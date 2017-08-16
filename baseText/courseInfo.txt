@@ -1,0 +1,7 @@
+\newcommand{\institution}{YOUR INSTITUTION}
+\newcommand{\courseCode}{} 
+\newcommand{\courseName}{YOUR LINEAR ALGEBRA COURSE}
+\newcommand{\courseSession}{ }
+\newcommand{\courseSection}{ }
+
+
