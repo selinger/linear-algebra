@@ -1,0 +1,9 @@
+/LinearAlgebra-AFirstCourse.pdf
+*.aux
+*.idx
+*.ilg
+*.ind
+*.log
+*.out
+*.toc
+/ex.tex
