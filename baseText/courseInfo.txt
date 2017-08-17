@@ -1,6 +1,6 @@
-\newcommand{\institution}{YOUR INSTITUTION}
+\newcommand{\institution}{Dalhousie University}
 \newcommand{\courseCode}{} 
-\newcommand{\courseName}{YOUR LINEAR ALGEBRA COURSE}
+\newcommand{\courseName}{Matrix Theory and Linear Algebra}
 \newcommand{\courseSession}{ }
 \newcommand{\courseSection}{ }
 
