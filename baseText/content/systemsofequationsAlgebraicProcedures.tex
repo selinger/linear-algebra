@@ -1,5 +1,19 @@
-\section{Systems Of Equations, Algebraic Procedures}
+\section{Systems Of Equations, Definitions}
 
+\begin{outcome}
+  \begin{enumerate}
+  \item[A.] Recognize the difference between a linear equation and a
+    non-linear equation.
+  \item[B.] Understand the definition of a system of linear equations.
+  \item[C.] Determine whether a tuple of real numbers is a solution
+    for a system of linear equations.
+  \item[D.] Recognize whether a system of linear equations is homogeneous.
+  \item[E.] Understand what it means for a system of linear equations
+    to be consistent or inconsistent.
+  \end{enumerate}
+\end{outcome}
+
+\void{
 \begin{outcome}
 \begin{enumerate}
 \item[A.] Use elementary operations to find the solution to a linear system of equations. 
@@ -15,74 +29,153 @@ unique solution or an infinite number of solutions from its \ef.
 \end{enumerate}
 
 \end{outcome}
+}
 
-We have taken an in depth look at graphical representations of systems of equations, as well as how to find possible
+We have taken an in-depth look at graphical representations of systems of equations, as well as how to find possible
 solutions graphically. Our attention now turns to working with systems algebraically. 
 
-\begin{definition}{System of Linear Equations}{systemoflinearequations}
-A \textbf{system of linear equations} \index{system of equations} is a list of equations,
+\begin{definition}{Linear Equation}{linearequation}
+A \textbf{linear equation} \index{linear equation} is an equation of
+the form
 \begin{equation*}
-\begin{array}{c}
-a_{11}x_{1}+a_{12}x_{2}+\cdots +a_{1n}x_{n}=b_{1} \\
-a_{21}x_{1}+a_{22}x_{2}+\cdots +a_{2n}x_{n}=b_{2} \\
+  a_1x_1 + a_2x_2 + \cdots + a_nx_n = b.
+\end{equation*}
+Here, $a_1,\ldots,a_n$ are real numbers called the
+\textbf{coefficients}\index{coefficient} of the equation, $b$ is a
+real number called the \textbf{constant term}\index{constant term}
+of the equation, and $x_1,\ldots,x_n$ are
+\textbf{variables}\index{variable}.
+\end{definition}
+
+\begin{example}{Linear vs. Non-Linear Equation}{linear-vs-nonlinear}
+  The equation $2x+3y=5$ is linear. The equation $2x^2+3y=5$ is not
+  linear, because it contains the square of a variable instead of a
+  variable.  The equation $2\sqrt{x} + 3\sin y = 5$ is also not
+  linear, because functions such as square root and sine are applied
+  to the variables. On the other hand, the equation
+  $(\sqrt{2}) x + (\sin 3)y = 5^2$ is linear, because $\sqrt{2}$,
+  $\sin 3$, and $5^2$ are real numbers, and can therefore be used as
+  coefficients and constant terms.
+
+  We also permit minor notational variants of linear equations. The
+  equation $2x-3y=5$ is linear although
+  Definition~\ref{def:linearequation} does not mention subtraction,
+  because it can be regarded as just another notation for
+  $2x+(-3)y = 5$. Similarly, the equation $2x=5+3y$ is linear, because
+  it can be easily rewritten as $2x-3y=5$ by bringing all the
+  variables (and their coefficients) to the left-hand side.
+\end{example}
+
+A \textbf{solution}\index{linear equation!solution} to a linear
+equation is an assignment of real numbers to the variables, making the
+equation true. More precisely, if $r_1,\ldots,r_n$ are real numbers,
+the assignment $x_1=r_1$, \ldots, $x_n=r_n$ is a solution to the
+equation in Definition~\ref{def:linearequation} if the real number
+$a_1r_1 + a_2r_2 + \ldots + a_nr_n$ is equal to the real number
+$b$. To save space, we often write solutions in \textbf{tuple
+  notation}\index{tuple}\footnote{The terminology ``tuple'' arose as
+  follows. A collection of two items is called a ``pair'', a
+  collection of three items is called a ``triple'', followed by
+  ``quadruple'', ``quintuple'', ``sextuple'', and so on. You have to
+  know Latin to know what the next ones are called. To avoid these
+  Latin terms, mathematicians started saying $4$-tuple, $5$-tuple,
+  $6$-tuple and so on, and more generally, $n$-tuple for an ordered
+  collection of $n$ items. When $n$ doesn't matter or is clear from
+  the context, we often just say ``tuple''.}  as
+$(x_1,\ldots,x_n) = (r_1,\ldots,r_n)$. When there is no doubt about
+the order of the variables, we also often simply write the solution as
+$(r_1,\ldots,r_n)$.
+
+\begin{example}{Solutions of a Linear Equation}{linear-equation-solutions}
+  Consider the linear equation $2x+3y-4z=5$. The assignment
+  $(x,y,z) = (1,1,0)$ is a solution because $2(1)+3(1)-4(0) = 5$. The
+  assignment $(x,y,z) = (0,3,1)$ is also a solution, because $2(0) +
+  3(3) - 4(1) = 5$. On the other hand, $(x,y,z) = (1,1,1)$ is not a
+  solution, because $2(1) + 3(1)-4(1) = 1 \neq 5$.
+\end{example}
+
+A system of linear equations is just several linear equations taken together.
+
+\begin{definition}{System of Linear Equations}{systemoflinearequations}
+A \textbf{system of linear equations}\index{system of linear equations} is a list of equations
+\begin{equation*}
+\begin{array}{c@{~}c@{~}c}
+a_{11}x_{1}+a_{12}x_{2}+\cdots +a_{1n}x_{n}&=&b_{1} \\
+a_{21}x_{1}+a_{22}x_{2}+\cdots +a_{2n}x_{n}&=&b_{2} \\
 \vdots \\
-a_{m1}x_{1}+a_{m2}x_{2}+\cdots +a_{mn}x_{n}=b_{m}
+a_{m1}x_{1}+a_{m2}x_{2}+\cdots +a_{mn}x_{n}&=&b_{m},
 \end{array}
 \end{equation*}
 where $a_{ij}$ and $b_{j}$ are real numbers. The above is a system
 of $m$ equations in the $n$ variables, $x_{1},x_{2}\cdots ,x_{n}$.
- Written more simply in terms
-of summation notation, the above can be written in the form
-\begin{equation*}
-\sum_{j=1}^{n}a_{ij}x_{j}=b_{i},
-\text{ }i=1,2,3,\cdots ,m
-\end{equation*}
+As before, the numbers $a_{ij}$ are called the
+\textbf{coefficients}\index{coefficient} and the numbers $b_{j}$ are
+called the \textbf{constant terms}\index{constant term} of the system
+of equations.
 \end{definition}
 
-The relative size of $m$ and $n$ is not important here. Notice that we
-have allowed $a_{ij}$ and $b_{j}$ to be any real number.  We can also
-call these numbers \textbf{scalars} \index{scalar}. We will use this
-term throughout the text, so keep in mind that the term
-\textbf{scalar} just means that we are working with real numbers.
+The relative size of $m$ and $n$ is not important here. We may have
+more variables than equations, more equations than variables, or an
+equal number of equations and variables. 
 
-Now, suppose we have a system where $b_{i} = 0$ for all $i$. In other words every
-equation equals $0$. This is a special type of system.
+A \textbf{solution}\index{system of linear equations!solution} to a
+system of linear equations is an assignment of real numbers to the
+variables that is a solution to {\em all} of the equations in the
+system.
+
+\begin{example}{Solutions of a System of Linear Equations}{linear-system-solutions}
+  Consider the system of linear equations
+  \begin{equation*}
+    \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
+      2x&+&3y&-&4z &=& 5\\
+      -2x&+&y&+&2z &=& -1.
+    \end{array}
+  \end{equation*}
+  Then $(x,y,z)=(1,1,0)$ is a solution of this system of equations,
+  because it is a solution to the first equation and the second
+  equation. Also, $(x,y,z)=(6,3,4)$ is another solution of this system
+  of equations (check this!).  On the other hand, $(x,y,z)=(0,3,1)$ is
+  not a solution of the system, because although it is a solution to
+  the first equation, it is not a solution to the second equation.
+\end{example}
+
+Recall from Section~\ref{sec:systems-geometric} that a system of
+equations either has a unique solution, infinitely many solutions, or
+no solution. It is very important to us whether a system of equations
+has solutions or not. For this reason, we introduce the following terminology:
+
+\begin{definition}{Consistent and Inconsistent Systems}{consistentandinconsistent}
+A system of linear equations is called
+\index{consistent system}\textbf{consistent} if there exists at least one solution. It is
+called
+\index{inconsistent system}\textbf{inconsistent }if there is no solution.
+\end{definition}
+
+If we think of each equation as a condition that must be satisfied by
+the variables, consistent means that there is some choice of values
+for the variables which can satisfy \textbf{all} of the
+conditions. Inconsistent means that there is no such choice of values
+for the variables. In the following sections, you will learn a method
+for determining whether a system of equations is consistent or not,
+and in case it is consistent, to find all of its solutions. 
+
+%%% MOVE THIS TO 1.2.4, but first rewrite 1.2.3
+
+We conclude this section by introducing a special name for a system of
+equations where all of the constant terms are $0$. 
 
 \begin{definition}{Homogeneous System of Equations}{homogeneoussystem}
-A system of equations is called \textbf{homogeneous} \index{system of equations!homogeneous} if each equation in
-the system  is equal to $0$. A homogeneous system has the form 
+  A system of equations is called \textbf{homogeneous} \index{system
+    of equations!homogeneous} if each of the constant terms is equal
+  to $0$. A homogeneous system therefore has the form
 \begin{equation*}
 \begin{array}{c}
 a_{11}x_{1}+a_{12}x_{2}+\cdots +a_{1n}x_{n}= 0 \\
 a_{21}x_{1}+a_{22}x_{2}+\cdots +a_{2n}x_{n}= 0  \\
 \vdots \\
-a_{m1}x_{1}+a_{m2}x_{2}+\cdots +a_{mn}x_{n}= 0 
+a_{m1}x_{1}+a_{m2}x_{2}+\cdots +a_{mn}x_{n}= 0, 
 \end{array}
 \end{equation*}
-where $a_{ij}$ are scalars and $x_{i}$ are variables.
+where $a_{ij}$ are coefficients and $x_{i}$ are variables.
 \end{definition}
 
-Recall from the previous section that our goal when working with systems of linear equations 
-was to find the point of intersection of the equations when graphed. In other words, we 
-looked for the solutions to the system. We now wish to find these solutions algebraically. We want to find values for  
-$ x_{1},\cdots ,x_{n} $ which solve all of
-the equations. If such a set of values exists,  we call $\left( x_{1},\cdots ,x_{n}\right)$  the \textbf{solution set}. \index{system of equations!solution set} 
-
-Recall the above discussions about the types of solutions possible. 
-We will see that systems of linear equations will have one unique solution, infinitely many solutions, 
-or no solution.  Consider the following definition. 
-
-\begin{definition}{Consistent and Inconsistent Systems}{consistentandinconsistent}
-A system of linear equations is called
-\index{consistent system} \textbf{consistent} if there exists at least one solution. It is
-called
-\index{inconsistent system} \textbf{inconsistent }if there is no solution.
-\end{definition}
-
-If you think of each equation as a condition which must
-be satisfied by the variables, consistent would mean there is some choice of
-variables which can satisfy \textbf{all} the conditions. Inconsistent would mean
-there is no choice of the variables which can satisfy all of the conditions.
-
-The following sections provide methods for determining if a system is consistent or inconsistent, and finding
-solutions if they exist.
