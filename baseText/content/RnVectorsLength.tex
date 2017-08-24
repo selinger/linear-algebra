@@ -54,9 +54,9 @@ lengths of the sides of this triangle are $\left| p_{1}-q_{1}\right| $
 and $\left| p_{2}-q_{2}\right|$, the absolute value of the difference in these values. Therefore, the Pythagorean Theorem
 implies the length of the hypotenuse (and thus the distance between $P$ and $Q$) equals
 \begin{equation}
-\left( \left| p_{1}-q_{1}\right| ^{2}+\left| p_{2}-q_{2}\right| ^{2}\right)
-^{1/2}=\left( \left( p_{1}-q_{1}\right) ^{2}+\left( p_{2}-q_{2}\right)
-^{2}\right) ^{1/2}
+d(P,Q)=\sqrt{ \left| p_{1}-q_{1}\right| ^{2}+\left| p_{2}-q_{2}\right| ^{2}}
+=\sqrt{ \left( p_{1}-q_{1}\right) ^{2}+\left( p_{2}-q_{2}\right)
+^{2}}
 \label{distance2}
 \end{equation}
 
@@ -98,8 +98,7 @@ Here, we need to use Pythagorean Theorem twice in order to find the length of
 the solid line. First, by the Pythagorean Theorem, the length of the dotted line joining $\left(
 q_{1},q_{2},q_{3}\right) $ and $\left( p_{1},p_{2},q_{3}\right) $ equals
 \begin{equation*}
-\left( \left( p_{1}-q_{1}\right) ^{2}+\left( p_{2}-q_{2}\right) ^{2}\right)
-^{1/2}
+\sqrt{ \left( p_{1}-q_{1}\right) ^{2}+\left( p_{2}-q_{2}\right) ^{2}}
 \end{equation*}
 while the length of the line joining $\left( p_{1},p_{2},q_{3}\right) $ to 
 $\left( p_{1},p_{2},p_{3}\right) $ is just $\left| p_{3}-q_{3}\right| .$
@@ -107,13 +106,13 @@ Therefore, by the Pythagorean Theorem again, the length of the line joining
 the points $P = \left( p_{1},p_{2},p_{3}\right) $ and $Q = \left(
 q_{1},q_{2},q_{3}\right) $ equals
 \begin{equation*}
-\left( \left( \left( \left( p_{1}-q_{1}\right) ^{2}+\left(
-p_{2}-q_{2}\right) ^{2}\right) ^{1/2}\right) ^{2}+\left( p_{3}-q_{3}\right)
-^{2}\right) ^{1/2}
+d(P,Q)=\sqrt{ \left(   \sqrt{ \left( p_{1}-q_{1}\right) ^{2}+\left(
+p_{2}-q_{2}\right) ^{2}}  \right) ^{2}+\left( p_{3}-q_{3}\right)
+^{2}}
 \end{equation*}
 \begin{equation}
- =\left( \left( p_{1}-q_{1}\right) ^{2}+\left( p_{2}-q_{2}\right)
-^{2}+\left( p_{3}-q_{3}\right) ^{2}\right) ^{1/2}
+ =\sqrt{ \left( p_{1}-q_{1}\right) ^{2}+\left( p_{2}-q_{2}\right)
+^{2}+\left( p_{3}-q_{3}\right) ^{2}}
 \label{distance3}
 \end{equation}
 
@@ -125,9 +124,8 @@ $Q=\left( q_{1},\cdots ,q_{n}\right) $ be two points in
 $\mathbb{R}^{n}$. Then the distance
 between these points is defined as
 \begin{equation*}
-\text{ distance between }P\text{ and } Q\text{ } = 
-d( P, Q ) = \left( \sum_{k=1}^{n}\left\vert
-p_{k}-q_{k}\right\vert ^{2}\right) ^{1/2}
+\text{ distance between }P\text{ and } Q\text{ is } 
+d( P, Q ) =\sqrt{ (p_1-q_1)^2 + \cdots + (p_n-q_n)^2}
 \end{equation*}
 This is called the \textbf{distance formula}. We may also write $\left\vert P - Q \right\vert $ as the distance between $P$ and $Q$.
 \index{distance formula}
@@ -155,8 +153,8 @@ We will use the formula given in Definition \ref{def:distancebetweenpoints} to f
 $P$ and $Q$. 
 Use the distance formula and write
 \begin{equation*}
-d(P,Q)= \left( \left( 1-2\right) ^{2}+\left( 2-3\right)
-^{2}+\left( -4-\left( -1\right) \right) ^{2}+\left( 6-0\right)^{2}\right) ^{\frac{1}{2}} = 47
+d(P,Q)= \sqrt{ \left( 1-2\right) ^{2}+\left( 2-3\right)
+^{2}+\left( -4-\left( -1\right) \right) ^{2}+\left( 6-0\right)^{2}} = \sqrt{47}
 \end{equation*}
 
 Therefore, $d( P,Q) =
@@ -183,13 +181,13 @@ same distance between the given points. This is explored in the
 following example.
 
 \begin{example}{The Plane Between Two Points}{planebetweentwopoints}
-Describe the points in $\mathbb{R}^3$ which are at the same distance between $\left(
+Describe the points in $\mathbb{R}^3$ which are equally distant from both the points $\left(
 1,2,3\right) $ and $\left( 0,1,2\right) .$
 \end{example}
 
 \begin{solution}
 Let $P = \left( p_1 , p_2, p_3\right) $ be such a point. Therefore, $P$ is the same distance from $\left(
-1,2,3\right) $ and $\left( 0,1,2\right) .$
+1,2,3\right) $ and $\left( 0,1,2\right) $, thus $d(P,(1,2,3))=d(P,(0,1,2))$.
 Then by Definition \ref{def:distancebetweenpoints},
 \begin{equation*}
 \sqrt{\left( p_1 -1\right) ^{2}+\left( p_2 -2\right) ^{2}+\left( p_3-3\right) ^{2}}=
@@ -246,7 +244,7 @@ We conclude this section with a new definition for the special case of
 vectors of length $1$.
 
 \begin{definition}{Unit Vector}{unitvector}
-Let $\vect{u}$ be a vector in $\mathbb{R}^{n}$. Then, we call $\vect{u}$ a 
+Let $\vect{u}$ be a non-zero vector in $\mathbb{R}^{n}$. Then, we call $\vect{u}$ a 
 \textbf{unit vector} \index{unit vector} if it has length 1, that is if
 \begin{equation*}
 \vectlength \vect{u} \vectlength
