@@ -104,6 +104,8 @@
 % fancy section headers, sc for small caps, prevent titles from being stranded on previous page
 \usepackage[explicit,sc,nobottomtitles]{titlesec}
 
+% background images
+\usepackage[pages=some]{background}
 
 % Inputs information regarding book Title, Authors, Version and Revision
 \input frontmatter/bookinfo.txt
@@ -224,17 +226,13 @@
 }
 
 
-% Lyryx with Open Texts 
-	\input frontmatter/LyryxOpenTexts.tex
-	\cleardoublepage
-
 % License
 	\input frontmatter/license.tex
-	\cleardoublepage
+	\clearpage
 
 % Revision
 	\input frontmatter/revision.tex
-	\cleardoublepage
+	\clearpage
 
 %\end{document} %to compile only the front matter
 
@@ -264,12 +262,6 @@
 	\addcontentsline{toc}{chapter}{\indexname}
 	\printindex
 
-% Back cover page
-\ifthenelse{\equal{\detokenize{interior}}{\jobname}}{
-	% Skip back cover page
-}{
-	\input frontmatter/backpage.tex
-}
 }
 }
 %%that's it folks

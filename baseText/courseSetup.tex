@@ -1,10 +1,13 @@
-%LOAD CHAPTERS / SECTIONS / SUBSECTIONS IN DESIRED ORDER
+\long\def\void#1{}
+
+% LOAD CHAPTERS / SECTIONS / SUBSECTIONS IN DESIRED ORDER
 \input content/preface.tex
 \input content/systemsofequations.tex %Chapter
 	\input content/systemsofequationsGeometry.tex %Section
-		\input exercises/SystemsofEquations-Geometric.tex %Subsection
+		\input exercises/SystemsofEquations-Geometric.tex
 
 	\input content/systemsofequationsAlgebraicProcedures.tex %Section
+		\input exercises/SystemsofEquations-Definition.tex
 		\input content/systemsofequationsAlgebraicProceduresElementaryOperations.tex %Subection
 		\input content/systemsofequationsAlgebraicProceduresGaussianElimination.tex %Subection
 		\input content/systemsofequationsAlgebraicProceduresUniquenessRREF.tex %Subection

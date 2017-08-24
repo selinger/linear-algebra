@@ -4,8 +4,8 @@
 \begin{enumialphparenastyle}
 
 \begin{ex}
-Graphically, find the point $\left( x_{1},y_{1}\right) $ which
-lies on both lines, $x+3y=1$ and $4x-y=3.$  That is, graph each line
+Graphically, find the point $\left(x,y\right)$ which
+lies on both of the lines $x+3y=1$ and $4x-y=3$. That is, graph each line
 and see where they intersect.
 
 \begin{sol}
@@ -44,6 +44,25 @@ Explain the geometric significance of
 
 %\begin{sol}
 %\end{sol}
+\end{ex}
+
+\begin{ex}
+  Draw a picture of three planes such that no two of the planes are
+  parallel, but the three points have no common intersection.
+
+  \begin{sol}~\par\vspace{-2ex}\quad
+    \begin{tikzpicture}[xscale=0.2,yscale=0.15]
+      \draw[fill=gray!30] (-6,0) -- ++(7,7) -- ++(4,0) -- ++(-7,-7) -- cycle;
+      \draw[fill=gray!90] (-2,-8) -- ++(7,7) -- ++(2,4) -- ++(-7,-7) -- cycle;
+      \draw[fill=gray!60] (2,-8) -- ++(7,7) -- ++(-2,4) -- ++(-7,-7) -- cycle;
+      \draw[fill=gray!60] (0,-4) -- ++(7,7) -- ++(-2,4) -- ++(-7,-7) -- cycle;
+      \draw[fill=gray!60] (-2,0) -- ++(7,7) -- ++(-2,4) -- ++(-7,-7) -- cycle;
+      \draw[fill=gray!30] (-2,0) -- ++(7,7) -- ++(4,0) -- ++(-7,-7) -- cycle;
+      \draw[fill=gray!90] (0,-4) -- ++(7,7) -- ++(2,4) -- ++(-7,-7) -- cycle;
+      \draw[fill=gray!30] (2,0) -- ++(7,7) -- ++(4,0) -- ++(-7,-7) -- cycle;
+      \draw[fill=gray!90] (2,0) -- ++(7,7) -- ++(2,4) -- ++(-7,-7) -- cycle;
+    \end{tikzpicture}
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}
