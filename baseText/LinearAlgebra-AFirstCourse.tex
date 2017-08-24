@@ -228,11 +228,11 @@
 
 % License
 	\input frontmatter/license.tex
-	\cleardoublepage
+	\clearpage
 
 % Revision
 	\input frontmatter/revision.tex
-	\cleardoublepage
+	\clearpage
 
 %\end{document} %to compile only the front matter
 
@@ -246,7 +246,7 @@
 	\mainmatter
 	
 %LOAD COURSE CONTENT
-%	\input courseSetup.tex
+	\input courseSetup.tex
 
 % Solutions
 	\Closesolutionfile{solutions}
@@ -262,12 +262,6 @@
 	\addcontentsline{toc}{chapter}{\indexname}
 	\printindex
 
-% Back cover page
-\ifthenelse{\equal{\detokenize{interior}}{\jobname}}{
-	% Skip back cover page
-}{
-	\input frontmatter/backpage.tex
-}
 }
 }
 %%that's it folks
