@@ -107,5 +107,42 @@ If $A$ is symmetric then $A=-A^{T}.$ It follows that $a_{ii}=-a_{ii}$ and so eac
 %\begin{sol}
 %\end{sol}
 \end{ex}
+
+\begin{ex} \label{exerRn3}  Let $A$ be a real $m\times n$ matrix and
+let $\vect{u}\in \mathbb{R}^{n}$ and $\vect{v}\in \mathbb{R}^{m}.$ Show 
+$A\vect{u}\dotprod \vect{v}=\vect{u}\dotprod A^{T}\vect{v}$. 
+\textbf{Hint:} Use the definition of matrix
+multiplication to do this.
+\begin{sol}
+$A\vect{x}\dotprod \vect{y}=\sum_{k}\left( A\vect{x}
+\right) _{k}y_{k}=\sum_{k}\sum_{i}A_{ki}x_{i}y_{k}=\sum_{i}
+\sum_{k}A_{ik}^{T}x_{i}y_{k}= \vect{x} \dotprod A^{T}\vect{y} $
+\end{sol}
+\end{ex}
+
+\begin{ex} Use the result of Problem \ref{exerRn3} to verify directly
+that $\left( AB\right) ^{T}=B^{T}A^{T}$ without making any reference to
+subscripts.
+\begin{sol}
+\begin{eqnarray*}
+ AB\vect{x} \dotprod \vect{y} &=& B\vect{x} \dotprod A^{T}\vect{y} \\ 
+&=& \vect{x}\dotprod B^{T}A^{T}\vect{y} \\
+&=& \vect{x}\dotprod \left( AB\right) ^{T} \vect{y}
+\end{eqnarray*}
+Since this is true for all $\vect{x}$, it follows that, in particular, it
+holds for
+\[
+\vect{x}=B^{T}A^{T}\vect{y}-\left( AB\right) ^{T}\vect{y}
+\]
+and so from the axioms of the dot product,
+\[
+\left( B^{T}A^{T}\vect{y}-\left( AB\right) ^{T}\vect{y}\right) \dotprod \left(B^{T}A^{T}
+\vect{y}-\left( AB\right) ^{T}\vect{y}\right) =0
+\]
+and so $B^{T}A^{T}\vect{y}-\left( AB\right) ^{T}\vect{y}=\vect{0}$. However,
+this is true for all $\vect{y}$ and so $B^{T}A^{T}-\left(
+AB\right) ^{T}=0.$
+\end{sol}
+\end{ex}
  
 \end{enumialphparenastyle}

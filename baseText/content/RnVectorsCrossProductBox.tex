@@ -8,7 +8,7 @@ We begin with a definition.
 \begin{definition}{Parallelepiped}{parallelepiped}
 A parallelepiped
 \index{parallelepiped}
- determined by the three vectors, $\vect{u},\vect{v}$, and $\vect{w}$ consists of
+ determined by the three vectors, $\vect{u},\vect{v}$, and $\vect{w}$ consists of the set of points
 \begin{equation*}
 \left\{ r\vect{u}+s\vect{v}+t\vect{w}:r,s,t\in \left[ 0,1\right]
 \right\} 
@@ -109,9 +109,9 @@ volume. Therefore by taking the absolute value of the result, we obtain the volu
 
 We will take the cross product of $\vect{u}$ and $\vect{v}$. 
 This is given by 
-\begin{equation*}
+\begin{align*}
 \vect{u} \times \vect{v}
-=
+&=
 \leftB
 \begin{array}{r}
 1 \\
@@ -126,16 +126,9 @@ This is given by
 3 \\
 -6
 \end{array}
-\rightB
-\end{equation*}
-\begin{equation*}
-=\left\vert
-\begin{array}{rrr}
-\vect{i} & \vect{j} & \vect{k} \\
-1 & 2 & -5 \\
-1 & 3 & -6
-\end{array}
-\right\vert = 3\vect{i}+\vect{j}+\vect{k}
+\rightB\\
+&=((2)(-6)-(-5)(3))\vect{i}+((1)(-6)-(-5)(1))\vect{j}+((1)(3)-(2)(1))\vect{k} \\
+&= 3\vect{i}+\vect{j}+\vect{k}
 =
 \leftB
 \begin{array}{r}
@@ -144,7 +137,7 @@ This is given by
 1
 \end{array}
 \rightB 
-\end{equation*}
+\end{align*}
 
 Now take the dot product of this vector with $\vect{w}$ which yields
 \begin{eqnarray*}
@@ -189,6 +182,7 @@ $\left( \vect{u}\times \vect{v}\right) \dotprod \vect{w}$ and $\vect{u}\dotprod
 give $-1$ times the volume.
 \end{proof}
 
+\begin{comment}
 Recall that we can express the cross product as the determinant of a particular matrix. It turns out
 that the same can be done for the box product. 
 Suppose you have three vectors, $\vect{u}=\leftB
@@ -253,3 +247,6 @@ This follows directly from the definition of the cross product given above
 and the way we expand determinants. Thus the volume of a parallelepiped
 determined by the vectors $\vect{u},\vect{v},\vect{w}$ is just the
 absolute value of the above determinant.
+\end{comment}
+
+
