@@ -1,5 +1,12 @@
 \section{Application: Dimensionless Variables}
 
+\begingroup  %% definitions local to this file
+
+% SI units are written in Roman font
+\newcommand\m{\mathop{\textrm{m}}\nolimits}
+\newcommand\kg{\mathop{\textrm{kg}}\nolimits}
+\newcommand\s{\mathop{\textrm{s}}\nolimits}
+
 This section shows how solving systems of equations can be used to
 determine appropriate dimensionless variables. It is only an
 introduction to this topic and considers a specific example of a
@@ -26,17 +33,17 @@ depend.
 \begin{tabular}{|l|l|l|}
 \hline
 Variable & Symbol & Units \\ \hline
-chord & $A$ & $m$ \\ \hline
-span & $B$ & $m$ \\ \hline
-angle incidence & $\theta $ & $m^{0}kg^{0}\sec ^{0}$ \\ \hline
-speed of wind & $V$ & $m\sec ^{-1}$ \\ \hline
-speed of sound & $V_{0}$ & $m\sec ^{-1}$ \\ \hline
-density of air & $\rho $ & $kgm^{-3}$ \\ \hline
-viscosity & $\mu $ & $kg\sec ^{-1}m^{-1}$ \\ \hline
-lift & $l$ & $kg\sec ^{-2}m$ \\ \hline
+chord & $A$ & $\m$ \\ \hline
+span & $B$ & $\m$ \\ \hline
+angle incidence & $\theta $ & $\m^{0}\kg^{0}\s ^{0}$ \\ \hline
+speed of wind & $V$ & $\m\s ^{-1}$ \\ \hline
+speed of sound & $V_{0}$ & $\m\s ^{-1}$ \\ \hline
+density of air & $\rho $ & $\kg\m^{-3}$ \\ \hline
+viscosity & $\mu $ & $\kg\s ^{-1}\m^{-1}$ \\ \hline
+lift & $l$ & $\kg\s ^{-2}\m$ \\ \hline
 \end{tabular}
 \end{equation*}
-Here $m$ denotes meters, $\sec $ refers to seconds and $kg$ refers to
+Here $\m$ denotes meters, $\s $ refers to seconds and $\kg$ refers to
 kilograms. All of these are likely familiar except for $\mu $, which we will discuss in further detail now. 
 
 Viscosity is a measure of how much internal friction is experienced when the
@@ -51,12 +58,12 @@ tangential force}
 \end{equation*}
 Hence 
 \begin{equation*}
-\left( \text{units on }\mu \right) m^{2}\left( \frac{m}{\sec m}\right)
-=kg\sec ^{-2}m
+\left( \text{units on }\mu \right) \m^{2}\left( \frac{\m}{\s \m}\right)
+=\kg\s ^{-2}\m
 \end{equation*}
 Thus the units on $\mu $ are 
 \begin{equation*}
-kg\sec ^{-1}m^{-1}
+\kg\s ^{-1}\m^{-1}
 \end{equation*}
 as claimed above.
 
@@ -77,8 +84,8 @@ l=f\left( g_{1},\cdots ,g_{k}\right) \rho V^{2}AB
 \end{equation*}
 where the units on $\rho V^{2}AB$ are 
 \begin{equation*}
-\frac{kg}{m^{3}}\left( \frac{m}{\sec }\right) ^{2}m^{2}=\frac{kg\times m}{%
-\sec ^{2}}
+\frac{\kg}{\m^{3}}\left( \frac{\m}{\s }\right) ^{2}\m^{2}=\frac{\kg\times \m}{%
+\s ^{2}}
 \end{equation*}
 which are the units of force. Each of these $g_{i}$ is of the form 
 \begin{equation}
@@ -89,9 +96,9 @@ and each $g_{i}$ is independent of the dimensions. That is, this expression
 must not depend on meters, kilograms, seconds, etc. Thus, placing in the
 units for each of these quantities, one needs 
 \begin{equation*}
-m^{x_{1}}m^{x_{2}}\left( m^{x_{4}}\sec ^{-x_{4}}\right) \left( m^{x_{5}}\sec
-^{-x_{5}}\right) \left( kgm^{-3}\right) ^{x_{6}}\left( kg\sec
-^{-1}m^{-1}\right) ^{x_{7}}=m^{0}kg^{0}\sec ^{0}
+\m^{x_{1}}\m^{x_{2}}\left( \m^{x_{4}}\s ^{-x_{4}}\right) \left( \m^{x_{5}}\s
+^{-x_{5}}\right) \left( \kg\m^{-3}\right) ^{x_{6}}\left( \kg\s
+^{-1}\m^{-1}\right) ^{x_{7}}=\m^{0}\kg^{0}\s ^{0}
 \end{equation*}
 Notice that there are no units on $\theta $ because it is just the radian
 measure of an angle. Hence its dimensions consist of length divided by
@@ -99,9 +106,9 @@ length, thus it is dimensionless. Then this leads to the following equations
 for the $x_{i}.$
 \begin{equation*}
 \begin{array}{cc}
-m: & x_{1}+x_{2}+x_{4}+x_{5}-3x_{6}-x_{7}=0 \\ 
-\sec :\  & -x_{4}-x_{5}-x_{7}=0 \\ 
-kg: & x_{6}+x_{7}=0%
+\m: & x_{1}+x_{2}+x_{4}+x_{5}-3x_{6}-x_{7}=0 \\ 
+\s :\  & -x_{4}-x_{5}-x_{7}=0 \\ 
+\kg: & x_{6}+x_{7}=0%
 \end{array}
 \end{equation*}
 The augmented matrix for this system is 
@@ -181,7 +188,7 @@ then the dimensionless variable which results from this is $A^{-1}V^{-1}\rho
 /\mu $. This one is called the Reynold's number. It is the one which
 involves viscosity. Thus we would look for 
 \begin{equation*}
-l=f\left( \func{Re},AR,\theta ,\mathcal{M}\right) kg\times m/\sec ^{2}
+l=f\left( \func{Re},AR,\theta ,\mathcal{M}\right) \kg\times \m/\s ^{2}
 \end{equation*}
 This is quite interesting because it is easy to vary $\func{Re}$ by simply
 adjusting the velocity or $A$ but it is hard to vary things like $\mu $ or $%
@@ -189,3 +196,5 @@ adjusting the velocity or $A$ but it is hard to vary things like $\mu $ or $%
 used, along with wind tunnel experiments to get a formula for the lift which
 would be reasonable. You could also consider more variables and more
 complicated situations in the same way.
+
+\endgroup
