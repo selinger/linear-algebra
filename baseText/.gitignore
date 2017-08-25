@@ -1,5 +1,8 @@
 /LinearAlgebra-AFirstCourse.pdf
 /LinearAlgebra-AFirstCourse.ps
+/ex.tex
+/LyryxLinAlgStyle.sty
+/LyryxMathStyle.sty
 *.fls
 *.synctex.gz
 *.aux
@@ -12,6 +15,4 @@
 *.dvi
 *.two
 *.texwatch.lock
-/ex.tex
-/LyryxLinAlgStyle.sty
-/LyryxMathStyle.sty
+*.bak

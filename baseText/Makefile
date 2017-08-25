@@ -63,3 +63,6 @@ clean:
 	rm -f $(foreach f,$(suffixes),print-cover-front$(f))
 	rm -f $(foreach f,$(suffixes),base-text$(f))
 #Test
+
+spellcheck:
+	ispell -d canadian -p ./dictionary.txt -t frontmatter/*.tex content/*.tex exercises/*.tex
