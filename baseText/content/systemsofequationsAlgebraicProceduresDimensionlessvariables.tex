@@ -3,9 +3,9 @@
 \begingroup  %% definitions local to this file
 
 % SI units are written in Roman font
-\newcommand\m{\mathop{\textrm{m}}\nolimits}
-\newcommand\kg{\mathop{\textrm{kg}}\nolimits}
-\newcommand\s{\mathop{\textrm{s}}\nolimits}
+\def\m{\mathop{\textrm{m}}\nolimits}
+\def\kg{\mathop{\textrm{kg}}\nolimits}
+\def\s{\mathop{\textrm{s}}\nolimits}
 
 This section shows how solving systems of equations can be used to
 determine appropriate dimensionless variables. It is only an
@@ -71,14 +71,15 @@ Returning to our original discussion, you may think that we would want
 \begin{equation*}
 l=f\left( A,B,\theta ,V,V_{0},\rho ,\mu \right) 
 \end{equation*}
-This is very cumbersome because it depends on seven variables. Also, it is likely that without much care,
-a change in the units such as going from meters to feet would result in an
-incorrect value for $l$. The way to get around this problem is to look for $l
-$ as a function of dimensionless variables multiplied by something which has
-units of force. It is helpful because first of all, you will likely have
-fewer independent variables and secondly, you could expect the formula to
-hold independent of the way of specifying length, mass and so forth. One
-looks for 
+This is very cumbersome because it depends on seven variables. Also,
+it is likely that without much care, a change in the units such as
+going from meters to centimeters would result in an incorrect value
+for $l$. The way to get around this problem is to look for $l $ as a
+function of dimensionless variables multiplied by something which has
+units of force. It is helpful because first of all, you will likely
+have fewer independent variables and secondly, you could expect the
+formula to hold independent of the way of specifying length, mass and
+so forth. One looks for
 \begin{equation*}
 l=f\left( g_{1},\cdots ,g_{k}\right) \rho V^{2}AB
 \end{equation*}
@@ -198,3 +199,4 @@ would be reasonable. You could also consider more variables and more
 complicated situations in the same way.
 
 \endgroup
+
