@@ -39,17 +39,15 @@ Find the angle between the vectors given by
 \leftB
 \begin{array}{r}
 2 \\
-1 \\
--1 
+2
 \end{array}
 \rightB, 
 \vect{v}
 =
 \leftB
 \begin{array}{r}
-3 \\
-4 \\
-1
+0 \\
+3 
 \end{array}
 \rightB
 \end{equation*}
@@ -71,7 +69,7 @@ First, we can compute $\vect{u}\dotprod \vect{v}$. By Definition \ref{def:dotpro
 \begin{equation*}
 \vect{u}\dotprod \vect{v}
 =
-(2)(3) + (1)(4)+(-1)(1) = 9
+(2)(0) + (2)(3) = 6
 \end{equation*}
 
 Then, 
@@ -79,19 +77,19 @@ Then,
 \begin{array}{c}
 \vectlength \vect{u} \vectlength
 =
-\sqrt{(2)(2)+(1)(1)+(1)(1)}=\sqrt{6}\\
+\sqrt{(2)(2)+(2)(2)}=2\sqrt{2}\\
 \vectlength  \vect{v} \vectlength
 =
-\sqrt{(3)(3)+(4)(4)+(1)(1)}=\sqrt{26}
+\sqrt{(0)(0)+(3)(3)}=\sqrt{3}
 \end{array}
 \end{equation*}
  Therefore, the cosine of the included angle equals
 \begin{equation*}
-\cos \theta =\frac{9}{\sqrt{26}\sqrt{6}}=0.7205766...
+\cos \theta =\frac{6}{(2\sqrt{2})(3)}=\frac{1}{2}
 \end{equation*}
 
 With the cosine known, the angle can be determined by computing the
-inverse cosine of that angle, giving approximately  $\theta =0.76616$ radians. 
+inverse cosine of that angle, giving approximately  $\theta =\frac{\pi}{4}$ radians. 
 \end{solution}
 
 Another application of the geometric description of the dot product is
@@ -220,7 +218,7 @@ Consider the following proposition.
 
 \begin{proposition}{Perpendicular Vectors}{perpvectors}
 Let $\vect{u}$ and $\vect{v}$ be nonzero vectors in $\mathbb{R}^n$. Then, 
-$\vect{u}$ and $\vect{v}$ are said to be \textbf{perpendicular} \index{vector!perpendicular} exactly when
+$\vect{u}$ and $\vect{v}$ are \textbf{perpendicular} \index{vector!perpendicular} if and only if
 \begin{equation*}
 \vect{u}
 \dotprod
