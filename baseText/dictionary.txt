@@ -38,6 +38,7 @@ cardioid
 cauchyschwarzinequality
 Cayley
 cc
+centimeters
 cholesky
 choleskyfactorization
 circuitikz
