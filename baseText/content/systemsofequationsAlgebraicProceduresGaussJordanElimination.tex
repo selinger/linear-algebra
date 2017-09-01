@@ -1,0 +1,224 @@
+\section{Gauss-Jordan Eliminiation}
+
+In the previous section, we saw how to solve a system of equations by
+using Gaussian elimination and back substitution. The back
+substitution step can be quite confusing and error prone, especially
+when there are parameters. For example, in
+Example~\ref{exa:twoparametersetofsoln}, we had to substitute $y=s$,
+$z=2-t$, and $w=t$ into the equation $x=3-2y+2z-2w$, which required
+another simplification step.
+
+In this section, you will learn an alternative procedure called {\em
+  Gauss-Jordan elimination} which eliminates the need for back
+substitution, at the expense of doing a few additional row operations.
+The key to this technique is a special kind of {\ef} called a
+{\em {\rref}}.
+
+\begin{definition}{\RREF}{rref}
+  An augmented matrix is in \textbf{\rref}\eindex{\rref}\eindex{\ef!reduced} if
+  
+  \begin{enumerate}
+  \item It is in {\ef}.
+    
+  \item Each leading entry is equal to $1$.
+    
+  \item All entries above a leading entry are zero.
+  \end{enumerate}
+\end{definition}
+
+\begin{example}{{\RREF}}{rrefmatrices}
+The following augmented matrices are in {\rref}. The leading entries
+have been circled for emphasis. Note how all of the leading entries
+are equal to $1$, and they have zeros above them.
+\begin{equation*}
+\leftB
+\begin{array}{rrrrr|r}
+\circled{1} & 2 & 0 & 5 & 0 & 3 \\
+0 & 0 & \circled{1} & 2 & 0 & 0 \\
+0 & 0 & 0 & 0 & \circled{1} & 1 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}
+\rightB,\quad\leftB
+\begin{array}{rrr|r}
+\circled{1} & 0 & 0 & 0 \\
+0 & \circled{1} & 0 & 0 \\
+0 & 0 & \circled{1} & 0 \\
+0 & 0 & 0 & \circled{1} \\
+0 & 0 & 0 & 0
+\end{array}
+\rightB , \leftB
+\begin{array}{rrr|r}
+\circled{1} & 0 & 0 & 4 \\
+0 & \circled{1} & 0 & 3 \\
+0 & 0 & \circled{1} & 2 
+\end{array}
+\rightB
+\end{equation*}
+\end{example}
+
+We can carry every augmented matrix to {\rref} by doing elementary row
+operations.
+
+\begin{algorithm}{Gauss-Jordan Elimination}{gaussjordan}
+  This algorithm provides a method for using row operations to take a
+  matrix to its
+  {\rref} \eindex{\rref!algorithm}\index{Gauss-Jordan elimination}.
+  \begin{enumerate}
+  \item First, use Gaussian elimination
+    (Algorithm~\ref{algo:gaussianelimination}) to reduce the matrix to
+    {\ef}.
+  \item Moving from bottom to top, consider each non-zero row. Divide
+    the row by its leading entry, to make the leading entry equal to
+    $1$. Then use row operations to create zeros in the column above
+    the leading entry.
+  \end{enumerate}
+\end{algorithm}
+
+\begin{example}{Gauss-Jordan Elimination}{gaussjordan1}
+  Solve the system of equations from
+  Example~\ref{exa:systemwithonesoln} using Gauss-Jordan elimination.
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      x+4y+3z &=& 11\\
+      2x+10y+7z &=& 27\\
+      x+y+2z &=& 5.
+    \end{array}
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  In Example~\ref{exa:systemwithonesoln}, we had already reduced the
+  system to {\ef}:
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 4 & 3 & 11 \\
+      0 & \circled{2} & 1 & 5 \\
+      0 & 0 & \circled{1} & 3
+    \end{array}
+    \rightB.
+  \end{equation*}
+  We reduce it to {\rref} by performing the following row operations:
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 4 & 3 & 11 \\
+      0 & \circled{2} & 1 & 5 \\
+      0 & 0 & \circled{1} & 3
+    \end{array}
+    \rightB
+    \stackrel{R_2\leftarrow R_2-R_3}{\stackrel{R_1\leftarrow R_1-3R_3}{\sim}}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 4 & 0 & 2 \\
+      0 & \circled{2} & 0 & 2 \\
+      0 & 0 & \circled{1} & 3
+    \end{array}
+    \rightB
+    \stackrel{R_2\leftarrow \frac{1}{2}R_2}{\sim}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 4 & 0 & 2 \\
+      0 & \circled{1} & 0 & 1 \\
+      0 & 0 & \circled{1} & 3
+    \end{array}
+    \rightB
+    \stackrel{R_1\leftarrow 4R_2}{\sim}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 0 & 0 & -2 \\
+      0 & \circled{1} & 0 & 1 \\
+      0 & 0 & \circled{1} & 3
+    \end{array}
+    \rightB
+  \end{equation*}
+  The resulting matrix is in {\rref}. Note that the system of
+  equations is especially easy to solve, because the three equations
+  are $x=-2$, $y=1$, and $z=3$. No back substitution is needed.
+\end{solution}
+
+\begin{example}{Gauss-Jordan Elimination}{gaussjordan2}
+  Solve the system of equations from
+  Example~\ref{exa:twoparametersetofsoln} using Gauss-Jordan
+  elimination.
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      x +2y  -2z  +2w &=& 3 \\
+      x +2y  -z   +3w &=& 5 \\
+      x +2y  -3z  +1w &=& 1.
+    \end{array}
+  \end{equation*}    
+\end{example}
+
+\begin{solution}
+  In Example~\ref{exa:twoparametersetofsoln}, we had obtained the
+  following {\ef}:
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrrr|r}
+      \circled{1} & 2 & -2 & 2 & 3 \\
+      0 & 0 & \circled{1} & 1 & 2 \\
+      0 & 0 & 0 & 0 & 0
+    \end{array}
+    \rightB.
+  \end{equation*}
+  We reduce this to {\rref} by performing the following additional
+  step:
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrrr|r}
+      \circled{1} & 2 & -2 & 2 & 3 \\
+      0 & 0 & \circled{1} & 1 & 2 \\
+      0 & 0 & 0 & 0 & 0
+    \end{array}
+    \rightB
+    \stackrel{R1\leftarrow R1+2R2}{\sim}
+    \leftB
+    \begin{array}{rrrr|r}
+      \circled{1} & 2 & 0 & 4 & 7 \\
+      0 & 0 & \circled{1} & 1 & 2 \\
+      0 & 0 & 0 & 0 & 0
+    \end{array}
+    \rightB.
+  \end{equation*}
+  The first equation states that $x=7-2y-4w$, and the second equation
+  states that $z=2-w$. Using the free variables $y$ and $w$ as
+  parameters, we obtain the following general solution:
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      x &=& 7-2y-4w \\
+      y &=& y \\
+      z &=& 2-w \\
+      w &=& w.
+    \end{array}
+  \end{equation*}
+  Note that we did not really have to do back substitution; all we had
+  to do is to shift parts of the equations to the right-hand side. If
+  the solution looks strange, because it has equations like ``$y=y$''
+  in it, keep in mind that this means that $y$ and $w$ are arbitrary
+  numbers, i.e., parameters. We can replace $y$ and $w$ by parameters
+  $s$ and $t$ on the right-hand side, as before:
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      x &=& 7-2s-4t \\
+      y &=& s \\
+      z &=& 2-t \\
+      w &=& t.
+    \end{array}
+  \end{equation*}
+\end{solution}
+
+Which one is the better procedure to use, Gaussian elimination with
+back substitution, or Gauss-Jordan eliminiation? The answer is: it
+depends. In certain applications, it is not necessary to completely
+solve a system of equations. Sometimes it is sufficient just to figure
+out whether the system is consistent or inconsisent, or whether the
+solution is unique or not. In those situations, you already get the
+required information from the {\ef} and there is no need to do the
+additional steps to reduce the system to {\rref}. Also, in some
+situations, Gauss-Jordan elimination can introduce fractions into your
+augmented matrix, making the matrix more complicated to work with. In
+such cases, it may sometimes be easier to do back substitution. But in
+most cases, Gauss-Jordan elimination is simpler to do than back
+substitution, and therefore I recommend using the Gauss-Jordan method
+most of the time. 
