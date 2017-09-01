@@ -329,10 +329,10 @@ EE^{-1}
 This equals $I$ so we know that we have compute $E^{-1}$ properly. 
 \end{solution}
 
-Suppose an $m \times n$ matrix $A$ is row reduced to its \rref. By tracking each row operation completed, this row reduction can be completed through multiplication by elementary matrices. Consider the following definition.
+Suppose an $m \times n$ matrix $A$ is row reduced to its {\rref}. By tracking each row operation completed, this row reduction can be completed through multiplication by elementary matrices. Consider the following definition.
 
 \begin{definition}{The Form $B=UA$}{formbua}
-Let $A$ be an $m \times n$ matrix and let $B$ be the \rref \;of $A$. Then we can write $B = UA$ where $U$ is the product of all elementary matrices representing the row operations done to $A$ to obtain $B$. 
+Let $A$ be an $m \times n$ matrix and let $B$ be the {\rref} of $A$. Then we can write $B = UA$ where $U$ is the product of all elementary matrices representing the row operations done to $A$ to obtain $B$. 
 \end{definition}
 
 Consider the following example.
@@ -344,7 +344,7 @@ Let $A = \leftB
 1 & 0 \\
 2 & 0
 \end{array}
-\rightB$. Find $B$, the \rref \;of $A$ and write it in the form $B=UA$.
+\rightB$. Find $B$, the {\rref} of $A$ and write it in the form $B=UA$.
 \end{example}
 
 \begin{solution}
@@ -402,7 +402,7 @@ This is equivalent to multiplying by the matrix $E(-2 \times 1 + 3) =
 0 & 1 & 0 \\
 -2 & 0 & 1 
 \end{array}
-\rightB$. Notice that the resulting matrix is $B$, the required \rref\; of $A$.
+\rightB$. Notice that the resulting matrix is $B$, the required {\rref} of $A$.
 
 We can then write 
 \begin{eqnarray*}
@@ -462,7 +462,7 @@ UA &=& \leftB
 While the process used in the above example is reliable and simple when only a few row operations are used, it becomes cumbersome in a case where many row operations are needed to carry $A$ to $B$. The following theorem provides an alternate way to find the matrix $U$. 
 
 \begin{theorem}{Finding the Matrix $U$}{findingu}
-Let $A$ be an $m \times n$ matrix and let $B$ be its \rref. Then $B = UA$ where $U$ is an invertible $m \times m$ matrix found by forming the matrix $ \leftB A | I_m \rightB$ and row reducing to $\leftB B | U \rightB$. 
+Let $A$ be an $m \times n$ matrix and let $B$ be its {\rref}. Then $B = UA$ where $U$ is an invertible $m \times m$ matrix found by forming the matrix $ \leftB A | I_m \rightB$ and row reducing to $\leftB B | U \rightB$. 
 \end{theorem}
 
 Let's revisit the above example using the process outlined in Theorem \ref{thm:findingu}.
@@ -485,7 +485,7 @@ First, set up the matrix $\leftB A | I_m \rightB$.
 2 & 0 & 0 & 0 & 1 
 \end{array}\rightB
 \]
-Now, row reduce this matrix until the left side equals the \rref\; of $A$. 
+Now, row reduce this matrix until the left side equals the {\rref} of $A$. 
 
 \begin{eqnarray*}
 \leftB \begin{array}{rr|rrr}
@@ -622,7 +622,7 @@ represented by the elementary matrix $E_3=  \leftB
 0 & 2 & 1 
 \end{array} \rightB$.
 
-Notice that the \rref \;of $A$ is $I$. Hence $I = UA$ where $U$ is the product of the above elementary matrices. It follows that $A = U^{-1}$. Since we want to write $A$ as a product of elementary matrices, we wish to express $U^{-1}$ as a product of elementary matrices. 
+Notice that the {\rref} of $A$ is $I$. Hence $I = UA$ where $U$ is the product of the above elementary matrices. It follows that $A = U^{-1}$. Since we want to write $A$ as a product of elementary matrices, we wish to express $U^{-1}$ as a product of elementary matrices. 
 \begin{eqnarray*}
 U^{-1} &=& \left( E_3 E_2 E_1 \right)^{-1}\\
 &=& E_1^{-1} E_2^{-1} E_3^{-1} \\

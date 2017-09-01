@@ -11,7 +11,7 @@ be solved systematically.
 Before we start, let's figure out what it means to be ``done''. At
 what point should we stop performing row operations? The answer is
 that we will stop performing row operations when the system of
-equations is in a special form called {\em \ef}, which we now define.
+equations is in a special form called {\em {\ef}}, which we now define.
 
 \begin{definition}{\EF}{echelonform}
   An entry of an augmented matrix is called a
@@ -19,7 +19,7 @@ equations is in a special form called {\em \ef}, which we now define.
   \textbf{pivot entry}\index{pivot entry}
   if it is the leftmost nonzero entry of a row. 
   An augmented matrix is in
-  \textbf{\ef}\index{\ef}
+  \textbf{\ef}\eindex{\ef}
   (also called \textbf{row echelon form}\index{row echelon form}) if
   \begin{enumerate}
   \item All rows of zeros are below all nonzero rows.
@@ -36,8 +36,8 @@ ladder. This is because an echelon form looks a bit like a ladder or
 staircase. Here are some examples of {\ef}s.
 
 
-\begin{example}{Matrices in \EF}{matricesnotrref}
-  The following augmented matrices are in \ef. We have circled the
+\begin{example}{Matrices in {\EF}}{matricesnotrref}
+  The following augmented matrices are in {\ef}. We have circled the
   pivot entries for clarity.
   \begin{equation*}
     \leftB
@@ -65,8 +65,8 @@ staircase. Here are some examples of {\ef}s.
   \end{equation*}
 \end{example}
 
-\begin{example}{Not in \EF}{matricesnotechelon}
-The following augmented matrices are not in \ef. 
+\begin{example}{Not in {\EF}}{matricesnotechelon}
+The following augmented matrices are not in {\ef}. 
 
 \begin{equation*}
 \leftB
@@ -103,7 +103,7 @@ this.
 
 \begin{algorithm}{Gaussian Elimination}{gaussianelimination}
   This algorithm provides a method for using row operations to take a
-  matrix to its \ef \index{\ef!algorithm}\index{Gaussian elimination}.
+  matrix to its {\ef} \eindex{\ef!algorithm}\index{Gaussian elimination}.
   We begin with the matrix in its original form.
 
   \begin{enumerate}
@@ -151,7 +151,7 @@ examples show how to do this.
   \end{equation*}
   In order to find the solution(s) to this system, we first use
   Algorithm~\ref{algo:gaussianelimination} to carry the augmented
-  matrix to \ef. Notice that the first column is nonzero, so this is
+  matrix to {\ef}. Notice that the first column is nonzero, so this is
   our first pivot column. The first entry in the first row, $1$, is
   the first pivot entry. We will use row operations to create zeros in
   the entries below the $1$.
@@ -275,7 +275,7 @@ examples show how to do this.
     \rightB.
   \end{equation*}
   We use Algorithm~\ref{algo:gaussianelimination} to carry the
-  augmented matrix to \ef. The first column is nonzero and will be the
+  augmented matrix to {\ef}. The first column is nonzero and will be the
   first pivot column. We switch the first two rows to move a non-zero
   number into the pivot position:
   \begin{equation*}

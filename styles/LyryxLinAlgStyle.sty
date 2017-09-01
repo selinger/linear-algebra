@@ -137,12 +137,14 @@
 \newcommand{\leftB}{\left[} 
 \newcommand{\rightB}{\right]}
 
-% Row reduced echelon form options
-\newcommand{\RREF}{ Reduced Echelon Form }
+% Row reduced echelon form options. Note: these must be used with
+% braces like {\rref} to get the correct spacing before and after.
+\newcommand{\RREF}{Reduced Echelon Form}
 \newcommand{\rref}{reduced echelon form}
 
-% Row-Echelon Form Options
-\newcommand{\EF}{Echelon Form }
+% Row-Echelon Form Options. Note: these must be used with braces like
+% {\ef} to get the correct spacing before and after.
+\newcommand{\EF}{Echelon Form}
 \newcommand{\ef}{echelon form}
 
 % Vector Notation Options
@@ -167,3 +169,9 @@
 % For marking an entry in a matrix
 \newcommand*\circled[1]{\!\!\!\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=1pt] (char) {$#1$};}\!\!\!}
+
+% For putting something in the index after expanding tokens. Note that,
+% for example, \index{\ef} does not work correctly, as it will be
+% alphabetized under backslash, rather than "echelon". Use
+% \eindex{\ef} instead.
+\def\eindex#1{{\edef\tmpa{#1}\def\tmpb##1\relax{\index{##1}}\expandafter\tmpb\tmpa\relax}}
