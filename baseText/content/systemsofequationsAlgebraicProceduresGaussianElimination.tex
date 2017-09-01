@@ -1,4 +1,4 @@
-\section{Gaussian Elimination}
+\section{{\EF}s and Gaussian Elimination}
 
 In the previous section, we saw examples of how to solve a system of
 equations using elementary row operations (and sometimes back
@@ -500,158 +500,74 @@ than one parameter, as shown in the following example.
   \end{equation}
 \end{solution}
 
-%%% ####### CONTINUE HERE
-
-This example shows a system of equations with an infinite solution set which depends on two parameters. 
-It can be less confusing in the case of an infinite solution set to first
-place the augmented matrix in \rref \;rather than just
-\ef \;before seeking to write down the description of the solution.
-
-In the above steps, this means we don't stop with the \ef \;in equation \ref{twoparameters1}.
-Instead we first place it in \rref \;as follows.
-\begin{equation*}
-\leftB
-\begin{array}{rrrr|r}
-1 & 0 & -1 & 1 & -1 \\
-0 & 1 & 0 & 0 & 2 \\
-0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB 
-\end{equation*}
-Then the solution is $y=2$ from the second row and $x=-1+z-w$ from the
-first. Thus letting $z=s$ and $w=t,$ the solution is given by \ref{twoparameters2}. 
-
-You can see here that there are two paths to the correct answer, which both yield the
-same answer. Hence, either approach may be used. The process which we first used in the above solution is called \textbf{Gaussian Elimination} 
-\index{Gaussian Elimination}
-This process involves carrying the matrix to \ef, converting back to equations, and using back substitution to find the solution. 
-When you do row operations until you obtain \rref, the process is
-called \textbf{Gauss-Jordan Elimination}. \index{Gauss-Jordan Elimination}
-
-We have now found solutions for systems of equations with no solution and infinitely many solutions, with one parameter as well as two parameters. 
-Recall the three types of solution sets which we discussed in the previous section; no solution, one solution, and infinitely many solutions. Each of these
-types of solutions could be identified from the graph of the system. It turns out that we can also identify the type of solution
-from the \rref \;of the augmented matrix.
+In
+Examples~\ref{exa:systemwithonesoln}--\ref{exa:twoparametersetofsoln},
+we have seem systems of equations with one solution, no solution, and
+infinitely many solutions with one parameter as well as two
+parameters. Moreover, in each case, we have been able to determine the
+number of solutions by looking at the {\ef} of the augmented matrix.
+To summarize, we have the following possibilities for a system of equations:
 
 \begin{itemize}
-\item {\em No Solution: \em}
-In the case where the system of equations has no solution, the \ef \; of the augmented matrix will have a row of the form 
-\[
-\leftB
-\begin{array}{rrrrr}
-0 & 0 & 0 & | & 1
-\end{array}
-\rightB
-\]
+\item {\em No Solution:} If the {\ef} has a row of the form
+  \[
+    \leftB
+    \begin{array}{rrr|r}
+      0 & 0 & 0 & b
+    \end{array}
+    \rightB,
+  \]
+  where $b\neq 0$, then the system is inconsistent and has no
+  solution.
 
-This row indicates that the system is inconsistent and has no solution.
+\item {\em One Solution:} For a consistent system of equations: If
+  every column of the coefficient matrix of the {\ef} is a pivot
+  column, the system has exactly one solution. The following is an
+  example of an augmented matrix in {\ef} for a system of equations
+  with one solution.
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      1 & 1 & -2 & 5 \\
+      0 & 2 & 3 & 0 \\ 
+      0 & 0 & 1 & 2 \\
+      0 & 0 & 0 & 0 
+    \end{array}
+    \rightB.
+  \end{equation*}
 
-\item {\em One Solution: \em}
-In the case where the system of equations has one solution, every column
-of the coefficient matrix is a pivot column. 
-The following is an example of an augmented matrix in \rref \hspace{0.5mm} for a system of equations with one solution. 
-\begin{equation*}
-\leftB
-\begin{array}{rrr|r}
-1 & 0 & 0 & 5 \\
-0 & 1 & 0 & 0 \\ 
-0 & 0 & 1 & 2 
-\end{array}
-\rightB
-\end{equation*}
-
-\item {\em Infinitely Many Solutions: \em} 
-In the case where the system of equations has infinitely many solutions, the solution contains parameters. There
-will be columns of the coefficient matrix which are not pivot columns.
-The following are examples of augmented matrices in \rref \;for systems of equations with infinitely many solutions. 
-\begin{equation*}
-\leftB
-\begin{array}{rrr|r}
-1 & 0 & 0 & 5 \\
-0 & 1 & 2 & -3 \\ 
-0 & 0 & 0 & 0 
-\end{array}
-\rightB
-\end{equation*}
-or
-\begin{equation*}
-\leftB
-\begin{array}{rrr|r}
-1 & 0 & 0 & 5 \\
-0 & 1 & 0 & -3
-\end{array}
-\rightB
+\item {\em Infinitely Many Solutions:} For a consistent system of
+  equations: If not all columns of the coefficient matrix of the {\ef}
+  are pivot columns, then the system has infinitely many solutions.
+  In this case, each variable corresponding to a non-pivot column is a
+  {\em free variable}\index{free variable}\index{variable!free} and
+  can be assigned a {\em parameter}\index{parameter}. The remaining
+  variables are
+  {\em pivot variables}\index{pivot variable}\index{variable!pivot}
+  and can be expressed in terms of the parameters. Therefore, the
+  number of parameters in the general solution is equal to the number
+  of non-pivot columns.
+  The following are examples of {\ef}s for systems of equations with
+  infinitely many solutions.
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      1 & 0 & 1 & 5 \\
+      0 & 1 & 2 & -3 \\ 
+      0 & 0 & 0 & 0 \\
+      0 & 0 & 0 & 0 
+    \end{array}
+    \rightB
+  \end{equation*}
+  or
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      1 & 2 & 3 & 5 \\
+      0 & 0 & 4 & 6
+    \end{array}
+    \rightB.
 \end{equation*}
 
 \end{itemize}
-
-% ======================================================================
-
-
-
-
-%%For Style B:
-We also consider another reduced form of the augmented matrix which has one further condition. 
-
-%%For Original Kuttler:
-%% We also consider another reduced form of the augmented matrix which has further conditions.
-
-\begin{definition}{\RREF}{rref}
-An augmented 
-\index{\rref} matrix is in \textbf{\rref } if
-
-\begin{enumerate}
-\item All nonzero rows are above any rows of zeros.
-
-\item Each leading entry of a row is in a column to the right of the leading
-entries of any rows above it.
-
-\item Each leading entry of a row is equal to $1$.
-
-\item All entries in a column above and below a leading entry are zero.
-
-\end{enumerate}
-\end{definition}
-
-%%For Style B definition:
-Notice that the first three conditions on a \rref  \; matrix are the same as those for \ef. 
-
-
-%%For original Kuttler definition:
-%%Notice that the first two conditions on a \rref  \; matrix are the same as those for \ef.
-
-Hence, every \rref \;matrix is also in \ef. The converse is not necessarily true;
- we cannot assume that every matrix in \ef \;is also in \rref. However, it often happens
-that the \ef \;is sufficient to provide information about the solution of a system.
-
-Notice that we could apply further row operations to these matrices to carry them to \rref. Take the time to try that on your own. 
-Consider the following matrices, which are in \rref. 
-
-\begin{example}{Matrices in\RREF}{rrefmatrices}
-The following augmented matrices are in \rref.
-\begin{equation*}
-\leftB
-\begin{array}{rrrrr|r}
-1 & 0 & 0 & 5 & 0 & 0 \\
-0 & 0 & 1 & 2 & 0 & 0 \\
-0 & 0 & 0 & 0 & 1 & 1 \\
-0 & 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB ,\leftB
-\begin{array}{rrr|r}
-1 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 1 \\
-0 & 0 & 0 & 0
-\end{array}
-\rightB , \leftB
-\begin{array}{rrr|r}
-1 & 0 & 0 & 4 \\
-0 & 1 & 0 & 3 \\
-0 & 0 & 1 & 2 
-\end{array}
-\rightB
-\end{equation*}
-\end{example}
 
