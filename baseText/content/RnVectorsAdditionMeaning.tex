@@ -139,7 +139,25 @@ The following picture fully represents $\vect{u}-\vect{v}$:
 \end{center}
 \end{solution}
 
-Given any to vectors $\vect{u}$ and $\vect{v}$ one can create a parallelogram with sides these vectors and diagonals $\vect{u}+\vect{v}$ and $\vect{v}-\vect{u}$: $$Picture \ to \ be \ added \ soon$$ 
+Given any to vectors $\vect{u}$ and $\vect{v}$ one can create a parallelogram with sides these vectors and diagonals $\vect{u}+\vect{v}$ and $\vect{v}-\vect{u}$:  
+
+\begin{center}
+\begin{tikzpicture}[scale=2]
+\draw[->, thick, blue](0,0)--(2,1);
+\draw[->, thick, red](1,1.5)--(2,1);
+\draw[->, thick, gray](0,0)--(1,1.5);
+\draw[->, thick, red](-1,0.5)--(0,0);
+\draw[->, thick, blue](-1,0.5)--(1,1.5);
+\draw[->, thick, black](-1,0.5)--(2,1);
+\node[above] at (1,0.2){$\vect{u}$};
+\node[above] at (-0.1,1){$\vect{u}$};
+\node[above] at (1.5, 1.25){$\vect{v}$};
+\node[left] at (-0.5, 0.2){$\vect{v}$};
+\node[left] at (0.3, 0.75){$\vect{u}+\vect{v}$};
+\node[left] at (0.6, 0.3){$\vect{u}-\vect{v}$};
+\end{tikzpicture}
+\end{center}
+
 
 Now suppose we have a vector $\vect{u} = \leftB 
 \begin{array}{lll}
@@ -206,7 +224,7 @@ These vectors are shown in the following diagram.
 \draw[->, thick, red] (6.5,0.75)--(6,1);
 \draw[->, thick, red] (4,1)--(6,0);
 \node[above] at (1,1){$\vect{u}$};
-\node[below] at (2,0.5){$-\vect{u}$};
+\node[below] at (2,0.5){$\vect{u}$};
 \node[below] at (5.5, 0.75){$\vect{v}$};
 \node[above right] at (6.25, 0.75){$-\frac{1}{2}\vect{v}$};
 \node[below] at (5, 0.4){$2\vect{v}$};
@@ -260,3 +278,44 @@ The two vectors are shown below.
 \end{tikzpicture}
 \end{center}
 \end{solution}
+
+Given any two non-parallel vectors $\vect{u}$ and $\vect{v}$ in $\mathbb{R}^2$, we can create a grid of their linear combinations. The integer ones are pictured below. From this we can see that all vectors in $\mathbb{R}^2$ can be written as a linear combination of $\vect{u}$ and $\vect{v}$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\draw[->, thick, blue] (0,0)--(1.5,0.5);
+\draw[->, thick, red] (0,0)--(0.5,1);
+\draw[-, gray] (-2,-1.5)--(4,0.5);
+\draw[-, gray] (-1.5,-0.5)--(0,0);
+\draw[-, gray] (1.5,0.5)--(4.5,1.5);
+\draw[-, gray] (-1,0.5)--(5,2.5);
+\draw[-, gray] (-0.5,1.5)--(5.5,3.5);
+\draw[-, gray] (0,2.5)--(6,4.5);
+\draw[-, gray] (-2,-1.5)--(0,2.5);
+\draw[-, gray] (-0.5,-1)--(0,0);
+\draw[-, gray] (0.5,1)--(1.5,3);
+\draw[-, gray] (1,-0.5)--(3,3.5);
+\draw[-, gray] (2.5,0)--(4.5,4);
+\draw[-, gray] (4,0.5)--(6,4.5);
+\node[above] at (0,0.5){$\vect{u}$};
+\node[below] at (1.1,0.3){$\vect{v}$};
+%\node[below] at (5.5, 0.75){$\vect{v}$};
+%\node[above right] at (6.25, 0.75){$-\frac{1}{2}\vect{v}$};
+%\node[below] at (5, 0.4){$2\vect{v}$};
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
