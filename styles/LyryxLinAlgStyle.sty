@@ -174,4 +174,7 @@
 % for example, \index{\ef} does not work correctly, as it will be
 % alphabetized under backslash, rather than "echelon". Use
 % \eindex{\ef} instead.
-\def\eindex#1{{\edef\tmpa{#1}\def\tmpb##1\relax{\index{##1}}\expandafter\tmpb\tmpa\relax}}
+\newcommand{\eindex}[1]{{\edef\tmpa{#1}\def\tmpb##1\relax{\index{##1}}\expandafter\tmpb\tmpa\relax}}
+
+% For writing a set, use $\s{...}$ or $\s{...\mid...}$.
+\newcommand{\s}[1]{\{#1\}}

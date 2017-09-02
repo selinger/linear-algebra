@@ -1,0 +1,737 @@
+\section{Fields}
+
+So far in this chapter, we have worked with real numbers: all of our
+coefficients, constant terms, variables, and parameters were real
+numbers. But in fact, we have not used very many properties of the
+real numbers, except for the fact that we can add, subtract, multiply,
+and divide them, and that these operations satisfy certain expected
+properties (for example, that a non-zero number divided by itself is
+equal to $1$).
+
+This opens to door to doing linear algebra using other number systems:
+for example, we can do linear algebra over the rational numbers,
+complex numbers, or even over some more exotic number systems. A
+system of numbers that one can do linear algebra with is called a {\em
+  field}.
+
+\begin{definition}{Field}{field}
+  A \textbf{field}\index{field} is a set $F$, together with two
+  operations called \textbf{addition}\index{field!addition} and
+  \textbf{multiplication}\index{field!multiplication}, and together
+  with two distinct elements $0$ and $1$, such that addition and
+  multiplication satisfy the following properties:
+  \begin{itemize}
+  \item[(A1)] {Commutative law of addition:} $a+b=b+a$;
+  \item[(A2)] {Associative law of addition:} $(a+b)+c = a+(b+c)$;
+  \item[(A3)] {Unit law of addition:} $0+a = a$;
+  \item[(A4)] {Additive inverse:} for each $a\in F$, there exists an element $(-a)\in F$ such that $a+(-a)=0$;
+  \item[(M1)] {Commutative law of multiplication:} $ab=ba$;
+  \item[(M2)] {Associative law of multiplication:} $(ab)c=a(bc)$;
+  \item[(M3)] {Unit law of multiplication:} $1a=a$;
+  \item[(M4)] {Multiplicative inverse:} for each non-zero $a\in F$, there exists an element $a^{-1}\in F$ such that $aa^{-1}=1$;
+  \item[(D)] {Distributive law:} $a(b+c)=ab+ac$.
+  \end{itemize}
+\end{definition}
+
+Properties (A1)--(A4) are about addition, properties (M1)--(M4) are
+about multiplication, and property (D) is about both addition and
+multiplication. Here are some examples and non-examples of fields:
+
+\begin{example}{Some Fields and Some Non-Fields}{fields-examples}
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item The set $\mathbb{R}$ of real numbers is a field.
+    \item The set $\mathbb{Q}$ of rational numbers is a field.
+    \item The set $\mathbb{Z}$ of integers satisfies all field
+      properties except for (M3). It is therefore not a field.
+    \item The set $\mathbb{N}=\s{0,1,2,\ldots}$ of natural numbers
+      satisfies all field properties except (A3) and (M3). It is
+      therefore not a field.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{example}
+
+A field doesn't have to be infinite. The following is an example of a
+field with only two elements.
+
+\begin{example}{The Integers Modulo 2}{z-mod-2}
+  Consider the set of {\em bits}\index{bit} (binary digits) $\s{0,1}$.
+  We can multiply them as usual, and add them almost as usual, subject
+  to the alternative rule $1+1=0$ (instead of $1+1=2$). Here is a
+  summary of the rules for addition and multiplication:
+  \begin{equation*}
+    \begin{array}{l|ll}
+      +&0&1 \\\hline
+      0&0&1 \\
+      1&1&0
+    \end{array}
+    \quad
+    \begin{array}{l|ll}
+      \cdot&0&1 \\\hline
+      0&0&0 \\
+      1&0&1
+    \end{array}
+  \end{equation*}
+  This particular alternative arithmetic is called ``arithmetic modulo
+  2''.   In computer science, the addition is also called the ``logical
+  exclusive or'' operation\index{logical operation!exclusive or}, and multiplication is also called the
+  ``logical and'' operation\index{logical operation!and}.  For example, we can calculate like this:
+  \begin{equation*}
+    \begin{array}{lll}
+      1\cdot((1+0)+1) + 1 &=& 1\cdot(1+1) + 1\\
+                          &=& 1\cdot 0 + 1\\
+                          &=& 0 + 1\\
+                          &=& 1.
+    \end{array}
+  \end{equation*}
+  The binary digits form a field $\mathbb{Z}_2 = \s{0,1}$, also
+  called \textbf{the field of integers modulo 2}\index{integers modulo 2}.
+\end{example}
+
+You can convince yourself that the 9 properties of fields are all
+satisfied by the integers modulo 2. This is a bit tedious, but it can
+be checked by calculations.  For example, to verify (A1), we have to
+check that $0+0=0+0$, $0+1=1+0$, $1+0=0+1$, and $1+1=1+1$. Perhaps the
+most interesting properties are (A4) and (M4). For (A4), we can set
+$(-0)=0$ and $(-1)=1$. It may be surprising that $(-1)=1$, but you can
+check for yourself that $1+(-1)=1+1=0$ when calculating modulo
+$2$. For (M4), we can set $1^{-1} = 1$.
+
+When solving systems of linear equations, we only used addition,
+subtraction, multiplication, and division. Therefore, we can solve
+systems of equations using the elements of any field instead of real numbers.
+
+\begin{example}{Solving a System of Equations over $\mathbb{Z}_2$}{system-z2}
+  Solve the following system in the integers modulo 2:
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      x + y     &=& 0 \\
+      x     + z &=& 1 \\
+          y + z &=& 1.
+    \end{array}
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  As usual, we write the augmented matrix of the system of equations,
+  then reduce it to {\rref} using elementary row operations. The only
+  difference is that we will perform all arithmetic operations modulo
+  2, rather than in the real numbers. The augmented matrix is:
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      1 & 1 & 0 & 0 \\
+      1 & 0 & 1 & 1 \\
+      0 & 1 & 1 & 1 \\
+    \end{array}
+    \rightB.
+  \end{equation*}
+  The first pivot entry is the $1$ in the upper left. We use a row
+  operation to create a zero below it. Note that, because we are
+  working modulo 2, adding $1$ and subtracting $1$ is the same thing.
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 1 & 0 & 0 \\
+      1 & 0 & 1 & 1 \\
+      0 & 1 & 1 & 1 \\
+    \end{array}
+    \rightB
+    \stackrel{R_2\leftarrow R_2+R_1}{\sim}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 1 & 0 & 0 \\
+      0 & 1 & 1 & 1 \\
+      0 & 1 & 1 & 1 \\
+    \end{array}
+    \rightB.
+  \end{equation*}
+  The next pivot entry is in row 2 and column 2. We create a zero
+  below it by subtracting row 2 from row 3, and a zero above it by
+  subtracting row 2 from row 1:
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 1 & 0 & 0 \\
+      0 & \circled{1} & 1 & 1 \\
+      0 & 1 & 1 & 1 \\
+    \end{array}
+    \rightB
+    \stackrel{R_3\leftarrow R_3-R_2}{\sim}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 1 & 0 & 0 \\
+      0 & \circled{1} & 1 & 1 \\
+      0 & 0 & 0 & 0 \\
+    \end{array}
+    \rightB
+    \stackrel{R_1\leftarrow R_1-R_2}{\sim}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 0 & 1 & 1 \\
+      0 & \circled{1} & 1 & 1 \\
+      0 & 0 & 0 & 0 \\
+    \end{array}
+    \rightB.
+  \end{equation*}
+  The resulting system is in {\rref}. We can see that the system is
+  consistent, because there is no row whose left-hand side is zero and
+  whose right-hand side is non-zero. We also see that there are two
+  pivot columns, and therefore two pivot variables, $x$ and $y$. On
+  the other hand, $z$ is a free variable, so we set it equal to a
+  parameter: $z=t$. Notice that this time, the parameter $t$ is not a
+  real number, but an element of $\mathbb{Z}_2$. From the equation
+  $x+z=1$, we get $x=1-z=1+t$. Can you guess why I have written $1+t$
+  instead of $1-t$? This is because $(-1)=1$ in the integers modulo 2.
+  So $1-t = 1+(-1)t = 1+1t = 1+t$. Similarly, from the equation
+  $y+z=1$, we get that $y=1+t$. Therefore, the general solution to the
+  system of equations is
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      x &=& 1+t \\
+      y &=& 1+t \\
+      z &=& t,
+    \end{array}
+  \end{equation*}
+  where $t\in\s{0,1}$ is an arbitrary parameter. Recall that this
+  means that each time we plug in a particular value for $t$, we get a
+  solution.
+
+  There is one difference between solving equations in the real
+  numbers and solving equations in $\mathbb{Z}_2$. In the real
+  numbers, a system of equations has either no solution, a unique
+  solution, or infinitely many solutions. This is because when there
+  is a parameter, we automatically get infinitely many solutions. By
+  contrast, in $\mathbb{Z}_2$, there are only two possible values for
+  the parameter $t$, namely $t=0$ and $t=1$. For $t=0$ we get the
+  solution $(x,y,z) = (1,1,0)$, and for $t=1$ we get the solution
+  $(x,y,z) = (0,0,1)$.  Thus, when the general solution has one
+  parameter in $\mathbb{Z}_2$, there are only two solutions, instead
+  of infinitely many.
+\end{solution}
+
+\begin{example}{The Integers Modulo 5}{z-mod-5}
+  Consider the set $\mathbb{Z}_5=\s{0,1,2,3,4}$, called the
+  \textbf{integers modulo 5}\index{integers modulo 5}. We define their
+  addition and multiplication by computing the usual addition and
+  multiplication, then ``reducing'' the answer modulo 5. Here,
+  ``reducing'' a number means repeatedly subtracting 5 until the
+  answer is between $0$ and $4$. Imagine a clock showing 5 numbers
+  instead of the usual 12:
+  \begin{center}
+    \includegraphics[width=3cm]{figures/clock}
+  \end{center}
+  If we want to calculate 3 o'clock plus 4 hours, we get 2 o'clock,
+  because whenever the clock reaches 5, it resets to 0. This is how
+  addition and multiplication modulo 5 are defined:
+  \begin{equation*}
+    \begin{array}{l|lllll}
+      +&0&1&2&3&4 \\\hline
+      0&0&1&2&3&4 \\
+      1&1&2&3&4&0 \\
+      2&2&3&4&0&1 \\
+      3&3&4&0&1&2 \\
+      4&4&0&1&2&3 \\
+    \end{array}
+    \quad
+    \begin{array}{l|lllll}
+      \cdot&0&1&2&3&4 \\\hline
+      0&0&0&0&0&0 \\
+      1&0&1&2&3&4 \\
+      2&0&2&4&1&3 \\
+      3&0&3&1&4&2 \\
+      4&0&4&3&2&1 \\
+    \end{array}
+  \end{equation*}
+\end{example}
+
+We note that the integers modulo 5 form a field. Most of the
+properties are tedious but easy to verify. Perhaps the most
+interesting of the field properties is (M4). It says that for each
+non-zero element $a$, there is another element $a^{-1}$ such that
+$aa^{-1}=1$.  By looking at the multiplication table, we see that
+$1\cdot 1=1$, $2\cdot 3=1$, $3\cdot 2=1$, and $4\cdot 4=1$. Therefore
+we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
+
+\begin{example}{Division in $\mathbb{Z}_5$}{division-z5}
+  What is 2 divided by 3 in $\mathbb{Z}_5$?
+\end{example}
+
+\begin{solution}
+  There are no fractions in $\mathbb{Z}_5$. The key to dividing is
+  this: instead of dividing by $a$, multiply by $a^{-1}$. So we have:
+  \begin{equation*}
+    2/3 = 2\cdot 3^{-1} = 2\cdot 2 = 4.
+  \end{equation*}
+  So 2 divided by 3 equals 4. This makes sense, because 4 times 3
+  equals 2, when calculating modulo 5.
+\end{solution}
+
+\begin{example}{Solving a System of Equations over $\mathbb{Z}_5$}{system-z5}
+  Solve the following system of linear equations over $\mathbb{Z}_5$:
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      2x + z &=& 1 \\
+      x+4y+z &=& 3 \\
+      x+2y+3z &=& 2. \\
+    \end{array}
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We perform the usual Gauss-Jordan algorithm on the augmented
+  matrix. The only thing to keep in mind is that, instead of dividing
+  a row by $a$, we should multiply it by $a^{-1}$. And of course, we
+  should reduce all intermediate results modulo $5$. For example, to
+  change the first pivot entry from $2$ to $1$, we multiply by
+  $2^{-1}=3$, instead of dividing by $2$.
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{2} & 0 & 1 & 1 \\
+      1 & 4 & 1 & 3 \\
+      1 & 2 & 3 & 2
+    \end{array}
+    \rightB
+    \stackrel{R_1\leftarrow 3R_1}{\sim}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 0 & 3 & 3 \\
+      1 & 4 & 1 & 3 \\
+      1 & 2 & 3 & 2
+    \end{array}
+    \rightB
+    \stackrel{R_2\leftarrow R_2-R_1}{\stackrel{R_3\leftarrow R_3-R_1}{\sim}}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 0 & 3 & 3 \\
+      0 & \circled{4} & 3 & 0 \\
+      0 & 2 & 0 & 4
+    \end{array}
+    \rightB
+    \stackrel{R_2\leftarrow 4R_2}{\sim}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 0 & 3 & 3 \\
+      0 & \circled{1} & 2 & 0 \\
+      0 & 2 & 0 & 4
+    \end{array}
+    \rightB
+  \end{equation*}
+  \begin{equation*}
+    {}
+    \stackrel{R_3\leftarrow R_3-2R_2}{\sim}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 0 & 3 & 3 \\
+      0 & \circled{1} & 2 & 0 \\
+      0 & 0 & \circled{1} & 4
+    \end{array}
+    \rightB
+    \stackrel{R_1\leftarrow R_1-3R_3}{\stackrel{R_2\leftarrow R_2-2R_3}{\sim}}
+    \leftB
+    \begin{array}{rrr|r}
+      \circled{1} & 0 & 0 & 1 \\
+      0 & \circled{1} & 0 & 2 \\
+      0 & 0 & \circled{1} & 4
+    \end{array}
+    \rightB.
+  \end{equation*}
+  The final matrix is in {\rref}, and we see that the system has the
+  unique solution $(x,y,z) = (1,2,4)$. Please double-check the
+  solution with respect to the original equations.
+\end{solution}
+
+\begin{example}{The Integers Modulo 6 are not a Field}{nofield-z6}
+  Are the integers modulo 6 a field? 
+\end{example}
+
+\begin{solution}
+  The integers modulo 6 are the set $\mathbb{Z}_6=\s{0,1,2,3,4,5}$, with the
+  addition and multiplication modulo 6:
+    \[ \begin{array}{l|llllll}
+    +&0&1&2&3&4&5 \\\hline
+    0&0&1&2&3&4&5 \\
+    1&1&2&3&4&5&0 \\
+    2&2&3&4&5&0&1 \\
+    3&3&4&5&0&1&2 \\
+    4&4&5&0&1&2&3 \\
+    5&5&0&1&2&3&4 \\
+  \end{array}
+  \quad
+  \begin{array}{l|llllll}
+    +&0&1&2&3&4&5 \\\hline
+    0&0&0&0&0&0&0 \\
+    1&0&1&2&3&4&5 \\
+    2&0&2&4&0&2&4 \\
+    3&0&3&0&3&0&3 \\
+    4&0&4&2&0&4&2 \\
+    5&0&5&4&3&2&1 \\
+  \end{array}
+  \]
+  Then $\mathbb{Z}_6$ satisfies all of the field axioms except
+  (M3). To see why (M3) fails, let $a=2$, and note, by looking at the
+  multiplication table, that there is no $b\in\mathbb{Z}_6$ such that
+  $ab=1$. Therefore, $\mathbb{Z}_6$ is not a field.
+\end{solution}
+
+We conclude this section with a fact that we will not prove.
+
+\begin{theorem}
+  Let $n$ be a positive integer. Then the set
+  $\mathbb{Z}_n=\s{0,\ldots,n-1}$ of integers modulo $n$, with
+  addition and multiplication modulo $n$, forms a field if and only if
+  $n$ is prime. Thus, for example, $\mathbb{Z}_2$, $\mathbb{Z}_3$,
+  $\mathbb{Z}_5$, $\mathbb{Z}_7$, and $\mathbb{Z}_{11}$ are fields,
+  whereas $\mathbb{Z}_4$, $\mathbb{Z}_6$, and $\mathbb{Z}_9$ are not.
+\end{theorem}
+
+\void{
+  
+
+\begin{example}{Arithmetic Modulo 5}{arithmetic-mod-5}
+  Consider the set $\s{0,1,2,3,4}$......
+\end{example}
+
+
+\section{Abstract number systems in linear algebra}
+
+As you already know, Linear Algebra deals with subjects such as matrix
+multiplication, linear combinations, solutions of systems of linear
+equations, and so on. It makes heavy use of addition, subtraction,
+multiplication, and division of scalars (think, for example, of the
+rule for multiplying matrices). 
+
+It turns out that most of what we do in linear algebra does not rely
+on the specific laws of arithmetic. Linear algebra works equally well
+over ``alternative'' arithmetics. 
+
+\begin{example}
+  Consider multiplying two matrices, using arithmetic modulo 2 instead
+  of the usual arithmetic.
+  \[
+  \left(\begin{array}{lll}
+      0&1&1\\
+      1&1&0\\
+      0&0&1\\
+    \end{array}
+  \right)\cdot
+  \left(\begin{array}{lll}
+      1&0&0\\
+      0&1&1\\
+      1&0&1\\
+    \end{array}
+  \right)=
+  \left(\begin{array}{lll}
+      1&1&0\\
+      1&1&1\\
+      1&0&1\\
+    \end{array}
+  \right)
+  \]
+  For example, to calculate the entry in the first row and column, we
+  compute
+  \[ 0\cdot 1 + 1\cdot 0 + 1\cdot 1 = 1.
+  \]
+\end{example}
+
+There are important applications of linear algebra over such abstract
+number systems, particularly in the area of cryptography. This is the
+reason we introduce the concept of a {\em field}.
+
+\section{The field axioms}
+
+This means we can do linear algebra taking the real numbers, the complex
+numbers, or the rational numbers as the scalars.
+
+\begin{example}
+  Consider the set $\Z_2=\s{0,1}$ from Example~\ref{exa-z2}, with the
+  addition and multiplication given by the rules of arithmetic
+  ``modulo 2'':
+  \[ \begin{array}{l|ll}
+    +&0&1 \\\hline
+    0&0&1 \\
+    1&1&0
+  \end{array}
+  \quad
+  \begin{array}{l|ll}
+    \cdot&0&1 \\\hline
+    0&0&0 \\
+    1&0&1
+  \end{array}
+  \]
+  With these operations, $\Z_2$ is a field.
+\end{example}
+
+This means we can do linear algebra over $\Z_2$. 
+
+\begin{nproblem}
+  What is subtraction in $\Z_2$?
+\end{nproblem}
+
+\begin{nproblem}
+Multiply the following matrices, taking scalars in $\Z_2$. 
+\[   \left(\begin{array}{lll}
+      0&1&1\\
+      1&1&0\\
+      0&0&1\\
+    \end{array}
+  \right)\cdot
+  \left(\begin{array}{lll}
+      0&1&0\\
+      1&0&0\\
+      1&1&1\\
+    \end{array}
+  \right)
+\]
+Compare your answer to what you get when doing the calculation with
+rational scalars. 
+\end{nproblem}
+
+\begin{nproblem}
+Find the inverse of the matrix 
+\[   M=\left(\begin{array}{lll}
+      0&1&1\\
+      1&1&0\\
+      0&0&1\\
+    \end{array}
+  \right)
+\]
+using $\Z_2$ as the set of scalars. Hint: follow the usual steps of
+Gaussian elimination, but use the modulo 2 operations. Compare this to
+the inverse of $M$ when interpreted over the rational numbers.
+\end{nproblem}
+
+\begin{nproblem}
+  Consider the set $\s{0,1}$ with the following different addition and
+  multiplication rules:
+  \[ \begin{array}{l|ll}
+    +&0&1 \\\hline
+    0&0&1 \\
+    1&1&1
+  \end{array}
+  \quad
+  \begin{array}{l|ll}
+    \cdot&0&1 \\\hline
+    0&0&0 \\
+    1&0&1
+  \end{array}
+  \]
+  Note that we have set $1+1=1$. Which of the nine axioms are
+  satisfied? Which of the nine axioms fail, if any? Is this a field?
+\end{nproblem}
+
+\begin{example}
+  The {\em integers modulo 5} are the set $\Z_5=\s{0,1,2,3,4}$, with
+  the following addition and multiplication rules:
+    \[ \begin{array}{l|lllll}
+    +&0&1&2&3&4 \\\hline
+    0&0&1&2&3&4 \\
+    1&1&2&3&4&0 \\
+    2&2&3&4&0&1 \\
+    3&3&4&0&1&2 \\
+    4&4&0&1&2&3 \\
+  \end{array}
+  \quad
+  \begin{array}{l|lllll}
+    +&0&1&2&3&4 \\\hline
+    0&0&0&0&0&0 \\
+    1&0&1&2&3&4 \\
+    2&0&2&4&1&3 \\
+    3&0&3&1&4&2 \\
+    4&0&4&3&2&1 \\
+  \end{array}
+  \]
+  This is called ``arithmetic modulo 5'', because the numbers are
+  wrapped after 4: 5 is treated the same as 0, 6 is treated the same
+  as 1, 7 is treated the same as 2, and so on. With these operations,
+  $\Z_5$ is a field.
+\end{example}
+
+\begin{example}
+  The {\em integers modulo 6}
+\end{example}
+
+\begin{example}
+  More generally, for any natural number $n\geq 2$, the {\em integers
+    modulo $n$} are given by $\Z_n=\s{0,1,\ldots,n-1}$, with addition
+  and multiplication ``modulo $n$''. For all $n$, $\Z_n$ satisfies the
+  axioms (A1)--(A4), (M1), (M2), (M4), and (D).  However, the axiom
+  (M3) is only satisfied when $n$ is a prime number. It is a fact
+  that $\Z_n$ is a field if and only if $n$ is prime.
+\end{example}
+
+\begin{nproblem}
+  Solve the following system of linear equations with scalars in
+  $\Z_5$:
+  \[ 
+  \]
+\end{nproblem}
+
+\section{Elementary properties of fields}
+
+Our goal is to make arithmetic in a field look ``as much as possible''
+as arithmetic in the real numbers. For this reason, it will be useful
+to state some additional algebraic laws, which are consequences of the
+field axioms.
+
+\begin{proposition}[Cancellation of addition]
+  For all elements $x,y,a$ of a field, if $x+a=y+a$, then $x=y$. 
+\end{proposition}
+
+\begin{proof}
+  Assume $x+a=y+a$. By axiom (A3), there exists an element $b$ such
+  that $a+b=0$. But then we have:
+  \[ \begin{array}{llll}
+    x &=& 0+x & \mbox{by (A2)} \\
+    &=& x+0 & \mbox{by (A4)} \\
+    &=& x+(a+b) & \mbox{by assumption on $b$} \\
+    &=& (x+a)+b & \mbox{by (A1)} \\
+    &=& (y+a)+b & \mbox{by assumption} \\
+    &=& y+(a+b) & \mbox{by (A1)} \\
+    &=& y+0 & \mbox{by assumption on $b$} \\
+    &=& 0+y & \mbox{by (A1)} \\
+    &=& y & \mbox{by (A2)}
+  \end{array}
+  \]
+  Note how all four axioms of addition have been used. \eot
+\end{proof}
+
+\begin{proposition}[Cancellation of multiplication]\label{pro-cancel-m}
+  For all elements $x,y,a$ of a field, if $xa=ya$ and $a\neq 0$, then
+  $x=y$.
+\end{proposition}
+
+\begin{nproblem}
+  Prove Prop.~\ref{pro-cancel-m}.
+\end{nproblem}
+
+\begin{proposition}\label{pro-0a}
+  For all elements $a$ of field, $0a=0$.
+\end{proposition}
+
+\begin{proof}
+  Using distributivity and (A2), we have $0+0a = 0a = (0+0)a = 0a+0a$,
+  therefore the claim follows by cancellation.\eot
+\end{proof}
+
+\begin{proposition}
+  In any field, if $ab=0$, then $a=0$ or $b=0$.
+\end{proposition}
+
+\begin{proof}
+  Suppose $a$ and $b$ are elements in a field such that $ab=0$. We
+  must show that $a=0$ or $b=0$. We consider two cases:
+
+  Case 1: $a=0$. Then the conclusion holds and we are done.
+
+  Case 2: $a\neq 0$. In this case, by (M3), there exists an element
+  $c$ such that $ac=1$. We have:
+  \[ \begin{array}{llll}
+    b &=& 1b &\mbox{by (FM2)} \\
+    &=& (ac)b &\mbox{by definition of $c$} \\
+    &=& (ca)b &\mbox{by (FM4)} \\
+    &=& c(ab) &\mbox{by (FM1)} \\
+    &=& c0    &\mbox{by assumption $ab=0$} \\
+    &=& 0     &\mbox{by Prop.~\ref{pro-0a}}
+  \end{array}
+  \]
+  In each of the two cases, we have proved $a=0$ or $b=0$. \eot
+\end{proof}
+
+The following four propositions show that certain elements, whose
+existence is guaranteed by the field axioms, are in fact unique.
+
+\begin{proposition}
+  In a field, the element $0$ is uniquely determined by axiom (A2).
+\end{proposition}
+
+\begin{proof}
+  Suppose that $z$ is another element also satisfying $z+a=a$ for all
+  $a$. Then $z+0=0$, by definition of $z$, but also $0+z=z$, by
+  definition of $0$. Using commutativity, it follows that
+  $z=0+z=z+0=0$, so there cannot be more than one zero element.\eot
+\end{proof}
+
+\begin{proposition}\label{pro-uniq-a3}
+  For any element $a$ of a field, the element $b$ in axiom (A3) is
+  uniquely determined.
+\end{proposition}
+
+\begin{proof}
+  Let $a$ be arbitrary, and suppose that there are two elements $b$
+  and $b'$ such that both $a+b=0$ and $a+b'=0$. By commutativity,
+  $b+a=0=b'+a$, and by cancellation, $b=b'$. It follows that there is
+  no more than one element $b$ satisfying the condition of axiom (A3).
+\end{proof}
+
+\begin{remark}
+  If $a,b$ are elements such that $a+b=0$, we usually write $b=(-a)$. 
+  This notation is justified by Prop.~\ref{pro-uniq-a3}.
+\end{remark}
+
+\begin{proposition}\label{pro-uniq-fm2}
+  In a field, the element $1$ is uniquely determined by axiom (FM2).
+\end{proposition}
+
+\begin{nproblem}
+  Prove Prop.~\ref{pro-uniq-fm2}.
+\end{nproblem}
+
+\begin{proposition}\label{pro-uniq-fm3}
+  For any element $a\neq 0$ of a field, the element $b$ in axiom (FM3)
+  is uniquely determined.
+\end{proposition}
+
+\begin{nproblem}
+  Prove Prop.~\ref{pro-uniq-fm3}.
+\end{nproblem}
+
+The next two propositions are also useful.
+
+\begin{proposition}
+  Distributivity also holds on the right: $(b+c)a = ba + ca$.
+\end{proposition}
+
+\begin{proof}
+  This is a direct consequence of (D) and (FM4).\eot
+\end{proof}
+
+\begin{proposition}
+  The following hold in any field, for all $a,b$:
+  \begin{enumerate}\alphalabels
+  \item $-(-a) = a$,
+  \item $-(ab) = (-a)b = a(-b)$,
+  \item $-a = (-1)a$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  (a) By definition of $(-a)$, we have $a+(-a)=0$. Also, by definition
+  of $-(-a)$ (and commutativity), we have $(-(-a))+(-a) = 0$. By
+  cancellation, it follows that $a=-(-a)$.
+
+  (b) To show that $-(ab) = (-a)b$, we need to show that $(-a)b$ is
+  the negative of $ab$, in other words, that $ab+(-a)b=0$. This
+  follows from the axioms as follows: 
+  \[ \begin{array}{llll}
+    ab+(-a)b &=& (a+(-a))b &\mbox{by distributivity}\\
+    &=& 0b &\mbox{by (A3)} \\
+    &=& 0 &\mbox{by Prop.~\ref{pro-0a}}
+  \end{array}
+  \]
+  The proof of $-(ab)=a(-b)$ is similar.
+
+  (c) By (FM2) and (b), we have $-a = -(1a) = (-1)a$. \eot
+\end{proof}
+
+\end{document}
+
+Scalar.
+
+In this book, almost everything we do will work over an arbitrary
+field. The exceptions are in Section X, where we use sin and cos to
+compute angles, and in Section Y, where we will sometimes have a
+compute a square root.
+
+}
