@@ -509,8 +509,8 @@ parameters. Moreover, in each case, we have been able to determine the
 number of solutions by looking at the {\ef} of the augmented matrix.
 To summarize, we have the following possibilities for a system of equations:
 
-\begin{itemize}
-\item {\em No Solution:} If the {\ef} has a row of the form
+\begin{enumerate}
+\item {\em No solution:} If the {\ef} has a row of the form
   \[
     \leftB
     \begin{array}{rrr|r}
@@ -521,7 +521,7 @@ To summarize, we have the following possibilities for a system of equations:
   where $b\neq 0$, then the system is inconsistent and has no
   solution.
 
-\item {\em One Solution:} For a consistent system of equations: If
+\item {\em One solution:} For a consistent system of equations: If
   every column of the coefficient matrix of the {\ef} is a pivot
   column, the system has exactly one solution. The following is an
   example of an augmented matrix in {\ef} for a system of equations
@@ -537,7 +537,7 @@ To summarize, we have the following possibilities for a system of equations:
     \rightB.
   \end{equation*}
 
-\item {\em Infinitely Many Solutions:} For a consistent system of
+\item {\em Infinitely many solutions:} For a consistent system of
   equations: If not all columns of the coefficient matrix of the {\ef}
   are pivot columns, then the system has infinitely many solutions.
   In this case, each variable corresponding to a non-pivot column is a
@@ -569,6 +569,93 @@ To summarize, we have the following possibilities for a system of equations:
     \end{array}
     \rightB.
 \end{equation*}
+\end{enumerate}
 
-\end{itemize}
+There is a special name for the number of pivot variables in a system
+of equations. It is called the {\em rank} of the system.
 
+\begin{definition}{Rank of a Matrix}{rank}
+  Let $A$ be a matrix and consider any {\ef} of $A$.  Then, the number
+  $r$ of pivot entries of $A$ does not depend on the {\ef} you choose,
+  and is called the \textbf{rank}\index{matrix!rank} of $A$. We denote
+  it by $\func{rank}(A)$.
+
+  The rank of a system of linear equations is the rank of its
+  coefficient matrix (i.e., the matrix on the left-hand side).
+  It is equal to the number of pivot variables.
+\end{definition}
+
+\begin{example}{Finding the Rank of a Matrix}{rankofamatrix}
+Consider the matrix
+\begin{equation*}
+\leftB
+\begin{array}{rrr}
+1 & 2 & 3 \\
+1 & 5 & 9 \\
+2 & 4 & 6 
+\end{array}
+\rightB
+\end{equation*}
+What is its rank?
+\end{example}
+
+\begin{solution}
+  First, we need to find an {\ef} of $A$. Through the usual algorithm,
+  we find that this is
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr}
+      \circled{1} & 0 & -1 \\
+      0 & \circled{3} & 6 \\
+      0 & 0 & 0
+    \end{array}
+    \rightB.
+  \end{equation*}
+  Here we have two pivot entries, and therefore the rank of $A$ is
+  $r=2$.
+\end{solution}
+
+Suppose we have a system of $m$ equations in $n$ variables, and
+suppose that $n>m$. Further assume that the system is consistent. From
+our above discussion, we know that this system will have infinitely
+many solutions. This is because there can be at most one pivot entry
+per row, and therefore at most $m$ variables can be pivot
+variables. It follows that there are at least $n-m$ free variables.
+Therefore, the general solution of this system has at least $n-m$
+parameters.
+
+Notice that if $n=m$ or $n<m$, it is possible for the system to have a
+unique solution or infinitely many solutions. In all cases ($n>m$,
+$n=m$, or $n<m$), it is also possible for the system to be
+inconsistent (have no solutions).
+
+By refining the above argument, we get the following theorem:
+
+\begin{theorem}{Rank and Solutions to System of Equations}{rankconsistentsolutions}
+  Consider a system of $m$ equations in $n$ variables, and assume that
+  the coefficient matrix has rank $r$. Assume further that the system
+  is consistent.
+\begin{enumerate}
+\item If $r=n$, then the system has a unique solution.
+\item If $r<n$, then the system has infinitely many solutions.
+\end{enumerate}
+\end{theorem}
+
+Here is a final summary of how the rank affects the number of
+solutions:
+
+\begin{enumerate}
+\item {\em No solution.} If the system of equations is inconsistent,
+  then it has no solution, regardless of the rank.
+
+\item {\em Unique solution.} For a consistent system, suppose
+  $r=n$. Then there is a pivot position in every column of the
+  coefficient matrix of $A$. Hence, there is a unique solution.
+
+\item {\em Infinitely many solutions.} For a consistent system, suppose
+  $r<n$. Then there are less pivot positions than columns in the
+  coefficient matrix, meaning that not every column is a pivot
+  column. The columns which are {\em not} pivot columns correspond to
+  parameters. In fact, in this case we have $n-r$ parameters. The
+  system has infinitely many solutions.
+\end{enumerate}
