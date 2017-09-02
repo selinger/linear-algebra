@@ -8,12 +8,11 @@ include the definitions and examples here for convenience.
 
 \begin{definition}{Span of a Set of Vectors and Subspace}{span}
 The collection of all linear combinations of a set of vectors $\{ \vec{u}_1,
-\cdots ,\vec{u}_k\}$ in $\mathbb{R}^{n}$ is known as the span of these
+\cdots ,\vec{u}_k\}$ in $\mathbb{R}^{n}$ is known as the span\index{span}\index{vectors!span} of these
 vectors and is written as $\func{span} \{\vec{u}_1, \cdots ,
 \vec{u}_k\}$. \\ 
 We call a collection of the form $\func{span} \{\vec{u}_1, \cdots , \vec{u}_k\}$ 
 a subspace of $\mathbb{R}^{n}$.
-\index{span} \index{vectors!span}
 \end{definition}
 
 Consider the following example. 
@@ -75,8 +74,8 @@ Another important property of sets of vectors is called linear independence.
 
 \begin{definition}{Linearly Independent Set of Vectors}{linearindependentortho}
 A set of non-zero vectors $\{ \vect{u}_1, \cdots ,\vect{u}_k\}$ in $\mathbb{R}^{n}$ is said to be 
-\textbf{linearly independent} if no vector in that set is in the span of the other vectors of that set.
-\index{linear independent}\index{vectors!linear independent}
+\textbf{linearly independent}\index{linear independence}\index{vectors!linear independence}
+ if no vector in that set is in the span of the other vectors of that set.
 \end{definition}
 
 Here is an example.  
@@ -125,9 +124,9 @@ then we say that it is a basis for the subspace.
 
 \begin{definition}{Basis of a Subspace}{subspacebasis}
 Let $V$ be a subspace of $\mathbb{R}^{n}$. Then $\left\{
-\vect{u}_{1},\cdots ,\vect{u}_{k}\right\} $ is a \textbf{basis} for
+\vect{u}_{1},\cdots ,\vect{u}_{k}\right\} $ is a \textbf{basis}\index{basis}\index{vectors!basis}\index{subspace!basis} for
 $V$ if the following two conditions
-hold. \index{basis}\index{vectors!basis}\index{subspace!basis}
+hold.
 
 \begin{enumerate}
 \item $\func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} =V$
@@ -176,13 +175,13 @@ In conclusion, the only vector orthogonal to every vector of
 a spanning set of $\mathbb{R}^n$ is the zero vector.
 \end{solution}
 
-We can now discuss what is meant by an orthogonal set of vectors. \index{orthogonal}
+We can now discuss what is meant by an orthogonal\index{orthogonal} set of vectors. 
 
 \begin{definition}{Orthogonal Set of Vectors}{orthset}
 Let $\{ \vect{u}_1, \vect{u}_2, \cdots, \vect{u}_m \}$ be a set of
 vectors in $\mathbb{R}^n$. Then this set is called an
-\textbf{orthogonal set} if the following conditions hold:
-\index{orthogonal}\index{vectors!orthogonal}
+\textbf{orthogonal set}\index{orthogonal}\index{vectors!orthogonal}
+if the following conditions hold:
 \begin{enumerate}
 \item 
 $\vect{u}_i \dotprod \vect{u}_j = 0$ for all $i \neq j$ 
@@ -198,8 +197,8 @@ set} of vectors. They can be described as follows.
 \begin{definition}{Orthonormal Set of Vectors}{orthoSetVectors}
 A set of vectors, $\left\{ \vect{w}_{1},\cdots ,\vect{w}_{m}\right\} $
 is said to be an
-\index{orthonormal}\index{vectors!orthonormal}
- \textbf{orthonormal} set if 
+\textbf{orthonormal}\index{orthonormal}\index{vectors!orthonormal}
+set if 
 \[
 \vect{w}_i \dotprod \vect{w}_j = \delta _{ij} = \left\{ 
 \begin{array}{c}

@@ -12,7 +12,7 @@ and $k\in\mathbb{R}$, $k\vect{u}\in V$.
 \end{enumerate}
 \end{theorem}
 
-This test allows us to determine if a given set is a subspace of $\mathbb{R}^n$. Notice that the subset $V = \left\{ \vect{0} \right\}$ is a subspace of $\mathbb{R}^n$ (called the zero subspace \index{zero subspace}), as is $\mathbb{R}^n$ itself. A subspace which is not the zero subspace of $\mathbb{R}^n$ is referred to as a proper subspace\index{proper subspace}.
+This test allows us to determine if a given set is a subspace of $\mathbb{R}^n$. Notice that the subset $V = \left\{ \vect{0} \right\}$ is a subspace of $\mathbb{R}^n$ (called the zero subspace\index{zero subspace}), as is $\mathbb{R}^n$ itself. A subspace which is not the zero subspace of $\mathbb{R}^n$ is referred to as a proper subspace\index{proper subspace}.
 
  A subspace is simply a set of vectors with the property that linear
 combinations of these vectors remain in the set. Geometrically in
@@ -63,9 +63,8 @@ We are now prepared to examine the precise definition of a subspace as follows.
 
 \begin{definition}{Subspace}{subspace}
 Let $V$ be a nonempty collection of vectors in $\mathbb{R}^{n}.$ Then
-$V$ is called a subspace \index{subspace} if whenever $a$ and $b$  are scalars and $\vect{u}$ and $\vect{v}$
+$V$ is called a subspace\index{subspace} if whenever $a$ and $b$  are scalars and $\vect{u}$ and $\vect{v}$
 are vectors in $V,$ the linear combination $a \vect{u}+ b \vect{v}$ is also in $V$.
-\index{subspace} 
 \end{definition}
 
 More generally this means that a subspace contains the span of any
@@ -77,7 +76,7 @@ its vectors.
 Let $V$ be a nonempty collection of vectors in $\mathbb{R}^{n}.$ Then $V$ is a subspace of $\mathbb{R}^{n}$ if and only if there
 exist vectors $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\}$ in $V$ such that 
 \[
-V= \func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} 
+V= \func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\}. 
 \]
 \index{subspace!span} 
 Furthermore, let $W$ be another subspace of $\mathbb{R}^n$ and suppose $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} \in W$. Then it follows that $V$ is a subset of $W$. 
@@ -131,7 +130,7 @@ that $V=\func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} $.
 
 In summary, subspaces of $\mathbb{R}^{n}$ consist of spans of finite,
 linearly independent collections of vectors of $\mathbb{R}^{n}$.  Such
-a collection of vectors is called a basis. \index{basis}
+a collection of vectors is called a basis.\index{basis}
 
 \begin{definition}{Basis of a Subspace}{subspacebasis}
 Let $V$ be a subspace of $\mathbb{R}^{n}$. Then $\left\{
@@ -143,8 +142,7 @@ Let $V$ be a subspace of $\mathbb{R}^{n}$. Then $\left\{
 independent
 \end{enumerate}
 
-Note the plural of basis is \textbf{bases}.
-\index{subspace!basis} 
+Note the plural of basis is \textbf{bases}.\index{subspace!basis} 
 \end{definition}
 
 The following is a simple but very useful example of a basis, called the standard basis.
@@ -152,8 +150,7 @@ The following is a simple but very useful example of a basis, called the standar
 \begin{definition}{Standard Basis of $\mathbb{R}^n$}{standardbasis}
 Let $\vect{e}_i$ be the vector in $\mathbb{R}^n$ which has a $1$ in the $i^{th}$ entry and zeros elsewhere, that is the $i^{th}$ column of the identity matrix. Then the collection $\left\{\vect{e}_1, \vect{e}_2, \cdots, \vect{e}_n
 \right\}$ is a basis for
-$\mathbb{R}^n$ and is called the standard basis of $\mathbb{R}^n$.
-\index{standard basis}
+$\mathbb{R}^n$ and is called the standard basis\index{standard basis} of $\mathbb{R}^n$.
 \end{definition}
 
 The main theorem about bases is not only they exist, but that they
@@ -165,7 +162,7 @@ Suppose $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{r}\right\} $ is a
 linearly independent set of vectors in $\mathbb{R}^n$, and each
 $\vect{u}_{k}$ is contained in $\func{span}\left\{ \vect{v}_{1},\cdots
 ,\vect{v}_{s}\right\}$ Then $s\geq r.$ \\
-In words, spanning \index{exchange theorem} sets have at least as many vectors as linearly
+In words, spanning\index{exchange theorem} sets have at least as many vectors as linearly
 independent sets.
 \end{theorem}
 
@@ -214,7 +211,7 @@ The following definition can now be stated.
 
 \begin{definition}{Dimension of a Subspace}{dimension}
 Let $V$ be a subspace of $\mathbb{R}^{n}$. Then the \textbf{dimension }of $V$, written $\func{dim}(V)$
-is defined to be the number of vectors in a basis. \index{dimension} \index{subspace!dimension}
+is defined to be the number of vectors in a basis.\index{dimension}\index{subspace!dimension}
 \end{definition}
 
 The next result follows.
@@ -431,8 +428,7 @@ Next we consider the case of removing vectors from a spanning set to result in a
 \begin{theorem}{Finding a Basis from a Span}{}
 Let $W$ be a subspace. Also suppose that $W=\limfunc{span}\left\{ \vect{w}
 _{1},\cdots ,\vect{w}_{m}\right\} $. Then there exists a subset of $\left\{ 
-\vect{w}_{1},\cdots ,\vect{w}_{m}\right\} $ which is a basis for $W$.
-\index{spanning set!basis}
+\vect{w}_{1},\cdots ,\vect{w}_{m}\right\} $ which is a basis for $W$.\index{spanning set!basis}
 \end{theorem}
 
 \begin{proof}
@@ -576,8 +572,7 @@ Then  $\dim(W) \leq \dim(V)$ with equality when $W=V$.
 \begin{theorem}{Extending a Basis}{extendingbasis}
 Let $W$ be any non-zero subspace $\mathbb{R}^{n}$ and let $W\subseteq V$
 where $V$ is also a subspace of $\mathbb{R}^{n}$. Then every basis of $W$
-can be extended to a basis for $V$.
-\index{extending a basis}
+can be extended to a basis for $V$.\index{extending a basis}
 \end{theorem}
 
 The proof is left as an exercise but proceeds as follows. Begin with a basis for $W,\left\{ \vect{w}_{1},\cdots ,\vect{w}_{s}\right\} $ and add in vectors from $V$ until you obtain a basis for $V$.

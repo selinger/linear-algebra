@@ -10,10 +10,9 @@ of equations.
 First, we provide a formal definition of row and column vectors. 
 
 \begin{definition}{Row and Column Vectors}{rowandcolumnvectors}
-Matrices of size $n\times 1$ or $1\times n$ are called \textbf{vectors}. If $X$ is such a matrix, then we write $x_{i}$ to 
-denote the entry of $X$ in the $i^{th}$ row of a column matrix, or the $i^{th}$ column of a row matrix. 
-\index{vectors}
-\index{vectors!column} 
+Matrices of size $n\times 1$ or $1\times n$ are called \textbf{vectors}\index{vectors}. If $X$ is such a matrix, then we write $x_{i}$ to 
+denote the entry of $X$ in the $i^{th}$ row of a column matrix, or the $i^{th}$ column of a row matrix\index{vectors!column}. 
+
 
 The $n\times 1$ matrix
 \begin{equation*}
@@ -26,7 +25,8 @@ x_{n}
 \rightB
 \end{equation*}
 is called
-\index{vectors!row vector} a \textbf{column vector.} The $1\times n$ matrix
+a \textbf{column vector}\index{vectors!row vector}.
+The $1\times n$ matrix
 \begin{equation*}
 X = \leftB
 \begin{array}{ccc}
@@ -82,7 +82,7 @@ a_{11}x_{1}+\cdots +a_{1n}x_{n}=b_{1} \\
 a_{m1}x_{1}+\cdots +a_{mn}x_{n}=b_{m}
 \end{array}
 \end{equation*}
-We can express this system in \textbf{vector form} \index{system of equations!vector form} which is as follows:
+We can express this system in \textbf{vector form}\index{system of equations!vector form} which is as follows:
 \begin{equation*}
 x_1
 \leftB
@@ -230,7 +230,8 @@ x_{n}
 \end{equation*}
 
 Then the product $AX$ is the $m\times 1$ column
-\index{matrix multiplication!vectors}vector which equals the following
+vector\index{matrix multiplication!vectors}
+which equals the following
 linear combination of the columns of $A$:
 \begin{equation*}
 x_{1}A_{1}+x_{2}A_{2}+\cdots +x_{n}A_{n} = 
@@ -379,7 +380,7 @@ a_{21}x_{1}+ \cdots + a_{2n}x_{n} = b_{2} \\
 a_{m1}x_{1}+\cdots +a_{mn}x_{n}=b_{m}
 \end{array}
 \end{equation*}
-Then we can express this system in \textbf{matrix form} \index{system of equations!matrix form} as follows.
+Then we can express this system in \textbf{matrix form}\index{system of equations!matrix form} as follows.
 \begin{equation*}
 \leftB
 \begin{array}{cccc}
@@ -410,8 +411,8 @@ b_{m}
  
 \end{definition}
 
-The expression $AX=B$ is also known as the \textbf{Matrix Form} of the
-corresponding system of linear equations. \index{matrix form AX=B} The
+The expression $AX=B$ is also known as the \textbf{Matrix Form}\index{matrix form AX=B} of the
+corresponding system of linear equations. The
 matrix $A$ is simply the coefficient matrix of the system, the vector
 $X$ is the column vector constructed from the variables of the system,
 and finally the vector $B$ is the column vector constructed from the constants
@@ -458,9 +459,9 @@ If the two middle numbers don't match, you can't multiply the
 matrices!
 
 When the number of columns of $A$ equals the number of rows
-of $B$ the two matrices are said to be \textbf{conformable}
-\index{matrix!conformable} and the product $AB$ is obtained
-\index{matrix multiplication} as follows.
+of $B$ the two matrices are said to be
+\textbf{conformable}\index{matrix!conformable} and the product
+$AB$\index{matrix multiplication}  is obtained as follows.
 
 \begin{definition}{Multiplication of Two Matrices}{multiplicationoftwomatrices}
  Let $A$ be an $m\times n$ matrix

@@ -1,14 +1,14 @@
 \subsection{Similarity and Diagonalization}
 
 We begin this section by recalling the definition  of similar matrices. 
-Recall that if $A,B$ are two $n\times n$ matrices, then they are \textbf{similar} \index{similar matrices}
+Recall that if $A,B$ are two $n\times n$ matrices, then they are \textbf{similar}\index{similar matrices}
 if and only if there exists an invertible matrix $P$
 such that
 \begin{equation*}
 A=P^{-1}BP
 \end{equation*}
 
-In this case we write $A \sim B$. The concept of similarity is an example of an \textbf{equivalence relation}. \index{equivalence relation} 
+In this case we write $A \sim B$. The concept of similarity is an example of an \textbf{equivalence relation}\index{equivalence relation}.
 
 \begin{lemma}{Similarity is an Equivalence Relation}{similarityequivalence}
 Similarity is an equivalence relation, i.e. for $n \times n$ matrices $A,B,$ and $C$, 
@@ -51,7 +51,7 @@ showing that $A$ is similar to $C$.
 Another important concept necessary to this section is the trace of a matrix. Consider the definition.
 
 \begin{definition}{Trace of a Matrix}{matrixtrace}
-\index{trace of a matrix}
+\index{trace of a matrix}%
 If $A=[a_{ij}]$ is an $n\times n$ matrix, then the
 trace of $A$ is
 \[ \func{trace}(A) = \sum_{i=1}^n a_{ii}.\]
@@ -83,9 +83,9 @@ If $A$ and $B$ are $n\times n$ matrices and $A\sim B$, then
 
 We now proceed to the main concept of this section. When a matrix is similar to a diagonal matrix, the matrix is said to
 be
-\index{diagonalizable} diagonalizable. 
+diagonalizable\index{diagonalizable}. 
 We define a diagonal matrix $D$ as a matrix containing a zero in every entry 
-except those on the main diagonal.\index{matrix!diagonal matrix} \index{matrix!main diagonal} More precisely, if $d_{ij}$ is the $ij^{th}$ entry of a diagonal matrix $D$, then
+except those on the main diagonal\index{matrix!diagonal matrix}\index{matrix!main diagonal}. More precisely, if $d_{ij}$ is the $ij^{th}$ entry of a diagonal matrix $D$, then
 $d_{ij}=0$ unless $i=j$. Such
 matrices look like the following.
 \begin{equation*}
@@ -102,8 +102,7 @@ where $\ast $ is a number which might not be zero.
 The following is the formal definition of a diagonalizable matrix. 
 
 \begin{definition}{Diagonalizable}{diagonalizable}
-Let $A$ be an $n\times n$ matrix. Then $A$ is said to be \textbf{diagonalizable}
-\index{diagonalizable} if there exists an invertible matrix $P$ such that
+Let $A$ be an $n\times n$ matrix. Then $A$ is said to be \textbf{diagonalizable}\index{diagonalizable} if there exists an invertible matrix $P$ such that
 \begin{equation*}
 P^{-1}AP=D
 \end{equation*}

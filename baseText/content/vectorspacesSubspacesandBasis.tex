@@ -13,7 +13,7 @@ In this section we will examine the concept of subspaces introduced earlier in t
 Consider the definition of a subspace.
 
 \begin{definition}{Subspace}{subspace}
-Let $V$ be a vector space. A subset $W\subseteq V$ is said to be a\index{subspace} \textbf{subspace} of $V$ if $a\vect{x}+b\vect{y}
+Let $V$ be a vector space. A subset $W\subseteq V$ is said to be a \textbf{subspace}\index{subspace} of $V$ if $a\vect{x}+b\vect{y}
 \in W$ whenever $a,b\in \mathbb{R}$ and $\vect{x},\vect{y}\in W.$
 \end{definition}
 
@@ -134,7 +134,7 @@ Hence the product is contained in  $\left\{ \vect{0} \right\}$ and the third con
 It follows that  $\left\{ \vect{0} \right\}$ is a subspace of $V$. 
 \end{solution}
 
-The two subspaces described above are called \textbf{improper subspaces}.\index{improper subspace} Any subspace of a vector space $V$ which is not equal to $V$ or  $\left\{ \vect{0} \right\}$ is called a \textbf{proper subspace}.\index{proper subspace} 
+The two subspaces described above are called \textbf{improper subspaces}\index{improper subspace}. Any subspace of a vector space $V$ which is not equal to $V$ or  $\left\{ \vect{0} \right\}$ is called a \textbf{proper subspace}\index{proper subspace}. 
 
 Consider another example.
 
@@ -179,8 +179,7 @@ It follows that $W$ is a subspace of $\mathbb{P}_2$.
 Recall the definition of basis, considered now in the context of vector spaces.
 
 \begin{definition}{Basis}{basisvectorspace}
-Let $V$ be a vector space. Then $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is called a basis
-\index{basis} for $V$ if the following conditions hold.
+Let $V$ be a vector space. Then $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is called a basis\index{basis} for $V$ if the following conditions hold.
 \begin{enumerate}
 \item
 $\func{span}\left\{ \vect{v}_{1},\cdots ,\vect{v}_{n}\right\} = V$
@@ -207,8 +206,7 @@ ax^{2}+bx+c=0x^2 + 0x + 0
 where $a,b,c$ are real numbers. It is clear that this can only occur if $a=b=c=0$. Hence the set is linearly independent and forms a basis of $\mathbb{P}_2$.
 \end{solution}
 
-The next theorem is an essential result in linear algebra and is called the exchange theorem. 
-\index{exchange theorem}
+The next theorem is an essential result in linear algebra and is called the exchange theorem\index{exchange theorem}.
 
 \begin{theorem}{Exchange Theorem}{exchangetheorem}
 Let $\left\{ \vect{x}_{1},\cdots ,\vect{x}_{r}\right\} $
@@ -309,14 +307,13 @@ r\leq s$ as claimed.
 The following corollary follows from the exchange theorem.
 
 \begin{corollary}{Two Bases of the Same Length}{baseslength}
-Let $B_1$, $B_2$ be two bases of a vector space $V$. Suppose $B_1$ contains $m$ vectors and $B_2$ contains $n$ vectors. Then $m = n$. 
+Let $B_1$, $B_2$ be two bases of a vector space $V$. Suppose $B_1$ contains $m$ vectors and $B_2$ contains $n$ vectors. Then $m = n$.\index{basis!any two same size}
 \end{corollary}
 
 \begin{proof} By Theorem \ref{thm:exchangetheorem}, $m\leq n$ and $n\leq m$. Therefore $m=n$. 
 \end{proof}
 
 This corollary is very important so we provide another proof independent of the exchange theorem above.
-\index{basis!any two same size}
 
 \begin{proof}Suppose $n > m.$ Then since the vectors $\left\{ \vect{u}
 _{1},\cdots ,\vect{u}_{m}\right\} $ span $V,$ there exist scalars $c_{ij}$
@@ -358,13 +355,12 @@ that $m > n$.
 Given the result of the previous corollary, the following definition follows.
 
 \begin{definition}{Dimension}{dimensionvectorspace}
- A vector space $V$ is of dimension $n$ if it has a basis consisting of $n$ vectors. \index{dimension of vector space}
-\index{vector space!dimension} 
+ A vector space $V$ is of dimension $n$ if it has a basis consisting of $n$ vectors\index{dimension of vector space}\index{vector space!dimension}.
 \end{definition}
 
 Notice that the dimension is well defined by Corollary \ref{cor:baseslength}. It is assumed here
 that $n<\infty $ and therefore such a vector space is said to be \textbf{finite
-dimensional}.\index{finite dimensional}
+dimensional}\index{finite dimensional}.
 
 \begin{example}{Dimension of a Vector Space}{dimension}
 Let $\mathbb{P}_2$ be the set of all polynomials of degree at most $2$. Find the dimension of $\mathbb{P}_2$. 
@@ -409,8 +405,8 @@ Consider the following theorem.
 \begin{theorem}{Every Subspace has a Basis}{everysubspacebasis}
 Let $W$ be a nonzero subspace of a finite dimensional vector
 space $V$. Suppose $V$ has dimension $n$.
-\index{subspace!has a basis} Then $W$ has a basis with no more than $n$
-vectors.
+Then $W$ has a basis\index{subspace!has a basis}
+with no more than $n$ vectors.
 \end{theorem}
 
 \begin{proof}
@@ -516,9 +512,9 @@ _{n}\right\} $ is a vector space, then some subset of $\{\vect{u}_{1},\cdots ,\v
 is a basis for $V.$ Also, if $\{\vect{u}_{1},\cdots ,\vect{u}
 _{k}\}\subseteq V$ is linearly independent and the vector space is finite
 dimensional,
-\index{linear independence!enlarging to form a basis} then the set $\{
+then the set $\{
 \vect{u}_{1},\cdots ,\vect{u}_{k}\},$ can be enlarged to obtain a basis
-of $V.$
+of $V$\index{linear independence!enlarging to form a basis}.
 \end{theorem}
 
 \begin{proof}Let 
