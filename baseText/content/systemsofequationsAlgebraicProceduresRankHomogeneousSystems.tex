@@ -1,314 +1,422 @@
 \section{Homogeneous Systems}
 
-There is a special type of system which requires additional study. This type of system is called a homogeneous system of
-equations, which we defined above in Definition \ref{def:homogeneoussystem}. 
-Our focus in this section is to consider what types of solutions are possible for a homogeneous system of equations. 
+There is a special type of system of linear equations that requires
+additional study. This type of system is called a {\em
+  homogeneous}\footnote{The word ``homogeneous'' has 5 syllables. In
+  scientific usage, it is not the same as the word ``homogenous''.}
+system of equations.  Our focus in this section is to consider what
+types of solutions are possible for a homogeneous system of equations,
+and how the solutions of non-homogeneous systems are related to those
+of their homogeneous counterparts.
 
-Consider the following definition. 
-
-\begin{definition}{Trivial Solution}{trivialsolution}
-Consider the homogeneous system of equations given by
+\begin{definition}{Homogeneous System of Equations}{homogeneoussystem}
+  A system of equations is called
+  \textbf{homogeneous}\index{system of linear equations!homogeneous}
+  if each of the constant terms is equal to $0$. A homogeneous system
+  therefore has the form
 \begin{equation*}
 \begin{array}{c}
 a_{11}x_{1}+a_{12}x_{2}+\cdots +a_{1n}x_{n}= 0 \\
 a_{21}x_{1}+a_{22}x_{2}+\cdots +a_{2n}x_{n}= 0  \\
 \vdots \\
-a_{m1}x_{1}+a_{m2}x_{2}+\cdots +a_{mn}x_{n}= 0 
+a_{m1}x_{1}+a_{m2}x_{2}+\cdots +a_{mn}x_{n}= 0, 
 \end{array}
 \end{equation*}
-Then, $x_{1} = 0, x_{2} = 0, \cdots, x_{n} =0$ is always a 
-solution to this system. We call this the \textbf{trivial solution}\index{trivial solution}.
+where $a_{ij}$ are coefficients and $x_{i}$ are variables.
 \end{definition}
 
-If the system has a solution in which not all of the $x_1, \cdots, x_n$ are equal to zero,
-then we call this solution \textbf{nontrivial}\index{nontrivial solution}. The trivial solution
-does not tell us much about the system, as it says that $0=0$! 
-Therefore, when working with homogeneous systems of 
-equations, we want to know when the system has a nontrivial solution. 
+The first thing we note is that a homogeneous system is always
+consistent. Indeed, it always has the solution $x_1=0, x_2=0, \ldots,
+x_n=0$. This solution is called the
+\textbf{trivial solution}\index{trivial solution}\index{solution!trivial}.
 
-Suppose we have a homogeneous system of $m$ equations, using $n$ variables, and suppose that
-$n > m$. In other words, there are more variables than equations. 
-Then, it turns out that this system always has a nontrivial solution. Not only will the
-system have a nontrivial solution, but it also will have infinitely many solutions.
-It is also possible, but not required, to have a nontrivial solution if $n=m$ and $n<m$.
+If the system has a solution in which not all of the
+$x_1, \cdots, x_n$ are equal to zero, then we call this solution
+\textbf{nontrivial}\index{nontrivial
+  solution}\index{solution!nontrivial}.  When working with homogeneous
+systems of equations, since the trivial solution always exists, we are
+usually interested in finding whether there are non-trivial solutions.
 
-Consider the following example.
+The following theorem is a special case of
+Theorem~\ref{thm:rankconsistentsolutions}. Recall that the
+{\em rank}\index{rank}
+of a system is the number of pivot variables in its {\ef}.
+
+\begin{theorem}{Rank and Solutions of Homogeneous System of Equations}{rankhomogeneoussolutions}
+  Consider a homogeneous system of $m$ equations in $n$ variables, and
+  assume that the coefficient matrix has rank $r$. Then the system is
+  consistent, and 
+\begin{enumerate}
+\item if $r=n$, then the system has a unique solution;
+\item if $r<n$, then the system has infinitely many solutions.
+\end{enumerate}
+\end{theorem}
+
+\begin{example}{Homogeneous System with More Variables than Equations}{homomorevars}
+  True or false: Suppose a homogeneous system has more variables than
+  equations. Then the system has infinitely many solutions.  
+\end{example}
+
+\begin{solution}
+  This is true. If the system has $m$ equations and $n$ variables,
+  then the rank can be at most $m$. Since $m<n$, the system has
+  infinitely many solutions. Note that it is not possible for a
+  homogeneous system to be inconsistent, since there is always the
+  trivial solution.
+\end{solution} 
+
+\begin{example}{Homogeneous System with an Equal Number of Variables and Equations}{homolessvars}
+  True or false: Suppose a homogeneous system has the same number of
+  variables as equations. Then the system has a unique solution.
+\end{example}
+
+\begin{solution}
+  This is false in general. While it is possible for such a system to
+  have a unique solution, it is also possible for it to have
+  infinitely many. Let there be $n$ equations and $n$ variables.  Then
+  depending on the {\ef}, the rank $r$ could be either equal to $n$,
+  in which case there is a unique solution, or less than $n$, in which
+  case there are infinitely many.
+\end{solution}
+
+We now consider an example of solving a homogeneous system of equations.
 
 \begin{example}{Solutions to a Homogeneous System of Equations}{homogeneoussolution}
-Find the nontrivial solutions to the following homogeneous system of equations
+Find the general solution to the following homogeneous system of
+equations. Does the system have non-trivial solutions?
 \begin{equation*}
 \begin{array}{c}
-2x + y - z = 0 \\
-x + 2y - 2z = 0
+2x + y - z + w = 0 \\
+x + 2y - 2z + 3w = 0
 \end{array}
 \end{equation*}
 \end{example}
 
 \begin{solution}
-Notice that this system has $m = 2$ equations and $n = 3$ variables, so $n>m$.
-Therefore by our previous discussion, we expect this system to have infinitely many solutions. 
+  Notice that this system has $m = 2$ equations and $n = 4$ variables,
+  so $n>m$.  Therefore by our previous discussion, we expect this
+  system to have infinitely many solutions. In particular, it will
+  have non-trivial solutions.
 
-The process we use to find the solutions for a homogeneous system of equations
-is the same process we used in the previous section. 
-First, we construct the augmented matrix, given by 
-\begin{equation*}
-\leftB
-\begin{array}{rrr|r}
-2 & 1 & -1 & 0 \\ 
-1 & 2 & -2 & 0
-\end{array}
-\rightB
-\end{equation*}
-Then, we carry this matrix to its {\rref}, given below. 
-\begin{equation*}
-\leftB
-\begin{array}{rrr|r}
-1 & 0 & 0 & 0 \\ 
-0 & 1 & -1 & 0
-\end{array}
-\rightB
-\end{equation*}
-The corresponding system of equations is 
-\begin{equation*}
-\begin{array}{c}
-x = 0 \\
-y - z =0 \\
-\end{array}
-\end{equation*}
-Since $z$ is not restrained by any equation, we know that this variable will become our parameter. 
-Let $z=t$ where $t$ is any number. 
-Therefore, our solution has the form
-\begin{equation*}
-\begin{array}{c}
-x = 0 \\
-y = z = t \\
-z = t
-\end{array}
-\end{equation*}
-Hence this system has infinitely many solutions, with one parameter $t$.
+  The process we use to find the solutions for a homogeneous system of
+  equations is the same process we used for non-homogeneous
+  equations. We construct the augmented matrix and reduce it to
+  {\rref}.
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrrr|r}
+      2 & 1 & 1 & 4 & 0 \\ 
+      1 & 2 & -1 & 5 & 0
+    \end{array}
+    \rightB
+    \sim
+    \leftB
+    \begin{array}{rrrr|r}
+      1 & 0 &  1 & 1 & 0 \\ 
+      0 & 1 & -1 & 2 & 0
+    \end{array}
+    \rightB
+  \end{equation*}
+  The corresponding system of equations is 
+  \begin{equation*}
+    \begin{array}{r}
+      x + z + w = 0 \\
+      y - z + 2w = 0. \\
+    \end{array}
+  \end{equation*}
+  The free variables are $z$ and $w$. We set them equal to parameters
+  $z=s$ and $w=t$. Then our general solution has the form
+  \begin{equation*}
+    \begin{array}{c}
+      x = -s-t \\
+      y = s-2t \\
+      z = s \\
+      w = t.
+    \end{array}
+  \end{equation*}
+  Hence this system has infinitely many solutions, with two parameters
+  $s$ and $t$.
 \end{solution}
 
-Suppose we were to write the solution to the previous example in another form.
-Specifically,
-\begin{equation*}
-\begin{array}{c}
-x = 0 \\
-y = 0 + t \\
-z = 0 + t
-\end{array}
-\end{equation*}
-can be written as 
-\begin{equation*}
-\leftB
-\begin{array}{r}
-x\\
-y\\
-z
-\end{array}
-\rightB
- =
-\leftB
-\begin{array}{r}
-0\\
-0\\
-0
-\end{array}
-\rightB
- +
-t
-\leftB
-\begin{array}{r}
-0\\
-1\\
-1
-\end{array}
-\rightB
-\end{equation*}
-Notice that we have constructed a column from the constants in the solution (all equal to $0$),
- as well as a column corresponding to the 
-coefficients on $t$ in each equation. While we will discuss this form of solution more in further chapters, 
-for now consider the column of coefficients 
-of the parameter $t$. In this case, this is the column
-$\leftB
-\begin{array}{r}
-0\\
-1\\
-1
-\end{array}
-\rightB$. 
+Let us write the solution of the last example in another form.
+Specifically, it can be written as 
+\begin{equation}\label{eqn:homogeneoussolution-1}
+  \leftB
+  \begin{array}{r}
+    x\\
+    y\\
+    z\\
+    w
+  \end{array}
+  \rightB
+  =
+  s
+  \leftB
+  \begin{array}{r}
+    -1\\
+    1\\
+    1\\
+    0
+  \end{array}
+  \rightB
+  +
+  t
+  \leftB
+  \begin{array}{r}
+    -1\\
+    -2\\
+    0\\
+    1
+  \end{array}
+  \rightB.
+\end{equation}
+Notice that we have constructed a column from the coefficients of $s$
+in each equation, and another column from the coefficients of $t$.  We
+will discuss this notation more in later chapters. For now, consider
+what happens when we choose the parameters to be $s=1$ and $t=0$. In
+this case, we get the solution
+\begin{equation}\label{eqn:homogeneoussolution-2}
+  \leftB
+  \begin{array}{r}
+    -1\\
+    1\\
+    1\\
+    0
+  \end{array}
+  \rightB,
+\end{equation}
+which is the same as the column of coefficients for $s$. This is
+called a \textbf{basic solution}\index{basic solution} of the
+homogeneous system of equations. The other basic solution is obtained
+by setting $s=0$ and $t=1$. In this case,
+\begin{equation}\label{eqn:homogeneoussolution-3}
+  \leftB
+  \begin{array}{r}
+    -1\\
+    -2\\
+    0\\
+    1
+  \end{array}
+  \rightB.
+\end{equation}
+The basic solutions of a system are columns constructed from the
+coefficients on parameters in the solution. If $X_1$ and $X_2$ are the
+basic solutions {\eqref{eqn:homogeneoussolution-2}} and
+{\eqref{eqn:homogeneoussolution-3}}, then the general solution
+{\eqref{eqn:homogeneoussolution-1}} is of the form $sX_1+tX_2$.  We
+say that the general solution of the homogeneous system is a
+\textbf{linear combination}\index{linear combination!of basic
+  solutions} of its basic solutions.
 
-There is a special name for this column, which is \textbf{basic solution}\index{basic solution}. The basic solutions of a system 
-are columns constructed from the coefficients on parameters in the solution. We often denote basic solutions 
-by $X_1, X_2$ etc., depending on how many solutions occur. Therefore, Example \ref{exa:homogeneoussolution}
-has the basic solution $X_1 = \leftB
-\begin{array}{r}
-0\\
-1\\
-1
-\end{array}
-\rightB$. 
-
-We explore this further in the following example. 
+We explore this further in the following example.
 
 \begin{example}{Basic Solutions of a Homogeneous System}{basicsolutions}
-Consider the following homogeneous system of equations. 
-\begin{equation*}
-\begin{array}{c}
-x + 4y + 3z = 0 \\
-3x + 12y + 9z = 0
-\end{array}
-\end{equation*}
-Find the basic solutions to this system.
+  Consider the following homogeneous system of equations. 
+  \begin{equation}\label{eqn:basicsolutions-1}
+    \begin{array}{c}
+      x + 4y + 3z = 0 \\
+      3x + 12y + 9z = 0.
+    \end{array}
+  \end{equation}
+  Find the basic solutions to this system.
 \end{example}
 
 \begin{solution}
-The augmented matrix of this system and the resulting {\rref} are 
-\begin{equation*}
-\leftB
-\begin{array}{rrr|r}
-1 & 4 & 3 & 0 \\
-3 & 12 & 9 & 0
-\end{array}
-\rightB
-\rightarrow \cdots \rightarrow
-\leftB
-\begin{array}{rrr|r}
-1 & 4 & 3 & 0 \\
-0 & 0 & 0 & 0
-\end{array}
-\rightB
-\end{equation*}
-When written in equations, this system is given by 
-\begin{equation*}
-x + 4y +3z=0
-\end{equation*}
-Notice that only $x$ corresponds to a pivot column. In this case, we will have two parameters, 
-one for $y$ and one for $z$. Let $y = s$ and $z=t$ for any numbers $s$ and $t$. Then, our solution becomes
-\begin{equation*}
-\begin{array}{c}
-x = -4s - 3t \\
-y = s \\
-z = t
-\end{array}
-\end{equation*}
-which can be written as 
-\begin{equation*}
-\leftB
-\begin{array}{r}
-x\\
-y\\
-z
-\end{array}
-\rightB
-=
-\leftB
-\begin{array}{r}
-0\\
-0\\
-0
-\end{array}
-\rightB
-+
-s
-\leftB
-\begin{array}{r}
--4 \\
-1 \\
-0
-\end{array}
-\rightB
-+ 
-t
-\leftB
-\begin{array}{r}
--3 \\
-0 \\
-1
-\end{array}
-\rightB
-\end{equation*}
-You can see here that we have two columns of coefficients corresponding to parameters, specifically one for $s$ and one for $t$. 
-Therefore, this system has two basic solutions! These are
-\begin{equation*}
-X_1=
-\leftB
-\begin{array}{r}
--4 \\
-1 \\
-0
-\end{array}
-\rightB, X_2 = \leftB
-\begin{array}{r}
--3 \\
-0 \\
-1
-\end{array}
-\rightB
-\end{equation*} 
+  The augmented matrix of this system and the resulting {\rref} are 
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      1 & 4 & 3 & 0 \\
+      3 & 12 & 9 & 0
+    \end{array}
+    \rightB
+    \sim
+    \leftB
+    \begin{array}{rrr|r}
+      1 & 4 & 3 & 0 \\
+      0 & 0 & 0 & 0
+    \end{array}
+    \rightB.
+  \end{equation*}
+  When written in equations, this system is given by 
+  \begin{equation*}
+    x + 4y +3z=0.
+  \end{equation*}
+  Notice that $x$ is the only pivot variable, and $y$ and $z$ are free
+  variables. Let $y = s$ and $z=t$ for parameters $s$ and $t$. Then the
+  general solution is
+  \begin{equation*}
+    \begin{array}{c}
+      x = -4s - 3t \\
+      y = s \\
+      z = t,
+    \end{array}
+  \end{equation*}
+  which can be written as 
+  \begin{equation*}
+    \leftB
+    \begin{array}{r}
+      x\\
+      y\\
+      z
+    \end{array}
+    \rightB
+    =
+    s
+    \leftB
+    \begin{array}{r}
+      -4 \\
+      1 \\
+      0
+    \end{array}
+    \rightB
+    + 
+    t
+    \leftB
+    \begin{array}{r}
+      -3 \\
+      0 \\
+      1
+    \end{array}
+    \rightB.
+  \end{equation*}
+  You can see here that we have two columns of coefficients
+  corresponding to parameters, specifically one for $s$ and one for $t$.
+  Therefore, this system has two basic solutions! They are
+  \begin{equation*}
+    X_1=
+    \leftB
+    \begin{array}{r}
+      -4 \\
+      1 \\
+      0
+    \end{array}
+    \rightB,\quad X_2 = \leftB
+    \begin{array}{r}
+      -3 \\
+      0 \\
+      1
+    \end{array}
+    \rightB.
+  \end{equation*} 
 \end{solution}
 
-We now present a new definition. 
+We can take any non-homogeneous system of equations and get a new
+homogeneous system by keeping the left-hand sides the same and setting
+all of the constant terms equal to $0$. This is called the
+\textbf{associated homogeneous system}\index{homogeneous system!associated}\index{associated homogeneous system}
+of the system of equations. We end this section by investigating how
+the solutions of a system of equations are related to the solutions of
+its associated homogeneous system.
 
-\begin{definition}{Linear Combination}{linearcombination-col-matrices}
-Let $X_1,\cdots ,X_n,V$ be column matrices. Then 
-$V$ is said to be a \textbf{linear combination}
-\index{linear combination} of the columns $X_1,\cdots , X_n $ 
-if there exist scalars, $a_{1},\cdots ,a_{n}$ such
-that
-\begin{equation*}
-V = a_1 X_1 + \cdots + a_n X_n
-\end{equation*}
-\end{definition}
+\begin{example}{Non-homogeneous vs. Homogeneous System}{nonhomo-vs-homo}
+  Solve the system of equations
+  \begin{equation}\label{eqn:nonhomo-vs-homo-1}
+    \begin{array}{c}
+      x + 4y + 3z = 2 \\
+      3x + 12y + 9z = 6.
+    \end{array}
+  \end{equation}
+  How are the solutions related to those of the associated homogeneous
+  system in Example~\ref{exa:basicsolutions}?
+\end{example}
 
-A remarkable result of this section is that a linear combination of the basic solutions is again a solution to the system.
-Even more remarkable is that every solution can be written as a linear combination of these solutions. 
-Therefore, if we take a linear combination of the two solutions to Example \ref{exa:basicsolutions},
-this would also be a solution. 
-For example, we could take the following linear combination
-\begin{equation*}
-3
-\leftB
-\begin{array}{r}
--4 \\
-1 \\
-0
-\end{array}
-\rightB
-+
-2
-\leftB
-\begin{array}{r}
--3 \\
-0\\
-1
-\end{array}
-\rightB
- =
-\leftB
-\begin{array}{r}
--18 \\
-3 \\
-2
-\end{array}
-\rightB
-\end{equation*}
-You should take a moment to verify that
-\begin{equation*}
-\leftB
-\begin{array}{r}
-x \\
-y \\
-z
-\end{array}
-\rightB
-=
-\leftB
-\begin{array}{r}
--18 \\
-3 \\
-2
-\end{array}
-\rightB
-\end{equation*}
-is in fact a solution to the system in Example \ref{exa:basicsolutions}.
+\begin{solution}
+  We note that the associated homogeneous system of
+  {\eqref{eqn:nonhomo-vs-homo-1}} is the system we saw in
+  Example~\ref{exa:basicsolutions}. We solve the system
+  {\eqref{eqn:nonhomo-vs-homo-1}} in the usual way by reducing its
+  augmented matrix to {\rref}
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrr|r}
+      1 & 4 & 3 & 2 \\
+      3 & 12 & 9 & 6
+    \end{array}
+    \rightB
+    \sim
+    \leftB
+    \begin{array}{rrr|r}
+      1 & 4 & 3 & 2 \\
+      0 & 0 & 0 & 0
+    \end{array}
+    \rightB
+  \end{equation*}
+  and then assigning parameters $y=s$, $z=t$ to the free
+  variables. From the equation $x+4y+3z=2$, the general solution is
+  \begin{equation*}
+    \begin{array}{c}
+      x = 2 -4s - 3t \\
+      y = s \\
+      z = t,
+    \end{array}
+  \end{equation*}
+  which can be written as 
+  \begin{equation}\label{eqn:nonhomo-vs-homo-2}
+    \leftB
+    \begin{array}{r}
+      x\\
+      y\\
+      z
+    \end{array}
+    \rightB
+    =
+    \leftB
+    \begin{array}{r}
+      2 \\
+      0 \\
+      0
+    \end{array}
+    \rightB
+    + 
+    s
+    \leftB
+    \begin{array}{r}
+      -4 \\
+      1 \\
+      0
+    \end{array}
+    \rightB
+    + 
+    t
+    \leftB
+    \begin{array}{r}
+      -3 \\
+      0 \\
+      1
+    \end{array}
+    \rightB.
+  \end{equation}
+  We see that the general solution is almost exactly the same as that
+  of the homogeneous system in Example~\ref{exa:basicsolutions}. The
+  only difference is the additional column
+  \begin{equation}\label{eqn:nonhomo-vs-homo-3}
+    \leftB
+    \begin{array}{r}
+      2 \\
+      0 \\
+      0
+    \end{array}
+    \rightB
+  \end{equation}    
+\end{solution}
 
+Note that the column {\eqref{eqn:nonhomo-vs-homo-3}}, by itself, is a
+solution of the non-homogeneous system. It is not the most general
+solution, but rather the special solution resulting from the
+parameters $s=0$ and $t=0$. We can therefore interpret equation
+{\eqref{eqn:nonhomo-vs-homo-2}} as saying that the general solution of
+the non-homogeneous system is equal to a special solution of the
+non-homogeneous system, plus the general solution of the associated
+homogeneous system. The same is true in general, and we summarize it
+as a theorem.
+
+\begin{theorem}{Non-homogeneous vs. Homogeneous System}{nonhomo-vs-homo}
+  Let $A$ be a system of equations, and let $B$ be the associated
+  homogeneous system. Then
+  \begin{equation*}
+    \mbox{the general solution of $A$}
+    = \mbox{a special solution of $A$}
+    + \mbox{the general solution of $B$}.
+  \end{equation*}
+\end{theorem}
