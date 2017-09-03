@@ -2,7 +2,7 @@
 
 The goal of this section is to develop an understanding of a subspace of $\mathbb{R}^n$. Before a precise definition is considered, we first examine the subspace test given below.
 
-\begin{theorem}{Subspace Test}{subspacetest}
+\begin{theorem}{Subspace test}{subspacetest}
 A subset $V$ of $\mathbb{R}^n$ is a subspace of $\mathbb{R}^n$ if 
 \begin{enumerate}
 \item the zero vector of $\mathbb{R}^n$, $\vect{0}_n$, is in $V$;
@@ -72,7 +72,7 @@ finite collection vectors in that subspace. It turns out that in
 $\mathbb{R}^{n}$, a subspace is exactly the span of finitely many of
 its vectors.
 
-\begin{theorem}{Subspaces are Spans}{subspacesarespans}
+\begin{theorem}{Subspaces are spans}{subspacesarespans}
 Let $V$ be a nonempty collection of vectors in $\mathbb{R}^{n}.$ Then $V$ is a subspace of $\mathbb{R}^{n}$ if and only if there
 exist vectors $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\}$ in $V$ such that 
 \[
@@ -157,7 +157,7 @@ The main theorem about bases is not only they exist, but that they
 must be of the same size. To show this, we will need the the following
 fundamental result, called the Exchange Theorem.
 
-\begin{theorem}{Exchange Theorem}{exchangetheorem}
+\begin{theorem}{Exchange theorem}{exchangetheorem}
 Suppose $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{r}\right\} $ is a
 linearly independent set of vectors in $\mathbb{R}^n$, and each
 $\vect{u}_{k}$ is contained in $\func{span}\left\{ \vect{v}_{1},\cdots
@@ -193,7 +193,7 @@ is linearly independent, because not all the $d_{j}$ are zero. Thus this contrad
 
 We are now ready to show that any two bases are of the same size. 
 
-\begin{theorem}{Bases of $\mathbb{R}^{n}$ are of the Same Size}{basessamesize}
+\begin{theorem}{Bases of $\mathbb{R}^{n}$ are of the same size}{basessamesize}
 Let $V$ be a subspace of $\mathbb{R}^{n}$ with two bases $B_1$ and $B_2$. Suppose $B_1$ contains $s$ vectors and $B_2$ contains $r$ vectors. Then $s=r.$
 \end{theorem}
 
@@ -364,7 +364,7 @@ less than $n$ vectors again contrary to Corollary \ref{cor:dimensionRn}.
 
 The next theorem follows from the above claim.
 
-\begin{theorem}{Existence of Basis}{existencebasis}
+\begin{theorem}{Existence of basis}{existencebasis}
 Let $V$ be a subspace of $\mathbb{R}^n$. Then there exists a basis of $V$ with 
  $\dim(V)\leq n$.
 \end{theorem}
@@ -425,7 +425,7 @@ Therefore, $S$ can be extended to the following basis of $U$:
 
 Next we consider the case of removing vectors from a spanning set to result in a basis. 
 
-\begin{theorem}{Finding a Basis from a Span}{}
+\begin{theorem}{Finding a basis from a span}{}
 Let $W$ be a subspace. Also suppose that $W=\limfunc{span}\left\{ \vect{w}
 _{1},\cdots ,\vect{w}_{m}\right\} $. Then there exists a subset of $\left\{ 
 \vect{w}_{1},\cdots ,\vect{w}_{m}\right\} $ which is a basis for $W$.\index{spanning set!basis}
@@ -564,12 +564,12 @@ is true for the matrix having the given vectors as columns.
 
 Consider the following theorems regarding a subspace contained in another subspace. 
 
-\begin{theorem}{Subset of a Subspace}{subsetdimension}
+\begin{theorem}{Subset of a subspace}{subsetdimension}
 Let $V$ and $W$ be subspaces of $\mathbb{R}^n$, and suppose that $W\subseteq V$.
 Then  $\dim(W) \leq \dim(V)$ with equality when $W=V$.
 \end{theorem}
 
-\begin{theorem}{Extending a Basis}{extendingbasis}
+\begin{theorem}{Extending a basis}{extendingbasis}
 Let $W$ be any non-zero subspace $\mathbb{R}^{n}$ and let $W\subseteq V$
 where $V$ is also a subspace of $\mathbb{R}^{n}$. Then every basis of $W$
 can be extended to a basis for $V$.\index{extending a basis}
