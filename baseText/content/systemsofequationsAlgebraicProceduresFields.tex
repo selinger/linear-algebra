@@ -45,7 +45,7 @@ multiplication. Here are some examples and non-examples of fields:
     \item The set $\mathbb{Q}$ of rational numbers is a field.
     \item The set $\mathbb{Z}$ of integers satisfies all field
       properties except for (M3). It is therefore not a field.
-    \item The set $\mathbb{N}=\s{0,1,2,\ldots}$ of natural numbers
+    \item The set $\mathbb{N}=\set{0,1,2,\ldots}$ of natural numbers
       satisfies all field properties except (A3) and (M3). It is
       therefore not a field.
     \end{enumerate}
@@ -56,7 +56,7 @@ A field doesn't have to be infinite. The following is an example of a
 field with only two elements.
 
 \begin{example}{The integers modulo 2}{z-mod-2}
-  Consider the set of {\em bits}\index{bit} (binary digits) $\s{0,1}$.
+  Consider the set of {\em bits}\index{bit} (binary digits) $\set{0,1}$.
   We can multiply them as usual, and add them almost as usual, subject
   to the alternative rule $1+1=0$ (instead of $1+1=2$). Here is a
   summary of the rules for addition and multiplication:
@@ -85,7 +85,7 @@ field with only two elements.
                           &=& 1.
     \end{array}
   \end{equation*}
-  The binary digits form a field $\mathbb{Z}_2 = \s{0,1}$, also
+  The binary digits form a field $\mathbb{Z}_2 = \set{0,1}$, also
   called \textbf{the field of integers modulo 2}\index{integers modulo 2}.
 \end{example}
 
@@ -194,7 +194,7 @@ systems of equations using the elements of any field instead of real numbers.
       z &=& t,
     \end{array}
   \end{equation*}
-  where $t\in\s{0,1}$ is an arbitrary parameter. Recall that this
+  where $t\in\set{0,1}$ is an arbitrary parameter. Recall that this
   means that each time we plug in a particular value for $t$, we get a
   solution.
 
@@ -212,7 +212,7 @@ systems of equations using the elements of any field instead of real numbers.
 \end{solution}
 
 \begin{example}{The integers modulo 5}{z-mod-5}
-  Consider the set $\mathbb{Z}_5=\s{0,1,2,3,4}$, called the
+  Consider the set $\mathbb{Z}_5=\set{0,1,2,3,4}$, called the
   \textbf{integers modulo 5}\index{integers modulo 5}. We define their
   addition and multiplication by computing the usual addition and
   multiplication, then ``reducing'' the answer modulo 5. Here,
@@ -348,7 +348,7 @@ we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
 \end{example}
 
 \begin{solution}
-  The integers modulo 6 are the set $\mathbb{Z}_6=\s{0,1,2,3,4,5}$, with the
+  The integers modulo 6 are the set $\mathbb{Z}_6=\set{0,1,2,3,4,5}$, with the
   addition and multiplication modulo 6:
     \[ \begin{array}{l|llllll}
     +&0&1&2&3&4&5 \\\hline
@@ -380,7 +380,7 @@ We conclude this section with a fact that we will not prove.
 
 \begin{theorem}{The integers modulo a prime}{z-mod-p}
   Let $n$ be a positive integer. Then the set
-  $\mathbb{Z}_n=\s{0,\ldots,n-1}$ of integers modulo $n$, with
+  $\mathbb{Z}_n=\set{0,\ldots,n-1}$ of integers modulo $n$, with
   addition and multiplication modulo $n$, forms a field if and only if
   $n$ is prime. Thus, for example, $\mathbb{Z}_2$, $\mathbb{Z}_3$,
   $\mathbb{Z}_5$, $\mathbb{Z}_7$, and $\mathbb{Z}_{11}$ are fields,

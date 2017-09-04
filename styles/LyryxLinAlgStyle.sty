@@ -178,5 +178,16 @@
 % \eindex{\ef} instead.
 \newcommand{\eindex}[1]{{\edef\tmpa{#1}\def\tmpb##1\relax{\index{##1}}\expandafter\tmpb\tmpa\relax}}
 
-% For writing a set, use $\s{...}$ or $\s{...\mid...}$.
-\newcommand{\s}[1]{\{#1\}}
+% For writing a set, use $\set{...}$ or $\set{...\mid...}$.
+\newcommand{\set}[1]{\{#1\}}
+
+% SI units are always typeset in a Roman font, even if the surrounding
+% text is in italics. We use \mathop so that there will be a tiny
+% space between each unit; this makes things like kgms easier to read.
+\newcommand{\SI}[1]{\mathop{\textrm{\rm #1}}\nolimits}
+\newcommand{\m}{\SI{m}}
+\newcommand{\kg}{\SI{kg}}
+\newcommand{\s}{\SI{s}}
+\newcommand{\volt}{\SI{V}}
+\newcommand{\amp}{\SI{A}}
+\newcommand{\ohm}{\SI{$\Omega$}}
