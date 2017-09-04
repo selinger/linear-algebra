@@ -88,7 +88,7 @@ No. Consider $x+y+z=2$ and $x+y+z=1.$
 
 \begin{ex}
 If a system of equations has more equations than variables, can it
-have a solution? If so, give an example and if not, tell why not.
+have a solution? If so, give an example and if not, explain why not.
 \begin{sol}
 These can
 have a solution. For example, $x+y=1,2x+2y=2,3x+3y=3$ even has an infinite
@@ -210,7 +210,7 @@ augmented matrix. $\leftB
 2 & 1 & -1 & 0 & 1 \\
 4 & 2 & 1 & 0 & 5
 \end{array}
-\rightB $, {\rref}: $\leftB
+\rightB $, {\ef}: $\leftB
 \begin{array}{rrrrr}
 1 & 0 & 0 & \vspace{0.05in}\frac{1}{3} & 0 \\
 0 & 1 & 0 & -\vspace{0.05in}\frac{2}{3} & 0 \\
@@ -237,43 +237,45 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 \end{sol}
 \end{ex}
 
-\begin{ex} Determine which matrices are in {\rref}. 
+\begin{ex} Determine which matrices are in {\ef}. 
 
 \begin{enumerate}
 \item $\leftB
-\begin{array}{rrr}
-1 & 2 & 0 \\
-0 & 1 & 7
-\end{array}
-\rightB $
-
-\item $\leftB
 \begin{array}{rrrr}
-1 & 0 & 0 & 0 \\
-0 & 0 & 1 & 2 \\
+1 & 1 & 2 & 0 \\
+0 & 0 & 3 & 2 \\
 0 & 0 & 0 & 0
 \end{array}
 \rightB $
 
 \item $\leftB
+\begin{array}{rrr}
+1 & 0 & 0 \\
+2 & 1 & 7
+\end{array}
+\rightB $
+
+\item $\leftB
 \begin{array}{rrrrrr}
-1 & 1 & 0 & 0 & 0 & 5 \\
-0 & 0 & 1 & 2 & 0 & 4 \\
-0 & 0 & 0 & 0 & 1 & 3
+0 & 1 & 0 & 0 & 5 \\
+0 & 0 & 1 & 0 & 4 \\
+0 & 0 & 0 & 1 & 3
 \end{array}
 \rightB $
 \end{enumerate}
 \begin{sol}
 \begin{enumerate}
-\item This one is not.
 \item This one is.
+\item This one is not.
 \item This one is.
 \end{enumerate}
 \end{sol}
 \end{ex}
 
-\begin{ex} Row reduce the following matrix to obtain the {\ef}. Then continue to obtain the {\rref}. 
+\begin{ex}\label{ex:rr-ef}
+Row reduce each of the following matrices to obtain the {\ef}.
 \begin{equation*}
+(a)~
 \leftB
 \begin{array}{rrrr}
 2 & -1 & 3 & -1 \\
@@ -281,13 +283,8 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 1 & -1 & 1 & -2
 \end{array}
 \rightB
-\end{equation*}
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Row reduce the following matrix to obtain the {\ef}. Then continue to obtain the {\rref}. 
-\begin{equation*}
+\quad
+(b)~
 \leftB
 \begin{array}{rrrr}
 0 & 0 & -1 & -1 \\
@@ -295,13 +292,8 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 1 & 1 & 0 & -1
 \end{array}
 \rightB
-\end{equation*}
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Row reduce the following matrix to obtain the {\ef}. Then continue to obtain the {\rref}. 
-\begin{equation*}
+\quad
+(c)~
 \leftB
 \begin{array}{rrrr}
 3 & -6 & -7 & -8 \\
@@ -310,12 +302,8 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 \end{array}
 \rightB
 \end{equation*}
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Row reduce the following matrix to obtain the {\ef}. Then continue to obtain the {\rref}. 
 \begin{equation*}
+(d)~
 \leftB
 \begin{array}{rrrr}
 2 & 4 & 5 & 15 \\
@@ -323,13 +311,8 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 1 & 2 & 2 & 6
 \end{array}
 \rightB
-\end{equation*}
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Row reduce the following matrix to obtain the {\ef}. Then continue to obtain the {\rref}. 
-\begin{equation*}
+\quad
+(e)~
 \leftB
 \begin{array}{rrrr}
 4 & -1 & 7 & 10 \\
@@ -337,13 +320,8 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 1 & -1 & -2 & 1
 \end{array}
 \rightB
-\end{equation*}
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Row reduce the following matrix to obtain the {\ef}. Then continue to obtain the {\rref}. 
-\begin{equation*}
+\quad
+(f)~
 \leftB
 \begin{array}{rrrr}
 3 & 5 & -4 & 2 \\
@@ -352,12 +330,8 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 \end{array}
 \rightB
 \end{equation*}
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Row reduce the following matrix to obtain the {\ef}. Then continue to obtain the {\rref}. 
 \begin{equation*}
+(g)~
 \leftB
 \begin{array}{rrrr}
 -2 & 3 & -8 & 7 \\
@@ -370,8 +344,10 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 %\end{sol}
 \end{ex}
  
-\begin{ex} Find the solution of the system whose augmented matrix is 
+\begin{ex}
+Find the general solution of the system whose augmented matrix is 
 \begin{equation*}
+(a)~
 \leftB
 \begin{array}{rrr|r}
 1 & 2 & 0 & 2 \\
@@ -379,13 +355,8 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 1 & 0 & 2 & 1
 \end{array}
 \rightB 
-\end{equation*}
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Find the solution of the system whose augmented matrix is 
-\begin{equation*}
+\quad
+(b)~
 \leftB
 \begin{array}{rrr|r}
 1 & 2 & 0 & 2 \\
@@ -393,21 +364,8 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 3 & 2 & 1 & 3
 \end{array}
 \rightB 
-\end{equation*}
-\begin{sol}
-The {\rref} is $\leftB
-\begin{array}{rrr|r}
-1 & 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2} \\
-0 & 1 & -\vspace{0.05in}\frac{1}{4} & \vspace{0.05in}\frac{3}{4} \\
-0 & 0 & 0 & 0
-\end{array}
-\rightB .$ Therefore, the solution is of the form $z=t,y=\frac{3}{4}+t\left(
-\frac{1}{4}\right) ,x=\frac{1}{2}-\frac{1}{2}t$ where $t\in \mathbb{R}$.
-\end{sol}
-\end{ex}
-
-\begin{ex} Find the solution of the system whose augmented matrix is 
-\begin{equation*}
+\quad
+(c)~
 \leftB
 \begin{array}{rrr|r}
 1 & 1 & 0 & 1 \\
@@ -415,18 +373,8 @@ The {\rref} is $\leftB
 \end{array}
 \rightB 
 \end{equation*}
-\begin{sol}
-The {\rref} is $\leftB
-\begin{array}{rrr|r}
-1 & 0 & 4 & 2 \\
-0 & 1 & -4 & -1
-\end{array}
-\rightB $ and so the solution is $z=t,y=4t,x=2-4t.$
-\end{sol}
-\end{ex}
-
-\begin{ex} Find the solution of the system whose augmented matrix is 
 \begin{equation*}
+(d)~
 \leftB
 \begin{array}{rrrrr|r}
 1 & 0 & 2 & 1 & 1 & 2 \\
@@ -435,21 +383,8 @@ The {\rref} is $\leftB
 1 & 0 & 1 & 0 & 2 & 2
 \end{array}
 \rightB 
-\end{equation*}
-\begin{sol}
-The {\rref} is $\leftB
-\begin{array}{rrrrr|r}
-1 & 0 & 0 & 0 & 9 & 3 \\
-0 & 1 & 0 & 0 & -4 & 0 \\
-0 & 0 & 1 & 0 & -7 & -1 \\
-0 & 0 & 0 & 1 & 6 & 1
-\end{array}
-\rightB $ and so $x_{5}=t,x_{4}=1-6t,x_{3}=-1+7t,x_{2}=4t,x_{1}=3-9t$.
-\end{sol}
-\end{ex}
-
-\begin{ex} Find the solution of the system whose augmented matrix is 
-\begin{equation*}
+\quad
+(e)~
 \leftB
 \begin{array}{rrrrr|r}
 1 & 0 & 2 & 1 & 1 & 2 \\
@@ -459,8 +394,34 @@ The {\rref} is $\leftB
 \end{array}
 \rightB 
 \end{equation*}
+
 \begin{sol}
-The {\rref} is $\leftB
+(b) The {\ef} is $\leftB
+\begin{array}{rrr|r}
+1 & 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2} \\
+0 & 1 & -\vspace{0.05in}\frac{1}{4} & \vspace{0.05in}\frac{3}{4} \\
+0 & 0 & 0 & 0
+\end{array}
+\rightB .$ Therefore, the solution is of the form $z=t,y=\frac{3}{4}+t\left(
+\frac{1}{4}\right) ,x=\frac{1}{2}-\frac{1}{2}t$ where $t\in \mathbb{R}$.
+
+(c) The {\ef} is $\leftB
+\begin{array}{rrr|r}
+1 & 0 & 4 & 2 \\
+0 & 1 & -4 & -1
+\end{array}
+\rightB $ and so the solution is $z=t,y=4t,x=2-4t.$
+
+(d) The {\ef} is $\leftB
+\begin{array}{rrrrr|r}
+1 & 0 & 0 & 0 & 9 & 3 \\
+0 & 1 & 0 & 0 & -4 & 0 \\
+0 & 0 & 1 & 0 & -7 & -1 \\
+0 & 0 & 0 & 1 & 6 & 1
+\end{array}
+\rightB $ and so $x_{5}=t,x_{4}=1-6t,x_{3}=-1+7t,x_{2}=4t,x_{1}=3-9t$.
+
+(e) The {\ef} is $\leftB
 \begin{array}{rrrrr|r}
 1 & 0 & 2 & 0 & -\vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{5}{2} \\
 0 & 1 & 0 & 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2} \\
@@ -473,28 +434,28 @@ given by $x_{4}=-\frac{1}{2}-\frac{3}{2}t,x_{2}=\frac{3}{2}-t\frac{1}{2}
 \end{sol}
 \end{ex}
 
-\begin{ex} Find the solution to the system of equations, $7x+14y+15z=22,
+\begin{ex} Solve the system of equations $7x+14y+15z=22,
 $ $2x+4y+3z=5,$ and $3x+6y+10z=13.$
 \begin{sol}
 Solution is: $\left[ x=1-2t,z=1,y=t\right] $
 \end{sol}
 \end{ex}
 
-\begin{ex} Find the solution to the system of equations, $3x-y+4z=6,$ 
+\begin{ex} Solve the system of equations $3x-y+4z=6,$ 
 $y+8z=0,$ and $-2x+y=-4.$
 \begin{sol}
 Solution is: $\left[ x=2-4t,y=-8t,z=t\right] $
 \end{sol}
 \end{ex}
 
-\begin{ex} Find the solution to the system of equations, $9x-2y+4z=-17,
+\begin{ex} Solve the system of equations $9x-2y+4z=-17,
 $ $13x-3y+6z=-25,$ and $-2x-z=3.$
 \begin{sol}
  Solution is: $\left[x=-1,y=2,z=-1\right] $
 \end{sol}
 \end{ex}
 
-\begin{ex} Find the solution to the system of equations,
+\begin{ex} Solve the system of equations
 $65x+84y+16z=546,$ $81x+105y+20z=682,$ and $84x+110y+21z=713.$
 \begin{sol}
 Solution is:
@@ -502,38 +463,10 @@ $\left[ x=2,y=4,z=5\right] $
 \end{sol}
 \end{ex}
 
-\begin{ex} Find the solution to the system of equations, 
+\begin{ex} Solve the system of equations 
 $8x+2y+3z=-3,8x+3y+3z=-1,$ and $4x+y+3z=-9.$
 \begin{sol}
 Solution is: $\left[ x=1,y=2,z=-5\right] $
-\end{sol}
-\end{ex}
-
-\begin{ex} Find the solution to the system of equations, 
-$-8x+2y+5z=18,-8x+3y+5z=13,$ and $-4x+y+5z=19.$
-\begin{sol}
- Solution is: $\left[x=-1,y=-5,z=4\right] $
-\end{sol}
-\end{ex}
-
-\begin{ex} Find the solution to the system of equations, $3x-y-2z=3,$ 
-$y-4z=0,$ and $-2x+y=-2.$
-\begin{sol}
-Solution is: $\left[ x=2t+1,y=4t,z=t\right] $
-\end{sol}
-\end{ex}
-
-\begin{ex} Find the solution to the system of equations, 
-$-9x+15y=66,-11x+18y=79$, $-x+y=4$, and $z=3$.
-\begin{sol}
-Solution is: $\left[x=1,y=5,z=3\right] $
-\end{sol}
-\end{ex}
-
-\begin{ex} Find the solution to the system of equations, $-19x+8y=-108,$
-$-71x+30y=-404,$ $-2x+y=-12,$ $4x+z=14.$
-\begin{sol}
-Solution is: $\left[ x=4,y=-4,z=-2\right] $
 \end{sol}
 \end{ex}
 
