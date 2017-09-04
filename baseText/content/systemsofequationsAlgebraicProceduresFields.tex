@@ -1,18 +1,19 @@
 \section{Fields}
+\label{sec:fields}
 
-So far in this chapter, we have worked with real numbers: all of our
-coefficients, constant terms, variables, and parameters were real
-numbers. But in fact, we have not used very many properties of the
-real numbers, except for the fact that we can add, subtract, multiply,
-and divide them. For example, we have never needed to take a square
-root or to compute a trigonometric function.
+So far in this chapter, we have worked with real numbers: all of the
+scalars we used, for coefficients, constant terms, variables, and
+parameters, were real numbers. But in fact, we have not used very many
+properties of the real numbers, except for the fact that we can add,
+subtract, multiply, and divide them. For example, we have never needed
+to take a square root or to compute a trigonometric function.
 
 In fact, most of linear algebra only requires addition, subtraction,
 multiplication, and division. This opens to door to doing linear
-algebra using other number systems besides the real numbers. For
+algebra using other kinds of scalars besides the real numbers. For
 example, we can do linear algebra over the rational numbers, complex
 numbers, or even over some more exotic number systems that you will
-learn about in this section. A system of numbers that one can do
+learn about in this section. A system of scalars that one can do
 linear algebra with is called a {\em field}.
 
 \begin{definition}{Field}{field}
@@ -100,7 +101,8 @@ $2$. For (M4), we can set $1^{-1} = 1$.
 
 When solving systems of linear equations, we only used addition,
 subtraction, multiplication, and division. Therefore, we can solve
-systems of equations using the elements of any field instead of real numbers.
+systems of equations using the elements of any field as the scalars,
+instead of the real numbers.
 
 \begin{example}{Solving a system of equations over $\mathbb{Z}_2$}{system-z2}
   Solve the following system in the integers modulo 2:
@@ -203,12 +205,12 @@ systems of equations using the elements of any field instead of real numbers.
   numbers, a system of equations has either no solution, a unique
   solution, or infinitely many solutions. This is because when there
   is a parameter, we automatically get infinitely many solutions. By
-  contrast, in $\mathbb{Z}_2$, there are only two possible values for
-  the parameter $t$, namely $t=0$ and $t=1$. For $t=0$ we get the
-  solution $(x,y,z) = (1,1,0)$, and for $t=1$ we get the solution
-  $(x,y,z) = (0,0,1)$.  Thus, when the general solution has one
-  parameter in $\mathbb{Z}_2$, there are only two solutions, instead
-  of infinitely many.
+  contrast, in $\mathbb{Z}_2$, there are only two scalars, and
+  therefore only two possible values for the parameter $t$, namely
+  $t=0$ and $t=1$. For $t=0$ we get the solution $(x,y,z) = (1,1,0)$,
+  and for $t=1$ we get the solution $(x,y,z) = (0,0,1)$.  Thus, when
+  the general solution has one parameter in $\mathbb{Z}_2$, there are
+  only two solutions, instead of infinitely many.
 \end{solution}
 
 \begin{example}{The integers modulo 5}{z-mod-5}
@@ -344,7 +346,7 @@ we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
 \end{solution}
 
 \begin{example}{The integers modulo 6 are not a field}{nofield-z6}
-  Are the integers modulo 6 a field? 
+  Do the integers modulo 6 form a field? 
 \end{example}
 
 \begin{solution}
