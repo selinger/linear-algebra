@@ -115,3 +115,14 @@ Now, we say that the matrix $B$ is \textbf{row equivalent}\index{matrix!row equi
   Omitting the final column of zeros, we must also have $B=C$.
 \end{proof}
 
+An important consequence of Theorem~\ref{thm:uniquerref} is that the
+rank\index{rank} of a matrix is well-defined. Recall that in
+Definition~\ref{def:rank}, we defined the rank of a matrix $A$ to be
+the number of pivot entries of ``any'' {\ef} of $A$. It was not clear,
+however, why different {\ef}s of $A$ could not have different numbers
+of pivot entries. Now we can answer this question. By the Gauss-Jordan
+algorithm, we know that every {\ef} can be converted to a {\rref}
+without changing the number or position of the pivots. Since the
+{\rref} is unique, it follows that all {\ef}s of $A$ have the same
+number of pivot entries (and in fact the same pivot
+columns). Therefore, the rank of $A$ is a well-defined quantity.
