@@ -67,10 +67,11 @@ operations.
   \item First, use Gaussian elimination
     (Algorithm~\ref{algo:gaussianelimination}) to reduce the matrix to
     {\ef}.
-  \item Moving from bottom to top, consider each non-zero row. Divide
-    the row by its leading entry, to make the leading entry equal to
-    $1$. Then use row operations to create zeros in the column above
-    the leading entry.
+  \item Moving from right to left, consider each pivot entry. Without
+    changing the row containing the pivot entry, or any rows below it,
+    use row operations to create zeros in the column above the pivot
+    entry. Finally, divide the row by its pivot entry, to make the
+    pivot entry equal to $1$. 
   \end{enumerate}
 \end{algorithm}
 
@@ -115,24 +116,24 @@ operations.
       0 & 0 & \circled{1} & 3
     \end{array}
     \rightB
-    \stackrel{R_2\leftarrow \frac{1}{2}R_2}{\sim}
+    \stackrel{R_1\leftarrow 2R_2}{\sim}
     \leftB
     \begin{array}{rrr|r}
-      \circled{1} & 4 & 0 & 2 \\
-      0 & \circled{1} & 0 & 1 \\
+      \circled{1} & 0 & 0 & -2 \\
+      0 & \circled{2} & 0 & 2 \\
       0 & 0 & \circled{1} & 3
     \end{array}
     \rightB
-    \stackrel{R_1\leftarrow 4R_2}{\sim}
+    \stackrel{R_2\leftarrow \frac{1}{2}R_2}{\sim}
     \leftB
     \begin{array}{rrr|r}
       \circled{1} & 0 & 0 & -2 \\
       0 & \circled{1} & 0 & 1 \\
       0 & 0 & \circled{1} & 3
     \end{array}
-    \rightB
+    \rightB.
   \end{equation*}
-  The resulting matrix is in {\rref}. Note that the system of
+  The resulting matrix is in {\rref}. Note that the final system of
   equations is especially easy to solve, because the three equations
   are $x=-2$, $y=1$, and $z=3$. No back substitution is needed.
 \end{solution}
