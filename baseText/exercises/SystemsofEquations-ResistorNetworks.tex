@@ -2,22 +2,27 @@
 
 \begin{enumialphparenastyle}
 
+% SI units are written in Roman font
+\def\volt{\mathop{\textrm{\rm V}}\nolimits}
+\def\amp{\mathop{\textrm{\rm A}}\nolimits}
+\def\ohm{\mathop{\textrm{$\Omega$}}\nolimits}
+  
 \begin{ex} Consider the following diagram of four circuits.
 \begin{center}
-\begin{circuitikz} \draw
-(0,4) to [battery1, v_= $5\; volts$] (0,0)
-      to [R = $ 2 \Omega $] (4,0)
-      to [R = $ 5 \Omega $] (4,4)
-(0,4) to [R =$ 3 \Omega $] (4,4)
-(4,4) to [battery1 = $20\; volts$] (6,4)
-      to [R = $1 \Omega$] (8,4)
-      to [R = $1 \Omega$] (8,0)
-(4,0) to [R = $6 \Omega$] (8,0)   
-      to [R = $3 \Omega$] (8,-4)
-      to [R = $2 \Omega$] (4,-4)
-      to [R = $1 \Omega$] (4,0)
-(4,-4)to [R = $4 \Omega$] (0,-4) 
-      to [battery1 = $10\; volts$] (0,0)
+\begin{circuitikz}[american, scale=0.8] \draw
+(0,0) to [battery1, v^= $5\volt$~~] (0,4)
+(0,0) to [R = $ 2 \ohm $] (4,0)
+      to [R = $ 5 \ohm $] (4,4)
+(0,4) to [R =$ 3 \ohm $] (4,4)
+(6,4) to [battery1, v_= \raisebox{1ex}{$20\volt$}] (4,4)
+(6,4) to [R = $1 \ohm$] (8,4)
+      to [R = $1 \ohm$] (8,0)
+(4,0) to [R = $6 \ohm$] (8,0)   
+      to [R = $3 \ohm$] (8,-4)
+      to [R = $2 \ohm$] (4,-4)
+      to [R = $1 \ohm$] (4,0)
+(4,-4)to [R = $4 \ohm$] (0,-4) 
+(0,0 )to [battery1, v_= $10\volt$~~] (0,-4)
 (2,2) node[scale=4]{$\circlearrowleft$}
 (2,2) node{$I_2$}
 (6,2) node[scale=4]{$\circlearrowleft$}
@@ -30,10 +35,11 @@
 \end{circuitikz}
 \end{center}
 
-The current in amps in the four circuits is denoted by $I_{1},I_{2},I_{3},I_{4}$ and it is
-understood that the motion is in the counter clockwise direction. If $I_{k}$
-ends up being negative, then it just means the current flows in the
-clockwise direction. 
+The current in amperes in the four circuits is denoted by $I_{1}$,
+$I_{2}$, $I_{3}$, and $I_{4}$. It is understood that a positive
+current means a current flowing in the counterclockwise direction. If
+$I_{k}$ ends up being negative, then it just means the current flows
+in the clockwise direction.
 
 In the above diagram, the top left circuit should give the equation
 \begin{equation*}
@@ -73,18 +79,18 @@ I_{4}&=& -\frac{1718}{1119}
 \begin{ex} Consider the following diagram of three circuits.
 
 \begin{center}
-\begin{circuitikz} \draw
-(0,4) to [battery1, v_= $10\; volts$] (0,0)
-      to [R = $ 2 \Omega $] (4,0)
-      to [R = $ 5 \Omega $] (4,4)
-(0,4) to [R =$ 3 \Omega $] (4,4)
-(4,4) to [battery1 = $12\; volts$] (6,4)
-      to [R = $7 \Omega$] (8,4)
-      to [R = $3 \Omega$] (8,0)
-(4,0) to [R = $1 \Omega$] (8,0)   
-      to [R = $4 \Omega$] (8,-4)
-      to [R = $4 \Omega$] (4,-4)
-      to [R = $2 \Omega$] (4,0)
+\begin{circuitikz}[american, scale=0.8] \draw
+(0,0) to [battery1, v^= $10\volt$~~] (0,4)
+(0,0) to [R = $ 2 \ohm $] (4,0)
+      to [R = $ 5 \ohm $] (4,4)
+(0,4) to [R =$ 3 \ohm $] (4,4)
+(6,4) to [battery1, v_= \raisebox{1ex}{$12\volt$}] (4,4)
+(6,4) to [R = $7 \ohm$] (8,4)
+      to [R = $3 \ohm$] (8,0)
+(4,0) to [R = $1 \ohm$] (8,0)   
+      to [R = $4 \ohm$] (8,-4)
+      to [R = $4 \ohm$] (4,-4)
+      to [R = $2 \ohm$] (4,0)
 (2,2) node[scale=4]{$\circlearrowleft$}
 (2,2) node{$I_1$}
 (6,2) node[scale=4]{$\circlearrowleft$}
@@ -95,12 +101,8 @@ I_{4}&=& -\frac{1718}{1119}
 \end{circuitikz}
 \end{center}
 
-The current in amps in the four circuits is denoted by $I_{1},I_{2},I_{3}$ and it is
-understood that the motion is in the counter clockwise direction. If $I_{k}$
-ends up being negative, then it just means the current flows in the
-clockwise direction. 
-
-Find $I_{1},I_{2},I_{3}$.
+Find $I_{1}$, $I_{2}$, and $I_{3}$, the counterclockwise currents in
+amperes in the three circuits.
 
 \begin{sol}
 You
