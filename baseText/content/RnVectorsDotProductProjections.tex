@@ -23,10 +23,10 @@ We start by proving that $\vect{v}_{||}$ and $\vect{v}_{\bot}$ are unique, suppo
 \begin{array}{ll}
 \vect{v}\dotprod \vect{u} & = ( \vect{v}_{||}+\vect{v}_{\bot }) \dotprod \vect{u} \\
 & =  k\vect{u} \dotprod \vect{u} + \vect{v}_{\bot} \dotprod \vect{u} \\
-& = k \vectlength \vect{u}\vectlength ^{2}
+& = k \norm{\vect{u}} ^{2}
 \end{array}
 \end{equation*}
-which requires $k =\vect{v}\dotprod \vect{u} / \vectlength \vect{u}\vectlength ^{2}.$
+which requires $k =\vect{v}\dotprod \vect{u} / \norm{\vect{u}} ^{2}.$
 Thus there can be no more than one vector $\vect{v}_{||}$. It follows 
 $\vect{v}_{\bot }$ must equal $\vect{v}-\vect{v}_{||}.$ This verifies there can
 be no more than one choice for both $\vect{v}_{||}$ and $\vect{v}_{\bot
@@ -35,18 +35,18 @@ be no more than one choice for both $\vect{v}_{||}$ and $\vect{v}_{\bot
 Now let
 \begin{equation*}
 \vect{v}_{||} = 
-\frac{\vect{v}\dotprod \vect{u}}{\vectlength \vect{u}\vectlength ^{2}}\vect{u}
+\frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\vect{u}
 \end{equation*}
 and let
 \begin{equation*}
 \vect{v}_{\bot }=\vect{v}-\vect{v}_{||}=\vect{v}-\frac{\vect{v}\dotprod \vect{u}}
-{\vectlength \vect{u}\vectlength ^{2}}\vect{u}
+{\norm{\vect{u}} ^{2}}\vect{u}
 \end{equation*}
-Then $\vect{v}_{||}= k\vect{u}$ where $k =\frac{\vect{v}\dotprod \vect{u}}{\vectlength \vect{u}\vectlength ^{2}}$.
+Then $\vect{v}_{||}= k\vect{u}$ where $k =\frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}$.
  It only remains to
 verify $\vect{v}_{\bot }\dotprod \vect{u}=0.$ But
 \begin{eqnarray*}
-\vect{v}_{\bot }\dotprod \vect{u} &=& \vect{v}\dotprod \vect{u}-\frac{\vect{v}\dotprod \vect{u}}{\vectlength \vect{u}\vectlength ^{2}}\vect{u}\dotprod \vect{u} \\
+\vect{v}_{\bot }\dotprod \vect{u} &=& \vect{v}\dotprod \vect{u}-\frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\vect{u}\dotprod \vect{u} \\
 &=& \vect{v}\dotprod\vect{u}-\vect{v}\dotprod \vect{u}\\
 &=& 0 
 \end{eqnarray*}
@@ -69,7 +69,7 @@ $\vect{u}$} is given by
 \func{proj}_{\vect{u}}\tup{\vect{v}} =\tup{\vspace{0.05in}
 \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}} \vect{u}
 =
-\frac{\vect{v}\dotprod \vect{u}}{\vectlength \vect{u}\vectlength ^{2}}\vect{u}
+\frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\vect{u}
 \end{equation*}
 \index{vector!projection}
 \end{definition}

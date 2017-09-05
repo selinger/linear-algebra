@@ -19,8 +19,8 @@ determine the included angle between two vectors. Consider the following picture
 Let $\vect{u}$ and $\vect{v}$ be two vectors in $\R^n$, and let 
 $\theta$ be the included angle. Then the following equation holds.
 \begin{equation*}
-\vect{u}\dotprod \vect{v}=\vectlength \vect{u}\vectlength \vectlength \vect{v}
-\vectlength \cos \theta 
+\vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}
+} \cos \theta 
 \end{equation*}
 \end{proposition}
 
@@ -52,13 +52,13 @@ Find the angle between the vectors given by
 \begin{solution}
 By Proposition \ref{prop:dotproductangle},
 \begin{equation*}
-\vect{u}\dotprod \vect{v}=\vectlength \vect{u}\vectlength \vectlength \vect{v}
-\vectlength \cos \theta 
+\vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}
+} \cos \theta 
 \end{equation*}
 Hence, 
 \begin{equation*}
-\cos \theta =\frac{\vect{u}\dotprod \vect{v}}{\vectlength \vect{u}\vectlength \vectlength \vect{v}
-\vectlength}
+\cos \theta =\frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}} \norm{\vect{v}
+}}
 \end{equation*}
  
 First, we can compute $\vect{u}\dotprod \vect{v}$. By Definition \ref{def:dotproductdefn}, this equals
@@ -71,10 +71,10 @@ First, we can compute $\vect{u}\dotprod \vect{v}$. By Definition \ref{def:dotpro
 Then, 
 \begin{equation*}
 \begin{array}{c}
-\vectlength \vect{u} \vectlength
+\norm{\vect{u}}
 =
 \sqrt{(2)(2)+(2)(2)}=2\sqrt{2}\\
-\vectlength  \vect{v} \vectlength
+\norm{\vect{v}}
 =
 \sqrt{(0)(0)+(3)(3)}=\sqrt{3}
 \end{array}
@@ -163,8 +163,8 @@ between the direction vectors given above:
 
 In order to find the angle, we solve the following equation for $\theta$
 \begin{equation*}
-\vect{u}\dotprod \vect{v}=\vectlength \vect{u}\vectlength \vectlength \vect{v}
-\vectlength \cos \theta
+\vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}
+} \cos \theta
 \end{equation*}
 to obtain $\cos \theta = -\frac{1}{2}$ and since we choose included
 angles between $0$ and $\pi$ we obtain $\theta = \frac{2 \pi}{3}$.
@@ -178,7 +178,7 @@ either be $\frac{2 \pi}{3}$ or its complement $ \phi = \pi -  \frac{2 \pi}{3}
 We can also use Proposition \ref{prop:dotproductangle} to compute the dot product of two vectors.
 
 \begin{example}{Using geometric description to find a dot product}{geometricdotproduct}
-Let $\vect{u},\vect{v}$ be vectors with $ \vectlength \vect{u} \vectlength = 3$ and $\vectlength \vect{v} \vectlength = 4$. 
+Let $\vect{u},\vect{v}$ be vectors with $ \norm{\vect{u}} = 3$ and $\norm{\vect{v}} = 4$. 
 Suppose the angle between $\vect{u}$ and $\vect{v}$ is $\pi / 3$. Find $\vect{u}\dotprod \vect{v}$.
 \end{example}
 

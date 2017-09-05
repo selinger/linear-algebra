@@ -48,7 +48,7 @@ Choose $\vect{z}\in W= \func{im}\tup{A}$ given by $\vect{z} =
 Then
 \begin{enumerate}
 \item $\vect{y} - A\vect{x} \in W^{\perp}$
-\item $\vectlength \vect{y} - A\vect{x} \vectlength < \vectlength \vect{y} - \vect{u} \vectlength$ for all $\vect{u} \neq \vect{z} \in W$
+\item $\norm{\vect{y} - A\vect{x}} < \norm{\vect{y} - \vect{u}}$ for all $\vect{u} \neq \vect{z} \in W$
 \end{enumerate}
 \end{theorem}
 
@@ -296,14 +296,14 @@ b
 which is of the form $\vect{y}=A\vect{x}$. It is desired to choose $m$
 and $b$ to make 
 \begin{equation*}
-\left\vectlength A\begin{mymatrix}{c}
+\left\norm{A\begin{mymatrix}{c}
 m \\ 
 b
 \end{mymatrix} -\begin{mymatrix}{c}
 y_{1} \\ 
 \vdots \\ 
 y_{n}
-\end{mymatrix} \right\vectlength ^{2}
+\end{mymatrix} \right} ^{2}
 \end{equation*}
 as small as possible. According to Theorem \ref{thm:existenceminimizerhs} and
 Corollary \ref{cor:normalEquation}, the best values for $m$ and $b$ occur as the

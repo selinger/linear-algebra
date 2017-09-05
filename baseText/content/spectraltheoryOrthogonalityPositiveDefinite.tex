@@ -19,12 +19,12 @@ positive definite.
 %%\begin{proof}
 %%Suppose $A$ is negative definite. For all $\vect{x},$ 
 %%\begin{equation*}
-%%\vect{x}^{T}A\vect{x}\leq -\delta \vectlength \vect{x} \vectlength ^{2}
+%%\vect{x}^{T}A\vect{x}\leq -\delta \norm{\vect{x}} ^{2}
 %\end{equation*}
 %%Then multiply both sides by $-1$ to find that $-A$ is positive definite.
 %%Next suppose for all $\vect{x},$
 %%\begin{equation*}
-%%\vect{x}^{T}\tup{-A} \vect{x}\geq \delta \vectlength \vect{x}\vectlength
+%%\vect{x}^{T}\tup{-A} \vect{x}\geq \delta \norm{\vect{x}}
 %%^{2}.
 %%\end{equation*}
 %%Then multiply by $-1$ to see that $A$ is negative definite.
@@ -49,8 +49,8 @@ positive definite.
 %%is an eigenvalue with eigenvector $
 %%\vect{u}.$ Then, since $\lambda $ is real, 
 %%\begin{equation*}
-%%\vect{u}^{T}A\vect{u}=\lambda \vect{u}^{T}\vect{u}=\lambda \vectlength
-%%u\vectlength ^{2}\geq \delta \vectlength \vect{u}\vectlength ^{2}
+%%\vect{u}^{T}A\vect{u}=\lambda \vect{u}^{T}\vect{u}=\lambda \norm{
+%%u} ^{2}\geq \delta \norm{\vect{u}} ^{2}
 %%\end{equation*}
 %%Hence $0<\delta \leq \lambda ,$ this for any eigenvalue. Hence all
 %%eigenvalues are positive.
@@ -63,12 +63,12 @@ positive definite.
 %%\vect{x}^{T}A\vect{x}=\vect{x}^{T}UDU^{T}\vect{x}=\tup{U^{T}\vect{x}}
 %%^{T}DU^{T}\vect{x}=\sum_{i=1}^{n}\tup{U^{T}\vect{x}} _{i}^{2}\lambda
 %%_{i}\geq \delta \sum_{i=1}^{n}\tup{U^{T}\vect{x}} _{i}^{2}=\delta
-%%\vectlength U^{T}\vect{x}\vectlength ^{2}
+%%\norm{U^{T}\vect{x}} ^{2}
 %%\end{equation*}
-%%Now $\vectlength U^{T}\vect{x}\vectlength ^{2}=\tup{U^{T}\vect{x}}
-%%^{T}U^{T}\vect{x}=\vect{x}^{T}UU^{T}\vect{x}=\vect{x}^{T}\vect{x}=\vectlength \vect{x}\vectlength ^{2}$ and so 
+%%Now $\norm{U^{T}\vect{x}} ^{2}=\tup{U^{T}\vect{x}}
+%%^{T}U^{T}\vect{x}=\vect{x}^{T}UU^{T}\vect{x}=\vect{x}^{T}\vect{x}=\norm{\vect{x}} ^{2}$ and so 
 %%\begin{equation*}
-%%\vect{x}^{T}A\vect{x}\geq \delta \vectlength \vect{x}\vectlength ^{2}
+%%\vect{x}^{T}A\vect{x}\geq \delta \norm{\vect{x}} ^{2}
 %%\end{equation*}
 %%and so $A$ is positive definite.
 %%\end{proof}
@@ -208,9 +208,9 @@ _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}$ is an element of $\func{span}\set{
 \alpha _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}}
 \end{equation*}
 \begin{equation*}
-=\abs{\alpha _{1}}^{2}\lambda _{1}\vectlength \vect{u}
-_{1}\vectlength ^{2}+\abs{\alpha _{2}}^{2}\lambda
-_{2}\vectlength \vect{u}_{2}\vectlength ^{2}<0.
+=\abs{\alpha _{1}}^{2}\lambda _{1}\norm{\vect{u}
+_{1}} ^{2}+\abs{\alpha _{2}}^{2}\lambda
+_{2}\norm{\vect{u}_{2}} ^{2}<0.
 \end{equation*}
 Now letting $\vect{x}\in \R^{n-1},$ we can use the induction
 hypothesis to write 

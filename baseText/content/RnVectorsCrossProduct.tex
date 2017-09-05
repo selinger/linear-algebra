@@ -77,8 +77,8 @@ Then the \textbf{cross product}, written $\vect{u}\times \vect{v}$, is defined b
 \index{cross product!geometric description}
 
 \begin{enumerate}
-\item Its length is $\vectlength \vect{u}\times \vect{v}\vectlength =\vectlength \vect{u}\vectlength \vectlength
-\vect{v}\vectlength \sin \theta $, \\
+\item Its length is $\norm{\vect{u}\times \vect{v}} =\norm{\vect{u}} \norm{
+\vect{v}} \sin \theta $, \\
 where $\theta $ is the included angle between $\vect{u}$ and $\vect{v}$.
 
 \item It is perpendicular to both $\vect{u}$ and $\vect{v}$, that is $\tup{\vect{u}\times \vect{v} } \dotprod \vect{u}=0,$ $\tup{\vect{u}\times \vect{v} } \dotprod \vect{v}=0,$ \\
@@ -298,7 +298,7 @@ We can write this result in the usual way, as
 
 \end{solution}
 
-An important geometrical application of the cross product is as follows. The size of the cross product, $\vectlength \vect{u}\times \vect{v}\vectlength $, is the area of the
+An important geometrical application of the cross product is as follows. The size of the cross product, $\norm{\vect{u}\times \vect{v}} $, is the area of the
 parallelogram determined by $\vect{u}$ and $\vect{v}$, as shown in the following picture. 
 \index{cross product!area of parallelogram}
 
@@ -312,7 +312,7 @@ parallelogram determined by $\vect{u}$ and $\vect{v}$, as shown in the following
 \node[below] at (1.5,0){$\vect{u}$};
 \node[left] at (0.8,1){$\vect{v}$};
 \node[above right] at (0.2,0){$\theta$};
-\node[right] at (2,1){$\vectlength \vect{v} \vectlength \sin(\theta)$};
+\node[right] at (2,1){$\norm{\vect{v}} \sin(\theta)$};
 \end{tikzpicture}
 \end{center}
 
@@ -358,7 +358,7 @@ We can also write this as
 
 Thus the area of the parallelogram is 
 \begin{equation*}
-\vectlength \vect{u} \times \vect{v} \vectlength = 
+\norm{\vect{u} \times \vect{v}} = 
 \sqrt{(3)(3) + (5)(5) + (1)(1)} = 
 \sqrt{9+25+1}=\sqrt{35}
 \end{equation*}
@@ -415,7 +415,7 @@ Hence the area of the triangle is $\frac{1}{2}\sqrt{54}= \frac{3}{2}\sqrt{6}.$
 
 In general, if you have three points in $\R^{3}, P,Q,R$, the area of the triangle is given by
 \begin{equation*}
-\frac{1}{2}\vectlength  \longvect{PQ} \times  \longvect{PR}  \vectlength 
+\frac{1}{2}\norm{\longvect{PQ} \times  \longvect{PR}} 
 \end{equation*}
 
 Recall that $\longvect{PQ}$ is the vector running from point $P$ to point $Q$. 

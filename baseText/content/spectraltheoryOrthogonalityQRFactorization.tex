@@ -30,7 +30,7 @@ A_1 & A_2 & \cdots & A_n
 Apply the Gram-Schmidt Process \ref{algo:gramschmidtalgorithm} to the columns of $A$, writing $B_i$ for the resulting columns.
 
 \item
-Normalize the $B_i$, to find $C_i = \frac{1}{\vectlength B_i \vectlength} B_i$. 
+Normalize the $B_i$, to find $C_i = \frac{1}{\norm{B_i}} B_i$. 
 
 \item
 Construct the orthogonal matrix $Q$ as $Q=\begin{mymatrix}{cccc}
@@ -41,11 +41,11 @@ C_1 & C_2 & \cdots & C_n
 Construct the upper triangular matrix $R$ as 
 \[ R = 
 \begin{mymatrix}{ccccc}
-\vectlength B_1 \vectlength & A_2 \dotprod C_1 & A_3 \dotprod C_1 & \cdots & A_n \dotprod C_1 \\
-0 & \vectlength B_2 \vectlength & A_3 \dotprod C_2 & \cdots & A_n \dotprod C_2 \\
-0 & 0 & \vectlength B_3 \vectlength & \cdots & A_n \dotprod C_3 \\
+\norm{B_1} & A_2 \dotprod C_1 & A_3 \dotprod C_1 & \cdots & A_n \dotprod C_1 \\
+0 & \norm{B_2} & A_3 \dotprod C_2 & \cdots & A_n \dotprod C_2 \\
+0 & 0 & \norm{B_3} & \cdots & A_n \dotprod C_3 \\
 \vdots & \vdots & \vdots & & \vdots \\
-0 & 0 & 0 & \cdots & \vectlength B_n \vectlength 
+0 & 0 & 0 & \cdots & \norm{B_n} 
 \end{mymatrix}
 \]
 
@@ -54,7 +54,7 @@ Finally, write $A=QR$ where $Q$ is the orthogonal matrix and $R$ is the upper tr
 \end{enumerate} 
 \end{procedure}
 
-Notice that $Q$ is an orthogonal matrix as the $C_i$ form an orthonormal set. Since $\vectlength B_i \vectlength > 0$ for all $i$ (since the length of a vector is always positive), it follows that $R$ is an upper triangular matrix with positive entries on the main diagonal. 
+Notice that $Q$ is an orthogonal matrix as the $C_i$ form an orthonormal set. Since $\norm{B_i} > 0$ for all $i$ (since the length of a vector is always positive), it follows that $R$ is an upper triangular matrix with positive entries on the main diagonal. 
 
 Consider the following example.
 
@@ -77,7 +77,7 @@ B_1 &=& A_1 = \begin{mymatrix}{r}
 0 \\
 1
 \end{mymatrix} \\
-B_2 &=& A_2 - \frac{A_2 \dotprod B_1}{\vectlength B_1 \vectlength ^2} B_1 \\
+B_2 &=& A_2 - \frac{A_2 \dotprod B_1}{\norm{B_1} ^2} B_1 \\
 &=& \begin{mymatrix}{r}
 2 \\
 1 \\
@@ -98,12 +98,12 @@ B_2 &=& A_2 - \frac{A_2 \dotprod B_1}{\vectlength B_1 \vectlength ^2} B_1 \\
 
 Normalize each vector to create the set $\set{C_1, C_2 }$ as follows:
 \begin{eqnarray*}
-C_1 &=& \frac{1}{\vectlength B_1 \vectlength} B_1 = \frac{1}{\sqrt{2}}  \begin{mymatrix}{r}
+C_1 &=& \frac{1}{\norm{B_1}} B_1 = \frac{1}{\sqrt{2}}  \begin{mymatrix}{r}
 1 \\
 0 \\
 1
 \end{mymatrix} \\
-C_2 &=& \frac{1}{\vectlength B_2 \vectlength} B_2 = \frac{1}{\sqrt{3}} \begin{mymatrix}{r}
+C_2 &=& \frac{1}{\norm{B_2}} B_2 = \frac{1}{\sqrt{3}} \begin{mymatrix}{r}
 1 \\
 1 \\
 -1 
@@ -126,8 +126,8 @@ Finally, construct the upper triangular matrix $R$ as
 \begin{eqnarray*}
 R &=& 
 \begin{mymatrix}{cc}
-\vectlength B_1 \vectlength & A_2 \dotprod C_1  \\
-0 & \vectlength B_2 
+\norm{B_1} & A_2 \dotprod C_1  \\
+0 & \norm{B_2}
 \end{mymatrix} \\
 &=& 
 \begin{mymatrix}{cc}

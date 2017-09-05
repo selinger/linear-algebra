@@ -44,13 +44,13 @@ $\R^n$. Then the orthogonal projection of $Y$ onto $W$ is given by
 \[
 \vect{z} = \func{proj}_{W}\tup{\vect{y}}
 =
-\tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \vectlength \vect{w}_1 \vectlength^2}} \vect{w}_1
+\tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \norm{\vect{w}_1}^2}} \vect{w}_1
 +
-\tup{\frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}} \vect{w}_2
+\tup{\frac{\vect{y} \dotprod \vect{w}_2}{ \norm{\vect{w}_2}^2}} \vect{w}_2
 +
 \cdots
 +
-\tup{\frac{\vect{y} \dotprod \vect{w}_m}{ \vectlength \vect{w}_m \vectlength^2}} \vect{w}_m
+\tup{\frac{\vect{y} \dotprod \vect{w}_m}{ \norm{\vect{w}_m}^2}} \vect{w}_m
 \]
 where $\{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m\}$ is any orthogonal basis of $W$.
 \end{definition}
@@ -85,13 +85,13 @@ $W$, and $\vect{z} - \vect{z}_1$ is contained in $W$. Therefore these
 vectors are orthogonal to each other. By the Pythagorean Theorem, we
 have that
 \[
-\vectlength \vect{y} - \vect{z}_1 \vectlength^2 = \vectlength \vect{y} - \vect{z}\vectlength ^2 + \vectlength \vect{z} -\vect{z}_1 \vectlength ^2 > \vectlength \vect{y} - \vect{z} \vectlength^2
+\norm{\vect{y} - \vect{z}_1}^2 = \norm{\vect{y} - \vect{z}} ^2 + \norm{\vect{z} -\vect{z}_1} ^2 > \norm{\vect{y} - \vect{z}}^2
 \]
 This follows because $\vect{z} \neq \vect{z}_1$ so
-$\vectlength\vect{z} -\vect{z}_1 \vectlength^2 > 0.$
+$\norm{\vect{z} -\vect{z}_1}^2 > 0.$
 
-Hence, $\vectlength \vect{y} - \vect{z}_1 \vectlength^2 > \vectlength
-\vect{y} - \vect{z} \vectlength^2$. Taking the square root of each
+Hence, $\norm{\vect{y} - \vect{z}_1}^2 > \norm{
+\vect{y} - \vect{z}}^2$. Taking the square root of each
 side, we obtain the desired result.
 \end{proof}
 
@@ -162,7 +162,7 @@ required that it be orthonormal.
 \end{mymatrix}
 \]
 \begin{eqnarray*}
-\vect{w}_2 &=& \vect{u}_2 - \tup{\frac{ \vect{u}_2 \dotprod \vect{w}_1}{\vectlength \vect{w}_1 \vectlength^2} }  \vect{w}_1\\
+\vect{w}_2 &=& \vect{u}_2 - \tup{\frac{ \vect{u}_2 \dotprod \vect{w}_1}{\norm{\vect{w}_1}^2} }  \vect{w}_1\\
 &=& \begin{mymatrix}{c}
 0 \\
 1 \\
@@ -221,9 +221,9 @@ vector $\vect{y}$ of $Y$ as $\vect{y} = \begin{mymatrix}{c} 1 \\ 0 \\ 3
 \begin{eqnarray*}
 \vect{z} &=& \func{proj}_{W}\tup{\vect{y}}\\
 &=&
-\tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \vectlength \vect{w}_1 \vectlength^2}} \vect{w}_1
+\tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \norm{\vect{w}_1}^2}} \vect{w}_1
 +
-\tup{\frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}} \vect{w}_2 \\
+\tup{\frac{\vect{y} \dotprod \vect{w}_2}{ \norm{\vect{w}_2}^2}} \vect{w}_2 \\
 &=&
 \tup{\frac{-2}{2} } \begin{mymatrix}{r}
 1 \\
@@ -459,9 +459,9 @@ Notice that since the above vectors already give an orthogonal basis for $W$, we
 \begin{eqnarray*}
 \vect{z} &=& \func{proj}_{W}\tup{\vect{y}}\\
 &=&
-\tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \vectlength \vect{w}_1 \vectlength^2}} \vect{w}_1
+\tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \norm{\vect{w}_1}^2}} \vect{w}_1
 +
-\tup{\frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}} \vect{w}_2 \\
+\tup{\frac{\vect{y} \dotprod \vect{w}_2}{ \norm{\vect{w}_2}^2}} \vect{w}_2 \\
 &=& 
 \tup{\frac{4}{2} } \begin{mymatrix}{c}
 1 \\

@@ -141,7 +141,7 @@ $\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k$ span $\R^n$).
  
 Then
 \begin{eqnarray*}
-\vectlength\vect{u}\vectlength^2 & = & \vect{u}\dotprod\vect{u} \\
+\norm{\vect{u}}^2 & = & \vect{u}\dotprod\vect{u} \\
 & = & \vect{u}\dotprod(t_1\vect{x}_1 + t_2\vect{x}_2 +\cdots +t_k\vect{x}_k) \\
 & = & \vect{u}\dotprod (t_1\vect{x}_1) +  \vect{u}\dotprod (t_2\vect{x}_2) +
 \cdots +  \vect{u}\dotprod (t_k\vect{x}_k) \\
@@ -149,8 +149,8 @@ Then
 + t_k(\vect{u}\dotprod \vect{x}_k) \\
 & = & t_1(0) + t_2(0) + \cdots + t_k(0) = 0.
 \end{eqnarray*}
-Since $\vectlength\vect{u}\vectlength^2 =0$, $\vectlength\vect{u}\vectlength =0$.
-We know that $\vectlength\vect{u}\vectlength=0$ if and only if 
+Since $\norm{\vect{u}}^2 =0$, $\norm{\vect{u}} =0$.
+We know that $\norm{\vect{u}}=0$ if and only if 
 $\vect{u}=\vect{0}_n$.
 Therefore, $\vect{u}=\vect{0}_n$.
 In conclusion, the only vector orthogonal to every vector of
@@ -203,9 +203,9 @@ If $\{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_k\}$
 is an orthogonal subset of $\R^n$, 
 then 
 \[ \set{
-\frac{1}{\vectlength\vect{u}_1\vectlength}\vect{u}_1,
-\frac{1}{\vectlength\vect{u}_2\vectlength}\vect{u}_2, \ldots,
-\frac{1}{\vectlength\vect{u}_k\vectlength}\vect{u}_k }
+\frac{1}{\norm{\vect{u}_1}}\vect{u}_1,
+\frac{1}{\norm{\vect{u}_2}}\vect{u}_2, \ldots,
+\frac{1}{\norm{\vect{u}_k}}\vect{u}_k }
 \]
 is an orthonormal set.
 \end{definition}
@@ -232,14 +232,14 @@ Show that it is an orthogonal set of vectors  but not an orthonormal one. Find t
 \begin{solution}
 One easily verifies that $\vect{u}_1 \dotprod \vect{u}_2 = 0$ and
 $\set{\vect{u}_1, \vect{u}_2 }$ is an orthogonal set of
-vectors. On the other hand one can compute that $\vectlength \vect{u}_1 \vectlength= \vectlength \vect{u}_2 \vectlength =
+vectors. On the other hand one can compute that $\norm{\vect{u}_1}= \norm{\vect{u}_2} =
 \sqrt{2} \neq 1$ and thus it is not an orthonormal set.
 
 Thus to find a corresponding orthonormal set, we simply need to
 normalize each vector. We will write $\{\vect{w}_1, \vect{w}_2\}$
 for the corresponding orthonormal set. Then,
 \begin{eqnarray*}
-\vect{w}_1 &=& \frac{1}{\vectlength \vect{u}_1 \vectlength} \vect{u}_1\\
+\vect{w}_1 &=& \frac{1}{\norm{\vect{u}_1}} \vect{u}_1\\
 &=& \frac{1}{\sqrt{2}} \begin{mymatrix}{c}
 1 \\
 1 
@@ -253,7 +253,7 @@ for the corresponding orthonormal set. Then,
 
 Similarly, 
 \begin{eqnarray*}
-\vect{w}_2 &=& \frac{1}{\vectlength \vect{u}_2 \vectlength} \vect{u}_2\\
+\vect{w}_2 &=& \frac{1}{\norm{\vect{u}_2}} \vect{u}_2\\
 &=& \frac{1}{\sqrt{2}} \begin{mymatrix}{r}
 -1 \\
 1 
@@ -314,10 +314,10 @@ Now since the set is orthogonal, $\vect{w}_i \dotprod \vect{w}_m = 0$ for all $m
 a_1 (0) + \cdots + a_i(\vect{w}_i \dotprod \vect{w}_i) + \cdots + a_k (0) = 0
 \]
 \[
-a_i \vectlength \vect{w}_i \vectlength^2 = 0
+a_i \norm{\vect{w}_i}^2 = 0
 \]
 
-Since the set is orthogonal, we know that $\vectlength \vect{w}_i \vectlength^2  \neq 0$. It follows that $a_i =0$. Since the $a_i$ was chosen arbitrarily, the set $\{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k\}$ is linearly independent. 
+Since the set is orthogonal, we know that $\norm{\vect{w}_i}^2  \neq 0$. It follows that $a_i =0$. Since the $a_i$ was chosen arbitrarily, the set $\{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k\}$ is linearly independent. 
 
 Finally since $W = \mbox{span} \{\vect{w}_1, \vect{w}_2, \cdots,
 \vect{w}_k\}$, the set of vectors also spans $W$ and therefore forms a basis of $W$. 
@@ -335,14 +335,14 @@ Let $V$ be a subspace of $\R^n$ and suppose $\{\vect{u}_1, \vect{u}_2, \ldots, \
 is an orthogonal basis of $V$. 
 Then for any $\vect{x}\in V$,
 \[ \vect{x} = 
-\tup{\frac{\vect{x}\dotprod \vect{u}_1}{\vectlength \vect{u}_1 \vectlength^2}} \vect{u}_1 +
-\tup{\frac{\vect{x}\dotprod \vect{u}_2}{\vectlength \vect{u}_2 \vectlength^2}} \vect{u}_2 +
+\tup{\frac{\vect{x}\dotprod \vect{u}_1}{\norm{\vect{u}_1}^2}} \vect{u}_1 +
+\tup{\frac{\vect{x}\dotprod \vect{u}_2}{\norm{\vect{u}_2}^2}} \vect{u}_2 +
 \cdots +
-\tup{\frac{\vect{x}\dotprod \vect{u}_m}{\vectlength \vect{u}_m \vectlength^2}} \vect{u}_m.
+\tup{\frac{\vect{x}\dotprod \vect{u}_m}{\norm{\vect{u}_m}^2}} \vect{u}_m.
 \]
 This expression is called the Fourier expansion 
 of $\vect{x}$, and 
-\[ \frac{\vect{x}\dotprod \vect{u}_j}{\vectlength \vect{u}_j \vectlength^2},\]
+\[ \frac{\vect{x}\dotprod \vect{u}_j}{\norm{\vect{u}_j}^2},\]
 $j=1,2,\ldots,m$
 are the Fourier coefficients.
 \end{theorem}
@@ -374,18 +374,18 @@ That is:
 
 \[ 
 \vect{x}   = 
-\tup{\frac{\vect{x}\dotprod \vect{u}_1}{\vectlength \vect{u}_1 \vectlength^2}} \vect{u}_1 +
-\tup{\frac{\vect{x}\dotprod \vect{u}_2}{\vectlength \vect{u}_2 \vectlength^2}} \vect{u}_2 +
-\tup{\frac{\vect{x}\dotprod \vect{u}_3}{\vectlength \vect{u}_3 \vectlength^2}} \vect{u}_3.
+\tup{\frac{\vect{x}\dotprod \vect{u}_1}{\norm{\vect{u}_1}^2}} \vect{u}_1 +
+\tup{\frac{\vect{x}\dotprod \vect{u}_2}{\norm{\vect{u}_2}^2}} \vect{u}_2 +
+\tup{\frac{\vect{x}\dotprod \vect{u}_3}{\norm{\vect{u}_3}^2}} \vect{u}_3.
 \]
 
 We readily compute: 
 
 \[
-\frac{\vect{x}\dotprod\vect{u}_1}{\vectlength \vect{u}_1 \vectlength^2} = \frac{2}{6}, \; 
-\frac{\vect{x}\dotprod\vect{u}_2}{\vectlength \vect{u}_2 \vectlength^2} = \frac{3}{5},
+\frac{\vect{x}\dotprod\vect{u}_1}{\norm{\vect{u}_1}^2} = \frac{2}{6}, \; 
+\frac{\vect{x}\dotprod\vect{u}_2}{\norm{\vect{u}_2}^2} = \frac{3}{5},
 \mbox{ and }
-\frac{\vect{x}\dotprod\vect{u}_3}{\vectlength \vect{u}_3 \vectlength^2} = \frac{4}{30}.\]
+\frac{\vect{x}\dotprod\vect{u}_3}{\norm{\vect{u}_3}^2} = \frac{4}{30}.\]
 
 Therefore, 
 \[ \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}

@@ -3,7 +3,7 @@
 \begin{ex} Show that if $\vect{a}\times \vect{u}=\vect{0}$ for any unit vector $\vect{u}
 $, then $\vect{a}=\vect{0}$.
 \begin{sol}
-If $\vect{a}\neq \vect{0}$, then the condition says that $\vectlength \vect{a}\times \vect{u}\vectlength = \vectlength \vect{a} \vectlength \sin \theta =0$ for all angles $\theta $. Hence $\vect{a} = \vect{0}$ after all.
+If $\vect{a}\neq \vect{0}$, then the condition says that $\norm{\vect{a}\times \vect{u}} = \norm{\vect{a}} \sin \theta =0$ for all angles $\theta $. Hence $\vect{a} = \vect{0}$ after all.
 \end{sol}
 \end{ex}
 
@@ -136,13 +136,13 @@ $\vect{u}\times \vect{v}$ has the property that it is perpendicular to both
 $\vect{u}$ and $\vect{v}$. Then show by direct computation that this
 coordinate description satisfies
 \begin{align*}
-\vectlength \vect{u}\times \vect{v}\vectlength ^{2}& =\vectlength \vect{u}
-\vectlength ^{2}\vectlength \vect{v}\vectlength ^{2}-\tup{\vect{u}\dotprod \vect{v}} ^{2} \\
-& =\vectlength \vect{u}\vectlength ^{2}\vectlength \vect{v}\vectlength
+\norm{\vect{u}\times \vect{v}} ^{2}& =\norm{\vect{u}
+} ^{2}\norm{\vect{v}} ^{2}-\tup{\vect{u}\dotprod \vect{v}} ^{2} \\
+& =\norm{\vect{u}} ^{2}\norm{\vect{v}}
 ^{2}\tup{1-\cos ^{2}\tup{\theta } }
 \end{align*}
 where $\theta $ is the angle included between the two vectors. Explain why 
-$\vectlength \vect{u}\times \vect{v}\vectlength $ has the correct magnitude.
+$\norm{\vect{u}\times \vect{v}} $ has the correct magnitude.
 \begin{sol}
 Verify directly from the coordinate description of the cross product that the right hand rule applies to the vectors $\vect{i},\vect{j},\vect{k}.$ Next verify that the
 distributive law holds for the coordinate description of the cross product.
@@ -158,13 +158,13 @@ _{jik}a_{j}b_{k}a_{i}=-\varepsilon _{jik}b_{k}a_{i}a_{j}=-\vect{a}\times
 and so $\vect{a}\times \vect{b}$ is perpendicular to $\vect{a}$. Similarly, $
 \vect{a}\times \vect{b}$ is perpendicular to $\vect{b}$. Now we need that 
 \[
-\vectlength \vect{a}\times \vect{b}\vectlength ^{2}=\vectlength \vect{a}
-\vectlength ^{2}\vectlength \vect{b}\vectlength ^{2}\tup{1-\cos
-^{2}\theta } =\vectlength \vect{a}\vectlength ^{2}\vectlength \vect{b
-}\vectlength ^{2}\sin ^{2}\theta
+\norm{\vect{a}\times \vect{b}} ^{2}=\norm{\vect{a}
+} ^{2}\norm{\vect{b}} ^{2}\tup{1-\cos
+^{2}\theta } =\norm{\vect{a}} ^{2}\norm{\vect{b
+}} ^{2}\sin ^{2}\theta
 \]
-and so $\vectlength \vect{a}\times \vect{b}\vectlength =\vectlength \vect{a}
-\vectlength \vectlength \vect{b}\vectlength \sin \theta ,$ the area of the
+and so $\norm{\vect{a}\times \vect{b}} =\norm{\vect{a}
+} \norm{\vect{b}} \sin \theta ,$ the area of the
 parallelogram determined by $\vect{a},\vect{b}$. Only the right hand rule is a
 little problematic. However, you can see right away from the component
 definition that the right hand rule holds for each of the standard unit

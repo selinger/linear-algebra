@@ -281,7 +281,7 @@ Then, $\longvect{P_0P} = \begin{mymatrix}{c}
 Next, compute $\longvect{QP} = \func{proj}_{\vect{n}}\longvect{P_0P}$. 
 \begin{eqnarray*}
 \longvect{QP} &=& \func{proj}_{\vect{n}}\longvect{P_0P} \\
-&=& \tup{\frac{ \longvect{P_0P} \dotprod \vect{n}}{\vectlength \vect{n} \vectlength ^2}}\vect{n} \\
+&=& \tup{\frac{ \longvect{P_0P} \dotprod \vect{n}}{\norm{\vect{n}} ^2}}\vect{n} \\
 &=& \frac{12}{9} \begin{mymatrix}{r}
 2 \\
 1 \\
@@ -294,7 +294,7 @@ Next, compute $\longvect{QP} = \func{proj}_{\vect{n}}\longvect{P_0P}$.
 \end{mymatrix} 
 \end{eqnarray*}
 
-Then, $\vectlength \longvect{QP} \vectlength = 4$ so the shortest distance from $P$ to the plane is $4$. 
+Then, $\norm{\longvect{QP}} = 4$ so the shortest distance from $P$ to the plane is $4$. 
 
 Next, to find the point $Q$ on the plane which is closest to $P$ we have
 \begin{eqnarray*}
