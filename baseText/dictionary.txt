@@ -10,6 +10,7 @@ adj
 adjoint
 adjugate
 algebraicstraightline
+american
 Andrée
 anglebetweentwolines
 angletwovectors
@@ -35,6 +36,7 @@ bipoles
 Bogdan
 boxproduct
 cardioid
+cartesian
 cauchyschwarzinequality
 Cayley
 cc
@@ -77,13 +79,14 @@ creativecommons
 crossprodcoord
 crossprodgeomet
 cuberoots
-Curvilinear
+curvilinear
 cyan
 DA
 Dal
 Dalhousie
 De
 demoivretheorem
+det
 determinantofproduct
 determinantoftriangularmatrix
 determinantthreebythree
@@ -137,6 +140,7 @@ elemmatrixmultbyscalar
 endpoints
 entriesofproduct
 enuitem
+eq
 equalities
 equalityofmatrices
 equalspan
@@ -151,6 +155,7 @@ existenceofeigenvector
 existenceqr
 extendindependent
 extendingbasis
+échelle
 factorizations
 Farah
 fibonacci
@@ -181,6 +186,8 @@ Friess
 functiontransformation
 fundtheorem
 Gaston
+gaussianelimination
+gaussjordan
 generalsolution
 geometricdotproduct
 geometryofvectoraddition
@@ -190,8 +197,11 @@ graphinglinearcombination
 graphingscalarmult
 graphingvectoraddition
 Hermitian
+homo
 homogeneoussolution
 homogeneoussystem
+homolessvars
+homomorevars
 https
 Ichabod
 idempotent
@@ -219,7 +229,7 @@ inverseproperties
 inversetosolvesystem
 inversetransformation
 inversetransposeprod
-Invertibility
+invertibility
 invertible
 invertiblematrices
 invertiblematrix
@@ -305,9 +315,12 @@ matrixtrace
 matrixtranspose
 migrationmatrix
 minimizer
-Minimizers
+minimizers
+modulo
 Moivre
 Moivre's
+mol
+mols
 multbyelemmatrix
 multbyidentity
 multbyzeromatrix
@@ -327,8 +340,10 @@ NDsupp
 negativedefinitematrix
 newaxes
 nilpotent
+nofield
 noncommutativemultiplication
 nondefective
+nonhomo
 noninvertiblematrix
 nonlinear
 nonnegative
@@ -386,6 +401,7 @@ pdf
 permutationmatrix
 perpendicularvectors
 perpvectors
+pivotfree
 pivotposition
 pivotpositionandcolumn
 planebetweentwopoints
@@ -478,6 +494,7 @@ scalareqnplane
 scalarmultdet
 scalarmultofmatrices
 Schwarz
+seealso
 Selinger
 sextuple
 shortestdistanceplane
@@ -538,6 +555,7 @@ symmetricskewmatrices
 symmetrictoparametric
 systemoflinearequations
 systemwithnosoln
+systemwithonesoln
 Tamsyn
 TAV
 th
