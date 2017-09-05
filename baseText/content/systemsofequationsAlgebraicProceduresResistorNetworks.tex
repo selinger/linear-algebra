@@ -5,6 +5,7 @@ The tools of linear algebra can be used to study the application of resistor net
 \medskip
 
 \begin{center}
+\scalebox{0.8}{
 \begin{circuitikz}[american] \draw
 (0,0) to [battery1, v^= $18\volt$~~] (0,4)
 (0,0) to [R = $ 2 \ohm$] (4,0)
@@ -14,6 +15,7 @@ The tools of linear algebra can be used to study the application of resistor net
 (2,2) node{$I_1$}
 ;
 \end{circuitikz}
+}
 \end{center}
 
 \medskip
@@ -51,6 +53,7 @@ We will explore this in the next example where we determine the value of the cur
 Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$. 
 
 \begin{center}
+\scalebox{0.8}{
 \begin{circuitikz}[american] \draw
 (0,0) to [battery1, v^= $18\volt$~~] (0,4)
 (0,0) to [R = $ 2 \ohm$] (4,0)
@@ -60,6 +63,7 @@ Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$.
 (2,2) node{$I_1$}
 ;
 \end{circuitikz}
+}
 \end{center}
 
 \end{example}
@@ -81,6 +85,7 @@ Since the answer is positive, this confirms that the current flows counterclockw
 Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$. 
 
 \begin{center}
+\scalebox{0.8}{
 \begin{circuitikz}[american] \draw
 (0,0) to [R = $4\ohm$] (0,4)
 (2,4) to [battery1, v_= \raisebox{1ex}{$27\volt$}] (0,4)
@@ -91,6 +96,7 @@ Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$.
 (2,2) node{$I_1$}
 ;
 \end{circuitikz}
+}
 \end{center}
 
 \end{example}
@@ -121,6 +127,7 @@ A more complicated example follows. Two of the circuits below may be familiar; t
 The circuits are given in the following diagram.
 
 \begin{center}
+\scalebox{0.8}{
 \begin{circuitikz}[american, scale=0.8] \draw
 (0,0) to [battery1, v^= $18\volt$~~] (0,4)
 (0,0) to [R = $ 2 \ohm$] (4,0)
@@ -145,6 +152,7 @@ The circuits are given in the following diagram.
 (2,-2) node{$I_1$}
 ;
 \end{circuitikz}
+}
 \end{center}
 
 Starting with the top left circuit, multiply the resistance by the amps and sum the resulting products. Specifically, consider the resistor labelled $2 \ohm$ that is part of the circuits of $I_1$ and $I_2$. Notice that current $I_2$ runs through this in a positive (counterclockwise) direction, and $I_1$ runs through in the opposite (negative) direction. The product of resistance and amps is then $2 (I_2 - I_1) = 2I_2 - 2I_1$. 
