@@ -170,7 +170,7 @@ examples show how to do this.
       0 & 2 & 1 & 5 \\
       1 & 1 & 2 & 5
     \end{mymatrix}
-    \stackrel{R_2\leftarrow R_2-R_1}{\sim}
+    \stackrel{R_3\leftarrow R_3-R_1}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 4 & 3 & 11 \\
       0 & 2 & 1 & 5 \\
@@ -266,6 +266,7 @@ examples show how to do this.
   first pivot column. We switch the first two rows to move a non-zero
   number into the pivot position:
   \begin{equation*}
+  \stackrel{R_2\leftrightarrow R_1}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  1 &   2 & 2\\
@@ -275,6 +276,7 @@ examples show how to do this.
   To create zeros below the pivot entry, we subtract $2$ times the
   first row from the third row:
   \begin{equation*}
+  \stackrel{R_3\leftarrow R_3-2R_1}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  1 &   2 & 2\\
@@ -286,6 +288,7 @@ examples show how to do this.
   entry. We add $3$ times the second row to the third row to create a
   zero below the pivot:
   \begin{equation*}
+  \stackrel{R_3\leftarrow R_3+3R_2}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  \circled{1} &   2 & 2\\
@@ -325,8 +328,9 @@ examples show how to do this.
   We use Gaussian elimination to carry the augmented matrix to
   {\ef}. The first column is the first pivot column, and $3$ is the
   pivot entry. We use row operating to create zeros beneath the pivot
-  entry. We subtract $2$ times the first row from the second row and get:
+  entry. We subtract $2$ times the first row from the third row and get:
   \begin{equation*}
+  \stackrel{R_3\leftarrow R_3-2R_1}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{3} &  -1  &  5 & 8 \\
       0 &   1 & -10 & 1 \\
@@ -338,6 +342,7 @@ examples show how to do this.
   second column) and repeat the procedure. Subtracting the second row
   from the third row, we get:
   \begin{equation*}
+  \stackrel{R_3\leftarrow R_3-R_2}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{3} &  -1  &  5 & 8 \\
       0 &   \circled{1} & -10 & 1 \\
@@ -587,7 +592,7 @@ By refining the above argument, we get the following theorem:
   is consistent.
 \begin{enumerate}
 \item If $r=n$, then the system has a unique solution.
-\item If $r<n$, then the system has infinitely many solutions.
+\item If $r<n$, then the system has infinitely many solutions, with $n-r$ parameters.
 \end{enumerate}
 \end{theorem}
 
