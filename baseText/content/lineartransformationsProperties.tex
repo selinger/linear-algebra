@@ -41,199 +41,190 @@ These properties are useful in determining the action of a transformation on a g
 \begin{example}{Linear combination}{lintransfcombination}
 Let $T:\R^3 \mapsto \R^4$ be a linear transformation such that 
 \[
-T \leftB \begin{array}{r}
+T \begin{mymatrix}{r}
 1 \\
 3 \\
 1
-\end{array} \rightB
+\end{mymatrix}
 =
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 4 \\
 4 \\
 0 \\
 -2
-\end{array} \rightB,
-T \leftB \begin{array}{r}
+\end{mymatrix},
+T \begin{mymatrix}{r}
 4 \\
 0 \\
 5
-\end{array} \rightB
+\end{mymatrix}
 =
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 4 \\
 5 \\
 -1 \\
 5
-\end{array} \rightB
+\end{mymatrix}
 \]
-Find $T \leftB \begin{array}{r}
+Find $T \begin{mymatrix}{r}
 -7 \\
 3 \\
 -9
-\end{array} \rightB$.
+\end{mymatrix}$.
 \end{example}
 
 \begin{solution}
-Using the third property in Theorem \ref{thm:properties}, we can find $T \leftB \begin{array}{r}
+Using the third property in Theorem \ref{thm:properties}, we can find $T \begin{mymatrix}{r}
 -7 \\
 3 \\
 -9
-\end{array} \rightB$ by writing $\leftB \begin{array}{r}
+\end{mymatrix}$ by writing $\begin{mymatrix}{r}
 -7 \\
 3 \\
 -9
-\end{array} \rightB$ as a linear combination of $\leftB \begin{array}{r}
+\end{mymatrix}$ as a linear combination of $\begin{mymatrix}{r}
 1 \\
 3 \\
 1
-\end{array} \rightB$ and $\leftB \begin{array}{r}
+\end{mymatrix}$ and $\begin{mymatrix}{r}
 4 \\
 0 \\
 5
-\end{array} \rightB$. 
+\end{mymatrix}$. 
 
 Therefore we want to find $a,b \in \R$ such that 
 \[
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 -7 \\
 3 \\
 -9
-\end{array} \rightB
+\end{mymatrix}
 =
 a
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 3 \\
 1
-\end{array} \rightB
+\end{mymatrix}
 +
 b
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 4 \\
 0 \\
 5
-\end{array} \rightB
+\end{mymatrix}
 \]
 
 The necessary augmented matrix and resulting {\rref} are given by:
 \[
-\leftB
-\begin{array}{rr|r}
+\begin{mymatrix}{rr|r}
 1 & 4 & -7 \\
 3 & 0 & 3 \\
 1 & 5 & -9 
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB
-\begin{array}{rr|r}
+\begin{mymatrix}{rr|r}
 1 & 0 & 1 \\
 0 & 1 & -2 \\
 0 & 0 & 0 
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 Hence $a = 1, b = -2$ and \[
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 -7 \\
 3 \\
 -9
-\end{array} \rightB
+\end{mymatrix}
 =
 1
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 3 \\
 1
-\end{array} \rightB
+\end{mymatrix}
 +
 (-2)
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 4 \\
 0 \\
 5
-\end{array} \rightB
+\end{mymatrix}
 \]
 
 Now, using the third property above, we have 
 \begin{eqnarray*}
-T \leftB \begin{array}{r}
+T \begin{mymatrix}{r}
 -7 \\
 3 \\
 -9
-\end{array} \rightB
+\end{mymatrix}
 &=&
 T \left(
 1
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 3 \\
 1
-\end{array} \rightB
+\end{mymatrix}
 +
 (-2)
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 4 \\
 0 \\
 5
-\end{array} \rightB
+\end{mymatrix}
 \right) \\
 &=& 
 1T 
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 3 \\
 1
-\end{array} \rightB
+\end{mymatrix}
 -2T
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 4 \\
 0 \\
 5
-\end{array} \rightB
+\end{mymatrix}
 \\
 &=&
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 4 \\
 4 \\
 0 \\
 -2
-\end{array} \rightB
+\end{mymatrix}
 -2
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 4 \\
 5 \\
 -1 \\
 5
-\end{array} \rightB
+\end{mymatrix}
 \\
 &=& 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -4 \\
 -6 \\
 2 \\
 -12
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
-Therefore, $T \leftB \begin{array}{r}
+Therefore, $T \begin{mymatrix}{r}
 -7 \\
 3 \\
 -9
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -4 \\
 -6 \\
 2 \\
 -12
-\end{array}
-\rightB
+\end{mymatrix}
 $.
 \end{solution}
 
@@ -271,29 +262,23 @@ Consider the following example.
 Let $T$ be a linear transformation induced by the matrix 
 \[
 A = 
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 2 \\
 2 & 0 
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 and $S$ a linear transformation induced by the matrix
 \[
 B = 
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 2 & 3 \\
 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \]
-Find the matrix of the composite transformation $S \circ T$. Then, find $(S \circ T)(\vect{x})$ for $\vect{x} = \leftB
-\begin{array}{r}
+Find the matrix of the composite transformation $S \circ T$. Then, find $(S \circ T)(\vect{x})$ for $\vect{x} = \begin{mymatrix}{r}
 1 \\
 4 
-\end{array}
-\rightB$.
+\end{mymatrix}$.
 \end{example}
 
 \begin{solution}
@@ -301,94 +286,70 @@ By Theorem \ref{thm:compositetransformation}, the matrix of $S \circ T$ is given
 \[
 BA 
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 2 & 3 \\
 0 & 1
-\end{array}
-\rightB
-\leftB
-\begin{array}{rr}
+\end{mymatrix}
+\begin{mymatrix}{rr}
 1 & 2 \\
 2 & 0 
-\end{array}
-\rightB
+\end{mymatrix}
  =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 8 & 4 \\
 2 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 To find $(S \circ T)(\vect{x})$, multiply $\vect{x}$ by $BA$ as follows
 \[
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 8 & 4 \\
 2 & 0
-\end{array}
-\rightB
-\leftB
-\begin{array}{rr}
+\end{mymatrix}
+\begin{mymatrix}{rr}
 1 \\
 4
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 24 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 To check, first determine $T(\vect{x})$:
 \[
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 2 \\
 2 & 0 
-\end{array}
-\rightB
-\leftB
-\begin{array}{r}
+\end{mymatrix}
+\begin{mymatrix}{r}
 1 \\
 4
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 9 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 Then, compute $S(T(\vect{x}))$ as follows:
 \[
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 2 & 3 \\
 0 & 1 
-\end{array}
-\rightB
-\leftB
-\begin{array}{r}
+\end{mymatrix}
+\begin{mymatrix}{r}
 9 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 24 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{solution}
 
@@ -418,12 +379,10 @@ Consider the following example.
 Let $T: \R^2 \mapsto \R^2$ be a linear transformation induced by the matrix 
 \[
 A = 
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 2 & 3 \\
 3 & 4
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 Show that $T^{-1}$ exists and find the matrix $B$ which it is induced by. 
 \end{example}
@@ -435,12 +394,10 @@ You can verify that $A^{-1}$ is given by:
 \[
 A^{-1}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 -4 & 3 \\
 3 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 Therefore the linear transformation $T^{-1}$ is induced by the matrix $A^{-1}$. 
 \end{solution}

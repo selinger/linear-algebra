@@ -270,13 +270,11 @@ x&+&3y&+&6z&=&25 \\
 \end{equation*}
 This system can be written as an augmented matrix as follows:
 \begin{equation*}
-\leftB 
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 3 & 6 & 25 \\
 2 & 7 & 14 & 58 \\
 0 & 2 & 5 & 19
-\end{array}
-\rightB.
+\end{mymatrix}.
 \end{equation*}
 A \textbf{matrix}\index{matrix} is just a 2-dimensional array of
 numbers. An augmented matrix has two parts separated by a vertical
@@ -289,23 +287,19 @@ line. These two parts of the augmented matrix are also called the
   matrix}\index{matrix!coefficient matrix} and the \textbf{constant
   matrix}\index{constant matrix}\index{matrix!constant matrix}.  Each
 row of the augmented matrix corresponds to one linear equation. For example,
-the top row $\leftB
-\begin{array}{rrrrr}
+the top row $\begin{mymatrix}{rrrrr}
 1 & 3 & 6 & | & 25
-\end{array}
-\rightB$
+\end{mymatrix}$
  corresponds to the equation
 \begin{equation*}
 x+3y+6z=25.
 \end{equation*}
 Each column of the coefficient matrix contains the coefficients
-for one particular variable. For example, the first column $\leftB
-\begin{array}{r}
+for one particular variable. For example, the first column $\begin{mymatrix}{r}
 1 \\
 2 \\
 0
-\end{array}
-\rightB$ contains all of the coefficients for the variable $x$. If a
+\end{mymatrix}$ contains all of the coefficients for the variable $x$. If a
 variable does not appear in an equation, the corresponding coefficient
 is $0$. In general, the augmented matrix of a linear system of
 equations is defined as follows.
@@ -322,13 +316,11 @@ equations is defined as follows.
   \end{equation*}
   is
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       a_{11} & \cdots & a_{1n} &  b_{1} \\
       \vdots &  & \vdots &  \vdots \\
       a_{m1} & \cdots & a_{mn} &  b_{m}
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
 \end{definition}
 
@@ -372,29 +364,23 @@ same set of solutions.
 \begin{solution}
   We have:
   \begin{equation*}
-    \leftB 
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 3 & 6 &  25 \\
       2 & 7 & 14 &  58 \\
       0 & 2 & 5 &  19
-    \end{array}
-    \rightB 
+    \end{mymatrix} 
     \stackrel{R_2\leftarrow R_2-2R_1}{\sim}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 3 & 6 & 25 \\
       0 & 1 & 2 & 8 \\
       0 & 2 & 5 & 19
-    \end{array}
-    \rightB 
+    \end{mymatrix} 
     \stackrel{R_3\leftarrow R_3-2R_2}{\sim}
-    \leftB 
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 3 & 6 & 25 \\
       0 & 1 & 2 & 8 \\
       0 & 0 & 1 & 3
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   The final augmented matrix corresponds to the system
   \begin{equation*}
@@ -409,29 +395,23 @@ same set of solutions.
 
   Alternatively, we can continue with additional row operations:
   \begin{equation*}
-    \leftB 
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 3 & 6 & 25 \\
       0 & 1 & 2 & 8 \\
       0 & 0 & 1 & 3
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \stackrel{R_1\leftarrow R_1-6R_3}{\stackrel{R_2\leftarrow R_2-2R_3}{\sim}}
-    \leftB 
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 3 & 0 & 7 \\
       0 & 1 & 0 & 2\\
       0 & 0 & 1 & 3
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \stackrel{R_1\leftarrow R_1-3R_2}{\sim}
-    \leftB 
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 0 & 0 & 1\\
       0 & 1 & 0 & 2\\
       0 & 0 & 1 & 3
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   Notice how this notation is much more succinct than what we used in
   Example~\ref{exa:solvingasystemwithelementaryops}.

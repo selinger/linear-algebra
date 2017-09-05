@@ -128,13 +128,11 @@ this line in the form
 \vect{q}=\vect{p_0}+t\left( \vect{p}-\vect{p_0}\right)
 \end{equation*}
 Let $\vect{q} = 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB
+\end{mymatrix}
 $. Then, we can find $\vect{p}$ and $\vect{p_0}$ by taking the position vectors of points $P$ and $P_0$ 
 respectively. 
 Then, 
@@ -143,59 +141,47 @@ Then,
 \end{equation*}
 can be written as
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y \\
 z \\
-\end{array}
-\rightB
+\end{mymatrix}
  =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 2 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 +
 t
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
  1 \\
 -6 \\
 6  
-\end{array}
-\rightB,
+\end{mymatrix},
 \;t\in
 \R
 \end{equation*}
 Here, the direction vector $
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -6 \\
 6 
-\end{array}
-\rightB
+\end{mymatrix}
 $
 is obtained by $
 \vect{p} - \vect{p_0} = 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 -4 \\
 6
-\end{array}
-\rightB
+\end{mymatrix}
 -
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 $
 as indicated above in Definition \ref{def:vectorequationofline}.
 \end{solution} 
@@ -208,13 +194,11 @@ parameter, say $3s.$ Then you obtain a different vector equation for the same
 line because the same set of points is obtained.
 
 In Example \ref{exa:linefromtwopoints}, the vector given by 
-$\leftB
-\begin{array}{r}
+$\begin{mymatrix}{r}
  1 \\
 -6 \\
 6 
-\end{array}
-\rightB$
+\end{mymatrix}$
 is the direction vector defined in Definition \ref{def:vectorequationofline}.
 If we know the direction vector of a line, as well as a point on the line,
 we can find the vector equation. 
@@ -224,13 +208,11 @@ Consider the following example.
 \begin{example}{A line from a point and a direction vector}{linepointanddirectionvector}
 Find a vector equation for the line which contains the point $P_0 = \left(
 1,2,0\right) $ and has direction vector $\vect{d} = 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 $
 \end{example}
 
@@ -239,50 +221,40 @@ We will use Definition \ref{def:vectorequationofline} to write this line in the 
 $\vect{p}=\vect{p_0}+t\vect{d},\; t\in \R$. We are given the direction vector $\vect{d}$. 
 In order to find $\vect{p_0}$, we can use the position vector of the point $P_0$. 
 This is given by 
-$\leftB
-\begin{array}{c}
+$\begin{mymatrix}{c}
 1 \\
 2 \\
 0
-\end{array}
-\rightB.
+\end{mymatrix}.
 $
 Letting $\vect{p}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
  x \\
 y \\
 z
-\end{array}
-\rightB
+\end{mymatrix}
 $,
 the equation for the line is given by 
 \begin{equation}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 2 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 + 
 t
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 2 \\
 1
-\end{array}
-\rightB,
+\end{mymatrix},
 \;t\in
 \R \label{vectoreqn}
 \end{equation}
@@ -305,13 +277,11 @@ This set of equations give the same information as \ref{vectoreqn}, and is calle
 Consider the following definition. 
 
 \begin{definition}{Parametric equation of a line}{parametricequation}
-Let $L$ be a line in $\R^3$ which has direction vector $\vect{d} = \leftB
-\begin{array}{c}
+Let $L$ be a line in $\R^3$ which has direction vector $\vect{d} = \begin{mymatrix}{c}
 a \\
 b \\
 c
-\end{array}
-\rightB$
+\end{mymatrix}$
 and goes through the point $P_0 = \left( x_0, y_0, z_0 \right)$.
 Then, letting $t$ be a parameter, we can write $L$ as 
 \begin{equation*}
@@ -401,29 +371,23 @@ This is the form
 where $t\in \R$.
 This equation becomes
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB =
-\leftB
-\begin{array}{r}
+\end{mymatrix} =
+\begin{mymatrix}{r}
 2 \\
 1 \\
 -3 
-\end{array}
-\rightB
+\end{mymatrix}
 +
 t
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 2 \\
 1 
-\end{array}
-\rightB,
+\end{mymatrix},
 \;t\in
 \R
 \end{equation*}

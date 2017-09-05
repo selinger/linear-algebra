@@ -4,18 +4,14 @@ Another important operation on matrices is that of taking the \textbf{transpose}
 \textbf{transpose} of $A$ by $A^T$. Before formally defining the transpose, we explore this
 operation on the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 1 & 4 \\
 3 & 1 \\
 2 & 6
-\end{array}
-\rightB ^{T}=\allowbreak \leftB
-\begin{array}{ccc}
+\end{mymatrix} ^{T}=\allowbreak \begin{mymatrix}{ccc}
 1 & 3 & 2 \\
 4 & 1 & 6
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 What happened? The first column became the first row and the second column
@@ -41,12 +37,10 @@ Consider the following example.
 \begin{example}{The transpose of a matrix}{transposematrix}
 Calculate $A^T$ for the following matrix
 \begin{equation*}
-A = \leftB
-\begin{array}{rrr}
+A = \begin{mymatrix}{rrr}
 1 & 2 & -6 \\
 3 & 5 & 4
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -58,13 +52,11 @@ location of each entry. The $\left( 1, 2 \right)$-entry becomes the $\left( 2,1 
 Thus, 
 \begin{equation*}
 A^T = 
- \leftB
-\begin{array}{rr}
+ \begin{mymatrix}{rr}
 1 & 3 \\
 2 & 5 \\
 -6 & 4
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Notice that $A$ is a $2 \times 3$ matrix, while $A^T$ is a $3 \times 2$ matrix. 
@@ -109,13 +101,11 @@ We will explore these definitions in the following examples.
 \begin{example}{Symmetric matrices}{symmetricmatrix}
 Let
 \begin{equation*}
-A=\leftB
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 2 & 1 & 3 \\
 1 & 5 & -3 \\
 3 & -3 & 7
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Use Definition \ref{def:symmetricandskewsymmetric} to show that $A$ is symmetric. 
 \end{example}
@@ -124,13 +114,11 @@ Use Definition \ref{def:symmetricandskewsymmetric} to show that $A$ is symmetric
 By Definition \ref{def:symmetricandskewsymmetric}, we need to show that $A = A^T$. 
 Now, using Definition \ref{def:matrixtranspose}, 
 \begin{equation*}
-A^{T} = \leftB
-\begin{array}{rrr}
+A^{T} = \begin{mymatrix}{rrr}
 2 & 1 & 3 \\
 1 & 5 & -3 \\
 3 & -3 & 7
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Hence, $A = A^{T}$, so $A$ is symmetric.
 \end{solution}
@@ -138,26 +126,22 @@ Hence, $A = A^{T}$, so $A$ is symmetric.
 \begin{example}{A skew symmetric matrix}{skewsymmetricmatrix}
 Let
 \begin{equation*}
-A=\leftB
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 0 & 1 & 3 \\
 -1 & 0 & 2 \\
 -3 & -2 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Show that $A$ is skew symmetric.
 \end{example}
 
 \begin{solution} By Definition \ref{def:symmetricandskewsymmetric}, 
 \begin{equation*}
-A^{T} = \leftB
-\begin{array}{rrr}
+A^{T} = \begin{mymatrix}{rrr}
 0 & -1 & -3\\
 1 &  0 & -2\\
 3 &  2 &  0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 You can see that each entry of $A^T$ is equal to $-1$ times the same entry of $A$. 

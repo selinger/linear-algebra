@@ -11,29 +11,23 @@ example.
 \begin{example}{Eigenvectors and eigenvalues}{eigenvectorsandeigenvalues}
 Let
 \begin{equation*}
-A = \leftB
-\begin{array}{rrr}
+A = \begin{mymatrix}{rrr}
 0 & 5 & -10 \\
 0 & 22 & 16 \\
 0 & -9 & -2
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Compute the product $AX$ for 
 \begin{equation*}
-X = \leftB
-\begin{array}{r}
+X = \begin{mymatrix}{r}
 5 \\
 -4 \\
  3
-\end{array}
-\rightB, X = \leftB
-\begin{array}{r}
+\end{mymatrix}, X = \begin{mymatrix}{r}
 1 \\
 0 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 What do you notice about $AX$ in each of these products? 
 \end{example}
@@ -41,42 +35,32 @@ What do you notice about $AX$ in each of these products?
 \begin{solution}
 First, compute $AX$ for 
 \begin{equation*}
-X =\leftB
-\begin{array}{r}
+X =\begin{mymatrix}{r}
 5 \\
 -4 \\
 3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 This product is given by 
 \begin{equation*}
-AX = \leftB
-\begin{array}{rrr}
+AX = \begin{mymatrix}{rrr}
 0 & 5 & -10 \\
 0 & 22 & 16 \\
 0 & -9 & -2
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 -5 \\
 -4 \\
 3
-\end{array}
-\rightB = \leftB
-\begin{array}{r}
+\end{mymatrix} = \begin{mymatrix}{r}
 -50 \\
 -40 \\
 30
-\end{array}
-\rightB =10\leftB
-\begin{array}{r}
+\end{mymatrix} =10\begin{mymatrix}{r}
 -5 \\
 -4 \\
 3
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 In this case, the product $AX$ resulted in a vector which is equal to $10$ times the vector $X$. 
@@ -85,67 +69,51 @@ In other words, $AX=10X$.
 Let's see what happens in the next product.
 Compute $AX$ for the vector 
 \begin{equation*}
-X =  \leftB
-\begin{array}{r}
+X =  \begin{mymatrix}{r}
 1 \\
 0 \\
 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 This product is given by 
 \begin{equation*}
-AX = \leftB
-\begin{array}{rrr}
+AX = \begin{mymatrix}{rrr}
 0 & 5 & -10 \\
 0 & 22 & 16 \\
 0 & -9 & -2
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 1 \\
 0 \\
 0
-\end{array}
-\rightB = \leftB
-\begin{array}{r}
+\end{mymatrix} = \begin{mymatrix}{r}
 0 \\
 0 \\
 0
-\end{array}
-\rightB =0\leftB
-\begin{array}{r}
+\end{mymatrix} =0\begin{mymatrix}{r}
 1 \\
 0 \\
 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 In this case, the product $AX$ resulted in a vector equal to $0$ times the vector $X$, $AX=0X$. 
 
 Perhaps this matrix is such that $AX$ results in $kX$, for every vector $X$. However, consider
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0 & 5 & -10 \\
 0 & 22 & 16 \\
 0 & -9 & -2
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 1 \\
 1 \\
 1
-\end{array}
-\rightB = \leftB
-\begin{array}{r}
+\end{mymatrix} = \begin{mymatrix}{r}
 -5 \\
 38 \\
 -11
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 In this case, $AX$ did not result in a vector of the form $kX$ for some scalar $k$. 
 \end{solution}

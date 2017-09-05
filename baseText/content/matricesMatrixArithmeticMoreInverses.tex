@@ -89,13 +89,11 @@ We will now consider an example.
 Let 
 \begin{equation*}
 A =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1 \\
 0 & 0 
-\end{array}
-\rightB,
+\end{mymatrix},
 \end{equation*}
 Show that $A^{T}A = I$ but $AA^{T} \neq 0$. 
 \end{example}
@@ -103,51 +101,39 @@ Show that $A^{T}A = I$ but $AA^{T} \neq 0$.
 \begin{solution}
 Consider the product $A^{T}A$ given by 
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0\\
 0 & 1 & 0
-\end{array}
-\rightB
-\leftB
-\begin{array}{rr}
+\end{mymatrix}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1 \\
 0 & 0 
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Therefore, $A^{T}A = I_2$, where $I_2$ is the $2 \times 2$ identity matrix.
 However, the product $AA^{T}$ is 
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1 \\
 0 & 0 
-\end{array}
-\rightB
-\leftB
-\begin{array}{rrr}
+\end{mymatrix}
+\begin{mymatrix}{rrr}
 1 & 0 & 0\\
 0 & 1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Hence $AA^{T}$ is not the $3 \times 3$ identity matrix. This shows that for Theorem \ref{thm:uniqueinverseofmatrix}, it is essential that both matrices be square and of the same size.
 \end{solution}

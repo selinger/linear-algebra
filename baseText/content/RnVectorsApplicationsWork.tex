@@ -91,11 +91,9 @@ Consider the following example.
 
 \begin{example}{Finding work}{findingwork}
 Let $\vect{F}=
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 2 & 7 & -3
-\end{array}
-\rightB^T$ Newtons. Find the work
+\end{mymatrix}^T$ Newtons. Find the work
 done by this force in moving from the point $\left( 1,2,3\right) $ to the
 point $\left( -9,-3,4\right) $ along the straight line segment joining these
 points where distances are measured in meters.
@@ -104,38 +102,28 @@ points where distances are measured in meters.
 \begin{solution}
 First, compute the vector $\vect{q} - \vect{p}$, given by 
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -9 & -3 & 4
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 -
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 3
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 =
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -10 & -5 & 1
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 \end{equation*}
 
 According to Definition \ref{def:workdonebyforce} the work done is
 \begin{align*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 2 & 7 & 3
-\end{array}
-\rightB^T
+\end{mymatrix}^T
  \dotprod 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -10 & -5 & 1
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 & =-20+\left( -35\right) +\left(
 -3\right) \\
 & =-58\text{ Newton meters}

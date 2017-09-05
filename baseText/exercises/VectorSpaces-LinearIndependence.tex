@@ -16,47 +16,35 @@ T\vect{e}_{1}=1,T\vect{e}_{2}=x,T\vect{e}_{3}=x^{2}
 \end{equation*}
 Then extend $T$ linearly. Thus
 \begin{equation*}
-T\leftB 
-\begin{array}{c}
+T\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB =x^{2}+x+1,T\leftB 
-\begin{array}{c}
+\end{mymatrix} =x^{2}+x+1,T\begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 2
-\end{array}
-\rightB =2x^{2}+2x+1,T\leftB 
-\begin{array}{c}
+\end{mymatrix} =2x^{2}+2x+1,T\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB =1+x
+\end{mymatrix} =1+x
 \end{equation*}
 It follows that if 
 \begin{equation*}
-\left\{ \leftB 
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 2
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 is a basis for $\R^{3},$ then the polynomials will be a basis for 
 $\Poly_{2}$ because they will be independent. Recall that an isomorphism
@@ -353,16 +341,16 @@ If these are linearly independent, extend to a basis for all of $\Poly_{3}$.
 
 \begin{ex} Determine if the following set is linearly independent. If it is linearly dependent, write one vector as a linear combination of the other vectors in the set. 
 \[
-\left\{ \leftB \begin{array}{rr}
+\left\{ \begin{mymatrix}{rr}
 1 & 2 \\
 0 & 1  
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 -7 & 2 \\
 -2 & -3  
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 4 & 0 \\
 1 & 2  
-\end{array} \rightB
+\end{mymatrix}
  \right\}
 \]
 %\begin{sol}
@@ -371,19 +359,19 @@ If these are linearly independent, extend to a basis for all of $\Poly_{3}$.
 
 \begin{ex} Determine if the following set is linearly independent. If it is linearly dependent, write one vector as a linear combination of the other vectors in the set. 
 \[
-\left\{ \leftB \begin{array}{rr}
+\left\{ \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1  
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 1 \\
 0 & 1  
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 1 & 0 \\
 1 & 0  
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 0 \\
 1 & 1 
-\end{array} \rightB
+\end{mymatrix}
  \right\}
 \]
 %\begin{sol}
@@ -452,14 +440,12 @@ Therefore, these are linearly independent.
 Show that this collection of polynomials is linearly independent on an
 interval $\left[ s,t\right] $ if and only if 
 \begin{equation*}
-\leftB
-\begin{array}{cccc}
+\begin{mymatrix}{cccc}
 a_{1} & b_{1} & c_{1} & d_{1} \\ 
 a_{2} & b_{2} & c_{2} & d_{2} \\ 
 a_{3} & b_{3} & c_{3} & d_{3} \\ 
 a_{4} & b_{4} & c_{4} & d_{4}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is an invertible matrix.
 \begin{sol}

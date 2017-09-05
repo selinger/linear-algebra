@@ -62,13 +62,11 @@ example.
 \begin{example}{Simplify using elementary matrices}{simplifyusingelementarymatrices}
 Find the eigenvalues for the matrix
 \begin{equation*}
-A = \leftB
-\begin{array}{rrr}
+A = \begin{mymatrix}{rrr}
  33 & 105 & 105 \\
  10 &  28 & 30 \\
 -20 & -60 & -62
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -79,74 +77,56 @@ We will do so using row operations. First, add $2$ times the second row
 to the third row. To do so, left multiply $A$ by $E \left(2,2\right)$. 
 Then right multiply $A$ by the inverse of $E \left(2,2\right)$ as illustrated.
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 2 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 33 & 105 & 105 \\
 10 & 28 & 30 \\
 -20 & -60 & -62
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & -2 & 1
-\end{array}
-\rightB =\leftB
-\begin{array}{rrr}
+\end{mymatrix} =\begin{mymatrix}{rrr}
 33 & -105 & 105 \\
 10 & -32 & 30 \\
 0 & 0 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 By Lemma \ref{lem:similarmatrices}, the resulting matrix has the same eigenvalues as $A$ where here, the matrix $E \left(2,2\right)$ plays the role of $P$.
 
 We do this step again, as follows. In this step, we use the elementary matrix obtained by adding $-3$
 times the second row to the first row. 
 \begin{equation}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & -3 & 0 \\
 0 &  1 & 0 \\
 0 &  0 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 33 & -105 & 105 \\
 10 & -32  & 30 \\
 0  &   0  & -2
-\end{array} 
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 3 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
-\end{array}
-\rightB =\leftB
-\begin{array}{rrr}
+\end{mymatrix} =\begin{mymatrix}{rrr}
 3  & 0  & 15 \\
 10 & -2 & 30 \\
 0  & 0  & -2
-\end{array}
-\rightB  \label{elemeigenvalue}
+\end{mymatrix}  \label{elemeigenvalue}
 \end{equation}
 Again by Lemma \ref{lem:similarmatrices}, this resulting matrix has the same eigenvalues as $A$. 
 At this point, we can easily find the eigenvalues.
 Let 
 \begin{equation*}
-B = \leftB
-\begin{array}{rrr}
+B = \begin{mymatrix}{rrr}
 3  & 0  & 15 \\
 10 & -2 & 30 \\
 0  & 0  & -2
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Then, we find the eigenvalues of $B$ (and therefore of $A$) by solving the equation 
 $\det \left( \eigenVar I - B  \right) = 0$.
@@ -173,25 +153,19 @@ adding to the second. Thus, without referring to the elementary
 matrices, the transition to the new matrix in \ref{elemeigenvalue} can be
 illustrated by
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 33 & -105 & 105 \\
 10 & -32 & 30 \\
 0 & 0 & -2
-\end{array}
-\rightB \rightarrow \leftB
-\begin{array}{rrr}
+\end{mymatrix} \rightarrow \begin{mymatrix}{rrr}
 3 & -9 & 15 \\
 10 & -32 & 30 \\
 0 & 0 & -2
-\end{array}
-\rightB \rightarrow \leftB
-\begin{array}{rrr}
+\end{mymatrix} \rightarrow \begin{mymatrix}{rrr}
 3 & 0 & 15 \\
 10 & -2 & 30 \\
 0 & 0 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 The third special type of matrix we will consider in this section is
@@ -206,26 +180,22 @@ In the next example we will demonstrate that the eigenvalues of a
 triangular matrix are the entries on the main diagonal. 
 
 \begin{example}{Eigenvalues for a triangular matrix}{eigenvaluestriangularmatrix}
-Let $A=\leftB
-\begin{array}{rrr}
+Let $A=\begin{mymatrix}{rrr}
 1 & 2 & 4 \\
 0 & 4 & 7 \\
 0 & 0 & 6
-\end{array}
-\rightB .$ Find the eigenvalues of $A$.
+\end{mymatrix} .$ Find the eigenvalues of $A$.
 \end{example}
 
 \begin{solution}
 We need to solve the equation $\det \left( \eigenVar I - A \right) = 0$ as follows
 \begin{eqnarray*}
 \det \left( \eigenVar I - A \right) =
-\det \leftB
-\begin{array}{ccc}
+\det \begin{mymatrix}{ccc}
 \eigenVar -1 & -2 & -4 \\
 0 & \eigenVar-4 & -7 \\
 0 & 0 & \eigenVar-6
-\end{array}
-\rightB =\left( \eigenVar-1 \right) \left( \eigenVar-4 \right) \left( \eigenVar-6 \right) =0
+\end{mymatrix} =\left( \eigenVar-1 \right) \left( \eigenVar-4 \right) \left( \eigenVar-6 \right) =0
 \end{eqnarray*}
 
 Solving the equation $\left( \eigenVar-1 \right) \left( \eigenVar-4

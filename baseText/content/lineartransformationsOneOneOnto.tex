@@ -14,13 +14,11 @@ $\func{Im}\left( T\right) $ to denote these vectors.
 \begin{lemma}{Range of a matrix transformation}{Ax}
 
 Let $A$ be an $m\times n$ matrix where $A_{1},\cdots , A_{n}$ denote the columns of
-$A$\index{range of matrix transformation}. Then, for a vector $\vect{x}=\leftB 
-\begin{array}{c}
+$A$\index{range of matrix transformation}. Then, for a vector $\vect{x}=\begin{mymatrix}{c}
 x_{1} \\
 \vdots \\
  x_{n}
-\end{array}
-\rightB$ in $\R^n$,
+\end{mymatrix}$ in $\R^n$,
 
 \begin{equation*}
 A\vect{x}=\sum_{k=1}^{n}x_{k}A_{k}
@@ -96,11 +94,9 @@ T(\vect{v})-T(\vect{u})=T\left( \vect{v}-\vect{u}\right) =\vect{0}
 which shows that $\vect{v}-\vect{u}=0$. In other words, $\vect{v}=\vect{u}$, and $T$ is one to one. 
 \end{proof}
 
-Note that this proposition says that if $A=\leftB
-\begin{array}{ccc}
+Note that this proposition says that if $A=\begin{mymatrix}{ccc}
 A_{1} & \cdots & A_{n}
-\end{array}
-\rightB $ then $A$ is one to one if and only if whenever
+\end{mymatrix} $ then $A$ is one to one if and only if whenever
 \begin{equation*}
 0 = \sum_{k=1}^{n}c_{k}A_{k}
 \end{equation*}
@@ -111,22 +107,16 @@ We will now take a look at an example of a one to one and onto linear transforma
 \begin{example}{A one to one and onto linear transformation}{onetooneontolineartransformation}
 Suppose
 \begin{equation*}
-T\leftB
-\begin{array}{c}
+T\begin{mymatrix}{c}
 x \\
 y
-\end{array}
-\rightB =\leftB
-\begin{array}{rr}
+\end{mymatrix} =\begin{mymatrix}{rr}
 1 & 1 \\
 1 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 x \\
 y
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Then, $T:\R^{2}\rightarrow \R^{2}$ is a linear
 transformation. Is $T$ onto? Is it one to one?
@@ -134,53 +124,37 @@ transformation. Is $T$ onto? Is it one to one?
 
 \begin{solution} Recall that because $T$ can be expressed as matrix
 multiplication, we know that $T$ is a linear transformation.  We will
-start by looking at onto.  So suppose $\leftB
-\begin{array}{c}
+start by looking at onto.  So suppose $\begin{mymatrix}{c}
 a \\
 b
-\end{array}
-\rightB \in \R^{2}.$ Does there exist $\leftB
-\begin{array}{c}
+\end{mymatrix} \in \R^{2}.$ Does there exist $\begin{mymatrix}{c}
 x \\
 y
-\end{array}
-\rightB  \in \R^2 $ such that $T\leftB
-\begin{array}{c}
+\end{mymatrix}  \in \R^2 $ such that $T\begin{mymatrix}{c}
 x \\
 y
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 a \\
 b
-\end{array}
-\rightB ?$ If so, then since $\leftB
-\begin{array}{c}
+\end{mymatrix} ?$ If so, then since $\begin{mymatrix}{c}
 a \\
 b
-\end{array}
-\rightB $ is an arbitrary vector in $\R^{2},$ it will follow that $T$
+\end{mymatrix} $ is an arbitrary vector in $\R^{2},$ it will follow that $T$
 is onto. 
 
 This question is familiar to you. It is asking whether
 there is a solution to the equation
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 1 & 1 \\
 1 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x \\
 y
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 a \\
 b
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 This is the same thing as asking for a solution to the following system of
 equations.
@@ -192,62 +166,46 @@ x+2y=b
 \end{equation*}
 Set up the augmented matrix and row reduce.
 \begin{equation}
-\leftB
-\begin{array}{rr|r}
+\begin{mymatrix}{rr|r}
 1 & 1 & a \\
 1 & 2 & b
-\end{array}
-\rightB \rightarrow \leftB
-\begin{array}{rr|r}
+\end{mymatrix} \rightarrow \begin{mymatrix}{rr|r}
 1 & 0 & 2a-b \\
 0 & 1 & b-a
-\end{array}
-\rightB
+\end{mymatrix}
 \label{ontomatrix}
 \end{equation}
 You can see from this point that the system has a solution. Therefore,
 we have shown that for any $a, b$, there is a $
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y
-\end{array}
-\rightB$ such that $T\leftB
-\begin{array}{c}
+\end{mymatrix}$ such that $T\begin{mymatrix}{c}
 x \\
 y
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 a \\
 b
-\end{array}
-\rightB$.
+\end{mymatrix}$.
 Thus $T$ is onto.
 
 Now we want to know if $T$ is one to one. 
 By Proposition \ref{prop:onetoonematrices} it is enough to show that $A\vect{x}=0$ implies $\vect{x}=0$. 
 Consider the system $A\vect{x}=0$ given by:
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 1 & 1 \\
 1 & 2\\
-\end{array}
-\rightB
-\leftB
-\begin{array}{c}
+\end{mymatrix}
+\begin{mymatrix}{c}
 x\\
 y
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 0 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 This is the same as the system given by
@@ -260,53 +218,41 @@ x + 2y = 0
 \end{equation*}
 
 We need to show that the solution to this system is $x = 0$ and $y = 0$. By setting up the augmented matrix and row reducing, we end up with
-\begin{equation*} \leftB
-\begin{array}{rr|r}
+\begin{equation*} \begin{mymatrix}{rr|r}
 1 & 0 & 0 \\
 0 & 1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 This tells us that $x = 0$ and $y = 0$. Returning to the original system, this says that if 
 
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 1 & 1 \\
 1 & 2\\
-\end{array}
-\rightB
-\leftB
-\begin{array}{c}
+\end{mymatrix}
+\begin{mymatrix}{c}
 x\\
 y
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 0 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 then 
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 0 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 In other words, $A\vect{x}=0$ implies that $\vect{x}=0$. By 
@@ -316,53 +262,42 @@ We also could have seen that $T$ is one to one from our above solution for onto.
 by \ref{ontomatrix}, you can see that there is a \textbf{unique} solution given
 by $x=2a-b$ and $y=b-a$. Therefore, there
 is only one vector, specifically 
-$\leftB
-\begin{array}{c}
+$\begin{mymatrix}{c}
 x \\
 y
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 2a-b\\
 b-a
-\end{array}
-\rightB $ such that $T\leftB
-\begin{array}{c}
+\end{mymatrix} $ such that $T\begin{mymatrix}{c}
 x \\
 y
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 a \\
 b
-\end{array}
-\rightB $. Hence by Definition \ref{def:onetoone}, $T$ is one to one.
+\end{mymatrix} $. Hence by Definition \ref{def:onetoone}, $T$ is one to one.
 \end{solution}
 
 \begin{example}{An onto transformation}{ontotransformation}
 Let $T: \R^4 \mapsto \R^2$ be a linear transformation defined by
 \[
-T \leftB \begin{array}{c}
+T \begin{mymatrix}{c}
 a \\
 b \\
 c \\
 d
-\end{array}
-\rightB = 
-\leftB \begin{array}{c}
+\end{mymatrix} = 
+\begin{mymatrix}{c}
 a + d \\
 b + c 
-\end{array}
-\rightB
-\mbox{ for all } \leftB \begin{array}{c}
+\end{mymatrix}
+\mbox{ for all } \begin{mymatrix}{c}
 a \\
 b \\
 c \\
 d
-\end{array}
-\rightB \in \R^4
+\end{mymatrix} \in \R^4
 \]
 Prove that $T$ is onto but not one to one.
 \end{example}
@@ -370,55 +305,49 @@ Prove that $T$ is onto but not one to one.
 \begin{solution} 
 You can prove that $T$ is in fact linear. 
 
-To show that $T$ is onto, let $\leftB \begin{array}{c} 
+To show that $T$ is onto, let $\begin{mymatrix}{c} 
 x \\
 y
-\end{array} \rightB$ be an arbitrary vector in $\R^2$. Taking the vector $\leftB \begin{array}{c}
+\end{mymatrix}$ be an arbitrary vector in $\R^2$. Taking the vector $\begin{mymatrix}{c}
 x \\
 y \\
 0 \\
 0 
-\end{array} \rightB \in \R^4$ we have 
+\end{mymatrix} \in \R^4$ we have 
 \[
-T \leftB \begin{array}{c}
+T \begin{mymatrix}{c}
 x \\
 y \\
 0 \\
 0
-\end{array}
-\rightB = 
-\leftB \begin{array}{c}
+\end{mymatrix} = 
+\begin{mymatrix}{c}
 x + 0 \\
 y + 0 
-\end{array}
-\rightB
-= \leftB \begin{array}{c}
+\end{mymatrix}
+= \begin{mymatrix}{c}
 x \\
 y 
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 This shows that $T$ is onto. 
 
 By Proposition \ref{prop:onetoonematrices} $T$ is one to one if and only if $T(\vect{x}) = \vect{0}$ implies that $\vect{x} = \vect{0}$. Observe that 
 \[
-T \leftB \begin{array}{r}
+T \begin{mymatrix}{r}
 1 \\
 0 \\
 0 \\
 -1
-\end{array}
-\rightB = 
-\leftB \begin{array}{c}
+\end{mymatrix} = 
+\begin{mymatrix}{c}
 1 + -1 \\
 0 + 0 
-\end{array}
-\rightB
-= \leftB \begin{array}{c}
+\end{mymatrix}
+= \begin{mymatrix}{c}
 0 \\
 0 
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 There exists a nonzero vector $\vect{x}$ in $\R^4$ such that $T(\vect{x}) = \vect{0}$. It follows that $T$ is not one to one.
 \end{solution}
@@ -434,25 +363,22 @@ Consider Example \ref{exa:ontotransformation}. Above we showed that $T$ was onto
 \begin{example}{An onto transformation}{ontotransformationmatrix}
 Let $T: \R^4 \mapsto \R^2$ be a linear transformation defined by
 \[
-T \leftB \begin{array}{c}
+T \begin{mymatrix}{c}
 a \\
 b \\
 c \\
 d
-\end{array}
-\rightB = 
-\leftB \begin{array}{c}
+\end{mymatrix} = 
+\begin{mymatrix}{c}
 a + d \\
 b + c 
-\end{array}
-\rightB
-\mbox{ for all } \leftB \begin{array}{c}
+\end{mymatrix}
+\mbox{ for all } \begin{mymatrix}{c}
 a \\
 b \\
 c \\
 d
-\end{array}
-\rightB \in \R^4
+\end{mymatrix} \in \R^4
 \]
 Prove that $T$ is onto but not one to one.
 \end{example}
@@ -460,10 +386,10 @@ Prove that $T$ is onto but not one to one.
 \begin{solution}
 Using Theorem \ref{thm:matrixonetooneonto} we can show that $T$ is onto but not one to one from the matrix of $T$. Recall that to find the matrix $A$ of $T$, we apply $T$ to each of the standard basis vectors $\vect{e}_i$ of $\R^4$. The result is the $2 \times 4$ matrix A given by 
 \[
-A = \leftB \begin{array}{rrrr}
+A = \begin{mymatrix}{rrrr}
 1 & 0 & 0 & 1 \\
 0 & 1 & 1 & 0 
-\end{array} \rightB
+\end{mymatrix}
 \]
 Fortunately, this matrix is already in {\rref}. The rank of $A$ is $2$. Therefore by the above theorem $T$ is onto but not one to one. 
 \end{solution}

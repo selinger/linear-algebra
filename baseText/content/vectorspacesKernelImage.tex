@@ -90,18 +90,15 @@ Notice that this is a subspace of $\R$, and in fact is the space $\R$ itself.
 \begin{example}{Kernel and image of a linear transformation}{findingkernelimage}
 Let $T: \Mat_{22} \mapsto \R^2$ be defined by
 \[
-T \leftB \begin{array}{cc}
+T \begin{mymatrix}{cc}
 a & b \\
 c & d 
-\end{array}
-\rightB
+\end{mymatrix}
  = 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 a - b \\
 c + d
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 Then $T$ is a linear transformation. Find a basis for $\func{ker} (T)$ and $\func{im}(T)$.
 \end{example}
@@ -110,32 +107,26 @@ Then $T$ is a linear transformation. Find a basis for $\func{ker} (T)$ and $\fun
 You can verify that $T$ represents a linear transformation. 
 
 Now we want to find a way to describe all matrices $A$ such that $T(A) = \vect{0}$, that is the matrices in $\func{ker}(T)$. 
-Suppose $A = \leftB \begin{array}{cc}
+Suppose $A = \begin{mymatrix}{cc}
 a & b \\
 c & d 
-\end{array}
-\rightB$ is such a matrix. 
+\end{mymatrix}$ is such a matrix. 
 Then
 \[
-T \leftB \begin{array}{cc}
+T \begin{mymatrix}{cc}
 a & b \\
 c & d 
-\end{array}
-\rightB
+\end{mymatrix}
  = 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 a - b \\
 c + d
-\end{array}
-\rightB
+\end{mymatrix}
  = 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 0 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 The values of $a, b, c, d$ that make this true are given by solutions to the system
 \begin{eqnarray*}
@@ -146,23 +137,22 @@ The solution is $a = s, b = s, c = t, d = -t$ where $s, t$ are scalars. We can d
 \[
 \func{ker}(T) = 
 \left\{ 
-\leftB \begin{array}{cc}
+\begin{mymatrix}{cc}
 s & s \\
 t & -t 
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 =
 \func{span}
 \left\{
-\leftB \begin{array}{cc}
+\begin{mymatrix}{cc}
 1 & 1 \\
 0 & 0 
-\end{array} \rightB, 
-\leftB \begin{array}{cc}
+\end{mymatrix}, 
+\begin{mymatrix}{cc}
 0 & 0 \\
 1 & -1 
-\end{array} \rightB
+\end{mymatrix}
 \right\}
 \]
 It is clear that this set is linearly independent and therefore forms a basis for $\func{ker}(T)$. 
@@ -170,46 +160,45 @@ It is clear that this set is linearly independent and therefore forms a basis fo
 We now wish to find a basis for $\func{im}(T)$. We can write the image of $T$ as 
 \[
 \func{im}(T) = \left\{ 
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 a - b  \\
 c + d  
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 \]
 Notice that this can be written as 
 \[
 \func{span}
 \left\{
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 0
-\end{array}\rightB, 
-\leftB \begin{array}{c}
+\end{mymatrix}, 
+\begin{mymatrix}{c}
 -1 \\ 
 0
-\end{array}\rightB, 
-\leftB \begin{array}{c}
+\end{mymatrix}, 
+\begin{mymatrix}{c}
 0 \\ 
 1
-\end{array}\rightB, 
-\leftB \begin{array}{c}
+\end{mymatrix}, 
+\begin{mymatrix}{c}
 0 \\ 
 1
-\end{array}\rightB \right\}
+\end{mymatrix} \right\}
 \]
 
 However this is clearly not linearly independent. By removing vectors from the set to create an independent set gives a basis of $\func{im}(T)$.
 \[
 \left\{
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 0
-\end{array}\rightB, 
-\leftB \begin{array}{c}
+\end{mymatrix}, 
+\begin{mymatrix}{c}
 0 \\ 
 1
-\end{array}\rightB
+\end{mymatrix}
 \right\}
 \]
 
@@ -317,8 +306,8 @@ Let $S:\Poly_2\to\Mat_{22}$ be a linear transformation
 defined by
 \[ S(ax^2+bx+c)
 =
-\leftB\begin{array}{cc}
-a+b & a+c \\ b-c & b+c \end{array}\rightB
+\begin{mymatrix}{cc}
+a+b & a+c \\ b-c & b+c \end{mymatrix}
 \mbox{ for all }
  ax^2+bx+c\in \Poly_2.\]
 Prove that $S$ is one to one but not onto.
@@ -336,31 +325,31 @@ This leads to a homogeneous system of four equations in three
 variables.  
 Putting the augmented matrix in {\rref}: 
 
-\[ \leftB\begin{array}{rrr|c}
+\[ \begin{mymatrix}{rrr|c}
 1 & 1 & 0 & 0  \\
 1 & 0 & 1 & 0  \\
 0 & 1 & -1 & 0  \\
-0 & 1 & 1 & 0  \end{array}\rightB
+0 & 1 & 1 & 0  \end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 1 & 0 & 0 & 0  \\
 0 & 1 & 0 & 0  \\
 0 & 0 & 1 & 0  \\
-0 & 0 & 0 & 0  \end{array}\rightB. \]
+0 & 0 & 0 & 0  \end{mymatrix}. \]
 
 Since the unique solution is $a=b=c=0$, $\ker(S)=\{\vect{0}\}$, and thus
 $S$ is one-to-one by Corollary \ref{cor:oneoneontochar}.
 
 Similarly, by Corollary \ref{cor:oneoneontochar}, if $S$ is onto it will have $\func{rank}(S) = \func{dim}(\Mat_{22}) = 4$. The image of $S$ is given by 
 \[
-\func{im}(S) = \left\{ \leftB\begin{array}{cc}
-a+b & a+c \\ b-c & b+c \end{array}\rightB \right\} = \func{span} \left\{ \leftB\begin{array}{rr}
+\func{im}(S) = \left\{ \begin{mymatrix}{cc}
+a+b & a+c \\ b-c & b+c \end{mymatrix} \right\} = \func{span} \left\{ \begin{mymatrix}{rr}
 1 & 1 \\
-0 & 0 \end{array} \rightB, \leftB\begin{array}{rr}
+0 & 0 \end{mymatrix}, \begin{mymatrix}{rr}
 1 & 0 \\
-1 & 1 \end{array} \rightB, \leftB\begin{array}{rr}
+1 & 1 \end{mymatrix}, \begin{mymatrix}{rr}
 0 & 1 \\
--1 & 1 \end{array} \rightB \right\}
+-1 & 1 \end{mymatrix} \right\}
 \]
 These matrices are linearly independent which means this set forms a basis for $\func{im}(S)$. Therefore the dimension of $\func{im}(S)$, also called $\func{rank}(S)$, is equal to $3$. It follows that $S$ is not onto. 
 \end{solution}

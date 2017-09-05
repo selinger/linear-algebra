@@ -30,17 +30,13 @@ which results from switching two rows of $A.$ Then $\det \left( B\right)
 When we switch two rows of a matrix, the determinant is multiplied by $-1$. Consider the following example.
 
 \begin{example}{Switching two rows}{switchingrows}
-Let $A=\leftB
-\begin{array}{rr}
+Let $A=\begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB $ and let $B=\leftB
-\begin{array}{rr}
+\end{mymatrix} $ and let $B=\begin{mymatrix}{rr}
 3 & 4 \\
 1 & 2
-\end{array}
-\rightB $. 
+\end{mymatrix} $. 
 Knowing that $\det \left( A \right) =-2$, find $\det \left( B \right) $.
 \end{example}
 
@@ -75,17 +71,13 @@ Let $A$ and $B$ be $n \times n$ matrices and $k$ a scalar, such that $B = kA$. T
 Consider the following example.
 
 \begin{example}{Multiplying a row by 5}{5timesrow}
-Let $A=\leftB
-\begin{array}{rr}
+Let $A=\begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB ,\ B=\leftB
-\begin{array}{rr}
+\end{mymatrix} ,\ B=\begin{mymatrix}{rr}
 5 & 10 \\
 3 & 4
-\end{array}
-\rightB .$ 
+\end{mymatrix} .$ 
 Knowing that $\det \left( A \right) =-2$, find  $\det \left( B \right) $.
 \end{example}
 
@@ -121,17 +113,13 @@ Using Laplace Expansion along the row of zeros, we find that the determinant is 
 Consider the following example.
 
 \begin{example}{Adding a row to another row}{addingrow}
-Let $A=\leftB
-\begin{array}{rr}
+Let $A=\begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB $ and let $B=\leftB
-\begin{array}{rr}
+\end{mymatrix} $ and let $B=\begin{mymatrix}{rr}
 1 & 2 \\
 5 & 8
-\end{array}
-\rightB .$ 
+\end{mymatrix} .$ 
 Find $\det \left(B\right)$.
 \end{example}
 
@@ -145,10 +133,10 @@ As usual, you can verify this answer using Definition \ref{def:twobytwodetermina
 \end{solution}
 
 \begin{example}{Multiple of a row}{multiplerows}
-Let $A = \leftB \begin{array}{rr}
+Let $A = \begin{mymatrix}{rr}
 1 & 2 \\
 2 & 4 
-\end{array} \rightB$. Show that $\det \left( A \right) = 0$. 
+\end{mymatrix}$. Show that $\det \left( A \right) = 0$. 
 \end{example}
 
 \begin{solution}
@@ -185,66 +173,50 @@ Consider the following example.
 Compare $\det \left( AB\right) $ and $\det \left( A\right) \det \left(
 B\right) $ for
 \begin{equation*}
-A=\leftB
-\begin{array}{rr}
+A=\begin{mymatrix}{rr}
 1 & 2 \\
 -3 & 2
-\end{array}
-\rightB ,B=\leftB
-\begin{array}{rr}
+\end{mymatrix} ,B=\begin{mymatrix}{rr}
 3 & 2 \\
 4 & 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \end{example}
 
 \begin{solution} First compute $AB$, which is given by 
 \begin{equation*}
-AB=\leftB
-\begin{array}{rr}
+AB=\begin{mymatrix}{rr}
 1 & 2 \\
 -3 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 3 & 2 \\
 4 & 1
-\end{array}
-\rightB = \leftB
-\begin{array}{rr}
+\end{mymatrix} = \begin{mymatrix}{rr}
 11 & 4 \\
 -1 & -4
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and so by Definition \ref{def:twobytwodeterminant}
 \begin{equation*}
-\det \left( AB\right) =\det \leftB
-\begin{array}{rr}
+\det \left( AB\right) =\det \begin{mymatrix}{rr}
 11 & 4 \\
 -1 & -4
-\end{array}
-\rightB = -40
+\end{mymatrix} = -40
 \end{equation*}
 
 Now
 \begin{equation*}
-\det \left( A\right) =\det \leftB
-\begin{array}{rr}
+\det \left( A\right) =\det \begin{mymatrix}{rr}
 1 & 2 \\
 -3 & 2
-\end{array}
-\rightB = 8
+\end{mymatrix} = 8
 \end{equation*}
 and
 \begin{equation*}
-\det \left( B\right) =\det \leftB
-\begin{array}{rr}
+\det \left( B\right) =\det \begin{mymatrix}{rr}
 3 & 2 \\
 4 & 1
-\end{array}
-\rightB = -5
+\end{mymatrix} = -5
 \end{equation*}
 
 Computing $\det \left(A\right) \times \det \left(B\right)$ we 
@@ -269,12 +241,10 @@ Let
 \begin{equation*}
 A
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 2 & 5 \\
 4 & 3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Find $\det \left(A^T\right)$.
 \end{example}
@@ -284,12 +254,10 @@ First, note that
 \begin{equation*}
 A^{T}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 2 & 4 \\
 5 & 3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Using Definition \ref{def:twobytwodeterminant}, we can compute $\det \left(A\right)$ and $\det \left(A^T\right)$. It follows that
@@ -309,13 +277,13 @@ Let $A$ be an $n \times n$ matrix. Then $A$ is invertible if and only if $\det(A
 Consider the following example.
 
 \begin{example}{Determinant of an invertible matrix}{detinvertiblematrix}
-Let $A = \leftB \begin{array}{rr}
+Let $A = \begin{mymatrix}{rr}
 3 & 6 \\
 2 & 4 
-\end{array} \rightB, B = \leftB \begin{array}{rr}
+\end{mymatrix}, B = \begin{mymatrix}{rr}
 2 & 3 \\
 5 & 1
-\end{array} \rightB$. For each matrix, determine if it is invertible. If so, find the determinant of the inverse. 
+\end{mymatrix}$. For each matrix, determine if it is invertible. If so, find the determinant of the inverse. 
 \end{example}
 
 \begin{solution}

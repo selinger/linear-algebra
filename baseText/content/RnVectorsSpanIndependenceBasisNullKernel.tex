@@ -95,84 +95,66 @@ Consider the following example.
 Find the rank of the following matrix and describe the column and row spaces.
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 1 & 2 & 1 & 3 & 2 \\
 1 & 3 & 6 & 0 & 2 \\
 3 & 7 & 8 & 6 & 6
-\end{array}
-\rightB  
+\end{mymatrix}  
 \end{equation*}
 \end{example}
 
 \begin{solution}
 The {\rref} of $A$ is 
 \begin{equation*}
-\leftB 
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 1 & 0 & -9 & 9 & 2 \\ 
 0 & 1 & 5 & -3 & 0 \\ 
 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Therefore, the rank is $2$.
 
 Notice that the first two columns of $R$ are pivot columns. By the discussion following Lemma \ref{lem:echelonformrowspace}, we find the corresponding columns of $A$, in this case the first two columns. Therefore a basis for $\func{col}(A)$ is given by
 \[
-\left\{\leftB 
-\begin{array}{r}
+\left\{\begin{mymatrix}{r}
 1 \\ 
 1 \\ 
 3
-\end{array}
-\rightB , \leftB 
-\begin{array}{r}
+\end{mymatrix} , \begin{mymatrix}{r}
 2 \\ 
 3 \\ 
 7
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 \] 
 
  For
 example, consider the third column of the original matrix. It can be written as a linear combination of the first two columns of the original matrix as follows.
 \begin{equation*}
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\ 
 6 \\ 
 8
-\end{array}
-\rightB =-9\leftB 
-\begin{array}{r}
+\end{mymatrix} =-9\begin{mymatrix}{r}
 1 \\ 
 1 \\ 
 3
-\end{array}
-\rightB +5\leftB 
-\begin{array}{r}
+\end{mymatrix} +5\begin{mymatrix}{r}
 2 \\ 
 3 \\ 
 7
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 What about an efficient description of the row space? By Lemma \ref{lem:echelonformrowspace} we know that the nonzero rows of $R$ create a basis of $\func{row}(A)$.  For the above matrix, the row space equals 
 \[
 \func{row}(A) = 
 \func{span} \left\{
-\leftB 
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 1 & 0 & -9 & 9 & 2
-\end{array}
-\rightB, \leftB 
-\begin{array}{rrrrr}
+\end{mymatrix}, \begin{mymatrix}{rrrrr}
 0 & 1 & 5 & -3 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 \]
 \end{solution}
@@ -185,73 +167,57 @@ Consider another example.
 Find the rank of the following matrix and describe the
 column and row spaces.
 \begin{equation*}
-\leftB
-\begin{array}{rrrrrr}
+\begin{mymatrix}{rrrrrr}
 1 & 2 & 1 & 3 & 2 \\
 1 & 3 & 6 & 0 & 2 \\
 1 & 2 & 1 & 3 & 2 \\
 1 & 3 & 2 & 4 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
 \begin{solution}
 The {\rref} is 
 \begin{equation*}
-\leftB 
-\begin{array}{rrrrrr}
+\begin{mymatrix}{rrrrrr}
 1 & 0 & 0 & 0 & \vspace{0.05in}\frac{13}{2} \\ 
 0 & 1 & 0 & 2 & -\vspace{0.05in}\frac{5}{2} \\ 
 0 & 0 & 1 & -1 & \vspace{0.05in}\frac{1}{2} \\ 
 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 and so the rank is $3$. The row space is given by 
 \begin{equation*}
 \func{row}(A) = \func{span} \left\{ 
-\leftB 
-\begin{array}{ccccc}
+\begin{mymatrix}{ccccc}
 1 & 0 & 0 & 0 & \frac{13}{2}
-\end{array}
-\rightB,
-\leftB 
-\begin{array}{rrrrr}
+\end{mymatrix},
+\begin{mymatrix}{rrrrr}
 0 & 1 & 0 & 2 & -\frac{5}{2}
-\end{array}
-\rightB , 
-\leftB 
-\begin{array}{rrrrr}
+\end{mymatrix} , 
+\begin{mymatrix}{rrrrr}
 0 & 0 & 1 & -1 & \frac{1}{2}
-\end{array}
-\rightB
+\end{mymatrix}
  \right\}
 \end{equation*}
 Notice that the first three columns of the {\rref} are pivot columns. The column space is the span of the first three columns in the \textbf{original matrix}, 
 \begin{equation*}
-\func{col}(A) = \func{span} \left\{ \leftB 
-\begin{array}{r}
+\func{col}(A) = \func{span} \left\{ \begin{mymatrix}{r}
 1 \\ 
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB, \; \leftB 
-\begin{array}{r}
+\end{mymatrix}, \; \begin{mymatrix}{r}
 2 \\ 
 3 \\ 
 2 \\ 
 3
-\end{array}
-\rightB , \; \leftB 
-\begin{array}{r}
+\end{mymatrix} , \; \begin{mymatrix}{r}
 1 \\ 
 6 \\ 
 1 \\ 
 2
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 
 \end{solution}
@@ -289,11 +255,10 @@ Consider the following example.
 \begin{example}{Rank of the transpose}{ranktranspose}
 Let \[
 A = 
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 2 \\
 -1 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \]
 Find $\func{rank}(A)$ and $\func{rank}(A^T)$.
 \end{example}
@@ -302,36 +267,35 @@ Find $\func{rank}(A)$ and $\func{rank}(A^T)$.
 To find $\func{rank}(A)$ we first row reduce to find the {\rref}.
 \[
 A = 
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 2 \\
 -1 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB \begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1 
-\end{array}\rightB
+\end{mymatrix}
 \]
 
 Therefore the rank of $A$ is $2$. Now consider $A^T$ given by 
 \[
-A^T = \leftB \begin{array}{rr}
+A^T = \begin{mymatrix}{rr}
 1 & -1 \\
 2 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \]
 Again we row reduce to find the {\rref}.
 \[
-\leftB \begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & -1 \\
 2 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB \begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \]
 
 You can see that $\func{rank}(A^T) = 2$, the same as $\func{rank}(A)$. 
@@ -414,13 +378,11 @@ Consider the following example.
 \begin{example}{Null space of $A$}{nullspace}
 Let
 \begin{equation*}
-A=\leftB
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 0 & -1 & 1 \\
 2 & 3 & 3
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Find $\func{null} \left( A\right) $ and $\func{im}\left( A\right)$.
 \end{example}
@@ -431,55 +393,45 @@ equation $A\vect{x}=\vect{0}$. This is the usual procedure of writing
 the augmented matrix, finding the {\rref} and then the solution. The
 augmented matrix and corresponding {\rref} are
 \begin{equation*}
-\leftB 
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 2 & 1 & 0 \\ 
 0 & -1 & 1 & 0 \\ 
 2 & 3 & 3 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB 
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & 3 & 0 \\ 
 0 & 1 & -1 & 0 \\ 
 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The third column is not a pivot column, and therefore the solution
 will contain a parameter. The solution to the system
 $A\vect{x}=\vect{0}$ is given by
 \begin{equation*}
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 -3t \\ 
 t \\ 
 t
-\end{array}
-\rightB :t\in \R
+\end{mymatrix} :t\in \R
 \end{equation*}
 which can be written as 
 \begin{equation*}
 t
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 -3 \\ 
 1 \\ 
 1
-\end{array}
-\rightB :t\in \R
+\end{mymatrix} :t\in \R
 \end{equation*}
 
 Therefore, the null space of $A$ is all multiples of this vector, which we can write as
 \begin{equation*}
-\func{null} (A) = \func{span} \left\{ \leftB 
-\begin{array}{r}
+\func{null} (A) = \func{span} \left\{ \begin{mymatrix}{r}
 -3 \\ 
 1 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 \end{equation*}
 
@@ -492,19 +444,15 @@ columns. Thus the  column space is the span of the first two  columns in
 the \textbf{original matrix}, and we get 
 \begin{equation*}
 \func{im}\left( A\right) = \func{col}(A) =
-\func{span} \left\{ \leftB 
-\begin{array}{r}
+\func{span} \left\{ \begin{mymatrix}{r}
 1 \\ 
 0 \\ 
 2 
-\end{array}
-\rightB, \; \leftB 
-\begin{array}{r}
+\end{mymatrix}, \; \begin{mymatrix}{r}
 2 \\ 
 -1 \\ 
 3 
-\end{array}
-\rightB  \right\}
+\end{mymatrix}  \right\}
 \end{equation*}
 
 \end{solution}
@@ -514,14 +462,12 @@ Here is a larger example, but the method is entirely similar.
 \begin{example}{Null space of $A$}{nullspace2}
 Let
 \begin{equation*}
-A=\leftB
-\begin{array}{rrrrr}
+A=\begin{mymatrix}{rrrrr}
 1 & 2 & 1 & 0 & 1 \\
 2 & -1 & 1 & 3 & 0 \\
 3 & 1 & 2 & 3 & 1 \\
 4 & -2 & 2 & 6 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Find the null space of $A$.
 \end{example}
@@ -529,28 +475,23 @@ Find the null space of $A$.
 \begin{solution}
 To find the null space, we need to solve the equation $AX=0$. The augmented matrix and corresponding {\rref} are given by 
 \begin{equation*}
-\leftB 
-\begin{array}{rrrrr|r}
+\begin{mymatrix}{rrrrr|r}
 1 & 2 & 1 & 0 & 1 & 0 \\ 
 2 & -1 & 1 & 3 & 0 & 0 \\ 
 3 & 1 & 2 & 3 & 1 & 0 \\ 
 4 & -2 & 2 & 6 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB 
-\begin{array}{rrrrr|r}
+\begin{mymatrix}{rrrrr|r}
 1 & 0 & \vspace{0.05in}\frac{3}{5} & \vspace{0.05in}\frac{6}{5} & \vspace{0.05in}\frac{1}{5} & 0 \\ 
 0 & 1 & \vspace{0.05in}\frac{1}{5} & -\vspace{0.05in}\frac{3}{5} & \vspace{0.05in}\frac{2}{5} & 0 \\ 
 0 & 0 & 0 & 0 & 0 & 0 \\ 
 0 & 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 It follows that the first two columns are pivot columns, and the next three correspond to parameters. Therefore, $\func{null} \left( A\right) $ is given by 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 \left( -\vspace{0.05in}\frac{3}{5}\right) s +\left( -\vspace{0.05in}\frac{6}{5}\right) t+\left( 
 \vspace{0.05in}\frac{1}{5}\right) r \\ 
 \left( -\vspace{0.05in}\frac{1}{5}\right) s +\left( \vspace{0.05in}\frac{3}{5}\right) t +\left( -
@@ -558,65 +499,52 @@ It follows that the first two columns are pivot columns, and the next three corr
 s \\ 
 t \\ 
 r
-\end{array}
-\rightB :s ,t ,r\in \R\text{.}
+\end{mymatrix} :s ,t ,r\in \R\text{.}
 \end{equation*}
 We write this in the form 
 \begin{equation*}
-s \leftB 
-\begin{array}{r}
+s \begin{mymatrix}{r}
 -\vspace{0.05in}\frac{3}{5} \\ 
 -\vspace{0.05in}\frac{1}{5} \\ 
 1 \\ 
 0 \\ 
 0
-\end{array}
-\rightB + t \leftB 
-\begin{array}{r}
+\end{mymatrix} + t \begin{mymatrix}{r}
 -\vspace{0.05in}\frac{6}{5} \\ 
 \vspace{0.05in}\frac{3}{5} \\ 
 0 \\ 
 1 \\ 
 0
-\end{array}
-\rightB + r \leftB 
-\begin{array}{r}
+\end{mymatrix} + r \begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{5} \\ 
 -\vspace{0.05in}\frac{2}{5} \\ 
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB :s , t , r\in \R\text{.}
+\end{mymatrix} :s , t , r\in \R\text{.}
 \end{equation*}
 In other words, the null space of this matrix equals the span of the three
 vectors above. Thus 
 \begin{equation*}
-\func{null} \left( A\right) =\func{span}\left\{ \leftB 
-\begin{array}{r}
+\func{null} \left( A\right) =\func{span}\left\{ \begin{mymatrix}{r}
 -\vspace{0.05in}\frac{3}{5} \\ 
 -\vspace{0.05in}\frac{1}{5} \\ 
 1 \\ 
 0 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 -\vspace{0.05in}\frac{6}{5} \\ 
 \vspace{0.05in}\frac{3}{5} \\ 
 0 \\ 
 1 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{5} \\ 
 -\vspace{0.05in}\frac{2}{5} \\ 
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB \right\} 
+\end{mymatrix} \right\} 
 \end{equation*}
 \end{solution}
 
@@ -645,13 +573,11 @@ Consider the following example, which we first explored above in Example \ref{ex
 \begin{example}{Rank and nullity}{ranknullity}
 Let
 \begin{equation*}
-A=\leftB
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 0 & -1 & 1 \\
 2 & 3 & 3
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Find $\func{rank}\left( A\right)$ and $\dim( \func{null}\left(A\right))$. 
@@ -661,24 +587,20 @@ Find $\func{rank}\left( A\right)$ and $\dim( \func{null}\left(A\right))$.
 \begin{solution}
 In the above Example \ref{exa:nullspace} we determined that the {\rref} of $A$ is given by 
 \[
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 3 \\ 
 0 & 1 & -1  \\
 0 & 0 & 0 
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 Therefore the rank of $A$ is $2$. We also determined that the null space of $A$ is given by 
 \[
-\func{null} (A) = \func{span} \left\{ \leftB 
-\begin{array}{r}
+\func{null} (A) = \func{span} \left\{ \begin{mymatrix}{r}
 -3 \\ 
 1 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 \]
 

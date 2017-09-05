@@ -117,19 +117,15 @@ x + 2y - 2z + 3w = 0
   equations. We construct the augmented matrix and reduce it to
   {\rref}.
   \begin{equation*}
-    \leftB
-    \begin{array}{rrrr|r}
+    \begin{mymatrix}{rrrr|r}
       2 & 1 & 1 & 4 & 0 \\ 
       1 & 2 & -1 & 5 & 0
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \sim
-    \leftB
-    \begin{array}{rrrr|r}
+    \begin{mymatrix}{rrrr|r}
       1 & 0 &  1 & 1 & 0 \\ 
       0 & 1 & -1 & 2 & 0
-    \end{array}
-    \rightB
+    \end{mymatrix}
   \end{equation*}
   The corresponding system of equations is 
   \begin{equation*}
@@ -155,34 +151,28 @@ x + 2y - 2z + 3w = 0
 Let us write the solution of the last example in another form.
 Specifically, it can be written as 
 \begin{equation}\label{eqn:homogeneoussolution-1}
-  \leftB
-  \begin{array}{r}
+  \begin{mymatrix}{r}
     x\\
     y\\
     z\\
     w
-  \end{array}
-  \rightB
+  \end{mymatrix}
   =
   s
-  \leftB
-  \begin{array}{r}
+  \begin{mymatrix}{r}
     -1\\
     1\\
     1\\
     0
-  \end{array}
-  \rightB
+  \end{mymatrix}
   +
   t
-  \leftB
-  \begin{array}{r}
+  \begin{mymatrix}{r}
     -1\\
     -2\\
     0\\
     1
-  \end{array}
-  \rightB.
+  \end{mymatrix}.
 \end{equation}
 Notice that we have constructed a column from the coefficients of $s$
 in each equation, and another column from the coefficients of $t$.  We
@@ -190,28 +180,24 @@ will discuss this notation more in later chapters. For now, consider
 what happens when we choose the parameters to be $s=1$ and $t=0$. In
 this case, we get the solution
 \begin{equation}\label{eqn:homogeneoussolution-2}
-  \leftB
-  \begin{array}{r}
+  \begin{mymatrix}{r}
     -1\\
     1\\
     1\\
     0
-  \end{array}
-  \rightB,
+  \end{mymatrix},
 \end{equation}
 which is the same as the column of coefficients for $s$. This is
 called a \textbf{basic solution}\index{basic solution}\index{solution!basic} of the
 homogeneous system of equations. The other basic solution is obtained
 by setting $s=0$ and $t=1$. In this case,
 \begin{equation}\label{eqn:homogeneoussolution-3}
-  \leftB
-  \begin{array}{r}
+  \begin{mymatrix}{r}
     -1\\
     -2\\
     0\\
     1
-  \end{array}
-  \rightB.
+  \end{mymatrix}.
 \end{equation}
 The basic solutions of a system are columns constructed from the
 coefficients on parameters in the solution. If $X_1$ and $X_2$ are the
@@ -238,19 +224,15 @@ We explore this further in the following example.
 \begin{solution}
   The augmented matrix of this system and the resulting {\rref} are 
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 4 & 3 & 0 \\
       3 & 12 & 9 & 0
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \sim
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 4 & 3 & 0 \\
       0 & 0 & 0 & 0
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   When written in equations, this system is given by 
   \begin{equation*}
@@ -268,50 +250,40 @@ We explore this further in the following example.
   \end{equation*}
   which can be written as 
   \begin{equation*}
-    \leftB
-    \begin{array}{r}
+    \begin{mymatrix}{r}
       x\\
       y\\
       z
-    \end{array}
-    \rightB
+    \end{mymatrix}
     =
     s
-    \leftB
-    \begin{array}{r}
+    \begin{mymatrix}{r}
       -4 \\
       1 \\
       0
-    \end{array}
-    \rightB
+    \end{mymatrix}
     + 
     t
-    \leftB
-    \begin{array}{r}
+    \begin{mymatrix}{r}
       -3 \\
       0 \\
       1
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   You can see here that we have two columns of coefficients
   corresponding to parameters, specifically one for $s$ and one for $t$.
   Therefore, this system has two basic solutions! They are
   \begin{equation*}
     X_1=
-    \leftB
-    \begin{array}{r}
+    \begin{mymatrix}{r}
       -4 \\
       1 \\
       0
-    \end{array}
-    \rightB,\quad X_2 = \leftB
-    \begin{array}{r}
+    \end{mymatrix},\quad X_2 = \begin{mymatrix}{r}
       -3 \\
       0 \\
       1
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*} 
 \end{solution}
 
@@ -342,19 +314,15 @@ its associated homogeneous system.
   {\eqref{eqn:nonhomo-vs-homo-1}} in the usual way by reducing its
   augmented matrix to {\rref}
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 4 & 3 & 2 \\
       3 & 12 & 9 & 6
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \sim
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 4 & 3 & 2 \\
       0 & 0 & 0 & 0
-    \end{array}
-    \rightB
+    \end{mymatrix}
   \end{equation*}
   and then assigning parameters $y=s$, $z=t$ to the free
   variables. From the equation $x+4y+3z=2$, the general solution is
@@ -367,51 +335,41 @@ its associated homogeneous system.
   \end{equation*}
   which can be written as 
   \begin{equation}\label{eqn:nonhomo-vs-homo-2}
-    \leftB
-    \begin{array}{r}
+    \begin{mymatrix}{r}
       x\\
       y\\
       z
-    \end{array}
-    \rightB
+    \end{mymatrix}
     =
-    \leftB
-    \begin{array}{r}
+    \begin{mymatrix}{r}
       2 \\
       0 \\
       0
-    \end{array}
-    \rightB
+    \end{mymatrix}
     + 
     s
-    \leftB
-    \begin{array}{r}
+    \begin{mymatrix}{r}
       -4 \\
       1 \\
       0
-    \end{array}
-    \rightB
+    \end{mymatrix}
     + 
     t
-    \leftB
-    \begin{array}{r}
+    \begin{mymatrix}{r}
       -3 \\
       0 \\
       1
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation}
   We see that the general solution is almost exactly the same as that
   of the homogeneous system in Example~\ref{exa:basicsolutions}. The
   only difference is the additional column
   \begin{equation}\label{eqn:nonhomo-vs-homo-3}
-    \leftB
-    \begin{array}{r}
+    \begin{mymatrix}{r}
       2 \\
       0 \\
       0
-    \end{array}
-    \rightB
+    \end{mymatrix}
   \end{equation}    
 \end{solution}
 

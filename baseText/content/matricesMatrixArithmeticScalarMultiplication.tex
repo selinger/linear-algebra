@@ -4,19 +4,15 @@ Recall that we use the word {\em scalar \em}when referring to numbers. Therefore
 To illustrate this concept, consider the following example in which a
 matrix is multiplied by the scalar $3$.
 \begin{equation*}
-3\leftB
-\begin{array}{rrrr}
+3\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 4 \\
 5 & 2 & 8 & 7 \\
 6 & -9 & 1 & 2
-\end{array}
-\rightB = \leftB
-\begin{array}{rrrr}
+\end{mymatrix} = \begin{mymatrix}{rrrr}
 3 & 6 & 9 & 12 \\
 15 & 6 & 24 & 21 \\
 18 & -27 & 3 & 6
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 The new matrix is obtained by multiplying every entry of the original matrix
@@ -34,12 +30,10 @@ Consider the following example.
 \begin{example}{Effect of multiplication by a scalar}{effectofscalarmult}
 Find the result of multiplying the following matrix $A$ by $7$.
 \begin{equation*}
-A=\leftB
-\begin{array}{rr}
+A=\begin{mymatrix}{rr}
 2 & 0 \\
 1 & -4
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -48,24 +42,18 @@ By Definition \ref{def:scalarmultofmatrices}, we multiply each element of $A$ by
 Therefore,
 \begin{equation*}
 7A = 
-7\leftB
-\begin{array}{rr}
+7\begin{mymatrix}{rr}
 2 & 0 \\
 1 & -4
-\end{array}
-\rightB =
-\leftB
-\begin{array}{rr}
+\end{mymatrix} =
+\begin{mymatrix}{rr}
 7(2) & 7(0) \\
 7(1) & 7(-4)
-\end{array}
-\rightB =
-\leftB
-\begin{array}{rr}
+\end{mymatrix} =
+\begin{mymatrix}{rr}
 14 & 0 \\
 7 & -28
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{solution}
 

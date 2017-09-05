@@ -121,13 +121,11 @@ we can also speak about the null space of a matrix. Consider the following examp
 \begin{example}{The null space of a matrix}{matrixnullspace}
 Let
 \begin{equation*}
-A=\leftB
-\begin{array}{rrrr}
+A=\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 0 \\
 2 & 1 & 1 & 2 \\
 4 & 5 & 7 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Find $\func{null} \left( A\right) $. Equivalently, find the solutions to the
 system of equations $A\vect{x}=\vect{0}$.
@@ -135,35 +133,27 @@ system of equations $A\vect{x}=\vect{0}$.
 
 \begin{solution}  We are asked to find $\left\{ \vect{x} : A\vect{x} = \vect{0}\right\} .$ In other
 words we want to solve the system, $A\vect{x}=\vect{0}$. Let $\vect{x} =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB.$ Then this amounts to solving
+\end{mymatrix}.$ Then this amounts to solving
 \begin{equation*}
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 0 \\
 2 & 1 & 1 & 2 \\
 4 & 5 & 7 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 0 \\
 0 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 This is the linear system
 \begin{equation*}
@@ -175,49 +165,39 @@ x+2y+3z=0 \\
 \end{equation*}
 To solve, set up the augmented matrix and row reduce to find the {\rref}.
 \begin{equation*}
-\leftB
-\begin{array}{rrrr|r}
+\begin{mymatrix}{rrrr|r}
 1 & 2 & 3 & 0 & 0 \\
 2 & 1 & 1 & 2 & 0 \\
 4 & 5 & 7 & 2 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB
-\begin{array}{rrrr|r}
+\begin{mymatrix}{rrrr|r}
 1 & 0 & -
 \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{4}{3} &  0 \\
 0 & 1 & \vspace{0.05in}\frac{5}{3} & -\vspace{0.05in}\frac{2}{3} & 0 \\
 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 This yields $x=\vspace{0.05in}\frac{1}{3}z-\vspace{0.05in}\frac{4}{3}w$ and 
 $y=\vspace{0.05in}\frac{2}{3}w-\vspace{0.05in}\frac{5}{3}z.$
 Since $\func{null} \left( A\right) $ consists of the solutions to this system, it consists vectors of the form,
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 \vspace{0.05in}\frac{1}{3}z-\vspace{0.05in}\frac{4}{3}w \\
 \vspace{0.05in}\frac{2}{3}w-\vspace{0.05in}\frac{5}{3}z \\
 z \\
 w
-\end{array}
-\rightB =z \leftB
-\begin{array}{r}
+\end{mymatrix} =z \begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{3} \\
 -\vspace{0.05in}\frac{5}{3} \\
 1 \\
 0
-\end{array}
-\rightB +w \leftB
-\begin{array}{r}
+\end{mymatrix} +w \begin{mymatrix}{r}
 -\vspace{0.05in}\frac{4}{3} \\
 \vspace{0.05in}\frac{2}{3} \\
 0 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \end{solution}
 
@@ -228,42 +208,32 @@ The \textbf{general solution}\index{general solution} of a linear system of equa
 is the set of
 all possible solutions. Find the general solution to the linear system,
 \begin{equation*}
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 0 \\
 2 & 1 & 1 & 2 \\
 4 & 5 & 7 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB =\leftB
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 9 \\
 7 \\
 25
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
-given that $\leftB
-\begin{array}{r}
+given that $\begin{mymatrix}{r}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB=\leftB
-\begin{array}{r}
+\end{mymatrix}=\begin{mymatrix}{r}
 1 \\
 1 \\
 2 \\
 1
-\end{array}
-\rightB$ is one solution.
+\end{mymatrix}$ is one solution.
 \end{example}
 
 \begin{solution} Note the matrix of this system is the same as the matrix in Example 
@@ -273,48 +243,38 @@ system, $\vect{x}$. One particular solution is given above by
 \begin{equation}
 \vect{x}_p
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB=\leftB
-\begin{array}{r}
+\end{mymatrix}=\begin{mymatrix}{r}
 1 \\
 1 \\
 2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation}
 
 Using this particular solution along with the solutions found in Example \ref{exa:matrixnullspace}, we
 obtain the following solutions, 
 \begin{equation*}
-z\leftB
-\begin{array}{r}
+z\begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{3} \\
 -\vspace{0.05in}\frac{5}{3} \\
 1 \\
 0
-\end{array}
-\rightB +w\leftB
-\begin{array}{r}
+\end{mymatrix} +w\begin{mymatrix}{r}
 -\vspace{0.05in}\frac{4}{3} \\
 \vspace{0.05in}\frac{2}{3} \\
 0 \\
 1
-\end{array}
-\rightB +\leftB
-\begin{array}{r}
+\end{mymatrix} +\begin{mymatrix}{r}
 1 \\
 1 \\
 2 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Hence, any solution to the above linear system is of this form.

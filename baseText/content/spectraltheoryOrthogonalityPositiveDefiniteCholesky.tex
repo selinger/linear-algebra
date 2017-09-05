@@ -31,40 +31,40 @@ Consider the following example.
 
 \begin{example}{Cholesky factorization}{cholesky}
 Show that
-$A=\leftB\begin{array}{rrr}
+$A=\begin{mymatrix}{rrr}
 9 & -6 & 3 \\ -6 & 5 & -3 \\ 3 & -3 & 6 
-\end{array}\rightB$ 
+\end{mymatrix}$ 
 is positive definite, and find the Cholesky factorization of $A$.
 \end{example}
 
 \begin{solution}
 First we show that $A$ is positive definite. By Theorem \ref{thm:positivematrixdeterminantAk} it suffices to show that the determinant of each submatrix is positive. 
-\[ A_{1}=\leftB\begin{array}{c} 9 \end{array}\rightB
+\[ A_{1}=\begin{mymatrix}{c} 9 \end{mymatrix}
 \mbox{ and }
-A_{2}=\leftB\begin{array}{rr} 9 & -6 \\ -6 & 5 \end{array}\rightB,\]
+A_{2}=\begin{mymatrix}{rr} 9 & -6 \\ -6 & 5 \end{mymatrix},\]
 so $\det(A_{1})=9$ and $\det(A_{2})=9$.
 Since $\det(A)=36$, it follows that $A$ is positive definite.
 
 Now we use Procedure \ref{proc:findingcholesky} to find the Cholesky Factorization. Row reduce (using only type $3$ row operations) until an upper triangular matrix is obtained. 
-\[ \leftB\begin{array}{rrr}
+\[ \begin{mymatrix}{rrr}
 9 & -6 & 3 \\ -6 & 5 & -3 \\ 3 & -3 & 6
-\end{array}\rightB
+\end{mymatrix}
 \rightarrow
-\leftB\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 9 & -6 & 3 \\ 0 & 1 & -1 \\ 0 & -1 & 5
-\end{array}\rightB
+\end{mymatrix}
 \rightarrow
-\leftB\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 9 & -6 & 3 \\ 0 & 1 & -1 \\ 0 & 0 & 4
-\end{array}\rightB
+\end{mymatrix}
 \]
 
 Now divide the entries in each row by the square root of the diagonal
 entry in that row, to give
 
-\[ U=\leftB\begin{array}{rrr}
+\[ U=\begin{mymatrix}{rrr}
 3 & -2 & 1 \\ 0 & 1 & -1 \\ 0 & 0 & 2
-\end{array}\rightB
+\end{mymatrix}
 \]
 
 You can verify that $U^TU = A$.
@@ -73,13 +73,11 @@ You can verify that $U^TU = A$.
 \begin{example}{Cholesky factorization}{cholesky}
 Let $A$ be a positive definite matrix given by 
 \begin{equation*}
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 3 & 1 & 1 \\ 
 1 & 4 & 2 \\ 
 1 & 2 & 5
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Determine its Cholesky factorization.
 \end{example}
@@ -89,40 +87,32 @@ You can verify that $A$ is in fact positive definite.
 
 To find the Cholesky factorization we first row reduce to an upper triangular matrix. 
 \[
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 3 & 1 & 1 \\ 
 1 & 4 & 2 \\ 
 1 & 2 & 5
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow
-\leftB 
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 3 & 1 & 1 \\ 
 0 & \vspace{0.05in}\frac{11}{3} & \vspace{0.05in}\frac{5}{3} \\ 
 0 & \vspace{0.05in}\frac{5}{3}  & \vspace{0.05in}\frac{14}{5}
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow
-\leftB 
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 3 & 1 & 1 \\ 
 0 & \vspace{0.05in}\frac{11}{3} & \vspace{0.05in}\frac{5}{3} \\ 
 0 & 0 & \vspace{0.05in}\frac{43}{11}
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 Now divide the entries in each row by the square root of the diagonal entry in that row and simplify.
 \[
-U = \leftB 
-\begin{array}{ccc}
+U = \begin{mymatrix}{ccc}
 \sqrt{3} & \vspace{0.05in}\frac{1}{3}\sqrt{3} & \vspace{0.05in}\frac{1}{3}\sqrt{3}  \\ 
 0  & \vspace{0.05in}\frac{1}{3}\sqrt{3}\sqrt{11} &  \vspace{0.05in}\frac{5}{33}\sqrt{3}\sqrt{11} \\ 
 
 0  & 0 & \vspace{0.05in}\frac{1}{11}\sqrt{11}\sqrt{43}
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{solution}

@@ -6,17 +6,13 @@ but not in the other order. However, even if both $AB$ and $BA$ are defined,
 they may not be equal. 
 
 \begin{example}{Matrix multiplication is not commutative}{noncommutativemultiplication}
-Compare the products $AB$ and $BA$, for matrices $ A = \leftB
-\begin{array}{rr}
+Compare the products $AB$ and $BA$, for matrices $ A = \begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB, B= \leftB
-\begin{array}{rr}
+\end{mymatrix}, B= \begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0
-\end{array}
-\rightB $ 
+\end{mymatrix} $ 
 \end{example}
 
 \begin{solution} 
@@ -24,41 +20,29 @@ First, notice that $A$ and $B$ are both of size $2 \times 2$. Therefore, both
 products $AB$ and $BA$ are defined. 
 The first product, $AB$ is
 \begin{equation*}
-AB = \leftB
-\begin{array}{rr}
+AB = \begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0
-\end{array}
-\rightB = \leftB
-\begin{array}{rr}
+\end{mymatrix} = \begin{mymatrix}{rr}
 2 & 1 \\
 4 & 3
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 The second product, $BA$ is
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB = \leftB
-\begin{array}{rr}
+\end{mymatrix} = \begin{mymatrix}{rr}
 3 & 4 \\
 1 & 2
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Therefore, $AB \neq BA$. 
 \end{solution}

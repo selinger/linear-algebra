@@ -58,16 +58,16 @@ We will now examine how to find the kernel and image of a linear transformation 
 \begin{example}{Kernel and image of a linear transformation}{kernelimage}
 Let $T: \R^4 \mapsto \R^2$ be defined by
 \[
-T \leftB \begin{array}{c}
+T \begin{mymatrix}{c}
 a \\
 b \\
 c \\
 d
-\end{array} \rightB = 
-\leftB \begin{array}{c}
+\end{mymatrix} = 
+\begin{mymatrix}{c}
 a - b \\ 
 c + d
-\end{array} \rightB
+\end{mymatrix}
 \]
 Then $T$ is a linear transformation. Find a basis for $\func{ker}(T)$ and $\func{im}(T)$. 
 \end{example}
@@ -75,27 +75,27 @@ Then $T$ is a linear transformation. Find a basis for $\func{ker}(T)$ and $\func
 \begin{solution}
 You can verify that $T$ is a linear transformation.
 
-First we will find a basis for $\func{ker}(T)$. To do so, we want to find a way to describe all vectors $\vect{x} \in \R^4$ such that $T(\vect{x}) = \vect{0}$. Let $\vect{x} =  \leftB \begin{array}{c}
+First we will find a basis for $\func{ker}(T)$. To do so, we want to find a way to describe all vectors $\vect{x} \in \R^4$ such that $T(\vect{x}) = \vect{0}$. Let $\vect{x} =  \begin{mymatrix}{c}
 a \\
 b \\
 c \\
 d
-\end{array} \rightB$ be such a vector. Then
+\end{mymatrix}$ be such a vector. Then
 \[
-T \leftB \begin{array}{c}
+T \begin{mymatrix}{c}
 a \\
 b \\
 c \\
 d
-\end{array} \rightB = 
-\leftB \begin{array}{c}
+\end{mymatrix} = 
+\begin{mymatrix}{c}
 a - b \\ 
 c + d
-\end{array} \rightB = 
-\leftB \begin{array}{c}
+\end{mymatrix} = 
+\begin{mymatrix}{c}
 0 \\ 
 0
-\end{array} \rightB
+\end{mymatrix}
 \]
 
 The values of $a, b, c, d$ that make this true are given by solutions to the system 
@@ -105,66 +105,66 @@ c + d &=& 0
 \end{eqnarray*}
 The solution to this system is $ a = s, b = s, c = t, d = -t$ where $s, t$ are scalars. We can describe $\func{ker}(T)$ as follows.
 \[
-\func{ker}(T) = \left\{ \leftB \begin{array}{r}
+\func{ker}(T) = \left\{ \begin{mymatrix}{r}
 s \\ 
 s \\
 t \\
 -t 
-\end{array} \rightB \right\}
+\end{mymatrix} \right\}
 =
-\func{span} \left\{ \leftB \begin{array}{r}
+\func{span} \left\{ \begin{mymatrix}{r}
 1 \\
 1 \\
 0 \\
 0 
-\end{array} \rightB, \leftB \begin{array}{r}
+\end{mymatrix}, \begin{mymatrix}{r}
 0 \\
 0 \\
 1 \\
 -1
-\end{array} \rightB \right\}
+\end{mymatrix} \right\}
 \]
 Notice that this set is linearly independent and therefore forms a basis for $\func{ker}(T)$. 
 
 We move on to finding a basis for $\func{im}(T)$. We can write the image of $T$ as 
 \[
-\func{im}(T) = \left\{ \leftB \begin{array}{c}
+\func{im}(T) = \left\{ \begin{mymatrix}{c}
 a - b \\
 c + d
-\end{array} \rightB
+\end{mymatrix}
 \right\}
 \]
 We can write this in the form
 \[
 \func{span} = \left\{ 
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0
-\end{array} \rightB, 
-\leftB \begin{array}{r}
+\end{mymatrix}, 
+\begin{mymatrix}{r}
 -1 \\
 0
-\end{array} \rightB, 
-\leftB \begin{array}{r}
+\end{mymatrix}, 
+\begin{mymatrix}{r}
 0 \\
 1
-\end{array} \rightB, 
-\leftB \begin{array}{r}
+\end{mymatrix}, 
+\begin{mymatrix}{r}
 0 \\
 1
-\end{array} \rightB \right\}
+\end{mymatrix} \right\}
 \]
 This set is clearly not linearly independent. By removing unnecessary vectors from the set we can create a linearly independent set with the same span. This gives a basis for $\func{im}(T)$ as
 \[
 \func{im}(T) = \func{span} \left\{
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0
-\end{array} \rightB,
-\leftB \begin{array}{r}
+\end{mymatrix},
+\begin{mymatrix}{r}
 0 \\
 1
-\end{array} \rightB
+\end{mymatrix}
 \right\}
 \]
 \end{solution}
@@ -251,13 +251,11 @@ Consider the following example.
 \begin{example}{}{}
 Let $T:\R^{2}\rightarrow \R^{3}$ be defined by 
 \begin{equation*}
-T(\vect{x})=\leftB
-\begin{array}{rr}
+T(\vect{x})=\begin{mymatrix}{rr}
 1 & 0 \\ 
 1 & 0 \\ 
 0 & 1
-\end{array}
-\rightB \vect{x}
+\end{mymatrix} \vect{x}
 \end{equation*}
 Then $\func{im}\left( T\right) =V$ is a subspace of $\R^{3}$ and $T$
 is an isomorphism of $\R^{2}$ and $V$. Find a $2\times 3$ matrix $A$
@@ -271,143 +269,105 @@ Since the two columns of the above matrix are linearly independent, we conclude 
 Thus $T$ is an isomorphism of $\R^{2}$ and the two dimensional subspace of $\R^{3}$ which is the
 span of the columns of the given matrix. Now in particular, 
 \begin{equation*}
-T(\vect{e}_{1})=\leftB 
-\begin{array}{r}
+T(\vect{e}_{1})=\begin{mymatrix}{r}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB ,\ T(\vect{e}_{2})=\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\ T(\vect{e}_{2})=\begin{mymatrix}{r}
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Thus 
 \begin{equation*}
-T^{-1}\leftB 
-\begin{array}{r}
+T^{-1}\begin{mymatrix}{r}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB =\vect{e}_{1},\ T^{-1}\leftB 
-\begin{array}{c}
+\end{mymatrix} =\vect{e}_{1},\ T^{-1}\begin{mymatrix}{c}
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB =\vect{e}_{2}
+\end{mymatrix} =\vect{e}_{2}
 \end{equation*}
 Extend $T^{-1}$ to all of $\R^{3}$ by defining 
 \begin{equation*}
-T^{-1}\leftB
-\begin{array}{c}
+T^{-1}\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0
-\end{array}
-\rightB =\vect{e}_{1}
+\end{mymatrix} =\vect{e}_{1}
 \end{equation*}
 Notice that the vectors
 \begin{equation*}
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0
-\end{array}
-\rightB \right\} 
+\end{mymatrix} \right\} 
 \end{equation*}
 are linearly independent so $T^{-1}$ can be extended linearly to yield a
 linear transformation defined on $\R^{3}$. The matrix of $T^{-1}$
 denoted as $A$ needs to satisfy 
 \begin{equation*}
-A\leftB
-\begin{array}{rrr}
+A\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 1 & 0 & 1 \\ 
 0 & 1 & 0
-\end{array}
-\rightB =\leftB 
-\begin{array}{rrr}
+\end{mymatrix} =\begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 0 & 1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and so 
 \begin{equation*}
-A=\leftB 
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 0 & 1 & 0
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 1 & 0 & 1 \\ 
 0 & 1 & 0
-\end{array}
-\rightB^{-1}=\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^{-1}=\begin{mymatrix}{rrr}
 0 & 1 & 0 \\ 
 0 & 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Note that 
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0 & 1 & 0 \\ 
 0 & 0 & 1
-\end{array}
-\rightB \leftB 
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 1 \\ 
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0 & 1 & 0 \\ 
 0 & 0 & 1
-\end{array}
-\rightB \leftB 
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 0 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 so the restriction to $V$ of matrix multiplication by this matrix yields $
 T^{-1}.$  

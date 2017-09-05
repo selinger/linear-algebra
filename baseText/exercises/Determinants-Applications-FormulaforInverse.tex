@@ -3,29 +3,24 @@
 \begin{ex} Let 
 \begin{equation*}
 A=
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 3 \\
 0 & 2 & 1 \\
 3 & 1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Determine whether the matrix $A$ has an inverse by finding whether the
 determinant is non zero. If the determinant is nonzero, find the inverse
 using the formula for the inverse which involves the cofactor matrix.
 \begin{sol}
 $\det
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 1 & 2 & 3 \\
 0 & 2 & 1 \\
 3 & 1 & 0
-\end{array}
-\rightB = -13$ and so it has an inverse. This inverse is
+\end{mymatrix} = -13$ and so it has an inverse. This inverse is
 \begin{eqnarray*}
-\frac{1}{-13}\leftB
-\begin{array}{rrr}
+\frac{1}{-13}\begin{mymatrix}{rrr}
 \left\vert
 \begin{array}{cc}
 2 & 1 \\
@@ -74,21 +69,16 @@ $\det
 0 & 2
 \end{array}
 \right\vert
-\end{array}
-\rightB ^{T} &=&\frac{1}{-13}\leftB
-\begin{array}{rrr}
+\end{mymatrix} ^{T} &=&\frac{1}{-13}\begin{mymatrix}{rrr}
 -1 & 3 & -6 \\
 3 & -9 & 5 \\
 -4 & -1 & 2
-\end{array}
-\rightB ^{T} \\
-&=& \leftB
-\begin{array}{rrr}
+\end{mymatrix} ^{T} \\
+&=& \begin{mymatrix}{rrr}
 \vspace{0.05in}\frac{1}{13} & -\vspace{0.05in}\frac{3}{13} & \vspace{0.05in}\frac{4}{13} \\
 -\vspace{0.05in}\frac{3}{13} & \vspace{0.05in}\frac{9}{13} & \vspace{0.05in}\frac{1}{13} \\
 \vspace{0.05in}\frac{6}{13} & -\vspace{0.05in}\frac{5}{13} & -\vspace{0.05in}\frac{2}{13}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 \end{sol}
 \end{ex}
@@ -96,75 +86,61 @@ $\det
 \begin{ex} Let 
 \begin{equation*}
 A=
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 0 \\
 0 & 2 & 1 \\
 3 & 1 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Determine whether the matrix $A$ has an inverse by finding whether the
 determinant is non zero. If the determinant is nonzero, find the inverse
 using the formula for the inverse.
 \begin{sol}
 $\det
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 1 & 2 & 0 \\
 0 & 2 & 1 \\
 3 & 1 & 1
-\end{array}
-\rightB = 7$ so it has an inverse. This inverse is $\frac{1}{7}
-\leftB
-\begin{array}{rrr}
+\end{mymatrix} = 7$ so it has an inverse. This inverse is $\frac{1}{7}
+\begin{mymatrix}{rrr}
 1 & 3 & -6 \\
 -2 & 1 & 5 \\
 2 & -1 & 2
-\end{array}
-\rightB^{T} = \leftB
-\begin{array}{rrr}
+\end{mymatrix}^{T} = \begin{mymatrix}{rrr}
 \vspace{0.05in}\frac{1}{7} & -\vspace{0.05in}\frac{2}{7} & \vspace{0.05in}\frac{2}{7} \\
 \vspace{0.05in}\frac{3}{7} & \vspace{0.05in}\frac{1}{7} & -\vspace{0.05in}\frac{1}{7} \\
 -\vspace{0.05in}\frac{6}{7} & \vspace{0.05in}\frac{5}{7} & \vspace{0.05in}\frac{2}{7}
-\end{array}
-\rightB $
+\end{mymatrix} $
 \end{sol}
 \end{ex}
 
 \begin{ex} Let
 \begin{equation*}
 A=
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 3 & 3 \\
 2 & 4 & 1 \\
 0 & 1 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Determine whether the matrix $A$ has an inverse by finding whether the
 determinant is non zero. If the determinant is nonzero, find the inverse
 using the formula for the inverse.
 \begin{sol}
 \[
-\det \leftB
-\begin{array}{ccc}
+\det \begin{mymatrix}{ccc}
 1 & 3 & 3 \\
 2 & 4 & 1 \\
 0 & 1 & 1
-\end{array}
-\rightB = 3
+\end{mymatrix} = 3
 \]
 so it has an inverse which is
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & -3 \\
 -\vspace{0.05in}\frac{2}{3} & \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{5}{3} \\
 \vspace{0.05in}\frac{2}{3} & -\vspace{0.05in}\frac{1}{3} & -\vspace{0.05in}\frac{2}{3}
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
@@ -172,13 +148,11 @@ so it has an inverse which is
 \begin{ex} Let 
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 3 \\
 0 & 2 & 1 \\
 2 & 6 & 7
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Determine whether the matrix $A$ has an inverse by finding whether the
 determinant is non zero. If the determinant is nonzero, find the inverse
@@ -191,36 +165,30 @@ using the formula for the inverse.
 \begin{ex} Let 
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 3 \\
 1 & 0 & 1 \\
 3 & 1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Determine whether the matrix $A$ has an inverse by finding whether the
 determinant is non zero. If the determinant is nonzero, find the inverse
 using the formula for the inverse.
 \begin{sol}
 \[
-\det \leftB
-\begin{array}{rrr}
+\det \begin{mymatrix}{rrr}
 1 & 0 & 3 \\
 1 & 0 & 1 \\
 3 & 1 & 0
-\end{array}
-\rightB = 2
+\end{mymatrix} = 2
 \]
 and so it has an inverse. The inverse turns out to equal
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -\vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2} & 0 \\
 \vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{9}{2} & 1 \\
 \vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2} & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
@@ -229,28 +197,22 @@ and so it has an inverse. The inverse turns out to equal
 find each inverse. If the inverse does not exist, explain why. 
 \begin{enumerate}
 \item
-$\leftB
-\begin{array}{rr}
+$\begin{mymatrix}{rr}
 1 & 1 \\
 1 & 2
-\end{array}
-\rightB$
+\end{mymatrix}$
 \item
-$\leftB
-\begin{array}{rrr}
+$\begin{mymatrix}{rrr}
 1 & 2 & 3 \\
 0 & 2 & 1 \\
 4 & 1 & 1
-\end{array}
-\rightB$
+\end{mymatrix}$
 \item
-$\leftB
-\begin{array}{rrr}
+$\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 2 & 3 & 0 \\
 0 & 1 & 2
-\end{array}
-\rightB $
+\end{mymatrix} $
 \end{enumerate}
 \begin{sol}
 \begin{enumerate}
@@ -281,13 +243,11 @@ $\leftB
 \begin{ex} Consider the matrix 
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 1 & 0 & 0 \\
 0 & \cos t & -\sin t \\
 0 & \sin t & \cos t
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Does there exist a value of $t$ for which this matrix fails to have an
 inverse? Explain.
@@ -300,25 +260,21 @@ inverse? Explain.
 \begin{ex} Consider the matrix 
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & t & t^{2} \\
 0 & 1 & 2t \\
 t & 0 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Does there exist a value of $t$ for which this matrix fails to have an
 inverse? Explain.
 \begin{sol}
 \[
-\det \leftB
-\begin{array}{ccc}
+\det \begin{mymatrix}{ccc}
 1 & t & t^{2} \\
 0 & 1 & 2t \\
 t & 0 & 2
-\end{array}
-\rightB = t^{3}+2
+\end{mymatrix} = t^{3}+2
 \]
 and so it has no inverse when $t=-\sqrt[3]{2}$
 \end{sol}
@@ -327,25 +283,21 @@ and so it has no inverse when $t=-\sqrt[3]{2}$
 \begin{ex} Consider the matrix 
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 e^{t} & \cosh t & \sinh t \\
 e^{t} & \sinh t & \cosh t \\
 e^{t} & \cosh t & \sinh t
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Does there exist a value of $t$ for which this matrix fails to have an
 inverse? Explain.
 \begin{sol}
 \[
-\det \leftB
-\begin{array}{ccc}
+\det \begin{mymatrix}{ccc}
 e^{t} & \cosh t & \sinh t \\
 e^{t} & \sinh t & \cosh t \\
 e^{t} & \cosh t & \sinh t
-\end{array}
-\rightB = 0
+\end{mymatrix} = 0
 \]
 and so this matrix fails to have a nonzero determinant at any value of $t$.
 \end{sol}
@@ -354,25 +306,21 @@ and so this matrix fails to have a nonzero determinant at any value of $t$.
 \begin{ex} Consider the matrix
 \begin{equation*} 
 A = 
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 e^{t} & e^{-t}\cos t & e^{-t}\sin t \\
 e^{t} & -e^{-t}\cos t-e^{-t}\sin t & -e^{-t}\sin t+e^{-t}\cos t \\
 e^{t} & 2e^{-t}\sin t & -2e^{-t}\cos t
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Does there exist a value of $t$ for which this matrix fails to have an
 inverse? Explain.
 \begin{sol}
 \[
-\det \leftB
-\begin{array}{ccc}
+\det \begin{mymatrix}{ccc}
 e^{t} & e^{-t}\cos t & e^{-t}\sin t \\
 e^{t} & -e^{-t}\cos t-e^{-t}\sin t & -e^{-t}\sin t+e^{-t}\cos t \\
 e^{t} & 2e^{-t}\sin t & -2e^{-t}\cos t%
-\end{array}
-\rightB = 5e^{-t} \neq 0
+\end{mymatrix} = 5e^{-t} \neq 0
 \]
 and so this matrix is always invertible.
 \end{sol}
@@ -405,40 +353,32 @@ and so it follows from the above problem that $\left( BA-I\right)X=0.$ Since $X$
 \begin{ex} Use the formula for the inverse in terms of the cofactor matrix to
 find the inverse of the matrix 
 \begin{equation*}
-A=\leftB
-\begin{array}{ccc}
+A=\begin{mymatrix}{ccc}
 e^{t} & 0 & 0 \\
 0 & e^{t}\cos t & e^{t}\sin t \\
 0 & e^{t}\cos t-e^{t}\sin t & e^{t}\cos t+e^{t}\sin t
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \begin{sol}
 \[
-\det \leftB
-\begin{array}{ccc}
+\det \begin{mymatrix}{ccc}
 e^{t} & 0 & 0 \\
 0 & e^{t}\cos t & e^{t}\sin t \\
 0 & e^{t}\cos t-e^{t}\sin t & e^{t}\cos t+e^{t}\sin t
-\end{array}
-\rightB = e^{3t}.
+\end{mymatrix} = e^{3t}.
 \]
 Hence the inverse is
 \begin{eqnarray*}
-&&e^{-3t}\leftB
-\begin{array}{ccc}
+&&e^{-3t}\begin{mymatrix}{ccc}
 e^{2t} & 0 & 0 \\
 0 & e^{2t}\cos t+e^{2t}\sin t & -\left( e^{2t}\cos t-e^{2t}\sin \right) t \\
 0 & -e^{2t}\sin t & e^{2t}\cos \left( t\right)
-\end{array}
-\rightB ^{T} \\
-&=& \leftB
-\begin{array}{ccc}
+\end{mymatrix} ^{T} \\
+&=& \begin{mymatrix}{ccc}
 e^{-t} & 0 & 0 \\
 0 & e^{-t}\left( \cos t+\sin t\right)  & -\left( \sin t\right) e^{-t} \\
 0 & -e^{-t}\left( \cos t-\sin t\right)  & \left( \cos t\right) e^{-t}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 \end{sol}
 \end{ex}
@@ -446,32 +386,26 @@ e^{-t} & 0 & 0 \\
 \begin{ex} Find the inverse, if it exists, of the matrix 
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 e^{t} & \cos t & \sin t \\
 e^{t} & -\sin t & \cos t \\
 e^{t} & -\cos t & -\sin t
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \begin{sol}
 \begin{eqnarray*}
-&&\leftB
-\begin{array}{ccc}
+&&\begin{mymatrix}{ccc}
 e^{t} & \cos t & \sin t \\
 e^{t} & -\sin t & \cos t \\
 e^{t} & -\cos t & -\sin t
-\end{array}
-\rightB ^{-1} \\
-&=&\leftB
-\begin{array}{ccc}
+\end{mymatrix} ^{-1} \\
+&=&\begin{mymatrix}{ccc}
 \frac{1}{2}e^{-t} & 0 & \frac{1}{2}e^{-t} \\
 \frac{1}{2}\cos t+\frac{1}{2}\sin t & -\sin t & \frac{1}{2}\sin t-\frac{1}{2}
 \cos t \\
 \frac{1}{2}\sin t-\frac{1}{2}\cos t & \cos t & -\frac{1}{2}\cos t-\frac{1}{2}
 \sin t
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{eqnarray*}
 \end{sol}
 \end{ex}

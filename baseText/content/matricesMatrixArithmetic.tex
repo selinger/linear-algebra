@@ -30,13 +30,11 @@ turns out that matrices are important not only for systems of equations but also
 Recall that a \textbf{matrix}\index{matrix} is a rectangular array of numbers. Several of them are
 referred to as \textbf{matrices}. For example, here is a matrix.
 \begin{equation}
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 4 \\
 5 & 2 & 8 & 7 \\
 6 & -9 & 1 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \label{matrix}
 \end{equation}
 Recall that the size or dimension of a matrix is defined as $m\times n$ where $m$ is the
@@ -62,11 +60,9 @@ There is some notation specific to matrices which we now introduce. We denote th
 by $A_{j}$ as follows
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 A_{1} & A_{2} & \cdots & A_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Therefore, $A_{j}$ is the $j^{th}$ column of $A$, when counted from left to right. 
 
@@ -98,12 +94,10 @@ having every entry equal to zero. It is\index{zero matrix} denoted by $0.$
 One possible zero matrix is shown in the following example.
 
 \begin{example}{The zero matrix}{zeromatrix}
-The $2\times 3$ zero matrix is $0= \leftB
-\begin{array}{ccc}
+The $2\times 3$ zero matrix is $0= \begin{mymatrix}{ccc}
 0 & 0 & 0 \\
 0 & 0 & 0
-\end{array}
-\rightB $.
+\end{mymatrix} $.
 \end{example}
 
 Note there is a $2\times 3$ zero matrix, a $3\times 4$ zero matrix, etc. In
@@ -119,33 +113,25 @@ $1\leq j\leq n.$
 In other words, two matrices are equal exactly when they are the same size and the
 corresponding entries are identical. Thus
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 0 \\
 0 & 0 \\
 0 & 0
-\end{array}
-\rightB \neq \leftB
-\begin{array}{rr}
+\end{mymatrix} \neq \begin{mymatrix}{rr}
 0 & 0 \\
 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 because they are different sizes. 
 Also,
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 1 \\
 3 & 2 
-\end{array}
-\rightB \neq \leftB
-\begin{array}{rr}
+\end{mymatrix} \neq \begin{mymatrix}{rr}
 1 & 0 \\
 2 & 3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 because, although they are the same size, their corresponding entries are not identical.
 

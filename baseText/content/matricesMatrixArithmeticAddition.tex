@@ -3,42 +3,34 @@
 When adding matrices, all matrices in the sum need have the same size.
 For example,
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4 \\
 5 & 2
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 and
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -1 & 4 & 8\\
 2 & 8 & 5
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 cannot be added, as one has size $3 \times 2$ while the other has size $2 \times 3$.
 
 However, the addition
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 4 & 6 & 3\\
 5 & 0 & 4\\
 11 & -2 & 3
-\end{array}
-\rightB 
+\end{mymatrix} 
 +
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0 & 5 & 0 \\
 4 & -4 & 14 \\
 1 & 2 & 6
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is possible.
 
@@ -60,18 +52,14 @@ This is demonstrated in the next example.
 \begin{example}{Addition of matrices of same size}{samesizematrixaddition}
 Add the following matrices, if possible.
 \begin{equation*}
-A = \leftB
-\begin{array}{ccc}
+A = \begin{mymatrix}{ccc}
 1 & 2 & 3 \\
 1 & 0 & 4
-\end{array}
-\rightB,
-B = \leftB
-\begin{array}{rrr}
+\end{mymatrix},
+B = \begin{mymatrix}{rrr}
 5 & 2 & 3 \\
 -6 & 2 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -80,33 +68,25 @@ Notice that both $A$ and $B$ are of size $2 \times 3$.
 Since $A$ and $B$ are of the same size, the addition is possible. Using Definition \ref{def:additionofmatrices}, 
 the addition is done as follows. 
 \begin{equation*}
-A + B = \leftB
-\begin{array}{rrr}
+A + B = \begin{mymatrix}{rrr}
 1 & 2 & 3 \\
 1 & 0 & 4
-\end{array}
-\rightB
+\end{mymatrix}
 +
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 5 & 2 & 3 \\
 -6 & 2 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 =\allowbreak 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1+5 & 2+2 & 3+3 \\
 1+ -6 & 0+2 & 4+1
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 6 & 4 & 6 \\
 -5 & 2 & 5
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{solution}
 

@@ -6,11 +6,9 @@ The most important theorem about diagonalizability is the following major result
 An $n\times n$ matrix $A$ is diagonalizable if and only if there is an
 invertible matrix $P$ given by 
 \begin{equation*}
-P=\leftB
-\begin{array}{cccc}
+P=\begin{mymatrix}{cccc}
 X_{1} & X_{2} & \cdots & X_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 where the $X_{k}$ are eigenvectors of $A$. 
 
@@ -22,14 +20,12 @@ diagonal entries of the diagonal matrix $D$.
 Suppose $P$ is given as above as an invertible matrix whose columns are eigenvectors of $A$. Then $P^{-1}$
 is of the form
 \begin{equation*}
-P^{-1}=\leftB
-\begin{array}{c}
+P^{-1}=\begin{mymatrix}{c}
 W_{1}^{T} \\
 W_{2}^{T} \\
 \vdots \\
 W_{n}^{T}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 where $W_{k}^{T}X_{j}=\delta _{kj},$ which is the Kronecker's symbol defined by
 \begin{equation*}
@@ -45,86 +41,64 @@ where $W_{k}^{T}X_{j}=\delta _{kj},$ which is the Kronecker's symbol defined by
 Then
 \begin{eqnarray*}
 P^{-1}AP & = & 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 W_{1}^{T} \\
 W_{2}^{T} \\
 \vdots \\
 W_{n}^{T}
-\end{array}
-\rightB \leftB
-\begin{array}{cccc}
+\end{mymatrix} \begin{mymatrix}{cccc}
 AX_{1} & AX_{2} & \cdots & AX_{n}
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 & = & 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 W_{1}^{T} \\
 W_{2}^{T} \\
 \vdots \\
 W_{n}^{T}
-\end{array}
-\rightB \leftB
-\begin{array}{cccc}
+\end{mymatrix} \begin{mymatrix}{cccc}
 \lambda _{1}X_{1} & \lambda _{2}X_{2} & \cdots & \lambda
 _{n}X_{n}
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=&
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 \lambda _{1} &  & 0 \\
 & \ddots &  \\
 0 &  & \lambda _{n}
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 \end{eqnarray*}
 
 Conversely, suppose $A$ is diagonalizable so that $P^{-1}AP=D.$ Let 
 \begin{equation*}
-P=\leftB
-\begin{array}{cccc}
+P=\begin{mymatrix}{cccc}
 X_{1} & X_{2} & \cdots & X_{n}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
  where the columns are the $X_{k}$ and
 \begin{equation*}
-D=\leftB
-\begin{array}{ccc}
+D=\begin{mymatrix}{ccc}
 \lambda _{1} &  & 0 \\
 & \ddots &  \\
 0 &  & \lambda _{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Then
 \begin{equation*}
-AP=PD=\leftB
-\begin{array}{cccc}
+AP=PD=\begin{mymatrix}{cccc}
 X_{1} & X_{2} & \cdots & X_{n}
-\end{array}
-\rightB \leftB
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 \lambda _{1} &  & 0 \\
 & \ddots &  \\
 0 &  & \lambda _{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and so
 \begin{equation*}
-\leftB
-\begin{array}{cccc}
+\begin{mymatrix}{cccc}
 AX_{1} & AX_{2} & \cdots & AX_{n}
-\end{array}
-\rightB =\leftB
-\begin{array}{cccc}
+\end{mymatrix} =\begin{mymatrix}{cccc}
 \lambda _{1}X_{1} & \lambda _{2}X_{2} & \cdots & \lambda
 _{n}X_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 showing the $X_{k}$ are eigenvectors of $A$ and the $\lambda _{k}$
 are eigenvectors.
@@ -143,13 +117,11 @@ achieve this by using basic eigenvectors for the columns of $P$.
 \begin{example}{Diagonalize a matrix}{diagonalizematrix}
 Let 
 \begin{equation*}
-A=\leftB
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 2 & 0 & 0 \\
 1 & 4 & -1 \\
 -2 & -4 & 4
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
  Find an invertible matrix $P$ and a diagonal matrix $D$ such that $P^{-1}AP=D$.
 \end{example}
@@ -163,21 +135,17 @@ First, we will find the eigenvalues of $A$. To do so, we solve $\det \left( \eig
 \det
 \left(
 \eigenVar
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 -
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 2 & 0 & 0 \\
 1 & 4 & -1 \\
 -2 & -4 & 4
-\end{array}
-\rightB
+\end{mymatrix}
 \right)
 =
 0
@@ -190,106 +158,82 @@ Next, we need to find the eigenvectors. We first find the eigenvectors for $\lam
 Solving $\left(2I - A \right)X = 0$ to find the eigenvectors, we find that the
 eigenvectors are
 \begin{equation*}
-t\leftB
-\begin{array}{r}
+t\begin{mymatrix}{r}
 -2 \\
 1 \\
 0
-\end{array}
-\rightB +s\leftB
-\begin{array}{r}
+\end{mymatrix} +s\begin{mymatrix}{r}
 1 \\
 0 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 where $t,s$ are scalars. Hence there are two basic eigenvectors which are given by
 \begin{equation*}
 X_1
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -2 \\
 1 \\
 0
-\end{array}
-\rightB,
+\end{mymatrix},
 X_2
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
-You can verify that the basic eigenvector for $\lambda_3 =6$ is $ X_3 = \leftB
-\begin{array}{r}
+You can verify that the basic eigenvector for $\lambda_3 =6$ is $ X_3 = \begin{mymatrix}{r}
 0 \\
 1 \\
 -2
-\end{array}
-\rightB$
+\end{mymatrix}$
 
 Then, we construct the matrix $P$ as follows. 
 \begin{equation*}
 P=
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 X_1 & X_2 & X_3
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -2 & 1 & 0 \\
 1 & 0 & 1 \\
 0 & 1 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 That is, the columns of $P$ are the basic  eigenvectors of $A$. Then, you can verify that
 \begin{equation*}
-P^{-1}=\leftB
-\begin{array}{rrr}
+P^{-1}=\begin{mymatrix}{rrr}
 -\vspace{0.05in}\frac{1}{4} & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{4} \\
 \vspace{0.05in}\frac{1}{2} & 1 & \vspace{0.05in}\frac{1}{2} \\
 \vspace{0.05in}\frac{1}{4} & \vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{4}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Thus, 
 \begin{eqnarray*}
-P^{-1}AP &=&\leftB
-\begin{array}{rrr}
+P^{-1}AP &=&\begin{mymatrix}{rrr}
 -\vspace{0.05in}\frac{1}{4} & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{4} \\
 \vspace{0.05in}\frac{1}{2} & 1 & \vspace{0.05in}\frac{1}{2} \\
 \vspace{0.05in}\frac{1}{4} & \vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{4}
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 2 & 0 & 0 \\
 1 & 4 & -1 \\
 -2 & -4 & 4
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 -2 & 1 & 0 \\
 1 & 0 & 1 \\
 0 & 1 & -2
-\end{array}
-\rightB \\
-&=&\leftB
-\begin{array}{rrr}
+\end{mymatrix} \\
+&=&\begin{mymatrix}{rrr}
 2 & 0 & 0 \\
 0 & 2 & 0 \\
 0 & 0 & 6
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{eqnarray*}
 
 You can see that the result here is a diagonal matrix where the entries on the main diagonal are the eigenvalues of $A$. We expected this based on 
@@ -320,12 +264,10 @@ Consider the following example.
 Let
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 1 \\
 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 If possible, find an invertible matrix $P$ and diagonal matrix $D$ so that $P^{-1}AP=D$.
 \end{example}
@@ -335,68 +277,54 @@ Through the usual procedure, we find that the eigenvalues of $A$ are $\lambda_1 
 To find the eigenvectors, we solve the equation $\left(\lambda I - A \right) X = 0$.
 The matrix $\left(\lambda I -A \right)$ is given by 
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 \lambda - 1 & -1 \\
 0 & \lambda - 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Substituting in $\lambda = 1$, we have the matrix
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 1 - 1 & -1 \\
 0 & 1 - 1
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & -1 \\
 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Then, solving the equation $\left(\lambda I - A\right) X = 0$ 
 involves carrying the following augmented matrix to its {\rref}. 
 \begin{equation*}
-\leftB
-\begin{array}{rr|r}
+\begin{mymatrix}{rr|r}
 0 & -1 & 0 \\
 0 & 0 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \rightarrow \cdots \rightarrow
-\leftB
-\begin{array}{rr|r}
+\begin{mymatrix}{rr|r}
 0 & -1 & 0 \\
 0 & 0 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Then the eigenvectors are of the form
 \begin{equation*}
-t\leftB
-\begin{array}{r}
+t\begin{mymatrix}{r}
 1 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and the basic eigenvector is 
 \begin{equation*}
 X_1
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 In this case, the matrix $A$ has one eigenvalue of multiplicity two, 
@@ -444,8 +372,8 @@ Let $A$ be an $n \times n$ matrix $A$. Then $A$ is diagonalizable if and only if
 %%
 %%\begin{example}{Diagonalizability condition}{}
 %%If possible, diagonalize the matrix
-%%$A=\leftB\begin{array}{rrr}
-%%\end{array}\rightB$.
+%%$A=\begin{mymatrix}{rrr}
+%%\end{mymatrix}$.
 %%Otherwise, explain why $A$ is not diagonalizable.
 %%\end{example}
 %%

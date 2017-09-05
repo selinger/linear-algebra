@@ -3,70 +3,52 @@
 \begin{ex} Using the Gram Schmidt process or the $QR$ factorization, find an
 orthonormal basis for the following span:
 \[
-\func{span} \left\{\leftB
-\begin{array}{r}
+\func{span} \left\{\begin{mymatrix}{r}
 1 \\
 2 \\
 1
-\end{array}
-\rightB ,\leftB
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 2 \\
 -1 \\
 3
-\end{array}
-\rightB , \leftB
-\begin{array}{r}
+\end{mymatrix} , \begin{mymatrix}{r}
 1 \\
 0 \\
 0
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \]
 \begin{sol}
 Using the $QR$ factorization, we have:
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 2 & -1 & 0 \\
 1 & 3 & 0
-\end{array}
-\rightB = \leftB
-\begin{array}{ccc}
+\end{mymatrix} = \begin{mymatrix}{ccc}
 \frac{1}{6}\sqrt{6} & \frac{3}{10}\sqrt{2} & \frac{7}{15}\sqrt{3} \\
 \frac{1}{3}\sqrt{6} & -\frac{2}{5}\sqrt{2} & -\frac{1}{15}\sqrt{3} \\
 \frac{1}{6}\sqrt{6} & \frac{1}{2}\sqrt{2} & -\frac{1}{3}\sqrt{3}
-\end{array}
-\rightB  \leftB
-\begin{array}{ccc}
+\end{mymatrix}  \begin{mymatrix}{ccc}
 \sqrt{6} & \frac{1}{2}\sqrt{6} & \frac{1}{6}\sqrt{6} \\
 0 & \frac{5}{2}\sqrt{2} & \frac{3}{10}\sqrt{2} \\
 0 & 0 & \frac{7}{15}\sqrt{3}
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 A solution is then
 \[
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 \frac{1}{6}\sqrt{6} \\
 \frac{1}{3}\sqrt{6} \\
 \frac{1}{6}\sqrt{6}
-\end{array}
-\rightB ,\leftB
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 \frac{3}{10}\sqrt{2} \\
 -\frac{2}{5}\sqrt{2} \\
 \frac{1}{2}\sqrt{2}
-\end{array}
-\rightB ,\leftB
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 \frac{7}{15}\sqrt{3} \\
 -\frac{1}{15}\sqrt{3} \\
 -\frac{1}{3}\sqrt{3}
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
@@ -75,41 +57,32 @@ A solution is then
 orthonormal basis for the following span:
 \[
 \func{span} = \left\{
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 1 \\
 0
-\end{array}
-\rightB
-, \leftB
-\begin{array}{r}
+\end{mymatrix}
+, \begin{mymatrix}{r}
 2 \\
 -1 \\
 3 \\
 1
-\end{array}
-\rightB , \leftB
-\begin{array}{r}
+\end{mymatrix} , \begin{mymatrix}{r}
 1 \\
 0 \\
 0 \\
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \]
 \begin{sol}
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 2 & -1 & 0 \\
 1 & 3 & 0 \\
 0 & 1 & 1
-\end{array}
-\rightB =  \leftB
-\begin{array}{cccc}
+\end{mymatrix} =  \begin{mymatrix}{cccc}
 \frac{1}{6}\sqrt{6} & \frac{1}{6}\sqrt{2}\sqrt{3} & \frac{5}{111}\sqrt{3}
 \sqrt{37} & \frac{7}{111}\sqrt{111} \\
 \frac{1}{3}\sqrt{6} & -\frac{2}{9}\sqrt{2}\sqrt{3} & \frac{1}{333}\sqrt{3}
@@ -118,43 +91,34 @@ orthonormal basis for the following span:
 \sqrt{37} & -\frac{1}{37}\sqrt{111} \\
 0 & \frac{1}{9}\sqrt{2}\sqrt{3} & \frac{22}{333}\sqrt{3}\sqrt{37} & -\frac{7
 }{111}\sqrt{111}
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \[
-\cdot \leftB
-\begin{array}{ccc}
+\cdot \begin{mymatrix}{ccc}
 \sqrt{6} & \frac{1}{2}\sqrt{6} & \frac{1}{6}\sqrt{6} \\
 0 & \frac{3}{2}\sqrt{2}\sqrt{3} & \frac{5}{18}\sqrt{2}\sqrt{3} \\
 0 & 0 & \frac{1}{9}\sqrt{3}\sqrt{37} \\
 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 Then a solution is
 \[
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 \frac{1}{6}\sqrt{6} \\
 \frac{1}{3}\sqrt{6} \\
 \frac{1}{6}\sqrt{6} \\
 0
-\end{array}
-\rightB ,\leftB
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 \frac{1}{6}\sqrt{2}\sqrt{3} \\
 -\frac{2}{9}\sqrt{2}\sqrt{3} \\
 \frac{5}{18}\sqrt{2}\sqrt{3} \\
 \frac{1}{9}\sqrt{2}\sqrt{3}
-\end{array}
-\rightB ,\leftB
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 \frac{5}{111}\sqrt{3}\sqrt{37} \\
 \frac{1}{333}\sqrt{3}\sqrt{37} \\
 -\frac{17}{333}\sqrt{3}\sqrt{37} \\
 \frac{22}{333}\sqrt{3}\sqrt{37}
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}

@@ -22,39 +22,31 @@ independent, we must have all $a_i=0$, and therefore we conclude that
 
 \begin{ex} Let 
 \begin{equation*}
-V=\mbox{span}\left\{ \leftB 
-\begin{array}{c}
+V=\mbox{span}\left\{ \begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 2 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 Let $T\vect{x}=A\vect{x}$ where $A$ is the matrix 
 \begin{equation*}
-\leftB 
-\begin{array}{cccc}
+\begin{mymatrix}{cccc}
 1 & 1 & 1 & 1 \\ 
 0 & 1 & 1 & 0 \\ 
 0 & 1 & 2 & 1 \\ 
 1 & 1 & 1 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Give a basis for $\func{im}\left( T\right) $.
 %\begin{sol}
@@ -64,39 +56,31 @@ Give a basis for $\func{im}\left( T\right) $.
 
 \begin{ex} Let 
 \begin{equation*}
-V=\mbox{span}\left\{ \leftB 
-\begin{array}{c}
+V=\mbox{span}\left\{ \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 4 \\ 
 4 \\ 
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 Let $T\vect{x}=A\vect{x}$ where $A$ is the matrix 
 \begin{equation*}
-\leftB 
-\begin{array}{cccc}
+\begin{mymatrix}{cccc}
 1 & 1 & 1 & 1 \\ 
 0 & 1 & 1 & 0 \\ 
 0 & 1 & 2 & 1 \\ 
 1 & 1 & 1 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Find a basis for $\func{im}\left( T\right) $. In this case, the original
 vectors do not form an independent set.
@@ -111,21 +95,17 @@ the image.
 Thus a basis for $\func{im}\left( T\right) $ is: 
 
 \begin{equation*}
-V=\mbox{span}\left\{ \leftB 
-\begin{array}{c}
+V=\mbox{span}\left\{ \begin{mymatrix}{c}
 2 \\ 
 0 \\ 
 1 \\ 
 3
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 4 \\ 
 2 \\ 
 4 \\ 
 5
-\end{array}
-\rightB  \right\}
+\end{mymatrix}  \right\}
 \end{equation*}
 
 \end{sol}
@@ -157,13 +137,11 @@ _{1},\cdots ,T\vect{v}_{r}\right\} =W$.
 
 \begin{ex} Define $T:\R^{4}\rightarrow \R^{3}$ as follows. 
 \begin{equation*}
-T\vect{x}=\leftB 
-\begin{array}{rrrr}
+T\vect{x}=\begin{mymatrix}{rrrr}
 3 & 2 & 1 & 8 \\ 
 2 & 2 & -2 & 6 \\ 
 1 & 1 & -1 & 3
-\end{array}
-\rightB \vect{x}
+\end{mymatrix} \vect{x}
 \end{equation*}
 Find a basis for $\func{im}\left( T\right) $. Also find a basis for $\ker
 \left( T\right) .$
@@ -174,13 +152,11 @@ Find a basis for $\func{im}\left( T\right) $. Also find a basis for $\ker
 
 \begin{ex} Define $T:\R^{3}\rightarrow \R^{3}$ as follows. 
 \begin{equation*}
-T\vect{x}=\leftB 
-\begin{array}{ccc}
+T\vect{x}=\begin{mymatrix}{ccc}
 1 & 2 & 0 \\ 
 1 & 1 & 1 \\ 
 0 & 1 & 1
-\end{array}
-\rightB \vect{x}
+\end{mymatrix} \vect{x}
 \end{equation*}
 where on the right, it is just matrix multiplication of the vector $\vect{x}$
 which is meant. Explain why $T$ is an isomorphism of $\R^{3}$ to $
@@ -217,13 +193,11 @@ m<n, $ then $T$ cannot be one to one.
 
 \begin{ex} Define $T:\R^{2}\rightarrow \R^{3}$ as follows. 
 \begin{equation*}
-T\vect{x}=\leftB 
-\begin{array}{cc}
+T\vect{x}=\begin{mymatrix}{cc}
 1 & 0 \\ 
 1 & 1 \\ 
 0 & 1
-\end{array}
-\rightB \vect{x}
+\end{mymatrix} \vect{x}
 \end{equation*}
 where on the right, it is just matrix multiplication of the vector $\vect{x}$
 which is meant. Show that $T$ is one to one. Next let $W=\func{im}\left(
@@ -239,55 +213,41 @@ restriction of $A$ to $\func{im}\left( T\right) $ gives the same result as $
 T^{-1}$ on $\func{im}\left( T\right) $. \textbf{Hint:\ }You might let $A$ be
 such that 
 \begin{equation*}
-A\leftB 
-\begin{array}{c}
+A\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 1 \\ 
 0
-\end{array}
-\rightB ,\ A\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\ A\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 0 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 now find another vector $\vect{v}\in \R^{3}$ such that 
 \begin{equation*}
-\left\{ \leftB 
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\vect{v}\right\}
+\end{mymatrix} ,\vect{v}\right\}
 \end{equation*}
 is a basis. You could pick 
 \begin{equation*}
-\vect{v}=\leftB 
-\begin{array}{c}
+\vect{v}=\begin{mymatrix}{c}
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 for example. Explain why this one works or one of your choice works. Then
 you could define $A\vect{v}$ to equal some vector in $\R^{2}.$
@@ -298,134 +258,100 @@ the inverse isomorphism $T^{-1}$ on $\func{im}\left( T\right) $.
 \end{ex}
 
 
-\begin{ex} Now let $V$ equal $\func{span}\left\{ \leftB 
-\begin{array}{c}
+\begin{ex} Now let $V$ equal $\func{span}\left\{ \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB \right\} $ and let $T:V\rightarrow W$ be a linear transformation
+\end{mymatrix} \right\} $ and let $T:V\rightarrow W$ be a linear transformation
 where 
 \begin{equation*}
-W=\func{span}\left\{ \leftB 
-\begin{array}{c}
+W=\func{span}\left\{ \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 $\ $\ and 
 \begin{equation*}
-T\leftB 
-\begin{array}{c}
+T\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 0
-\end{array}
-\rightB ,T\leftB 
-\begin{array}{c}
+\end{mymatrix} ,T\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Explain why $T$ is an isomorphism. Determine a matrix $A$ which, when
 multiplied on the left gives the same result as $T$ on $V$ and a matrix $B$
 which delivers $T^{-1}$ on $W$. \textbf{Hint:\ }You need to have 
 \begin{equation*}
-A\leftB 
-\begin{array}{cc}
+A\begin{mymatrix}{cc}
 1 & 0 \\ 
 0 & 1 \\ 
 1 & 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{cc}
+\end{mymatrix} =\begin{mymatrix}{cc}
 1 & 0 \\ 
 0 & 1 \\ 
 1 & 1 \\ 
 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
-Now enlarge $\leftB 
-\begin{array}{c}
+Now enlarge $\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB $ to obtain a basis for $\R^{3}$. You could add in $\leftB 
-\begin{array}{c}
+\end{mymatrix} $ to obtain a basis for $\R^{3}$. You could add in $\begin{mymatrix}{c}
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB $ for example, and then pick another vector in $\R^{4}$ and
-let $A\leftB 
-\begin{array}{c}
+\end{mymatrix} $ for example, and then pick another vector in $\R^{4}$ and
+let $A\begin{mymatrix}{c}
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB $ equal this other vector. Then you would have 
+\end{mymatrix} $ equal this other vector. Then you would have 
 \begin{equation*}
-A\leftB 
-\begin{array}{ccc}
+A\begin{mymatrix}{ccc}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 1 & 1 & 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{ccc}
+\end{mymatrix} =\begin{mymatrix}{ccc}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 1 & 1 & 0 \\ 
 0 & 1 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 This would involve picking for the new vector in $\R^{4}$ the vector 
-$\leftB 
-\begin{array}{cccc}
+$\begin{mymatrix}{cccc}
 0 & 0 & 0 & 1
-\end{array}
-\rightB ^{T}.$ Then you could find $A$. You can do something similar to find
+\end{mymatrix} ^{T}.$ Then you could find $A$. You can do something similar to find
 a matrix for $T^{-1}$ denoted as $B$.
 %\begin{sol}
 %\end{sol}

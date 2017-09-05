@@ -73,31 +73,25 @@ Find the volume of the parallelepiped determined by the vectors
 \begin{equation*}
 \vect{u}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 -5
-\end{array}
-\rightB, 
+\end{mymatrix}, 
 \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 3 \\
 -6
-\end{array}
-\rightB, 
+\end{mymatrix}, 
 \vect{w}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 2 \\
 3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -112,52 +106,42 @@ This is given by
 \begin{align*}
 \vect{u} \times \vect{v}
 &=
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 -5
-\end{array}
-\rightB
+\end{mymatrix}
 \times
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 3 \\
 -6
-\end{array}
-\rightB\\
+\end{mymatrix}\\
 &=((2)(-6)-(-5)(3))\vect{i}+((1)(-6)-(-5)(1))\vect{j}+((1)(3)-(2)(1))\vect{k} \\
 &= 3\vect{i}+\vect{j}+\vect{k}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 1 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{align*}
 
 Now take the dot product of this vector with $\vect{w}$ which yields
 \begin{eqnarray*}
 (\vect{u} \times \vect{v}) \dotprod \vect{w}
 &=&
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 1 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \dotprod
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 2 \\
 3 
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=&\left( 3\vect{i}+\vect{j}+\vect{k}\right) \dotprod
  \left( 3\vect{i}+2\vect{j}+3\vect{k}\right) \\
 &=&9+2+3 \\
@@ -185,28 +169,20 @@ give $-1$ times the volume.
 \begin{comment}
 Recall that we can express the cross product as the determinant of a particular matrix. It turns out
 that the same can be done for the box product. 
-Suppose you have three vectors, $\vect{u}=\leftB
-\begin{array}{rrr}
+Suppose you have three vectors, $\vect{u}=\begin{mymatrix}{rrr}
 a & b & c
-\end{array}
-\rightB^T ,\vect{v}=\leftB
-\begin{array}{rrr}
+\end{mymatrix}^T ,\vect{v}=\begin{mymatrix}{rrr}
  d & e & f
-\end{array}
-\rightB^T ,$ and $\vect{w}=\leftB
-\begin{array}{rrr}
+\end{mymatrix}^T ,$ and $\vect{w}=\begin{mymatrix}{rrr}
 g & h & i
-\end{array}
-\rightB^T .$ Then the box product $\vect{u}\dotprod \left(\vect{v}\times \vect{w}\right)$ is given by the following.
+\end{mymatrix}^T .$ Then the box product $\vect{u}\dotprod \left(\vect{v}\times \vect{w}\right)$ is given by the following.
 \begin{eqnarray*}
 \vect{u}\dotprod \left(\vect{v}\times \vect{w}\right) &=&
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 a \\
 b \\
 c
-\end{array}
-\rightB \dotprod \left|
+\end{mymatrix} \dotprod \left|
 \begin{array}{rrr}
 \vect{i} & \vect{j} & \vect{k} \\
 d & e & f \\
@@ -229,13 +205,11 @@ d & e \\
 g & h
 \end{array}
 \right| \\
-&= &\det \leftB
-\begin{array}{rrr}
+&= &\det \begin{mymatrix}{rrr}
 a & b & c \\
 d & e & f \\
 g & h & i
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{eqnarray*}
 
 To take the box product, you can simply take the

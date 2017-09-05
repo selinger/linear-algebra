@@ -14,26 +14,18 @@ $1\vect{u}_1 - \vect{u}_2+ 0 \vect{u}_3 + \cdots  + 0 \vect{u}_k = \vect{0}$, no
 \begin{example}{Linearly dependent set of vectors}{linearlydependentvectors}
 Consider the vectors 
 \begin{equation*}
-\vect{u}_1=\leftB 
-\begin{array}{rrr}
+\vect{u}_1=\begin{mymatrix}{rrr}
 0  & 1 & -2
-\end{array}
-\rightB^T, 
-\vect{u}_2=\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T, 
+\vect{u}_2=\begin{mymatrix}{rrr}
 1  & 1 & 0
-\end{array}
-\rightB^T, 
-\vect{u}_3=\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T, 
+\vect{u}_3=\begin{mymatrix}{rrr}
 -2  & 3 & 2
-\end{array}
-\rightB^T, \mbox{ and } 
-\vect{u}_4=\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T, \mbox{ and } 
+\vect{u}_4=\begin{mymatrix}{rrr}
 1  & -2 & 0
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 \end{equation*}
 in $\R^{3}$.
 
@@ -92,21 +84,15 @@ precisely when $AX=0$ has only the trivial solution.
 Here is an example.  
 
 \begin{example}{Linearly independent vectors}{linearlyindependentvectors}
-Consider the vectors $\vect{u}=\leftB 
-\begin{array}{rrr}
+Consider the vectors $\vect{u}=\begin{mymatrix}{rrr}
 1  & 1 & 0
-\end{array}
-\rightB^T$, 
-$\vect{v}=\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T$, 
+$\vect{v}=\begin{mymatrix}{rrr}
 1  & 0 & 1
-\end{array}
-\rightB^T$, and
-$\vect{w}=\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T$, and
+$\vect{w}=\begin{mymatrix}{rrr}
 0  & 1 & 1
-\end{array}
-\rightB^T$ in $\R^{3}$.
+\end{mymatrix}^T$ in $\R^{3}$.
 Verify whether the set $\{\vect{u}, \vect{v}, \vect{w}\}$ is linearly independent. 
 \end{example}
 
@@ -116,13 +102,11 @@ So suppose that we have a linear combinations $a\vect{u} + b \vect{v}
 with $a=b=c=0$.
 
 As mentioned above, you can equivalently form the $3 \times 3$ matrix $A = 
-\leftB 
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 1  & 1 & 0 \\
 1  & 0 & 1 \\
 0  & 1 & 1 \\
-\end{array}
-\rightB$, and show that $AX=0$ has only the trivial solution.
+\end{mymatrix}$, and show that $AX=0$ has only the trivial solution.
 
 Thus this  means the set $\left\{ \vect{u}, \vect{v}, \vect{w} \right\}$ is linearly independent. 
 \end{solution}
@@ -166,35 +150,27 @@ Here is a detailed  example in  $\R^{4}$.
 
 \begin{example}{Linear independence}{linearindependence2}
 Determine whether the set of vectors given by  
-\[ \left\{ \leftB
-\begin{array}{r}
+\[ \left\{ \begin{mymatrix}{r}
 1 \\
 2 \\
 3 \\
 0
-\end{array}
-\rightB, \; \leftB
-\begin{array}{r}
+\end{mymatrix}, \; \begin{mymatrix}{r}
 2 \\
 1 \\
 0 \\
 1
-\end{array}
-\rightB , \; \leftB
-\begin{array}{r}
+\end{mymatrix} , \; \begin{mymatrix}{r}
 0 \\
 1 \\
 1 \\
 2
-\end{array}
-\rightB  , \; \leftB
-\begin{array}{r}
+\end{mymatrix}  , \; \begin{mymatrix}{r}
 3 \\
 2 \\
 2 \\
 0
-\end{array}
-\rightB \right\} \]
+\end{mymatrix} \right\} \]
 is linearly independent. If it is linearly dependent,
 express one of the vectors as a linear combination of the others.
 \end{example}
@@ -202,25 +178,21 @@ express one of the vectors as a linear combination of the others.
 \begin{solution}
 In this case the matrix of the corresponding homogeneous system of linear equations  is 
 \begin{equation*}
-\leftB 
-\begin{array}{rrrr|r}
+\begin{mymatrix}{rrrr|r}
 1 & 2 & 0 & 3 & 0\\ 
 2 & 1 & 1 & 2 & 0 \\ 
 3 & 0 & 1 & 2 & 0 \\ 
 0 & 1 & 2 & 0 & 0 
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The {\rref} is 
 \begin{equation*}
-\leftB 
-\begin{array}{rrrr|r}
+\begin{mymatrix}{rrrr|r}
 1 & 0 & 0 & 0 & 0 \\ 
 0 & 1 & 0 & 0 & 0 \\ 
 0 & 0 & 1 & 0 & 0 \\ 
 0 & 0 & 0 & 1 & 0 
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and so every column is a pivot column and the corresponding system
 $AX=0$ only has the trivial solution.  Therefore, these vectors are
@@ -233,35 +205,27 @@ Consider another example.
 \begin{example}{Linear independence}{linearindependence}
 Determine whether the set of vectors given by  
 \[\left\{ 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 3 \\
 0
-\end{array}
-\rightB, \; \leftB
-\begin{array}{r}
+\end{mymatrix}, \; \begin{mymatrix}{r}
 2 \\
 1 \\
 0 \\
 1
-\end{array}
-\rightB, \; \leftB
-\begin{array}{r}
+\end{mymatrix}, \; \begin{mymatrix}{r}
 0 \\
 1 \\
 1 \\
 2
-\end{array}
-\rightB, \; \leftB
-\begin{array}{r}
+\end{mymatrix}, \; \begin{mymatrix}{r}
 3 \\
 2 \\
 2 \\
 -1
-\end{array}
-\rightB \right\} \]
+\end{mymatrix} \right\} \]
 is linearly independent. If it is linearly dependent,
 express one of the vectors as a linear combination of the others.
 \end{example}
@@ -269,123 +233,97 @@ express one of the vectors as a linear combination of the others.
 \begin{solution}
 Form the $4 \times 4$  matrix $A$ having these vectors as columns:
 \begin{equation*}
-A= \leftB 
-\begin{array}{rrrr}
+A= \begin{mymatrix}{rrrr}
 1 & 2 & 0 & 3 \\ 
 2 & 1 & 1 & 2 \\ 
 3 & 0 & 1 & 2 \\ 
 0 & 1 & 2 & -1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Then by Theorem \ref{thm:linearindependencecombination}, the given set of vectors is linearly independent
 exactly if the system $AX=0$ has only the trivial solution.
 
 The augmented matrix for this system and corresponding {\rref} are given by  
 \begin{equation*}
- \leftB 
-\begin{array}{rrrr|r}
+ \begin{mymatrix}{rrrr|r}
 1 & 2 & 0 & 3 & 0 \\ 
 2 & 1 & 1 & 2 & 0 \\ 
 3 & 0 & 1 & 2 & 0 \\ 
 0 & 1 & 2 & -1 & 0 
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB 
-\begin{array}{rrrr|r}
+\begin{mymatrix}{rrrr|r}
 1 & 0 & 0 & 1 & 0 \\ 
 0 & 1 & 0 & 1 & 0 \\ 
 0 & 0 & 1 & -1 & 0 \\ 
 0 & 0 & 0 & 0 & 0 
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Not all the columns of the coefficient matrix are pivot columns and so the vectors are not linearly independent. In this case, we say the vectors are linearly dependent. 
 
 It follows that there are infinitely many solutions to $AX=0$, one of which is
 \begin{equation*}
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\ 
 1 \\ 
 -1 \\ 
 -1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Therefore we can write 
 \begin{equation*}
-1\leftB 
-\begin{array}{r}
+1\begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 3 \\ 
 0
-\end{array}
-\rightB +1\leftB
-\begin{array}{r}
+\end{mymatrix} +1\begin{mymatrix}{r}
 2 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB  -1 \leftB 
-\begin{array}{r}
+\end{mymatrix}  -1 \begin{mymatrix}{r}
 0 \\ 
 1 \\ 
 1 \\ 
 2
-\end{array}
-\rightB -1 \leftB 
-\begin{array}{r}
+\end{mymatrix} -1 \begin{mymatrix}{r}
 3 \\ 
 2 \\ 
 2 \\ 
 -1
-\end{array}
-\rightB =
-\leftB 
-\begin{array}{r}
+\end{mymatrix} =
+\begin{mymatrix}{r}
 0 \\ 
 0 \\ 
 0 \\ 
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 This can be rearranged as follows
 \begin{equation*}
-1\leftB 
-\begin{array}{r}
+1\begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 3 \\ 
 0
-\end{array}
-\rightB +1\leftB
-\begin{array}{r}
+\end{mymatrix} +1\begin{mymatrix}{r}
 2 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB  -1 \leftB 
-\begin{array}{r}
+\end{mymatrix}  -1 \begin{mymatrix}{r}
 0 \\ 
 1 \\ 
 1 \\ 
 2
-\end{array}
-\rightB =\leftB 
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 3 \\ 
 2 \\ 
 2 \\ 
 -1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 This gives the last vector as a linear combination of the first three vectors.
 
@@ -439,21 +377,18 @@ the system $AX=0$ has a nontrivial solution % by \ref{thm:rankhomogeneoussolutio
 \begin{example}{Linear dependence}{lineardependence}
 Consider the vectors 
 \[
-\left\{ \leftB \begin{array}{r}
+\left\{ \begin{mymatrix}{r}
 1 \\
 4 
-\end{array}
-\rightB, 
-\leftB \begin{array}{r}
+\end{mymatrix}, 
+\begin{mymatrix}{r}
 2 \\
 3
-\end{array}
-\rightB, 
-\leftB \begin{array}{r}
+\end{mymatrix}, 
+\begin{mymatrix}{r}
 3 \\
 2
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \]
 Are these vectors linearly independent?
 \end{example}
@@ -462,21 +397,18 @@ Are these vectors linearly independent?
 This set contains three vectors in $\R^2$. By Corollary \ref{cor:lineardependenceRn} these vectors are linearly dependent.
 In fact, we can write
 \[
-(-1) \leftB \begin{array}{r}
+(-1) \begin{mymatrix}{r}
 1 \\
 4 
-\end{array}
-\rightB + (2) 
-\leftB \begin{array}{r}
+\end{mymatrix} + (2) 
+\begin{mymatrix}{r}
 2 \\
 3
-\end{array}
-\rightB = 
-\leftB \begin{array}{r}
+\end{mymatrix} = 
+\begin{mymatrix}{r}
 3 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 showing that this set is linearly dependent. 
 \end{solution}

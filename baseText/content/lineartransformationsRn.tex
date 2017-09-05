@@ -15,26 +15,22 @@ an $m \times 1$ column vector.
 Recall that the $n \times 1$ vector given by
 \begin{equation*}
 \vect{x} = 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 x_1 \\
 x_2\\ 
 \vdots \\
 x_n
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is said to belong to $\R^n$, which is the set of all $n \times 1$ vectors. In this section, we will discuss transformations of vectors in $\R^n.$ 
 
 Consider the following example. 
 
 \begin{example}{A function which transforms vectors}{functiontransformation}
-Consider the matrix $A = \leftB
-\begin{array}{ccc}
+Consider the matrix $A = \begin{mymatrix}{ccc}
 1 & 2 & 0 \\
 2 & 1 & 0
-\end{array}
-\rightB .$ 
+\end{mymatrix} .$ 
 Show that by matrix multiplication $A$ transforms vectors in $\R^3$ into vectors in $\R^2$.
 \end{example}
 
@@ -43,90 +39,68 @@ First, recall that vectors in $\R^3$ are vectors of size $ 3 \times 1$, while ve
 \R^{2}$ are of size $2 \times 1$. If we multiply $A$, which is a $2 \times 3$ matrix, by a $3 \times 1$ vector,
 the result will be a $2 \times 1$ vector. This what we mean when we say that $A$ {\em transforms \em} vectors.
 
-Now, for $\leftB
-\begin{array}{c}
+Now, for $\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB $ in $\R^3$ , multiply on the left by the given matrix to obtain the new
+\end{mymatrix} $ in $\R^3$ , multiply on the left by the given matrix to obtain the new
 vector. This product looks like 
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 0 \\
 2 & 1 & 0
-\end{array}
-\rightB 
-\leftB
-\begin{array}{r}
+\end{mymatrix} 
+\begin{mymatrix}{r}
 x \\
 y \\
 z
-\end{array}
-\rightB = 
-\leftB
-\begin{array}{c}
+\end{mymatrix} = 
+\begin{mymatrix}{c}
 x+2y \\
 2x+y
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The resulting product is a $2 \times 1$ vector which is determined by the choice of $x$ and $y$. 
  Here are some numerical examples.
 \begin{equation*}
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 1 & 2 & 0 \\
 2 & 1 & 0
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 1 \\
 2 \\
 3
-\end{array}
-\rightB =\allowbreak \leftB
-\begin{array}{c}
+\end{mymatrix} =\allowbreak \begin{mymatrix}{c}
 5 \\
 4
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Here, the vector
-$\leftB
-\begin{array}{c}
+$\begin{mymatrix}{c}
 1 \\
 2 \\
 3
-\end{array} \rightB$
+\end{mymatrix}$
 in $\R^3$ was transformed by the matrix into the vector
-$\leftB
-\begin{array}{c} 
+$\begin{mymatrix}{c} 
 5 \\
 4
-\end{array}\rightB$
+\end{mymatrix}$
 in $\R^2$. 
  
 Here is another example:
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 0 \\
 2 & 1 & 0
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 10 \\
 5 \\
 -3
-\end{array}
-\rightB =\allowbreak \leftB
-\begin{array}{r}
+\end{mymatrix} =\allowbreak \begin{mymatrix}{r}
 20 \\
 25
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{solution}
 
@@ -169,11 +143,11 @@ Consider the following example.
 Let $T$ be a transformation defined by
 $T:\R^3\to\R^2$ is defined by
 \[
-T\leftB\begin{array}{c} x \\ y \\ z \end{array}\rightB
+T\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
 = 
-\leftB\begin{array}{c} x+y \\ x-z \end{array}\rightB
+\begin{mymatrix}{c} x+y \\ x-z \end{mymatrix}
 \mbox{ for all }
-\leftB\begin{array}{c} x \\ y \\ z \end{array}\rightB \in\R^3
+\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix} \in\R^3
 \]
 Show that $T$ is a linear transformation.
 \end{example}
@@ -182,18 +156,18 @@ Show that $T$ is a linear transformation.
 By Definition \ref{def:lineartransformation} we need to show that $T\left( k \vect{x}_1 + p \vect{x}_2 \right) = kT\left(\vect{x}_1\right)+ pT\left(\vect{x}_{2} \right)$ for all scalars $k,p$ and vectors $\vect{x}_1, \vect{x}_2$.
 Let
 \[
-\vect{x}_1 = \leftB\begin{array}{c} x_1 \\ y_1 \\ z_1 \end{array}\rightB, 
-\vect{x}_2 = \leftB\begin{array}{c} x_2 \\ y_2 \\ z_2 \end{array}\rightB
+\vect{x}_1 = \begin{mymatrix}{c} x_1 \\ y_1 \\ z_1 \end{mymatrix}, 
+\vect{x}_2 = \begin{mymatrix}{c} x_2 \\ y_2 \\ z_2 \end{mymatrix}
 \]
 Then
 \begin{eqnarray*}
-T\left( k \vect{x}_1 + p \vect{x}_2 \right) &=& T \left( k \leftB\begin{array}{c} x_1 \\ y_1 \\ z_1 \end{array}\rightB + p \leftB\begin{array}{c} x_2 \\ y_2 \\ z_2 \end{array}\rightB \right) \\
-&=& T \left(  \leftB\begin{array}{c} kx_1 \\ ky_1 \\ kz_1 \end{array}\rightB +  \leftB\begin{array}{c} px_2 \\ py_2 \\ pz_2 \end{array}\rightB \right) \\
-&=& T \left(  \leftB\begin{array}{c} kx_1 + px_2 \\ ky_1 + py_2 \\ kz_1 + pz_2 \end{array}\rightB  \right) \\
-&=& \leftB\begin{array}{c} (kx_1 + px_2) + (ky_1 + py_2) \\ (kx_1 + px_2)- (kz_1 + pz_2) \end{array}\rightB \\
-&=& \leftB\begin{array}{c} (kx_1 + ky_1) + (px_2 + py_2) \\ (kx_1 - kz_1) + (px_2 - pz_2) \end{array}\rightB \\
-&=& \leftB\begin{array}{c} kx_1 + ky_1 \\ kx_1 - kz_1 \end{array}\rightB + \leftB \begin{array}{c} px_2 + py_2 \\  px_2 - pz_2 \end{array}\rightB \\
-&=& k \leftB\begin{array}{c} x_1 + y_1 \\ x_1 - z_1 \end{array}\rightB + p \leftB \begin{array}{c} x_2 + y_2 \\  x_2 - z_2 \end{array}\rightB \\
+T\left( k \vect{x}_1 + p \vect{x}_2 \right) &=& T \left( k \begin{mymatrix}{c} x_1 \\ y_1 \\ z_1 \end{mymatrix} + p \begin{mymatrix}{c} x_2 \\ y_2 \\ z_2 \end{mymatrix} \right) \\
+&=& T \left(  \begin{mymatrix}{c} kx_1 \\ ky_1 \\ kz_1 \end{mymatrix} +  \begin{mymatrix}{c} px_2 \\ py_2 \\ pz_2 \end{mymatrix} \right) \\
+&=& T \left(  \begin{mymatrix}{c} kx_1 + px_2 \\ ky_1 + py_2 \\ kz_1 + pz_2 \end{mymatrix}  \right) \\
+&=& \begin{mymatrix}{c} (kx_1 + px_2) + (ky_1 + py_2) \\ (kx_1 + px_2)- (kz_1 + pz_2) \end{mymatrix} \\
+&=& \begin{mymatrix}{c} (kx_1 + ky_1) + (px_2 + py_2) \\ (kx_1 - kz_1) + (px_2 - pz_2) \end{mymatrix} \\
+&=& \begin{mymatrix}{c} kx_1 + ky_1 \\ kx_1 - kz_1 \end{mymatrix} + \begin{mymatrix}{c} px_2 + py_2 \\  px_2 - pz_2 \end{mymatrix} \\
+&=& k \begin{mymatrix}{c} x_1 + y_1 \\ x_1 - z_1 \end{mymatrix} + p \begin{mymatrix}{c} x_2 + y_2 \\  x_2 - z_2 \end{mymatrix} \\
 &=& k T(\vect{x}_1) + p T(\vect{x}_2) 
 \end{eqnarray*}
 Therefore $T$ is a linear transformation. 

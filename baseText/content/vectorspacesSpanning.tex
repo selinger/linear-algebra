@@ -42,39 +42,39 @@ When we say that a vector $\vect{w}$ is in $\func{span}\left\{ \vect{v}_{1},\cdo
 Consider the following example.
 
 \begin{example}{Matrix span}{matrixspan}
-Let $A = \leftB \begin{array}{rr}
+Let $A = \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 2 
-\end{array}\rightB$, $B = \leftB \begin{array}{rr}
+\end{mymatrix}$, $B = \begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0 
-\end{array}\rightB$. 
+\end{mymatrix}$. 
 Determine if $A$ and $B$ are in 
 \[
-\func{span}\left\{ M_1, M_2 \right\} = \func{span} \left\{ \leftB \begin{array}{rr}
+\func{span}\left\{ M_1, M_2 \right\} = \func{span} \left\{ \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
-\end{array}\rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 0 \\
 0 & 1 
-\end{array}\rightB \right\}\] 
+\end{mymatrix} \right\}\] 
 \end{example}
 
 \begin{solution}
 
 First consider $A$. We want to see if scalars $s,t$ can be found such that $A = s M_1 + t M_2$. 
 \begin{equation*}
-\leftB \begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 2 
-\end{array}\rightB = 
-s \leftB \begin{array}{rr}
+\end{mymatrix} = 
+s \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
-\end{array}\rightB + t \leftB \begin{array}{rr}
+\end{mymatrix} + t \begin{mymatrix}{rr}
 0 & 0 \\
 0 & 1 
-\end{array}\rightB
+\end{mymatrix}
 \end{equation*}
 The solution to this equation is given by 
 \begin{eqnarray*}
@@ -85,17 +85,17 @@ and it follows that $A$ is in $\func{span} \left\{ M_1, M_2 \right\}$.
 
 Now consider $B$. Again we write $B = sM_1 + t M_2$ and see if a solution can be found for $s, t$. 
 \begin{equation*}
-\leftB \begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0 
-\end{array}\rightB = 
-s \leftB \begin{array}{rr}
+\end{mymatrix} = 
+s \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
-\end{array}\rightB + t \leftB \begin{array}{rr}
+\end{mymatrix} + t \begin{mymatrix}{rr}
 0 & 0 \\
 0 & 1 
-\end{array}\rightB
+\end{mymatrix}
 \end{equation*}
 Clearly no values of $s$ and $t$ can be found such that this equation holds. Therefore $B$ is not in $\func{span} \left\{ M_1, M_2 \right\}$.
 \end{solution}
@@ -155,16 +155,16 @@ c &=& r-2s
 
 To check that a solution exists, set up the augmented matrix and row reduce:
 \[
-\leftB \begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & 2 & a \\
 0 & 1 & -1 & b \\
 1 & -2 & 0 & c 
-\end{array} \rightB \rightarrow \cdots \rightarrow 
-\leftB \begin{array}{rrr|c} 
+\end{mymatrix} \rightarrow \cdots \rightarrow 
+\begin{mymatrix}{rrr|c} 
 1 & 0 & 0 & \frac{1}{2} a + 2b + \frac{1}{2}c\\
 0 & 1 & 0 & \frac{1}{4}a - \frac{1}{4}c \\
 0 & 0 & 1 & \frac{1}{4}a - b - \frac{1}{4}c 
-\end{array} \rightB
+\end{mymatrix}
 \]
 
 Clearly a solution exists for any choice of $a,b,c$. Hence $S$ is a spanning set for $\Poly_2$. 

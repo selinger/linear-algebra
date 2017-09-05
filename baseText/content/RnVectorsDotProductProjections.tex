@@ -81,21 +81,17 @@ Find
 $\func{proj}_{\vect{u}}\left( \vect{v}\right) $ if 
 \begin{equation*}
 \vect{u}=
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 3 \\
 -4
-\end{array}
-\rightB,
+\end{mymatrix},
 \vect{v}=
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -104,21 +100,17 @@ We can use the formula provided in Definition \ref{def:projection} to find $\fun
 First, compute $\vect{v} \dotprod \vect{u}$. 
 This is given by 
 \begin{eqnarray*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
  \dotprod
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 3 \\
 -4
-\end{array}
-\rightB
+\end{mymatrix}
 &=&
 (2)(1) + (3)(-2) + (-4)(1) \\
 &=& 
@@ -127,21 +119,17 @@ This is given by
 \end{eqnarray*}
 Similarly, $\vect{u} \dotprod \vect{u}$ is given by 
 \begin{eqnarray*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 3 \\
 -4 
-\end{array}
-\rightB
+\end{mymatrix}
  \dotprod
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 3 \\
 -4
-\end{array}
-\rightB
+\end{mymatrix}
 &=&
 (2)(2) + (3)(3) + (-4)(-4) \\
 &=& 
@@ -153,34 +141,28 @@ Therefore, the projection is equal to
 \begin{eqnarray*}
 \func{proj}_{\vect{u}}\left( \vect{v}\right)
 &=&-\frac{8}{29} 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 3 \\
 -4
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -\vspace{0.05in}\frac{16}{29} \\
 -\vspace{0.05in}\frac{24}{29} \\
 \vspace{0.05in}\frac{32}{29}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 \end{solution}
 
 We will conclude this section with an important application of projections. Suppose a line $L$ and a point $P$ are given such that $P$ is not contained in $L$. Through the use of projections, we can determine the shortest distance from $P$ to $L$. 
 
 \begin{example}{Shortest distance from a point to a line}{shortestpointline}
-Let $P = (1,3,5)$ be a point in $\R^3$, and let $L$ be the line which goes through point $P_0 = (0,4,-2)$ with direction vector $\vect{d} = \leftB
-\begin{array}{r}
+Let $P = (1,3,5)$ be a point in $\R^3$, and let $L$ be the line which goes through point $P_0 = (0,4,-2)$ with direction vector $\vect{d} = \begin{mymatrix}{r}
 2 \\
 1 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 $.  Find the shortest distance from $P$ to the line $L$, and find the point $Q$ on $L$ that is closest to $P$. 
 \end{example}
 
@@ -189,28 +171,22 @@ In order to determine the shortest distance from $P$ to $L$, we will first find 
 The vector $\longvect{P_0P}$ is given by 
 \[
 \longvect{P_0P}=
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 3 \\
 5
-\end{array}
-\rightB
+\end{mymatrix}
 -
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 0 \\
 4 \\
 -2
-\end{array}
-\rightB
- = \leftB
-\begin{array}{r}
+\end{mymatrix}
+ = \begin{mymatrix}{r}
 1 \\
 -1 \\
 7
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 Then, if $Q$ is the point on $L$ closest to $P$, it follows that 
@@ -218,21 +194,17 @@ Then, if $Q$ is the point on $L$ closest to $P$, it follows that
 \longvect{P_0Q} &=& \func{proj}_{\vect{d}}\longvect{P_0P} \\
 &=& \left( \frac{ \longvect{P_0P}\bullet \vect{d}}{\|\vect{d}\|^2}\right) \vect{d} \\
 &=& 
-\frac{15}{9} \leftB
-\begin{array}{r}
+\frac{15}{9} \begin{mymatrix}{r}
 2 \\
 1 \\
 2
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=&
-\frac{5}{3} \leftB
-\begin{array}{r}
+\frac{5}{3} \begin{mymatrix}{r}
 2 \\
 1 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 Now, the distance from $P$ to $L$ is given by 
@@ -243,30 +215,24 @@ Now, the distance from $P$ to $L$ is given by
 
 The point $Q$ is found by adding the vector $\longvect{P_0Q}$ to the position vector $\longvect{0P_0}$ for $P_0$ as follows
 \begin{eqnarray*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 0 \\
 4 \\
 -2
-\end{array}
-\rightB
+\end{mymatrix}
 +
 \frac{5}{3}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 1 \\
 2
-\end{array}
-\rightB 
+\end{mymatrix} 
 &=& 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 \vspace{0.05in}\frac{10}{3} \\
 \vspace{0.05in}\frac{17}{3} \\
 \vspace{0.05in}\frac{4}{3}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 Therefore, $Q = (\frac{10}{3}, \frac{17}{3}, \frac{4}{3})$. 

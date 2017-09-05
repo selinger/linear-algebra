@@ -92,13 +92,11 @@ eigenvector to determine this directly.
 \begin{example}{Finding eigenvalue and eigenvector}{}
 Find the eigenvalue and eigenvector for 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 3 & 2 & 1 \\ 
 -2 & 0 & -1 \\ 
 -2 & -2 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 which is closest to $.9+.9i$.
 \end{example}
@@ -106,21 +104,16 @@ which is closest to $.9+.9i$.
 \begin{solution}
 Form 
 \begin{eqnarray*}
-&&\left( \leftB 
-\begin{array}{rrr}
+&&\left( \begin{mymatrix}{rrr}
 3 & 2 & 1 \\ 
 -2 & 0 & -1 \\ 
 -2 & -2 & 0
-\end{array}
-\rightB -\left( .9+.9i\right) \leftB 
-\begin{array}{rrr}
+\end{mymatrix} -\left( .9+.9i\right) \begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 1
-\end{array}
-\rightB \right) ^{-1} \\
-&=&\leftB 
-\begin{array}{ccc}
+\end{mymatrix} \right) ^{-1} \\
+&=&\begin{mymatrix}{ccc}
 -0.619\,19-10.\,\allowbreak 545i & -5.\,\allowbreak 524\,9-4.\,\allowbreak
 972\,4i & -0.370\,57-5.\,\allowbreak 821\,3i \\ 
 5.\,\allowbreak 524\,9+4.\,\allowbreak 972\,4i & 5.\,\allowbreak
@@ -133,76 +126,60 @@ Form
 Then pick an initial guess an multiply by this matrix raised to a large
 power. 
 \begin{equation*}
-\leftB 
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 -0.619\,19-10.\,\allowbreak 545i & -5.\,\allowbreak 524\,9-4.\,\allowbreak
 972\,4i & -0.370\,57-5.\,\allowbreak 821\,3i \\ 
 5.\,\allowbreak 524\,9+4.\,\allowbreak 972\,4i & 5.\,\allowbreak
 276\,2+0.248\,62i & 2.\,\allowbreak 762\,4+2.\,\allowbreak 486\,2i \\ 
 0.741\,14+11.\,\allowbreak 643i & 5.\,\allowbreak 524\,9+4.\,\allowbreak
 972\,4i & 0.492\,52+6.\,\allowbreak 918\,9i%
-\end{array}
-\rightB ^{15}\leftB 
-\begin{array}{c}
+\end{mymatrix} ^{15}\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 This equals 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 1.\,\allowbreak 562\,9\times 10^{13}-3.\,\allowbreak 899\,3\times 10^{12}i
 \\ 
 -5.\,\allowbreak 864\,5\times 10^{12}+9.\,\allowbreak 764\,2\times 10^{12}i
 \\ 
 -1.\,\allowbreak 562\,9\times 10^{13}+3.\,\allowbreak 899\,9\times 10^{12}i
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Now divide by an entry to make the vector have reasonable size. This yields 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 -0.999\,99-3.\,\allowbreak 614\,0\times 10^{-5}i \\ 
 0.499\,99-0.499\,99i \\ 
 1.0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 which is close to 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 -1 \\ 
 0.5-0.5i \\ 
 1.0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Then 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 3 & 2 & 1 \\ 
 -2 & 0 & -1 \\ 
 -2 & -2 & 0
-\end{array}
-\rightB \leftB 
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 -1 \\ 
 0.5-0.5i \\ 
 1.0
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 -1.0-1.0i \\ 
 1.0 \\ 
 1.0+1.0i
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Now to determine the eigenvalue, you could just take the ratio of
 corresponding entries. Pick the two corresponding entries which have the
@@ -210,13 +187,11 @@ largest absolute values. In this case, you would get the eigenvalue is $1+i$
 which happens to be the exact eigenvalue. Thus an eigenvector and eigenvalue
 are 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 -1 \\ 
 0.5-0.5i \\ 
 1.0
-\end{array}
-\rightB, 1+i
+\end{mymatrix}, 1+i
 \end{equation*}
 \end{solution}
 

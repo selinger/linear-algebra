@@ -56,60 +56,44 @@ lie on its main diagonal, and are the singular values of $A$.
 How can we find such a decomposition? We are aiming to decompose $A$ in the following form:
 
 \begin{equation*}
-A=U\leftB 
-\begin{array}{cc}
+A=U\begin{mymatrix}{cc}
 \sigma & 0 \\ 
 0 & 0
-\end{array}
-\rightB V^T 
+\end{mymatrix} V^T 
 \end{equation*}
 
 where $\sigma $ is of the form 
 \[
-\sigma =\leftB 
-\begin{array}{ccc}
+\sigma =\begin{mymatrix}{ccc}
 \sigma _{1} &  & 0 \\ 
 & \ddots &  \\ 
 0 &  & \sigma _{k}
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
-Thus $A^T=V\leftB 
-\begin{array}{cc}
+Thus $A^T=V\begin{mymatrix}{cc}
 \sigma & 0 \\ 
 0 & 0
-\end{array}
-\rightB U^T$ and it follows that 
+\end{mymatrix} U^T$ and it follows that 
 \begin{equation*}
-A^TA=V\leftB 
-\begin{array}{cc}
+A^TA=V\begin{mymatrix}{cc}
 \sigma & 0 \\ 
 0 & 0
-\end{array}
-\rightB U^TU\leftB 
-\begin{array}{cc}
+\end{mymatrix} U^TU\begin{mymatrix}{cc}
 \sigma & 0 \\ 
 0 & 0
-\end{array}
-\rightB V^T=V\leftB 
-\begin{array}{cc}
+\end{mymatrix} V^T=V\begin{mymatrix}{cc}
 \sigma ^{2} & 0 \\ 
 0 & 0
-\end{array}
-\rightB V^T
+\end{mymatrix} V^T
 \end{equation*}
-and so $A^TAV=V\leftB 
-\begin{array}{cc}
+and so $A^TAV=V\begin{mymatrix}{cc}
 \sigma ^{2} & 0 \\ 
 0 & 0
-\end{array}
-\rightB .$ Similarly, $AA^TU=U\leftB 
-\begin{array}{cc}
+\end{mymatrix} .$ Similarly, $AA^TU=U\begin{mymatrix}{cc}
 \sigma ^{2} & 0 \\ 
 0 & 0
-\end{array}
-\rightB .$ Therefore, you would find an orthonormal basis of eigenvectors
+\end{mymatrix} .$ Therefore, you would find an orthonormal basis of eigenvectors
 for $AA^T$ make them the columns of a matrix such that the
 corresponding eigenvalues are decreasing. This gives $U.$ You could then do
 the same for $A^TA$ to get $V$.
@@ -121,22 +105,18 @@ Let $A$ be an $m\times n$ matrix. Then there exist
 orthogonal matrices $U$ and $V$ of the appropriate size such that $A= U \Sigma V^T$ where $\Sigma$ is of the form
 \[
 \Sigma = 
-\leftB 
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 \sigma & 0 \\ 
 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 and $\sigma $ is of the form 
 \[
-\sigma =\leftB 
-\begin{array}{ccc}
+\sigma =\begin{mymatrix}{ccc}
 \sigma _{1} &  & 0 \\ 
 & \ddots &  \\ 
 0 &  & \sigma _{k}
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 for the $\sigma _{i}$ the singular values of $A.$
 \end{theorem}
@@ -173,46 +153,36 @@ Now extend $\left\{ \vect{u}_{i}\right\} _{i=1}^{k}$ to an orthonormal
 basis for all of $\R^{m},\left\{ \vect{u}_{i}\right\} _{i=1}^{m}$
 and let 
 \begin{equation*}
-U= \leftB 
-\begin{array}{ccc}
+U= \begin{mymatrix}{ccc}
 \vect{u}_{1} & \cdots & \vect{u}_{m}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 while $V= \left( \vect{v}_{1}\cdots \vect{v}_{n}\right) .$ Thus $U$
 is the matrix which has the $\vect{u}_{i}$ as columns and $V$ is defined
 as the matrix which has the $\vect{v}_{i}$ as columns. Then 
 \begin{equation*}
-U^TAV=\leftB 
-\begin{array}{c}
+U^TAV=\begin{mymatrix}{c}
 \vect{u}_{1}^T \\ 
 \vdots \\ 
 \vect{u}_{k}^T \\ 
 \vdots \\ 
 \vect{u}_{m}^T
-\end{array}
-\rightB A\leftB \vect{v}_{1}\cdots \vect{v}_{n}\rightB
+\end{mymatrix} A\leftB \vect{v}_{1}\cdots \vect{v}_{n}\rightB
 \end{equation*}
 \begin{equation*}
-=\leftB 
-\begin{array}{c}
+=\begin{mymatrix}{c}
 \vect{u}_{1}^T \\ 
 \vdots \\ 
 \vect{u}_{k}^T \\ 
 \vdots \\ 
 \vect{u}_{m}^T
-\end{array}
-\rightB \leftB 
-\begin{array}{cccccc}
+\end{mymatrix} \begin{mymatrix}{cccccc}
 \sigma _{1}\vect{u}_{1} & \cdots & \sigma _{k}\vect{u}_{k} & \vect{0}
 & \cdots & \vect{0}
-\end{array}
-\rightB =\leftB 
-\begin{array}{cc}
+\end{mymatrix} =\begin{mymatrix}{cc}
 \sigma & 0 \\ 
 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 where $\sigma $ is given in the statement of the theorem. 
 \end{proof}
@@ -257,20 +227,20 @@ Let's compute the Singular Value Decomposition of a simple matrix.
 
 \begin{example}{Singular value decomposition}{SVD}
 Let 
-$A=\leftB\begin{array}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{array}\rightB$.
+$A=\begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}$.
 Find the Singular Value Decomposition (SVD) of $A$.
 \end{example}
 
 \begin{solution}
 To begin, we compute $AA^T$ and $A^TA$.
-\[ AA^T = \leftB\begin{array}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{array}\rightB
-\leftB\begin{array}{rr} 1 & 3 \\ -1 & 1 \\ 3 & 1  \end{array}\rightB
-= \leftB\begin{array}{rr} 11 & 5 \\ 5 & 11  \end{array}\rightB.\]
+\[ AA^T = \begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}
+\begin{mymatrix}{rr} 1 & 3 \\ -1 & 1 \\ 3 & 1  \end{mymatrix}
+= \begin{mymatrix}{rr} 11 & 5 \\ 5 & 11  \end{mymatrix}.\]
 
-\[ A^TA = \leftB\begin{array}{rr} 1 & 3 \\ -1 & 1 \\ 3 & 1  \end{array}\rightB
-\leftB\begin{array}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{array}\rightB
-= \leftB\begin{array}{rrr} 10 & 2 & 6 \\ 2 & 2 & -2\\
-6 & -2 & 10 \end{array}\rightB.\]
+\[ A^TA = \begin{mymatrix}{rr} 1 & 3 \\ -1 & 1 \\ 3 & 1  \end{mymatrix}
+\begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}
+= \begin{mymatrix}{rrr} 10 & 2 & 6 \\ 2 & 2 & -2\\
+6 & -2 & 10 \end{mymatrix}.\]
 
 Since $AA^T$ is $2\times 2$ while $A^T A$ is $3\times 3$, and $AA^T$
 and $A^TA$ have the same {\em nonzero} eigenvalues (by Proposition
@@ -302,76 +272,76 @@ eigenvectors are orthogonal, and we need only normalize them.
 
 $\lambda_1=16$: solve $(16I-A^TA)Y= 0$.
 
-\[ \leftB\begin{array}{rrr|r}
+\[ \begin{mymatrix}{rrr|r}
 6 & -2 & -6 & 0 \\ -2 & 14 & 2 & 0 \\ -6 & 2 & 6 & 0
-\end{array}\rightB
+\end{mymatrix}
 \rightarrow
-\leftB\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & -1 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0
-\end{array}\rightB,
+\end{mymatrix},
 \mbox{ so }
-Y=\leftB\begin{array}{r} t \\ 0 \\ t \end{array}\rightB
-=t\leftB\begin{array}{r} 1 \\ 0 \\ 1 \end{array}\rightB,
+Y=\begin{mymatrix}{r} t \\ 0 \\ t \end{mymatrix}
+=t\begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix},
 t\in \R. \]
 
 $\lambda_2=6$: solve $(6I-A^TA)Y= 0$.
 
-\[ \leftB\begin{array}{rrr|r}
+\[ \begin{mymatrix}{rrr|r}
 -4 & -2 & -6 & 0 \\ -2 & 4 & 2 & 0 \\ -6 & 2 & -4 & 0
-\end{array}\rightB
+\end{mymatrix}
 \rightarrow
-\leftB\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & 1 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 0 & 0
-\end{array}\rightB,
+\end{mymatrix},
 \mbox{ so }
-Y=\leftB\begin{array}{r} -s \\ -s \\ s \end{array}\rightB
-=s\leftB\begin{array}{r} -1 \\ -1 \\ 1 \end{array}\rightB,
+Y=\begin{mymatrix}{r} -s \\ -s \\ s \end{mymatrix}
+=s\begin{mymatrix}{r} -1 \\ -1 \\ 1 \end{mymatrix},
 s\in \R. \]
 
 $\lambda_3=0$: solve $(-A^TA)Y= 0$.
-\[ \leftB\begin{array}{rrr|r}
+\[ \begin{mymatrix}{rrr|r}
 -10 & -2 & -6 & 0 \\ -2 & -2 & 2 & 0 \\ -6 & 2 & -10 & 0
-\end{array}\rightB
+\end{mymatrix}
 \rightarrow
-\leftB\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & 1 & 0 \\ 0 & 1 & -2 & 0 \\ 0 & 0 & 0 & 0
-\end{array}\rightB,
+\end{mymatrix},
 \mbox{ so }
-Y=\leftB\begin{array}{r} -r \\ 2r \\ r \end{array}\rightB
-=r\leftB\begin{array}{r} -1 \\ 2 \\ 1 \end{array}\rightB,
+Y=\begin{mymatrix}{r} -r \\ 2r \\ r \end{mymatrix}
+=r\begin{mymatrix}{r} -1 \\ 2 \\ 1 \end{mymatrix},
 r\in \R. \]
 
 
 Let
-\[ V_1=\frac{1}{\sqrt{2}}\leftB\begin{array}{r} 1\\ 0\\ 1 \end{array}\rightB,
-V_2=\frac{1}{\sqrt{3}}\leftB\begin{array}{r} -1\\ -1\\ 1 \end{array}\rightB,
-V_3=\frac{1}{\sqrt{6}}\leftB\begin{array}{r} -1\\ 2\\ 1 \end{array}\rightB.\]
+\[ V_1=\frac{1}{\sqrt{2}}\begin{mymatrix}{r} 1\\ 0\\ 1 \end{mymatrix},
+V_2=\frac{1}{\sqrt{3}}\begin{mymatrix}{r} -1\\ -1\\ 1 \end{mymatrix},
+V_3=\frac{1}{\sqrt{6}}\begin{mymatrix}{r} -1\\ 2\\ 1 \end{mymatrix}.\]
 
 Then
-\[ V=\frac{1}{\sqrt{6}}\leftB\begin{array}{rrr}
+\[ V=\frac{1}{\sqrt{6}}\begin{mymatrix}{rrr}
 \sqrt 3 & -\sqrt 2 & -1  \\
 0 & -\sqrt 2 & 2 \\
-\sqrt 3 & \sqrt 2 & 1 \end{array}\rightB.\]
+\sqrt 3 & \sqrt 2 & 1 \end{mymatrix}.\]
 
 Also,
-\[ \Sigma = \leftB\begin{array}{rrr} 4 & 0 & 0 \\
-0 & \sqrt 6 & 0 \end{array}\rightB,\]
+\[ \Sigma = \begin{mymatrix}{rrr} 4 & 0 & 0 \\
+0 & \sqrt 6 & 0 \end{mymatrix},\]
 and we use $A$, $V^T$, and $\Sigma$ to find $U$.
 
 Since $V$ is orthogonal and $A=U\Sigma V^T$, it follows that $AV=U\Sigma$.
-Let $V=\leftB\begin{array}{ccc} V_1 & V_2 & V_3 \end{array}\rightB$, and
-let $U=\leftB\begin{array}{cc} U_1 & U_2 \end{array}\rightB$, where
+Let $V=\begin{mymatrix}{ccc} V_1 & V_2 & V_3 \end{mymatrix}$, and
+let $U=\begin{mymatrix}{cc} U_1 & U_2 \end{mymatrix}$, where
 $U_1$ and $U_2$ are the two columns of $U$.
 
 Then we have
 \begin{eqnarray*}
-A\leftB\begin{array}{ccc} V_1 & V_2 & V_3 \end{array}\rightB
-&=& \leftB\begin{array}{cc} U_1 & U_2 \end{array}\rightB\Sigma\\
-\leftB\begin{array}{ccc} AV_1 & AV_2 & AV_3 \end{array}\rightB
-&=& \leftB\begin{array}{ccc} \sigma_1U_1 + 0U_2 &
-0U_1 + \sigma_2 U_2 & 0 U_1 + 0 U_2 \end{array}\rightB \\
-&=& \leftB\begin{array}{ccc} \sigma_1U_1 & \sigma_2 U_2 &
-0 \end{array}\rightB
+A\begin{mymatrix}{ccc} V_1 & V_2 & V_3 \end{mymatrix}
+&=& \begin{mymatrix}{cc} U_1 & U_2 \end{mymatrix}\Sigma\\
+\begin{mymatrix}{ccc} AV_1 & AV_2 & AV_3 \end{mymatrix}
+&=& \begin{mymatrix}{ccc} \sigma_1U_1 + 0U_2 &
+0U_1 + \sigma_2 U_2 & 0 U_1 + 0 U_2 \end{mymatrix} \\
+&=& \begin{mymatrix}{ccc} \sigma_1U_1 & \sigma_2 U_2 &
+0 \end{mymatrix}
 \end{eqnarray*}
 which implies that $AV_1=\sigma_1U_1 = 4U_1$ and
 $AV_2=\sigma_2U_2 = \sqrt 6 U_2$.
@@ -379,32 +349,32 @@ $AV_2=\sigma_2U_2 = \sqrt 6 U_2$.
 Thus,
 \[ U_1 = \frac{1}{4}AV_1 
 = \frac{1}{4}
-\leftB\begin{array}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{array}\rightB
-\frac{1}{\sqrt{2}}\leftB\begin{array}{r} 1\\ 0\\ 1 \end{array}\rightB
-= \frac{1}{4\sqrt 2}\leftB\begin{array}{r} 4\\ 4 \end{array}\rightB
-= \frac{1}{\sqrt 2}\leftB\begin{array}{r} 1\\ 1 \end{array}\rightB,\]
+\begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}
+\frac{1}{\sqrt{2}}\begin{mymatrix}{r} 1\\ 0\\ 1 \end{mymatrix}
+= \frac{1}{4\sqrt 2}\begin{mymatrix}{r} 4\\ 4 \end{mymatrix}
+= \frac{1}{\sqrt 2}\begin{mymatrix}{r} 1\\ 1 \end{mymatrix},\]
 and
 \[ U_2 = \frac{1}{\sqrt 6}AV_2 
 = \frac{1}{\sqrt 6}
-\leftB\begin{array}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{array}\rightB
-\frac{1}{\sqrt{3}}\leftB\begin{array}{r} -1\\ -1\\ 1 \end{array}\rightB
-=\frac{1}{3\sqrt 2}\leftB\begin{array}{r} 3\\ -3 \end{array}\rightB
-=\frac{1}{\sqrt 2}\leftB\begin{array}{r} 1\\ -1 \end{array}\rightB.
+\begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}
+\frac{1}{\sqrt{3}}\begin{mymatrix}{r} -1\\ -1\\ 1 \end{mymatrix}
+=\frac{1}{3\sqrt 2}\begin{mymatrix}{r} 3\\ -3 \end{mymatrix}
+=\frac{1}{\sqrt 2}\begin{mymatrix}{r} 1\\ -1 \end{mymatrix}.
 \]
 Therefore,
-\[ U=\frac{1}{\sqrt{2}}\leftB\begin{array}{rr} 1 & 1 \\
-1 & -1 \end{array}\rightB,\]
+\[ U=\frac{1}{\sqrt{2}}\begin{mymatrix}{rr} 1 & 1 \\
+1 & -1 \end{mymatrix},\]
 and
 \begin{eqnarray*}
-A & = & \leftB\begin{array}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{array}\rightB\\
-& = & \left(\frac{1}{\sqrt{2}}\leftB\begin{array}{rr} 1 & 1 \\
-1 & -1 \end{array}\rightB\right)
-\leftB\begin{array}{rrr} 4 & 0 & 0 \\
-0 & \sqrt 6 & 0 \end{array}\rightB
-\left(\frac{1}{\sqrt{6}}\leftB\begin{array}{rrr}
+A & = & \begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}\\
+& = & \left(\frac{1}{\sqrt{2}}\begin{mymatrix}{rr} 1 & 1 \\
+1 & -1 \end{mymatrix}\right)
+\begin{mymatrix}{rrr} 4 & 0 & 0 \\
+0 & \sqrt 6 & 0 \end{mymatrix}
+\left(\frac{1}{\sqrt{6}}\begin{mymatrix}{rrr}
 \sqrt 3 & 0 & \sqrt 3  \\
 -\sqrt 2 & -\sqrt 2 & \sqrt2 \\
--1 & 2 & 1 \end{array}\rightB\right).
+-1 & 2 & 1 \end{mymatrix}\right).
 \end{eqnarray*}
 \end{solution}
 
@@ -412,7 +382,7 @@ Here is another example.
 
 \begin{example}{Finding the SVD}{SVD2}
 Find an SVD for
-$A=\leftB\begin{array}{r} -1 \\ 2\\ 2 \end{array}\rightB$.
+$A=\begin{mymatrix}{r} -1 \\ 2\\ 2 \end{mymatrix}$.
 \end{example}
 
 \begin{solution}
@@ -420,9 +390,9 @@ Since $A$ is $3\times 1$, $A^T A$ is a $1\times 1$ matrix
 whose eigenvalues are easier to find than the eigenvalues of
 the $3\times 3$ matrix $AA^T$.
 
-\[ A^TA=\leftB\begin{array}{ccc} -1 & 2 & 2 \end{array}\rightB
-\leftB\begin{array}{r} -1 \\ 2 \\ 2 \end{array}\rightB
-=\leftB\begin{array}{r} 9 \end{array}\rightB.\]
+\[ A^TA=\begin{mymatrix}{ccc} -1 & 2 & 2 \end{mymatrix}
+\begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix}
+=\begin{mymatrix}{r} 9 \end{mymatrix}.\]
 
 Thus $A^TA$ has eigenvalue $\lambda_1=9$, and
 the eigenvalues of $AA^T$ are $\lambda_1=9$, $\lambda_2=0$, and
@@ -433,34 +403,34 @@ Furthermore, $A$ has only one singular value, $\sigma_1=3$.
 To do so we find an eigenvector for $A^TA$ and
 normalize it.
 In this case, finding a unit eigenvector is trivial:
-$V_1=\leftB\begin{array}{r} 1 \end{array}\rightB$, and
-\[ V=\leftB\begin{array}{r} 1 \end{array}\rightB.\]
+$V_1=\begin{mymatrix}{r} 1 \end{mymatrix}$, and
+\[ V=\begin{mymatrix}{r} 1 \end{mymatrix}.\]
 
 Also,
-$\Sigma =\leftB\begin{array}{r} 3 \\ 0\\ 0 \end{array}\rightB$,
+$\Sigma =\begin{mymatrix}{r} 3 \\ 0\\ 0 \end{mymatrix}$,
 and we use $A$, $V^T$, and $\Sigma$ to find $U$.
 
 
 Now $AV=U\Sigma$, with
-$V=\leftB\begin{array}{r} V_1 \end{array}\rightB$,
-and $U=\leftB\begin{array}{rrr} U_1 & U_2 & U_3 \end{array}\rightB$,
+$V=\begin{mymatrix}{r} V_1 \end{mymatrix}$,
+and $U=\begin{mymatrix}{rrr} U_1 & U_2 & U_3 \end{mymatrix}$,
 where $U_1$, $U_2$, and $U_3$ are the columns of $U$.
 Thus
 \begin{eqnarray*}
-A\leftB\begin{array}{r} V_1 \end{array}\rightB
-&=& \leftB\begin{array}{rrr} U_1 & U_2 & U_3 \end{array}\rightB\Sigma\\
-\leftB\begin{array}{r} AV_1 \end{array}\rightB
-&=& \leftB\begin{array}{r} \sigma_1 U_1+0U_2+0U_3 \end{array}\rightB\\
-&=& \leftB\begin{array}{r} \sigma_1 U_1 \end{array}\rightB
+A\begin{mymatrix}{r} V_1 \end{mymatrix}
+&=& \begin{mymatrix}{rrr} U_1 & U_2 & U_3 \end{mymatrix}\Sigma\\
+\begin{mymatrix}{r} AV_1 \end{mymatrix}
+&=& \begin{mymatrix}{r} \sigma_1 U_1+0U_2+0U_3 \end{mymatrix}\\
+&=& \begin{mymatrix}{r} \sigma_1 U_1 \end{mymatrix}
 \end{eqnarray*}
 This gives us $AV_1=\sigma_1 U_1= 3U_1$, so
 
 \[ U_1 = \frac{1}{3}AV_1 
 = \frac{1}{3}
-\leftB\begin{array}{r} -1 \\ 2 \\ 2 \end{array}\rightB
-\leftB\begin{array}{r} 1 \end{array}\rightB
+\begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix}
+\begin{mymatrix}{r} 1 \end{mymatrix}
 = \frac{1}{3}
-\leftB\begin{array}{r} -1 \\ 2 \\ 2 \end{array}\rightB.\]
+\begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix}.\]
 
 The vectors $U_2$ and $U_3$ are eigenvectors of $AA^T$ corresponding
 to the eigenvalue $\lambda_2=\lambda_3=0$.
@@ -477,45 +447,45 @@ Starting with $\{ 3U_1 \}$ instead of $\{ U_1 \}$ makes the
 arithmetic a bit easier.
 It is easy to verify that
 
-\[ \left\{ \leftB\begin{array}{r} -1 \\ 2 \\ 2 \end{array}\rightB,
-\leftB\begin{array}{r} 1 \\ 0 \\ 0 \end{array}\rightB,
-\leftB\begin{array}{r} 0 \\ 1 \\ 0 \end{array}\rightB\right\}\]
+\[ \left\{ \begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix},
+\begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},
+\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}\right\}\]
 is a basis of $\R^3$.  Set
 
-\[ E_1 = \leftB\begin{array}{r} -1 \\ 2 \\ 2 \end{array}\rightB,
-X_2 = \leftB\begin{array}{r} 1 \\ 0 \\ 0 \end{array}\rightB,
-X_3 =\leftB\begin{array}{r} 0 \\ 1 \\ 0 \end{array}\rightB,\]
+\[ E_1 = \begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix},
+X_2 = \begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},
+X_3 =\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix},\]
 
 and apply the Gram-Schmidt algorithm to
 $\{ E_1, X_2, X_3\}$.
 
 This gives us
 
-\[ E_2 = \leftB\begin{array}{r} 4 \\ 1 \\ 1 \end{array}\rightB
+\[ E_2 = \begin{mymatrix}{r} 4 \\ 1 \\ 1 \end{mymatrix}
 \mbox{ and }
-E_3 = \leftB\begin{array}{r} 0 \\ 1 \\ -1 \end{array}\rightB.\]
+E_3 = \begin{mymatrix}{r} 0 \\ 1 \\ -1 \end{mymatrix}.\]
 
 Therefore,
 \[ U_2 = \frac{1}{\sqrt{18}}
- \leftB\begin{array}{r} 4 \\ 1 \\ 1 \end{array}\rightB,
+ \begin{mymatrix}{r} 4 \\ 1 \\ 1 \end{mymatrix},
 U_3 = \frac{1}{\sqrt 2}
-\leftB\begin{array}{r} 0 \\ 1 \\ -1 \end{array}\rightB,\]
+\begin{mymatrix}{r} 0 \\ 1 \\ -1 \end{mymatrix},\]
 and
 
-\[ U = \leftB\begin{array}{rrr} -\frac{1}{3} & \frac{4}{\sqrt{18}} & 0 \\
+\[ U = \begin{mymatrix}{rrr} -\frac{1}{3} & \frac{4}{\sqrt{18}} & 0 \\
 \frac{2}{3} & \frac{1}{\sqrt{18}} & \frac{1}{\sqrt 2} \\
-\frac{2}{3} & \frac{1}{\sqrt{18}} & -\frac{1}{\sqrt 2} \end{array}\rightB.\]
+\frac{2}{3} & \frac{1}{\sqrt{18}} & -\frac{1}{\sqrt 2} \end{mymatrix}.\]
 
 Finally,
 
 \[ A = 
-\leftB\begin{array}{r} -1 \\ 2 \\ 2 \end{array}\rightB
+\begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix}
 =
-\leftB\begin{array}{rrr} -\frac{1}{3} & \frac{4}{\sqrt{18}} & 0 \\
+\begin{mymatrix}{rrr} -\frac{1}{3} & \frac{4}{\sqrt{18}} & 0 \\
 \frac{2}{3} & \frac{1}{\sqrt{18}} & \frac{1}{\sqrt 2} \\
-\frac{2}{3} & \frac{1}{\sqrt{18}} & -\frac{1}{\sqrt 2} \end{array}\rightB
-\leftB\begin{array}{r} 3 \\ 0 \\ 0 \end{array}\rightB
-\leftB\begin{array}{r} 1 \end{array}\rightB.\]
+\frac{2}{3} & \frac{1}{\sqrt{18}} & -\frac{1}{\sqrt 2} \end{mymatrix}
+\begin{mymatrix}{r} 3 \\ 0 \\ 0 \end{mymatrix}
+\begin{mymatrix}{r} 1 \end{mymatrix}.\]
 
 \end{solution}
 
@@ -524,118 +494,90 @@ Consider another example.
 \begin{example}{Find the SVD}{SVD3}
 Find a singular value decomposition for the matrix 
 \begin{equation*}
-A= \leftB  
-\begin{array}{ccc}
+A= \begin{mymatrix}{ccc}
 \frac{2}{5}\sqrt{2}\sqrt{5} & \frac{4}{5}\sqrt{2}\sqrt{5} & 0 \\ 
 \frac{2}{5}\sqrt{2}\sqrt{5} & \frac{4}{5}\sqrt{2}\sqrt{5} & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
 First consider $A^TA$
 \begin{equation*}
-\leftB 
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 \frac{16}{5} & \frac{32}{5} & 0 \\ 
 \frac{32}{5} & \frac{64}{5} & 0 \\ 
 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 What are some eigenvalues and eigenvectors? Some computing shows these are
 
 \begin{equation*}
-\left\{ \leftB 
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 -\frac{2}{5}\sqrt{5} \\ 
 \frac{1}{5}\sqrt{5} \\ 
 0
-\end{array}
-\rightB \right\} \leftrightarrow 0,\left\{ \leftB 
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 0,\left\{ \begin{mymatrix}{c}
 \frac{1}{5}\sqrt{5} \\ 
 \frac{2}{5}\sqrt{5} \\ 
 0
-\end{array}
-\rightB \right\} \leftrightarrow 16
+\end{mymatrix} \right\} \leftrightarrow 16
 \end{equation*}
 Thus the matrix $V$ is given by 
 \begin{equation*}
-V=\leftB 
-\begin{array}{ccc}
+V=\begin{mymatrix}{ccc}
 \frac{1}{5}\sqrt{5} & -\frac{2}{5}\sqrt{5} & 0 \\ 
 \frac{2}{5}\sqrt{5} & \frac{1}{5}\sqrt{5} & 0 \\ 
 0 & 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Next consider $AA^T$
 \begin{equation*}
-\leftB 
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 8 & 8 \\ 
 8 & 8
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Eigenvectors and eigenvalues are
 
 \begin{equation*}
-\left\{ \leftB 
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 -\frac{1}{2}\sqrt{2} \\ 
 \frac{1}{2}\sqrt{2}
-\end{array}
-\rightB \right\} \leftrightarrow 0,\left\{ \leftB 
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 0,\left\{ \begin{mymatrix}{c}
 \frac{1}{2}\sqrt{2} \\ 
 \frac{1}{2}\sqrt{2}
-\end{array}
-\rightB \right\} \leftrightarrow 16
+\end{mymatrix} \right\} \leftrightarrow 16
 \end{equation*}
 Thus you can let $U$ be given by 
 \begin{equation*}
-U=\leftB 
-\begin{array}{cc}
+U=\begin{mymatrix}{cc}
 \frac{1}{2}\sqrt{2} & -\frac{1}{2}\sqrt{2} \\ 
 \frac{1}{2}\sqrt{2} & \frac{1}{2}\sqrt{2}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Lets check this. $U^TAV=$ 
 \begin{equation*}
-\leftB 
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 \frac{1}{2}\sqrt{2} & \frac{1}{2}\sqrt{2} \\ 
 -\frac{1}{2}\sqrt{2} & \frac{1}{2}\sqrt{2}
-\end{array}
-\rightB \leftB  
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 \frac{2}{5}\sqrt{2}\sqrt{5} & \frac{4}{5}\sqrt{2}\sqrt{5} & 0 \\ 
 \frac{2}{5}\sqrt{2}\sqrt{5} & \frac{4}{5}\sqrt{2}\sqrt{5} & 0
-\end{array}
-\rightB \leftB 
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 \frac{1}{5}\sqrt{5} & -\frac{2}{5}\sqrt{5} & 0 \\ 
 \frac{2}{5}\sqrt{5} & \frac{1}{5}\sqrt{5} & 0 \\ 
 0 & 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{equation*}
-=\leftB 
-\begin{array}{ccc}
+=\begin{mymatrix}{ccc}
 4 & 0 & 0 \\ 
 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 This illustrates that if you have a good way to find the eigenvectors and

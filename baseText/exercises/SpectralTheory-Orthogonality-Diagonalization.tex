@@ -2,74 +2,58 @@
 
 \begin{ex} Find the eigenvalues and an orthonormal basis of eigenvectors for $A.$ 
 \begin{equation*}
-A=\leftB 
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 11 & -1 & -4 \\ 
 -1 & 11 & -4 \\ 
 -4 & -4 & 14
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \textbf{Hint:\ }Two eigenvalues are 12 and 18.
 \begin{sol}
 The eigenvectors and eigenvalues are:
 \[
-\left\{ \frac{1}{\sqrt{3}}\leftB
-\begin{array}{c}
+\left\{ \frac{1}{\sqrt{3}}\begin{mymatrix}{c}
 1 \\
 1 \\
 1
-\end{array}
-\rightB \right\} \leftrightarrow 6,\left\{ \frac{1}{\sqrt{2}}\leftB
-\begin{array}{r}
+\end{mymatrix} \right\} \leftrightarrow 6,\left\{ \frac{1}{\sqrt{2}}\begin{mymatrix}{r}
 -1 \\
 1 \\
 0
-\end{array}
-\rightB \right\} \leftrightarrow 12,\left\{ \frac{1}{\sqrt{6}}\leftB
-\begin{array}{r}
+\end{mymatrix} \right\} \leftrightarrow 12,\left\{ \frac{1}{\sqrt{6}}\begin{mymatrix}{r}
 -1 \\
 -1 \\
 2
-\end{array}
-\rightB \right\} \leftrightarrow 18
+\end{mymatrix} \right\} \leftrightarrow 18
 \]
 \end{sol}
 \end{ex}
 
 \begin{ex} Find the eigenvalues and an orthonormal basis of eigenvectors for $A.$ 
 \begin{equation*}
-A=\leftB 
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 4 & 1 & -2 \\ 
 1 & 4 & -2 \\ 
 -2 & -2 & 7
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \textbf{Hint:\ }One eigenvalue is 3.
 \begin{sol}
 The eigenvectors and eigenvalues are:
 \[
-\left\{ \frac{1}{\sqrt{2}}\leftB
-\begin{array}{r}
+\left\{ \frac{1}{\sqrt{2}}\begin{mymatrix}{r}
 -1 \\
 1 \\
 0
-\end{array}
-\rightB ,\frac{1}{\sqrt{3}}\leftB
-\begin{array}{c}
+\end{mymatrix} ,\frac{1}{\sqrt{3}}\begin{mymatrix}{c}
 1 \\
 1 \\
 1
-\end{array}
-\rightB \right\} \leftrightarrow 3,\left\{ \frac{1}{\sqrt{6}}\leftB
-\begin{array}{r}
+\end{mymatrix} \right\} \leftrightarrow 3,\left\{ \frac{1}{\sqrt{6}}\begin{mymatrix}{r}
 -1 \\
 -1 \\
 2
-\end{array}
-\rightB \right\} \leftrightarrow 9
+\end{mymatrix} \right\} \leftrightarrow 9
 \]
 \end{sol}
 \end{ex}
@@ -78,68 +62,52 @@ The eigenvectors and eigenvalues are:
 Diagonalize $A$ by finding an orthogonal matrix $U$ and a diagonal matrix $D$
 such that $U^{T}AU=D$. 
 \begin{equation*}
-A=\leftB 
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 -1 & 1 & 1 \\ 
 1 & -1 & 1 \\ 
 1 & 1 & -1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \textbf{Hint:\ }One eigenvalue is -2.
 \begin{sol}
 The eigenvectors and eigenvalues are:
 \[
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 \frac{1}{3}\sqrt{3} \\
 \frac{1}{3}\sqrt{3} \\
 \frac{1}{3}\sqrt{3}
-\end{array}
-\rightB \right\} \leftrightarrow 1,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 1,\left\{ \begin{mymatrix}{c}
 -\frac{1}{2}\sqrt{2} \\
 \frac{1}{2}\sqrt{2} \\
 0
-\end{array}
-\rightB ,\allowbreak \leftB
-\begin{array}{c}
+\end{mymatrix} ,\allowbreak \begin{mymatrix}{c}
 -\frac{1}{6}\sqrt{6} \\
 -\frac{1}{6}\sqrt{6} \\
 \frac{1}{3}\sqrt{2}\sqrt{3}
-\end{array}
-\rightB \right\} \leftrightarrow -2
+\end{mymatrix} \right\} \leftrightarrow -2
 \]
 \begin{eqnarray*}
-&&\leftB
-\begin{array}{ccc}
+&&\begin{mymatrix}{ccc}
 \sqrt{3}/3 & -\sqrt{2}/2 & -\sqrt{6}/6 \\
 \sqrt{3}/3 & \sqrt{2}/2 & -\sqrt{6}/6 \\
 \sqrt{3}/3 & 0 & \frac{1}{3}\sqrt{2}\sqrt{3}
-\end{array}
-\rightB^{T}\leftB
-\begin{array}{rrr}
+\end{mymatrix}^{T}\begin{mymatrix}{rrr}
 -1 & 1 & 1 \\
 1 & -1 & 1 \\
 1 & 1 & -1
-\end{array}
-\rightB  \\
-&&\cdot \leftB
-\begin{array}{ccc}
+\end{mymatrix}  \\
+&&\cdot \begin{mymatrix}{ccc}
 \sqrt{3}/3 & -\sqrt{2}/2 & -\sqrt{6}/6 \\
 \sqrt{3}/3 & \sqrt{2}/2 & -\sqrt{6}/6 \\
 \sqrt{3}/3 & 0 & \frac{1}{3}\sqrt{2}\sqrt{3}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 \[
-=\leftB
-\begin{array}{rrr}
+=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & -2 & 0 \\
 0 & 0 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
@@ -148,37 +116,29 @@ The eigenvectors and eigenvalues are:
 Diagonalize $A$ by finding an orthogonal matrix $U$ and a diagonal matrix $D$
 such that $U^{T}AU=D$. 
 \begin{equation*}
-A=\leftB 
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 17 & -7 & -4 \\ 
 -7 & 17 & -4 \\ 
 -4 & -4 & 14
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \textbf{Hint:\ }Two eigenvalues are $18$ and $24$.
 \begin{sol}
 The eigenvectors and eigenvalues are:
 \[
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 \frac{1}{3}\sqrt{3} \\
 \frac{1}{3}\sqrt{3} \\
 \frac{1}{3}\sqrt{3}
-\end{array}
-\rightB \right\} \leftrightarrow 6,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 6,\left\{ \begin{mymatrix}{c}
 -\frac{1}{6}\sqrt{6} \\
 -\frac{1}{6}\sqrt{6} \\
 \frac{1}{3}\sqrt{2}\sqrt{3}
-\end{array}
-\rightB \right\} \leftrightarrow 18,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 18,\left\{ \begin{mymatrix}{c}
 -\frac{1}{2}\sqrt{2} \\
 \frac{1}{2}\sqrt{2} \\
 0
-\end{array}
-\rightB \right\} \leftrightarrow 24
+\end{mymatrix} \right\} \leftrightarrow 24
 \]
 The matrix $U$ has these as its columns.
 \end{sol}
@@ -188,37 +148,29 @@ The matrix $U$ has these as its columns.
 Diagonalize $A$ by finding an orthogonal matrix $U$ and a diagonal matrix $D$
 such that $U^{T}AU=D$. 
 \begin{equation*}
-A=\leftB 
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 13 & 1 & 4 \\ 
 1 & 13 & 4 \\ 
 4 & 4 & 10
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \textbf{Hint:\ }Two eigenvalues are $12$ and 18.
 \begin{sol}
 The eigenvectors and eigenvalues are:
 \[
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 -\frac{1}{6}\sqrt{6} \\
 -\frac{1}{6}\sqrt{6} \\
 \frac{1}{3}\sqrt{2}\sqrt{3}
-\end{array}
-\rightB \right\} \leftrightarrow 6,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 6,\left\{ \begin{mymatrix}{c}
 -\frac{1}{2}\sqrt{2} \\
 \frac{1}{2}\sqrt{2} \\
 0
-\end{array}
-\rightB \right\} \leftrightarrow 12,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 12,\left\{ \begin{mymatrix}{c}
 \frac{1}{3}\sqrt{3} \\
 \frac{1}{3}\sqrt{3} \\
 \frac{1}{3}\sqrt{3}
-\end{array}
-\rightB \right\} \leftrightarrow 18.
+\end{mymatrix} \right\} \leftrightarrow 18.
 \]
 The matrix $U$ has these as its columns.
 \end{sol}
@@ -229,40 +181,33 @@ Diagonalize $A$ by finding an orthogonal matrix $U$ and a diagonal matrix $D$
 such that $U^{T}AU=D$.
 
 \begin{equation*}
-A=\leftB 
-\begin{array}{ccc}
+A=\begin{mymatrix}{ccc}
 -\vspace{0.05in}\frac{5}{3} & \vspace{0.05in}\frac{1}{15}\sqrt{6}\sqrt{5} & 
 \vspace{0.05in}\frac{8}{15}\sqrt{5} \\ 
 \vspace{0.05in}\frac{1}{15}\sqrt{6}\sqrt{5} & -\vspace{0.05in}\frac{14}{5} & 
 -\vspace{0.05in}\frac{1}{15}\sqrt{6} \\ 
 \vspace{0.05in}\frac{8}{15}\sqrt{5} & -\vspace{0.05in}\frac{1}{15}\sqrt{6} & 
 \vspace{0.05in}\frac{7}{15}
-\end{array} \rightB
+\end{mymatrix}
 \end{equation*}
 
 \textbf{Hint:\ }The eigenvalues are $-3,-2,1.$ 
 \begin{sol}
 eigenvectors:
 \[
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 \frac{1}{6}\sqrt{6} \\
 0 \\
 \frac{1}{6}\sqrt{5}\sqrt{6}
-\end{array}
-\rightB \right\} \leftrightarrow 1,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 1,\left\{ \begin{mymatrix}{c}
 -\frac{1}{3}\sqrt{2}\sqrt{3} \\
 -\frac{1}{5}\sqrt{5} \\
 \frac{1}{15}\sqrt{2}\sqrt{15}
-\end{array}
-\rightB \right\} \leftrightarrow -2,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow -2,\left\{ \begin{mymatrix}{c}
 -\frac{1}{6}\sqrt{6} \\
 \frac{2}{5}\sqrt{5} \\
 \frac{1}{30}\sqrt{30}
-\end{array}
-\rightB \right\} \leftrightarrow -3
+\end{mymatrix} \right\} \leftrightarrow -3
 \]
 These vectors are the columns of $U$.
 \end{sol}
@@ -273,34 +218,26 @@ These vectors are the columns of $U$.
 Diagonalize $A$ by finding an orthogonal matrix $U$ and a diagonal matrix $D$
 such that $U^{T}AU=D$.\ 
 \begin{equation*}
-A=\leftB 
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 3 & 0 & 0 \\ 
 0 & \vspace{0.05in}\frac{3}{2} & \vspace{0.05in}\frac{1}{2} \\ 
 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \begin{sol}
-The eigenvectors and eigenvalues are: $\left\{ \leftB
-\begin{array}{c}
+The eigenvectors and eigenvalues are: $\left\{ \begin{mymatrix}{c}
 0 \\
 -\frac{1}{2}\sqrt{2} \\
 \frac{1}{2}\sqrt{2}
-\end{array}
-\rightB \right\} \leftrightarrow 1,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 1,\left\{ \begin{mymatrix}{c}
 0 \\
 \frac{1}{2}\sqrt{2} \\
 \frac{1}{2}\sqrt{2}
-\end{array}
-\rightB \right\} \leftrightarrow 2,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 2,\left\{ \begin{mymatrix}{c}
 1 \\
 0 \\
 0
-\end{array}
-\rightB \right\} \leftrightarrow 3.$ These vectors are the columns of the
+\end{mymatrix} \right\} \leftrightarrow 3.$ These vectors are the columns of the
 matrix $U$.
 \end{sol}
 \end{ex}
@@ -309,36 +246,28 @@ matrix $U$.
 Diagonalize $A$ by finding an orthogonal matrix $U$ and a diagonal matrix $D$
 such that $U^{T}AU=D$. 
 \begin{equation*}
-A=\leftB 
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 2 & 0 & 0 \\ 
 0 & 5 & 1 \\ 
 0 & 1 & 5
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \begin{sol}
 The eigenvectors and eigenvalues are:
 \[
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 1 \\
 0 \\
 0
-\end{array}
-\rightB \right\} \leftrightarrow 2,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 2,\left\{ \begin{mymatrix}{c}
 0 \\
 -\frac{1}{2}\sqrt{2} \\
 \frac{1}{2}\sqrt{2}
-\end{array}
-\rightB \right\} \leftrightarrow 4,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 4,\left\{ \begin{mymatrix}{c}
 0 \\
 \frac{1}{2}\sqrt{2} \\
 \frac{1}{2}\sqrt{2}
-\end{array}
-\rightB \right\} \leftrightarrow 6.
+\end{mymatrix} \right\} \leftrightarrow 6.
 \]
 These vectors are the columns of $U$.
 \end{sol}
@@ -349,16 +278,14 @@ Diagonalize $A$ by finding an orthogonal matrix $U$ and a diagonal matrix $D$
 such that $U^{T}AU=D$.
 
 \begin{equation*}
-A=\leftB 
-\begin{array}{ccc}
+A=\begin{mymatrix}{ccc}
 \vspace{0.05in}\frac{4}{3} & \vspace{0.05in}\frac{1}{3}\sqrt{3}\sqrt{2} & 
 \vspace{0.05in}\frac{1}{3}\sqrt{2} \\ 
 \vspace{0.05in}\frac{1}{3}\sqrt{3}\sqrt{2} & 1 & -\vspace{0.05in}\frac{1}{3}
 \sqrt{3} \\ 
 \vspace{0.05in}\frac{1}{3}\sqrt{2} & -\vspace{0.05in}\frac{1}{3}\sqrt{3} & 
 \vspace{0.05in}\frac{5}{3}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 \textbf{Hint: }The eigenvalues are $0,2,2$ where $2$ is listed twice because
@@ -366,25 +293,19 @@ it is a root of multiplicity 2.
 \begin{sol}
 The eigenvectors and eigenvalues are:
 \[
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 -\frac{1}{5}\sqrt{2}\sqrt{5} \\
 \frac{1}{5}\sqrt{3}\sqrt{5} \\
 \frac{1}{5}\sqrt{5}
-\end{array}
-\rightB \right\} \leftrightarrow 0,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 0,\left\{ \begin{mymatrix}{c}
 \frac{1}{3}\sqrt{3} \\
 0 \\
 \frac{1}{3}\sqrt{2}\sqrt{3}%
-\end{array}
-\rightB ,\leftB
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 \frac{1}{5}\sqrt{2}\sqrt{5} \\
 \frac{1}{5}\sqrt{3}\sqrt{5} \\
 -\frac{1}{5}\sqrt{5}
-\end{array}
-\rightB \right\} \leftrightarrow 2.
+\end{mymatrix} \right\} \leftrightarrow 2.
 \]
 The columns are these vectors.
 \end{sol}
@@ -397,41 +318,33 @@ Diagonalize $A$ by finding an orthogonal matrix $U$ and a diagonal matrix $D$
 such that $U^{T}AU=D$.
 
 \begin{equation*}
-A=\leftB 
-\begin{array}{ccc}
+A=\begin{mymatrix}{ccc}
 1 & \vspace{0.05in}\frac{1}{6}\sqrt{3}\sqrt{2} & \vspace{0.05in}\frac{1}{6}
 \sqrt{3}\sqrt{6} \\ 
 \vspace{0.05in}\frac{1}{6}\sqrt{3}\sqrt{2} & \vspace{0.05in}\frac{3}{2} & 
 \vspace{0.05in}\frac{1}{12}\sqrt{2}\sqrt{6} \\ 
 \vspace{0.05in}\frac{1}{6}\sqrt{3}\sqrt{6} & \vspace{0.05in}\frac{1}{12}
 \sqrt{2}\sqrt{6} & \vspace{0.05in}\frac{1}{2}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 \textbf{Hint:\ }The eigenvalues are $2,1,0.$
 \begin{sol}
 The eigenvectors and eigenvalues are:
 \[
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 -\frac{1}{3}\sqrt{3} \\
 0 \\
 \frac{1}{3}\sqrt{2}\sqrt{3}
-\end{array}
-\rightB \right\} \leftrightarrow 0,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 0,\left\{ \begin{mymatrix}{c}
 \frac{1}{3}\sqrt{3} \\
 -\frac{1}{2}\sqrt{2} \\
 \frac{1}{6}\sqrt{6}
-\end{array}
-\rightB \right\} \leftrightarrow 1,\allowbreak \left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 1,\allowbreak \left\{ \begin{mymatrix}{c}
 \frac{1}{3}\sqrt{3} \\
 \frac{1}{2}\sqrt{2} \\
 \frac{1}{6}\sqrt{6}
-\end{array}
-\rightB \right\} \leftrightarrow 2.
+\end{mymatrix} \right\} \leftrightarrow 2.
 \]
 The columns are these vectors.
 \end{sol}
@@ -441,41 +354,33 @@ The columns are these vectors.
 matrix
 
 \begin{equation*}
-A = \leftB 
-\begin{array}{ccc}
+A = \begin{mymatrix}{ccc}
 \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{1}{6}\sqrt{3}\sqrt{2} & -
 \vspace{0.05in}\frac{7}{18}\sqrt{3}\sqrt{6} \\ 
 \vspace{0.05in}\frac{1}{6}\sqrt{3}\sqrt{2} & \vspace{0.05in}\frac{3}{2} & -
 \vspace{0.05in}\frac{1}{12}\sqrt{2}\sqrt{6} \\ 
 -\vspace{0.05in}\frac{7}{18}\sqrt{3}\sqrt{6} & -\vspace{0.05in}\frac{1}{12}
 \sqrt{2}\sqrt{6} & -\vspace{0.05in}\frac{5}{6}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 \textbf{Hint:\ }The eigenvalues are $1,2,-2.$
 \begin{sol}
 eigenvectors:
 \[
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 -\frac{1}{3}\sqrt{3} \\
 \frac{1}{2}\sqrt{2} \\
 \frac{1}{6}\sqrt{6}
-\end{array}
-\rightB \right\} \leftrightarrow 1,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow 1,\left\{ \begin{mymatrix}{c}
 \frac{1}{3}\sqrt{3} \\
 0 \\
 \frac{1}{3}\sqrt{2}\sqrt{3}
-\end{array}
-\rightB \right\} \leftrightarrow -2,\allowbreak \left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow -2,\allowbreak \left\{ \begin{mymatrix}{c}
 \frac{1}{3}\sqrt{3} \\
 \frac{1}{2}\sqrt{2} \\
 -\frac{1}{6}\sqrt{6}
-\end{array}
-\rightB \right\} \leftrightarrow 2.
+\end{mymatrix} \right\} \leftrightarrow 2.
 \]
 Then the columns of $U$ are these vectors
 \end{sol}
@@ -485,16 +390,14 @@ Then the columns of $U$ are these vectors
 matrix
 
 \begin{equation*}
-A = \leftB 
-\begin{array}{ccc}
+A = \begin{mymatrix}{ccc}
 -\vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{5}\sqrt{6}\sqrt{5} & 
 \vspace{0.05in}\frac{1}{10}\sqrt{5} \\ 
 -\vspace{0.05in}\frac{1}{5}\sqrt{6}\sqrt{5} & \vspace{0.05in}\frac{7}{5} & -
 \vspace{0.05in}\frac{1}{5}\sqrt{6} \\ 
 \vspace{0.05in}\frac{1}{10}\sqrt{5} & -\vspace{0.05in}\frac{1}{5}\sqrt{6} & -
 \vspace{0.05in}\frac{9}{10}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 \textbf{Hint:\ }The eigenvalues are $-1,2,-1$ where $-1$ is listed twice
@@ -502,61 +405,47 @@ because it has multiplicity 2 as a zero of the characteristic equation.
 \begin{sol}
 The eigenvectors and eigenvalues are:
 \[
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 -\frac{1}{6}\sqrt{6} \\
 0 \\
 \frac{1}{6}\sqrt{5}\sqrt{6}
-\end{array}
-\rightB ,\leftB
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 \frac{1}{3}\sqrt{2}\sqrt{3} \\
 \frac{1}{5}\sqrt{5} \\
 \frac{1}{15}\sqrt{2}\sqrt{15}
-\end{array}
-\rightB \right\} \leftrightarrow -1,\left\{ \leftB
-\begin{array}{c}
+\end{mymatrix} \right\} \leftrightarrow -1,\left\{ \begin{mymatrix}{c}
 \frac{1}{6}\sqrt{6} \\
 -\frac{2}{5}\sqrt{5} \\
 \frac{1}{30}\sqrt{30}
-\end{array}
-\rightB \right\} \leftrightarrow 2 .
+\end{mymatrix} \right\} \leftrightarrow 2 .
 \]
 The columns of $U$ are these vectors.
 \[
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 -\frac{1}{6}\sqrt{6} & \frac{1}{3}\sqrt{2}\sqrt{3} & \frac{1}{6}\sqrt{6} \\
 0 & \frac{1}{5}\sqrt{5} & -\frac{2}{5}\sqrt{5} \\
 \frac{1}{6}\sqrt{5}\sqrt{6} & \frac{1}{15}\sqrt{2}\sqrt{15} & \frac{1}{30}
 \sqrt{30}
-\end{array}
-\rightB ^{T}\leftB
-\begin{array}{ccc}
+\end{mymatrix} ^{T}\begin{mymatrix}{ccc}
 -\vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{5}\sqrt{6}\sqrt{5} &
 \vspace{0.05in}\frac{1}{10}\sqrt{5} \\
 -\vspace{0.05in}\frac{1}{5}\sqrt{6}\sqrt{5} & \vspace{0.05in}\frac{7}{5} & -
 \vspace{0.05in}\frac{1}{5}\sqrt{6} \\
 \vspace{0.05in}\frac{1}{10}\sqrt{5} & -\vspace{0.05in}\frac{1}{5}\sqrt{6} & -
 \vspace{0.05in}\frac{9}{10}
-\end{array}
-\rightB \cdot
+\end{mymatrix} \cdot
 \]
 \[
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 -\frac{1}{6}\sqrt{6} & \frac{1}{3}\sqrt{2}\sqrt{3} & \frac{1}{6}\sqrt{6} \\
 0 & \frac{1}{5}\sqrt{5} & -\frac{2}{5}\sqrt{5} \\
 \frac{1}{6}\sqrt{5}\sqrt{6} & \frac{1}{15}\sqrt{2}\sqrt{15} & \frac{1}{30}
 \sqrt{30}
-\end{array}
-\rightB =\leftB
-\begin{array}{rrr}
+\end{mymatrix} =\begin{mymatrix}{rrr}
 -1 & 0 & 0 \\
 0 & -1 & 0 \\
 0 & 0 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}

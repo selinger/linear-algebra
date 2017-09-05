@@ -112,14 +112,14 @@ Then
 = (\vect{x}^TU)D(U^T\vect{x})
 =\vect{y}^TD\vect{y}.\]
 
-Writing $\vect{y}^T=\leftB\begin{array}{cccc}
-y_1 & y_2 & \cdots & y_n\end{array}\rightB$, 
+Writing $\vect{y}^T=\begin{mymatrix}{cccc}
+y_1 & y_2 & \cdots & y_n\end{mymatrix}$, 
 
 \begin{eqnarray*}
 \vect{x}^TA\vect{x} & = & 
-\leftB\begin{array}{cccc} y_1 & y_2 & \cdots & y_n\end{array}\rightB
+\begin{mymatrix}{cccc} y_1 & y_2 & \cdots & y_n\end{mymatrix}
 \func{diag}(\lambda_1,\lambda_2,\ldots,\lambda_n)
-\leftB\begin{array}{c} y_1 \\ y_2 \\ \vdots \\ y_n\end{array}\rightB\\
+\begin{mymatrix}{c} y_1 \\ y_2 \\ \vdots \\ y_n\end{mymatrix}\\
 & = & \lambda_1 y_1^2 + \lambda_2 y_2^2 + \cdots \lambda_n y_n^2.
 \end{eqnarray*}
 
@@ -169,16 +169,12 @@ Let $A$ be an $n\times n$ positive definite matrix.  Then each submatrix $A_{k}$
 \begin{proof}
 This follows right away from the above definition. Let $\vect{x}\in \R^{k}$ be nonzero. Then 
 \begin{equation*}
-\vect{x}^{T}A_{k}\vect{x}=\leftB 
-\begin{array}{cc}
+\vect{x}^{T}A_{k}\vect{x}=\begin{mymatrix}{cc}
 \vect{x}^{T} & 0
-\end{array}
-\rightB A\leftB 
-\begin{array}{c}
+\end{mymatrix} A\begin{mymatrix}{c}
 \vect{x} \\ 
 0
-\end{array}
-\rightB >  0
+\end{mymatrix} >  0
 \end{equation*}
 by the assumption that $A$ is positive definite.
 \end{proof}
@@ -219,16 +215,12 @@ _{2}\vectlength \vect{u}_{2}\vectlength ^{2}<0.
 Now letting $\vect{x}\in \R^{n-1},$ we can use the induction
 hypothesis to write 
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 x^{T} & 0
-\end{array}
-\rightB A\leftB 
-\begin{array}{c}
+\end{mymatrix} A\begin{mymatrix}{c}
 \vect{x} \\ 
 0
-\end{array}
-\rightB =\vect{x}^{T}A_{n-1}\vect{x}>0.
+\end{mymatrix} =\vect{x}^{T}A_{n-1}\vect{x}>0.
 \end{equation*}
 Now the dimension of $\left\{ \vect{z}\in \R^{n}:z_{n}=0\right\} $ is 
 $n-1$ and the dimension of $\func{span}\left\{ \vect{u}_{1},\vect{u}

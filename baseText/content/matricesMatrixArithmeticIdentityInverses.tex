@@ -6,25 +6,19 @@ matrix, and it has
 the property that there are ones down the main diagonal and zeroes
 elsewhere. Here are some identity matrices of various sizes.
 \begin{equation*}
-\leftB 1\rightB ,\leftB
-\begin{array}{cc}
+\leftB 1\rightB ,\begin{mymatrix}{cc}
 1 & 0 \\
 0 & 1
-\end{array}
-\rightB ,\leftB
-\begin{array}{ccc}
+\end{mymatrix} ,\begin{mymatrix}{ccc}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
-\end{array}
-\rightB ,\leftB
-\begin{array}{cccc}
+\end{mymatrix} ,\begin{mymatrix}{cccc}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0 \\
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 The first is the $1\times 1$ identity matrix, the second is the $2\times 2$
 identity matrix, and so on. By extension, you can likely see
@@ -100,56 +94,40 @@ Hence, $A^{-1} = B$ which tells us that the inverse is unique.
 The next example demonstrates how to check the inverse of a matrix. 
 
 \begin{example}{Verifying the inverse of a matrix}{verifyinginverse}
-Let $A=\leftB
-\begin{array}{rr}
+Let $A=\begin{mymatrix}{rr}
 1 & 1 \\
 1 & 2
-\end{array}
-\rightB .$ Show $\leftB
-\begin{array}{rr}
+\end{mymatrix} .$ Show $\begin{mymatrix}{rr}
 2 & -1 \\
 -1 & 1
-\end{array}
-\rightB $ is the inverse of $A.$
+\end{mymatrix} $ is the inverse of $A.$
 \end{example}
 
 \begin{solution} To check this, multiply
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 1 \\
 1 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 2 & -1 \\
 -1 & 1
-\end{array}
-\rightB =\allowbreak \leftB
-\begin{array}{rr}
+\end{mymatrix} =\allowbreak \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1
-\end{array}
-\rightB = I 
+\end{mymatrix} = I 
 \end{equation*}
 and
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 2 & -1 \\
 -1 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 1 & 1 \\
 1 & 2
-\end{array}
-\rightB =\allowbreak \leftB
-\begin{array}{rr}
+\end{mymatrix} =\allowbreak \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1
-\end{array}
-\rightB = I 
+\end{mymatrix} = I 
 \end{equation*}
 showing that this matrix is indeed the inverse of $A.$
 \end{solution}
@@ -158,87 +136,63 @@ Unlike ordinary multiplication of numbers, it can happen that $A\neq 0$ but
 $A$ may fail to have an inverse. This is illustrated in the following example.
 
 \begin{example}{A nonzero matrix with no inverse}{noninvertiblematrix}
-Let $A=\leftB
-\begin{array}{rr}
+Let $A=\begin{mymatrix}{rr}
 1 & 1 \\
 1 & 1
-\end{array}
-\rightB .$ Show that $A$ does not have an inverse.
+\end{mymatrix} .$ Show that $A$ does not have an inverse.
 \end{example}
 
 \begin{solution} One might think $A$ would have an inverse because it does not equal zero.
 However, note that 
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 1 \\
 1 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 -1 \\
 1
-\end{array}
-\rightB =\leftB
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 0 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 If $A^{-1}$ existed, we would have the following
 \begin{eqnarray*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 0 \\
 0
-\end{array}
-\rightB &=& A^{-1}\left( \leftB
-\begin{array}{r}
+\end{mymatrix} &=& A^{-1}\left( \begin{mymatrix}{r}
 0 \\
 0
-\end{array}
-\rightB \right) \\
-&=& A^{-1}\left( A\leftB
-\begin{array}{r}
+\end{mymatrix} \right) \\
+&=& A^{-1}\left( A\begin{mymatrix}{r}
 -1 \\
 1
-\end{array}
-\rightB \right) \\
-&=&\left( A^{-1}A\right) \leftB
-\begin{array}{r}
+\end{mymatrix} \right) \\
+&=&\left( A^{-1}A\right) \begin{mymatrix}{r}
 -1 \\
 1
-\end{array}
-\rightB \\
-&=&I\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+&=&I\begin{mymatrix}{r}
 -1 \\
 1
-\end{array}
-\rightB \\
-&=&\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+&=&\begin{mymatrix}{r}
 -1 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 This says that 
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 0 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -1 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 which is impossible! Therefore, $A$ does not have an inverse. 
 \end{solution}

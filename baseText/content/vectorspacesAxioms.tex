@@ -92,64 +92,64 @@ To show that $\R^n$ is a vector space, we need to show that the above axioms hol
 \item 
 To show that $\R^n$ is closed under addition, we must show that for two vectors in $\R^n$ their sum is also in $\R^n$. The sum $\vect{x} + \vect{y}$ is given by:
 \[
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}\rightB + 
-\leftB \begin{array}{c}
+\end{mymatrix} + 
+\begin{mymatrix}{c}
 y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{array}\rightB = 
-\leftB \begin{array}{c}
+\end{mymatrix} = 
+\begin{mymatrix}{c}
 x_1 + y_1 \\
 x_2 + y_2 \\
 \vdots \\
 x_n + y_n
-\end{array}\rightB
+\end{mymatrix}
 \]
 The sum is a vector with $n$ entries, showing that it is in $\R^n$. Hence $\R^n$ is closed under vector addition.
 
 \item
 To show that addition is commutative, consider the following:
 \begin{eqnarray*}
-\vect{x} + \vect{y} &=& \leftB \begin{array}{c}
+\vect{x} + \vect{y} &=& \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array} \rightB + \leftB \begin{array}{c}
+\end{mymatrix} + \begin{mymatrix}{c}
 y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{array} \rightB \\
-&=& \leftB \begin{array}{c}
+\end{mymatrix} \\
+&=& \begin{mymatrix}{c}
 x_1 + y_1 \\
 x_2 + y_2 \\
 \vdots \\
 x_n + y_n 
-\end{array} \rightB \\ 
-&=& \leftB \begin{array}{c}
+\end{mymatrix} \\ 
+&=& \begin{mymatrix}{c}
 y_1 + x_1 \\
 y_2 + x_2 \\
 \vdots \\
 y_n + x_n 
-\end{array} \rightB \\ 
-&=& \leftB \begin{array}{c}
+\end{mymatrix} \\ 
+&=& \begin{mymatrix}{c}
 y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{array} \rightB + \leftB \begin{array}{c}
+\end{mymatrix} + \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array} \rightB \\
+\end{mymatrix} \\
 &=& \vect{y} + \vect{x}
 \end{eqnarray*}
 
@@ -159,120 +159,118 @@ Hence addition of vectors in $\R^n$ is commutative.
 We will show that addition of vectors in $\R^n$ is associative in a similar way. 
 \begin{eqnarray*} 
 (\vect{x} + \vect{y}) + \vect{z} &=& 
-\left(  \leftB \begin{array}{c}
+\left(  \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array} \rightB +  \leftB \begin{array}{c}
+\end{mymatrix} +  \begin{mymatrix}{c}
 y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{array} \rightB \right)
+\end{mymatrix} \right)
 +
- \leftB \begin{array}{c}
+ \begin{mymatrix}{c}
 z_1 \\
 z_2 \\
 \vdots \\
 z_n
-\end{array} \rightB \\
+\end{mymatrix} \\
 &=& 
- \leftB \begin{array}{c}
+ \begin{mymatrix}{c}
 x_1 + y_1 \\
 x_2 + y_2 \\
 \vdots \\
 x_n + y_n
-\end{array} \rightB  + \leftB \begin{array}{c}
+\end{mymatrix}  + \begin{mymatrix}{c}
 z_1 \\
 z_2 \\
 \vdots \\
 z_n
-\end{array} \rightB \\
+\end{mymatrix} \\
 &=& 
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 (x_1 + y_1) + z_1 \\
 (x_2 + y_2) + z_2\\
 \vdots \\
 (x_n + y_n) + z_n
-\end{array} \rightB \\
+\end{mymatrix} \\
 &=& 
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 x_1 + (y_1 + z_1) \\
 x_2 + (y_2 + z_2)\\
 \vdots \\
 x_n + (y_n + z_n)
-\end{array} \rightB \\
-&=& \leftB \begin{array}{c}
+\end{mymatrix} \\
+&=& \begin{mymatrix}{c}
 x_1 \\
 x_2  \\
 \vdots \\
 x_n 
-\end{array} \rightB + 
-\leftB \begin{array}{c}
+\end{mymatrix} + 
+\begin{mymatrix}{c}
  y_1 + z_1 \\
  y_2 + z_2\\
 \vdots \\
 y_n + z_n
-\end{array} \rightB \\
+\end{mymatrix} \\
 &=& 
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 x_1 \\
 x_2  \\
 \vdots \\
 x_n 
-\end{array} \rightB + \left(
-\leftB \begin{array}{c}
+\end{mymatrix} + \left(
+\begin{mymatrix}{c}
  y_1  \\
  y_2 \\
 \vdots \\
 y_n 
-\end{array} \rightB + \leftB \begin{array}{c}
+\end{mymatrix} + \begin{mymatrix}{c}
  z_1  \\
  z_2 \\
 \vdots \\
 z_n 
-\end{array} \rightB \right) \\
+\end{mymatrix} \right) \\
 &=& \vect{x} + \left( \vect{y} + \vect{z} \right)
 \end{eqnarray*}
 
 Hence addition of vectors is associative. 
 
 \item
-Next, we show the existence of an additive identity. Let $\vect{0} = \leftB \begin{array}{c}
+Next, we show the existence of an additive identity. Let $\vect{0} = \begin{mymatrix}{c}
 0 \\
 0 \\
 \vdots \\
 0
-\end{array}
-\rightB.$ 
+\end{mymatrix}.$ 
 
 \begin{eqnarray*}
 \vect{x} + \vect{0} &=& 
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}\rightB + \leftB \begin{array}{c}
+\end{mymatrix} + \begin{mymatrix}{c}
 0 \\
 0 \\
 \vdots \\
 0
-\end{array}
-\rightB \\
-&=& \leftB \begin{array}{c}
+\end{mymatrix} \\
+&=& \begin{mymatrix}{c}
 x_1 + 0 \\
 x_2 + 0 \\
 \vdots \\
 x_n + 0 
-\end{array}\rightB \\
-&=& \leftB \begin{array}{c}
+\end{mymatrix} \\
+&=& \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}\rightB \\
+\end{mymatrix} \\
 &=& \vect{x}
 \end{eqnarray*} 
 
@@ -280,38 +278,38 @@ Hence the zero vector $\vect{0}$ is an additive identity.
 
 \item
 Next, we prove the existence of an additive inverse. 
-Let $-\vect{x} = \leftB \begin{array}{c}
+Let $-\vect{x} = \begin{mymatrix}{c}
 -x_1 \\
 -x_2 \\
 \vdots \\
 -x_n
-\end{array}\rightB$. 
+\end{mymatrix}$. 
 
 \begin{eqnarray*}
 \vect{x} + \left( -\vect{x} \right) &=& 
- \leftB \begin{array}{c}
+ \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}\rightB + \leftB \begin{array}{c}
+\end{mymatrix} + \begin{mymatrix}{c}
 -x_1 \\
 -x_2 \\
 \vdots \\
 -x_n
-\end{array}\rightB \\
-&=& \leftB \begin{array}{c}
+\end{mymatrix} \\
+&=& \begin{mymatrix}{c}
 x_1-x_1 \\
 x_2-x_2 \\
 \vdots \\
 x_n-x_n
-\end{array}\rightB \\
-&=& \leftB \begin{array}{c}
+\end{mymatrix} \\
+&=& \begin{mymatrix}{c}
 0\\
 0 \\
 \vdots \\
 0
-\end{array}\rightB \\
+\end{mymatrix} \\
 &=& \vect{0}
 \end{eqnarray*}
 
@@ -324,21 +322,19 @@ We now need to prove the axioms related to scalar multiplication. Let $a,b$ be r
 \item
 We first show that $\R^n$ is closed under scalar multiplication. To do so, we show that $a\vect{x}$ is also a vector with $n$ entries. 
 \[
-a\vect{x} = a\leftB 
-\begin{array}{c}
+a\vect{x} = a\begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n 
-\end{array} \rightB 
+\end{mymatrix} 
 =
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 ax_1 \\
 ax_2 \\
 \vdots \\
 ax_n 
-\end{array} \rightB
+\end{mymatrix}
 \]
 The vector $a\vect{x}$ is again a vector with $n$ entries, showing that $\R^n$ is closed under scalar multiplication. 
 
@@ -349,50 +345,50 @@ We wish to show that $a (\vect{x} + \vect{y}) = a\vect{x} + a\vect{y}$.
 \begin{eqnarray*}
 a (\vect{x} + \vect{y}) &=& 
 a \left(
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}\rightB + \leftB \begin{array}{c}
+\end{mymatrix} + \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}\rightB \right) \\
+\end{mymatrix} \right) \\
 &=& 
-a \leftB \begin{array}{c}
+a \begin{mymatrix}{c}
 x_1 + y_1 \\
 x_2 + y_2\\
 \vdots \\
 x_n + y_n
-\end{array}\rightB \\
+\end{mymatrix} \\
 &=& 
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 a(x_1 +y_1)\\
 a(x_2 +y_2)\\
 \vdots \\
 a(x_n+y_n)
-\end{array}\rightB \\
-& =& \leftB \begin{array}{c}
+\end{mymatrix} \\
+& =& \begin{mymatrix}{c}
 ax_1+ay_1 \\
 ax_2+ay_2 \\
 \vdots \\
 ax_n+ay_n
-\end{array}\rightB \\
+\end{mymatrix} \\
 &=&
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 ax_1 \\
 ax_2 \\
 \vdots \\
 ax_n
-\end{array}\rightB+
-\leftB \begin{array}{c}
+\end{mymatrix}+
+\begin{mymatrix}{c}
 ay_1 \\
 ay_2 \\
 \vdots \\
 ay_n
-\end{array}\rightB\\
+\end{mymatrix}\\
 &=& a\vect{x} + a\vect{y}
 \end{eqnarray*}
 
@@ -401,45 +397,40 @@ Next, we wish to show that $(a+b)\vect{x} = a\vect{x} + b\vect{x}$.
 
 \begin{eqnarray*} 
 (a+b)\vect{x} &=& 
-(a+b) \leftB \begin{array}{c}
+(a+b) \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}
-\rightB
+\end{mymatrix}
 \\
 &=& 
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 (a+b)x_1 \\
 (a+b)x_2 \\
 \vdots \\
 (a+b)x_n
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=&
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 ax_1 +bx_1 \\
 ax_2 +bx_2\\
 \vdots \\
 ax_n +bx_n
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=&
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 ax_1 \\
 ax_2 \\
 \vdots \\
 ax_n
-\end{array}
-\rightB +
-\leftB \begin{array}{c}
+\end{mymatrix} +
+\begin{mymatrix}{c}
 bx_1 \\
 bx_2 \\
 \vdots \\
 bx_n
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& a\vect{x} + b\vect{x}
 \end{eqnarray*}
 
@@ -447,74 +438,66 @@ bx_n
 We wish to show that $a(b\vect{x}) = (ab) \vect{x}$. 
 \begin{eqnarray*}
 a(b\vect{x}) &=& 
-a\left(b \leftB \begin{array}{c}
+a\left(b \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}
-\rightB \right) \\
+\end{mymatrix} \right) \\
 &=& a\left(
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 bx_1 \\
 bx_2 \\
 \vdots \\
 bx_n
-\end{array}
-\rightB \right) \\
+\end{mymatrix} \right) \\
 &=&
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 a(bx_1) \\
 a(bx_2) \\
 \vdots \\
 a(bx_n)
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=&
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 (ab)x_1 \\
 (ab)x_2 \\
 \vdots \\
 (ab)x_n
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& (ab)
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& (ab)\vect{x}
 \end{eqnarray*}
 
 \item
 Finally, we need to show that $1\vect{x} = \vect{x}$.
 \begin{eqnarray*}
-1\vect{x} &=& 1 \leftB \begin{array}{c}
+1\vect{x} &=& 1 \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=&
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 1x_1 \\
 1x_2 \\
 \vdots \\
 1x_n
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& 
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& \vect{x}
 \end{eqnarray*}
 \end{itemize}
@@ -656,17 +639,17 @@ Let $A, B$ be $2 \times 3$ matrices in $\Mat_{2,3}$. We first prove the axioms f
 \item
 In order to prove that $\Mat_{2,3}$ is closed under matrix addition, we show that the sum $A+B$ is in $\Mat_{2,3}$. This means showing that $A+B$ is a $2 \times 3$ matrix. 
 \begin{eqnarray*}
-A+B &=& \leftB \begin{array}{rrr}
+A+B &=& \begin{mymatrix}{rrr}
 a_{11} & a_{12} & a_{13}\\
 a_{21} & a_{22} & a_{23}
-\end{array} \rightB + \leftB \begin{array}{rrr}
+\end{mymatrix} + \begin{mymatrix}{rrr}
 b_{11} & b_{12} & b_{13}\\
 b_{21} & b_{22} & b_{23}
-\end{array} \rightB \\
-&=& \leftB \begin{array}{rrr}
+\end{mymatrix} \\
+&=& \begin{mymatrix}{rrr}
 a_{11} + b_{11} & a_{12}+b_{12} & a_{13}+b_{13}\\
 a_{21} +b_{21}& a_{22}+b_{22} & a_{23}+b_{23}
-\end{array} \rightB
+\end{mymatrix}
 \end{eqnarray*}
 You can see that the sum is a $2\times 3$ matrix, so it is in $\Mat_{2,3}$. It follows that $\Mat_{2,3}$ is closed under matrix addition. 
 
@@ -680,14 +663,14 @@ We now turn our attention to the axioms regarding scalar multiplication. Let $A,
 \item
 We first show that $\Mat_{2,3}$ is closed under scalar multiplication. That is, we show that $cA$ a $2 \times 3$ matrix.
 \begin{eqnarray*}
-cA &=& c\leftB \begin{array}{rrr}
+cA &=& c\begin{mymatrix}{rrr}
 a_{11} & a_{12} & a_{13}\\
 a_{21} & a_{22} & a_{23}
-\end{array} \rightB \\
-&=& \leftB \begin{array}{rrr}
+\end{mymatrix} \\
+&=& \begin{mymatrix}{rrr}
 ca_{11} & ca_{12} & ca_{13}\\
 ca_{21} & ca_{22} & ca_{23}
-\end{array} \rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 This is a $2 \times 3$ matrix in $\Mat_{2,3}$ which proves that the set is closed under scalar multiplication. 
@@ -716,28 +699,28 @@ We first want to check if addition is closed. Consider $A+B$. By the definition 
 \item
 We now wish to check if addition is commutative. That is, we want to check if $A + B = B + A$ \textbf{for all} choices of $A$ and $B$ in $V$. From the definition of addition, we have that $A + B = A$ and $B + A = B$. Therefore, we can find $A$, $B$ in $V$ such that these sums are not equal. One example is 
 \[
-A = \leftB \begin{array}{rrr}
+A = \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 0 & 0 
-\end{array}\rightB, B = \leftB \begin{array}{rrr}
+\end{mymatrix}, B = \begin{mymatrix}{rrr}
 0 & 0 & 0 \\
 1 & 0 & 0 
-\end{array}\rightB
+\end{mymatrix}
 \]
 
 Using the operation defined by $A+B=A$, we have 
 \begin{eqnarray*}
 A+B &=& A \\
-&=& \leftB \begin{array}{rrr}
+&=& \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 0 & 0 
-\end{array}\rightB \\
+\end{mymatrix} \\
 \\
 B+A &=& B \\
-&=& \leftB \begin{array}{rrr}
+&=& \begin{mymatrix}{rrr}
 0 & 0 & 0 \\
 1 & 0 & 0 
-\end{array}\rightB
+\end{mymatrix}
 \end{eqnarray*}
 It follows that $A+B \neq B+A$. Therefore addition as defined for $V$ is not commutative and $V$ fails this axiom. Hence $V$ is not a vector space.
 \end{itemize}

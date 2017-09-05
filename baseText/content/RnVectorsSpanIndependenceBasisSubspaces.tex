@@ -25,11 +25,11 @@ Consider the following example of a line in $\R^3$.
 \begin{example}{Subspace of $\R^3$}{linesubspace}
 In $\R^3$, the line $L$ through the origin that is
 parallel to the vector
-${\vect{d}}= \leftB \begin{array}{r} -5 \\ 1 \\ -4 \end{array}\rightB$ 
+${\vect{d}}= \begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix}$ 
 has (vector) equation
-$\leftB \begin{array}{r} x \\ y \\ z \end{array}\rightB
-=t\leftB \begin{array}{r} -5 \\ 1 \\ -4 \end{array}\rightB, t\in\R$,
-%If ${\bm u}=\leftB \begin{array}{r} x \\ y \\ z \end{array}\rightB$, 
+$\begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}
+=t\begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix}, t\in\R$,
+%If ${\bm u}=\begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}$, 
 so 
 \[ L=\left\{ t{\vect{d}} ~|~ t\in\R\right\}.\] Then $L$ is a subspace of $\R^3$.  
 \end{example}
@@ -230,7 +230,7 @@ Consider the following example.
 \begin{example}{Basis of subspace}{basissubspace}
 Let 
 \[ V=\left\{
-\leftB\begin{array}{c} a\\ b\\ c\\ d\end{array}\rightB\in\R^4
+\begin{mymatrix}{c} a\\ b\\ c\\ d\end{mymatrix}\in\R^4
 ~:~ a-b=d-c \right\}.\]
 Show that $V$ is a subspace of $\R^4$,
 find a basis of $V$, and find $\dim(V)$.
@@ -241,12 +241,12 @@ The condition $a-b=d-c$ is equivalent to the condition
 $a=b-c+d$, so we may write
 
 \[ V =\left\{
-\leftB\begin{array}{c} b-c+d\\ b\\ c\\ d\end{array}\rightB ~:~b,c,d  \in\R
+\begin{mymatrix}{c} b-c+d\\ b\\ c\\ d\end{mymatrix} ~:~b,c,d  \in\R
 \right\}
 = \left\{
-b\leftB\begin{array}{c} 1\\ 1\\ 0\\ 0\end{array}\rightB
-+c\leftB\begin{array}{c} -1\\ 0\\ 1\\ 0\end{array}\rightB
-+d\leftB\begin{array}{c} 1\\ 0\\ 0\\ 1\end{array}\rightB
+b\begin{mymatrix}{c} 1\\ 1\\ 0\\ 0\end{mymatrix}
++c\begin{mymatrix}{c} -1\\ 0\\ 1\\ 0\end{mymatrix}
++d\begin{mymatrix}{c} 1\\ 0\\ 0\\ 1\end{mymatrix}
 ~:~ b,c,d\in\R \right\}
 \]
 
@@ -254,42 +254,42 @@ This shows that $V$ is a subspace of $\R^4$,
 since $V=\func{span}\{ \vect{u}_1, \vect{u}_2, \vect{u}_3 \}$ where
 
 \begin{equation*}
-\vect{u}_1  =  \leftB\begin{array}{r} 
+\vect{u}_1  =  \begin{mymatrix}{r} 
 1 \\
 1 \\
 0 \\
-0 \end{array}\rightB, \vect{u}_2  =  \leftB\begin{array}{r} 
+0 \end{mymatrix}, \vect{u}_2  =  \begin{mymatrix}{r} 
 -1 \\
  0 \\
  1 \\
- 0 \end{array}\rightB, \vect{u}_3  =  \leftB\begin{array}{r} 
+ 0 \end{mymatrix}, \vect{u}_3  =  \begin{mymatrix}{r} 
 1 \\
  0 \\
  0 \\
- 1 \end{array}\rightB
+ 1 \end{mymatrix}
 \end{equation*}
 
 Furthermore,
 
 \[\left\{ 
-\leftB\begin{array}{c} 1\\ 1\\ 0\\ 0\end{array}\rightB,
-\leftB\begin{array}{c} -1\\ 0\\ 1\\ 0\end{array}\rightB,
-\leftB\begin{array}{c} 1\\ 0\\ 0\\ 1\end{array}\rightB \right\}\]
+\begin{mymatrix}{c} 1\\ 1\\ 0\\ 0\end{mymatrix},
+\begin{mymatrix}{c} -1\\ 0\\ 1\\ 0\end{mymatrix},
+\begin{mymatrix}{c} 1\\ 0\\ 0\\ 1\end{mymatrix} \right\}\]
 is linearly independent, as can be seen by taking the
 {\rref} of the matrix whose columns are
 $\vect{u}_1, \vect{u}_2$ and $\vect{u}_3$.
 
-\[ \leftB\begin{array}{rrr}
+\[ \begin{mymatrix}{rrr}
 1 & -1 & 1 \\
 1 & 0 & 0 \\
 0 & 1 & 0 \\
-0 & 0 & 1 \end{array}\rightB
+0 & 0 & 1 \end{mymatrix}
 \rightarrow
-\leftB\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1 \\
-0 & 0 & 0 \end{array}\rightB
+0 & 0 & 0 \end{mymatrix}
 \]
 
 Since every column of the {\rref} matrix has a leading one,
@@ -321,11 +321,9 @@ Consider the matrix $A$ having the vectors $\vect{u}_i$  as
 columns:
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 \vect{u}_{1} & \cdots & \vect{u}_{n} 
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 By linear independence of the $\vect{u}_i$'s, the {\rref} of $A$ is
 the identity matrix.  Therefore the system $A\vect{x}=
@@ -336,11 +334,9 @@ To establish the second claim, suppose that $m<n.$ Then letting
 $\vect{u}_{i_{1}},\cdots ,\vect{u}_{i_{k}}$ be the pivot columns of the
 matrix
 \begin{equation*}
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 \vect{u}_{1} & \cdots & \vect{u}_{m}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 it follows $k\leq m<n$ and these $k$ pivot columns would be a basis
 for $\R^{n}$ having fewer than $n$ vectors, contrary to
@@ -351,11 +347,9 @@ Finally consider the third claim. If $\left\{ \vect{u}_{1},\cdots
 list with $\left\{ \vect{u}_{i_{1}},\cdots ,\vect{u}_{i_{k}}\right\} $ where these
 are the pivot columns of the matrix 
 \begin{equation*}
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 \vect{u}_{1} & \cdots & \vect{u}_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Then $\left\{ \vect{u}_{i_{1}},\cdots ,\vect{u}_{i_{k}}\right\} $ spans
 $\R^{n}$ and is linearly independent, so it is a basis having
@@ -375,14 +369,14 @@ We illustrate this concept in the next example.
 
 \begin{example}{Extending an independent set}{extendindependent}
 Consider the set $U$ given by 
-\[ U=\left\{ \left.\leftB\begin{array}{c} a\\ b\\ c\\ d\end{array}\rightB
+\[ U=\left\{ \left.\begin{mymatrix}{c} a\\ b\\ c\\ d\end{mymatrix}
 \in\R^4 ~\right|~ a-b=d-c \right\}\]
 Then $U$ is a subspace of $\R^4$ and $\dim(U)=3$.
 
 Then
 \[S=\left\{ 
-\leftB\begin{array}{c} 1\\ 1\\ 1\\ 1\end{array}\rightB,
-\leftB\begin{array}{c} 2\\ 3\\ 3\\ 2\end{array}\rightB \right\},\]
+\begin{mymatrix}{c} 1\\ 1\\ 1\\ 1\end{mymatrix},
+\begin{mymatrix}{c} 2\\ 3\\ 3\\ 2\end{mymatrix} \right\},\]
 is an independent subset of $U$.
 Therefore $S$ can be extended to a basis of $U$.
 \end{example}
@@ -391,35 +385,35 @@ Therefore $S$ can be extended to a basis of $U$.
 To extend $S$ to a basis of $U$, find a vector in $U$ that is {\bf not} in
 $\func{span}(S)$.
 \[
-\leftB\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & ? \\
 1 & 3 & ? \\
 1 & 3 & ? \\
 1 & 2 & ? 
-\end{array}\rightB
+\end{mymatrix}
 \]
 
 \[
-\leftB\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 1 & 3 & 0 \\
 1 & 3 & -1 \\
 1 & 2 & 0 
-\end{array}\rightB
+\end{mymatrix}
 \rightarrow
-\leftB\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1 \\
 0 & 0 & 0 
-\end{array}\rightB
+\end{mymatrix}
 \]
 
 Therefore, $S$ can be extended to the following basis of $U$:
 \[\left\{ 
-\leftB\begin{array}{r} 1\\ 1\\ 1\\ 1\end{array}\rightB,
-\leftB\begin{array}{r} 2\\ 3\\ 3\\ 2\end{array}\rightB,
-\leftB\begin{array}{r} 1\\ 0\\ -1\\ 0\end{array}\rightB
+\begin{mymatrix}{r} 1\\ 1\\ 1\\ 1\end{mymatrix},
+\begin{mymatrix}{r} 2\\ 3\\ 3\\ 2\end{mymatrix},
+\begin{mymatrix}{r} 1\\ 0\\ -1\\ 0\end{mymatrix}
 \right\},\]
 \end{solution}
 
@@ -461,49 +455,37 @@ of vectors which is linearly independent.
 \begin{example}{Subset of a span}{subsetbasis}
 Let $W$ be the subspace 
 \begin{equation*}
-\limfunc{span}\left\{ \leftB 
-\begin{array}{r}
+\limfunc{span}\left\{ \begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 -1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 1 \\ 
 3 \\ 
 -1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 8 \\ 
 19 \\ 
 -8 \\ 
 8
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 -6 \\ 
 -15 \\ 
 6 \\ 
 -6
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 1 \\ 
 3 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 1 \\ 
 5 \\ 
 0 \\ 
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 Find a basis for $W$ which consists of a subset of the given vectors.
 \end{example}
@@ -512,50 +494,40 @@ Find a basis for $W$ which consists of a subset of the given vectors.
 You can use the {\rref} to accomplish this reduction. Form
 the matrix which has the given vectors as columns. 
 \begin{equation*}
-\leftB
-\begin{array}{rrrrrr}
+\begin{mymatrix}{rrrrrr}
 1 & 1 & 8 & -6 & 1 & 1 \\ 
 2 & 3 & 19 & -15 & 3 & 5 \\ 
 -1 & -1 & -8 & 6 & 0 & 0 \\ 
 1 & 1 & 8 & -6 & 1 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Then take the {\rref}
 \begin{equation*}
-\leftB
-\begin{array}{rrrrrr}
+\begin{mymatrix}{rrrrrr}
 1 & 0 & 5 & -3 & 0 & -2 \\ 
 0 & 1 & 3 & -3 & 0 & 2 \\ 
 0 & 0 & 0 & 0 & 1 & 1 \\ 
 0 & 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 It follows that a basis for $W$ is 
 \begin{equation*}
-\left\{ \leftB 
-\begin{array}{r}
+\left\{ \begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 -1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 1 \\ 
 3 \\ 
 -1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 3 \\ 
 0 \\ 
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 Since the first, second, and fifth columns are
 obviously a basis for the column space of the {\rref}, the same
@@ -583,21 +555,17 @@ Consider the following example.
 \begin{example}{Extending a basis}{extendingbasis}
 Let $V=\R^{4}$ and let 
 \begin{equation*}
-W=\func{span}\left\{ \leftB
-\begin{array}{c}
+W=\func{span}\left\{ \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 Extend this basis of $W$ to a basis of $\R^{n}$.
 \end{example}
@@ -605,60 +573,48 @@ Extend this basis of $W$ to a basis of $\R^{n}$.
 \begin{solution}
 An easy way to do this is to take the {\rref} of the matrix 
 \begin{equation}
-\leftB
-\begin{array}{cccccc}
+\begin{mymatrix}{cccccc}
 1 & 0 & 1 & 0 & 0 & 0 \\ 
 0 & 1 & 0 & 1 & 0 & 0 \\ 
 1 & 0 & 0 & 0 & 1 & 0 \\ 
 1 & 1 & 0 & 0 & 0 & 1
-\end{array}
-\rightB  \label{basiseq1}
+\end{mymatrix}  \label{basiseq1}
 \end{equation}
 Note how the given vectors were placed as the first two columns and then the matrix
 was extended in such a way that it is clear that the span of the columns of
 this matrix yield all of $\R^{4}$. Now determine the pivot columns.
 The {\rref} is 
 \begin{equation}
-\leftB
-\begin{array}{rrrrrr}
+\begin{mymatrix}{rrrrrr}
 1 & 0 & 0 & 0 & 1 & 0 \\ 
 0 & 1 & 0 & 0 & -1 & 1 \\ 
 0 & 0 & 1 & 0 & -1 & 0 \\ 
 0 & 0 & 0 & 1 & 1 & -1
-\end{array}
-\rightB  \label{basiseq2}
+\end{mymatrix}  \label{basiseq2}
 \end{equation}
 Therefore the pivot columns are 
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 0 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and now this is an extension of the given basis for $W$ to a basis for $
 \R^{4}$.
@@ -670,51 +626,39 @@ six.
 Consider another example.
 
 \begin{example}{Extending a basis}{}
-Let $W$ be the span of $\leftB
-\begin{array}{c}
+Let $W$ be the span of $\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 0
-\end{array}
-\rightB $ in $\R^{4}$. Let $V$ consist of the span of the vectors 
+\end{mymatrix} $ in $\R^{4}$. Let $V$ consist of the span of the vectors 
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 7 \\ 
 -6 \\ 
 1 \\ 
 -6
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 -5 \\ 
 7 \\ 
 2 \\ 
 7
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Find a basis for $V$ which extends the basis for $W$.
 \end{example}
@@ -725,51 +669,41 @@ denoted as $V$ is a subspace which does include the subspace $W$.
 
 Using the process outlined in the previous example, form the following matrix 
 \begin{equation*}
-\leftB
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 1 & 0 & 7 & -5 & 0 \\ 
 0 & 1 & -6 & 7 & 0 \\ 
 1 & 1 & 1 & 2 & 0 \\ 
 0 & 1 & -6 & 7 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Next find its {\rref}
 \begin{equation*}
-\leftB
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 1 & 0 & 7 & -5 & 0 \\ 
 0 & 1 & -6 & 7 & 0 \\ 
 0 & 0 & 0 & 0 & 1 \\ 
 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 It follows that a basis for $V$ consists of the first two vectors and the
 last. 
 \begin{equation*}
-\left\{ \leftB
-\begin{array}{c}
+\left\{ \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 0 \\ 
 0 \\ 
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 Thus $V$ is of dimension 3 and it has a basis which extends the basis for $W$.
 \end{solution}

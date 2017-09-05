@@ -4,17 +4,13 @@
 Identify what was done and tell how it will affect the value of the
 determinant. 
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 a & b \\
 c & d
-\end{array}
-\rightB  \rightarrow \cdots \rightarrow \leftB
-\begin{array}{cc}
+\end{mymatrix}  \rightarrow \cdots \rightarrow \begin{mymatrix}{cc}
 a & c \\
 b & d
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{sol}
 It does not change the determinant. This was just taking the transpose.
@@ -25,17 +21,13 @@ It does not change the determinant. This was just taking the transpose.
 Identify what was done and tell how it will affect the value of the
 determinant. 
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 a & b \\
 c & d
-\end{array}
-\rightB \rightarrow \cdots \rightarrow \leftB
-\begin{array}{cc}
+\end{mymatrix} \rightarrow \cdots \rightarrow \begin{mymatrix}{cc}
 c & d \\
 a & b
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{sol}
 In this case two rows were switched and so the resulting determinant is $-1$
@@ -48,17 +40,13 @@ times the first.
 Identify what was done and tell how it will affect the value of the
 determinant. 
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 a & b \\
 c & d
-\end{array}
-\rightB \rightarrow \cdots \rightarrow \leftB
-\begin{array}{cc}
+\end{mymatrix} \rightarrow \cdots \rightarrow \begin{mymatrix}{cc}
 a & b \\
 a+c & b+d
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{sol}
 The determinant is unchanged. It was just the first row added to the second.
@@ -70,17 +58,13 @@ The determinant is unchanged. It was just the first row added to the second.
 Identify what was done and tell how it will affect the value of the
 determinant. 
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 a & b \\
 c & d
-\end{array}
-\rightB \rightarrow \cdots \rightarrow \leftB
-\begin{array}{cc}
+\end{mymatrix} \rightarrow \cdots \rightarrow \begin{mymatrix}{cc}
 a & b \\
 2c & 2d
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{sol}
 The second row was multiplied by 2 so the determinant of the result is 2
@@ -92,17 +76,13 @@ times the original determinant.
 Identify what was done and tell how it will affect the value of the
 determinant. 
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 a & b \\
 c & d
-\end{array}
-\rightB \rightarrow \cdots \rightarrow \leftB
-\begin{array}{cc}
+\end{mymatrix} \rightarrow \cdots \rightarrow \begin{mymatrix}{cc}
 b & a \\
 d & c
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{sol}
 In this case the two columns were switched so the determinant of the second
@@ -137,30 +117,22 @@ $\det A \det B = \det (AB)$.
 \begin{sol}
 \[
 \det
-\left( \leftB
-\begin{array}{cc}
+\left( \begin{mymatrix}{cc}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 -1 & 2 \\
 -5 & 6
-\end{array}
-\rightB \right) = -8
+\end{mymatrix} \right) = -8
 \]
 \[
-\det \leftB
-\begin{array}{cc}
+\det \begin{mymatrix}{cc}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB \det \leftB
-\begin{array}{rr}
+\end{mymatrix} \det \begin{mymatrix}{rr}
 -1 & 2 \\
 -5 & 6
-\end{array}
-\rightB = -2 \times 4 = -8
+\end{mymatrix} = -2 \times 4 = -8
 \]
 \end{sol}
 \end{ex}
@@ -169,17 +141,13 @@ $\det A \det B = \det (AB)$.
 \left( B\right) ?$ If this is so, explain why. If it is not so,
 give a counter example.  
 \begin{sol}
-This is not true at all. Consider $A=\leftB
-\begin{array}{cc}
+This is not true at all. Consider $A=\begin{mymatrix}{cc}
 1 & 0 \\
 0 & 1
-\end{array}
-\rightB ,B=\leftB
-\begin{array}{rr}
+\end{mymatrix} ,B=\begin{mymatrix}{rr}
 -1 & 0 \\
 0 & -1
-\end{array}
-\rightB .$
+\end{mymatrix} .$
 \end{sol}
 \end{ex}
 
@@ -251,13 +219,11 @@ A\right) =0.$
 \end{enumerate}
 \begin{sol}
 \begin{enumerate}
-\item False. Consider $\leftB
-\begin{array}{rrr}
+\item False. Consider $\begin{mymatrix}{rrr}
 1 & 1 & 2 \\
 -1 & 5 & 4 \\
 0 & 3 & 3
-\end{array}
-\rightB $
+\end{mymatrix} $
 \item True.
 \item False.
 \item False.

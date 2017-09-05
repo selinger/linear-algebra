@@ -13,22 +13,16 @@ the ends of intervals of time which may be of interest in the problem. In other 
 of prey at the end of the $n^{th}$ interval of time.
 An example of this situation may be modelled by the following equation
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n+1\right) \\
 y\left( n+1\right)
-\end{array}
-\rightB =\leftB
-\begin{array}{rr}
+\end{mymatrix} =\begin{mymatrix}{rr}
 2 & -3 \\
 1 & 4
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 This says that from time period $n$ to $n+1$, $x$ increases if there are more $x$ and decreases as there
 are more $y$. In the context of this example, this means that as the number of predators increases,
@@ -44,14 +38,13 @@ x_{n+1} &=& a x_n + b y_n \\
 y_{n+1} &=& c x_n + d y_n
 \end{eqnarray*}
 
-This system can be expressed as $V_{n+1} = A V_{n}$ where $V_{n} = \leftB \begin{array}{r}
+This system can be expressed as $V_{n+1} = A V_{n}$ where $V_{n} = \begin{mymatrix}{r}
 x_n \\
 y_n
-\end{array}
-\rightB$ and $A = \leftB \begin{array}{rr}
+\end{mymatrix}$ and $A = \begin{mymatrix}{rr}
 a & b \\
 c & d 
-\end{array} \rightB$.  
+\end{mymatrix}$.  
 \end{definition}
 
 In this section, we will examine how to find solutions to a dynamical system given certain initial conditions. This process involves several concepts previously studied, including matrix diagonalization and Markov matrices. The procedure is given as follows. Recall that when diagonalized, we can write $A^{n} = PD^{n}P^{-1}$. 
@@ -92,227 +85,165 @@ Express this system as a matrix recurrence and find solutions to the dynamical s
 First, we express the system as a matrix recurrence. 
 \begin{eqnarray*}
 V_{n+1} &=& AV_{n}\\
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n+1\right) \\
 y\left( n+1\right)
-\end{array}
-\rightB &=&\leftB 
-\begin{array}{rr}
+\end{mymatrix} &=&\begin{mymatrix}{rr}
 1.5 & -0.5 \\
 1.0 & 0
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 Then
 \begin{equation*}
 A
 =
-\leftB 
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1.5 & -0.5 \\
 1.0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 You can verify that the eigenvalues of $A$ are $1$ and $.5$. By diagonalizing, we can write $A$ in the form
 \begin{equation*}
 P^{-1} D P =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 1 \\
 1 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 1 & 0 \\
 0 & .5
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 2 & -1 \\
 -1 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Now given an initial condition
 \begin{equation*}
-V_0 = \leftB
-\begin{array}{c}
+V_0 = \begin{mymatrix}{c}
 x_{0} \\
 y_{0}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 the solution to the dynamical system is given by 
 \begin{eqnarray*}
 V_n &=& P D^n P^{-1} V_0\\
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB &=&\leftB
-\begin{array}{rr}
+\end{mymatrix} &=&\begin{mymatrix}{rr}
 1 & 1 \\
 1 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 1 & 0 \\
 0 & .5
-\end{array}
-\rightB ^{n}\leftB
-\begin{array}{rr}
+\end{mymatrix} ^{n}\begin{mymatrix}{rr}
 2 & -1 \\
 -1 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x_{0} \\
 y_{0}
-\end{array}
-\rightB \\
-&=&\leftB
-\begin{array}{rr}
+\end{mymatrix} \\
+&=&\begin{mymatrix}{rr}
 1 & 1 \\
 1 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 1 & 0 \\
 0 & \left( .5\right) ^{n}
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 2 & -1 \\
 -1 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x_{0} \\
 y_{0}
-\end{array}
-\rightB \\
-&=&\leftB
-\begin{array}{c}
+\end{mymatrix} \\
+&=&\begin{mymatrix}{c}
 y_{0}\left( \left( .5\right) ^{n}-1\right) -x_{0}\left( \left( .5\right)
 ^{n}-2\right) \\
 y_{0}\left( 2\left( .5\right) ^{n}-1\right) -x_{0}\left( 2\left( .5\right)
 ^{n}-2\right)
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{eqnarray*}
 
 If we let $n$ become arbitrarily large, this vector approaches 
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 2x_{0}-y_{0} \\
 2x_{0}-y_{0}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Thus for large $n,$
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB \approx \leftB
-\begin{array}{c}
+\end{mymatrix} \approx \begin{mymatrix}{c}
 2x_{0}-y_{0} \\
 2x_{0}-y_{0}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Now suppose the initial condition is given by 
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x_{0} \\
 y_{0}
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 20 \\
 10
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Then, we can find solutions for various values of $n$. Here are the
 solutions for values of $n$ between $1$ and $5$
 \begin{equation*}
 n=1:
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 25.0 \\
 20.0
-\end{array}
-\rightB,
-n=2: \leftB
-\begin{array}{r}
+\end{mymatrix},
+n=2: \begin{mymatrix}{r}
 27.5 \\
 25.0
-\end{array}
-\rightB,
-n=3: \leftB
-\begin{array}{r}
+\end{mymatrix},
+n=3: \begin{mymatrix}{r}
 28.75 \\
 27.5
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{equation*}
-n=4: \leftB
-\begin{array}{r}
+n=4: \begin{mymatrix}{r}
 29.375 \\
 28.75
-\end{array}
-\rightB,
-n=5: \leftB
-\begin{array}{r}
+\end{mymatrix},
+n=5: \begin{mymatrix}{r}
 29.688 \\
 29.375
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Notice that as $n$ increases, we approach the vector given by  
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 2x_{0}-y_{0} \\
 2x_{0}-y_{0}
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2\left(20\right)- 10\\
 2\left( 20 \right)-10
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 30\\
 30
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 These solutions are graphed in the following figure. 
@@ -349,22 +280,16 @@ possible for the ordered pairs to spiral around the origin.
 \begin{example}{Finding solutions to a dynamical system}{findsolutionsdynamicalsystem}
 Suppose a dynamical system is of the form
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n+1\right) \\
 y\left( n+1\right)
-\end{array}
-\rightB =\leftB 
-\begin{array}{rr}
+\end{mymatrix} =\begin{mymatrix}{rr}
 0.7 & 0.7 \\
 -0.7 & 0.7
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Find solutions to the dynamical system for given initial conditions.
 \end{example}
@@ -374,86 +299,63 @@ Let
 \begin{equation*}
 A
 =
-\leftB 
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0.7 & 0.7 \\
 -0.7 & 0.7
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 To find solutions, we must diagonalize $A$. You can verify that the eigenvalues of $A$ are complex and are given by  $\lambda_1 = .7+.7i$ and $\lambda_2 = .7-.7i$. The eigenvector for $\lambda_1 = .7+.7i$ is 
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 i
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 and that the eigenvector for $\lambda_2 = .7-.7i$ is
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -i
-\end{array}
-\rightB  
+\end{mymatrix}  
 \end{equation*}
 
 Thus the matrix $A$ can be written in the form
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 1 \\
 i & -i
-\end{array}
-\rightB \leftB
-\begin{array}{cc}
+\end{mymatrix} \begin{mymatrix}{cc}
 .7+.7i & 0 \\
 0 & .7-.7i
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}i \\
 \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2}i
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and so,
 \begin{eqnarray*}
 V_n &=& PD^nP^{-1}V_0 \\
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB &=&\leftB
-\begin{array}{rr}
+\end{mymatrix} &=&\begin{mymatrix}{rr}
 1 & 1 \\
 i & -i
-\end{array}
-\rightB \leftB
-\begin{array}{cc}
+\end{mymatrix} \begin{mymatrix}{cc}
 \left( .7+.7i\right) ^{n} & 0 \\
 0 & \left( .7-.7i\right) ^{n}
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}i \\
 \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2}i
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x_{0} \\
 y_{0}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 The explicit solution is given by
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x_{0}\left( \vspace{0.05in}\frac{1}{2}\left( 0.7-0.7i \right) ^{n}+\vspace{0.05in}\frac{1}{2}
 \left( 0.7+0.7i\right) ^{n}\right) + \allowbreak y_{0}\left( \vspace{0.05in}\frac{1}{2}
 i\left( 0.7-0.7i\right) ^{n}-\frac{1}{2}i \left(
@@ -462,23 +364,18 @@ y_{0}\left( \vspace{0.05in}\frac{1}{2} \left( 0.7-0.7i \right) ^{n}+\vspace{0.05
 \left( 0.7+0.7i\right) ^{n}\right) -  x_{0}\left( \vspace{0.05in}\frac{1}{2}
 i\left( 0.7-0.7i\right) ^{n}-\vspace{0.05in}\frac{1}{2}i\left( 
 0.7+0.7i\right) ^{n}\right)
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Suppose the initial condition is
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x_{0} \\
 y_{0}
-\end{array}
-\rightB =\leftB
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 10 \\
 10
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Then one obtains the following sequence of values which are graphed below by
 letting $n=1,2,\cdots ,20$
@@ -492,17 +389,13 @@ picture what is happening.
 
 These points are getting gradually closer to the origin, but they are
 circling the origin in the clockwise direction as they do so. As $n$ increases,
-the vector  $\leftB
-\begin{array}{c}
+the vector  $\begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB$ approaches $ \leftB
-\begin{array}{r}
+\end{mymatrix}$ approaches $ \begin{mymatrix}{r}
 0 \\
 0
-\end{array}
-\rightB$
+\end{mymatrix}$
 \end{solution}
 
 This type of behavior along with complex eigenvalues is typical of the
@@ -569,22 +462,16 @@ y\left( t+h\right) &=&y\left( t\right) +h\frac{a}{b}dx
 Let $1,2,3,\cdots $ denote the ends of discrete intervals of time having
 length $h$ chosen above. Then the above equations take the form
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n+1\right) \\
 y\left( n+1\right)
-\end{array}
-\rightB =\leftB
-\begin{array}{cc}
+\end{mymatrix} =\begin{mymatrix}{cc}
 1 & -\vspace{0.05in}\frac{hbc}{d} \\
 \vspace{0.05in}\frac{had}{b} & 1
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Note that the eigenvalues of this matrix are always complex.
 
@@ -592,41 +479,29 @@ We are not interested in time intervals of length $h$ for $h$ very small.
 Instead, we are interested in much longer lengths of time. Thus, replacing
 the time interval with $mh,$
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n+m\right) \\
 y\left( n+m\right)
-\end{array}
-\rightB =\leftB
-\begin{array}{cc}
+\end{mymatrix} =\begin{mymatrix}{cc}
 1 & -\vspace{0.05in}\frac{hbc}{d} \\
 \vspace{0.05in}\frac{had}{b} & 1
-\end{array}
-\rightB ^{m}\leftB
-\begin{array}{c}
+\end{mymatrix} ^{m}\begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 For example, if $m=2,$ you would have
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n+2\right) \\
 y\left( n+2\right)
-\end{array}
-\rightB =\leftB
-\begin{array}{cc}
+\end{mymatrix} =\begin{mymatrix}{cc}
 1-ach^{2} & -2b\vspace{0.05in}\frac{c}{d}h \\
 2\vspace{0.05in}\frac{a}{b}dh & 1-ach^{2}
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Note that most of the time, the eigenvalues of the new matrix will be complex.
 
@@ -635,22 +510,16 @@ considering higher powers of the matrix. Thus letting $1,2,3,\cdots $ denote
 the ends of discrete intervals of time, the desired discrete dynamical
 system is of the form
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n+1\right) \\
 y\left( n+1\right)
-\end{array}
-\rightB =\leftB
-\begin{array}{rr}
+\end{mymatrix} =\begin{mymatrix}{rr}
 a & -b \\
 c & d
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 where $a,b,c,d$ are positive constants and the matrix will likely have
 complex eigenvalues because it is a power of a matrix which has complex
@@ -686,125 +555,91 @@ This sequence is extremely important in the study of reproducing rabbits. It
 can be considered as a dynamical system as follows. Let $y\left( n\right)
 =x\left( n+1\right) .$ Then the above recurrence relation can be written as
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n+1\right) \\
 y\left( n+1\right)
-\end{array}
-\rightB =\leftB
-\begin{array}{rr}
+\end{mymatrix} =\begin{mymatrix}{rr}
 0 & 1 \\
 1 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB ,\ \leftB
-\begin{array}{c}
+\end{mymatrix} ,\ \begin{mymatrix}{c}
 x\left( 0\right) \\
 y\left( 0\right)
-\end{array}
-\rightB =\leftB
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 1 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Let 
 \begin{equation*}
 A
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 1 \\
 1 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 The eigenvalues of the matrix $A$ are $\lambda_1 = \frac{1}{2}-\frac{1}{2}\sqrt{5}$ and 
 $\lambda_2 = \frac{1}{2}\sqrt{5}+\frac{1}{2}$. The corresponding eigenvectors are, respectively,
 \begin{equation*}
 X_1 = 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 -\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
 1
-\end{array}
-\rightB ,
-X_2 = \leftB
-\begin{array}{c}
+\end{mymatrix} ,
+X_2 = \begin{mymatrix}{c}
 \vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 You can see from a short computation that one of the eigenvalues is smaller than 1 in
 absolute value while the other is larger than 1 in absolute value.
 Now, diagonalizing $A$ gives us 
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 \vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
 1 & 1
-\end{array}
-\rightB ^{-1}\leftB
-\begin{array}{rr}
+\end{mymatrix} ^{-1}\begin{mymatrix}{rr}
 0 & 1 \\
 1 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{cc}
+\end{mymatrix} \begin{mymatrix}{cc}
 \vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
 1 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{equation*}
-=\leftB
-\begin{array}{cc}
+=\begin{mymatrix}{cc}
 \vspace{0.05in}\frac{1}{2}\sqrt{5}+\vspace{0.05in}\frac{1}{2} & 0 \\
 0 & \vspace{0.05in}\frac{1}{2}-\vspace{0.05in}\frac{1}{2}\sqrt{5}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Then it follows that for a given initial condition, the solution to this
 dynamical system is of the form
 \begin{eqnarray*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x\left( n\right) \\
 y\left( n\right)
-\end{array}
-\rightB &=&\leftB
-\begin{array}{cc}
+\end{mymatrix} &=&\begin{mymatrix}{cc}
 \vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
 1 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{cc}
+\end{mymatrix} \begin{mymatrix}{cc}
 \left( \vspace{0.05in}\frac{1}{2}\sqrt{5}+\vspace{0.05in}\frac{1}{2}\right) ^{n} & 0 \\
 0 & \left( \vspace{0.05in}\frac{1}{2}-\vspace{0.05in}\frac{1}{2}\sqrt{5}\right) ^{n}
-\end{array}
-\rightB \cdot \\
-&&\leftB
-\begin{array}{cc}
+\end{mymatrix} \cdot \\
+&&\begin{mymatrix}{cc}
 \vspace{0.05in}\frac{1}{5}\sqrt{5} & \vspace{0.05in}\frac{1}{10}\sqrt{5}+\vspace{0.05in}\frac{1}{2} \\
 -\vspace{0.05in}\frac{1}{5}\sqrt{5} & \vspace{0.05in}\frac{1}{5}\sqrt{5}\left( \vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1
 }{2}\right)
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 1 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 It follows that
 \begin{equation*}

@@ -86,74 +86,69 @@ a_n$.
 The  \textbf{coordinate vector}\index{vector!coordinate vector}\index{coordinate vector} of $\vect{x}$ with respect to the
 basis $B$, written $C_B(\vect{x})$ or  $[\vect{x}]_B$,  is given by
 \[
-C_B(\vect{x}) =  C_B \left( a_1\vect{v}_1 + a_2\vect{v}_2 + \cdots + a_n\vect{v}_n \right) = \leftB
-\begin{array}{c}
+C_B(\vect{x}) =  C_B \left( a_1\vect{v}_1 + a_2\vect{v}_2 + \cdots + a_n\vect{v}_n \right) = \begin{mymatrix}{c}
 a_1 \\
 a_2 \\
 \vdots \\
 a_n
-\end{array} \rightB
+\end{mymatrix}
 \] 
 \end{definition}
 
 Consider the following example.
 
 \begin{example}{Coordinate vector}{coordinatevector}
-Let $B = \left\{ \leftB \begin{array}{r}
+Let $B = \left\{ \begin{mymatrix}{r}
 1 \\
 0 
-\end{array} \rightB, \leftB \begin{array}{r}
+\end{mymatrix}, \begin{mymatrix}{r}
 -1 \\
 1
-\end{array} \rightB \right\}$ be a basis of $\R^2$ and let $\vect{x} = \leftB
-\begin{array}{r}
+\end{mymatrix} \right\}$ be a basis of $\R^2$ and let $\vect{x} = \begin{mymatrix}{r}
 3 \\
 -1
-\end{array}
-\rightB$ be a vector in $\R^2$. Find $C_B(\vect{x})$. 
+\end{mymatrix}$ be a vector in $\R^2$. Find $C_B(\vect{x})$. 
 \end{example}
 
 \begin{solution}
 First, note the order of the basis is important so label the vectors in the basis $B$ as 
 \[
-B = \left\{ \leftB \begin{array}{r}
+B = \left\{ \begin{mymatrix}{r}
 1 \\
 0 
-\end{array} \rightB, \leftB \begin{array}{r}
+\end{mymatrix}, \begin{mymatrix}{r}
 -1 \\
 1
-\end{array} \rightB \right\} = \left\{ \vect{v}_1, \vect{v}_2 \right\} \]
+\end{mymatrix} \right\} = \left\{ \vect{v}_1, \vect{v}_2 \right\} \]
 Now we need to find $a_1, a_2$ such that $\vect{x} = a_1 \vect{v}_1 + a_2 \vect{v}_2$, that is:
 \[
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 -1
-\end{array}
-\rightB
+\end{mymatrix}
 =
 a_1 
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0 
-\end{array} \rightB
+\end{mymatrix}
 + a_2
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 -1 \\
 1 
-\end{array} \rightB\]
+\end{mymatrix}\]
 Solving this system gives $a_1 = 2, a_2 = -1$. Therefore the coordinate vector of $\vect{x}$ with respect to the basis $B$ is 
 \[
 C_B(\vect{x})
 =
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 a_1 \\
 a_2 
-\end{array}\rightB
-= \leftB \begin{array}{r}
+\end{mymatrix}
+= \begin{mymatrix}{r}
 2 \\
 -1 
-\end{array} \rightB
+\end{mymatrix}
 \]
 \end{solution}
 
@@ -214,37 +209,34 @@ and this completes the proof.
 Consider the following example.
 
 \begin{example}{Matrix of a linear transformation}{matrixlintransf}
-Let $T: \R^2 \mapsto \R^2$ be a linear transformation defined by $T \left( \leftB \begin{array}{r}
+Let $T: \R^2 \mapsto \R^2$ be a linear transformation defined by $T \left( \begin{mymatrix}{r}
 a \\
 b
-\end{array} \rightB \right) = \leftB \begin{array}{r}
+\end{mymatrix} \right) = \begin{mymatrix}{r}
 b \\
 a 
-\end{array} \rightB$. 
+\end{mymatrix}$. 
 
 Consider the two bases
 \[
-B_1 = \left\{ \vect{v}_{1}, \vect{v}_{2} \right\} = \left\{ \leftB \begin{array}{r}
+B_1 = \left\{ \vect{v}_{1}, \vect{v}_{2} \right\} = \left\{ \begin{mymatrix}{r}
 1 \\
 0
-\end{array}\rightB, \leftB \begin{array}{r}
+\end{mymatrix}, \begin{mymatrix}{r}
 -1 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 \]
  and 
 \[
-B_2 = \left\{ \leftB \begin{array}{r}
+B_2 = \left\{ \begin{mymatrix}{r}
 1 \\
 1
-\end{array}
-\rightB, \leftB \begin{array}{r}
+\end{mymatrix}, \begin{mymatrix}{r}
 1 \\
 -1
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 \]
 
@@ -258,153 +250,129 @@ to $B_2$.
 
 Since \[
 T \left( 
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0
-\end{array}\rightB \right)
-= \leftB \begin{array}{r}
+\end{mymatrix} \right)
+= \begin{mymatrix}{r}
 0 \\
 1
-\end{array}\rightB ,\]
+\end{mymatrix} ,\]
 a standard calculation yields 
 \[
- \leftB \begin{array}{r}
+ \begin{mymatrix}{r}
 0 \\
 1
-\end{array}\rightB 
+\end{mymatrix} 
  =  
-\left(\frac{1}{2} \right)\leftB \begin{array}{r}
+\left(\frac{1}{2} \right)\begin{mymatrix}{r}
 1 \\
 1
-\end{array} 
-\rightB
+\end{mymatrix}
 +
 \left(-\frac{1}{2} \right)
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -1
-\end{array} \rightB,
+\end{mymatrix},
 \]
-the first column of $M_{B_{2} B_{1}}$ is $\leftB \begin{array}{r}
+the first column of $M_{B_{2} B_{1}}$ is $\begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{2}\\
 \vspace{0.05in}-\frac{1}{2}
-\end{array}\rightB$. 
+\end{mymatrix}$. 
 
 The second column is found in a similar way. We have 
 \[
 T \left( 
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 -1 \\
 1
-\end{array}
-\rightB \right)
-= \leftB \begin{array}{r}
+\end{mymatrix} \right)
+= \begin{mymatrix}{r}
 1 \\
 -1
-\end{array}\rightB , \]
+\end{mymatrix} , \]
 and with respect to $B_2$ calculate:
 \[ 
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -1
-\end{array}\rightB
+\end{mymatrix}
 =
-0 \leftB \begin{array}{r}
+0 \begin{mymatrix}{r}
 1 \\
 1
-\end{array} 
-\rightB
+\end{mymatrix}
 +
 1
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -1
-\end{array} \rightB
+\end{mymatrix}
 \]
-Hence the second column of $M_{B_{2} B_{1}}$ is given by $\leftB \begin{array}{r}
+Hence the second column of $M_{B_{2} B_{1}}$ is given by $\begin{mymatrix}{r}
 0 \\
 1
-\end{array} \rightB$. We thus obtain 
+\end{mymatrix}$. We thus obtain 
 \[
-M_{B_{2} B_{1}} = \leftB
-\begin{array}{rr}
+M_{B_{2} B_{1}} = \begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{2} & 0 \\
 \vspace{0.05in}-\frac{1}{2} & 1 
-\end{array}
-\rightB \]
+\end{mymatrix} \]
 
 We can verify that this is the correct matrix $M_{B_{2} B_{1}}$ on the specific example
 \[
-\vect{v} = \leftB 
-\begin{array}{r}
+\vect{v} = \begin{mymatrix}{r}
 3 \\
 -1 
-\end{array}
-\rightB \]
+\end{mymatrix} \]
 First applying $T$ gives
 \[
 T( \vect{v} ) =
 T \left( 
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 -1 
-\end{array}
-\rightB \right) = \leftB 
-\begin{array}{r}
+\end{mymatrix} \right) = \begin{mymatrix}{r}
 -1\\
 3
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 and one can compute that  
 \[ C_{B_2} 
  \left( 
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 -1 \\
 3 
-\end{array}
-\rightB \right) = \leftB 
-\begin{array}{r}
+\end{mymatrix} \right) = \begin{mymatrix}{r}
 1\\
 -2
-\end{array}
-\rightB .\]
+\end{mymatrix} .\]
 
 On the other hand, one compute $C_{B_1}( \vect{v})$ as 
 \[ C_{B_1} 
  \left( 
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 -1 
-\end{array}
-\rightB \right) = \leftB 
-\begin{array}{r}
+\end{mymatrix} \right) = \begin{mymatrix}{r}
 2\\
 -1
-\end{array}
-\rightB ,\]
+\end{mymatrix} ,\]
 and finally applying $M_{B_1 B_2}$ gives
 
-\[\leftB
-\begin{array}{rr}
+\[\begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{2} & 0 \\
 \vspace{0.05in}-\frac{1}{2} & 1 
-\end{array}
-\rightB 
-\leftB \begin{array}{r}
+\end{mymatrix} 
+\begin{mymatrix}{r}
 2 \\
 -1
-\end{array}\rightB 
-= \leftB \begin{array}{r}
+\end{mymatrix} 
+= \begin{mymatrix}{r}
 1 \\
 -2
-\end{array}
-\rightB \]
+\end{mymatrix} \]
 as above. 
 
 We see that the same vector results from either method, as suggested by Theorem \ref{thm:matrixlintransfbases}.
@@ -420,67 +388,49 @@ Consider the basis $B$ of $\R^3$ given by
 \begin{equation*}
 B = \{\vect{v}_1 , \vect{v}_2,  \vect{v}_3  \} =
 \left\{
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0 \\
 1
-\end{array}
-\rightB ,\leftB
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 1 \\
 1 \\
 1
-\end{array}
-\rightB ,\leftB
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 -1 \\
 1 \\
 0
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \]
 
 And let $T :\R^{3}\mapsto \R^{3}$ be the linear transformation 
 defined on $B$ as:
 \begin{equation*}
-T\leftB
-\begin{array}{r}
+T\begin{mymatrix}{r}
 1 \\
 0 \\
 1
-\end{array}
-\rightB =\leftB
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 1 \\
 -1 \\
 1
-\end{array}
-\rightB ,T \leftB
-\begin{array}{c}
+\end{mymatrix} ,T \begin{mymatrix}{c}
 1 \\
 1 \\
 1
-\end{array}
-\rightB =\leftB
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 1 \\
 2 \\
 -1
-\end{array}
-\rightB ,T\leftB
-\begin{array}{r}
+\end{mymatrix} ,T\begin{mymatrix}{r}
 -1 \\
 1 \\
 0
-\end{array}
-\rightB =\leftB
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 0 \\
 1 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 \begin{enumerate}
@@ -497,203 +447,153 @@ $M_{B} = C_BTC^{-1}_B$.
 
 Now $C_B(\vec{v}_i) = \vec{e}_i$, so the matrix of $C_B^{-1}$ (with respect to the standard basis) is given by
 \[ \leftB  C_B^{-1}(\vec{e}_1) \;\; C_B^{-1}(\vec{e}_2) \;\; C_B^{-1}(\vec{e}_2) \rightB =  
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 1 & -1 \\ 
 0 & 1 & 1 \\ 
 1 & 1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 Moreover the matrix of  $T C_B^{-1}$ is given by 
 \[ \leftB  TC_B^{-1}(\vec{e}_1) \;\; TC_B^{-1}(\vec{e}_2) \;\; TC_B^{-1}(\vec{e}_2) \rightB =  
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 1 & 0 \\ 
 -1 & 2 & 1 \\ 
 1 & -1 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 Thus 
 \[ \begin{array}{ll}
 M_{B} & =  C_BTC^{-1}_B =  [C^{-1}_B]^{-1} [TC^{-1}_B] \\
 	& = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 1 & -1 \\ 
 0 & 1 & 1 \\ 
 1 & 1 & 0
-\end{array}
-\rightB ^{-1}\leftB 
-\begin{array}{rrr}
+\end{mymatrix} ^{-1}\begin{mymatrix}{rrr}
 1 & 1 & 0 \\ 
 -1 & 2 & 1 \\ 
 1 & -1 & 1
-\end{array}
-\rightB \\
-&=\leftB 
-\begin{array}{rrr}
+\end{mymatrix} \\
+&=\begin{mymatrix}{rrr}
 2 & -5 & 1 \\ 
 -1 & 4 & 0 \\ 
 0 & -2 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{array}
 \]
 
 
-Consider how this works. Let $\vect{b} = \leftB
-\begin{array}{r}
+Consider how this works. Let $\vect{b} = \begin{mymatrix}{r}
 b_1 \\
 b_2 \\
 b_3
-\end{array}
-\rightB$ be an arbitrary vector in $\R^3$. 
+\end{mymatrix}$ be an arbitrary vector in $\R^3$. 
 
 Apply $C^{-1}_{B}$ to $\vect{b}$ to get 
 \begin{equation*}
-b_1\leftB 
-\begin{array}{r}
+b_1\begin{mymatrix}{r}
 1 \\
 0 \\
 1
-\end{array}
-\rightB + b_2\leftB 
-\begin{array}{r}
+\end{mymatrix} + b_2\begin{mymatrix}{r}
 1 \\
 1 \\
 1
-\end{array}
-\rightB + b_3\leftB 
-\begin{array}{r}
+\end{mymatrix} + b_3\begin{mymatrix}{r}
 -1 \\
 1 \\
 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Apply $T$ to this linear combination to obtain 
 \begin{equation*}
-b_1\leftB 
-\begin{array}{r}
+b_1\begin{mymatrix}{r}
 1 \\ 
 -1 \\ 
 1
-\end{array}
-\rightB + b_2\leftB 
-\begin{array}{r}
+\end{mymatrix} + b_2\begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 -1
-\end{array}
-\rightB + b_3\leftB 
-\begin{array}{r}
+\end{mymatrix} + b_3\begin{mymatrix}{r}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 b_1+b_2 \\ 
 -b_1 + 2b_2+ b_3 \\ 
 b_1-b_2+b_3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Now take the matrix $M_{B}$ of the transformation (as found above) and multiply it by $\vect{b}$. 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 2 & -5 & 1 \\ 
 -1 & 4 & 0 \\ 
 0 & -2 & 1
-\end{array}
-\rightB \leftB 
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 b_1 \\ 
 b_2 \\ 
 b_3
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 2b_1-5b_2+b_3 \\ 
 -b_1 + 4b_2 \\ 
 -2b_2 + b_3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Is this the coordinate vector of the above relative to the given basis? We check as follows. 
 \begin{equation*}
-\left( 2b_1-5b_2+b_3\right) \leftB 
-\begin{array}{c}
+\left( 2b_1-5b_2+b_3\right) \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB +\left( -b_1 + 4b_2\right) \leftB 
-\begin{array}{c}
+\end{mymatrix} +\left( -b_1 + 4b_2\right) \begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB +\left( -2b_2+b_3\right) \leftB 
-\begin{array}{c}
+\end{mymatrix} +\left( -2b_2+b_3\right) \begin{mymatrix}{c}
 -1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{equation*}
-= \leftB 
-\begin{array}{c}
+= \begin{mymatrix}{c}
 b_1+b_2 \\ 
 -b_1 + 2b_2+b_3 \\ 
 b_1-b_2+b_3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 You see it is the same thing.
 
 Now lets find the matrix of $T$ with respect to the standard basis. Let $A$ be
 this matrix. That is, multiplication by $A$ is the same as doing $T$. Thus 
 \begin{equation*}
-A\leftB 
-\begin{array}{rrr}
+A\begin{mymatrix}{rrr}
 1 & 1 & -1 \\ 
 0 & 1 & 1 \\ 
 1 & 1 & 0
-\end{array}
-\rightB =\leftB 
-\begin{array}{rrr}
+\end{mymatrix} =\begin{mymatrix}{rrr}
 1 & 1 & 0 \\ 
 -1 & 2 & 1 \\ 
 1 & -1 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Hence 
 \begin{equation*}
-A=\leftB 
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 1 & 1 & 0 \\ 
 -1 & 2 & 1 \\ 
 1 & -1 & 1
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 1 & -1 \\ 
 0 & 1 & 1 \\ 
 1 & 1 & 0
-\end{array}
-\rightB ^{-1}=\leftB 
-\begin{array}{rrr}
+\end{mymatrix} ^{-1}=\begin{mymatrix}{rrr}
 0 & 0 & 1 \\ 
 2 & 3 & -3 \\ 
 -3 & -2 & 4
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Of course this is a very different matrix than the matrix of the linear
 transformation with respect to the non standard basis.

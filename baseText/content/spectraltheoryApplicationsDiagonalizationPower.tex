@@ -30,13 +30,11 @@ Through this method, we can compute large powers of matrices. Consider the follo
 
 \begin{example}{Raising a matrix to a high power}{matrixhighpower}
 Let
-\index{matrix!raising to a power}  $A=\leftB 
-\begin{array}{rrr}
+\index{matrix!raising to a power}  $A=\begin{mymatrix}{rrr}
 2 & 1 & 0 \\
 0 & 1 & 0 \\
 -1 & -1 & 1
-\end{array}
-\rightB. $ Find $A^{50}.$
+\end{mymatrix}. $ Find $A^{50}.$
 \end{example}
 
 \begin{solution}
@@ -46,190 +44,146 @@ you may wish to verify that the eigenvalues of $A$ are $\lambda_1 =1,
 
 The basic eigenvectors corresponding to $\lambda_1, \lambda_2 = 1$ are
 \begin{equation*}
-X_1 = \leftB
-\begin{array}{r}
+X_1 = \begin{mymatrix}{r}
 0 \\
 0 \\
 1
-\end{array}
-\rightB ,
+\end{mymatrix} ,
 X_2
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -1 \\
 1 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 The basic eigenvector corresponding to $\lambda_3 = 2$ is
 \begin{equation*}
 X_3
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -1 \\
 0 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Now we construct $P$ by using the basic eigenvectors of $A$ as the columns of $P$.
 Thus
 \begin{equation*}
 P=
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 X_1 & X_2 & X_3
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0 & -1 & -1 \\
 0 & 1 & 0 \\
 1 & 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Then also
 \begin{equation*}
-P^{-1}=\leftB
-\begin{array}{rrr}
+P^{-1}=\begin{mymatrix}{rrr}
 1 & 1 & 1 \\
 0 & 1 & 0 \\
 -1 & -1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 which you may wish to verify.
 
 Then, 
 \begin{eqnarray*}
-P^{-1}AP &=&\leftB
-\begin{array}{rrr}
+P^{-1}AP &=&\begin{mymatrix}{rrr}
 1 & 1 & 1 \\
 0 & 1 & 0 \\
 -1 & -1 & 0
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 2 & 1 & 0 \\
 0 & 1 & 0 \\
 -1 & -1 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 0 & -1 & -1 \\
 0 & 1 & 0 \\
 1 & 0 & 1
-\end{array}
-\rightB \\
-&=&\leftB
-\begin{array}{rrr}
+\end{mymatrix} \\
+&=&\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 2
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& D
 \end{eqnarray*}
 
 Now it follows by rearranging the equation that
 \begin{equation*}
-A=PDP^{-1}=\leftB
-\begin{array}{rrr}
+A=PDP^{-1}=\begin{mymatrix}{rrr}
 0 & -1 & -1 \\
 0 & 1 & 0 \\
 1 & 0 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 1 & 1 \\
 0 & 1 & 0 \\
 -1 & -1 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Therefore,
 \begin{eqnarray*}
 A^{50} &=&PD^{50}P^{-1} \\
-&=&\leftB
-\begin{array}{rrr}
+&=&\begin{mymatrix}{rrr}
 0 & -1 & -1 \\
 0 & 1 & 0 \\
 1 & 0 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 2
-\end{array}
-\rightB ^{50}\leftB
-\begin{array}{rrr}
+\end{mymatrix} ^{50}\begin{mymatrix}{rrr}
 1 & 1 & 1 \\
 0 & 1 & 0 \\
 -1 & -1 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{eqnarray*}
 
 By our discussion above, $D^{50}$ is found as follows.
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 2
-\end{array}
-\rightB ^{50}=\leftB
-\begin{array}{rrr}
+\end{mymatrix} ^{50}=\begin{mymatrix}{rrr}
 1^{50} & 0      & 0 \\
 0      & 1^{50} & 0 \\
 0      & 0      & 2^{50}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 It follows that
 \begin{eqnarray*}
-A^{50} &=&\leftB
-\begin{array}{rrr}
+A^{50} &=&\begin{mymatrix}{rrr}
 0 & -1 & -1 \\
 0 & 1 & 0 \\
 1 & 0 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1^{50} & 0      & 0 \\
 0      & 1^{50} & 0 \\
 0      & 0      & 2^{50}
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 1 & 1 \\
 0 & 1 & 0 \\
 -1 & -1 & 0
-\end{array}
-\rightB \\
-&=&\leftB
-\begin{array}{ccc}
+\end{mymatrix} \\
+&=&\begin{mymatrix}{ccc}
 2^{50} & -1+2^{50} & 0 \\
 0 & 1 & 0 \\
 1-2^{50} & 1-2^{50} & 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{eqnarray*}
 
 \end{solution}

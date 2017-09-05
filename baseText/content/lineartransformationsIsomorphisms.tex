@@ -43,13 +43,13 @@ Consider the following example of an isomorphism.
 \begin{example}{Isomorphism}{isomorphism}
 Let $T: \R^2 \mapsto \R^2$ be defined by 
 \[
-T \leftB \begin{array}{c}
+T \begin{mymatrix}{c}
 x \\
 y
-\end{array} \rightB = \leftB \begin{array}{c}
+\end{mymatrix} = \begin{mymatrix}{c}
 x + y \\
 x - y 
-\end{array} \rightB
+\end{mymatrix}
 \]
 Show that $T$ is an isomorphism.
 \end{example}
@@ -69,82 +69,82 @@ We proceed as follows.
 
 Let $k, p$ be scalars. 
 \begin{eqnarray*}
-T \left( k \leftB \begin{array}{c}
+T \left( k \begin{mymatrix}{c}
 x_1 \\
 y_1
-\end{array} \rightB + p \leftB \begin{array}{c}
+\end{mymatrix} + p \begin{mymatrix}{c}
 x_2 \\
 y_2
-\end{array} \rightB \right) &=& 
-T \left(  \leftB \begin{array}{c}
+\end{mymatrix} \right) &=& 
+T \left(  \begin{mymatrix}{c}
 kx_1 \\
 ky_1
-\end{array} \rightB + \leftB \begin{array}{c}
+\end{mymatrix} + \begin{mymatrix}{c}
 px_2 \\
 py_2
-\end{array} \rightB \right) \\
+\end{mymatrix} \right) \\
 &=&
-T \left(  \leftB \begin{array}{c}
+T \left(  \begin{mymatrix}{c}
 kx_1 + px_2 \\
 ky_1 + py_2
-\end{array} \rightB  \right) \\
+\end{mymatrix}  \right) \\
 &=& 
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 (kx_1 + px_2) + (ky_1 + py_2) \\
 (kx_1 + px_2) - (ky_1 + py_2)
-\end{array} \rightB \\
+\end{mymatrix} \\
 &=& 
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 (kx_1 + ky_1) + (px_2 + py_2) \\
 (kx_1  - ky_1) + (px_2 - py_2)
-\end{array} \rightB \\
+\end{mymatrix} \\
 &=&
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 kx_1 + ky_1  \\
 kx_1  - ky_1
-\end{array} \rightB + 
-\leftB \begin{array}{c}
+\end{mymatrix} + 
+\begin{mymatrix}{c}
 px_2 + py_2 \\
 px_2 - py_2
-\end{array} \rightB \\
-&=& k \leftB \begin{array}{c}
+\end{mymatrix} \\
+&=& k \begin{mymatrix}{c}
 x_1 + y_1  \\
 x_1  - y_1
-\end{array} \rightB + 
-p \leftB \begin{array}{c}
+\end{mymatrix} + 
+p \begin{mymatrix}{c}
 x_2 + y_2 \\
 x_2 - y_2
-\end{array} \rightB \\
+\end{mymatrix} \\
 &=& 
-k T \left(  \leftB \begin{array}{c}
+k T \left(  \begin{mymatrix}{c}
 x_1 \\
 y_1
-\end{array} \rightB \right) + p T \left( \leftB \begin{array}{c}
+\end{mymatrix} \right) + p T \left( \begin{mymatrix}{c}
 x_2 \\
 y_2
-\end{array} \rightB \right)
+\end{mymatrix} \right)
 \end{eqnarray*}
 
 Therefore $T$ is linear. 
 
 \item $T$ is one to one:
 
-We need to show that if $T (\vect{x}) = \vect{0}$ for a vector $\vect{x} \in \R^2$, then it follows that $\vect{x} = \vect{0}$.  Let $\vect{x} = \leftB \begin{array}{c}
+We need to show that if $T (\vect{x}) = \vect{0}$ for a vector $\vect{x} \in \R^2$, then it follows that $\vect{x} = \vect{0}$.  Let $\vect{x} = \begin{mymatrix}{c}
 x \\
 y
-\end{array} \rightB$. 
+\end{mymatrix}$. 
 
 \[
-T  \left( \leftB \begin{array}{c}
+T  \left( \begin{mymatrix}{c}
 x \\
 y
-\end{array} \rightB \right) = \leftB \begin{array}{c}
+\end{mymatrix} \right) = \begin{mymatrix}{c}
 x + y\\
 x - y 
-\end{array} \rightB = \leftB \begin{array}{c}
+\end{mymatrix} = \begin{mymatrix}{c}
 0 \\
 0
-\end{array} \rightB
+\end{mymatrix}
 \]
 This provides a system of equations given by 
 \begin{eqnarray*}
@@ -153,14 +153,14 @@ x - y &=& 0
 \end{eqnarray*}
 You can verify that the solution to this system if $x = y =0$. Therefore 
 \[
-\vect{x} = \leftB \begin{array}{c}
+\vect{x} = \begin{mymatrix}{c}
 x \\
 y
-\end{array} \rightB
- = \leftB \begin{array}{c}
+\end{mymatrix}
+ = \begin{mymatrix}{c}
 0 \\
 0
-\end{array} \rightB
+\end{mymatrix}
 \]
 and $T$ is one to one.
 
@@ -168,16 +168,16 @@ and $T$ is one to one.
 
 Let $a,b$ be scalars. We want to check if there is always a solution to 
 \[
-T  \left( \leftB \begin{array}{c}
+T  \left( \begin{mymatrix}{c}
 x \\
 y
-\end{array} \rightB \right) = \leftB \begin{array}{c}
+\end{mymatrix} \right) = \begin{mymatrix}{c}
 x + y\\
 x - y 
-\end{array} \rightB = \leftB \begin{array}{c}
+\end{mymatrix} = \begin{mymatrix}{c}
 a \\
 b
-\end{array} \rightB
+\end{mymatrix}
 \]
 
 This can be represented as the system of equations 
@@ -188,14 +188,14 @@ x - y &=& b
 
 Setting up the augmented matrix and row reducing gives
 \[
-\leftB \begin{array}{cc|c}
+\begin{mymatrix}{cc|c}
 1 & 1 & a \\
 1 & -1 & b
-\end{array} \rightB \rightarrow \cdots \rightarrow
-\leftB \begin{array}{cc|c}
+\end{mymatrix} \rightarrow \cdots \rightarrow
+\begin{mymatrix}{cc|c}
 1 & 0 & \vspace{0.05in}\frac{a+b}{2} \\
 0 & 1 & \vspace{0.05in}\frac{a-b}{2}
-\end{array} \rightB
+\end{mymatrix}
 \]
 This has a solution for all $a,b$ and therefore $T$ is onto. 
 \end{enumerate}
@@ -484,28 +484,22 @@ part of the argument by describing what it does to a basis and then
 \begin{example}{Isomorphic subspaces}{}
 Let $V=\R^{3}$ and let $W$ denote 
 \begin{equation*}
-\func{span}\left\{ \leftB 
-\begin{array}{r}
+\func{span}\left\{ \begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 1 \\ 
 1 \\ 
 2 \\ 
 0
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 Show that $V$ and $W$ are isomorphic. 
 \end{example}
@@ -517,41 +511,33 @@ making them the columns of a matrix and row reducing to the {\rref}.
 
 You can exhibit an isomorphism of these two spaces as follows. 
 \begin{equation*}
-T(\vect{e}_{1})=\leftB 
-\begin{array}{c}
+T(\vect{e}_{1})=\begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 1 \\ 
 1
-\end{array}
-\rightB, T(\vect{e}_{2})=\leftB 
-\begin{array}{c}
+\end{mymatrix}, T(\vect{e}_{2})=\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB, T(\vect{e}_{3})=\leftB 
-\begin{array}{c}
+\end{mymatrix}, T(\vect{e}_{3})=\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 2 \\ 
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and extend linearly. Recall that the matrix of this linear transformation is
 just the matrix having these vectors as columns. Thus the matrix of this
 isomorphism is 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 2 & 1 & 1 \\ 
 1 & 0 & 2 \\ 
 1 & 1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 You should check that multiplication on the left by this matrix does
 reproduce the claimed effect resulting from an application by $T$.
@@ -562,72 +548,54 @@ Consider the following example.
 \begin{example}{Finding the matrix of an isomorphism}{matrixofisomorphism}
 Let $V=\R^{3}$ and let $W$ denote 
 \begin{equation*}
-\func{span}\left\{ \leftB 
-\begin{array}{c}
+\func{span}\left\{ \begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 2 \\ 
 0
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 
 Let $T: V \mapsto W$ be defined as follows. 
 \begin{equation*}
-T\leftB 
-\begin{array}{c}
+T\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,T\leftB 
-\begin{array}{c}
+\end{mymatrix} ,T\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,T\leftB 
-\begin{array}{c}
+\end{mymatrix} ,T\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 2 \\ 
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Find the matrix of this isomorphism $T$.
 \end{example}
@@ -635,25 +603,19 @@ Find the matrix of this isomorphism $T$.
 \begin{solution}
  First note that the vectors 
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 are indeed a basis for $\R^{3}$ as can be seen by making them the
 columns of a matrix and using the {\rref}.
@@ -661,44 +623,34 @@ columns of a matrix and using the {\rref}.
 Now recall the matrix of $T$ is a $4\times 3$ matrix $A$ which gives the same
 effect as $T.$ Thus, from the way we multiply matrices, 
 \begin{equation*}
-A\leftB
-\begin{array}{rrr}
+A\begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 1 & 1 & 1 \\ 
 0 & 1 & 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{rrr}
+\end{mymatrix} =\begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 2 & 1 & 1 \\ 
 1 & 0 & 2 \\ 
 1 & 1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Hence, 
 \begin{equation*}
-A=\leftB 
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 2 & 1 & 1 \\ 
 1 & 0 & 2 \\ 
 1 & 1 & 0
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 1 & 1 & 1 \\ 
 0 & 1 & 1
-\end{array}
-\rightB ^{-1}=\leftB 
-\begin{array}{rrr}
+\end{mymatrix} ^{-1}=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 2 & -1 \\ 
 2 & -1 & 1 \\ 
 -1 & 2 & -1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Note how the span of the columns of this new matrix must be the same as the
 span of the vectors defining $W$.
@@ -710,71 +662,53 @@ works for linear maps which are not necessarily isomorphisms.
 \begin{example}{Finding the matrix of an isomorphism}{}
 Let $V=\R^{3}$ and let $W$ denote 
 \begin{equation*}
-\func{span}\left\{ \leftB
-\begin{array}{c}
+\func{span}\left\{ \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1 \\ 
 2
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 Let $T: V \mapsto W$ be defined as follows. 
 \begin{equation*}
-T\leftB 
-\begin{array}{c}
+T\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
-\end{array}
-\rightB = \leftB 
-\begin{array}{c}
+\end{mymatrix} = \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,T\leftB 
-\begin{array}{c}
+\end{mymatrix} ,T\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,T\leftB 
-\begin{array}{c}
+\end{mymatrix} ,T\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1 \\ 
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
  Find the matrix of this linear transformation.
 \end{example}
@@ -783,44 +717,34 @@ T\leftB
 Note that in this case, the three vectors which span $W$ are not linearly independent. Nevertheless the above procedure will still work.
 The reasoning is the same as before. If $A$ is this matrix, then 
 \begin{equation*}
-A\leftB
-\begin{array}{rrr}
+A\begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 1 & 1 & 1 \\ 
 0 & 1 & 1
-\end{array}
-\rightB =\leftB 
-\begin{array}{rrr}
+\end{mymatrix} =\begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 0 & 1 & 1 \\ 
 1 & 0 & 1 \\ 
 1 & 1 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and so 
 \begin{equation*}
-A=\leftB
-\begin{array}{rrr}
+A=\begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 0 & 1 & 1 \\ 
 1 & 0 & 1 \\ 
 1 & 1 & 2
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 0 & 1 \\ 
 1 & 1 & 1 \\ 
 0 & 1 & 1
-\end{array}
-\rightB ^{-1}=\leftB 
-\begin{array}{rrr}
+\end{mymatrix} ^{-1}=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 0 & 1 \\ 
 1 & 0 & 0 \\ 
 1 & 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The columns of this last matrix are obviously not linearly independent.
 \end{solution}

@@ -109,29 +109,23 @@ characterized by all points $(a,b,c)$ where $c = 2b-a$. In other
 words,
 \[
 W = 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 a \\
 b \\
 2b - a 
-\end{array}
-\rightB
+\end{mymatrix}
 = 
-a \leftB
-\begin{array}{c}
+a \begin{mymatrix}{c}
 1 \\
 0 \\
 -1 
-\end{array}
-\rightB
+\end{mymatrix}
 + 
-b \leftB
-\begin{array}{c}
+b \begin{mymatrix}{c}
 0 \\
 1 \\
 2 
-\end{array}
-\rightB, 
+\end{mymatrix}, 
 \; 
 a,b \in \R
 \] 
@@ -141,20 +135,16 @@ We can thus write $W$ as
 W &=& \mbox{span} \left\{ \vect{u}_1, \vect{u}_2 \right\} \\
  &=& \mbox{span} 
 \left\{
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0 \\
 -1
-\end{array}
-\rightB,
-\leftB
-\begin{array}{c}
+\end{mymatrix},
+\begin{mymatrix}{c}
 0 \\
 1 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 \end{eqnarray*}
 
@@ -165,83 +155,69 @@ case, as we remarked it is only necessary to find an orthogonal basis, and it is
 required that it be orthonormal.
 
 \[
-\vect{w}_1 = \vect{u}_1 = \leftB \begin{array}{r}
+\vect{w}_1 = \vect{u}_1 = \begin{mymatrix}{r}
 1 \\
 0 \\
 -1
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \begin{eqnarray*}
 \vect{w}_2 &=& \vect{u}_2 - \left(  \frac{ \vect{u}_2 \dotprod \vect{w}_1}{\vectlength \vect{w}_1 \vectlength^2} \right)  \vect{w}_1\\
-&=& \leftB
-\begin{array}{c}
+&=& \begin{mymatrix}{c}
 0 \\
 1 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 -
 \left(
 \frac{-2}{2}\right)
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0 \\
 -1
-\end{array}
-\rightB
+\end{mymatrix}
 \\
 &=&
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 0 \\
 1 \\
 2
-\end{array}
-\rightB 
+\end{mymatrix} 
 +
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0 \\
 -1
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=&
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 1 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 Therefore an orthogonal basis of $W$ is 
 \[
 \left\{ \vect{w}_1, \vect{w}_2 \right\} = 
 \left\{
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0 \\
 -1
-\end{array}
-\rightB, 
-\leftB
-\begin{array}{c}
+\end{mymatrix}, 
+\begin{mymatrix}{c}
 1 \\
 1 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 \]
 
 We can now use this basis to find the orthogonal projection of the
 point $Y=(1,0,3)$ on the subspace $W$. We will write the position
-vector $\vect{y}$ of $Y$ as $\vect{y} = \leftB \begin{array}{c} 1 \\ 0 \\ 3
-\end{array} \rightB$. Using Definition \ref{def:orthproj}, we compute the projection as follows:
+vector $\vect{y}$ of $Y$ as $\vect{y} = \begin{mymatrix}{c} 1 \\ 0 \\ 3
+\end{mymatrix}$. Using Definition \ref{def:orthproj}, we compute the projection as follows:
 \begin{eqnarray*}
 \vect{z} &=& \func{proj}_{W}\left( \vect{y}\right)\\
 &=&
@@ -249,30 +225,24 @@ vector $\vect{y}$ of $Y$ as $\vect{y} = \leftB \begin{array}{c} 1 \\ 0 \\ 3
 +
 \left( \frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}\right) \vect{w}_2 \\
 &=&
-\left( \frac{-2}{2} \right) \leftB
-\begin{array}{r}
+\left( \frac{-2}{2} \right) \begin{mymatrix}{r}
 1 \\
 0 \\
 -1
-\end{array}
-\rightB
+\end{mymatrix}
 +
 \left( \frac{4}{3} \right)
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 1 \\
 1 
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 \vspace{0.05in}\frac{1}{3} \\
 \vspace{0.05in}\frac{4}{3} \\
 \vspace{0.05in}\frac{7}{3} 
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 Therefore the point $Z$ on $W$ closest to the point $(1,0,3)$  is $\left( \frac{1}{3}, \frac{4}{3}, \frac{7}{3} \right)$. 
@@ -352,32 +322,26 @@ From Example \ref{exa:orthproj} we know that we can write $W$ as
 \[
 W = \mbox{span} \left\{ \vect{u}_1, \vect{u}_2 \right\} = \mbox{span} 
 \left\{
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0 \\
 -1
-\end{array}
-\rightB,
-\leftB
-\begin{array}{c}
+\end{mymatrix},
+\begin{mymatrix}{c}
 0 \\
 1 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}
 \]
 
 In order to find $W^{\perp}$, we need to find all $\vect{x}$ which are orthogonal to every vector in this span. 
 
-Let $\vect{x} = \leftB
-\begin{array}{c}
+Let $\vect{x} = \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 x_3
-\end{array}
-\rightB$. 
+\end{mymatrix}$. 
 In order to satisfy $\vect{x} \dotprod \vect{u}_1 = 0$, the following equation must hold. 
 \[
 x_1 - x_3 = 0
@@ -399,27 +363,23 @@ x_2 + 2x_3 = 0
 To solve, set up the augmented matrix. 
 
 \[
-\leftB \begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & -1 & 0 \\
 0 & 1 & 2 & 0 
-\end{array} \rightB
+\end{mymatrix}
 \]
 
-Using Gaussian Elimination, we find that $W^{\perp} = \mbox{span} \left\{ \leftB
-\begin{array}{r}
+Using Gaussian Elimination, we find that $W^{\perp} = \mbox{span} \left\{ \begin{mymatrix}{r}
 1 \\
 -2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}$, and hence 
-$\left\{ \leftB
-\begin{array}{r}
+$\left\{ \begin{mymatrix}{r}
 1 \\
 -2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}$ is a basis for  $W^{\perp}$. 
 \end{solution}
 
@@ -442,11 +402,11 @@ Consider the following example of this concept.
 \begin{example}{Find a vector closest to a given vector}{vectorclosestvector}
 
 Let
-\[ \vect{x}_1=\leftB\begin{array}{c} 1\\ 0\\ 1\\ 0 \end{array}\rightB,
-\vect{x}_2=\leftB\begin{array}{c} 1\\ 0\\ 1\\ 1 \end{array}\rightB,
-\vect{x}_3=\leftB\begin{array}{c} 1\\ 1\\ 0\\ 0 \end{array}\rightB,
+\[ \vect{x}_1=\begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix},
+\vect{x}_2=\begin{mymatrix}{c} 1\\ 0\\ 1\\ 1 \end{mymatrix},
+\vect{x}_3=\begin{mymatrix}{c} 1\\ 1\\ 0\\ 0 \end{mymatrix},
 \mbox{ and }
-\vect{v}=\leftB\begin{array}{c} 4\\ 3\\ -2\\ 5 \end{array}\rightB. \]
+\vect{v}=\begin{mymatrix}{c} 4\\ 3\\ -2\\ 5 \end{mymatrix}. \]
 We want to find the vector in
 $W =\func{span}\{\vect{x}_1, \vect{x}_2,\vect{x}_3\}$
 closest to $\vect{y}$.
@@ -455,17 +415,17 @@ closest to $\vect{y}$.
 \begin{solution}
 We will first use the Gram-Schmidt Process to construct the orthogonal basis, $B$, of $W$:
 \[ B=\left\{
-\leftB\begin{array}{c} 1\\ 0\\ 1\\ 0 \end{array}\rightB,
-\leftB\begin{array}{c} 0\\ 0\\ 0\\ 1 \end{array}\rightB,
-\leftB\begin{array}{r} 1\\ 2\\ -1\\ 0 \end{array}\rightB
+\begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix},
+\begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix},
+\begin{mymatrix}{r} 1\\ 2\\ -1\\ 0 \end{mymatrix}
 \right\}.\]
 
 By Theorem \ref{thm:orthproj},
 \[ \func{proj}_U(\vect{v}) = 
-\frac{2}{2} \leftB\begin{array}{c} 1\\ 0\\ 1\\ 0 \end{array}\rightB +
-\frac{5}{1}\leftB\begin{array}{c} 0\\ 0\\ 0\\ 1 \end{array}\rightB +
-\frac{12}{6}\leftB\begin{array}{r} 1\\ 2\\ -1\\ 0 \end{array}\rightB
-= \leftB\begin{array}{r} 3\\ 4\\ -1\\ 5 \end{array}\rightB
+\frac{2}{2} \begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix} +
+\frac{5}{1}\begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix} +
+\frac{12}{6}\begin{mymatrix}{r} 1\\ 2\\ -1\\ 0 \end{mymatrix}
+= \begin{mymatrix}{r} 3\\ 4\\ -1\\ 5 \end{mymatrix}
 \]
 is the vector in $U$ closest to $\vect{y}$.
 \end{solution}
@@ -474,22 +434,18 @@ Consider the next example.
 
 \begin{example}{Vector written as a sum of two vectors}{sumoftwovectors}
 Let $W$ be a subspace given by $W = \mbox{span} \left\{
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 0 \\
 1 \\
 0 \\
-\end{array}
-\rightB, 
-\leftB 
-\begin{array}{c}
+\end{mymatrix}, 
+\begin{mymatrix}{c}
 0 \\
 1 \\
 0 \\
 2 \\
-\end{array}
-\rightB
+\end{mymatrix}
 \right\}$, and $Y = (1,2,3,4)$. \\
 Find the point $Z$ in $W$ closest to $Y$, and moreover write $\vect{y}$ as the sum of a  vector in $W$ and a vector in $W^{\perp}$. 
 \end{example}
@@ -507,33 +463,27 @@ Notice that since the above vectors already give an orthogonal basis for $W$, we
 +
 \left( \frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}\right) \vect{w}_2 \\
 &=& 
-\left( \frac{4}{2} \right) \leftB
-\begin{array}{c}
+\left( \frac{4}{2} \right) \begin{mymatrix}{c}
 1 \\
 0 \\
 1 \\
 0 
-\end{array}
-\rightB
+\end{mymatrix}
 +
 \left( \frac{10}{5} \right)
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 0 \\
 1 \\
 0 \\
 2
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 2 \\
 2 \\
 2 \\
 4 
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*} 
 
 Therefore the point in $W$ closest to $Y$ is $Z = (2,2,2,4)$. \\
@@ -546,61 +496,49 @@ vector in $W^{\perp}$. This can easily be done as follows:
 since $\vect{z}$ is in $W$ and as we have seen $\vect{y} - \vect{z}$ is in  $W^{\perp}$. \\
 The vector $\vect{y} - \vect{z}$ is given by 
 \[
-\vect{y} - \vect{z} = \leftB
-\begin{array}{c}
+\vect{y} - \vect{z} = \begin{mymatrix}{c}
 1 \\
 2 \\
 3 \\
 4 
-\end{array}
-\rightB
+\end{mymatrix}
 -
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 2 \\
 2 \\
 2 \\
 4 
-\end{array}
-\rightB
+\end{mymatrix}
  = 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -1 \\
 0 \\
 1 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 Therefore, we can write $\vect{y}$ as
 \[
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 2 \\
 3 \\
 4 
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 2 \\
 2 \\
 2 \\
 4 
-\end{array}
-\rightB
+\end{mymatrix}
 +
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -1 \\
 0 \\
 1 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{solution}
 
@@ -625,47 +563,47 @@ We now begin the solution.
 \item $3x+y-2z=0$ is a system of one equation in three variables.
 Putting the augmented matrix in {\rref}:
 \[
-\leftB\begin{array}{rrr|r} 3 & 1 & -2 & 0 \end{array}\rightB
+\begin{mymatrix}{rrr|r} 3 & 1 & -2 & 0 \end{mymatrix}
 \rightarrow
-\leftB\begin{array}{rrr|r} 1 & \frac{1}{3} & -\frac{2}{3} & 0 \end{array}\rightB
+\begin{mymatrix}{rrr|r} 1 & \frac{1}{3} & -\frac{2}{3} & 0 \end{mymatrix}
 \]
 gives general solution $x=\frac{1}{3}s+\frac{2}{3}t$, $y=s$, $z=t$
 for any $s,t\in\R$.
 Then  
 \[
 W=\func{span} \left\{
-\leftB\begin{array}{r} -\frac{1}{3} \\ 1 \\ 0 \end{array}\rightB,
-\leftB\begin{array}{r} \frac{2}{3} \\ 0 \\ 1 \end{array}\rightB\right\}
+\begin{mymatrix}{r} -\frac{1}{3} \\ 1 \\ 0 \end{mymatrix},
+\begin{mymatrix}{r} \frac{2}{3} \\ 0 \\ 1 \end{mymatrix}\right\}
 \]
 Let
 $X=\left\{
-\leftB\begin{array}{r} -1 \\ 3 \\ 0 \end{array}\rightB,
-\leftB\begin{array}{r} 2 \\ 0 \\ 3 \end{array}\rightB\right\}$.
+\begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix},
+\begin{mymatrix}{r} 2 \\ 0 \\ 3 \end{mymatrix}\right\}$.
 Then $X$ is linearly independent and $\func{span}(X)=W$, so $X$ is a basis of $W$.
 
 \item Use the Gram-Schmidt Process to get an
 orthogonal basis of $W$: 
 
 
-\[ \vect{f}_1=\leftB\begin{array}{r} -1 \\ 3 \\ 0 \end{array}\rightB
+\[ \vect{f}_1=\begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix}
 \mbox{ and }
 \vect{f}_2 =
-\leftB\begin{array}{r} 2 \\ 0 \\ 3 \end{array}\rightB
--\frac{-2}{10}\leftB\begin{array}{r} -1 \\ 3 \\ 0 \end{array}\rightB
-=\frac{1}{5}\leftB\begin{array}{r} 9 \\ 3 \\ 15 \end{array}\rightB.\]
+\begin{mymatrix}{r} 2 \\ 0 \\ 3 \end{mymatrix}
+-\frac{-2}{10}\begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix}
+=\frac{1}{5}\begin{mymatrix}{r} 9 \\ 3 \\ 15 \end{mymatrix}.\]
 Therefore
-$B=\left\{ \leftB\begin{array}{r} -1 \\ 3 \\ 0 \end{array}\rightB,
-\leftB\begin{array}{r} 3 \\ 1 \\ 5 \end{array}\rightB \right\}$ is
+$B=\left\{ \begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix},
+\begin{mymatrix}{r} 3 \\ 1 \\ 5 \end{mymatrix} \right\}$ is
 an orthogonal basis of $W$.
 \item To find 
 the point $Z$ on $W$ closest to $Y=(1,1,1)$, compute
 \begin{eqnarray*}
-\func{proj}_{W}\leftB\begin{array}{r} 1 \\ 1 \\ 1 \end{array}\rightB
+\func{proj}_{W}\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}
 & = &
-\frac{2}{10} \leftB\begin{array}{r} -1 \\ 3 \\ 0 \end{array}\rightB
-+ \frac{9}{35}\leftB\begin{array}{r} 3 \\ 1 \\ 5 \end{array}\rightB\\
+\frac{2}{10} \begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix}
++ \frac{9}{35}\begin{mymatrix}{r} 3 \\ 1 \\ 5 \end{mymatrix}\\
 & = & 
-\frac{1}{7}\leftB\begin{array}{r} 4 \\ 6 \\ 9 \end{array}\rightB.
+\frac{1}{7}\begin{mymatrix}{r} 4 \\ 6 \\ 9 \end{mymatrix}.
 \end{eqnarray*}
 Therefore, $Z=\left( \frac{4}{7}, \frac{6}{7}, \frac{9}{7}\right)$.
 \end{enumerate}

@@ -341,11 +341,9 @@ However, this is a system of $m$ equations in $n$ variables, $d_{1},\cdots
 ,d_{n}$ and $m<n.$ Therefore, there exists a solution to this system of
 equations in which not all the $d_{j}$ are equal to zero. Recall why this is
 so. The augmented matrix for the system is of the form 
-$\leftB 
-\begin{array}{c|c}
+$\begin{mymatrix}{c|c}
 C & \vect{0}
-\end{array}
-\rightB $ where $C$ is a matrix which has more columns than rows. Therefore,
+\end{mymatrix} $ where $C$ is a matrix which has more columns than rows. Therefore,
 there are free variables and hence nonzero solutions to the system of
 equations. However, this contradicts the linear independence of $\left\{ 
 \vect{u}_{1},\cdots ,\vect{u}_{m}\right\} $. Similarly it cannot happen
@@ -448,30 +446,30 @@ Consider the following example.
 
 \begin{example}{Basis of a subspace}{basissubspace}
 Let $U=\left\{ A\in\Mat_{22} ~\left|~
-A\leftB\begin{array}{rr}
-1 & 0 \\ 1 & -1 \end{array}\rightB\right. 
-= \leftB\begin{array}{rr}
-1 & 1 \\ 0 & -1 \end{array}\rightB A \right\}$. 
+A\begin{mymatrix}{rr}
+1 & 0 \\ 1 & -1 \end{mymatrix}\right. 
+= \begin{mymatrix}{rr}
+1 & 1 \\ 0 & -1 \end{mymatrix} A \right\}$. 
 Then $U$ is a subspace of $\Mat_{22}$ 
 Find a basis of $U$, and hence $\dim(U)$.
 \end{example}
 
 \begin{solution}
-Let $A=\leftB\begin{array}{rr} a & b \\ c & d \end{array}\rightB
+Let $A=\begin{mymatrix}{rr} a & b \\ c & d \end{mymatrix}
 \in\Mat_{22}$.
 Then
-\[ A\leftB\begin{array}{rr} 1 & 0 \\ 1 & -1 \end{array}\rightB
-= \leftB\begin{array}{rr} a & b \\ c & d \end{array}\rightB
-\leftB\begin{array}{rr} 1 & 0 \\ 1 & -1 \end{array}\rightB
-=\leftB\begin{array}{rr} a+b & -b \\ c+d & -d \end{array}\rightB\]
+\[ A\begin{mymatrix}{rr} 1 & 0 \\ 1 & -1 \end{mymatrix}
+= \begin{mymatrix}{rr} a & b \\ c & d \end{mymatrix}
+\begin{mymatrix}{rr} 1 & 0 \\ 1 & -1 \end{mymatrix}
+=\begin{mymatrix}{rr} a+b & -b \\ c+d & -d \end{mymatrix}\]
 and
-\[ \leftB\begin{array}{rr} 1 & 1 \\ 0 & -1 \end{array}\rightB A
-= \leftB\begin{array}{rr} 1 & 1 \\ 0 & -1 \end{array}\rightB
-\leftB\begin{array}{rr} a & b \\ c & d \end{array}\rightB
-=\leftB\begin{array}{cc} a+c & b+d \\ -c & -d \end{array}\rightB.\]
+\[ \begin{mymatrix}{rr} 1 & 1 \\ 0 & -1 \end{mymatrix} A
+= \begin{mymatrix}{rr} 1 & 1 \\ 0 & -1 \end{mymatrix}
+\begin{mymatrix}{rr} a & b \\ c & d \end{mymatrix}
+=\begin{mymatrix}{cc} a+c & b+d \\ -c & -d \end{mymatrix}.\]
 If $A\in U$, then
-$\leftB\begin{array}{cc} a+b & -b \\ c+d & -d \end{array}\rightB=
-\leftB\begin{array}{cc} a+c & b+d \\ -c & -d \end{array}\rightB$.
+$\begin{mymatrix}{cc} a+b & -b \\ c+d & -d \end{mymatrix}=
+\begin{mymatrix}{cc} a+c & b+d \\ -c & -d \end{mymatrix}$.
 
 Equating entries leads to a system of four equations in the four
 variables $a,b,c$ and $d$.
@@ -489,16 +487,16 @@ b - c & = & 0 \\
 The solution to this system is
 $a=s$, $b=-\frac{1}{2}t$, $c=-\frac{1}{2}t$,  $d=t$ for any $s,t\in\R$, 
 and thus 
-\[ A=\leftB\begin{array}{cc} s & \frac{t}{2} \\
--\frac{t}{2} & t \end{array}\rightB
-= s\leftB\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\rightB
-+ t\leftB\begin{array}{rr} 0  & -\frac{1}{2} \\ 
--\frac{1}{2} & 1 \end{array}\rightB .\]
+\[ A=\begin{mymatrix}{cc} s & \frac{t}{2} \\
+-\frac{t}{2} & t \end{mymatrix}
+= s\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix}
++ t\begin{mymatrix}{rr} 0  & -\frac{1}{2} \\ 
+-\frac{1}{2} & 1 \end{mymatrix} .\]
 Let 
 \[ B=\left\{ 
-\leftB\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\rightB,
-\leftB\begin{array}{rr} 0  & -\frac{1}{2} \\
--\frac{1}{2} & 1 \end{array}\rightB\right\}.\]
+\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
+\begin{mymatrix}{rr} 0  & -\frac{1}{2} \\
+-\frac{1}{2} & 1 \end{mymatrix}\right\}.\]
 Then $\func{span}(B)=U$, and it is routine to verify that $B$ is
 an independent subset of $\Mat_{22}$.  
 Therefore $B$ is a basis of $U$, and $\dim(U)=2$.
@@ -585,13 +583,13 @@ Recall Example \ref{exa:addinglinind} in which we added a matrix to a linearly i
 \begin{example}{Adding to a linearly independent set}{addinglinearindbasis}
 Let $S \subseteq M_{22}$ be a linearly independent set given by 
 \[
-S  = \left\{ \leftB \begin{array}{rr}
+S  = \left\{ \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 1 \\
 0 & 0 
-\end{array} \rightB \right\}
+\end{mymatrix} \right\}
 \]
 Enlarge $S$ to a basis of $M_{22}$. 
 \end{example}
@@ -599,36 +597,36 @@ Enlarge $S$ to a basis of $M_{22}$.
 \begin{solution}
 Recall from the solution of Example \ref{exa:addinglinind} that the set  $R \subseteq M_{22}$ given by 
 \[
-R = \left\{ \leftB \begin{array}{rr}
+R = \left\{ \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 1 \\
 0 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 0 \\
 1 & 0 
-\end{array} \rightB \right\}
+\end{mymatrix} \right\}
 \]
 is also linearly independent.
-However this set is still not a basis for $M_{22}$ as it is not a spanning set. In particular, $\leftB \begin{array}{rr}
+However this set is still not a basis for $M_{22}$ as it is not a spanning set. In particular, $\begin{mymatrix}{rr}
 0 & 0 \\
 0 & 1 
-\end{array} \rightB$ is not in $\func{span} R$. Therefore, this matrix can be added to the set by Lemma \ref{lem:addinglinearlyindependent} to obtain a new linearly independent set given by 
+\end{mymatrix}$ is not in $\func{span} R$. Therefore, this matrix can be added to the set by Lemma \ref{lem:addinglinearlyindependent} to obtain a new linearly independent set given by 
 \[
-T = \left\{ \leftB \begin{array}{rr}
+T = \left\{ \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 1 \\
 0 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 0 \\
 1 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 0 \\
 0 & 1 
-\end{array} \rightB \right\}
+\end{mymatrix} \right\}
 \]
 
 This set is linearly independent and now spans $M_{22}$. Hence $T$ is a basis. 
@@ -689,55 +687,43 @@ which has the same span. Determine whether this subset is a basis for $V$.
 Consider an isomorphism which maps $\R%
 ^{4}$ to $V$ in the obvious way. Thus 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 2 \\ 
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 corresponds to $2x^{2}+x+1$ through the use of this isomorphism. Then
 corresponding to the above vectors in $V$ we would have the following
 vectors in $\R^{4}.$ 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 2 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 2 \\ 
 2 \\ 
 4 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 2 \\ 
 2
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 2 \\ 
 -3 \\ 
 4 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 3 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Now if we obtain a subset of these which has the same span but which is
 linearly independent, then the corresponding vectors from $V$ will also be
@@ -746,14 +732,12 @@ in the list, then the resulting vectors from $V$ must be a basis for $V$.
 The {\rref} for the matrix which has the above vectors as
 columns is 
 \begin{equation*}
-\leftB 
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 1 & 0 & 0 & -15 & 0 \\ 
 0 & 1 & 0 & 11 & 0 \\ 
 0 & 0 & 1 & -5 & 0 \\ 
 0 & 0 & 0 & 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Therefore, a basis for $V$ consists of the vectors
 \begin{eqnarray*}
@@ -856,21 +840,17 @@ Consider the following example.
 \begin{example}{Basis extension}{}
 Let $V=\R^{4}$ and let 
 \begin{equation*}
-W=\func{span}\left\{ \leftB 
-\begin{array}{c}
+W=\func{span}\left\{ \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} \right\}
 \end{equation*}
 Extend this basis of $W$ to a basis of $V$.
 \end{example}
@@ -878,60 +858,48 @@ Extend this basis of $W$ to a basis of $V$.
 \begin{solution}
 An easy way to do this is to take the {\rref} of the matrix 
 \begin{equation}
-\leftB 
-\begin{array}{cccccc}
+\begin{mymatrix}{cccccc}
 1 & 0 & 1 & 0 & 0 & 0 \\ 
 0 & 1 & 0 & 1 & 0 & 0 \\ 
 1 & 0 & 0 & 0 & 1 & 0 \\ 
 1 & 1 & 0 & 0 & 0 & 1
-\end{array}
-\rightB  \label{vectorspaceeq1}
+\end{mymatrix}  \label{vectorspaceeq1}
 \end{equation}
 Note how the given vectors were placed as the first two and then the matrix
 was extended in such a way that it is clear that the span of the columns of
 this matrix yield all of $\R^{4}$. Now determine the pivot columns.
 The {\rref} is 
 \begin{equation}
-\leftB 
-\begin{array}{rrrrrr}
+\begin{mymatrix}{rrrrrr}
 1 & 0 & 0 & 0 & 1 & 0 \\ 
 0 & 1 & 0 & 0 & -1 & 1 \\ 
 0 & 0 & 1 & 0 & -1 & 0 \\ 
 0 & 0 & 0 & 1 & 1 & -1
-\end{array}
-\rightB  \label{vectorspaceeq2}
+\end{mymatrix}  \label{vectorspaceeq2}
 \end{equation}
 These are 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 0 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and now this is an extension of the given basis for $W$ to a basis for $
 \R^{4}$.

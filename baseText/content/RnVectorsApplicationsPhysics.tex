@@ -117,11 +117,9 @@ The sides, corresponding to the $\vect{i}$ and $\vect{j}$ directions,  should be
  \vect{u} = \frac{100}{\sqrt{2}} \vect{i}+ \frac{100}{\sqrt{2
 }}\vect{j}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 \vspace{0.05in} \frac{100}{\sqrt{2}} & \vspace{0.05in}\frac{100}{\sqrt{2}}
-\end{array}
-\rightB^T\
+\end{mymatrix}^T\
 \]
 \end{solution}
 
@@ -155,11 +153,9 @@ components are measured on a line from West to East and a line from South to
 North. 
 
 Consider the vector $
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 1
-\end{array}
-\rightB^T ,$ which is the initial position vector
+\end{mymatrix}^T ,$ which is the initial position vector
 of the airplane. As the plane moves, the position vector changes according to the velocity vector. 
 After one minute (considered as $\frac{1}{60}$ of an hour)
 the airplane has moved in the $\vect{i}$ direction a distance of 
@@ -169,21 +165,15 @@ while it moves $\frac{1}{60}$ kilometer in the $\vect{k}$ direction.
 %\begin{picture}(1,425)\end{picture}
 Therefore, the new displacement vector for the airplane is
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 1
-\end{array}
-\rightB^T +
-\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T +
+\begin{mymatrix}{rrr}
 \frac{5}{3} & \frac{1}{60} & \frac{1}{60}
-\end{array}
-\rightB^T
-=\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T
+=\begin{mymatrix}{rrr}
 \frac{8}{3} & \frac{121}{60} & \frac{121}{60}
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 \end{equation*}
 \end{solution}
 

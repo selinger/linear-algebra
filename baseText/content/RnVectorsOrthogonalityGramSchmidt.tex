@@ -70,19 +70,15 @@ Consider the following example.
 \begin{example}{Find orthonormal set with same span}{orthosamespan}
 Consider the set of vectors $\{\vect{u}_1, \vect{u}_2\}$ given as in Example \ref{exa:spanvectors}. That is  
 \[
-\vect{u}_1=\leftB 
-\begin{array}{r}
+\vect{u}_1=\begin{mymatrix}{r}
 1 \\
 1 \\
 0
-\end{array}
-\rightB, \vect{u}_2=\leftB 
-\begin{array}{r}
+\end{mymatrix}, \vect{u}_2=\begin{mymatrix}{r}
 3 \\
 2 \\
 0
-\end{array}
-\rightB \in \R^{3} 
+\end{mymatrix} \in \R^{3} 
 \]
 
 Use the Gram-Schmidt algorithm to find an orthonormal set of vectors $\{\vect{w}_1, \vect{w}_2\}$ having the same span.
@@ -93,58 +89,46 @@ We already remarked that the set of vectors in $\{\vect{u}_1,
 \vect{u}_2\}$ is linearly independent, so we can proceed with the
 Gram-Schmidt algorithm:
 \begin{eqnarray*}
-\vect{v}_1 &=& \vect{u}_1 =  \leftB 
-\begin{array}{r}
+\vect{v}_1 &=& \vect{u}_1 =  \begin{mymatrix}{r}
 1 \\
 1 \\
 0
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 && \\
 \vect{v}_{2} &=& \vect{u}_{2} - \left(  \dfrac{\vect{u}_2 \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} \right)  \vect{v}_1\\ 
 && \\
-&=& \leftB 
-\begin{array}{r}
+&=& \begin{mymatrix}{r}
 3 \\
 2 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 - 
 \frac{5}{2} 
- \leftB 
-\begin{array}{r}
+ \begin{mymatrix}{r}
 1 \\
 1 \\
 0
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &&\\
-&=&  \leftB 
-\begin{array}{r}
+&=&  \begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{2} \\
 -\vspace{0.05in}\frac{1}{2} \\
 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{eqnarray*}
 
 Now to normalize simply let 
 \begin{eqnarray*}
-\vect{w}_1  = \frac{\vect{v}_1}{\vectlength\vect{v}_1\vectlength}  = \leftB 
-\begin{array}{r}
+\vect{w}_1  = \frac{\vect{v}_1}{\vectlength\vect{v}_1\vectlength}  = \begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{\sqrt{2}}  \\
 \vspace{0.05in}\frac{1}{\sqrt{2}} \\
 0
-\end{array}
-\rightB \\
-\vect{w}_2  = \frac{\vect{v}_2}{\vectlength\vect{v}_2\vectlength}  = \leftB 
-\begin{array}{r}
+\end{mymatrix} \\
+\vect{w}_2  = \frac{\vect{v}_2}{\vectlength\vect{v}_2\vectlength}  = \begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{\sqrt{2}}  \\
 -\vspace{0.05in}\frac{1}{\sqrt{2}} \\
  0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 You can verify that $\{\vect{w}_1, \vect{w}_2\}$ is an orthonormal set of vectors  having the same span as
@@ -155,10 +139,10 @@ In this example, we began with a linearly independent set and found an orthonorm
 
 \begin{example}{Find a corresponding orthogonal basis}{orthogonalbasis}
 Let
-\[ \vect{x}_1=\leftB\begin{array}{c} 1\\ 0\\ 1\\ 0 \end{array}\rightB,
-\vect{x}_2=\leftB\begin{array}{c} 1\\ 0\\ 1\\ 1 \end{array}\rightB,
+\[ \vect{x}_1=\begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix},
+\vect{x}_2=\begin{mymatrix}{c} 1\\ 0\\ 1\\ 1 \end{mymatrix},
 \mbox{ and }
-\vect{x}_3=\leftB\begin{array}{c} 1\\ 1\\ 0\\ 0 \end{array}\rightB,\]
+\vect{x}_3=\begin{mymatrix}{c} 1\\ 1\\ 0\\ 0 \end{mymatrix},\]
 and let $U=\func{span}\{\vect{x}_1, \vect{x}_2,\vect{x}_3\}$. Use the Gram-Schmidt Process
 to construct an orthogonal basis $B$ of $U$. 
 \end{example}
@@ -167,28 +151,28 @@ to construct an orthogonal basis $B$ of $U$.
 First $\vect{f}_1=\vect{x}_1$. 
 
 Next,
-\[ \vect{f}_2=\leftB\begin{array}{c} 1\\ 0\\ 1\\ 1 \end{array}\rightB
--\frac{2}{2}\leftB\begin{array}{c} 1\\ 0\\ 1\\ 0 \end{array}\rightB
-=\leftB\begin{array}{c} 0\\ 0\\ 0\\ 1 \end{array}\rightB.\]
+\[ \vect{f}_2=\begin{mymatrix}{c} 1\\ 0\\ 1\\ 1 \end{mymatrix}
+-\frac{2}{2}\begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix}
+=\begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix}.\]
 
 Finally,
-\[ \vect{f}_3=\leftB\begin{array}{c} 1\\ 1\\ 0\\ 0 \end{array}\rightB
--\frac{1}{2}\leftB\begin{array}{c} 1\\ 0\\ 1\\ 0 \end{array}\rightB
--\frac{0}{1}\leftB\begin{array}{c} 0\\ 0\\ 0\\ 1 \end{array}\rightB
-=\leftB\begin{array}{c} 1/2\\ 1\\ -1/2\\ 0 \end{array}\rightB.\]
+\[ \vect{f}_3=\begin{mymatrix}{c} 1\\ 1\\ 0\\ 0 \end{mymatrix}
+-\frac{1}{2}\begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix}
+-\frac{0}{1}\begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix}
+=\begin{mymatrix}{c} 1/2\\ 1\\ -1/2\\ 0 \end{mymatrix}.\]
 
 Therefore,
 \[ \left\{ 
-\leftB\begin{array}{c} 1\\ 0\\ 1\\ 0 \end{array}\rightB,
-\leftB\begin{array}{c} 0\\ 0\\ 0\\ 1 \end{array}\rightB,
-\leftB\begin{array}{c} 1/2\\ 1\\ -1/2\\ 0 \end{array}\rightB
+\begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix},
+\begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix},
+\begin{mymatrix}{c} 1/2\\ 1\\ -1/2\\ 0 \end{mymatrix}
 \right\}\]
 is an orthogonal basis of $U$.
 However, it is sometimes more convenient to deal with vectors
 having integer entries, in which case we take
 \[ B=\left\{ 
-\leftB\begin{array}{c} 1\\ 0\\ 1\\ 0 \end{array}\rightB,
-\leftB\begin{array}{c} 0\\ 0\\ 0\\ 1 \end{array}\rightB,
-\leftB\begin{array}{r} 1\\ 2\\ -1\\ 0 \end{array}\rightB
+\begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix},
+\begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix},
+\begin{mymatrix}{r} 1\\ 2\\ -1\\ 0 \end{mymatrix}
 \right\}.\]
 \end{solution}

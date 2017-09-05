@@ -4,38 +4,28 @@
 the form $a_{1}x^{2}+a_{2}y^{2}+a_{3}z^{2}+a_{4}xy+a_{5}xz+a_{6}yz.$ Show
 that every such quadratic form may be written as 
 \begin{equation*}
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 x & y & z
-\end{array}
-\rightB A \leftB 
-\begin{array}{c}
+\end{mymatrix} A \begin{mymatrix}{c}
 x \\ 
 y \\ 
 z
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 where $A$ is a symmetric matrix.
 \begin{sol}
 \[
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 x & y & z
-\end{array}
-\rightB \leftB
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 a_{1} & a_{4}/2 & a_{5}/2 \\
 a_{4}/2 & a_{2} & a_{6}/2 \\
 a_{5}/2 & a_{6}/2 & a_{3}
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
@@ -45,19 +35,15 @@ z
 exists an orthogonal matrix $U$ and variables $x^{\prime },y^{\prime
 },z^{\prime }$ such that 
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\ 
 y \\ 
 z
-\end{array}
-\rightB =U\leftB 
-\begin{array}{c}
+\end{mymatrix} =U\begin{mymatrix}{c}
 x^{\prime } \\ 
 y^{\prime } \\ 
 z^{\prime }
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 with the property that in terms of the new variables, the quadratic form is 
 \begin{equation*}

@@ -99,11 +99,9 @@ With this information, the following gives the coordinate description of the
 cross product.
 \index{cross product!coordinate description}
 
-Recall that the vector $\vect{u}= \leftB 
-\begin{array}{ccc}
+Recall that the vector $\vect{u}= \begin{mymatrix}{ccc}
 u_1 & u_2 & u_3
-\end{array}
-\rightB^T$
+\end{mymatrix}^T$
 can be written in terms of $\vect{i}, \vect{j}, \vect{k}$ as $\vect{u}=u_{1}\vect{i}+u_{2}\vect{j}+u_{3}\vect{k}$. 
 
 The cross product satisfies the following properties.
@@ -174,13 +172,11 @@ Writing $\vect{u} \times \vect{v}$ in the usual way, it is given by
 \begin{equation*}
 \vect{u} \times \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
  u_{2}v_{3}-u_{3}v_{2} \\
 -(u_{1}v_{3}-u_{3}v_{1}) \\
  u_{1}v_{2}-u_{2}v_{1}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 We now prove this proposition. 
@@ -270,22 +266,18 @@ Find $\vect{u} \times \vect{v}$ for the following vectors
 \begin{equation*}
 \vect{u}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -1 \\
 2
-\end{array}
-\rightB,
+\end{mymatrix},
 \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 -2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -313,13 +305,11 @@ We can write this result in the usual way, as
 \begin{equation*}
 \vect{u} \times \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 5 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 \end{solution}
@@ -351,22 +341,18 @@ and $\vect{v}$ given by
 \begin{equation*}
 \vect{u}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -1 \\
 2
-\end{array}
-\rightB, 
+\end{mymatrix}, 
 \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 -2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -379,13 +365,11 @@ We can also write this as
 \begin{equation*}
 \vect{u} \times \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 5 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Thus the area of the parallelogram is 
@@ -408,45 +392,31 @@ Find the area of the triangle determined by the points $\left(1, 2, 3 \right) ,
 \begin{solution}
 This triangle is obtained by connecting the three points with lines. Picking
 $\left( 1,2,3\right) $ as a starting point, there are two displacement
-vectors, $\leftB 
-\begin{array}{rrr}
+vectors, $\begin{mymatrix}{rrr}
 -1 & 0 & 2
-\end{array}
-\rightB^T $ and $\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T $ and $\begin{mymatrix}{rrr}
 4 & -1 & -1
-\end{array}
-\rightB^T $. Notice that if we add either of these vectors to the position vector of the 
+\end{mymatrix}^T $. Notice that if we add either of these vectors to the position vector of the 
 starting point, the result is the position vectors of the other two
 points. Now, the area of the triangle is half the area of the parallelogram
-determined by $\leftB 
-\begin{array}{rrr}
+determined by $\begin{mymatrix}{rrr}
 -1 & 0 & 2
-\end{array}
-\rightB^T $ and $\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T $ and $\begin{mymatrix}{rrr}
 4 & -1 & -1
-\end{array}
-\rightB^T.$ 
+\end{mymatrix}^T.$ 
 The required cross product is given by
 \begin{equation*}
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 -1 \\
 0 \\
 2
-\end{array}
-\rightB \times \leftB 
-\begin{array}{r}
+\end{mymatrix} \times \begin{mymatrix}{r}
 4 \\
 -1 \\
 -1
-\end{array}
-\rightB = \leftB
-\begin{array}{rrr}
+\end{mymatrix} = \begin{mymatrix}{rrr}
 2 \\ 7 \\ 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
   Taking the size of this vector gives the area of the parallelogram,
 given by 

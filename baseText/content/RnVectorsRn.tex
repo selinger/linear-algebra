@@ -97,23 +97,21 @@ $0=\left( 0,\cdots ,0\right) $ and its tip at
 $P$ is called the \textbf{position vector}\index{position vector}\index{vector!points and vectors} of the point $P$. 
 We write 
 \begin{equation*}
-\longvect{0P} = \leftB 
-\begin{array}{c}
+\longvect{0P} = \begin{mymatrix}{c}
 p_{1} \\
 \vdots \\
 p_{n}
-\end{array} \rightB
+\end{mymatrix}
 \end{equation*}
 \end{definition}
 
 $\longvect{0P}$ can be interpreted as a set of directions to get from the origin to the point $P$.
 For this reason we may write both $P=\left( p_{1},\cdots ,p_{n}\right)  \in \R^{n}$
-and  $$\longvect{0P}= \leftB 
-\begin{array}{c}
+and  $$\longvect{0P}= \begin{mymatrix}{c}
 p_{1} \\
 \vdots \\
 p_{n}
-\end{array} \rightB = \leftB p_{1} \cdots p_{n} \rightB^T \in \R^{n}$$ 
+\end{mymatrix} = \leftB p_{1} \cdots p_{n} \rightB^T \in \R^{n}$$ 
 Where $\leftB p_{1} \cdots p_{n} \rightB^T$ is used to lighten the text, the superscript $T$ will be explained in more details in a further chapter.
 
 This definition is illustrated in the following picture for the
@@ -126,9 +124,9 @@ special case of $\R^{3}$.
 \draw[thick, blue](0,0,0)--(1.5,1,0);
 \draw[fill=red] (1.5, 1,0) circle [radius=3pt];
 \node[above right] at (1.5, 1.25, 0){$P=(p_1, p_2, p_3)$};
-\node[below right] at (1.5, 0.75, 0){$\longvect{0P}= \leftB \begin{array}{ccc}
+\node[below right] at (1.5, 0.75, 0){$\longvect{0P}= \begin{mymatrix}{ccc}
 p_1 & p_2 & p_3 
-\end{array}\rightB^T$};
+\end{mymatrix}^T$};
 \end{tikzpicture}
 \end{center}
 
@@ -142,12 +140,11 @@ coordinates are $\left( p_{1},\cdots ,p_{n}\right) $ and $\left(
 q_{1},\cdots ,q_{n}\right) $ respectively. We can also determine the
 \textbf{position vector from $P$ to $Q$} (also called the \textbf{vector from $P$ to $Q$}) defined as follows.
 \begin{equation*}
-\longvect{PQ} = \leftB \begin{array}{c}
+\longvect{PQ} = \begin{mymatrix}{c}
 q_{1}-p_{1}\\
  \vdots \\
 q_{n}-p_{n}
-\end{array}
-\rightB = \longvect{0Q} - \longvect{0P}
+\end{mymatrix} = \longvect{0Q} - \longvect{0P}
 \end{equation*}
 One can verify that $\longvect{0Q}=\longvect{0P}+\longvect{PQ}$.
 
@@ -160,8 +157,8 @@ keeping it pointing in the same direction as shown in the following picture.
 \draw[->](0,0,0)--(0,0,2);
 \draw[->, thick, blue](0,0,0)--(1.5,1,0);
 \draw[->, thick, blue](-1,1,0)--(0.5,2,0);
-\node[right] at (1.5, 1.25, 0){$\longvect{0P}= \leftB \begin{array}{ccc}
-p_1 & p_2 & p_3 \end{array}\rightB ^T$};
+\node[right] at (1.5, 1.25, 0){$\longvect{0P}= \begin{mymatrix}{ccc}
+p_1 & p_2 & p_3 \end{mymatrix} ^T$};
 \node[below] at (-1,1,0){$A$};
 \node[below] at (0.5,2,0){$B$};
 \end{tikzpicture}
@@ -178,12 +175,11 @@ Then,
 \begin{equation*}
 \vect{x}
 =
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 x_{1} \\
 \vdots \\
 x_{n}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 is called a \textbf{vector}\index{vector}. Vectors have both size (magnitude) and direction. 
 The numbers $x_{j}$ are called the \textbf{components}\index{vector!components} of $\vect{x}$. 
@@ -220,22 +216,14 @@ u_{j}=v_{j} \; \mbox{for all}\; j=1,\cdots ,n
 \end{array}
 \end{equation*} 
 Thus 
-$\leftB 
-\begin{array}{rrr}
+$\begin{mymatrix}{rrr}
 1  & 2 & 4
-\end{array}
-\rightB^T \in \R^{3}$ and $\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T \in \R^{3}$ and $\begin{mymatrix}{rrr}
 2 & 1 & 4
-\end{array}
-\rightB^T \in
-\R^{3}$ but $\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T \in
+\R^{3}$ but $\begin{mymatrix}{rrr}
 1 & 2 & 4
-\end{array}
-\rightB^T \neq \leftB
-\begin{array}{rrr}
+\end{mymatrix}^T \neq \begin{mymatrix}{rrr}
 2 & 1 & 4
-\end{array}
-\rightB^T $ because,
+\end{mymatrix}^T $ because,
 even though the same numbers are involved, the order of the numbers is different. 
