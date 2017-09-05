@@ -1,63 +1,51 @@
-\subsection{Addition of vectors in \texorpdfstring{$\mathbb{R}^n$}{Rn}}
+\subsection{Addition of vectors in \texorpdfstring{$\R^n$}{Rn}}
 
-Addition of vectors in $\mathbb{R}^n$ is defined as follows.\index{vector!addition}
+Addition of vectors in $\R^n$ is defined as follows.\index{vector!addition}
 
-\begin{definition}{Addition of vectors in $\mathbb{R}^n$}{vectoraddition}
-For $\vect{u}=\leftB \begin{array}{c}
+\begin{definition}{Addition of vectors in $\R^n$}{vectoraddition}
+For $\vect{u}=\begin{mymatrix}{c}
 u_{1} \\
 \vdots \\
 u_{n}
-\end{array}
-\rightB,\; \vect{v}= \leftB \begin{array}{c}
+\end{mymatrix},\; \vect{v}= \begin{mymatrix}{c}
 v_{1} \\
 \vdots \\
 v_{n}
-\end{array}
-\rightB \in \mathbb{R}^{n}$,
- $\vect{u}+\vect{v}\in \mathbb{R}^{n}$ is defined by
+\end{mymatrix} \in \R^{n}$,
+ $\vect{u}+\vect{v}\in \R^{n}$ is defined by
 \begin{eqnarray*}
-\vect{u}+\vect{v} &=& \leftB \begin{array}{c}
+\vect{u}+\vect{v} &=& \begin{mymatrix}{c}
 u_{1} \\
 \vdots \\
 u_{n}
-\end{array}
-\rightB +  \leftB \begin{array}{c}
+\end{mymatrix} +  \begin{mymatrix}{c}
 v_{1} \\
 \vdots \\
 v_{n}
-\end{array} \rightB\\
-& =& \leftB \begin{array}{c}
+\end{mymatrix}\\
+& =& \begin{mymatrix}{c}
 u_{1}+v_{1} \\
 \vdots \\
 u_{n}+v_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 \end{definition}
 
 For example 
-$\leftB
-\begin{array}{rrr}
+$\begin{mymatrix}{rrr}
 1 & 2 & 3
-\end{array}
-\rightB^T +
-\leftB
-\begin{array}{rrr}
+\end{mymatrix}^T +
+\begin{mymatrix}{rrr}
 4 & 5 & 6
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 =
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1+4 & 2+5 & 3+6
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 =
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 5 & 7 & 9
-\end{array}
-\rightB^T$.
+\end{mymatrix}^T$.
 
 To add vectors, we simply add corresponding components. Therefore, in order to add vectors, they must
 be the same size.
@@ -65,7 +53,7 @@ be the same size.
 Addition of vectors satisfies some important properties which are outlined in the following theorem.  
 
 \begin{theorem}{Properties of vector addition}{propertiesvectoraddition}
-The following properties hold for vectors $\vect{u},\vect{v}, \vect{w} \in \mathbb{R}^{n}$.
+The following properties hold for vectors $\vect{u},\vect{v}, \vect{w} \in \R^{n}$.
 \begin{itemize}
 \item The Commutative Law of Addition
 \begin{equation*}
@@ -73,7 +61,7 @@ The following properties hold for vectors $\vect{u},\vect{v}, \vect{w} \in \math
 \end{equation*}
 \item The Associative Law of Addition
 \begin{equation*}
-\left( \vect{u}+\vect{v}\right) +\vect{w}=\vect{u}+\left( \vect{v}+\vect{w}\right)
+\tup{\vect{u}+\vect{v}} +\vect{w}=\vect{u}+\tup{\vect{v}+\vect{w}}
 \end{equation*}
 \item The Existence of an Additive Identity
 \begin{equation}
@@ -82,16 +70,16 @@ The following properties hold for vectors $\vect{u},\vect{v}, \vect{w} \in \math
 \end{equation}
 \item The Existence of an Additive Inverse
 \begin{equation*}
-\vect{u}+\left( -\vect{u}\right) =\vect{0}  
+\vect{u}+\tup{-\vect{u}} =\vect{0}  
 \end{equation*}
 \end{itemize}
 \end{theorem}
 
 The additive identity shown in equation
 \ref{vectoridentity} is also called the \textbf{zero vector}\index{zero vector}\index{vector!zero}, 
-the vector from $\mathbb{R}^{n}$ in which all components are equal to $0$.
+the vector from $\R^{n}$ in which all components are equal to $0$.
 Further, $-\vect{u}$ is simply the vector with all components having
 same value as those of $\vect{u}$ but opposite sign; this is just
 $(-1)\vect{u}$. This will be made more explicit in the next
-section when we explore scalar multiplication of vectors. Note that subtraction is defined as $\vect{u}-\vect{v} = \vect{u}+\left(
--\vect{v} \right)$\index{vector!subtraction}.
+section when we explore scalar multiplication of vectors. Note that subtraction is defined as $\vect{u}-\vect{v} = \vect{u}+\tup{
+-\vect{v} }$\index{vector!subtraction}.

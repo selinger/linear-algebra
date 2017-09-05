@@ -9,36 +9,30 @@ Any elementary matrix, which we often denote by $E$, is obtained from applying
 For example, the matrix
 \begin{equation*}
 E = 
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is the elementary matrix obtained from switching the two rows. 
 The matrix 
 \begin{equation*}
 E = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 3 & 0 \\
 0 & 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is the elementary matrix obtained from multiplying the second row of the $3 \times 3$ identity matrix
 by $3$.
 The matrix
 \begin{equation*}
 E = 
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 -3 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is the elementary matrix obtained from adding $-3$ times the first row to the third row.
 
@@ -90,19 +84,15 @@ We will explore this idea more in the following example.
 \begin{example}{Switching rows with an elementary matrix}{elementarymatrixswitchingrows}
 Let
 \begin{equation*}
-P^{12} = \leftB
-\begin{array}{rrr}
+P^{12} = \begin{mymatrix}{rrr}
 0 & 1 & 0 \\
 1 & 0 & 0 \\
 0 & 0 & 1
-\end{array}
-\rightB, A = \leftB
-\begin{array}{cc}
+\end{mymatrix}, A = \begin{mymatrix}{cc}
 a & b \\
 g & d \\
 e & f
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Find $B$ where $B = P^{12}A$.
@@ -113,13 +103,11 @@ You can see that the matrix $P^{12}$ is obtained by switching the first and seco
 
 Using our usual procedure, compute the product $P^{12}A = B$. The result is given by
 \begin{equation*}
-B =\leftB
-\begin{array}{cc}
+B =\begin{mymatrix}{cc}
 g & d \\
 a & b \\
 e & f
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Notice that $B$ is the matrix obtained by switching rows $1$ and $2$ of $A$. Therefore by  multiplying 
 $A$ by $P^{12}$, the row operation which was applied to $I$ to obtain $P^{12}$ is applied to $A$ to obtain $B$. 
@@ -129,11 +117,11 @@ Theorem \ref{thm:multbyelemmatrix} applies to all three row operations, and we n
 look at the row operation of multiplying a row by a scalar.  Consider the following lemma.
 
 \begin{lemma}{Multiplication by a scalar and elementary matrices}{elemmatrixmultbyscalar}
-Let $E\left( k,i\right) $ denote the elementary matrix
+Let $E\tup{k,i} $ denote the elementary matrix
 corresponding to the row operation in which the $i^{th}$ row is multiplied
 by the nonzero scalar, $k.$  Then
 \begin{equation*}
-E\left( k,i\right) A=B
+E\tup{k,i} A=B
 \end{equation*}
 where $B$ is obtained from $A$ by multiplying the $i^{th}$ row of $A$ by $k$.
 \end{lemma}
@@ -143,38 +131,32 @@ We will explore this lemma further in the following example.
 \begin{example}{Multiplication of a row by 5 using elementary matrix}{elemmatrixmultbyscalar}
 Let
 \begin{equation*}
-E \left(5, 2\right) = \leftB
-\begin{array}{rrr}
+E \tup{5, 2} = \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 5 & 0 \\
 0 & 0 & 1
-\end{array}
-\rightB, A =  \leftB
-\begin{array}{cc}
+\end{mymatrix}, A =  \begin{mymatrix}{cc}
 a & b \\
 c & d \\
 e & f
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
-Find the matrix $B$ where $B = E \left(5, 2\right)A$
+Find the matrix $B$ where $B = E \tup{5, 2}A$
 \end{example}
 
 \begin{solution}
-You can see that $E \left(5, 2\right)$ is obtained by multiplying the second row 
+You can see that $E \tup{5, 2}$ is obtained by multiplying the second row 
 of the identity matrix by $5$.
 
-Using our usual procedure for multiplication of matrices, we can compute the product $E \left(5, 2\right)A$. The 
+Using our usual procedure for multiplication of matrices, we can compute the product $E \tup{5, 2}A$. The 
 resulting matrix is given by 
 \begin{equation*}
 B
-=\leftB
-\begin{array}{cc}
+=\begin{mymatrix}{cc}
 a & b \\
 5c & 5d \\
 e & f
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Notice that $B$ is obtained by multiplying the second row of $A$ by the scalar $5$. 
@@ -184,10 +166,10 @@ There is one last row operation to consider. The following lemma discusses the f
 operation of adding a multiple of a row to another row.
 
 \begin{lemma}{Adding multiples of rows and elementary matrices}{addingrowselemmatrix}
-Let $E\left( k \times i+j\right) $ denote the elementary
+Let $E\tup{k \times i+j} $ denote the elementary
 matrix obtained from $I$ by adding $k$ times the $i^{th}$ row to the $j^{th}$. Then
 \begin{equation*}
-E\left( k \times i+j\right) A=B
+E\tup{k \times i+j} A=B
 \end{equation*}
 where $B$ is obtained from $A$ by adding $k$ times the $i^{th}$ row to the $j^{th}$ row of $A.$
 \end{lemma}
@@ -197,38 +179,32 @@ Consider the following example.
 \begin{example}{Adding two times the first row to the last}{twotimesrowelemmatrix}
 Let
 \begin{equation*}
-E\left( 2 \times 1+3\right) = \leftB
-\begin{array}{rrr}
+E\tup{2 \times 1+3} = \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 2 & 0 & 1
-\end{array}
-\rightB, A =  \leftB
-\begin{array}{cc}
+\end{mymatrix}, A =  \begin{mymatrix}{cc}
 a & b \\
 c & d \\
 e & f
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
-Find $B$ where $B = E\left( 2 \times 1+3\right)A$.
+Find $B$ where $B = E\tup{2 \times 1+3}A$.
 \end{example}
 
 \begin{solution}
-You can see that the matrix $E\left( 2 \times 1+3\right)$ was obtained by adding $2$ times the first row
+You can see that the matrix $E\tup{2 \times 1+3}$ was obtained by adding $2$ times the first row
 of $I$ to the third row of $I$. 
 
-Using our usual procedure, we can compute the product $E\left( 2 \times 1+3\right)A$. The resulting 
+Using our usual procedure, we can compute the product $E\tup{2 \times 1+3}A$. The resulting 
 matrix $B$ is given by 
 \begin{equation*}
-B = \leftB
-\begin{array}{cc}
+B = \begin{mymatrix}{cc}
 a & b \\
 c & d \\
 2a+e & 2b+f
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 You can see that $B$ is the matrix obtained by adding $2$ times the first row of $A$ to the third row. 
@@ -263,12 +239,10 @@ Let
 \begin{equation*}
 E
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Find $E^{-1}$. 
@@ -279,12 +253,10 @@ Consider the elementary matrix $E$ given by
 \begin{equation*}
 E
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Here, $E$ is obtained from the $2 \times 2$ identity matrix by multiplying the second row by $2$. In order to carry $E$ back to the identity,
 we need to multiply the second row of $E$ by $\frac{1}{2}$. 
@@ -292,37 +264,29 @@ Hence, $E^{-1}$ is given by
 \begin{equation*}
 E^{-1}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & \vspace{0.05in}\frac{1}{2}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 We can verify that $EE^{-1}=I$. Take the product $EE^{-1}$, given by
 \begin{equation*}
 EE^{-1}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 2
-\end{array}
-\rightB
-\leftB
-\begin{array}{rr}
+\end{mymatrix}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & \vspace{0.05in}\frac{1}{2}
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 This equals $I$ so we know that we have compute $E^{-1}$ properly. 
@@ -337,123 +301,103 @@ Let $A$ be an $m \times n$ matrix and let $B$ be the {\rref} of $A$. Then we can
 Consider the following example.
 
 \begin{example}{The form $B=UA$}{formbua}
-Let $A = \leftB
-\begin{array}{rr}
+Let $A = \begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0 \\
 2 & 0
-\end{array}
-\rightB$. Find $B$, the {\rref} of $A$ and write it in the form $B=UA$.
+\end{mymatrix}$. Find $B$, the {\rref} of $A$ and write it in the form $B=UA$.
 \end{example}
 
 \begin{solution}
 To find $B$, row reduce $A$. For each step, we will record the appropriate elementary matrix. 
 First, switch rows $1$ and $2$. 
 \[
- \leftB
-\begin{array}{rr}
+ \begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0 \\
 2 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1 \\
 2 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 The resulting matrix is equivalent to finding the product of 
-$ P^{12} =\leftB
-\begin{array}{rrr}
+$ P^{12} =\begin{mymatrix}{rrr}
 0 & 1 & 0 \\
 1 & 0 & 0 \\
 0 & 0 & 1 
-\end{array}
-\rightB$ and $A$. 
+\end{mymatrix}$ and $A$. 
 
 Next, add $(-2)$ times row $1$ to row $3$. 
 \[
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1 \\
 2 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1 \\
 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 This is equivalent to multiplying by the matrix $E(-2 \times 1 + 3) = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 -2 & 0 & 1 
-\end{array}
-\rightB$. Notice that the resulting matrix is $B$, the required {\rref} of $A$.
+\end{mymatrix}$. Notice that the resulting matrix is $B$, the required {\rref} of $A$.
 
 We can then write 
 \begin{eqnarray*}
-B &=& E(-2 \times 1 + 2) \left( P^{12} A \right) \\
-&=& \left( E(-2 \times 1 + 2) P^{12} \right) A \\
+B &=& E(-2 \times 1 + 2) \tup{P^{12} A } \\
+&=& \tup{E(-2 \times 1 + 2) P^{12} } A \\
 &=& U A
 \end{eqnarray*} 
 
 It remains to find the matrix $U$. 
 \begin{eqnarray*}
 U &=& E(-2 \times 1 + 2) P^{12} \\
-&=& \leftB \begin{array}{rrr}
+&=& \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 -2 & 0 & 1 
-\end{array} \rightB
-\leftB \begin{array}{rrr}
+\end{mymatrix}
+\begin{mymatrix}{rrr}
 0 & 1 & 0 \\
 1 & 0 & 0 \\
 0 & 0 & 1 
-\end{array} \rightB \\
-&=& \leftB
-\begin{array}{rrr}
+\end{mymatrix} \\
+&=& \begin{mymatrix}{rrr}
 0 & 1 & 0\\
 1 & 0 & 0 \\
 0 & -2  & 1 
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 
 We can verify that $B = UA$ holds for this matrix $U$:
 \begin{eqnarray*}
-UA &=& \leftB
-\begin{array}{rrr}
+UA &=& \begin{mymatrix}{rrr}
 0 & 1 & 0\\
 1 & 0 & 0 \\
 0 & -2  & 1 
-\end{array}
-\rightB
-\leftB
-\begin{array}{rr}
+\end{mymatrix}
+\begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0 \\
 2 & 0
-\end{array}
-\rightB \\
-&=& \leftB \begin{array}{rr}
+\end{mymatrix} \\
+&=& \begin{mymatrix}{rr}
 1 & 0 \\
 0 & 1 \\
 0 & 0 
-\end{array} \rightB \\
+\end{mymatrix} \\
 &=& B 
 \end{eqnarray*} 
 \end{solution}
@@ -461,49 +405,48 @@ UA &=& \leftB
 While the process used in the above example is reliable and simple when only a few row operations are used, it becomes cumbersome in a case where many row operations are needed to carry $A$ to $B$. The following theorem provides an alternate way to find the matrix $U$. 
 
 \begin{theorem}{Finding the matrix $U$}{findingu}
-Let $A$ be an $m \times n$ matrix and let $B$ be its {\rref}. Then $B = UA$ where $U$ is an invertible $m \times m$ matrix found by forming the matrix $ \leftB A | I_m \rightB$ and row reducing to $\leftB B | U \rightB$. 
+Let $A$ be an $m \times n$ matrix and let $B$ be its {\rref}. Then $B = UA$ where $U$ is an invertible $m \times m$ matrix found by forming the matrix $ \mat{A | I_m }$ and row reducing to $\mat{B | U }$. 
 \end{theorem}
 
 Let's revisit the above example using the process outlined in Theorem \ref{thm:findingu}.
 
 \begin{example}{The form $B=UA$, revisited}{formbuarevisited}
-Let $A = \leftB 
-\begin{array}{rr} 
+Let $A = \begin{mymatrix}{rr} 
 0 & 1 \\
 1 & 0 \\
 2 & 0 
-\end{array}\rightB$. Using the process outlined in Theorem \ref{thm:findingu}, find $U$ such that $B=UA$. 
+\end{mymatrix}$. Using the process outlined in Theorem \ref{thm:findingu}, find $U$ such that $B=UA$. 
 \end{example}
 
 \begin{solution}
-First, set up the matrix $\leftB A | I_m \rightB$. 
+First, set up the matrix $\mat{A | I_m }$. 
 \[
-\leftB \begin{array}{rr|rrr}
+\begin{mymatrix}{rr|rrr}
 0 & 1 & 1 & 0 & 0 \\
 1 & 0 & 0 & 1 & 0 \\
 2 & 0 & 0 & 0 & 1 
-\end{array}\rightB
+\end{mymatrix}
 \]
 Now, row reduce this matrix until the left side equals the {\rref} of $A$. 
 
 \begin{eqnarray*}
-\leftB \begin{array}{rr|rrr}
+\begin{mymatrix}{rr|rrr}
 0 & 1 & 1 & 0 & 0 \\
 1 & 0 & 0 & 1 & 0 \\
 2 & 0 & 0 & 0 & 1 
-\end{array}\rightB 
+\end{mymatrix} 
 &\rightarrow& 
-\leftB \begin{array}{rr|rrr}
+\begin{mymatrix}{rr|rrr}
 1 & 0 & 0 & 1 & 0 \\
 0 & 1 & 1 & 0 & 0 \\
 2 & 0 & 0 & 0 & 1 
-\end{array}\rightB \\
+\end{mymatrix} \\
 &\rightarrow&
-\leftB \begin{array}{rr|rrr}
+\begin{mymatrix}{rr|rrr}
 1 & 0 & 0 & 1 & 0 \\
 0 & 1 & 1 & 0 & 0 \\
 0 & 0 & 0 & -2 & 1 
-\end{array}\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 The left side of this matrix is $B$, and the right side is $U$. Comparing this to the matrix $U$ found above in Example \ref{exa:formbua}, you can see that the same matrix is obtained regardless of which process is used. 
@@ -511,7 +454,7 @@ The left side of this matrix is $B$, and the right side is $U$. Comparing this t
 
 Recall from Algorithm \ref{algo:matrixinversionalgorithm} that an $n \times n$  matrix $A$ is invertible if and only if $A$ can be carried to the $n \times n$ identity matrix using the usual row operations. This leads to an important consequence related to the above discussion. 
 
-Suppose $A$ is an $n \times n$ invertible matrix. Then, set up the matrix $\leftB A | I_n \rightB$ as done above, and row reduce until it is of the form $\leftB B | U \rightB$. In this case, $B = I_n$ because $A$ is invertible. 
+Suppose $A$ is an $n \times n$ invertible matrix. Then, set up the matrix $\mat{A | I_n }$ as done above, and row reduce until it is of the form $\mat{B | U }$. In this case, $B = I_n$ because $A$ is invertible. 
 
 \begin{eqnarray*}
 B &=& UA \\
@@ -521,7 +464,7 @@ U^{-1} &=& A
 
 Now suppose that $U = E_1 E_2 \cdots E_k$ where each $E_i$ is an elementary matrix representing a row operation used to carry $A$ to $I$. Then, 
 \[
-U^{-1} = \left( E_1 E_2 \cdots E_k \right) ^{-1}  =  E_k^{-1} \cdots E_2^{-1} E_1{-1} 
+U^{-1} = \tup{E_1 E_2 \cdots E_k } ^{-1}  =  E_k^{-1} \cdots E_2^{-1} E_1{-1} 
 \]
 
 Remember that if $E_i$ is an elementary matrix, so too is $E_i^{-1}$. 
@@ -539,109 +482,97 @@ Let $A$ be an $n \times n$ matrix. Then $A$ is invertible if and only if it can 
 Consider the following example.
 
 \begin{example}{Product of elementary matrices}{prodelem}
-Let $A = \leftB
-\begin{array}{rrr}
+Let $A = \begin{mymatrix}{rrr}
 0 & 1 & 0 \\
 1 & 1 & 0 \\
 0 & -2 & 1 
-\end{array} \rightB$. 
+\end{mymatrix}$. 
 Write $A$ as a product of elementary matrices. 
 \end{example}
 
 \begin{solution}
-We will use the process outlined in Theorem \ref{thm:findingu} to write $A$ as a product of elementary matrices. We will set up the matrix $\leftB A | I \rightB$ and row reduce, recording each row operation as an elementary matrix. 
+We will use the process outlined in Theorem \ref{thm:findingu} to write $A$ as a product of elementary matrices. We will set up the matrix $\mat{A | I }$ and row reduce, recording each row operation as an elementary matrix. 
 
 First: 
 \[
- \leftB
-\begin{array}{rrr|rrr}
+ \begin{mymatrix}{rrr|rrr}
 0 & 1 & 0 & 1 & 0 & 0 \\
 1 & 1 & 0 & 0 & 1 & 0 \\
 0 & -2 & 1 & 0 & 0 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \rightarrow 
- \leftB
-\begin{array}{rrr|rrr}
+ \begin{mymatrix}{rrr|rrr}
 1 & 1 & 0 & 0 & 1 & 0 \\
 0 & 1 & 0 & 1 & 0 & 0 \\
 0 & -2 & 1 & 0 & 0 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \]
-represented by the elementary matrix $E_1= \leftB
-\begin{array}{rrr}
+represented by the elementary matrix $E_1= \begin{mymatrix}{rrr}
 0 & 1 & 0 \\
 1 & 0 & 0 \\
 0 & 0 & 1 
-\end{array} \rightB$.
+\end{mymatrix}$.
 
 Secondly:
 \[
-\leftB
-\begin{array}{rrr|rrr}
+\begin{mymatrix}{rrr|rrr}
 1 & 1 & 0 & 0 & 1 & 0 \\
 0 & 1 & 0 & 1 & 0 & 0 \\
 0 & -2 & 1 & 0 & 0 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \rightarrow 
- \leftB
-\begin{array}{rrr|rrr}
+ \begin{mymatrix}{rrr|rrr}
 1 & 0 & 0 & -1 & 1 & 0 \\
 0 & 1 & 0 & 1 & 0 & 0 \\
 0 & -2 & 1 & 0 & 0 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \]
 represented by the elementary matrix
-$E_2 =  \leftB
-\begin{array}{rrr}
+$E_2 =  \begin{mymatrix}{rrr}
 1 & -1 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1 
-\end{array} \rightB$.
+\end{mymatrix}$.
 
 Finally:
 \[
-\leftB
-\begin{array}{rrr|rrr}
+\begin{mymatrix}{rrr|rrr}
 1 & 0& 0 & -1 & 1 & 0 \\
 0 & 1 & 0 & 1 & 0 & 0 \\
 0 & -2 & 1 & 0 & 0 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \rightarrow 
- \leftB
-\begin{array}{rrr|rrr}
+ \begin{mymatrix}{rrr|rrr}
 1 & 0 & 0 &-1 & 1 & 0\\
 0 & 1 & 0 & 1 & 0 & 0 \\
 0 & 0 & 1 & 2 & 0 & 1 
-\end{array} \rightB
+\end{mymatrix}
 \]
-represented by the elementary matrix $E_3=  \leftB
-\begin{array}{rrr}
+represented by the elementary matrix $E_3=  \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 2 & 1 
-\end{array} \rightB$.
+\end{mymatrix}$.
 
 Notice that the {\rref} of $A$ is $I$. Hence $I = UA$ where $U$ is the product of the above elementary matrices. It follows that $A = U^{-1}$. Since we want to write $A$ as a product of elementary matrices, we wish to express $U^{-1}$ as a product of elementary matrices. 
 \begin{eqnarray*}
-U^{-1} &=& \left( E_3 E_2 E_1 \right)^{-1}\\
+U^{-1} &=& \tup{E_3 E_2 E_1 }^{-1}\\
 &=& E_1^{-1} E_2^{-1} E_3^{-1} \\
-&=& \leftB
-\begin{array}{rrr}
+&=& \begin{mymatrix}{rrr}
 0 & 1 & 0 \\
 1 & 0 & 0 \\
 0 & 0 & 1 
-\end{array} \rightB
-\leftB
-\begin{array}{rrr}
+\end{mymatrix}
+\begin{mymatrix}{rrr}
 1 & 1 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1 
-\end{array} \rightB
-\leftB \begin{array}{rrr}
+\end{mymatrix}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & -2 & 1 
-\end{array} \rightB \\
+\end{mymatrix} \\
 &=& A
 \end{eqnarray*}
 

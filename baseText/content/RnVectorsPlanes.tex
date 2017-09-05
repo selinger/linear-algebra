@@ -1,5 +1,5 @@
 \pagebreak
-\section{Planes in $\mathbb{R}^n$}
+\section{Planes in $\R^n$}
 
 \begin{outcome}
 
@@ -10,10 +10,10 @@
 \end{enumerate}
 \end{outcome}
 
-Much like the above discussion with lines, vectors can be used to determine planes in $\mathbb{R}^n$. Given a vector $\vect{n}$ in $\mathbb{R}^n$ and a point $P_0$, it is possible to find a \textbf{unique} plane which contains $P_0$ and is perpendicular to the given vector. 
+Much like the above discussion with lines, vectors can be used to determine planes in $\R^n$. Given a vector $\vect{n}$ in $\R^n$ and a point $P_0$, it is possible to find a \textbf{unique} plane which contains $P_0$ and is perpendicular to the given vector. 
 
 \begin{definition}{Normal vector}{normalvector}
-Let $\vect{n}$ be a nonzero vector in $\mathbb{R}^n$. Then $\vect{n}$ is called a \textbf{normal vector}\index{plane!normal vector} to a plane if and only if 
+Let $\vect{n}$ be a nonzero vector in $\R^n$. Then $\vect{n}$ is called a \textbf{normal vector}\index{plane!normal vector} to a plane if and only if 
 \[
 \vect{n} \dotprod \vect{v} = 0
 \]
@@ -44,13 +44,11 @@ Notice that this equation can be used to determine if a point $P$ is contained i
 
 \begin{example}{A point in a plane}{pointplane}
 Let $\vect{n} = 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 3 
-\end{array}
-\rightB$ be the normal vector for a plane which contains the point $P_0 = \left( 2, 1, 4 \right)$. Determine if the point $P = \left( 5, 4, 1 \right)$ is contained in this plane. 
+\end{mymatrix}$ be the normal vector for a plane which contains the point $P_0 = \tup{2, 1, 4 }$. Determine if the point $P = \tup{5, 4, 1 }$ is contained in this plane. 
 \end{example}
 
 \begin{solution}
@@ -61,49 +59,39 @@ By Definition \ref{def:vecteqnplane}, $P$ is a point in the plane if it satisfie
 
 Given the above $\vect{n}$, $P_0$, and $P$, this equation becomes
 \begin{eqnarray*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 3
-\end{array}
-\rightB
+\end{mymatrix}
 \dotprod
-\left(
-\leftB
-\begin{array}{r}
+\tup{
+\begin{mymatrix}{r}
 5 \\
 4 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 -
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 1 \\
 4
-\end{array}
-\rightB
-\right)
+\end{mymatrix}
+}
 &=& 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 3
-\end{array}
-\rightB
+\end{mymatrix}
 \dotprod
-\left(
-\leftB
-\begin{array}{r}
+\tup{
+\begin{mymatrix}{r}
 3 \\
 3 \\
 -3
-\end{array}
-\rightB
-\right) \\
+\end{mymatrix}
+} \\
 &=& 
 3 + 6 - 9 = 0
 \end{eqnarray*}
@@ -112,58 +100,46 @@ Therefore $P = ( 5, 4, 1)$ is contained in the plane.
 
 \end{solution}
 
-Suppose $\vect{n} = \leftB
-\begin{array}{c}
+Suppose $\vect{n} = \begin{mymatrix}{c}
 a \\
 b \\
 c
-\end{array}
-\rightB$, $P = \left( x,y,z\right)$ and $P_0 = (x_0, y_0, z_0 )$.
+\end{mymatrix}$, $P = \tup{x,y,z}$ and $P_0 = (x_0, y_0, z_0 )$.
 
 Then 
 \begin{eqnarray*}
 \vect{n} \dotprod (\longvect{0P} - \longvect{0P_0}) &=& 0 \\
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 a \\
 b \\
 c
-\end{array}
-\rightB
+\end{mymatrix}
 \dotprod
-\left(
-\leftB
-\begin{array}{c}
+\tup{
+\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB
+\end{mymatrix}
 -
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x_0 \\
 y_0 \\
 z_0
-\end{array}
-\rightB
-\right) 
+\end{mymatrix}
+} 
 &=& 0 \\
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 a \\
 b \\
 c
-\end{array}
-\rightB
+\end{mymatrix}
 \dotprod
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x - x_0 \\
 y - y_0 \\
 z - z_0
-\end{array}
-\rightB
+\end{mymatrix}
 &=& 0 
 \\
 a(x - x_0) + b (y - y_0) + c (z-z_0) &=& 0 
@@ -180,31 +156,27 @@ ax + by + cz = d
 \]
 
 \begin{definition}{Scalar equation of a plane}{scalareqnplane}
-Let $\vect{n} = \leftB 
-\begin{array}{c}
+Let $\vect{n} = \begin{mymatrix}{c}
 a \\
 b \\
 c
-\end{array}
-\rightB $
+\end{mymatrix} $
 be the normal vector for a plane which contains the point $P_0 = (x_0, y_0, z_0)$.Then if $P=(x,y,z)$ is an arbitrary point on the plane, the \textbf{scalar equation}\index{plane!scalar equation} of the plane is given by
 \[
 ax + by + cz = d 
 \]
-where $ a,b,c,d \in \mathbb{R}$ and $d = ax_0 + by_0 + cz_0$.
+where $ a,b,c,d \in \R$ and $d = ax_0 + by_0 + cz_0$.
 \end{definition}
 
 Consider the following equation.
 
 \begin{example}{Finding the equation of a plane}{findingeqnplane}
 Find an equation of the plane containing $P_0 = (3, -2, 5)$ and orthogonal to $\vect{n} = 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -2 \\
 4 \\
 1
-\end{array}
-\rightB$. 
+\end{mymatrix}$. 
 \end{example}
 
 \begin{solution}
@@ -212,44 +184,34 @@ The above vector $\vect{n}$ is the normal vector for this plane.
 Using Definition \ref{def:vecteqnplane}, we can determine the vector equation for this plane. 
 \begin{eqnarray*}
 \vect{n} \dotprod (\longvect{0P} - \longvect{0P_0}) &=& 0 \\
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -2 \\
 4 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \dotprod 
-\left(\leftB
-\begin{array}{c}
+\tup{\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB
+\end{mymatrix}
 -
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 -2 \\
 5
-\end{array}
-\rightB \right) &=& 0 \\
-\leftB
-\begin{array}{r}
+\end{mymatrix} } &=& 0 \\
+\begin{mymatrix}{r}
 -2 \\
 4 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \dotprod 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x - 3 \\
 y + 2 \\
 z - 5
-\end{array}
-\rightB
+\end{mymatrix}
 &=& 0 
 \end{eqnarray*} 
 
@@ -260,21 +222,17 @@ Using Definition \ref{def:scalareqnplane}, we can determine the scalar equation 
 
 Hence, the vector equation of the plane is
 \[
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -2 \\
 4 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \dotprod 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x - 3 \\
 y + 2 \\
 z - 5
-\end{array}
-\rightB
+\end{mymatrix}
 = 0 
 \]
 and the scalar equation is 
@@ -294,89 +252,71 @@ Pick an arbitrary point $P_0$ on the plane. Then, it follows that
 \[
 \longvect{QP} = \func{proj}_{\vect{n}}\longvect{P_0P}
 \]
-and $\| \longvect{QP} \|$ is the shortest distance from $P$ to the plane. Further, the vector $\longvect{0Q} = \longvect{0P} - \longvect{QP}$ gives the necessary point $Q$. 
+and $\norm{\longvect{QP}}$ is the shortest distance from $P$ to the plane. Further, the vector $\longvect{0Q} = \longvect{0P} - \longvect{QP}$ gives the necessary point $Q$. 
 
 From the above scalar equation, we have that $\vect{n} = 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 2 \\
 1 \\
 2 
-\end{array}
-\rightB$. Now, choose $P_0 = (1, 0, 0)$ so that $\vect{n} \dotprod \longvect{0P} = 2 = d$. 
-Then, $\longvect{P_0P} = \leftB
-\begin{array}{c}
+\end{mymatrix}$. Now, choose $P_0 = (1, 0, 0)$ so that $\vect{n} \dotprod \longvect{0P} = 2 = d$. 
+Then, $\longvect{P_0P} = \begin{mymatrix}{c}
 3 \\
 2 \\
 3
-\end{array}
-\rightB
+\end{mymatrix}
 - 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 0 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 2 \\
 2 \\
 3
-\end{array}
-\rightB$. 
+\end{mymatrix}$. 
 
 Next, compute $\longvect{QP} = \func{proj}_{\vect{n}}\longvect{P_0P}$. 
 \begin{eqnarray*}
 \longvect{QP} &=& \func{proj}_{\vect{n}}\longvect{P_0P} \\
-&=& \left( \frac{ \longvect{P_0P} \dotprod \vect{n}}{\vectlength \vect{n} \vectlength ^2}\right)\vect{n} \\
-&=& \frac{12}{9} \leftB
-\begin{array}{r}
+&=& \tup{\frac{ \longvect{P_0P} \dotprod \vect{n}}{\norm{\vect{n}} ^2}}\vect{n} \\
+&=& \frac{12}{9} \begin{mymatrix}{r}
 2 \\
 1 \\
 2
-\end{array}
-\rightB \\
-&=& \frac{4}{3} \leftB
-\begin{array}{r}
+\end{mymatrix} \\
+&=& \frac{4}{3} \begin{mymatrix}{r}
 2 \\
 1 \\
 2
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{eqnarray*}
 
-Then, $\vectlength \longvect{QP} \vectlength = 4$ so the shortest distance from $P$ to the plane is $4$. 
+Then, $\norm{\longvect{QP}} = 4$ so the shortest distance from $P$ to the plane is $4$. 
 
 Next, to find the point $Q$ on the plane which is closest to $P$ we have
 \begin{eqnarray*}
 \longvect{0Q} &=& \longvect{0P} - \longvect{QP} \\
-&=& \leftB
-\begin{array}{r}
+&=& \begin{mymatrix}{r}
 3 \\
 2 \\
 3
-\end{array}
-\rightB 
+\end{mymatrix} 
 -
-\frac{4}{3} \leftB
-\begin{array}{r}
+\frac{4}{3} \begin{mymatrix}{r}
 2 \\
 1 \\
 2
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& 
 \frac{1}{3}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
 Therefore, $Q = (\frac{1}{3}, \frac{2}{3}, \frac{1}{3} )$.  

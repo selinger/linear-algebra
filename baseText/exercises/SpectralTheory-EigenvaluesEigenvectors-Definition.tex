@@ -29,7 +29,7 @@ $AX$ must also be an eigenvector for $B$. \vspace{1mm}
 
 \begin{ex} Suppose $A$ is an $n\times n$ matrix and it satisfies $A^{m}=A$ for
 some $m$ a positive integer larger than 1. Show that if $\lambda $ is an
-eigenvalue of $A$ then $\left\vert \lambda \right\vert $ equals either 0 or $
+eigenvalue of $A$ then $\abs{\lambda }$ equals either 0 or $
 1$. \vspace{1mm}
 \begin{sol}
 Let $X$ be the eigenvector. Then $A^{m}X=\lambda ^{m}
@@ -41,13 +41,13 @@ Hence if $\lambda \neq 0,$ then
 \[
 \lambda ^{m-1}=1
 \]
-and so $\left\vert \lambda \right\vert =1.$
+and so $\abs{\lambda }=1.$
 \end{sol}
 \end{ex}
 
 \begin{ex} Show that if $AX=\lambda X$ and $AY=\lambda Y$, then whenever $k,p$ are scalars,
 \begin{equation*}
-A\left( kX+pY\right) =\lambda \left( kX+pY\right) 
+A\tup{kX+pY} =\lambda \tup{kX+pY} 
 \end{equation*}
 Does this imply that $kX+pY$ is an eigenvector? Explain.
 \vspace{1mm} 
@@ -61,53 +61,39 @@ and eigenvectors cannot equal $0$.
 \begin{ex} Suppose $A$ is a $3\times 3$ matrix and the following information is
 available. 
 \begin{eqnarray*}
-A\leftB
-\begin{array}{r}
+A\begin{mymatrix}{r}
 0 \\
 -1 \\
 -1
-\end{array}
-\rightB &=&0\leftB
-\begin{array}{r}
+\end{mymatrix} &=&0\begin{mymatrix}{r}
 0 \\
 -1 \\
 -1
-\end{array}
-\rightB \\
-A\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+A\begin{mymatrix}{r}
 1 \\
 1 \\
 1
-\end{array}
-\rightB &=&-2\leftB
-\begin{array}{r}
+\end{mymatrix} &=&-2\begin{mymatrix}{r}
 1 \\
 1 \\
 1
-\end{array}
-\rightB \\
-A\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+A\begin{mymatrix}{r}
 -2 \\
 -3 \\
 -2
-\end{array}
-\rightB &=&-2\leftB
-\begin{array}{r}
+\end{mymatrix} &=&-2\begin{mymatrix}{r}
 -2 \\
 -3 \\
 -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
-Find $A\leftB
-\begin{array}{r}
+Find $A\begin{mymatrix}{r}
 1 \\
 -4 \\
 3
-\end{array}
-\rightB. $
+\end{mymatrix}. $
 %\begin{sol}
 %\end{sol}
 \end{ex}
@@ -115,53 +101,39 @@ Find $A\leftB
 \begin{ex} Suppose $A$ is a $3\times 3$ matrix and the following information is
 available.
 \begin{eqnarray*}
-A\leftB
-\begin{array}{r}
+A\begin{mymatrix}{r}
 -1 \\
 -2 \\
 -2
-\end{array}
-\rightB &=&1\leftB
-\begin{array}{r}
+\end{mymatrix} &=&1\begin{mymatrix}{r}
 -1 \\
 -2 \\
 -2
-\end{array}
-\rightB \\
-A\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+A\begin{mymatrix}{r}
 1 \\
 1 \\
 1
-\end{array}
-\rightB &=& 0\leftB
-\begin{array}{r}
+\end{mymatrix} &=& 0\begin{mymatrix}{r}
 1 \\
 1 \\
 1
-\end{array}
-\rightB \\
-A\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+A\begin{mymatrix}{r}
 -1 \\
 -4 \\
 -3
-\end{array}
-\rightB &=&2\leftB
-\begin{array}{r}
+\end{mymatrix} &=&2\begin{mymatrix}{r}
 -1 \\
 -4 \\
 -3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
-Find $A\leftB
-\begin{array}{r}
+Find $A\begin{mymatrix}{r}
 3 \\
 -4 \\
 3
-\end{array}
-\rightB. $
+\end{mymatrix}. $
 %\begin{sol}
 %\end{sol}
 \end{ex}
@@ -169,53 +141,39 @@ Find $A\leftB
 \begin{ex} Suppose $A$ is a $3\times 3$ matrix and the following information is
 available.
 \begin{eqnarray*}
-A\leftB
-\begin{array}{r}
+A\begin{mymatrix}{r}
 0 \\
 -1 \\
 -1
-\end{array}
-\rightB &=&2\leftB
-\begin{array}{r}
+\end{mymatrix} &=&2\begin{mymatrix}{r}
 0 \\
 -1 \\
 -1
-\end{array}
-\rightB \\
-A\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+A\begin{mymatrix}{r}
 1 \\
 1 \\
 1
-\end{array}
-\rightB &=& 1\leftB
-\begin{array}{r}
+\end{mymatrix} &=& 1\begin{mymatrix}{r}
 1 \\
 1 \\
 1
-\end{array}
-\rightB \\
-A\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+A\begin{mymatrix}{r}
 -3 \\
 -5 \\
 -4
-\end{array}
-\rightB &=&-3\leftB
-\begin{array}{r}
+\end{mymatrix} &=&-3\begin{mymatrix}{r}
 -3 \\
 -5 \\
 -4
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
-Find $A\leftB
-\begin{array}{r}
+Find $A\begin{mymatrix}{r}
 2 \\
 -3 \\
 3
-\end{array}
-\rightB. $ \vspace{1mm}
+\end{mymatrix}. $ \vspace{1mm}
 %\begin{sol}
 %\end{sol}
 \end{ex}

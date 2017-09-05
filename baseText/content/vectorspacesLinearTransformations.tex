@@ -10,11 +10,11 @@ Recall that a function is simply a transformation of a vector to result in a new
 
 \begin{definition}{Linear transformation}{lineartransformation}
  Let $V$ and $W$ be vector spaces. Suppose $T: V \mapsto W$ is a function, where for each
-$\vect{x} \in V ,T\left(\vect{x}\right)\in W.$ Then $T$ is a
+$\vect{x} \in V ,T\tup{\vect{x}}\in W.$ Then $T$ is a
 \textbf{linear transformation}\index{linear transformation} if whenever $k ,p $ are scalars and 
 $\vect{v}_1$ and $\vect{v}_2$ are vectors in $V$
 \begin{equation*}
-T\left( k \vect{v}_1 + p \vect{v}_2 \right) = kT\left(\vect{v}_1\right)+ pT\left(\vect{v}_{2} \right)
+T\tup{k \vect{v}_1 + p \vect{v}_2 } = kT\tup{\vect{v}_1}+ pT\tup{\vect{v}_{2} }
 \end{equation*}
 \end{definition}
 
@@ -34,7 +34,7 @@ $0:V\to W$ is defined by $0(\vect{v})=\vect{0}$ for all $\vect{v}\in V$.
 $1_V:V\to V$ is defined by $1_V(\vect{v})=\vect{v}$ for all $\vect{v}\in V$.
 
 \item \textbf{The scalar transformation}\index{scalar transformation}
-Let $a\in\mathbb{R}$.
+Let $a\in\R$.
 
 $s_a:V\to V$ is defined by $s_a(\vect{v})=a\vect{v}$ for all $\vect{v}\in V$.
 \end{enumerate}
@@ -44,12 +44,12 @@ $s_a:V\to V$ is defined by $s_a(\vect{v})=a\vect{v}$ for all $\vect{v}\in V$.
 We will show that the scalar transformation $s_a$ is linear, the rest are left as an exercise. 
 
 By Definition \ref{def:lineartransformation} we must show that for all scalars $k ,p $ and 
-vectors $\vect{v}_1$ and $\vect{v}_2$ in $V$, $s_a\left( k \vect{v}_1 + p \vect{v}_2 \right) = k s_a\left(\vect{v}_1\right)+ p s_a\left(\vect{v}_{2} \right)$. Assume that $a$ is also a scalar. 
+vectors $\vect{v}_1$ and $\vect{v}_2$ in $V$, $s_a\tup{k \vect{v}_1 + p \vect{v}_2 } = k s_a\tup{\vect{v}_1}+ p s_a\tup{\vect{v}_{2} }$. Assume that $a$ is also a scalar. 
 \begin{eqnarray*}
-s_a\left( k \vect{v}_1 + p \vect{v}_2 \right) &=& a \left( k \vect{v}_1 + p \vect{v}_2 \right) \\
+s_a\tup{k \vect{v}_1 + p \vect{v}_2 } &=& a \tup{k \vect{v}_1 + p \vect{v}_2 } \\
 &=&  ak \vect{v}_1 + ap \vect{v}_2  \\
- &=&  k \left(a \vect{v}_1\right) + p\left(a \vect{v}_2\right)  \\
-&=& k s_a\left( \vect{v}_1 \right)  + p s_a \left(\vect{v}_2 \right)
+ &=&  k \tup{a \vect{v}_1} + p\tup{a \vect{v}_2}  \\
+&=& k s_a\tup{\vect{v}_1 }  + p s_a \tup{\vect{v}_2 }
 \end{eqnarray*}
 Therefore $s_a$ is a linear transformation.
 \end{solution}
@@ -72,7 +72,7 @@ T(-\vect{v})= -T(\vect{v})
 \]
 \item $T$ preserves linear combinations.
 For all $\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_m \in V$ and
-all $k_1, k_2, \ldots, k_m\in\mathbb{R}$,
+all $k_1, k_2, \ldots, k_m\in\R$,
 \[ T(k_1\vect{v}_1 + k_2\vect{v}_2 + \cdots + k_m\vect{v}_m)
 = k_1T(\vect{v}_1) + k_2T(\vect{v}_2) + \cdots + k_mT(\vect{v}_m).\]
 \end{enumerate}
@@ -104,7 +104,7 @@ A formal proof would be by induction on $m$.
 Consider the following example using the above theorem. 
 
 \begin{example}{Linear combination}{lintransfcombination2}
-Let $T:\mathbb{P}_2 \to \mathbb{R}$ be a linear transformation such that
+Let $T:\Poly_2 \to \R$ be a linear transformation such that
 \[ T(x^2+x)=-1; T(x^2-x)=1; T(x^2+1)=3.\]
 Find $T(4x^2+5x-3)$.
 \end{example}
@@ -122,14 +122,14 @@ $a=6$, $b=1$, $c=-3$.
 
 Thus
 \begin{eqnarray*}
-T(4x^2+5x-3) & = & T\left( 6(x^2+x) + (x^2-x) -3(x^2+1) \right) \\
+T(4x^2+5x-3) & = & T\tup{6(x^2+x) + (x^2-x) -3(x^2+1) } \\
 & = & 6T(x^2+x) + T(x^2-x) -3T(x^2+1) \\
 & = & 6(-1) + 1 -3(3) = -14. \\
 \end{eqnarray*}
 
 \textbf{Solution 2:}
 Notice that
-$S=\{ x^2+x, x^2-x, x^2+1\}$ is a basis of $\mathbb{ P}_2$, and
+$S=\{x^2+x, x^2-x, x^2+1\}$ is a basis of $\Poly_2$, and
 thus $x^2$, $x$, and $1$ can each be written as a linear 
 combination of elements of $S$.
 
@@ -140,14 +140,14 @@ x & = & \textstyle \frac{1}{2}(x^2+x) - \frac{1}{2}(x^2-x) \\
 \end{eqnarray*}
 Then
 \begin{eqnarray*}
-T(x^2) & = & \textstyle T\left(\frac{1}{2}(x^2+x) + \frac{1}{2}(x^2-x)\right)
+T(x^2) & = & \textstyle T\tup{\frac{1}{2}(x^2+x) + \frac{1}{2}(x^2-x)}
 =\frac{1}{2}T(x^2+x) + \frac{1}{2}T(x^2-x)\\
 & = & \textstyle \frac{1}{2}(-1) + \frac{1}{2}(1) = 0.  \\
-T(x) & = & \textstyle T\left(\frac{1}{2}(x^2+x) - \frac{1}{2}(x^2-x)\right)
+T(x) & = & \textstyle T\tup{\frac{1}{2}(x^2+x) - \frac{1}{2}(x^2-x)}
 = \frac{1}{2}T(x^2+x) - \frac{1}{2}T(x^2-x) \\
 & = & \textstyle \frac{1}{2}(-1) - \frac{1}{2}(1) = -1.\\
-T(1) & = & \textstyle T\left((x^2+1)-\frac{1}{2}(x^2+x) -
-\frac{1}{2}(x^2-x)\right)\\
+T(1) & = & \textstyle T\tup{(x^2+1)-\frac{1}{2}(x^2+x) -
+\frac{1}{2}(x^2-x)}\\
 & = & \textstyle T(x^2+1)-\frac{1}{2}T(x^2+x) - \frac{1}{2}T(x^2-x) \\
 & = & \textstyle 3-\frac{1}{2}(-1) - \frac{1}{2}(1) = 3.
 \end{eqnarray*}
@@ -176,21 +176,21 @@ Suppose two linear transformations act in the same way on $\vect{v}$ for all vec
 \begin{definition}{Equal transformations}{equaltransformations}
 Let $S$ and $T$ be linear transformations from $V$ to $W$. Then $S = T$ if and only if for every $\vect{v} \in V$, 
 \[
-S \left( \vect{v} \right) = T \left( \vect{v} \right)
+S \tup{\vect{v} } = T \tup{\vect{v} }
 \]
 \end{definition}
 
 The definition above requires that two transformations have the same action on every vector in order for them to be equal. The next theorem argues that it is only necessary to check the action of the transformations on basis vectors.
 
 \begin{theorem}{Transformation of a spanning set}{transformationspanningset}
-Let $V$ and $W$ be vector spaces and suppose that $S$ and $T$ are linear transformations from $V$ to $W$. Then in order for $S$ and $T$ to be equal, it suffices that $S(\vect{v}_i) = T(\vect{v}_i)$ where $V=\func{span} \{ \vect{v}_1, \vect{v}_2, \ldots, \vect{v}_n\}.$
+Let $V$ and $W$ be vector spaces and suppose that $S$ and $T$ are linear transformations from $V$ to $W$. Then in order for $S$ and $T$ to be equal, it suffices that $S(\vect{v}_i) = T(\vect{v}_i)$ where $V=\func{span} \{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_n\}.$
 \end{theorem}
 
 This theorem tells us that a linear transformation is completely
 determined by its actions on a spanning set. We can also examine the effect of a linear transformation on a basis.
 
 \begin{theorem}{Transformation of a basis}{transformationbasis}
-Suppose $V$ and $W$ are vector spaces and let $\{ \vect{w}_1, \vect{w}_2, \ldots, \vect{w}_n\}$ be any given vectors in $W$ that may not be distinct. Then there exists a basis $\{ \vect{v}_1, \vect{v}_2, \ldots, \vect{v}_n\}$ of $V$ and a unique linear transformation $T: V \mapsto W$ with $T (\vect{v}_i) = \vect{w}_i$.
+Suppose $V$ and $W$ are vector spaces and let $\{\vect{w}_1, \vect{w}_2, \ldots, \vect{w}_n\}$ be any given vectors in $W$ that may not be distinct. Then there exists a basis $\{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_n\}$ of $V$ and a unique linear transformation $T: V \mapsto W$ with $T (\vect{v}_i) = \vect{w}_i$.
 
 Furthermore, if 
 \[ \vect{v} = k_1\vect{v}_1+k_2\vect{v}_2+ \cdots+ k_n\vect{v}_n\]

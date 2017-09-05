@@ -1,6 +1,6 @@
 \subsection{Geometric meaning of vector addition and scalar multiplication}
 
-Recall that an element of $\mathbb{R}^{n}$ is an ordered list of
+Recall that an element of $\R^{n}$ is an ordered list of
 numbers. For the specific case of $n=2,3$ this can be used to
 determine a point in two or three dimensional space. This point is
 specified relative to some coordinate axes.
@@ -11,16 +11,16 @@ vector. This is important in the geometric representation of vector
 addition.
 
 Suppose we have two vectors, $\vect{u}$ and $\vect{v}$ in
-$\mathbb{R}^{3}$. Each of these can be drawn geometrically by placing
-the tail of each vector at $0$ and its point at $\left( u_{1}, u_{2},
-u_{3}\right)$ and $\left( v_{1}, v_{2}, v_{3}\right) $
+$\R^{3}$. Each of these can be drawn geometrically by placing
+the tail of each vector at $0$ and its point at $\tup{u_{1}, u_{2},
+u_{3}}$ and $\tup{v_{1}, v_{2}, v_{3}} $
 respectively. Suppose we slide the vector $\vect{v}$ so that its tail
 sits at the point of $\vect{u}$.  We know that this does not change
 the vector $\vect{v}$.  Now, draw a new vector from the tail of
 $\vect{u}$ to the point of $\vect{v}$. This vector is
 $\vect{u}+\vect{v}$.
 
-The geometric significance of vector addition in $\mathbb{R}^n$ for any $n$ is given in
+The geometric significance of vector addition in $\R^n$ for any $n$ is given in
 the following definition.
 
 \begin{definition}{Geometry of vector addition}{geometryofvectoraddition}
@@ -78,8 +78,8 @@ $\vect{v}$.
 
 When you have a vector $\vect{v}$, its additive inverse $-\vect{v}$ will
 be the vector which has the same magnitude as $\vect{v}$ but the opposite
-direction. When one writes $\vect{u}-\vect{v,}$ the meaning is $\vect{u} + \left(
--\vect{v}\right) $ as with real numbers. The following example illustrates these definitions and conventions.
+direction. When one writes $\vect{u}-\vect{v,}$ the meaning is $\vect{u} + \tup{
+-\vect{v}} $ as with real numbers. The following example illustrates these definitions and conventions.
 
 \begin{example}{Graphing vector addition}{graphingvectoraddition}
 Consider the following picture of vectors $\vect{u}$ and $\vect{v}$.
@@ -113,8 +113,8 @@ drawing a vector from the tail of $\vect{u}$ to the tip of $\vect{v}$.
 \end{tikzpicture}
 \end{center}
 
-Next consider $\vect{u}-\vect{v}.$ This means $\vect{u}+\left( -\vect{v}
-\right) .$ From the above geometric description of vector addition, $-\vect{v}$ 
+Next consider $\vect{u}-\vect{v}.$ This means $\vect{u}+\tup{-\vect{v}
+} .$ From the above geometric description of vector addition, $-\vect{v}$ 
 is the vector which has the same length but which points in the
 opposite direction to $\vect{v}$. Here is a picture of $-\vect{v}$ 
 
@@ -159,32 +159,26 @@ Given any to vectors $\vect{u}$ and $\vect{v}$ one can create a parallelogram wi
 \end{center}
 
 
-Now suppose we have a vector $\vect{u} = \leftB 
-\begin{array}{lll}
+Now suppose we have a vector $\vect{u} = \begin{mymatrix}{lll}
 u_1 &  u_2 & u_3 
-\end{array}
-\rightB^T$ and we multiply $\vect{u}$ by a
+\end{mymatrix}^T$ and we multiply $\vect{u}$ by a
 scalar $k$. By Definition \ref{def:vectorscalarmultiplication},
-$k\vect{u} = \leftB
-\begin{array}{rrr}
+$k\vect{u} = \begin{mymatrix}{rrr}
 ku_{1} & ku_{2} & ku_{3}
-\end{array}
-\rightB^T $. 
+\end{mymatrix}^T $. 
 Then, by using Definition \ref{def:distancebetweenpoints}, the length of this vector is given by 
 \begin{equation*}
-\sqrt{\left( \left( k u_{1}\right) ^{2}+\left( k u_{2}\right)
-^{2}+\left( k u_{3}\right) ^{2}\right) }=\left\vert k \right\vert
-\sqrt{u_{1}^{2}+u_{2}^{2}+u_{3}^{2}}
+\sqrt{\tup{\tup{k u_{1}} ^{2}+\tup{k u_{2}}
+^{2}+\tup{k u_{3}} ^{2}} }=\abs{k }\sqrt{u_{1}^{2}+u_{2}^{2}+u_{3}^{2}}
 \end{equation*}
 Thus the following holds.
 \begin{equation*}
-\vectlength k \vect{u} \vectlength =\left\vert k \right\vert
-\vectlength \vect{u} \vectlength 
+\norm{k \vect{u}} =\abs{k }\norm{\vect{u}} 
 \end{equation*}
 In other words, multiplication by a scalar magnifies or shrinks the length
-of the vector by a factor of $\left\vert k \right\vert$. If $\left\vert k \right\vert > 1$, the length of the resulting vector will 
-be magnified. If $\left\vert k \right\vert <1$, the length of the resulting vector will shrink. Remember that by the definition 
-of the absolute value, $\left\vert k \right\vert >0$. 
+of the vector by a factor of $\abs{k}$. If $\abs{k}> 1$, the length of the resulting vector will 
+be magnified. If $\abs{k}<1$, the length of the resulting vector will shrink. Remember that by the definition 
+of the absolute value, $\abs{k}>0$. 
 
 What about the direction? Draw a picture of $\vect{u}$ and $k\vect{u}$
 where $k$ is negative. Notice that this causes the resulting vector
@@ -235,7 +229,7 @@ These vectors are shown in the following diagram.
 
 Now that we have studied both vector addition and scalar multiplication, we can combine the two actions. Recall 
 Definition \ref{def:linearcombination} of linear combinations of vectors. We can apply this definition to 
-vectors in $\mathbb{R}^n$. A linear combination of vectors in $\mathbb{R}^n$ is a sum of vectors multiplied by scalars.
+vectors in $\R^n$. A linear combination of vectors in $\R^n$ is a sum of vectors multiplied by scalars.
 
 In the following example, we examine the geometric meaning of this concept. 
 
@@ -279,7 +273,7 @@ The two vectors are shown below.
 \end{center}
 \end{solution}
 
-Given any two non-parallel vectors $\vect{u}$ and $\vect{v}$ in $\mathbb{R}^2$, we can create a grid of their linear combinations. The integer ones are pictured below. From this we can see that all vectors in $\mathbb{R}^2$ can be written as a linear combination of $\vect{u}$ and $\vect{v}$.
+Given any two non-parallel vectors $\vect{u}$ and $\vect{v}$ in $\R^2$, we can create a grid of their linear combinations. The integer ones are pictured below. From this we can see that all vectors in $\R^2$ can be written as a linear combination of $\vect{u}$ and $\vect{v}$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.5]

@@ -1,34 +1,24 @@
 \begin{enumialphparenastyle}
 
 \begin{ex} Consider the matrices $
-A =\leftB
-\begin{array}{rr}
+A =\begin{mymatrix}{rr}
 1 & 2 \\
 3 & 2 \\
 1 & -1
-\end{array}
-\rightB, B=\leftB
-\begin{array}{rrr}
+\end{mymatrix}, B=\begin{mymatrix}{rrr}
 2 & -5 & 2 \\
 -3 & 2 & 1
-\end{array}
-\rightB, 
-C =\leftB
-\begin{array}{rr}
+\end{mymatrix}, 
+C =\begin{mymatrix}{rr}
 1 & 2 \\
 5 & 0
-\end{array}
-\rightB, \\ D=\leftB
-\begin{array}{rr}
+\end{mymatrix}, \\ D=\begin{mymatrix}{rr}
 -1 & 1 \\
 4 & -3
-\end{array}
-\rightB, E=\leftB
-\begin{array}{r}
+\end{mymatrix}, E=\begin{mymatrix}{r}
 1 \\
 3
-\end{array}
-\rightB$
+\end{mymatrix}$
 
 Find the following if possible. If it is not possible explain why. 
 \begin{enumerate}  
@@ -43,40 +33,30 @@ Find the following if possible. If it is not possible explain why.
 
 \begin{sol}
 \begin{enumerate}
-\item $\leftB
-\begin{array}{rrr}
+\item $\begin{mymatrix}{rrr}
 -3 & -9 & -3 \\
 -6 & -6 & 3
-\end{array}
-\rightB$
-\item $\leftB
-\begin{array}{rrr}
+\end{mymatrix}$
+\item $\begin{mymatrix}{rrr}
 5 & -18 & 5 \\
 -11 & 4 & 4
-\end{array}
-\rightB$
-\item $\leftB
-\begin{array}{rrr}
+\end{mymatrix}$
+\item $\begin{mymatrix}{rrr}
 -7 & 1 & 5
-\end{array}
-\rightB$
-\item $\leftB
-\begin{array}{rr}
+\end{mymatrix}$
+\item $\begin{mymatrix}{rr}
 1 & 3 \\
 3 & 9
-\end{array}
-\rightB$
-\item $\leftB \begin{array}{rrr}
+\end{mymatrix}$
+\item $\begin{mymatrix}{rrr}
 13 & -16 & 1\\
 -16 & 29 & -8 \\
 1 & -8 & 5
-\end{array}
-\rightB$
-\item $\leftB \begin{array}{rrr}
+\end{mymatrix}$
+\item $\begin{mymatrix}{rrr}
 5 & 7 & -1 \\
 5 & 15 & 5 
-\end{array}
-\rightB$
+\end{mymatrix}$
 \item Not possible.
 \end{enumerate}
 \end{sol}
@@ -85,10 +65,10 @@ Find the following if possible. If it is not possible explain why.
 \begin{ex} Let $A$ be an $n\times n$ matrix. Show $A$ equals the sum of a
 symmetric and a skew symmetric matrix.  
 \textbf{Hint: }Show that $
-\frac{1}{2}\left( A^{T}+A\right) $ is symmetric and then consider using this
+\frac{1}{2}\tup{A^{T}+A} $ is symmetric and then consider using this
 as one of the matrices. 
 \begin{sol}
-Show that $\frac{1}{2}\left( A^{T}+A\right) $ is symmetric and then consider using this
+Show that $\frac{1}{2}\tup{A^{T}+A} $ is symmetric and then consider using this
 as one of the matrices. $A=\frac{A+A^{T}}{2}+\frac{A-A^{T}}{2}.$
 \end{sol}
 \end{ex}
@@ -102,46 +82,46 @@ If $A$ is symmetric then $A=-A^{T}.$ It follows that $a_{ii}=-a_{ii}$ and so eac
 
 \begin{ex} Prove \ref{matrixtranspose2}. That is, show that for an $m \times n$ matrix $A$, an $n \times p$ matrix $B$, and scalars $r, s$, the following holds:
 \[
-\left( rA + sB \right) ^T = rA^{T} + sB^{T}
+\tup{rA + sB } ^T = rA^{T} + sB^{T}
 \]
 %\begin{sol}
 %\end{sol}
 \end{ex}
 
 \begin{ex} \label{exerRn3}  Let $A$ be a real $m\times n$ matrix and
-let $\vect{u}\in \mathbb{R}^{n}$ and $\vect{v}\in \mathbb{R}^{m}.$ Show 
+let $\vect{u}\in \R^{n}$ and $\vect{v}\in \R^{m}.$ Show 
 $A\vect{u}\dotprod \vect{v}=\vect{u}\dotprod A^{T}\vect{v}$. 
 \textbf{Hint:} Use the definition of matrix
 multiplication to do this.
 \begin{sol}
-$A\vect{x}\dotprod \vect{y}=\sum_{k}\left( A\vect{x}
-\right) _{k}y_{k}=\sum_{k}\sum_{i}A_{ki}x_{i}y_{k}=\sum_{i}
+$A\vect{x}\dotprod \vect{y}=\sum_{k}\tup{A\vect{x}
+} _{k}y_{k}=\sum_{k}\sum_{i}A_{ki}x_{i}y_{k}=\sum_{i}
 \sum_{k}A_{ik}^{T}x_{i}y_{k}= \vect{x} \dotprod A^{T}\vect{y} $
 \end{sol}
 \end{ex}
 
 \begin{ex} Use the result of Problem \ref{exerRn3} to verify directly
-that $\left( AB\right) ^{T}=B^{T}A^{T}$ without making any reference to
+that $\tup{AB} ^{T}=B^{T}A^{T}$ without making any reference to
 subscripts.
 \begin{sol}
 \begin{eqnarray*}
  AB\vect{x} \dotprod \vect{y} &=& B\vect{x} \dotprod A^{T}\vect{y} \\ 
 &=& \vect{x}\dotprod B^{T}A^{T}\vect{y} \\
-&=& \vect{x}\dotprod \left( AB\right) ^{T} \vect{y}
+&=& \vect{x}\dotprod \tup{AB} ^{T} \vect{y}
 \end{eqnarray*}
 Since this is true for all $\vect{x}$, it follows that, in particular, it
 holds for
 \[
-\vect{x}=B^{T}A^{T}\vect{y}-\left( AB\right) ^{T}\vect{y}
+\vect{x}=B^{T}A^{T}\vect{y}-\tup{AB} ^{T}\vect{y}
 \]
 and so from the axioms of the dot product,
 \[
-\left( B^{T}A^{T}\vect{y}-\left( AB\right) ^{T}\vect{y}\right) \dotprod \left(B^{T}A^{T}
-\vect{y}-\left( AB\right) ^{T}\vect{y}\right) =0
+\tup{B^{T}A^{T}\vect{y}-\tup{AB} ^{T}\vect{y}} \dotprod \tup{B^{T}A^{T}
+\vect{y}-\tup{AB} ^{T}\vect{y}} =0
 \]
-and so $B^{T}A^{T}\vect{y}-\left( AB\right) ^{T}\vect{y}=\vect{0}$. However,
-this is true for all $\vect{y}$ and so $B^{T}A^{T}-\left(
-AB\right) ^{T}=0.$
+and so $B^{T}A^{T}\vect{y}-\tup{AB} ^{T}\vect{y}=\vect{0}$. However,
+this is true for all $\vect{y}$ and so $B^{T}A^{T}-\tup{
+AB} ^{T}=0.$
 \end{sol}
 \end{ex}
  

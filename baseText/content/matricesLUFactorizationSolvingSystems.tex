@@ -7,26 +7,20 @@ systems of equations. Here is an example.
 \begin{example}{$LU$ factorization to solve equations}{}
 Suppose you want to find the solutions to
 \begin{equation*}
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 2 \\
 4 & 3 & 1 & 1 \\
 1 & 2 & 3 & 0
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 1 \\
 2 \\
 3
-\end{array}
-\rightB .
+\end{mymatrix} .
 \end{equation*}
 \end{example}
 
@@ -38,91 +32,69 @@ factorization and it turns out that the $LU$ factorization can give the
 solution quickly. Here is how. The following is an $LU$ factorization for
 the matrix. 
 \begin{equation*}
-\leftB 
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 2 \\ 
 4 & 3 & 1 & 1 \\ 
 1 & 2 & 3 & 0
-\end{array}
-\rightB \allowbreak =\allowbreak \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \allowbreak =\allowbreak \begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 4 & 1 & 0 \\ 
 1 & 0 & 1
-\end{array}
-\rightB \leftB 
-\begin{array}{rrrr}
+\end{mymatrix} \begin{mymatrix}{rrrr}
 1 & 2 & 3 & 2 \\ 
 0 & -5 & -11 & -7 \\ 
 0 & 0 & 0 & -2
-\end{array}
-\rightB .
+\end{mymatrix} .
 \end{equation*}
 
-Let $UX=Y$ and consider $LY=B$ where in this case, $B=\leftB 1,2,3\rightB ^{T}$. Thus 
+Let $UX=Y$ and consider $LY=B$ where in this case, $B=\mat{1,2,3} ^{T}$. Thus 
 \begin{equation*}
-\allowbreak \leftB 
-\begin{array}{rrr}
+\allowbreak \begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 4 & 1 & 0 \\ 
 1 & 0 & 1
-\end{array}
-\rightB \leftB 
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 y_{1} \\ 
 y_{2} \\ 
 y_{3}
-\end{array}
-\rightB =\leftB 
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
-which yields very quickly that $Y=\leftB 
-\begin{array}{r}
+which yields very quickly that $Y=\begin{mymatrix}{r}
 1 \\ 
 -2 \\ 
 2
-\end{array}
-\rightB \allowbreak .$ 
+\end{mymatrix} \allowbreak .$ 
 
 Now you can find $X$ by solving $UX=Y$. Thus in this case, 
 \begin{equation*}
-\leftB 
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 2 \\ 
 0 & -5 & -11 & -7 \\ 
 0 & 0 & 0 & -2
-\end{array}
-\rightB \leftB 
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x \\ 
 y \\ 
 z \\ 
 w
-\end{array}
-\rightB =\leftB 
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 1 \\ 
 -2 \\ 
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 which yields 
 \begin{equation*}
-X=\leftB 
-\begin{array}{c}
+X=\begin{mymatrix}{c}
 -
 \vspace{0.05in}\frac{3}{5}+\vspace{0.05in}\frac{7}{5}t \\ 
 \vspace{0.05in}\frac{9}{5}-\vspace{0.05in}\frac{11}{5}t \\ 
 t \\ 
 -1
-\end{array}
-\rightB ,\enspace t\in \mathbb{R}\text{.}
+\end{mymatrix} ,\enspace t\in \R\text{.}
 \end{equation*}
 
 \end{solution}

@@ -12,7 +12,7 @@ Recall the definition of a linear transformation discussed above.
 $T$ is a \textbf{linear transformation} if whenever $\vect{x}, \vect{y}$ are
 vectors and $k,p$ are scalars,
 \begin{equation*}
-T\left( k\vect{x}+p\vect{y}\right) =k T \left( \vect{x} \right) +p T\left(\vect{y} \right)
+T\tup{k\vect{x}+p\vect{y}} =k T \tup{\vect{x} } +p T\tup{\vect{y} }
 \end{equation*}
 Thus linear transformations distribute across addition and pass scalars to
 the outside.
@@ -25,53 +25,53 @@ transformation $T_A$ induced by the coefficient matrix $A$. With this in mind co
 \begin{definition}{Particular solution of a system of equations}{particularsolutions}
 Suppose a linear system of equations can be written in the form
 \begin{equation*}
-T\left(\vect{x}\right)=\vect{b}
+T\tup{\vect{x}}=\vect{b}
 \end{equation*}
-If $T\left(\vect{x}_{p}\right)=\vect{b},$ 
+If $T\tup{\vect{x}_{p}}=\vect{b},$ 
 then $\vect{x}_{p}$ is called a \textbf{particular solution}\index{particular solution} of
 the linear system.
 \end{definition}
 
 Recall that a system is called homogeneous if every equation in the system is equal to $0$. 
-Suppose we represent a homogeneous system of equations by $T\left(\vect{x}\right)=0$. It turns out
-that the $\vect{x}$ for which $T \left(\vect{x}\right) = 0$ are part of a special set called the \textbf{null space}
-of $T$. We may also refer to the null space as the \textbf{kernel} of $T$, and we write $ker\left(T\right)$. 
+Suppose we represent a homogeneous system of equations by $T\tup{\vect{x}}=0$. It turns out
+that the $\vect{x}$ for which $T \tup{\vect{x}} = 0$ are part of a special set called the \textbf{null space}
+of $T$. We may also refer to the null space as the \textbf{kernel} of $T$, and we write $ker\tup{T}$. 
 
 Consider the following definition.
 
 \begin{definition}{Null space or kernel of a linear transformation}{nullspaceoflineartransformation}
 Let $T$ be a linear transformation. Define
 \begin{equation*}
-\ker \left( T\right) = \left\{ \vect{x}:T \left(\vect{x} \right)= \vect{0} \right\} 
+\ker \tup{T} = \set{\vect{x}:T \tup{\vect{x} }= \vect{0} } 
 \end{equation*}
-The kernel\index{kernel}, $\ker \left( T\right) $ consists of the set of all vectors $\vect{x}$ for which
+The kernel\index{kernel}, $\ker \tup{T} $ consists of the set of all vectors $\vect{x}$ for which
 $T (\vect{x}) = \vect{0}$. This is also called the
 \textbf{null space}\index{null space} of $T$. 
 \end{definition}
 
 We may also refer to the kernel of $T$ as the
-\textbf{solution space}\index{solution space} of the equation $T \left(\vect{x}\right) = \vect{0}$.
+\textbf{solution space}\index{solution space} of the equation $T \tup{\vect{x}} = \vect{0}$.
 
 
 Consider the following example.
 
 \begin{example}{The kernel of the derivative}{kernelderivative}
 Let $\frac{d}{dx}$ denote the linear transformation defined on $f,$ the functions
-which are defined on $\mathbb{R}$ and have a continuous derivative. Find 
-$\ker \left( \frac{d}{dx}\right) .$
+which are defined on $\R$ and have a continuous derivative. Find 
+$\ker \tup{\frac{d}{dx}} .$
 \end{example}
 
 \begin{solution} The example asks for functions $f$ which the property that $\frac{df}{dx}
 =0. $ As you may know from calculus, these functions are the constant functions.
-Thus $\ker \left( \frac{d}{dx}\right)$ is the set of constant functions.
+Thus $\ker \tup{\frac{d}{dx}}$ is the set of constant functions.
 \end{solution} 
 
-Definition \ref{def:nullspaceoflineartransformation} states that $\ker \left( T\right) $ is the set of
+Definition \ref{def:nullspaceoflineartransformation} states that $\ker \tup{T} $ is the set of
 solutions to the equation,
 \begin{equation*}
-T\left( \vect{x} \right) = \vect{0}
+T\tup{\vect{x} } = \vect{0}
 \end{equation*}
-Since we can write $T\left( \vect{x} \right)$ as $A\vect{x}$, you have been solving such
+Since we can write $T\tup{\vect{x} }$ as $A\vect{x}$, you have been solving such
 equations for quite some time.
 
 We have spent a lot of time finding solutions to systems of equations in general, as well as
@@ -80,39 +80,39 @@ related homogeneous system. By this, we mean that we replace $\vect{b}$ by $\vec
 It turns out that there is a very important relationship between the solutions of the original
 system and the solutions of the associated homogeneous system. In the following 
 theorem, we use linear transformations to denote a system of equations. Remember that
-$T\left(\vect{x}\right) = A\vect{x}$.
+$T\tup{\vect{x}} = A\vect{x}$.
 
 \begin{theorem}{Particular solution and general solution}{particularandgeneralsolution}
 Suppose $\vect{x}_{p}$ is a solution to the linear system given by
 \begin{equation*}
-T\left( \vect{x} \right) = \vect{b}.
+T\tup{\vect{x} } = \vect{b}.
 \end{equation*}
-Then if $\vect{y}$ is any other solution to $T\left(\vect{x}\right)=\vect{b}$, 
+Then if $\vect{y}$ is any other solution to $T\tup{\vect{x}}=\vect{b}$, 
 \index{general solution!solution space} there exists $\vect{x}_0 \in \ker
-\left( T\right) $ such that
+\tup{T} $ such that
 \begin{equation*}
 \vect{y} = \vect{x}_{p}+ \vect{x}_0.
 \end{equation*}
 Hence, every solution to the linear system can be written as a sum of a particular solution, $\vect{x}_p$,
  and a solution $\vect{x}_0$ to the associated 
-homogeneous system given by $T\left(\vect{x}\right)=\vect{0}$.
+homogeneous system given by $T\tup{\vect{x}}=\vect{0}$.
 \end{theorem}
 
 \begin{proof}
-Consider $\vect{y} - \vect{x}_{p}= \vect{y} + \left(
--1\right) \vect{x}_{p}.$ Then $T\left( \vect{y} - \vect{x}_{p}\right) =T\left(\vect{y}\right)
--T\left( \vect{x}_{p} \right)$. Since $\vect{y}$ and $\vect{x}_{p}$ are both solutions to the system, it follows that $T\left(\vect{y}\right)= \vect{b} $
-and $T\left(\vect{x}_p\right) = \vect{b}$. 
+Consider $\vect{y} - \vect{x}_{p}= \vect{y} + \tup{
+-1} \vect{x}_{p}.$ Then $T\tup{\vect{y} - \vect{x}_{p}} =T\tup{\vect{y}}
+-T\tup{\vect{x}_{p} }$. Since $\vect{y}$ and $\vect{x}_{p}$ are both solutions to the system, it follows that $T\tup{\vect{y}}= \vect{b} $
+and $T\tup{\vect{x}_p} = \vect{b}$. 
 
-Hence, $T\left(\vect{y}\right)-T\left( \vect{x}_{p} \right)
+Hence, $T\tup{\vect{y}}-T\tup{\vect{x}_{p} }
 =\vect{b} - \vect{b} = \vect{0}$.  Let $\vect{x}_0 = \vect{y} - \vect{x}_{p}$.
-Then, $T\left(\vect{x}_0\right)= \vect{0} $ so $\vect{x}_0$ is a solution to the associated homogeneous system and so is in $\ker \left(T\right)$.
+Then, $T\tup{\vect{x}_0}= \vect{0} $ so $\vect{x}_0$ is a solution to the associated homogeneous system and so is in $\ker \tup{T}$.
 \end{proof}
 
 Sometimes people remember the above theorem in the following form. The
-solutions to the system $T\left(\vect{x}\right)=\vect{b}$ are given by 
-$\vect{x}_{p}+\ker \left( T\right) $ where $\vect{x}_{p}$ is a particular
-solution to $T\left(\vect{x}\right)=\vect{b}$.
+solutions to the system $T\tup{\vect{x}}=\vect{b}$ are given by 
+$\vect{x}_{p}+\ker \tup{T} $ where $\vect{x}_{p}$ is a particular
+solution to $T\tup{\vect{x}}=\vect{b}$.
 
 For now, we have been speaking about the kernel or null space of a linear transformation $T$. However, 
 we know that every linear transformation $T$ is determined by some matrix $A$. Therefore,
@@ -121,49 +121,39 @@ we can also speak about the null space of a matrix. Consider the following examp
 \begin{example}{The null space of a matrix}{matrixnullspace}
 Let
 \begin{equation*}
-A=\leftB
-\begin{array}{rrrr}
+A=\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 0 \\
 2 & 1 & 1 & 2 \\
 4 & 5 & 7 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
-Find $\func{null} \left( A\right) $. Equivalently, find the solutions to the
+Find $\func{null} \tup{A} $. Equivalently, find the solutions to the
 system of equations $A\vect{x}=\vect{0}$.
 \end{example}
 
-\begin{solution}  We are asked to find $\left\{ \vect{x} : A\vect{x} = \vect{0}\right\} .$ In other
+\begin{solution}  We are asked to find $\set{\vect{x} : A\vect{x} = \vect{0}} .$ In other
 words we want to solve the system, $A\vect{x}=\vect{0}$. Let $\vect{x} =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB.$ Then this amounts to solving
+\end{mymatrix}.$ Then this amounts to solving
 \begin{equation*}
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 0 \\
 2 & 1 & 1 & 2 \\
 4 & 5 & 7 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 0 \\
 0 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 This is the linear system
 \begin{equation*}
@@ -175,49 +165,39 @@ x+2y+3z=0 \\
 \end{equation*}
 To solve, set up the augmented matrix and row reduce to find the {\rref}.
 \begin{equation*}
-\leftB
-\begin{array}{rrrr|r}
+\begin{mymatrix}{rrrr|r}
 1 & 2 & 3 & 0 & 0 \\
 2 & 1 & 1 & 2 & 0 \\
 4 & 5 & 7 & 2 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB
-\begin{array}{rrrr|r}
+\begin{mymatrix}{rrrr|r}
 1 & 0 & -
 \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{4}{3} &  0 \\
 0 & 1 & \vspace{0.05in}\frac{5}{3} & -\vspace{0.05in}\frac{2}{3} & 0 \\
 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 This yields $x=\vspace{0.05in}\frac{1}{3}z-\vspace{0.05in}\frac{4}{3}w$ and 
 $y=\vspace{0.05in}\frac{2}{3}w-\vspace{0.05in}\frac{5}{3}z.$
-Since $\func{null} \left( A\right) $ consists of the solutions to this system, it consists vectors of the form,
+Since $\func{null} \tup{A} $ consists of the solutions to this system, it consists vectors of the form,
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 \vspace{0.05in}\frac{1}{3}z-\vspace{0.05in}\frac{4}{3}w \\
 \vspace{0.05in}\frac{2}{3}w-\vspace{0.05in}\frac{5}{3}z \\
 z \\
 w
-\end{array}
-\rightB =z \leftB
-\begin{array}{r}
+\end{mymatrix} =z \begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{3} \\
 -\vspace{0.05in}\frac{5}{3} \\
 1 \\
 0
-\end{array}
-\rightB +w \leftB
-\begin{array}{r}
+\end{mymatrix} +w \begin{mymatrix}{r}
 -\vspace{0.05in}\frac{4}{3} \\
 \vspace{0.05in}\frac{2}{3} \\
 0 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \end{solution}
 
@@ -228,42 +208,32 @@ The \textbf{general solution}\index{general solution} of a linear system of equa
 is the set of
 all possible solutions. Find the general solution to the linear system,
 \begin{equation*}
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 0 \\
 2 & 1 & 1 & 2 \\
 4 & 5 & 7 & 2
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB =\leftB
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 9 \\
 7 \\
 25
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
-given that $\leftB
-\begin{array}{r}
+given that $\begin{mymatrix}{r}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB=\leftB
-\begin{array}{r}
+\end{mymatrix}=\begin{mymatrix}{r}
 1 \\
 1 \\
 2 \\
 1
-\end{array}
-\rightB$ is one solution.
+\end{mymatrix}$ is one solution.
 \end{example}
 
 \begin{solution} Note the matrix of this system is the same as the matrix in Example 
@@ -273,48 +243,38 @@ system, $\vect{x}$. One particular solution is given above by
 \begin{equation}
 \vect{x}_p
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 x \\
 y \\
 z \\
 w
-\end{array}
-\rightB=\leftB
-\begin{array}{r}
+\end{mymatrix}=\begin{mymatrix}{r}
 1 \\
 1 \\
 2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation}
 
 Using this particular solution along with the solutions found in Example \ref{exa:matrixnullspace}, we
 obtain the following solutions, 
 \begin{equation*}
-z\leftB
-\begin{array}{r}
+z\begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{3} \\
 -\vspace{0.05in}\frac{5}{3} \\
 1 \\
 0
-\end{array}
-\rightB +w\leftB
-\begin{array}{r}
+\end{mymatrix} +w\begin{mymatrix}{r}
 -\vspace{0.05in}\frac{4}{3} \\
 \vspace{0.05in}\frac{2}{3} \\
 0 \\
 1
-\end{array}
-\rightB +\leftB
-\begin{array}{r}
+\end{mymatrix} +\begin{mymatrix}{r}
 1 \\
 1 \\
 2 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Hence, any solution to the above linear system is of this form.

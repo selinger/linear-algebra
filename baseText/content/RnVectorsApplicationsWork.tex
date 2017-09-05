@@ -1,6 +1,6 @@
 \subsection{Work}
 
-The mathematical concept of work is an application of vectors in $\mathbb{R}^n$.  The physical concept
+The mathematical concept of work is an application of vectors in $\R^n$.  The physical concept
 of work differs from the notion of work employed in
 ordinary conversation. For example, suppose you were to slide an object of mass 150 kilograms
 off a table which is one meter high and carry the object to another table 50 meters away, keeping the object always exactly one meter above ground. The physical concept
@@ -13,7 +13,7 @@ the component of the force in the direction of motion.
 Work is defined to be the magnitude of the component of
 this force times the distance over which it acts, when the 
 component of force points in the direction of motion. In the case where the force points in exactly the opposite direction of motion
-work is given by $\left( -1\right) $
+work is given by $\tup{-1} $
 times the magnitude of this component times the distance.
 Thus the work done by a force on an object as
 the object moves from one point to another is a measure of the extent to
@@ -35,7 +35,7 @@ motion.
 \end{tikzpicture}
 \end{center}
 
-Recall that for any vector $\vect{u}$ in $\mathbb{R}^n$, we can write $\vect{u}$ as a sum
+Recall that for any vector $\vect{u}$ in $\R^n$, we can write $\vect{u}$ as a sum
 of two vectors, as in
 \begin{equation*}
 \vect{u} = \vect{u}_{||} + \vect{u}_{\perp}
@@ -57,14 +57,14 @@ $\vect{F}_{||}$ contributes to the work done by $\vect{F}$ on the object
 as it moves from $P$ to $Q$. $\vect{F}_{||}$ is
 called the component of the force in
 \index{component of a force} the direction of motion. From trigonometry, you
-see the magnitude of $\vect{F}_{||}$ should equal $\vectlength \vect{F}
-\vectlength \left| \cos \theta \right| .$ Thus, since $\vect{F}_{||}$ points
+see the magnitude of $\vect{F}_{||}$ should equal $\norm{\vect{F}
+} \abs{\cos \theta} .$ Thus, since $\vect{F}_{||}$ points
 in the direction of the vector from $P$ to $Q,$
 the total work done should equal
 \begin{equation*}
-\vectlength \vect{F}\vectlength \vectlength
-\longvect{PQ}\vectlength \cos \theta =\vectlength
-\vect{F}\vectlength \vectlength \vect{q}-\vect{p}\vectlength \cos \theta
+\norm{\vect{F}} \norm{
+\longvect{PQ}} \cos \theta =\norm{
+\vect{F}} \norm{\vect{q}-\vect{p}} \cos \theta
 \end{equation*}
 
 Now, suppose the included angle had been obtuse. Then the work done by the force 
@@ -74,8 +74,8 @@ so it is still
 the case that the work done would be given by the above formula. Thus from
 the geometric description of the dot product given above, the work equals
 \begin{equation*}
-\vectlength \vect{F}\vectlength \vectlength \vect{q}-\vect{p}\vectlength \cos
-\theta =\vect{F}\dotprod \left( \vect{q}-\vect{p}\right) 
+\norm{\vect{F}} \norm{\vect{q}-\vect{p}} \cos
+\theta =\vect{F}\dotprod \tup{\vect{q}-\vect{p}} 
 \end{equation*}
 This explains the following definition.
 
@@ -83,61 +83,49 @@ This explains the following definition.
 Let $\vect{F}$ be a force acting on an object which moves from the point 
 $P$ to the point $Q$, which have position vectors given by $\vect{p}$ and $\vect{q}$ respectively.
  Then the \textbf{work} done
-\index{work} on the object by the given force equals $\vect{F}\dotprod \left(
-\vect{q}-\vect{p}\right) .$
+\index{work} on the object by the given force equals $\vect{F}\dotprod \tup{
+\vect{q}-\vect{p}} .$
 \end{definition}
 
 Consider the following example.
 
 \begin{example}{Finding work}{findingwork}
 Let $\vect{F}=
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 2 & 7 & -3
-\end{array}
-\rightB^T$ Newtons. Find the work
-done by this force in moving from the point $\left( 1,2,3\right) $ to the
-point $\left( -9,-3,4\right) $ along the straight line segment joining these
+\end{mymatrix}^T$ Newtons. Find the work
+done by this force in moving from the point $\tup{1,2,3} $ to the
+point $\tup{-9,-3,4} $ along the straight line segment joining these
 points where distances are measured in meters.
 \end{example}
 
 \begin{solution}
 First, compute the vector $\vect{q} - \vect{p}$, given by 
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -9 & -3 & 4
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 -
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 3
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 =
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -10 & -5 & 1
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 \end{equation*}
 
 According to Definition \ref{def:workdonebyforce} the work done is
 \begin{align*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 2 & 7 & 3
-\end{array}
-\rightB^T
+\end{mymatrix}^T
  \dotprod 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -10 & -5 & 1
-\end{array}
-\rightB^T
-& =-20+\left( -35\right) +\left(
--3\right) \\
+\end{mymatrix}^T
+& =-20+\tup{-35} +\tup{
+-3} \\
 & =-58\text{ Newton meters}
 \end{align*}
 \end{solution}

@@ -5,13 +5,11 @@ Remember that for a matrix $A$ to be written in the form $A=LU$, you must be abl
 \begin{example}{$LU$ factorization}{lufactorization}
 Find an $LU$ factorization for 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 3 \\ 
 2 & 3 & 1 \\ 
 -2 & 3 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -19,19 +17,15 @@ Find an $LU$ factorization for
 
 Write the matrix as the following product.
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 1
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 2 & 3 \\ 
 2 & 3 & 1 \\ 
 -2 & 3 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 In the matrix on the right, begin with the left row and zero
@@ -41,54 +35,42 @@ on the left so that the product will be unchanged. Here is the first step.
 Take $-2$ times the top row and add to the second. Then take $2$ times the
 top row and add to the second in the matrix on the left. 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 2 & 1 & 0 \\ 
 0 & 0 & 1
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 2 & 3 \\ 
 0 & -1 & -5 \\ 
 -2 & 3 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The next step is to take $2$ times the top row and add to the bottom in the
 matrix on the right. To ensure that the product is unchanged, you place a $%
 -2 $ in the bottom left in the matrix on the left. Thus the next step yields 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 2 & 1 & 0 \\ 
 -2 & 0 & 1
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 2 & 3 \\ 
 0 & -1 & -5 \\ 
 0 & 7 & 4
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Next take $7$ times the middle row on right and add to bottom row. Updating
 the matrix on the left in a similar manner to what was done earlier, 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 2 & 1 & 0 \\ 
 -2 & -7 & 1
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 2 & 3 \\ 
 0 & -1 & -5 \\ 
 0 & 0 & -31
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 At this point, stop. You are done. 
 \end{solution}

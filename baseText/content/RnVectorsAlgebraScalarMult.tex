@@ -1,68 +1,58 @@
-\subsection{Scalar multiplication of vectors in \texorpdfstring{$\mathbb{R}^n$}{Rn}}
+\subsection{Scalar multiplication of vectors in \texorpdfstring{$\R^n$}{Rn}}
 
-Scalar multiplication of vectors in $\mathbb{R}^n$ is defined as 
+Scalar multiplication of vectors in $\R^n$ is defined as 
 follows.
 
-\begin{definition}{Scalar multiplication of vectors in $\mathbb{R}^n$}{vectorscalarmultiplication}
-If $\vect{u}\in \mathbb{R}^{n}$ and $k\in \mathbb{R}$ is a
-scalar\index{scalars}, then $k\vect{u}\in \mathbb{R}^{n}$\index{vector!scalar multiplication} is defined by
+\begin{definition}{Scalar multiplication of vectors in $\R^n$}{vectorscalarmultiplication}
+If $\vect{u}\in \R^{n}$ and $k\in \R$ is a
+scalar\index{scalars}, then $k\vect{u}\in \R^{n}$\index{vector!scalar multiplication} is defined by
 \begin{equation*}
-k\vect{u}=k\leftB \begin{array}{c}
+k\vect{u}=k\begin{mymatrix}{c}
 u_{1} \\
 \vdots \\
 u_{n}
-\end{array}
-\rightB = \leftB \begin{array}{c}
+\end{mymatrix} = \begin{mymatrix}{c}
 ku_{1} \\
 \vdots \\
 ku_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{definition}
 
 For example 
-$3 \leftB
-\begin{array}{rrr}
+$3 \begin{mymatrix}{rrr}
 1 & 2 & 3
-\end{array}
-\rightB^T =
-\leftB
-\begin{array}{rrr}
+\end{mymatrix}^T =
+\begin{mymatrix}{rrr}
 3 & 6 & 9
-\end{array}
-\rightB^T$
+\end{mymatrix}^T$
  and 
-$-2\leftB
-\begin{array}{rrr}
+$-2\begin{mymatrix}{rrr}
 1 & 2 & 3
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 =
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -2 & -4 & -6
-\end{array}
-\rightB^T$.
+\end{mymatrix}^T$.
 
 Just as with addition, scalar multiplication of vectors satisfies several important properties. These are 
 outlined in the following theorem. 
 
 \begin{theorem}{Properties of scalar multiplication}{vectorscalarmult}
-The following properties hold for vectors $\vect{u},\vect{v}\in \mathbb{R}^{n}$ and $k,p $
+The following properties hold for vectors $\vect{u},\vect{v}\in \R^{n}$ and $k,p $
 scalars.
 \begin{itemize}
 \item The Distributive Law over Vector Addition
 \begin{equation*}
-k \left( \vect{u}+\vect{v}\right) = k\vect{u}+ k\vect{v}
+k \tup{\vect{u}+\vect{v}} = k\vect{u}+ k\vect{v}
 \end{equation*}
 \item The Distributive Law over Scalar Addition
 \begin{equation*}
-\left( k + p  \right)\vect{u} = k \vect{u}+p \vect{u}
+\tup{k + p  }\vect{u} = k \vect{u}+p \vect{u}
 \end{equation*}
 \item The Associative Law for Scalar Multiplication
 \begin{equation*}
-k \left( p \vect{u}\right) = \left(k p \right)\vect{u}
+k \tup{p \vect{u}} = \tup{k p }\vect{u}
 \end{equation*}
 \item Rule for Multiplication by $1$
 \begin{equation*}
@@ -74,15 +64,15 @@ k \left( p \vect{u}\right) = \left(k p \right)\vect{u}
 \begin{proof}
 We will show the proof of: 
 \begin{equation*}
-k \left( \vect{u}+\vect{v}\right) = k \vect{u}+ k \vect{v}
+k \tup{\vect{u}+\vect{v}} = k \vect{u}+ k \vect{v}
 \end{equation*}
 Note that:
 \begin{equation*}
 \begin{array}{ll}
-k \left( \vect{u}+\vect{v}\right) & =k \leftB u_{1}+v_{1} \cdots u_{n}+v_{n}\rightB^T \\
-& = \leftB k \left( u_{1}+v_{1}\right) \cdots k \left( u_{n}+v_{n}\right) \rightB^T \\
-& = \leftB k u_{1}+ k  v_{1} \cdots k u_{n}+ k v_{n}\rightB^T \\
-& = \leftB k u_{1} \cdots k u_{n} \rightB^T + \leftB k v_{1} \cdots k v_{n} \rightB^T \\
+k \tup{\vect{u}+\vect{v}} & =k \mat{u_{1}+v_{1} \cdots u_{n}+v_{n}}^T \\
+& = \mat{k \tup{u_{1}+v_{1}} \cdots k \tup{u_{n}+v_{n}} }^T \\
+& = \mat{k u_{1}+ k  v_{1} \cdots k u_{n}+ k v_{n}}^T \\
+& = \mat{k u_{1} \cdots k u_{n} }^T + \mat{k v_{1} \cdots k v_{n} }^T \\
 & = k \vect{u}+k \vect{v} \\
 \end{array}
 \end{equation*}
@@ -102,98 +92,78 @@ that
 For example, 
 \begin{equation*}
 3
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -4 \\
 1 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 +
 2
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -3 \\
 0\\
 1
-\end{array}
-\rightB
+\end{mymatrix}
  =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -18 \\
 3 \\
 2
-\end{array}
-\rightB. 
+\end{mymatrix}. 
 \end{equation*}
 Thus we can say that
 \begin{equation*}
-\vect{v}= \leftB
-\begin{array}{r}
+\vect{v}= \begin{mymatrix}{r}
 -18 \\
 3 \\
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is a linear combination of the vectors 
 \begin{equation*}
-\vect{u}_1 = \leftB
-\begin{array}{r}
+\vect{u}_1 = \begin{mymatrix}{r}
 -4 \\
 1 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \mbox{ and } 
 \vect{u}_2 = 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -3 \\
 0\\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
-For the specific case of $\mathbb{R}^3$, there are three special vectors which we often use. 
+For the specific case of $\R^3$, there are three special vectors which we often use. 
 They are given by 
 \begin{equation*}
 \vect{i} = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 0 & 0
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 \end{equation*}
 \begin{equation*}
 \vect{j} = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0 & 1 & 0
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 \end{equation*}
 \begin{equation*}
 \vect{k} = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0 & 0 & 1
-\end{array}
-\rightB^T
+\end{mymatrix}^T
 \end{equation*}
 We can write any vector $\vect{u} = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 a_1 & a_2 & a_3
-\end{array}
-\rightB^T$
+\end{mymatrix}^T$
 as a linear combination of these vectors, written as $\vect{u} = a_1 \vect{i} + a_2 \vect{j} + a_3 \vect{k}$. This notation will be used throughout 
 this chapter.
 
 \begin{example}{Determining if linear combination}{determinelincomb}
-Can $\vect{v}=\leftB \begin{array}{rrr}1 & 3 & 5 \end{array} \rightB^T$ be written as a linear combination of $\vect{u}_1=\leftB \begin{array}{rrr}2 & 2 & 6 \end{array} \rightB^T$, $\vect{u}_2=\leftB \begin{array}{rrr}1 & 6 & 8 \end{array} \rightB^T$ and $\vect{u}_3=\leftB \begin{array}{rrr}3 & 8 & 18 \end{array} \rightB^T$?
+Can $\vect{v}=\begin{mymatrix}{rrr}1 & 3 & 5 \end{mymatrix}^T$ be written as a linear combination of $\vect{u}_1=\begin{mymatrix}{rrr}2 & 2 & 6 \end{mymatrix}^T$, $\vect{u}_2=\begin{mymatrix}{rrr}1 & 6 & 8 \end{mymatrix}^T$ and $\vect{u}_3=\begin{mymatrix}{rrr}3 & 8 & 18 \end{mymatrix}^T$?
 \end{example}
 
 \begin{solution}
@@ -207,15 +177,15 @@ where $x,y,z$ are scalars? Multiplying out produces the system of linear equatio
 \end{align*}
 now we row reduce the corresponding augmented matrix to solve
 \begin{align*}
-&\leftB \begin{array}{rrr|r} 2 & 1 & 3 & 1 \\ 2 & 6 & 8 & 3\\ 6 & 8 & 18 & 5 \end{array}\rightB  \stackrel{R_1\leftarrow R_1-R_2}{\stackrel{R_3\leftarrow R_3-3R_1}{\sim}}
-\leftB \begin{array}{rrr|r} 0 & -5 & -5 & -2 \\ 2 & 6 & 8 & 3 \\ 0 & 5 & 9 & 2 \end{array}\rightB \stackrel{R_1\leftarrow R_1+R_3}{\sim}
-\leftB \begin{array}{rrr|r} 0 & 0 & 4 & 0 \\ 2 & 6 & 8 & 3 \\ 0 & 5 & 9 & 2 \end{array}\rightB \stackrel{R_2\leftrightarrow R_1}{\sim} \\
-&\leftB \begin{array}{rrr|r} 2 & 6 & 8 & 3 \\ 0 & 0 & 4 & 0 \\ 0 & 5 & 9 & 2 \end{array}\rightB \stackrel{\frac{1}{2}R_1}{\stackrel{R_2\leftrightarrow R_3}{\sim}}
-\leftB \begin{array}{rrr|r} 1 & 3 & 4 & \frac{3}{2} \\ 0 & 5 & 9 & 2\\  0 & 0 & 4 & 0\end{array}\rightB \stackrel{\frac{1}{4}R_3}{\sim}
-\leftB \begin{array}{rrr|r} 1 & 3 & 4 & \frac{3}{2} \\ 0 & 5 & 9 & 2\\  0 & 0 & 1 & 0 \end{array}\rightB \stackrel{R_1\leftarrow R_1-4R_3}{\stackrel{R_2\leftarrow R_2-9R_3}{\sim}} \\
-& \leftB \begin{array}{rrr|r} 1 & 3 & 0 & \frac{3}{2} \\ 0 & 5 & 0 & 2\\  0 & 0 & 1 & 0 \end{array}\rightB  \stackrel{\frac{1}{5}R_2}{\sim}
-\leftB \begin{array}{rrr|r} 1 & 3 & 0 & \frac{3}{2} \\ 0 & 1 & 0 & \frac{2}{5}\\  0 & 0 & 1 & 0 \end{array}\rightB \stackrel{R_1\leftarrow R_1-3R_2}{\sim}
-\leftB \begin{array}{rrr|r} 1 & 0 & 0 & \frac{3}{10} \\ 0 & 1 & 0 & \frac{2}{5}\\  0 & 0 & 1 & 0 \end{array}\rightB
+&\begin{mymatrix}{rrr|r} 2 & 1 & 3 & 1 \\ 2 & 6 & 8 & 3\\ 6 & 8 & 18 & 5 \end{mymatrix}  \stackrel{R_1\leftarrow R_1-R_2}{\stackrel{R_3\leftarrow R_3-3R_1}{\sim}}
+\begin{mymatrix}{rrr|r} 0 & -5 & -5 & -2 \\ 2 & 6 & 8 & 3 \\ 0 & 5 & 9 & 2 \end{mymatrix} \stackrel{R_1\leftarrow R_1+R_3}{\sim}
+\begin{mymatrix}{rrr|r} 0 & 0 & 4 & 0 \\ 2 & 6 & 8 & 3 \\ 0 & 5 & 9 & 2 \end{mymatrix} \stackrel{R_2\leftrightarrow R_1}{\sim} \\
+&\begin{mymatrix}{rrr|r} 2 & 6 & 8 & 3 \\ 0 & 0 & 4 & 0 \\ 0 & 5 & 9 & 2 \end{mymatrix} \stackrel{\frac{1}{2}R_1}{\stackrel{R_2\leftrightarrow R_3}{\sim}}
+\begin{mymatrix}{rrr|r} 1 & 3 & 4 & \frac{3}{2} \\ 0 & 5 & 9 & 2\\  0 & 0 & 4 & 0\end{mymatrix} \stackrel{\frac{1}{4}R_3}{\sim}
+\begin{mymatrix}{rrr|r} 1 & 3 & 4 & \frac{3}{2} \\ 0 & 5 & 9 & 2\\  0 & 0 & 1 & 0 \end{mymatrix} \stackrel{R_1\leftarrow R_1-4R_3}{\stackrel{R_2\leftarrow R_2-9R_3}{\sim}} \\
+& \begin{mymatrix}{rrr|r} 1 & 3 & 0 & \frac{3}{2} \\ 0 & 5 & 0 & 2\\  0 & 0 & 1 & 0 \end{mymatrix}  \stackrel{\frac{1}{5}R_2}{\sim}
+\begin{mymatrix}{rrr|r} 1 & 3 & 0 & \frac{3}{2} \\ 0 & 1 & 0 & \frac{2}{5}\\  0 & 0 & 1 & 0 \end{mymatrix} \stackrel{R_1\leftarrow R_1-3R_2}{\sim}
+\begin{mymatrix}{rrr|r} 1 & 0 & 0 & \frac{3}{10} \\ 0 & 1 & 0 & \frac{2}{5}\\  0 & 0 & 1 & 0 \end{mymatrix}
 \end{align*}
 we are in the case where we have a unique solution:
 \begin{align*}

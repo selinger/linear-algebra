@@ -4,7 +4,7 @@
 \begin{enumialphparenastyle}
 
 \begin{ex} \label{exerlineartransf}
-Consider the following functions which map $\mathbb{R}^{n}$ to $\mathbb{R}^{n}$. 
+Consider the following functions which map $\R^{n}$ to $\R^{n}$. 
 
 \begin{enumerate}
 \item $T$ multiplies the $j^{th}$ component of $\vect{x}$ by a nonzero
@@ -16,7 +16,7 @@ $j^{th}$ component added to the $i^{th}$ component.
 \item $T$ switches the $i^{th}$ and $j^{th}$ components.
 \end{enumerate}
 
-Show these functions are linear transformations and describe their matrices $A$ such that $T\left(\vect{x}\right) = A\vect{x}$.
+Show these functions are linear transformations and describe their matrices $A$ such that $T\tup{\vect{x}} = A\vect{x}$.
 \begin{sol}
 \begin{enumerate}
 \item The matrix of $T$ is the elementary matrix which multiplies
@@ -31,94 +31,66 @@ and $j^{th}$ positions.
 \end{sol}
 \end{ex}
 
-\begin{ex} You are given a linear transformation $T:\mathbb{R}^{n}\rightarrow
-\mathbb{R}^{m}$ and you know that
+\begin{ex} You are given a linear transformation $T:\R^{n}\rightarrow
+\R^{m}$ and you know that
 \begin{equation*}
-T\left(A_{i}\right)=B_{i}
+T\tup{A_{i}}=B_{i}
 \end{equation*}
-where $\leftB
-\begin{array}{ccc}
+where $\begin{mymatrix}{ccc}
 A_{1} & \cdots & A_{n}
-\end{array}
-\rightB ^{-1}$ exists. Show that the matrix of $T$ is of the form
+\end{mymatrix} ^{-1}$ exists. Show that the matrix of $T$ is of the form
 \begin{equation*}
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 B_{1} & \cdots & B_{n}
-\end{array}
-\rightB \leftB
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 A_{1} & \cdots & A_{n}
-\end{array}
-\rightB ^{-1}
+\end{mymatrix} ^{-1}
 \end{equation*}
 \begin{sol}
 Suppose 
 \[
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 \vect{c}_{1}^{T} \\
 \vdots \\
 \vect{c}_{n}^{T}
-\end{array}
-\rightB =\leftB
-\begin{array}{ccc}
+\end{mymatrix} =\begin{mymatrix}{ccc}
 \vect{a}_{1} & \cdots & \vect{a}_{n}
-\end{array}
-\rightB^{-1}
+\end{mymatrix}^{-1}
 \]
 Thus $\vect{c}_{i}^{T}\vect{a}_{j}=\delta _{ij}$. Therefore,
 \begin{eqnarray*}
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 \vect{b}_{1} & \cdots & \vect{b}_{n}
-\end{array}
-\rightB \leftB
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 \vect{a}_{1} & \cdots & \vect{a}_{n}
-\end{array}
-\rightB ^{-1}\vect{a}_{i} &=&
-\leftB
-\begin{array}{ccc}
+\end{mymatrix} ^{-1}\vect{a}_{i} &=&
+\begin{mymatrix}{ccc}
 \vect{b}_{1} & \cdots & \vect{b}_{n}
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 \vect{c}_{1}^{T} \\
 \vdots \\
 \vect{c}_{n}^{T}
-\end{array}
-\rightB \vect{a}_{i} \\
-&=&\leftB
-\begin{array}{ccc}
+\end{mymatrix} \vect{a}_{i} \\
+&=&\begin{mymatrix}{ccc}
 \vect{b}_{1} & \cdots & \vect{b}_{n}
-\end{array}
-\rightB \vect{e}_{i} \\
+\end{mymatrix} \vect{e}_{i} \\
 &=&\vect{b}_{i}
 \end{eqnarray*}
-Thus $T\vect{a}_{i}=\leftB
-\begin{array}{ccc}
+Thus $T\vect{a}_{i}=\begin{mymatrix}{ccc}
 \vect{b}_{1} & \cdots & \vect{b}_{n}
-\end{array}
-\rightB \leftB
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 \vect{a}_{1} & \cdots & \vect{a}_{n}
-\end{array}
-\rightB ^{-1}\vect{a}_{i} =  A\vect{a}_{i}.$ If $\vect{x}$ is
-arbitrary, then since the matrix $\leftB
-\begin{array}{ccc}
+\end{mymatrix} ^{-1}\vect{a}_{i} =  A\vect{a}_{i}.$ If $\vect{x}$ is
+arbitrary, then since the matrix $\begin{mymatrix}{ccc}
 \vect{a}_{1} & \cdots & \vect{a}_{n}
-\end{array}
-\rightB $ is invertible, there exists a unique $\vect{y}$ such that $
-\leftB
-\begin{array}{ccc}
+\end{mymatrix} $ is invertible, there exists a unique $\vect{y}$ such that $
+\begin{mymatrix}{ccc}
 \vect{a}_{1} & \cdots & \vect{a}_{n}
-\end{array}
-\rightB \vect{y}=\vect{x}$ Hence
+\end{mymatrix} \vect{y}=\vect{x}$ Hence
 \[
-T\vect{x}=T\left( \sum_{i=1}^{n}y_{i}\vect{a}_{i}\right)
+T\vect{x}=T\tup{\sum_{i=1}^{n}y_{i}\vect{a}_{i}}
 =\sum_{i=1}^{n}y_{i}T\vect{a}_{i}=\sum_{i=1}^{n}y_{i}A\vect{a}
-_{i}=A\left( \sum_{i=1}^{n}y_{i}\vect{a}_{i}\right) =A\vect{x}
+_{i}=A\tup{\sum_{i=1}^{n}y_{i}\vect{a}_{i}} =A\vect{x}
 \]
 
 \end{sol}
@@ -126,461 +98,339 @@ _{i}=A\left( \sum_{i=1}^{n}y_{i}\vect{a}_{i}\right) =A\vect{x}
 
 \begin{ex} Suppose $T$ is a linear transformation such that 
 \begin{eqnarray*}
-T\leftB
-\begin{array}{r}
+T\begin{mymatrix}{r}
 1 \\
 2 \\
 -6
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 5 \\
 1 \\
 3
-\end{array}
-\rightB \\
-T\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+T\begin{mymatrix}{r}
 -1 \\
 -1 \\
 5
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 1 \\
 1 \\
 5
-\end{array}
-\rightB \\
-T\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+T\begin{mymatrix}{r}
 0 \\
 -1 \\
 2
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 5 \\
 3 \\
 -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 Find the matrix of $T$. That is find $A$ such that $T(\vect{x})=A\vect{x}$. \vspace{1mm}
 \begin{sol}
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 5 & 1 & 5 \\
 1 & 1 & 3 \\
 3 & 5 & -2
-\end{array}
-\rightB \leftB
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 3 & 2 & 1 \\
 2 & 2 & 1 \\
 4 & 1 & 1
-\end{array}
-\rightB =\leftB
-\begin{array}{ccc}
+\end{mymatrix} =\begin{mymatrix}{ccc}
 37 & 17 & 11 \\
 17 & 7 & 5 \\
 11 & 14 & 6
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
 
 \begin{ex} Suppose $T$ is a linear transformation such that 
 \begin{eqnarray*}
-T\leftB
-\begin{array}{r}
+T\begin{mymatrix}{r}
 1 \\
 1 \\
 -8
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 1 \\
 3 \\
 1
-\end{array}
-\rightB \\
-T\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+T\begin{mymatrix}{r}
 -1 \\
 0 \\
 6
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 2 \\
 4 \\
 1
-\end{array}
-\rightB \\
-T\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+T\begin{mymatrix}{r}
 0 \\
 -1 \\
 3
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 6 \\
 1 \\
 -1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 Find the matrix of $T$. That is find $A$ such that $T(\vect{x})=A\vect{x}$. \vspace{1mm}
 \begin{sol}
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 6 \\
 3 & 4 & 1 \\
 1 & 1 & -1
-\end{array}
-\rightB \leftB
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 6 & 3 & 1 \\
 5 & 3 & 1 \\
 6 & 2 & 1
-\end{array}
-\rightB =\leftB
-\begin{array}{ccc}
+\end{mymatrix} =\begin{mymatrix}{ccc}
 52 & 21 & 9 \\
 44 & 23 & 8 \\
 5 & 4 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
 
 \begin{ex} Suppose $T$ is a linear transformation such that 
 \begin{eqnarray*}
-T\leftB
-\begin{array}{r}
+T\begin{mymatrix}{r}
 1 \\
 3 \\
 -7
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 -3 \\
 1 \\
 3
-\end{array}
-\rightB \\
-T\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+T\begin{mymatrix}{r}
 -1 \\
 -2 \\
 6
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 1 \\
 3 \\
 -3
-\end{array}
-\rightB \\
-T\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+T\begin{mymatrix}{r}
 0 \\
 -1 \\
 2
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 5 \\
 3 \\
 -3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 Find the matrix of $T$. That is find $A$ such that $T(\vect{x})=A\vect{x}$. \vspace{1mm}\vspace{1mm}
 \begin{sol}
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -3 & 1 & 5 \\
 1 & 3 & 3 \\
 3 & -3 & -3
-\end{array}
-\rightB \leftB
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 2 & 2 & 1 \\
 1 & 2 & 1 \\
 4 & 1 & 1
-\end{array}
-\rightB = \leftB
-\begin{array}{rrr}
+\end{mymatrix} = \begin{mymatrix}{rrr}
 15 & 1 & 3 \\
 17 & 11 & 7 \\
 -9 & -3 & -3
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
 
 \begin{ex} Suppose $T$ is a linear transformation such that 
 \begin{eqnarray*}
-T\leftB
-\begin{array}{r}
+T\begin{mymatrix}{r}
 1 \\
 1 \\
 -7
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 3 \\
 3 \\
 3
-\end{array}
-\rightB \\
-T\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+T\begin{mymatrix}{r}
 -1 \\
 0 \\
 6
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 1 \\
 2 \\
 3
-\end{array}
-\rightB \\
-T\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+T\begin{mymatrix}{r}
 0 \\
 -1 \\
 2
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 1 \\
 3 \\
 -1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 Find the matrix of $T$. That is find $A$ such that $T(\vect{x})=A\vect{x}$. \vspace{1mm}
 \begin{sol}
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 3 & 1 & 1 \\
 3 & 2 & 3 \\
 3 & 3 & -1
-\end{array}
-\rightB \leftB
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 6 & 2 & 1 \\
 5 & 2 & 1 \\
 6 & 1 & 1
-\end{array}
-\rightB =\allowbreak \leftB
-\begin{array}{ccc}
+\end{mymatrix} =\allowbreak \begin{mymatrix}{ccc}
 29 & 9 & 5 \\
 46 & 13 & 8 \\
 27 & 11 & 5
-\end{array}
-\rightB 
+\end{mymatrix} 
 \]
 \end{sol}
 \end{ex}
 
 \begin{ex} Suppose $T$ is a linear transformation such that
 \begin{eqnarray*}
-T\leftB
-\begin{array}{r}
+T\begin{mymatrix}{r}
 1 \\
 2 \\
 -18
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 5 \\
 2 \\
 5
-\end{array}
-\rightB \\
-T\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+T\begin{mymatrix}{r}
 -1 \\
 -1 \\
 15
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 3 \\
 3 \\
 5
-\end{array}
-\rightB \\
-T\leftB
-\begin{array}{r}
+\end{mymatrix} \\
+T\begin{mymatrix}{r}
 0 \\
 -1 \\
 4
-\end{array}
-\rightB &=&\leftB
-\begin{array}{r}
+\end{mymatrix} &=&\begin{mymatrix}{r}
 2 \\
 5 \\
 -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 Find the matrix of $T$. That is find $A$ such that $T(\vect{x})=A\vect{x}$. \vspace{1mm}
 \begin{sol}
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 5 & 3 & 2 \\
 2 & 3 & 5 \\
 5 & 5 & -2
-\end{array}
-\rightB \leftB
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 11 & 4 & 1 \\
 10 & 4 & 1 \\
 12 & 3 & 1
-\end{array}
-\rightB =\leftB
-\begin{array}{ccc}
+\end{mymatrix} =\begin{mymatrix}{ccc}
 109 & 38 & 10 \\
 112 & 35 & 10 \\
 81 & 34 & 8
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
 
 
-\begin{ex} Consider the following functions $T:\mathbb{R}^{3}\rightarrow \mathbb{R}^{2}$.
+\begin{ex} Consider the following functions $T:\R^{3}\rightarrow \R^{2}$.
 Show that each is a linear transformation and determine for each the matrix $A$ such that 
 $T(\vect{x})=A\vect{x}$.
 
 \begin{enumerate}
-\item $T\leftB
-\begin{array}{c}
+\item $T\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 x+2y+3z \\
 2y-3x+z
-\end{array}
-\rightB $
+\end{mymatrix} $
 
-\item $T\leftB
-\begin{array}{c}
+\item $T\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 7x+2y+z \\
 3x-11y+2z
-\end{array}
-\rightB $
+\end{mymatrix} $
 
-\item $T\leftB
-\begin{array}{c}
+\item $T\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 3x+2y+z \\
 x+2y+6z
-\end{array}
-\rightB $
+\end{mymatrix} $
 
-\item $T\leftB
-\begin{array}{c}
+\item $T\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 2y-5x+z \\
 x+y+z
-\end{array}
-\rightB $
+\end{mymatrix} $
 \end{enumerate}
 %\begin{sol}
 %\end{sol}
 \end{ex}
 
-\begin{ex} Consider the following functions $T:\mathbb{R}^{3}\rightarrow \mathbb{R}^{2}.$
+\begin{ex} Consider the following functions $T:\R^{3}\rightarrow \R^{2}.$
 Explain why each of these functions $T$ is not linear.
 
 \begin{enumerate}
-\item $T\leftB
-\begin{array}{c}
+\item $T\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 x+2y+3z+1 \\
 2y-3x+z
-\end{array}
-\rightB $
+\end{mymatrix} $
 
-\item $T\leftB
-\begin{array}{c}
+\item $T\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 x+2y^{2}+3z \\
 2y+3x+z
-\end{array}
-\rightB $
+\end{mymatrix} $
 
-\item $T\leftB
-\begin{array}{c}
+\item $T\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 \sin x+2y+3z \\
 2y+3x+z
-\end{array}
-\rightB $
+\end{mymatrix} $
 
-\item $T\leftB
-\begin{array}{c}
+\item $T\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 x+2y+3z \\
 2y+3x-\ln z
-\end{array}
-\rightB $
+\end{mymatrix} $
 \end{enumerate}
 %\begin{sol}
 %\end{sol}
@@ -589,14 +439,12 @@ x+2y+3z \\
 
 \begin{ex} Suppose 
 \begin{equation*}
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 A_{1} & \cdots & A_{n}
-\end{array}
-\rightB ^{-1}
+\end{mymatrix} ^{-1}
 \end{equation*}
- exists where each $A_{j}\in \mathbb{R}^{n}$ and let
-vectors  $\left\{ B_{1},\cdots ,B_{n}\right\} $ in $\mathbb{R}^{m}$ be given. 
+ exists where each $A_{j}\in \R^{n}$ and let
+vectors  $\set{B_{1},\cdots ,B_{n}} $ in $\R^{m}$ be given. 
 Show that there \textbf{always }exists a linear
 transformation $T$ such that $T(A_{i})=B_{i}$.
 %\begin{sol}
@@ -604,61 +452,49 @@ transformation $T$ such that $T(A_{i})=B_{i}$.
 \end{ex}
 
 
-\begin{ex}  Find the matrix for $T\left(\vect{w} \right) = \func{proj}_{\vect{v}}\left( \vect{w}\right) $
-where $\vect{v}=\leftB 
-\begin{array}{rrr}
+\begin{ex}  Find the matrix for $T\tup{\vect{w} } = \func{proj}_{\vect{v}}\tup{\vect{w}} $
+where $\vect{v}=\begin{mymatrix}{rrr}
 1 & -2 & 3
-\end{array}
-\rightB ^{T}.$
+\end{mymatrix} ^{T}.$
 \begin{sol}
- Recall that $\func{proj}_{\vect{u}}\left( \vect{v}\right) =\frac{\vect{v}\dotprod\vect{u} }{\vectlength \vect{u}\vectlength ^{2}}\vect{u}$ and so the desired matrix
-has $i^{th}$ column equal to $\func{proj}_{\vect{u}}\left( \vect{e}_{i}\right) .$ Therefore, the matrix desired is
+ Recall that $\func{proj}_{\vect{u}}\tup{\vect{v}} =\frac{\vect{v}\dotprod\vect{u} }{\norm{\vect{u}} ^{2}}\vect{u}$ and so the desired matrix
+has $i^{th}$ column equal to $\func{proj}_{\vect{u}}\tup{\vect{e}_{i}} .$ Therefore, the matrix desired is
 \[
-\frac{1}{14}\leftB
-\begin{array}{rrr}
+\frac{1}{14}\begin{mymatrix}{rrr}
 1 & -2 & 3 \\
 -2 & 4 & -6 \\
 3 & -6 & 9
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
 
-\begin{ex}  Find the matrix for $T\left(\vect{w} \right) = \func{proj}_{\vect{v}}\left( \vect{w}\right) $
-where $\vect{v}=\leftB 
-\begin{array}{rrr}
+\begin{ex}  Find the matrix for $T\tup{\vect{w} } = \func{proj}_{\vect{v}}\tup{\vect{w}} $
+where $\vect{v}=\begin{mymatrix}{rrr}
 1 & 5 & 3
-\end{array}
-\rightB ^{T}.$
+\end{mymatrix} ^{T}.$
 \begin{sol}
 \[
-\frac{1}{35}\leftB
-\begin{array}{rrr}
+\frac{1}{35}\begin{mymatrix}{rrr}
 1 & 5 & 3 \\
 5 & 25 & 15 \\
 3 & 15 & 9
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
 
-\begin{ex} Find the matrix for $T\left(\vect{w} \right) = \func{proj}_{\vect{v}}\left( \vect{w}\right) $
-where $\vect{v}=\leftB 
-\begin{array}{rrr}
+\begin{ex} Find the matrix for $T\tup{\vect{w} } = \func{proj}_{\vect{v}}\tup{\vect{w}} $
+where $\vect{v}=\begin{mymatrix}{rrr}
 1 & 0 & 3
-\end{array}
-\rightB ^{T}.$ 
+\end{mymatrix} ^{T}.$ 
 \begin{sol}
 \[
-\frac{1}{10}\leftB
-\begin{array}{ccc}
+\frac{1}{10}\begin{mymatrix}{ccc}
 1 & 0 & 3 \\
 0 & 0 & 0 \\
 3 & 0 & 9
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{sol}
 \end{ex}
@@ -668,96 +504,87 @@ where $\vect{v}=\leftB
 
 
 \begin{ex}
-Let $B = \left\{ \leftB \begin{array}{r}
+Let $B = \set{\begin{mymatrix}{r}
 2 \\
 -1 
-\end{array} \rightB, \leftB \begin{array}{r}
+\end{mymatrix}, \begin{mymatrix}{r}
 3 \\
 2
-\end{array} \rightB \right\}$ be a basis of $\mathbb{R}^2$ and let $\vect{x} = \leftB
-\begin{array}{r}
+\end{mymatrix} }$ be a basis of $\R^2$ and let $\vect{x} = \begin{mymatrix}{r}
 5 \\
 -7
-\end{array}
-\rightB$ be a vector in $\mathbb{R}^2$. Find $C_B(\vect{x})$. 
+\end{mymatrix}$ be a vector in $\R^2$. Find $C_B(\vect{x})$. 
 \end{ex}
 
 \begin{ex}
-Let $B = \left\{ \leftB \begin{array}{r}
+Let $B = \set{\begin{mymatrix}{r}
 1 \\
 -1 \\
 2 
-\end{array} \rightB, \leftB \begin{array}{r}
+\end{mymatrix}, \begin{mymatrix}{r}
 2 \\
 1 \\
 2
- \end{array} \rightB, \leftB \begin{array}{r}
+ \end{mymatrix}, \begin{mymatrix}{r}
 -1 \\
 0 \\
 2
-\end{array} \rightB \right\}$ 
-be a basis of $\mathbb{R}^3$ and let $\vect{x} = \leftB
-\begin{array}{r}
+\end{mymatrix} }$ 
+be a basis of $\R^3$ and let $\vect{x} = \begin{mymatrix}{r}
 5 \\
 -1 \\
 4
-\end{array}
-\rightB$ be a vector in $\mathbb{R}^2$. Find $C_B(\vect{x})$. 
+\end{mymatrix}$ be a vector in $\R^2$. Find $C_B(\vect{x})$. 
 \begin{sol}
  $C_B(\vect{x}) = 
-\leftB \begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 1 \\
 -1
- \end{array} \rightB $.
+ \end{mymatrix} $.
 \end{sol}
 \end{ex}
 
 
 \begin{ex}
-Let $T: \mathbb{R}^2 \mapsto \mathbb{R}^2$ be a linear transformation defined by $T \left( \leftB \begin{array}{r}
+Let $T: \R^2 \mapsto \R^2$ be a linear transformation defined by $T \tup{\begin{mymatrix}{r}
 a \\
 b
-\end{array} \rightB \right) = \leftB \begin{array}{r}
+\end{mymatrix} } = \begin{mymatrix}{r}
 a+b \\
 a-b
-\end{array} \rightB$. 
+\end{mymatrix}$. 
 
 Consider the two bases
 \[
-B_1 = \left\{ \vect{v}_{1}, \vect{v}_{2} \right\} = \left\{ \leftB \begin{array}{r}
+B_1 = \set{\vect{v}_{1}, \vect{v}_{2} } = \set{\begin{mymatrix}{r}
 1 \\
 0
-\end{array}\rightB, \leftB \begin{array}{r}
+\end{mymatrix}, \begin{mymatrix}{r}
 -1 \\
 1
-\end{array}
-\rightB
-\right\}
+\end{mymatrix}
+}
 \]
  and 
 \[
-B_2 = \left\{ \leftB \begin{array}{r}
+B_2 = \set{\begin{mymatrix}{r}
 1 \\
 1
-\end{array}
-\rightB, \leftB \begin{array}{r}
+\end{mymatrix}, \begin{mymatrix}{r}
 1 \\
 -1
-\end{array}
-\rightB
-\right\}
+\end{mymatrix}
+}
 \]
 
 Find the matrix $M_{B_2,B_1}$ of $T$ with respect to the bases $B_1$ and $B_2$. 
 \begin{sol}
 $
-M_{B_{2} B_{1}} = \leftB
-\begin{array}{rr}
+M_{B_{2} B_{1}} = \begin{mymatrix}{rr}
 \vspace{0.05in}1 & 0 \\
 \vspace{0.05in}-1 & 1 
-\end{array}
-\rightB $
+\end{mymatrix} $
 \end{sol}
 \end{ex}
 

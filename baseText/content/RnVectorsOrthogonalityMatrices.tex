@@ -21,12 +21,10 @@ Consider the following example.
 \begin{example}{Orthogonal matrix}{}
 Show the matrix
 \begin{equation*}
-U=\leftB
-\begin{array}{rr}
+U=\begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 \vspace{0.05in}\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is orthogonal.
 \end{example}
@@ -35,22 +33,16 @@ is orthogonal.
 All we need to do is verify (one of the equations from) the requirements of Definition \ref{def:OrthoMatrix}.
 
 \begin{equation*}
-UU^{T}=\leftB 
-\begin{array}{rr}
+UU^{T}=\begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
 \vspace{0.05in}\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
-\end{array}
-\rightB \leftB 
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
 \vspace{0.05in}\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
-\end{array}
-\rightB =\allowbreak \leftB 
-\begin{array}{cc}
+\end{mymatrix} =\allowbreak \begin{mymatrix}{cc}
 1 & 0 \\ 
 0 & 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Since $UU^{T} = I$, this matrix is orthogonal.
@@ -59,52 +51,40 @@ Since $UU^{T} = I$, this matrix is orthogonal.
 Here is another example.
 
 \begin{example}{Orthogonal matrix}{}
-Let $U=\leftB
-\begin{array}{rrr}
+Let $U=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 0 & -1 \\
 0 & -1 & 0
-\end{array}
-\rightB .$ Is $U$ orthogonal?
+\end{mymatrix} .$ Is $U$ orthogonal?
 \end{example}
 
 \begin{solution}
 Again the answer is yes and this can be verified simply by showing that $U^{T}U=I$: 
 
 \begin{eqnarray*}
-U^{T}U&=&\leftB 
-\begin{array}{rrr}
+U^{T}U&=&\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 0 & -1 \\ 
 0 & -1 & 0
-\end{array}
-\rightB ^{T}\leftB 
-\begin{array}{rrr}
+\end{mymatrix} ^{T}\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 0 & -1 \\ 
 0 & -1 & 0
-\end{array}
-\rightB \\
-&=&\leftB 
-\begin{array}{rrr}
+\end{mymatrix} \\
+&=&\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 0 & -1 \\ 
 0 & -1 & 0
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 0 & -1 \\ 
 0 & -1 & 0
-\end{array}
-\rightB \\
-&=&\leftB 
-\begin{array}{rrr}
+\end{mymatrix} \\
+&=&\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 \end{solution}
 
@@ -116,7 +96,7 @@ where $\delta _{ij}$ is the \textbf{Kronecker symbol}
 defined
 \index{Kronecker symbol} by
 \begin{equation*}
-\delta _{ij}=\left\{
+\delta _{ij}=\set{
 \begin{array}{c}
 1
 \text{ if }i=j \\
@@ -137,7 +117,7 @@ columns are the same and $0$ if the two columns are different.
 More succinctly, this states that if $\vect{u}_{1},\cdots ,\vect{u}_{n}$
 are the columns of $U,$ an orthogonal matrix, then 
 \[
-\vect{u}_{i}\dotprod \vect{u}_{j}=\delta _{ij} = \left\{ 
+\vect{u}_{i}\dotprod \vect{u}_{j}=\delta _{ij} = \set{
 \begin{array}{c}
 1\text{ if }i=j \\ 
 0\text{ if }i\neq j
@@ -150,8 +130,8 @@ We will say that the columns form an orthonormal set of vectors, and similarly f
 
 \begin{proposition}{Orthonormal basis}{orthbasis}
 The rows of an $n \times n$ orthogonal matrix form an orthonormal
-basis of $\mathbb{R}^n$. Further, any orthonormal basis of
-$\mathbb{R}^n$ can be used to construct an $n \times n$ orthogonal
+basis of $\R^n$. Further, any orthonormal basis of
+$\R^n$ can be used to construct an $n \times n$ orthogonal
 matrix.
 \end{proposition}
 
@@ -160,10 +140,10 @@ Recall from Theorem \ref{thm:orthbasis} that an orthonormal set is
 linearly independent and forms a basis for its span. Since the rows of
 an $n \times n$ orthogonal matrix form an orthonormal set, they must
 be linearly independent. Now we have $n$ linearly independent vectors,
-and it follows that their span equals $\mathbb{R}^n$. Therefore these
-vectors form an orthonormal basis for $\mathbb{R}^n$.
+and it follows that their span equals $\R^n$. Therefore these
+vectors form an orthonormal basis for $\R^n$.
 
-Suppose now that we have an orthonormal basis for $\mathbb{R}^n$. Since the
+Suppose now that we have an orthonormal basis for $\R^n$. Since the
 basis will contain $n$ vectors, these can be used to construct an $n
 \times n$ matrix, with each vector becoming a row. Therefore the
 matrix is composed of orthonormal rows, which by our above discussion,
@@ -176,18 +156,18 @@ the previous matrix.
 Consider the following proposition.
 
 \begin{proposition}{Determinant of orthogonal matrices}{orthoDet}
-Suppose $U$ is an orthogonal matrix. Then $\det \left( U\right) = \pm 1.$ 
+Suppose $U$ is an orthogonal matrix. Then $\det \tup{U} = \pm 1.$ 
 \end{proposition}
 
 \begin{proof}
 This result follows from the properties of determinants. Recall that
 for any matrix $A$, $\det(A)^T = \det(A)$. Now if $U$ is orthogonal, then:
 \begin{equation*}
-(\det \left( U\right)) ^{2}=\det \left( U^{T}\right) \det \left( U\right)
-=\det \left( U^{T}U\right) =\det \left( I\right) =1
+(\det \tup{U}) ^{2}=\det \tup{U^{T}} \det \tup{U}
+=\det \tup{U^{T}U} =\det \tup{I} =1
 \end{equation*}
 
-Therefore $(\det (U))^2 = 1$ and it follows that $\det \left( U\right) = \pm 1$. 
+Therefore $(\det (U))^2 = 1$ and it follows that $\det \tup{U} = \pm 1$. 
 \end{proof}
 
 Orthogonal matrices are divided into two classes, proper and improper.

@@ -17,15 +17,13 @@ reactions. There is some redundancy. What are the independent reactions? Is
 there a way to consider a shorter list of reactions? To analyze this
 situation, we can write the reactions in a matrix as follows
 \begin{equation*}
-\leftB
-\begin{array}{cccccc}
+\begin{mymatrix}{cccccc}
 CO & O_{2} & CO_{2} & H_{2} & H_{2}O & CH_{4} \\
 1 & 1/2 & -1 & 0 & 0 & 0 \\
 0 & 1/2 & 0 & 1 & -1 & 0 \\
 -1 & 3/2 & 0 & 0 & -2 & 1 \\
 0 & 2 & -1 & 0 & -2 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Each row contains the coefficients of the respective elements in each reaction. For example, the top row of numbers comes from $CO+\frac{1}{2}O_{2}-CO_{2}=0$ which
@@ -33,28 +31,24 @@ represents the first of the chemical reactions.
 
 We can write these coefficients in the following matrix
 \begin{equation*}
-\leftB
-\begin{array}{rrrrrr}
+\begin{mymatrix}{rrrrrr}
 1 & 1/2 & -1 & 0 & 0 & 0 \\
 0 & 1/2 & 0 & 1 & -1 & 0 \\
 -1 & 3/2 & 0 & 0 & -2 & 1 \\
 0 & 2 & -1 & 0 & -2 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Rather than listing all of the
 reactions as above, it would be more efficient to only list those which are independent by throwing out that which is redundant. We can use the concepts of the previous section to accomplish this.
 
 First, take the {\rref} of the above matrix. 
 \begin{equation*}
-\leftB
-\begin{array}{rrrrrr}
+\begin{mymatrix}{rrrrrr}
 1 & 0 & 0 & 3 & -1 & -1 \\
 0 & 1 & 0 & 2 & -2 & 0 \\
 0 & 0 & 1 & 4 & -2 & -1 \\
 0 & 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The top three rows represent \textquotedblleft independent" reactions which
 come from the original four reactions. One can obtain each of the original

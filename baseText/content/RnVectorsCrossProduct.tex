@@ -4,12 +4,12 @@
 
 \begin{enumerate}
 
-\item[A.] Compute the cross product and box product of vectors in $\mathbb{R}^3$.
+\item[A.] Compute the cross product and box product of vectors in $\R^3$.
 \end{enumerate}
 \end{outcome}
 
 Recall that the dot product is one of two important products for vectors. The second type of product for vectors is called the cross product. It is important to note that the 
-cross product is only defined in $\mathbb{R}^{3}$ and produces a vector. 
+cross product is only defined in $\R^{3}$ and produces a vector. 
 First we discuss the geometric meaning and then a description in terms of
 coordinates is given, both of which are important. 
 The geometric description is essential in order to understand the
@@ -71,17 +71,17 @@ a direction as well as magnitude.
 \index{cross product!geometric description}
 
 \begin{definition}{Geometric definition of cross product}{crossprodgeomet}
-Let $\vect{u}$ and $\vect{v}$ be two vectors in $\mathbb{R}^{3}.$ 
+Let $\vect{u}$ and $\vect{v}$ be two vectors in $\R^{3}.$ 
 Then the \textbf{cross product}, written $\vect{u}\times \vect{v}$, is defined by
 \index{cross product} the following two rules.
 \index{cross product!geometric description}
 
 \begin{enumerate}
-\item Its length is $\vectlength \vect{u}\times \vect{v}\vectlength =\vectlength \vect{u}\vectlength \vectlength
-\vect{v}\vectlength \sin \theta $, \\
+\item Its length is $\norm{\vect{u}\times \vect{v}} =\norm{\vect{u}} \norm{
+\vect{v}} \sin \theta $, \\
 where $\theta $ is the included angle between $\vect{u}$ and $\vect{v}$.
 
-\item It is perpendicular to both $\vect{u}$ and $\vect{v}$, that is $\left( \vect{u}\times \vect{v} \right) \dotprod \vect{u}=0,$ $\left( \vect{u}\times \vect{v} \right) \dotprod \vect{v}=0,$ \\
+\item It is perpendicular to both $\vect{u}$ and $\vect{v}$, that is $\tup{\vect{u}\times \vect{v} } \dotprod \vect{u}=0,$ $\tup{\vect{u}\times \vect{v} } \dotprod \vect{v}=0,$ \\
 and  $\vect{u},\vect{v},\vect{u}\times \vect{v}$ form a right hand system.
 \end{enumerate}
 \end{definition}
@@ -99,57 +99,55 @@ With this information, the following gives the coordinate description of the
 cross product.
 \index{cross product!coordinate description}
 
-Recall that the vector $\vect{u}= \leftB 
-\begin{array}{ccc}
+Recall that the vector $\vect{u}= \begin{mymatrix}{ccc}
 u_1 & u_2 & u_3
-\end{array}
-\rightB^T$
+\end{mymatrix}^T$
 can be written in terms of $\vect{i}, \vect{j}, \vect{k}$ as $\vect{u}=u_{1}\vect{i}+u_{2}\vect{j}+u_{3}\vect{k}$. 
 
 The cross product satisfies the following properties.
 
 \begin{proposition}{Properties of the cross product}{propertiescrossproduct}
-Let $\vect{u}, \vect{v}, \vect{w}$ be vectors in $\mathbb{R}^3$, and $k$ a scalar. Then, the following properties 
+Let $\vect{u}, \vect{v}, \vect{w}$ be vectors in $\R^3$, and $k$ a scalar. Then, the following properties 
 of the cross product hold.
 \begin{enumerate}
 \item 
-$\vect{u}\times \vect{v}= -\left( \vect{v}\times \vect{u}\right), 
+$\vect{u}\times \vect{v}= -\tup{\vect{v}\times \vect{u}}, 
 \mbox{and} \; \vect{u}\times \vect{u}=\vect{0}$
 \item 
-$\left( k \vect{u}\right)\times \vect{v}= k \left( \vect{u}\times \vect{v}\right) 
-=\vect{u}\times \left( k \vect{v}\right)$
+$\tup{k \vect{u}}\times \vect{v}= k \tup{\vect{u}\times \vect{v}} 
+=\vect{u}\times \tup{k \vect{v}}$
 \item
-$\vect{u}\times \left( \vect{v}+\vect{w}\right) =\vect{u}\times \vect{v}+\vect{u}\times \vect{w}$
+$\vect{u}\times \tup{\vect{v}+\vect{w}} =\vect{u}\times \vect{v}+\vect{u}\times \vect{w}$
 \item 
-$\left( \vect{v}+\vect{w}\right) \times \vect{u}=\vect{v} \times \vect{u}+\vect{w}\times \vect{u}$
+$\tup{\vect{v}+\vect{w}} \times \vect{u}=\vect{v} \times \vect{u}+\vect{w}\times \vect{u}$
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
 Formula $1.$ follows immediately from the definition. The vectors 
 $\vect{u}\times \vect{v}$ and $\vect{v}\times \vect{u}$ have the same magnitude, 
-$\left\vert \vect{u}\right\vert \left\vert \vect{v}\right\vert \sin
+$\abs{\vect{u}}\abs{\vect{v}}\sin
 \theta ,$ and an application of the right hand rule shows they have opposite
 direction. 
 
 Formula $2.$ is proven as follows. If $k $ is a
-non-negative scalar, the direction of $\left( k \vect{u}\right)
+non-negative scalar, the direction of $\tup{k \vect{u}}
 \times \vect{v}$ is the same as the direction of $\vect{u}\times \vect{v},
-k \left( \vect{u}\times \vect{v}\right) $ and $\vect{u}\times \left(
-k \vect{v}\right) $. The magnitude is  $k$ times the
+k \tup{\vect{u}\times \vect{v}} $ and $\vect{u}\times \tup{
+k \vect{v}} $. The magnitude is  $k$ times the
 magnitude of $\vect{u}\times \vect{v}$ which is the same as the magnitude of 
-$k \left( \vect{u}\times \vect{v}\right) $ and $\vect{u}\times \left(
-k \vect{v}\right) .$ Using this yields equality in $2$. In
+$k \tup{\vect{u}\times \vect{v}} $ and $\vect{u}\times \tup{
+k \vect{v}} .$ Using this yields equality in $2$. In
 the case where $k <0,$ everything works the same way except the vectors
 are all pointing in the opposite direction and you must multiply by 
-$\left\vert k \right\vert $ when comparing their magnitudes. 
+$\abs{k }$ when comparing their magnitudes. 
 
 The distributive laws, $3.$ and $4.$, are much harder to establish. For now, it suffices to
  notice that if we know that $3.$ is true, $4.$ follows. Thus, assuming $3.$, and using $1.$,
 \begin{align*}
-\left( \vect{v}+\vect{w}\right) \times \vect{u}& =-\vect{u}\times \left(
-\vect{v}+\vect{w}\right) \\
-& =-\left( \vect{u}\times \vect{v}+\vect{u}\times \vect{w}\right) \\
+\tup{\vect{v}+\vect{w}} \times \vect{u}& =-\vect{u}\times \tup{
+\vect{v}+\vect{w}} \\
+& =-\tup{\vect{u}\times \vect{v}+\vect{u}\times \vect{w}} \\
 & =\vect{v}\times \vect{u}+\vect{w}\times \vect{u}
 \end{align*}
 \end{proof}
@@ -161,9 +159,9 @@ vectors. Then
 \begin{equation}
 \begin{array}{c}
 \vect{u}\times \vect{v} 
- =\left( u_{2}v_{3}-u_{3}v_{2}\right) \vect{i}-\left(
-u_{1}v_{3} - u_{3}v_{1}\right) \vect{j}+  \\
- +\left( u_{1}v_{2}-u_{2}v_{1}\right) \vect{k}  \label{crossprod1}
+ =\tup{u_{2}v_{3}-u_{3}v_{2}} \vect{i}-\tup{
+u_{1}v_{3} - u_{3}v_{1}} \vect{j}+  \\
+ +\tup{u_{1}v_{2}-u_{2}v_{1}} \vect{k}  \label{crossprod1}
 \end{array}
 \end{equation}
 \end{proposition}
@@ -174,13 +172,11 @@ Writing $\vect{u} \times \vect{v}$ in the usual way, it is given by
 \begin{equation*}
 \vect{u} \times \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
  u_{2}v_{3}-u_{3}v_{2} \\
 -(u_{1}v_{3}-u_{3}v_{1}) \\
  u_{1}v_{2}-u_{2}v_{1}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 We now prove this proposition. 
@@ -188,15 +184,15 @@ We now prove this proposition.
 \begin{proof} From the above table and the properties of the cross
 product listed,
 \begin{eqnarray*}
-\vect{u} \times \vect{v} &=& \left( u_{1}\vect{i}+u_{2}\vect{j}+u_{3}\vect{k}\right) \times \left(
-v_{1}\vect{i}+v_{2}\vect{j}+v_{3}\vect{k}\right) \\
+\vect{u} \times \vect{v} &=& \tup{u_{1}\vect{i}+u_{2}\vect{j}+u_{3}\vect{k}} \times \tup{
+v_{1}\vect{i}+v_{2}\vect{j}+v_{3}\vect{k}} \\
 &=& u_{1}v_{2}\vect{i}\times \vect{j}+u_{1}v_{3}\vect{i}\times \vect{k}+u_{2}v_{1}\vect{j}\times \vect{i}+
 u_{2}v_{3}\vect{j}\times \vect{k}+
 +u_{3}v_{1}\vect{k}\times \vect{i}+u_{3}v_{2}\vect{k}\times \vect{j} \\
 &=&u_{1}v_{2}\vect{k}-u_{1}v_{3}\vect{j}-u_{2}v_{1}\vect{k}+u_{2}v_{3}
 \vect{i}+u_{3}v_{1}\vect{j}-u_{3}v_{2}\vect{i} \\
-&=&\left( u_{2}v_{3}-u_{3}v_{2}\right) \vect{i}+\left(
-u_{3}v_{1}-u_{1}v_{3}\right) \vect{j}+\left( u_{1}v_{2}-u_{2}v_{1}\right)
+&=&\tup{u_{2}v_{3}-u_{3}v_{2}} \vect{i}+\tup{
+u_{3}v_{1}-u_{1}v_{3}} \vect{j}+\tup{u_{1}v_{2}-u_{2}v_{1}}
 \vect{k}  
 \end{eqnarray*}
 \begin{equation}
@@ -208,55 +204,39 @@ u_{3}v_{1}-u_{1}v_{3}\right) \vect{j}+\left( u_{1}v_{2}-u_{2}v_{1}\right)
 There is another version of \ref{crossprod1} which may be easier to remember.
 We can express the cross product as the determinant of a matrix, as follows. 
 \begin{equation}
-\vect{u}\times \vect{v} = \left\vert
-\begin{array}{ccc}
+\vect{u}\times \vect{v} = \begin{absmatrix}{ccc}
 \vect{i} & \vect{j} & \vect{k} \\
 u_{1} & u_{2} & u_{3} \\
 v_{1} & v_{2} & v_{3}
-\end{array}
-\right\vert  \label{crossprod3}
+\end{absmatrix} \label{crossprod3}
 \end{equation}
 Expanding the determinant along the top row yields
 \begin{equation*}
-\vect{i}\left( -1\right) ^{1+1}\left\vert
-\begin{array}{cc}
+\vect{i}\tup{-1} ^{1+1}\begin{absmatrix}{cc}
 u_{2} & u_{3} \\
 v_{2} & v_{3}
-\end{array}
-\right\vert +\vect{j}\left( -1\right) ^{2+1}\left\vert
-\begin{array}{cc}
+\end{absmatrix}+\vect{j}\tup{-1} ^{2+1}\begin{absmatrix}{cc}
 u_{1} & u_{3} \\
 v_{1} & v_{3}
-\end{array}
-\right\vert +\vect{k}\left( -1\right) ^{3+1}\left\vert
-\begin{array}{cc}
+\end{absmatrix}+\vect{k}\tup{-1} ^{3+1}\begin{absmatrix}{cc}
 u_{1} & u_{2} \\
 v_{1} & v_{2}
-\end{array}
-\right\vert
-\end{equation*}
+\end{absmatrix}\end{equation*}
 \begin{equation*}
-=\vect{i}\left\vert
-\begin{array}{cc}
+=\vect{i}\begin{absmatrix}{cc}
 u_{2} & u_{3} \\
 v_{2} & v_{3}
-\end{array}
-\right\vert -\vect{j}\left\vert
-\begin{array}{cc}
+\end{absmatrix}-\vect{j}\begin{absmatrix}{cc}
 u_{1} & u_{3} \\
 v_{1} & v_{3}
-\end{array}
-\right\vert +\vect{k}\left\vert
-\begin{array}{cc}
+\end{absmatrix}+\vect{k}\begin{absmatrix}{cc}
 u_{1} & u_{2} \\
 v_{1} & v_{2}
-\end{array}
-\right\vert
-\end{equation*}
+\end{absmatrix}\end{equation*}
 Expanding these determinants leads to 
 \begin{equation*}
-\left( u_{2}v_{3}-u_{3}v_{2}\right) \vect{i}-\left(
-u_{1}v_{3}-u_{3}v_{1}\right) \vect{j}+\left( u_{1}v_{2}-u_{2}v_{1}\right)
+\tup{u_{2}v_{3}-u_{3}v_{2}} \vect{i}-\tup{
+u_{1}v_{3}-u_{3}v_{1}} \vect{j}+\tup{u_{1}v_{2}-u_{2}v_{1}}
 \vect{k}  
 %\label{crossprod4}
 \end{equation*}
@@ -270,22 +250,18 @@ Find $\vect{u} \times \vect{v}$ for the following vectors
 \begin{equation*}
 \vect{u}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -1 \\
 2
-\end{array}
-\rightB,
+\end{mymatrix},
 \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 -2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -313,18 +289,16 @@ We can write this result in the usual way, as
 \begin{equation*}
 \vect{u} \times \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 5 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 \end{solution}
 
-An important geometrical application of the cross product is as follows. The size of the cross product, $\vectlength \vect{u}\times \vect{v}\vectlength $, is the area of the
+An important geometrical application of the cross product is as follows. The size of the cross product, $\norm{\vect{u}\times \vect{v}} $, is the area of the
 parallelogram determined by $\vect{u}$ and $\vect{v}$, as shown in the following picture. 
 \index{cross product!area of parallelogram}
 
@@ -338,7 +312,7 @@ parallelogram determined by $\vect{u}$ and $\vect{v}$, as shown in the following
 \node[below] at (1.5,0){$\vect{u}$};
 \node[left] at (0.8,1){$\vect{v}$};
 \node[above right] at (0.2,0){$\theta$};
-\node[right] at (2,1){$\vectlength \vect{v} \vectlength \sin(\theta)$};
+\node[right] at (2,1){$\norm{\vect{v}} \sin(\theta)$};
 \end{tikzpicture}
 \end{center}
 
@@ -351,22 +325,18 @@ and $\vect{v}$ given by
 \begin{equation*}
 \vect{u}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -1 \\
 2
-\end{array}
-\rightB, 
+\end{mymatrix}, 
 \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 -2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -379,18 +349,16 @@ We can also write this as
 \begin{equation*}
 \vect{u} \times \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 5 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Thus the area of the parallelogram is 
 \begin{equation*}
-\vectlength \vect{u} \times \vect{v} \vectlength = 
+\norm{\vect{u} \times \vect{v}} = 
 \sqrt{(3)(3) + (5)(5) + (1)(1)} = 
 \sqrt{9+25+1}=\sqrt{35}
 \end{equation*}
@@ -400,53 +368,39 @@ We can also use this concept to find the area of a triangle. Consider the follow
 example.
 
 \begin{example}{Area of triangle}{areatriangle}
-Find the area of the triangle determined by the points $\left(1, 2, 3 \right) ,
-\left( 0,2,5\right),
-\left( 5,1, 2 \right) $ 
+Find the area of the triangle determined by the points $\tup{1, 2, 3 } ,
+\tup{0,2,5},
+\tup{5,1, 2 } $ 
 \end{example}
 
 \begin{solution}
 This triangle is obtained by connecting the three points with lines. Picking
-$\left( 1,2,3\right) $ as a starting point, there are two displacement
-vectors, $\leftB 
-\begin{array}{rrr}
+$\tup{1,2,3} $ as a starting point, there are two displacement
+vectors, $\begin{mymatrix}{rrr}
 -1 & 0 & 2
-\end{array}
-\rightB^T $ and $\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T $ and $\begin{mymatrix}{rrr}
 4 & -1 & -1
-\end{array}
-\rightB^T $. Notice that if we add either of these vectors to the position vector of the 
+\end{mymatrix}^T $. Notice that if we add either of these vectors to the position vector of the 
 starting point, the result is the position vectors of the other two
 points. Now, the area of the triangle is half the area of the parallelogram
-determined by $\leftB 
-\begin{array}{rrr}
+determined by $\begin{mymatrix}{rrr}
 -1 & 0 & 2
-\end{array}
-\rightB^T $ and $\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T $ and $\begin{mymatrix}{rrr}
 4 & -1 & -1
-\end{array}
-\rightB^T.$ 
+\end{mymatrix}^T.$ 
 The required cross product is given by
 \begin{equation*}
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 -1 \\
 0 \\
 2
-\end{array}
-\rightB \times \leftB 
-\begin{array}{r}
+\end{mymatrix} \times \begin{mymatrix}{r}
 4 \\
 -1 \\
 -1
-\end{array}
-\rightB = \leftB
-\begin{array}{rrr}
+\end{mymatrix} = \begin{mymatrix}{rrr}
 2 \\ 7 \\ 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
   Taking the size of this vector gives the area of the parallelogram,
 given by 
@@ -459,9 +413,9 @@ given by
 Hence the area of the triangle is $\frac{1}{2}\sqrt{54}= \frac{3}{2}\sqrt{6}.$
 \end{solution}
 
-In general, if you have three points in $\mathbb{R}^{3}, P,Q,R$, the area of the triangle is given by
+In general, if you have three points in $\R^{3}, P,Q,R$, the area of the triangle is given by
 \begin{equation*}
-\frac{1}{2}\vectlength  \longvect{PQ} \times  \longvect{PR}  \vectlength 
+\frac{1}{2}\norm{\longvect{PQ} \times  \longvect{PR}} 
 \end{equation*}
 
 Recall that $\longvect{PQ}$ is the vector running from point $P$ to point $Q$. 

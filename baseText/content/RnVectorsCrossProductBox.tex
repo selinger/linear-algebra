@@ -10,10 +10,10 @@ A parallelepiped
 \index{parallelepiped}
  determined by the three vectors, $\vect{u},\vect{v}$, and $\vect{w}$ consists of the set of points
 \begin{equation*}
-\left\{ r\vect{u}+s\vect{v}+t\vect{w}:r,s,t\in \left[ 0,1\right]
-\right\} 
+\set{r\vect{u}+s\vect{v}+t\vect{w}:r,s,t\in \mat{0,1}
+} 
 \end{equation*}
-That is, if you pick three numbers, $r,s,$ and $t$ each in $\left[ 0,1\right]
+That is, if you pick three numbers, $r,s,$ and $t$ each in $\mat{0,1}
 $ and form $r\vect{u}+s\vect{v}+t\vect{w}$ then the collection of all
 such points makes up the parallelepiped
 \index{parallelepiped!volume}determined by these three vectors.
@@ -41,17 +41,17 @@ The following is an example of a parallelepiped.
 
 Notice that the base of the parallelepiped is the parallelogram
 determined by the vectors $\vect{u}$ and $\vect{v}$. Therefore, its area is equal to 
-$\vectlength \vect{u}\times \vect{v} \vectlength $. The height of the parallelepiped
-is $\vectlength \vect{w}\vectlength \cos \theta $ where $\theta $ is the angle
+$\norm{\vect{u}\times \vect{v}} $. The height of the parallelepiped
+is $\norm{\vect{w}} \cos \theta $ where $\theta $ is the angle
 shown in the picture between $\vect{w}$ and $\vect{u}\times \vect{v}$.
 The volume of this parallelepiped is the area of the base times
 the height which is just
 \begin{equation*}
-\vectlength \vect{u}\times \vect{v}\vectlength \vectlength \vect{w}\vectlength \cos \theta =
-\left( \vect{u}\times\vect{v}\right) \dotprod \vect{w}
+\norm{\vect{u}\times \vect{v}} \norm{\vect{w}} \cos \theta =
+\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}
 \end{equation*}
 This expression is known as the box product and is sometimes written as 
-$\left[ \vect{u},\vect{v},\vect{w}\right] .$
+$\mat{\vect{u},\vect{v},\vect{w}} .$
 \index{box product}You should consider what happens if you interchange the 
 $\vect{v}$ with the $\vect{w}$ or the $\vect{u}$ with the $\vect{w}$.
 You can see geometrically from drawing pictures that this merely introduces
@@ -60,9 +60,9 @@ either the volume of the parallelepiped determined by the three vectors or
 else $-1$ times this volume.
 
 \begin{proposition}{The box product}{boxproduct}
-Let $\vect{u}, \vect{v}, \vect{w}$ be three vectors in $\mathbb{R}^n$ that define a parallelepiped. Then the volume of the parallelepiped is the absolute value of the box product, given by 
+Let $\vect{u}, \vect{v}, \vect{w}$ be three vectors in $\R^n$ that define a parallelepiped. Then the volume of the parallelepiped is the absolute value of the box product, given by 
 \[
-\left| \left(\vect{u}\times\vect{v}\right) \dotprod \vect{w} \right|
+\abs{\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}}
 \]
 \end{proposition}
 
@@ -73,31 +73,25 @@ Find the volume of the parallelepiped determined by the vectors
 \begin{equation*}
 \vect{u}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 -5
-\end{array}
-\rightB, 
+\end{mymatrix}, 
 \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 3 \\
 -6
-\end{array}
-\rightB, 
+\end{mymatrix}, 
 \vect{w}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 2 \\
 3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -112,54 +106,44 @@ This is given by
 \begin{align*}
 \vect{u} \times \vect{v}
 &=
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 -5
-\end{array}
-\rightB
+\end{mymatrix}
 \times
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 3 \\
 -6
-\end{array}
-\rightB\\
+\end{mymatrix}\\
 &=((2)(-6)-(-5)(3))\vect{i}+((1)(-6)-(-5)(1))\vect{j}+((1)(3)-(2)(1))\vect{k} \\
 &= 3\vect{i}+\vect{j}+\vect{k}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 1 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{align*}
 
 Now take the dot product of this vector with $\vect{w}$ which yields
 \begin{eqnarray*}
 (\vect{u} \times \vect{v}) \dotprod \vect{w}
 &=&
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 1 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \dotprod
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 2 \\
 3 
-\end{array}
-\rightB \\
-&=&\left( 3\vect{i}+\vect{j}+\vect{k}\right) \dotprod
- \left( 3\vect{i}+2\vect{j}+3\vect{k}\right) \\
+\end{mymatrix} \\
+&=&\tup{3\vect{i}+\vect{j}+\vect{k}} \dotprod
+ \tup{3\vect{i}+2\vect{j}+3\vect{k}} \\
 &=&9+2+3 \\
 &=&14
 \end{eqnarray*}
@@ -171,71 +155,53 @@ There is a fundamental observation which comes directly from the geometric
 definitions of the cross product and the dot product.
 
 \begin{proposition}{Order of the product}{orderofproduct}
-Let $\vect{u},\vect{v}$, and $\vect{w}$ be vectors. Then $\left(
-\vect{u}\times \vect{v}\right) \dotprod \vect{w}=\vect{u}\dotprod \left( \vect{v}\times \vect{w}
-\right) .$
+Let $\vect{u},\vect{v}$, and $\vect{w}$ be vectors. Then $\tup{
+\vect{u}\times \vect{v}} \dotprod \vect{w}=\vect{u}\dotprod \tup{\vect{v}\times \vect{w}
+} .$
 \end{proposition}
 
 \begin{proof}This follows from observing that either 
-$\left( \vect{u}\times \vect{v}\right) \dotprod \vect{w}$ and $\vect{u}\dotprod 
-\left( \vect{v}\times \vect{w}\right) $ both give the volume of the parallelepiped or they both
+$\tup{\vect{u}\times \vect{v}} \dotprod \vect{w}$ and $\vect{u}\dotprod 
+\tup{\vect{v}\times \vect{w}} $ both give the volume of the parallelepiped or they both
 give $-1$ times the volume.
 \end{proof}
 
 \begin{comment}
 Recall that we can express the cross product as the determinant of a particular matrix. It turns out
 that the same can be done for the box product. 
-Suppose you have three vectors, $\vect{u}=\leftB
-\begin{array}{rrr}
+Suppose you have three vectors, $\vect{u}=\begin{mymatrix}{rrr}
 a & b & c
-\end{array}
-\rightB^T ,\vect{v}=\leftB
-\begin{array}{rrr}
+\end{mymatrix}^T ,\vect{v}=\begin{mymatrix}{rrr}
  d & e & f
-\end{array}
-\rightB^T ,$ and $\vect{w}=\leftB
-\begin{array}{rrr}
+\end{mymatrix}^T ,$ and $\vect{w}=\begin{mymatrix}{rrr}
 g & h & i
-\end{array}
-\rightB^T .$ Then the box product $\vect{u}\dotprod \left(\vect{v}\times \vect{w}\right)$ is given by the following.
+\end{mymatrix}^T .$ Then the box product $\vect{u}\dotprod \tup{\vect{v}\times \vect{w}}$ is given by the following.
 \begin{eqnarray*}
-\vect{u}\dotprod \left(\vect{v}\times \vect{w}\right) &=&
-\leftB 
-\begin{array}{r}
+\vect{u}\dotprod \tup{\vect{v}\times \vect{w}} &=&
+\begin{mymatrix}{r}
 a \\
 b \\
 c
-\end{array}
-\rightB \dotprod \left|
-\begin{array}{rrr}
+\end{mymatrix} \dotprod \begin{absmatrix}{rrr}
 \vect{i} & \vect{j} & \vect{k} \\
 d & e & f \\
 g & h & i
-\end{array}
-\right| \\
-&=&a\left|
-\begin{array}{rr}
+\end{absmatrix} \\
+&=&a\begin{absmatrix}{rr}
 e & f \\
 h & i
-\end{array}
-\right| -b\left|
-\begin{array}{rr}
+\end{absmatrix} -b\begin{absmatrix}{rr}
 d & f \\
 g & i
-\end{array}
-\right| +c\left|
-\begin{array}{rr}
+\end{absmatrix} +c\begin{absmatrix}{rr}
 d & e \\
 g & h
-\end{array}
-\right| \\
-&= &\det \leftB
-\begin{array}{rrr}
+\end{absmatrix} \\
+&= &\det \begin{mymatrix}{rrr}
 a & b & c \\
 d & e & f \\
 g & h & i
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{eqnarray*}
 
 To take the box product, you can simply take the

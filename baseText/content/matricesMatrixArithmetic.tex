@@ -30,13 +30,11 @@ turns out that matrices are important not only for systems of equations but also
 Recall that a \textbf{matrix}\index{matrix} is a rectangular array of numbers. Several of them are
 referred to as \textbf{matrices}. For example, here is a matrix.
 \begin{equation}
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 4 \\
 5 & 2 & 8 & 7 \\
 6 & -9 & 1 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \label{matrix}
 \end{equation}
 Recall that the size or dimension of a matrix is defined as $m\times n$ where $m$ is the
@@ -62,22 +60,20 @@ There is some notation specific to matrices which we now introduce. We denote th
 by $A_{j}$ as follows
 \begin{equation*}
 A = 
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 A_{1} & A_{2} & \cdots & A_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Therefore, $A_{j}$ is the $j^{th}$ column of $A$, when counted from left to right. 
 
 The individual elements of the matrix are called \textbf{entries}\index{matrix!entries of a matrix} or \textbf{components}\index{matrix!components of a matrix} of $A$. Elements of the matrix
-are identified according to their position. The $\mathbf{\left( i, j \right)}$\textbf{-entry} of a matrix is the entry 
+are identified according to their position. The $\mathbf{\tup{i, j }}$\textbf{-entry} of a matrix is the entry 
 in the $i^{th}$ row and $j^{th}$ column. For example, in the matrix \ref{matrix} above,  $8$ is in
-position $\left(2,3 \right)$ (and is called the $\left(2,3 \right)$-entry) because it is in the second row and the third column. 
+position $\tup{2,3 }$ (and is called the $\tup{2,3 }$-entry) because it is in the second row and the third column. 
 
 In order to remember which matrix we are speaking of, we 
 will denote the entry in the $i^{th}$ row  and the $j^{th}$ column of matrix $A$ by $a_{ij}$. Then, we can write $A$ in terms of its entries,
-as $A= \leftB a_{ij} \rightB$. Using this notation on the matrix in \ref{matrix},
+as $A= \mat{a_{ij} }$. Using this notation on the matrix in \ref{matrix},
 $a_{23}=8, a_{32}=-9, a_{12}=2,$ etc.
 
 There are various operations which are done on matrices of appropriate
@@ -98,12 +94,10 @@ having every entry equal to zero. It is\index{zero matrix} denoted by $0.$
 One possible zero matrix is shown in the following example.
 
 \begin{example}{The zero matrix}{zeromatrix}
-The $2\times 3$ zero matrix is $0= \leftB
-\begin{array}{ccc}
+The $2\times 3$ zero matrix is $0= \begin{mymatrix}{ccc}
 0 & 0 & 0 \\
 0 & 0 & 0
-\end{array}
-\rightB $.
+\end{mymatrix} $.
 \end{example}
 
 Note there is a $2\times 3$ zero matrix, a $3\times 4$ zero matrix, etc. In
@@ -111,41 +105,33 @@ fact there is a zero matrix for every size!
 
 \begin{definition}{Equality of matrices}{equalityofmatrices}
  Let $A$ and $B$ be two $m \times n$ matrices. Then $A=B$\index{matrix!equality} means
-that for $A=\leftB a_{ij}\rightB $
-and $B=\leftB b_{ij}\rightB ,$ $a_{ij}=b_{ij}$ for all $1\leq i\leq m$ and 
+that for $A=\mat{a_{ij}} $
+and $B=\mat{b_{ij}} ,$ $a_{ij}=b_{ij}$ for all $1\leq i\leq m$ and 
 $1\leq j\leq n.$
 \end{definition}
 
 In other words, two matrices are equal exactly when they are the same size and the
 corresponding entries are identical. Thus
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 0 \\
 0 & 0 \\
 0 & 0
-\end{array}
-\rightB \neq \leftB
-\begin{array}{rr}
+\end{mymatrix} \neq \begin{mymatrix}{rr}
 0 & 0 \\
 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 because they are different sizes. 
 Also,
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 1 \\
 3 & 2 
-\end{array}
-\rightB \neq \leftB
-\begin{array}{rr}
+\end{mymatrix} \neq \begin{mymatrix}{rr}
 1 & 0 \\
 2 & 3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 because, although they are the same size, their corresponding entries are not identical.
 

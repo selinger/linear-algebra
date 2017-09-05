@@ -2,13 +2,11 @@
  
 \begin{ex} The following is a Markov (migration) matrix for three locations
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 \vspace{0.05in}\frac{7}{10} & \vspace{0.05in}\frac{1}{9} & \vspace{0.05in}\frac{1}{5} \\
 \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{7}{9} & \vspace{0.05in}\frac{2}{5} \\
 \vspace{0.05in}\frac{1}{5} & \vspace{0.05in}\frac{1}{9} & \vspace{0.05in}\frac{2}{5}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \begin{enumerate}
 \item
@@ -19,18 +17,16 @@ The total number of individuals in the migration process is $256$. After a long 
 \begin{sol}
 \begin{enumerate}
 \item  Multiply the given matrix by the initial state vector given by 
-$\leftB
-\begin{array}{r}
+$\begin{mymatrix}{r}
 90 \\
 81 \\
 85
-\end{array}
-\rightB$. After one time period there are $89$ people in location $1$, $106$ in location $2$, and $61$ in location $3$. 
-\item  Solve the system given by $(I - A) X_s = 0$ where $A$ is the migration matrix and $X_s = \leftB \begin{array}{c}
+\end{mymatrix}$. After one time period there are $89$ people in location $1$, $106$ in location $2$, and $61$ in location $3$. 
+\item  Solve the system given by $(I - A) X_s = 0$ where $A$ is the migration matrix and $X_s = \begin{mymatrix}{c}
 x_{1s} \\
 x_{2s} \\
 x_{3s}
-\end{array} \rightB$ is the steady state vector. The solution to this system is given by 
+\end{mymatrix}$ is the steady state vector. The solution to this system is given by 
 \begin{eqnarray*}
 x_{1s} &=& \frac{8}{5} x_{3s} \\
 x_{2s} &=& \frac{63}{25} x_{3s} 
@@ -46,13 +42,11 @@ We find that $t=50$. Therefore after a long time, there are $80$ people in locat
 
 \begin{ex} The following is a Markov (migration) matrix for three locations
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 \vspace{0.05in}\frac{1}{5} & \vspace{0.05in}\frac{1}{5} & \vspace{0.05in}\frac{2}{5} \\
 \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{1}{5} \\
 \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{2}{5}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \begin{enumerate}
 \item Initially, there are $130$ individuals in location $1$, $300$ in location $2$, and $70$ in location $3$. How many are in each location after two time periods?
@@ -68,23 +62,20 @@ long time, how many are in each location?
 
 \begin{ex} The following is a Markov (migration) matrix for three locations
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 \vspace{0.05in}\frac{3}{10} & \vspace{0.05in}\frac{3}{8} & \vspace{0.05in}\frac{1}{3} \\
 \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{3}{8} & \vspace{0.05in}\frac{1}{3} \\
 \vspace{0.05in}\frac{3}{5} & \vspace{0.05in}\frac{1}{4} & \vspace{0.05in}\frac{1}{3}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The total number of individuals in the migration process is $480$. After a
 long time, how many are in each location?
 \begin{sol}
-We solve $(I-A)X_s = 0$ to find the steady state vector $X_s = \leftB \begin{array}{c}
+We solve $(I-A)X_s = 0$ to find the steady state vector $X_s = \begin{mymatrix}{c}
 x_{1s} \\
 x_{2s} \\
 x_{3s} 
-\end{array}
-\rightB$.
+\end{mymatrix}$.
 The solution to the system is given by 
 \begin{eqnarray*}
 x_{1s} &=& \frac{5}{6} x_{3s} \\
@@ -100,13 +91,11 @@ We find that $t=192$. Therefore after a long time, there are $160$ people in loc
 
 \begin{ex} The following is a Markov (migration) matrix for three locations
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 \vspace{0.05in}\frac{3}{10} & \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{1}{5} \\
 \vspace{0.05in}\frac{3}{10} & \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{7}{10} \\
 \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{1}{10}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 The total number of individuals in the migration process is $1155.$ After a
 long time, how many are in each location?
@@ -116,13 +105,11 @@ long time, how many are in each location?
 
 \begin{ex} The following is a Markov (migration) matrix for three locations
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{1}{8} \\
 \vspace{0.05in}\frac{3}{10} & \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{5}{8} \\
 \vspace{0.05in}\frac{3}{10} & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{4}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 The total number of individuals in the migration process is $704.$ After a
 long time, how many are in each location?
@@ -132,24 +119,20 @@ long time, how many are in each location?
 
 \begin{ex} A person sets off on a random walk with three possible locations. The Markov matrix of probabilities $A = [a_{ij}]$ is given by
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0.1 & 0.3 & 0.7 \\
 0.1 & 0.3 & 0.2 \\
 0.8 & 0.4 & 0.1
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 If the walker starts in location $2$, what is the probability of ending back in location $2$ at time $n = 3$?
 \begin{sol}
 \[
-X_{3} = \leftB
-\begin{array}{r}
+X_{3} = \begin{mymatrix}{r}
 0.38 \\
 0.18 \\
 0.44
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 Therefore the probability of ending up back in location $2$ is $0.18$. 
 \end{sol}
@@ -157,35 +140,30 @@ Therefore the probability of ending up back in location $2$ is $0.18$.
 
 \begin{ex} A person sets off on a random walk with three possible locations. The Markov matrix of probabilities $A = [a_{ij}]$ is given by
 \[
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0.5 & 0.1 & 0.6 \\
 0.2 & 0.9 & 0.2 \\
 0.3 & 0 & 0.2
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 It is unknown where the walker starts, but the probability of starting in each location is given by
 \[
 X_{0}
-= \leftB \begin{array}{r}
+= \begin{mymatrix}{r}
 0.2 \\
 0.25 \\
 0.55
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 What is the probability of the walker being in location $1$ at time $n = 2$?
 \begin{sol}
 \[
-X_{2} = \leftB
-\begin{array}{r}
+X_{2} = \begin{mymatrix}{r}
 0.367 \\
 0.4625 \\
 0.1705
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 Therefore the probability of ending up in location $1$ is $0.367$. 
 \end{sol}
@@ -213,22 +191,19 @@ after a long time if the total number of trailers is $413$?
 The migration matrix is 
 \[
 A = 
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{1}{10} &\vspace{0.05in}\frac{1}{5} \\
 \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{7}{10} & \vspace{0.05in}\frac{1}{5} &\vspace{0.05in}\frac{1}{10} \\
 \vspace{0.05in}\frac{2}{9} & \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{3}{5} &\vspace{0.05in}\frac{1}{5} \\
 \vspace{0.05in}\frac{1}{9} & \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{1}{10} &\vspace{0.05in}\frac{1}{2} 
-\end{array}
-\rightB
+\end{mymatrix}
 \]
-To find the number of trailers in each location after a long time we solve system $(I - A)X_s = 0$ for the steady state vector $X_s = \leftB \begin{array}{c}
+To find the number of trailers in each location after a long time we solve system $(I - A)X_s = 0$ for the steady state vector $X_s = \begin{mymatrix}{c}
 x_{1s} \\
 x_{2s} \\
 x_{3s} \\
 x_{4s} 
-\end{array}
-\rightB$. 
+\end{mymatrix}$. 
 The solution to the system is 
 \begin{eqnarray*}
 x_{1s} &=& \frac{9}{10} x_{4s} \\

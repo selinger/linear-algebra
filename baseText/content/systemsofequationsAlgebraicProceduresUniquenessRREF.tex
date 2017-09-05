@@ -39,13 +39,11 @@ x+3y-z+w=0
 \begin{solution}
 The {\rref} of the augmented matrix is
 \[
-\leftB
-\begin{array}{rrrr|r}
+\begin{mymatrix}{rrrr|r}
 \circled{1} & 0 & -1 & 1 & 0 \\
 0 & \circled{1} & 0 & 0 & 0 \\
 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB.
+\end{mymatrix}.
 \]
 From this, we see that columns $1$ and $2$ are pivot
 columns. Therefore, $x$ and $y$ are pivot variables and $z$ and $w$
@@ -146,39 +144,31 @@ Now, we say that the matrix $B$ is \textbf{row equivalent}\index{matrix!row equi
 \begin{solution}
   The augmented matrices for the two systems are:
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       2 & 3 & 1 & 12 \\
       1 & -2 & 4 & -1\\
       1 & 0 & 2 & 3
-    \end{array}
-    \rightB,
+    \end{mymatrix},
     \quad\quad
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 2 & 0 & 7 \\
       3 & -1 & 7 & 7\\
       0 & 1 & -1 & 2
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   The {\rref}s of the two augmented matrices are:
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 0 & 2 & 3 \\
       0 & 1 & -1 & 2 \\
       0 & 0 & 0 & 0
-    \end{array}
-    \rightB,
+    \end{mymatrix},
     \quad\quad
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 0 & 2 & 3 \\
       0 & 1 & -1 & 2 \\
       0 & 0 & 0 & 0
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   Since both systems have the same {\rref}, they are row equivalent.
 \end{solution}
@@ -205,39 +195,31 @@ Now, we say that the matrix $B$ is \textbf{row equivalent}\index{matrix!row equi
 \begin{solution}
   The augmented matrices for the two systems are:
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & -2 & -5 & 0\\
       1 & 0 & 1 & 0 \\
       1 & 1 & 4 & 0
-    \end{array}
-    \rightB,
+    \end{mymatrix},
     \quad\quad
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       2 & 2 & 1 & 0 \\
       1 & 1 & 3 & 0\\
       -1 & -1 & 2 & 0
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   The {\rref}s of the two augmented matrices are:
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 0 & 1 & 0 \\
       0 & 1 & 3 & 0 \\
       0 & 0 & 0 & 0
-    \end{array}
-    \rightB,
+    \end{mymatrix},
     \quad\quad
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 1 & 0 & 0 \\
       0 & 0 & 1 & 0 \\
       0 & 0 & 0 & 0
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   Since the two systems have different {\rref}s, they are not row
   equivalent.  Following the proof of Lemma~\ref{lem:rrefsolutions},

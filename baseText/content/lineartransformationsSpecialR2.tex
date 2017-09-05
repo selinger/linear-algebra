@@ -1,12 +1,12 @@
-\section{Special linear transformations in $\mathbb{R}^2$}
+\section{Special linear transformations in $\R^2$}
 
 \begin{outcome}
 \begin{enumerate}
-\item[A.] Find the matrix of rotations and reflections in $\mathbb{R}^2$ and determine the action of each on a vector in $\mathbb{R}^2$. 
+\item[A.] Find the matrix of rotations and reflections in $\R^2$ and determine the action of each on a vector in $\R^2$. 
 \end{enumerate}
 \end{outcome}
 
-In this section, we will examine some special examples of linear transformations in $\mathbb{R}^2$ including rotations and reflections. We will use the geometric descriptions of vector addition and scalar
+In this section, we will examine some special examples of linear transformations in $\R^2$ including rotations and reflections. We will use the geometric descriptions of vector addition and scalar
 multiplication discussed earlier to show that a rotation of vectors through an angle and reflection of a vector across a line are examples of
 linear transformations. 
 
@@ -34,7 +34,7 @@ linear? Consider the following picture which illustrates a rotation. Let $\vect{
 \end{tikzpicture}
 \end{center}
 
-Let's consider how to obtain $T\left( \vect{u}+\vect{v}\right)$. 
+Let's consider how to obtain $T\tup{\vect{u}+\vect{v}}$. 
 Simply, you add $T (\vect{u})$ and $T(\vect{v})$. 
 Here is why. If you add $T(\vect{u})$ to $T(\vect{v})$ you get
 the diagonal of the parallelogram determined by $T(\vect{u})$ and $T(\vect{v})$, as this action
@@ -47,41 +47,35 @@ As shown in the diagram, this will result in the same vector. In other words, $T
 This is because the rotation preserves all angles between the vectors
 as well as their lengths. In particular, it preserves the shape of
 this parallelogram. Thus both
-$T\left(\vect{u}\right)+T\left(\vect{v}\right)$ and
-$T\left(\vect{u}+\vect{v}\right)$ give the same vector. It follows
+$T\tup{\vect{u}}+T\tup{\vect{v}}$ and
+$T\tup{\vect{u}+\vect{v}}$ give the same vector. It follows
 that $T$ distributes across addition of the vectors of
-$\mathbb{R}^{2}$.
+$\R^{2}$.
 
-Similarly, if $k$ is a scalar, it follows that $T\left(k\vect{u}\right)=kT\left(\vect{u}\right)$.
+Similarly, if $k$ is a scalar, it follows that $T\tup{k\vect{u}}=kT\tup{\vect{u}}$.
 Thus rotations are an example of a
 linear transformation by Definition \ref{def:lineartransformation}.
 
 The following theorem gives the matrix of a linear transformation which rotates all vectors through an angle of $\theta$. 
 
 \begin{theorem}{Rotation}{rotation}
-Let $R_{\theta}: \mathbb{R}^2 \to \mathbb{R}^2$ be a linear transformation given by rotating vectors through an angle of $\theta$. Then the matrix $A$ of $R_{\theta}$ is given by 
+Let $R_{\theta}: \R^2 \to \R^2$ be a linear transformation given by rotating vectors through an angle of $\theta$. Then the matrix $A$ of $R_{\theta}$ is given by 
 \[
-\leftB
-\begin{array}{rr}
-\cos \left( \theta \right) & -\sin \left( \theta \right) \\
-\sin \left( \theta \right) & \cos \left( \theta \right)
-\end{array}
-\rightB
+\begin{mymatrix}{rr}
+\cos \tup{\theta } & -\sin \tup{\theta } \\
+\sin \tup{\theta } & \cos \tup{\theta }
+\end{mymatrix}
 \]
 \end{theorem}
 
 \begin{proof}
-Let $\vect{e}_{1} = \leftB
-\begin{array}{r}
+Let $\vect{e}_{1} = \begin{mymatrix}{r}
 1 \\
 0
-\end{array}
-\rightB $ and $\vect{e}_{2} = \leftB
-\begin{array}{r}
+\end{mymatrix} $ and $\vect{e}_{2} = \begin{mymatrix}{r}
 0 \\
 1
-\end{array}
-\rightB .$ These identify the geometric vectors which point along the
+\end{mymatrix} .$ These identify the geometric vectors which point along the
 positive $x$ axis and positive $y$ axis as shown.
 
 \begin{center}
@@ -110,99 +104,79 @@ $\func{cos},\func{sin}$ of the angle $\theta$ to find the coordinates of $R_{\th
 in the above picture. The coordinates of $R_{\theta}(\vect{e}_{2})$ also follow from
 trigonometry. Thus
 \begin{equation*}
-R_{\theta}(\vect{e}_{1})=\leftB
-\begin{array}{r}
+R_{\theta}(\vect{e}_{1})=\begin{mymatrix}{r}
 \cos \theta \\
 \sin \theta
-\end{array}
-\rightB ,R_{\theta}(\vect{e}_{2})=\leftB
-\begin{array}{r}
+\end{mymatrix} ,R_{\theta}(\vect{e}_{2})=\begin{mymatrix}{r}
 -\sin \theta \\
 \cos \theta
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Therefore, from Theorem \ref{thm:matrixoflineartransformation},
 \begin{equation*}
-A=\leftB
-\begin{array}{rr}
+A=\begin{mymatrix}{rr}
 \cos \theta & -\sin \theta \\
 \sin \theta & \cos \theta
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 We can also prove this algebraically without the use of the
-above picture. The definition of $\left(
-\cos \left( \theta \right) ,\sin \left( \theta \right) \right) $ is as the 
+above picture. The definition of $\tup{
+\cos \tup{\theta } ,\sin \tup{\theta } } $ is as the 
 coordinates of the point of $R_{\theta}(\vect{e}_{1})$.  Now the point of
 the vector $\vect{e}_{2}$ is exactly $\pi /2$ further along the unit circle from 
 the point of $\vect{e}_{1}$, and therefore after rotation through an angle of $\theta $ the coordinates
 $x$ and $y$ of the point of $R_{\theta}(\vect{e}_{2})$ are given by
 \begin{equation*}
-\left( x,y\right) =\left( \cos \left( \theta +\pi /2\right) ,\sin \left(
-\theta +\pi /2\right) \right) =\left( -\sin \theta ,\cos \theta \right) 
+\tup{x,y} =\tup{\cos \tup{\theta +\pi /2} ,\sin \tup{
+\theta +\pi /2} } =\tup{-\sin \theta ,\cos \theta } 
 \end{equation*}
 
 \end{proof}
 
 Consider the following example. 
 
-\begin{example}{Rotation in $\mathbb{R}^2$}{rotation}
-Let $R_{\frac{\pi}{2}}: \mathbb{R}^2 \to \mathbb{R}^2$ denote rotation through $\pi/2$. Find the matrix of $R_{\frac{\pi}{2}}$. Then, find $R_{\frac{\pi}{2}} (\vect{x})$ where $\vect{x} = \leftB
-\begin{array}{r}
+\begin{example}{Rotation in $\R^2$}{rotation}
+Let $R_{\frac{\pi}{2}}: \R^2 \to \R^2$ denote rotation through $\pi/2$. Find the matrix of $R_{\frac{\pi}{2}}$. Then, find $R_{\frac{\pi}{2}} (\vect{x})$ where $\vect{x} = \begin{mymatrix}{r}
 1 \\
 -2
-\end{array}
-\rightB$. 
+\end{mymatrix}$. 
 \end{example}
 
 \begin{solution}
 By Theorem \ref{thm:rotation}, the matrix of $R_{\frac{\pi}{2}}$ is given by
 \[
-\leftB
-\begin{array}{rr}
-\cos \left( \theta \right) & -\sin \left( \theta \right) \\
-\sin \left( \theta \right) & \cos \left( \theta \right)
-\end{array}
-\rightB
+\begin{mymatrix}{rr}
+\cos \tup{\theta } & -\sin \tup{\theta } \\
+\sin \tup{\theta } & \cos \tup{\theta }
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rr}
-\cos \left( \pi/2 \right) & -\sin \left( \pi/2 \right) \\
-\sin \left( \pi/2 \right) & \cos \left( \pi/2 \right)
-\end{array}
-\rightB
+\begin{mymatrix}{rr}
+\cos \tup{\pi/2 } & -\sin \tup{\pi/2 } \\
+\sin \tup{\pi/2 } & \cos \tup{\pi/2 }
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & -1 \\
 1 & 0 
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 To find $R_{\frac{\pi}{2}} (\vect{x})$, we multiply the matrix of $R_{\frac{\pi}{2}}$ by $\vect{x}$ as follows
 \[
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & -1 \\
 1 & 0 
-\end{array}
-\rightB
-\leftB
-\begin{array}{r}
+\end{mymatrix}
+\begin{mymatrix}{r}
 1 \\
 -2 
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 \end{solution}
@@ -226,50 +200,40 @@ $R_{\theta }$ is the linear transformation which rotates through an angle of
 $\theta $. Denoting the corresponding matrices by $A_{\theta +\phi }$, 
 $A_{\phi },$ and $A_{\theta },$ it follows that for every $\vect{u}$
 \begin{equation*}
-R_{\theta +\phi }\left(\vect{u}\right)=A_{\theta +\phi }\vect{u}=A_{\theta }A_{\phi }\vect{u} = R_{\theta }R_{\phi }
-\left(\vect{u}\right)
+R_{\theta +\phi }\tup{\vect{u}}=A_{\theta +\phi }\vect{u}=A_{\theta }A_{\phi }\vect{u} = R_{\theta }R_{\phi }
+\tup{\vect{u}}
 \end{equation*}
 Notice the order of the matrices here! 
 
 Consequently, you must have
 \begin{eqnarray*}
-A_{\theta +\phi } &=&\leftB
-\begin{array}{cc}
-\cos \left( \theta +\phi \right) & -\sin \left( \theta +\phi \right) \\
-\sin \left( \theta +\phi \right) & \cos \left( \theta +\phi \right)
-\end{array}
-\rightB\\
-&=&\leftB
-\begin{array}{cc}
+A_{\theta +\phi } &=&\begin{mymatrix}{cc}
+\cos \tup{\theta +\phi } & -\sin \tup{\theta +\phi } \\
+\sin \tup{\theta +\phi } & \cos \tup{\theta +\phi }
+\end{mymatrix}\\
+&=&\begin{mymatrix}{cc}
 \cos \theta & -\sin \theta \\
 \sin \theta & \cos \theta
-\end{array}
-\rightB \leftB
-\begin{array}{cc}
+\end{mymatrix} \begin{mymatrix}{cc}
 \cos \phi & -\sin \phi \\
 \sin \phi & \cos \phi
-\end{array}
-\rightB 
+\end{mymatrix} 
  =A_{\theta }A_{\phi } 
 \end{eqnarray*}
 
 The usual matrix multiplication 
 yields
 \begin{eqnarray*}
-A_{\theta +\phi } &=& \leftB
-\begin{array}{cc}
-\cos \left( \theta +\phi \right) & -\sin \left( \theta +\phi \right) \\
-\sin \left( \theta +\phi \right) & \cos \left( \theta +\phi \right)
-\end{array}
-\rightB \\
-&=&\leftB
-\begin{array}{cc}
+A_{\theta +\phi } &=& \begin{mymatrix}{cc}
+\cos \tup{\theta +\phi } & -\sin \tup{\theta +\phi } \\
+\sin \tup{\theta +\phi } & \cos \tup{\theta +\phi }
+\end{mymatrix} \\
+&=&\begin{mymatrix}{cc}
 \cos \theta \cos \phi -\sin \theta \sin \phi & -\cos \theta \sin \phi -\sin
 \theta \cos \phi \\
 \sin \theta \cos \phi +\cos \theta \sin \phi & \cos \theta \cos \phi -\sin
 \theta \sin \phi
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& A_{\theta }A_{\phi } 
 \end{eqnarray*}
 
@@ -288,82 +252,66 @@ single matrix which can give you numerical information on the results of
 applying the given sequence of simple procedures.
 
 
-Linear transformations which reflect vectors across a line are a second important type of transformations in $\mathbb{R}^2$. Consider the following theorem.
+Linear transformations which reflect vectors across a line are a second important type of transformations in $\R^2$. Consider the following theorem.
 
 \begin{theorem}{Reflection}{reflection}
-Let $Q_m: \mathbb{R}^2 \to \mathbb{R}^2$ be a linear transformation given by reflecting vectors over the line $\vect{y}=m\vect{x}$. Then the matrix of $Q_m$ is given by 
+Let $Q_m: \R^2 \to \R^2$ be a linear transformation given by reflecting vectors over the line $\vect{y}=m\vect{x}$. Then the matrix of $Q_m$ is given by 
 \[
 \frac{1}{1+m^2}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 1-m^2 & 2m \\
 2m & m^2-1 
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 \end{theorem}
 
 Consider the following example. 
 
-\begin{example}{Reflection in $\mathbb{R}^2$}{reflection}
-Let $Q_2: \mathbb{R}^2 \to \mathbb{R}^2$ denote reflection over the line $\vect{y}=2\vect{x}$. Then $Q_2$ is a linear transformation. Find the matrix of $Q_2$. Then, find $Q_2 (\vect{x})$ where $\vect{x} = \leftB 
-\begin{array}{r}
+\begin{example}{Reflection in $\R^2$}{reflection}
+Let $Q_2: \R^2 \to \R^2$ denote reflection over the line $\vect{y}=2\vect{x}$. Then $Q_2$ is a linear transformation. Find the matrix of $Q_2$. Then, find $Q_2 (\vect{x})$ where $\vect{x} = \begin{mymatrix}{r}
 1 \\
 -2
-\end{array}
-\rightB$. 
+\end{mymatrix}$. 
 \end{example}
 
 \begin{solution}
 By Theorem \ref{thm:reflection}, the matrix of $Q_2$ is given by 
 \[
 \frac{1}{1+m^2}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 1-m^2 & 2m \\
 2m & m^2-1 
-\end{array}
-\rightB
+\end{mymatrix}
 =
 \frac{1}{1+(2)^2}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 1-(2)^2 & 2(2) \\
 2(2) & (2)^2-1 
-\end{array}
-\rightB
+\end{mymatrix}
 =
 \frac{1}{5}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 -3 & 8 \\
 8 & 3 
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 To find $Q_2(\vect{x})$ we multiply $\vect{x}$ by the matrix of $Q_2$ as follows:
 \[
 \frac{1}{5}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 -3 & 8 \\
 8 & 3 
-\end{array}
-\rightB
-\leftB
-\begin{array}{r}
+\end{mymatrix}
+\begin{mymatrix}{r}
 1 \\
 -2
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -\vspace{0.05in}\frac{19}{5} \\
 \vspace{0.05in}\frac{2}{5}
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 \end{solution}
@@ -380,64 +328,48 @@ through the $x$ axis.
 By Theorem \ref{thm:rotation}, the matrix of the transformation which
 involves rotating through an angle of $\pi /6$ is
 \begin{equation*}
-\leftB
-\begin{array}{rr}
-\cos \left( \pi /6\right) & -\sin \left( \pi /6\right) \\
-\sin \left( \pi /6\right) & \cos \left( \pi /6\right)
-\end{array}
-\rightB =\leftB
-\begin{array}{cc}
+\begin{mymatrix}{rr}
+\cos \tup{\pi /6} & -\sin \tup{\pi /6} \\
+\sin \tup{\pi /6} & \cos \tup{\pi /6}
+\end{mymatrix} =\begin{mymatrix}{cc}
 \vspace{0.05in}\frac{1}{2}\sqrt{3} & -\vspace{0.05in}\frac{1}{2} \\
 \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2}\sqrt{3}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Reflecting across the $x$ axis is the same action as reflecting vectors over the line $\vect{y}=m\vect{x}$ with $m=0$. By Theorem \ref{thm:reflection}, the matrix for the transformation which reflects all vectors through the $x$
 axis is
 \begin{equation*}
 \frac{1}{1+m^2}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 1-m^2 & 2m \\
 2m & m^2-1 
-\end{array}
-\rightB
+\end{mymatrix}
 =
 \frac{1}{1+(0)^2}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 1-(0)^2 & 2(0) \\
 2(0) & (0)^2-1 
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & -1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Therefore, the matrix of the linear transformation which first rotates
 through $\pi /6$ and then reflects through the $x$ axis is given by 
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 0 \\
 0 & -1
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{2}\sqrt{3} & -\vspace{0.05in}\frac{1}{2} \\
 \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2}\sqrt{3}
-\end{array}
-\rightB =\allowbreak \leftB
-\begin{array}{rr}
+\end{mymatrix} =\allowbreak \begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{2}\sqrt{3} & -\vspace{0.05in}\frac{1}{2} \\
 -\vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}\sqrt{3}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \end{solution}

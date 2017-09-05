@@ -22,17 +22,17 @@ $z$.
 Then, we refer to $a$ as the
 {\em real\em} part of $z$, and $b$ as the {\em imaginary\em} part of
 $z$. It turns out that such numbers not only solve the above equation,
-but in fact also solve any polynomial of degree at least 1 with complex coefficients. This property, called the Fundamental Theorem of Algebra\index{Fundamental Theorem of Algebra}, is sometimes referred to by saying $\mathbb{C}$ is
+but in fact also solve any polynomial of degree at least 1 with complex coefficients. This property, called the Fundamental Theorem of Algebra\index{Fundamental Theorem of Algebra}, is sometimes referred to by saying $\C$ is
 algebraically closed. Gauss is usually credited with giving a proof
 of this theorem in 1797 but many others worked on it and the first
 completely correct proof was due to Argand in 1806.
 
 Just as a real number can be considered as a point on the line, a
-complex number $z = a + bi$ can be considered as a point $\left(
-a,b\right) $ in the plane whose $x$ coordinate is $ a$ and whose $y$
+complex number $z = a + bi$ can be considered as a point $\tup{
+a,b} $ in the plane whose $x$ coordinate is $ a$ and whose $y$
 coordinate is $b.$ For example, in the following picture, the point $z
 = 3+2i$ can be represented as the point in the plane with
-coordinates $\left( 3,2\right) .$
+coordinates $\tup{3,2} .$
 
 \begin{center}
 \begin{tikzpicture}
@@ -50,7 +50,7 @@ coordinates $\left( 3,2\right) .$
 
 Addition\index{complex numbers!addition} of complex numbers is defined as follows.
 \begin{equation*}
-\left( a+bi\right) +\left( c+di\right) =\left( a+c\right) +\left( b+d\right)i
+\tup{a+bi} +\tup{c+di} =\tup{a+c} +\tup{b+d}i
 \end{equation*}
 
 This addition obeys all the usual properties\index{field axioms} as the following theorem indicates.
@@ -71,15 +71,15 @@ z+0=z
 \item Existence of Additive Inverse
 \begin{equation*}
 \begin{array}{l}
-\mbox{For each} \; z\in \mathbb{C}, \mbox{there exists}\; -z\in \mathbb{C} \mbox{ such that}\; 
-z+\left( -z\right) =0 \\
+\mbox{For each} \; z\in \C, \mbox{there exists}\; -z\in \C \mbox{ such that}\; 
+z+\tup{-z} =0 \\
 \mbox{In fact if } z=a+bi, \mbox{ then } -z=-a-bi.
 \end{array}
 \end{equation*}
 
 \item Associative Law for Addition
 \begin{equation*}
-\left( z+w\right) +v= z +\left( w+v\right)
+\tup{z+w} +v= z +\tup{w+v}
 \end{equation*}
 \end{itemize}
 \end{theorem}
@@ -88,8 +88,8 @@ The proof of this theorem is left as an exercise for the reader.
 
 Now, multiplication\index{complex numbers!multiplication} of complex numbers is defined the way you would expect, recalling that $i^{2} = -1$.
 \begin{eqnarray*}
-\left( a+bi\right) \left( c+di\right) &=&ac+adi+bci+i^{2}bd \\
-&=&\left( ac-bd\right) +\left( ad + bc \right)i 
+\tup{a+bi} \tup{c+di} &=&ac+adi+bci+i^{2}bd \\
+&=&\tup{ac-bd} +\tup{ad + bc }i 
 \end{eqnarray*}
 
 Consider the following examples.
@@ -116,7 +116,7 @@ zw=wz
 
 \item Associative Law for Multiplication
 \begin{equation*}
-\left( zw\right) v=z\left( wv\right) 
+\tup{zw} v=z\tup{wv} 
 \end{equation*}
 
 \item Multiplicative Identity
@@ -131,7 +131,7 @@ zw=wz
 
 \item Distributive Law
 \begin{equation*}
-z\left( w+v\right) =zw+zv
+z\tup{w+v} =zw+zv
 \end{equation*}
 \end{itemize}
 \end{theorem}
@@ -144,8 +144,8 @@ for cryptography, and the reason for specifying these axioms is that
 linear algebra is all about fields and we can do just about anything
 in this subject using any field. Although here, the fields of most
 interest will be the familiar field of real numbers, denoted as
-$\mathbb{R}$, and the field of complex numbers, denoted as
-$\mathbb{C}$.
+$\R$, and the field of complex numbers, denoted as
+$\C$.
 
 An important construction regarding complex numbers is the complex
 conjugate\index{complex numbers!conjugate} denoted by a horizontal line above the number, $\overline{z}$. It
@@ -177,9 +177,9 @@ i.e., $\overline{3+4i}=3-4i$.
 
 Consider the following computation. 
 \begin{eqnarray*}
-\left( \overline{a+bi}\right) \left( a+bi\right) &=&\left( a-bi\right)
-\left( a+bi\right) \\
-&=&a^{2}+b^{2}-\left( ab-ab\right)i =a^{2}+b^{2}
+\tup{\overline{a+bi}} \tup{a+bi} &=&\tup{a-bi}
+\tup{a+bi} \\
+&=&a^{2}+b^{2}-\tup{ab-ab}i =a^{2}+b^{2}
 \end{eqnarray*}
 Notice that there is no imaginary part in the product, thus
 multiplying a complex number by its conjugate results in  a real number.
@@ -195,7 +195,7 @@ $\overline{(zw)} = \overline{z}~ \overline{w}$.
 \item
 $\overline{(\overline{z})}=z$.
 \item
-$\overline{\left(\frac{z}{w}\right)} =
+$\overline{\tup{\frac{z}{w}}} =
 \frac{\overline{z}}{\overline{w}}$.
 \item
 $z$ is real if and only if $\overline{z}=z$.
@@ -268,21 +268,20 @@ Another important construction of complex numbers is that of the absolute value,
 \begin{definition}{Absolute value}{complexabsvalue}
 \index{complex numbers!modulus}\index{complex numbers!absolute value}%
 The absolute
-value, or modulus, of a complex number, denoted $\left| z \right|$ is defined as follows.
+value, or modulus, of a complex number, denoted $\abs{z}$ is defined as follows.
 \begin{equation*}
-\left| a+bi\right| =
+\abs{a+bi} =
 \sqrt{a^{2}+b^{2}}
 \end{equation*}
 \end{definition}
 
 Thus, if $z$ is the complex number $z=a+bi$, it follows that
 \begin{equation*}
-\left| z\right| =\left( z\overline{z}\right) ^{1/2}
+\abs{z} =\tup{z\overline{z}} ^{1/2}
 \end{equation*}
 
 Also from the definition, if $z=a+bi$ and $w=c+di$ are two complex numbers,
-then $\left\vert zw\right\vert =\left\vert z\right\vert \left\vert
-w\right\vert .$ Take a moment to verify this.
+then $\abs{zw}=\abs{z}\abs{w}.$ Take a moment to verify this.
 
 The triangle inequality\index{complex numbers!triangle inequality} is an important property of the absolute value
 of complex numbers. There are two useful versions which we present
@@ -294,8 +293,8 @@ Let $z,w$ be complex numbers.
 The following two inequalities hold for any  complex numbers $z,w$:
 \begin{equation*}
 \begin{array}{l}
-\left| z+w\right| \leq \left| z\right| +\left| w\right|  \\
-\left| \left| z\right| -\left| w\right| \right| \leq \left| z-w\right| 
+\abs{z+w} \leq \abs{z} +\abs{w}  \\
+\abs{\abs{z} -\abs{w}} \leq \abs{z-w} 
 \end{array}
 \end{equation*}
 The first one is called the \em{Triangle Inequality}.
@@ -305,31 +304,27 @@ The first one is called the \em{Triangle Inequality}.
 Let $z=a+bi$ and $w=c+di$. First note that
 \begin{equation*}
 z
-\overline{w}=\left( a+bi\right) \left( c-di\right) =ac+bd+\left(
-bc-ad\right)i
+\overline{w}=\tup{a+bi} \tup{c-di} =ac+bd+\tup{
+bc-ad}i
 \end{equation*}
-and so $\left\vert ac+bd\right\vert \leq \left\vert z\overline{w}\right\vert
-=\left\vert z\right\vert \left\vert w\right\vert .$
+and so $\abs{ac+bd}\leq \abs{z\overline{w}}=\abs{z}\abs{w}.$
 
 Then,
 \begin{equation*}
-\left\vert z+w\right\vert ^{2}=\left( a+c+i\left( b+d\right) \right) \left(
-a+c-i\left( b+d\right) \right)
+\abs{z+w}^{2}=\tup{a+c+i\tup{b+d} } \tup{
+a+c-i\tup{b+d} }
 \end{equation*}
 \begin{equation*}
-=\left( a+c\right) ^{2}+\left( b+d\right)
+=\tup{a+c} ^{2}+\tup{b+d}
 ^{2}=a^{2}+c^{2}+2ac+2bd+b^{2}+d^{2}
 \end{equation*}
 \begin{equation*}
-\leq \left\vert z\right\vert ^{2}+\left\vert w\right\vert ^{2}+2\left\vert
-z\right\vert \left\vert w\right\vert =\left( \left\vert z\right\vert
-+\left\vert w\right\vert \right) ^{2}
+\leq \abs{z}^{2}+\abs{w}^{2}+2\abs{z}\abs{w}=\tup{\abs{z}+\abs{w}} ^{2}
 \end{equation*}
 
 Taking the square root, we have that 
 \begin{equation*}
-\left\vert z+w\right\vert \leq \left\vert z\right\vert
-+\left\vert w\right\vert 
+\abs{z+w}\leq \abs{z}+\abs{w}
 \end{equation*}
 so this verifies the triangle inequality. 
 
@@ -339,32 +334,28 @@ z=z-w+w,\;w=w-z+z
 \end{equation*}
 and so by the first form of the inequality we get both:
 \begin{equation*}
-\left\vert z\right\vert \leq \left\vert z-w\right\vert +\left\vert
-w\right\vert ,\;\left\vert w\right\vert \leq \left\vert z-w\right\vert
-+\left\vert z\right\vert
-\end{equation*}
+\abs{z}\leq \abs{z-w}+\abs{w},\;\abs{w}\leq \abs{z-w}+\abs{z}\end{equation*}
 
-Hence,  both $\left\vert z\right\vert -\left\vert w\right\vert $ and 
-$\left\vert w\right\vert -\left\vert z\right\vert $ are no larger than 
-$\left\vert z-w\right\vert $. This proves the second version because 
-$\left\vert \left\vert z\right\vert -\left\vert w\right\vert \right\vert $ is
-one of $\left\vert z\right\vert -\left\vert w\right\vert $ or $\left\vert
-w\right\vert -\left\vert z\right\vert $. 
+Hence,  both $\abs{z}-\abs{w}$ and 
+$\abs{w}-\abs{z}$ are no larger than 
+$\abs{z-w}$. This proves the second version because 
+$\abs{\abs{z}-\abs{w}}$ is
+one of $\abs{z}-\abs{w}$ or $\abs{w}-\abs{z}$. 
 \end{proof}
 
 With this definition, it is important to note the following. You may wish to take
 the time to verify this remark.
 
-Let $z=a+bi$ and $w=c+di.$ Then $\left| z-w\right| =\sqrt{\left(
-a-c\right) ^{2}+\left( b-d\right) ^{2}}.$ Thus the distance between the
-point in the plane determined by the ordered pair $\left( a,b\right) $ and
-the ordered pair $\left( c,d\right) $ equals $\left| z-w\right| $ where $z$
+Let $z=a+bi$ and $w=c+di.$ Then $\abs{z-w} =\sqrt{\tup{
+a-c} ^{2}+\tup{b-d} ^{2}}.$ Thus the distance between the
+point in the plane determined by the ordered pair $\tup{a,b} $ and
+the ordered pair $\tup{c,d} $ equals $\abs{z-w} $ where $z$
 and $w$ are as just described.
 
-For example, consider the distance between $\left( 2,5\right) $ and $\left(
-1,8\right) .$ Letting $z=2+5i$ and $w=1+8i,$ $z-w=1-3i$, $\left( z-w\right)
-\left( \overline{z-w}\right) =\left( 1-3i\right) \left( 1+3i\right)
-= 10$ so $\left\vert z-w\right\vert =\sqrt{10}$.
+For example, consider the distance between $\tup{2,5} $ and $\tup{
+1,8} .$ Letting $z=2+5i$ and $w=1+8i,$ $z-w=1-3i$, $\tup{z-w}
+\tup{\overline{z-w}} =\tup{1-3i} \tup{1+3i}
+= 10$ so $\abs{z-w}=\sqrt{10}$.
 
 Recall that we refer to $z=a+bi$ as the standard form of the complex number. In the next section, 
 we examine another form in which we can express the complex number. 

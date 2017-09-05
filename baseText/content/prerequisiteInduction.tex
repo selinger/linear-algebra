@@ -44,7 +44,7 @@ smallest element $z$ having the property that $z\leq x$ for all $x\in S.$
 
 In particular, the set of natural numbers defined as
 \begin{equation*}
-\mathbb{N} = \left\{ 1,2,\cdots \right\}
+\N = \set{1,2,\cdots }
 \end{equation*}
 is well ordered\index{well ordered}\index{mathematical induction}.
 
@@ -57,14 +57,14 @@ Any set of integers larger than a given number is well ordered.
 This proposition claims that if a set has a lower bound which is a real number, 
 then this set is well ordered.
 
-Further, this proposition implies the principle of mathematical induction\index{mathematical induction}. The symbol $\mathbb{Z}$ denotes the set of all
+Further, this proposition implies the principle of mathematical induction\index{mathematical induction}. The symbol $\Z$ denotes the set of all
 integers. Note that if $a$ is an integer, then there are no integers between
 $a$ and $a+1.$
 
 \begin{theorem}{Mathematical induction}{mathinduction}
- A set $S\subseteq \mathbb{Z},$ having
+ A set $S\subseteq \Z,$ having
 the property that $a\in S$ and $n+1\in S$ whenever $n\in S$, contains all
-integers $x\in \mathbb{Z}$ such that $x\geq a.$
+integers $x\in \Z$ such that $x\geq a.$
 \end{theorem}
 
 \begin{proof} 
@@ -102,14 +102,14 @@ We can use this procedure to solve the following examples.
 
 \begin{example}{Proving by induction}{proofbyinduction}
 Prove by induction that $\sum_{k=1}^{n}k^{2}=\displaystyle
-\frac{n\left( n+1\right) \left( 2n+1\right) }{6}$.
+\frac{n\tup{n+1} \tup{2n+1} }{6}$.
 \end{example}
 
 \begin{solution}
 By Procedure \ref{proc:mathinduction}, we first need to show that this statement is true for $n=1$.
 When $n=1$, the statement says that 
 \begin{eqnarray*}
-\sum_{k=1}^{1}k^{2}&=&\frac{1\left( 1+1\right) \left( 2(1)+1\right) }{6}\\
+\sum_{k=1}^{1}k^{2}&=&\frac{1\tup{1+1} \tup{2(1)+1} }{6}\\
 &=&\frac{6}{6} \\
 &=& 1
 \end{eqnarray*}
@@ -119,37 +119,37 @@ Now suppose this formula is valid for some $n\geq
 1$ where $n$ is an integer. Hence, the following equation is true.
 \begin{equation}
 \sum_{k=1}^{n}k^{2}=
-\frac{n\left( n+1\right) \left( 2n+1\right) }{6}
+\frac{n\tup{n+1} \tup{2n+1} }{6}
 \label{induction1}
 \end{equation}
 We want to show that this is true for $n+1$. 
 
 Suppose we add $(n+1)^2$ to both sides of equation \ref{induction1}.
 \begin{eqnarray*}
-\sum_{k=1}^{n+1}k^{2}&=&\sum_{k=1}^{n}k^{2}+\left( n+1\right) ^{2} \\
-&=&\frac{n\left( n+1\right) \left( 2n+1\right) }{6}+\left( n+1\right) ^{2}
+\sum_{k=1}^{n+1}k^{2}&=&\sum_{k=1}^{n}k^{2}+\tup{n+1} ^{2} \\
+&=&\frac{n\tup{n+1} \tup{2n+1} }{6}+\tup{n+1} ^{2}
 \end{eqnarray*}
 The step going from the first to the second line is based on the assumption
 that the formula is true for $n.$
 Now simplify the expression in the second line,
 \begin{equation*}
-\frac{n\left( n+1\right) \left( 2n+1\right) }{6}+\left( n+1\right) ^{2}
+\frac{n\tup{n+1} \tup{2n+1} }{6}+\tup{n+1} ^{2}
 \end{equation*}
 This equals
 \begin{equation*}
-\left( n+1\right) \left( \frac{n\left( 2n+1\right) }{6}+\left( n+1\right)
-\right)
+\tup{n+1} \tup{\frac{n\tup{2n+1} }{6}+\tup{n+1}
+}
 \end{equation*}
 and
 \begin{equation*}
-\frac{n\left( 2n+1\right) }{6}+\left( n+1\right) =\frac{6\left( n+1\right)
-+2n^{2}+n}{6}=\frac{\allowbreak \left( n+2\right) \left( 2n+3\right) }{6}
+\frac{n\tup{2n+1} }{6}+\tup{n+1} =\frac{6\tup{n+1}
++2n^{2}+n}{6}=\frac{\allowbreak \tup{n+2} \tup{2n+3} }{6}
 \end{equation*}
 Therefore,
 \begin{equation*}
-\sum_{k=1}^{n+1}k^{2}=\frac{\allowbreak \left( n+1\right) \left( n+2\right)
-\left( 2n+3\right) }{6}=\frac{\allowbreak \left( n+1\right) \left( \left(
-n+1\right) +1\right) \left( 2\left( n+1\right) +1\right) }{6}
+\sum_{k=1}^{n+1}k^{2}=\frac{\allowbreak \tup{n+1} \tup{n+2}
+\tup{2n+3} }{6}=\frac{\allowbreak \tup{n+1} \tup{\tup{
+n+1} +1} \tup{2\tup{n+1} +1} }{6}
 \end{equation*}
 showing the formula holds for $n+1$ whenever it holds for $n.$ This proves
 the formula by mathematical induction. In other words, this formula is true for all $n = 1, 2, \cdots$.
@@ -158,7 +158,7 @@ the formula by mathematical induction. In other words, this formula is true for 
 Consider another example.
 
 \begin{example}{Proving an inequality by induction}{inequalityproofbyinduction}
-Show that for all $n\in \mathbb{N}$, $\displaystyle \frac{1}{2}\cdot 
+Show that for all $n\in \N$, $\displaystyle \frac{1}{2}\cdot 
 \displaystyle \frac{3}{4}\cdots \displaystyle \frac{2n-1}{2n}<\displaystyle
 \frac{1}{\sqrt{2n+1}}.$
 \end{example}
@@ -187,17 +187,17 @@ This yields
 The theorem will be proved if this last expression is less than $
 \displaystyle\frac{1}{\sqrt{2n+3}}.$ This happens if and only if
 \begin{equation*}
-\left( \frac{1}{\sqrt{2n+3}}\right) ^{2}=\frac{1}{2n+3}>\frac{2n+1}{\left(
-2n+2\right) ^{2}}
+\tup{\frac{1}{\sqrt{2n+3}}} ^{2}=\frac{1}{2n+3}>\frac{2n+1}{\tup{
+2n+2} ^{2}}
 \end{equation*}
-which occurs if and only if $\left( 2n+2\right) ^{2}>\left( 2n+3\right)
-\left( 2n+1\right) $ and this is clearly true which may be seen from
+which occurs if and only if $\tup{2n+2} ^{2}>\tup{2n+3}
+\tup{2n+1} $ and this is clearly true which may be seen from
 expanding both sides. This proves the inequality.
 \end{solution}
 
 Let's review the process just used. If $S$ is the set of integers at least as
 large as $1$ for which the formula holds, the first step was to show $1\in S$
 and then that whenever $n\in S,$ it follows $n+1\in S.$ Therefore, by the
-principle of mathematical induction, $S$ contains $[1,\infty )\cap \mathbb{Z}
+principle of mathematical induction, $S$ contains $[1,\infty )\cap \Z
 ,$ all positive integers. In doing an inductive proof of this sort, the set $
 S$ is normally not mentioned. One just verifies the steps above. 

@@ -16,23 +16,19 @@ denote the entry of $X$ in the $i^{th}$ row of a column matrix, or the $i^{th}$ 
 
 The $n\times 1$ matrix
 \begin{equation*}
-X=\leftB
-\begin{array}{c}
+X=\begin{mymatrix}{c}
 x_{1} \\
 \vdots \\
 x_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is called
 a \textbf{column vector}\index{vectors!row vector}.
 The $1\times n$ matrix
 \begin{equation*}
-X = \leftB
-\begin{array}{ccc}
+X = \begin{mymatrix}{ccc}
 x_{1} & \cdots & x_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is called a \textbf{row vector}.
 \end{definition}
@@ -44,29 +40,21 @@ In this chapter, we will again use the notion of linear combination of
 vectors as in  Definition \ref{def:linearcombination}.  In this context, a linear combination is a sum
 consisting of vectors multiplied by scalars.  For example,
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 50 \\
 122
-\end{array}
-\rightB
+\end{mymatrix}
 =
-7\leftB
-\begin{array}{r}
+7\begin{mymatrix}{r}
 1 \\
 4
-\end{array}
-\rightB +8\leftB
-\begin{array}{r}
+\end{mymatrix} +8\begin{mymatrix}{r}
 2 \\
 5
-\end{array}
-\rightB +9\leftB
-\begin{array}{r}
+\end{mymatrix} +9\begin{mymatrix}{r}
 3 \\
 6
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is a linear combination of three vectors. 
 
@@ -85,45 +73,37 @@ a_{m1}x_{1}+\cdots +a_{mn}x_{n}=b_{m}
 We can express this system in \textbf{vector form}\index{system of equations!vector form} which is as follows:
 \begin{equation*}
 x_1
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 a_{11}\\
 a_{21}\\
 \vdots \\
 a_{m1}
-\end{array}
-\rightB
+\end{mymatrix}
 +
 x_2
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 a_{12}\\
 a_{22}\\
 \vdots \\
 a_{m2}
-\end{array}
-\rightB
+\end{mymatrix}
 +
 \cdots
 +
 x_n
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 a_{1n}\\
 a_{2n}\\
 \vdots \\
 a_{mn}
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 b_1\\
 b_2\\
 \vdots \\
 b_m
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{definition}
 
@@ -133,79 +113,55 @@ along with the constant vector.
 The first important form of matrix multiplication is multiplying a matrix by a vector. 
 Consider the product given by
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 3 \\
 4 & 5 & 6
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 7 \\
 8 \\
 9
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 We will soon see that this equals
 \begin{equation*}
-7\leftB
-\begin{array}{c}
+7\begin{mymatrix}{c}
 1 \\
 4
-\end{array}
-\rightB +8\leftB
-\begin{array}{c}
+\end{mymatrix} +8\begin{mymatrix}{c}
 2 \\
 5
-\end{array}
-\rightB +9\leftB
-\begin{array}{c}
+\end{mymatrix} +9\begin{mymatrix}{c}
 3 \\
 6
-\end{array}
-\rightB =\leftB
-\begin{array}{c}
+\end{mymatrix} =\begin{mymatrix}{c}
 50 \\
 122
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 In general terms,
 \begin{eqnarray*}
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 a_{11} & a_{12} & a_{13} \\
 a_{21} & a_{22} & a_{23}
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x_{1} \\
 x_{2} \\
 x_{3}
-\end{array}
-\rightB &=&\allowbreak x_{1}\leftB
-\begin{array}{c}
+\end{mymatrix} &=&\allowbreak x_{1}\begin{mymatrix}{c}
 a_{11} \\
 a_{21}
-\end{array}
-\rightB +x_{2}\leftB
-\begin{array}{c}
+\end{mymatrix} +x_{2}\begin{mymatrix}{c}
 a_{12} \\
 a_{22}
-\end{array}
-\rightB +x_{3}\leftB
-\begin{array}{c}
+\end{mymatrix} +x_{3}\begin{mymatrix}{c}
 a_{13} \\
 a_{23}
-\end{array}
-\rightB \\
-&=&\leftB
-\begin{array}{c}
+\end{mymatrix} \\
+&=&\begin{mymatrix}{c}
 a_{11}x_{1}+a_{12}x_{2}+a_{13}x_{3} \\
 a_{21}x_{1}+a_{22}x_{2}+a_{23}x_{3}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{eqnarray*}
 Thus you take $x_{1}$ times the first column, add to $x_{2}$ times the
 second column, and finally $x_{3}$ times the third column. The above sum is a linear combination of the columns of the matrix.
@@ -217,16 +173,14 @@ Here is the formal definition of how to multiply an $m\times
 n $ matrix by an $ n\times 1 $ column vector.
 
 \begin{definition}{Multiplication of vector by matrix}{multiplicationvectormatrix}
-Let $A=\leftB a_{ij} \rightB$ be an $m\times n$ matrix and let $X$
+Let $A=\mat{a_{ij} }$ be an $m\times n$ matrix and let $X$
 be an $n\times 1$ matrix given by 
 \begin{equation*}
-A=\leftB A_{1} \cdots A_{n}\rightB,  X = \leftB
-\begin{array}{r}
+A=\mat{A_{1} \cdots A_{n}},  X = \begin{mymatrix}{r}
 x_{1} \\
 \vdots \\
 x_{n}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Then the product $AX$ is the $m\times 1$ column
@@ -242,40 +196,32 @@ x_{1}A_{1}+x_{2}A_{2}+\cdots +x_{n}A_{n} =
 If we write the columns of $A$ in terms of their entries, they are of the form
 \begin{equation*}
 A_{j}  =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 a_{1j} \\
 a_{2j} \\
 \vdots \\
 a_{mj}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Then, we can write the product $AX$ as
 \begin{equation*}
 AX = 
-x_{1}\leftB
-\begin{array}{c}
+x_{1}\begin{mymatrix}{c}
 a_{11} \\
 a_{21} \\
 \vdots \\
 a_{m1}
-\end{array}
-\rightB + x_{2}\leftB
-\begin{array}{c}
+\end{mymatrix} + x_{2}\begin{mymatrix}{c}
 a_{12} \\
 a_{22} \\
 \vdots \\
 a_{m2}
-\end{array}
-\rightB +\cdots + x_{n}\leftB
-\begin{array}{c}
+\end{mymatrix} +\cdots + x_{n}\begin{mymatrix}{c}
 a_{1n} \\
 a_{2n} \\
 \vdots \\
 a_{mn}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Note that multiplication of an $m \times n$ matrix and an $n \times 1$ vector produces an $m \times 1$ vector.
@@ -285,85 +231,63 @@ Here is an example.
 \begin{example}{A vector multiplied by a matrix}{vectormultbymatrix}
 Compute the product $AX$ for 
 \begin{equation*}
-A = \leftB
-\begin{array}{rrrr}
+A = \begin{mymatrix}{rrrr}
 1 & 2 & 1 & 3 \\
 0 & 2 & 1 & -2 \\
 2 & 1 & 4 & 1
-\end{array}
-\rightB, X =  \leftB
-\begin{array}{r}
+\end{mymatrix}, X =  \begin{mymatrix}{r}
 1 \\
 2 \\
 0 \\
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \end{example}
 
 \begin{solution} We will use Definition \ref{def:multiplicationvectormatrix} to compute the product.
 Therefore, we compute the product $AX$ as follows. 
 \begin{eqnarray*}
-& 1\leftB
-\begin{array}{r}
+& 1\begin{mymatrix}{r}
 1 \\
 0 \\
 2
-\end{array}
-\rightB + 2\leftB
-\begin{array}{r}
+\end{mymatrix} + 2\begin{mymatrix}{r}
 2 \\
 2 \\
 1
-\end{array}
-\rightB + 0\leftB
-\begin{array}{r}
+\end{mymatrix} + 0\begin{mymatrix}{r}
 1 \\
 1 \\
 4
-\end{array}
-\rightB + 1 \leftB
-\begin{array}{r}
+\end{mymatrix} + 1 \begin{mymatrix}{r}
 3 \\
 -2\\
 1
-\end{array} 
-\rightB \\ 
+\end{mymatrix} \\ 
 &=
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 0 \\
 2
-\end{array}
-\rightB + \leftB
-\begin{array}{r}
+\end{mymatrix} + \begin{mymatrix}{r}
 4 \\
 4 \\
 2
-\end{array}
-\rightB + \leftB
-\begin{array}{r}
+\end{mymatrix} + \begin{mymatrix}{r}
 0 \\
 0 \\
 0
-\end{array}
-\rightB +  \leftB
-\begin{array}{r}
+\end{mymatrix} +  \begin{mymatrix}{r}
 3 \\
 -2\\
 1
-\end{array} 
-\rightB \\
+\end{mymatrix} \\
 &=
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 8 \\
 2 \\
 5
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 \end{solution}
 
@@ -382,31 +306,25 @@ a_{m1}x_{1}+\cdots +a_{mn}x_{n}=b_{m}
 \end{equation*}
 Then we can express this system in \textbf{matrix form}\index{system of equations!matrix form} as follows.
 \begin{equation*}
-\leftB
-\begin{array}{cccc}
+\begin{mymatrix}{cccc}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
 \vdots & \vdots & \ddots & \vdots \\
 a_{m1} & a_{m2} & \cdots & a_{mn}
-\end{array}
-\rightB
-\leftB
-\begin{array}{c}
+\end{mymatrix}
+\begin{mymatrix}{c}
 x_{1} \\
 x_{2} \\
 \vdots \\
 x_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 b_{1}\\
 b_{2}\\
 \vdots \\
 b_{m}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
  
 \end{definition}
@@ -425,14 +343,12 @@ $AX=0$, for the zero vector $0$.
 You can see from this definition that a vector 
 \begin{equation*}
 X =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x_{1} \\
 x_{2} \\
 \vdots \\
 x_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 will satisfy the equation $AX=B$
 only when the entries $x_{1}, x_{2}, \cdots, x_{n}$ of the vector $X$ are solutions to the original system.
@@ -467,12 +383,12 @@ $AB$\index{matrix multiplication}  is obtained as follows.
  Let $A$ be an $m\times n$ matrix
 and let $B$ be an $n\times p$ matrix of the form
 \begin{equation*}
-B=\leftB B_{1} \cdots  B_{p}\rightB
+B=\mat{B_{1} \cdots  B_{p}}
 \end{equation*}
 where $B_{1},...,B_{p}$ are the $n\times 1$ columns of $B$. Then the 
 $m\times p$ matrix $AB$ is defined as follows:
 \begin{equation*}
-AB = A \leftB B_{1} \cdots  B_{p}\rightB =  \leftB (A B)_{1} \cdots  (AB)_{p}\rightB 
+AB = A \mat{B_{1} \cdots  B_{p}} =  \mat{(A B)_{1} \cdots  (AB)_{p}} 
 \end{equation*}
 where $(AB)_{k}$ is an $m\times 1$ matrix or column vector which
 gives the $k^{th}$ column of $AB$. 
@@ -483,18 +399,14 @@ Consider the following example.
 \begin{example}{Multiplying two matrices}{multiplicationoftwomatrices}
 Find $AB$ if possible.
 \begin{equation*}
-A = \leftB
-\begin{array}{rrr}
+A = \begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 0 & 2 & 1
-\end{array}
-\rightB, B = \leftB
-\begin{array}{rrr}
+\end{mymatrix}, B = \begin{mymatrix}{rrr}
 1 & 2 & 0 \\
 0 & 3 & 1 \\
 -2 & 1 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -506,62 +418,44 @@ According to the above discussion $AB$ will be a $2\times 3$ matrix.
 Definition \ref{def:multiplicationoftwomatrices} gives us a way to
 calculate each column of $AB$, as follows.
 \begin{equation*}
-\leftB \overset{
-\text{First column}}{\overbrace{\leftB
-\begin{array}{rrr}
+\mat{\overset{
+\text{First column}}{\overbrace{\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 0 & 2 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 1 \\
 0 \\
 -2
-\end{array}
-\rightB }},\overset{\text{Second column}}{\overbrace{\leftB
-\begin{array}{rrr}
+\end{mymatrix} }},\overset{\text{Second column}}{\overbrace{\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 0 & 2 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 2 \\
 3 \\
 1
-\end{array}
-\rightB }},\overset{\text{Third column}}{\overbrace{\leftB
-\begin{array}{rrr}
+\end{mymatrix} }},\overset{\text{Third column}}{\overbrace{\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 0 & 2 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 0 \\
 1 \\
 1
-\end{array}
-\rightB }}\rightB
+\end{mymatrix} }}}
 \end{equation*}
 You know how to multiply a matrix times a vector, using Definition \ref{def:multiplicationvectormatrix} for 
 each of the three columns. Thus
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 0 & 2 & 1
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 2 & 0 \\
 0 & 3 & 1 \\
 -2 & 1 & 1
-\end{array}
-\rightB =\allowbreak \leftB
-\begin{array}{rrr}
+\end{mymatrix} =\allowbreak \begin{mymatrix}{rrr}
 -1 & 9 & 3 \\
 -2 & 7 & 3
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \end{solution}
 
@@ -569,111 +463,81 @@ Since vectors are simply $ n \times 1$ or $1 \times m$
 matrices, we can also multiply a vector by another vector. 
 
 \begin{example}{Vector times vector multiplication}{vectormultiplication}
-Multiply if possible $\leftB
-\begin{array}{r}
+Multiply if possible $\begin{mymatrix}{r}
 1 \\
 2 \\
 1
-\end{array}
-\rightB \leftB
-\begin{array}{rrrr}
+\end{mymatrix} \begin{mymatrix}{rrrr}
 1 & 2 & 1 & 0
-\end{array}
-\rightB .$
+\end{mymatrix} .$
 \end{example}
 
 \begin{solution} In this case we are multiplying a matrix of size $3 \times 1$ by a matrix of size $1 \times
 4.$ The inside numbers match so the product is defined. Note that the product will be a matrix of size $3 \times 4$. 
 Using Definition \ref{def:multiplicationoftwomatrices}, we can compute this product as follows $\:$
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 1
-\end{array}
-\rightB \leftB
-\begin{array}{rrrr}
+\end{mymatrix} \begin{mymatrix}{rrrr}
 1 & 2 & 1 & 0
-\end{array}
-\rightB = 
-\leftB \overset{
-\text{First column}}{\overbrace{\leftB
-\begin{array}{r}
+\end{mymatrix} = 
+\mat{\overset{
+\text{First column}}{\overbrace{\begin{mymatrix}{r}
 1 \\
 2 \\
 1
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 1
-\end{array}
-\rightB }},\overset{\text{Second column}}{\overbrace{\leftB
-\begin{array}{r}
+\end{mymatrix} }},\overset{\text{Second column}}{\overbrace{\begin{mymatrix}{r}
 1 \\
 2\\
 1
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 2 
-\end{array}
-\rightB }},\overset{\text{Third column}}{\overbrace{\leftB
-\begin{array}{r}
+\end{mymatrix} }},\overset{\text{Third column}}{\overbrace{\begin{mymatrix}{r}
 1 \\
 2 \\
 1
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 1
-\end{array}
-\rightB }}, \overset {\text{Fourth column}}{\overbrace{\leftB
-\begin{array}{r}
+\end{mymatrix} }}, \overset {\text{Fourth column}}{\overbrace{\begin{mymatrix}{r}
 1\\
 2\\
 1
-\end{array}
-\rightB \leftB
-\begin{array}{r}
+\end{mymatrix} \begin{mymatrix}{r}
 0
-\end{array}
-\rightB}}
-\rightB
+\end{mymatrix}}}
+}
 \end{equation*}
 
 You can use Definition \ref{def:multiplicationvectormatrix} to verify that this product is
 \begin{equation*}
-\leftB
-\begin{array}{cccc}
+\begin{mymatrix}{cccc}
 1 & 2 & 1 & 0 \\
 2 & 4 & 2 & 0 \\
 1 & 2 & 1 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{solution}
 
 \begin{example}{A multiplication which is not defined}{undefinedmatrixmultiplication}
 Find $BA$ if possible.
 \begin{equation*}
-B = \leftB
-\begin{array}{ccc}
+B = \begin{mymatrix}{ccc}
 1 & 2 & 0 \\
 0 & 3 & 1 \\
 -2 & 1 & 1
-\end{array}
-\rightB,  A = \leftB
-\begin{array}{ccc}
+\end{mymatrix},  A = \begin{mymatrix}{ccc}
 1 & 2 & 1 \\
 0 & 2 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
-\begin{solution} First check if it is possible. This product is of the form $\left( 3\times 3\right)
-\left( 2\times 3\right) .$ The inside numbers do not match and so you can't
+\begin{solution} First check if it is possible. This product is of the form $\tup{3\times 3}
+\tup{2\times 3} .$ The inside numbers do not match and so you can't
 do this multiplication. 
 \end{solution}
 
@@ -692,57 +556,45 @@ following example for multiplication by the zero matrix.
 Compute the product $A0$ for the matrix
 \begin{equation*}
 A=
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and the $2 \times 2$ zero matrix given by
 \begin{equation*}
 0=
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 0 \\
 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
 \begin{solution} 
 In this product, we compute
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB
-\leftB
-\begin{array}{rr}
+\end{mymatrix}
+\begin{mymatrix}{rr}
 0 & 0 \\
 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 0 \\
 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Hence, $A0=0$. 
 \end{solution}
 
-Notice that we could also multiply $A$ by the $2 \times 1 $ zero vector given by $\leftB
-\begin{array}{r}
+Notice that we could also multiply $A$ by the $2 \times 1 $ zero vector given by $\begin{mymatrix}{r}
 0 \\
 0
-\end{array}
-\rightB$.
+\end{mymatrix}$.
 The result would be the $2 \times 1$ zero vector. 
 Therefore, it is always the case that $A0=0$, for an appropriately sized zero matrix or vector. 

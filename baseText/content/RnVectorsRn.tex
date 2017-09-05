@@ -1,37 +1,37 @@
-\section{Vectors in $\mathbb{R}^n$}
+\section{Vectors in $\R^n$}
 
 \begin{outcome}
 
 \begin{enumerate}
-\item[A.] Find the position vector of a point in $\mathbb{R}^n$.
+\item[A.] Find the position vector of a point in $\R^n$.
 \end{enumerate}
 \end{outcome}
 
-The notation $\mathbb{R}^{n}$, where n is a positive integer, refers to the collection of ordered lists of 
+The notation $\R^{n}$, where n is a positive integer, refers to the collection of ordered lists of 
 $n$ real numbers, that is 
 \[
-\mathbb{R}^{n} = \left\{ \left( x_{1},\cdots, x_{n}\right)
-:x_{j}\in \mathbb{R}\text{ for }j=1,\cdots ,n\right\}
+\R^{n} = \set{\tup{x_{1},\cdots, x_{n}}
+:x_{j}\in \R\text{ for }j=1,\cdots ,n}
 \]
-where each $\left( x_{1},\cdots, x_{n}\right)$ is a point of $\mathbb{R}^n$.
+where each $\tup{x_{1},\cdots, x_{n}}$ is a point of $\R^n$.
 
-In this chapter, we take a closer look at vectors in $\mathbb{R}^n$. First, we will consider what $\mathbb{R}^n$ looks like 
-in more detail. Recall that the point given by $0=\left( 0, \cdots, 0 \right)$ is called the \textbf{origin}.
+In this chapter, we take a closer look at vectors in $\R^n$. First, we will consider what $\R^n$ looks like 
+in more detail. Recall that the point given by $0=\tup{0, \cdots, 0 }$ is called the \textbf{origin}.
 
-Now, consider the case of $\mathbb{R}^n$ for $n=1.$ Then from the definition we can identify 
-$\mathbb{R}$ with points in $\mathbb{R}^{1}$ as follows:
+Now, consider the case of $\R^n$ for $n=1.$ Then from the definition we can identify 
+$\R$ with points in $\R^{1}$ as follows:
 \begin{equation*}
-\mathbb{R} = \mathbb{R}^{1}=
- \left\{ \left( x_{1}\right) :x_{1}\in \mathbb{R} \right\}
+\R = \R^{1}=
+ \set{\tup{x_{1}} :x_{1}\in \R }
 \end{equation*}
-Hence, $\mathbb{R}$ is defined as the set of all real numbers and geometrically,
+Hence, $\R$ is defined as the set of all real numbers and geometrically,
 we can describe this as all the points on a line.
 
 Now suppose $n=2$. Then, from the definition,
 \begin{equation*}
-\mathbb{R}^{2}=
-\left\{ \left(x_{1}, x_{2}\right)
-:x_{j}\in \mathbb{R}\text{ for }j=1,2 \right\}
+\R^{2}=
+\set{\tup{x_{1}, x_{2}}
+:x_{j}\in \R\text{ for }j=1,2 }
 \end{equation*}
 Consider the
 familiar coordinate plane, with an $x$ axis and a $y$ axis. Any point
@@ -62,19 +62,19 @@ axis. Consider as an example the following diagram.
 \end{tikzpicture}
 \end{center}
 
-Hence, every element in $\mathbb{R}^2$ is identified by two
-components, $x$ and $y$, in the usual manner. The coordinates $x, y$ (or $x_1$,$x_2$) uniquely determine a point in the plan. Note that while the definition uses $x_1$ and $x_2$ to label the coordinates and you may be used to $x$ and $y$, these notations are equivalent. Thus $\mathbb{R}^2$ can be represented by the two-dimensional coordinate plane.
+Hence, every element in $\R^2$ is identified by two
+components, $x$ and $y$, in the usual manner. The coordinates $x, y$ (or $x_1$,$x_2$) uniquely determine a point in the plan. Note that while the definition uses $x_1$ and $x_2$ to label the coordinates and you may be used to $x$ and $y$, these notations are equivalent. Thus $\R^2$ can be represented by the two-dimensional coordinate plane.
 
 Now suppose $n=3$. You may have previously encountered the $3$-dimensional
 coordinate system, given by
 \begin{equation*}
-\mathbb{R}^{3}=
-\left\{ \left( x_{1}, x_{2}, x_{3}\right)
-:x_{j}\in \mathbb{R}\text{ for }j=1,2,3 \right\}
+\R^{3}=
+\set{\tup{x_{1}, x_{2}, x_{3}}
+:x_{j}\in \R\text{ for }j=1,2,3 }
 \end{equation*}
 
-Points in $\mathbb{R}^3$ will be determined by three
-coordinates, often written $\left(x,y,z\right)$ which correspond to the $x$, $y$,
+Points in $\R^3$ will be determined by three
+coordinates, often written $\tup{x,y,z}$ which correspond to the $x$, $y$,
 and $z$ axes.  We can think as above that the first two coordinates
 determine a point in a plane. The third component determines the
 height above or below the plane, depending on whether this number is
@@ -84,40 +84,38 @@ see that the ordered triples correspond to points in space just as the
 ordered pairs correspond to points in a plane and single real numbers
 correspond to points on a line.
 
-The idea behind the more general $\mathbb{R}^n$ is that we can extend
-these ideas beyond $n = 3.$ This discussion regarding points in $\mathbb{R}^n$ leads into a study of vectors in $\mathbb{R}^n$. While we consider $\mathbb{R}^n$ for all $n$,
+The idea behind the more general $\R^n$ is that we can extend
+these ideas beyond $n = 3.$ This discussion regarding points in $\R^n$ leads into a study of vectors in $\R^n$. While we consider $\R^n$ for all $n$,
 we will largely  focus on $n=2,3$ in this section. 
 
 Consider the following definition.
 
 \begin{definition}{The position vector}{positionvector}
-Let $P=\left( p_{1},\cdots ,p_{n}\right) $ be the coordinates of a
-point in $\mathbb{R}^{n}.$ Then the vector $\longvect{0P}$ with its tail at
-$0=\left( 0,\cdots ,0\right) $ and its tip at 
+Let $P=\tup{p_{1},\cdots ,p_{n}} $ be the coordinates of a
+point in $\R^{n}.$ Then the vector $\longvect{0P}$ with its tail at
+$0=\tup{0,\cdots ,0} $ and its tip at 
 $P$ is called the \textbf{position vector}\index{position vector}\index{vector!points and vectors} of the point $P$. 
 We write 
 \begin{equation*}
-\longvect{0P} = \leftB 
-\begin{array}{c}
+\longvect{0P} = \begin{mymatrix}{c}
 p_{1} \\
 \vdots \\
 p_{n}
-\end{array} \rightB
+\end{mymatrix}
 \end{equation*}
 \end{definition}
 
 $\longvect{0P}$ can be interpreted as a set of directions to get from the origin to the point $P$.
-For this reason we may write both $P=\left( p_{1},\cdots ,p_{n}\right)  \in \mathbb{R}^{n}$
-and  $$\longvect{0P}= \leftB 
-\begin{array}{c}
+For this reason we may write both $P=\tup{p_{1},\cdots ,p_{n}}  \in \R^{n}$
+and  $$\longvect{0P}= \begin{mymatrix}{c}
 p_{1} \\
 \vdots \\
 p_{n}
-\end{array} \rightB = \leftB p_{1} \cdots p_{n} \rightB^T \in \mathbb{R}^{n}$$ 
-Where $\leftB p_{1} \cdots p_{n} \rightB^T$ is used to lighten the text, the superscript $T$ will be explained in more details in a further chapter.
+\end{mymatrix} = \mat{p_{1} \cdots p_{n} }^T \in \R^{n}$$ 
+Where $\mat{p_{1} \cdots p_{n} }^T$ is used to lighten the text, the superscript $T$ will be explained in more details in a further chapter.
 
 This definition is illustrated in the following picture for the
-special case of $\mathbb{R}^{3}$.
+special case of $\R^{3}$.
 
 \begin{center}
 \begin{tikzpicture}
@@ -126,32 +124,31 @@ special case of $\mathbb{R}^{3}$.
 \draw[thick, blue](0,0,0)--(1.5,1,0);
 \draw[fill=red] (1.5, 1,0) circle [radius=3pt];
 \node[above right] at (1.5, 1.25, 0){$P=(p_1, p_2, p_3)$};
-\node[below right] at (1.5, 0.75, 0){$\longvect{0P}= \leftB \begin{array}{ccc}
+\node[below right] at (1.5, 0.75, 0){$\longvect{0P}= \begin{mymatrix}{ccc}
 p_1 & p_2 & p_3 
-\end{array}\rightB^T$};
+\end{mymatrix}^T$};
 \end{tikzpicture}
 \end{center}
 
-Thus every point $P$ in $\mathbb{R}^{n}$ determines its position
+Thus every point $P$ in $\R^{n}$ determines its position
 vector $\longvect{0P}$. Conversely, every such position vector $\longvect{0P}$
 which has its tail at $0$ and point at $P$ determines the point $P$ of
-$\mathbb{R}^{n}$.
+$\R^{n}$.
 
 Now suppose we are given two points, $P,Q$ whose
-coordinates are $\left( p_{1},\cdots ,p_{n}\right) $ and $\left(
-q_{1},\cdots ,q_{n}\right) $ respectively. We can also determine the
+coordinates are $\tup{p_{1},\cdots ,p_{n}} $ and $\tup{
+q_{1},\cdots ,q_{n}} $ respectively. We can also determine the
 \textbf{position vector from $P$ to $Q$} (also called the \textbf{vector from $P$ to $Q$}) defined as follows.
 \begin{equation*}
-\longvect{PQ} = \leftB \begin{array}{c}
+\longvect{PQ} = \begin{mymatrix}{c}
 q_{1}-p_{1}\\
  \vdots \\
 q_{n}-p_{n}
-\end{array}
-\rightB = \longvect{0Q} - \longvect{0P}
+\end{mymatrix} = \longvect{0Q} - \longvect{0P}
 \end{equation*}
 One can verify that $\longvect{0Q}=\longvect{0P}+\longvect{PQ}$.
 
-Now, imagine taking a vector in $\mathbb{R}^n$ and moving it around, always
+Now, imagine taking a vector in $\R^n$ and moving it around, always
 keeping it pointing in the same direction as shown in the following picture.
 
 \begin{center}
@@ -160,8 +157,8 @@ keeping it pointing in the same direction as shown in the following picture.
 \draw[->](0,0,0)--(0,0,2);
 \draw[->, thick, blue](0,0,0)--(1.5,1,0);
 \draw[->, thick, blue](-1,1,0)--(0.5,2,0);
-\node[right] at (1.5, 1.25, 0){$\longvect{0P}= \leftB \begin{array}{ccc}
-p_1 & p_2 & p_3 \end{array}\rightB ^T$};
+\node[right] at (1.5, 1.25, 0){$\longvect{0P}= \begin{mymatrix}{ccc}
+p_1 & p_2 & p_3 \end{mymatrix} ^T$};
 \node[below] at (-1,1,0){$A$};
 \node[below] at (0.5,2,0){$B$};
 \end{tikzpicture}
@@ -169,21 +166,20 @@ p_1 & p_2 & p_3 \end{array}\rightB ^T$};
 
 After moving it around, it is regarded as the same vector. On the above picture, both vectors $\longvect{0P}$ and $\longvect{AB}$ have the same length (or magnitude) and direction. Therefore, they are equal, moving a vector in space while preserving its orientation does not alter it.
 
-Consider now the general definition for a vector in $\mathbb{R}^n$. 
+Consider now the general definition for a vector in $\R^n$. 
 
-\begin{definition}{Vectors in $\mathbb{R}^n$}{vectorsRn}
-Let $\mathbb{R}^{n} = \left\{ \left( x_{1}, \cdots, x_{n}\right)
-:x_{j}\in \mathbb{R}\text{ for }j=1,\cdots ,n\right\} .$
+\begin{definition}{Vectors in $\R^n$}{vectorsRn}
+Let $\R^{n} = \set{\tup{x_{1}, \cdots, x_{n}}
+:x_{j}\in \R\text{ for }j=1,\cdots ,n} .$
 Then,
 \begin{equation*}
 \vect{x}
 =
-\leftB \begin{array}{c}
+\begin{mymatrix}{c}
 x_{1} \\
 \vdots \\
 x_{n}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 is called a \textbf{vector}\index{vector}. Vectors have both size (magnitude) and direction. 
 The numbers $x_{j}$ are called the \textbf{components}\index{vector!components} of $\vect{x}$. 
@@ -194,24 +190,24 @@ Using this notation, we may use $\vect{p}$ to denote the position vector of poin
 
 You can think of the components of a vector as directions for
 obtaining the vector. Consider $n=3$.  Draw a vector with its tail at
-the point $\left( 0,0,0\right) $ and its tip at the point $\left(
-a,b,c\right) $. This vector it is obtained by starting at $\left(
-0,0,0\right) $, moving parallel to the $x$ axis to $\left(
-a,0,0\right) $ and then from here, moving parallel to the $y$ axis to
-$\left( a,b,0\right) $ and finally parallel to the $z$ axis to $\left(
-a,b,c\right). $ Observe that the same vector would result if you began
-at the point $ \left( d,e,f \right)$, moved parallel to the $x$ axis
-to $\left( d+a,e,f\right) ,$ then parallel to the $y$ axis to $\left(
-d+a,e+b,f\right) ,$ and finally parallel to the $z$ axis to $\left(
-d+a,e+b,f+c\right)$. Here, the vector would have its tail sitting at
-the point determined by $A= \left( d,e,f\right) $ and its point at
-$B=\left( d+a,e+b,f+c\right)$. It is the \textbf{same vector} because
+the point $\tup{0,0,0} $ and its tip at the point $\tup{
+a,b,c} $. This vector it is obtained by starting at $\tup{
+0,0,0} $, moving parallel to the $x$ axis to $\tup{
+a,0,0} $ and then from here, moving parallel to the $y$ axis to
+$\tup{a,b,0} $ and finally parallel to the $z$ axis to $\tup{
+a,b,c}. $ Observe that the same vector would result if you began
+at the point $ \tup{d,e,f }$, moved parallel to the $x$ axis
+to $\tup{d+a,e,f} ,$ then parallel to the $y$ axis to $\tup{
+d+a,e+b,f} ,$ and finally parallel to the $z$ axis to $\tup{
+d+a,e+b,f+c}$. Here, the vector would have its tail sitting at
+the point determined by $A= \tup{d,e,f} $ and its point at
+$B=\tup{d+a,e+b,f+c}$. It is the \textbf{same vector} because
 it will point in the same direction and have the same length. It is
 like you took an actual arrow, and moved it from one location to another keeping it pointing
 the same direction.\index{vector!addition, geometric meaning}
 
-Notice that two vectors $\vect{u} = \leftB u_{1} \cdots u_{n}\rightB^T $ and
-$\vect{v}=\leftB v_{1} \cdots v_{n}\rightB^T$ are equal if and only if
+Notice that two vectors $\vect{u} = \mat{u_{1} \cdots u_{n}}^T $ and
+$\vect{v}=\mat{v_{1} \cdots v_{n}}^T$ are equal if and only if
 all corresponding components are equal. Precisely,
 \begin{equation*}
 \begin{array}{c}
@@ -220,22 +216,14 @@ u_{j}=v_{j} \; \mbox{for all}\; j=1,\cdots ,n
 \end{array}
 \end{equation*} 
 Thus 
-$\leftB 
-\begin{array}{rrr}
+$\begin{mymatrix}{rrr}
 1  & 2 & 4
-\end{array}
-\rightB^T \in \mathbb{R}^{3}$ and $\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T \in \R^{3}$ and $\begin{mymatrix}{rrr}
 2 & 1 & 4
-\end{array}
-\rightB^T \in
-\mathbb{R}^{3}$ but $\leftB 
-\begin{array}{rrr}
+\end{mymatrix}^T \in
+\R^{3}$ but $\begin{mymatrix}{rrr}
 1 & 2 & 4
-\end{array}
-\rightB^T \neq \leftB
-\begin{array}{rrr}
+\end{mymatrix}^T \neq \begin{mymatrix}{rrr}
 2 & 1 & 4
-\end{array}
-\rightB^T $ because,
+\end{mymatrix}^T $ because,
 even though the same numbers are involved, the order of the numbers is different. 

@@ -4,8 +4,8 @@
 \begin{outcome}
   \begin{enumerate}
   \item[A.] Solve systems of equations using scalars from a field
-    other than the real numbers, such as $\mathbb{Z}_2$ or
-    $\mathbb{Z}_5$.
+    other than the real numbers, such as $\Z_2$ or
+    $\Z_5$.
   \end{enumerate}
 \end{outcome}
 
@@ -50,11 +50,11 @@ multiplication. Here are some examples and non-examples of fields:
 \begin{example}{Some fields and some non-fields}{fields-examples}
   \begin{enumialphparenastyle}
     \begin{enumerate}
-    \item The set $\mathbb{R}$ of real numbers is a field.
-    \item The set $\mathbb{Q}$ of rational numbers is a field.
-    \item The set $\mathbb{Z}$ of integers satisfies all field
+    \item The set $\R$ of real numbers is a field.
+    \item The set $\Q$ of rational numbers is a field.
+    \item The set $\Z$ of integers satisfies all field
       properties except for (M3). It is therefore not a field.
-    \item The set $\mathbb{N}=\set{0,1,2,\ldots}$ of natural numbers
+    \item The set $\N=\set{0,1,2,\ldots}$ of natural numbers
       satisfies all field properties except (A3) and (M3). It is
       therefore not a field.
     \end{enumerate}
@@ -94,7 +94,7 @@ field with only two elements.
                           &=& 1.
     \end{array}
   \end{equation*}
-  The binary digits form a field $\mathbb{Z}_2 = \set{0,1}$, also
+  The binary digits form a field $\Z_2 = \set{0,1}$, also
   called \textbf{the field of integers modulo 2}\index{integers modulo 2}.
 \end{example}
 
@@ -112,7 +112,7 @@ subtraction, multiplication, and division. Therefore, we can solve
 systems of equations using the elements of any field as the scalars,
 instead of the real numbers.
 
-\begin{example}{Solving a system of equations over $\mathbb{Z}_2$}{system-z2}
+\begin{example}{Solving a system of equations over $\Z_2$}{system-z2}
   Solve the following system in the integers modulo 2:
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
@@ -129,61 +129,49 @@ instead of the real numbers.
   difference is that we will perform all arithmetic operations modulo
   2, rather than in the real numbers. The augmented matrix is:
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       1 & 1 & 0 & 0 \\
       1 & 0 & 1 & 1 \\
       0 & 1 & 1 & 1 \\
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   The first pivot entry is the $1$ in the upper left. We use a row
   operation to create a zero below it. Note that, because we are
   working modulo 2, adding $1$ and subtracting $1$ is the same thing.
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{1} & 1 & 0 & 0 \\
       1 & 0 & 1 & 1 \\
       0 & 1 & 1 & 1 \\
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \stackrel{R_2\leftarrow R_2+R_1}{\sim}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{1} & 1 & 0 & 0 \\
       0 & 1 & 1 & 1 \\
       0 & 1 & 1 & 1 \\
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   The next pivot entry is in row 2 and column 2. We create a zero
   below it by subtracting row 2 from row 3, and a zero above it by
   subtracting row 2 from row 1:
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{1} & 1 & 0 & 0 \\
       0 & \circled{1} & 1 & 1 \\
       0 & 1 & 1 & 1 \\
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \stackrel{R_3\leftarrow R_3-R_2}{\sim}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{1} & 1 & 0 & 0 \\
       0 & \circled{1} & 1 & 1 \\
       0 & 0 & 0 & 0 \\
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \stackrel{R_1\leftarrow R_1-R_2}{\sim}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 1 & 1 \\
       0 & \circled{1} & 1 & 1 \\
       0 & 0 & 0 & 0 \\
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   The resulting system is in {\rref}. We can see that the system is
   consistent, because there is no row whose left-hand side is zero and
@@ -191,7 +179,7 @@ instead of the real numbers.
   pivot columns, and therefore two pivot variables, $x$ and $y$. On
   the other hand, $z$ is a free variable, so we set it equal to a
   parameter: $z=t$. Notice that this time, the parameter $t$ is not a
-  real number, but an element of $\mathbb{Z}_2$. From the equation
+  real number, but an element of $\Z_2$. From the equation
   $x+z=1$, we get $x=1-z=1+t$. Can you guess why I have written $1+t$
   instead of $1-t$? This is because $(-1)=1$ in the integers modulo 2.
   So $1-t = 1+(-1)t = 1+1t = 1+t$. Similarly, from the equation
@@ -209,15 +197,15 @@ instead of the real numbers.
   solution.
 
   There is one difference between solving equations in the real
-  numbers and solving equations in $\mathbb{Z}_2$. In the real
+  numbers and solving equations in $\Z_2$. In the real
   numbers, a system of equations has either no solution, a unique
   solution, or infinitely many solutions. This is because when there
   is a parameter, we automatically get infinitely many solutions. By
-  contrast, in $\mathbb{Z}_2$, there are only two scalars, and
+  contrast, in $\Z_2$, there are only two scalars, and
   therefore only two possible values for the parameter $t$, namely
   $t=0$ and $t=1$. For $t=0$ we get the solution $(x,y,z) = (1,1,0)$,
   and for $t=1$ we get the solution $(x,y,z) = (0,0,1)$.  Thus, when
-  the general solution has one parameter in $\mathbb{Z}_2$, there are
+  the general solution has one parameter in $\Z_2$, there are
   only two solutions, instead of infinitely many.
 \end{solution}
 
@@ -226,15 +214,15 @@ instead of the real numbers.
   \begin{center}
     \begin{tabular}{|c|c|c|}
       \hline
-      \includegraphics[width=1cm]{figures/lighton} &
-      \includegraphics[width=1cm]{figures/lightoff} &
-      \includegraphics[width=1cm]{figures/lighton} \\\hline 
-      \includegraphics[width=1cm]{figures/lightoff} &
-      \includegraphics[width=1cm]{figures/lighton} &
-      \includegraphics[width=1cm]{figures/lightoff} \\\hline 
-      \includegraphics[width=1cm]{figures/lightoff} &
-      \includegraphics[width=1cm]{figures/lightoff} &
-      \includegraphics[width=1cm]{figures/lighton} \\\hline 
+      \rule{0ex}{8.5mm}\includegraphics[width=7mm]{figures/lighton} &
+      \rule{0ex}{8.5mm}\includegraphics[width=7mm]{figures/lightoff} &
+      \rule{0ex}{8.5mm}\includegraphics[width=7mm]{figures/lighton} \\\hline 
+      \rule{0ex}{8.5mm}\includegraphics[width=7mm]{figures/lightoff} &
+      \rule{0ex}{8.5mm}\includegraphics[width=7mm]{figures/lighton} &
+      \rule{0ex}{8.5mm}\includegraphics[width=7mm]{figures/lightoff} \\\hline 
+      \rule{0ex}{8.5mm}\includegraphics[width=7mm]{figures/lightoff} &
+      \rule{0ex}{8.5mm}\includegraphics[width=7mm]{figures/lightoff} &
+      \rule{0ex}{8.5mm}\includegraphics[width=7mm]{figures/lighton} \\\hline 
     \end{tabular}
   \end{center}
   Each light is also a button. When a button is pressed, its own
@@ -256,7 +244,7 @@ instead of the real numbers.
       7 & 8 & 9 \\\hline
     \end{tabular}.
   \end{center}
-  Let $x_i$ be a variable in $\mathbb{Z}_2$, corresponding to the
+  Let $x_i$ be a variable in $\Z_2$, corresponding to the
   event ``button $i$ is pressed'' (or more precisely, ``button $i$
   is pressed an odd number of times'', because pressing a button
   twice is the same as not pressing it at all. That is why we are
@@ -281,8 +269,7 @@ instead of the real numbers.
   \end{equation*}
   Here is the augmented matrix for the system:
   \begin{equation*}
-    \leftB
-    \begin{array}{rrrrrrrrr|r}
+    \begin{mymatrix}{rrrrrrrrr|r}
       1&1&0 & 1&0&0 & 0&0&0 & 1 \\
       1&1&1 & 0&1&0 & 0&0&0 & 0 \\
       0&1&1 & 0&0&1 & 0&0&0 & 1 \\
@@ -294,14 +281,12 @@ instead of the real numbers.
       0&0&0 & 1&0&0 & 1&1&0 & 0 \\
       0&0&0 & 0&1&0 & 1&1&1 & 0 \\
       0&0&0 & 0&0&1 & 0&1&1 & 1 \\
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   We solve this system of equations by doing Gauss-Jordan
-  elimination with scalars in $\mathbb{Z}_2$.  The {\rref} is
+  elimination with scalars in $\Z_2$.  The {\rref} is
   \begin{equation*}
-    \leftB
-    \begin{array}{rrrrrrrrr|r}
+    \begin{mymatrix}{rrrrrrrrr|r}
       1&0&0 & 0&0&0 & 0&0&0 & 0 \\
       0&1&0 & 0&0&0 & 0&0&0 & 0 \\
       0&0&1 & 0&0&0 & 0&0&0 & 1 \\
@@ -313,15 +298,14 @@ instead of the real numbers.
       0&0&0 & 0&0&0 & 1&0&0 & 0 \\
       0&0&0 & 0&0&0 & 0&1&0 & 1 \\
       0&0&0 & 0&0&0 & 0&0&1 & 0 \\
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   This means we have to press buttons 3, 4, 5, and 8. Also, since
   the rank is 9, the solution is unique.
 \end{solution}
 
 \begin{example}{The integers modulo 5}{z-mod-5}
-  Consider the set $\mathbb{Z}_5=\set{0,1,2,3,4}$, called the
+  Consider the set $\Z_5=\set{0,1,2,3,4}$, called the
   \textbf{integers modulo 5}\index{integers modulo 5}. We define their
   addition and multiplication by computing the usual addition and
   multiplication, then ``reducing'' the answer modulo 5. Here,
@@ -363,12 +347,12 @@ $aa^{-1}=1$.  By looking at the multiplication table, we see that
 $1\cdot 1=1$, $2\cdot 3=1$, $3\cdot 2=1$, and $4\cdot 4=1$. Therefore
 we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
 
-\begin{example}{Division in $\mathbb{Z}_5$}{division-z5}
-  What is 2 divided by 3 in $\mathbb{Z}_5$?
+\begin{example}{Division in $\Z_5$}{division-z5}
+  What is 2 divided by 3 in $\Z_5$?
 \end{example}
 
 \begin{solution}
-  There are no fractions in $\mathbb{Z}_5$. The key to dividing is
+  There are no fractions in $\Z_5$. The key to dividing is
   this: instead of dividing by $a$, multiply by $a^{-1}$. So we have:
   \begin{equation*}
     2/3 = 2\cdot 3^{-1} = 2\cdot 2 = 4.
@@ -377,8 +361,8 @@ we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
   equals 2, when calculating modulo 5.
 \end{solution}
 
-\begin{example}{Solving a system of equations over $\mathbb{Z}_5$}{system-z5}
-  Solve the following system of linear equations over $\mathbb{Z}_5$:
+\begin{example}{Solving a system of equations over $\Z_5$}{system-z5}
+  Solve the following system of linear equations over $\Z_5$:
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
       2x + z &=& 1 \\
@@ -396,56 +380,44 @@ we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
   change the first pivot entry from $2$ to $1$, we multiply by
   $2^{-1}=3$, instead of dividing by $2$.
   \begin{equation*}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{2} & 0 & 1 & 1 \\
       1 & 4 & 1 & 3 \\
       1 & 2 & 3 & 2
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \stackrel{R_1\leftarrow 3R_1}{\sim}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 3 & 3 \\
       1 & 4 & 1 & 3 \\
       1 & 2 & 3 & 2
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \stackrel{R_2\leftarrow R_2-R_1}{\stackrel{R_3\leftarrow R_3-R_1}{\sim}}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 3 & 3 \\
       0 & \circled{4} & 3 & 0 \\
       0 & 2 & 0 & 4
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \stackrel{R_2\leftarrow 4R_2}{\sim}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 3 & 3 \\
       0 & \circled{1} & 2 & 0 \\
       0 & 2 & 0 & 4
-    \end{array}
-    \rightB
+    \end{mymatrix}
   \end{equation*}
   \begin{equation*}
     {}
     \stackrel{R_3\leftarrow R_3-2R_2}{\sim}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 3 & 3 \\
       0 & \circled{1} & 2 & 0 \\
       0 & 0 & \circled{1} & 4
-    \end{array}
-    \rightB
+    \end{mymatrix}
     \stackrel{R_1\leftarrow R_1-3R_3}{\stackrel{R_2\leftarrow R_2-2R_3}{\sim}}
-    \leftB
-    \begin{array}{rrr|r}
+    \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 0 & 1 \\
       0 & \circled{1} & 0 & 2 \\
       0 & 0 & \circled{1} & 4
-    \end{array}
-    \rightB.
+    \end{mymatrix}.
   \end{equation*}
   The final matrix is in {\rref}, and we see that the system has the
   unique solution $(x,y,z) = (1,2,4)$. Please double-check the
@@ -457,7 +429,7 @@ we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
 \end{example}
 
 \begin{solution}
-  The integers modulo 6 are the set $\mathbb{Z}_6=\set{0,1,2,3,4,5}$, with the
+  The integers modulo 6 are the set $\Z_6=\set{0,1,2,3,4,5}$, with the
   addition and multiplication modulo 6:
     \[ \begin{array}{l|llllll}
     +&0&1&2&3&4&5 \\\hline
@@ -479,19 +451,19 @@ we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
     5&0&5&4&3&2&1 \\
   \end{array}
   \]
-  Then $\mathbb{Z}_6$ satisfies all of the field axioms except
+  Then $\Z_6$ satisfies all of the field axioms except
   (M3). To see why (M3) fails, let $a=2$, and note, by looking at the
-  multiplication table, that there is no $b\in\mathbb{Z}_6$ such that
-  $ab=1$. Therefore, $\mathbb{Z}_6$ is not a field.
+  multiplication table, that there is no $b\in\Z_6$ such that
+  $ab=1$. Therefore, $\Z_6$ is not a field.
 \end{solution}
 
 We conclude this section with a fact that we will not prove.
 
 \begin{theorem}{The integers modulo a prime}{z-mod-p}
   Let $n$ be a positive integer. Then the set
-  $\mathbb{Z}_n=\set{0,\ldots,n-1}$ of integers modulo $n$, with
+  $\Z_n=\set{0,\ldots,n-1}$ of integers modulo $n$, with
   addition and multiplication modulo $n$, forms a field if and only if
-  $n$ is prime. Thus, for example, $\mathbb{Z}_2$, $\mathbb{Z}_3$,
-  $\mathbb{Z}_5$, $\mathbb{Z}_7$, and $\mathbb{Z}_{11}$ are fields,
-  whereas $\mathbb{Z}_4$, $\mathbb{Z}_6$, and $\mathbb{Z}_9$ are not.
+  $n$ is prime. Thus, for example, $\Z_2$, $\Z_3$,
+  $\Z_5$, $\Z_7$, and $\Z_{11}$ are fields,
+  whereas $\Z_4$, $\Z_6$, and $\Z_9$ are not.
 \end{theorem}

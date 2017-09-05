@@ -8,13 +8,13 @@
 \end{enumerate}
 \end{outcome}
 
-In this section we will examine the concept of subspaces introduced earlier in terms of $\mathbb{R}^n$. Here, we will discuss these concepts in terms of abstract vector spaces. 
+In this section we will examine the concept of subspaces introduced earlier in terms of $\R^n$. Here, we will discuss these concepts in terms of abstract vector spaces. 
 
 Consider the definition of a subspace.
 
 \begin{definition}{Subspace}{subspace}
 Let $V$ be a vector space. A subset $W\subseteq V$ is said to be a \textbf{subspace}\index{subspace} of $V$ if $a\vect{x}+b\vect{y}
-\in W$ whenever $a,b\in \mathbb{R}$ and $\vect{x},\vect{y}\in W.$
+\in W$ whenever $a,b\in \R$ and $\vect{x},\vect{y}\in W.$
 \end{definition}
 
 The span of a set of vectors as described in Definition \ref{def:span} is an example of a subspace. The following fundamental result says that subspaces are subsets of a
@@ -37,8 +37,8 @@ Theorem \ref{thm:axiomuniqueness}.
 when you add vectors of $W$ do you get a vector in $W?$ When you multiply a
 vector in $W$ by a scalar, do you get a vector in $W?$ Yes. This is
 contained in the definition. Does every vector in $W$ have an additive
-inverse? Yes by Theorem \ref{thm:axiomuniqueness} because $-\vect{v}=\left(
--1\right) \vect{v}$ which is given to be in $W$ provided $\vect{v}\in W$.
+inverse? Yes by Theorem \ref{thm:axiomuniqueness} because $-\vect{v}=\tup{
+-1} \vect{v}$ which is given to be in $W$ provided $\vect{v}\in W$.
 
 Next suppose $W$ is a vector space. Then by definition, it is closed with
 respect to linear combinations. Hence it is a subspace. 
@@ -47,13 +47,13 @@ respect to linear combinations. Hence it is a subspace.
 Consider the following useful Corollary.
 
 \begin{corollary}{Span is a subspace}{spansubspace}
-Let $V$ be a vector space with $W \subseteq V$. If $W = \func{span} \left\{ \vect{v}_1, \cdots,  \vect{v}_n \right\}$ then $W$ is a subspace of $V$.
+Let $V$ be a vector space with $W \subseteq V$. If $W = \func{span} \set{\vect{v}_1, \cdots,  \vect{v}_n }$ then $W$ is a subspace of $V$.
 \end{corollary}
 
 When determining spanning sets the following theorem proves useful.
 
 \begin{theorem}{Spanning set}{spanningset}
-Let $W \subseteq V$ for a vector space $V$ and suppose $W = \func{span} \left\{ \vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n \right\}$. 
+Let $W \subseteq V$ for a vector space $V$ and suppose $W = \func{span} \set{\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n }$. 
 
 Let $U \subseteq V$ be a subspace such that $\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n \in U$. Then it follows that $W \subseteq U$. 
 \end{theorem}
@@ -63,7 +63,7 @@ In other words, this theorem claims that any subspace that contains a set of vec
 The following example will show that two spans, described differently, can in fact be equal. 
 
 \begin{example}{Equal span}{equalspan}
-Let $p(x), q(x)$ be polynomials and suppose $U = \func{span}\left\{ 2p(x) - q(x), p(x) + 3q(x)\right\} $ and $W =  \func{span}\left\{ p(x), q(x) \right\}$. Show that $U = W$. 
+Let $p(x), q(x)$ be polynomials and suppose $U = \func{span}\set{2p(x) - q(x), p(x) + 3q(x)} $ and $W =  \func{span}\set{p(x), q(x) }$. Show that $U = W$. 
 \end{example}
 
 \begin{solution}
@@ -71,16 +71,16 @@ We will use Theorem \ref{thm:spanningset} to show that $U \subseteq W$ and $W \s
 \begin{enumerate}
 \item $U \subseteq W$
 
-Notice that $2p(x) - q(x)$ and $p(x) + 3q(x)$  are both in $W = \func{span} \left\{ p(x), q(x) \right\}$. Then by Theorem \ref{thm:spanningset} $W$ must contain the span of these polynomials and so $U \subseteq W$. 
+Notice that $2p(x) - q(x)$ and $p(x) + 3q(x)$  are both in $W = \func{span} \set{p(x), q(x) }$. Then by Theorem \ref{thm:spanningset} $W$ must contain the span of these polynomials and so $U \subseteq W$. 
 
 \item $W \subseteq U$
 
 Notice that 
 \begin{eqnarray*}
-p(x) &=& \frac{3}{7} \left( 2p(x) - q(x) \right)  + \frac{2}{7} \left( p(x) + 3q(x)\right) \\
-q(x) &=& -\frac{1}{7} \left( 2p(x) - q(x) \right)  + \frac{2}{7} \left( p(x) + 3q(x)\right)
+p(x) &=& \frac{3}{7} \tup{2p(x) - q(x) }  + \frac{2}{7} \tup{p(x) + 3q(x)} \\
+q(x) &=& -\frac{1}{7} \tup{2p(x) - q(x) }  + \frac{2}{7} \tup{p(x) + 3q(x)}
 \end{eqnarray*}
-Hence $p(x), q(x)$ are in $\func{span} \left\{ 2p(x) - q(x), p(x) + 3q(x) \right\}$. By Theorem \ref{thm:spanningset} $U$ must contain the span of these polynomials and so $W \subseteq U$. 
+Hence $p(x), q(x)$ are in $\func{span} \set{2p(x) - q(x), p(x) + 3q(x) }$. By Theorem \ref{thm:spanningset} $U$ must contain the span of these polynomials and so $W \subseteq U$. 
 \end{enumerate}
 \end{solution}
 
@@ -103,55 +103,55 @@ Therefore it suffices to prove these three steps to show that a set is a subspac
 Consider the following example.
 
 \begin{example}{Improper subspaces}{impropersubspaces}
-Let $V$ be an arbitrary vector space. Then $V$ is a subspace of itself. Similarly, the set $\left\{ \vect{0} \right\}$ containing only the zero vector is also a subspace. 
+Let $V$ be an arbitrary vector space. Then $V$ is a subspace of itself. Similarly, the set $\set{\vect{0} }$ containing only the zero vector is also a subspace. 
 \end{example}
 
 \begin{solution}
-Using the subspace test in Procedure \ref{proc:subspacetest} we can show that $V$ and $\left\{ \vect{0} \right\}$ are subspaces of $V$. 
+Using the subspace test in Procedure \ref{proc:subspacetest} we can show that $V$ and $\set{\vect{0} }$ are subspaces of $V$. 
 
 Since $V$ satisfies the vector space axioms it also satisfies the three steps of the subspace test. Therefore $V$ is a subspace.
 
-Let's consider the set $\left\{ \vect{0} \right\}$. 
+Let's consider the set $\set{\vect{0} }$. 
 \begin{enumerate}
 \item
-The vector $\vect{0}$ is clearly contained in  $\left\{ \vect{0} \right\}$, so the first condition is satisfied.
+The vector $\vect{0}$ is clearly contained in  $\set{\vect{0} }$, so the first condition is satisfied.
 
 \item
-Let $\vect{w}_1, \vect{w}_2$ be in  $\left\{ \vect{0} \right\}$. Then $\vect{w}_1 = \vect{0}$ and $\vect{w}_2 = \vect{0}$ and so 
+Let $\vect{w}_1, \vect{w}_2$ be in  $\set{\vect{0} }$. Then $\vect{w}_1 = \vect{0}$ and $\vect{w}_2 = \vect{0}$ and so 
 \[
 \vect{w}_1 + \vect{w}_2 = \vect{0} + \vect{0} = \vect{0}
 \]
-It follows that the sum is contained in $\left\{ \vect{0} \right\}$ and the second condition is satisfied. 
+It follows that the sum is contained in $\set{\vect{0} }$ and the second condition is satisfied. 
 
 \item
-Let $\vect{w}_1$ be in  $\left\{ \vect{0} \right\}$ and let $a$ be an arbitrary scalar. Then
+Let $\vect{w}_1$ be in  $\set{\vect{0} }$ and let $a$ be an arbitrary scalar. Then
 \[
 a\vect{w}_1  = a\vect{0} = \vect{0}
 \]
-Hence the product is contained in  $\left\{ \vect{0} \right\}$ and the third condition is satisfied. 
+Hence the product is contained in  $\set{\vect{0} }$ and the third condition is satisfied. 
 \end{enumerate}
 
-It follows that  $\left\{ \vect{0} \right\}$ is a subspace of $V$. 
+It follows that  $\set{\vect{0} }$ is a subspace of $V$. 
 \end{solution}
 
-The two subspaces described above are called \textbf{improper subspaces}\index{improper subspace}. Any subspace of a vector space $V$ which is not equal to $V$ or  $\left\{ \vect{0} \right\}$ is called a \textbf{proper subspace}\index{proper subspace}. 
+The two subspaces described above are called \textbf{improper subspaces}\index{improper subspace}. Any subspace of a vector space $V$ which is not equal to $V$ or  $\set{\vect{0} }$ is called a \textbf{proper subspace}\index{proper subspace}. 
 
 Consider another example.
 
 \begin{example}{Subspace of polynomials}{polysubspace}
-Let $\mathbb{P}_2$ be the vector space of polynomials of degree two or less. Let $W \subseteq \mathbb{P}_2$ be all polynomials of degree two or less which have $1$ as a root. Show that $W$ is a subspace of $\mathbb{P}_2$. 
+Let $\Poly_2$ be the vector space of polynomials of degree two or less. Let $W \subseteq \Poly_2$ be all polynomials of degree two or less which have $1$ as a root. Show that $W$ is a subspace of $\Poly_2$. 
 \end{example}
 
 \begin{solution}
 First, express $W$ as follows:
 \[
-W = \left\{ p(x) = ax^2 +bx +c, a,b,c, \in \mathbb{R} | p(1)  = 0 \right\}
+W = \set{p(x) = ax^2 +bx +c, a,b,c, \in \R | p(1)  = 0 }
 \]
 
 We need to show that $W$ satisfies the three conditions of Procedure \ref{proc:subspacetest}. 
 \begin{enumerate}
 \item
-The zero polynomial of $\mathbb{P}_2$ is given by $0(x) = 0x^2 + 0x + 0 = 0$. Clearly $0(1) = 0$ so $0(x)$ is contained in $W$. 
+The zero polynomial of $\Poly_2$ is given by $0(x) = 0x^2 + 0x + 0 = 0$. Clearly $0(1) = 0$ so $0(x)$ is contained in $W$. 
 
 \item
 Let $p(x), q(x)$ be polynomials in $W$.  It follows that $p(1) = 0 $ and $q(1) = 0$. Now consider $p(x) + q(x)$. Let $r(x)$ represent this sum.
@@ -173,7 +173,7 @@ ap(1) &=& a(0) \\
 Therefore the product is in $W$ and the third condition is satisfied.
 \end{enumerate}
 
-It follows that $W$ is a subspace of $\mathbb{P}_2$. 
+It follows that $W$ is a subspace of $\Poly_2$. 
 \end{solution} 
 
 Recall the definition of basis, considered now in the context of vector spaces.
@@ -182,7 +182,7 @@ Recall the definition of basis, considered now in the context of vector spaces.
 Let $V$ be a vector space. Then $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is called a basis\index{basis} for $V$ if the following conditions hold.
 \begin{enumerate}
 \item
-$\func{span}\left\{ \vect{v}_{1},\cdots ,\vect{v}_{n}\right\} = V$
+$\func{span}\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} = V$
 \item
 $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is linearly independent
 \end{enumerate}
@@ -191,90 +191,90 @@ $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is linearly independent
 Consider the following example.
 
 \begin{example}{Polynomials of degree two}{polydegreetwo}
-Let $\mathbb{P}_2$ be the set polynomials of degree no more than 2. We can write
-$\mathbb{P}_2=\func{span}\left\{ x^{2}, x, 1\right\} .$ Is $\left\{ x^{2}, x, 1\right\} $ a
-basis for $\mathbb{P}_2$?
+Let $\Poly_2$ be the set polynomials of degree no more than 2. We can write
+$\Poly_2=\func{span}\set{x^{2}, x, 1} .$ Is $\set{x^{2}, x, 1} $ a
+basis for $\Poly_2$?
 \end{example}
 
 \begin{solution}
-It can be verified that $\mathbb{P}_2$ is a vector space defined under the usual addition and scalar multiplication of polynomials. 
+It can be verified that $\Poly_2$ is a vector space defined under the usual addition and scalar multiplication of polynomials. 
 
-Now, since $\mathbb{P}_2=\func{span}\left\{ x^{2},x, 1\right\}$, the set  $\left\{ x^{2}, x, 1\right\} $ is a basis if it is linearly independent. Suppose then that 
+Now, since $\Poly_2=\func{span}\set{x^{2},x, 1}$, the set  $\set{x^{2}, x, 1} $ is a basis if it is linearly independent. Suppose then that 
 \begin{equation*}
 ax^{2}+bx+c=0x^2 + 0x + 0 
 \end{equation*}
-where $a,b,c$ are real numbers. It is clear that this can only occur if $a=b=c=0$. Hence the set is linearly independent and forms a basis of $\mathbb{P}_2$.
+where $a,b,c$ are real numbers. It is clear that this can only occur if $a=b=c=0$. Hence the set is linearly independent and forms a basis of $\Poly_2$.
 \end{solution}
 
 The next theorem is an essential result in linear algebra and is called the exchange theorem\index{exchange theorem}.
 
 \begin{theorem}{Exchange theorem}{exchangetheorem}
-Let $\left\{ \vect{x}_{1},\cdots ,\vect{x}_{r}\right\} $
+Let $\set{\vect{x}_{1},\cdots ,\vect{x}_{r}} $
 be a linearly independent set of vectors such that each $\vect{x}_{i}$ is
-contained in span$\left\{ \vect{y}_{1},\cdots ,\vect{y}_{s}\right\} .$ Then $
+contained in span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} .$ Then $
 r\leq s.$
 \end{theorem}
 
 \begin{proof} The proof will proceed as follows. First, we set up the necessary steps for the proof. Next, we will assume that $r > s$ and show that this leads to a contradiction, thus requiring that $r \leq s$. 
 
-Define span$\left\{ \vect{y}_{1},\cdots ,\vect{y}_{s}\right\} = V.$ Since each $\vect{x}_i$ is in  span$\left\{ \vect{y}_{1},\cdots ,\vect{y}_{s}\right\}$, it follows there exist scalars $c_{1},\cdots ,c_{s}$
+Define span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} = V.$ Since each $\vect{x}_i$ is in  span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}}$, it follows there exist scalars $c_{1},\cdots ,c_{s}$
 such that 
 \begin{equation}
 \vect{x}_{1}=\sum_{i=1}^{s}c_{i}\vect{y}_{i}  \label{lincomb}
 \end{equation}
 Note that not all of these scalars $c_i$ can equal zero. Suppose that all the $c_i=0$. Then it
-would follow that $\vect{x}_{1}=\vect{0}$ and so $\left\{ \vect{x}
-_{1},\cdots ,\vect{x}_{r}\right\} $ would not be linearly independent.
+would follow that $\vect{x}_{1}=\vect{0}$ and so $\set{\vect{x}
+_{1},\cdots ,\vect{x}_{r}} $ would not be linearly independent.
 Indeed, if $\vect{x}_{1}=\vect{0}$, $1\vect{x}_{1}+\sum_{i=2}^{r}0
 \vect{x}_{i}=\vect{x}_{1}=\vect{0}$ and so there would exist a
-nontrivial linear combination of the vectors $\left\{ \vect{x}_{1},\cdots ,
-\vect{x}_{r}\right\} $ which equals zero. Therefore at least one $c_i$ is nonzero. 
+nontrivial linear combination of the vectors $\set{\vect{x}_{1},\cdots ,
+\vect{x}_{r}} $ which equals zero. Therefore at least one $c_i$ is nonzero. 
 
 Say $c_{k}\neq 0.$ Then solve \ref{lincomb} for $\vect{y}_{k}$ and obtain 
 \begin{equation*}
-\vect{y}_{k}\in \func{span}\left\{ \vect{x}_{1},\overset{\text{s-1
+\vect{y}_{k}\in \func{span}\set{\vect{x}_{1},\overset{\text{s-1
 vectors here}}{\overbrace{\vect{y}_{1},\cdots ,\vect{y}_{k-1},\vect{y}
-_{k+1},\cdots ,\vect{y}_{s}}}\right\} .
+_{k+1},\cdots ,\vect{y}_{s}}}} .
 \end{equation*}
-Define $\left\{ \vect{z}_{1},\cdots ,\vect{z}_{s-1}\right\} $ to be
+Define $\set{\vect{z}_{1},\cdots ,\vect{z}_{s-1}} $ to be
 \begin{equation*}
-\left\{ \vect{z}_{1},\cdots ,\vect{z}_{s-1}\right\} = \left\{ 
+\set{\vect{z}_{1},\cdots ,\vect{z}_{s-1}} = \set{
 \vect{y}_{1},\cdots ,\vect{y}_{k-1},\vect{y}_{k+1},\cdots ,\vect{y}
-_{s}\right\}
+_{s}}
 \end{equation*}
 Now we can write 
 \begin{equation*}
-\vect{y}_{k}\in \func{span}\left\{ \vect{x}_{1}, \vect{z}_{1},\cdots, \vect{z}_{s-1}\right\} 
+\vect{y}_{k}\in \func{span}\set{\vect{x}_{1}, \vect{z}_{1},\cdots, \vect{z}_{s-1}} 
 \end{equation*}
-Therefore, $\func{span}\left\{ \vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z
-}_{s-1}\right\}=V$. To see this, suppose $\vect{v}\in V$. Then there exist constants $
+Therefore, $\func{span}\set{\vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z
+}_{s-1}}=V$. To see this, suppose $\vect{v}\in V$. Then there exist constants $
 c_{1},\cdots ,c_{s}$ such that 
 \begin{equation*}
 \vect{v}=\sum_{i=1}^{s-1}c_{i}\vect{z}_{i}+c_{s}\vect{y}_{k}.
 \end{equation*}
 Replace this $\vect{y}_{k}$ with a linear combination of the
-vectors $\left\{ \vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z}_{s-1}\right\}$
-to obtain $\vect{v}\in \func{span}\left\{ \vect{x}_{1},\vect{z}
-_{1},\cdots ,\vect{z}_{s-1}\right\} .$ The vector $\vect{y}_{k},$ in the
-list $\left\{ \vect{y}_{1},\cdots ,\vect{y}_{s}\right\} ,$ has now been
+vectors $\set{\vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z}_{s-1}}$
+to obtain $\vect{v}\in \func{span}\set{\vect{x}_{1},\vect{z}
+_{1},\cdots ,\vect{z}_{s-1}} .$ The vector $\vect{y}_{k},$ in the
+list $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} ,$ has now been
 replaced with the vector $\vect{x}_{1}$ and the resulting modified list of
-vectors has the same span as the original list of vectors, $\left\{ \vect{y
-}_{1},\cdots ,\vect{y}_{s}\right\} .$
+vectors has the same span as the original list of vectors, $\set{\vect{y
+}_{1},\cdots ,\vect{y}_{s}} .$
 
 We are now ready to move on to the proof. Suppose that $r>s$ and that 
 \[
-\func{span}\left\{ \vect{x}_{1},\cdots ,
-\vect{x}_{l},\vect{z}_{1},\cdots ,\vect{z}_{p}\right\} =V
+\func{span}\set{\vect{x}_{1},\cdots ,
+\vect{x}_{l},\vect{z}_{1},\cdots ,\vect{z}_{p}} =V
 \]
  where the process established above has continued. In other words, the vectors $\vect{z}_{1},\cdots ,\vect{z}_{p}$ are each taken from the
-set $\left\{ \vect{y}_{1},\cdots ,\vect{y}_{s}\right\} $ and $l+p=s.$
+set $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} $ and $l+p=s.$
 This was done for $l=1$ above. Then since $r>s,$ it follows that $
 l\leq s<r$ and so $l+1\leq r.$ Therefore, $\vect{x}_{l+1}$ is a vector not
-in the list, $\left\{ \vect{x}_{1},\cdots ,\vect{x}_{l}\right\} $ and
+in the list, $\set{\vect{x}_{1},\cdots ,\vect{x}_{l}} $ and
 since 
 \[
-\func{span}\left\{ \vect{x}_{1},\cdots ,\vect{x}_{l},\vect{z}
-_{1},\cdots ,\vect{z}_{p}\right\} =V
+\func{span}\set{\vect{x}_{1},\cdots ,\vect{x}_{l},\vect{z}
+_{1},\cdots ,\vect{z}_{p}} =V
 \]
  there exist scalars, $c_{i}$ and $
 d_{j}$ such that 
@@ -283,24 +283,24 @@ d_{j}$ such that
 \vect{z}_{j}.  \label{lincomb2}
 \end{equation}
 Not all the $d_{j}$ can equal zero because if this were so, it would follow
-that $\left\{ \vect{x}_{1},\cdots ,\vect{x}_{r}\right\} $ would be a
+that $\set{\vect{x}_{1},\cdots ,\vect{x}_{r}} $ would be a
 linearly dependent set because one of the vectors would equal a linear
 combination of the others. Therefore, \ref{lincomb2} can be solved for one of the 
 $\vect{z}_{i},$ say $\vect{z}_{k},$ in terms of $\vect{x}_{l+1}$ and
 the other $\vect{z}_{i}$ and just as in the above argument, replace that $
 \vect{z}_{i}$ with $\vect{x}_{l+1}$ to obtain 
 \begin{equation*}
-\func{span}\left\{ \vect{x}_{1},\cdots \vect{x}_{l},\vect{x}_{l+1},
+\func{span}\set{\vect{x}_{1},\cdots \vect{x}_{l},\vect{x}_{l+1},
 \overset{\text{p-1 vectors here}}{\overbrace{\vect{z}_{1},\cdots \vect{z}
-_{k-1},\vect{z}_{k+1},\cdots ,\vect{z}_{p}}}\right\} =V
+_{k-1},\vect{z}_{k+1},\cdots ,\vect{z}_{p}}}} =V
 \end{equation*}
 Continue this way, eventually obtaining 
 \begin{equation*}
-\func{span}\left\{ \vect{x}_{1},\cdots ,\vect{x}_{s}\right\} =V.
+\func{span}\set{\vect{x}_{1},\cdots ,\vect{x}_{s}} =V.
 \end{equation*}
-But then $\vect{x}_{r}\in $ $\func{span}\left\{ \vect{x}_{1},\cdots ,
-\vect{x}_{s}\right\} $ contrary to the assumption that $\left\{ \vect{x}
-_{1},\cdots ,\vect{x}_{r}\right\} $ is linearly independent. Therefore, $
+But then $\vect{x}_{r}\in $ $\func{span}\set{\vect{x}_{1},\cdots ,
+\vect{x}_{s}} $ contrary to the assumption that $\set{\vect{x}
+_{1},\cdots ,\vect{x}_{r}} $ is linearly independent. Therefore, $
 r\leq s$ as claimed.
 \end{proof}
 
@@ -315,8 +315,8 @@ Let $B_1$, $B_2$ be two bases of a vector space $V$. Suppose $B_1$ contains $m$ 
 
 This corollary is very important so we provide another proof independent of the exchange theorem above.
 
-\begin{proof}Suppose $n > m.$ Then since the vectors $\left\{ \vect{u}
-_{1},\cdots ,\vect{u}_{m}\right\} $ span $V,$ there exist scalars $c_{ij}$
+\begin{proof}Suppose $n > m.$ Then since the vectors $\set{\vect{u}
+_{1},\cdots ,\vect{u}_{m}} $ span $V,$ there exist scalars $c_{ij}$
 such that 
 \begin{equation*}
 \sum_{i=1}^{m}c_{ij}\vect{u}_{i}=\vect{v}_{j}.
@@ -329,7 +329,7 @@ Therefore,
 \end{equation*}
 if and only if 
 \begin{equation*}
-\sum_{i=1}^{m}\left( \sum_{j=1}^{n}c_{ij}d_{j}\right) \vect{u}_{i}=\vect{
+\sum_{i=1}^{m}\tup{\sum_{j=1}^{n}c_{ij}d_{j}} \vect{u}_{i}=\vect{
 0}
 \end{equation*}
 Now since $\{\vect{u}_{1},\cdots ,\vect{u}_{n}\}$ is independent, this
@@ -341,14 +341,12 @@ However, this is a system of $m$ equations in $n$ variables, $d_{1},\cdots
 ,d_{n}$ and $m<n.$ Therefore, there exists a solution to this system of
 equations in which not all the $d_{j}$ are equal to zero. Recall why this is
 so. The augmented matrix for the system is of the form 
-$\leftB 
-\begin{array}{c|c}
+$\begin{mymatrix}{c|c}
 C & \vect{0}
-\end{array}
-\rightB $ where $C$ is a matrix which has more columns than rows. Therefore,
+\end{mymatrix} $ where $C$ is a matrix which has more columns than rows. Therefore,
 there are free variables and hence nonzero solutions to the system of
-equations. However, this contradicts the linear independence of $\left\{ 
-\vect{u}_{1},\cdots ,\vect{u}_{m}\right\} $. Similarly it cannot happen
+equations. However, this contradicts the linear independence of $\set{
+\vect{u}_{1},\cdots ,\vect{u}_{m}} $. Similarly it cannot happen
 that $m > n$.
 \end{proof}
 
@@ -363,41 +361,41 @@ that $n<\infty $ and therefore such a vector space is said to be \textbf{finite
 dimensional}\index{finite dimensional}.
 
 \begin{example}{Dimension of a vector space}{dimension}
-Let $\mathbb{P}_2$ be the set of all polynomials of degree at most $2$. Find the dimension of $\mathbb{P}_2$. 
+Let $\Poly_2$ be the set of all polynomials of degree at most $2$. Find the dimension of $\Poly_2$. 
 \end{example}
 
 \begin{solution}
-If we can find a basis of $\mathbb{P}_2$ then the number of vectors in the basis will give the dimension. Recall from Example \ref{exa:polydegreetwo} that a basis of $\mathbb{P}_2$ is given by 
+If we can find a basis of $\Poly_2$ then the number of vectors in the basis will give the dimension. Recall from Example \ref{exa:polydegreetwo} that a basis of $\Poly_2$ is given by 
 \[
-S  = \left\{ x^2, x, 1 \right\}
+S  = \set{x^2, x, 1 }
 \]
-There are three polynomials in $S$ and hence the dimension of $\mathbb{P}_2$ is three. 
+There are three polynomials in $S$ and hence the dimension of $\Poly_2$ is three. 
 \end{solution}
 
 It is important to note that a basis for a vector space is not unique. A vector space can have many bases. Consider the following example.
 
 \begin{example}{A different basis for polynomials of degree two}{polydegtwodifferentbasis}
-Let $\mathbb{P}_2$ be the polynomials of degree no more than 2. Is $\left\{
-x^{2}+x+1,2x+1,3x^{2}+1\right\} $ a basis for $\mathbb{P}_2$?
+Let $\Poly_2$ be the polynomials of degree no more than 2. Is $\set{
+x^{2}+x+1,2x+1,3x^{2}+1} $ a basis for $\Poly_2$?
 \end{example}
 
 \begin{solution}
-Suppose these vectors are linearly independent but do not form a spanning set for $\mathbb{P}_2$. Then by Lemma \ref{lem:addinglinearlyindependent}, we could find a fourth polynomial in $\mathbb{P}_2$ to create a new linearly independent 
-set containing four polynomials. However this would imply that we could find a basis of $\mathbb{P}_2$ of more than three polynomials. This contradicts the result of Example \ref{exa:dimension} in which we determined the dimension of $\mathbb{P}_2$ is three.  Therefore if these vectors are linearly independent they must also form a spanning set and thus a basis for $\mathbb{P}_2$. 
+Suppose these vectors are linearly independent but do not form a spanning set for $\Poly_2$. Then by Lemma \ref{lem:addinglinearlyindependent}, we could find a fourth polynomial in $\Poly_2$ to create a new linearly independent 
+set containing four polynomials. However this would imply that we could find a basis of $\Poly_2$ of more than three polynomials. This contradicts the result of Example \ref{exa:dimension} in which we determined the dimension of $\Poly_2$ is three.  Therefore if these vectors are linearly independent they must also form a spanning set and thus a basis for $\Poly_2$. 
 
 Suppose then that 
 \begin{eqnarray*}
-a\left( x^{2}+x+1\right) +b\left( 2x+1\right) +c\left( 3x^{2}+1\right) &=& 0\\
-\left( a+3c\right) x^{2}+\left( a+2b\right) x+\left( a+b+c\right) &=& 0 
+a\tup{x^{2}+x+1} +b\tup{2x+1} +c\tup{3x^{2}+1} &=& 0\\
+\tup{a+3c} x^{2}+\tup{a+2b} x+\tup{a+b+c} &=& 0 
 \end{eqnarray*}
-We know that $\left\{ x^2, x, 1 \right\}$ is linearly independent, and so it follows that  
+We know that $\set{x^2, x, 1 }$ is linearly independent, and so it follows that  
 \begin{eqnarray*}
 a+3c &=& 0 \\
 a+2b &=& 0 \\
 a+b+c &=& 0
 \end{eqnarray*}
 and there is only one solution to this system of equations, $a=b=c=0$.
-Therefore, these are linearly independent and form a basis for $\mathbb{P}_2$.
+Therefore, these are linearly independent and form a basis for $\Poly_2$.
 \end{solution}
 
 Consider the following theorem. 
@@ -411,15 +409,15 @@ with no more than $n$ vectors.
 
 \begin{proof}
 Let $\vect{v}_{1}\in V$ where $\vect{v}_{1}\neq 0.$ If $
-\func{span}\left\{ \vect{v}_{1}\right\} =V,$ then it follows that $\left\{ \vect{v}
-_{1}\right\} $ is a basis for $V$. Otherwise, there exists $\vect{v}
-_{2}\in V$ which is not in $\func{span}\left\{ \vect{v}_{1}\right\} .$ By
-Lemma \ref{lem:addinglinearlyindependent} $\left\{ \vect{v}_{1},\vect{v}_{2}\right\} $ is a
-linearly independent set of vectors. Then $\left\{ \vect{v}_{1},\vect{v}
-_{2}\right\} $ is a basis for $V$ and we are done. If $\func{span}\left\{ \vect{v}_{1},
-\vect{v}_{2}\right\} \neq V,$ then there exists $\vect{v}_{3}\notin \func{
-span}\left\{ \vect{v}_{1},\vect{v}_{2}\right\} $ and $\left\{ \vect{v}
-_{1},\vect{v}_{2},\vect{v}_{3}\right\} $ is a larger linearly
+\func{span}\set{\vect{v}_{1}} =V,$ then it follows that $\set{\vect{v}
+_{1}} $ is a basis for $V$. Otherwise, there exists $\vect{v}
+_{2}\in V$ which is not in $\func{span}\set{\vect{v}_{1}} .$ By
+Lemma \ref{lem:addinglinearlyindependent} $\set{\vect{v}_{1},\vect{v}_{2}} $ is a
+linearly independent set of vectors. Then $\set{\vect{v}_{1},\vect{v}
+_{2}} $ is a basis for $V$ and we are done. If $\func{span}\set{\vect{v}_{1},
+\vect{v}_{2}} \neq V,$ then there exists $\vect{v}_{3}\notin \func{
+span}\set{\vect{v}_{1},\vect{v}_{2}} $ and $\set{\vect{v}
+_{1},\vect{v}_{2},\vect{v}_{3}} $ is a larger linearly
 independent set of vectors. Continuing this way, the process must stop
 before $n+1$ steps because if not, it would be possible to obtain $n+1$
 linearly independent vectors contrary to the exchange theorem, Theorem \ref{thm:exchangetheorem}. 
@@ -435,10 +433,10 @@ subspace. Then $W=V$ if and only if the dimension of $W$ is also $n$.
 \begin{proof}First suppose $W=V.$ Then obviously the dimension of $W=n.$
 
 Now suppose that the dimension of $W$ is $n$. Let a basis for $W$ be $
-\left\{ \vect{w}_{1},\cdots ,\vect{w}_{n}\right\} $. If $W$ is not equal to $V$
+\set{\vect{w}_{1},\cdots ,\vect{w}_{n}} $. If $W$ is not equal to $V$
 , then let $\vect{v}$ be a vector of $V$ which is not contained in $W.$ Thus $
-\vect{v}$ is not in $\func{span}\left\{ \vect{w}_{1},\cdots ,\vect{w}
-_{n}\right\} $ and by Lemma \ref{lem:basesisomorphism}, $\left\{ \vect{w}_{1},\cdots ,\vect{w}_{n},\vect{v}\right\} $ is linearly independent which contradicts
+\vect{v}$ is not in $\func{span}\set{\vect{w}_{1},\cdots ,\vect{w}
+_{n}} $ and by Lemma \ref{lem:basesisomorphism}, $\set{\vect{w}_{1},\cdots ,\vect{w}_{n},\vect{v}} $ is linearly independent which contradicts
 Theorem \ref{thm:exchangetheorem} because it would be an independent set of $n+1$
 vectors even though each of these vectors is in a spanning set of $n$
 vectors, a basis of $V$. 
@@ -447,31 +445,31 @@ vectors, a basis of $V$.
 Consider the following example.
 
 \begin{example}{Basis of a subspace}{basissubspace}
-Let $U=\left\{ A\in\mathbb{M}_{22} ~\left|~
-A\leftB\begin{array}{rr}
-1 & 0 \\ 1 & -1 \end{array}\rightB\right. 
-= \leftB\begin{array}{rr}
-1 & 1 \\ 0 & -1 \end{array}\rightB A \right\}$. 
-Then $U$ is a subspace of $\mathbb{M}_{22}$ 
+Let $U=\set{A\in\Mat_{22} ~\abs{~
+A\begin{mymatrix}{rr}
+1 & 0 \\ 1 & -1 \end{mymatrix}\right. 
+= \begin{mymatrix}{rr}
+1 & 1 \\ 0 & -1 \end{mymatrix} A }$. 
+Then $U$ is a subspace of $\Mat_{22}$ 
 Find a basis of $U$, and hence $\dim(U)$.
 \end{example}
 
 \begin{solution}
-Let $A=\leftB\begin{array}{rr} a & b \\ c & d \end{array}\rightB
-\in\mathbb{M}_{22}$.
+Let $A=\begin{mymatrix}{rr} a & b \\ c & d \end{mymatrix}
+\in\Mat_{22}$.
 Then
-\[ A\leftB\begin{array}{rr} 1 & 0 \\ 1 & -1 \end{array}\rightB
-= \leftB\begin{array}{rr} a & b \\ c & d \end{array}\rightB
-\leftB\begin{array}{rr} 1 & 0 \\ 1 & -1 \end{array}\rightB
-=\leftB\begin{array}{rr} a+b & -b \\ c+d & -d \end{array}\rightB\]
+\[ A\begin{mymatrix}{rr} 1 & 0 \\ 1 & -1 \end{mymatrix}
+= \begin{mymatrix}{rr} a & b \\ c & d \end{mymatrix}
+\begin{mymatrix}{rr} 1 & 0 \\ 1 & -1 \end{mymatrix}
+=\begin{mymatrix}{rr} a+b & -b \\ c+d & -d \end{mymatrix}\]
 and
-\[ \leftB\begin{array}{rr} 1 & 1 \\ 0 & -1 \end{array}\rightB A
-= \leftB\begin{array}{rr} 1 & 1 \\ 0 & -1 \end{array}\rightB
-\leftB\begin{array}{rr} a & b \\ c & d \end{array}\rightB
-=\leftB\begin{array}{cc} a+c & b+d \\ -c & -d \end{array}\rightB.\]
+\[ \begin{mymatrix}{rr} 1 & 1 \\ 0 & -1 \end{mymatrix} A
+= \begin{mymatrix}{rr} 1 & 1 \\ 0 & -1 \end{mymatrix}
+\begin{mymatrix}{rr} a & b \\ c & d \end{mymatrix}
+=\begin{mymatrix}{cc} a+c & b+d \\ -c & -d \end{mymatrix}.\]
 If $A\in U$, then
-$\leftB\begin{array}{cc} a+b & -b \\ c+d & -d \end{array}\rightB=
-\leftB\begin{array}{cc} a+c & b+d \\ -c & -d \end{array}\rightB$.
+$\begin{mymatrix}{cc} a+b & -b \\ c+d & -d \end{mymatrix}=
+\begin{mymatrix}{cc} a+c & b+d \\ -c & -d \end{mymatrix}$.
 
 Equating entries leads to a system of four equations in the four
 variables $a,b,c$ and $d$.
@@ -487,28 +485,28 @@ b - c & = & 0 \\
 \end{array}.  \] 
 
 The solution to this system is
-$a=s$, $b=-\frac{1}{2}t$, $c=-\frac{1}{2}t$,  $d=t$ for any $s,t\in\mathbb{R}$, 
+$a=s$, $b=-\frac{1}{2}t$, $c=-\frac{1}{2}t$,  $d=t$ for any $s,t\in\R$, 
 and thus 
-\[ A=\leftB\begin{array}{cc} s & \frac{t}{2} \\
--\frac{t}{2} & t \end{array}\rightB
-= s\leftB\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\rightB
-+ t\leftB\begin{array}{rr} 0  & -\frac{1}{2} \\ 
--\frac{1}{2} & 1 \end{array}\rightB .\]
+\[ A=\begin{mymatrix}{cc} s & \frac{t}{2} \\
+-\frac{t}{2} & t \end{mymatrix}
+= s\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix}
++ t\begin{mymatrix}{rr} 0  & -\frac{1}{2} \\ 
+-\frac{1}{2} & 1 \end{mymatrix} .\]
 Let 
-\[ B=\left\{ 
-\leftB\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\rightB,
-\leftB\begin{array}{rr} 0  & -\frac{1}{2} \\
--\frac{1}{2} & 1 \end{array}\rightB\right\}.\]
+\[ B=\set{
+\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
+\begin{mymatrix}{rr} 0  & -\frac{1}{2} \\
+-\frac{1}{2} & 1 \end{mymatrix}}.\]
 Then $\func{span}(B)=U$, and it is routine to verify that $B$ is
-an independent subset of $\mathbb{M}_{22}$.  
+an independent subset of $\Mat_{22}$.  
 Therefore $B$ is a basis of $U$, and $\dim(U)=2$.
 \end{solution}
 
 The following theorem claims that a spanning set of a vector space $V$ can be shrunk down to a basis of $V$. Similarly, a linearly independent set within $V$ can be enlarged to create a basis of $V$.
 
 \begin{theorem}{Basis of $V$}{basisfromspanninglinind}
- If $V=\func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}
-_{n}\right\} $ is a vector space, then some subset of $\{\vect{u}_{1},\cdots ,\vect{u}_{n}\}$
+ If $V=\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}
+_{n}} $ is a vector space, then some subset of $\{\vect{u}_{1},\cdots ,\vect{u}_{n}\}$
 is a basis for $V.$ Also, if $\{\vect{u}_{1},\cdots ,\vect{u}
 _{k}\}\subseteq V$ is linearly independent and the vector space is finite
 dimensional,
@@ -520,12 +518,12 @@ of $V$\index{linear independence!enlarging to form a basis}.
 \begin{proof}Let 
 \begin{equation*}
 S=\{E\subseteq \{\vect{u}_{1},\cdots ,\vect{u}_{n}\}\text{ such that }%
-\func{span}\left\{ E\right\} =V\}.
+\func{span}\set{E} =V\}.
 \end{equation*}
-For $E\in S,$ let $\left\vert E\right\vert $ denote the number of elements
+For $E\in S,$ let $\abs{E}$ denote the number of elements
 of $E.$ Let 
 \begin{equation*}
-m= \min \{\left\vert E\right\vert \text{ such that }E\in S\}.
+m= \min \{\abs{E}\text{ such that }E\in S\}.
 \end{equation*}
 Thus there exist vectors 
 \begin{equation*}
@@ -534,7 +532,7 @@ Thus there exist vectors
 \end{equation*}
 such that 
 \begin{equation*}
-\func{span}\left\{ \vect{v}_{1},\cdots ,\vect{v}_{m}\right\} =V
+\func{span}\set{\vect{v}_{1},\cdots ,\vect{v}_{m}} =V
 \end{equation*}
 and $m$ is as small as possible for this to happen. If this set is linearly
 independent, it follows it is a basis for $V$ and the theorem is proved. On
@@ -547,8 +545,8 @@ and not all the $c_{i}$ are equal to zero. Suppose $c_{k}\neq 0.$ Then solve for
 vector $\vect{v}_{k}$ in terms of the other vectors.
 Consequently, 
 \begin{equation*}
-V=\func{span}\left\{ \vect{v}_{1},\cdots ,\vect{v}_{k-1},\vect{v}
-_{k+1},\cdots ,\vect{v}_{m}\right\}
+V=\func{span}\set{\vect{v}_{1},\cdots ,\vect{v}_{k-1},\vect{v}
+_{k+1},\cdots ,\vect{v}_{m}}
 \end{equation*}
 contradicting the definition of $m$. This proves the first part of the
 theorem.
@@ -556,26 +554,26 @@ theorem.
 To obtain the second part, begin with $\{\vect{u}_{1},\cdots ,\vect{u}
 _{k}\}$ and suppose a basis for $V$ is 
 \begin{equation*}
-\left\{ \vect{v}_{1},\cdots ,\vect{v}_{n}\right\} 
+\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} 
 \end{equation*}
 If 
 \begin{equation*}
-\func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} =V,
+\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V,
 \end{equation*}
 then $k=n$. If not, there exists a vector 
 \begin{equation*}
-\vect{u}_{k+1}\notin \func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}
-_{k}\right\}
+\vect{u}_{k+1}\notin \func{span}\set{\vect{u}_{1},\cdots ,\vect{u}
+_{k}}
 \end{equation*}
 Then from Lemma \ref{lem:addinglinearlyindependent}, $\{\vect{u}_{1},\cdots ,\vect{u}_{k},
 \vect{u}_{k+1}\}$ is also linearly independent. Continue adding vectors in
 this way until $n$ linearly independent vectors have been obtained. Then 
 \begin{equation*}
-\func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n}\right\} =V
+\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} =V
 \end{equation*}
 because if it did not do so, there would exist $\vect{u}_{n+1}$ as just
-described and $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n+1}\right\} $
-would be a linearly independent set of vectors having $n+1$ elements. This contradicts the fact that $\left\{ \vect{v}_{1},\cdots ,\vect{v}_{n}\right\} $ is a basis.
+described and $\set{\vect{u}_{1},\cdots ,\vect{u}_{n+1}} $
+would be a linearly independent set of vectors having $n+1$ elements. This contradicts the fact that $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} $ is a basis.
  In turn this would contradict Theorem \ref{thm:exchangetheorem}. Therefore, this list is a
 basis. 
 \end{proof}
@@ -585,13 +583,13 @@ Recall Example \ref{exa:addinglinind} in which we added a matrix to a linearly i
 \begin{example}{Adding to a linearly independent set}{addinglinearindbasis}
 Let $S \subseteq M_{22}$ be a linearly independent set given by 
 \[
-S  = \left\{ \leftB \begin{array}{rr}
+S  = \set{\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 1 \\
 0 & 0 
-\end{array} \rightB \right\}
+\end{mymatrix} }
 \]
 Enlarge $S$ to a basis of $M_{22}$. 
 \end{example}
@@ -599,36 +597,36 @@ Enlarge $S$ to a basis of $M_{22}$.
 \begin{solution}
 Recall from the solution of Example \ref{exa:addinglinind} that the set  $R \subseteq M_{22}$ given by 
 \[
-R = \left\{ \leftB \begin{array}{rr}
+R = \set{\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 1 \\
 0 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 0 \\
 1 & 0 
-\end{array} \rightB \right\}
+\end{mymatrix} }
 \]
 is also linearly independent.
-However this set is still not a basis for $M_{22}$ as it is not a spanning set. In particular, $\leftB \begin{array}{rr}
+However this set is still not a basis for $M_{22}$ as it is not a spanning set. In particular, $\begin{mymatrix}{rr}
 0 & 0 \\
 0 & 1 
-\end{array} \rightB$ is not in $\func{span} R$. Therefore, this matrix can be added to the set by Lemma \ref{lem:addinglinearlyindependent} to obtain a new linearly independent set given by 
+\end{mymatrix}$ is not in $\func{span} R$. Therefore, this matrix can be added to the set by Lemma \ref{lem:addinglinearlyindependent} to obtain a new linearly independent set given by 
 \[
-T = \left\{ \leftB \begin{array}{rr}
+T = \set{\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 1 \\
 0 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 0 \\
 1 & 0 
-\end{array} \rightB, \leftB \begin{array}{rr}
+\end{mymatrix}, \begin{mymatrix}{rr}
 0 & 0 \\
 0 & 1 
-\end{array} \rightB \right\}
+\end{mymatrix} }
 \]
 
 This set is linearly independent and now spans $M_{22}$. Hence $T$ is a basis. 
@@ -639,105 +637,93 @@ spanning set and you want a subset which is a basis. The above discussion involv
 
 \begin{theorem}{Basis from a spanning set}{}
 Let $V$ be a vector space and let $W$ be a subspace. Also
-suppose that $W=\func{span}\left\{ \vect{w}_{1},\cdots ,\vect{w}
-_{m}\right\} $. Then there exists a subset of $\left\{ \vect{w}_{1},\cdots ,
-\vect{w}_{m}\right\} $ which is a basis for $W$.
+suppose that $W=\func{span}\set{\vect{w}_{1},\cdots ,\vect{w}
+_{m}} $. Then there exists a subset of $\set{\vect{w}_{1},\cdots ,
+\vect{w}_{m}} $ which is a basis for $W$.
 \end{theorem}
 
 \begin{proof}
 Let $S$ denote the set of positive integers such that for $
-k\in S,$ there exists a subset of $\left\{ \vect{w}_{1},\cdots ,\vect{w}
-_{m}\right\} $ consisting of exactly $k$ vectors which is a spanning set for 
+k\in S,$ there exists a subset of $\set{\vect{w}_{1},\cdots ,\vect{w}
+_{m}} $ consisting of exactly $k$ vectors which is a spanning set for 
 $W$. Thus $m\in S$. Pick the smallest positive integer in $S$. Call it $k$.
-Then there exists $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} \subseteq
-\left\{ \vect{w}_{1},\cdots ,\vect{w}_{m}\right\} $ such that $\limfunc{span}
-\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} =W.$ If 
+Then there exists $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} \subseteq
+\set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $ such that $\limfunc{span}
+\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =W.$ If 
 \begin{equation*}
 \sum_{i=1}^{k}c_{i}\vect{w}_{i}=\vect{0}
 \end{equation*}
 and not all of the $c_{i}=0,$ then you could pick $c_{j}\neq 0$, divide by
 it and solve for $\vect{u}_{j}$ in terms of the others. 
 \begin{equation*}
-\vect{w}_{j}=\sum_{i\neq j}\left( -\frac{c_{i}}{c_{j}}\right) \vect{w}_{i}
+\vect{w}_{j}=\sum_{i\neq j}\tup{-\frac{c_{i}}{c_{j}}} \vect{w}_{i}
 \end{equation*}
 Then you could delete $\vect{w}_{j}$ from the list and have the same span.
 In any linear combination involving $\vect{w}_{j}$, the linear
 combination would equal one in which $\vect{w}_{j}$ is replaced with the
 above sum, showing that it could have been obtained as a linear combination
 of $\vect{w}_{i}$ for $i\neq j$. Thus $k-1\in S$ contrary to the choice of $k$
-. Hence each $c_{i}=0$ and so $\left\{ \vect{u}_{1},\cdots ,\vect{u}
-_{k}\right\} $ is a basis for $W$ consisting of vectors of $\left\{ \vect{w}
-_{1},\cdots ,\vect{w}_{m}\right\} $. 
+. Hence each $c_{i}=0$ and so $\set{\vect{u}_{1},\cdots ,\vect{u}
+_{k}} $ is a basis for $W$ consisting of vectors of $\set{\vect{w}
+_{1},\cdots ,\vect{w}_{m}} $. 
 \end{proof}
 
 Consider the following example of this concept. 
 
 \begin{example}{Basis from a spanning set}{}
 Let $V$ be the vector space of polynomials of degree no more than 3,
-denoted earlier as $\mathbb{P}_{3}$. Consider the following vectors in $V$.
+denoted earlier as $\Poly_{3}$. Consider the following vectors in $V$.
 \begin{eqnarray*}
 &&2x^{2}+x+1,x^{3}+4x^{2}+2x+2,2x^{3}+2x^{2}+2x+1, \\
 &&x^{3}+4x^{2}-3x+2,x^{3}+3x^{2}+2x+1
 \end{eqnarray*}
 Then, as mentioned above, $V$ has dimension 4 and so clearly these vectors
-are not linearly independent. A basis for $V$ is $\left\{
-1,x,x^{2},x^{3}\right\} $. Determine a linearly independent subset of these
+are not linearly independent. A basis for $V$ is $\set{
+1,x,x^{2},x^{3}} $. Determine a linearly independent subset of these
 which has the same span. Determine whether this subset is a basis for $V$.
 \end{example}
 
 \begin{solution}
-Consider an isomorphism which maps $\mathbb{R}%
+Consider an isomorphism which maps $\R%
 ^{4}$ to $V$ in the obvious way. Thus 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 2 \\ 
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 corresponds to $2x^{2}+x+1$ through the use of this isomorphism. Then
 corresponding to the above vectors in $V$ we would have the following
-vectors in $\mathbb{R}^{4}.$ 
+vectors in $\R^{4}.$ 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 2 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 2 \\ 
 2 \\ 
 4 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 2 \\ 
 2
-\end{array}
-\rightB ,\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\begin{mymatrix}{r}
 2 \\ 
 -3 \\ 
 4 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 3 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Now if we obtain a subset of these which has the same span but which is
 linearly independent, then the corresponding vectors from $V$ will also be
@@ -746,14 +732,12 @@ in the list, then the resulting vectors from $V$ must be a basis for $V$.
 The {\rref} for the matrix which has the above vectors as
 columns is 
 \begin{equation*}
-\leftB 
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 1 & 0 & 0 & -15 & 0 \\ 
 0 & 1 & 0 & 11 & 0 \\ 
 0 & 0 & 1 & -5 & 0 \\ 
 0 & 0 & 0 & 0 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Therefore, a basis for $V$ consists of the vectors
 \begin{eqnarray*}
@@ -767,8 +751,8 @@ the original set of vectors in this way.
 
 Note also that, since all linear relations are preserved by an isomorphism,
 \begin{eqnarray*}
-&&-15\left( 2x^{2}+x+1\right) +11\left( x^{3}+4x^{2}+2x+2\right) +\left(
--5\right) \left( 2x^{3}+2x^{2}+2x+1\right) \\
+&&-15\tup{2x^{2}+x+1} +11\tup{x^{3}+4x^{2}+2x+2} +\tup{
+-5} \tup{2x^{3}+2x^{2}+2x+1} \\
 &=&x^{3}+4x^{2}-3x+2
 \end{eqnarray*}
 
@@ -777,15 +761,15 @@ Note also that, since all linear relations are preserved by an isomorphism,
 Consider the following example.
 
 \begin{example}{Shrinking a spanning set}{shrinkspanning}
-Consider the set $S \subseteq \mathbb{P}_2$ given by 
+Consider the set $S \subseteq \Poly_2$ given by 
 \[
-S = \left\{ 1, x, x^2, x^2 + 1 \right\}
+S = \set{1, x, x^2, x^2 + 1 }
 \]
-Show that $S$ spans $\mathbb{P}_2$, then remove vectors from $S$ until it creates a basis. 
+Show that $S$ spans $\Poly_2$, then remove vectors from $S$ until it creates a basis. 
 \end{example}
 
 \begin{solution}
-First we need to show that $S$ spans $\mathbb{P}_2$. Let $ax^2 + bx + c$ be an arbitrary polynomial in $\mathbb{P}_2$. Write 
+First we need to show that $S$ spans $\Poly_2$. Let $ax^2 + bx + c$ be an arbitrary polynomial in $\Poly_2$. Write 
 \[
 ax^2 + bx + c = r(1) + s(x) + t(x^2) + u (x^2 + 1)
 \]
@@ -802,12 +786,12 @@ b &=& s \\
 c &=& r + u 
 \end{eqnarray*}
 
-Clearly a solution exists for all $a,b,c$ and so $S$ is a spanning set for $\mathbb{P}_2$. By Theorem \ref{thm:basisfromspanninglinind}, some subset of $S$ is a basis for $\mathbb{P}_2$. 
+Clearly a solution exists for all $a,b,c$ and so $S$ is a spanning set for $\Poly_2$. By Theorem \ref{thm:basisfromspanninglinind}, some subset of $S$ is a basis for $\Poly_2$. 
 
 Recall that a basis must be both a spanning set and a linearly independent set.
-Therefore we must remove a vector from $S$ keeping this in mind. Suppose we remove $x$ from $S$. The resulting set would be $\left\{ 1, x^2, x^2 + 1 \right\}$. This set is clearly linearly dependent (and also does not span $\mathbb{P}_2$) and so is not a basis. 
+Therefore we must remove a vector from $S$ keeping this in mind. Suppose we remove $x$ from $S$. The resulting set would be $\set{1, x^2, x^2 + 1 }$. This set is clearly linearly dependent (and also does not span $\Poly_2$) and so is not a basis. 
 
-Suppose we remove $x^2 + 1$ from $S$. The resulting set is $\left\{ 1, x, x^2 \right\}$ which is both linearly independent and spans $\mathbb{P}_2$. Hence this is a basis for $\mathbb{P}_2$. Note that removing any one of $1, x^2$, or $x^2 + 1$ will result in a basis.
+Suppose we remove $x^2 + 1$ from $S$. The resulting set is $\set{1, x, x^2 }$ which is both linearly independent and spans $\Poly_2$. Hence this is a basis for $\Poly_2$. Note that removing any one of $1, x^2$, or $x^2 + 1$ will result in a basis.
 \end{solution}
 
 Now the following is a fundamental result about subspaces.
@@ -815,31 +799,31 @@ Now the following is a fundamental result about subspaces.
 \begin{theorem}{Basis of a vector space}{basisvectorspace}
 Let $V$ be a finite dimensional vector space and let $W$ be
 a non-zero subspace. Then $W$ has a basis. That is, there exists a linearly
-independent set of vectors $\left\{ \vect{w}_{1},\cdots ,\vect{w}_{r}\right\} $
+independent set of vectors $\set{\vect{w}_{1},\cdots ,\vect{w}_{r}} $
 such that 
 \begin{equation*}
-\limfunc{span}\left\{ \vect{w}_{1},\cdots ,\vect{w}_{r}\right\} =W
+\limfunc{span}\set{\vect{w}_{1},\cdots ,\vect{w}_{r}} =W
 \end{equation*}
-Also if $\left\{ \vect{w}_{1},\cdots ,\vect{w}_{s}\right\} $ is a linearly
-independent set of vectors, then $W$ has a basis of the form $\left\{ \vect{w}
-_{1},\cdots ,\vect{w}_{s},\cdots ,\vect{w}_{r}\right\} $ for $r\geq s$.
+Also if $\set{\vect{w}_{1},\cdots ,\vect{w}_{s}} $ is a linearly
+independent set of vectors, then $W$ has a basis of the form $\set{\vect{w}
+_{1},\cdots ,\vect{w}_{s},\cdots ,\vect{w}_{r}} $ for $r\geq s$.
 \end{theorem}
 
 \begin{proof}
 Let the dimension of $V$ be $n$. Pick $\vect{w}_{1}\in W$
 where $\vect{w}_{1}\neq \vect{0}.$ If $\vect{w}_{1},\cdots ,\vect{w}_{s}$ have
-been chosen such that $\left\{ \vect{w}_{1},\cdots ,\vect{w}_{s}\right\} $ is
-linearly independent, if $\limfunc{span}\left\{ \vect{w}_{1},\cdots ,\vect{w}
-_{r}\right\} =W,$ stop. You have the desired basis. Otherwise, there exists $
-\vect{w}_{s+1}\notin \limfunc{span}\left\{ \vect{w}_{1},\cdots ,\vect{w}
-_{s}\right\} $ and $\left\{ \vect{w}_{1},\cdots ,
-\vect{w}_{s},\vect{w}_{s+1}\right\} $ is linearly independent. Continue this
+been chosen such that $\set{\vect{w}_{1},\cdots ,\vect{w}_{s}} $ is
+linearly independent, if $\limfunc{span}\set{\vect{w}_{1},\cdots ,\vect{w}
+_{r}} =W,$ stop. You have the desired basis. Otherwise, there exists $
+\vect{w}_{s+1}\notin \limfunc{span}\set{\vect{w}_{1},\cdots ,\vect{w}
+_{s}} $ and $\set{\vect{w}_{1},\cdots ,
+\vect{w}_{s},\vect{w}_{s+1}} $ is linearly independent. Continue this
 way until the process stops. It must stop since otherwise, you could obtain a
 linearly independent set of vectors having more than $n$ vectors which is
 impossible.
 
 The last claim is proved by following the above procedure starting with $
-\left\{ \vect{w}_{1},\cdots ,\vect{w}_{s}\right\} $ as above. 
+\set{\vect{w}_{1},\cdots ,\vect{w}_{s}} $ as above. 
 \end{proof}
 
 This also proves the following corollary. Let $V$ play the role of $
@@ -854,23 +838,19 @@ Then every basis of $W$ can be extended to a basis for $V$.
 Consider the following example.
 
 \begin{example}{Basis extension}{}
-Let $V=\mathbb{R}^{4}$ and let 
+Let $V=\R^{4}$ and let 
 \begin{equation*}
-W=\func{span}\left\{ \leftB 
-\begin{array}{c}
+W=\func{span}\set{\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} }
 \end{equation*}
 Extend this basis of $W$ to a basis of $V$.
 \end{example}
@@ -878,65 +858,53 @@ Extend this basis of $W$ to a basis of $V$.
 \begin{solution}
 An easy way to do this is to take the {\rref} of the matrix 
 \begin{equation}
-\leftB 
-\begin{array}{cccccc}
+\begin{mymatrix}{cccccc}
 1 & 0 & 1 & 0 & 0 & 0 \\ 
 0 & 1 & 0 & 1 & 0 & 0 \\ 
 1 & 0 & 0 & 0 & 1 & 0 \\ 
 1 & 1 & 0 & 0 & 0 & 1
-\end{array}
-\rightB  \label{vectorspaceeq1}
+\end{mymatrix}  \label{vectorspaceeq1}
 \end{equation}
 Note how the given vectors were placed as the first two and then the matrix
 was extended in such a way that it is clear that the span of the columns of
-this matrix yield all of $\mathbb{R}^{4}$. Now determine the pivot columns.
+this matrix yield all of $\R^{4}$. Now determine the pivot columns.
 The {\rref} is 
 \begin{equation}
-\leftB 
-\begin{array}{rrrrrr}
+\begin{mymatrix}{rrrrrr}
 1 & 0 & 0 & 0 & 1 & 0 \\ 
 0 & 1 & 0 & 0 & -1 & 1 \\ 
 0 & 0 & 1 & 0 & -1 & 0 \\ 
 0 & 0 & 0 & 1 & 1 & -1
-\end{array}
-\rightB  \label{vectorspaceeq2}
+\end{mymatrix}  \label{vectorspaceeq2}
 \end{equation}
 These are 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 1
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 0 \\ 
 0
-\end{array}
-\rightB ,\leftB 
-\begin{array}{c}
+\end{mymatrix} ,\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 0 \\ 
 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and now this is an extension of the given basis for $W$ to a basis for $
-\mathbb{R}^{4}$.
+\R^{4}$.
 
-Why does this work? The columns of \ref{vectorspaceeq1} obviously span $\mathbb{R}
+Why does this work? The columns of \ref{vectorspaceeq1} obviously span $\R
 ^{4}$  the span of the first four is the same as the span of all
 six.
 \end{solution}

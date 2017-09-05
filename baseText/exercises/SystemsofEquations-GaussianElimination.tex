@@ -8,14 +8,12 @@ arbitrary number and $\blacksquare $ denotes a nonzero number. Determine
 whether the given augmented matrix is consistent. If consistent, is the
 solution unique? 
 \begin{equation*}
-\leftB
-\begin{array}{ccccc|c}
+\begin{mymatrix}{ccccc|c}
 \blacksquare & \ast & \ast & \ast & \ast & \ast \\
 0 & \blacksquare & \ast & \ast & 0 & \ast \\
 0 & 0 & \blacksquare & \ast & \ast & \ast \\
 0 & 0 & 0 & 0 & \blacksquare & \ast
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{sol}
 The solution exists but is not unique.
@@ -27,13 +25,11 @@ Consider the following augmented matrix in which $\ast $ denotes an arbitrary
 number and $\blacksquare $ denotes a nonzero number. Determine whether the
 given augmented matrix is consistent. If consistent, is the solution unique?
 \begin{equation*}
-\leftB
-\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 \blacksquare & \ast & \ast & \ast \\
 0 & \blacksquare & \ast & \ast \\
 0 & 0 & \blacksquare & \ast
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{sol}
 A solution exists and is unique.
@@ -46,14 +42,12 @@ Consider the following augmented matrix in which $\ast $ denotes an arbitrary
 number and $\blacksquare $ denotes a nonzero number. Determine whether the
 given augmented matrix is consistent. If consistent, is the solution unique? 
 \begin{equation*}
-\leftB
-\begin{array}{ccccc|c}
+\begin{mymatrix}{ccccc|c}
 \blacksquare & \ast & \ast & \ast & \ast & \ast \\
 0 & \blacksquare & 0 & \ast & 0 & \ast \\
 0 & 0 & 0 & \blacksquare & \ast & \ast \\
 0 & 0 & 0 & 0 & \blacksquare & \ast
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -64,14 +58,12 @@ Consider the following augmented matrix in which $\ast $ denotes an arbitrary
 number and $\blacksquare $ denotes a nonzero number. Determine whether the
 given augmented matrix is consistent. If consistent, is the solution unique?
 \begin{equation*}
-\leftB
-\begin{array}{ccccc|c}
+\begin{mymatrix}{ccccc|c}
 \blacksquare & \ast & \ast & \ast & \ast & \ast \\
 0 & \blacksquare & \ast & \ast & 0 & \ast \\
 0 & 0 & 0 & 0 & \blacksquare & 0 \\
 0 & 0 & 0 & 0 & \ast & \blacksquare
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{sol}
 There might be a solution. If so, there are infinitely many.
@@ -99,12 +91,10 @@ set of solutions.
 \begin{ex}
 Find $h$ such that
 \begin{equation*}
-\leftB
-\begin{array}{rr|r}
+\begin{mymatrix}{rr|r}
 2 & h & 4 \\
 3 & 6 & 7
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is the augmented matrix of an \textit{inconsistent} system.
 \begin{sol}
@@ -115,12 +105,10 @@ $h=4$
 \begin{ex}
 Find $h$ such that
 \begin{equation*}
-\leftB
-\begin{array}{rr|r}
+\begin{mymatrix}{rr|r}
 1 & h & 3 \\
 2 & 4 & 6
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is the augmented matrix of a \textit{consistent} system. 
 \begin{sol}
@@ -131,12 +119,10 @@ is the augmented matrix of a \textit{consistent} system.
 \begin{ex}
 Find $h$ such that
 \begin{equation*}
-\leftB
-\begin{array}{rr|r}
+\begin{mymatrix}{rr|r}
 1 & 1 & 4 \\
 3 & h & 12
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 is the augmented matrix of a \textit{consistent} system. 
 \begin{sol}
@@ -153,12 +139,10 @@ Choose $h$ and $k$ such that the augmented matrix shown has each of the followin
 \item infinitely many solutions
 \end{enumerate}
 \begin{equation*}
-\leftB
-\begin{array}{rr|r}
+\begin{mymatrix}{rr|r}
 1 & h & 2 \\
 2 & 4 & k
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \begin{sol}
 If $h\neq 2$ there will be a unique solution for any $k$. If $h=2$ and $%
@@ -176,12 +160,10 @@ Choose $h$ and $k$ such that the augmented matrix shown has each of the followin
 \item infinitely many solutions
 \end{enumerate}
 \begin{equation*}
-\leftB
-\begin{array}{rr|r}
+\begin{mymatrix}{rr|r}
 1 & 2 & 2 \\
 2 & h & k
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \begin{sol}
 If $h\neq 4,$ then there is exactly one solution. If $h=4$ and $k\neq 4,$
@@ -203,21 +185,17 @@ x-y+z+w=1 \\
 \end{equation*}
 \begin{sol}
 There is no solution. The system is inconsistent. You can see this from the
-augmented matrix. $\leftB
-\begin{array}{rrrrr}
+augmented matrix. $\begin{mymatrix}{rrrrr}
 1 & 2 & 1 & -1 & 2 \\
 1 & -1 & 1 & 1 & 1 \\
 2 & 1 & -1 & 0 & 1 \\
 4 & 2 & 1 & 0 & 5
-\end{array}
-\rightB $, {\ef}: $\leftB
-\begin{array}{rrrrr}
+\end{mymatrix} $, {\ef}: $\begin{mymatrix}{rrrrr}
 1 & 0 & 0 & \vspace{0.05in}\frac{1}{3} & 0 \\
 0 & 1 & 0 & -\vspace{0.05in}\frac{2}{3} & 0 \\
 0 & 0 & 1 & 0 & 0 \\
 0 & 0 & 0 & 0 & 1
-\end{array}
-\rightB .$
+\end{mymatrix} .$
 \end{sol}
 \end{ex}
 
@@ -232,36 +210,30 @@ x-y+z+w=0 \\
 \end{array}
 \end{equation*}
 \begin{sol}
-Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
-}\right] $
+Solution is: $\mat{w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
+}} $
 \end{sol}
 \end{ex}
 
 \begin{ex} Determine which matrices are in {\ef}. 
 
 \begin{enumerate}
-\item $\leftB
-\begin{array}{rrrr}
+\item $\begin{mymatrix}{rrrr}
 1 & 1 & 2 & 0 \\
 0 & 0 & 3 & 2 \\
 0 & 0 & 0 & 0
-\end{array}
-\rightB $
+\end{mymatrix} $
 
-\item $\leftB
-\begin{array}{rrr}
+\item $\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 2 & 1 & 7
-\end{array}
-\rightB $
+\end{mymatrix} $
 
-\item $\leftB
-\begin{array}{rrrrrr}
+\item $\begin{mymatrix}{rrrrrr}
 0 & 1 & 0 & 0 & 5 \\
 0 & 0 & 1 & 0 & 4 \\
 0 & 0 & 0 & 1 & 3
-\end{array}
-\rightB $
+\end{mymatrix} $
 \end{enumerate}
 \begin{sol}
 \begin{enumerate}
@@ -276,69 +248,55 @@ Solution is: $\left[ w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 Row reduce each of the following matrices to obtain the {\ef}.
 \begin{equation*}
 (a)~
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 2 & -1 & 3 & -1 \\
 1 & 0 & 2 & 1 \\
 1 & -1 & 1 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \quad
 (b)~
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 0 & 0 & -1 & -1 \\
 1 & 1 & 1 & 0 \\
 1 & 1 & 0 & -1
-\end{array}
-\rightB
+\end{mymatrix}
 \quad
 (c)~
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 3 & -6 & -7 & -8 \\
 1 & -2 & -2 & -2 \\
 1 & -2 & -3 & -4
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{equation*}
 (d)~
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 2 & 4 & 5 & 15 \\
 1 & 2 & 3 & 9 \\
 1 & 2 & 2 & 6
-\end{array}
-\rightB
+\end{mymatrix}
 \quad
 (e)~
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 4 & -1 & 7 & 10 \\
 1 & 0 & 3 & 3 \\
 1 & -1 & -2 & 1
-\end{array}
-\rightB
+\end{mymatrix}
 \quad
 (f)~
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 3 & 5 & -4 & 2 \\
 1 & 2 & -1 & 1 \\
 1 & 1 & -2 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{equation*}
 (g)~
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 -2 & 3 & -8 & 7 \\
 1 & -2 & 5 & -5 \\
 1 & -3 & 7 & -8
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -348,87 +306,69 @@ Row reduce each of the following matrices to obtain the {\ef}.
 Find the general solution of the system whose augmented matrix is 
 \begin{equation*}
 (a)~
-\leftB
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 2 & 0 & 2 \\
 1 & 3 & 4 & 2 \\
 1 & 0 & 2 & 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \quad
 (b)~
-\leftB
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 2 & 0 & 2 \\
 2 & 0 & 1 & 1 \\
 3 & 2 & 1 & 3
-\end{array}
-\rightB 
+\end{mymatrix} 
 \quad
 (c)~
-\leftB
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 1 & 0 & 1 \\
 1 & 0 & 4 & 2
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 \begin{equation*}
 (d)~
-\leftB
-\begin{array}{rrrrr|r}
+\begin{mymatrix}{rrrrr|r}
 1 & 0 & 2 & 1 & 1 & 2 \\
 0 & 1 & 0 & 1 & 2 & 1 \\
 1 & 2 & 0 & 0 & 1 & 3 \\
 1 & 0 & 1 & 0 & 2 & 2
-\end{array}
-\rightB 
+\end{mymatrix} 
 \quad
 (e)~
-\leftB
-\begin{array}{rrrrr|r}
+\begin{mymatrix}{rrrrr|r}
 1 & 0 & 2 & 1 & 1 & 2 \\
 0 & 1 & 0 & 1 & 2 & 1 \\
 0 & 2 & 0 & 0 & 1 & 3 \\
 1 & -1 & 2 & 2 & 2 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 \begin{sol}
-(b) The {\ef} is $\leftB
-\begin{array}{rrr|r}
+(b) The {\ef} is $\begin{mymatrix}{rrr|r}
 1 & 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2} \\
 0 & 1 & -\vspace{0.05in}\frac{1}{4} & \vspace{0.05in}\frac{3}{4} \\
 0 & 0 & 0 & 0
-\end{array}
-\rightB .$ Therefore, the solution is of the form $z=t,y=\frac{3}{4}+t\left(
-\frac{1}{4}\right) ,x=\frac{1}{2}-\frac{1}{2}t$ where $t\in \mathbb{R}$.
+\end{mymatrix} .$ Therefore, the solution is of the form $z=t,y=\frac{3}{4}+t\tup{
+\frac{1}{4}} ,x=\frac{1}{2}-\frac{1}{2}t$ where $t\in \R$.
 
-(c) The {\ef} is $\leftB
-\begin{array}{rrr|r}
+(c) The {\ef} is $\begin{mymatrix}{rrr|r}
 1 & 0 & 4 & 2 \\
 0 & 1 & -4 & -1
-\end{array}
-\rightB $ and so the solution is $z=t,y=4t,x=2-4t.$
+\end{mymatrix} $ and so the solution is $z=t,y=4t,x=2-4t.$
 
-(d) The {\ef} is $\leftB
-\begin{array}{rrrrr|r}
+(d) The {\ef} is $\begin{mymatrix}{rrrrr|r}
 1 & 0 & 0 & 0 & 9 & 3 \\
 0 & 1 & 0 & 0 & -4 & 0 \\
 0 & 0 & 1 & 0 & -7 & -1 \\
 0 & 0 & 0 & 1 & 6 & 1
-\end{array}
-\rightB $ and so $x_{5}=t,x_{4}=1-6t,x_{3}=-1+7t,x_{2}=4t,x_{1}=3-9t$.
+\end{mymatrix} $ and so $x_{5}=t,x_{4}=1-6t,x_{3}=-1+7t,x_{2}=4t,x_{1}=3-9t$.
 
-(e) The {\ef} is $\leftB
-\begin{array}{rrrrr|r}
+(e) The {\ef} is $\begin{mymatrix}{rrrrr|r}
 1 & 0 & 2 & 0 & -\vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{5}{2} \\
 0 & 1 & 0 & 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2} \\
 0 & 0 & 0 & 1 & \vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{1}{2} \\
 0 & 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB $. Therefore, let $x_{5}=t,x_{3}=s.$ Then the other variables are
+\end{mymatrix} $. Therefore, let $x_{5}=t,x_{3}=s.$ Then the other variables are
 given by $x_{4}=-\frac{1}{2}-\frac{3}{2}t,x_{2}=\frac{3}{2}-t\frac{1}{2}
 ,,x_{1}=\frac{5}{2}+\frac{1}{2}t-2s.$
 \end{sol}
@@ -437,21 +377,21 @@ given by $x_{4}=-\frac{1}{2}-\frac{3}{2}t,x_{2}=\frac{3}{2}-t\frac{1}{2}
 \begin{ex} Solve the system of equations $7x+14y+15z=22,
 $ $2x+4y+3z=5,$ and $3x+6y+10z=13.$
 \begin{sol}
-Solution is: $\left[ x=1-2t,z=1,y=t\right] $
+Solution is: $\mat{x=1-2t,z=1,y=t} $
 \end{sol}
 \end{ex}
 
 \begin{ex} Solve the system of equations $3x-y+4z=6,$ 
 $y+8z=0,$ and $-2x+y=-4.$
 \begin{sol}
-Solution is: $\left[ x=2-4t,y=-8t,z=t\right] $
+Solution is: $\mat{x=2-4t,y=-8t,z=t} $
 \end{sol}
 \end{ex}
 
 \begin{ex} Solve the system of equations $9x-2y+4z=-17,
 $ $13x-3y+6z=-25,$ and $-2x-z=3.$
 \begin{sol}
- Solution is: $\left[x=-1,y=2,z=-1\right] $
+ Solution is: $\mat{x=-1,y=2,z=-1} $
 \end{sol}
 \end{ex}
 
@@ -459,14 +399,14 @@ $ $13x-3y+6z=-25,$ and $-2x-z=3.$
 $65x+84y+16z=546,$ $81x+105y+20z=682,$ and $84x+110y+21z=713.$
 \begin{sol}
 Solution is:
-$\left[ x=2,y=4,z=5\right] $
+$\mat{x=2,y=4,z=5} $
 \end{sol}
 \end{ex}
 
 \begin{ex} Solve the system of equations 
 $8x+2y+3z=-3,8x+3y+3z=-1,$ and $4x+y+3z=-9.$
 \begin{sol}
-Solution is: $\left[ x=1,y=2,z=-5\right] $
+Solution is: $\mat{x=1,y=2,z=-5} $
 \end{sol}
 \end{ex}
 
@@ -510,7 +450,7 @@ at each node to equal the average of the temperature at the four adjacent
 nodes. In the following picture, the numbers represent the observed
 temperature at the indicated nodes. Find the temperature at
 the interior nodes, indicated by $x,y,z,$ and $w$. One of the equations is 
-$z=\vspace{0.05in}\frac{1}{4}\left( 10+0+w+x\right) $. 
+$z=\vspace{0.05in}\frac{1}{4}\tup{10+0+w+x} $. 
 
 \begin{picture}(1,60)
  \put(100,0){\begin{picture}(1,1)
@@ -550,24 +490,22 @@ $z=\vspace{0.05in}\frac{1}{4}\left( 10+0+w+x\right) $.
 \begin{sol}
 You need $
 \begin{array}{c}
-\frac{1}{4}\left( 20+30+w+x\right) -y=0 \\
-\frac{1}{4}\left( y+30+0+z\right) -w=0 \\
-\frac{1}{4}\left( 20+y+z+10\right) -x=0 \\
-\frac{1}{4}\left( x+w+0+10\right) -z=0
+\frac{1}{4}\tup{20+30+w+x} -y=0 \\
+\frac{1}{4}\tup{y+30+0+z} -w=0 \\
+\frac{1}{4}\tup{20+y+z+10} -x=0 \\
+\frac{1}{4}\tup{x+w+0+10} -z=0
 \end{array}
-$, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
+$, Solution is: $\mat{w=15,x=15,y=20,z=10} .$
 \end{sol}
 \end{ex}
 
 \begin{ex} Find the rank of the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 4 & -16 & -1 & -5 \\
 1 & -4 & 0 & -1 \\
 1 & -4 & -1 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -575,13 +513,11 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 
 \begin{ex} Find the rank of the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 3 & 6 & 5 & 12 \\
 1 & 2 & 2 & 5 \\
 1 & 2 & 1 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -589,14 +525,12 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 
 \begin{ex} Find the rank of the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 0 & 0 & -1 & 0 & 3 \\
 1 & 4 & 1 & 0 & -8 \\
 1 & 4 & 0 & 1 & 2 \\
 -1 & -4 & 0 & -1 & -2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -604,13 +538,11 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 
 \begin{ex} Find the rank of the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 4 & -4 & 3 & -9 \\
 1 & -1 & 1 & -2 \\
 1 & -1 & 0 & -3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -618,14 +550,12 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 
 \begin{ex} Find the rank of the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 2 & 0 & 1 & 0 & 1 \\
 1 & 0 & 1 & 0 & 0 \\
 1 & 0 & 0 & 1 & 7 \\
 1 & 0 & 0 & 1 & 7
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -633,14 +563,12 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 
 \begin{ex} Find the rank of the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 4 & 15 & 29 \\
 1 & 4 & 8 \\
 1 & 3 & 5 \\
 3 & 9 & 15
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -648,14 +576,12 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 
 \begin{ex} Find the rank of the following matrix. 
 \begin{equation*}
-\leftB
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 0 & 0 & -1 & 0 & 1 \\
 1 & 2 & 3 & -2 & -18 \\
 1 & 2 & 2 & -1 & -11 \\
 -1 & -2 & -2 & 1 & 11
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -663,14 +589,12 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 
 \begin{ex} Find the rank of the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 1 & -2 & 0 & 3 & 11 \\
 1 & -2 & 0 & 4 & 15 \\
 1 & -2 & 0 & 3 & 11 \\
 0 & 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -678,14 +602,12 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 
 \begin{ex} Find the rank of the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 -2 & -3 & -2 \\
 1 & 1 & 1 \\
 1 & 0 & 1 \\
 -3 & 0 & -3
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -693,14 +615,12 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 
 \begin{ex} Find the rank of the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 4 & 4 & 20 & -1 & 17 \\
 1 & 1 & 5 & 0 & 5 \\
 1 & 1 & 5 & -1 & 2 \\
 3 & 3 & 15 & -3 & 6
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
@@ -708,24 +628,22 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 
 \begin{ex} Find the rank of the following matrix.
 \begin{equation*}
-\leftB
-\begin{array}{rrrrr}
+\begin{mymatrix}{rrrrr}
 -1 & 3 & 4 & -3 & 8 \\
 1 & -3 & -4 & 2 & -5 \\
 1 & -3 & -4 & 1 & -2 \\
 -2 & 6 & 8 & -2 & 4
-\end{array}
- \rightB
+\end{mymatrix}
 \end{equation*}
 %\begin{sol}
 %\end{sol}
 \end{ex}
 
 \begin{ex} Suppose $A$ is an $m\times n$ matrix. Explain why the rank of $A$ is
-always no larger than $\min \left( m,n\right) .$
+always no larger than $\min \tup{m,n} .$
 \begin{sol}
 It is because you cannot
-have more than $\min \left( m,n\right) $ nonzero rows in the {\rref}. Recall that the number of pivot columns is the same as the
+have more than $\min \tup{m,n} $ nonzero rows in the {\rref}. Recall that the number of pivot columns is the same as the
 number of nonzero rows from the description of this {\rref}.
 \end{sol}
 \end{ex}
@@ -735,24 +653,24 @@ number of nonzero rows from the description of this {\rref}.
   possible for a system of equations. If possible, describe the
   solution set.  That is, indicate whether there exists a unique
   solution, no solution or infinitely many solutions. Here, $A$ is
-  the coefficient matrix, and $\leftB A|B \rightB$ denotes the
+  the coefficient matrix, and $\mat{A|B }$ denotes the
   augmented matrix of the system.
   
   \begin{enumerate}
-  \item $A$ is a $5\times 6$ matrix, $\limfunc{rank}\left( A\right) =4$ and 
-    $\limfunc{rank}\leftB A|B \rightB =4.$ 
+  \item $A$ is a $5\times 6$ matrix, $\limfunc{rank}\tup{A} =4$ and 
+    $\limfunc{rank}\mat{A|B } =4.$ 
     
-  \item $A$ is a $3\times 4$ matrix, $\limfunc{rank}\left( A\right) =3$ and 
-    $\limfunc{rank}\leftB A|B\rightB =2.$
+  \item $A$ is a $3\times 4$ matrix, $\limfunc{rank}\tup{A} =3$ and 
+    $\limfunc{rank}\mat{A|B} =2.$
     
-  \item $A$ is a $4\times 2$ matrix, $\limfunc{rank}\left( A\right) =4$ and 
-    $\limfunc{rank}\leftB A|B \rightB =4.$ 
+  \item $A$ is a $4\times 2$ matrix, $\limfunc{rank}\tup{A} =4$ and 
+    $\limfunc{rank}\mat{A|B } =4.$ 
     
-  \item $A$ is a $5\times 5$ matrix, $\limfunc{rank}\left( A\right) =4$ and 
-    $\limfunc{rank}\leftB A|B \rightB =5.$ 
+  \item $A$ is a $5\times 5$ matrix, $\limfunc{rank}\tup{A} =4$ and 
+    $\limfunc{rank}\mat{A|B } =5.$ 
     
-  \item $A$ is a $4\times 2$ matrix, $\limfunc{rank}\left( A\right) =2$ and 
-    $\limfunc{rank}\leftB A|B \rightB =2$.
+  \item $A$ is a $4\times 2$ matrix, $\limfunc{rank}\tup{A} =2$ and 
+    $\limfunc{rank}\mat{A|B } =2$.
   \end{enumerate}
   
   \begin{sol}

@@ -6,17 +6,13 @@ but not in the other order. However, even if both $AB$ and $BA$ are defined,
 they may not be equal. 
 
 \begin{example}{Matrix multiplication is not commutative}{noncommutativemultiplication}
-Compare the products $AB$ and $BA$, for matrices $ A = \leftB
-\begin{array}{rr}
+Compare the products $AB$ and $BA$, for matrices $ A = \begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB, B= \leftB
-\begin{array}{rr}
+\end{mymatrix}, B= \begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0
-\end{array}
-\rightB $ 
+\end{mymatrix} $ 
 \end{example}
 
 \begin{solution} 
@@ -24,41 +20,29 @@ First, notice that $A$ and $B$ are both of size $2 \times 2$. Therefore, both
 products $AB$ and $BA$ are defined. 
 The first product, $AB$ is
 \begin{equation*}
-AB = \leftB
-\begin{array}{rr}
+AB = \begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0
-\end{array}
-\rightB = \leftB
-\begin{array}{rr}
+\end{mymatrix} = \begin{mymatrix}{rr}
 2 & 1 \\
 4 & 3
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 The second product, $BA$ is
 \begin{equation*}
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
-\end{array}
-\rightB = \leftB
-\begin{array}{rr}
+\end{mymatrix} = \begin{mymatrix}{rr}
 3 & 4 \\
 1 & 2
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Therefore, $AB \neq BA$. 
 \end{solution}
@@ -75,15 +59,15 @@ Notice that these properties hold only when the size of matrices are such that t
 The following hold\index{matrix multiplication!properties} for matrices $A,B,$ and $C$ and for scalars $r$ and $s$,
 
 \begin{equation}
-A\left( rB+sC\right) =r\left( AB\right) +s\left( AC\right)  \label{matrixproperties1}
+A\tup{rB+sC} =r\tup{AB} +s\tup{AC}  \label{matrixproperties1}
 \end{equation}
 
 \begin{equation}
-\left( B+C\right) A=BA+CA  \label{matrixproperties2}
+\tup{B+C} A=BA+CA  \label{matrixproperties2}
 \end{equation}
 
 \begin{equation}
-A\left( BC\right) =\left( AB\right) C  \label{matrixproperties3}
+A\tup{BC} =\tup{AB} C  \label{matrixproperties3}
 \end{equation}
 \end{proposition}
 
@@ -92,28 +76,28 @@ A\left( BC\right) =\left( AB\right) C  \label{matrixproperties3}
 and prove this statement using the $ij^{th}$ entries of a matrix. 
 Therefore, 
 \begin{equation*}
-\left( A\left( rB+sC\right) \right) _{ij}=\sum_{k}a_{ik}\left( rB+sC\right)
-_{kj}=\sum_{k}a_{ik}\left( rb_{kj}+sc_{kj}\right)
+\tup{A\tup{rB+sC} } _{ij}=\sum_{k}a_{ik}\tup{rB+sC}
+_{kj}=\sum_{k}a_{ik}\tup{rb_{kj}+sc_{kj}}
 \end{equation*}
 \begin{equation*}
-=r\sum_{k}a_{ik}b_{kj}+s\sum_{k}a_{ik}c_{kj}=r\left( AB\right) _{ij}+s\left(
-AC\right) _{ij}
+=r\sum_{k}a_{ik}b_{kj}+s\sum_{k}a_{ik}c_{kj}=r\tup{AB} _{ij}+s\tup{
+AC} _{ij}
 \end{equation*}
 \begin{equation*}
-=\left( r\left( AB\right) +s\left( AC\right) \right) _{ij}
+=\tup{r\tup{AB} +s\tup{AC} } _{ij}
 \end{equation*}
-Thus $A\left( rB+sC\right) =r(AB)+s(AC)$ as claimed. 
+Thus $A\tup{rB+sC} =r(AB)+s(AC)$ as claimed. 
 
 The proof of \ref{matrixproperties2} follows the same pattern and is left as an exercise. 
 
 Statement \ref{matrixproperties3} is the associative law of multiplication. Using
 Definition \ref{def:ijentryofproduct},
 \begin{equation*}
-\left( A\left( BC\right) \right) _{ij}=\sum_{k}a_{ik}\left( BC\right)
+\tup{A\tup{BC} } _{ij}=\sum_{k}a_{ik}\tup{BC}
 _{kj}=\sum_{k}a_{ik}\sum_{l}b_{kl}c_{lj}
 \end{equation*}
 \begin{equation*}
-=\sum_{l}\left( AB\right) _{il}c_{lj}=\left( \left( AB\right) C\right) _{ij}.
+=\sum_{l}\tup{AB} _{il}c_{lj}=\tup{\tup{AB} C} _{ij}.
 \end{equation*}
 This proves \ref{matrixproperties3}.
 \end{proof}

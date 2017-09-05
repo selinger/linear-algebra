@@ -11,14 +11,12 @@ matrix below the main diagonal equal $0$,
 as shown. Here, $\ast$ refers to any nonzero number. 
 \index{matrix!lower triangular}
 \begin{equation*}
-\leftB
-\begin{array}{cccc}
+\begin{mymatrix}{cccc}
 \ast & \ast & \cdots & \ast \\
 0 & \ast & \cdots & \vdots \\
 \vdots & \vdots & \ddots & \ast \\
 0 & \cdots & 0 & \ast
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 A lower triangular matrix is defined similarly as a matrix for which all
 entries above the
@@ -29,7 +27,7 @@ The following theorem provides a useful way to calculate the determinant
 of a triangular matrix. 
 
 \begin{theorem}{Determinant of a triangular matrix}{determinantoftriangularmatrix}
-Let $A$ be an upper or lower triangular matrix. Then $\det \left( A\right) $
+Let $A$ be an upper or lower triangular matrix. Then $\det \tup{A} $
 is obtained by taking the product of the entries on the main diagonal.
 \end{theorem}
 
@@ -41,100 +39,80 @@ Consider the following example.
 \begin{example}{Determinant of a triangular matrix}{determinantoftriangularmatrix}
 Let
 \begin{equation*}
-A=\leftB
-\begin{array}{rrrr}
+A=\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 77 \\
 0 & 2 & 6 & 7 \\
 0 & 0 & 3 & 33.7 \\
 0 & 0 & 0 & -1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
-Find $\det \left( A\right) .$
+Find $\det \tup{A} .$
 \end{example}
 
 \begin{solution} From Theorem \ref{thm:determinantoftriangularmatrix}, it suffices to take the product of the elements on 
-the main diagonal. Thus $\det \left( A\right) =1\times 2\times 3\times \left(
--1\right) =-6.$ 
+the main diagonal. Thus $\det \tup{A} =1\times 2\times 3\times \tup{
+-1} =-6.$ 
 
 Without using Theorem \ref{thm:determinantoftriangularmatrix}, you could use Laplace Expansion. 
 We will expand along the
 first column. This gives
 \begin{eqnarray*}
-\det \left(A\right) = 
-&&1\left|
-\begin{array}{rrr}
+\det \tup{A} = 
+&&1\begin{absmatrix}{rrr}
 2 & 6 & 7 \\
 0 & 3 & 33.7 \\
 0 & 0 & -1
-\end{array}
-\right| +0\left( -1\right) ^{2+1}\left|
-\begin{array}{rrr}
+\end{absmatrix} +0\tup{-1} ^{2+1}\begin{absmatrix}{rrr}
 2 & 3 & 77 \\
 0 & 3 & 33.7 \\
 0 & 0 & -1
-\end{array}
-\right| + \\
-&&0\left( -1\right) ^{3+1}\left|
-\begin{array}{rrr}
+\end{absmatrix} + \\
+&&0\tup{-1} ^{3+1}\begin{absmatrix}{rrr}
 2 & 3 & 77 \\
 2 & 6 & 7 \\
 0 & 0 & -1
-\end{array}
-\right| +0\left( -1\right) ^{4+1}\left|
-\begin{array}{rrr}
+\end{absmatrix} +0\tup{-1} ^{4+1}\begin{absmatrix}{rrr}
 2 & 3 & 77 \\
 2 & 6 & 7 \\
 0 & 3 & 33.7
-\end{array}
-\right|
+\end{absmatrix}
 \end{eqnarray*}
 and the only nonzero term in the expansion is
 \begin{equation*}
-1\left|
-\begin{array}{rrr}
+1\begin{absmatrix}{rrr}
 2 & 6 & 7 \\
 0 & 3 & 33.7 \\
 0 & 0 & -1
-\end{array}
-\right| 
+\end{absmatrix} 
 \end{equation*}
 Now find the determinant of this $3 \times 3$ matrix, by expanding along the first column to obtain
 \begin{equation*}
-\det \left(A\right) 
+\det \tup{A} 
 =
-1\times \left( 2\times \left|
-\begin{array}{rr}
+1\times \tup{2\times \begin{absmatrix}{rr}
 3 & 33.7 \\
 0 & -1
-\end{array}
-\right| +0\left( -1\right) ^{2+1}\left|
-\begin{array}{rr}
+\end{absmatrix} +0\tup{-1} ^{2+1}\begin{absmatrix}{rr}
 6 & 7 \\
 0 & -1
-\end{array}
-\right| +0\left( -1\right) ^{3+1}\left|
-\begin{array}{rr}
+\end{absmatrix} +0\tup{-1} ^{3+1}\begin{absmatrix}{rr}
 6 & 7 \\
 3 & 33.7
-\end{array}
-\right| \right)
+\end{absmatrix} }
 \end{equation*}
 \begin{equation*}
-=1\times 2\times \left|
-\begin{array}{rr}
+=1\times 2\times \begin{absmatrix}{rr}
 3 & 33.7 \\
 0 & -1
-\end{array}
-\right|
+\end{absmatrix}
 \end{equation*}
 Next use Definition \ref{def:twobytwodeterminant} to find the determinant of this $2 \times 2$ matrix, which is
 just $3 \times -1  - 0 \times 33.7 = -3$.
 Putting all these steps together, we have 
 \begin{equation*}
-\det \left(A\right)
+\det \tup{A}
 =
-1\times 2\times 3\times \left( -1\right) =-6
+1\times 2\times 3\times \tup{-1} =-6
 \end{equation*}
 which is just the product of the entries down the main diagonal of the
 original matrix!

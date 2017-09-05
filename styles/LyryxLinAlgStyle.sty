@@ -133,10 +133,6 @@
 % Matrix setup
 \setcounter{MaxMatrixCols}{10}
 
-% Square brackets
-\newcommand{\leftB}{\left[} 
-\newcommand{\rightB}{\right]}
-
 % Row reduced echelon form options. Note: these must be used with
 % braces like {\rref} to get the correct spacing before and after.
 \newcommand{\RREF}{Reduced Echelon Form}
@@ -159,8 +155,8 @@
 % Dot Product Notation Options
 \newcommand{\dotprod}{\mathbin{\makebox[0.7ex][c]{\raisebox{-0.6ex}{\scalebox{2}{$\cdot$}}}}}
 
-% Vector Length Notation
-\newcommand{\vectlength}{\|}
+% Vector norm notation
+\newcommand{\norm}[1]{\|#1\|}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Other useful macros
@@ -178,9 +174,6 @@
 % \eindex{\ef} instead.
 \newcommand{\eindex}[1]{{\edef\tmpa{#1}\def\tmpb##1\relax{\index{##1}}\expandafter\tmpb\tmpa\relax}}
 
-% For writing a set, use $\set{...}$ or $\set{...\mid...}$.
-\newcommand{\set}[1]{\{#1\}}
-
 % SI units are always typeset in a Roman font, even if the surrounding
 % text is in italics. We use \mathop so that there will be a tiny
 % space between each unit; this makes things like kgms easier to read.
@@ -191,3 +184,29 @@
 \newcommand{\volt}{\SI{V}}
 \newcommand{\amp}{\SI{A}}
 \newcommand{\ohm}{\SI{$\Omega$}}
+
+% Shorthand command for some standard sets
+\newcommand{\N}{\mathbb{N}}  % natural numbers
+\newcommand{\Z}{\mathbb{Z}}  % integers
+\newcommand{\Q}{\mathbb{Q}}  % rationals
+\newcommand{\R}{\mathbb{R}}  % reals
+\newcommand{\C}{\mathbb{C}}  % complex numbers
+
+% Other shorthand notations for sets
+\newcommand{\Poly}{\mathbf{P}}   % vector space of polynomials
+\newcommand{\Mat}{\mathbf{M}}    % vector space of matrices
+\newcommand{\Func}{\mathbf{F}}   % vector space of functions
+
+% Matrices with square brackets.
+\newenvironment{mymatrix}[1]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newcommand{\mat}[1]{\left[#1\right]}
+
+% Matrices with vertical bars. Also used for absolute value and cardinality.
+\newenvironment{absmatrix}[1]{\left|\begin{array}{#1}}{\end{array}\right|}
+\newcommand{\abs}[1]{\left|#1\right|}
+
+% For writing a set, use $\set{...}$ or $\set{...\mid...}$.
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+% For writing a tuple, use $\tup{...}$ instead of $\left(...\right)$.
+\newcommand{\tup}[1]{\left(#1\right)}

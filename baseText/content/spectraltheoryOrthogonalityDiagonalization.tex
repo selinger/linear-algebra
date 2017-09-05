@@ -15,7 +15,7 @@ A=-A^{T},$ then $A$ is called \textbf{skew symmetric. }
 Before proving an essential theorem, we first examine the following lemma which will be used below.
 
 \begin{lemma}{The dot product}{dotprodlemma}
-Let $A=\leftB a_{ij} \rightB$ be a real symmetric $n \times n$ matrix, and let $\vect{x}, \vect{y} \in \mathbb{R}^n$. Then
+Let $A=\mat{a_{ij} }$ be a real symmetric $n \times n$ matrix, and let $\vect{x}, \vect{y} \in \R^n$. Then
 \[
 A\vect{x} \dotprod \vect{y} = \vect{x} \dotprod A \vect{y}
 \]
@@ -48,8 +48,8 @@ entry replaced by its complex conjugate.
 Suppose $A$ is a real symmetric matrix and $A\vect{x}=\lambda \vect{x}$.
 Then 
 \begin{equation*}
-\overline{\lambda }\overline{\vect{x}}^{T}\vect{x}=\left( \overline{A
-\vect{x}}\right) ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=
+\overline{\lambda }\overline{\vect{x}}^{T}\vect{x}=\tup{\overline{A
+\vect{x}}} ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=
 \overline{\vect{x}}^{T}A\vect{x}=\lambda \overline{\vect{x}}^{T}
 \vect{x}
 \end{equation*}
@@ -62,7 +62,7 @@ is symmetric, it follows from Lemma \ref{lem:dotprodlemma} about the dot product
 \begin{equation*}
 \lambda \vect{x}\dotprod \vect{y}=A\vect{x}\dotprod \vect{y}=\vect{x}\dotprod A\vect{y}=\vect{x}\dotprod \mu \vect{y}=\mu \vect{x}\dotprod \vect{y}
 \end{equation*}
-Hence $\left( \lambda -\mu \right) \vect{x}\dotprod \vect{y}=0.$ It follows that,
+Hence $\tup{\lambda -\mu } \vect{x}\dotprod \vect{y}=0.$ It follows that,
 since $\lambda -\mu \neq 0,$ it must be that $\vect{x}\dotprod \vect{y}=0$. Therefore the eigenvectors form an orthogonal set. 
 \end{proof}
 
@@ -78,8 +78,8 @@ First, note that if $A=0$ is the zero matrix, then $A$ is skew symmetric and has
 Suppose $A=-A^{T}$ so $A$ is skew symmetric and $A\vect{x}=\lambda 
 \vect{x}$. Then 
 \begin{equation*}
-\overline{\lambda \vect{x}}^{T}\vect{x}=\left( \overline{A
-\vect{x}}\right) ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=-
+\overline{\lambda \vect{x}}^{T}\vect{x}=\tup{\overline{A
+\vect{x}}} ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=-
 \overline{\vect{x}}^{T}A\vect{x}=-\lambda \overline{\vect{x}}^{T}
 \vect{x}
 \end{equation*}
@@ -91,24 +91,20 @@ a-ib=-a-ib$ and so $a=0.$ Thus $\lambda $ is pure imaginary.
 Consider the following example. 
 
 \begin{example}{Eigenvalues of a skew symmetric matrix}{skewsymmeigenvalues}
-Let $A=\leftB
-\begin{array}{rr}
+Let $A=\begin{mymatrix}{rr}
 0 & -1 \\
 1 & 0
-\end{array}
-\rightB .$  Find its eigenvalues.
+\end{mymatrix} .$  Find its eigenvalues.
 \end{example}
 
 \begin{solution}
 First notice that $A$ is skew symmetric. By Theorem \ref{thm:skewsymmetriceigen}, the eigenvalues will either equal $0$ or be pure imaginary.  The eigenvalues of $A$ are obtained by solving the usual equation 
 \[
 \det (\eigenVar I - A ) = 
-\det \leftB
-\begin{array}{rr}
+\det \begin{mymatrix}{rr}
 \eigenVar & 1 \\ 
 -1 & \eigenVar
-\end{array}
-\rightB =\eigenVar ^{2}+1=0
+\end{mymatrix} =\eigenVar ^{2}+1=0
 \]
 
 Hence the eigenvalues are $\pm i,$ pure
@@ -118,30 +114,26 @@ imaginary.
 Consider the following example.
 
 \begin{example}{Eigenvalues of a symmetric matrix}{eigenvaluessymmetric}
-Let $A=\leftB
-\begin{array}{rr}
+Let $A=\begin{mymatrix}{rr}
 1 & 2 \\
 2 & 3
-\end{array}
-\rightB .$ Find its eigenvalues.
+\end{mymatrix} .$ Find its eigenvalues.
 \end{example}
 
 \begin{solution}
 First, notice that $A$ is symmetric. By Theorem \ref{thm:symmetricorthogonaleigenvectors}, the eigenvalues will all be real. The eigenvalues of $A$ are obtained by solving the usual equation 
 \[
 \det (\eigenVar I - A) = 
-\det \leftB
-\begin{array}{rr}
+\det \begin{mymatrix}{rr}
 \eigenVar - 1 & -2 \\ 
 -2 & \eigenVar - 3 
-\end{array}
-\rightB = \eigenVar^2 -4\eigenVar -1=0
+\end{mymatrix} = \eigenVar^2 -4\eigenVar -1=0
 \]
 The eigenvalues are given by $\lambda_1 =2+
 \sqrt{5}$ and $\lambda_2 =2-\sqrt{5}$ which are both real. 
 \end{solution}
 
-Recall that a diagonal matrix $D=\leftB d_{ij} \rightB$ is one in which $d_{ij} = 0$ whenever $i \neq j$. In other words, all numbers not on the main diagonal are equal to zero. 
+Recall that a diagonal matrix $D=\mat{d_{ij} }$ is one in which $d_{ij} = 0$ whenever $i \neq j$. In other words, all numbers not on the main diagonal are equal to zero. 
 
 Consider the following important theorem.
 
@@ -159,8 +151,8 @@ We can use this theorem to diagonalize a symmetric matrix, using orthogonal matr
 
 \begin{corollary}{Orthonormal set of eigenvectors}{orthonormaleigenvectors}
 If $A$ is a real $n\times n$ symmetric matrix, then there exists an
-orthonormal set of eigenvectors, $\left\{ \vect{u}_{1},\cdots ,\vect{u}
-_{n}\right\} .$
+orthonormal set of eigenvectors, $\set{\vect{u}_{1},\cdots ,\vect{u}
+_{n}} .$
 \end{corollary}
 
 \begin{proof}
@@ -175,35 +167,27 @@ showing $D$ is real because each entry of $D$ equals its complex conjugate.
 
 Now let 
 \begin{equation*}
-U=\leftB
-\begin{array}{cccc}
+U=\begin{mymatrix}{cccc}
 \vect{u}_{1} & \vect{u}_{2} & \cdots & \vect{u}_{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 where the $\vect{u}_{i}$ denote the columns of $U$ and 
 \begin{equation*}
-D=\leftB
-\begin{array}{ccc}
+D=\begin{mymatrix}{ccc}
 \lambda _{1} &  & 0 \\ 
 & \ddots &  \\ 
 0 &  & \lambda _{n}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The equation, $U^{T}AU=D$ implies $AU = UD$ and 
 \begin{eqnarray*}
-AU &=&\leftB 
-\begin{array}{cccc}
+AU &=&\begin{mymatrix}{cccc}
 A\vect{u}_{1} & A\vect{u}_{2} & \cdots & A\vect{u}_{n}%
-\end{array}
-\rightB \\
-&=&\leftB 
-\begin{array}{cccc}
+\end{mymatrix} \\
+&=&\begin{mymatrix}{cccc}
 \lambda _{1}\vect{u}_{1} & \lambda _{2}\vect{u}_{2} & \cdots & \lambda
 _{n}\vect{u}_{n}
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& UD
 \end{eqnarray*}
 where the entries denote the columns of $AU$ and $UD$ respectively.
@@ -213,8 +197,8 @@ is orthogonal, the $ij^{th}$ entry of $U^{T}U$ equals $\delta _{ij}$ and so
 \delta _{ij}=\vect{u}_{i}^{T}\vect{u}_{j}=\vect{u}_{i}\dotprod \vect{u}
 _{j}
 \end{equation*}
-This proves the corollary because it shows the vectors $\left\{ \vect{u}
-_{i}\right\} $ form an orthonormal set.
+This proves the corollary because it shows the vectors $\set{\vect{u}
+_{i}} $ form an orthonormal set.
 \end{proof}
 
 \begin{definition}{Principal axes}{principalaxes}
@@ -227,13 +211,11 @@ In the next example, we examine how to find such a set of orthonormal eigenvecto
 \begin{example}{Find an orthonormal set of eigenvectors}{orthbasiseigenvectors}
 Find an orthonormal set of eigenvectors for the symmetric matrix
 \begin{equation*}
-A = \leftB
-\begin{array}{rrr}
+A = \begin{mymatrix}{rrr}
 17 & -2 & -2 \\
 -2 & 6 & 4 \\
 -2 & 4 & 6
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -241,139 +223,109 @@ A = \leftB
 Recall Procedure \ref{proc:findeigenvaluesvectors} for finding the eigenvalues and eigenvectors of a matrix. You can verify that the eigenvalues are $18,9,2.$ First find the eigenvector for $18$ by solving the equation $(18I-A)X = 0$. 
 The appropriate augmented matrix is given by  
 \begin{equation*}
-\leftB
-\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 18-17 & 2 & 2 & 0 \\ 
 2 & 18-6 & -4 & 0 \\ 
 2 & -4 & 18-6 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The {\rref} is 
 \begin{equation*}
-\leftB
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & 4 & 0 \\ 
 0 & 1 & -1 & 0 \\ 
 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Therefore an eigenvector is 
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -4 \\ 
 1 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Next find the eigenvector for $\lambda =9.$ The augmented matrix and resulting {\rref} are 
 \begin{equation*}
-\leftB
-\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 9-17 & 2 & 2 & 0 \\ 
 2 & 9-6 & -4 & 0 \\ 
 2 & -4 & 9-6 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & 1 & -1 & 0 \\ 
 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Thus an eigenvector for $\lambda =9$ is 
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Finally find an eigenvector for $\lambda =2.$ The appropriate augmented
 matrix and {\rref} are 
 \begin{equation*}
-\leftB
-\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 2-17 & 2 & 2 & 0 \\ 
 2 & 2-6 & -4 & 0 \\ 
 2 & -4 & 2-6 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & 0 & 0 \\ 
 0 & 1 & 1 & 0 \\ 
 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Thus an eigenvector for $\lambda =2$ is 
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 0 \\ 
 -1 \\ 
 1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 The set of eigenvectors for $A$ is given by 
 \[
-\left\{
-\leftB
-\begin{array}{r}
+\set{
+\begin{mymatrix}{r}
 -4 \\ 
 1 \\ 
 1
-\end{array}
-\rightB,
-\leftB
-\begin{array}{r}
+\end{mymatrix},
+\begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 2
-\end{array}
-\rightB,
-\leftB
-\begin{array}{r}
+\end{mymatrix},
+\begin{mymatrix}{r}
 0 \\ 
 -1 \\ 
 1
-\end{array}
-\rightB
-\right\}
+\end{mymatrix}
+}
 \]
 You can verify that these eigenvectors form an orthogonal set. By dividing each eigenvector by its magnitude, we obtain an orthonormal set: 
 \begin{equation*}
-\left\{ \frac{1}{\sqrt{18}}\leftB
-\begin{array}{r}
+\set{\frac{1}{\sqrt{18}}\begin{mymatrix}{r}
 -4 \\ 
 1 \\ 
 1
-\end{array}
-\rightB ,\frac{1}{3}\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\frac{1}{3}\begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 2
-\end{array}
-\rightB ,\frac{1}{\sqrt{2}}\leftB 
-\begin{array}{r}
+\end{mymatrix} ,\frac{1}{\sqrt{2}}\begin{mymatrix}{r}
 0 \\ 
 -1 \\ 
 1
-\end{array}
-\rightB \right\}
+\end{mymatrix} }
 \end{equation*}
 \end{solution}
 
@@ -382,13 +334,11 @@ Consider the following example.
 \begin{example}{Repeated eigenvalues}{}
 Find an orthonormal set of three eigenvectors for the matrix
 \begin{equation*}
-A = \leftB
-\begin{array}{rrr}
+A = \begin{mymatrix}{rrr}
 10 & 2 & 2 \\
 2 & 13 & 4 \\
 2 & 4 & 13
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -397,124 +347,96 @@ You can verify that the eigenvalues of $A$ are $9$ (with multiplicity two) and $
 eigenvectors corresponding to $\lambda =9$. The appropriate augmented matrix
 and {\rref} are given by  
 \begin{equation*}
-\leftB
-\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 9-10 & -2 & -2 & 0 \\ 
 -2 & 9-13 & -4 & 0 \\ 
 -2 & -4 & 9-13 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow 
-\leftB
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 2 & 2 & 0 \\ 
 0 & 0 & 0 & 0 \\ 
 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and so eigenvectors are of the form 
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 -2y-2z \\ 
 y \\ 
 z
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 We need to find two of these which are orthogonal. Let one be given by setting $z=0$ and $y=1$, giving $
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -2 \\ 
 1 \\ 
 0
-\end{array}
-\rightB$. 
+\end{mymatrix}$. 
 
 In order to find an eigenvector orthogonal to this one, we need to satisfy 
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 -2 \\ 
 1 \\ 
 0
-\end{array}
-\rightB \dotprod \leftB
-\begin{array}{c}
+\end{mymatrix} \dotprod \begin{mymatrix}{c}
 -2y-2z \\ 
 y \\ 
 z
-\end{array}
-\rightB =5y+4z=0
+\end{mymatrix} =5y+4z=0
 \end{equation*}
 The values $y=-4$ and $z=5$ satisfy this equation, giving another eigenvector
 corresponding to $\lambda=9$ as 
 \begin{equation*}
-\leftB
-\begin{array}{c}
--2\left( -4\right) -2\left( 5\right) \\ 
-\left( -4\right) \\ 
+\begin{mymatrix}{c}
+-2\tup{-4} -2\tup{5} \\ 
+\tup{-4} \\ 
 5
-\end{array}
-\rightB =\leftB
-\begin{array}{r}
+\end{mymatrix} =\begin{mymatrix}{r}
 -2 \\ 
 -4 \\ 
 5
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Next find the eigenvector for $\lambda =18.$ The augmented matrix and the resulting {\rref} are given by  
 \begin{equation*}
-\leftB
-\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 18-10 & -2 & -2 & 0 \\ 
 -2 & 18-13 & -4 & 0 \\ 
 -2 & -4 & 18-13 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & 1 & -1 & 0 \\ 
 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and so an eigenvector is 
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Dividing each eigenvector by its length, the orthonormal set is 
 \begin{equation*}
-\left\{ \frac{1}{\sqrt{5}} \leftB 
-\begin{array}{r}
+\set{\frac{1}{\sqrt{5}} \begin{mymatrix}{r}
 -2\\ 
 1 \\ 
 0
-\end{array}
-\rightB , \frac{\sqrt{5}}{15} \leftB 
-\begin{array}{r}
+\end{mymatrix} , \frac{\sqrt{5}}{15} \begin{mymatrix}{r}
 -2 \\ 
 -4 \\ 
 5
-\end{array}
-\rightB , \frac{1}{3}\leftB
-\begin{array}{r}
+\end{mymatrix} , \frac{1}{3}\begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 2
-\end{array}
-\rightB \right\}
+\end{mymatrix} }
 \end{equation*}
 
 \end{solution}
@@ -549,14 +471,12 @@ In the following example, the orthogonal
 matrix $U$ will be found to orthogonally diagonalize a matrix. 
 
 \begin{example}{Diagonalize a symmetric matrix}{orthdiag}
-Let $A=\leftB
-\begin{array}{rrr}
+Let $A=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 &
 \vspace{0.05in}\frac{3}{2} & \vspace{0.05in}\frac{1}{2} \\
 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2}
-\end{array}
-\rightB .$ Find an orthogonal matrix $U$ such that $U^{T}AU$ is a diagonal
+\end{mymatrix} .$ Find an orthogonal matrix $U$ such that $U^{T}AU$ is a diagonal
 matrix.
 \end{example}
 
@@ -564,128 +484,100 @@ matrix.
 In this case, the eigenvalues are $2$ (with multiplicity one) and $1$ (with multiplicity two). First
 we will find an eigenvector for the eigenvalue $2$. The appropriate augmented matrix and resulting {\rref} are given by 
 \begin{equation*}
-\leftB
-\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 2-1 & 0 & 0 &  0 \\ 
 0 & 2-\vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & -\vspace{0.05in}\frac{1}{2} & 2-\vspace{0.05in}\frac{3}{2} &  0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & 0 & 0 \\ 
 0 & 1 & -1 & 0 \\ 
 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and so an eigenvector is 
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 However, it is desired that the eigenvectors be unit vectors
 and so dividing this vector by its length gives 
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 0 \\ 
 \vspace{0.05in}\frac{1}{\sqrt{2}} \\ 
 \vspace{0.05in}\frac{1}{\sqrt{2}}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Next find the eigenvectors corresponding to the eigenvalue equal to $1$. The appropriate augmented matrix and resulting {\rref} are given by:
 \begin{equation*}
-\leftB
-\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 1-1 & 0 & 0 & 0 \\ 
 0 & 1-\vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & -\vspace{0.05in}\frac{1}{2} & 1-\vspace{0.05in}\frac{3}{2} & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \rightarrow \cdots \rightarrow
-\leftB
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 0 & 1 & 1 & 0 \\ 
 0 & 0 & 0 & 0 \\ 
 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 Therefore, the eigenvectors are of the form 
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 s \\ 
 -t \\ 
 t
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
-Two of these which are orthonormal are $\leftB
-\begin{array}{c}
+Two of these which are orthonormal are $\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 0
-\end{array}
-\rightB$, choosing $s=1$ and $t=0$, and $\leftB
-\begin{array}{c}
+\end{mymatrix}$, choosing $s=1$ and $t=0$, and $\begin{mymatrix}{c}
 0 \\ 
 -\vspace{0.05in}\frac{1}{\sqrt{2}} \\ 
 \vspace{0.05in}\frac{1}{\sqrt{2}}
-\end{array}
-\rightB$, letting $s=0$, $t= 1 $ and normalizing the resulting vector.
+\end{mymatrix}$, letting $s=0$, $t= 1 $ and normalizing the resulting vector.
 
 To obtain the desired orthogonal matrix, we let the orthonormal eigenvectors computed above be the columns. 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0 & 1 & 0 \\ 
 -\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 
 \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 To verify, compute $U^{T}AU$ as follows:
 \begin{equation*}
 U^{T}AU = 
-\leftB
-\begin{array}{rrr}
+\begin{mymatrix}{rrr}
 0 & -\vspace{0.05in}\frac{1}{\sqrt{2}} & \vspace{0.05in}\frac{1}{\sqrt{2}}
 \\ 
 1 & 0 & 0 \\ 
 0 & \vspace{0.05in}\frac{1}{\sqrt{2}} & \vspace{0.05in}\frac{1}{\sqrt{2}}
-\end{array}
-\rightB \leftB
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & \vspace{0.05in}\frac{3}{2} & \vspace{0.05in}\frac{1}{2} \\ 
 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2}
-\end{array}
-\rightB \leftB 
-\begin{array}{rrr}
+\end{mymatrix} \begin{mymatrix}{rrr}
 0 & 1 & 0 \\ 
 -\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 
 \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{equation*}
-=\leftB
-\begin{array}{rrr}
+=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 2
-\end{array}
-\rightB = D 
+\end{mymatrix} = D 
 \end{equation*}
 the desired diagonal matrix. Notice that the eigenvectors, which construct the columns of $U$, are in the same order as the eigenvalues in $D$. 
 \end{solution}

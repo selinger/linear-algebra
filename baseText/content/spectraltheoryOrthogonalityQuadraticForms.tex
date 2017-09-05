@@ -3,7 +3,7 @@
 One of the applications of orthogonal diagonalization is that of quadratic forms and graphs of level curves of a quadratic form. This section has to do with rotation of axes
 so that with respect to the new axes, the graph of the level curve of a
 quadratic form is oriented parallel to the coordinate axes. This makes it
-much easier to understand. For example, we all know that $x_1^2 + x_2^2=1$ represents the equation in two variables whose graph in $\mathbb{R}^2$ is a circle of radius $1$. But how do we know what the graph of the equation $5x_1^2 + 4x_1x_2 + 3x_2^2=1$ represents?  
+much easier to understand. For example, we all know that $x_1^2 + x_2^2=1$ represents the equation in two variables whose graph in $\R^2$ is a circle of radius $1$. But how do we know what the graph of the equation $5x_1^2 + 4x_1x_2 + 3x_2^2=1$ represents?  
 \index{principal axis!quadratic forms}
 
 We first formally define what is meant by a quadratic form. In this section we will work with only \textit{real} quadratic forms, which means that the coefficients will all be real numbers. 
@@ -12,55 +12,47 @@ We first formally define what is meant by a quadratic form. In this section we w
 A \textbf{quadratic form}\index{quadratic form} is a polynomial of degree two in $n$ variables $x_1, x_2, \cdots, x_n$, written as a linear combination of $x_i^{2}$ terms and $x_ix_j$ terms. 
 \end{definition}
 
-Consider the quadratic form $q = a_{11}x_1^2 + a_{22}x_2^2 + \cdots + a_{nn}x_n^2 + a_{12}x_1x_2 + \cdots$. We can write $\vect{x} = \leftB 
-\begin{array}{r}
+Consider the quadratic form $q = a_{11}x_1^2 + a_{22}x_2^2 + \cdots + a_{nn}x_n^2 + a_{12}x_1x_2 + \cdots$. We can write $\vect{x} = \begin{mymatrix}{r}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array} \rightB$ as the vector whose entries are the variables contained in the quadratic form.
+\end{mymatrix}$ as the vector whose entries are the variables contained in the quadratic form.
 
-Similarly, let $A = \leftB
-\begin{array}{rrrr}
+Similarly, let $A = \begin{mymatrix}{rrrr}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
 \vdots & \vdots & & \vdots \\
 a_{n1} & a_{n2} & \cdots & a_{nn}
-\end{array}
-\rightB$ be the matrix whose entries are the coefficients of $x_i^2$ and $x_ix_j$ from $q$. Note that the matrix $A$ is not unique, and we will consider this further in the example below. Using this matrix $A$,  the quadratic form can be written as $q = \vect{x}^T A \vect{x}$. 
+\end{mymatrix}$ be the matrix whose entries are the coefficients of $x_i^2$ and $x_ix_j$ from $q$. Note that the matrix $A$ is not unique, and we will consider this further in the example below. Using this matrix $A$,  the quadratic form can be written as $q = \vect{x}^T A \vect{x}$. 
 
 \begin{eqnarray*}
 q &=& \vect{x}^T A \vect{x} \\
-&=& \leftB \begin{array}{rrrr}
+&=& \begin{mymatrix}{rrrr}
 x_1 & x_2 & \cdots & x_n
-\end{array} \rightB 
- \leftB
-\begin{array}{rrrr}
+\end{mymatrix} 
+ \begin{mymatrix}{rrrr}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
 \vdots & \vdots & & \vdots \\
 a_{n1} & a_{n2} & \cdots & a_{nn}
-\end{array}
-\rightB
-\leftB \begin{array}{r}
+\end{mymatrix}
+\begin{mymatrix}{r}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n 
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& 
-\leftB \begin{array}{rrrr}
+\begin{mymatrix}{rrrr}
 x_1 & x_2 & \cdots & x_n
-\end{array} \rightB 
-\leftB
-\begin{array}{c}
+\end{mymatrix} 
+\begin{mymatrix}{c}
 a_{11}x_1 + a_{21}x_2 + \cdots + a_{n1}x_n \\
 a_{12}x_1 + a_{22}x_2 + \cdots + a_{n2}x_n \\
 \vdots \\
 a_{1n}x_1 + a_{2n}x_2 + \cdots + a_{nn}x_n
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& a_{11}x_1^2 + a_{22}x_2^2 + \cdots + a_{nn}x_n^2 + a_{12}x_1x_2 + \cdots
 \end{eqnarray*}
 
@@ -75,45 +67,38 @@ Write $q$ in the form $\vect{x}^TA\vect{x}$.
 \end{example}
 
 \begin{solution}
-First, let $\vect{x} = \leftB
-\begin{array}{r}
+First, let $\vect{x} = \begin{mymatrix}{r}
 x_1 \\
 x_2
-\end{array}
-\rightB$ and $A = \leftB
-\begin{array}{rr}
+\end{mymatrix}$ and $A = \begin{mymatrix}{rr}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
-\end{array}
-\rightB$. 
+\end{mymatrix}$. 
 
 Then, writing $q = \vect{x}^TA\vect{x}$ gives 
 \begin{eqnarray*}
-q &=& \leftB \begin{array}{rr}
+q &=& \begin{mymatrix}{rr}
 x_1 & x_2 
-\end{array}
-\rightB
-\leftB \begin{array}{rr}
+\end{mymatrix}
+\begin{mymatrix}{rr}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
-\end{array}
-\rightB
-\leftB \begin{array}{r}
+\end{mymatrix}
+\begin{mymatrix}{r}
 x_1 \\
 x_2 
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 &=& a_{11}x_1^2 + a_{21}x_1x_2 + a_{12}x_1x_2 + a_{22}x_2^2
 \end{eqnarray*}
 
 Notice that we have an $x_1x_2$ term as well as an $x_2x_1$ term. Since multiplication is commutative, these terms can be combined. This means that $q$ can be written 
 \[
-q =  a_{11}x_1^2 + \left( a_{21}+ a_{12}\right) x_1x_2 + a_{22}x_2^2
+q =  a_{11}x_1^2 + \tup{a_{21}+ a_{12}} x_1x_2 + a_{22}x_2^2
 \]
 
 Equating this to $q$ as given in the example, we have 
 \[
- a_{11}x_1^2 + \left( a_{21}+ a_{12}\right) x_1x_2 + a_{22}x_2^2 =  6x_1^2 + 4x_1x_2 + 3x_2^2
+ a_{11}x_1^2 + \tup{a_{21}+ a_{12}} x_1x_2 + a_{22}x_2^2 =  6x_1^2 + 4x_1x_2 + 3x_2^2
 \]
 
 Therefore,
@@ -128,18 +113,15 @@ This demonstrates that the matrix $A$ is not unique, as there are several correc
 Hence, 
 \[
 A = 
-\leftB \begin{array}{rr}
+\begin{mymatrix}{rr}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 6 & 2 \\
 2 & 3
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 You can verify that $q = \vect{x}^T A \vect{x}$ holds for this choice of $A$. 
@@ -151,49 +133,46 @@ We now turn our attention to the focus of this section. Our goal is to start wit
 \[
 q = d_{11}y_1^2 + d_{22}y_2^2 + \cdots + d_{nn}y_n^2
 \]
- Letting $\vect{y} = \leftB
-\begin{array}{r}
+ Letting $\vect{y} = \begin{mymatrix}{r}
 y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{array}
-\rightB$ and $D = \leftB d_{ij} \rightB$, we can write $q = \vect{y}^T D \vect{y}$ where $D$ is the matrix of coefficients from $q$. There is something special about this matrix $D$ that is crucial. Since no $y_iy_j$ terms exist in $q$, it follows that $d_{ij} = 0$ for all $i \neq j$. Therefore, $D$ is a diagonal matrix. Through this change of variables, we find the \textbf{principal axes}\index{principal axes} $y_1, y_2, \cdots, y_n$ of the quadratic form. 
+\end{mymatrix}$ and $D = \mat{d_{ij} }$, we can write $q = \vect{y}^T D \vect{y}$ where $D$ is the matrix of coefficients from $q$. There is something special about this matrix $D$ that is crucial. Since no $y_iy_j$ terms exist in $q$, it follows that $d_{ij} = 0$ for all $i \neq j$. Therefore, $D$ is a diagonal matrix. Through this change of variables, we find the \textbf{principal axes}\index{principal axes} $y_1, y_2, \cdots, y_n$ of the quadratic form. 
 
 This discussion sets the stage for the following essential theorem.
 
 \begin{theorem}{Diagonalizing a quadratic form}{diagquadraticform}
 Let $q$ be a quadratic form in the variables $x_1, \cdots, x_n$. It follows that $q$ can be written in the form $q = \vect{x}^T A \vect{x}$ where 
 \[
-\vect{x} = \leftB \begin{array}{r}
+\vect{x} = \begin{mymatrix}{r}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{array} \rightB 
+\end{mymatrix} 
 \]
-and $A = \leftB a_{ij} \rightB$ is the symmetric matrix of coefficients of $q$. 
+and $A = \mat{a_{ij} }$ is the symmetric matrix of coefficients of $q$. 
 
 New variables $y_1, y_2, \cdots, y_n$ can be found such that $q = \vect{y}^T D \vect{y}$ where 
 \[
-\vect{y} = \leftB \begin{array}{r} 
+\vect{y} = \begin{mymatrix}{r} 
 y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{array} \rightB \] and $D=\leftB d_{ij} \rightB$ is a diagonal matrix. The matrix $D$ contains the eigenvalues of $A$ and is found by orthogonally diagonalizing $A$. 
+\end{mymatrix} \] and $D=\mat{d_{ij} }$ is a diagonal matrix. The matrix $D$ contains the eigenvalues of $A$ and is found by orthogonally diagonalizing $A$. 
 \end{theorem}
 
 While not a formal proof, the following discussion should convince you that the above theorem holds. Let $q$ be a quadratic form in the variables $x_1, \cdots, x_n$. Then, $q$ can be written in the form $q = \vect{x}^T A \vect{x}$ for a symmetric matrix $A$.  
 By Theorem \ref{thm:orthdiag} we can orthogonally diagonalize the matrix $A$ such that $U^TAU = D$ for an orthogonal matrix $U$ and diagonal matrix $D$. 
 
-Then, the vector $\vect{y} = \leftB \begin{array}{r}
+Then, the vector $\vect{y} = \begin{mymatrix}{r}
 y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{array}
-\rightB
+\end{mymatrix}
 $ is found by $\vect{y} = U^T \vect{x}$. To see that this works, rewrite $\vect{y} = U^T \vect{x}$ as $\vect{x} = U\vect{y}$. Letting $q = \vect{x}^TA\vect{x}$, proceed as follows:
 \begin{eqnarray*}
 q &=& \vect{x}^T A \vect{x}\\
@@ -219,20 +198,19 @@ Write $q = \vect{x}^T A \vect{x}$ for a symmetric matrix $A$.
 Orthogonally diagonalize $A$ to be written as $U^TAU=D$ for an orthogonal matrix $U$ and diagonal matrix $D$. 
 
 \item
-Write $\vect{y} = \leftB \begin{array}{c}
+Write $\vect{y} = \begin{mymatrix}{c}
 y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{array}
-\rightB$. Then, $\vect{x} = U \vect{y}$. 
+\end{mymatrix}$. Then, $\vect{x} = U \vect{y}$. 
 
 \item 
 The quadratic form $q$ will now be given by 
 \[
 q = d_{11}y_1^2 + \cdots + d_{nn}y_n^2 = \vect{y}^T D \vect{y}
 \]
-where $D = \leftB d_{ij} \rightB$ is the diagonal matrix found by orthogonally diagonalizing $A$. 
+where $D = \mat{d_{ij} }$ is the diagonal matrix found by orthogonally diagonalizing $A$. 
 \end{enumerate}
 \end{procedure}
 
@@ -261,38 +239,30 @@ Use a change of variables to choose new axes such that the ellipse is oriented p
 \begin{solution}
 Notice that the level curve is given by $q = 7$ for $q = 6x_1^2 + 4x_1x_2 + 3x_2^2$. This is the same quadratic form that we examined earlier in Example \ref{exa:matrixquadraticform}. Therefore we know that we can write $q = \vect{x}^T A \vect{x}$ for the matrix 
 \[
-A = \leftB
-\begin{array}{rr}
+A = \begin{mymatrix}{rr}
 6 & 2 \\
 2 & 3
-\end{array}
-\rightB
+\end{mymatrix}
 \]
 
 Now we want to orthogonally diagonalize $A$ to write $U^TAU=D$ for an orthogonal matrix $U$ and diagonal matrix $D$. The details are left to the reader, and you can verify that the resulting matrices are 
 \begin{eqnarray*}
 U &=& 
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
 \vspace{0.05in}\frac{2}{\sqrt{5}} & -\vspace{0.05in}\frac{1}{\sqrt{5}} \\
 \vspace{0.05in}\frac{1}{\sqrt{5}} & \vspace{0.05in}\frac{2}{\sqrt{5}}
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 D &=& 
-\leftB
-\begin{array}{rr}
+\begin{mymatrix}{rr}
  7 & 0 \\
 0 & 2 
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
-Next we write $ \vect{y} = \leftB 
-\begin{array}{c}
+Next we write $ \vect{y} = \begin{mymatrix}{c}
 y_1 \\
 y_2 
-\end{array}
-\rightB$. It follows that $\vect{x} = U \vect{y}$. 
+\end{mymatrix}$. It follows that $\vect{x} = U \vect{y}$. 
 
 We can now express the quadratic form $q$ in terms of $y$, using the entries from $D$ as coefficients as follows:
 \begin{eqnarray*}
@@ -340,30 +310,25 @@ Use a change of variables to choose new axes such that the ellipse is oriented p
 \end{example}
 
 \begin{solution}
-First, express the level curve as $\vect{x}^TA\vect{x}$ where $\vect{x} = \leftB
-\begin{array}{r}
+First, express the level curve as $\vect{x}^TA\vect{x}$ where $\vect{x} = \begin{mymatrix}{r}
 x_1 \\
 x_2 
-\end{array}
-\rightB$ and $A$ is symmetric. Let $A = \leftB \begin{array}{rr}
+\end{mymatrix}$ and $A$ is symmetric. Let $A = \begin{mymatrix}{rr}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
-\end{array} \rightB$. Then $q = \vect{x}^T A \vect{x}$ is given by 
+\end{mymatrix}$. Then $q = \vect{x}^T A \vect{x}$ is given by 
 \begin{eqnarray*}
-q &=&  \leftB \begin{array}{cc}
+q &=&  \begin{mymatrix}{cc}
 x_1 & x_2 
-\end{array}
-\rightB
-\leftB \begin{array}{rr}
+\end{mymatrix}
+\begin{mymatrix}{rr}
 a_{11} & a_{12} \\
 a_{21} & a_{22}
-\end{array} \rightB
-\leftB
-\begin{array}{r}
+\end{mymatrix}
+\begin{mymatrix}{r}
 x_1 \\
 x_2 
-\end{array}
-\rightB\\
+\end{mymatrix}\\
 &=& a_{11}x_1^2 + (a_{12} + a_{21})x_1x_2 + a_{22}x_2^2
 \end{eqnarray*}
  
@@ -371,49 +336,39 @@ Equating this to the given description for $q$, we have
 \[
 5x_1^2 -6x_1x_2 + 5x_2^2 =  a_{11}x_1^2 + (a_{12} + a_{21})x_1x_2 + a_{22}x_2^2
 \]
-This implies that $a_{11} = 5, a_{22} = 5$ and in order for $A$ to be symmetric, $a_{12} = a_{22} = \frac{1}{2} (a_{12}+a_{21}) = -3$. The result is $A = \leftB
-\begin{array}{rr}
+This implies that $a_{11} = 5, a_{22} = 5$ and in order for $A$ to be symmetric, $a_{12} = a_{22} = \frac{1}{2} (a_{12}+a_{21}) = -3$. The result is $A = \begin{mymatrix}{rr}
 5 & -3 \\
 -3 & 5
-\end{array}
-\rightB$. We can write $q = \vect{x}^TA\vect{x}$ as 
+\end{mymatrix}$. We can write $q = \vect{x}^TA\vect{x}$ as 
 \begin{equation*}
-\leftB
-\begin{array}{cc}
+\begin{mymatrix}{cc}
 x_1 & x_2 
-\end{array}
-\rightB \leftB
-\begin{array}{rr}
+\end{mymatrix} \begin{mymatrix}{rr}
 5 & -3 \\
 -3 & 5
-\end{array}
-\rightB \leftB
-\begin{array}{c}
+\end{mymatrix} \begin{mymatrix}{c}
 x_1 \\
 x_2
-\end{array}
-\rightB =8
+\end{mymatrix} =8
 \end{equation*}
 
 Next, orthogonally diagonalize the matrix $A$ to write $U^TAU = D$. The details are left to the reader and the necessary matrices are given by 
 \begin{eqnarray*}
-U &=& \leftB \begin{array}{rr}
+U &=& \begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{2}\sqrt{2} & \vspace{0.05in}\frac{1}{2}\sqrt{2} \\
 \vspace{0.05in}\frac{1}{2}\sqrt{2} & -\vspace{0.05in}\frac{1}{2}\sqrt{2}
-\end{array}
-\rightB \\
+\end{mymatrix} \\
 D &=& 
-\leftB \begin{array}{rr}
+\begin{mymatrix}{rr}
 2 & 0 \\
 0 & 8 
-\end{array}
-\rightB
+\end{mymatrix}
 \end{eqnarray*}
 
-Write $\vect{y} = \leftB \begin{array}{r}
+Write $\vect{y} = \begin{mymatrix}{r}
 y_1 \\
 y_2 
-\end{array} \rightB$, such that $\vect{x} = U \vect{y}$. Then it follows that $q$ is given by 
+\end{mymatrix}$, such that $\vect{x} = U \vect{y}$. Then it follows that $q$ is given by 
 \begin{eqnarray*}
 q &=& d_{11}y_1^2 + d_{22}y_2^2 \\
 &=& 2y_1^{2}+8y_2^{2}

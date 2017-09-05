@@ -9,12 +9,12 @@
 \end{enumerate}
 \end{outcome}
 
-We can use the concept of vectors and points to find equations for arbitrary lines in $\mathbb{R}^n$, although in this section the focus will be on lines in $\mathbb{R}^3$. 
+We can use the concept of vectors and points to find equations for arbitrary lines in $\R^n$, although in this section the focus will be on lines in $\R^3$. 
 
-To begin, consider the case $n=1$ so we have $\mathbb{R}^{1}=\mathbb{R}$. There is only one line here which is the familiar number line, that is $\mathbb{R}$ itself. Therefore it is not necessary to explore the case of $n=1$ further. 
+To begin, consider the case $n=1$ so we have $\R^{1}=\R$. There is only one line here which is the familiar number line, that is $\R$ itself. Therefore it is not necessary to explore the case of $n=1$ further. 
 
-Now consider the case where $n=2$, in other words $\mathbb{R}^2$.  Let $P $ and $P_0$ be
-two different points in $\mathbb{R}^{2}$ which are contained in a line
+Now consider the case where $n=2$, in other words $\R^2$.  Let $P $ and $P_0$ be
+two different points in $\R^{2}$ which are contained in a line
 $L$. Let $\vect{p}$ and $\vect{p_0}$ be the position vectors for the points $P$ and $P_0$
 respectively. Suppose that $Q$ is an arbitrary point on $L$. Consider the following
 diagram.
@@ -41,74 +41,66 @@ In other words,
 Now suppose we were to add $t(\vect{p} - \vect{p_0})$ to $\vect{p}$ where $t$ is some scalar.
 You can see that by doing so, we could find a vector with its point at $Q$. In other words, we can find $t$ such that 
 \begin{equation*}
-\vect{q} = \vect{p_0} + t \left( \vect{p}- \vect{p_0}\right)
+\vect{q} = \vect{p_0} + t \tup{\vect{p}- \vect{p_0}}
 \end{equation*}
 
-This equation determines the line $L$ in $\mathbb{R}^2$. In fact, it determines a line $L$ in $\mathbb{R}^n$. Consider the following definition.
+This equation determines the line $L$ in $\R^2$. In fact, it determines a line $L$ in $\R^n$. Consider the following definition.
 
 \begin{definition}{Vector equation of a line}{vectorequationofline}
-Suppose a line $L$ in $\mathbb{R}^{n}$ contains the two\index{lines!vector equation} different points $P$ and 
+Suppose a line $L$ in $\R^{n}$ contains the two\index{lines!vector equation} different points $P$ and 
 $P_0$. Let $\vect{p}$ and $\vect{p_0}$ be the position vectors of these two points, respectively.
 Then, $L$ is the collection of points $Q$ which have the position vector $\vect{q}$ given by
 \begin{equation*}
-\vect{q}=\vect{p_0}+t\left( \vect{p}-\vect{p_0}\right)
+\vect{q}=\vect{p_0}+t\tup{\vect{p}-\vect{p_0}}
 \end{equation*}
-where $t\in \mathbb{R}$. 
+where $t\in \R$. 
 
 Let $\vect{d} = \vect{p} - \vect{p_0}$. Then $\vect{d}$ is the \textbf{direction vector for $L$}\index{direction vector} and the \textbf{vector equation} for $L$ is given by 
 \begin{equation*}
-\vect{p}=\vect{p_0}+t\vect{d}, t\in\mathbb{R}
+\vect{p}=\vect{p_0}+t\vect{d}, t\in\R
 \end{equation*}
 \end{definition}
 
 Note that this definition agrees with the usual notion of a
-line in two dimensions and so this is consistent with earlier concepts. Consider now points in $\mathbb{R}^3$. If a point $P \in \mathbb{R}^3$ is given by $P = \left( x,y,z \right)$, $P_0 \in \mathbb{R}^3$ by $P_0 = \left( x_0, y_0, z_0 \right)$, then we can write
+line in two dimensions and so this is consistent with earlier concepts. Consider now points in $\R^3$. If a point $P \in \R^3$ is given by $P = \tup{x,y,z }$, $P_0 \in \R^3$ by $P_0 = \tup{x_0, y_0, z_0 }$, then we can write
 \begin{equation*}
-\left[
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y \\
 z 
-\end{array}
-\right] = 
-\left[
-\begin{array}{c}
+\end{mymatrix} = 
+\begin{mymatrix}{c}
 x_0 \\
 y_0 \\
 z_0 
-\end{array}
-\right]
+\end{mymatrix}
 +
 t
-\left[
-\begin{array}{c}
+\begin{mymatrix}{c}
 a \\
 b \\
 c 
-\end{array}
-\right]
+\end{mymatrix}
 \end{equation*}
-where $\vect{d} = \left[
-\begin{array}{c}
+where $\vect{d} = \begin{mymatrix}{c}
 a \\
 b \\
 c 
-\end{array}
-\right]$. This is the vector equation of $L$ written in \textbf{component form}\index{component form}.
+\end{mymatrix}$. This is the vector equation of $L$ written in \textbf{component form}\index{component form}.
 
 The following theorem claims that such an equation is in fact a line. 
 
 \begin{proposition}{Algebraic description of a straight line}{algebraicstraightline}
-Let $\vect{a},\vect{b}\in \mathbb{R}^{n}$ with $\vect{b}\neq \vect{0}$. 
-Then $\vect{x}=\vect{a}+t\vect{b},\; t\in \mathbb{R}$, is a
+Let $\vect{a},\vect{b}\in \R^{n}$ with $\vect{b}\neq \vect{0}$. 
+Then $\vect{x}=\vect{a}+t\vect{b},\; t\in \R$, is a
 line.
 \end{proposition}
 
 \begin{proof}
-Let $\vect{x_{1}}, \vect{x_{2}} \in \mathbb{R}^n$. 
+Let $\vect{x_{1}}, \vect{x_{2}} \in \R^n$. 
 Define $\vect{x_{1}}=\vect{a}$ and let $\vect{x_{2}}-\vect{x_{1}}=\vect{b}$.
 Since $\vect{b} \neq \vect{0}$, it follows that $\vect{x_{2}}\neq \vect{x_{1}}.$ Then
-$\vect{a}+t\vect{b}=\vect{x_{1}} + t\left( \vect{x_{2}}-\vect{x_{1}}\right) $. It follows that  
+$\vect{a}+t\vect{b}=\vect{x_{1}} + t\tup{\vect{x_{2}}-\vect{x_{1}}} $. It follows that  
 $\vect{x}=\vect{a}+t\vect{b}$ is a line containing the two different points 
 $X_1$ and $X_2$ whose position vectors are given by $\vect{x}_1$ and $\vect{x}_2$ respectively. 
 \end{proof}
@@ -117,85 +109,71 @@ We can use the above discussion to find the equation of a line when given two di
 Consider the following example. 
 
 \begin{example}{A line from two points}{linefromtwopoints}
-Find a vector equation for the line through the points $P_0 = \left(
-1,2,0\right) $ and $P = \left( 2,-4,6\right).$
+Find a vector equation for the line through the points $P_0 = \tup{
+1,2,0} $ and $P = \tup{2,-4,6}.$
 \end{example}
 
 \begin{solution}
 We will use the definition of a line given above in Definition \ref{def:vectorequationofline} to write
 this line in the form 
 \begin{equation*}
-\vect{q}=\vect{p_0}+t\left( \vect{p}-\vect{p_0}\right)
+\vect{q}=\vect{p_0}+t\tup{\vect{p}-\vect{p_0}}
 \end{equation*}
 Let $\vect{q} = 
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB
+\end{mymatrix}
 $. Then, we can find $\vect{p}$ and $\vect{p_0}$ by taking the position vectors of points $P$ and $P_0$ 
 respectively. 
 Then, 
 \begin{equation*}
-\vect{q}=\vect{p_0}+t\left( \vect{p}-\vect{p_0}\right)
+\vect{q}=\vect{p_0}+t\tup{\vect{p}-\vect{p_0}}
 \end{equation*}
 can be written as
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y \\
 z \\
-\end{array}
-\rightB
+\end{mymatrix}
  =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 2 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 +
 t
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
  1 \\
 -6 \\
 6  
-\end{array}
-\rightB,
+\end{mymatrix},
 \;t\in
-\mathbb{R}
+\R
 \end{equation*}
 Here, the direction vector $
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 -6 \\
 6 
-\end{array}
-\rightB
+\end{mymatrix}
 $
 is obtained by $
 \vect{p} - \vect{p_0} = 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 -4 \\
 6
-\end{array}
-\rightB
+\end{mymatrix}
 -
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 $
 as indicated above in Definition \ref{def:vectorequationofline}.
 \end{solution} 
@@ -208,13 +186,11 @@ parameter, say $3s.$ Then you obtain a different vector equation for the same
 line because the same set of points is obtained.
 
 In Example \ref{exa:linefromtwopoints}, the vector given by 
-$\leftB
-\begin{array}{r}
+$\begin{mymatrix}{r}
  1 \\
 -6 \\
 6 
-\end{array}
-\rightB$
+\end{mymatrix}$
 is the direction vector defined in Definition \ref{def:vectorequationofline}.
 If we know the direction vector of a line, as well as a point on the line,
 we can find the vector equation. 
@@ -222,69 +198,57 @@ we can find the vector equation.
 Consider the following example. 
 
 \begin{example}{A line from a point and a direction vector}{linepointanddirectionvector}
-Find a vector equation for the line which contains the point $P_0 = \left(
-1,2,0\right) $ and has direction vector $\vect{d} = 
-\leftB
-\begin{array}{c}
+Find a vector equation for the line which contains the point $P_0 = \tup{
+1,2,0} $ and has direction vector $\vect{d} = 
+\begin{mymatrix}{c}
 1 \\
 2 \\
 1
-\end{array}
-\rightB
+\end{mymatrix}
 $
 \end{example}
 
 \begin{solution}
 We will use Definition \ref{def:vectorequationofline} to write this line in the form 
-$\vect{p}=\vect{p_0}+t\vect{d},\; t\in \mathbb{R}$. We are given the direction vector $\vect{d}$. 
+$\vect{p}=\vect{p_0}+t\vect{d},\; t\in \R$. We are given the direction vector $\vect{d}$. 
 In order to find $\vect{p_0}$, we can use the position vector of the point $P_0$. 
 This is given by 
-$\leftB
-\begin{array}{c}
+$\begin{mymatrix}{c}
 1 \\
 2 \\
 0
-\end{array}
-\rightB.
+\end{mymatrix}.
 $
 Letting $\vect{p}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
  x \\
 y \\
 z
-\end{array}
-\rightB
+\end{mymatrix}
 $,
 the equation for the line is given by 
 \begin{equation}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB
+\end{mymatrix}
 =
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 2 \\
 0
-\end{array}
-\rightB
+\end{mymatrix}
 + 
 t
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 2 \\
 1
-\end{array}
-\rightB,
+\end{mymatrix},
 \;t\in
-\mathbb{R} \label{vectoreqn}
+\R \label{vectoreqn}
 \end{equation}
 \end{solution}
 
@@ -296,7 +260,7 @@ x=1+t \\
 y=2+2t \\
 z=t 
 \end{array} \right\} & 
-\mbox{where} \; t\in \mathbb{R} 
+\mbox{where} \; t\in \R 
 \end{array}
 \label{parameqn}
 \end{equation}
@@ -305,14 +269,12 @@ This set of equations give the same information as \ref{vectoreqn}, and is calle
 Consider the following definition. 
 
 \begin{definition}{Parametric equation of a line}{parametricequation}
-Let $L$ be a line in $\mathbb{R}^3$ which has direction vector $\vect{d} = \leftB
-\begin{array}{c}
+Let $L$ be a line in $\R^3$ which has direction vector $\vect{d} = \begin{mymatrix}{c}
 a \\
 b \\
 c
-\end{array}
-\rightB$
-and goes through the point $P_0 = \left( x_0, y_0, z_0 \right)$.
+\end{mymatrix}$
+and goes through the point $P_0 = \tup{x_0, y_0, z_0 }$.
 Then, letting $t$ be a parameter, we can write $L$ as 
 \begin{equation*}
 \begin{array}{ll}
@@ -323,7 +285,7 @@ y = y_0 + tb \\
 z = z_0 + tc
 \end{array}
 \right\} & 
-\mbox{where} \; t\in \mathbb{R} 
+\mbox{where} \; t\in \R 
 \end{array}
 \end{equation*}
 This is called a \textbf{parametric equation}\index{lines!parametric equation} of the line $L$.
@@ -371,7 +333,7 @@ y = y_0 + tb \\
 z = z_0 + tc
 \end{array}
 \right\} & 
-\mbox{where} \; t\in \mathbb{R} 
+\mbox{where} \; t\in \R 
 \end{array}
 \end{equation*}
 
@@ -387,7 +349,7 @@ y=1 + 2t \\
 z=-3 + t 
 \end{array}
 \right\} & 
-\mbox{with} \;t\in \mathbb{R}
+\mbox{with} \;t\in \R
 \end{array}
 \end{equation*}
 
@@ -398,33 +360,27 @@ This is the form
 \begin{equation*}
 \vect{p}=\vect{p_0}+t\vect{d}
 \end{equation*}
-where $t\in \mathbb{R}$.
+where $t\in \R$.
 This equation becomes
 \begin{equation*}
-\leftB
-\begin{array}{c}
+\begin{mymatrix}{c}
 x \\
 y \\
 z
-\end{array}
-\rightB =
-\leftB
-\begin{array}{r}
+\end{mymatrix} =
+\begin{mymatrix}{r}
 2 \\
 1 \\
 -3 
-\end{array}
-\rightB
+\end{mymatrix}
 +
 t
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 3 \\
 2 \\
 1 
-\end{array}
-\rightB,
+\end{mymatrix},
 \;t\in
-\mathbb{R}
+\R
 \end{equation*}
 \end{solution}

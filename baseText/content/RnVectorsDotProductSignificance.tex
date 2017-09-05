@@ -16,11 +16,11 @@ determine the included angle between two vectors. Consider the following picture
 \end{center}
 
 \begin{proposition}{The dot product and the included angle}{dotproductangle}
-Let $\vect{u}$ and $\vect{v}$ be two vectors in $\mathbb{R}^n$, and let 
+Let $\vect{u}$ and $\vect{v}$ be two vectors in $\R^n$, and let 
 $\theta$ be the included angle. Then the following equation holds.
 \begin{equation*}
-\vect{u}\dotprod \vect{v}=\vectlength \vect{u}\vectlength \vectlength \vect{v}
-\vectlength \cos \theta 
+\vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}
+} \cos \theta 
 \end{equation*}
 \end{proposition}
 
@@ -36,33 +36,29 @@ Find the angle between the vectors given by
 \begin{equation*}
 \vect{u}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 2
-\end{array}
-\rightB, 
+\end{mymatrix}, 
 \vect{v}
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 0 \\
 3 
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
 \begin{solution}
 By Proposition \ref{prop:dotproductangle},
 \begin{equation*}
-\vect{u}\dotprod \vect{v}=\vectlength \vect{u}\vectlength \vectlength \vect{v}
-\vectlength \cos \theta 
+\vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}
+} \cos \theta 
 \end{equation*}
 Hence, 
 \begin{equation*}
-\cos \theta =\frac{\vect{u}\dotprod \vect{v}}{\vectlength \vect{u}\vectlength \vectlength \vect{v}
-\vectlength}
+\cos \theta =\frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}} \norm{\vect{v}
+}}
 \end{equation*}
  
 First, we can compute $\vect{u}\dotprod \vect{v}$. By Definition \ref{def:dotproductdefn}, this equals
@@ -75,10 +71,10 @@ First, we can compute $\vect{u}\dotprod \vect{v}$. By Definition \ref{def:dotpro
 Then, 
 \begin{equation*}
 \begin{array}{c}
-\vectlength \vect{u} \vectlength
+\norm{\vect{u}}
 =
 \sqrt{(2)(2)+(2)(2)}=2\sqrt{2}\\
-\vectlength  \vect{v} \vectlength
+\norm{\vect{v}}
 =
 \sqrt{(0)(0)+(3)(3)}=\sqrt{3}
 \end{array}
@@ -107,53 +103,41 @@ simply take the smaller of the two.
 Find the angle between the two lines
 \begin{equation*}
 L_1:  \;
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 x \\
 y \\
 z 
-\end{array}
-\rightB
+\end{mymatrix}
  = 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 2 \\
 0
-\end{array}
-\rightB +t\leftB
-\begin{array}{r}
+\end{mymatrix} +t\begin{mymatrix}{r}
 -1 \\
 1 \\
 2
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
  and
 \begin{equation*}
 L_2: \;
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 x \\
 y \\
 z
-\end{array}
-\rightB
+\end{mymatrix}
  = 
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 0 \\
 4 \\
 -3
-\end{array}
-\rightB
- +s\leftB
-\begin{array}{r}
+\end{mymatrix}
+ +s\begin{mymatrix}{r}
 2 \\
 1 \\
 -1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \end{example}
 
@@ -165,26 +149,22 @@ between any directions vectors for these lines.
 To do so  we first find the angle
 between the direction vectors given above:
 \begin{equation*}
-\vect{u}=\leftB
-\begin{array}{r}
+\vect{u}=\begin{mymatrix}{r}
 -1 \\
 1 \\
 2
-\end{array}
-\rightB,\;
-\vect{v}=\leftB
-\begin{array}{r}
+\end{mymatrix},\;
+\vect{v}=\begin{mymatrix}{r}
 2 \\
 1 \\
 -1
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 In order to find the angle, we solve the following equation for $\theta$
 \begin{equation*}
-\vect{u}\dotprod \vect{v}=\vectlength \vect{u}\vectlength \vectlength \vect{v}
-\vectlength \cos \theta
+\vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}
+} \cos \theta
 \end{equation*}
 to obtain $\cos \theta = -\frac{1}{2}$ and since we choose included
 angles between $0$ and $\pi$ we obtain $\theta = \frac{2 \pi}{3}$.
@@ -198,14 +178,14 @@ either be $\frac{2 \pi}{3}$ or its complement $ \phi = \pi -  \frac{2 \pi}{3}
 We can also use Proposition \ref{prop:dotproductangle} to compute the dot product of two vectors.
 
 \begin{example}{Using geometric description to find a dot product}{geometricdotproduct}
-Let $\vect{u},\vect{v}$ be vectors with $ \vectlength \vect{u} \vectlength = 3$ and $\vectlength \vect{v} \vectlength = 4$. 
+Let $\vect{u},\vect{v}$ be vectors with $ \norm{\vect{u}} = 3$ and $\norm{\vect{v}} = 4$. 
 Suppose the angle between $\vect{u}$ and $\vect{v}$ is $\pi / 3$. Find $\vect{u}\dotprod \vect{v}$.
 \end{example}
 
 \begin{solution}
 From the geometric description of the dot product in Proposition \ref{prop:dotproductangle}
 \begin{equation*}
-\vect{u}\dotprod \vect{v}=(3)(4) \cos \left( \pi / 3\right) =3\times
+\vect{u}\dotprod \vect{v}=(3)(4) \cos \tup{\pi / 3} =3\times
 4\times 1/2=6
 \end{equation*}
 \end{solution}
@@ -216,7 +196,7 @@ the included angle is $\pi /2$ radians ($90^{\circ }).$
 Consider the following proposition.
 
 \begin{proposition}{Perpendicular vectors}{perpvectors}
-Let $\vect{u}$ and $\vect{v}$ be nonzero vectors in $\mathbb{R}^n$. Then, 
+Let $\vect{u}$ and $\vect{v}$ be nonzero vectors in $\R^n$. Then, 
 $\vect{u}$ and $\vect{v}$ are \textbf{perpendicular}\index{vector!perpendicular} if and only if
 \begin{equation*}
 \vect{u}
@@ -244,22 +224,18 @@ Consider the following example.
 Determine whether the two vectors, 
 \begin{equation*}
 \vect{u}=
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 2 \\
 1 \\
 -1 
-\end{array}
-\rightB, 
+\end{mymatrix}, 
 \vect{v} 
 =
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\
 3 \\
 5
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
  are perpendicular.
 \end{example}

@@ -27,13 +27,13 @@ coordinates}\index{polar coordinates}. The idea is suggested in the following pi
 \end{tikzpicture}
 \end{center}
 
-Consider the point above, which would be specified as $(x,y)$ in Cartesian coordinates. We can also specify this point using polar coordinates, which we write as $\left( r, \theta \right)$. The number $r$ is the distance from the origin$\left( 0,0\right)$ to the point, while $\theta $ is the angle shown
-between the positive $x$ axis and the line from the origin to the point. In this way, the point can be specified in polar coordinates as $\left(r, \theta \right)$.
+Consider the point above, which would be specified as $(x,y)$ in Cartesian coordinates. We can also specify this point using polar coordinates, which we write as $\tup{r, \theta }$. The number $r$ is the distance from the origin$\tup{0,0}$ to the point, while $\theta $ is the angle shown
+between the positive $x$ axis and the line from the origin to the point. In this way, the point can be specified in polar coordinates as $\tup{r, \theta }$.
 
-Now suppose we are given an ordered pair $\left( r,\theta \right) $ where 
+Now suppose we are given an ordered pair $\tup{r,\theta } $ where 
 $r$ and $\theta$ are real numbers. We want to determine the point specified by this ordered pair. We can use $\theta $ to identify a ray
-from the origin as follows. Let the ray pass from $\left( 0,0\right) $
-through the point $\left( \cos \theta ,\sin \theta \right) $ as shown.
+from the origin as follows. Let the ray pass from $\tup{0,0} $
+through the point $\tup{\cos \theta ,\sin \theta } $ as shown.
 
 \begin{center}
 \begin{tikzpicture}
@@ -49,23 +49,23 @@ through the point $\left( \cos \theta ,\sin \theta \right) $ as shown.
 
 The ray is identified on the graph as the line from the origin, through the point $(\cos(\theta),\sin(\theta))$. Now if $r>0,$ go a distance
 equal to $r$ in the direction of the displayed arrow starting at $(0,0)$. If 
-$r<0,$ move in the opposite direction a distance of $\left\vert r\right\vert 
-$. This is the point determined by $\left( r,\theta \right)$.
+$r<0,$ move in the opposite direction a distance of $\abs{r}
+$. This is the point determined by $\tup{r,\theta }$.
 
 It is common to assume that $\theta $ is in the interval $
 [0,2\pi )$ and $r>0.$ In this case, there is a very simple relationship
 between the Cartesian and polar coordinates, given by
 \begin{equation}
-x=r\cos \left( \theta \right) ,\ \ y=r\sin \left( \theta \right) 
+x=r\cos \tup{\theta } ,\ \ y=r\sin \tup{\theta } 
 \label{cartpolcoord}
 \end{equation}
 
-These equations demonstrate how to find the Cartesian coordinates when we are given the polar coordinates of a point. They can also be used to find the polar coordinates when we know $\left( x, y \right)$. A simpler way to do this is the following equations:
+These equations demonstrate how to find the Cartesian coordinates when we are given the polar coordinates of a point. They can also be used to find the polar coordinates when we know $\tup{x, y }$. A simpler way to do this is the following equations:
 \begin{equation}
 \begin{array}{l}
 r = \sqrt{x^2 + y^2} \\
 \\
-\tan \left(\theta\right) = \frac{y}{x}
+\tan \tup{\theta} = \frac{y}{x}
 \end{array}
 \label{polcartcoord}
 \end{equation}
@@ -73,20 +73,20 @@ r = \sqrt{x^2 + y^2} \\
 In the next example, we look at how to find the Cartesian coordinates of a point specified by polar coordinates. 
 
 \begin{example}{Finding cartesian coordinates}{}
-The polar coordinates of a point in the plane are $\left( 5,\pi /6\right) $.
+The polar coordinates of a point in the plane are $\tup{5,\pi /6} $.
 Find the Cartesian coordinates of this point.
 \end{example}
 
 \begin{solution}
-The point is specified by the polar coordinates $\left( 5,\pi /6\right)$. Therefore $r=5$ and $\theta = \pi /6$. 
+The point is specified by the polar coordinates $\tup{5,\pi /6}$. Therefore $r=5$ and $\theta = \pi /6$. 
 From \ref{cartpolcoord}
 \[
-x= r \cos \left( \theta \right)= 5\cos \left( \vspace{0.05in}\frac{\pi }{6}\right) = \vspace{0.05in}\frac{5}{2}\sqrt{3}
+x= r \cos \tup{\theta }= 5\cos \tup{\vspace{0.05in}\frac{\pi }{6}} = \vspace{0.05in}\frac{5}{2}\sqrt{3}
 \]
 \[
-y= r \sin \left( \theta \right) = 5\sin \left( \vspace{0.05in}\frac{\pi }{6}\right) = \vspace{0.05in}\frac{5}{2}
+y= r \sin \tup{\theta } = 5\sin \tup{\vspace{0.05in}\frac{\pi }{6}} = \vspace{0.05in}\frac{5}{2}
 \]
-Thus the Cartesian coordinates are $\left( \vspace{0.05in}\frac{5}{2}\sqrt{3}, \vspace{0.05in}\frac{5}{2}\right)$. The point is shown in the below graph. 
+Thus the Cartesian coordinates are $\tup{\vspace{0.05in}\frac{5}{2}\sqrt{3}, \vspace{0.05in}\frac{5}{2}}$. The point is shown in the below graph. 
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -102,21 +102,21 @@ Thus the Cartesian coordinates are $\left( \vspace{0.05in}\frac{5}{2}\sqrt{3}, \
 Consider the following example of the case where $r < 0$. 
 
 \begin{example}{Finding cartesian coordinates}{}
-The polar coordinates of a point in the plane are $\left( -5,\pi /6\right) .$
+The polar coordinates of a point in the plane are $\tup{-5,\pi /6} .$
 Find the Cartesian coordinates.
 \end{example}
 
 \begin{solution}
-For the point specified by the polar coordinates $\left( -5, \pi /6 \right)$,
+For the point specified by the polar coordinates $\tup{-5, \pi /6 }$,
 $r=-5$, and $x\theta = \pi /6$. 
 From \ref{cartpolcoord}
 \[
-x= r \cos \left( \theta \right)= -5\cos \left( \vspace{0.05in}\frac{\pi }{6}\right) = -\vspace{0.05in}\frac{5}{2}\sqrt{3}
+x= r \cos \tup{\theta }= -5\cos \tup{\vspace{0.05in}\frac{\pi }{6}} = -\vspace{0.05in}\frac{5}{2}\sqrt{3}
 \]
 \[
-y= r \sin \left( \theta \right) = -5\sin \left( \vspace{0.05in}\frac{\pi }{6}\right) = -\vspace{0.05in}\frac{5}{2}
+y= r \sin \tup{\theta } = -5\sin \tup{\vspace{0.05in}\frac{\pi }{6}} = -\vspace{0.05in}\frac{5}{2}
 \]
-Thus the Cartesian coordinates are $\left( -\vspace{0.05in}\frac{5}{2}\sqrt{3}, -\vspace{0.05in}\frac{5}{2}\right)$. The point is shown in the following graph.
+Thus the Cartesian coordinates are $\tup{-\vspace{0.05in}\frac{5}{2}\sqrt{3}, -\vspace{0.05in}\frac{5}{2}}$. The point is shown in the following graph.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -128,12 +128,12 @@ Thus the Cartesian coordinates are $\left( -\vspace{0.05in}\frac{5}{2}\sqrt{3}, 
 \end{tikzpicture}
 \end{center}
 
-Recall from the previous example that for the point specified by $\left( 5, \pi /6 \right)$, the Cartesian coordinates are $\left( \vspace{0.05in}\frac{5}{2}\sqrt{3}, \vspace{0.05in}\frac{5}{2}\right)$. Notice that in this example, by multiplying $r$ by $-1$, the resulting Cartesian coordinates are also multiplied by $-1$. 
+Recall from the previous example that for the point specified by $\tup{5, \pi /6 }$, the Cartesian coordinates are $\tup{\vspace{0.05in}\frac{5}{2}\sqrt{3}, \vspace{0.05in}\frac{5}{2}}$. Notice that in this example, by multiplying $r$ by $-1$, the resulting Cartesian coordinates are also multiplied by $-1$. 
 \end{solution}
 
 The following picture exhibits both points in the above two examples to
-emphasize how they are just on opposite sides of $\left( 0,0\right) $ but at
-the same distance from $\left( 0,0\right) $.
+emphasize how they are just on opposite sides of $\tup{0,0} $ but at
+the same distance from $\tup{0,0} $.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -152,7 +152,7 @@ the same distance from $\left( 0,0\right) $.
 In the next two examples, we look at how to convert Cartesian coordinates to polar coordinates. 
 
 \begin{example}{Finding polar coordinates}{}
-Suppose the Cartesian coordinates of a point are $\left( 3,4\right) $. Find
+Suppose the Cartesian coordinates of a point are $\tup{3,4} $. Find
 a pair of polar coordinates which correspond to this point.
 \end{example}
 
@@ -161,14 +161,14 @@ Using equation \ref{polcartcoord}, we can find $r$ and $\theta$. Hence $r=\sqrt{
 first quadrant. Therefore, $\theta$ is between $0$ and $\pi /2\ $. 
 Using this and \ref{polcartcoord}, we have to solve:
 \[
-\tan\left(\theta \right)=\frac{4}{3}
+\tan\tup{\theta }=\frac{4}{3}
 \]
 Conversely, we can use equation \ref{cartpolcoord} as follows:
 \[
-3=5\cos \left( \theta \right) 
+3=5\cos \tup{\theta } 
 \]
 \[
-4 = 5\sin \left( \theta \right) 
+4 = 5\sin \tup{\theta } 
 \]
 Solving these equations, we find that, 
 approximately, $\theta =0.\, 927\,295$ radians.
@@ -177,12 +177,12 @@ approximately, $\theta =0.\, 927\,295$ radians.
 Consider the following example.
 
 \begin{example}{Finding polar coordinates}{}
-Suppose the Cartesian coordinates of a point are $\left( -\sqrt{3},1\right)$
+Suppose the Cartesian coordinates of a point are $\tup{-\sqrt{3},1}$
 . Find the polar coordinates which correspond to this point.
 \end{example}
 
 \begin{solution}
-Given the point $\left( -\sqrt{3}, 1\right)$, 
+Given the point $\tup{-\sqrt{3}, 1}$, 
 \begin{eqnarray*}
 r &=& \sqrt{ 1^2 + (-\sqrt{3})^2}\\
 &=& \sqrt{1 + 3}\\
@@ -191,17 +191,17 @@ r &=& \sqrt{ 1^2 + (-\sqrt{3})^2}\\
  In this case, the point is in the second quadrant since the $x$ value is negative and the $y$ value is positive. Therefore, $\theta$ will be between $\pi/2$ and $\pi$.
 Solving the equations
 \[
--\sqrt{3}= 2 \cos \left(\theta\right)
+-\sqrt{3}= 2 \cos \tup{\theta}
 \]
 \[
-1 = 2 \sin \left( \theta\right) 
+1 = 2 \sin \tup{\theta} 
 \]
 
 we find that $\theta = 5\pi /6.$
-Hence the polar coordinates for this point are $\left(2, 5\pi /6 \right)$.
+Hence the polar coordinates for this point are $\tup{2, 5\pi /6 }$.
 \end{solution}
 
-Consider this example. Suppose we used $r=-2$ and $\theta =2\pi -\left( \pi /6\right) = 11\pi /6 $. These coordinates specify the same point as above. Observe that there are infinitely many ways to identify this
+Consider this example. Suppose we used $r=-2$ and $\theta =2\pi -\tup{\pi /6} = 11\pi /6 $. These coordinates specify the same point as above. Observe that there are infinitely many ways to identify this
 particular point with polar coordinates. In fact, every point can be represented with polar coordinates in infinitely many ways. Because of this, it will usually be
 the case that $\theta $ is confined to lie in some interval
 of length $2\pi $ and $r>0$, for real numbers $r$ and $\theta $. 
@@ -209,14 +209,14 @@ of length $2\pi $ and $r>0$, for real numbers $r$ and $\theta $.
 Just as with Cartesian coordinates, it is possible to use
 relations between the polar coordinates to specify points in the plane. The
 process of sketching the graphs of these relations is very similar to that used to sketch
-graphs of functions in Cartesian coordinates. Consider a relation between polar coordinates of the form, $r=f\left( \theta \right)$. To graph such a relation, first make a table of
+graphs of functions in Cartesian coordinates. Consider a relation between polar coordinates of the form, $r=f\tup{\theta }$. To graph such a relation, first make a table of
 the form 
 \begin{equation*}
 \begin{tabular}{|l|l|}
 \hline
 $\theta $ & $r$ \\ \hline
-$\theta _{1}$ & $f\left( \theta _{1}\right) $ \\ \hline
-$\theta _{2}$ & $f\left( \theta _{2}\right) $ \\ \hline
+$\theta _{1}$ & $f\tup{\theta _{1}} $ \\ \hline
+$\theta _{2}$ & $f\tup{\theta _{2}} $ \\ \hline
 $\vdots $ & $\vdots $ \\ \hline
 \end{tabular}
 \end{equation*}
@@ -238,8 +238,8 @@ following picture illustrates how to begin this process.
 \end{tikzpicture}
 \end{center}
 
-To find the point in the plane corresponding to the ordered pair $\left( f\left(
-\theta \right) ,\theta \right) $, we follow the same process as when finding the point corresponding to $\left( r, \theta \right)$.
+To find the point in the plane corresponding to the ordered pair $\tup{f\tup{
+\theta } ,\theta } $, we follow the same process as when finding the point corresponding to $\tup{r, \theta }$.
 
 Consider the following example of this procedure, incorporating computer software.
 
@@ -250,7 +250,7 @@ Graph the polar equation $r=1+\cos \theta$.
 \begin{solution}
 We will use the computer software {\em Maple\em} to complete this example. The command which produces the polar graph of the above equation is: $>$ plot(1+cos(t),t=
 0..2*Pi,coords=polar). Here we use $t$ to represent the variable $\theta$ for convenience. The command tells Maple that $r$
-is given by $1+\cos \left( t\right) $ and that $t\in \left[ 0,2\pi \right]$.
+is given by $1+\cos \tup{t} $ and that $t\in \mat{0,2\pi}$.
 
 \begin{picture}(1,120)
 \put(110,-25){
@@ -286,13 +286,13 @@ curve, with the result being the figure shown above.
 Consider another example of constructing a polar graph.
 
 \begin{example}{A polar graph}{}
-Graph $r=1+2\cos \theta $ for $\theta \in \left[
-0,2\pi \right]$.
+Graph $r=1+2\cos \theta $ for $\theta \in \mat{
+0,2\pi}$.
 \end{example}
 
 \begin{solution}
-The graph of the polar equation $r=1+2\cos \theta $ for $\theta \in \left[
-0,2\pi \right]$ is given as follows. 
+The graph of the polar equation $r=1+2\cos \theta $ for $\theta \in \mat{
+0,2\pi}$ is given as follows. 
 
 \begin{picture}(1,127)
 \put(110,-25){
@@ -332,13 +332,13 @@ larger loop in the graph.
 
 The process of constructing these graphs can be greatly facilitated by computer software. However, the use of such software should not replace understanding the steps involved.
 
-The next example shows the graph for the equation $r=3+\sin \left( 
+The next example shows the graph for the equation $r=3+\sin \tup{
 \displaystyle
-\frac{7\theta }{6}\right)$. For complicated polar graphs, computer software is used to facilitate the process. 
+\frac{7\theta }{6}}$. For complicated polar graphs, computer software is used to facilitate the process. 
 
 \begin{example}{A polar graph}{}
-Graph $r=3+\sin \left( \displaystyle \frac{7\theta }{6}%
-\right) $ for $\theta \in \left[ 0,14\pi \right]$.
+Graph $r=3+\sin \tup{\displaystyle \frac{7\theta }{6}%
+} $ for $\theta \in \mat{0,14\pi}$.
 \end{example}
 
 \begin{solution}
@@ -355,7 +355,7 @@ Graph $r=3+\sin \left( \displaystyle \frac{7\theta }{6}%
 The next example shows another situation in which $r$ can be negative.
 
 \begin{example}{A polar graph: negative $r$}{}
-Graph $r=3\func{sin}(4\theta) $ for $\theta \in \left[ 0,2\pi \right]$.
+Graph $r=3\func{sin}(4\theta) $ for $\theta \in \mat{0,2\pi}$.
 \end{example}
 
 \begin{solution}

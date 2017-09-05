@@ -40,13 +40,11 @@ eigenvectors of each eigenvalue to obtain an orthonormal set of eigenvectors.
 We demonstrate this in the following example. 
 
 \begin{example}{Orthogonal diagonalization of a symmetric matrix}{orthogonaldiagonalization}
-Let $A=\leftB
-\begin{array}{rrr}
+Let $A=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & \vspace{0.05in}\frac{3}{2} & \vspace{0.05in}\frac{1}{2} \\
 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2}
-\end{array}
-\rightB .$ 
+\end{mymatrix} .$ 
 Find an orthogonal matrix $P$ such that $P^{T}AP$ is a diagonal
 matrix.
 \end{example}
@@ -56,75 +54,61 @@ In this case, verify that the eigenvalues are 2 and 1. First
 we will find an eigenvector for the eigenvalue $2$. This involves row
 reducing the following augmented matrix. 
 \begin{equation*}
-\leftB 
-\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 2 - 1 & 0 & 0 & 0 \\ 
 0 & 2-\vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & -\vspace{0.05in}\frac{1}{2} & 2-\vspace{0.05in}\frac{3}{2} & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The {\rref} is 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 1 & 0 & 0 & 0 \\ 
 0 & 1 & -1 & 0 \\ 
 0 & 0 & 0 & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 and so an eigenvector is 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 0 \\ 
 1 \\ 
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Finally to obtain an eigenvector of length one (unit eigenvector) we simply  divide this vector by its length to yield:
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 0 \\ 
 \frac{1}{\sqrt{2}} \\ 
 \frac{1}{\sqrt{2}}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 
 Next consider the case of the eigenvalue $1$. To obtain basic eigenvectors, the matrix which needs to be
 row reduced in this case is 
 \begin{equation*}
-\leftB 
-\begin{array}{ccc|c}
+\begin{mymatrix}{ccc|c}
 1-1 & 0 & 0 & 0 \\ 
 0 & 1-\vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & -\vspace{0.05in}\frac{1}{2} & 1-\vspace{0.05in}\frac{3}{2} & 0
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 The {\rref} is 
 \begin{equation*}
-\leftB 
-\begin{array}{rrr|r}
+\begin{mymatrix}{rrr|r}
 0 & 1 & 1 & 0 \\ 
 0 & 0 & 0 & 0 \\ 
 0 & 0 & 0 & 0
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Therefore, the eigenvectors are of the form 
 \begin{equation*}
-\leftB 
-\begin{array}{c}
+\begin{mymatrix}{c}
 s \\ 
 -t \\ 
 t
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Note that all these vectors are automatically orthogonal to
 eigenvectors corresponding to the first eigenvalue. This follows from the fact that $A$
@@ -132,80 +116,62 @@ is symmetric, as mentioned earlier.
 
 We obtain basic eigenvectors 
 \begin{equation*}
-\leftB
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\ 
 0 \\ 
 0
-\end{array}
-\rightB \text{ and }\leftB 
-\begin{array}{r}
+\end{mymatrix} \text{ and }\begin{mymatrix}{r}
 0 \\ 
 -1 \\ 
 1
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 Since they are themselves orthogonal (by luck here) we do not need to
 use the Gram-Schmidt process and instead simply normalize these
 vectors to obtain 
 \begin{equation*}
-\leftB 
-\begin{array}{r}
+\begin{mymatrix}{r}
 1 \\ 
 0 \\ 
 0
-\end{array}
-\rightB \text{ and }\leftB 
-\begin{array}{c}
+\end{mymatrix} \text{ and }\begin{mymatrix}{c}
 0 \\ 
 -\frac{1}{\sqrt{2}} \\ 
 \frac{1}{\sqrt{2}}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 An orthogonal matrix $P$ to orthogonally diagonalize $A$  is then obtained by letting
 these basic vectors be the columns. 
 \begin{equation*}
-P= \leftB 
-\begin{array}{ccc}
+P= \begin{mymatrix}{ccc}
 0 & 1 & 0 \\ 
 -\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 
 \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 We verify this works. $P^{T}AP$ is of the form 
 \begin{equation*}
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 0 & -\vspace{0.05in}\frac{1}{\sqrt{2}} & \vspace{0.05in}\frac{1}{\sqrt{2}}
 \\ 
 1 & 0 & 0 \\ 
 0 & \vspace{0.05in}\frac{1}{\sqrt{2}} & \vspace{0.05in}\frac{1}{\sqrt{2}}
-\end{array}
-\rightB \leftB 
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 1 & 0 & 0 \\ 
 0 & \vspace{0.05in}\frac{3}{2} & \vspace{0.05in}\frac{1}{2} \\ 
 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2}
-\end{array}
-\rightB \leftB 
-\begin{array}{ccc}
+\end{mymatrix} \begin{mymatrix}{ccc}
 0 & 1 & 0 \\ 
 -\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 
 \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 \begin{equation*}
-=\allowbreak \leftB 
-\begin{array}{ccc}
+=\allowbreak \begin{mymatrix}{ccc}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 2
-\end{array}
-\rightB 
+\end{mymatrix} 
 \end{equation*}
 which is the desired diagonal matrix.
 \end{solution}
@@ -213,13 +179,11 @@ which is the desired diagonal matrix.
 We can now apply this technique to efficiently compute high powers of a symmetric matrix. 
 
 \begin{example}{Powers of a symmetric matrix}{powerssymmetricmatrix}
-Let $A=\leftB
-\begin{array}{rrr}
+Let $A=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & \vspace{0.05in}\frac{3}{2} & \vspace{0.05in}\frac{1}{2} \\
 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2}
-\end{array}
-\rightB .$ 
+\end{mymatrix} .$ 
 Compute $A^7$. 
 \end{example}
 
@@ -227,20 +191,16 @@ Compute $A^7$.
 We found in Example \ref{exa:orthogonaldiagonalization} that $P^TAP=D$ is diagonal, where 
 
 \begin{equation*}
-P= \leftB 
-\begin{array}{ccc}
+P= \begin{mymatrix}{ccc}
 0 & 1 & 0 \\ 
 -\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 
 \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}
-\end{array}
-\rightB \text{ and } 
-D = \leftB 
-\begin{array}{ccc}
+\end{mymatrix} \text{ and } 
+D = \begin{mymatrix}{ccc}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 2
-\end{array}
-\rightB
+\end{mymatrix}
 \end{equation*}
 
 Thus $A=PDP^T$ and $A^7=PDP^T \; PDP^T \; \cdots PDP^T = PD^7P^T$ which gives:
@@ -248,68 +208,54 @@ Thus $A=PDP^T$ and $A^7=PDP^T \; PDP^T \; \cdots PDP^T = PD^7P^T$ which gives:
 \[ 
 \begin{array}{rr}
 A^7 & = 
-\leftB 
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 0 & 1 & 0 \\ 
 -\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 
 \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}
-\end{array}
-\rightB
-\leftB 
-\begin{array}{ccc}
+\end{mymatrix}
+\begin{mymatrix}{ccc}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 2
-\end{array}
-\rightB ^7
-\leftB
-\begin{array}{ccc}
+\end{mymatrix} ^7
+\begin{mymatrix}{ccc}
 0 & -\vspace{0.05in}\frac{1}{\sqrt{2}} & \vspace{0.05in}\frac{1}{\sqrt{2}}\\ 
 1 & 0 & 0 \\ 
 0 & \vspace{0.05in}\frac{1}{\sqrt{2}} & \vspace{0.05in}\frac{1}{\sqrt{2}}
-\end{array} \rightB  \\
+\end{mymatrix}  \\
 & = 
-\leftB 
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 0 & 1 & 0 \\ 
 -\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 
 \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}
-\end{array}
-\rightB
-\leftB 
-\begin{array}{ccc}
+\end{mymatrix}
+\begin{mymatrix}{ccc}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 2^7
-\end{array}
-\rightB 
-\leftB
-\begin{array}{ccc}
+\end{mymatrix} 
+\begin{mymatrix}{ccc}
 0 & -\vspace{0.05in}\frac{1}{\sqrt{2}} & \vspace{0.05in}\frac{1}{\sqrt{2}}\\ 
 1 & 0 & 0 \\ 
 0 & \vspace{0.05in}\frac{1}{\sqrt{2}} & \vspace{0.05in}\frac{1}{\sqrt{2}}
-\end{array} \rightB  \\
+\end{mymatrix}  \\
 & = 
-\leftB 
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 0 & 1 & 0 \\ 
 -\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 
 \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}
-\end{array}
-\rightB
-\leftB
-\begin{array}{ccc}
+\end{mymatrix}
+\begin{mymatrix}{ccc}
 0 & -\vspace{0.05in}\frac{1}{\sqrt{2}} & \vspace{0.05in}\frac{1}{\sqrt{2}}\\ 
 1 & 0 & 0 \\ 
 0 & \vspace{0.05in}\frac{2^7}{\sqrt{2}} & \vspace{0.05in}\frac{2^7}{\sqrt{2}}
-\end{array} \rightB  \\
+\end{mymatrix}  \\
 & = 
-\leftB
-\begin{array}{ccc}
+\begin{mymatrix}{ccc}
 1 & 0 & 0 \\ 
 0 & \vspace{0.05in}\frac{2^7+1}{2} & \vspace{0.05in}\frac{2^7-1}{2}\\ 
 0 & \vspace{0.05in}\frac{2^7-1}{2} & \vspace{0.05in}\frac{2^7+1}{2}
-\end{array} \rightB  \\
+\end{mymatrix}  \\
 
 \end{array}
 \]
