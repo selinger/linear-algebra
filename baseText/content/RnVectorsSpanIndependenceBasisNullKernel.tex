@@ -28,17 +28,17 @@ Suppose $p\neq 0$, and suppose that for some $j$, $1\leq j\leq m$,
 $B$ is obtained from $A$ by multiplying row $j$ by $p$.
 Then 
 
-\[ \func{row}(B)=\func{span}\{ \vect{r}_1, \ldots, 
+\[ \func{row}(B)=\func{span}\{\vect{r}_1, \ldots, 
 p\vect{r}_{j}, \ldots, \vect{r}_m\}.  \]
 
 Since
-\[ \{ \vect{r}_1, \ldots, 
+\[ \{\vect{r}_1, \ldots, 
 p\vect{r}_{j}, \ldots, \vect{r}_m\} \subseteq\func{row}(A),\]
 
 it follows that $\func{row}(B)\subseteq\func{row}(A)$.
 Conversely, since
 
-\[ \{ \vect{r}_1, \ldots, \vect{r}_m\}\subseteq\func{row}(B),\]
+\[ \{\vect{r}_1, \ldots, \vect{r}_m\}\subseteq\func{row}(B),\]
 
 it follows that $\func{row}(A)\subseteq\func{row}(B)$.
 Therefore, $\func{row}(B)=\func{row}(A)$.
@@ -51,19 +51,19 @@ Without loss of generality, we may assume $i<j$.
 
 Then 
 
-\[ \func{row}(B)=\func{span}\{ \vect{r}_1, \ldots, \vect{r}_{i-1},
+\[ \func{row}(B)=\func{span}\{\vect{r}_1, \ldots, \vect{r}_{i-1},
 \vect{r}_i+p\vect{r}_j, \ldots,\vect{r}_j,\ldots, \vect{r}_m\}.  \]
 
 Since
 
-\[ \{ \vect{r}_1, \ldots, \vect{r}_{i-1}, 
+\[ \{\vect{r}_1, \ldots, \vect{r}_{i-1}, 
 \vect{r}_i+p\vect{r}_{j}, \ldots, \vect{r}_m\} \subseteq\func{row}(A),\]
 
 it follows that $\func{row}(B)\subseteq\func{row}(A)$.
 
 Conversely, since
 
-\[ \{ \vect{r}_1, \ldots, \vect{r}_m\}\subseteq\func{row}(B),\]
+\[ \{\vect{r}_1, \ldots, \vect{r}_m\}\subseteq\func{row}(B),\]
 
 it follows that $\func{row}(A)\subseteq\func{row}(B)$.
 Therefore, $\func{row}(B)=\func{row}(A)$.
@@ -116,7 +116,7 @@ Therefore, the rank is $2$.
 
 Notice that the first two columns of $R$ are pivot columns. By the discussion following Lemma \ref{lem:echelonformrowspace}, we find the corresponding columns of $A$, in this case the first two columns. Therefore a basis for $\func{col}(A)$ is given by
 \[
-\left\{\begin{mymatrix}{r}
+\set{\begin{mymatrix}{r}
 1 \\ 
 1 \\ 
 3
@@ -125,7 +125,7 @@ Notice that the first two columns of $R$ are pivot columns. By the discussion fo
 3 \\ 
 7
 \end{mymatrix}
-\right\}
+}
 \] 
 
  For
@@ -149,13 +149,13 @@ example, consider the third column of the original matrix. It can be written as 
 What about an efficient description of the row space? By Lemma \ref{lem:echelonformrowspace} we know that the nonzero rows of $R$ create a basis of $\func{row}(A)$.  For the above matrix, the row space equals 
 \[
 \func{row}(A) = 
-\func{span} \left\{
+\func{span} \set{
 \begin{mymatrix}{rrrrr}
 1 & 0 & -9 & 9 & 2
 \end{mymatrix}, \begin{mymatrix}{rrrrr}
 0 & 1 & 5 & -3 & 0
 \end{mymatrix}
-\right\}
+}
 \]
 \end{solution}
 
@@ -188,7 +188,7 @@ The {\rref} is
 \end{equation*}
 and so the rank is $3$. The row space is given by 
 \begin{equation*}
-\func{row}(A) = \func{span} \left\{ 
+\func{row}(A) = \func{span} \set{
 \begin{mymatrix}{ccccc}
 1 & 0 & 0 & 0 & \frac{13}{2}
 \end{mymatrix},
@@ -198,11 +198,11 @@ and so the rank is $3$. The row space is given by
 \begin{mymatrix}{rrrrr}
 0 & 0 & 1 & -1 & \frac{1}{2}
 \end{mymatrix}
- \right\}
+ }
 \end{equation*}
 Notice that the first three columns of the {\rref} are pivot columns. The column space is the span of the first three columns in the \textbf{original matrix}, 
 \begin{equation*}
-\func{col}(A) = \func{span} \left\{ \begin{mymatrix}{r}
+\func{col}(A) = \func{span} \set{\begin{mymatrix}{r}
 1 \\ 
 1 \\ 
 1 \\ 
@@ -217,7 +217,7 @@ Notice that the first three columns of the {\rref} are pivot columns. The column
 6 \\ 
 1 \\ 
 2
-\end{mymatrix} \right\}
+\end{mymatrix} }
 \end{equation*}
 
 \end{solution}
@@ -308,7 +308,7 @@ The null space of a matrix $A$, also referred to as the kernel of $A$,
 is defined as follows.\index{kernel}\index{matrix!kernel}%
 \index{null space}\index{matrix!null space}
 \begin{equation*}
-\func{null} \left( A\right) =\left\{ \vect{x} :A \vect{x} =\vect{0}\right\}
+\func{null} \left( A\right) =\set{\vect{x} :A \vect{x} =\vect{0}}
 \end{equation*}
 \end{definition}
 
@@ -322,7 +322,7 @@ is as follows.
 \begin{definition}{Image of $A$}{image}
 The image of $A$, written $\func{im}\left( A\right)$ is given by
 \[
-\func{im}\left( A \right) = \left\{ A\vect{x} : \vect{x} \in \R^n \right\}
+\func{im}\left( A \right) = \set{A\vect{x} : \vect{x} \in \R^n }
 \]
 \end{definition}
 
@@ -427,16 +427,16 @@ t
 
 Therefore, the null space of $A$ is all multiples of this vector, which we can write as
 \begin{equation*}
-\func{null} (A) = \func{span} \left\{ \begin{mymatrix}{r}
+\func{null} (A) = \func{span} \set{\begin{mymatrix}{r}
 -3 \\ 
 1 \\ 
 1
 \end{mymatrix}
-\right\}
+}
 \end{equation*}
 
-Finally $\func{im}\left( A\right) $ is just $\left\{ A\vect{x} :
-\vect{x} \in \R^n \right\}$ and hence consists of the span of
+Finally $\func{im}\left( A\right) $ is just $\set{A\vect{x} :
+\vect{x} \in \R^n }$ and hence consists of the span of
 all columns of $A$, that is $\func{im}\left( A\right) = \func{col} (A)$. 
 
 Notice from the above calculation that that the first two columns of the {\rref} are pivot
@@ -444,7 +444,7 @@ columns. Thus the  column space is the span of the first two  columns in
 the \textbf{original matrix}, and we get 
 \begin{equation*}
 \func{im}\left( A\right) = \func{col}(A) =
-\func{span} \left\{ \begin{mymatrix}{r}
+\func{span} \set{\begin{mymatrix}{r}
 1 \\ 
 0 \\ 
 2 
@@ -452,7 +452,7 @@ the \textbf{original matrix}, and we get
 2 \\ 
 -1 \\ 
 3 
-\end{mymatrix}  \right\}
+\end{mymatrix}  }
 \end{equation*}
 
 \end{solution}
@@ -526,7 +526,7 @@ s \begin{mymatrix}{r}
 In other words, the null space of this matrix equals the span of the three
 vectors above. Thus 
 \begin{equation*}
-\func{null} \left( A\right) =\func{span}\left\{ \begin{mymatrix}{r}
+\func{null} \left( A\right) =\func{span}\set{\begin{mymatrix}{r}
 -\vspace{0.05in}\frac{3}{5} \\ 
 -\vspace{0.05in}\frac{1}{5} \\ 
 1 \\ 
@@ -544,7 +544,7 @@ vectors above. Thus
 0 \\ 
 0 \\ 
 1
-\end{mymatrix} \right\} 
+\end{mymatrix} } 
 \end{equation*}
 \end{solution}
 
@@ -596,12 +596,12 @@ In the above Example \ref{exa:nullspace} we determined that the {\rref} of $A$ i
 
 Therefore the rank of $A$ is $2$. We also determined that the null space of $A$ is given by 
 \[
-\func{null} (A) = \func{span} \left\{ \begin{mymatrix}{r}
+\func{null} (A) = \func{span} \set{\begin{mymatrix}{r}
 -3 \\ 
 1 \\ 
 1
 \end{mymatrix}
-\right\}
+}
 \]
 
 Therefore the nullity of $A$ is $1$. It follows from Theorem \ref{thm:ranknullity} that $\func{rank}\left( A\right) + \dim( \func{null}\left(A\right)) = 2 + 1 = 3$, which is the number of columns of $A$.

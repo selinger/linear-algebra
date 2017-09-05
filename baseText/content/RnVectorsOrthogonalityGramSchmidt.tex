@@ -12,10 +12,10 @@ set of vectors with the same span, since from there an orthonormal set
 can be obtained by simply dividing each vector by its length.
 
 \begin{algorithm}{Gram-Schmidt process}{gramschmidtalgorithm}
-Let $\{ \vect{u}_1,\cdots ,\vect{u}_n \} $ be a set of
+Let $\{\vect{u}_1,\cdots ,\vect{u}_n\} $ be a set of
 linearly independent vectors in $\R^{n}$.
 
-\textbf{I:} Construct a new set of vectors $\{ \vect{v}_1,\cdots ,\vect{v}_n \} $ as follows:
+\textbf{I:} Construct a new set of vectors $\{\vect{v}_1,\cdots ,\vect{v}_n\} $ as follows:
 \[ \begin{array}{ll}
 \vect{v}_1 & = \vect{u}_1 \\
 \vect{v}_{2} & = \vect{u}_{2} - \left(  \dfrac{ \vect{u}_2 \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} \right)  \vect{v}_1\\
@@ -31,16 +31,16 @@ linearly independent vectors in $\R^{n}$.
 
 Then 
 \begin{enumerate}
-\item $\left\{ \vect{v}_1, \cdots, \vect{v}_n \right\}$ is an orthogonal set. 
-\item  $\left\{ \vect{w}_1,\cdots , \vect{w}_n  \right\} $ is an orthonormal set. 
-\item $\func{span}\left\{ \vect{u}_1,\cdots ,\vect{u}_n \right\} = \func{span} \left\{ \vect{v}_1, \cdots, \vect{v}_n \right\} = \func{span}\left\{ \vect{w}_1,\cdots ,\vect{w}_n \right\}$.
+\item $\set{\vect{v}_1, \cdots, \vect{v}_n }$ is an orthogonal set. 
+\item  $\set{\vect{w}_1,\cdots , \vect{w}_n  } $ is an orthonormal set. 
+\item $\func{span}\set{\vect{u}_1,\cdots ,\vect{u}_n } = \func{span} \set{\vect{v}_1, \cdots, \vect{v}_n } = \func{span}\set{\vect{w}_1,\cdots ,\vect{w}_n }$.
 \end{enumerate}
 \end{algorithm}
 
 \begin{proof}
 The full proof of this algorithm is beyond this material, however here is an indication of the arguments. 
 
-To show that  $\left\{ \vect{v}_1,\cdots , \vect{v}_n  \right\} $ is an orthogonal set, let 
+To show that  $\set{\vect{v}_1,\cdots , \vect{v}_n  } $ is an orthogonal set, let 
 \[ a_2 =  \dfrac{ \vect{u}_2 \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} \]
 then: 
 \[
@@ -51,12 +51,12 @@ then:
  & = ( \vect{v}_1 \dotprod \vect{u}_2 ) - ( \vect{u}_2 \dotprod \vect{v}_1 ) =0\\
 \end{array}
 \]
-Now that you have shown that $\{ \vect{v}_1, \vect{v}_2\}$ is orthogonal,  use the same method as above to show that 
-$\{ \vect{v}_1, \vect{v}_2, \vect{v}_3\}$ is also orthogonal,  and so on. 
+Now that you have shown that $\{\vect{v}_1, \vect{v}_2\}$ is orthogonal,  use the same method as above to show that 
+$\{\vect{v}_1, \vect{v}_2, \vect{v}_3\}$ is also orthogonal,  and so on. 
 
-Then in a similar fashion you show that $\func{span}\left\{
-\vect{u}_1,\cdots ,\vect{u}_n \right\} = \func{span}\left\{
-\vect{v}_1,\cdots ,\vect{v}_n \right\}$.
+Then in a similar fashion you show that $\func{span}\set{
+\vect{u}_1,\cdots ,\vect{u}_n } = \func{span}\set{
+\vect{v}_1,\cdots ,\vect{v}_n }$.
 
 Finally defining $\vect{w}_i =
 \dfrac{\vect{v}_i}{\vectlength\vect{v}_i\vectlength}$ for $i=1, \cdots
@@ -162,17 +162,17 @@ Finally,
 =\begin{mymatrix}{c} 1/2\\ 1\\ -1/2\\ 0 \end{mymatrix}.\]
 
 Therefore,
-\[ \left\{ 
+\[ \set{
 \begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix},
 \begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix},
 \begin{mymatrix}{c} 1/2\\ 1\\ -1/2\\ 0 \end{mymatrix}
-\right\}\]
+}\]
 is an orthogonal basis of $U$.
 However, it is sometimes more convenient to deal with vectors
 having integer entries, in which case we take
-\[ B=\left\{ 
+\[ B=\set{
 \begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix},
 \begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix},
 \begin{mymatrix}{r} 1\\ 2\\ -1\\ 0 \end{mymatrix}
-\right\}.\]
+}.\]
 \end{solution}

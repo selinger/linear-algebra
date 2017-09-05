@@ -122,7 +122,7 @@ for the $\sigma _{i}$ the singular values of $A.$
 \end{theorem}
 
 \begin{proof}
-There exists an orthonormal basis, $\left\{ \vect{v}_{i}\right\} _{i=1}^{n}$ such that $
+There exists an orthonormal basis, $\set{\vect{v}_{i}} _{i=1}^{n}$ such that $
 A^TA\vect{v}_{i}=\sigma _{i}^{2}\vect{v}_{i}$ where $\sigma
 _{i}^{2}>0$ for $i=1,\cdots ,k,\left( \sigma _{i}>0\right) $ and equals zero
 if $i>k.$ Thus for $i>k,$ $A\vect{v}_{i}=\vect{0}$ because 
@@ -142,15 +142,15 @@ Thus $A\vect{v}_{i}=\sigma _{i}\vect{u}_{i}.$ Now
 \frac{\sigma _{j}}{\sigma _{i}}\left( \vect{v}_{i} \dotprod \vect{v}_{j}\right)
 =\delta _{ij}.
 \end{eqnarray*}
-Thus $\left\{ \vect{u}_{i}\right\} _{i=1}^{k}$ is an orthonormal set of
+Thus $\set{\vect{u}_{i}} _{i=1}^{k}$ is an orthonormal set of
 vectors in $\R^{m}.$ Also, 
 \begin{equation*}
 AA^T\vect{u}_{i}=AA^T\sigma _{i}^{-1}A\vect{v}_{i}=\sigma
 _{i}^{-1}AA^TA\vect{v}_{i}=\sigma _{i}^{-1}A\sigma _{i}^{2}\vect{v}
 _{i}=\sigma _{i}^{2}\vect{u}_{i}.
 \end{equation*}
-Now extend $\left\{ \vect{u}_{i}\right\} _{i=1}^{k}$ to an orthonormal
-basis for all of $\R^{m},\left\{ \vect{u}_{i}\right\} _{i=1}^{m}$
+Now extend $\set{\vect{u}_{i}} _{i=1}^{k}$ to an orthonormal
+basis for all of $\R^{m},\set{\vect{u}_{i}} _{i=1}^{m}$
 and let 
 \begin{equation*}
 U= \begin{mymatrix}{ccc}
@@ -439,17 +439,17 @@ Gram-Schmidt process on the resulting set of
 two basic eigenvectors, the following approach may be used.
 
 
-Find vectors $U_2$ and $U_3$ by first extending $\{ U_1\}$ to a basis of
+Find vectors $U_2$ and $U_3$ by first extending $\{U_1\}$ to a basis of
 $\R^3$, then using the Gram-Schmidt algorithm to orthogonalize the basis,
 and finally normalizing the vectors.
 
-Starting with $\{ 3U_1 \}$ instead of $\{ U_1 \}$ makes the
+Starting with $\{3U_1\}$ instead of $\{U_1\}$ makes the
 arithmetic a bit easier.
 It is easy to verify that
 
-\[ \left\{ \begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix},
+\[ \set{\begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix},
 \begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},
-\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}\right\}\]
+\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}}\]
 is a basis of $\R^3$.  Set
 
 \[ E_1 = \begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix},
@@ -457,7 +457,7 @@ X_2 = \begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},
 X_3 =\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix},\]
 
 and apply the Gram-Schmidt algorithm to
-$\{ E_1, X_2, X_3\}$.
+$\{E_1, X_2, X_3\}$.
 
 This gives us
 
@@ -512,7 +512,7 @@ First consider $A^TA$
 What are some eigenvalues and eigenvectors? Some computing shows these are
 
 \begin{equation*}
-\left\{ \begin{mymatrix}{c}
+\set{\begin{mymatrix}{c}
 0 \\ 
 0 \\ 
 1
@@ -520,11 +520,11 @@ What are some eigenvalues and eigenvectors? Some computing shows these are
 -\frac{2}{5}\sqrt{5} \\ 
 \frac{1}{5}\sqrt{5} \\ 
 0
-\end{mymatrix} \right\} \leftrightarrow 0,\left\{ \begin{mymatrix}{c}
+\end{mymatrix} } \leftrightarrow 0,\set{\begin{mymatrix}{c}
 \frac{1}{5}\sqrt{5} \\ 
 \frac{2}{5}\sqrt{5} \\ 
 0
-\end{mymatrix} \right\} \leftrightarrow 16
+\end{mymatrix} } \leftrightarrow 16
 \end{equation*}
 Thus the matrix $V$ is given by 
 \begin{equation*}
@@ -544,13 +544,13 @@ Next consider $AA^T$
 Eigenvectors and eigenvalues are
 
 \begin{equation*}
-\left\{ \begin{mymatrix}{c}
+\set{\begin{mymatrix}{c}
 -\frac{1}{2}\sqrt{2} \\ 
 \frac{1}{2}\sqrt{2}
-\end{mymatrix} \right\} \leftrightarrow 0,\left\{ \begin{mymatrix}{c}
+\end{mymatrix} } \leftrightarrow 0,\set{\begin{mymatrix}{c}
 \frac{1}{2}\sqrt{2} \\ 
 \frac{1}{2}\sqrt{2}
-\end{mymatrix} \right\} \leftrightarrow 16
+\end{mymatrix} } \leftrightarrow 16
 \end{equation*}
 Thus you can let $U$ be given by 
 \begin{equation*}

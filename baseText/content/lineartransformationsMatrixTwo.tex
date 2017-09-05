@@ -25,43 +25,43 @@ then it is an isomorphism.
 
 \begin{proof}
 First, suppose $T:\R^n \mapsto \R^n$ is a linear
-transformation which is one to one and onto. Let $\left\{
-\vect{v}_{1},\cdots ,\vect{v}_{n}\right\} $ be a basis for
-$\R^n$. We wish to show that $\left\{ T(\vect{v}_{1}),\cdots ,
-T(\vect{v}_{n})\right\} $ is also a basis for $\R^n$. 
+transformation which is one to one and onto. Let $\set{
+\vect{v}_{1},\cdots ,\vect{v}_{n}} $ be a basis for
+$\R^n$. We wish to show that $\set{T(\vect{v}_{1}),\cdots ,
+T(\vect{v}_{n})} $ is also a basis for $\R^n$. 
 
 First consider why it is linearly independent. Suppose
 $\sum_{k=1}^{n}a_{k}T(\vect{v}_{k})=\vect{0}$. Then by linearity we have $T\left(
 \sum_{k=1}^{n}a_{k}\vect{v}_{k}\right) =\vect{0}$ and since $T$ is one
 to one, it follows that $\sum_{k=1}^{n}a_{k}\vect{v}_{k}=\vect{0}$.
-This requires that  each $a_{k}=0$ because $\left\{ \vect{v}_{1},\cdots,
-\vect{v}_{n}\right\} $ is independent, and it follows that $\left\{
-T(\vect{v}_{1}),\cdots , T(\vect{v}_{n})\right\} $ is linearly
+This requires that  each $a_{k}=0$ because $\set{\vect{v}_{1},\cdots,
+\vect{v}_{n}} $ is independent, and it follows that $\set{
+T(\vect{v}_{1}),\cdots , T(\vect{v}_{n})} $ is linearly
 independent. 
 
 
 Next take $\vect{w}\in \R^n.$ Since $T$ is onto,
 there exists $\vect{v}\in \R^n$ such that
-$T(\vect{v})=\vect{w}$. Since $ \left\{ \vect{v}_{1},\cdots
-,\vect{v}_{n}\right\} $ is a basis, in particular it is a spanning set
+$T(\vect{v})=\vect{w}$. Since $ \set{\vect{v}_{1},\cdots
+,\vect{v}_{n}} $ is a basis, in particular it is a spanning set
 and there are scalars $b_{k}$ such that $T\left(
 \sum_{k=1}^{n}b_{k}\vect{v} _{k}\right) =T\left( \vect{v}\right)
 =\vect{w}$. Therefore $\vect{w} =\sum_{k=1}^{n}b_{k}T(\vect{v}_{k})$
-which is in the $\func{span}\left\{ T(\vect{v}_{1}),\cdots ,
-T(\vect{v}_{n})\right\} .$ Therefore, $\left\{ T(\vect{v}_{1}),\cdots
-,T(\vect{v}_{n}) \right\} $ is a basis as claimed.
+which is in the $\func{span}\set{T(\vect{v}_{1}),\cdots ,
+T(\vect{v}_{n})} .$ Therefore, $\set{T(\vect{v}_{1}),\cdots
+,T(\vect{v}_{n}) } $ is a basis as claimed.
 
 Suppose now that $T: \R^n \mapsto \R^n$ is a linear
 transformation such that $T(\vect{v}_{i})=\vect{w}_{i}$ where
-$\left\{\vect{v} _{1},\cdots ,\vect{v}_{n}\right\} $ and $\left\{
-\vect{w}_{1},\cdots , \vect{w}_{n}\right\} $ are two bases for
+$\set{\vect{v} _{1},\cdots ,\vect{v}_{n}} $ and $\set{
+\vect{w}_{1},\cdots , \vect{w}_{n}} $ are two bases for
 $\R^n$. 
 
 To show that $T$ is one to one, let $T\left(
 \sum_{k=1}^{n}c_{k}\vect{v}_{k}\right) =\vect{0}$. Then
 $\sum_{k=1}^{n}c_{k}T(\vect{v}_{k})=\sum_{k=1}^{n}c_{k}\vect{w}_{k}=\vect{
 0}$. It follows that each $c_{k} = 0$ because it is given that
-$\left\{ \vect{w} _{1},\cdots ,\vect{w}_{n}\right\} $ is linearly
+$\set{\vect{w} _{1},\cdots ,\vect{w}_{n}} $ is linearly
 independent. Hence $T\left( \sum_{k=1}^{n}c_{k}\vect{v}_{k}\right)
 =\vect{0}$ implies that $\sum_{k=1}^{n}c_{k}\vect{v}_{k}=\vect{0}$ and
 so $T$ is one to one.  
@@ -76,7 +76,7 @@ $\R^n$. This vector can be written as $\vect{w} =
 Consider now an important definition.
 
 \begin{definition}{Coordinate vector}{coordinatevector}
-Let $B = \left\{ \vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n \right\}$
+Let $B = \set{\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n }$
 be a basis for $\R^n$ and let $\vect{x}$ be an arbitrary
 vector in $\R^n$. Then $\vect{x}$ is uniquely represented as
 $\vect{x} = a_1\vect{v}_1 +
@@ -98,13 +98,13 @@ a_n
 Consider the following example.
 
 \begin{example}{Coordinate vector}{coordinatevector}
-Let $B = \left\{ \begin{mymatrix}{r}
+Let $B = \set{\begin{mymatrix}{r}
 1 \\
 0 
 \end{mymatrix}, \begin{mymatrix}{r}
 -1 \\
 1
-\end{mymatrix} \right\}$ be a basis of $\R^2$ and let $\vect{x} = \begin{mymatrix}{r}
+\end{mymatrix} }$ be a basis of $\R^2$ and let $\vect{x} = \begin{mymatrix}{r}
 3 \\
 -1
 \end{mymatrix}$ be a vector in $\R^2$. Find $C_B(\vect{x})$. 
@@ -113,13 +113,13 @@ Let $B = \left\{ \begin{mymatrix}{r}
 \begin{solution}
 First, note the order of the basis is important so label the vectors in the basis $B$ as 
 \[
-B = \left\{ \begin{mymatrix}{r}
+B = \set{\begin{mymatrix}{r}
 1 \\
 0 
 \end{mymatrix}, \begin{mymatrix}{r}
 -1 \\
 1
-\end{mymatrix} \right\} = \left\{ \vect{v}_1, \vect{v}_2 \right\} \]
+\end{mymatrix} } = \set{\vect{v}_1, \vect{v}_2 } \]
 Now we need to find $a_1, a_2$ such that $\vect{x} = a_1 \vect{v}_1 + a_2 \vect{v}_2$, that is:
 \[
 \begin{mymatrix}{r}
@@ -175,7 +175,7 @@ C_{B_2} T = M_{B_{2} B_{1}} C_{B_1}   \label{matrixequation}
 \end{equation}
 where $M_{B_{2} B_{1}}$  is a unique  $m \times n$  matrix.
 
-If the basis $B_1$ is given by $B_1=\{ \vect{v}_1, \cdots, \vec{v}_n \}$ in this order, then 
+If the basis $B_1$ is given by $B_1=\{\vect{v}_1, \cdots, \vec{v}_n\}$ in this order, then 
 
 \[  M_{B_{2} B_{1}} = \mat{C_{B_2}(T(\vec{v}_1)) \; C_{B_2}(T(\vec{v}_2)) \; \cdots C_{B_2}(T(\vec{v}_n)) } \]
 \end{theorem}
@@ -195,8 +195,8 @@ The above equation \ref{matrixequation} can be represented by the following diag
 Since $C_{B_1}$ is an isomorphism, then the matrix we are looking for is the matrix of the linear transformation 
 \[   C_{B_2} T C^{-1}_{B_1} : \R^n \mapsto \R^m. \]
 By Theorem \ref{thm:matrixoflineartransformation}, the columns are
-given by the image of the standard basis $\left\{ \vect{e}_1,
-\vect{e}_2, \cdots, \vect{e}_n \right\}$. But since $C^{-1}_{B_1}( \vec{e}_i) = \vec{v}_i$, we readily obtain that 
+given by the image of the standard basis $\set{\vect{e}_1,
+\vect{e}_2, \cdots, \vect{e}_n }$. But since $C^{-1}_{B_1}( \vec{e}_i) = \vec{v}_i$, we readily obtain that 
 
 \[ \begin{array}{ll} 
 M_{B_{2} B_{1}} 
@@ -219,25 +219,25 @@ a
 
 Consider the two bases
 \[
-B_1 = \left\{ \vect{v}_{1}, \vect{v}_{2} \right\} = \left\{ \begin{mymatrix}{r}
+B_1 = \set{\vect{v}_{1}, \vect{v}_{2} } = \set{\begin{mymatrix}{r}
 1 \\
 0
 \end{mymatrix}, \begin{mymatrix}{r}
 -1 \\
 1
 \end{mymatrix}
-\right\}
+}
 \]
  and 
 \[
-B_2 = \left\{ \begin{mymatrix}{r}
+B_2 = \set{\begin{mymatrix}{r}
 1 \\
 1
 \end{mymatrix}, \begin{mymatrix}{r}
 1 \\
 -1
 \end{mymatrix}
-\right\}
+}
 \]
 
 Find the matrix $M_{B_2,B_1}$ of $T$ with respect to the bases $B_1$ and $B_2$. 
@@ -386,8 +386,8 @@ $B_1=B_2$ to be the standard basis.
 
 Consider the basis $B$ of $\R^3$ given by 
 \begin{equation*}
-B = \{\vect{v}_1 , \vect{v}_2,  \vect{v}_3  \} =
-\left\{
+B = \{\vect{v}_1 , \vect{v}_2,  \vect{v}_3\} =
+\set{
 \begin{mymatrix}{r}
 1 \\
 0 \\
@@ -400,7 +400,7 @@ B = \{\vect{v}_1 , \vect{v}_2,  \vect{v}_3  \} =
 -1 \\
 1 \\
 0
-\end{mymatrix} \right\}
+\end{mymatrix} }
 \]
 
 And let $T :\R^{3}\mapsto \R^{3}$ be the linear transformation 

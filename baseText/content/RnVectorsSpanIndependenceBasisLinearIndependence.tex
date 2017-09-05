@@ -1,7 +1,7 @@
 \subsection{Linearly independent set of vectors}
 
 We now turn our attention to the following question: what linear
-combinations of a given set of vectors $\{ \vect{u}_1, \cdots
+combinations of a given set of vectors $\{\vect{u}_1, \cdots
 ,\vect{u}_k\}$ in $\R^{n}$ yields the zero vector? Clearly
 $0\vect{u}_1 + 0\vect{u}_2+ \cdots + 0 \vect{u}_k = \vect{0}$, but is
 it possible to have $\sum_{i=1}^{k}a_{i}\vect{u}_{i}=\vect{0}$ without
@@ -9,7 +9,7 @@ all coefficients being zero?
 
 You can create examples where this easily happens. For example if $\vec{u}_1=\vect{u}_2$, then 
 $1\vect{u}_1 - \vect{u}_2+ 0 \vect{u}_3 + \cdots  + 0 \vect{u}_k = \vect{0}$, no matter the vectors 
- $\{ \vect{u}_3, \cdots ,\vect{u}_k\}$. 0But sometimes it can be more subtle. 
+ $\{\vect{u}_3, \cdots ,\vect{u}_k\}$. 0But sometimes it can be more subtle. 
 
 \begin{example}{Linearly dependent set of vectors}{linearlydependentvectors}
 Consider the vectors 
@@ -40,7 +40,7 @@ has some non-zero coefficients. Thus we define a set of vectors to be
 {\em linearly dependent} if this happens.
 
 \begin{definition}{Linearly dependent set of vectors}{lineardependent}
-A set of non-zero vectors $\{ \vect{u}_1, \cdots ,\vect{u}_k\}$ in $\R^{n}$ is said to be 
+A set of non-zero vectors $\{\vect{u}_1, \cdots ,\vect{u}_k\}$ in $\R^{n}$ is said to be 
 \textbf{linearly dependent} if a linear combination of these vectors without all  coefficients being zero does yield the zero vector.
 \index{linear dependence}\index{vectors!linear dependent}
 \end{definition}
@@ -55,7 +55,7 @@ so we get that a set of vectors is linearly dependent precisely when
 one of its vector is in the span of the other vectors of that set.
 
 In particular, you can show that the vector $\vec{u}_1$ in the above
-example is in the span of the vectors  $\{ \vect{u}_2, \vect{u}_3, \vect{u}_4 \}$. 
+example is in the span of the vectors  $\{\vect{u}_2, \vect{u}_3, \vect{u}_4\}$. 
 
 If a set of vectors is NOT linearly dependent, then it must be that
 any linear combination of these vectors which yields the zero vector
@@ -63,7 +63,7 @@ must use all zero coefficients. This is a very important notion, and we give it 
 linear independence}. 
 
 \begin{definition}{Linearly independent set of vectors}{linearindependent}
-A set of non-zero vectors $\{ \vect{u}_1, \cdots ,\vect{u}_k\}$ in $\R^{n}$ is said to be 
+A set of non-zero vectors $\{\vect{u}_1, \cdots ,\vect{u}_k\}$ in $\R^{n}$ is said to be 
 \textbf{linearly independent} if whenever 
 \begin{equation*}
 \sum_{i=1}^{k}a_{i}\vect{u}_{i}=\vect{0}
@@ -78,7 +78,7 @@ linearly independent set.
 
 To view this in a more familiar setting, form the $n \times k$ matrix
 $A$ having these vectors as columns. Then all we are saying is that
-the set $\{ \vect{u}_1, \cdots ,\vect{u}_k\}$ is linearly independent
+the set $\{\vect{u}_1, \cdots ,\vect{u}_k\}$ is linearly independent
 precisely when $AX=0$ has only the trivial solution.
 
 Here is an example.  
@@ -108,7 +108,7 @@ As mentioned above, you can equivalently form the $3 \times 3$ matrix $A =
 0  & 1 & 1 \\
 \end{mymatrix}$, and show that $AX=0$ has only the trivial solution.
 
-Thus this  means the set $\left\{ \vect{u}, \vect{v}, \vect{w} \right\}$ is linearly independent. 
+Thus this  means the set $\set{\vect{u}, \vect{v}, \vect{w} }$ is linearly independent. 
 \end{solution}
 
 In terms of spanning, a set of vectors is linearly independent if it
@@ -117,7 +117,7 @@ does not contain unnecessary vectors, that is not vector is in the span of the o
 Thus we put all this together in the following important theorem.
 
 \begin{theorem}{Linear independence as a linear combination}{linearindependencecombination}
-Let $\left\{\vect{u}_{1},\cdots ,\vect{u}_{k}\right\}$ be a collection of vectors  in
+Let $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ be a collection of vectors  in
 $\R^{n}$. Then the following are equivalent:
 
 \begin{enumerate}
@@ -140,7 +140,7 @@ independent. Let the vectors be columns of a matrix $A$. Find the
 that the vectors are linearly independent.
 
 Sometimes we refer to the condition regarding sums as follows: The set
-of vectors, $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} $ is
+of vectors, $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is
 linearly independent if and only if there is no nontrivial linear
 combination which equals the zero vector. A nontrivial linear
 combination is one in which not all the scalars equal zero. Similarly,
@@ -150,7 +150,7 @@ Here is a detailed  example in  $\R^{4}$.
 
 \begin{example}{Linear independence}{linearindependence2}
 Determine whether the set of vectors given by  
-\[ \left\{ \begin{mymatrix}{r}
+\[ \set{\begin{mymatrix}{r}
 1 \\
 2 \\
 3 \\
@@ -170,7 +170,7 @@ Determine whether the set of vectors given by
 2 \\
 2 \\
 0
-\end{mymatrix} \right\} \]
+\end{mymatrix} } \]
 is linearly independent. If it is linearly dependent,
 express one of the vectors as a linear combination of the others.
 \end{example}
@@ -204,7 +204,7 @@ Consider another example.
 
 \begin{example}{Linear independence}{linearindependence}
 Determine whether the set of vectors given by  
-\[\left\{ 
+\[\set{
 \begin{mymatrix}{r}
 1 \\
 2 \\
@@ -225,7 +225,7 @@ Determine whether the set of vectors given by
 2 \\
 2 \\
 -1
-\end{mymatrix} \right\} \]
+\end{mymatrix} } \]
 is linearly independent. If it is linearly dependent,
 express one of the vectors as a linear combination of the others.
 \end{example}
@@ -333,7 +333,7 @@ Notice that we could rearrange this equation to write any of the four vectors as
 When given a linearly independent set of vectors, we can determine if related sets are linearly independent. 
 
 \begin{example}{Related sets of vectors}{relatedlinearindependence}
-Let $\{ \vect{u},\vect{v},\vect{w}\}$ be an independent set of $\R^n$.
+Let $\{\vect{u},\vect{v},\vect{w}\}$ be an independent set of $\R^n$.
 Is $\{\vect{u}+\vect{v}, 2\vect{u}+\vect{w}, \vect{v}-5\vect{w}\}$ linearly
 independent?
 \end{example}
@@ -361,14 +361,14 @@ system of linear equations has more columns than rows, the system has infinitely
 solutions.
 
 \begin{corollary}{Linear dependence in $\R^{n}$}{lineardependenceRn}
-Let $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} $
+Let $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $
 be a set of vectors in $\R^{n}$. 
 If $k>n$, then the set is linearly dependent (i.e. NOT linearly independent).
 \end{corollary}
 
 \begin{proof}
-Form the $n \times k$ matrix $A$ having the vectors $\left\{
-\vect{u}_{1},\cdots ,\vect{u}_{k}\right\} $ as its columns and suppose $k > n$. Then $A$ has rank $r \leq n <k$, so 
+Form the $n \times k$ matrix $A$ having the vectors $\set{
+\vect{u}_{1},\cdots ,\vect{u}_{k}} $ as its columns and suppose $k > n$. Then $A$ has rank $r \leq n <k$, so 
 the system $AX=0$ has a nontrivial solution % by \ref{thm:rankhomogeneoussolutions}
  and thus not linearly independent by Theorem 
  \ref{thm:linearindependencecombination}.
@@ -377,7 +377,7 @@ the system $AX=0$ has a nontrivial solution % by \ref{thm:rankhomogeneoussolutio
 \begin{example}{Linear dependence}{lineardependence}
 Consider the vectors 
 \[
-\left\{ \begin{mymatrix}{r}
+\set{\begin{mymatrix}{r}
 1 \\
 4 
 \end{mymatrix}, 
@@ -388,7 +388,7 @@ Consider the vectors
 \begin{mymatrix}{r}
 3 \\
 2
-\end{mymatrix} \right\}
+\end{mymatrix} }
 \]
 Are these vectors linearly independent?
 \end{example}
@@ -421,7 +421,7 @@ Then any vector $\vect{x}\in\func{span}(U)$ can be written uniquely as a linear 
 \end{theorem}
 
 \begin{proof}
-To prove this theorem, we will show that two linear combinations of vectors in $U$ that equal $\vect{x}$ must be the same. Let $U =\{ \vect{u}_1, \vect{u}_2, \ldots, \vect{u}_k\}$.
+To prove this theorem, we will show that two linear combinations of vectors in $U$ that equal $\vect{x}$ must be the same. Let $U =\{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_k\}$.
 Suppose that there is a vector $\vect{x}\in \func{span}(U)$ such that
 \begin{eqnarray*}
 \vect{x} & = & s_1\vect{u}_1 + s_2\vect{u}_2 + \cdots + s_k\vect{u}_k,
@@ -442,12 +442,12 @@ Then any vector $\vect{x}\in\func{span}(U)$ can be written uniquely as a linear 
 \end{proof}
 
 Suppose that $\vect{u},\vect{v}$ and $\vect{w}$ are nonzero vectors in $\R^3$,
-and that $\{ \vect{v},\vect{w}\}$ is independent. Consider the set $\{ \vect{u},\vect{v},\vect{w}\}$. When can we know that this set is independent? It turns out that this follows exactly when $\vect{u}\not\in\func{span}\{\vect{v},\vect{w}\}$.
+and that $\{\vect{v},\vect{w}\}$ is independent. Consider the set $\{\vect{u},\vect{v},\vect{w}\}$. When can we know that this set is independent? It turns out that this follows exactly when $\vect{u}\not\in\func{span}\{\vect{v},\vect{w}\}$.
 
 \begin{example}{}{}
 Suppose that $\vect{u},\vect{v}$ and $\vect{w}$ are nonzero vectors in $\R^3$,
-and that $\{ \vect{v},\vect{w}\}$ is independent.
-Prove that $\{ \vect{u},\vect{v},\vect{w}\}$ is independent if and only if 
+and that $\{\vect{v},\vect{w}\}$ is independent.
+Prove that $\{\vect{u},\vect{v},\vect{w}\}$ is independent if and only if 
 $\vect{u}\not\in\func{span}\{\vect{v},\vect{w}\}$.
 \end{example}
 
@@ -456,9 +456,9 @@ If $\vect{u}\in\func{span}\{\vect{v},\vect{w}\}$, then there exist $a,b\in\R$ so
 that $\vect{u}=a\vect{v} + b\vect{w}$.
 This implies that $\vect{u}-a\vect{v} - b\vect{w}=\vect{0}_3$,
 so  $\vect{u}-a\vect{v} - b\vect{w}$
-is a nontrivial linear combination of $\{ \vect{u},\vect{v},\vect{w}\}$ that
+is a nontrivial linear combination of $\{\vect{u},\vect{v},\vect{w}\}$ that
 vanishes, 
-and thus $\{ \vect{u},\vect{v},\vect{w}\}$ is dependent.
+and thus $\{\vect{u},\vect{v},\vect{w}\}$ is dependent.
 
 Now suppose that $\vect{u}\not\in\func{span}\{\vect{v},\vect{w}\}$, and suppose
 that there exist $a,b,c\in\R$ such that
@@ -466,11 +466,11 @@ $a\vect{u}+b\vect{v}+c\vect{w}=\vect{0}_3$.
 If $a\neq 0$, then $\vect{u}=-\frac{b}{a}\vect{v}-\frac{c}{a}\vect{w}$,
 and $\vect{u}\in\func{span}\{\vect{v},\vect{w}\}$, a contradiction.
 Therefore, $a=0$, implying that $b\vect{v}+c\vect{w}=\vect{0}_3$.
-Since $\{ \vect{v},\vect{w}\}$ is independent, $b=c=0$, and thus
+Since $\{\vect{v},\vect{w}\}$ is independent, $b=c=0$, and thus
 $a=b=c=0$, i.e., the only linear combination of 
 $\vect{u},\vect{v}$ and $\vect{w}$ that vanishes is the trivial one.
 
-Therefore, $\{ \vect{u},\vect{v},\vect{w}\}$ is independent.
+Therefore, $\{\vect{u},\vect{v},\vect{w}\}$ is independent.
 \end{solution}
 
 Consider the following useful theorem.

@@ -31,13 +31,13 @@ This definition leads to our next concept of span.
 \begin{definition}{Span of vectors}{span}
 Let $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\} \subseteq V$. Then\index{span}
 \begin{equation*}
-\func{span}\left\{ \vect{v}_{1},\cdots ,\vect{v}_{n}\right\} = 
-\left\{ \sum_{i=1}^{n}c_{i}\vect{v}_{i}: c_{i}\in \R
-\right\} 
+\func{span}\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} = 
+\set{\sum_{i=1}^{n}c_{i}\vect{v}_{i}: c_{i}\in \R
+} 
 \end{equation*}
 \end{definition}
 
-When we say that a vector $\vect{w}$ is in $\func{span}\left\{ \vect{v}_{1},\cdots ,\vect{v}_{n}\right\}$ we mean that $\vect{w}$ can be written as a linear combination of the $\vect{v}_1$. We say that a collection of vectors $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is a \textbf{spanning set}\index{spanning set} for $V$ if $V = \func{span} \{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$. 
+When we say that a vector $\vect{w}$ is in $\func{span}\set{\vect{v}_{1},\cdots ,\vect{v}_{n}}$ we mean that $\vect{w}$ can be written as a linear combination of the $\vect{v}_1$. We say that a collection of vectors $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is a \textbf{spanning set}\index{spanning set} for $V$ if $V = \func{span} \{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$. 
 
 Consider the following example.
 
@@ -51,13 +51,13 @@ Let $A = \begin{mymatrix}{rr}
 \end{mymatrix}$. 
 Determine if $A$ and $B$ are in 
 \[
-\func{span}\left\{ M_1, M_2 \right\} = \func{span} \left\{ \begin{mymatrix}{rr}
+\func{span}\set{M_1, M_2 } = \func{span} \set{\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
 \end{mymatrix}, \begin{mymatrix}{rr}
 0 & 0 \\
 0 & 1 
-\end{mymatrix} \right\}\] 
+\end{mymatrix} }\] 
 \end{example}
 
 \begin{solution}
@@ -81,7 +81,7 @@ The solution to this equation is given by
 1 &=& s \\
 2 &=& t
 \end{eqnarray*}
-and it follows that $A$ is in $\func{span} \left\{ M_1, M_2 \right\}$. 
+and it follows that $A$ is in $\func{span} \set{M_1, M_2 }$. 
 
 Now consider $B$. Again we write $B = sM_1 + t M_2$ and see if a solution can be found for $s, t$. 
 \begin{equation*}
@@ -97,13 +97,13 @@ s \begin{mymatrix}{rr}
 0 & 1 
 \end{mymatrix}
 \end{equation*}
-Clearly no values of $s$ and $t$ can be found such that this equation holds. Therefore $B$ is not in $\func{span} \left\{ M_1, M_2 \right\}$.
+Clearly no values of $s$ and $t$ can be found such that this equation holds. Therefore $B$ is not in $\func{span} \set{M_1, M_2 }$.
 \end{solution}
 
 Consider another example. 
 
 \begin{example}{Polynomial span}{polyspan}
-Show that $p(x) = 7x^2 + 4x - 3$ is in $\func{span}\left\{ 4x^2 + x, x^2 -2x + 3 \right\}$. 
+Show that $p(x) = 7x^2 + 4x - 3$ is in $\func{span}\set{4x^2 + x, x^2 -2x + 3 }$. 
 \end{example}
 
 \begin{solution}
@@ -129,7 +129,7 @@ Hence $p(x)$ is in the given span.
 Consider the following example.
 
 \begin{example}{Spanning set}{spanningset}
-Let $S = \left\{ x^2 + 1, x-2, 2x^2 - x \right\}$. Show that $S$ is a spanning set for $\Poly_2$, the set of all polynomials of degree at most $2$. 
+Let $S = \set{x^2 + 1, x-2, 2x^2 - x }$. Show that $S$ is a spanning set for $\Poly_2$, the set of all polynomials of degree at most $2$. 
 \end{example}
 
 \begin{solution}

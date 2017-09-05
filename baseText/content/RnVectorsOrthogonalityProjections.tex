@@ -52,7 +52,7 @@ $\R^n$. Then the orthogonal projection of $Y$ onto $W$ is given by
 +
 \left( \frac{\vect{y} \dotprod \vect{w}_m}{ \vectlength \vect{w}_m \vectlength^2}\right) \vect{w}_m
 \]
-where $\{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m \}$ is any orthogonal basis of $W$.
+where $\{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m\}$ is any orthogonal basis of $W$.
 \end{definition}
 
 Therefore, in order to find the orthogonal projection, we must first
@@ -132,9 +132,9 @@ a,b \in \R
 
 We can thus write $W$ as 
 \begin{eqnarray*}
-W &=& \mbox{span} \left\{ \vect{u}_1, \vect{u}_2 \right\} \\
+W &=& \mbox{span} \set{\vect{u}_1, \vect{u}_2 } \\
  &=& \mbox{span} 
-\left\{
+\set{
 \begin{mymatrix}{r}
 1 \\
 0 \\
@@ -145,12 +145,12 @@ W &=& \mbox{span} \left\{ \vect{u}_1, \vect{u}_2 \right\} \\
 1 \\
 2
 \end{mymatrix}
-\right\}
+}
 \end{eqnarray*}
 
 Notice that this span is a basis of $W$ as it is linearly
 independent. We will use the Gram-Schmidt Process to convert this to
-an orthogonal basis, $\left\{\vect{w}_1, \vect{w}_2 \right\}$. In this
+an orthogonal basis, $\set{\vect{w}_1, \vect{w}_2 }$. In this
 case, as we remarked it is only necessary to find an orthogonal basis, and it is not
 required that it be orthonormal.
 
@@ -199,8 +199,8 @@ required that it be orthonormal.
 
 Therefore an orthogonal basis of $W$ is 
 \[
-\left\{ \vect{w}_1, \vect{w}_2 \right\} = 
-\left\{
+\set{\vect{w}_1, \vect{w}_2 } = 
+\set{
 \begin{mymatrix}{r}
 1 \\
 0 \\
@@ -211,7 +211,7 @@ Therefore an orthogonal basis of $W$ is
 1 \\
 1
 \end{mymatrix}
-\right\}
+}
 \]
 
 We can now use this basis to find the orthogonal projection of the
@@ -262,15 +262,15 @@ complement of $W$, written $W^{\perp}$, is the set of all vectors
 $\vect{x}$ such that $\vect{x} \dotprod \vect{z} = 0$ for all vectors
 $\vect{z}$ in $W$.
 \[
-W^{\perp} = \{ \vect{x} \in \R^n \; \mbox{such that} \;
-\vect{x} \dotprod \vect{z} = 0 \; \mbox{for all} \; \vect{z} \in W \}
+W^{\perp} = \{\vect{x} \in \R^n \; \mbox{such that} \;
+\vect{x} \dotprod \vect{z} = 0 \; \mbox{for all} \; \vect{z} \in W\}
 \]
 \end{definition}
 
 The orthogonal complement is defined as the set of all vectors which are orthogonal to all vectors in the original subspace. It turns out that it is sufficient that the vectors in the orthogonal complement be orthogonal to a spanning set of the original space.
 
 \begin{proposition}{Orthogonal to spanning set}{orthogonalspanningset}
-Let $W$ be a subspace of $\R^n$ such that $W = \func{span} \left\{ \vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m \right\}$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set. 
+Let $W$ be a subspace of $\R^n$ such that $W = \func{span} \set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m }$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set. 
 \end{proposition}
 
 The following proposition demonstrates that the orthogonal complement of a subspace is itself a subspace. 
@@ -284,23 +284,23 @@ Consider the following proposition.
 \begin{proposition}{Orthogonal complement of $\R^n$}{complementofrn}
 The complement of $\R^n$ is the set containing the zero vector:
 \[
- (\R^n)^{\perp} = \left\{ \vect{0} \right\}
+ (\R^n)^{\perp} = \set{\vect{0} }
 \]
 Similarly, 
 \[
-\left\{ \vect{0} \right\}^{\perp} = (\R^n)
+\set{\vect{0} }^{\perp} = (\R^n)
 \]
 \end{proposition}
 
 \begin{proof}
 Here, $\vect{0}$ is the zero vector of $\R^n$.
 Since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\R^n$, 
-$\R^n\subseteq\{ \vect{0}\}^{\perp}$.
-Since $\{ \vect{0}\}^{\perp}\subseteq\R^n$, the equality follows,
-i.e., $\{ \vect{0}\}^{\perp}=\R^n$.
+$\R^n\subseteq\{\vect{0}\}^{\perp}$.
+Since $\{\vect{0}\}^{\perp}\subseteq\R^n$, the equality follows,
+i.e., $\{\vect{0}\}^{\perp}=\R^n$.
 
 Again, since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\R^n$,
-$\vect{0}\in (\R^n)^{\perp}$, so $\{ \vect{0}\}\subseteq(\R^n)^{\perp}$.
+$\vect{0}\in (\R^n)^{\perp}$, so $\{\vect{0}\}\subseteq(\R^n)^{\perp}$.
 Suppose $\vect{x}\in\R^n$, $\vect{x}\neq\vect{0}$.  
 Since $\vect{x}\dotprod\vect{x}=||\vect{x}||^2$ and $\vect{x}\neq\vect{0}$,
 $\vect{x}\dotprod\vect{x}\neq 0$, so $\vect{x}\not\in(\R^n)^{\perp}$.
@@ -320,8 +320,8 @@ a basis for the orthogonal complement of $W$.
 
 From Example \ref{exa:orthproj} we know that we can write $W$ as 
 \[
-W = \mbox{span} \left\{ \vect{u}_1, \vect{u}_2 \right\} = \mbox{span} 
-\left\{
+W = \mbox{span} \set{\vect{u}_1, \vect{u}_2 } = \mbox{span} 
+\set{
 \begin{mymatrix}{r}
 1 \\
 0 \\
@@ -332,7 +332,7 @@ W = \mbox{span} \left\{ \vect{u}_1, \vect{u}_2 \right\} = \mbox{span}
 1 \\
 2
 \end{mymatrix}
-\right\}
+}
 \]
 
 In order to find $W^{\perp}$, we need to find all $\vect{x}$ which are orthogonal to every vector in this span. 
@@ -369,18 +369,18 @@ To solve, set up the augmented matrix.
 \end{mymatrix}
 \]
 
-Using Gaussian Elimination, we find that $W^{\perp} = \mbox{span} \left\{ \begin{mymatrix}{r}
+Using Gaussian Elimination, we find that $W^{\perp} = \mbox{span} \set{\begin{mymatrix}{r}
 1 \\
 -2 \\
 1
 \end{mymatrix}
-\right\}$, and hence 
-$\left\{ \begin{mymatrix}{r}
+}$, and hence 
+$\set{\begin{mymatrix}{r}
 1 \\
 -2 \\
 1
 \end{mymatrix}
-\right\}$ is a basis for  $W^{\perp}$. 
+}$ is a basis for  $W^{\perp}$. 
 \end{solution}
 
 The following results summarize the important properties of the orthogonal projection. 
@@ -414,11 +414,11 @@ closest to $\vect{y}$.
 
 \begin{solution}
 We will first use the Gram-Schmidt Process to construct the orthogonal basis, $B$, of $W$:
-\[ B=\left\{
+\[ B=\set{
 \begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix},
 \begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix},
 \begin{mymatrix}{r} 1\\ 2\\ -1\\ 0 \end{mymatrix}
-\right\}.\]
+}.\]
 
 By Theorem \ref{thm:orthproj},
 \[ \func{proj}_U(\vect{v}) = 
@@ -433,7 +433,7 @@ is the vector in $U$ closest to $\vect{y}$.
 Consider the next example. 
 
 \begin{example}{Vector written as a sum of two vectors}{sumoftwovectors}
-Let $W$ be a subspace given by $W = \mbox{span} \left\{
+Let $W$ be a subspace given by $W = \mbox{span} \set{
 \begin{mymatrix}{c}
 1 \\
 0 \\
@@ -446,7 +446,7 @@ Let $W$ be a subspace given by $W = \mbox{span} \left\{
 0 \\
 2 \\
 \end{mymatrix}
-\right\}$, and $Y = (1,2,3,4)$. \\
+}$, and $Y = (1,2,3,4)$. \\
 Find the point $Z$ in $W$ closest to $Y$, and moreover write $\vect{y}$ as the sum of a  vector in $W$ and a vector in $W^{\perp}$. 
 \end{example}
 
@@ -571,14 +571,14 @@ gives general solution $x=\frac{1}{3}s+\frac{2}{3}t$, $y=s$, $z=t$
 for any $s,t\in\R$.
 Then  
 \[
-W=\func{span} \left\{
+W=\func{span} \set{
 \begin{mymatrix}{r} -\frac{1}{3} \\ 1 \\ 0 \end{mymatrix},
-\begin{mymatrix}{r} \frac{2}{3} \\ 0 \\ 1 \end{mymatrix}\right\}
+\begin{mymatrix}{r} \frac{2}{3} \\ 0 \\ 1 \end{mymatrix}}
 \]
 Let
-$X=\left\{
+$X=\set{
 \begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix},
-\begin{mymatrix}{r} 2 \\ 0 \\ 3 \end{mymatrix}\right\}$.
+\begin{mymatrix}{r} 2 \\ 0 \\ 3 \end{mymatrix}}$.
 Then $X$ is linearly independent and $\func{span}(X)=W$, so $X$ is a basis of $W$.
 
 \item Use the Gram-Schmidt Process to get an
@@ -592,8 +592,8 @@ orthogonal basis of $W$:
 -\frac{-2}{10}\begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix}
 =\frac{1}{5}\begin{mymatrix}{r} 9 \\ 3 \\ 15 \end{mymatrix}.\]
 Therefore
-$B=\left\{ \begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix},
-\begin{mymatrix}{r} 3 \\ 1 \\ 5 \end{mymatrix} \right\}$ is
+$B=\set{\begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix},
+\begin{mymatrix}{r} 3 \\ 1 \\ 5 \end{mymatrix} }$ is
 an orthogonal basis of $W$.
 \item To find 
 the point $Z$ on $W$ closest to $Y=(1,1,1)$, compute

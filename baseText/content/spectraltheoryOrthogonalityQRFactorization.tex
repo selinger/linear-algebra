@@ -70,7 +70,7 @@ Find an orthogonal matrix $Q$ and upper triangular matrix $R$ such that $A=QR$.
 \end{example}
 
 \begin{solution}
-First, observe that $A_1$, $A_2$, the columns of $A$, are linearly independent. Therefore we can use the Gram-Schmidt Process to create a corresponding orthogonal set $\left\{ B_1, B_2 \right\}$ as follows:
+First, observe that $A_1$, $A_2$, the columns of $A$, are linearly independent. Therefore we can use the Gram-Schmidt Process to create a corresponding orthogonal set $\set{B_1, B_2 }$ as follows:
 \begin{eqnarray*}
 B_1 &=& A_1 = \begin{mymatrix}{r}
 1 \\
@@ -96,7 +96,7 @@ B_2 &=& A_2 - \frac{A_2 \dotprod B_1}{\vectlength B_1 \vectlength ^2} B_1 \\
 \end{mymatrix}
 \end{eqnarray*}
 
-Normalize each vector to create the set $\left\{ C_1, C_2 \right\}$ as follows:
+Normalize each vector to create the set $\set{C_1, C_2 }$ as follows:
 \begin{eqnarray*}
 C_1 &=& \frac{1}{\vectlength B_1 \vectlength} B_1 = \frac{1}{\sqrt{2}}  \begin{mymatrix}{r}
 1 \\

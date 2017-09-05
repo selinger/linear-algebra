@@ -16,13 +16,13 @@ kernel of a linear transformation.
 Let $V$ and $W$ be vector spaces and let $T:V\rightarrow W$ be a linear transformation. Then the image of $T$
 denoted as $\func{im}\left( T\right) $ is defined to be the set 
 \begin{equation*}
-\left\{ T(\vect{v}):\vect{v}\in V\right\}
+\set{T(\vect{v}):\vect{v}\in V}
 \end{equation*}
 In words, it consists of all vectors in $W$ which equal $T(\vect{v})$ for some $
 \vect{v}\in V$. The kernel, $\ker \left( T\right) $, 
 consists of all $\vect{v}\in V$ such that $T(\vect{v})=\vect{0}$. That is, 
 \begin{equation*}
-\ker \left( T\right) =\left\{ \vect{v}\in V:T(\vect{v})=\vect{0}\right\}
+\ker \left( T\right) =\set{\vect{v}\in V:T(\vect{v})=\vect{0}}
 \end{equation*}
 \end{definition}
 
@@ -63,26 +63,26 @@ Find the kernel and image of $T$.
 \begin{solution}
 We will first find the kernel of $T$. It consists of all polynomials in $\Poly_1$ that have $1$ for a root. 
 \begin{eqnarray*}
-\func{ker}(T) & = & \{ p(x)\in \Poly_1 ~|~ p(1)=0\} \\
-& = & \{ ax+b ~|~ a,b\in\R \mbox{ and }a+b=0\} \\
-& = & \{ ax-a ~|~ a\in\R \}
+\func{ker}(T) & = & \{p(x)\in \Poly_1 ~|~ p(1)=0\} \\
+& = & \{ax+b ~|~ a,b\in\R \mbox{ and }a+b=0\} \\
+& = & \{ax-a ~|~ a\in\R\}
 \end{eqnarray*}
 Therefore a basis for $\func{ker}(T)$ is 
 \[
-\left\{ x-1 \right\}
+\set{x-1 }
 \]
 Notice that this is a subspace of $\Poly_1$. 
 
 Now consider the image. It consists of all numbers which can be obtained by evaluating all polynomials in $\Poly_1$ at $1$. 
 \begin{eqnarray*}
-\func{im}(T) & = & \{ p(1) ~|~ p(x)\in \Poly_1 \} \\
- & = & \{ a+b ~|~ ax+b\in \Poly_1 \} \\
- & = & \{ a+b ~|~ a,b\in\R \}\\
+\func{im}(T) & = & \{p(1) ~|~ p(x)\in \Poly_1\} \\
+ & = & \{a+b ~|~ ax+b\in \Poly_1\} \\
+ & = & \{a+b ~|~ a,b\in\R\}\\
  & = & \R
 \end{eqnarray*}
 Therefore a basis for $\func{im}(T)$ is 
 \[
-\left\{ 1 \right\}
+\set{1 }
 \]
 Notice that this is a subspace of $\R$, and in fact is the space $\R$ itself. 
 \end{solution}
@@ -136,15 +136,15 @@ c + d &=& 0
 The solution is $a = s, b = s, c = t, d = -t$ where $s, t$ are scalars. We can describe $\func{ker}(T)$ as follows.
 \[
 \func{ker}(T) = 
-\left\{ 
+\set{
 \begin{mymatrix}{cc}
 s & s \\
 t & -t 
 \end{mymatrix}
-\right\}
+}
 =
 \func{span}
-\left\{
+\set{
 \begin{mymatrix}{cc}
 1 & 1 \\
 0 & 0 
@@ -153,23 +153,23 @@ t & -t
 0 & 0 \\
 1 & -1 
 \end{mymatrix}
-\right\}
+}
 \]
 It is clear that this set is linearly independent and therefore forms a basis for $\func{ker}(T)$. 
 
 We now wish to find a basis for $\func{im}(T)$. We can write the image of $T$ as 
 \[
-\func{im}(T) = \left\{ 
+\func{im}(T) = \set{
 \begin{mymatrix}{c}
 a - b  \\
 c + d  
 \end{mymatrix}
-\right\}
+}
 \]
 Notice that this can be written as 
 \[
 \func{span}
-\left\{
+\set{
 \begin{mymatrix}{c}
 1 \\ 
 0
@@ -185,12 +185,12 @@ Notice that this can be written as
 \begin{mymatrix}{c}
 0 \\ 
 1
-\end{mymatrix} \right\}
+\end{mymatrix} }
 \]
 
 However this is clearly not linearly independent. By removing vectors from the set to create an independent set gives a basis of $\func{im}(T)$.
 \[
-\left\{
+\set{
 \begin{mymatrix}{c}
 1 \\ 
 0
@@ -199,7 +199,7 @@ However this is clearly not linearly independent. By removing vectors from the s
 0 \\ 
 1
 \end{mymatrix}
-\right\}
+}
 \]
 
 Notice that these vectors have the same span as the set above but are now linearly independent.
@@ -221,9 +221,9 @@ Then $n=\dim \left( \ker \left( T\right) \right) +\dim \left( \func{im}
 \begin{proof}
 From Proposition \ref{prop:kernelimagevectorspaces}, $\func{im}\left( T\right) $
 is a subspace of $W.$ By Theorem \ref{thm:basisvectorspace}, there exists a basis for $
-\func{im}\left( T\right) ,\left\{ T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})\right\}
-. $ Similarly, there is a basis for $\ker \left( T\right) ,\left\{ \vect{u}
-_{1},\cdots ,\vect{u}_{s}\right\} $. Then if $\vect{v}\in V,$ there exist
+\func{im}\left( T\right) ,\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})}
+. $ Similarly, there is a basis for $\ker \left( T\right) ,\set{\vect{u}
+_{1},\cdots ,\vect{u}_{s}} $. Then if $\vect{v}\in V,$ there exist
 scalars $c_{i}$ such that 
 \begin{equation*}
 T(\vect{v})=\sum_{i=1}^{r}c_{i}T(\vect{v}_{i})
@@ -237,11 +237,11 @@ Hence there are scalars $a_{i}$ such that
 Hence $\vect{v}=\sum_{i=1}^{r}c_{i}\vect{v}_{i}+\sum_{j=1}^{s}a_{j}\vect{u}
 _{j}. $ Since $\vect{v}$ is arbitrary, it follows that 
 \begin{equation*}
-V=\func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
-\vect{v}_{r}\right\}
+V=\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
+\vect{v}_{r}}
 \end{equation*}
-If the vectors $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
-\vect{v}_{r}\right\} $ are linearly independent, then it will follow that
+If the vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
+\vect{v}_{r}} $ are linearly independent, then it will follow that
 this set is a basis. Suppose then that 
 \begin{equation*}
 \sum_{i=1}^{r}c_{i}\vect{v}_{i}+\sum_{j=1}^{s}a_{j}\vect{u}_{j}=0
@@ -251,12 +251,12 @@ Apply $T$ to both sides to obtain
 \sum_{i=1}^{r}c_{i}T(\vect{v}_{i})+\sum_{j=1}^{s}a_{j}T(\vect{u}
 _{j})=\sum_{i=1}^{r}c_{i}T(\vect{v}_{i})= \vect{0}
 \end{equation*}
-Since $\left\{ T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})\right\} $ is linearly
+Since $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})} $ is linearly
 independent, it follows that each $c_{i}=0.$ Hence $\sum_{j=1}^{s}a_{j}\vect{u
-}_{j}=0$ and so, since the $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{s}\right\} $
+}_{j}=0$ and so, since the $\set{\vect{u}_{1},\cdots ,\vect{u}_{s}} $
 are linearly independent, it follows that each $a_{j}=0$ also. It follows
-that $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,\vect{v}
-_{r}\right\} $ is a basis for $V$ and so 
+that $\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,\vect{v}
+_{r}} $ is a basis for $V$ and so 
 \begin{equation*}
 n=s+r=\dim \left( \ker \left( T\right) \right) +\dim \left( \func{im}\left(
 T\right) \right)
@@ -286,12 +286,12 @@ From this theorem follows the next corollary.
 \begin{corollary}{One to one and onto characterization}{oneoneontochar}
 Let $T:V\rightarrow W$ be a linear map where the dimension of $V$ is $n$ and
 the dimension of $W$ is $m$. Then $T$ is one to one if and only if $\ker
-\left( T\right) =\left\{ \vect{0}\right\} $ and $T$ is onto if and only if $
+\left( T\right) =\set{\vect{0}} $ and $T$ is onto if and only if $
 \func{rank}\left( T\right) =m$.
 \end{corollary}
 
 \begin{proof}
-The statement $\ker \left( T \right) =\left\{ \vect{0}\right\} $
+The statement $\ker \left( T \right) =\set{\vect{0}} $
 is equivalent to saying if $T \left( \vect{v} \right)=\vect{0},$ it follows that $\vect{v}=\vect{0}$
 . Thus by Lemma \ref{lem:onetooneabstract} $T$ is one to one. If $T$ is onto, then $
 \func{im}\left( T\right) =W$ and so $\func{rank}\left( T\right) $ which is
@@ -342,14 +342,14 @@ $S$ is one-to-one by Corollary \ref{cor:oneoneontochar}.
 
 Similarly, by Corollary \ref{cor:oneoneontochar}, if $S$ is onto it will have $\func{rank}(S) = \func{dim}(\Mat_{22}) = 4$. The image of $S$ is given by 
 \[
-\func{im}(S) = \left\{ \begin{mymatrix}{cc}
-a+b & a+c \\ b-c & b+c \end{mymatrix} \right\} = \func{span} \left\{ \begin{mymatrix}{rr}
+\func{im}(S) = \set{\begin{mymatrix}{cc}
+a+b & a+c \\ b-c & b+c \end{mymatrix} } = \func{span} \set{\begin{mymatrix}{rr}
 1 & 1 \\
 0 & 0 \end{mymatrix}, \begin{mymatrix}{rr}
 1 & 0 \\
 1 & 1 \end{mymatrix}, \begin{mymatrix}{rr}
 0 & 1 \\
--1 & 1 \end{mymatrix} \right\}
+-1 & 1 \end{mymatrix} }
 \]
 These matrices are linearly independent which means this set forms a basis for $\func{im}(S)$. Therefore the dimension of $\func{im}(S)$, also called $\func{rank}(S)$, is equal to $3$. It follows that $S$ is not onto. 
 \end{solution}

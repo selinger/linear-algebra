@@ -5,24 +5,24 @@
 
 \begin{ex} Let $V$ and $W$ be subspaces of $\R^{n}$ and $\R^{m}$
 respectively and let $T:V\rightarrow W$ be a linear transformation. Suppose
-that $\left\{ T\vect{v}_{1},\cdots ,T\vect{v}_{r}\right\} $ is linearly
-independent. Show that it must be the case that $\left\{ \vect{v}_{1},\cdots ,
-\vect{v}_{r}\right\} $ is also linearly independent.
+that $\set{T\vect{v}_{1},\cdots ,T\vect{v}_{r}} $ is linearly
+independent. Show that it must be the case that $\set{\vect{v}_{1},\cdots ,
+\vect{v}_{r}} $ is also linearly independent.
 \begin{sol}
 If $\sum_i^r a_i \vect{v}_r =0$, then using linearity properties of $T$ we get 
 \[ 0 = T(0) =  T(\sum_i^r a_i \vect{v}_r) = 
 \sum_i^r a_i T(\vect{v}_r).\]
-Since we assume that  $\left\{ T\vect{v}_{1},\cdots ,T\vect{v}_{r}\right\} $ is linearly
+Since we assume that  $\set{T\vect{v}_{1},\cdots ,T\vect{v}_{r}} $ is linearly
 independent, we must have all $a_i=0$, and therefore we conclude that 
- $\left\{ \vect{v}_{1},\cdots ,
-\vect{v}_{r}\right\} $ is also linearly independent.
+ $\set{\vect{v}_{1},\cdots ,
+\vect{v}_{r}} $ is also linearly independent.
 \end{sol}
 \end{ex}
 
 
 \begin{ex} Let 
 \begin{equation*}
-V=\mbox{span}\left\{ \begin{mymatrix}{c}
+V=\mbox{span}\set{\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 2 \\ 
@@ -37,7 +37,7 @@ V=\mbox{span}\left\{ \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1
-\end{mymatrix} \right\}
+\end{mymatrix} }
 \end{equation*}
 Let $T\vect{x}=A\vect{x}$ where $A$ is the matrix 
 \begin{equation*}
@@ -56,7 +56,7 @@ Give a basis for $\func{im}\left( T\right) $.
 
 \begin{ex} Let 
 \begin{equation*}
-V=\mbox{span}\left\{ \begin{mymatrix}{c}
+V=\mbox{span}\set{\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 0 \\ 
@@ -71,7 +71,7 @@ V=\mbox{span}\left\{ \begin{mymatrix}{c}
 4 \\ 
 4 \\ 
 1
-\end{mymatrix} \right\}
+\end{mymatrix} }
 \end{equation*}
 Let $T\vect{x}=A\vect{x}$ where $A$ is the matrix 
 \begin{equation*}
@@ -95,7 +95,7 @@ the image.
 Thus a basis for $\func{im}\left( T\right) $ is: 
 
 \begin{equation*}
-V=\mbox{span}\left\{ \begin{mymatrix}{c}
+V=\mbox{span}\set{\begin{mymatrix}{c}
 2 \\ 
 0 \\ 
 1 \\ 
@@ -105,19 +105,19 @@ V=\mbox{span}\left\{ \begin{mymatrix}{c}
 2 \\ 
 4 \\ 
 5
-\end{mymatrix}  \right\}
+\end{mymatrix}  }
 \end{equation*}
 
 \end{sol}
 \end{ex}
 
 
-\begin{ex} If $\left\{ \vect{v}_{1},\cdots ,\vect{v}_{r}\right\} $ is linearly
+\begin{ex} If $\set{\vect{v}_{1},\cdots ,\vect{v}_{r}} $ is linearly
 independent and $T$ is a one to one linear transformation, show that $
-\left\{ T\vect{v}_{1},\cdots ,T\vect{v}_{r}\right\} $ is also linearly
+\set{T\vect{v}_{1},\cdots ,T\vect{v}_{r}} $ is also linearly
 independent. Give an example which shows that if $T$ is only linear, it can
-happen that, although $\left\{ \vect{v}_{1},\cdots ,\vect{v}_{r}\right\} $ is
-linearly independent, $\left\{ T\vect{v}_{1},\cdots ,T\vect{v}_{r}\right\} $
+happen that, although $\set{\vect{v}_{1},\cdots ,\vect{v}_{r}} $ is
+linearly independent, $\set{T\vect{v}_{1},\cdots ,T\vect{v}_{r}} $
 is not. In fact, show that it can happen that each of the $T\vect{v}_{j}$
 equals 0.
 %\begin{sol}
@@ -127,9 +127,9 @@ equals 0.
 
 \begin{ex} Let $V$ and $W$ be subspaces of $\R^{n}$ and $\R^{m}$
 respectively and let $T:V\rightarrow W$ be a linear transformation. Show
-that if $T$ is onto $W$ and if $\left\{ \vect{v}_{1},\cdots ,\vect{v}
-_{r}\right\} $ is a basis for $V,$ then $\func{span}\left\{ T\vect{v}
-_{1},\cdots ,T\vect{v}_{r}\right\} =W$.
+that if $T$ is onto $W$ and if $\set{\vect{v}_{1},\cdots ,\vect{v}
+_{r}} $ is a basis for $V,$ then $\func{span}\set{T\vect{v}
+_{1},\cdots ,T\vect{v}_{r}} =W$.
 %\begin{sol}
 %\end{sol}
 \end{ex}
@@ -231,7 +231,7 @@ A\begin{mymatrix}{c}
 \end{equation*}
 now find another vector $\vect{v}\in \R^{3}$ such that 
 \begin{equation*}
-\left\{ \begin{mymatrix}{c}
+\set{\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
@@ -239,7 +239,7 @@ now find another vector $\vect{v}\in \R^{3}$ such that
 0 \\ 
 1 \\ 
 1
-\end{mymatrix} ,\vect{v}\right\}
+\end{mymatrix} ,\vect{v}}
 \end{equation*}
 is a basis. You could pick 
 \begin{equation*}
@@ -258,7 +258,7 @@ the inverse isomorphism $T^{-1}$ on $\func{im}\left( T\right) $.
 \end{ex}
 
 
-\begin{ex} Now let $V$ equal $\func{span}\left\{ \begin{mymatrix}{c}
+\begin{ex} Now let $V$ equal $\func{span}\set{\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1
@@ -266,10 +266,10 @@ the inverse isomorphism $T^{-1}$ on $\func{im}\left( T\right) $.
 0 \\ 
 1 \\ 
 1
-\end{mymatrix} \right\} $ and let $T:V\rightarrow W$ be a linear transformation
+\end{mymatrix} } $ and let $T:V\rightarrow W$ be a linear transformation
 where 
 \begin{equation*}
-W=\func{span}\left\{ \begin{mymatrix}{c}
+W=\func{span}\set{\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
@@ -279,7 +279,7 @@ W=\func{span}\left\{ \begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1
-\end{mymatrix} \right\}
+\end{mymatrix} }
 \end{equation*}
 $\ $\ and 
 \begin{equation*}

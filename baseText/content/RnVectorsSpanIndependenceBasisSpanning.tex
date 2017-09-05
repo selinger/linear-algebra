@@ -3,7 +3,7 @@
 We begin this section with a definition.
 
 \begin{definition}{Span of a set of vectors}{span}
-The collection of all linear combinations of a set of vectors $\{ \vect{u}_1,
+The collection of all linear combinations of a set of vectors $\{\vect{u}_1,
 \cdots ,\vect{u}_k\}$ in $\R^{n}$ is known as the span\index{span}\index{vectors!span} of these
 vectors and is written as $\func{span} \{\vect{u}_1, \cdots , \vect{u}_k\}$.
 \end{definition}
@@ -53,7 +53,7 @@ You can convince yourself that no single vector can span the
 $XY$-plane. In fact, take a moment to consider what is meant by the span of a single vector.
 
 However you can make the set larger if you wish. For example consider
-the larger set of vectors $\{ \vect{u}, \vect{v},
+the larger set of vectors $\{\vect{u}, \vect{v},
 \vect{w}\}$ where $ \vect{w}=\begin{mymatrix}{rrr}
 4 & 5 & 0
 \end{mymatrix}^T$. 
@@ -65,7 +65,7 @@ $ \vect{w}=\begin{mymatrix}{rrr}
 0 & 0 & 1
 \end{mymatrix}^T$ then it does span a different space. What is the span of $\vect{u}, \vect{v}, \vect{w}$ in this case?   
 
-The distinction between the sets $\{ \vect{u}, \vect{v}\}$ and $\{
+The distinction between the sets $\{\vect{u}, \vect{v}\}$ and $\{
 \vect{u}, \vect{v}, \vect{w}\}$ will be made using the concept of linear independence. 
 
 Consider the vectors $\vect{u}, \vect{v}$, and $\vect{w}$ discussed above. In the next example, we will show how to formally demonstrate that $\vect{w}$ is in the span of $\vect{u}$ and $\vect{v}$. 
@@ -78,11 +78,11 @@ $\vect{v}=\begin{mymatrix}{rrr}
 3  & 2 & 0
 \end{mymatrix}^T \in \R^{3}$. Show that $\vect{w} = \begin{mymatrix}{rrr}
 4 & 5 & 0 
-\end{mymatrix}^{T}$ is in $\func{span} \left\{ \vect{u}, \vect{v} \right\}$.
+\end{mymatrix}^{T}$ is in $\func{span} \set{\vect{u}, \vect{v} }$.
 \end{example}
 
 \begin{solution}
-For a vector to be in $\func{span} \left\{ \vect{u}, \vect{v} \right\}$, it must be a linear combination of these vectors. If $\vect{w} \in \func{span} \left\{ \vect{u}, \vect{v} \right\}$, we must be able to find scalars $a,b$ such that\[
+For a vector to be in $\func{span} \set{\vect{u}, \vect{v} }$, it must be a linear combination of these vectors. If $\vect{w} \in \func{span} \set{\vect{u}, \vect{v} }$, we must be able to find scalars $a,b$ such that\[
 \vect{w} = a \vect{u} +b \vect{v}
 \]
 
@@ -130,5 +130,5 @@ The solution is $a=7, b=-1$. This means that
 \[
 \vect{w} = 7 \vect{u} - \vect{v}
 \] 
-Therefore we can say that $\vect{w}$ is in $\func{span} \left\{ \vect{u}, \vect{v} \right\}$. 
+Therefore we can say that $\vect{w}$ is in $\func{span} \set{\vect{u}, \vect{v} }$. 
 \end{solution}

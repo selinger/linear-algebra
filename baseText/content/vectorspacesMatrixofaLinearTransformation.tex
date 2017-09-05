@@ -17,8 +17,8 @@ Consider now an important definition.
 
 \index{coordinate isomorphism}
 \begin{definition}{Coordinate isomorphism}{coordinateisomorphism}
-Let $V$ be a vector space with $\func{dim}(V)=n$, let $B=\{ \vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n \}$ be a fixed basis of $V$,
-and let $\{ \vect{e}_1, \vect{e}_2, \ldots, \vect{e}_n \}$
+Let $V$ be a vector space with $\func{dim}(V)=n$, let $B=\{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n\}$ be a fixed basis of $V$,
+and let $\{\vect{e}_1, \vect{e}_2, \ldots, \vect{e}_n\}$
 denote the standard basis of $\R^n$.
 We define a transformation $C_B:V\to\R^n$ by
 \[
@@ -53,9 +53,9 @@ Consider the following example.
 Let $V = \Poly_2$ and $\vect{x} = -x^2 -2x + 4$. 
 Find $C_B(\vect{x})$ for the following bases $B$:
 \begin{enumerate}
-\item $B = \left\{ 1, x, x^2 \right\}$
-\item $B = \left\{ x^2, x, 1 \right\}$
-\item $B = \left\{ x + x^2 , x , 4 \right\}$
+\item $B = \set{1, x, x^2 }$
+\item $B = \set{x^2, x, 1 }$
+\item $B = \set{x + x^2 , x , 4 }$
 \end{enumerate}
 \end{example}
 
@@ -212,9 +212,9 @@ d + a
 \end{mymatrix}
 \]
 
-Suppose $B_1 = \left\{ x^3, x^2, x, 1 \right\}$ is an ordered basis of $\Poly_3$ and 
+Suppose $B_1 = \set{x^3, x^2, x, 1 }$ is an ordered basis of $\Poly_3$ and 
 \[
-B_2 = \left\{ \begin{mymatrix}{r}
+B_2 = \set{\begin{mymatrix}{r}
 1 \\
 0 \\
 1 \\
@@ -236,7 +236,7 @@ B_2 = \left\{ \begin{mymatrix}{r}
 0 \\
 0 \\
 1
-\end{mymatrix} \right\} 
+\end{mymatrix} } 
 \]
 be an ordered basis of $\R^4$.
 Find the matrix $M_{B_2B_1}(T)$. 
@@ -372,9 +372,9 @@ M_{B_2B_1}(T) = \begin{mymatrix}{rrrr}
 1 & 0 & 0 & 1 
 \end{mymatrix},
 \]
-where $B_1 = \left\{ x^3, x^2, x, 1 \right\}$ is an ordered basis of $\Poly_3$ and 
+where $B_1 = \set{x^3, x^2, x, 1 }$ is an ordered basis of $\Poly_3$ and 
 \[
-B_2 = \left\{ \begin{mymatrix}{r}
+B_2 = \set{\begin{mymatrix}{r}
 1 \\
 0 \\
 1 \\
@@ -396,7 +396,7 @@ B_2 = \left\{ \begin{mymatrix}{r}
 0 \\
 0 \\
 1
-\end{mymatrix} \right\} 
+\end{mymatrix} } 
 \]
 is an ordered basis of $\R^4$. If $p(x) = ax^3 + bx^2 + cx + d$, find $T(p(x))$. 
 \end{example}
@@ -496,12 +496,12 @@ defined by
 \[ T(ax^3+bx^2+cx+d)=
 \begin{mymatrix}{cc} a+d & b-c \\ b+c & a-d \end{mymatrix}\]
 for all $ax^3+bx^2+cx+d\in\Poly_3$. Let
-$B_1=\{ x^3, x^2, x, 1\}$ and
-\[ B_2=\left\{
+$B_1=\{x^3, x^2, x, 1\}$ and
+\[ B_2=\set{
 \begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
 \begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix},
 \begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix},
-\begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}\right\}\]
+\begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}}\]
 be ordered bases of $\Poly_3$ and $\Mat_{22}$, respectively.
 \begin{enumerate}
 \item Find $M_{B_2B_1}(T)$.

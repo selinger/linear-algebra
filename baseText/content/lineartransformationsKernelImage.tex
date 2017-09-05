@@ -15,14 +15,14 @@ denoted as $\func{im}\left( T\right) $ is defined to be the set
 \index{linear map!image}
 \index{linear map!kernel} 
 \begin{equation*}
-\func{im}\left( T\right) = \left\{T (\vect{v}):\vect{v}\in V\right\}
+\func{im}\left( T\right) = \set{T (\vect{v}):\vect{v}\in V}
 \end{equation*}
 In words, it consists of all vectors in $W$ which equal $T(\vect{v})$ for some $
 \vect{v}\in V$.
 
 The kernel of $T$, written $\ker \left( T\right) $, consists of all $\vect{v}\in V$ such that $T(\vect{v})=\vect{0}$. That is, 
 \begin{equation*}
-\ker \left( T\right) =\left\{ \vect{v}\in V:T(\vect{v})=\vect{0}\right\}
+\ker \left( T\right) =\set{\vect{v}\in V:T(\vect{v})=\vect{0}}
 \end{equation*}
 \end{definition}
 
@@ -105,14 +105,14 @@ c + d &=& 0
 \end{eqnarray*}
 The solution to this system is $ a = s, b = s, c = t, d = -t$ where $s, t$ are scalars. We can describe $\func{ker}(T)$ as follows.
 \[
-\func{ker}(T) = \left\{ \begin{mymatrix}{r}
+\func{ker}(T) = \set{\begin{mymatrix}{r}
 s \\ 
 s \\
 t \\
 -t 
-\end{mymatrix} \right\}
+\end{mymatrix} }
 =
-\func{span} \left\{ \begin{mymatrix}{r}
+\func{span} \set{\begin{mymatrix}{r}
 1 \\
 1 \\
 0 \\
@@ -122,21 +122,21 @@ t \\
 0 \\
 1 \\
 -1
-\end{mymatrix} \right\}
+\end{mymatrix} }
 \]
 Notice that this set is linearly independent and therefore forms a basis for $\func{ker}(T)$. 
 
 We move on to finding a basis for $\func{im}(T)$. We can write the image of $T$ as 
 \[
-\func{im}(T) = \left\{ \begin{mymatrix}{c}
+\func{im}(T) = \set{\begin{mymatrix}{c}
 a - b \\
 c + d
 \end{mymatrix}
-\right\}
+}
 \]
 We can write this in the form
 \[
-\func{span} = \left\{ 
+\func{span} = \set{
 \begin{mymatrix}{r}
 1 \\
 0
@@ -152,11 +152,11 @@ We can write this in the form
 \begin{mymatrix}{r}
 0 \\
 1
-\end{mymatrix} \right\}
+\end{mymatrix} }
 \]
 This set is clearly not linearly independent. By removing unnecessary vectors from the set we can create a linearly independent set with the same span. This gives a basis for $\func{im}(T)$ as
 \[
-\func{im}(T) = \func{span} \left\{
+\func{im}(T) = \func{span} \set{
 \begin{mymatrix}{r}
 1 \\
 0
@@ -165,7 +165,7 @@ This set is clearly not linearly independent. By removing unnecessary vectors fr
 0 \\
 1
 \end{mymatrix}
-\right\}
+}
 \]
 \end{solution}
 
@@ -190,9 +190,9 @@ T\right) \right)
 \end{theorem}
 
 \begin{proof}
-From Proposition \ref{prop:kernelimagesubspaces}, $\func{im}\left( T\right) $ is a subspace of $W.$ We know that there exists a basis for $\func{im}\left( T\right)$, $\left\{ T(\vect{v}
-_{1}),\cdots ,T(\vect{v}_{r})\right\} . $ Similarly, there is a basis for $\ker
-\left( T\right) ,\left\{ \vect{u}_{1},\cdots ,\vect{u}_{s}\right\} $. Then if $
+From Proposition \ref{prop:kernelimagesubspaces}, $\func{im}\left( T\right) $ is a subspace of $W.$ We know that there exists a basis for $\func{im}\left( T\right)$, $\set{T(\vect{v}
+_{1}),\cdots ,T(\vect{v}_{r})} . $ Similarly, there is a basis for $\ker
+\left( T\right) ,\set{\vect{u}_{1},\cdots ,\vect{u}_{s}} $. Then if $
 \vect{v}\in V,$ there exist scalars $c_{i}$ such that 
 \begin{equation*}
 T(\vect{v})=\sum_{i=1}^{r}c_{i}T(\vect{v}_{i})
@@ -206,11 +206,11 @@ Hence there are scalars $a_{i}$ such that
 Hence $\vect{v}=\sum_{i=1}^{r}c_{i}\vect{v}_{i}+\sum_{j=1}^{s}a_{j}\vect{u}
 _{j}. $ Since $\vect{v}$ is arbitrary, it follows that 
 \begin{equation*}
-V=\func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
-\vect{v}_{r}\right\}
+V=\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
+\vect{v}_{r}}
 \end{equation*}
-If the vectors $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
-\vect{v}_{r}\right\} $ are linearly independent, then it will follow that
+If the vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
+\vect{v}_{r}} $ are linearly independent, then it will follow that
 this set is a basis. Suppose then that 
 \begin{equation*}
 \sum_{i=1}^{r}c_{i}\vect{v}_{i}+\sum_{j=1}^{s}a_{j}\vect{u}_{j}=0
@@ -220,11 +220,11 @@ Apply $T$ to both sides to obtain
 \sum_{i=1}^{r}c_{i}T(\vect{v}_{i})+\sum_{j=1}^{s}a_{j}T(\vect{u})
 _{j}=\sum_{i=1}^{r}c_{i}T(\vect{v}_{i})=0
 \end{equation*}
-Since $\left\{ T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})\right\} $ is linearly
+Since $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})} $ is linearly
 independent, it follows that each $c_{i}=0.$ Hence $\sum_{j=1}^{s}a_{j}\vect{u
-}_{j}=0$ and so, since the $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{s}\right\} $
-are linearly independent, it follows that each $a_{j}=0$ also. Therefore $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,\vect{v}
-_{r}\right\} $ is a basis for $V$ and so 
+}_{j}=0$ and so, since the $\set{\vect{u}_{1},\cdots ,\vect{u}_{s}} $
+are linearly independent, it follows that each $a_{j}=0$ also. Therefore $\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,\vect{v}
+_{r}} $ is a basis for $V$ and so 
 \begin{equation*}
 n=s+r=\dim \left( \ker \left( T\right) \right) +\dim \left( \func{im}\left(
 T\right) \right) 
@@ -301,7 +301,7 @@ T^{-1}\begin{mymatrix}{c}
 \end{equation*}
 Notice that the vectors
 \begin{equation*}
-\left\{ \begin{mymatrix}{c}
+\set{\begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 0
@@ -313,7 +313,7 @@ Notice that the vectors
 0 \\ 
 1 \\ 
 0
-\end{mymatrix} \right\} 
+\end{mymatrix} } 
 \end{equation*}
 are linearly independent so $T^{-1}$ can be extended linearly to yield a
 linear transformation defined on $\R^{3}$. The matrix of $T^{-1}$
