@@ -216,18 +216,14 @@ We illustrate this concept in the following example.
 Consider the set of vectors  given by 
 \[
 \set{\vect{u}_1, \vect{u}_2 } = \set{
-\left[
-\begin{array}{c}
+\begin{mymatrix}{c}
 1 \\
 1 
-\end{array}
-\right], 
-\left[
-\begin{array}{r}
+\end{mymatrix}, 
+\begin{mymatrix}{r}
 -1 \\
 1
-\end{array}
-\right]
+\end{mymatrix}
 }
 \]
 Show that it is an orthogonal set of vectors  but not an orthonormal one. Find the corresponding orthonormal set. 
@@ -244,12 +240,10 @@ normalize each vector. We will write $\{\vect{w}_1, \vect{w}_2\}$
 for the corresponding orthonormal set. Then,
 \begin{eqnarray*}
 \vect{w}_1 &=& \frac{1}{\vectlength \vect{u}_1 \vectlength} \vect{u}_1\\
-&=& \frac{1}{\sqrt{2}} \left[
-\begin{array}{c}
+&=& \frac{1}{\sqrt{2}} \begin{mymatrix}{c}
 1 \\
 1 
-\end{array}
-\right] \\
+\end{mymatrix} \\
 &=&
 \begin{mymatrix}{c}
 \vspace{0.05in} \frac{1}{\sqrt{2}}\\
@@ -260,12 +254,10 @@ for the corresponding orthonormal set. Then,
 Similarly, 
 \begin{eqnarray*}
 \vect{w}_2 &=& \frac{1}{\vectlength \vect{u}_2 \vectlength} \vect{u}_2\\
-&=& \frac{1}{\sqrt{2}} \left[
-\begin{array}{r}
+&=& \frac{1}{\sqrt{2}} \begin{mymatrix}{r}
 -1 \\
 1 
-\end{array}
-\right] \\
+\end{mymatrix} \\
 &=&
 \begin{mymatrix}{r}
 \vspace{0.05in} -\frac{1}{\sqrt{2}}\\
