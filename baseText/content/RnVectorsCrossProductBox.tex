@@ -48,7 +48,7 @@ The volume of this parallelepiped is the area of the base times
 the height which is just
 \begin{equation*}
 \vectlength \vect{u}\times \vect{v}\vectlength \vectlength \vect{w}\vectlength \cos \theta =
-\left( \vect{u}\times\vect{v}\right) \dotprod \vect{w}
+\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}
 \end{equation*}
 This expression is known as the box product and is sometimes written as 
 $\left[ \vect{u},\vect{v},\vect{w}\right] .$
@@ -62,7 +62,7 @@ else $-1$ times this volume.
 \begin{proposition}{The box product}{boxproduct}
 Let $\vect{u}, \vect{v}, \vect{w}$ be three vectors in $\R^n$ that define a parallelepiped. Then the volume of the parallelepiped is the absolute value of the box product, given by 
 \[
-\left| \left(\vect{u}\times\vect{v}\right) \dotprod \vect{w} \right|
+\left| \tup{\vect{u}\times\vect{v}} \dotprod \vect{w} \right|
 \]
 \end{proposition}
 
@@ -142,8 +142,8 @@ Now take the dot product of this vector with $\vect{w}$ which yields
 2 \\
 3 
 \end{mymatrix} \\
-&=&\left( 3\vect{i}+\vect{j}+\vect{k}\right) \dotprod
- \left( 3\vect{i}+2\vect{j}+3\vect{k}\right) \\
+&=&\tup{3\vect{i}+\vect{j}+\vect{k}} \dotprod
+ \tup{3\vect{i}+2\vect{j}+3\vect{k}} \\
 &=&9+2+3 \\
 &=&14
 \end{eqnarray*}
@@ -155,14 +155,14 @@ There is a fundamental observation which comes directly from the geometric
 definitions of the cross product and the dot product.
 
 \begin{proposition}{Order of the product}{orderofproduct}
-Let $\vect{u},\vect{v}$, and $\vect{w}$ be vectors. Then $\left(
-\vect{u}\times \vect{v}\right) \dotprod \vect{w}=\vect{u}\dotprod \left( \vect{v}\times \vect{w}
-\right) .$
+Let $\vect{u},\vect{v}$, and $\vect{w}$ be vectors. Then $\tup{
+\vect{u}\times \vect{v}} \dotprod \vect{w}=\vect{u}\dotprod \tup{\vect{v}\times \vect{w}
+} .$
 \end{proposition}
 
 \begin{proof}This follows from observing that either 
-$\left( \vect{u}\times \vect{v}\right) \dotprod \vect{w}$ and $\vect{u}\dotprod 
-\left( \vect{v}\times \vect{w}\right) $ both give the volume of the parallelepiped or they both
+$\tup{\vect{u}\times \vect{v}} \dotprod \vect{w}$ and $\vect{u}\dotprod 
+\tup{\vect{v}\times \vect{w}} $ both give the volume of the parallelepiped or they both
 give $-1$ times the volume.
 \end{proof}
 
@@ -175,9 +175,9 @@ a & b & c
  d & e & f
 \end{mymatrix}^T ,$ and $\vect{w}=\begin{mymatrix}{rrr}
 g & h & i
-\end{mymatrix}^T .$ Then the box product $\vect{u}\dotprod \left(\vect{v}\times \vect{w}\right)$ is given by the following.
+\end{mymatrix}^T .$ Then the box product $\vect{u}\dotprod \tup{\vect{v}\times \vect{w}}$ is given by the following.
 \begin{eqnarray*}
-\vect{u}\dotprod \left(\vect{v}\times \vect{w}\right) &=&
+\vect{u}\dotprod \tup{\vect{v}\times \vect{w}} &=&
 \begin{mymatrix}{r}
 a \\
 b \\

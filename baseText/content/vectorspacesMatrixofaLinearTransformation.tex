@@ -279,12 +279,12 @@ T(1) = \begin{mymatrix}{c}
 
 Next we apply the coordinate isomorphism $C_{B_2}$ to each of these vectors. We will show the first in detail. 
 \[
-C_{B_2} \left( \begin{mymatrix}{c}
+C_{B_2} \tup{\begin{mymatrix}{c}
 1 \\
 0 \\
 0 \\
 1 
-\end{mymatrix} \right) = a_1 \begin{mymatrix}{r}
+\end{mymatrix} } = a_1 \begin{mymatrix}{r}
 1 \\
 0 \\
 1 \\
@@ -558,27 +558,27 @@ You should verify that $M_{B_2B_1}(T) M_{B_1B_2}(T^{-1}) = I_4$. From this it fo
 
 \item 
 \begin{eqnarray*}
-C_{B_1}\left(T^{-1}\begin{mymatrix}{cc}
-p & q \\ r & s \end{mymatrix}\right) & = & 
+C_{B_1}\tup{T^{-1}\begin{mymatrix}{cc}
+p & q \\ r & s \end{mymatrix}} & = & 
 M_{B_1B_2}(T^{-1})
-C_{B_2}\left( \begin{mymatrix}{cc}
-p & q \\ r & s \end{mymatrix}\right)\\
+C_{B_2}\tup{\begin{mymatrix}{cc}
+p & q \\ r & s \end{mymatrix}}\\
 T^{-1}\begin{mymatrix}{cc}
 p & q \\ r & s \end{mymatrix} & = & 
-C_{B_1}^{-1}\left(M_{B_1B_2}(T^{-1})
-C_{B_2}\left( \begin{mymatrix}{cc}
-p & q \\ r & s \end{mymatrix}\right)\right)\\
+C_{B_1}^{-1}\tup{M_{B_1B_2}(T^{-1})
+C_{B_2}\tup{\begin{mymatrix}{cc}
+p & q \\ r & s \end{mymatrix}}}\\
 & = &
-C_{B_1}^{-1}\left(
+C_{B_1}^{-1}\tup{
 \frac{1}{2}\begin{mymatrix}{rrrr}
 1 & 0 & 0 & 1 \\
 0 & 1 & 1 & 0 \\
 0 & -1 & 1 & 0 \\
 1 & 0 & 0 & -1 \end{mymatrix}
-\begin{mymatrix}{c} p \\ q\\ r\\ s\end{mymatrix}\right) \\
+\begin{mymatrix}{c} p \\ q\\ r\\ s\end{mymatrix}} \\
 & =&
-C_{B_1}^{-1}\left(\frac{1}{2}\begin{mymatrix}{c}
-p+s \\ q+r \\ r-q \\ p-s \end{mymatrix}\right) \\
+C_{B_1}^{-1}\tup{\frac{1}{2}\begin{mymatrix}{c}
+p+s \\ q+r \\ r-q \\ p-s \end{mymatrix}} \\
 & = & \frac{1}{2}(p+s)x^3 +\frac{1}{2}(q+r)x^2 +\frac{1}{2}(r-q)x 
 + \frac{1}{2}(p-s).
 \end{eqnarray*}

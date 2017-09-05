@@ -14,42 +14,42 @@ kernel of a linear transformation.
 
 \begin{definition}{Kernel and image}{}
 Let $V$ and $W$ be vector spaces and let $T:V\rightarrow W$ be a linear transformation. Then the image of $T$
-denoted as $\func{im}\left( T\right) $ is defined to be the set 
+denoted as $\func{im}\tup{T} $ is defined to be the set 
 \begin{equation*}
 \set{T(\vect{v}):\vect{v}\in V}
 \end{equation*}
 In words, it consists of all vectors in $W$ which equal $T(\vect{v})$ for some $
-\vect{v}\in V$. The kernel, $\ker \left( T\right) $, 
+\vect{v}\in V$. The kernel, $\ker \tup{T} $, 
 consists of all $\vect{v}\in V$ such that $T(\vect{v})=\vect{0}$. That is, 
 \begin{equation*}
-\ker \left( T\right) =\set{\vect{v}\in V:T(\vect{v})=\vect{0}}
+\ker \tup{T} =\set{\vect{v}\in V:T(\vect{v})=\vect{0}}
 \end{equation*}
 \end{definition}
 
-Then in fact, both $\func{im}\left( T\right) $ and $\ker \left( T\right) $
+Then in fact, both $\func{im}\tup{T} $ and $\ker \tup{T} $
 are subspaces of $W$ and $V$ respectively.
 
 \begin{proposition}{Kernel and image as subspaces}{kernelimagevectorspaces}
-Let $V,W$ be vector spaces and let $T:V\rightarrow W$ be a linear transformation. Then $\ker \left(
-T\right) \subseteq V$ and $\func{im}\left( T\right) \subseteq W$. In fact, they are both subspaces. 
+Let $V,W$ be vector spaces and let $T:V\rightarrow W$ be a linear transformation. Then $\ker \tup{
+T} \subseteq V$ and $\func{im}\tup{T} \subseteq W$. In fact, they are both subspaces. 
 \end{proposition}
 
 \begin{proof}
-First consider $\ker \left( T\right) .$ It is necessary to
-show that if $\vect{v}_{1},\vect{v}_{2}$ are vectors in $\ker \left( T\right) $
+First consider $\ker \tup{T} .$ It is necessary to
+show that if $\vect{v}_{1},\vect{v}_{2}$ are vectors in $\ker \tup{T} $
 and if $a,b$ are scalars, then $a\vect{v}_{1}+b\vect{v}_{2}$ is also in $\ker
-\left( T\right) .$ But 
+\tup{T} .$ But 
 \begin{equation*}
-T\left( a\vect{v}_{1}+b\vect{v}_{2}\right) =aT(\vect{v}_{1})+bT(\vect{v}_{2})=a\vect{0}+b\vect{0}=\vect{0}
+T\tup{a\vect{v}_{1}+b\vect{v}_{2}} =aT(\vect{v}_{1})+bT(\vect{v}_{2})=a\vect{0}+b\vect{0}=\vect{0}
 \end{equation*}
-Thus $\ker \left( T\right) $ is a subspace of $V$.
+Thus $\ker \tup{T} $ is a subspace of $V$.
 
-Next suppose $T(\vect{v}_{1}),T(\vect{v}_{2})$ are two vectors in $\func{im}\left(
-T\right) .$ Then if $a,b$ are scalars, 
+Next suppose $T(\vect{v}_{1}),T(\vect{v}_{2})$ are two vectors in $\func{im}\tup{
+T} .$ Then if $a,b$ are scalars, 
 \begin{equation*}
-aT(\vect{v}_{2})+bT(\vect{v}_{2})=T\left( a\vect{v}_{1}+b\vect{v}_{2}\right)
+aT(\vect{v}_{2})+bT(\vect{v}_{2})=T\tup{a\vect{v}_{1}+b\vect{v}_{2}}
 \end{equation*}
-and this last vector is in $\func{im}\left( T\right) $ by definition. 
+and this last vector is in $\func{im}\tup{T} $ by definition. 
 \end{proof}
 
 Consider the following example.
@@ -214,22 +214,22 @@ rank of $A$ equals $n$.
 \begin{theorem}{Dimension of kernel and image}{}
 Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are vector
 spaces. Suppose the dimension of $V$ is $n$.
-Then $n=\dim \left( \ker \left( T\right) \right) +\dim \left( \func{im}
-\left( T\right) \right) $.
+Then $n=\dim \tup{\ker \tup{T} } +\dim \tup{\func{im}
+\tup{T} } $.
 \end{theorem}
 
 \begin{proof}
-From Proposition \ref{prop:kernelimagevectorspaces}, $\func{im}\left( T\right) $
+From Proposition \ref{prop:kernelimagevectorspaces}, $\func{im}\tup{T} $
 is a subspace of $W.$ By Theorem \ref{thm:basisvectorspace}, there exists a basis for $
-\func{im}\left( T\right) ,\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})}
-. $ Similarly, there is a basis for $\ker \left( T\right) ,\set{\vect{u}
+\func{im}\tup{T} ,\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})}
+. $ Similarly, there is a basis for $\ker \tup{T} ,\set{\vect{u}
 _{1},\cdots ,\vect{u}_{s}} $. Then if $\vect{v}\in V,$ there exist
 scalars $c_{i}$ such that 
 \begin{equation*}
 T(\vect{v})=\sum_{i=1}^{r}c_{i}T(\vect{v}_{i})
 \end{equation*}
-Hence $T\left( \vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}\right) =0.$ It follows
-that $\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}$ is in $\ker \left( T\right) $.
+Hence $T\tup{\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}} =0.$ It follows
+that $\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}$ is in $\ker \tup{T} $.
 Hence there are scalars $a_{i}$ such that 
 \begin{equation*}
 \vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}=\sum_{j=1}^{s}a_{j}\vect{u}_{j}
@@ -258,8 +258,8 @@ are linearly independent, it follows that each $a_{j}=0$ also. It follows
 that $\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,\vect{v}
 _{r}} $ is a basis for $V$ and so 
 \begin{equation*}
-n=s+r=\dim \left( \ker \left( T\right) \right) +\dim \left( \func{im}\left(
-T\right) \right)
+n=s+r=\dim \tup{\ker \tup{T} } +\dim \tup{\func{im}\tup{
+T} }
 \end{equation*}
 \end{proof}
 
@@ -267,11 +267,11 @@ Consider the following definition.
 
 \begin{definition}{Rank of linear transformation}{}
 Let $T:V\rightarrow W$ be a linear transformation and suppose $V,W$ are finite dimensional vector spaces. Then
-the rank of $T$ denoted as $\func{rank}\left( T\right) $ is defined as the
-dimension of $\func{im}\left( T\right) .$ The nullity of $T$ is the
-dimension of $\ker \left( T\right) .$ Thus the above theorem says that $
-\func{rank}\left( T\right) +\dim \left( \ker \left( T\right) \right) =\dim
-\left( V\right) .$
+the rank of $T$ denoted as $\func{rank}\tup{T} $ is defined as the
+dimension of $\func{im}\tup{T} .$ The nullity of $T$ is the
+dimension of $\ker \tup{T} .$ Thus the above theorem says that $
+\func{rank}\tup{T} +\dim \tup{\ker \tup{T} } =\dim
+\tup{V} .$
 \end{definition}
 
 Recall the following important result. 
@@ -286,19 +286,19 @@ From this theorem follows the next corollary.
 \begin{corollary}{One to one and onto characterization}{oneoneontochar}
 Let $T:V\rightarrow W$ be a linear map where the dimension of $V$ is $n$ and
 the dimension of $W$ is $m$. Then $T$ is one to one if and only if $\ker
-\left( T\right) =\set{\vect{0}} $ and $T$ is onto if and only if $
-\func{rank}\left( T\right) =m$.
+\tup{T} =\set{\vect{0}} $ and $T$ is onto if and only if $
+\func{rank}\tup{T} =m$.
 \end{corollary}
 
 \begin{proof}
-The statement $\ker \left( T \right) =\set{\vect{0}} $
-is equivalent to saying if $T \left( \vect{v} \right)=\vect{0},$ it follows that $\vect{v}=\vect{0}$
+The statement $\ker \tup{T } =\set{\vect{0}} $
+is equivalent to saying if $T \tup{\vect{v} }=\vect{0},$ it follows that $\vect{v}=\vect{0}$
 . Thus by Lemma \ref{lem:onetooneabstract} $T$ is one to one. If $T$ is onto, then $
-\func{im}\left( T\right) =W$ and so $\func{rank}\left( T\right) $ which is
-defined as the dimension of $\func{im}\left( T\right) $ is $m$. If $\func{
-rank}\left( T\right) =m,$ then by Theorem \ref{thm:subspacevectorspace}, since $\func{im}
-\left( T\right) $ is a subspace of $W,$ it follows that $\func{im}\left(
-T\right) =W$. 
+\func{im}\tup{T} =W$ and so $\func{rank}\tup{T} $ which is
+defined as the dimension of $\func{im}\tup{T} $ is $m$. If $\func{
+rank}\tup{T} =m,$ then by Theorem \ref{thm:subspacevectorspace}, since $\func{im}
+\tup{T} $ is a subspace of $W,$ it follows that $\func{im}\tup{
+T} =W$. 
 \end{proof}
 
 \begin{example}{One to one transformation}{onetoonekernel}

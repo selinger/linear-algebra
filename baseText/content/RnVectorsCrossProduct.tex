@@ -81,7 +81,7 @@ Then the \textbf{cross product}, written $\vect{u}\times \vect{v}$, is defined b
 \vect{v}\vectlength \sin \theta $, \\
 where $\theta $ is the included angle between $\vect{u}$ and $\vect{v}$.
 
-\item It is perpendicular to both $\vect{u}$ and $\vect{v}$, that is $\left( \vect{u}\times \vect{v} \right) \dotprod \vect{u}=0,$ $\left( \vect{u}\times \vect{v} \right) \dotprod \vect{v}=0,$ \\
+\item It is perpendicular to both $\vect{u}$ and $\vect{v}$, that is $\tup{\vect{u}\times \vect{v} } \dotprod \vect{u}=0,$ $\tup{\vect{u}\times \vect{v} } \dotprod \vect{v}=0,$ \\
 and  $\vect{u},\vect{v},\vect{u}\times \vect{v}$ form a right hand system.
 \end{enumerate}
 \end{definition}
@@ -111,15 +111,15 @@ Let $\vect{u}, \vect{v}, \vect{w}$ be vectors in $\R^3$, and $k$ a scalar. Then,
 of the cross product hold.
 \begin{enumerate}
 \item 
-$\vect{u}\times \vect{v}= -\left( \vect{v}\times \vect{u}\right), 
+$\vect{u}\times \vect{v}= -\tup{\vect{v}\times \vect{u}}, 
 \mbox{and} \; \vect{u}\times \vect{u}=\vect{0}$
 \item 
-$\left( k \vect{u}\right)\times \vect{v}= k \left( \vect{u}\times \vect{v}\right) 
-=\vect{u}\times \left( k \vect{v}\right)$
+$\tup{k \vect{u}}\times \vect{v}= k \tup{\vect{u}\times \vect{v}} 
+=\vect{u}\times \tup{k \vect{v}}$
 \item
-$\vect{u}\times \left( \vect{v}+\vect{w}\right) =\vect{u}\times \vect{v}+\vect{u}\times \vect{w}$
+$\vect{u}\times \tup{\vect{v}+\vect{w}} =\vect{u}\times \vect{v}+\vect{u}\times \vect{w}$
 \item 
-$\left( \vect{v}+\vect{w}\right) \times \vect{u}=\vect{v} \times \vect{u}+\vect{w}\times \vect{u}$
+$\tup{\vect{v}+\vect{w}} \times \vect{u}=\vect{v} \times \vect{u}+\vect{w}\times \vect{u}$
 \end{enumerate}
 \end{proposition}
 
@@ -131,13 +131,13 @@ $\left\vert \vect{u}\right\vert \left\vert \vect{v}\right\vert \sin
 direction. 
 
 Formula $2.$ is proven as follows. If $k $ is a
-non-negative scalar, the direction of $\left( k \vect{u}\right)
+non-negative scalar, the direction of $\tup{k \vect{u}}
 \times \vect{v}$ is the same as the direction of $\vect{u}\times \vect{v},
-k \left( \vect{u}\times \vect{v}\right) $ and $\vect{u}\times \left(
-k \vect{v}\right) $. The magnitude is  $k$ times the
+k \tup{\vect{u}\times \vect{v}} $ and $\vect{u}\times \tup{
+k \vect{v}} $. The magnitude is  $k$ times the
 magnitude of $\vect{u}\times \vect{v}$ which is the same as the magnitude of 
-$k \left( \vect{u}\times \vect{v}\right) $ and $\vect{u}\times \left(
-k \vect{v}\right) .$ Using this yields equality in $2$. In
+$k \tup{\vect{u}\times \vect{v}} $ and $\vect{u}\times \tup{
+k \vect{v}} .$ Using this yields equality in $2$. In
 the case where $k <0,$ everything works the same way except the vectors
 are all pointing in the opposite direction and you must multiply by 
 $\left\vert k \right\vert $ when comparing their magnitudes. 
@@ -145,9 +145,9 @@ $\left\vert k \right\vert $ when comparing their magnitudes.
 The distributive laws, $3.$ and $4.$, are much harder to establish. For now, it suffices to
  notice that if we know that $3.$ is true, $4.$ follows. Thus, assuming $3.$, and using $1.$,
 \begin{align*}
-\left( \vect{v}+\vect{w}\right) \times \vect{u}& =-\vect{u}\times \left(
-\vect{v}+\vect{w}\right) \\
-& =-\left( \vect{u}\times \vect{v}+\vect{u}\times \vect{w}\right) \\
+\tup{\vect{v}+\vect{w}} \times \vect{u}& =-\vect{u}\times \tup{
+\vect{v}+\vect{w}} \\
+& =-\tup{\vect{u}\times \vect{v}+\vect{u}\times \vect{w}} \\
 & =\vect{v}\times \vect{u}+\vect{w}\times \vect{u}
 \end{align*}
 \end{proof}
@@ -159,9 +159,9 @@ vectors. Then
 \begin{equation}
 \begin{array}{c}
 \vect{u}\times \vect{v} 
- =\left( u_{2}v_{3}-u_{3}v_{2}\right) \vect{i}-\left(
-u_{1}v_{3} - u_{3}v_{1}\right) \vect{j}+  \\
- +\left( u_{1}v_{2}-u_{2}v_{1}\right) \vect{k}  \label{crossprod1}
+ =\tup{u_{2}v_{3}-u_{3}v_{2}} \vect{i}-\tup{
+u_{1}v_{3} - u_{3}v_{1}} \vect{j}+  \\
+ +\tup{u_{1}v_{2}-u_{2}v_{1}} \vect{k}  \label{crossprod1}
 \end{array}
 \end{equation}
 \end{proposition}
@@ -184,15 +184,15 @@ We now prove this proposition.
 \begin{proof} From the above table and the properties of the cross
 product listed,
 \begin{eqnarray*}
-\vect{u} \times \vect{v} &=& \left( u_{1}\vect{i}+u_{2}\vect{j}+u_{3}\vect{k}\right) \times \left(
-v_{1}\vect{i}+v_{2}\vect{j}+v_{3}\vect{k}\right) \\
+\vect{u} \times \vect{v} &=& \tup{u_{1}\vect{i}+u_{2}\vect{j}+u_{3}\vect{k}} \times \tup{
+v_{1}\vect{i}+v_{2}\vect{j}+v_{3}\vect{k}} \\
 &=& u_{1}v_{2}\vect{i}\times \vect{j}+u_{1}v_{3}\vect{i}\times \vect{k}+u_{2}v_{1}\vect{j}\times \vect{i}+
 u_{2}v_{3}\vect{j}\times \vect{k}+
 +u_{3}v_{1}\vect{k}\times \vect{i}+u_{3}v_{2}\vect{k}\times \vect{j} \\
 &=&u_{1}v_{2}\vect{k}-u_{1}v_{3}\vect{j}-u_{2}v_{1}\vect{k}+u_{2}v_{3}
 \vect{i}+u_{3}v_{1}\vect{j}-u_{3}v_{2}\vect{i} \\
-&=&\left( u_{2}v_{3}-u_{3}v_{2}\right) \vect{i}+\left(
-u_{3}v_{1}-u_{1}v_{3}\right) \vect{j}+\left( u_{1}v_{2}-u_{2}v_{1}\right)
+&=&\tup{u_{2}v_{3}-u_{3}v_{2}} \vect{i}+\tup{
+u_{3}v_{1}-u_{1}v_{3}} \vect{j}+\tup{u_{1}v_{2}-u_{2}v_{1}}
 \vect{k}  
 \end{eqnarray*}
 \begin{equation}
@@ -214,17 +214,17 @@ v_{1} & v_{2} & v_{3}
 \end{equation}
 Expanding the determinant along the top row yields
 \begin{equation*}
-\vect{i}\left( -1\right) ^{1+1}\left\vert
+\vect{i}\tup{-1} ^{1+1}\left\vert
 \begin{array}{cc}
 u_{2} & u_{3} \\
 v_{2} & v_{3}
 \end{array}
-\right\vert +\vect{j}\left( -1\right) ^{2+1}\left\vert
+\right\vert +\vect{j}\tup{-1} ^{2+1}\left\vert
 \begin{array}{cc}
 u_{1} & u_{3} \\
 v_{1} & v_{3}
 \end{array}
-\right\vert +\vect{k}\left( -1\right) ^{3+1}\left\vert
+\right\vert +\vect{k}\tup{-1} ^{3+1}\left\vert
 \begin{array}{cc}
 u_{1} & u_{2} \\
 v_{1} & v_{2}
@@ -251,8 +251,8 @@ v_{1} & v_{2}
 \end{equation*}
 Expanding these determinants leads to 
 \begin{equation*}
-\left( u_{2}v_{3}-u_{3}v_{2}\right) \vect{i}-\left(
-u_{1}v_{3}-u_{3}v_{1}\right) \vect{j}+\left( u_{1}v_{2}-u_{2}v_{1}\right)
+\tup{u_{2}v_{3}-u_{3}v_{2}} \vect{i}-\tup{
+u_{1}v_{3}-u_{3}v_{1}} \vect{j}+\tup{u_{1}v_{2}-u_{2}v_{1}}
 \vect{k}  
 %\label{crossprod4}
 \end{equation*}
@@ -384,14 +384,14 @@ We can also use this concept to find the area of a triangle. Consider the follow
 example.
 
 \begin{example}{Area of triangle}{areatriangle}
-Find the area of the triangle determined by the points $\left(1, 2, 3 \right) ,
-\left( 0,2,5\right),
-\left( 5,1, 2 \right) $ 
+Find the area of the triangle determined by the points $\tup{1, 2, 3 } ,
+\tup{0,2,5},
+\tup{5,1, 2 } $ 
 \end{example}
 
 \begin{solution}
 This triangle is obtained by connecting the three points with lines. Picking
-$\left( 1,2,3\right) $ as a starting point, there are two displacement
+$\tup{1,2,3} $ as a starting point, there are two displacement
 vectors, $\begin{mymatrix}{rrr}
 -1 & 0 & 2
 \end{mymatrix}^T $ and $\begin{mymatrix}{rrr}

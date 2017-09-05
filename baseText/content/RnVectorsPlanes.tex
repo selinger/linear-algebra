@@ -48,7 +48,7 @@ Let $\vect{n} =
 1 \\
 2 \\
 3 
-\end{mymatrix}$ be the normal vector for a plane which contains the point $P_0 = \left( 2, 1, 4 \right)$. Determine if the point $P = \left( 5, 4, 1 \right)$ is contained in this plane. 
+\end{mymatrix}$ be the normal vector for a plane which contains the point $P_0 = \tup{2, 1, 4 }$. Determine if the point $P = \tup{5, 4, 1 }$ is contained in this plane. 
 \end{example}
 
 \begin{solution}
@@ -65,7 +65,7 @@ Given the above $\vect{n}$, $P_0$, and $P$, this equation becomes
 3
 \end{mymatrix}
 \dotprod
-\left(
+\tup{
 \begin{mymatrix}{r}
 5 \\
 4 \\
@@ -77,7 +77,7 @@ Given the above $\vect{n}$, $P_0$, and $P$, this equation becomes
 1 \\
 4
 \end{mymatrix}
-\right)
+}
 &=& 
 \begin{mymatrix}{r}
 1 \\
@@ -85,13 +85,13 @@ Given the above $\vect{n}$, $P_0$, and $P$, this equation becomes
 3
 \end{mymatrix}
 \dotprod
-\left(
+\tup{
 \begin{mymatrix}{r}
 3 \\
 3 \\
 -3
 \end{mymatrix}
-\right) \\
+} \\
 &=& 
 3 + 6 - 9 = 0
 \end{eqnarray*}
@@ -104,7 +104,7 @@ Suppose $\vect{n} = \begin{mymatrix}{c}
 a \\
 b \\
 c
-\end{mymatrix}$, $P = \left( x,y,z\right)$ and $P_0 = (x_0, y_0, z_0 )$.
+\end{mymatrix}$, $P = \tup{x,y,z}$ and $P_0 = (x_0, y_0, z_0 )$.
 
 Then 
 \begin{eqnarray*}
@@ -115,7 +115,7 @@ b \\
 c
 \end{mymatrix}
 \dotprod
-\left(
+\tup{
 \begin{mymatrix}{c}
 x \\
 y \\
@@ -127,7 +127,7 @@ x_0 \\
 y_0 \\
 z_0
 \end{mymatrix}
-\right) 
+} 
 &=& 0 \\
 \begin{mymatrix}{c}
 a \\
@@ -190,7 +190,7 @@ Using Definition \ref{def:vecteqnplane}, we can determine the vector equation fo
 1
 \end{mymatrix} 
 \dotprod 
-\left(\begin{mymatrix}{c}
+\tup{\begin{mymatrix}{c}
 x \\
 y \\
 z
@@ -200,7 +200,7 @@ z
 3 \\
 -2 \\
 5
-\end{mymatrix} \right) &=& 0 \\
+\end{mymatrix} } &=& 0 \\
 \begin{mymatrix}{r}
 -2 \\
 4 \\
@@ -281,7 +281,7 @@ Then, $\longvect{P_0P} = \begin{mymatrix}{c}
 Next, compute $\longvect{QP} = \func{proj}_{\vect{n}}\longvect{P_0P}$. 
 \begin{eqnarray*}
 \longvect{QP} &=& \func{proj}_{\vect{n}}\longvect{P_0P} \\
-&=& \left( \frac{ \longvect{P_0P} \dotprod \vect{n}}{\vectlength \vect{n} \vectlength ^2}\right)\vect{n} \\
+&=& \tup{\frac{ \longvect{P_0P} \dotprod \vect{n}}{\vectlength \vect{n} \vectlength ^2}}\vect{n} \\
 &=& \frac{12}{9} \begin{mymatrix}{r}
 2 \\
 1 \\

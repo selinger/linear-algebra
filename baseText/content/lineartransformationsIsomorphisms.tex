@@ -17,7 +17,7 @@ operations of addition and
 are scalars and $
 \vect{x},\vect{y}$ are vectors, 
 \begin{equation*}
-T\left( a\vect{x}+b\vect{y}\right) =aT(\vect{x})+bT(\vect{y})
+T\tup{a\vect{x}+b\vect{y}} =aT(\vect{x})+bT(\vect{y})
 \end{equation*}
 
 Consider the following important definition.
@@ -69,25 +69,25 @@ We proceed as follows.
 
 Let $k, p$ be scalars. 
 \begin{eqnarray*}
-T \left( k \begin{mymatrix}{c}
+T \tup{k \begin{mymatrix}{c}
 x_1 \\
 y_1
 \end{mymatrix} + p \begin{mymatrix}{c}
 x_2 \\
 y_2
-\end{mymatrix} \right) &=& 
-T \left(  \begin{mymatrix}{c}
+\end{mymatrix} } &=& 
+T \tup{\begin{mymatrix}{c}
 kx_1 \\
 ky_1
 \end{mymatrix} + \begin{mymatrix}{c}
 px_2 \\
 py_2
-\end{mymatrix} \right) \\
+\end{mymatrix} } \\
 &=&
-T \left(  \begin{mymatrix}{c}
+T \tup{\begin{mymatrix}{c}
 kx_1 + px_2 \\
 ky_1 + py_2
-\end{mymatrix}  \right) \\
+\end{mymatrix}  } \\
 &=& 
 \begin{mymatrix}{c}
 (kx_1 + px_2) + (ky_1 + py_2) \\
@@ -116,13 +116,13 @@ x_2 + y_2 \\
 x_2 - y_2
 \end{mymatrix} \\
 &=& 
-k T \left(  \begin{mymatrix}{c}
+k T \tup{\begin{mymatrix}{c}
 x_1 \\
 y_1
-\end{mymatrix} \right) + p T \left( \begin{mymatrix}{c}
+\end{mymatrix} } + p T \tup{\begin{mymatrix}{c}
 x_2 \\
 y_2
-\end{mymatrix} \right)
+\end{mymatrix} }
 \end{eqnarray*}
 
 Therefore $T$ is linear. 
@@ -135,10 +135,10 @@ y
 \end{mymatrix}$. 
 
 \[
-T  \left( \begin{mymatrix}{c}
+T  \tup{\begin{mymatrix}{c}
 x \\
 y
-\end{mymatrix} \right) = \begin{mymatrix}{c}
+\end{mymatrix} } = \begin{mymatrix}{c}
 x + y\\
 x - y 
 \end{mymatrix} = \begin{mymatrix}{c}
@@ -168,10 +168,10 @@ and $T$ is one to one.
 
 Let $a,b$ be scalars. We want to check if there is always a solution to 
 \[
-T  \left( \begin{mymatrix}{c}
+T  \tup{\begin{mymatrix}{c}
 x \\
 y
-\end{mymatrix} \right) = \begin{mymatrix}{c}
+\end{mymatrix} } = \begin{mymatrix}{c}
 x + y\\
 x - y 
 \end{mymatrix} = \begin{mymatrix}{c}
@@ -215,21 +215,21 @@ also an isomorphism.
 vector in $W$ is of the form $T(\vect{v})$ where $\vect{v} \in V$. Consider then for $a,b$
 scalars, 
 \begin{equation*}
-T^{-1}\left( aT(\vect{v}_{1})+bT(\vect{v}_{2})\right)
+T^{-1}\tup{aT(\vect{v}_{1})+bT(\vect{v}_{2})}
 \end{equation*}
 where $\vect{v}_{1}, \vect{v}_2 \in V$. Is this equal to 
 \begin{equation*}
-aT^{-1}\left( T (\vect{v}_{1})\right) +bT^{-1}\left( T(\vect{v}_{2})\right) =a\vect{v}_{1}+b\vect{v}_{2}?
+aT^{-1}\tup{T (\vect{v}_{1})} +bT^{-1}\tup{T(\vect{v}_{2})} =a\vect{v}_{1}+b\vect{v}_{2}?
 \end{equation*}
 Since $T$ is one to one, this will be so if 
 \begin{equation*}
-T\left( a\vect{v}_{1}+b\vect{v}_{2}\right) =T\left( T^{-1}\left( aT(\vect{v}_{1})+bT(\vect{v}_{2})\right)
-\right) =aT(\vect{v}_{1})+bT(\vect{v}_{2}).
+T\tup{a\vect{v}_{1}+b\vect{v}_{2}} =T\tup{T^{-1}\tup{aT(\vect{v}_{1})+bT(\vect{v}_{2})}
+} =aT(\vect{v}_{1})+bT(\vect{v}_{2}).
 \end{equation*}
 However, the above statement is just the condition that $T$ is a linear map.
-Thus $T^{-1}$ is indeed a linear map. If $\vect{v} \in V$ is given, then $\vect{v}=T^{-1}\left( T(\vect{v})\right) $ and so $T^{-1}$ is onto. If $T^{-1} (\vect{v})=0,$ then 
+Thus $T^{-1}$ is indeed a linear map. If $\vect{v} \in V$ is given, then $\vect{v}=T^{-1}\tup{T(\vect{v})} $ and so $T^{-1}$ is onto. If $T^{-1} (\vect{v})=0,$ then 
 \begin{equation*}
-\vect{v}=T\left( T^{-1}(\vect{v})\right) =T(\vect{0})=\vect{0}
+\vect{v}=T\tup{T^{-1}(\vect{v})} =T(\vect{0})=\vect{0}
 \end{equation*}
 and so $T^{-1}$ is one to one.
 \end{proof}
@@ -238,8 +238,8 @@ Another important result is that the composition of multiple isomorphisms is als
 
 \begin{proposition}{Composition of isomorphisms}{compositionisomorphisms}
 Let $T:V\rightarrow W$ and  $S:W\rightarrow Z$ be isomorphisms where $V,W,Z$ are subspaces of $\R^n$. Then $S\circ
-T $ defined by $\left( S\circ T\right) \left( \vect{v} \right) = S\left(
-T\left( \vect{v} \right) \right) $ is also an isomorphism.
+T $ defined by $\tup{S\circ T} \tup{\vect{v} } = S\tup{
+T\tup{\vect{v} } } $ is also an isomorphism.
 \index{isomorphism!composition}
 \end{proposition}
 
@@ -247,17 +247,17 @@ T\left( \vect{v} \right) \right) $ is also an isomorphism.
 Suppose $T:V\rightarrow W$ and  $S:W\rightarrow Z$ are isomorphisms. Why is $S\circ T$ a linear map?
 For $a,b$ scalars,
 \begin{eqnarray*}
-S\circ T\left( a\vect{v}_{1}+b(\vect{v}_{2})\right) 
-&=& S\left( T\left(a\vect{v}_{1}+b\vect{v}_{2}\right) \right) =S\left( aT\vect{v}_{1}+bT\vect{v}_{2}\right) \\
-&=&aS\left( T\vect{v}_{1}\right) +bS\left( T\vect{v}_{2}\right) = a\left( S\circ
-T\right) \left( \vect{v}_{1}\right) +b\left( S\circ T\right) \left( \vect{v}_{2}\right)
+S\circ T\tup{a\vect{v}_{1}+b(\vect{v}_{2})} 
+&=& S\tup{T\tup{a\vect{v}_{1}+b\vect{v}_{2}} } =S\tup{aT\vect{v}_{1}+bT\vect{v}_{2}} \\
+&=&aS\tup{T\vect{v}_{1}} +bS\tup{T\vect{v}_{2}} = a\tup{S\circ
+T} \tup{\vect{v}_{1}} +b\tup{S\circ T} \tup{\vect{v}_{2}}
 \end{eqnarray*}
-Hence $S\circ T$ is a linear map. If $\left( S\circ T\right) \left( \vect{v} \right)
-=0,$ then $S\left( T\left(  \vect{v} \right) \right) =0$ and it follows that $T(\vect{v})=\vect{0}$ and hence by this lemma again, $\vect{v}=\vect{0}$. Thus $S\circ
+Hence $S\circ T$ is a linear map. If $\tup{S\circ T} \tup{\vect{v} }
+=0,$ then $S\tup{T\tup{\vect{v} } } =0$ and it follows that $T(\vect{v})=\vect{0}$ and hence by this lemma again, $\vect{v}=\vect{0}$. Thus $S\circ
 T $ is one to one. It remains to verify that it is onto. Let $\vect{z} \in Z$. Then
 since $S$ is onto, there exists $\vect{w} \in W$ such that $S(\vect{w})=\vect{z}.$ Also, since $T$
-is onto, there exists $\vect{v}\in V$ such that $T(\vect{v})=\vect{w}.$ It follows that $S\left(
-T\left( \vect{v}\right) \right) =\vect{z}$ and so $S\circ T$ is also onto.
+is onto, there exists $\vect{v}\in V$ such that $T(\vect{v})=\vect{w}.$ It follows that $S\tup{
+T\tup{\vect{v}} } =\vect{z}$ and so $S\circ T$ is also onto.
 \end{proof}
 
 Consider two subspaces $V$ and $W$, and suppose there exists an isomorphism mapping one to the other. In this way the two subspaces are related, which we can write as $V \sim W$. Then the previous two propositions together claim that $\sim $ is an equivalence relation. That is: $\sim $
@@ -283,9 +283,9 @@ an isomorphism.
 
 \begin{solution}
 The reason for this is that, since $A$ is invertible, the only vector it
-sends to $\vect{0}$ is the zero vector. Hence if $A(\vect{x})=A(\vect{y}),$ then $A\left( \vect{x}-\vect{y}\right) =\vect{0}$ and so $\vect{x}=\vect{y}$. It is onto
-because if $\vect{y}\in \R^{n},A\left( A^{-1} (\vect{y})\right) =\left(
-AA^{-1}\right) (\vect{y})$ $=\vect{y}$. 
+sends to $\vect{0}$ is the zero vector. Hence if $A(\vect{x})=A(\vect{y}),$ then $A\tup{\vect{x}-\vect{y}} =\vect{0}$ and so $\vect{x}=\vect{y}$. It is onto
+because if $\vect{y}\in \R^{n},A\tup{A^{-1} (\vect{y})} =\tup{
+AA^{-1}} (\vect{y})$ $=\vect{y}$. 
 \end{solution}
 
 In fact, all isomorphisms from $\R^{n}$ to $\R^{n}$ can be expressed as $T(\vect{x}) = A(\vect{x})$ where $A$ is an invertible $n \times n$ matrix. One
@@ -314,7 +314,7 @@ u}_{k})} $ is also linearly independent. Suppose then that
 \end{equation*}
 Then, since $T$ is linear, 
 \begin{equation*}
-T\left( \sum_{i=1}^{n}c_{i}\vect{u}_{i}\right) =\vect{0}
+T\tup{\sum_{i=1}^{n}c_{i}\vect{u}_{i}} =\vect{0}
 \end{equation*}
 Since $T$ is one to one, it follows that 
 \begin{equation*}
@@ -336,7 +336,7 @@ scalars $\set{c_{i}} _{i=1}^{n}$ such that
 \end{equation*}
 Hence, 
 \begin{equation*}
-\vect{w}=T(\vect{v})=T\left( \sum_{i=1}^{n}c_{i}\vect{v}_{i}\right)
+\vect{w}=T(\vect{v})=T\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}}
 =\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})
 \end{equation*}
 It follows that span$\set{T(\vect{v}_{1}),\cdots , T(\vect{v}_{n})} =W$ showing that this set of vectors is a
@@ -345,8 +345,8 @@ basis for $W$.
 Next suppose that $T$ is a linear transformation which takes a basis to a basis. This means that if $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} $ is a basis for $V,$ it
 follows $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} $ is a basis for $
 W.$ Then if $w\in W,$ there exist scalars $c_{i}$ such that $
-w=\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\left( \sum_{i=1}^{n}c_{i}\vect{v}_{i}\right) $
-showing that $T$ is onto. If $T\left( \sum_{i=1}^{n}c_{i}\vect{v}_{i}\right) =\vect{0}$
+w=\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} $
+showing that $T$ is onto. If $T\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} =\vect{0}$
 then $\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=\vect{0}$ and since the vectors $\set{T(\vect{v}
 _{1}),\cdots ,T(\vect{v}_{n})} $ are linearly independent, it follows
 that each $c_{i}=0.$ Since $\sum_{i=1}^{n}c_{i}\vect{v}_{i}$ is a typical vector in 
@@ -384,7 +384,7 @@ T(\vect{v}_{i})=\vect{w}_{i}
 \end{equation*}
 for $\sum_{i=1}^{n}c_{i}\vect{v}_{i}$ an arbitrary vector of $V,$
 \begin{equation*}
-T\left( \sum_{i=1}^{n}c_{i}\vect{v}_{i}\right) = \sum_{i=1}^{n}c_{i}T
+T\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} = \sum_{i=1}^{n}c_{i}T
 \vect{v}_{i}=\sum_{i=1}^{n}c_{i}\vect{w}_{i}.
 \end{equation*}
 It is necessary to verify that this is well defined. Suppose then that 
@@ -393,7 +393,7 @@ It is necessary to verify that this is well defined. Suppose then that
 \end{equation*}
 Then 
 \begin{equation*}
-\sum_{i=1}^{n}\left( c_{i}-\hat{c}_{i}\right) \vect{v}_{i}=\vect{0}
+\sum_{i=1}^{n}\tup{c_{i}-\hat{c}_{i}} \vect{v}_{i}=\vect{0}
 \end{equation*}
 and since $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} $ is a basis, $
 c_{i}=\hat{c}_{i}$ for each $i$. Hence 
@@ -402,18 +402,18 @@ c_{i}=\hat{c}_{i}$ for each $i$. Hence
 \end{equation*}
 and so the mapping is well defined. Also if $a,b$ are scalars, 
 \begin{eqnarray*}
-T\left( a\sum_{i=1}^{n}c_{i}\vect{v}_{i}+b\sum_{i=1}^{n}\hat{c}_{i}\vect{v}%
-_{i}\right) &=&T\left( \sum_{i=1}^{n}\left( ac_{i}+b\hat{c}_{i}\right) \vect{v%
-}_{i}\right) =\sum_{i=1}^{n}\left( ac_{i}+b\hat{c}_{i}\right) \vect{w}_{i} \\
+T\tup{a\sum_{i=1}^{n}c_{i}\vect{v}_{i}+b\sum_{i=1}^{n}\hat{c}_{i}\vect{v}%
+_{i}} &=&T\tup{\sum_{i=1}^{n}\tup{ac_{i}+b\hat{c}_{i}} \vect{v%
+}_{i}} =\sum_{i=1}^{n}\tup{ac_{i}+b\hat{c}_{i}} \vect{w}_{i} \\
 &=&a\sum_{i=1}^{n}c_{i}\vect{w}_{i}+b\sum_{i=1}^{n}\hat{c}_{i}\vect{w}_{i} \\
-&=&aT\left( \sum_{i=1}^{n}c_{i}\vect{v}_{i}\right) +bT\left( \sum_{i=1}^{n}%
-\hat{c}_{i}\vect{v}_{i}\right)
+&=&aT\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} +bT\tup{\sum_{i=1}^{n}%
+\hat{c}_{i}\vect{v}_{i}}
 \end{eqnarray*}
 Thus $T$ is a linear transformation. 
 
 Now if 
 \begin{equation*}
-T\left( \sum_{i=1}^{n}c_{i}\vect{v}_{i}\right) =\sum_{i=1}^{n}c_{i}\vect{w}%
+T\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} =\sum_{i=1}^{n}c_{i}\vect{w}%
 _{i}=\vect{0},
 \end{equation*}
 then since the $\set{\vect{w}_{1},\cdots ,\vect{w}_{n}} $ are
@@ -421,7 +421,7 @@ independent, each $c_{i}=0$ and so $\sum_{i=1}^{n}c_{i}\vect{v}_{i}=\vect{0}$
 also. Hence $T$ is one to one. If $\sum_{i=1}^{n}c_{i}\vect{w}_{i}$ is a
 vector in $W,$ then it equals 
 \begin{equation*}
-\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\left( \sum_{i=1}^{n}c_{i}\vect{v}_{i}\right)
+\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}}
 \end{equation*}
 showing that $T$ is also onto. Hence $T$ is an isomorphism and so $V$ and $W$
 are isomorphic.
@@ -444,8 +444,8 @@ fail to span $W$. But then there would exist $\vect{w}\notin \func{span}
 Hence $\func{span}\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} =W$ and
 so $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} $ is a basis. If $\vect{w}\in W,$ there exist scalars $c_{i}$ such that 
 \begin{equation*}
-\vect{w}=\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\left( \sum_{i=1}^{n}c_{i}\vect{v}
-_{i}\right)
+\vect{w}=\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\tup{\sum_{i=1}^{n}c_{i}\vect{v}
+_{i}}
 \end{equation*}
 showing that $T$ is onto. This shows that $1.)\Rightarrow 2.).$
 
@@ -462,8 +462,8 @@ Then
 \end{equation*}
 Hence each $c_{i}=0$ and so, $\set{\vect{v}_{1},\cdots ,\vect{v}
 _{n}} $ is a basis for $V$. Now it follows that a typical vector in $
-V $ is of the form $\sum_{i=1}^{n}c_{i}\vect{v}_{i}$. If $T\left(
-\sum_{i=1}^{n}c_{i}\vect{v}_{i}\right) =\vect{0},$ it follows that 
+V $ is of the form $\sum_{i=1}^{n}c_{i}\vect{v}_{i}$. If $T\tup{
+\sum_{i=1}^{n}c_{i}\vect{v}_{i}} =\vect{0},$ it follows that 
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=\vect{0}
 \end{equation*}

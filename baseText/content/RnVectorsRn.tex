@@ -10,19 +10,19 @@
 The notation $\R^{n}$, where n is a positive integer, refers to the collection of ordered lists of 
 $n$ real numbers, that is 
 \[
-\R^{n} = \set{\left( x_{1},\cdots, x_{n}\right)
+\R^{n} = \set{\tup{x_{1},\cdots, x_{n}}
 :x_{j}\in \R\text{ for }j=1,\cdots ,n}
 \]
-where each $\left( x_{1},\cdots, x_{n}\right)$ is a point of $\R^n$.
+where each $\tup{x_{1},\cdots, x_{n}}$ is a point of $\R^n$.
 
 In this chapter, we take a closer look at vectors in $\R^n$. First, we will consider what $\R^n$ looks like 
-in more detail. Recall that the point given by $0=\left( 0, \cdots, 0 \right)$ is called the \textbf{origin}.
+in more detail. Recall that the point given by $0=\tup{0, \cdots, 0 }$ is called the \textbf{origin}.
 
 Now, consider the case of $\R^n$ for $n=1.$ Then from the definition we can identify 
 $\R$ with points in $\R^{1}$ as follows:
 \begin{equation*}
 \R = \R^{1}=
- \set{\left( x_{1}\right) :x_{1}\in \R }
+ \set{\tup{x_{1}} :x_{1}\in \R }
 \end{equation*}
 Hence, $\R$ is defined as the set of all real numbers and geometrically,
 we can describe this as all the points on a line.
@@ -30,7 +30,7 @@ we can describe this as all the points on a line.
 Now suppose $n=2$. Then, from the definition,
 \begin{equation*}
 \R^{2}=
-\set{\left(x_{1}, x_{2}\right)
+\set{\tup{x_{1}, x_{2}}
 :x_{j}\in \R\text{ for }j=1,2 }
 \end{equation*}
 Consider the
@@ -69,12 +69,12 @@ Now suppose $n=3$. You may have previously encountered the $3$-dimensional
 coordinate system, given by
 \begin{equation*}
 \R^{3}=
-\set{\left( x_{1}, x_{2}, x_{3}\right)
+\set{\tup{x_{1}, x_{2}, x_{3}}
 :x_{j}\in \R\text{ for }j=1,2,3 }
 \end{equation*}
 
 Points in $\R^3$ will be determined by three
-coordinates, often written $\left(x,y,z\right)$ which correspond to the $x$, $y$,
+coordinates, often written $\tup{x,y,z}$ which correspond to the $x$, $y$,
 and $z$ axes.  We can think as above that the first two coordinates
 determine a point in a plane. The third component determines the
 height above or below the plane, depending on whether this number is
@@ -91,9 +91,9 @@ we will largely  focus on $n=2,3$ in this section.
 Consider the following definition.
 
 \begin{definition}{The position vector}{positionvector}
-Let $P=\left( p_{1},\cdots ,p_{n}\right) $ be the coordinates of a
+Let $P=\tup{p_{1},\cdots ,p_{n}} $ be the coordinates of a
 point in $\R^{n}.$ Then the vector $\longvect{0P}$ with its tail at
-$0=\left( 0,\cdots ,0\right) $ and its tip at 
+$0=\tup{0,\cdots ,0} $ and its tip at 
 $P$ is called the \textbf{position vector}\index{position vector}\index{vector!points and vectors} of the point $P$. 
 We write 
 \begin{equation*}
@@ -106,7 +106,7 @@ p_{n}
 \end{definition}
 
 $\longvect{0P}$ can be interpreted as a set of directions to get from the origin to the point $P$.
-For this reason we may write both $P=\left( p_{1},\cdots ,p_{n}\right)  \in \R^{n}$
+For this reason we may write both $P=\tup{p_{1},\cdots ,p_{n}}  \in \R^{n}$
 and  $$\longvect{0P}= \begin{mymatrix}{c}
 p_{1} \\
 \vdots \\
@@ -136,8 +136,8 @@ which has its tail at $0$ and point at $P$ determines the point $P$ of
 $\R^{n}$.
 
 Now suppose we are given two points, $P,Q$ whose
-coordinates are $\left( p_{1},\cdots ,p_{n}\right) $ and $\left(
-q_{1},\cdots ,q_{n}\right) $ respectively. We can also determine the
+coordinates are $\tup{p_{1},\cdots ,p_{n}} $ and $\tup{
+q_{1},\cdots ,q_{n}} $ respectively. We can also determine the
 \textbf{position vector from $P$ to $Q$} (also called the \textbf{vector from $P$ to $Q$}) defined as follows.
 \begin{equation*}
 \longvect{PQ} = \begin{mymatrix}{c}
@@ -169,7 +169,7 @@ After moving it around, it is regarded as the same vector. On the above picture,
 Consider now the general definition for a vector in $\R^n$. 
 
 \begin{definition}{Vectors in $\R^n$}{vectorsRn}
-Let $\R^{n} = \set{\left( x_{1}, \cdots, x_{n}\right)
+Let $\R^{n} = \set{\tup{x_{1}, \cdots, x_{n}}
 :x_{j}\in \R\text{ for }j=1,\cdots ,n} .$
 Then,
 \begin{equation*}
@@ -190,18 +190,18 @@ Using this notation, we may use $\vect{p}$ to denote the position vector of poin
 
 You can think of the components of a vector as directions for
 obtaining the vector. Consider $n=3$.  Draw a vector with its tail at
-the point $\left( 0,0,0\right) $ and its tip at the point $\left(
-a,b,c\right) $. This vector it is obtained by starting at $\left(
-0,0,0\right) $, moving parallel to the $x$ axis to $\left(
-a,0,0\right) $ and then from here, moving parallel to the $y$ axis to
-$\left( a,b,0\right) $ and finally parallel to the $z$ axis to $\left(
-a,b,c\right). $ Observe that the same vector would result if you began
-at the point $ \left( d,e,f \right)$, moved parallel to the $x$ axis
-to $\left( d+a,e,f\right) ,$ then parallel to the $y$ axis to $\left(
-d+a,e+b,f\right) ,$ and finally parallel to the $z$ axis to $\left(
-d+a,e+b,f+c\right)$. Here, the vector would have its tail sitting at
-the point determined by $A= \left( d,e,f\right) $ and its point at
-$B=\left( d+a,e+b,f+c\right)$. It is the \textbf{same vector} because
+the point $\tup{0,0,0} $ and its tip at the point $\tup{
+a,b,c} $. This vector it is obtained by starting at $\tup{
+0,0,0} $, moving parallel to the $x$ axis to $\tup{
+a,0,0} $ and then from here, moving parallel to the $y$ axis to
+$\tup{a,b,0} $ and finally parallel to the $z$ axis to $\tup{
+a,b,c}. $ Observe that the same vector would result if you began
+at the point $ \tup{d,e,f }$, moved parallel to the $x$ axis
+to $\tup{d+a,e,f} ,$ then parallel to the $y$ axis to $\tup{
+d+a,e+b,f} ,$ and finally parallel to the $z$ axis to $\tup{
+d+a,e+b,f+c}$. Here, the vector would have its tail sitting at
+the point determined by $A= \tup{d,e,f} $ and its point at
+$B=\tup{d+a,e+b,f+c}$. It is the \textbf{same vector} because
 it will point in the same direction and have the same length. It is
 like you took an actual arrow, and moved it from one location to another keeping it pointing
 the same direction.\index{vector!addition, geometric meaning}

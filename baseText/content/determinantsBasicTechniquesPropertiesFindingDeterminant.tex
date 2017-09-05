@@ -22,7 +22,7 @@ A=\begin{mymatrix}{rrrr}
 \end{example}
 
 \begin{solution}
-We will use the properties of determinants outlined above to find $\det \left(A\right)$. First, add $-5$ times the first row to the second row. Then add $-4$ times the first row to the third row, and $-2$ times
+We will use the properties of determinants outlined above to find $\det \tup{A}$. First, add $-5$ times the first row to the second row. Then add $-4$ times the first row to the third row, and $-2$ times
 the first row to the fourth row. This yields the matrix
 \begin{equation*}
 B=\begin{mymatrix}{rrrr}
@@ -33,9 +33,9 @@ B=\begin{mymatrix}{rrrr}
 \end{mymatrix}
 \end{equation*}
 Notice that the only row operation we have done so far is adding a multiple 
-of a row to another row. Therefore, by Theorem \ref{thm:addingmultipleofrow}, $\det \left(B\right) = \det \left(A\right).$ 
+of a row to another row. Therefore, by Theorem \ref{thm:addingmultipleofrow}, $\det \tup{B} = \det \tup{A}.$ 
 
-At this stage, you could use Laplace Expansion to find $\det \left(B\right)$. However, we will continue with row operations 
+At this stage, you could use Laplace Expansion to find $\det \tup{B}$. However, we will continue with row operations 
 to find an even simpler matrix to work with.
 
 Add $-3$ times the third row to the second row. By Theorem \ref{thm:addingmultipleofrow} this does not change the value of
@@ -48,16 +48,16 @@ C=\begin{mymatrix}{rrrr}
 0 & 6 & 30 & 9
 \end{mymatrix} 
 \end{equation*}
-Here, $\det \left(C\right) = -3 \det \left(B\right)$, which means that 
-$\det \left( B\right) =\left(-\frac{1}{3}\right) \det \left( C\right) $
+Here, $\det \tup{C} = -3 \det \tup{B}$, which means that 
+$\det \tup{B} =\tup{-\frac{1}{3}} \det \tup{C} $
 
-Since $\det \left(A\right) = \det \left(B\right)$, we now have that 
-$\det \left(A\right) = \left(-\frac{1}{3}\right) \det \left( C\right)$. Again, you could use Laplace Expansion here to find $\det \left(C\right)$. However,
+Since $\det \tup{A} = \det \tup{B}$, we now have that 
+$\det \tup{A} = \tup{-\frac{1}{3}} \det \tup{C}$. Again, you could use Laplace Expansion here to find $\det \tup{C}$. However,
 we will continue with row operations.
 
 Now replace the add $2$ times the third row to the fourth row. This does not change the
 value of the determinant by Theorem \ref{thm:addingmultipleofrow}. Finally switch the third
-and second rows. This causes the determinant to be multiplied by $-1.$ Thus $\det \left( C\right) = -\det \left( D\right) $ where
+and second rows. This causes the determinant to be multiplied by $-1.$ Thus $\det \tup{C} = -\det \tup{D} $ where
 \begin{equation*}
 D=\begin{mymatrix}{rrrr}
 1 & 2 & 3 & 4 \\
@@ -67,20 +67,20 @@ D=\begin{mymatrix}{rrrr}
 \end{mymatrix}
 \end{equation*}
 
-Hence, $\det \left(A\right) = \left(-\frac{1}{3}\right) \det \left( C\right) = \left(\frac{1}{3}\right) \det \left( D\right)$ 
+Hence, $\det \tup{A} = \tup{-\frac{1}{3}} \det \tup{C} = \tup{\frac{1}{3}} \det \tup{D}$ 
 
 You could do more row operations or you could note that this can be easily
 expanded along the first column. Then, expand the resulting $3 \times 3$ matrix
 also along the first column. This results in 
 \begin{equation*}
-\det \left( D\right) =1\left( -3\right) \left\vert
+\det \tup{D} =1\tup{-3} \left\vert
 \begin{array}{cc}
 11 & 22 \\
 14 & -17
 \end{array}
 \right\vert = 1485
 \end{equation*}
-and so  $\det \left( A\right) =\left(\frac{1}{3}\right) \left( 1485\right)
+and so  $\det \tup{A} =\tup{\frac{1}{3}} \tup{1485}
 =495.$
 \end{solution} 
 
@@ -117,7 +117,7 @@ B = \begin{mymatrix}{rrrr}
 0 & -10 & -8 & -4
 \end{mymatrix} 
 \end{equation*}
-By Theorem \ref{thm:addingmultipleofrow}, $\det \left(A\right) = \det \left(B\right)$. 
+By Theorem \ref{thm:addingmultipleofrow}, $\det \tup{A} = \det \tup{B}$. 
 
 Remember you can work with the columns also. Take $-5$
 times the fourth column and add to the second column. This yields
@@ -129,7 +129,7 @@ C = \begin{mymatrix}{rrrr}
 0 & 10 & -8 & -4
 \end{mymatrix}
 \end{equation*}
-By Theorem \ref{thm:addingmultipleofrow} $\det \left(A\right) = \det \left(C\right)$. 
+By Theorem \ref{thm:addingmultipleofrow} $\det \tup{A} = \det \tup{C}$. 
 
 Now take $-1$ times the third row and add to
 the top row. This gives.
@@ -143,9 +143,9 @@ D = \begin{mymatrix}{rrrr}
 \end{equation*}
 which by Theorem \ref{thm:addingmultipleofrow} has the same determinant as $A$.
 
-Now, we can find $\det \left(D\right)$ by expanding along the first column as follows. You can see that there will be only one non zero term.
+Now, we can find $\det \tup{D}$ by expanding along the first column as follows. You can see that there will be only one non zero term.
 \begin{equation*}
-\det \left(D\right) = 1 \det \begin{mymatrix}{rrr}
+\det \tup{D} = 1 \det \begin{mymatrix}{rrr}
 0 & -1 & -1 \\
 -8 & -4 & 1 \\
 10 & -8 & -4
@@ -154,18 +154,18 @@ Now, we can find $\det \left(D\right)$ by expanding along the first column as fo
 \end{equation*}
 Expanding again along the first column, we have
 \begin{equation*}
-\det \left(D\right) 
+\det \tup{D} 
 =
-1 \left ( 0 +  8\det \begin{mymatrix}{rr}
+1 \tup{0 +  8\det \begin{mymatrix}{rr}
 -1 & -1 \\
 -8 & -4
 \end{mymatrix} +10\det \begin{mymatrix}{rr}
 -1 & -1 \\
 -4 & 1
-\end{mymatrix} \right) = -82
+\end{mymatrix} } = -82
 \end{equation*}
 
-Now since $\det \left(A\right) = \det \left(D\right)$, it follows that $\det \left(A\right) = -82$. 
+Now since $\det \tup{A} = \det \tup{D}$, it follows that $\det \tup{A} = -82$. 
 \end{solution} 
 
 Remember that you can verify these answers by using Laplace Expansion on $A$. 

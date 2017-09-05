@@ -117,11 +117,11 @@ Theorem \ref{thm:multbyelemmatrix} applies to all three row operations, and we n
 look at the row operation of multiplying a row by a scalar.  Consider the following lemma.
 
 \begin{lemma}{Multiplication by a scalar and elementary matrices}{elemmatrixmultbyscalar}
-Let $E\left( k,i\right) $ denote the elementary matrix
+Let $E\tup{k,i} $ denote the elementary matrix
 corresponding to the row operation in which the $i^{th}$ row is multiplied
 by the nonzero scalar, $k.$  Then
 \begin{equation*}
-E\left( k,i\right) A=B
+E\tup{k,i} A=B
 \end{equation*}
 where $B$ is obtained from $A$ by multiplying the $i^{th}$ row of $A$ by $k$.
 \end{lemma}
@@ -131,7 +131,7 @@ We will explore this lemma further in the following example.
 \begin{example}{Multiplication of a row by 5 using elementary matrix}{elemmatrixmultbyscalar}
 Let
 \begin{equation*}
-E \left(5, 2\right) = \begin{mymatrix}{rrr}
+E \tup{5, 2} = \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 5 & 0 \\
 0 & 0 & 1
@@ -141,14 +141,14 @@ c & d \\
 e & f
 \end{mymatrix}
 \end{equation*}
-Find the matrix $B$ where $B = E \left(5, 2\right)A$
+Find the matrix $B$ where $B = E \tup{5, 2}A$
 \end{example}
 
 \begin{solution}
-You can see that $E \left(5, 2\right)$ is obtained by multiplying the second row 
+You can see that $E \tup{5, 2}$ is obtained by multiplying the second row 
 of the identity matrix by $5$.
 
-Using our usual procedure for multiplication of matrices, we can compute the product $E \left(5, 2\right)A$. The 
+Using our usual procedure for multiplication of matrices, we can compute the product $E \tup{5, 2}A$. The 
 resulting matrix is given by 
 \begin{equation*}
 B
@@ -166,10 +166,10 @@ There is one last row operation to consider. The following lemma discusses the f
 operation of adding a multiple of a row to another row.
 
 \begin{lemma}{Adding multiples of rows and elementary matrices}{addingrowselemmatrix}
-Let $E\left( k \times i+j\right) $ denote the elementary
+Let $E\tup{k \times i+j} $ denote the elementary
 matrix obtained from $I$ by adding $k$ times the $i^{th}$ row to the $j^{th}$. Then
 \begin{equation*}
-E\left( k \times i+j\right) A=B
+E\tup{k \times i+j} A=B
 \end{equation*}
 where $B$ is obtained from $A$ by adding $k$ times the $i^{th}$ row to the $j^{th}$ row of $A.$
 \end{lemma}
@@ -179,7 +179,7 @@ Consider the following example.
 \begin{example}{Adding two times the first row to the last}{twotimesrowelemmatrix}
 Let
 \begin{equation*}
-E\left( 2 \times 1+3\right) = \begin{mymatrix}{rrr}
+E\tup{2 \times 1+3} = \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 2 & 0 & 1
@@ -190,14 +190,14 @@ e & f
 \end{mymatrix} 
 \end{equation*}
 
-Find $B$ where $B = E\left( 2 \times 1+3\right)A$.
+Find $B$ where $B = E\tup{2 \times 1+3}A$.
 \end{example}
 
 \begin{solution}
-You can see that the matrix $E\left( 2 \times 1+3\right)$ was obtained by adding $2$ times the first row
+You can see that the matrix $E\tup{2 \times 1+3}$ was obtained by adding $2$ times the first row
 of $I$ to the third row of $I$. 
 
-Using our usual procedure, we can compute the product $E\left( 2 \times 1+3\right)A$. The resulting 
+Using our usual procedure, we can compute the product $E\tup{2 \times 1+3}A$. The resulting 
 matrix $B$ is given by 
 \begin{equation*}
 B = \begin{mymatrix}{cc}
@@ -355,8 +355,8 @@ This is equivalent to multiplying by the matrix $E(-2 \times 1 + 3) =
 
 We can then write 
 \begin{eqnarray*}
-B &=& E(-2 \times 1 + 2) \left( P^{12} A \right) \\
-&=& \left( E(-2 \times 1 + 2) P^{12} \right) A \\
+B &=& E(-2 \times 1 + 2) \tup{P^{12} A } \\
+&=& \tup{E(-2 \times 1 + 2) P^{12} } A \\
 &=& U A
 \end{eqnarray*} 
 
@@ -464,7 +464,7 @@ U^{-1} &=& A
 
 Now suppose that $U = E_1 E_2 \cdots E_k$ where each $E_i$ is an elementary matrix representing a row operation used to carry $A$ to $I$. Then, 
 \[
-U^{-1} = \left( E_1 E_2 \cdots E_k \right) ^{-1}  =  E_k^{-1} \cdots E_2^{-1} E_1{-1} 
+U^{-1} = \tup{E_1 E_2 \cdots E_k } ^{-1}  =  E_k^{-1} \cdots E_2^{-1} E_1{-1} 
 \]
 
 Remember that if $E_i$ is an elementary matrix, so too is $E_i^{-1}$. 
@@ -556,7 +556,7 @@ represented by the elementary matrix $E_3=  \begin{mymatrix}{rrr}
 
 Notice that the {\rref} of $A$ is $I$. Hence $I = UA$ where $U$ is the product of the above elementary matrices. It follows that $A = U^{-1}$. Since we want to write $A$ as a product of elementary matrices, we wish to express $U^{-1}$ as a product of elementary matrices. 
 \begin{eqnarray*}
-U^{-1} &=& \left( E_3 E_2 E_1 \right)^{-1}\\
+U^{-1} &=& \tup{E_3 E_2 E_1 }^{-1}\\
 &=& E_1^{-1} E_2^{-1} E_3^{-1} \\
 &=& \begin{mymatrix}{rrr}
 0 & 1 & 0 \\

@@ -47,15 +47,15 @@ A^{m} &=&\overset{
 
 We now will examine what is meant by the matrix exponential $e^{A}$. Begin by formally writing the following power series for $e^{A}$:
 \begin{equation*}
-e^{A} =  \sum_{k=0}^{\infty }\frac{A^{k}}{k!}=\sum_{k=0}^{\infty }\frac{PD^{k}P^{-1}}{k!}=P \left( \sum_{k=0}^{\infty }\frac{D^{k}}{k!} \right)P^{-1}
+e^{A} =  \sum_{k=0}^{\infty }\frac{A^{k}}{k!}=\sum_{k=0}^{\infty }\frac{PD^{k}P^{-1}}{k!}=P \tup{\sum_{k=0}^{\infty }\frac{D^{k}}{k!} }P^{-1}
 \end{equation*}
 If $D$ is given above in \ref{diagonalmatrix}, the above sum is of the form 
 \begin{equation*}
-P \left( \sum_{k=0}^{\infty }\begin{mymatrix}{ccc}
+P \tup{\sum_{k=0}^{\infty }\begin{mymatrix}{ccc}
 \frac{1}{k!}\lambda _{1}^{k} &  & 0 \\ 
 & \ddots &  \\ 
 0 &  & \frac{1}{k!}\lambda _{n}^{k}
-\end{mymatrix} \right) P^{-1}
+\end{mymatrix} } P^{-1}
 \end{equation*}
 This can be rearranged as follows:
 \begin{equation*}
@@ -190,7 +190,7 @@ x_n^{\prime}(t)
 \end{equation*}
 
 Then it turns out that the solution to the
-above system of equations is $X\left( t\right) =e^{At}C$. To see this, suppose $A$ is
+above system of equations is $X\tup{t} =e^{At}C$. To see this, suppose $A$ is
 diagonalizable so that 
 \begin{equation*}
 A=P\begin{mymatrix}{ccc}
@@ -217,7 +217,7 @@ e^{\lambda _{1}t} &  &  \\
 
 Differentiating $e^{At}C$ yields
 \begin{equation*}
-X^{\prime} = \left( e^{At}C\right) ^{\prime }=P\begin{mymatrix}{ccc}
+X^{\prime} = \tup{e^{At}C} ^{\prime }=P\begin{mymatrix}{ccc}
 \lambda _{1}e^{\lambda _{1}t} &  &  \\ 
 & \ddots &  \\ 
 &  & \lambda _{n}e^{\lambda _{n}t}
@@ -244,7 +244,7 @@ e^{\lambda _{1}t} &  &  \\
 & \ddots &  \\ 
 &  & e^{\lambda _{n}t}
 \end{mymatrix} P^{-1}C \\
-&=&A\left( e^{At}C\right) = AX
+&=&A\tup{e^{At}C} = AX
 \end{eqnarray*}
 Therefore $X = X(t) = e^{At}C$ is a solution to $X^{\prime }=AX$. 
 
@@ -314,8 +314,8 @@ The solution to the initial value problem is
 \begin{eqnarray*}
 X(t) &=& e^{At}C \\
 \begin{mymatrix}{c}
-x\left( t\right) \\ 
-y\left( t\right)
+x\tup{t} \\ 
+y\tup{t}
 \end{mymatrix} &=& \begin{mymatrix}{rr}
 1 & 1 \\ 
 -\frac{1}{2} & -1
@@ -337,8 +337,8 @@ e^{t} & 0 \\
 We can check that this works: 
 \begin{eqnarray*}
 \begin{mymatrix}{c}
-x\left( 0\right) \\ 
-y\left( 0\right)
+x\tup{0} \\ 
+y\tup{0}
 \end{mymatrix} &=&
 \begin{mymatrix}{c}
 4e^{0}-3e^{2(0)} \\ 

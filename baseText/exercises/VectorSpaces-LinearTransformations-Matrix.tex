@@ -16,7 +16,7 @@ $j^{th}$ component added to the $i^{th}$ component.
 \item $T$ switches the $i^{th}$ and $j^{th}$ components.
 \end{enumerate}
 
-Show these functions are linear transformations and describe their matrices $A$ such that $T\left(\vect{x}\right) = A\vect{x}$.
+Show these functions are linear transformations and describe their matrices $A$ such that $T\tup{\vect{x}} = A\vect{x}$.
 \begin{sol}
 \begin{enumerate}
 \item The matrix of $T$ is the elementary matrix which multiplies
@@ -34,7 +34,7 @@ and $j^{th}$ positions.
 \begin{ex} You are given a linear transformation $T:\R^{n}\rightarrow
 \R^{m}$ and you know that
 \begin{equation*}
-T\left(A_{i}\right)=B_{i}
+T\tup{A_{i}}=B_{i}
 \end{equation*}
 where $\begin{mymatrix}{ccc}
 A_{1} & \cdots & A_{n}
@@ -88,9 +88,9 @@ arbitrary, then since the matrix $\begin{mymatrix}{ccc}
 \vect{a}_{1} & \cdots & \vect{a}_{n}
 \end{mymatrix} \vect{y}=\vect{x}$ Hence
 \[
-T\vect{x}=T\left( \sum_{i=1}^{n}y_{i}\vect{a}_{i}\right)
+T\vect{x}=T\tup{\sum_{i=1}^{n}y_{i}\vect{a}_{i}}
 =\sum_{i=1}^{n}y_{i}T\vect{a}_{i}=\sum_{i=1}^{n}y_{i}A\vect{a}
-_{i}=A\left( \sum_{i=1}^{n}y_{i}\vect{a}_{i}\right) =A\vect{x}
+_{i}=A\tup{\sum_{i=1}^{n}y_{i}\vect{a}_{i}} =A\vect{x}
 \]
 
 \end{sol}
@@ -452,13 +452,13 @@ transformation $T$ such that $T(A_{i})=B_{i}$.
 \end{ex}
 
 
-\begin{ex}  Find the matrix for $T\left(\vect{w} \right) = \func{proj}_{\vect{v}}\left( \vect{w}\right) $
+\begin{ex}  Find the matrix for $T\tup{\vect{w} } = \func{proj}_{\vect{v}}\tup{\vect{w}} $
 where $\vect{v}=\begin{mymatrix}{rrr}
 1 & -2 & 3
 \end{mymatrix} ^{T}.$
 \begin{sol}
- Recall that $\func{proj}_{\vect{u}}\left( \vect{v}\right) =\frac{\vect{v}\dotprod\vect{u} }{\vectlength \vect{u}\vectlength ^{2}}\vect{u}$ and so the desired matrix
-has $i^{th}$ column equal to $\func{proj}_{\vect{u}}\left( \vect{e}_{i}\right) .$ Therefore, the matrix desired is
+ Recall that $\func{proj}_{\vect{u}}\tup{\vect{v}} =\frac{\vect{v}\dotprod\vect{u} }{\vectlength \vect{u}\vectlength ^{2}}\vect{u}$ and so the desired matrix
+has $i^{th}$ column equal to $\func{proj}_{\vect{u}}\tup{\vect{e}_{i}} .$ Therefore, the matrix desired is
 \[
 \frac{1}{14}\begin{mymatrix}{rrr}
 1 & -2 & 3 \\
@@ -469,7 +469,7 @@ has $i^{th}$ column equal to $\func{proj}_{\vect{u}}\left( \vect{e}_{i}\right) .
 \end{sol}
 \end{ex}
 
-\begin{ex}  Find the matrix for $T\left(\vect{w} \right) = \func{proj}_{\vect{v}}\left( \vect{w}\right) $
+\begin{ex}  Find the matrix for $T\tup{\vect{w} } = \func{proj}_{\vect{v}}\tup{\vect{w}} $
 where $\vect{v}=\begin{mymatrix}{rrr}
 1 & 5 & 3
 \end{mymatrix} ^{T}.$
@@ -484,7 +484,7 @@ where $\vect{v}=\begin{mymatrix}{rrr}
 \end{sol}
 \end{ex}
 
-\begin{ex} Find the matrix for $T\left(\vect{w} \right) = \func{proj}_{\vect{v}}\left( \vect{w}\right) $
+\begin{ex} Find the matrix for $T\tup{\vect{w} } = \func{proj}_{\vect{v}}\tup{\vect{w}} $
 where $\vect{v}=\begin{mymatrix}{rrr}
 1 & 0 & 3
 \end{mymatrix} ^{T}.$ 
@@ -547,10 +547,10 @@ be a basis of $\R^3$ and let $\vect{x} = \begin{mymatrix}{r}
 
 
 \begin{ex}
-Let $T: \R^2 \mapsto \R^2$ be a linear transformation defined by $T \left( \begin{mymatrix}{r}
+Let $T: \R^2 \mapsto \R^2$ be a linear transformation defined by $T \tup{\begin{mymatrix}{r}
 a \\
 b
-\end{mymatrix} \right) = \begin{mymatrix}{r}
+\end{mymatrix} } = \begin{mymatrix}{r}
 a+b \\
 a-b
 \end{mymatrix}$. 

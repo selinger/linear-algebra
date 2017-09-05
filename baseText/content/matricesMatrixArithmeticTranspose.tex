@@ -29,8 +29,8 @@ A^{T} = \mat{a _{ij}} ^{T}= \mat{a_{ji} }
 \end{equation*}
 \end{definition}
 
-The $\left( i, j  \right)$-entry of $A$ becomes the 
-$\left( j,i \right)$-entry of $A^T$. 
+The $\tup{i, j  }$-entry of $A$ becomes the 
+$\tup{j,i }$-entry of $A^T$. 
 
 Consider the following example.
 
@@ -47,7 +47,7 @@ A = \begin{mymatrix}{rrr}
 \begin{solution}
 By Definition \ref{def:matrixtranspose}, we know that for $A = \mat{a_{ij} }$, 
 $A^T = \mat{a_{ji} }$. In other words, we switch the row and column
-location of each entry. The $\left( 1, 2 \right)$-entry becomes the $\left( 2,1 \right)$-entry.
+location of each entry. The $\tup{1, 2 }$-entry becomes the $\tup{2,1 }$-entry.
 
 Thus, 
 \begin{equation*}
@@ -68,18 +68,18 @@ The transpose of a matrix has the following important properties\index{matrix!pr
 Let $A$ be an $m\times n$ matrix, $B$ an $n\times p$ matrix, and $r$ and $s$ scalars. Then
 \begin{enumerate}
 \item
-$\left(A^{T}\right)^{T} = A$
+$\tup{A^{T}}^{T} = A$
 \item
-$\left( AB\right) ^{T}=B^{T}A^{T} $ \label{matrixtranspose1}
+$\tup{AB} ^{T}=B^{T}A^{T} $ \label{matrixtranspose1}
 \item
-$\left( rA+ sB\right) ^{T}=rA^{T}+ sB^{T}$  \label{matrixtranspose2}
+$\tup{rA+ sB} ^{T}=rA^{T}+ sB^{T}$  \label{matrixtranspose2}
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
 First we prove \ref{matrixtranspose1}. From Definition \ref{def:matrixtranspose},
 \begin{equation*}
-\left(AB\right)^{T} = \mat{(AB) _{ij} } ^{T}=\mat{(AB)_{ji} }=\sum_{k}a_{jk}b_{ki}= \sum_{k}b_{ki}a_{jk} 
+\tup{AB}^{T} = \mat{(AB) _{ij} } ^{T}=\mat{(AB)_{ji} }=\sum_{k}a_{jk}b_{ki}= \sum_{k}b_{ki}a_{jk} 
 \end{equation*}
 \begin{equation*}
 = \sum_{k}\mat{b_{ik}}^{T}\mat{

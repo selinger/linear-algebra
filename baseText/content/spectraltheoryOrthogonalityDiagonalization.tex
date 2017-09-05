@@ -48,8 +48,8 @@ entry replaced by its complex conjugate.
 Suppose $A$ is a real symmetric matrix and $A\vect{x}=\lambda \vect{x}$.
 Then 
 \begin{equation*}
-\overline{\lambda }\overline{\vect{x}}^{T}\vect{x}=\left( \overline{A
-\vect{x}}\right) ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=
+\overline{\lambda }\overline{\vect{x}}^{T}\vect{x}=\tup{\overline{A
+\vect{x}}} ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=
 \overline{\vect{x}}^{T}A\vect{x}=\lambda \overline{\vect{x}}^{T}
 \vect{x}
 \end{equation*}
@@ -62,7 +62,7 @@ is symmetric, it follows from Lemma \ref{lem:dotprodlemma} about the dot product
 \begin{equation*}
 \lambda \vect{x}\dotprod \vect{y}=A\vect{x}\dotprod \vect{y}=\vect{x}\dotprod A\vect{y}=\vect{x}\dotprod \mu \vect{y}=\mu \vect{x}\dotprod \vect{y}
 \end{equation*}
-Hence $\left( \lambda -\mu \right) \vect{x}\dotprod \vect{y}=0.$ It follows that,
+Hence $\tup{\lambda -\mu } \vect{x}\dotprod \vect{y}=0.$ It follows that,
 since $\lambda -\mu \neq 0,$ it must be that $\vect{x}\dotprod \vect{y}=0$. Therefore the eigenvectors form an orthogonal set. 
 \end{proof}
 
@@ -78,8 +78,8 @@ First, note that if $A=0$ is the zero matrix, then $A$ is skew symmetric and has
 Suppose $A=-A^{T}$ so $A$ is skew symmetric and $A\vect{x}=\lambda 
 \vect{x}$. Then 
 \begin{equation*}
-\overline{\lambda \vect{x}}^{T}\vect{x}=\left( \overline{A
-\vect{x}}\right) ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=-
+\overline{\lambda \vect{x}}^{T}\vect{x}=\tup{\overline{A
+\vect{x}}} ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=-
 \overline{\vect{x}}^{T}A\vect{x}=-\lambda \overline{\vect{x}}^{T}
 \vect{x}
 \end{equation*}
@@ -390,8 +390,8 @@ The values $y=-4$ and $z=5$ satisfy this equation, giving another eigenvector
 corresponding to $\lambda=9$ as 
 \begin{equation*}
 \begin{mymatrix}{c}
--2\left( -4\right) -2\left( 5\right) \\ 
-\left( -4\right) \\ 
+-2\tup{-4} -2\tup{5} \\ 
+\tup{-4} \\ 
 5
 \end{mymatrix} =\begin{mymatrix}{r}
 -2 \\ 

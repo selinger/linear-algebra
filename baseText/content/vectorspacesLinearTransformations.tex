@@ -10,11 +10,11 @@ Recall that a function is simply a transformation of a vector to result in a new
 
 \begin{definition}{Linear transformation}{lineartransformation}
  Let $V$ and $W$ be vector spaces. Suppose $T: V \mapsto W$ is a function, where for each
-$\vect{x} \in V ,T\left(\vect{x}\right)\in W.$ Then $T$ is a
+$\vect{x} \in V ,T\tup{\vect{x}}\in W.$ Then $T$ is a
 \textbf{linear transformation}\index{linear transformation} if whenever $k ,p $ are scalars and 
 $\vect{v}_1$ and $\vect{v}_2$ are vectors in $V$
 \begin{equation*}
-T\left( k \vect{v}_1 + p \vect{v}_2 \right) = kT\left(\vect{v}_1\right)+ pT\left(\vect{v}_{2} \right)
+T\tup{k \vect{v}_1 + p \vect{v}_2 } = kT\tup{\vect{v}_1}+ pT\tup{\vect{v}_{2} }
 \end{equation*}
 \end{definition}
 
@@ -44,12 +44,12 @@ $s_a:V\to V$ is defined by $s_a(\vect{v})=a\vect{v}$ for all $\vect{v}\in V$.
 We will show that the scalar transformation $s_a$ is linear, the rest are left as an exercise. 
 
 By Definition \ref{def:lineartransformation} we must show that for all scalars $k ,p $ and 
-vectors $\vect{v}_1$ and $\vect{v}_2$ in $V$, $s_a\left( k \vect{v}_1 + p \vect{v}_2 \right) = k s_a\left(\vect{v}_1\right)+ p s_a\left(\vect{v}_{2} \right)$. Assume that $a$ is also a scalar. 
+vectors $\vect{v}_1$ and $\vect{v}_2$ in $V$, $s_a\tup{k \vect{v}_1 + p \vect{v}_2 } = k s_a\tup{\vect{v}_1}+ p s_a\tup{\vect{v}_{2} }$. Assume that $a$ is also a scalar. 
 \begin{eqnarray*}
-s_a\left( k \vect{v}_1 + p \vect{v}_2 \right) &=& a \left( k \vect{v}_1 + p \vect{v}_2 \right) \\
+s_a\tup{k \vect{v}_1 + p \vect{v}_2 } &=& a \tup{k \vect{v}_1 + p \vect{v}_2 } \\
 &=&  ak \vect{v}_1 + ap \vect{v}_2  \\
- &=&  k \left(a \vect{v}_1\right) + p\left(a \vect{v}_2\right)  \\
-&=& k s_a\left( \vect{v}_1 \right)  + p s_a \left(\vect{v}_2 \right)
+ &=&  k \tup{a \vect{v}_1} + p\tup{a \vect{v}_2}  \\
+&=& k s_a\tup{\vect{v}_1 }  + p s_a \tup{\vect{v}_2 }
 \end{eqnarray*}
 Therefore $s_a$ is a linear transformation.
 \end{solution}
@@ -122,7 +122,7 @@ $a=6$, $b=1$, $c=-3$.
 
 Thus
 \begin{eqnarray*}
-T(4x^2+5x-3) & = & T\left( 6(x^2+x) + (x^2-x) -3(x^2+1) \right) \\
+T(4x^2+5x-3) & = & T\tup{6(x^2+x) + (x^2-x) -3(x^2+1) } \\
 & = & 6T(x^2+x) + T(x^2-x) -3T(x^2+1) \\
 & = & 6(-1) + 1 -3(3) = -14. \\
 \end{eqnarray*}
@@ -140,14 +140,14 @@ x & = & \textstyle \frac{1}{2}(x^2+x) - \frac{1}{2}(x^2-x) \\
 \end{eqnarray*}
 Then
 \begin{eqnarray*}
-T(x^2) & = & \textstyle T\left(\frac{1}{2}(x^2+x) + \frac{1}{2}(x^2-x)\right)
+T(x^2) & = & \textstyle T\tup{\frac{1}{2}(x^2+x) + \frac{1}{2}(x^2-x)}
 =\frac{1}{2}T(x^2+x) + \frac{1}{2}T(x^2-x)\\
 & = & \textstyle \frac{1}{2}(-1) + \frac{1}{2}(1) = 0.  \\
-T(x) & = & \textstyle T\left(\frac{1}{2}(x^2+x) - \frac{1}{2}(x^2-x)\right)
+T(x) & = & \textstyle T\tup{\frac{1}{2}(x^2+x) - \frac{1}{2}(x^2-x)}
 = \frac{1}{2}T(x^2+x) - \frac{1}{2}T(x^2-x) \\
 & = & \textstyle \frac{1}{2}(-1) - \frac{1}{2}(1) = -1.\\
-T(1) & = & \textstyle T\left((x^2+1)-\frac{1}{2}(x^2+x) -
-\frac{1}{2}(x^2-x)\right)\\
+T(1) & = & \textstyle T\tup{(x^2+1)-\frac{1}{2}(x^2+x) -
+\frac{1}{2}(x^2-x)}\\
 & = & \textstyle T(x^2+1)-\frac{1}{2}T(x^2+x) - \frac{1}{2}T(x^2-x) \\
 & = & \textstyle 3-\frac{1}{2}(-1) - \frac{1}{2}(1) = 3.
 \end{eqnarray*}
@@ -176,7 +176,7 @@ Suppose two linear transformations act in the same way on $\vect{v}$ for all vec
 \begin{definition}{Equal transformations}{equaltransformations}
 Let $S$ and $T$ be linear transformations from $V$ to $W$. Then $S = T$ if and only if for every $\vect{v} \in V$, 
 \[
-S \left( \vect{v} \right) = T \left( \vect{v} \right)
+S \tup{\vect{v} } = T \tup{\vect{v} }
 \]
 \end{definition}
 

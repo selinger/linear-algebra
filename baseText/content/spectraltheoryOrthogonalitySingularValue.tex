@@ -124,7 +124,7 @@ for the $\sigma _{i}$ the singular values of $A.$
 \begin{proof}
 There exists an orthonormal basis, $\set{\vect{v}_{i}} _{i=1}^{n}$ such that $
 A^TA\vect{v}_{i}=\sigma _{i}^{2}\vect{v}_{i}$ where $\sigma
-_{i}^{2}>0$ for $i=1,\cdots ,k,\left( \sigma _{i}>0\right) $ and equals zero
+_{i}^{2}>0$ for $i=1,\cdots ,k,\tup{\sigma _{i}>0} $ and equals zero
 if $i>k.$ Thus for $i>k,$ $A\vect{v}_{i}=\vect{0}$ because 
 \begin{equation*}
  A\vect{v}_{i}\dotprod A\vect{v}_{i} = A^TA\vect{v}_{i} \dotprod \vect{v}_{i}  = \vect{0} \dotprod \vect{v}_{i} =0.
@@ -139,7 +139,7 @@ Thus $A\vect{v}_{i}=\sigma _{i}\vect{u}_{i}.$ Now
 \vect{u}_{i} \dotprod \vect{u}_{j} &=&  \sigma _{i}^{-1}A
 \vect{v}_{i} \dotprod \sigma _{j}^{-1}A\vect{v}_{j}  = \sigma_{i}^{-1}\vect{v}_{i} \dotprod \sigma _{j}^{-1}A^TA\vect{v}_{j} \\
 &=& \sigma _{i}^{-1}\vect{v}_{i} \dotprod \sigma _{j}^{-1}\sigma _{j}^{2} \vect{v}_{j} =
-\frac{\sigma _{j}}{\sigma _{i}}\left( \vect{v}_{i} \dotprod \vect{v}_{j}\right)
+\frac{\sigma _{j}}{\sigma _{i}}\tup{\vect{v}_{i} \dotprod \vect{v}_{j}}
 =\delta _{ij}.
 \end{eqnarray*}
 Thus $\set{\vect{u}_{i}} _{i=1}^{k}$ is an orthonormal set of
@@ -157,7 +157,7 @@ U= \begin{mymatrix}{ccc}
 \vect{u}_{1} & \cdots & \vect{u}_{m}
 \end{mymatrix}
 \end{equation*}
-while $V= \left( \vect{v}_{1}\cdots \vect{v}_{n}\right) .$ Thus $U$
+while $V= \tup{\vect{v}_{1}\cdots \vect{v}_{n}} .$ Thus $U$
 is the matrix which has the $\vect{u}_{i}$ as columns and $V$ is defined
 as the matrix which has the $\vect{v}_{i}$ as columns. Then 
 \begin{equation*}
@@ -197,7 +197,7 @@ the number of singular values.
 %%\begin{proof}
 %%Since $V$ and $U$ are unitary, it follows that 
 %%\begin{eqnarray*}
-%%\limfunc{rank}\left( A\right) &=&\limfunc{rank}\left( U^TAV\right) =
+%%\limfunc{rank}\tup{A} &=&\limfunc{rank}\tup{U^TAV} =
 %%\limfunc{rank}\mat{
 %%\begin{array}{cc}
 %%\sigma & 0 \\ 
@@ -208,16 +208,16 @@ the number of singular values.
 %%\end{eqnarray*}
 %%Also since $U,V$ are unitary, 
 %%\begin{equation*}
-%%\func{rank}\left( A^T\right) =\func{rank}\left( V^TA^{\ast
-%%}U\right) =\func{rank}\left( \left( U^TAV\right) ^T\right)
+%%\func{rank}\tup{A^T} =\func{rank}\tup{V^TA^{\ast
+%%}U} =\func{rank}\tup{\tup{U^TAV} ^T}
 %%\end{equation*}
 %%\begin{equation*}
-%%=\func{rank}\left( \mat{
+%%=\func{rank}\tup{\mat{
 %%\begin{array}{cc}
 %%\sigma & 0 \\ 
 %%0 & 0
 %%\end{array}
-%%} ^T\right) =\text{number of singular values.}
+%%} ^T} =\text{number of singular values.}
 %%\end{equation*}
 %%\end{proof}
 %%
@@ -367,14 +367,14 @@ Therefore,
 and
 \begin{eqnarray*}
 A & = & \begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}\\
-& = & \left(\frac{1}{\sqrt{2}}\begin{mymatrix}{rr} 1 & 1 \\
-1 & -1 \end{mymatrix}\right)
+& = & \tup{\frac{1}{\sqrt{2}}\begin{mymatrix}{rr} 1 & 1 \\
+1 & -1 \end{mymatrix}}
 \begin{mymatrix}{rrr} 4 & 0 & 0 \\
 0 & \sqrt 6 & 0 \end{mymatrix}
-\left(\frac{1}{\sqrt{6}}\begin{mymatrix}{rrr}
+\tup{\frac{1}{\sqrt{6}}\begin{mymatrix}{rrr}
 \sqrt 3 & 0 & \sqrt 3  \\
 -\sqrt 2 & -\sqrt 2 & \sqrt2 \\
--1 & 2 & 1 \end{mymatrix}\right).
+-1 & 2 & 1 \end{mymatrix}}.
 \end{eqnarray*}
 \end{solution}
 

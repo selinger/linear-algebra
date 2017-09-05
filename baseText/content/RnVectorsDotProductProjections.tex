@@ -57,7 +57,7 @@ The vector $\vect{v}_{||}$ in Theorem \ref{thm:projection} is called the \textbf
 \begin{equation*}
 \vect{v}_{||}
 =
-\func{proj}_{\vect{u}}\left( \vect{v}\right)
+\func{proj}_{\vect{u}}\tup{\vect{v}}
 \end{equation*}
 
 We now make a formal definition of the vector projection.
@@ -66,8 +66,8 @@ We now make a formal definition of the vector projection.
 Let $\vect{u}$ and $\vect{v}$ be vectors. Then, the \textbf{projection of $\vect{v}$ onto
 $\vect{u}$} is given by 
 \begin{equation*}
-\func{proj}_{\vect{u}}\left( \vect{v}\right) =\left( \vspace{0.05in}
-\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\right) \vect{u}
+\func{proj}_{\vect{u}}\tup{\vect{v}} =\tup{\vspace{0.05in}
+\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}} \vect{u}
 =
 \frac{\vect{v}\dotprod \vect{u}}{\vectlength \vect{u}\vectlength ^{2}}\vect{u}
 \end{equation*}
@@ -78,7 +78,7 @@ Consider the following example of a projection.
 
 \begin{example}{Find the projection of one vector onto another}{vectorprojection}
 Find 
-$\func{proj}_{\vect{u}}\left( \vect{v}\right) $ if 
+$\func{proj}_{\vect{u}}\tup{\vect{v}} $ if 
 \begin{equation*}
 \vect{u}=
 \begin{mymatrix}{r}
@@ -96,7 +96,7 @@ $\func{proj}_{\vect{u}}\left( \vect{v}\right) $ if
 \end{example}
 
 \begin{solution}
-We can use the formula provided in Definition \ref{def:projection} to find $\func{proj}_{\vect{u}}\left( \vect{v}\right)$.
+We can use the formula provided in Definition \ref{def:projection} to find $\func{proj}_{\vect{u}}\tup{\vect{v}}$.
 First, compute $\vect{v} \dotprod \vect{u}$. 
 This is given by 
 \begin{eqnarray*}
@@ -139,7 +139,7 @@ Similarly, $\vect{u} \dotprod \vect{u}$ is given by
 
 Therefore, the projection is equal to  
 \begin{eqnarray*}
-\func{proj}_{\vect{u}}\left( \vect{v}\right)
+\func{proj}_{\vect{u}}\tup{\vect{v}}
 &=&-\frac{8}{29} 
 \begin{mymatrix}{r}
 2 \\
@@ -192,7 +192,7 @@ The vector $\longvect{P_0P}$ is given by
 Then, if $Q$ is the point on $L$ closest to $P$, it follows that 
 \begin{eqnarray*}
 \longvect{P_0Q} &=& \func{proj}_{\vect{d}}\longvect{P_0P} \\
-&=& \left( \frac{ \longvect{P_0P}\bullet \vect{d}}{\|\vect{d}\|^2}\right) \vect{d} \\
+&=& \tup{\frac{ \longvect{P_0P}\bullet \vect{d}}{\|\vect{d}\|^2}} \vect{d} \\
 &=& 
 \frac{15}{9} \begin{mymatrix}{r}
 2 \\

@@ -12,8 +12,8 @@ addition.
 
 Suppose we have two vectors, $\vect{u}$ and $\vect{v}$ in
 $\R^{3}$. Each of these can be drawn geometrically by placing
-the tail of each vector at $0$ and its point at $\left( u_{1}, u_{2},
-u_{3}\right)$ and $\left( v_{1}, v_{2}, v_{3}\right) $
+the tail of each vector at $0$ and its point at $\tup{u_{1}, u_{2},
+u_{3}}$ and $\tup{v_{1}, v_{2}, v_{3}} $
 respectively. Suppose we slide the vector $\vect{v}$ so that its tail
 sits at the point of $\vect{u}$.  We know that this does not change
 the vector $\vect{v}$.  Now, draw a new vector from the tail of
@@ -78,8 +78,8 @@ $\vect{v}$.
 
 When you have a vector $\vect{v}$, its additive inverse $-\vect{v}$ will
 be the vector which has the same magnitude as $\vect{v}$ but the opposite
-direction. When one writes $\vect{u}-\vect{v,}$ the meaning is $\vect{u} + \left(
--\vect{v}\right) $ as with real numbers. The following example illustrates these definitions and conventions.
+direction. When one writes $\vect{u}-\vect{v,}$ the meaning is $\vect{u} + \tup{
+-\vect{v}} $ as with real numbers. The following example illustrates these definitions and conventions.
 
 \begin{example}{Graphing vector addition}{graphingvectoraddition}
 Consider the following picture of vectors $\vect{u}$ and $\vect{v}$.
@@ -113,8 +113,8 @@ drawing a vector from the tail of $\vect{u}$ to the tip of $\vect{v}$.
 \end{tikzpicture}
 \end{center}
 
-Next consider $\vect{u}-\vect{v}.$ This means $\vect{u}+\left( -\vect{v}
-\right) .$ From the above geometric description of vector addition, $-\vect{v}$ 
+Next consider $\vect{u}-\vect{v}.$ This means $\vect{u}+\tup{-\vect{v}
+} .$ From the above geometric description of vector addition, $-\vect{v}$ 
 is the vector which has the same length but which points in the
 opposite direction to $\vect{v}$. Here is a picture of $-\vect{v}$ 
 
@@ -168,8 +168,8 @@ ku_{1} & ku_{2} & ku_{3}
 \end{mymatrix}^T $. 
 Then, by using Definition \ref{def:distancebetweenpoints}, the length of this vector is given by 
 \begin{equation*}
-\sqrt{\left( \left( k u_{1}\right) ^{2}+\left( k u_{2}\right)
-^{2}+\left( k u_{3}\right) ^{2}\right) }=\left\vert k \right\vert
+\sqrt{\tup{\tup{k u_{1}} ^{2}+\tup{k u_{2}}
+^{2}+\tup{k u_{3}} ^{2}} }=\left\vert k \right\vert
 \sqrt{u_{1}^{2}+u_{2}^{2}+u_{3}^{2}}
 \end{equation*}
 Thus the following holds.

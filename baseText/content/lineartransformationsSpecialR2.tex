@@ -34,7 +34,7 @@ linear? Consider the following picture which illustrates a rotation. Let $\vect{
 \end{tikzpicture}
 \end{center}
 
-Let's consider how to obtain $T\left( \vect{u}+\vect{v}\right)$. 
+Let's consider how to obtain $T\tup{\vect{u}+\vect{v}}$. 
 Simply, you add $T (\vect{u})$ and $T(\vect{v})$. 
 Here is why. If you add $T(\vect{u})$ to $T(\vect{v})$ you get
 the diagonal of the parallelogram determined by $T(\vect{u})$ and $T(\vect{v})$, as this action
@@ -47,12 +47,12 @@ As shown in the diagram, this will result in the same vector. In other words, $T
 This is because the rotation preserves all angles between the vectors
 as well as their lengths. In particular, it preserves the shape of
 this parallelogram. Thus both
-$T\left(\vect{u}\right)+T\left(\vect{v}\right)$ and
-$T\left(\vect{u}+\vect{v}\right)$ give the same vector. It follows
+$T\tup{\vect{u}}+T\tup{\vect{v}}$ and
+$T\tup{\vect{u}+\vect{v}}$ give the same vector. It follows
 that $T$ distributes across addition of the vectors of
 $\R^{2}$.
 
-Similarly, if $k$ is a scalar, it follows that $T\left(k\vect{u}\right)=kT\left(\vect{u}\right)$.
+Similarly, if $k$ is a scalar, it follows that $T\tup{k\vect{u}}=kT\tup{\vect{u}}$.
 Thus rotations are an example of a
 linear transformation by Definition \ref{def:lineartransformation}.
 
@@ -62,8 +62,8 @@ The following theorem gives the matrix of a linear transformation which rotates 
 Let $R_{\theta}: \R^2 \to \R^2$ be a linear transformation given by rotating vectors through an angle of $\theta$. Then the matrix $A$ of $R_{\theta}$ is given by 
 \[
 \begin{mymatrix}{rr}
-\cos \left( \theta \right) & -\sin \left( \theta \right) \\
-\sin \left( \theta \right) & \cos \left( \theta \right)
+\cos \tup{\theta } & -\sin \tup{\theta } \\
+\sin \tup{\theta } & \cos \tup{\theta }
 \end{mymatrix}
 \]
 \end{theorem}
@@ -121,15 +121,15 @@ A=\begin{mymatrix}{rr}
 \end{equation*}
 
 We can also prove this algebraically without the use of the
-above picture. The definition of $\left(
-\cos \left( \theta \right) ,\sin \left( \theta \right) \right) $ is as the 
+above picture. The definition of $\tup{
+\cos \tup{\theta } ,\sin \tup{\theta } } $ is as the 
 coordinates of the point of $R_{\theta}(\vect{e}_{1})$.  Now the point of
 the vector $\vect{e}_{2}$ is exactly $\pi /2$ further along the unit circle from 
 the point of $\vect{e}_{1}$, and therefore after rotation through an angle of $\theta $ the coordinates
 $x$ and $y$ of the point of $R_{\theta}(\vect{e}_{2})$ are given by
 \begin{equation*}
-\left( x,y\right) =\left( \cos \left( \theta +\pi /2\right) ,\sin \left(
-\theta +\pi /2\right) \right) =\left( -\sin \theta ,\cos \theta \right) 
+\tup{x,y} =\tup{\cos \tup{\theta +\pi /2} ,\sin \tup{
+\theta +\pi /2} } =\tup{-\sin \theta ,\cos \theta } 
 \end{equation*}
 
 \end{proof}
@@ -147,13 +147,13 @@ Let $R_{\frac{\pi}{2}}: \R^2 \to \R^2$ denote rotation through $\pi/2$. Find the
 By Theorem \ref{thm:rotation}, the matrix of $R_{\frac{\pi}{2}}$ is given by
 \[
 \begin{mymatrix}{rr}
-\cos \left( \theta \right) & -\sin \left( \theta \right) \\
-\sin \left( \theta \right) & \cos \left( \theta \right)
+\cos \tup{\theta } & -\sin \tup{\theta } \\
+\sin \tup{\theta } & \cos \tup{\theta }
 \end{mymatrix}
 =
 \begin{mymatrix}{rr}
-\cos \left( \pi/2 \right) & -\sin \left( \pi/2 \right) \\
-\sin \left( \pi/2 \right) & \cos \left( \pi/2 \right)
+\cos \tup{\pi/2 } & -\sin \tup{\pi/2 } \\
+\sin \tup{\pi/2 } & \cos \tup{\pi/2 }
 \end{mymatrix}
 =
 \begin{mymatrix}{rr}
@@ -200,16 +200,16 @@ $R_{\theta }$ is the linear transformation which rotates through an angle of
 $\theta $. Denoting the corresponding matrices by $A_{\theta +\phi }$, 
 $A_{\phi },$ and $A_{\theta },$ it follows that for every $\vect{u}$
 \begin{equation*}
-R_{\theta +\phi }\left(\vect{u}\right)=A_{\theta +\phi }\vect{u}=A_{\theta }A_{\phi }\vect{u} = R_{\theta }R_{\phi }
-\left(\vect{u}\right)
+R_{\theta +\phi }\tup{\vect{u}}=A_{\theta +\phi }\vect{u}=A_{\theta }A_{\phi }\vect{u} = R_{\theta }R_{\phi }
+\tup{\vect{u}}
 \end{equation*}
 Notice the order of the matrices here! 
 
 Consequently, you must have
 \begin{eqnarray*}
 A_{\theta +\phi } &=&\begin{mymatrix}{cc}
-\cos \left( \theta +\phi \right) & -\sin \left( \theta +\phi \right) \\
-\sin \left( \theta +\phi \right) & \cos \left( \theta +\phi \right)
+\cos \tup{\theta +\phi } & -\sin \tup{\theta +\phi } \\
+\sin \tup{\theta +\phi } & \cos \tup{\theta +\phi }
 \end{mymatrix}\\
 &=&\begin{mymatrix}{cc}
 \cos \theta & -\sin \theta \\
@@ -225,8 +225,8 @@ The usual matrix multiplication
 yields
 \begin{eqnarray*}
 A_{\theta +\phi } &=& \begin{mymatrix}{cc}
-\cos \left( \theta +\phi \right) & -\sin \left( \theta +\phi \right) \\
-\sin \left( \theta +\phi \right) & \cos \left( \theta +\phi \right)
+\cos \tup{\theta +\phi } & -\sin \tup{\theta +\phi } \\
+\sin \tup{\theta +\phi } & \cos \tup{\theta +\phi }
 \end{mymatrix} \\
 &=&\begin{mymatrix}{cc}
 \cos \theta \cos \phi -\sin \theta \sin \phi & -\cos \theta \sin \phi -\sin
@@ -329,8 +329,8 @@ By Theorem \ref{thm:rotation}, the matrix of the transformation which
 involves rotating through an angle of $\pi /6$ is
 \begin{equation*}
 \begin{mymatrix}{rr}
-\cos \left( \pi /6\right) & -\sin \left( \pi /6\right) \\
-\sin \left( \pi /6\right) & \cos \left( \pi /6\right)
+\cos \tup{\pi /6} & -\sin \tup{\pi /6} \\
+\sin \tup{\pi /6} & \cos \tup{\pi /6}
 \end{mymatrix} =\begin{mymatrix}{cc}
 \vspace{0.05in}\frac{1}{2}\sqrt{3} & -\vspace{0.05in}\frac{1}{2} \\
 \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2}\sqrt{3}

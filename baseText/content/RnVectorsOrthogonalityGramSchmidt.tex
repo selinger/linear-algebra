@@ -18,13 +18,13 @@ linearly independent vectors in $\R^{n}$.
 \textbf{I:} Construct a new set of vectors $\{\vect{v}_1,\cdots ,\vect{v}_n\} $ as follows:
 \[ \begin{array}{ll}
 \vect{v}_1 & = \vect{u}_1 \\
-\vect{v}_{2} & = \vect{u}_{2} - \left(  \dfrac{ \vect{u}_2 \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} \right)  \vect{v}_1\\
-\vect{v}_{3} & = \vect{u}_{3} - \left(  \dfrac{\vect{u}_3 \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} \right)  \vect{v}_1
-	 - \left(  \dfrac{\vect{u}_3 \dotprod \vect{v}_2}{\vectlength \vect{v}_2 \vectlength^2} \right)  \vect{v}_2\\
+\vect{v}_{2} & = \vect{u}_{2} - \tup{\dfrac{ \vect{u}_2 \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} }  \vect{v}_1\\
+\vect{v}_{3} & = \vect{u}_{3} - \tup{\dfrac{\vect{u}_3 \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} }  \vect{v}_1
+	 - \tup{\dfrac{\vect{u}_3 \dotprod \vect{v}_2}{\vectlength \vect{v}_2 \vectlength^2} }  \vect{v}_2\\
 \vdots \\
-\vect{v}_{n} & = \vect{u}_{n} - \left(  \dfrac{\vect{u}_n \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} \right)  \vect{v}_1
-	 - \left(  \dfrac{\vect{u}_n \dotprod \vect{v}_2}{\vectlength \vect{v}_2 \vectlength^2}  \right) \vect{v}_2 - \cdots
-	 - \left(  \dfrac{\vect{u}_{n} \dotprod \vect{v}_{n-1}}{\vectlength \vect{v}_{n-1} \vectlength^2} \right) \vect{v}_{n-1} \\
+\vect{v}_{n} & = \vect{u}_{n} - \tup{\dfrac{\vect{u}_n \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} }  \vect{v}_1
+	 - \tup{\dfrac{\vect{u}_n \dotprod \vect{v}_2}{\vectlength \vect{v}_2 \vectlength^2}  } \vect{v}_2 - \cdots
+	 - \tup{\dfrac{\vect{u}_{n} \dotprod \vect{v}_{n-1}}{\vectlength \vect{v}_{n-1} \vectlength^2} } \vect{v}_{n-1} \\
 \end{array} \]
 
 \textbf{II:} Now let $\vect{w}_i = \dfrac{\vect{v}_i}{\vectlength\vect{v}_i\vectlength}$ for $i=1, \cdots ,n$.
@@ -45,7 +45,7 @@ To show that  $\set{\vect{v}_1,\cdots , \vect{v}_n  } $ is an orthogonal set, le
 then: 
 \[
 \begin{array}{ll}
- \vect{v}_1 \dotprod \vect{v}_2 &  =  \vect{v}_1 \dotprod \left( \vect{u}_2 - a_2 \vect{v}_1 \right)  \\
+ \vect{v}_1 \dotprod \vect{v}_2 &  =  \vect{v}_1 \dotprod \tup{\vect{u}_2 - a_2 \vect{v}_1 }  \\
  & = \vect{v}_1 \dotprod \vect{u}_2 - a_2 (\vect{v}_1 \dotprod \vect{v}_1  \\
  & = \vect{v}_1 \dotprod \vect{u}_2 - \dfrac{ \vect{u}_2 \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} \vectlength \vect{v}_1 \vectlength^2 \\
  & = ( \vect{v}_1 \dotprod \vect{u}_2 ) - ( \vect{u}_2 \dotprod \vect{v}_1 ) =0\\
@@ -95,7 +95,7 @@ Gram-Schmidt algorithm:
 0
 \end{mymatrix} \\
 && \\
-\vect{v}_{2} &=& \vect{u}_{2} - \left(  \dfrac{\vect{u}_2 \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} \right)  \vect{v}_1\\ 
+\vect{v}_{2} &=& \vect{u}_{2} - \tup{\dfrac{\vect{u}_2 \dotprod \vect{v}_1}{\vectlength \vect{v}_1 \vectlength^2} }  \vect{v}_1\\ 
 && \\
 &=& \begin{mymatrix}{r}
 3 \\

@@ -104,7 +104,7 @@ Now suppose $V=\func{span}\set{\vect{u}_{1},\cdots ,
 and $b$ be two scalars. Then 
 \begin{equation*}
 a \sum_{i=1}^{k}c_{i}\vect{u}_{i}+ b \sum_{i=1}^{k}d_{i}\vect{u}_{i}=
- \sum_{i=1}^{k}\left( a c_{i}+b  d_{i}\right) \vect{u}_{i}
+ \sum_{i=1}^{k}\tup{a c_{i}+b  d_{i}} \vect{u}_{i}
 \end{equation*}
 which is one of the vectors in $\func{span}\set{\vect{u}_{1},\cdots ,
 \vect{u}_{k}}$ and is therefore contained in $V$. This shows that $\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ has the properties of a subspace. 
@@ -184,7 +184,7 @@ Therefore,
 \begin{eqnarray*}
 \sum_{j=1}^{r}d_{j}\vect{u}_{j} &=&\sum_{j=1}^{r}d_{j}\sum_{i=1}^{s}a_{ij}
 \vect{v}_{i} \\
-&=&\sum_{i=1}^{s}\left( \sum_{j=1}^{r}a_{ij}d_{j}\right) \vect{v}
+&=&\sum_{i=1}^{s}\tup{\sum_{j=1}^{r}a_{ij}d_{j}} \vect{v}
 _{i}=\sum_{i=1}^{s}0\vect{v}_{i}=0
 \end{eqnarray*}
 which contradicts the assumption that $\set{\vect{u}_{1},\cdots ,\vect{u}_{r}} $
@@ -439,7 +439,7 @@ _{k}} =W.$ If
 and not all of the $c_{i}=0,$ then you could pick $c_{j}\neq 0$, divide by
 it and solve for $\vect{u}_{j}$ in terms of the others, 
 \begin{equation*}
-\vect{w}_{j}=\sum_{i\neq j}\left( -\frac{c_{i}}{c_{j}}\right) \vect{w}_{i}
+\vect{w}_{j}=\sum_{i\neq j}\tup{-\frac{c_{i}}{c_{j}}} \vect{w}_{i}
 \end{equation*}
 Then you could delete $\vect{w}_{j}$ from the list and have the same span. Any linear combination involving $\vect{w}_{j}$ would equal one in which $\vect{w}_{j}$ is replaced with the
 above sum, showing that it could have been obtained as a linear combination

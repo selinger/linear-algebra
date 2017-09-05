@@ -13,12 +13,12 @@ A fundamental identity is the
 \begin{theorem}{De Moivre's theorem}{demoivretheorem}
 For any positive integer $n$, we have
 \begin{equation*}
-\left( e^{i \theta} \right)^n = e^{i n \theta}
+\tup{e^{i \theta} }^n = e^{i n \theta}
 \end{equation*}
 Thus for any real number $r>0$ and any positive integer $n$, we have:
 \begin{equation*}
-\left( r\left( \cos \theta+i\sin \theta\right) \right) ^{n}=r^{n}\left( \cos n \theta +i\sin
-n\theta\right) 
+\tup{r\tup{\cos \theta+i\sin \theta} } ^{n}=r^{n}\tup{\cos n \theta +i\sin
+n\theta} 
 \end{equation*}
 \end{theorem}
 
@@ -26,15 +26,15 @@ n\theta\right)
  The proof is by induction on $n$. It is clear the formula holds if $n=1.$ Suppose it is true
 for $n.$ Then, consider $n+1$.
 \begin{equation*}
-\left( r\left( \cos \theta+i\sin \theta\right) \right) ^{n+1}=\left( r\left( \cos
-\theta+i\sin \theta\right) \right) ^{n}\left( r\left( \cos \theta+i\sin \theta\right) \right)
+\tup{r\tup{\cos \theta+i\sin \theta} } ^{n+1}=\tup{r\tup{\cos
+\theta+i\sin \theta} } ^{n}\tup{r\tup{\cos \theta+i\sin \theta} }
 \end{equation*}
 which by induction equals
 \begin{eqnarray*}
-&=&r^{n+1}\left( \cos n\theta+i\sin n\theta\right) \left( \cos \theta+i\sin \theta\right) \\
-&=& r^{n+1}\left( \left( \cos n\theta\cos \theta-\sin n\theta\sin \theta\right) +i\left( \sin
-n\theta\cos \theta+\cos n\theta\sin \theta\right) \right)\\
-&=&r^{n+1}\left( \cos \left( n+1\right) \theta+i\sin \left( n+1\right) \theta\right)
+&=&r^{n+1}\tup{\cos n\theta+i\sin n\theta} \tup{\cos \theta+i\sin \theta} \\
+&=& r^{n+1}\tup{\tup{\cos n\theta\cos \theta-\sin n\theta\sin \theta} +i\tup{\sin
+n\theta\cos \theta+\cos n\theta\sin \theta} }\\
+&=&r^{n+1}\tup{\cos \tup{n+1} \theta+i\sin \tup{n+1} \theta}
 \end{eqnarray*}
 by the formulas for the cosine and sine of the sum of two angles. 
 \end{proof}
@@ -52,20 +52,20 @@ roots of $z$ in $\C$.
 \end{corollary}
 
 \begin{proof}
-Let $z=a+bi$ and let $z=\left\vert z\right\vert \left( \cos
-\theta+i\sin \theta\right) $ be the polar form of the complex number. By De Moivre's
+Let $z=a+bi$ and let $z=\left\vert z\right\vert \tup{\cos
+\theta+i\sin \theta} $ be the polar form of the complex number. By De Moivre's
 theorem, a complex number
 \begin{equation*}
-w= r e^{i \alpha} = r\left( \cos \alpha +i\sin \alpha \right) 
+w= r e^{i \alpha} = r\tup{\cos \alpha +i\sin \alpha } 
 \end{equation*}
 is a $k^{th}$ root of $z$ if and only if
 \begin{equation*}
-w^k = (r e^{i \alpha})^k = r^k e^{ik\alpha} = r^{k}\left( \cos k\alpha +i\sin k\alpha \right) =\left\vert z\right\vert
-\left( \cos \theta+i\sin \theta\right) 
+w^k = (r e^{i \alpha})^k = r^k e^{ik\alpha} = r^{k}\tup{\cos k\alpha +i\sin k\alpha } =\left\vert z\right\vert
+\tup{\cos \theta+i\sin \theta} 
 \end{equation*}
 This requires $r^{k}=\left\vert z\right\vert $ and so $r=\left\vert
-z\right\vert ^{1/k}$. Also, both $\cos \left( k\alpha \right) =\cos \theta$ and
-$\sin \left( k\alpha \right) =\sin \theta.$ This can only happen if
+z\right\vert ^{1/k}$. Also, both $\cos \tup{k\alpha } =\cos \theta$ and
+$\sin \tup{k\alpha } =\sin \theta.$ This can only happen if
 \begin{equation*}
 k\alpha =\theta+2 \ell \pi
 \end{equation*}
@@ -76,8 +76,8 @@ for $\ell$ an integer. Thus
 \end{equation*}
 and so the $k^{th}$ roots of $z$ are of the form
 \begin{equation*}
-\left\vert z\right\vert ^{1/k}\left( \cos \left( \frac{\theta+2 \ell \pi }{k}\right)
-+i\sin \left( \frac{\theta+2 \ell \pi }{k}\right) \right) ,\;\ell = 0, 1, 2, \cdots, k-1 
+\left\vert z\right\vert ^{1/k}\tup{\cos \tup{\frac{\theta+2 \ell \pi }{k}}
++i\sin \tup{\frac{\theta+2 \ell \pi }{k}} } ,\;\ell = 0, 1, 2, \cdots, k-1 
 \end{equation*}
 Since the cosine and sine are periodic of period $2\pi ,$ there are exactly $
 k$ distinct numbers which result from this formula. 
@@ -176,30 +176,30 @@ Factor the polynomial $x^{3}-27.$
 \begin{solution}
 First find the cube roots of 27. By the above procedure
 \index{polynomials!factoring}, these cube roots
-are $3,3\left( \displaystyle
-\frac{-1}{2}+i\displaystyle\frac{\sqrt{3}}{2}\right) ,$ and $3\left( 
-\displaystyle\frac{-1}{2}-i\displaystyle\frac{\sqrt{3}}{2}\right) $. You may wish to verify 
+are $3,3\tup{\displaystyle
+\frac{-1}{2}+i\displaystyle\frac{\sqrt{3}}{2}} ,$ and $3\tup{
+\displaystyle\frac{-1}{2}-i\displaystyle\frac{\sqrt{3}}{2}} $. You may wish to verify 
 this using the above steps.
 
 Therefore, $x^{3}-27 =$
 \begin{equation*}
- \left( x-3\right) \left( x-3\left( \frac{-1}{2}+i\frac{\sqrt{3}}{2}\right)
-\right) \left( x-3\left( \frac{-1}{2}-i\frac{\sqrt{3}}{2}\right) \right) 
+ \tup{x-3} \tup{x-3\tup{\frac{-1}{2}+i\frac{\sqrt{3}}{2}}
+} \tup{x-3\tup{\frac{-1}{2}-i\frac{\sqrt{3}}{2}} } 
 \end{equation*}
-Note also $\left( x-3\left( \frac{-1}{2}+i\frac{\sqrt{3}}{2}\right) \right)
-\left( x-3\left( \frac{-1}{2}-i\frac{\sqrt{3}}{2}\right) \right)
+Note also $\tup{x-3\tup{\frac{-1}{2}+i\frac{\sqrt{3}}{2}} }
+\tup{x-3\tup{\frac{-1}{2}-i\frac{\sqrt{3}}{2}} }
 =\allowbreak x^{2}+3x+9$ and so
 \begin{equation*}
-x^{3}-27=\left( x-3\right) \left( x^{2}+3x+9\right)
+x^{3}-27=\tup{x-3} \tup{x^{2}+3x+9}
 \end{equation*}
 where the quadratic polynomial $x^{2}+3x+9$ cannot be factored without using
 complex numbers.
 \end{solution}
 
 Note that even though the polynomial $x^{3}-27$ has all real coefficients,
-it has some complex zeros, $3\left( \displaystyle
-\frac{-1}{2}+i\displaystyle\frac{\sqrt{3}}{2}\right) ,$ and $3\left( 
-\displaystyle\frac{-1}{2}-i\displaystyle\frac{\sqrt{3}}{2}\right) $. 
+it has some complex zeros, $3\tup{\displaystyle
+\frac{-1}{2}+i\displaystyle\frac{\sqrt{3}}{2}} ,$ and $3\tup{
+\displaystyle\frac{-1}{2}-i\displaystyle\frac{\sqrt{3}}{2}} $. 
 These zeros are complex conjugates of each other. It is always the case that if a polynomial has real 
 coefficients and a complex root, it will also
 have a root equal to the complex conjugate.

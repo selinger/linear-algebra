@@ -1,6 +1,6 @@
 \begin{enumialphparenastyle}
 
-\begin{ex}  Find $\func{proj}_{\vect{v}}\left( \vect{w}\right) $ where $\vect{w}=\begin{mymatrix}{r}
+\begin{ex}  Find $\func{proj}_{\vect{v}}\tup{\vect{w}} $ where $\vect{w}=\begin{mymatrix}{r}
 1 \\
 0 \\
 -2
@@ -22,7 +22,7 @@ $\frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod \vect{u}}\vect{u}=\frac{-5}{1
 \end{sol}
 \end{ex}
 
-\begin{ex} Find $\func{proj}_{\vect{v}}\left( \vect{w}\right) $ where 
+\begin{ex} Find $\func{proj}_{\vect{v}}\tup{\vect{w}} $ where 
 $\vect{w}=\begin{mymatrix}{r}
 1 \\
 2 \\
@@ -45,7 +45,7 @@ $\vect{w}=\begin{mymatrix}{r}
 \end{sol}
 \end{ex}
 
-\begin{ex} Find $\func{proj}_{\vect{v}}\left( \vect{w}\right) $ where 
+\begin{ex} Find $\func{proj}_{\vect{v}}\tup{\vect{w}} $ where 
 $\vect{w}=\begin{mymatrix}{r}
 1 \\
 2 \\
@@ -91,18 +91,18 @@ $\frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod \vect{u}}\vect{u}=\frac{\begi
 %\end{sol}
 \end{ex}
 
-\begin{ex} Does it make sense to speak of $\func{proj}_{\vect{0}}\left( \vect{w}\right) ?$
+\begin{ex} Does it make sense to speak of $\func{proj}_{\vect{0}}\tup{\vect{w}} ?$
 \begin{sol}
-No, it does not. The $0$ vector has no direction. The formula for $\func{proj}_{\vect{0}}\left( \vect{w}\right)$ doesn't make sense either.
+No, it does not. The $0$ vector has no direction. The formula for $\func{proj}_{\vect{0}}\tup{\vect{w}}$ doesn't make sense either.
 \end{sol}
 \end{ex}
 
 \begin{ex} Prove the Cauchy Schwarz inequality in $\R^{n}$ as follows.
 For $\vect{u},\vect{v}$ vectors, consider 
 \begin{equation*}
-\left( \vect{w}-
-\func{proj}_{\vect{v}}\vect{w}\right) \dotprod \left( \vect{w}-
-\func{proj}_{\vect{v}}\vect{w}\right) \geq 0
+\tup{\vect{w}-
+\func{proj}_{\vect{v}}\vect{w}} \dotprod \tup{\vect{w}-
+\func{proj}_{\vect{v}}\vect{w}} \geq 0
 \end{equation*}
 Simplify using the axioms of the dot product and then put in the formula
 for the projection. Notice that this expression equals $0$ and you get equality
@@ -111,16 +111,16 @@ $\vect{w}=\func{proj}_{\vect{v}}\vect{w}$. What is the geometric meaning of
 $\vect{w}=\func{proj}_{\vect{v}}\vect{w}$?
 \begin{sol}
 \[
-\left( \vect{u}-\frac{\vect{u}\dotprod \vect{v}}{\vectlength \vect{v}\vectlength
-^{2}}\vect{v}\right) \dotprod \left( \vect{u}-\frac{\vect{u}\dotprod \vect{v}}{\vectlength \vect{v}\vectlength ^{2}}\vect{v}\right) =\vectlength \vect{u
-}\vectlength ^{2}-2\left( \vect{u}\dotprod \vect{v}\right) ^{2}\frac{1}{\vectlength
-\vect{v}\vectlength ^{2}}+\left( \vect{u}\dotprod \vect{v}\right) ^{2}\frac{1}{
+\tup{\vect{u}-\frac{\vect{u}\dotprod \vect{v}}{\vectlength \vect{v}\vectlength
+^{2}}\vect{v}} \dotprod \tup{\vect{u}-\frac{\vect{u}\dotprod \vect{v}}{\vectlength \vect{v}\vectlength ^{2}}\vect{v}} =\vectlength \vect{u
+}\vectlength ^{2}-2\tup{\vect{u}\dotprod \vect{v}} ^{2}\frac{1}{\vectlength
+\vect{v}\vectlength ^{2}}+\tup{\vect{u}\dotprod \vect{v}} ^{2}\frac{1}{
 \vectlength \vect{v}\vectlength ^{2}}\geq 0
 \]
 And so
 \[
 \vectlength \vect{u}\vectlength ^{2}\vectlength \vect{v}\vectlength
-^{2}\geq \left( \vect{u}\dotprod \vect{v}\right) ^{2}
+^{2}\geq \tup{\vect{u}\dotprod \vect{v}} ^{2}
 \]
 You get equality exactly when $\vect{u}=\func{proj}_{\vect{v}}\vect{u}
 = \frac{\vect{u}\dotprod \vect{v}}{\vectlength \vect{v}\vectlength ^{2}}\vect{v}$
@@ -130,36 +130,36 @@ in other words, when $\vect{u}$ is a multiple of $\vect{v}$.
 
 
 \begin{ex} \label{perplinear} Let $\vect{v},\vect{w}$ $\vect{u}$ be vectors. Show
-that $\left( \vect{w}+\vect{u}\right) _{\perp }=\vect{w}_{\perp }+\vect{u}_{\perp }$
- where $\vect{w}_{\perp }=\vect{w}-\func{proj}_{\vect{v}}\left( \vect{w}\right) .$
+that $\tup{\vect{w}+\vect{u}} _{\perp }=\vect{w}_{\perp }+\vect{u}_{\perp }$
+ where $\vect{w}_{\perp }=\vect{w}-\func{proj}_{\vect{v}}\tup{\vect{w}} .$
 \begin{sol}
 \begin{eqnarray*}
-\vect{w}-\func{proj}_{\vect{v}}\left(\vect{w}\right) +\vect{u}- \func{proj}_{\vect{v}}\left( \vect{u}\right) \\
-&=&\vect{w}+\vect{u}-\left( \func{proj}_{\vect{v}}\left( \vect{w}\right) +\func{proj}_{\vect{v}}\left( \vect{u}\right) \right) \\
-&=&\vect{w}+\vect{u}-\func{proj}_{\vect{v}}\left( \vect{w}+\vect{u}\right) 
+\vect{w}-\func{proj}_{\vect{v}}\tup{\vect{w}} +\vect{u}- \func{proj}_{\vect{v}}\tup{\vect{u}} \\
+&=&\vect{w}+\vect{u}-\tup{\func{proj}_{\vect{v}}\tup{\vect{w}} +\func{proj}_{\vect{v}}\tup{\vect{u}} } \\
+&=&\vect{w}+\vect{u}-\func{proj}_{\vect{v}}\tup{\vect{w}+\vect{u}} 
 \end{eqnarray*}
 This follows because 
 \begin{eqnarray*}
-\func{proj}_{\vect{v}}\left( \vect{w}\right) +\func{proj}_{\vect{v}}\left(
-\vect{u}\right) &=& \frac{\vect{u}\dotprod \vect{v}}{\vectlength \vect{v}\vectlength ^{2}}\vect{v}+
+\func{proj}_{\vect{v}}\tup{\vect{w}} +\func{proj}_{\vect{v}}\tup{
+\vect{u}} &=& \frac{\vect{u}\dotprod \vect{v}}{\vectlength \vect{v}\vectlength ^{2}}\vect{v}+
 \frac{\vect{w}\dotprod \vect{v}}{\vectlength \vect{v}\vectlength ^{2}}\vect{v} \\
-&=& \frac{\left( \vect{u}+\vect{w}\right) \dotprod \vect{v}}{\vectlength \vect{v}
+&=& \frac{\tup{\vect{u}+\vect{w}} \dotprod \vect{v}}{\vectlength \vect{v}
 \vectlength ^{2}}\vect{v} \\
-&=& \func{proj}_{\vect{v}}\left( \vect{w}+\vect{u}\right)
+&=& \func{proj}_{\vect{v}}\tup{\vect{w}+\vect{u}}
 \end{eqnarray*}
 \end{sol}
 \end{ex}
 
 \begin{ex} Show that
 \begin{equation*}
- \left( \vect{v}-\func{proj}_{\vect{u}
-}\left( \vect{v}\right) \right) \dotprod \vect{u}=0
+ \tup{\vect{v}-\func{proj}_{\vect{u}
+}\tup{\vect{v}} } \dotprod \vect{u}=0
 \end{equation*}
 and conclude every vector in $\R^{n}$ can be written as the sum of
 two vectors, one which is perpendicular and one which is parallel to the
 given vector.
 \begin{sol}
-$\left( \vect{v}-\func{proj}_{\vect{u}}\left( \vect{v}\right) \right) \dotprod \vect{u} =  \vect{v} \dotprod \vect{u} -\left( \frac{\left( \vect{v\cdot u}\right) }{\vectlength \vect{u} \vectlength ^{2}}\vect{u} \right) \dotprod \vect{u} = \vect{v} \dotprod \vect{u} - \vect{v} \dotprod \vect{u} =0.$ Therefore, $\vect{v} = \vect{v} - \func{proj}_{\vect{u}}\left( \vect{v}\right) + \func{proj}_{\vect{u}}\left( \vect{v}\right).$ The first is perpendicular to $\vect{u}$ and the second is a multiple
+$\tup{\vect{v}-\func{proj}_{\vect{u}}\tup{\vect{v}} } \dotprod \vect{u} =  \vect{v} \dotprod \vect{u} -\tup{\frac{\tup{\vect{v\cdot u}} }{\vectlength \vect{u} \vectlength ^{2}}\vect{u} } \dotprod \vect{u} = \vect{v} \dotprod \vect{u} - \vect{v} \dotprod \vect{u} =0.$ Therefore, $\vect{v} = \vect{v} - \func{proj}_{\vect{u}}\tup{\vect{v}} + \func{proj}_{\vect{u}}\tup{\vect{v}}.$ The first is perpendicular to $\vect{u}$ and the second is a multiple
 of $\vect{u}$ so it is parallel to $\vect{u}$.
 \end{sol}
 \end{ex}

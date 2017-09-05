@@ -174,9 +174,6 @@
 % \eindex{\ef} instead.
 \newcommand{\eindex}[1]{{\edef\tmpa{#1}\def\tmpb##1\relax{\index{##1}}\expandafter\tmpb\tmpa\relax}}
 
-% For writing a set, use $\set{...}$ or $\set{...\mid...}$.
-\newcommand{\set}[1]{\{#1\}}
-
 % SI units are always typeset in a Roman font, even if the surrounding
 % text is in italics. We use \mathop so that there will be a tiny
 % space between each unit; this makes things like kgms easier to read.
@@ -200,6 +197,13 @@
 \newcommand{\Mat}{\mathbf{M}}    % vector space of matrices
 \newcommand{\Func}{\mathbf{F}}   % vector space of functions
 
-% Matrices with square brackets
+% Matrices with square brackets. Use
+% $\begin{mymatrix}{rrrr|r} ... \end{mymatrix}$ or $\mat{...}$.
 \newenvironment{mymatrix}[1]{\left[\begin{array}{#1}}{\end{array}\right]}
 \newcommand{\mat}[1]{\left[#1\right]}
+
+% For writing a set, use $\set{...}$ or $\set{...\mid...}$.
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+% For writing a tuple, use $\tup{...}$ instead of $\left(...\right)$.
+\newcommand{\tup}[1]{\left(#1\right)}

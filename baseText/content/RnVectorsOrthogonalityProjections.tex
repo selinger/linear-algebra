@@ -5,8 +5,8 @@ An important use of the Gram-Schmidt Process is in orthogonal projections, the f
 You may recall that a subspace of $\R^n$ is a set of vectors
 which contains the zero vector, and is closed under addition and
 scalar multiplication. Let's call such a subspace $W$. In particular,
-a plane in $\R^n$ which contains the origin, $ \left(0,0,
-\cdots, 0 \right)$, is a subspace of $\R^n$.
+a plane in $\R^n$ which contains the origin, $ \tup{0,0,
+\cdots, 0 }$, is a subspace of $\R^n$.
 
 Suppose a point $Y$ in $\R^n$ is not contained in $W$, then what
 point $Z$ in $W$ is closest to $Y$? Using the Gram-Schmidt Process, we
@@ -42,15 +42,15 @@ $\vec{y}$ on $W$. The definition is given as follows.
 Let $W$ be a subspace of $\R^n$, and $Y$ be any point in
 $\R^n$. Then the orthogonal projection of $Y$ onto $W$ is given by
 \[
-\vect{z} = \func{proj}_{W}\left( \vect{y}\right)
+\vect{z} = \func{proj}_{W}\tup{\vect{y}}
 =
-\left( \frac{\vect{y} \dotprod \vect{w}_1}{ \vectlength \vect{w}_1 \vectlength^2}\right) \vect{w}_1
+\tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \vectlength \vect{w}_1 \vectlength^2}} \vect{w}_1
 +
-\left( \frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}\right) \vect{w}_2
+\tup{\frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}} \vect{w}_2
 +
 \cdots
 +
-\left( \frac{\vect{y} \dotprod \vect{w}_m}{ \vectlength \vect{w}_m \vectlength^2}\right) \vect{w}_m
+\tup{\frac{\vect{y} \dotprod \vect{w}_m}{ \vectlength \vect{w}_m \vectlength^2}} \vect{w}_m
 \]
 where $\{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m\}$ is any orthogonal basis of $W$.
 \end{definition}
@@ -162,15 +162,15 @@ required that it be orthonormal.
 \end{mymatrix}
 \]
 \begin{eqnarray*}
-\vect{w}_2 &=& \vect{u}_2 - \left(  \frac{ \vect{u}_2 \dotprod \vect{w}_1}{\vectlength \vect{w}_1 \vectlength^2} \right)  \vect{w}_1\\
+\vect{w}_2 &=& \vect{u}_2 - \tup{\frac{ \vect{u}_2 \dotprod \vect{w}_1}{\vectlength \vect{w}_1 \vectlength^2} }  \vect{w}_1\\
 &=& \begin{mymatrix}{c}
 0 \\
 1 \\
 2
 \end{mymatrix}
 -
-\left(
-\frac{-2}{2}\right)
+\tup{
+\frac{-2}{2}}
 \begin{mymatrix}{r}
 1 \\
 0 \\
@@ -219,19 +219,19 @@ point $Y=(1,0,3)$ on the subspace $W$. We will write the position
 vector $\vect{y}$ of $Y$ as $\vect{y} = \begin{mymatrix}{c} 1 \\ 0 \\ 3
 \end{mymatrix}$. Using Definition \ref{def:orthproj}, we compute the projection as follows:
 \begin{eqnarray*}
-\vect{z} &=& \func{proj}_{W}\left( \vect{y}\right)\\
+\vect{z} &=& \func{proj}_{W}\tup{\vect{y}}\\
 &=&
-\left( \frac{\vect{y} \dotprod \vect{w}_1}{ \vectlength \vect{w}_1 \vectlength^2}\right) \vect{w}_1
+\tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \vectlength \vect{w}_1 \vectlength^2}} \vect{w}_1
 +
-\left( \frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}\right) \vect{w}_2 \\
+\tup{\frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}} \vect{w}_2 \\
 &=&
-\left( \frac{-2}{2} \right) \begin{mymatrix}{r}
+\tup{\frac{-2}{2} } \begin{mymatrix}{r}
 1 \\
 0 \\
 -1
 \end{mymatrix}
 +
-\left( \frac{4}{3} \right)
+\tup{\frac{4}{3} }
 \begin{mymatrix}{c}
 1 \\
 1 \\
@@ -245,7 +245,7 @@ vector $\vect{y}$ of $Y$ as $\vect{y} = \begin{mymatrix}{c} 1 \\ 0 \\ 3
 \end{mymatrix}
 \end{eqnarray*}
 
-Therefore the point $Z$ on $W$ closest to the point $(1,0,3)$  is $\left( \frac{1}{3}, \frac{4}{3}, \frac{7}{3} \right)$. 
+Therefore the point $Z$ on $W$ closest to the point $(1,0,3)$  is $\tup{\frac{1}{3}, \frac{4}{3}, \frac{7}{3} }$. 
 
 \end{solution}
 
@@ -389,7 +389,7 @@ The following results summarize the important properties of the orthogonal proje
 Let $W$ be a subspace of $\R^n$, $Y$ be any point in $\R^n$, and let $Z$ be the point in $W$ closest to $Y$. Then, 
 \begin{enumerate}
 \item 
-The position vector $\vect{z}$ of the point $Z$ is given by $\vect{z} = \func{proj}_{W}\left( \vect{y}\right)$
+The position vector $\vect{z}$ of the point $Z$ is given by $\vect{z} = \func{proj}_{W}\tup{\vect{y}}$
 \item
 $\vect{z} \in W$ and $\vect{y} - \vect{z} \in W^{\perp}$
 \item
@@ -452,25 +452,25 @@ Find the point $Z$ in $W$ closest to $Y$, and moreover write $\vect{y}$ as the s
 
 \begin{solution}
 From Theorem \ref{thm:approximation}, the point $Z$ in $W$ closest to
-$Y$ is given by $\vect{z} = \func{proj}_{W}\left( \vect{y}\right)$.
+$Y$ is given by $\vect{z} = \func{proj}_{W}\tup{\vect{y}}$.
 
 Notice that since the above vectors already give an orthogonal basis for $W$, we have:
 
 \begin{eqnarray*}
-\vect{z} &=& \func{proj}_{W}\left( \vect{y}\right)\\
+\vect{z} &=& \func{proj}_{W}\tup{\vect{y}}\\
 &=&
-\left( \frac{\vect{y} \dotprod \vect{w}_1}{ \vectlength \vect{w}_1 \vectlength^2}\right) \vect{w}_1
+\tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \vectlength \vect{w}_1 \vectlength^2}} \vect{w}_1
 +
-\left( \frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}\right) \vect{w}_2 \\
+\tup{\frac{\vect{y} \dotprod \vect{w}_2}{ \vectlength \vect{w}_2 \vectlength^2}} \vect{w}_2 \\
 &=& 
-\left( \frac{4}{2} \right) \begin{mymatrix}{c}
+\tup{\frac{4}{2} } \begin{mymatrix}{c}
 1 \\
 0 \\
 1 \\
 0 
 \end{mymatrix}
 +
-\left( \frac{10}{5} \right)
+\tup{\frac{10}{5} }
 \begin{mymatrix}{c}
 0 \\
 1 \\
@@ -605,6 +605,6 @@ the point $Z$ on $W$ closest to $Y=(1,1,1)$, compute
 & = & 
 \frac{1}{7}\begin{mymatrix}{r} 4 \\ 6 \\ 9 \end{mymatrix}.
 \end{eqnarray*}
-Therefore, $Z=\left( \frac{4}{7}, \frac{6}{7}, \frac{9}{7}\right)$.
+Therefore, $Z=\tup{\frac{4}{7}, \frac{6}{7}, \frac{9}{7}}$.
 \end{enumerate}
 \end{solution}

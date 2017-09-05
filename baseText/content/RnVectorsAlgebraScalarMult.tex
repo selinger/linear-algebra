@@ -44,15 +44,15 @@ scalars.
 \begin{itemize}
 \item The Distributive Law over Vector Addition
 \begin{equation*}
-k \left( \vect{u}+\vect{v}\right) = k\vect{u}+ k\vect{v}
+k \tup{\vect{u}+\vect{v}} = k\vect{u}+ k\vect{v}
 \end{equation*}
 \item The Distributive Law over Scalar Addition
 \begin{equation*}
-\left( k + p  \right)\vect{u} = k \vect{u}+p \vect{u}
+\tup{k + p  }\vect{u} = k \vect{u}+p \vect{u}
 \end{equation*}
 \item The Associative Law for Scalar Multiplication
 \begin{equation*}
-k \left( p \vect{u}\right) = \left(k p \right)\vect{u}
+k \tup{p \vect{u}} = \tup{k p }\vect{u}
 \end{equation*}
 \item Rule for Multiplication by $1$
 \begin{equation*}
@@ -64,13 +64,13 @@ k \left( p \vect{u}\right) = \left(k p \right)\vect{u}
 \begin{proof}
 We will show the proof of: 
 \begin{equation*}
-k \left( \vect{u}+\vect{v}\right) = k \vect{u}+ k \vect{v}
+k \tup{\vect{u}+\vect{v}} = k \vect{u}+ k \vect{v}
 \end{equation*}
 Note that:
 \begin{equation*}
 \begin{array}{ll}
-k \left( \vect{u}+\vect{v}\right) & =k \mat{u_{1}+v_{1} \cdots u_{n}+v_{n}}^T \\
-& = \mat{k \left( u_{1}+v_{1}\right) \cdots k \left( u_{n}+v_{n}\right) }^T \\
+k \tup{\vect{u}+\vect{v}} & =k \mat{u_{1}+v_{1} \cdots u_{n}+v_{n}}^T \\
+& = \mat{k \tup{u_{1}+v_{1}} \cdots k \tup{u_{n}+v_{n}} }^T \\
 & = \mat{k u_{1}+ k  v_{1} \cdots k u_{n}+ k v_{n}}^T \\
 & = \mat{k u_{1} \cdots k u_{n} }^T + \mat{k v_{1} \cdots k v_{n} }^T \\
 & = k \vect{u}+k \vect{v} \\

@@ -67,7 +67,7 @@ The following is the formal definition for the $ij^{th}$ entry of a product of m
 \begin{definition}{The $ij^{th}$ entry of a product}{ijentryofproduct}
 Let $A=\mat{a_{ij}} $ be an $m\times n$ matrix and
 let $B=\mat{b_{ij}} $ be an $n\times p$ matrix. Then $AB$ is an 
-$m\times p$ matrix and the $\left( i, j \right)$-entry of $AB$\index{matrix multiplication!ijth entry} is defined as 
+$m\times p$ matrix and the $\tup{i, j }$-entry of $AB$\index{matrix multiplication!ijth entry} is defined as 
 \begin{equation*}
 (AB)_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}  
 %\label{mat12}
@@ -87,14 +87,14 @@ a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj}
 \end{equation*}
 \end{definition}
 
-In other words, to find the $\left( i, j \right)$-entry of the product $AB$, or $(AB)_{ij}$,
+In other words, to find the $\tup{i, j }$-entry of the product $AB$, or $(AB)_{ij}$,
 you multiply the $i^{th}$ row of 
 $A,$ on the left by the $j^{th}$ column of $B$. To express $AB$ in terms of its entries, we write $AB = \mat{(AB)_{ij} }$.
 
 Consider the following example. 
 
 \begin{example}{The entries of a product}{entriesofproduct1}
-Compute $AB$ if possible. If it is, find the $\left( 3,2 \right)$-entry of $AB$ using Definition \ref{def:ijentryofproduct}. 
+Compute $AB$ if possible. If it is, find the $\tup{3,2 }$-entry of $AB$ using Definition \ref{def:ijentryofproduct}. 
 \begin{equation*}
 A = \begin{mymatrix}{cc}
 1 & 2 \\
@@ -107,8 +107,8 @@ A = \begin{mymatrix}{cc}
 \end{equation*}
 \end{example}
 
-\begin{solution} First check if the product is possible. It is of the form $\left( 3\times
-2\right) \left( 2\times 3\right) $ and since the inside numbers match, it is possible to do the multiplication. The result should be a $3\times 3$ matrix. 
+\begin{solution} First check if the product is possible. It is of the form $\tup{3\times
+2} \tup{2\times 3} $ and since the inside numbers match, it is possible to do the multiplication. The result should be a $3\times 3$ matrix. 
 We can first compute $AB$:
 \begin{equation*}
 \mat{\begin{mymatrix}{rr}
@@ -143,10 +143,10 @@ above product equals
 46 & 42 & 14
 \end{mymatrix} 
 \end{equation*}
-which is a $3\times 3$ matrix as desired. Thus, the $\left( 3,2 \right)$-entry equals 42.
+which is a $3\times 3$ matrix as desired. Thus, the $\tup{3,2 }$-entry equals 42.
 
 Now using Definition
-\ref{def:ijentryofproduct}, we can find that the $\left( 3,2 \right)$-entry equals
+\ref{def:ijentryofproduct}, we can find that the $\tup{3,2 }$-entry equals
 \begin{eqnarray*}
 \sum_{k=1}^{2}a_{3k}b_{k2} &=&a_{31}b_{12}+a_{32}b_{22} \\
 &=&2\times 3+6\times 6=42\\
@@ -159,7 +159,7 @@ You may wish to use this method to verify that the rest of the entries in $AB$ a
 Here is another example.
 
 \begin{example}{Finding the entries of a product}{entriesofproduct2}
-Determine if the product $AB$ is defined. If it is, find the $\left( 2, 1 \right)$-entry of the product.
+Determine if the product $AB$ is defined. If it is, find the $\tup{2, 1 }$-entry of the product.
 \begin{equation*}
 A=
 \begin{mymatrix}{rrr}
@@ -174,16 +174,16 @@ A=
 \end{equation*}
 \end{example}
 
-\begin{solution} This product is of the form $\left( 3\times
-3\right) \left( 3\times 2\right) $. The middle numbers match so the
+\begin{solution} This product is of the form $\tup{3\times
+3} \tup{3\times 2} $. The middle numbers match so the
 matrices are conformable and it is possible to compute the product.  
 
-We want to find the $\left( 2, 1 \right)$-entry of $AB$, that is, the entry in the second row and first column of the product.
+We want to find the $\tup{2, 1 }$-entry of $AB$, that is, the entry in the second row and first column of the product.
 We will use Definition \ref{def:ijentryofproduct}, which states 
 \begin{equation*}
 (AB)_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}
 \end{equation*}
-In this case, $n=3$, $i=2$ and $j=1$. Hence the $\left( 2, 1 \right)$-entry is found by computing
+In this case, $n=3$, $i=2$ and $j=1$. Hence the $\tup{2, 1 }$-entry is found by computing
 \begin{equation*}
  (AB)_{21} = \sum_{k=1}^{3}a_{2k}b_{k1} = 
  \begin{mymatrix}{ccc}

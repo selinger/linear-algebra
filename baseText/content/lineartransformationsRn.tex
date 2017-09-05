@@ -111,14 +111,14 @@ case, that function is multiplication by the matrix $A$.
 Let $T$ denote such a function. The notation $T:\R^{n}\mapsto \R^{m}$ means that the function $T$
 transforms vectors in $\R^{n}$ into vectors in $\R^{m}$. The notation $T(\vect{x})$ means the transformation $T$ applied to the vector $\vect{x}$. The above example demonstrated a transformation achieved by matrix multiplication. In this case,  we often write
 \begin{equation*}
-T_{A}\left( \vect{x}\right) =A \vect{x}
+T_{A}\tup{\vect{x}} =A \vect{x}
 \end{equation*}
 Therefore, $T_{A}$ is the transformation determined by the matrix $A$. In this case we say that $T$ is a matrix transformation. 
 
 Recall the property of matrix multiplication that states that for 
 $k $ and $p$ scalars,
 \begin{equation*}
-A\left( kB+pC\right) =kAB+pAC
+A\tup{kB+pC} =kAB+pAC
 \end{equation*}
 In particular, for $A$ an $m\times n$ matrix and $B$ and $C,$ $n\times 1$
 vectors in $\R^{n}$,  this formula holds.
@@ -128,12 +128,12 @@ example of a linear transformation, which we will now define.
 
 \begin{definition}{Linear transformation}{lineartransformation}
  Let $T:\R^{n}\mapsto \R^{m}$ be a function, where for each
-$\vect{x} \in \R^{n},T\left(\vect{x}\right)\in \R^{m}.$ Then $T$ is a
+$\vect{x} \in \R^{n},T\tup{\vect{x}}\in \R^{m}.$ Then $T$ is a
 \textbf{linear transformation}\index{linear transformation} if whenever $k ,p $ are scalars and 
 $\vect{x}_1$ and $\vect{x}_2$ are vectors in $\R^{n}$ $(
 n\times 1$ vectors$),$
 \begin{equation*}
-T\left( k \vect{x}_1 + p \vect{x}_2 \right) = kT\left(\vect{x}_1\right)+ pT\left(\vect{x}_{2} \right)
+T\tup{k \vect{x}_1 + p \vect{x}_2 } = kT\tup{\vect{x}_1}+ pT\tup{\vect{x}_{2} }
 \end{equation*}
 \end{definition}
 
@@ -153,7 +153,7 @@ Show that $T$ is a linear transformation.
 \end{example}
 
 \begin{solution}
-By Definition \ref{def:lineartransformation} we need to show that $T\left( k \vect{x}_1 + p \vect{x}_2 \right) = kT\left(\vect{x}_1\right)+ pT\left(\vect{x}_{2} \right)$ for all scalars $k,p$ and vectors $\vect{x}_1, \vect{x}_2$.
+By Definition \ref{def:lineartransformation} we need to show that $T\tup{k \vect{x}_1 + p \vect{x}_2 } = kT\tup{\vect{x}_1}+ pT\tup{\vect{x}_{2} }$ for all scalars $k,p$ and vectors $\vect{x}_1, \vect{x}_2$.
 Let
 \[
 \vect{x}_1 = \begin{mymatrix}{c} x_1 \\ y_1 \\ z_1 \end{mymatrix}, 
@@ -161,9 +161,9 @@ Let
 \]
 Then
 \begin{eqnarray*}
-T\left( k \vect{x}_1 + p \vect{x}_2 \right) &=& T \left( k \begin{mymatrix}{c} x_1 \\ y_1 \\ z_1 \end{mymatrix} + p \begin{mymatrix}{c} x_2 \\ y_2 \\ z_2 \end{mymatrix} \right) \\
-&=& T \left(  \begin{mymatrix}{c} kx_1 \\ ky_1 \\ kz_1 \end{mymatrix} +  \begin{mymatrix}{c} px_2 \\ py_2 \\ pz_2 \end{mymatrix} \right) \\
-&=& T \left(  \begin{mymatrix}{c} kx_1 + px_2 \\ ky_1 + py_2 \\ kz_1 + pz_2 \end{mymatrix}  \right) \\
+T\tup{k \vect{x}_1 + p \vect{x}_2 } &=& T \tup{k \begin{mymatrix}{c} x_1 \\ y_1 \\ z_1 \end{mymatrix} + p \begin{mymatrix}{c} x_2 \\ y_2 \\ z_2 \end{mymatrix} } \\
+&=& T \tup{\begin{mymatrix}{c} kx_1 \\ ky_1 \\ kz_1 \end{mymatrix} +  \begin{mymatrix}{c} px_2 \\ py_2 \\ pz_2 \end{mymatrix} } \\
+&=& T \tup{\begin{mymatrix}{c} kx_1 + px_2 \\ ky_1 + py_2 \\ kz_1 + pz_2 \end{mymatrix}  } \\
 &=& \begin{mymatrix}{c} (kx_1 + px_2) + (ky_1 + py_2) \\ (kx_1 + px_2)- (kz_1 + pz_2) \end{mymatrix} \\
 &=& \begin{mymatrix}{c} (kx_1 + ky_1) + (px_2 + py_2) \\ (kx_1 - kz_1) + (px_2 - pz_2) \end{mymatrix} \\
 &=& \begin{mymatrix}{c} kx_1 + ky_1 \\ kx_1 - kz_1 \end{mymatrix} + \begin{mymatrix}{c} px_2 + py_2 \\  px_2 - pz_2 \end{mymatrix} \\
@@ -173,7 +173,7 @@ T\left( k \vect{x}_1 + p \vect{x}_2 \right) &=& T \left( k \begin{mymatrix}{c} x
 Therefore $T$ is a linear transformation. 
 \end{solution}
 
-Two important examples of linear transformations are the zero transformation\index{zero transformation} and identity transformation\index{identity transformation}. The zero transformation defined by $T\left( \vect{x} \right) = \vect(0)$ for all $\vect{x}$ is an example of a linear transformation. Similarly the identity transformation defined by $T\left( \vect{x} \right) = \vect(x)$ is also linear. Take the time to prove these using the method demonstrated in Example \ref{exa:lineartransformation}.
+Two important examples of linear transformations are the zero transformation\index{zero transformation} and identity transformation\index{identity transformation}. The zero transformation defined by $T\tup{\vect{x} } = \vect(0)$ for all $\vect{x}$ is an example of a linear transformation. Similarly the identity transformation defined by $T\tup{\vect{x} } = \vect(x)$ is also linear. Take the time to prove these using the method demonstrated in Example \ref{exa:lineartransformation}.
 
 We began this section by discussing matrix transformations, where multiplication by a matrix transforms vectors. These matrix transformations are in fact linear transformations. 
 

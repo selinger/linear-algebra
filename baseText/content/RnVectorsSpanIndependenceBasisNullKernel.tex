@@ -308,33 +308,33 @@ The null space of a matrix $A$, also referred to as the kernel of $A$,
 is defined as follows.\index{kernel}\index{matrix!kernel}%
 \index{null space}\index{matrix!null space}
 \begin{equation*}
-\func{null} \left( A\right) =\set{\vect{x} :A \vect{x} =\vect{0}}
+\func{null} \tup{A} =\set{\vect{x} :A \vect{x} =\vect{0}}
 \end{equation*}
 \end{definition}
 
-It can also be referred to using the notation $\ker \left(
-A\right) $. 
+It can also be referred to using the notation $\ker \tup{
+A} $. 
 Similarly, we can discuss the image of $A$, denoted by
-$\func{im}\left( A\right)$. The image of $A$ consists of the vectors
+$\func{im}\tup{A}$. The image of $A$ consists of the vectors
 of $\R^{m}$ which ``get hit'' by $A$.  The formal definition
 is as follows.
 
 \begin{definition}{Image of $A$}{image}
-The image of $A$, written $\func{im}\left( A\right)$ is given by
+The image of $A$, written $\func{im}\tup{A}$ is given by
 \[
-\func{im}\left( A \right) = \set{A\vect{x} : \vect{x} \in \R^n }
+\func{im}\tup{A } = \set{A\vect{x} : \vect{x} \in \R^n }
 \]
 \end{definition}
 
 Consider
 $A$ as a mapping from $\R^{n}$ to $\R^{m}$ whose action is given by multiplication. The following diagram displays this scenario. 
 \begin{equation*}
-\overset{\func{null} \left( A\right) }{\R^{n}}\ \overset{A}{\rightarrow }\ 
+\overset{\func{null} \tup{A} }{\R^{n}}\ \overset{A}{\rightarrow }\ 
 \overset{
-\func{im}\left( A\right) }{\R^{m}}
+\func{im}\tup{A} }{\R^{m}}
 \end{equation*}
-As indicated, $\func{im}\left( A\right) $ is a subset of $\R^{m}$
-while $\func{null} \left( A\right) $ is a subset of $\R^{n}$.
+As indicated, $\func{im}\tup{A} $ is a subset of $\R^{m}$
+while $\func{null} \tup{A} $ is a subset of $\R^{n}$.
 
 It turns out that the null space and image of $A$ are both subspaces. Consider the following example.
 
@@ -365,8 +365,8 @@ Therefore by the subspace test, $\func{null}(A)$ is a subspace of $\R^n$.
 
 The proof that $\func{im}(A)$ is a subspace of $\R^m$ is similar and is left as an exercise to the reader. 
 
-We now wish to find a way to describe $\func{null}(A)$ for a matrix $A$. However, finding $\func{null} \left( A\right)$ is not new! There is just some new
-terminology being used, as $\func{null} \left( A\right) $ is simply the solution
+We now wish to find a way to describe $\func{null}(A)$ for a matrix $A$. However, finding $\func{null} \tup{A}$ is not new! There is just some new
+terminology being used, as $\func{null} \tup{A} $ is simply the solution
 to the system $A\vect{x}=\vect{0}$.
 
 \begin{theorem}{Basis of $\func{null}(A)$}{nullspacebasis}
@@ -384,11 +384,11 @@ A=\begin{mymatrix}{rrr}
 2 & 3 & 3
 \end{mymatrix} 
 \end{equation*}
-Find $\func{null} \left( A\right) $ and $\func{im}\left( A\right)$.
+Find $\func{null} \tup{A} $ and $\func{im}\tup{A}$.
 \end{example}
 
 \begin{solution}
-In order to find $\func{null} \left( A\right) $, we simply need to solve the
+In order to find $\func{null} \tup{A} $, we simply need to solve the
 equation $A\vect{x}=\vect{0}$. This is the usual procedure of writing
 the augmented matrix, finding the {\rref} and then the solution. The
 augmented matrix and corresponding {\rref} are
@@ -435,15 +435,15 @@ Therefore, the null space of $A$ is all multiples of this vector, which we can w
 }
 \end{equation*}
 
-Finally $\func{im}\left( A\right) $ is just $\set{A\vect{x} :
+Finally $\func{im}\tup{A} $ is just $\set{A\vect{x} :
 \vect{x} \in \R^n }$ and hence consists of the span of
-all columns of $A$, that is $\func{im}\left( A\right) = \func{col} (A)$. 
+all columns of $A$, that is $\func{im}\tup{A} = \func{col} (A)$. 
 
 Notice from the above calculation that that the first two columns of the {\rref} are pivot
 columns. Thus the  column space is the span of the first two  columns in
 the \textbf{original matrix}, and we get 
 \begin{equation*}
-\func{im}\left( A\right) = \func{col}(A) =
+\func{im}\tup{A} = \func{col}(A) =
 \func{span} \set{\begin{mymatrix}{r}
 1 \\ 
 0 \\ 
@@ -489,13 +489,13 @@ To find the null space, we need to solve the equation $AX=0$. The augmented matr
 0 & 0 & 0 & 0 & 0 & 0
 \end{mymatrix}
 \end{equation*}
-It follows that the first two columns are pivot columns, and the next three correspond to parameters. Therefore, $\func{null} \left( A\right) $ is given by 
+It follows that the first two columns are pivot columns, and the next three correspond to parameters. Therefore, $\func{null} \tup{A} $ is given by 
 \begin{equation*}
 \begin{mymatrix}{c}
-\left( -\vspace{0.05in}\frac{3}{5}\right) s +\left( -\vspace{0.05in}\frac{6}{5}\right) t+\left( 
-\vspace{0.05in}\frac{1}{5}\right) r \\ 
-\left( -\vspace{0.05in}\frac{1}{5}\right) s +\left( \vspace{0.05in}\frac{3}{5}\right) t +\left( -
-\vspace{0.05in}\frac{2}{5}\right) r \\ 
+\tup{-\vspace{0.05in}\frac{3}{5}} s +\tup{-\vspace{0.05in}\frac{6}{5}} t+\tup{
+\vspace{0.05in}\frac{1}{5}} r \\ 
+\tup{-\vspace{0.05in}\frac{1}{5}} s +\tup{\vspace{0.05in}\frac{3}{5}} t +\tup{-
+\vspace{0.05in}\frac{2}{5}} r \\ 
 s \\ 
 t \\ 
 r
@@ -526,7 +526,7 @@ s \begin{mymatrix}{r}
 In other words, the null space of this matrix equals the span of the three
 vectors above. Thus 
 \begin{equation*}
-\func{null} \left( A\right) =\func{span}\set{\begin{mymatrix}{r}
+\func{null} \tup{A} =\func{span}\set{\begin{mymatrix}{r}
 -\vspace{0.05in}\frac{3}{5} \\ 
 -\vspace{0.05in}\frac{1}{5} \\ 
 1 \\ 
@@ -549,7 +549,7 @@ vectors above. Thus
 \end{solution}
 
 Notice also that the three vectors above are linearly independent and
-so the dimension of $\func{null} \left( A\right) $ is 3. The following is
+so the dimension of $\func{null} \tup{A} $ is 3. The following is
 true in general, the number of parameters in the solution of $AX=0$
 equals the dimension of the null space. Recall also that the number of
 leading ones in the {\rref} equals the number of pivot columns, which is
@@ -559,13 +559,13 @@ the column or row space.
 Before we proceed to an important theorem, we first define what is meant by the nullity of a matrix. 
 
 \begin{definition}{Nullity}{nullity}
-The dimension of the null space of a matrix is called the \textbf{nullity}\index{nullity}, denoted $\dim( \func{null}\left(A\right))$.
+The dimension of the null space of a matrix is called the \textbf{nullity}\index{nullity}, denoted $\dim( \func{null}\tup{A})$.
 \end{definition}
 
 From our observation above we can now state an important theorem.
 
 \begin{theorem}{Rank and nullity}{ranknullity}
-Let $A$ be an $m\times n$ matrix. Then $\func{rank}\left( A\right) + \dim( \func{null}\left(A\right)) =n$. 
+Let $A$ be an $m\times n$ matrix. Then $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) =n$. 
 \end{theorem}
 
 Consider the following example, which we first explored above in Example \ref{exa:nullspace}
@@ -580,7 +580,7 @@ A=\begin{mymatrix}{rrr}
 \end{mymatrix} 
 \end{equation*}
 
-Find $\func{rank}\left( A\right)$ and $\dim( \func{null}\left(A\right))$. 
+Find $\func{rank}\tup{A}$ and $\dim( \func{null}\tup{A})$. 
 \end{example}
 
 \medskip
@@ -604,7 +604,7 @@ Therefore the rank of $A$ is $2$. We also determined that the null space of $A$ 
 }
 \]
 
-Therefore the nullity of $A$ is $1$. It follows from Theorem \ref{thm:ranknullity} that $\func{rank}\left( A\right) + \dim( \func{null}\left(A\right)) = 2 + 1 = 3$, which is the number of columns of $A$.
+Therefore the nullity of $A$ is $1$. It follows from Theorem \ref{thm:ranknullity} that $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) = 2 + 1 = 3$, which is the number of columns of $A$.
 \end{solution} 
 
 We conclude this section with two similar, and important, theorems.

@@ -9,7 +9,7 @@ First, we will consider the concept of distance for $\R$, that is, for points in
 distance between two points $P$ and $Q$ is given by the absolute value
 of their difference. We denote the distance between $P$ and $Q$ by  $d(P,Q)$ which is defined as 
 \begin{equation}
-d(P,Q) = \sqrt{ \left( P-Q\right) ^{2}}
+d(P,Q) = \sqrt{ \tup{P-Q} ^{2}}
 \label{distance1}
 \end{equation}
 
@@ -33,8 +33,8 @@ Consider now the case for $n=2$, demonstrated by the following picture.
 \end{picture}}
 \end{picture}
 
-There are two points $P =\left( p_{1},p_{2}\right) $ and 
-$Q = \left(q_{1},q_{2}\right)$ in the plane. The distance between these
+There are two points $P =\tup{p_{1},p_{2}} $ and 
+$Q = \tup{q_{1},q_{2}}$ in the plane. The distance between these
 points is shown in the picture as a solid line. Notice that this line
 is the hypotenuse of a right triangle which is half of the rectangle
 shown in dotted lines. We want to find the length of this hypotenuse
@@ -44,16 +44,16 @@ and $\left| p_{2}-q_{2}\right|$, the absolute value of the difference in these v
 implies the length of the hypotenuse (and thus the distance between $P$ and $Q$) equals
 \begin{equation}
 d(P,Q)=\sqrt{ \left| p_{1}-q_{1}\right| ^{2}+\left| p_{2}-q_{2}\right| ^{2}}
-=\sqrt{ \left( p_{1}-q_{1}\right) ^{2}+\left( p_{2}-q_{2}\right)
+=\sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{p_{2}-q_{2}}
 ^{2}}
 \label{distance2}
 \end{equation}
 
-Now suppose $n=3$ and let $P = \left( p_{1},p_{2},p_{3}\right) $ and $Q = \left(
-q_{1},q_{2},q_{3}\right) $ be two points in $\R^{3}.$ Consider the
+Now suppose $n=3$ and let $P = \tup{p_{1},p_{2},p_{3}} $ and $Q = \tup{
+q_{1},q_{2},q_{3}} $ be two points in $\R^{3}.$ Consider the
 following picture in which the solid line joins the two points and a
-dotted line joins the points $\left( q_{1},q_{2},q_{3}\right) $ and $\left(
-p_{1},p_{2},q_{3}\right) .$
+dotted line joins the points $\tup{q_{1},q_{2},q_{3}} $ and $\tup{
+p_{1},p_{2},q_{3}} .$
 
 \begin{picture}(1,139)
 \put(100,20){\begin{picture}(1,1)
@@ -84,32 +84,32 @@ p_{1},p_{2},q_{3}\right) .$
 \end{picture}
 
 Here, we need to use Pythagorean Theorem twice in order to find the length of 
-the solid line. First, by the Pythagorean Theorem, the length of the dotted line joining $\left(
-q_{1},q_{2},q_{3}\right) $ and $\left( p_{1},p_{2},q_{3}\right) $ equals
+the solid line. First, by the Pythagorean Theorem, the length of the dotted line joining $\tup{
+q_{1},q_{2},q_{3}} $ and $\tup{p_{1},p_{2},q_{3}} $ equals
 \begin{equation*}
-\sqrt{ \left( p_{1}-q_{1}\right) ^{2}+\left( p_{2}-q_{2}\right) ^{2}}
+\sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{p_{2}-q_{2}} ^{2}}
 \end{equation*}
-while the length of the line joining $\left( p_{1},p_{2},q_{3}\right) $ to 
-$\left( p_{1},p_{2},p_{3}\right) $ is just $\left| p_{3}-q_{3}\right| .$
+while the length of the line joining $\tup{p_{1},p_{2},q_{3}} $ to 
+$\tup{p_{1},p_{2},p_{3}} $ is just $\left| p_{3}-q_{3}\right| .$
 Therefore, by the Pythagorean Theorem again, the length of the line joining
-the points $P = \left( p_{1},p_{2},p_{3}\right) $ and $Q = \left(
-q_{1},q_{2},q_{3}\right) $ equals
+the points $P = \tup{p_{1},p_{2},p_{3}} $ and $Q = \tup{
+q_{1},q_{2},q_{3}} $ equals
 \begin{equation*}
-d(P,Q)=\sqrt{ \left(   \sqrt{ \left( p_{1}-q_{1}\right) ^{2}+\left(
-p_{2}-q_{2}\right) ^{2}}  \right) ^{2}+\left( p_{3}-q_{3}\right)
+d(P,Q)=\sqrt{ \tup{\sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{
+p_{2}-q_{2}} ^{2}}  } ^{2}+\tup{p_{3}-q_{3}}
 ^{2}}
 \end{equation*}
 \begin{equation}
- =\sqrt{ \left( p_{1}-q_{1}\right) ^{2}+\left( p_{2}-q_{2}\right)
-^{2}+\left( p_{3}-q_{3}\right) ^{2}}
+ =\sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{p_{2}-q_{2}}
+^{2}+\tup{p_{3}-q_{3}} ^{2}}
 \label{distance3}
 \end{equation}
 
 This discussion motivates the following definition for the distance between points in $\R^n$. 
 
 \begin{definition}{Distance between points}{distancebetweenpoints}
-Let $P=\left( p_{1},\cdots ,p_{n}\right) $ and 
-$Q=\left( q_{1},\cdots ,q_{n}\right) $ be two points in 
+Let $P=\tup{p_{1},\cdots ,p_{n}} $ and 
+$Q=\tup{q_{1},\cdots ,q_{n}} $ be two points in 
 $\R^{n}$. Then the distance
 between these points is defined as
 \begin{equation*}
@@ -128,11 +128,11 @@ $\R^4$.
 Find the distance between the points $P$ and $Q$ in $\R^{4}$,
 where $P$ and $Q$ are given by 
 \begin{equation*}
-P=\left( 1,2,-4,6\right)
+P=\tup{1,2,-4,6}
 \end{equation*}
 and
 \begin{equation*}
-Q=\left( 2,3,-1,0\right)
+Q=\tup{2,3,-1,0}
 \end{equation*}
 \end{example}
 
@@ -141,8 +141,8 @@ We will use the formula given in Definition \ref{def:distancebetweenpoints} to f
 $P$ and $Q$. 
 Use the distance formula and write
 \begin{equation*}
-d(P,Q)= \sqrt{ \left( 1-2\right) ^{2}+\left( 2-3\right)
-^{2}+\left( -4-\left( -1\right) \right) ^{2}+\left( 6-0\right)^{2}} = \sqrt{47}
+d(P,Q)= \sqrt{ \tup{1-2} ^{2}+\tup{2-3}
+^{2}+\tup{-4-\tup{-1} } ^{2}+\tup{6-0}^{2}} = \sqrt{47}
 \end{equation*}
 
 Therefore, $d( P,Q) =
@@ -169,22 +169,22 @@ same distance between the given points. This is explored in the
 following example.
 
 \begin{example}{The plane between two points}{planebetweentwopoints}
-Describe the points in $\R^3$ which are equally distant from both the points $\left(
-1,2,3\right) $ and $\left( 0,1,2\right) .$
+Describe the points in $\R^3$ which are equally distant from both the points $\tup{
+1,2,3} $ and $\tup{0,1,2} .$
 \end{example}
 
 \begin{solution}
-Let $P = \left( p_1 , p_2, p_3\right) $ be such a point. Therefore, $P$ is the same distance from $\left(
-1,2,3\right) $ and $\left( 0,1,2\right) $, thus $d(P,(1,2,3))=d(P,(0,1,2))$.
+Let $P = \tup{p_1 , p_2, p_3} $ be such a point. Therefore, $P$ is the same distance from $\tup{
+1,2,3} $ and $\tup{0,1,2} $, thus $d(P,(1,2,3))=d(P,(0,1,2))$.
 Then by Definition \ref{def:distancebetweenpoints},
 \begin{equation*}
-\sqrt{\left( p_1 -1\right) ^{2}+\left( p_2 -2\right) ^{2}+\left( p_3-3\right) ^{2}}=
-\sqrt{\left( p_1 - 0 \right)^{2}+\left( p_2-1\right) ^{2}+\left( p_3-2\right) ^{2}}
+\sqrt{\tup{p_1 -1} ^{2}+\tup{p_2 -2} ^{2}+\tup{p_3-3} ^{2}}=
+\sqrt{\tup{p_1 - 0 }^{2}+\tup{p_2-1} ^{2}+\tup{p_3-2} ^{2}}
 \end{equation*}
 Squaring both sides we obtain 
 \begin{equation*}
-\left( p_1 -1\right) ^{2}+\left( p_2 -2\right) ^{2}+\left( p_3 -3\right)
-^{2}=p_1^{2}+\left( p_2-1\right) ^{2}+\left( p_3 -2\right) ^{2}
+\tup{p_1 -1} ^{2}+\tup{p_2 -2} ^{2}+\tup{p_3 -3}
+^{2}=p_1^{2}+\tup{p_2-1} ^{2}+\tup{p_3 -2} ^{2}
 \end{equation*}
 and so
 \begin{equation*}
@@ -198,8 +198,8 @@ which can be written as
 \begin{equation}
 2p_1+2p_2+2p_3=-9  \label{distanceplane}
 \end{equation}
-Therefore, the points $P = \left(
-p_1,p_2,p_3\right) $  which are the same 
+Therefore, the points $P = \tup{
+p_1,p_2,p_3} $  which are the same 
 distance from each of the given points form a plane whose equation is given by \ref{distanceplane}.
 \end{solution}
 
@@ -219,8 +219,8 @@ $\R^n$. Then, the length of $\vect{u}$, written $\vectlength \vect{u} \vectlengt
 
 This definition corresponds to Definition
 \ref{def:distancebetweenpoints}, if you consider the vector $\vect{u}$
-to have its tail at the point $0 = \left( 0, \cdots ,0 \right)$ and its
-tip at the point $U = \left(u_1, \cdots, u_n \right)$.  Then the length of
+to have its tail at the point $0 = \tup{0, \cdots ,0 }$ and its
+tip at the point $U = \tup{u_1, \cdots, u_n }$.  Then the length of
 $\vect{u}$ is equal to the distance between $0$ and $U$, $d(0,U)$. In general, $d(P,Q) = \vectlength \longvect{PQ} \vectlength$. 
 
 Consider Example \ref{exa:distancebetweenpoints}. By Definition \ref{def:lengthofvector}, we could also find the distance between $P$ and $Q$ 
@@ -281,7 +281,7 @@ Using the corresponding  values we find that
 \vectlength
 \vect{v}
 \vectlength
-&=& \sqrt{ 1^2 + \left(-3 \right)^2 + 4^2} \\
+&=& \sqrt{ 1^2 + \tup{-3 }^2 + 4^2} \\
 &=& \sqrt{ 1 + 9 + 16} \\
 &=& \sqrt{26} 
 \end{eqnarray*}

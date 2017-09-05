@@ -41,7 +41,7 @@ In other words,
 Now suppose we were to add $t(\vect{p} - \vect{p_0})$ to $\vect{p}$ where $t$ is some scalar.
 You can see that by doing so, we could find a vector with its point at $Q$. In other words, we can find $t$ such that 
 \begin{equation*}
-\vect{q} = \vect{p_0} + t \left( \vect{p}- \vect{p_0}\right)
+\vect{q} = \vect{p_0} + t \tup{\vect{p}- \vect{p_0}}
 \end{equation*}
 
 This equation determines the line $L$ in $\R^2$. In fact, it determines a line $L$ in $\R^n$. Consider the following definition.
@@ -51,7 +51,7 @@ Suppose a line $L$ in $\R^{n}$ contains the two\index{lines!vector equation} dif
 $P_0$. Let $\vect{p}$ and $\vect{p_0}$ be the position vectors of these two points, respectively.
 Then, $L$ is the collection of points $Q$ which have the position vector $\vect{q}$ given by
 \begin{equation*}
-\vect{q}=\vect{p_0}+t\left( \vect{p}-\vect{p_0}\right)
+\vect{q}=\vect{p_0}+t\tup{\vect{p}-\vect{p_0}}
 \end{equation*}
 where $t\in \R$. 
 
@@ -62,7 +62,7 @@ Let $\vect{d} = \vect{p} - \vect{p_0}$. Then $\vect{d}$ is the \textbf{direction
 \end{definition}
 
 Note that this definition agrees with the usual notion of a
-line in two dimensions and so this is consistent with earlier concepts. Consider now points in $\R^3$. If a point $P \in \R^3$ is given by $P = \left( x,y,z \right)$, $P_0 \in \R^3$ by $P_0 = \left( x_0, y_0, z_0 \right)$, then we can write
+line in two dimensions and so this is consistent with earlier concepts. Consider now points in $\R^3$. If a point $P \in \R^3$ is given by $P = \tup{x,y,z }$, $P_0 \in \R^3$ by $P_0 = \tup{x_0, y_0, z_0 }$, then we can write
 \begin{equation*}
 \left[
 \begin{array}{c}
@@ -108,7 +108,7 @@ line.
 Let $\vect{x_{1}}, \vect{x_{2}} \in \R^n$. 
 Define $\vect{x_{1}}=\vect{a}$ and let $\vect{x_{2}}-\vect{x_{1}}=\vect{b}$.
 Since $\vect{b} \neq \vect{0}$, it follows that $\vect{x_{2}}\neq \vect{x_{1}}.$ Then
-$\vect{a}+t\vect{b}=\vect{x_{1}} + t\left( \vect{x_{2}}-\vect{x_{1}}\right) $. It follows that  
+$\vect{a}+t\vect{b}=\vect{x_{1}} + t\tup{\vect{x_{2}}-\vect{x_{1}}} $. It follows that  
 $\vect{x}=\vect{a}+t\vect{b}$ is a line containing the two different points 
 $X_1$ and $X_2$ whose position vectors are given by $\vect{x}_1$ and $\vect{x}_2$ respectively. 
 \end{proof}
@@ -117,15 +117,15 @@ We can use the above discussion to find the equation of a line when given two di
 Consider the following example. 
 
 \begin{example}{A line from two points}{linefromtwopoints}
-Find a vector equation for the line through the points $P_0 = \left(
-1,2,0\right) $ and $P = \left( 2,-4,6\right).$
+Find a vector equation for the line through the points $P_0 = \tup{
+1,2,0} $ and $P = \tup{2,-4,6}.$
 \end{example}
 
 \begin{solution}
 We will use the definition of a line given above in Definition \ref{def:vectorequationofline} to write
 this line in the form 
 \begin{equation*}
-\vect{q}=\vect{p_0}+t\left( \vect{p}-\vect{p_0}\right)
+\vect{q}=\vect{p_0}+t\tup{\vect{p}-\vect{p_0}}
 \end{equation*}
 Let $\vect{q} = 
 \begin{mymatrix}{c}
@@ -137,7 +137,7 @@ $. Then, we can find $\vect{p}$ and $\vect{p_0}$ by taking the position vectors 
 respectively. 
 Then, 
 \begin{equation*}
-\vect{q}=\vect{p_0}+t\left( \vect{p}-\vect{p_0}\right)
+\vect{q}=\vect{p_0}+t\tup{\vect{p}-\vect{p_0}}
 \end{equation*}
 can be written as
 \begin{equation*}
@@ -206,8 +206,8 @@ we can find the vector equation.
 Consider the following example. 
 
 \begin{example}{A line from a point and a direction vector}{linepointanddirectionvector}
-Find a vector equation for the line which contains the point $P_0 = \left(
-1,2,0\right) $ and has direction vector $\vect{d} = 
+Find a vector equation for the line which contains the point $P_0 = \tup{
+1,2,0} $ and has direction vector $\vect{d} = 
 \begin{mymatrix}{c}
 1 \\
 2 \\
@@ -282,7 +282,7 @@ a \\
 b \\
 c
 \end{mymatrix}$
-and goes through the point $P_0 = \left( x_0, y_0, z_0 \right)$.
+and goes through the point $P_0 = \tup{x_0, y_0, z_0 }$.
 Then, letting $t$ be a parameter, we can write $L$ as 
 \begin{equation*}
 \begin{array}{ll}

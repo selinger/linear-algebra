@@ -348,8 +348,8 @@ Find the general solution of the system whose augmented matrix is
 1 & 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2} \\
 0 & 1 & -\vspace{0.05in}\frac{1}{4} & \vspace{0.05in}\frac{3}{4} \\
 0 & 0 & 0 & 0
-\end{mymatrix} .$ Therefore, the solution is of the form $z=t,y=\frac{3}{4}+t\left(
-\frac{1}{4}\right) ,x=\frac{1}{2}-\frac{1}{2}t$ where $t\in \R$.
+\end{mymatrix} .$ Therefore, the solution is of the form $z=t,y=\frac{3}{4}+t\tup{
+\frac{1}{4}} ,x=\frac{1}{2}-\frac{1}{2}t$ where $t\in \R$.
 
 (c) The {\ef} is $\begin{mymatrix}{rrr|r}
 1 & 0 & 4 & 2 \\
@@ -450,7 +450,7 @@ at each node to equal the average of the temperature at the four adjacent
 nodes. In the following picture, the numbers represent the observed
 temperature at the indicated nodes. Find the temperature at
 the interior nodes, indicated by $x,y,z,$ and $w$. One of the equations is 
-$z=\vspace{0.05in}\frac{1}{4}\left( 10+0+w+x\right) $. 
+$z=\vspace{0.05in}\frac{1}{4}\tup{10+0+w+x} $. 
 
 \begin{picture}(1,60)
  \put(100,0){\begin{picture}(1,1)
@@ -490,10 +490,10 @@ $z=\vspace{0.05in}\frac{1}{4}\left( 10+0+w+x\right) $.
 \begin{sol}
 You need $
 \begin{array}{c}
-\frac{1}{4}\left( 20+30+w+x\right) -y=0 \\
-\frac{1}{4}\left( y+30+0+z\right) -w=0 \\
-\frac{1}{4}\left( 20+y+z+10\right) -x=0 \\
-\frac{1}{4}\left( x+w+0+10\right) -z=0
+\frac{1}{4}\tup{20+30+w+x} -y=0 \\
+\frac{1}{4}\tup{y+30+0+z} -w=0 \\
+\frac{1}{4}\tup{20+y+z+10} -x=0 \\
+\frac{1}{4}\tup{x+w+0+10} -z=0
 \end{array}
 $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 \end{sol}
@@ -640,10 +640,10 @@ $, Solution is: $\left[ w=15,x=15,y=20,z=10\right] .$
 \end{ex}
 
 \begin{ex} Suppose $A$ is an $m\times n$ matrix. Explain why the rank of $A$ is
-always no larger than $\min \left( m,n\right) .$
+always no larger than $\min \tup{m,n} .$
 \begin{sol}
 It is because you cannot
-have more than $\min \left( m,n\right) $ nonzero rows in the {\rref}. Recall that the number of pivot columns is the same as the
+have more than $\min \tup{m,n} $ nonzero rows in the {\rref}. Recall that the number of pivot columns is the same as the
 number of nonzero rows from the description of this {\rref}.
 \end{sol}
 \end{ex}
@@ -657,19 +657,19 @@ number of nonzero rows from the description of this {\rref}.
   augmented matrix of the system.
   
   \begin{enumerate}
-  \item $A$ is a $5\times 6$ matrix, $\limfunc{rank}\left( A\right) =4$ and 
+  \item $A$ is a $5\times 6$ matrix, $\limfunc{rank}\tup{A} =4$ and 
     $\limfunc{rank}\mat{A|B } =4.$ 
     
-  \item $A$ is a $3\times 4$ matrix, $\limfunc{rank}\left( A\right) =3$ and 
+  \item $A$ is a $3\times 4$ matrix, $\limfunc{rank}\tup{A} =3$ and 
     $\limfunc{rank}\mat{A|B} =2.$
     
-  \item $A$ is a $4\times 2$ matrix, $\limfunc{rank}\left( A\right) =4$ and 
+  \item $A$ is a $4\times 2$ matrix, $\limfunc{rank}\tup{A} =4$ and 
     $\limfunc{rank}\mat{A|B } =4.$ 
     
-  \item $A$ is a $5\times 5$ matrix, $\limfunc{rank}\left( A\right) =4$ and 
+  \item $A$ is a $5\times 5$ matrix, $\limfunc{rank}\tup{A} =4$ and 
     $\limfunc{rank}\mat{A|B } =5.$ 
     
-  \item $A$ is a $4\times 2$ matrix, $\limfunc{rank}\left( A\right) =2$ and 
+  \item $A$ is a $4\times 2$ matrix, $\limfunc{rank}\tup{A} =2$ and 
     $\limfunc{rank}\mat{A|B } =2$.
   \end{enumerate}
   
