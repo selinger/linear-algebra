@@ -10,7 +10,7 @@ it is the case that each year the proportion of residents in location
 $j$ which move to location $i$ is $a_{ij}$. Also suppose no one
 escapes or emigrates from without these $m$ locations. This last
 assumption requires $\sum_{i}a_{ij}=1$, and means that the matrix $A$,
-such that $A = \leftB a_{ij} \rightB$, is a Markov matrix. In this context,
+such that $A = \mat{a_{ij} }$, is a Markov matrix. In this context,
 $A$ is also called a \textbf{migration matrix}\index{migration matrix}.
 \end{definition}
 
@@ -53,7 +53,7 @@ thousands people in location 1 the following year, and similarly
 there would be $.6 \times 15 + .8 \times 10 = 17$
 thousands people in location 2 the following year.
 
-More generally let $X_n=\leftB x_{1n} \cdots x_{mn}\rightB ^{T}$ where $x_{in}$ is the
+More generally let $X_n=\mat{x_{1n} \cdots x_{mn}} ^{T}$ where $x_{in}$ is the
 population of location $i$ at time period $n$. We call $X_n$ the \textbf{state vector at period $n$}\index{state vector}. In particular, we call $X_0$ the initial state vector. Letting $A$ be the migration matrix, we compute the population in each location $i$ one time period later by $AX_n$. In order to find the population of location $i$ after $k$
 years, we compute the $i^{th}$ component of $A^{k}X.$ This discussion is summarized in the following theorem. 
 
@@ -178,7 +178,7 @@ A second important application of Markov matrices is the concept of random walks
 \[
 \sum_{i=1}^{k}a_{ij}=1
 \]
-In this context, the vector $X_n=\leftB x_{1n} \cdots x_{mn}\rightB ^{T}$ contains the probabilities $x_{in}$ the walker ends up in location $i, 1\leq i \leq m$ at time $n$. 
+In this context, the vector $X_n=\mat{x_{1n} \cdots x_{mn}} ^{T}$ contains the probabilities $x_{in}$ the walker ends up in location $i, 1\leq i \leq m$ at time $n$. 
 
 \begin{example}{Random walks}{randomwalks}
 Suppose three locations exist, referred to as locations $1, 2$ and $3$. The Markov matrix of probabilities $A = [a_{ij}]$ is given by

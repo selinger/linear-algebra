@@ -44,7 +44,7 @@ For a simple illustration of the last claim,
 0 & 1 & 0 & 0 & 1 & 0 \\ 
 0 & 0 & 1 & 0 & -a & 1%
 \end{array}%
-\rightB
+}
 \end{equation*}
 
 Now let $A$ be an $m\times n$ matrix, say 
@@ -87,7 +87,7 @@ entry to zero out all the entries below it in the matrix on the right by
 multiplication by a matrix of the form $E_{2}=\begin{mymatrix}{cc}
 1 & \mathbf{0} \\ 
 \mathbf{0} & E
-\end{mymatrix} $ where $E$ is an $\leftB m-1\rightB \times \leftB m-1\rightB $
+\end{mymatrix} $ where $E$ is an $\mat{m-1} \times \mat{m-1} $
 matrix of the form 
 \begin{equation*}
 E=\begin{mymatrix}{cccc}
@@ -141,7 +141,7 @@ product of the form
 1 & 0 & \cdots & 0 \\ 
 0 & 1 & \cdots & 0 \\ 
 \vdots & 0 & \ddots & \vdots \\ 
-0 & \cdots & -M_{m\leftB m-1\rightB } & 1
+0 & \cdots & -M_{m\mat{m-1} } & 1
 \end{mymatrix}
 \end{equation*}
 each factor having at most one nonzero column, the position of which moves
@@ -153,10 +153,10 @@ on the left by an elementary matrix that the above product is of the form
 1 & 0 & \cdots & 0 & 0 \\ 
 -M_{21} & 1 & \cdots & 0 & 0 \\ 
 \vdots & -M_{32} & \ddots & \vdots & \vdots \\ 
--M_{\leftB M-1\rightB 1} & \vdots & \cdots & 1 & 0 \\ 
+-M_{\mat{M-1} 1} & \vdots & \cdots & 1 & 0 \\ 
 -M_{M1} & -M_{M2} & \cdots & -M_{MM-1} & 1
 \end{array}%
-\rightB
+}
 \end{equation*}
 
 In words, beginning at the left column and moving toward the right, you

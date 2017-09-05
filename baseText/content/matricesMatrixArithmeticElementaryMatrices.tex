@@ -405,7 +405,7 @@ UA &=& \begin{mymatrix}{rrr}
 While the process used in the above example is reliable and simple when only a few row operations are used, it becomes cumbersome in a case where many row operations are needed to carry $A$ to $B$. The following theorem provides an alternate way to find the matrix $U$. 
 
 \begin{theorem}{Finding the matrix $U$}{findingu}
-Let $A$ be an $m \times n$ matrix and let $B$ be its {\rref}. Then $B = UA$ where $U$ is an invertible $m \times m$ matrix found by forming the matrix $ \leftB A | I_m \rightB$ and row reducing to $\leftB B | U \rightB$. 
+Let $A$ be an $m \times n$ matrix and let $B$ be its {\rref}. Then $B = UA$ where $U$ is an invertible $m \times m$ matrix found by forming the matrix $ \mat{A | I_m }$ and row reducing to $\mat{B | U }$. 
 \end{theorem}
 
 Let's revisit the above example using the process outlined in Theorem \ref{thm:findingu}.
@@ -419,7 +419,7 @@ Let $A = \begin{mymatrix}{rr}
 \end{example}
 
 \begin{solution}
-First, set up the matrix $\leftB A | I_m \rightB$. 
+First, set up the matrix $\mat{A | I_m }$. 
 \[
 \begin{mymatrix}{rr|rrr}
 0 & 1 & 1 & 0 & 0 \\
@@ -454,7 +454,7 @@ The left side of this matrix is $B$, and the right side is $U$. Comparing this t
 
 Recall from Algorithm \ref{algo:matrixinversionalgorithm} that an $n \times n$  matrix $A$ is invertible if and only if $A$ can be carried to the $n \times n$ identity matrix using the usual row operations. This leads to an important consequence related to the above discussion. 
 
-Suppose $A$ is an $n \times n$ invertible matrix. Then, set up the matrix $\leftB A | I_n \rightB$ as done above, and row reduce until it is of the form $\leftB B | U \rightB$. In this case, $B = I_n$ because $A$ is invertible. 
+Suppose $A$ is an $n \times n$ invertible matrix. Then, set up the matrix $\mat{A | I_n }$ as done above, and row reduce until it is of the form $\mat{B | U }$. In this case, $B = I_n$ because $A$ is invertible. 
 
 \begin{eqnarray*}
 B &=& UA \\
@@ -491,7 +491,7 @@ Write $A$ as a product of elementary matrices.
 \end{example}
 
 \begin{solution}
-We will use the process outlined in Theorem \ref{thm:findingu} to write $A$ as a product of elementary matrices. We will set up the matrix $\leftB A | I \rightB$ and row reduce, recording each row operation as an elementary matrix. 
+We will use the process outlined in Theorem \ref{thm:findingu} to write $A$ as a product of elementary matrices. We will set up the matrix $\mat{A | I }$ and row reduce, recording each row operation as an elementary matrix. 
 
 First: 
 \[

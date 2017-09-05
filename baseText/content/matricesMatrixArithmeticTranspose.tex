@@ -25,7 +25,7 @@ The definition of the transpose is as follows.
 Let $A$ be an $m\times n$ matrix. Then $A^{T}$, the \textbf{transpose}\index{matrix!transpose}\index{transpose} of $A$,  denotes the $n\times m$
 matrix given by 
 \begin{equation*}
-A^{T} = \leftB a _{ij}\rightB ^{T}= \leftB a_{ji} \rightB
+A^{T} = \mat{a _{ij}} ^{T}= \mat{a_{ji} }
 \end{equation*}
 \end{definition}
 
@@ -45,8 +45,8 @@ A = \begin{mymatrix}{rrr}
 \end{example}
 
 \begin{solution}
-By Definition \ref{def:matrixtranspose}, we know that for $A = \leftB a_{ij} \rightB$, 
-$A^T = \leftB a_{ji} \rightB$. In other words, we switch the row and column
+By Definition \ref{def:matrixtranspose}, we know that for $A = \mat{a_{ij} }$, 
+$A^T = \mat{a_{ji} }$. In other words, we switch the row and column
 location of each entry. The $\left( 1, 2 \right)$-entry becomes the $\left( 2,1 \right)$-entry.
 
 Thus, 
@@ -79,11 +79,11 @@ $\left( rA+ sB\right) ^{T}=rA^{T}+ sB^{T}$  \label{matrixtranspose2}
 \begin{proof}
 First we prove \ref{matrixtranspose1}. From Definition \ref{def:matrixtranspose},
 \begin{equation*}
-\left(AB\right)^{T} = \leftB (AB) _{ij} \rightB ^{T}=\leftB (AB)_{ji} \rightB=\sum_{k}a_{jk}b_{ki}= \sum_{k}b_{ki}a_{jk} 
+\left(AB\right)^{T} = \mat{(AB) _{ij} } ^{T}=\mat{(AB)_{ji} }=\sum_{k}a_{jk}b_{ki}= \sum_{k}b_{ki}a_{jk} 
 \end{equation*}
 \begin{equation*}
-= \sum_{k}\leftB b_{ik}\rightB^{T}\leftB
-a_{kj}\rightB^{T}=\leftB b_{ij}\rightB ^{T} \leftB a_{ij}\rightB^{T} = B^{T}A^{T} 
+= \sum_{k}\mat{b_{ik}}^{T}\mat{
+a_{kj}}^{T}=\mat{b_{ij}} ^{T} \mat{a_{ij}}^{T} = B^{T}A^{T} 
 \end{equation*}
 The proof of Formula \ref{matrixtranspose2} is left as an exercise. 
 \end{proof}

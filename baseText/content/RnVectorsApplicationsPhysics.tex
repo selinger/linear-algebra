@@ -15,7 +15,7 @@ ingredients, its magnitude and its direction.
 Recall the special vectors which point along the coordinate axes.
 These are given by 
 \begin{equation*}
-\vect{e}_{i} = \leftB 0 \cdots 0 \; 1 \; 0 \cdots 0 \rightB^T
+\vect{e}_{i} = \mat{0 \cdots 0 \; 1 \; 0 \cdots 0 }^T
 \end{equation*}
 where the $1$ is in the $i^{th}$ slot and there are zeros in all the other
 spaces. The direction of $\vect{e}_{i}$ is referred to as the $i^{th}$ direction.
@@ -40,7 +40,7 @@ Recall that in $\R^3$, we may refer to these vectors as $\vect{i}, \vect{j},$ an
 \end{tikzpicture}
 \end{center}
 
-Given a vector $\vect{u}=\leftB u_{1} \cdots u_{n}\rightB^T ,$ it follows
+Given a vector $\vect{u}=\mat{u_{1} \cdots u_{n}}^T ,$ it follows
 that
 \begin{equation*}
 \vect{u}=u_{1}\vect{e}_{1}+\cdots +u_{n}\vect{e}_{n}=
@@ -58,7 +58,7 @@ direction equal to $\left( u_{i}+v_{i}\right) \vect{e}_{i}.$ This is
 exactly what is obtained when the vectors, $\vect{u}$ and $\vect{v}$ are
 added.
 \begin{eqnarray*}
-\vect{u}+\vect{v}& =&\leftB u_{1}+v_{1} \cdots u_{n}+v_{n}\rightB^T  \\
+\vect{u}+\vect{v}& =&\mat{u_{1}+v_{1} \cdots u_{n}+v_{n}}^T  \\
 & =&\sum_{i=1}^{n}\left( u_{i}+v_{i}\right) \vect{e}_{i}
 \end{eqnarray*}
 

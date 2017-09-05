@@ -133,10 +133,6 @@
 % Matrix setup
 \setcounter{MaxMatrixCols}{10}
 
-% Square brackets
-\newcommand{\leftB}{\left[} 
-\newcommand{\rightB}{\right]}
-
 % Row reduced echelon form options. Note: these must be used with
 % braces like {\rref} to get the correct spacing before and after.
 \newcommand{\RREF}{Reduced Echelon Form}
@@ -206,3 +202,4 @@
 
 % Matrices with square brackets
 \newenvironment{mymatrix}[1]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newcommand{\mat}[1]{\left[#1\right]}

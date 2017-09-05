@@ -173,10 +173,10 @@ Here is the formal definition of how to multiply an $m\times
 n $ matrix by an $ n\times 1 $ column vector.
 
 \begin{definition}{Multiplication of vector by matrix}{multiplicationvectormatrix}
-Let $A=\leftB a_{ij} \rightB$ be an $m\times n$ matrix and let $X$
+Let $A=\mat{a_{ij} }$ be an $m\times n$ matrix and let $X$
 be an $n\times 1$ matrix given by 
 \begin{equation*}
-A=\leftB A_{1} \cdots A_{n}\rightB,  X = \begin{mymatrix}{r}
+A=\mat{A_{1} \cdots A_{n}},  X = \begin{mymatrix}{r}
 x_{1} \\
 \vdots \\
 x_{n}
@@ -383,12 +383,12 @@ $AB$\index{matrix multiplication}  is obtained as follows.
  Let $A$ be an $m\times n$ matrix
 and let $B$ be an $n\times p$ matrix of the form
 \begin{equation*}
-B=\leftB B_{1} \cdots  B_{p}\rightB
+B=\mat{B_{1} \cdots  B_{p}}
 \end{equation*}
 where $B_{1},...,B_{p}$ are the $n\times 1$ columns of $B$. Then the 
 $m\times p$ matrix $AB$ is defined as follows:
 \begin{equation*}
-AB = A \leftB B_{1} \cdots  B_{p}\rightB =  \leftB (A B)_{1} \cdots  (AB)_{p}\rightB 
+AB = A \mat{B_{1} \cdots  B_{p}} =  \mat{(A B)_{1} \cdots  (AB)_{p}} 
 \end{equation*}
 where $(AB)_{k}$ is an $m\times 1$ matrix or column vector which
 gives the $k^{th}$ column of $AB$. 
@@ -418,7 +418,7 @@ According to the above discussion $AB$ will be a $2\times 3$ matrix.
 Definition \ref{def:multiplicationoftwomatrices} gives us a way to
 calculate each column of $AB$, as follows.
 \begin{equation*}
-\leftB \overset{
+\mat{\overset{
 \text{First column}}{\overbrace{\begin{mymatrix}{rrr}
 1 & 2 & 1 \\
 0 & 2 & 1
@@ -440,7 +440,7 @@ calculate each column of $AB$, as follows.
 0 \\
 1 \\
 1
-\end{mymatrix} }}\rightB
+\end{mymatrix} }}}
 \end{equation*}
 You know how to multiply a matrix times a vector, using Definition \ref{def:multiplicationvectormatrix} for 
 each of the three columns. Thus
@@ -483,7 +483,7 @@ Using Definition \ref{def:multiplicationoftwomatrices}, we can compute this prod
 \end{mymatrix} \begin{mymatrix}{rrrr}
 1 & 2 & 1 & 0
 \end{mymatrix} = 
-\leftB \overset{
+\mat{\overset{
 \text{First column}}{\overbrace{\begin{mymatrix}{r}
 1 \\
 2 \\
@@ -509,7 +509,7 @@ Using Definition \ref{def:multiplicationoftwomatrices}, we can compute this prod
 \end{mymatrix} \begin{mymatrix}{r}
 0
 \end{mymatrix}}}
-\rightB
+}
 \end{equation*}
 
 You can use Definition \ref{def:multiplicationvectormatrix} to verify that this product is

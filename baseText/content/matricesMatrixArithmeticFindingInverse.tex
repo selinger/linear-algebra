@@ -99,7 +99,7 @@ y & w
 
 After taking the time to solve the second system, you may have noticed that exactly the same row
 operations were used to solve both systems. In each case, the end result was
-something of the form $\leftB I|X\rightB $ where $I$ is the
+something of the form $\mat{I|X} $ where $I$ is the
 identity and $X$ gave a column of the inverse. In the above, 
 \begin{equation*}
 \begin{mymatrix}{c}
@@ -140,16 +140,16 @@ This exploration motivates the following important algorithm.
 Suppose $A$ is an $n\times n$ matrix. To find $A^{-1}$ if it exists\index{matrix!finding the inverse}, form
 the augmented $n\times 2n$ matrix
 \begin{equation*}
-\leftB A|I\rightB
+\mat{A|I}
 \end{equation*}
 If possible do row operations until you obtain an $n\times 2n$
 matrix of the form
 \begin{equation*}
-\leftB I|B\rightB  
+\mat{I|B}  
 \end{equation*}
 When this has been done, $B=A^{-1}.$ In this case, we say that $A$ is \textbf{invertible}. 
 If it is impossible to row reduce to a
-matrix of the form $\leftB I|B\rightB ,$ then $A$ has no inverse.
+matrix of the form $\mat{I|B} ,$ then $A$ has no inverse.
 \end{algorithm}
 
 This algorithm shows how to find the inverse if it exists. It will also tell you if
@@ -167,7 +167,7 @@ Let $A=\begin{mymatrix}{rrr}
 
 \begin{solution} Set up the augmented matrix
 \begin{equation*}
-\leftB A|I\rightB =  
+\mat{A|I} =  
 \begin{mymatrix}{rrr|rrr}
 1 & 2 & 2 & 1 & 0 & 0 \\
 1 & 0 & 2 & 0 & 1 & 0 \\
@@ -246,7 +246,7 @@ Let $A=\begin{mymatrix}{rrr}
 \end{mymatrix} $. Find $A^{-1}$ if it exists.
 \end{example}
 
-\begin{solution} Write the augmented matrix $\leftB A|I\rightB $
+\begin{solution} Write the augmented matrix $\mat{A|I} $
 \begin{equation*}
 \begin{mymatrix}{rrr|rrr}
 1 & 2 & 2 & 1 & 0 & 0 \\
@@ -254,8 +254,8 @@ Let $A=\begin{mymatrix}{rrr}
 2 & 2 & 4 & 0 & 0 & 1
 \end{mymatrix}
 \end{equation*}
-and proceed to do row operations attempting to obtain $\leftB
-I|A^{-1}\rightB .$ Take $-1$ times the first row and add to the
+and proceed to do row operations attempting to obtain $\mat{
+I|A^{-1}} .$ Take $-1$ times the first row and add to the
 second. Then take $ -2 $ times the first row and add to the
 third row.
 \begin{equation*}

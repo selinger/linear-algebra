@@ -65,8 +65,8 @@ a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots + a_{in}b_{nj}=\sum_{k=1}^{n}a_{ik}b_{kj}
 The following is the formal definition for the $ij^{th}$ entry of a product of matrices. 
 
 \begin{definition}{The $ij^{th}$ entry of a product}{ijentryofproduct}
-Let $A=\leftB a_{ij}\rightB $ be an $m\times n$ matrix and
-let $B=\leftB b_{ij}\rightB $ be an $n\times p$ matrix. Then $AB$ is an 
+Let $A=\mat{a_{ij}} $ be an $m\times n$ matrix and
+let $B=\mat{b_{ij}} $ be an $n\times p$ matrix. Then $AB$ is an 
 $m\times p$ matrix and the $\left( i, j \right)$-entry of $AB$\index{matrix multiplication!ijth entry} is defined as 
 \begin{equation*}
 (AB)_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}  
@@ -89,7 +89,7 @@ a_{i1}b_{1j} + a_{i2}b_{2j} + \cdots + a_{in}b_{nj}
 
 In other words, to find the $\left( i, j \right)$-entry of the product $AB$, or $(AB)_{ij}$,
 you multiply the $i^{th}$ row of 
-$A,$ on the left by the $j^{th}$ column of $B$. To express $AB$ in terms of its entries, we write $AB = \leftB (AB)_{ij} \rightB$.
+$A,$ on the left by the $j^{th}$ column of $B$. To express $AB$ in terms of its entries, we write $AB = \mat{(AB)_{ij} }$.
 
 Consider the following example. 
 
@@ -111,7 +111,7 @@ A = \begin{mymatrix}{cc}
 2\right) \left( 2\times 3\right) $ and since the inside numbers match, it is possible to do the multiplication. The result should be a $3\times 3$ matrix. 
 We can first compute $AB$:
 \begin{equation*}
-\leftB \begin{mymatrix}{rr}
+\mat{\begin{mymatrix}{rr}
 1 & 2 \\
 3 & 1 \\
 2 & 6
@@ -132,7 +132,7 @@ We can first compute $AB$:
 \end{mymatrix} \begin{mymatrix}{r}
 1 \\
 2
-\end{mymatrix} \rightB
+\end{mymatrix} }
 \end{equation*}
 where the commas separate the columns in the resulting product. Thus the
 above product equals

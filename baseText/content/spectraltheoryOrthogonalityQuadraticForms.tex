@@ -138,7 +138,7 @@ y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{mymatrix}$ and $D = \leftB d_{ij} \rightB$, we can write $q = \vect{y}^T D \vect{y}$ where $D$ is the matrix of coefficients from $q$. There is something special about this matrix $D$ that is crucial. Since no $y_iy_j$ terms exist in $q$, it follows that $d_{ij} = 0$ for all $i \neq j$. Therefore, $D$ is a diagonal matrix. Through this change of variables, we find the \textbf{principal axes}\index{principal axes} $y_1, y_2, \cdots, y_n$ of the quadratic form. 
+\end{mymatrix}$ and $D = \mat{d_{ij} }$, we can write $q = \vect{y}^T D \vect{y}$ where $D$ is the matrix of coefficients from $q$. There is something special about this matrix $D$ that is crucial. Since no $y_iy_j$ terms exist in $q$, it follows that $d_{ij} = 0$ for all $i \neq j$. Therefore, $D$ is a diagonal matrix. Through this change of variables, we find the \textbf{principal axes}\index{principal axes} $y_1, y_2, \cdots, y_n$ of the quadratic form. 
 
 This discussion sets the stage for the following essential theorem.
 
@@ -152,7 +152,7 @@ x_2 \\
 x_n
 \end{mymatrix} 
 \]
-and $A = \leftB a_{ij} \rightB$ is the symmetric matrix of coefficients of $q$. 
+and $A = \mat{a_{ij} }$ is the symmetric matrix of coefficients of $q$. 
 
 New variables $y_1, y_2, \cdots, y_n$ can be found such that $q = \vect{y}^T D \vect{y}$ where 
 \[
@@ -161,7 +161,7 @@ y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{mymatrix} \] and $D=\leftB d_{ij} \rightB$ is a diagonal matrix. The matrix $D$ contains the eigenvalues of $A$ and is found by orthogonally diagonalizing $A$. 
+\end{mymatrix} \] and $D=\mat{d_{ij} }$ is a diagonal matrix. The matrix $D$ contains the eigenvalues of $A$ and is found by orthogonally diagonalizing $A$. 
 \end{theorem}
 
 While not a formal proof, the following discussion should convince you that the above theorem holds. Let $q$ be a quadratic form in the variables $x_1, \cdots, x_n$. Then, $q$ can be written in the form $q = \vect{x}^T A \vect{x}$ for a symmetric matrix $A$.  
@@ -210,7 +210,7 @@ The quadratic form $q$ will now be given by
 \[
 q = d_{11}y_1^2 + \cdots + d_{nn}y_n^2 = \vect{y}^T D \vect{y}
 \]
-where $D = \leftB d_{ij} \rightB$ is the diagonal matrix found by orthogonally diagonalizing $A$. 
+where $D = \mat{d_{ij} }$ is the diagonal matrix found by orthogonally diagonalizing $A$. 
 \end{enumerate}
 \end{procedure}
 

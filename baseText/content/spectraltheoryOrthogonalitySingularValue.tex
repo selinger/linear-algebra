@@ -167,7 +167,7 @@ U^TAV=\begin{mymatrix}{c}
 \vect{u}_{k}^T \\ 
 \vdots \\ 
 \vect{u}_{m}^T
-\end{mymatrix} A\leftB \vect{v}_{1}\cdots \vect{v}_{n}\rightB
+\end{mymatrix} A\mat{\vect{v}_{1}\cdots \vect{v}_{n}}
 \end{equation*}
 \begin{equation*}
 =\begin{mymatrix}{c}
@@ -198,12 +198,12 @@ the number of singular values.
 %%Since $V$ and $U$ are unitary, it follows that 
 %%\begin{eqnarray*}
 %%\limfunc{rank}\left( A\right) &=&\limfunc{rank}\left( U^TAV\right) =
-%%\limfunc{rank}\leftB
+%%\limfunc{rank}\mat{
 %%\begin{array}{cc}
 %%\sigma & 0 \\ 
 %%0 & 0
 %%\end{array}
-%%\rightB \\
+%%} \\
 %%&=&\text{number of singular values.}
 %%\end{eqnarray*}
 %%Also since $U,V$ are unitary, 
@@ -212,12 +212,12 @@ the number of singular values.
 %%}U\right) =\func{rank}\left( \left( U^TAV\right) ^T\right)
 %%\end{equation*}
 %%\begin{equation*}
-%%=\func{rank}\left( \leftB 
+%%=\func{rank}\left( \mat{
 %%\begin{array}{cc}
 %%\sigma & 0 \\ 
 %%0 & 0
 %%\end{array}
-%%\rightB ^T\right) =\text{number of singular values.}
+%%} ^T\right) =\text{number of singular values.}
 %%\end{equation*}
 %%\end{proof}
 %%
