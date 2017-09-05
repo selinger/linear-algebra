@@ -221,6 +221,105 @@ instead of the real numbers.
   only two solutions, instead of infinitely many.
 \end{solution}
 
+\begin{example}{A game with buttons and lights}{button-game}
+  Consider a game with 9 lights arranged in a square:
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \includegraphics[width=1cm]{figures/lighton} &
+      \includegraphics[width=1cm]{figures/lightoff} &
+      \includegraphics[width=1cm]{figures/lighton} \\\hline 
+      \includegraphics[width=1cm]{figures/lightoff} &
+      \includegraphics[width=1cm]{figures/lighton} &
+      \includegraphics[width=1cm]{figures/lightoff} \\\hline 
+      \includegraphics[width=1cm]{figures/lightoff} &
+      \includegraphics[width=1cm]{figures/lightoff} &
+      \includegraphics[width=1cm]{figures/lighton} \\\hline 
+    \end{tabular}
+  \end{center}
+  Each light is also a button. When a button is pressed, its own
+  light, and all the lights neighboring it (i.e., above, below, to the
+  left and to the right) are toggled (i.e., each light is turned on if
+  it was off, and turned off if it was on). Figure out which buttons
+  to press to turn off all the lights if the starting position is as
+  shown above.
+\end{example}
+
+\begin{solution}
+  We number the lights and buttons from top to bottom, left to right,
+  like this:
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      1 & 2 & 3 \\\hline
+      4 & 5 & 6 \\\hline
+      7 & 8 & 9 \\\hline
+    \end{tabular}.
+  \end{center}
+  Let $x_i$ be a variable in $\mathbb{Z}_2$, corresponding to the
+  event ``button $i$ is pressed'' (or more precisely, ``button $i$
+  is pressed an odd number of times'', because pressing a button
+  twice is the same as not pressing it at all. That is why we are
+  working modulo 2). To turn off the light at position 1, we must
+  press an odd number of buttons 1, 2, and 4. In other words,
+  $x_1+x_2+x_4 = 1$. To ensure the light at position 2 stays off, we
+  must press an even number of buttons 1, 2, 3, and 5, or as an
+  equation, $x_1+x_2+x_3+x_5=0$. In this way, we obtain 9 linear
+  equations in 9 variables:
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      x_1+x_2+x_4 &=& 1 \\
+      x_1+x_2+x_3+x_5 &=& 0 \\
+      x_2+x_3+x_6 &=& 1 \\
+      x_1+x_4+x_5+x_7 &=& 0 \\
+      x_2+x_4+x_5+x_6+x_8 &=& 1 \\
+      x_3+x_5+x_6+x_9 &=& 0 \\
+      x_4+x_7+x_8 &=& 0 \\
+      x_5+x_7+x_8+x_9 &=& 0 \\
+      x_6+x_8+x_9 &=& 1.
+    \end{array}
+  \end{equation*}
+  Here is the augmented matrix for the system:
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrrrrrrrr|r}
+      1&1&0 & 1&0&0 & 0&0&0 & 1 \\
+      1&1&1 & 0&1&0 & 0&0&0 & 0 \\
+      0&1&1 & 0&0&1 & 0&0&0 & 1 \\
+      
+      1&0&0 & 1&1&0 & 1&0&0 & 0 \\
+      0&1&0 & 1&1&1 & 0&1&0 & 1 \\
+      0&0&1 & 0&1&1 & 0&0&1 & 0 \\
+      
+      0&0&0 & 1&0&0 & 1&1&0 & 0 \\
+      0&0&0 & 0&1&0 & 1&1&1 & 0 \\
+      0&0&0 & 0&0&1 & 0&1&1 & 1 \\
+    \end{array}
+    \rightB.
+  \end{equation*}
+  We solve this system of equations by doing Gauss-Jordan
+  elimination with scalars in $\mathbb{Z}_2$.  The {\rref} is
+  \begin{equation*}
+    \leftB
+    \begin{array}{rrrrrrrrr|r}
+      1&0&0 & 0&0&0 & 0&0&0 & 0 \\
+      0&1&0 & 0&0&0 & 0&0&0 & 0 \\
+      0&0&1 & 0&0&0 & 0&0&0 & 1 \\
+      
+      0&0&0 & 1&0&0 & 0&0&0 & 1 \\
+      0&0&0 & 0&1&0 & 0&0&0 & 1 \\
+      0&0&0 & 0&0&1 & 0&0&0 & 0 \\
+      
+      0&0&0 & 0&0&0 & 1&0&0 & 0 \\
+      0&0&0 & 0&0&0 & 0&1&0 & 1 \\
+      0&0&0 & 0&0&0 & 0&0&1 & 0 \\
+    \end{array}
+    \rightB.
+  \end{equation*}
+  This means we have to press buttons 3, 4, 5, and 8. Also, since
+  the rank is 9, the solution is unique.
+\end{solution}
+
 \begin{example}{The integers modulo 5}{z-mod-5}
   Consider the set $\mathbb{Z}_5=\set{0,1,2,3,4}$, called the
   \textbf{integers modulo 5}\index{integers modulo 5}. We define their
@@ -230,7 +329,7 @@ instead of the real numbers.
   answer is between $0$ and $4$. Imagine a clock showing 5 numbers
   instead of the usual 12:
   \begin{center}
-    \includegraphics[width=3cm]{figures/clock}
+    \includegraphics[width=2.5cm]{figures/clock}
   \end{center}
   If we want to calculate 3 o'clock plus 4 hours, we get 2 o'clock,
   because whenever the clock reaches 5, it resets to 0. This is how

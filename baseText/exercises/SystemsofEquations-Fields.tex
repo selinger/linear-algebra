@@ -38,7 +38,7 @@
     \quad
     (d)~
     \leftB
-    \begin{array}{rrrr|r}
+    \begin{array}{rrr|r}
       0 & 1 & 1 & 1 \\
       1 & 0 & 1 & 1 \\
       1 & 1 & 1 & 0
@@ -54,7 +54,7 @@
   \begin{equation*}
     (a)~
     \leftB
-    \begin{array}{rrrr|r}
+    \begin{array}{rrr|r}
       0 & 1 & 1 & 1 \\
       1 & 2 & 0 & 1 \\
       2 & 0 & 2 & 1
@@ -63,7 +63,7 @@
     \quad
     (b)~
     \leftB
-    \begin{array}{rrr|r}
+    \begin{array}{rrrr|r}
       2 & 1 & 2 & 1 & 0 \\
       0 & 2 & 1 & 1 & 2 \\
       1 & 0 & 0 & 1 & 1
@@ -72,10 +72,10 @@
     \quad
     (d)~
     \leftB
-    \begin{array}{rrrr|r}
-      1 & 2 & 0 & 2
+    \begin{array}{rrr|r}
+      1 & 2 & 0 & 2 \\
       1 & 0 & 1 & 1 \\
-      1 & 1 & 1 & 0 \\
+      1 & 1 & 1 & 0
     \end{array}
     \rightB
   \end{equation*}
@@ -109,6 +109,27 @@
 \begin{ex}
   In $\mathbb{Z}_7$, calculate $1^{-1}$, $2^{-1}$, $3^{-1}$, $4^{-1}$,
   $5^{-1}$, and $6^{-1}$. Hint: write down the multiplication table.
+\end{ex}
+
+\begin{ex}
+  Consider a game similar to Example~\ref{exa:button-game}, with 6
+  lights arranged in a rectangle:
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \includegraphics[width=0.7cm]{figures/lighton} &
+      \includegraphics[width=0.7cm]{figures/lighton} &
+      \includegraphics[width=0.7cm]{figures/lightoff} \\\hline 
+      \includegraphics[width=0.7cm]{figures/lightoff} &
+      \includegraphics[width=0.7cm]{figures/lightoff} &
+      \includegraphics[width=0.7cm]{figures/lighton} \\\hline 
+    \end{tabular}
+  \end{center}
+  Again, each light doubles as a button. Pressing it toggles its own
+  light, as well as all of its neighbors. Which buttons do you have to
+  press to turn off all the light from the starting position shown
+  above? Is the answer unique? Is every pattern of lights reachable
+  from this starting position?
 \end{ex}
 
 \end{enumialphparenastyle}
