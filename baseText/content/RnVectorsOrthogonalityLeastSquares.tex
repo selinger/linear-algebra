@@ -14,7 +14,7 @@ We begin with a lemma.
 
 Recall that we can form the image of an $m \times n$ matrix $A$ by
 $\func{im}\left( A\right) = = \left\{ A\vect{x} : \vect{x} \in
-\mathbb{R}^n \right\}$. Rephrasing Theorem \ref{thm:orthproj} using
+\R^n \right\}$. Rephrasing Theorem \ref{thm:orthproj} using
 the subspace $W=\func{im}\left( A\right)$  gives the
 equivalence of an orthogonality condition with a minimization
 condition\index{orthogonality and minimization}. The following picture
@@ -35,15 +35,15 @@ theorem.
 \node[above right] at (-1,1,0){$\vect{y}$};
 \node[left] at (-2,1,0){$\vect{y}-\vect{z}$};
 \node[right] at (-0.25,0,1){$\vect{u}$};
-\node at (1,0.5,0){$A(\mathbb{R}^n)$};
+\node at (1,0.5,0){$A(\R^n)$};
 \end{tikzpicture}
 \end{center}
 
 \begin{theorem}{Existence of minimizers}{existenceminimizerhs}\label{existenceminimizerhs}
-Let $\vect{y}\in \mathbb{R}^{m}$ and let $A$ be an $m\times n$ matrix.
+Let $\vect{y}\in \R^{m}$ and let $A$ be an $m\times n$ matrix.
 
 Choose $\vect{z}\in W= \func{im}\left( A\right)$ given by $\vect{z} =
-\func{proj}_{W}\left( \vect{y}\right)$, and let $\vect{x} \in \mathbb{R}^{n}$ such that $\vect{z}=A\vect{x}$.
+\func{proj}_{W}\left( \vect{y}\right)$, and let $\vect{x} \in \R^{n}$ such that $\vect{z}=A\vect{x}$.
 
 Then
 \begin{enumerate}
@@ -80,12 +80,12 @@ Furthermore, there always exists a solution to this system of equations.
 
 \begin{proof} 
 For $\vect{x}$ the minimizer of Theorem \ref{thm:existenceminimizerhs}, $\left(
-\vect{y}-A\vect{x}\right) \dotprod A \vect{u} =0$ for all $\vect{u} \in \mathbb{R}^{n}$ and from
+\vect{y}-A\vect{x}\right) \dotprod A \vect{u} =0$ for all $\vect{u} \in \R^{n}$ and from
 Lemma \ref{lem:transposeanddotprod}, this is the same as saying
 \begin{equation*}
 A^T\left( \vect{y}-A\vect{x}\right) \dotprod \vect{u}=0
 \end{equation*}
-for all $u \in \mathbb{R}^{n}.$ This implies 
+for all $u \in \R^{n}.$ This implies 
 \begin{equation*}
 A^T\vect{y}-A^TA\vect{x}=\vect{0}.
 \end{equation*}
@@ -94,7 +94,7 @@ solves the minimization problem of Theorem \ref{thm:existenceminimizerhs}.
 \end{proof}
 
 Note that $\vect{x}$ might not be unique but $A\vect{x}$, the closest
-point of $A\left(\mathbb{R}^{n}\right)$ to $\vect{y}$ is unique as was shown in the
+point of $A\left(\R^{n}\right)$ to $\vect{y}$ is unique as was shown in the
 above argument. 
 
 Consider the following example. 

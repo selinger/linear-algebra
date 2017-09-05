@@ -8,13 +8,13 @@
 \end{enumerate}
 \end{outcome}
 
-In this section we will examine the concept of subspaces introduced earlier in terms of $\mathbb{R}^n$. Here, we will discuss these concepts in terms of abstract vector spaces. 
+In this section we will examine the concept of subspaces introduced earlier in terms of $\R^n$. Here, we will discuss these concepts in terms of abstract vector spaces. 
 
 Consider the definition of a subspace.
 
 \begin{definition}{Subspace}{subspace}
 Let $V$ be a vector space. A subset $W\subseteq V$ is said to be a \textbf{subspace}\index{subspace} of $V$ if $a\vect{x}+b\vect{y}
-\in W$ whenever $a,b\in \mathbb{R}$ and $\vect{x},\vect{y}\in W.$
+\in W$ whenever $a,b\in \R$ and $\vect{x},\vect{y}\in W.$
 \end{definition}
 
 The span of a set of vectors as described in Definition \ref{def:span} is an example of a subspace. The following fundamental result says that subspaces are subsets of a
@@ -139,19 +139,19 @@ The two subspaces described above are called \textbf{improper subspaces}\index{i
 Consider another example.
 
 \begin{example}{Subspace of polynomials}{polysubspace}
-Let $\mathbb{P}_2$ be the vector space of polynomials of degree two or less. Let $W \subseteq \mathbb{P}_2$ be all polynomials of degree two or less which have $1$ as a root. Show that $W$ is a subspace of $\mathbb{P}_2$. 
+Let $\Poly_2$ be the vector space of polynomials of degree two or less. Let $W \subseteq \Poly_2$ be all polynomials of degree two or less which have $1$ as a root. Show that $W$ is a subspace of $\Poly_2$. 
 \end{example}
 
 \begin{solution}
 First, express $W$ as follows:
 \[
-W = \left\{ p(x) = ax^2 +bx +c, a,b,c, \in \mathbb{R} | p(1)  = 0 \right\}
+W = \left\{ p(x) = ax^2 +bx +c, a,b,c, \in \R | p(1)  = 0 \right\}
 \]
 
 We need to show that $W$ satisfies the three conditions of Procedure \ref{proc:subspacetest}. 
 \begin{enumerate}
 \item
-The zero polynomial of $\mathbb{P}_2$ is given by $0(x) = 0x^2 + 0x + 0 = 0$. Clearly $0(1) = 0$ so $0(x)$ is contained in $W$. 
+The zero polynomial of $\Poly_2$ is given by $0(x) = 0x^2 + 0x + 0 = 0$. Clearly $0(1) = 0$ so $0(x)$ is contained in $W$. 
 
 \item
 Let $p(x), q(x)$ be polynomials in $W$.  It follows that $p(1) = 0 $ and $q(1) = 0$. Now consider $p(x) + q(x)$. Let $r(x)$ represent this sum.
@@ -173,7 +173,7 @@ ap(1) &=& a(0) \\
 Therefore the product is in $W$ and the third condition is satisfied.
 \end{enumerate}
 
-It follows that $W$ is a subspace of $\mathbb{P}_2$. 
+It follows that $W$ is a subspace of $\Poly_2$. 
 \end{solution} 
 
 Recall the definition of basis, considered now in the context of vector spaces.
@@ -191,19 +191,19 @@ $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is linearly independent
 Consider the following example.
 
 \begin{example}{Polynomials of degree two}{polydegreetwo}
-Let $\mathbb{P}_2$ be the set polynomials of degree no more than 2. We can write
-$\mathbb{P}_2=\func{span}\left\{ x^{2}, x, 1\right\} .$ Is $\left\{ x^{2}, x, 1\right\} $ a
-basis for $\mathbb{P}_2$?
+Let $\Poly_2$ be the set polynomials of degree no more than 2. We can write
+$\Poly_2=\func{span}\left\{ x^{2}, x, 1\right\} .$ Is $\left\{ x^{2}, x, 1\right\} $ a
+basis for $\Poly_2$?
 \end{example}
 
 \begin{solution}
-It can be verified that $\mathbb{P}_2$ is a vector space defined under the usual addition and scalar multiplication of polynomials. 
+It can be verified that $\Poly_2$ is a vector space defined under the usual addition and scalar multiplication of polynomials. 
 
-Now, since $\mathbb{P}_2=\func{span}\left\{ x^{2},x, 1\right\}$, the set  $\left\{ x^{2}, x, 1\right\} $ is a basis if it is linearly independent. Suppose then that 
+Now, since $\Poly_2=\func{span}\left\{ x^{2},x, 1\right\}$, the set  $\left\{ x^{2}, x, 1\right\} $ is a basis if it is linearly independent. Suppose then that 
 \begin{equation*}
 ax^{2}+bx+c=0x^2 + 0x + 0 
 \end{equation*}
-where $a,b,c$ are real numbers. It is clear that this can only occur if $a=b=c=0$. Hence the set is linearly independent and forms a basis of $\mathbb{P}_2$.
+where $a,b,c$ are real numbers. It is clear that this can only occur if $a=b=c=0$. Hence the set is linearly independent and forms a basis of $\Poly_2$.
 \end{solution}
 
 The next theorem is an essential result in linear algebra and is called the exchange theorem\index{exchange theorem}.
@@ -363,27 +363,27 @@ that $n<\infty $ and therefore such a vector space is said to be \textbf{finite
 dimensional}\index{finite dimensional}.
 
 \begin{example}{Dimension of a vector space}{dimension}
-Let $\mathbb{P}_2$ be the set of all polynomials of degree at most $2$. Find the dimension of $\mathbb{P}_2$. 
+Let $\Poly_2$ be the set of all polynomials of degree at most $2$. Find the dimension of $\Poly_2$. 
 \end{example}
 
 \begin{solution}
-If we can find a basis of $\mathbb{P}_2$ then the number of vectors in the basis will give the dimension. Recall from Example \ref{exa:polydegreetwo} that a basis of $\mathbb{P}_2$ is given by 
+If we can find a basis of $\Poly_2$ then the number of vectors in the basis will give the dimension. Recall from Example \ref{exa:polydegreetwo} that a basis of $\Poly_2$ is given by 
 \[
 S  = \left\{ x^2, x, 1 \right\}
 \]
-There are three polynomials in $S$ and hence the dimension of $\mathbb{P}_2$ is three. 
+There are three polynomials in $S$ and hence the dimension of $\Poly_2$ is three. 
 \end{solution}
 
 It is important to note that a basis for a vector space is not unique. A vector space can have many bases. Consider the following example.
 
 \begin{example}{A different basis for polynomials of degree two}{polydegtwodifferentbasis}
-Let $\mathbb{P}_2$ be the polynomials of degree no more than 2. Is $\left\{
-x^{2}+x+1,2x+1,3x^{2}+1\right\} $ a basis for $\mathbb{P}_2$?
+Let $\Poly_2$ be the polynomials of degree no more than 2. Is $\left\{
+x^{2}+x+1,2x+1,3x^{2}+1\right\} $ a basis for $\Poly_2$?
 \end{example}
 
 \begin{solution}
-Suppose these vectors are linearly independent but do not form a spanning set for $\mathbb{P}_2$. Then by Lemma \ref{lem:addinglinearlyindependent}, we could find a fourth polynomial in $\mathbb{P}_2$ to create a new linearly independent 
-set containing four polynomials. However this would imply that we could find a basis of $\mathbb{P}_2$ of more than three polynomials. This contradicts the result of Example \ref{exa:dimension} in which we determined the dimension of $\mathbb{P}_2$ is three.  Therefore if these vectors are linearly independent they must also form a spanning set and thus a basis for $\mathbb{P}_2$. 
+Suppose these vectors are linearly independent but do not form a spanning set for $\Poly_2$. Then by Lemma \ref{lem:addinglinearlyindependent}, we could find a fourth polynomial in $\Poly_2$ to create a new linearly independent 
+set containing four polynomials. However this would imply that we could find a basis of $\Poly_2$ of more than three polynomials. This contradicts the result of Example \ref{exa:dimension} in which we determined the dimension of $\Poly_2$ is three.  Therefore if these vectors are linearly independent they must also form a spanning set and thus a basis for $\Poly_2$. 
 
 Suppose then that 
 \begin{eqnarray*}
@@ -397,7 +397,7 @@ a+2b &=& 0 \\
 a+b+c &=& 0
 \end{eqnarray*}
 and there is only one solution to this system of equations, $a=b=c=0$.
-Therefore, these are linearly independent and form a basis for $\mathbb{P}_2$.
+Therefore, these are linearly independent and form a basis for $\Poly_2$.
 \end{solution}
 
 Consider the following theorem. 
@@ -447,18 +447,18 @@ vectors, a basis of $V$.
 Consider the following example.
 
 \begin{example}{Basis of a subspace}{basissubspace}
-Let $U=\left\{ A\in\mathbb{M}_{22} ~\left|~
+Let $U=\left\{ A\in\Mat_{22} ~\left|~
 A\leftB\begin{array}{rr}
 1 & 0 \\ 1 & -1 \end{array}\rightB\right. 
 = \leftB\begin{array}{rr}
 1 & 1 \\ 0 & -1 \end{array}\rightB A \right\}$. 
-Then $U$ is a subspace of $\mathbb{M}_{22}$ 
+Then $U$ is a subspace of $\Mat_{22}$ 
 Find a basis of $U$, and hence $\dim(U)$.
 \end{example}
 
 \begin{solution}
 Let $A=\leftB\begin{array}{rr} a & b \\ c & d \end{array}\rightB
-\in\mathbb{M}_{22}$.
+\in\Mat_{22}$.
 Then
 \[ A\leftB\begin{array}{rr} 1 & 0 \\ 1 & -1 \end{array}\rightB
 = \leftB\begin{array}{rr} a & b \\ c & d \end{array}\rightB
@@ -487,7 +487,7 @@ b - c & = & 0 \\
 \end{array}.  \] 
 
 The solution to this system is
-$a=s$, $b=-\frac{1}{2}t$, $c=-\frac{1}{2}t$,  $d=t$ for any $s,t\in\mathbb{R}$, 
+$a=s$, $b=-\frac{1}{2}t$, $c=-\frac{1}{2}t$,  $d=t$ for any $s,t\in\R$, 
 and thus 
 \[ A=\leftB\begin{array}{cc} s & \frac{t}{2} \\
 -\frac{t}{2} & t \end{array}\rightB
@@ -500,7 +500,7 @@ Let
 \leftB\begin{array}{rr} 0  & -\frac{1}{2} \\
 -\frac{1}{2} & 1 \end{array}\rightB\right\}.\]
 Then $\func{span}(B)=U$, and it is routine to verify that $B$ is
-an independent subset of $\mathbb{M}_{22}$.  
+an independent subset of $\Mat_{22}$.  
 Therefore $B$ is a basis of $U$, and $\dim(U)=2$.
 \end{solution}
 
@@ -674,7 +674,7 @@ Consider the following example of this concept.
 
 \begin{example}{Basis from a spanning set}{}
 Let $V$ be the vector space of polynomials of degree no more than 3,
-denoted earlier as $\mathbb{P}_{3}$. Consider the following vectors in $V$.
+denoted earlier as $\Poly_{3}$. Consider the following vectors in $V$.
 \begin{eqnarray*}
 &&2x^{2}+x+1,x^{3}+4x^{2}+2x+2,2x^{3}+2x^{2}+2x+1, \\
 &&x^{3}+4x^{2}-3x+2,x^{3}+3x^{2}+2x+1
@@ -686,7 +686,7 @@ which has the same span. Determine whether this subset is a basis for $V$.
 \end{example}
 
 \begin{solution}
-Consider an isomorphism which maps $\mathbb{R}%
+Consider an isomorphism which maps $\R%
 ^{4}$ to $V$ in the obvious way. Thus 
 \begin{equation*}
 \leftB 
@@ -700,7 +700,7 @@ Consider an isomorphism which maps $\mathbb{R}%
 \end{equation*}
 corresponds to $2x^{2}+x+1$ through the use of this isomorphism. Then
 corresponding to the above vectors in $V$ we would have the following
-vectors in $\mathbb{R}^{4}.$ 
+vectors in $\R^{4}.$ 
 \begin{equation*}
 \leftB 
 \begin{array}{c}
@@ -777,15 +777,15 @@ Note also that, since all linear relations are preserved by an isomorphism,
 Consider the following example.
 
 \begin{example}{Shrinking a spanning set}{shrinkspanning}
-Consider the set $S \subseteq \mathbb{P}_2$ given by 
+Consider the set $S \subseteq \Poly_2$ given by 
 \[
 S = \left\{ 1, x, x^2, x^2 + 1 \right\}
 \]
-Show that $S$ spans $\mathbb{P}_2$, then remove vectors from $S$ until it creates a basis. 
+Show that $S$ spans $\Poly_2$, then remove vectors from $S$ until it creates a basis. 
 \end{example}
 
 \begin{solution}
-First we need to show that $S$ spans $\mathbb{P}_2$. Let $ax^2 + bx + c$ be an arbitrary polynomial in $\mathbb{P}_2$. Write 
+First we need to show that $S$ spans $\Poly_2$. Let $ax^2 + bx + c$ be an arbitrary polynomial in $\Poly_2$. Write 
 \[
 ax^2 + bx + c = r(1) + s(x) + t(x^2) + u (x^2 + 1)
 \]
@@ -802,12 +802,12 @@ b &=& s \\
 c &=& r + u 
 \end{eqnarray*}
 
-Clearly a solution exists for all $a,b,c$ and so $S$ is a spanning set for $\mathbb{P}_2$. By Theorem \ref{thm:basisfromspanninglinind}, some subset of $S$ is a basis for $\mathbb{P}_2$. 
+Clearly a solution exists for all $a,b,c$ and so $S$ is a spanning set for $\Poly_2$. By Theorem \ref{thm:basisfromspanninglinind}, some subset of $S$ is a basis for $\Poly_2$. 
 
 Recall that a basis must be both a spanning set and a linearly independent set.
-Therefore we must remove a vector from $S$ keeping this in mind. Suppose we remove $x$ from $S$. The resulting set would be $\left\{ 1, x^2, x^2 + 1 \right\}$. This set is clearly linearly dependent (and also does not span $\mathbb{P}_2$) and so is not a basis. 
+Therefore we must remove a vector from $S$ keeping this in mind. Suppose we remove $x$ from $S$. The resulting set would be $\left\{ 1, x^2, x^2 + 1 \right\}$. This set is clearly linearly dependent (and also does not span $\Poly_2$) and so is not a basis. 
 
-Suppose we remove $x^2 + 1$ from $S$. The resulting set is $\left\{ 1, x, x^2 \right\}$ which is both linearly independent and spans $\mathbb{P}_2$. Hence this is a basis for $\mathbb{P}_2$. Note that removing any one of $1, x^2$, or $x^2 + 1$ will result in a basis.
+Suppose we remove $x^2 + 1$ from $S$. The resulting set is $\left\{ 1, x, x^2 \right\}$ which is both linearly independent and spans $\Poly_2$. Hence this is a basis for $\Poly_2$. Note that removing any one of $1, x^2$, or $x^2 + 1$ will result in a basis.
 \end{solution}
 
 Now the following is a fundamental result about subspaces.
@@ -854,7 +854,7 @@ Then every basis of $W$ can be extended to a basis for $V$.
 Consider the following example.
 
 \begin{example}{Basis extension}{}
-Let $V=\mathbb{R}^{4}$ and let 
+Let $V=\R^{4}$ and let 
 \begin{equation*}
 W=\func{span}\left\{ \leftB 
 \begin{array}{c}
@@ -889,7 +889,7 @@ An easy way to do this is to take the {\rref} of the matrix
 \end{equation}
 Note how the given vectors were placed as the first two and then the matrix
 was extended in such a way that it is clear that the span of the columns of
-this matrix yield all of $\mathbb{R}^{4}$. Now determine the pivot columns.
+this matrix yield all of $\R^{4}$. Now determine the pivot columns.
 The {\rref} is 
 \begin{equation}
 \leftB 
@@ -934,9 +934,9 @@ These are
 \rightB
 \end{equation*}
 and now this is an extension of the given basis for $W$ to a basis for $
-\mathbb{R}^{4}$.
+\R^{4}$.
 
-Why does this work? The columns of \ref{vectorspaceeq1} obviously span $\mathbb{R}
+Why does this work? The columns of \ref{vectorspaceeq1} obviously span $\R
 ^{4}$  the span of the first four is the same as the span of all
 six.
 \end{solution}

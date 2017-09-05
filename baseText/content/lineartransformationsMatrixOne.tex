@@ -4,27 +4,27 @@
 \begin{enumerate}
 \item[A.] Find the matrix of a linear transformation with respect to the standard basis.
 
-\item[B.] Determine the action of a linear transformation on a vector in $\mathbb{R}^n$.   
+\item[B.] Determine the action of a linear transformation on a vector in $\R^n$.   
 \end{enumerate}
 \end{outcome}
 
 In the above examples, the action of the linear transformations was to multiply by a matrix. 
 It turns out that this is always the case for linear transformations.
-If $T$ is \textbf{any} linear transformation which maps $\mathbb{R}^{n}$ to 
-$\mathbb{R}^{m},$ there is \textbf{always} an $m\times n$ matrix $A$ with the
+If $T$ is \textbf{any} linear transformation which maps $\R^{n}$ to 
+$\R^{m},$ there is \textbf{always} an $m\times n$ matrix $A$ with the
 property that
 \begin{equation}
 T\left(\vect{x}\right) = A\vect{x} \label{matrixoftransf}
 \end{equation}
-for all $\vect{x} \in \mathbb{R}^{n}$.
+for all $\vect{x} \in \R^{n}$.
 
 \begin{theorem}{Matrix of a linear transformation}{matrixlintransf}
-Let $T:\mathbb{R}^{n}\mapsto \mathbb{R}^{m}$ be a linear transformation. Then we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
+Let $T:\R^{n}\mapsto \R^{m}$ be a linear transformation. Then we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
  In this case, we say that $T$ is {\em determined\em} or {\em induced\em}
 by the matrix $A$.
 \end{theorem}
 
-Here is why. Suppose $T:\mathbb{R}^{n}\mapsto \mathbb{R}^{m}$ is a linear transformation and you want to find
+Here is why. Suppose $T:\R^{n}\mapsto \R^{m}$ is a linear transformation and you want to find
 the matrix defined by this linear transformation as described in \ref{matrixoftransf}.
  Note that
 \begin{equation*}
@@ -87,11 +87,11 @@ x_{n}
 \rightB
 \end{eqnarray*}
 The desired matrix is obtained from constructing the $i^{th}$
-column as $T\left( \vect{e}_{i}\right) .$ Recall that the set $\left\{ \vect{e}_1, \vect{e}_2, \cdots, \vect{e}_n \right\}$ is called the standard basis of $\mathbb{R}^n$. Therefore the matrix of $T$ is found by applying $T$ to the standard basis. We state this formally as the
+column as $T\left( \vect{e}_{i}\right) .$ Recall that the set $\left\{ \vect{e}_1, \vect{e}_2, \cdots, \vect{e}_n \right\}$ is called the standard basis of $\R^n$. Therefore the matrix of $T$ is found by applying $T$ to the standard basis. We state this formally as the
 following theorem.
 
 \begin{theorem}{Matrix of a linear transformation}{matrixoflineartransformation}
-Let $T: \mathbb{R}^{n} \mapsto \mathbb{R}^{m}$ be a linear transformation. Then the matrix $A$ satisfying $T\left(\vect{x}\right)=A\vect{x}$\index{linear transformation!matrix} is given by
+Let $T: \R^{n} \mapsto \R^{m}$ be a linear transformation. Then the matrix $A$ satisfying $T\left(\vect{x}\right)=A\vect{x}$\index{linear transformation!matrix} is given by
 \begin{equation*}
 A=
 \leftB
@@ -109,14 +109,13 @@ where $\vect{e}_{i}$ is the $i^{th}$ column of $I_n$, and then $T\left( \vect{e}
 The following Corollary is an essential result.
 
 \begin{corollary}{Matrix and linear transformation}{matrixlintransfequivalence}
-A transformation $T:\mathbb{R}^n\rightarrow \mathbb{R}^m$ is a linear transformation if and only if it is a matrix transformation. 
+A transformation $T:\R^n\rightarrow \R^m$ is a linear transformation if and only if it is a matrix transformation. 
 \end{corollary}
 
 Consider the following example.
 
 \begin{example}{The matrix of a linear transformation}{matrixoflineartransformation}
-Suppose $T$ is a linear transformation, $T:\mathbb{R}^{3}\rightarrow \mathbb{
-R}^{2}$ where 
+Suppose $T$ is a linear transformation, $T:\R^{3}\rightarrow \R^{2}$ where 
 \begin{equation*}
 T\leftB
 \begin{array}{r}
@@ -187,7 +186,7 @@ T \left(\vect{e}_2 \right),$ and $T \left(\vect{e}_3 \right)$. Constructing the 
 could simply use these vectors as the columns of $A$. The next example shows how to find $A$ when we are not given the $T \left(\vect{e}_i \right)$ so clearly. 
 
 \begin{example}{The matrix of linear transformation: inconveniently \\ defined}{2x2inconvenientmatrixoflintransf}
-Suppose $T$ is a linear transformation, $T:\mathbb{R}^{2}\rightarrow \mathbb{R}^{2}$ and
+Suppose $T$ is a linear transformation, $T:\R^{2}\rightarrow \R^{2}$ and
 \begin{equation*}
 T\leftB
 \begin{array}{r}
@@ -359,8 +358,7 @@ This example illustrates a very long procedure for finding the matrix of $A$. Wh
 will always result in the correct matrix $A$, the following procedure provides an alternative method. 
 
 \begin{procedure}{Finding the matrix of inconveniently defined linear transformation}{findingmatrixoflineartransformation}
-Suppose $T:\mathbb{R}^{n}\rightarrow \mathbb{R}^{m}$ is a linear transformation. Suppose there exist vectors $\left\{ \vect{a}_{1},\cdots ,\vect{a}_{n}\right\} $ in $\mathbb
-{R}^{n}$ such that $\leftB
+Suppose $T:\R^{n}\rightarrow \R^{m}$ is a linear transformation. Suppose there exist vectors $\left\{ \vect{a}_{1},\cdots ,\vect{a}_{n}\right\} $ in $\R^{n}$ such that $\leftB
 \begin{array}{ccc}
 \vect{a}_{1} & \cdots & \vect{a}_{n}
 \end{array}
@@ -386,7 +384,7 @@ We will illustrate this procedure in the following example. You may also find it
 to work through Example \ref{exa:2x2inconvenientmatrixoflintransf} using this procedure.
 
 \begin{example}{Matrix of a linear transformation \\ given inconveniently}{inconvenientmatrixlintransf}
-Suppose $T:\mathbb{R}^{3}\rightarrow \mathbb{R}^{3}$ is a linear
+Suppose $T:\R^{3}\rightarrow \R^{3}$ is a linear
 transformation and
 \begin{equation*}
 T\leftB
@@ -549,11 +547,11 @@ Let $\vect{u} = \leftB \begin{array}{r}
 2 \\
 3
 \end{array}
-\rightB$ and let $T$ be the projection map $T: \mathbb{R}^3 \mapsto \mathbb{R}^3$ defined by 
+\rightB$ and let $T$ be the projection map $T: \R^3 \mapsto \R^3$ defined by 
 \[
 T(\vect{v}) = \func{proj}_{\vect{u}}\left( \vect{v}\right)
 \]
-for any $\vect{v} \in \mathbb{R}^3$.  
+for any $\vect{v} \in \R^3$.  
 \begin{enumerate}
 \item Does this transformation come from
 multiplication by a matrix?

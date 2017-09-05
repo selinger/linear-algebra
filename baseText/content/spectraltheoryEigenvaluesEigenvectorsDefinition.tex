@@ -1,7 +1,7 @@
 \subsection{Definition of eigenvectors and eigenvalues}
 
 In this section, we will work with the entire set of complex numbers, 
-denoted by $\mathbb{C}$. Recall that the real numbers, $\mathbb{R}$ are 
+denoted by $\C$. Recall that the real numbers, $\R$ are 
 contained in the complex numbers, so the discussions in this section 
 apply to both real and complex numbers. 
 
@@ -169,12 +169,12 @@ nonzero.
 There is also a geometric significance to eigenvectors.  When you have a \textbf{nonzero} vector which, when multiplied by a matrix results in another vector
 which is parallel to the first or equal to \textbf{0}, this vector is called
 an eigenvector of the matrix. This is the meaning when the vectors are in 
-$\mathbb{R}^{n}.$ 
+$\R^{n}.$ 
 
 The formal definition of eigenvalues and eigenvectors is as follows.
 
 \begin{definition}{Eigenvalues and eigenvectors}{eigenvaluesandeigenvectors}
-Let $A$ be an $n\times n$ matrix and let $X \in \mathbb{C}^{n}$ be a
+Let $A$ be an $n\times n$ matrix and let $X \in \C^{n}$ be a
 \textbf{nonzero vector} for which
 
 \begin{equation}
@@ -250,15 +250,15 @@ holds, $A$ has a nonzero eigenvector.
 
 \begin{theorem}{The existence of an eigenvector}{existenceofeigenvector}
 Let $A$ be an $n\times n$ matrix and suppose $\det \left( \lambda I -
-A\right) =0$ for some $ \lambda \in \mathbb{C}$.  \\
+A\right) =0$ for some $ \lambda \in \C$.  \\
 Then $\lambda$ is an eigenvalue of $A$ and thus there exists a nonzero
-vector $X \in \mathbb{C}^{n}$ such that $AX=\lambda X$. 
+vector $X \in \C^{n}$ such that $AX=\lambda X$. 
 \end{theorem}
 
 \begin{proof}
 For $A$ an $n\times n$ matrix, the method of Laplace
 Expansion demonstrates that $\det \left( \lambda I - A \right) $ is a
 polynomial of degree $n.$ As such, the equation
-\ref{eigen2} has a solution $\lambda \in \mathbb{C}$ by the Fundamental
+\ref{eigen2} has a solution $\lambda \in \C$ by the Fundamental
 Theorem of Algebra. The fact that $\lambda$ is an eigenvalue is left as an exercise. 
 \end{proof}

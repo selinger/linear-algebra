@@ -10,7 +10,7 @@ In this section we will consider the case where the linear transformation is not
 isomorphism. First consider the following important definition.
 
 \begin{definition}{Kernel and image}{kernelimage}
-Let $V$ and $W$ be subspaces of $\mathbb{R}^n$ and let $T:V\mapsto W$ be a linear transformation. Then the image of $T$
+Let $V$ and $W$ be subspaces of $\R^n$ and let $T:V\mapsto W$ be a linear transformation. Then the image of $T$
 denoted as $\func{im}\left( T\right) $ is defined to be the set 
 \index{linear map!image}
 \index{linear map!kernel} 
@@ -30,7 +30,7 @@ It follows that $\func{im}\left( T\right) $ and $\ker \left( T\right) $
 are subspaces of $W$ and $V$ respectively.
 
 \begin{proposition}{Kernel and image as subspaces}{kernelimagesubspaces}
-Let $V, W$ be subspaces of $\mathbb{R}^n$ and let $T:V\rightarrow W$ be a linear transformation. Then $\ker \left(
+Let $V, W$ be subspaces of $\R^n$ and let $T:V\rightarrow W$ be a linear transformation. Then $\ker \left(
 T\right) $ is a subspace of $V$ and $\func{im}\left( T\right) $ is a
 subspace of $W$.
 \end{proposition}
@@ -56,7 +56,7 @@ and this last vector is in $\func{im}\left( T\right) $ by definition.
 We will now examine how to find the kernel and image of a linear transformation and describe the basis of each. 
 
 \begin{example}{Kernel and image of a linear transformation}{kernelimage}
-Let $T: \mathbb{R}^4 \mapsto \mathbb{R}^2$ be defined by
+Let $T: \R^4 \mapsto \R^2$ be defined by
 \[
 T \leftB \begin{array}{c}
 a \\
@@ -75,7 +75,7 @@ Then $T$ is a linear transformation. Find a basis for $\func{ker}(T)$ and $\func
 \begin{solution}
 You can verify that $T$ is a linear transformation.
 
-First we will find a basis for $\func{ker}(T)$. To do so, we want to find a way to describe all vectors $\vect{x} \in \mathbb{R}^4$ such that $T(\vect{x}) = \vect{0}$. Let $\vect{x} =  \leftB \begin{array}{c}
+First we will find a basis for $\func{ker}(T)$. To do so, we want to find a way to describe all vectors $\vect{x} \in \R^4$ such that $T(\vect{x}) = \vect{0}$. Let $\vect{x} =  \leftB \begin{array}{c}
 a \\
 b \\
 c \\
@@ -176,10 +176,10 @@ Let $T$ be a linear transformation where $\func{ker}(T)$ is the kernel of $T$. T
 \end{theorem}
 
 A major result is the relation between the dimension of the kernel and
-dimension of the image of a linear transformation. In the previous example $\func{ker}(T)$ had dimension $2$, and $\func{im}(T)$ also had dimension of $2$. Is it a coincidence that the dimension of $\mathbb{M}_{22}$ is $4 = 2 + 2$? Consider the following theorem. 
+dimension of the image of a linear transformation. In the previous example $\func{ker}(T)$ had dimension $2$, and $\func{im}(T)$ also had dimension of $2$. Is it a coincidence that the dimension of $\Mat_{22}$ is $4 = 2 + 2$? Consider the following theorem. 
 
 \begin{theorem}{Dimension of kernel and image}{dimensionkernelimage}
-Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are subspaces of $\mathbb{R}^n$. Suppose the dimension of $V$ is $m$. Then 
+Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are subspaces of $\R^n$. Suppose the dimension of $V$ is $m$. Then 
 \[
 m=\dim \left( \ker \left( T\right) \right) +\dim \left( \func{im}\left(
 T\right) \right) 
@@ -234,7 +234,7 @@ T\right) \right)
 The above theorem leads to the next corollary.
 
 \begin{corollary}{}{}
-Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are subspaces of $\mathbb{R}^n$. Suppose the dimension of $V$ is $m$. Then 
+Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are subspaces of $\R^n$. Suppose the dimension of $V$ is $m$. Then 
 \[
 \dim \left( \ker \left( T\right) \right) \leq m
 \]
@@ -249,7 +249,7 @@ T\right) \right) $.
 Consider the following example.
 
 \begin{example}{}{}
-Let $T:\mathbb{R}^{2}\rightarrow \mathbb{R}^{3}$ be defined by 
+Let $T:\R^{2}\rightarrow \R^{3}$ be defined by 
 \begin{equation*}
 T(\vect{x})=\leftB
 \begin{array}{rr}
@@ -259,8 +259,8 @@ T(\vect{x})=\leftB
 \end{array}
 \rightB \vect{x}
 \end{equation*}
-Then $\func{im}\left( T\right) =V$ is a subspace of $\mathbb{R}^{3}$ and $T$
-is an isomorphism of $\mathbb{R}^{2}$ and $V$. Find a $2\times 3$ matrix $A$
+Then $\func{im}\left( T\right) =V$ is a subspace of $\R^{3}$ and $T$
+is an isomorphism of $\R^{2}$ and $V$. Find a $2\times 3$ matrix $A$
 such that the restriction of multiplication by $A$ to $V=\func{im}\left(
 T\right) $ equals $T^{-1}$. 
 \end{example}
@@ -268,8 +268,7 @@ T\right) $ equals $T^{-1}$.
 \begin{solution}
 Since the two columns of the above matrix are linearly independent, we conclude that $\func{dim}(\func{im}(T)) = 2$ and therefore $\func{dim}(\func{ker}(T)) = 2 - \func{dim}(\func{im}(T)) = 2-2 = 0$ by Theorem \ref{thm:dimensionkernelimage}. Then by Theorem \ref{thm:onetoonekernel} it follows that $T$ is one to one. 
 
-Thus $T$ is an isomorphism of $\mathbb{R
-}^{2}$ and the two dimensional subspace of $\mathbb{R}^{3}$ which is the
+Thus $T$ is an isomorphism of $\R^{2}$ and the two dimensional subspace of $\R^{3}$ which is the
 span of the columns of the given matrix. Now in particular, 
 \begin{equation*}
 T(\vect{e}_{1})=\leftB 
@@ -302,7 +301,7 @@ T^{-1}\leftB
 \end{array}
 \rightB =\vect{e}_{2}
 \end{equation*}
-Extend $T^{-1}$ to all of $\mathbb{R}^{3}$ by defining 
+Extend $T^{-1}$ to all of $\R^{3}$ by defining 
 \begin{equation*}
 T^{-1}\leftB
 \begin{array}{c}
@@ -335,7 +334,7 @@ Notice that the vectors
 \rightB \right\} 
 \end{equation*}
 are linearly independent so $T^{-1}$ can be extended linearly to yield a
-linear transformation defined on $\mathbb{R}^{3}$. The matrix of $T^{-1}$
+linear transformation defined on $\R^{3}$. The matrix of $T^{-1}$
 denoted as $A$ needs to satisfy 
 \begin{equation*}
 A\leftB

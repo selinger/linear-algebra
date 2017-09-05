@@ -2,13 +2,13 @@
 
 An important use of the Gram-Schmidt Process is in orthogonal projections, the focus of this section. 
 
-You may recall that a subspace of $\mathbb{R}^n$ is a set of vectors
+You may recall that a subspace of $\R^n$ is a set of vectors
 which contains the zero vector, and is closed under addition and
 scalar multiplication. Let's call such a subspace $W$. In particular,
-a plane in $\mathbb{R}^n$ which contains the origin, $ \left(0,0,
-\cdots, 0 \right)$, is a subspace of $\mathbb{R}^n$.
+a plane in $\R^n$ which contains the origin, $ \left(0,0,
+\cdots, 0 \right)$, is a subspace of $\R^n$.
 
-Suppose a point $Y$ in $\mathbb{R}^n$ is not contained in $W$, then what
+Suppose a point $Y$ in $\R^n$ is not contained in $W$, then what
 point $Z$ in $W$ is closest to $Y$? Using the Gram-Schmidt Process, we
 can find such a point. Let $\vect{y}, \vect{z}$ represent the position
 vectors of the points $Y$ and $Z$ respectively, with
@@ -39,8 +39,8 @@ The vector $\vect{z}$ is called the \textbf{orthogonal projection} of
 $\vec{y}$ on $W$. The definition is given as follows.
 
 \begin{definition}{Orthogonal projection}{orthproj}
-Let $W$ be a subspace of $\mathbb{R}^n$, and $Y$ be any point in
-$\mathbb{R}^n$. Then the orthogonal projection of $Y$ onto $W$ is given by
+Let $W$ be a subspace of $\R^n$, and $Y$ be any point in
+$\R^n$. Then the orthogonal projection of $Y$ onto $W$ is given by
 \[
 \vect{z} = \func{proj}_{W}\left( \vect{y}\right)
 =
@@ -67,8 +67,8 @@ vector is the vector $\vect{z}$ above) which is the point of $W$
 closest to $Y$.
 
 \begin{theorem}{Approximation theorem}{approximation}
-Let $W$ be a subspace of $\mathbb{R}^n$ and $Y$ any point in
-$\mathbb{R}^n$. Let $Z$ be the point whose position vector is the
+Let $W$ be a subspace of $\R^n$ and $Y$ any point in
+$\R^n$. Let $Z$ be the point whose position vector is the
 orthogonal projection of $Y$ onto $W$. \\
 Then, $Z$ is the point in $W$ closest to $Y$.
 \end{theorem}
@@ -133,7 +133,7 @@ b \leftB
 \end{array}
 \rightB, 
 \; 
-a,b \in \mathbb{R}
+a,b \in \R
 \] 
 
 We can thus write $W$ as 
@@ -287,12 +287,12 @@ perpendicular to $W$. We call this set of vectors the
 denote it $W^{\perp}$.
 
 \begin{definition}{Orthogonal complement}{orthcomp}
-Let $W$ be a subspace of $\mathbb{R}^n$. Then the orthogonal
+Let $W$ be a subspace of $\R^n$. Then the orthogonal
 complement of $W$, written $W^{\perp}$, is the set of all vectors
 $\vect{x}$ such that $\vect{x} \dotprod \vect{z} = 0$ for all vectors
 $\vect{z}$ in $W$.
 \[
-W^{\perp} = \{ \vect{x} \in \mathbb{R}^n \; \mbox{such that} \;
+W^{\perp} = \{ \vect{x} \in \R^n \; \mbox{such that} \;
 \vect{x} \dotprod \vect{z} = 0 \; \mbox{for all} \; \vect{z} \in W \}
 \]
 \end{definition}
@@ -300,42 +300,42 @@ W^{\perp} = \{ \vect{x} \in \mathbb{R}^n \; \mbox{such that} \;
 The orthogonal complement is defined as the set of all vectors which are orthogonal to all vectors in the original subspace. It turns out that it is sufficient that the vectors in the orthogonal complement be orthogonal to a spanning set of the original space.
 
 \begin{proposition}{Orthogonal to spanning set}{orthogonalspanningset}
-Let $W$ be a subspace of $\mathbb{R}^n$ such that $W = \func{span} \left\{ \vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m \right\}$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set. 
+Let $W$ be a subspace of $\R^n$ such that $W = \func{span} \left\{ \vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m \right\}$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set. 
 \end{proposition}
 
 The following proposition demonstrates that the orthogonal complement of a subspace is itself a subspace. 
 
 \begin{proposition}{The orthogonal complement}{subspacecomplement}
-Let $W$ be a subspace of $\mathbb{R}^n$. Then the orthogonal complement $W^{\perp}$ is also a subspace of $\mathbb{R}^n$.
+Let $W$ be a subspace of $\R^n$. Then the orthogonal complement $W^{\perp}$ is also a subspace of $\R^n$.
 \end{proposition}
 
 Consider the following proposition.
 
-\begin{proposition}{Orthogonal complement of $\mathbb{R}^n$}{complementofrn}
-The complement of $\mathbb{R}^n$ is the set containing the zero vector:
+\begin{proposition}{Orthogonal complement of $\R^n$}{complementofrn}
+The complement of $\R^n$ is the set containing the zero vector:
 \[
- (\mathbb{R}^n)^{\perp} = \left\{ \vect{0} \right\}
+ (\R^n)^{\perp} = \left\{ \vect{0} \right\}
 \]
 Similarly, 
 \[
-\left\{ \vect{0} \right\}^{\perp} = (\mathbb{R}^n)
+\left\{ \vect{0} \right\}^{\perp} = (\R^n)
 \]
 \end{proposition}
 
 \begin{proof}
-Here, $\vect{0}$ is the zero vector of $\mathbb{R}^n$.
-Since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\mathbb{R}^n$, 
-$\mathbb{R}^n\subseteq\{ \vect{0}\}^{\perp}$.
-Since $\{ \vect{0}\}^{\perp}\subseteq\mathbb{R}^n$, the equality follows,
-i.e., $\{ \vect{0}\}^{\perp}=\mathbb{R}^n$.
+Here, $\vect{0}$ is the zero vector of $\R^n$.
+Since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\R^n$, 
+$\R^n\subseteq\{ \vect{0}\}^{\perp}$.
+Since $\{ \vect{0}\}^{\perp}\subseteq\R^n$, the equality follows,
+i.e., $\{ \vect{0}\}^{\perp}=\R^n$.
 
-Again, since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\mathbb{R}^n$,
-$\vect{0}\in (\mathbb{R}^n)^{\perp}$, so $\{ \vect{0}\}\subseteq(\mathbb{R}^n)^{\perp}$.
-Suppose $\vect{x}\in\mathbb{R}^n$, $\vect{x}\neq\vect{0}$.  
+Again, since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\R^n$,
+$\vect{0}\in (\R^n)^{\perp}$, so $\{ \vect{0}\}\subseteq(\R^n)^{\perp}$.
+Suppose $\vect{x}\in\R^n$, $\vect{x}\neq\vect{0}$.  
 Since $\vect{x}\dotprod\vect{x}=||\vect{x}||^2$ and $\vect{x}\neq\vect{0}$,
-$\vect{x}\dotprod\vect{x}\neq 0$, so $\vect{x}\not\in(\mathbb{R}^n)^{\perp}$.
-Therefore $(\mathbb{R}^n)^{\perp}\subseteq \{\vect{0}\}$, and thus
-$(\mathbb{R}^n)^{\perp}=\{\vect{0}\}$.
+$\vect{x}\dotprod\vect{x}\neq 0$, so $\vect{x}\not\in(\R^n)^{\perp}$.
+Therefore $(\R^n)^{\perp}\subseteq \{\vect{0}\}$, and thus
+$(\R^n)^{\perp}=\{\vect{0}\}$.
 \end{proof}
 
 In the next example, we will look at how to find
@@ -426,7 +426,7 @@ $\left\{ \leftB
 The following results summarize the important properties of the orthogonal projection. 
 
 \begin{theorem}{Orthogonal projection}{orthproj}
-Let $W$ be a subspace of $\mathbb{R}^n$, $Y$ be any point in $\mathbb{R}^n$, and let $Z$ be the point in $W$ closest to $Y$. Then, 
+Let $W$ be a subspace of $\R^n$, $Y$ be any point in $\R^n$, and let $Z$ be the point in $W$ closest to $Y$. Then, 
 \begin{enumerate}
 \item 
 The position vector $\vect{z}$ of the point $Z$ is given by $\vect{z} = \func{proj}_{W}\left( \vect{y}\right)$
@@ -612,7 +612,7 @@ the point $Y=(1,1,1)$.
 \begin{solution}
 The solution will proceed as follows.
 \begin{enumerate}
-\item Find a basis $X$ of the subspace $W$ of $\mathbb{R}^3$ defined by
+\item Find a basis $X$ of the subspace $W$ of $\R^3$ defined by
 the equation  $3x+y-2z=0$.
 \item Orthogonalize the basis $X$ to get an orthogonal basis
 $B$ of $W$.
@@ -630,7 +630,7 @@ Putting the augmented matrix in {\rref}:
 \leftB\begin{array}{rrr|r} 1 & \frac{1}{3} & -\frac{2}{3} & 0 \end{array}\rightB
 \]
 gives general solution $x=\frac{1}{3}s+\frac{2}{3}t$, $y=s$, $z=t$
-for any $s,t\in\mathbb{R}$.
+for any $s,t\in\R$.
 Then  
 \[
 W=\func{span} \left\{

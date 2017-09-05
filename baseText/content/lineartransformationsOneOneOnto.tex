@@ -6,9 +6,9 @@
 \end{enumerate}
 \end{outcome}
 
-Let $T: \mathbb{R}^n \mapsto \mathbb{R}^m$ be a linear transformation. We define the \textbf{range}\index{linear transformation!range} or \textbf{image}\index{linear transformation!image} of $T$ as the set of vectors of $\mathbb{R}^{m}$ which are of the form
-$T \left(\vect{x}\right)$ (equivalently, $A\vect{x}$) for some $\vect{x}\in \mathbb{R}^{n}$. It is common
-to write $T\mathbb{R}^{n}$, $T\left( \mathbb{R}^{n}\right)$, or
+Let $T: \R^n \mapsto \R^m$ be a linear transformation. We define the \textbf{range}\index{linear transformation!range} or \textbf{image}\index{linear transformation!image} of $T$ as the set of vectors of $\R^{m}$ which are of the form
+$T \left(\vect{x}\right)$ (equivalently, $A\vect{x}$) for some $\vect{x}\in \R^{n}$. It is common
+to write $T\R^{n}$, $T\left( \R^{n}\right)$, or
 $\func{Im}\left( T\right) $ to denote these vectors.  
 
 \begin{lemma}{Range of a matrix transformation}{Ax}
@@ -20,13 +20,13 @@ x_{1} \\
 \vdots \\
  x_{n}
 \end{array}
-\rightB$ in $\mathbb{R}^n$,
+\rightB$ in $\R^n$,
 
 \begin{equation*}
 A\vect{x}=\sum_{k=1}^{n}x_{k}A_{k}
 \end{equation*}
 
-Therefore, $A \left( \mathbb{R}^n \right)$ is the collection of all
+Therefore, $A \left( \R^n \right)$ is the collection of all
 linear combinations of these products.
 \end{lemma}
 
@@ -37,7 +37,7 @@ This follows from the definition of matrix multiplication.
 This section is devoted to studying two important characterizations of linear transformations, called one to one and onto. We define them now. 
 
 \begin{definition}{One to one}{onetoone}
-Suppose $\vect{x}_1$ and $\vect{x}_2$ are vectors in $\mathbb{R}^n$. A linear transformation $T: \mathbb{R}^n \mapsto \mathbb{R}^m$ is called \textbf{one to one}\index{one to one} (often written as $1-1)$ if whenever
+Suppose $\vect{x}_1$ and $\vect{x}_2$ are vectors in $\R^n$. A linear transformation $T: \R^n \mapsto \R^m$ is called \textbf{one to one}\index{one to one} (often written as $1-1)$ if whenever
  $\vect{x}_1 \neq \vect{x}_2$ it follows that :
 \begin{equation*}
 T\left( \vect{x}_1 \right) \neq T \left(\vect{x}_2\right)
@@ -51,8 +51,8 @@ vectors to the same vector.
 The second important characterization is called onto.
 
 \begin{definition}{Onto}{onto}
-Let $T: \mathbb{R}^n \mapsto \mathbb{R}^m$ be a linear transformation. Then $T$ is called \textbf{onto}\index{onto} if whenever $\vect{x}_2 \in \mathbb{R}^{m}$ there exists 
-$\vect{x}_1 \in \mathbb{R}^{n}$ such that $T\left( \vect{x}_1\right) = \vect{x}_2. $
+Let $T: \R^n \mapsto \R^m$ be a linear transformation. Then $T$ is called \textbf{onto}\index{onto} if whenever $\vect{x}_2 \in \R^{m}$ there exists 
+$\vect{x}_1 \in \R^{n}$ such that $T\left( \vect{x}_1\right) = \vect{x}_2. $
 \end{definition}
 
 We often call a linear transformation which is one-to-one an \textbf{injection}\index{injection}. Similarly, a linear transformation which is onto is often called a \textbf{surjection}\index{surjection}.
@@ -60,7 +60,7 @@ We often call a linear transformation which is one-to-one an \textbf{injection}\
 The following proposition is an important result. 
 
 \begin{proposition}{One to one}{onetoonematrices}
-Let $T:\mathbb{R}^n \mapsto \mathbb{R}^m$ be a linear transformation. Then $T$ is one to one if
+Let $T:\R^n \mapsto \R^m$ be a linear transformation. Then $T$ is one to one if
 and only if $T(\vect{x}) = \vect{0}$ implies $\vect{x}=\vect{0}$.
 \end{proposition}
 
@@ -128,7 +128,7 @@ y
 \end{array}
 \rightB
 \end{equation*}
-Then, $T:\mathbb{R}^{2}\rightarrow \mathbb{R}^{2}$ is a linear
+Then, $T:\R^{2}\rightarrow \R^{2}$ is a linear
 transformation. Is $T$ onto? Is it one to one?
 \end{example}
 
@@ -139,12 +139,12 @@ start by looking at onto.  So suppose $\leftB
 a \\
 b
 \end{array}
-\rightB \in \mathbb{R}^{2}.$ Does there exist $\leftB
+\rightB \in \R^{2}.$ Does there exist $\leftB
 \begin{array}{c}
 x \\
 y
 \end{array}
-\rightB  \in \mathbb{R}^2 $ such that $T\leftB
+\rightB  \in \R^2 $ such that $T\leftB
 \begin{array}{c}
 x \\
 y
@@ -159,7 +159,7 @@ b
 a \\
 b
 \end{array}
-\rightB $ is an arbitrary vector in $\mathbb{R}^{2},$ it will follow that $T$
+\rightB $ is an arbitrary vector in $\R^{2},$ it will follow that $T$
 is onto. 
 
 This question is familiar to you. It is asking whether
@@ -342,7 +342,7 @@ b
 \end{solution}
 
 \begin{example}{An onto transformation}{ontotransformation}
-Let $T: \mathbb{R}^4 \mapsto \mathbb{R}^2$ be a linear transformation defined by
+Let $T: \R^4 \mapsto \R^2$ be a linear transformation defined by
 \[
 T \leftB \begin{array}{c}
 a \\
@@ -362,7 +362,7 @@ b \\
 c \\
 d
 \end{array}
-\rightB \in \mathbb{R}^4
+\rightB \in \R^4
 \]
 Prove that $T$ is onto but not one to one.
 \end{example}
@@ -373,12 +373,12 @@ You can prove that $T$ is in fact linear.
 To show that $T$ is onto, let $\leftB \begin{array}{c} 
 x \\
 y
-\end{array} \rightB$ be an arbitrary vector in $\mathbb{R}^2$. Taking the vector $\leftB \begin{array}{c}
+\end{array} \rightB$ be an arbitrary vector in $\R^2$. Taking the vector $\leftB \begin{array}{c}
 x \\
 y \\
 0 \\
 0 
-\end{array} \rightB \in \mathbb{R}^4$ we have 
+\end{array} \rightB \in \R^4$ we have 
 \[
 T \leftB \begin{array}{c}
 x \\
@@ -420,19 +420,19 @@ T \leftB \begin{array}{r}
 \end{array}
 \rightB
 \]
-There exists a nonzero vector $\vect{x}$ in $\mathbb{R}^4$ such that $T(\vect{x}) = \vect{0}$. It follows that $T$ is not one to one.
+There exists a nonzero vector $\vect{x}$ in $\R^4$ such that $T(\vect{x}) = \vect{0}$. It follows that $T$ is not one to one.
 \end{solution}
 
 The above examples demonstrate a method to determine if a linear transformation $T$ is one to one or onto. It turns out that the matrix $A$ of $T$ can provide this information.
 
 \begin{theorem}{Matrix of a one to one or onto transformation}{matrixonetooneonto}
-Let $T: \mathbb{R}^n \mapsto \mathbb{R}^m$ be a linear transformation induced by the $m \times n$ matrix $A$. Then $T$ is one to one if and only if the rank of $A$ is $n$. $T$ is onto if and only if the rank of $A$ is $m$. 
+Let $T: \R^n \mapsto \R^m$ be a linear transformation induced by the $m \times n$ matrix $A$. Then $T$ is one to one if and only if the rank of $A$ is $n$. $T$ is onto if and only if the rank of $A$ is $m$. 
 \end{theorem}
 
 Consider Example \ref{exa:ontotransformation}. Above we showed that $T$ was onto but not one to one. We can now use this theorem to determine this fact about $T$. 
 
 \begin{example}{An onto transformation}{ontotransformationmatrix}
-Let $T: \mathbb{R}^4 \mapsto \mathbb{R}^2$ be a linear transformation defined by
+Let $T: \R^4 \mapsto \R^2$ be a linear transformation defined by
 \[
 T \leftB \begin{array}{c}
 a \\
@@ -452,13 +452,13 @@ b \\
 c \\
 d
 \end{array}
-\rightB \in \mathbb{R}^4
+\rightB \in \R^4
 \]
 Prove that $T$ is onto but not one to one.
 \end{example}
 
 \begin{solution}
-Using Theorem \ref{thm:matrixonetooneonto} we can show that $T$ is onto but not one to one from the matrix of $T$. Recall that to find the matrix $A$ of $T$, we apply $T$ to each of the standard basis vectors $\vect{e}_i$ of $\mathbb{R}^4$. The result is the $2 \times 4$ matrix A given by 
+Using Theorem \ref{thm:matrixonetooneonto} we can show that $T$ is onto but not one to one from the matrix of $T$. Recall that to find the matrix $A$ of $T$, we apply $T$ to each of the standard basis vectors $\vect{e}_i$ of $\R^4$. The result is the $2 \times 4$ matrix A given by 
 \[
 A = \leftB \begin{array}{rrrr}
 1 & 0 & 0 & 1 \\
@@ -471,19 +471,19 @@ Fortunately, this matrix is already in {\rref}. The rank of $A$ is $2$. Therefor
 Recall that if $S$ and $T$ are linear transformations, we can discuss their composite denoted $S \circ T$. The following examines what happens if both $S$ and $T$ are onto. 
 
 \begin{example}{Composite of onto transformations}{compositeonto}
-Let $T: \mathbb{R}^k \mapsto \mathbb{R}^n$ and $S: \mathbb{R}^n \mapsto \mathbb{R}^m$ be linear transformations. 
+Let $T: \R^k \mapsto \R^n$ and $S: \R^n \mapsto \R^m$ be linear transformations. 
 If $T$ and $S$ are onto, then $S \circ T$ is onto.
 \end{example}
 
 \begin{solution}
-Let $\vect{z}\in \mathbb{R}^m$.  
-Since $S$ is onto, there exists a vector $\vect{y}\in \mathbb{R}^n$
+Let $\vect{z}\in \R^m$.  
+Since $S$ is onto, there exists a vector $\vect{y}\in \R^n$
 such that $S(\vect{y})=\vect{z}$.
-Furthermore, since $T$ is onto, there exists a vector $\vect{x}\in \mathbb{R}^k$
+Furthermore, since $T$ is onto, there exists a vector $\vect{x}\in \R^k$
 such that $T(\vect{x})=\vect{y}$.
 Thus
 \[ \vect{z} = S(\vect{y}) = S(T(\vect{x})) = (ST)(\vect{x}),\]
-showing that for each $\vect{z}\in \mathbb{R}^m$ there exists and $\vect{x}\in \mathbb{R}^k$
+showing that for each $\vect{z}\in \R^m$ there exists and $\vect{x}\in \R^k$
 such that $(ST)(\vect{x})=\vect{z}$.
 Therefore, $S \circ T$ is onto.
 \end{solution}
@@ -491,7 +491,7 @@ Therefore, $S \circ T$ is onto.
 The next example shows the same concept with regards to one-to-one transformations. 
 
 \begin{example}{Composite of one to one transformations}{compositeonetoone}
-Let $T: \mathbb{R}^k \mapsto \mathbb{R}^n$ and $S: \mathbb{R}^n \mapsto \mathbb{R}^m$ be linear transformations. 
+Let $T: \R^k \mapsto \R^n$ and $S: \R^n \mapsto \R^m$ be linear transformations. 
 Prove that if $T$ and $S$ are one to one, then $S \circ T$ 
 is one-to-one.
 \end{example}

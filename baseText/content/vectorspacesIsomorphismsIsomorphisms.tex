@@ -23,18 +23,18 @@ Then if $T$ is an isomorphism, we say that $V$ and $W$ are \textbf{isomorphic.}
 Consider the following example of an isomorphism.
 
 \begin{example}{Isomorphism}{isomorphism}
-Let $T:\mathbb{M}_{22}\to\mathbb{R}^4$ be defined by
+Let $T:\Mat_{22}\to\R^4$ be defined by
 \[
 T\leftB\begin{array}{cc} a & b \\ c & d \end{array}\rightB
 =\leftB\begin{array}{c} a\\ b\\ c \\ d \end{array}\rightB
 \mbox{ for all }
 \leftB\begin{array}{cc} a & b \\ c & d \end{array}\rightB
-\in\mathbb{M}_{22}. \]
+\in\Mat_{22}. \]
 Show that $T$ is an isomorphism.
 \end{example}
 
 \begin{solution}
-Notice that if we can prove $T$ is an isomorphism, it will mean that $\mathbb{M}_{22}$ and $\mathbb{R}^4$ are isomorphic.
+Notice that if we can prove $T$ is an isomorphism, it will mean that $\Mat_{22}$ and $\R^4$ are isomorphic.
 It remains to prove that 
 \begin{enumerate}
 \item $T$ is a linear transformation;
@@ -57,7 +57,7 @@ T \left( k \leftB\begin{array}{cc} a_1 & b_1 \\ c_1 & d_1 \end{array}\rightB +  
 Therefore $T$ is linear. 
 
 \textbf{$T$ is one-to-one:}
-By Lemma \ref{lem:onetooneabstract} we need to show that if $T(A) = 0$ then $A = 0$ for some matrix $A \in \mathbb{M}_{22}$. 
+By Lemma \ref{lem:onetooneabstract} we need to show that if $T(A) = 0$ then $A = 0$ for some matrix $A \in \Mat_{22}$. 
 \[
 T\leftB\begin{array}{cc} a & b \\ c & d \end{array}\rightB
 = \leftB\begin{array}{c} a\\ b\\ c \\ d \end{array}\rightB 
@@ -73,14 +73,14 @@ Hence $T$ is one-to-one.
 
 \textbf{$T$ is onto:}
 Let
-\[ \vect{x}=\leftB\begin{array}{c} x_1\\x_2\\x_3\\x_4 \end{array}\rightB\in\mathbb{R}^4,\]
+\[ \vect{x}=\leftB\begin{array}{c} x_1\\x_2\\x_3\\x_4 \end{array}\rightB\in\R^4,\]
 and
-define matrix $A\in\mathbb{M}_{22}$ as follows:
+define matrix $A\in\Mat_{22}$ as follows:
 \[ A=\leftB\begin{array}{cc} x_1 & x_2 \\ x_3 & x_4 \end{array}\rightB.\]
 
 Then $T(A)=\vect{x}$, and therefore $T$ is onto.
 
-Since $T$ is a linear transformation which is one-to-one and onto, $T$ is an isomorphism. Hence $\mathbb{M}_{22}$ and $\mathbb{R}^4$ are isomorphic.
+Since $T$ is a linear transformation which is one-to-one and onto, $T$ is an isomorphism. Hence $\Mat_{22}$ and $\R^4$ are isomorphic.
 \end{solution}
 
 An important property of isomorphisms is that the inverse of an isomorphism
@@ -371,7 +371,7 @@ part of the argument by describing what it does to a basis and then
 Consider the following example. 
 
 \begin{example}{}{}
-Let $V=\mathbb{R}^{3}$ and let $W$ denote the polynomials of degree at most
+Let $V=\R^{3}$ and let $W$ denote the polynomials of degree at most
 2. Show that these two vector spaces are isomorphic.
 \end{example}
 

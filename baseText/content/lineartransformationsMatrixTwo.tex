@@ -14,21 +14,21 @@
 We begin this section with an important lemma. 
 
 \begin{lemma}{Mapping of a basis}{mappingbasis}
-Let $T: \mathbb{R}^n \mapsto \mathbb{R}^n$ be an isomorphism.  Then $T$ maps any basis of
-$\mathbb{R}^n$ to another basis for $\mathbb{R}^n$. 
+Let $T: \R^n \mapsto \R^n$ be an isomorphism.  Then $T$ maps any basis of
+$\R^n$ to another basis for $\R^n$. 
 
 Conversely, if $T:
-\mathbb{R}^n \mapsto \mathbb{R}^n$ is a linear transformation which
-maps a basis of $\mathbb{R}^n$ to another basis of $\mathbb{R}^n$,
+\R^n \mapsto \R^n$ is a linear transformation which
+maps a basis of $\R^n$ to another basis of $\R^n$,
 then it is an isomorphism.
 \end{lemma}
 
 \begin{proof}
-First, suppose $T:\mathbb{R}^n \mapsto \mathbb{R}^n$ is a linear
+First, suppose $T:\R^n \mapsto \R^n$ is a linear
 transformation which is one to one and onto. Let $\left\{
 \vect{v}_{1},\cdots ,\vect{v}_{n}\right\} $ be a basis for
-$\mathbb{R}^n$. We wish to show that $\left\{ T(\vect{v}_{1}),\cdots ,
-T(\vect{v}_{n})\right\} $ is also a basis for $\mathbb{R}^n$. 
+$\R^n$. We wish to show that $\left\{ T(\vect{v}_{1}),\cdots ,
+T(\vect{v}_{n})\right\} $ is also a basis for $\R^n$. 
 
 First consider why it is linearly independent. Suppose
 $\sum_{k=1}^{n}a_{k}T(\vect{v}_{k})=\vect{0}$. Then by linearity we have $T\left(
@@ -40,8 +40,8 @@ T(\vect{v}_{1}),\cdots , T(\vect{v}_{n})\right\} $ is linearly
 independent. 
 
 
-Next take $\vect{w}\in \mathbb{R}^n.$ Since $T$ is onto,
-there exists $\vect{v}\in \mathbb{R}^n$ such that
+Next take $\vect{w}\in \R^n.$ Since $T$ is onto,
+there exists $\vect{v}\in \R^n$ such that
 $T(\vect{v})=\vect{w}$. Since $ \left\{ \vect{v}_{1},\cdots
 ,\vect{v}_{n}\right\} $ is a basis, in particular it is a spanning set
 and there are scalars $b_{k}$ such that $T\left(
@@ -51,11 +51,11 @@ which is in the $\func{span}\left\{ T(\vect{v}_{1}),\cdots ,
 T(\vect{v}_{n})\right\} .$ Therefore, $\left\{ T(\vect{v}_{1}),\cdots
 ,T(\vect{v}_{n}) \right\} $ is a basis as claimed.
 
-Suppose now that $T: \mathbb{R}^n \mapsto \mathbb{R}^n$ is a linear
+Suppose now that $T: \R^n \mapsto \R^n$ is a linear
 transformation such that $T(\vect{v}_{i})=\vect{w}_{i}$ where
 $\left\{\vect{v} _{1},\cdots ,\vect{v}_{n}\right\} $ and $\left\{
 \vect{w}_{1},\cdots , \vect{w}_{n}\right\} $ are two bases for
-$\mathbb{R}^n$. 
+$\R^n$. 
 
 To show that $T$ is one to one, let $T\left(
 \sum_{k=1}^{n}c_{k}\vect{v}_{k}\right) =\vect{0}$. Then
@@ -67,7 +67,7 @@ independent. Hence $T\left( \sum_{k=1}^{n}c_{k}\vect{v}_{k}\right)
 so $T$ is one to one.  
 
 To show that $T$ is onto, let $\vect{w}$ be an arbitrary vector in
-$\mathbb{R}^n$. This vector can be written as $\vect{w} =
+$\R^n$. This vector can be written as $\vect{w} =
 \sum_{k=1}^{n}d_k\vect{w}_k =
 \sum_{k=1}^{n}d_{k}T(\vect{v}_{k})=T\left( \sum_{k=1}^{n}d_{k}
 \vect{v}_{k}\right) .$  Therefore, $T$ is also onto. 
@@ -77,8 +77,8 @@ Consider now an important definition.
 
 \begin{definition}{Coordinate vector}{coordinatevector}
 Let $B = \left\{ \vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n \right\}$
-be a basis for $\mathbb{R}^n$ and let $\vect{x}$ be an arbitrary
-vector in $\mathbb{R}^n$. Then $\vect{x}$ is uniquely represented as
+be a basis for $\R^n$ and let $\vect{x}$ be an arbitrary
+vector in $\R^n$. Then $\vect{x}$ is uniquely represented as
 $\vect{x} = a_1\vect{v}_1 +
 a_2\vect{v}_2 + \cdots + a_n\vect{v}_n$ for scalars $a_1, \cdots,
 a_n$. 
@@ -105,12 +105,12 @@ Let $B = \left\{ \leftB \begin{array}{r}
 \end{array} \rightB, \leftB \begin{array}{r}
 -1 \\
 1
-\end{array} \rightB \right\}$ be a basis of $\mathbb{R}^2$ and let $\vect{x} = \leftB
+\end{array} \rightB \right\}$ be a basis of $\R^2$ and let $\vect{x} = \leftB
 \begin{array}{r}
 3 \\
 -1
 \end{array}
-\rightB$ be a vector in $\mathbb{R}^2$. Find $C_B(\vect{x})$. 
+\rightB$ be a vector in $\R^2$. Find $C_B(\vect{x})$. 
 \end{example}
 
 \begin{solution}
@@ -160,8 +160,8 @@ a_2
 Given any basis $B$, one can easily verify that the coordinate function is actually an isomorphism. 
 
 \begin{theorem}{$C_B$ is a linear transformation}{coordlintransf}
-For any basis $B$ of $\mathbb{R}^n$, the coordinate function
-\[ C_B: \mathbb{R}^n  \rightarrow \mathbb{R}^n  \]
+For any basis $B$ of $\R^n$, the coordinate function
+\[ C_B: \R^n  \rightarrow \R^n  \]
 is a linear transformation, and moreover an isomorphism. 
 \end{theorem}
 
@@ -170,9 +170,9 @@ to represent a linear transformation with respect to different
 bases.
 
 \begin{theorem}{The matrix of a linear transformation}{matrixlintransfbases}
-Let $T: \mathbb{R}^n \mapsto \mathbb{R}^m$ be a linear transformation,
-and let $B_1$ and $B_2$ be bases of $\mathbb{R}^{n}$ and
-$\mathbb{R}^{m}$ respectively.
+Let $T: \R^n \mapsto \R^m$ be a linear transformation,
+and let $B_1$ and $B_2$ be bases of $\R^{n}$ and
+$\R^{m}$ respectively.
 
 Then the following holds
 \begin{equation}
@@ -190,15 +190,15 @@ The above equation \ref{matrixequation} can be represented by the following diag
 \begin{equation*}
 \begin{array}{rrcll}
 &  & T &  &  \\
-& \mathbb{R}^n & \rightarrow  & \mathbb{R}^m & \\
+& \R^n & \rightarrow  & \R^m & \\
 & C_{B_{1} }\downarrow  & \circ  & \downarrow C_{B_{2} } &  \\
-& \mathbb{R}^{n} & \rightarrow  & \mathbb{R}^{m} &  \\
+& \R^{n} & \rightarrow  & \R^{m} &  \\
 &  & M_{B_{2} B_{1} } &  &
 \end{array}
 \end{equation*}
 
 Since $C_{B_1}$ is an isomorphism, then the matrix we are looking for is the matrix of the linear transformation 
-\[   C_{B_2} T C^{-1}_{B_1} : \mathbb{R}^n \mapsto \mathbb{R}^m. \]
+\[   C_{B_2} T C^{-1}_{B_1} : \R^n \mapsto \R^m. \]
 By Theorem \ref{thm:matrixoflineartransformation}, the columns are
 given by the image of the standard basis $\left\{ \vect{e}_1,
 \vect{e}_2, \cdots, \vect{e}_n \right\}$. But since $C^{-1}_{B_1}( \vec{e}_i) = \vec{v}_i$, we readily obtain that 
@@ -214,7 +214,7 @@ and this completes the proof.
 Consider the following example.
 
 \begin{example}{Matrix of a linear transformation}{matrixlintransf}
-Let $T: \mathbb{R}^2 \mapsto \mathbb{R}^2$ be a linear transformation defined by $T \left( \leftB \begin{array}{r}
+Let $T: \R^2 \mapsto \R^2$ be a linear transformation defined by $T \left( \leftB \begin{array}{r}
 a \\
 b
 \end{array} \rightB \right) = \leftB \begin{array}{r}
@@ -416,7 +416,7 @@ $B_1=B_2$ to be the standard basis.
 
 \begin{example}{Matrix of a linear transformation with respect to an arbitrary   basis}{arbitrarybases}
 
-Consider the basis $B$ of $\mathbb{R}^3$ given by 
+Consider the basis $B$ of $\R^3$ given by 
 \begin{equation*}
 B = \{\vect{v}_1 , \vect{v}_2,  \vect{v}_3  \} =
 \left\{
@@ -441,7 +441,7 @@ B = \{\vect{v}_1 , \vect{v}_2,  \vect{v}_3  \} =
 \rightB \right\}
 \]
 
-And let $T :\mathbb{R}^{3}\mapsto \mathbb{R}^{3}$ be the linear transformation 
+And let $T :\R^{3}\mapsto \R^{3}$ be the linear transformation 
 defined on $B$ as:
 \begin{equation*}
 T\leftB
@@ -485,7 +485,7 @@ T\leftB
 
 \begin{enumerate}
 \item Find the matrix  $M_{B}$ of $T$ relative to the basis $B$.
-\item Then find the usual matrix of $T$ with respect to the standard basis of $\mathbb{R}^{3}$.
+\item Then find the usual matrix of $T$ with respect to the standard basis of $\R^{3}$.
 \end{enumerate}
 
 \end{example}
@@ -549,7 +549,7 @@ b_1 \\
 b_2 \\
 b_3
 \end{array}
-\rightB$ be an arbitrary vector in $\mathbb{R}^3$. 
+\rightB$ be an arbitrary vector in $\R^3$. 
 
 Apply $C^{-1}_{B}$ to $\vect{b}$ to get 
 \begin{equation*}

@@ -4,11 +4,11 @@
 \begin{enumerate}
 \item[A.]  Determine if a linear transformation is an isomorphism.
 
-\item[B.]  Determine if two subspaces of $\mathbb{R}^n$ are isomorphic. 
+\item[B.]  Determine if two subspaces of $\R^n$ are isomorphic. 
 \end{enumerate}
 \end{outcome}
 
-Recall the definition of a linear transformation. Let $V$ and $W$ be two subspaces of $\mathbb{R}^{n}$ and $\mathbb{R}^{m}$
+Recall the definition of a linear transformation. Let $V$ and $W$ be two subspaces of $\R^{n}$ and $\R^{m}$
 respectively. A mapping $T:V\rightarrow W$ is called a\textbf{\ linear
 transformation} or \textbf{linear map} if it preserves the algebraic
 operations of addition and
@@ -41,7 +41,7 @@ be \textbf{isomorphic.}
 Consider the following example of an isomorphism.
 
 \begin{example}{Isomorphism}{isomorphism}
-Let $T: \mathbb{R}^2 \mapsto \mathbb{R}^2$ be defined by 
+Let $T: \R^2 \mapsto \R^2$ be defined by 
 \[
 T \leftB \begin{array}{c}
 x \\
@@ -129,7 +129,7 @@ Therefore $T$ is linear.
 
 \item $T$ is one to one:
 
-We need to show that if $T (\vect{x}) = \vect{0}$ for a vector $\vect{x} \in \mathbb{R}^2$, then it follows that $\vect{x} = \vect{0}$.  Let $\vect{x} = \leftB \begin{array}{c}
+We need to show that if $T (\vect{x}) = \vect{0}$ for a vector $\vect{x} \in \R^2$, then it follows that $\vect{x} = \vect{0}$.  Let $\vect{x} = \leftB \begin{array}{c}
 x \\
 y
 \end{array} \rightB$. 
@@ -206,7 +206,7 @@ Therefore $T$ is an isomorphism.
 An important property of isomorphisms is that its inverse is also an isomorphism. 
 
 \begin{proposition}{Inverse of an isomorphism}{inverseisomorphism}
-Let $T:V\rightarrow W$ be an isomorphism and $V,W$ be subspaces of $\mathbb{R}^n$. Then $T^{-1}:W\rightarrow V$ is
+Let $T:V\rightarrow W$ be an isomorphism and $V,W$ be subspaces of $\R^n$. Then $T^{-1}:W\rightarrow V$ is
 also an isomorphism.
 \index{isomorphism!inverse}
 \end{proposition}
@@ -237,7 +237,7 @@ and so $T^{-1}$ is one to one.
 Another important result is that the composition of multiple isomorphisms is also an isomorphism.
 
 \begin{proposition}{Composition of isomorphisms}{compositionisomorphisms}
-Let $T:V\rightarrow W$ and  $S:W\rightarrow Z$ be isomorphisms where $V,W,Z$ are subspaces of $\mathbb{R}^n$. Then $S\circ
+Let $T:V\rightarrow W$ and  $S:W\rightarrow Z$ be isomorphisms where $V,W,Z$ are subspaces of $\R^n$. Then $S\circ
 T $ defined by $\left( S\circ T\right) \left( \vect{v} \right) = S\left(
 T\left( \vect{v} \right) \right) $ is also an isomorphism.
 \index{isomorphism!composition}
@@ -277,18 +277,18 @@ We leave the verification of these conditions as an exercise.
 Consider the following example. 
 
 \begin{example}{Matrix isomorphism}{matrixisomorphism}
-Let $T:\mathbb{R}^{n}\rightarrow \mathbb{R}^{n}$ be defined by $T(\vect{x}) = A(\vect{x})$ where $A$ is an invertible $n\times n$ matrix. Then $T$ is
+Let $T:\R^{n}\rightarrow \R^{n}$ be defined by $T(\vect{x}) = A(\vect{x})$ where $A$ is an invertible $n\times n$ matrix. Then $T$ is
 an isomorphism.
 \end{example}
 
 \begin{solution}
 The reason for this is that, since $A$ is invertible, the only vector it
 sends to $\vect{0}$ is the zero vector. Hence if $A(\vect{x})=A(\vect{y}),$ then $A\left( \vect{x}-\vect{y}\right) =\vect{0}$ and so $\vect{x}=\vect{y}$. It is onto
-because if $\vect{y}\in \mathbb{R}^{n},A\left( A^{-1} (\vect{y})\right) =\left(
+because if $\vect{y}\in \R^{n},A\left( A^{-1} (\vect{y})\right) =\left(
 AA^{-1}\right) (\vect{y})$ $=\vect{y}$. 
 \end{solution}
 
-In fact, all isomorphisms from $\mathbb{R}^{n}$ to $\mathbb{R}^{n}$ can be expressed as $T(\vect{x}) = A(\vect{x})$ where $A$ is an invertible $n \times n$ matrix. One
+In fact, all isomorphisms from $\R^{n}$ to $\R^{n}$ can be expressed as $T(\vect{x}) = A(\vect{x})$ where $A$ is an invertible $n \times n$ matrix. One
 simply considers the matrix whose $i^{th}$ column is $T\vect{e}_{i}$.
 
 Recall that a basis of a subspace $V$ is a set of linearly independent vectors which span $V$. The following fundamental lemma describes the relation between bases and
@@ -296,7 +296,7 @@ isomorphisms.
 
 \begin{lemma}{Mapping bases}{mappingbases}
 Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are
-subspaces of $\mathbb{R}^n$. If $T$ is one to one, then it has the property that if $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} $ is linearly independent, so is $\left\{ T(\vect{u}_{1}),\cdots ,T(\vect{u}_{k})\right\} $.
+subspaces of $\R^n$. If $T$ is one to one, then it has the property that if $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} $ is linearly independent, so is $\left\{ T(\vect{u}_{1}),\cdots ,T(\vect{u}_{k})\right\} $.
 
 More generally, $T$ is an isomorphism if and only if whenever $\left\{ 
 \vect{v}_{1},\cdots ,\vect{v}_{n}\right\} $ is a basis for $V,$ it follows that $\left\{ T
@@ -359,7 +359,7 @@ isomorphism. Basically, if you know what it does to a basis, then you can
 construct the isomorphism.
 
 \begin{theorem}{Isomorphic subspaces}{isomorphicsubspaces}
-Suppose $V$ and $W$ are two subspaces of $\mathbb{R}^n$. Then the two
+Suppose $V$ and $W$ are two subspaces of $\R^n$. Then the two
 subspaces are isomorphic if and only if they have the same dimension. In the
 case that the two subspaces have the same dimension, then for
 \index{isomorphism!equivalence} a linear map $T:V\rightarrow W$, the
@@ -482,7 +482,7 @@ part of the argument by describing what it does to a basis and then
 \index{linear map!defining on a basis}
 
 \begin{example}{Isomorphic subspaces}{}
-Let $V=\mathbb{R}^{3}$ and let $W$ denote 
+Let $V=\R^{3}$ and let $W$ denote 
 \begin{equation*}
 \func{span}\left\{ \leftB 
 \begin{array}{r}
@@ -560,7 +560,7 @@ reproduce the claimed effect resulting from an application by $T$.
 Consider the following example. 
 
 \begin{example}{Finding the matrix of an isomorphism}{matrixofisomorphism}
-Let $V=\mathbb{R}^{3}$ and let $W$ denote 
+Let $V=\R^{3}$ and let $W$ denote 
 \begin{equation*}
 \func{span}\left\{ \leftB 
 \begin{array}{c}
@@ -655,7 +655,7 @@ Find the matrix of this isomorphism $T$.
 \end{array}
 \rightB
 \end{equation*}
-are indeed a basis for $\mathbb{R}^{3}$ as can be seen by making them the
+are indeed a basis for $\R^{3}$ as can be seen by making them the
 columns of a matrix and using the {\rref}.
 
 Now recall the matrix of $T$ is a $4\times 3$ matrix $A$ which gives the same
@@ -708,7 +708,7 @@ This idea of defining a linear transformation by what it does on a basis
 works for linear maps which are not necessarily isomorphisms.
 
 \begin{example}{Finding the matrix of an isomorphism}{}
-Let $V=\mathbb{R}^{3}$ and let $W$ denote 
+Let $V=\R^{3}$ and let $W$ denote 
 \begin{equation*}
 \func{span}\left\{ \leftB
 \begin{array}{c}

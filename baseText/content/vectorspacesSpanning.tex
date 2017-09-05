@@ -6,7 +6,7 @@
 \end{enumerate}
 \end{outcome}
 
-In this section we will examine the concept of spanning introduced earlier in terms of $\mathbb{R}^n$. Here, we will discuss these concepts in terms of abstract vector spaces. 
+In this section we will examine the concept of spanning introduced earlier in terms of $\R^n$. Here, we will discuss these concepts in terms of abstract vector spaces. 
 
 Consider the following definition. 
 
@@ -20,7 +20,7 @@ X \subseteq Y
 In particular, we often speak of subsets of a vector space, such as $X \subseteq V$. By this we mean that every element in the set $X$ is contained in the vector space $V$. 
 
 \begin{definition}{Linear combination}{linearcombination}
-Let $V$ be a vector space and let $\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n \subseteq V$. A vector $\vect{v} \in V$ is called a linear combination of the $\vect{v}_i$ if there exist scalars $c_i \in \mathbb{R}$ such that 
+Let $V$ be a vector space and let $\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n \subseteq V$. A vector $\vect{v} \in V$ is called a linear combination of the $\vect{v}_i$ if there exist scalars $c_i \in \R$ such that 
 \[
 \vect{v} = c_1 \vect{v}_1 + c_2 \vect{v}_2 + \cdots + c_n \vect{v}_n
 \]
@@ -32,7 +32,7 @@ This definition leads to our next concept of span.
 Let $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\} \subseteq V$. Then\index{span}
 \begin{equation*}
 \func{span}\left\{ \vect{v}_{1},\cdots ,\vect{v}_{n}\right\} = 
-\left\{ \sum_{i=1}^{n}c_{i}\vect{v}_{i}: c_{i}\in \mathbb{R}
+\left\{ \sum_{i=1}^{n}c_{i}\vect{v}_{i}: c_{i}\in \R
 \right\} 
 \end{equation*}
 \end{definition}
@@ -129,11 +129,11 @@ Hence $p(x)$ is in the given span.
 Consider the following example.
 
 \begin{example}{Spanning set}{spanningset}
-Let $S = \left\{ x^2 + 1, x-2, 2x^2 - x \right\}$. Show that $S$ is a spanning set for $\mathbb{P}_2$, the set of all polynomials of degree at most $2$. 
+Let $S = \left\{ x^2 + 1, x-2, 2x^2 - x \right\}$. Show that $S$ is a spanning set for $\Poly_2$, the set of all polynomials of degree at most $2$. 
 \end{example}
 
 \begin{solution}
-Let $p(x)= ax^2 + bx + c$ be an arbitrary polynomial in $\mathbb{P}_2$. To show that $S$ is a spanning set, it suffices to show that $p(x)$ can be written as a linear combination of the elements of $S$. In other words, can we find $r,s,t$ such that:
+Let $p(x)= ax^2 + bx + c$ be an arbitrary polynomial in $\Poly_2$. To show that $S$ is a spanning set, it suffices to show that $p(x)$ can be written as a linear combination of the elements of $S$. In other words, can we find $r,s,t$ such that:
 \[
 p(x) =  ax^2 +bx + c = r(x^2 + 1) + s(x -2) + t(2x^2 - x)
 \]
@@ -167,5 +167,5 @@ To check that a solution exists, set up the augmented matrix and row reduce:
 \end{array} \rightB
 \]
 
-Clearly a solution exists for any choice of $a,b,c$. Hence $S$ is a spanning set for $\mathbb{P}_2$. 
+Clearly a solution exists for any choice of $a,b,c$. Hence $S$ is a spanning set for $\Poly_2$. 
 \end{solution}

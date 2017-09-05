@@ -1,54 +1,54 @@
 \subsection{Subspaces and basis}
 
-The goal of this section is to develop an understanding of a subspace of $\mathbb{R}^n$. Before a precise definition is considered, we first examine the subspace test given below.
+The goal of this section is to develop an understanding of a subspace of $\R^n$. Before a precise definition is considered, we first examine the subspace test given below.
 
 \begin{theorem}{Subspace test}{subspacetest}
-A subset $V$ of $\mathbb{R}^n$ is a subspace of $\mathbb{R}^n$ if 
+A subset $V$ of $\R^n$ is a subspace of $\R^n$ if 
 \begin{enumerate}
-\item the zero vector of $\mathbb{R}^n$, $\vect{0}_n$, is in $V$;
+\item the zero vector of $\R^n$, $\vect{0}_n$, is in $V$;
 \item $V$ is closed under addition, i.e., for all $\vect{u},\vect{w}\in V$, $\vect{u}+\vect{w}\in V$;
 \item $V$ is closed under scalar multiplication, i.e., for all $\vect{u}\in V$
-and $k\in\mathbb{R}$, $k\vect{u}\in V$.
+and $k\in\R$, $k\vect{u}\in V$.
 \end{enumerate}
 \end{theorem}
 
-This test allows us to determine if a given set is a subspace of $\mathbb{R}^n$. Notice that the subset $V = \left\{ \vect{0} \right\}$ is a subspace of $\mathbb{R}^n$ (called the zero subspace\index{zero subspace}), as is $\mathbb{R}^n$ itself. A subspace which is not the zero subspace of $\mathbb{R}^n$ is referred to as a proper subspace\index{proper subspace}.
+This test allows us to determine if a given set is a subspace of $\R^n$. Notice that the subset $V = \left\{ \vect{0} \right\}$ is a subspace of $\R^n$ (called the zero subspace\index{zero subspace}), as is $\R^n$ itself. A subspace which is not the zero subspace of $\R^n$ is referred to as a proper subspace\index{proper subspace}.
 
  A subspace is simply a set of vectors with the property that linear
 combinations of these vectors remain in the set. Geometrically in
-$\mathbb{R}^{3}$, it turns out that a subspace can be represented by
+$\R^{3}$, it turns out that a subspace can be represented by
 either the origin as a single point, lines and planes which contain
-the origin, or the entire space $\mathbb{R}^{3}$. 
+the origin, or the entire space $\R^{3}$. 
 
-Consider the following example of a line in $\mathbb{R}^3$. 
+Consider the following example of a line in $\R^3$. 
 
-\begin{example}{Subspace of $\mathbb{R}^3$}{linesubspace}
-In $\mathbb{R}^3$, the line $L$ through the origin that is
+\begin{example}{Subspace of $\R^3$}{linesubspace}
+In $\R^3$, the line $L$ through the origin that is
 parallel to the vector
 ${\vect{d}}= \leftB \begin{array}{r} -5 \\ 1 \\ -4 \end{array}\rightB$ 
 has (vector) equation
 $\leftB \begin{array}{r} x \\ y \\ z \end{array}\rightB
-=t\leftB \begin{array}{r} -5 \\ 1 \\ -4 \end{array}\rightB, t\in\mathbb{R}$,
+=t\leftB \begin{array}{r} -5 \\ 1 \\ -4 \end{array}\rightB, t\in\R$,
 %If ${\bm u}=\leftB \begin{array}{r} x \\ y \\ z \end{array}\rightB$, 
 so 
-\[ L=\left\{ t{\vect{d}} ~|~ t\in\mathbb{R}\right\}.\] Then $L$ is a subspace of $\mathbb{R}^3$.  
+\[ L=\left\{ t{\vect{d}} ~|~ t\in\R\right\}.\] Then $L$ is a subspace of $\R^3$.  
 \end{example}
 
 \begin{solution}
-Using the subspace test given above we can verify that $L$ is a subspace of $\mathbb{R}^3$. 
+Using the subspace test given above we can verify that $L$ is a subspace of $\R^3$. 
 \begin{itemize}
 \item First: $\vect{0}_3\in L$ since $0\vect{d}=\vect{0}_3$.
 \item Suppose $\vect{u},\vect{v}\in L$.
 Then by definition, $\vect{u}=s\vect{d}$ and $\vect{v}=t\vect{d}$, 
-for some $s,t\in\mathbb{R}$.
+for some $s,t\in\R$.
 Thus
 \[ \vect{u}+\vect{v} = s\vect{d}+t\vect{d} = (s+t)\vect{d}.\]
-Since $s+t\in\mathbb{R}$, $\vect{u}+\vect{v}\in L$;
+Since $s+t\in\R$, $\vect{u}+\vect{v}\in L$;
 i.e., $L$ is closed under addition.
-\item Suppose $\vect{u}\in L$ and $k\in\mathbb{R}$ ($k$ is a scalar).
-Then $\vect{u}=t\vect{d}$, for some $t\in\mathbb{R}$, so
+\item Suppose $\vect{u}\in L$ and $k\in\R$ ($k$ is a scalar).
+Then $\vect{u}=t\vect{d}$, for some $t\in\R$, so
 \[ k\vect{u}=k(t\vect{d})=(kt)\vect{d}.\]
-Since $kt\in\mathbb{R}$, $k\vect{u}\in L$;
+Since $kt\in\R$, $k\vect{u}\in L$;
 i.e., $L$ is closed under scalar multiplication.
 \end{itemize}
 Since $L$ satisfies all conditions of the subspace test, it follows that $L$ is a subspace. 
@@ -56,33 +56,33 @@ Since $L$ satisfies all conditions of the subspace test, it follows that $L$ is 
 
 Note that there is nothing special about the vector $\vect{d}$ used
 in this example; the same proof works for any nonzero
-vector $\vect{d}\in\mathbb{R}^3$, so any line through the origin is
-a subspace of $\mathbb{R}^3$.
+vector $\vect{d}\in\R^3$, so any line through the origin is
+a subspace of $\R^3$.
 
 We are now prepared to examine the precise definition of a subspace as follows.
 
 \begin{definition}{Subspace}{subspace}
-Let $V$ be a nonempty collection of vectors in $\mathbb{R}^{n}.$ Then
+Let $V$ be a nonempty collection of vectors in $\R^{n}.$ Then
 $V$ is called a subspace\index{subspace} if whenever $a$ and $b$  are scalars and $\vect{u}$ and $\vect{v}$
 are vectors in $V,$ the linear combination $a \vect{u}+ b \vect{v}$ is also in $V$.
 \end{definition}
 
 More generally this means that a subspace contains the span of any
 finite collection vectors in that subspace. It turns out that in
-$\mathbb{R}^{n}$, a subspace is exactly the span of finitely many of
+$\R^{n}$, a subspace is exactly the span of finitely many of
 its vectors.
 
 \begin{theorem}{Subspaces are spans}{subspacesarespans}
-Let $V$ be a nonempty collection of vectors in $\mathbb{R}^{n}.$ Then $V$ is a subspace of $\mathbb{R}^{n}$ if and only if there
+Let $V$ be a nonempty collection of vectors in $\R^{n}.$ Then $V$ is a subspace of $\R^{n}$ if and only if there
 exist vectors $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\}$ in $V$ such that 
 \[
 V= \func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\}. 
 \]
 \index{subspace!span} 
-Furthermore, let $W$ be another subspace of $\mathbb{R}^n$ and suppose $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} \in W$. Then it follows that $V$ is a subset of $W$. 
+Furthermore, let $W$ be another subspace of $\R^n$ and suppose $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} \in W$. Then it follows that $V$ is a subset of $W$. 
 \end{theorem}
 
-Note that since $W$ is arbitrary, the statement that $V \subseteq W$ means that any other subspace of $\mathbb{R}^n$ that contains these vectors will also contain $V$. 
+Note that since $W$ is arbitrary, the statement that $V \subseteq W$ means that any other subspace of $\R^n$ that contains these vectors will also contain $V$. 
 
 \begin{proof}
 We first show that if $V$ is a subspace, then it can be written as $V= \func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\}$. Pick a vector $\vect{u}_{1}$ in $V$. If $V=
@@ -114,7 +114,7 @@ $\vect{u}_i\in V$, then $\vect{u}_i \in W$.
 
 Suppose $\vect{u}\in V$. 
 Then $\vect{u}=a_1\vect{u}_1 + a_2\vect{u}_2 + \cdots + a_k\vect{u}_k$
-for some $a_i\in\mathbb{R}$, $1\leq i\leq k$.
+for some $a_i\in\R$, $1\leq i\leq k$.
 Since $W$ contain each $\vect{u}_i$ and $W$ is a vector space, it follows that $ a_1\vect{u}_1 + a_2\vect{u}_2 + \cdots + a_k\vect{u}_k \in W$. 
 \end{proof}
 
@@ -123,17 +123,17 @@ of the previous vectors (by definition), they must be linearly independent and t
 obtain the following corollary.
 
 \begin{corollary}{Subspaces are spans of independent vectors}{subspacesarespansindependentvectors}
-If $V$ is a subspace of $\mathbb{R}^{n},$ then there exist linearly independent 
+If $V$ is a subspace of $\R^{n},$ then there exist linearly independent 
 vectors $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\}$ in $V$ such
 that $V=\func{span}\left\{ \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} $.
 \end{corollary}
 
-In summary, subspaces of $\mathbb{R}^{n}$ consist of spans of finite,
-linearly independent collections of vectors of $\mathbb{R}^{n}$.  Such
+In summary, subspaces of $\R^{n}$ consist of spans of finite,
+linearly independent collections of vectors of $\R^{n}$.  Such
 a collection of vectors is called a basis.\index{basis}
 
 \begin{definition}{Basis of a subspace}{subspacebasis}
-Let $V$ be a subspace of $\mathbb{R}^{n}$. Then $\left\{
+Let $V$ be a subspace of $\R^{n}$. Then $\left\{
 \vect{u}_{1},\cdots ,\vect{u}_{k}\right\} $ is a \textbf{basis} for $V$ if the following two conditions hold.\index{basis}\index{vectors!basis}
 
 \begin{enumerate}
@@ -147,10 +147,10 @@ Note the plural of basis is \textbf{bases}.\index{subspace!basis}
 
 The following is a simple but very useful example of a basis, called the standard basis.
 
-\begin{definition}{Standard basis of $\mathbb{R}^n$}{standardbasis}
-Let $\vect{e}_i$ be the vector in $\mathbb{R}^n$ which has a $1$ in the $i^{th}$ entry and zeros elsewhere, that is the $i^{th}$ column of the identity matrix. Then the collection $\left\{\vect{e}_1, \vect{e}_2, \cdots, \vect{e}_n
+\begin{definition}{Standard basis of $\R^n$}{standardbasis}
+Let $\vect{e}_i$ be the vector in $\R^n$ which has a $1$ in the $i^{th}$ entry and zeros elsewhere, that is the $i^{th}$ column of the identity matrix. Then the collection $\left\{\vect{e}_1, \vect{e}_2, \cdots, \vect{e}_n
 \right\}$ is a basis for
-$\mathbb{R}^n$ and is called the standard basis\index{standard basis} of $\mathbb{R}^n$.
+$\R^n$ and is called the standard basis\index{standard basis} of $\R^n$.
 \end{definition}
 
 The main theorem about bases is not only they exist, but that they
@@ -159,7 +159,7 @@ fundamental result, called the Exchange Theorem.
 
 \begin{theorem}{Exchange theorem}{exchangetheorem}
 Suppose $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{r}\right\} $ is a
-linearly independent set of vectors in $\mathbb{R}^n$, and each
+linearly independent set of vectors in $\R^n$, and each
 $\vect{u}_{k}$ is contained in $\func{span}\left\{ \vect{v}_{1},\cdots
 ,\vect{v}_{s}\right\}$ Then $s\geq r.$ \\
 In words, spanning\index{exchange theorem} sets have at least as many vectors as linearly
@@ -193,8 +193,8 @@ is linearly independent, because not all the $d_{j}$ are zero. Thus this contrad
 
 We are now ready to show that any two bases are of the same size. 
 
-\begin{theorem}{Bases of $\mathbb{R}^{n}$ are of the same size}{basessamesize}
-Let $V$ be a subspace of $\mathbb{R}^{n}$ with two bases $B_1$ and $B_2$. Suppose $B_1$ contains $s$ vectors and $B_2$ contains $r$ vectors. Then $s=r.$
+\begin{theorem}{Bases of $\R^{n}$ are of the same size}{basessamesize}
+Let $V$ be a subspace of $\R^{n}$ with two bases $B_1$ and $B_2$. Suppose $B_1$ contains $s$ vectors and $B_2$ contains $r$ vectors. Then $s=r.$
 \end{theorem}
 
 \begin{proof}
@@ -210,18 +210,18 @@ _{r}\right\} $ is a spanning set for $V$ while $B_1 = \left\{ \vect{u}_{1},\cdot
 The following definition can now be stated.
 
 \begin{definition}{Dimension of a subspace}{dimension}
-Let $V$ be a subspace of $\mathbb{R}^{n}$. Then the \textbf{dimension }of $V$, written $\func{dim}(V)$
+Let $V$ be a subspace of $\R^{n}$. Then the \textbf{dimension }of $V$, written $\func{dim}(V)$
 is defined to be the number of vectors in a basis.\index{dimension}\index{subspace!dimension}
 \end{definition}
 
 The next result follows.
 
-\begin{corollary}{Dimension of $\mathbb{R}^n$}{dimensionRn}
-The dimension of $\mathbb{R}^{n}$ is $n.$ 
+\begin{corollary}{Dimension of $\R^n$}{dimensionRn}
+The dimension of $\R^{n}$ is $n.$ 
 \end{corollary}
 
 \begin{proof}
-You only need to exhibit a basis for $\mathbb{R}^{n}$ which
+You only need to exhibit a basis for $\R^{n}$ which
 has $n$ vectors. Such a basis is the standard basis $\left\{ \vect{e}_{1},\cdots , \vect{e}_{n}\right\} $.
 \end{proof}
 
@@ -230,9 +230,9 @@ Consider the following example.
 \begin{example}{Basis of subspace}{basissubspace}
 Let 
 \[ V=\left\{
-\leftB\begin{array}{c} a\\ b\\ c\\ d\end{array}\rightB\in\mathbb{R}^4
+\leftB\begin{array}{c} a\\ b\\ c\\ d\end{array}\rightB\in\R^4
 ~:~ a-b=d-c \right\}.\]
-Show that $V$ is a subspace of $\mathbb{R}^4$,
+Show that $V$ is a subspace of $\R^4$,
 find a basis of $V$, and find $\dim(V)$.
 \end{example}
 
@@ -241,16 +241,16 @@ The condition $a-b=d-c$ is equivalent to the condition
 $a=b-c+d$, so we may write
 
 \[ V =\left\{
-\leftB\begin{array}{c} b-c+d\\ b\\ c\\ d\end{array}\rightB ~:~b,c,d  \in\mathbb{R}
+\leftB\begin{array}{c} b-c+d\\ b\\ c\\ d\end{array}\rightB ~:~b,c,d  \in\R
 \right\}
 = \left\{
 b\leftB\begin{array}{c} 1\\ 1\\ 0\\ 0\end{array}\rightB
 +c\leftB\begin{array}{c} -1\\ 0\\ 1\\ 0\end{array}\rightB
 +d\leftB\begin{array}{c} 1\\ 0\\ 0\\ 1\end{array}\rightB
-~:~ b,c,d\in\mathbb{R} \right\}
+~:~ b,c,d\in\R \right\}
 \]
 
-This shows that $V$ is a subspace of $\mathbb{R}^4$,
+This shows that $V$ is a subspace of $\R^4$,
 since $V=\func{span}\{ \vect{u}_1, \vect{u}_2, \vect{u}_3 \}$ where
 
 \begin{equation*}
@@ -300,14 +300,14 @@ independent and spans $V$, so is a basis of $V$. Hence
 $V$ has dimension three.
 \end{solution}
 
-We continue by stating further properties of a set of vectors in  $\mathbb{R}^{n}$.
+We continue by stating further properties of a set of vectors in  $\R^{n}$.
 
-\begin{corollary}{Linearly independent and spanning sets in  $\mathbb{R}^{n}$}{independentspanningRn}
-The following properties hold in $\mathbb{R}^{n}$:
+\begin{corollary}{Linearly independent and spanning sets in  $\R^{n}$}{independentspanningRn}
+The following properties hold in $\R^{n}$:
 \begin{itemize}
-\item Suppose $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n}\right\} $ is linearly independent. Then $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n}\right\} $ is a basis for $\mathbb{R}^{n}$. 
-\item Suppose $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{m}\right\} $ spans $\mathbb{R}^{n}.$ Then $m\geq n.$
-\item If $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n}\right\} $ spans $\mathbb{R}^{n},$ then $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n}\right\} $ is
+\item Suppose $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n}\right\} $ is linearly independent. Then $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n}\right\} $ is a basis for $\R^{n}$. 
+\item Suppose $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{m}\right\} $ spans $\R^{n}.$ Then $m\geq n.$
+\item If $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n}\right\} $ spans $\R^{n},$ then $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n}\right\} $ is
 linearly independent.
 \end{itemize}
 \end{corollary}
@@ -315,8 +315,8 @@ linearly independent.
 \begin{proof}
 Assume first that $\left\{ \vect{u}_{1},\cdots ,\vect{u}_{n}\right\} $
 is linearly independent, and we need to show that this set spans
-$\mathbb{R}^{n}$. To do so, let $\vect{v}$ be a vector of
-$\mathbb{R}^{n}$, and we need to write $\vect{v}$ as a linear combination of $\vect{u}_i$'s. 
+$\R^{n}$. To do so, let $\vect{v}$ be a vector of
+$\R^{n}$, and we need to write $\vect{v}$ as a linear combination of $\vect{u}_i$'s. 
 Consider the matrix $A$ having the vectors $\vect{u}_i$  as
 columns:
 \begin{equation*}
@@ -343,7 +343,7 @@ matrix
 \rightB
 \end{equation*}
 it follows $k\leq m<n$ and these $k$ pivot columns would be a basis
-for $\mathbb{R}^{n}$ having fewer than $n$ vectors, contrary to
+for $\R^{n}$ having fewer than $n$ vectors, contrary to
 Corollary \ref{cor:dimensionRn}.
 
 Finally consider the third claim. If $\left\{ \vect{u}_{1},\cdots
@@ -358,14 +358,14 @@ are the pivot columns of the matrix
 \rightB
 \end{equation*}
 Then $\left\{ \vect{u}_{i_{1}},\cdots ,\vect{u}_{i_{k}}\right\} $ spans
-$\mathbb{R}^{n}$ and is linearly independent, so it is a basis having
+$\R^{n}$ and is linearly independent, so it is a basis having
 less than $n$ vectors again contrary to Corollary \ref{cor:dimensionRn}.
 \end{proof}
 
 The next theorem follows from the above claim.
 
 \begin{theorem}{Existence of basis}{existencebasis}
-Let $V$ be a subspace of $\mathbb{R}^n$. Then there exists a basis of $V$ with 
+Let $V$ be a subspace of $\R^n$. Then there exists a basis of $V$ with 
  $\dim(V)\leq n$.
 \end{theorem}
 
@@ -376,8 +376,8 @@ We illustrate this concept in the next example.
 \begin{example}{Extending an independent set}{extendindependent}
 Consider the set $U$ given by 
 \[ U=\left\{ \left.\leftB\begin{array}{c} a\\ b\\ c\\ d\end{array}\rightB
-\in\mathbb{R}^4 ~\right|~ a-b=d-c \right\}\]
-Then $U$ is a subspace of $\mathbb{R}^4$ and $\dim(U)=3$.
+\in\R^4 ~\right|~ a-b=d-c \right\}\]
+Then $U$ is a subspace of $\R^4$ and $\dim(U)=3$.
 
 Then
 \[S=\left\{ 
@@ -565,13 +565,13 @@ is true for the matrix having the given vectors as columns.
 Consider the following theorems regarding a subspace contained in another subspace. 
 
 \begin{theorem}{Subset of a subspace}{subsetdimension}
-Let $V$ and $W$ be subspaces of $\mathbb{R}^n$, and suppose that $W\subseteq V$.
+Let $V$ and $W$ be subspaces of $\R^n$, and suppose that $W\subseteq V$.
 Then  $\dim(W) \leq \dim(V)$ with equality when $W=V$.
 \end{theorem}
 
 \begin{theorem}{Extending a basis}{extendingbasis}
-Let $W$ be any non-zero subspace $\mathbb{R}^{n}$ and let $W\subseteq V$
-where $V$ is also a subspace of $\mathbb{R}^{n}$. Then every basis of $W$
+Let $W$ be any non-zero subspace $\R^{n}$ and let $W\subseteq V$
+where $V$ is also a subspace of $\R^{n}$. Then every basis of $W$
 can be extended to a basis for $V$.\index{extending a basis}
 \end{theorem}
 
@@ -581,7 +581,7 @@ Not that the process will stop because the dimension of $V$ is no more than $n$.
 Consider the following example.
 
 \begin{example}{Extending a basis}{extendingbasis}
-Let $V=\mathbb{R}^{4}$ and let 
+Let $V=\R^{4}$ and let 
 \begin{equation*}
 W=\func{span}\left\{ \leftB
 \begin{array}{c}
@@ -599,7 +599,7 @@ W=\func{span}\left\{ \leftB
 \end{array}
 \rightB \right\}
 \end{equation*}
-Extend this basis of $W$ to a basis of $\mathbb{R}^{n}$.
+Extend this basis of $W$ to a basis of $\R^{n}$.
 \end{example}
 
 \begin{solution}
@@ -616,7 +616,7 @@ An easy way to do this is to take the {\rref} of the matrix
 \end{equation}
 Note how the given vectors were placed as the first two columns and then the matrix
 was extended in such a way that it is clear that the span of the columns of
-this matrix yield all of $\mathbb{R}^{4}$. Now determine the pivot columns.
+this matrix yield all of $\R^{4}$. Now determine the pivot columns.
 The {\rref} is 
 \begin{equation}
 \leftB
@@ -661,10 +661,9 @@ Therefore the pivot columns are
 \rightB
 \end{equation*}
 and now this is an extension of the given basis for $W$ to a basis for $
-\mathbb{R}^{4}$.
+\R^{4}$.
 
-Why does this work? The columns of \ref{basiseq1} obviously span $\mathbb{R
-}^{4}$. In fact the span of the first four is the same as the span of all
+Why does this work? The columns of \ref{basiseq1} obviously span $\R^{4}$. In fact the span of the first four is the same as the span of all
 six. 
 \end{solution}
 
@@ -678,7 +677,7 @@ Let $W$ be the span of $\leftB
 1 \\ 
 0
 \end{array}
-\rightB $ in $\mathbb{R}^{4}$. Let $V$ consist of the span of the vectors 
+\rightB $ in $\R^{4}$. Let $V$ consist of the span of the vectors 
 \begin{equation*}
 \leftB
 \begin{array}{c}

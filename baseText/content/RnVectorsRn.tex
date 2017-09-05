@@ -1,37 +1,37 @@
-\section{Vectors in $\mathbb{R}^n$}
+\section{Vectors in $\R^n$}
 
 \begin{outcome}
 
 \begin{enumerate}
-\item[A.] Find the position vector of a point in $\mathbb{R}^n$.
+\item[A.] Find the position vector of a point in $\R^n$.
 \end{enumerate}
 \end{outcome}
 
-The notation $\mathbb{R}^{n}$, where n is a positive integer, refers to the collection of ordered lists of 
+The notation $\R^{n}$, where n is a positive integer, refers to the collection of ordered lists of 
 $n$ real numbers, that is 
 \[
-\mathbb{R}^{n} = \left\{ \left( x_{1},\cdots, x_{n}\right)
-:x_{j}\in \mathbb{R}\text{ for }j=1,\cdots ,n\right\}
+\R^{n} = \left\{ \left( x_{1},\cdots, x_{n}\right)
+:x_{j}\in \R\text{ for }j=1,\cdots ,n\right\}
 \]
-where each $\left( x_{1},\cdots, x_{n}\right)$ is a point of $\mathbb{R}^n$.
+where each $\left( x_{1},\cdots, x_{n}\right)$ is a point of $\R^n$.
 
-In this chapter, we take a closer look at vectors in $\mathbb{R}^n$. First, we will consider what $\mathbb{R}^n$ looks like 
+In this chapter, we take a closer look at vectors in $\R^n$. First, we will consider what $\R^n$ looks like 
 in more detail. Recall that the point given by $0=\left( 0, \cdots, 0 \right)$ is called the \textbf{origin}.
 
-Now, consider the case of $\mathbb{R}^n$ for $n=1.$ Then from the definition we can identify 
-$\mathbb{R}$ with points in $\mathbb{R}^{1}$ as follows:
+Now, consider the case of $\R^n$ for $n=1.$ Then from the definition we can identify 
+$\R$ with points in $\R^{1}$ as follows:
 \begin{equation*}
-\mathbb{R} = \mathbb{R}^{1}=
- \left\{ \left( x_{1}\right) :x_{1}\in \mathbb{R} \right\}
+\R = \R^{1}=
+ \left\{ \left( x_{1}\right) :x_{1}\in \R \right\}
 \end{equation*}
-Hence, $\mathbb{R}$ is defined as the set of all real numbers and geometrically,
+Hence, $\R$ is defined as the set of all real numbers and geometrically,
 we can describe this as all the points on a line.
 
 Now suppose $n=2$. Then, from the definition,
 \begin{equation*}
-\mathbb{R}^{2}=
+\R^{2}=
 \left\{ \left(x_{1}, x_{2}\right)
-:x_{j}\in \mathbb{R}\text{ for }j=1,2 \right\}
+:x_{j}\in \R\text{ for }j=1,2 \right\}
 \end{equation*}
 Consider the
 familiar coordinate plane, with an $x$ axis and a $y$ axis. Any point
@@ -62,18 +62,18 @@ axis. Consider as an example the following diagram.
 \end{tikzpicture}
 \end{center}
 
-Hence, every element in $\mathbb{R}^2$ is identified by two
-components, $x$ and $y$, in the usual manner. The coordinates $x, y$ (or $x_1$,$x_2$) uniquely determine a point in the plan. Note that while the definition uses $x_1$ and $x_2$ to label the coordinates and you may be used to $x$ and $y$, these notations are equivalent. Thus $\mathbb{R}^2$ can be represented by the two-dimensional coordinate plane.
+Hence, every element in $\R^2$ is identified by two
+components, $x$ and $y$, in the usual manner. The coordinates $x, y$ (or $x_1$,$x_2$) uniquely determine a point in the plan. Note that while the definition uses $x_1$ and $x_2$ to label the coordinates and you may be used to $x$ and $y$, these notations are equivalent. Thus $\R^2$ can be represented by the two-dimensional coordinate plane.
 
 Now suppose $n=3$. You may have previously encountered the $3$-dimensional
 coordinate system, given by
 \begin{equation*}
-\mathbb{R}^{3}=
+\R^{3}=
 \left\{ \left( x_{1}, x_{2}, x_{3}\right)
-:x_{j}\in \mathbb{R}\text{ for }j=1,2,3 \right\}
+:x_{j}\in \R\text{ for }j=1,2,3 \right\}
 \end{equation*}
 
-Points in $\mathbb{R}^3$ will be determined by three
+Points in $\R^3$ will be determined by three
 coordinates, often written $\left(x,y,z\right)$ which correspond to the $x$, $y$,
 and $z$ axes.  We can think as above that the first two coordinates
 determine a point in a plane. The third component determines the
@@ -84,15 +84,15 @@ see that the ordered triples correspond to points in space just as the
 ordered pairs correspond to points in a plane and single real numbers
 correspond to points on a line.
 
-The idea behind the more general $\mathbb{R}^n$ is that we can extend
-these ideas beyond $n = 3.$ This discussion regarding points in $\mathbb{R}^n$ leads into a study of vectors in $\mathbb{R}^n$. While we consider $\mathbb{R}^n$ for all $n$,
+The idea behind the more general $\R^n$ is that we can extend
+these ideas beyond $n = 3.$ This discussion regarding points in $\R^n$ leads into a study of vectors in $\R^n$. While we consider $\R^n$ for all $n$,
 we will largely  focus on $n=2,3$ in this section. 
 
 Consider the following definition.
 
 \begin{definition}{The position vector}{positionvector}
 Let $P=\left( p_{1},\cdots ,p_{n}\right) $ be the coordinates of a
-point in $\mathbb{R}^{n}.$ Then the vector $\longvect{0P}$ with its tail at
+point in $\R^{n}.$ Then the vector $\longvect{0P}$ with its tail at
 $0=\left( 0,\cdots ,0\right) $ and its tip at 
 $P$ is called the \textbf{position vector}\index{position vector}\index{vector!points and vectors} of the point $P$. 
 We write 
@@ -107,17 +107,17 @@ p_{n}
 \end{definition}
 
 $\longvect{0P}$ can be interpreted as a set of directions to get from the origin to the point $P$.
-For this reason we may write both $P=\left( p_{1},\cdots ,p_{n}\right)  \in \mathbb{R}^{n}$
+For this reason we may write both $P=\left( p_{1},\cdots ,p_{n}\right)  \in \R^{n}$
 and  $$\longvect{0P}= \leftB 
 \begin{array}{c}
 p_{1} \\
 \vdots \\
 p_{n}
-\end{array} \rightB = \leftB p_{1} \cdots p_{n} \rightB^T \in \mathbb{R}^{n}$$ 
+\end{array} \rightB = \leftB p_{1} \cdots p_{n} \rightB^T \in \R^{n}$$ 
 Where $\leftB p_{1} \cdots p_{n} \rightB^T$ is used to lighten the text, the superscript $T$ will be explained in more details in a further chapter.
 
 This definition is illustrated in the following picture for the
-special case of $\mathbb{R}^{3}$.
+special case of $\R^{3}$.
 
 \begin{center}
 \begin{tikzpicture}
@@ -132,10 +132,10 @@ p_1 & p_2 & p_3
 \end{tikzpicture}
 \end{center}
 
-Thus every point $P$ in $\mathbb{R}^{n}$ determines its position
+Thus every point $P$ in $\R^{n}$ determines its position
 vector $\longvect{0P}$. Conversely, every such position vector $\longvect{0P}$
 which has its tail at $0$ and point at $P$ determines the point $P$ of
-$\mathbb{R}^{n}$.
+$\R^{n}$.
 
 Now suppose we are given two points, $P,Q$ whose
 coordinates are $\left( p_{1},\cdots ,p_{n}\right) $ and $\left(
@@ -151,7 +151,7 @@ q_{n}-p_{n}
 \end{equation*}
 One can verify that $\longvect{0Q}=\longvect{0P}+\longvect{PQ}$.
 
-Now, imagine taking a vector in $\mathbb{R}^n$ and moving it around, always
+Now, imagine taking a vector in $\R^n$ and moving it around, always
 keeping it pointing in the same direction as shown in the following picture.
 
 \begin{center}
@@ -169,11 +169,11 @@ p_1 & p_2 & p_3 \end{array}\rightB ^T$};
 
 After moving it around, it is regarded as the same vector. On the above picture, both vectors $\longvect{0P}$ and $\longvect{AB}$ have the same length (or magnitude) and direction. Therefore, they are equal, moving a vector in space while preserving its orientation does not alter it.
 
-Consider now the general definition for a vector in $\mathbb{R}^n$. 
+Consider now the general definition for a vector in $\R^n$. 
 
-\begin{definition}{Vectors in $\mathbb{R}^n$}{vectorsRn}
-Let $\mathbb{R}^{n} = \left\{ \left( x_{1}, \cdots, x_{n}\right)
-:x_{j}\in \mathbb{R}\text{ for }j=1,\cdots ,n\right\} .$
+\begin{definition}{Vectors in $\R^n$}{vectorsRn}
+Let $\R^{n} = \left\{ \left( x_{1}, \cdots, x_{n}\right)
+:x_{j}\in \R\text{ for }j=1,\cdots ,n\right\} .$
 Then,
 \begin{equation*}
 \vect{x}
@@ -224,12 +224,12 @@ $\leftB
 \begin{array}{rrr}
 1  & 2 & 4
 \end{array}
-\rightB^T \in \mathbb{R}^{3}$ and $\leftB 
+\rightB^T \in \R^{3}$ and $\leftB 
 \begin{array}{rrr}
 2 & 1 & 4
 \end{array}
 \rightB^T \in
-\mathbb{R}^{3}$ but $\leftB 
+\R^{3}$ but $\leftB 
 \begin{array}{rrr}
 1 & 2 & 4
 \end{array}

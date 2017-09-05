@@ -44,7 +44,7 @@ smallest element $z$ having the property that $z\leq x$ for all $x\in S.$
 
 In particular, the set of natural numbers defined as
 \begin{equation*}
-\mathbb{N} = \left\{ 1,2,\cdots \right\}
+\N = \left\{ 1,2,\cdots \right\}
 \end{equation*}
 is well ordered\index{well ordered}\index{mathematical induction}.
 
@@ -57,14 +57,14 @@ Any set of integers larger than a given number is well ordered.
 This proposition claims that if a set has a lower bound which is a real number, 
 then this set is well ordered.
 
-Further, this proposition implies the principle of mathematical induction\index{mathematical induction}. The symbol $\mathbb{Z}$ denotes the set of all
+Further, this proposition implies the principle of mathematical induction\index{mathematical induction}. The symbol $\Z$ denotes the set of all
 integers. Note that if $a$ is an integer, then there are no integers between
 $a$ and $a+1.$
 
 \begin{theorem}{Mathematical induction}{mathinduction}
- A set $S\subseteq \mathbb{Z},$ having
+ A set $S\subseteq \Z,$ having
 the property that $a\in S$ and $n+1\in S$ whenever $n\in S$, contains all
-integers $x\in \mathbb{Z}$ such that $x\geq a.$
+integers $x\in \Z$ such that $x\geq a.$
 \end{theorem}
 
 \begin{proof} 
@@ -158,7 +158,7 @@ the formula by mathematical induction. In other words, this formula is true for 
 Consider another example.
 
 \begin{example}{Proving an inequality by induction}{inequalityproofbyinduction}
-Show that for all $n\in \mathbb{N}$, $\displaystyle \frac{1}{2}\cdot 
+Show that for all $n\in \N$, $\displaystyle \frac{1}{2}\cdot 
 \displaystyle \frac{3}{4}\cdots \displaystyle \frac{2n-1}{2n}<\displaystyle
 \frac{1}{\sqrt{2n+1}}.$
 \end{example}
@@ -198,6 +198,6 @@ expanding both sides. This proves the inequality.
 Let's review the process just used. If $S$ is the set of integers at least as
 large as $1$ for which the formula holds, the first step was to show $1\in S$
 and then that whenever $n\in S,$ it follows $n+1\in S.$ Therefore, by the
-principle of mathematical induction, $S$ contains $[1,\infty )\cap \mathbb{Z}
+principle of mathematical induction, $S$ contains $[1,\infty )\cap \Z
 ,$ all positive integers. In doing an inductive proof of this sort, the set $
 S$ is normally not mentioned. One just verifies the steps above. 

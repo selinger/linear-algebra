@@ -21,7 +21,7 @@ A vector space\index{vector space} $V$ is a set of vectors with two operations d
 In the following definition we define two operations; vector addition, denoted by $+$ and scalar
 multiplication denoted by placing the scalar next to the vector. A vector space need not have usual operations, and for this reason the operations will always be given in the definition of the vector space. The below axioms\index{vector space axioms} for addition (written +) and scalar multiplication must hold for however addition and scalar multiplication are defined for the vector space.  
 
-It is important to note that we have seen much of this content before, in terms of $\mathbb{R}^n$. We will prove in this section that $\mathbb{R}^n$ is an example of a vector space and therefore all discussions in this chapter will pertain to $\mathbb{R}^n$. While it may be useful to consider all concepts of this chapter in terms of $\mathbb{R}^n$, it is also important to understand that these concepts apply to \textit{all} vector spaces. 
+It is important to note that we have seen much of this content before, in terms of $\R^n$. We will prove in this section that $\R^n$ is an example of a vector space and therefore all discussions in this chapter will pertain to $\R^n$. While it may be useful to consider all concepts of this chapter in terms of $\R^n$, it is also important to understand that these concepts apply to \textit{all} vector spaces. 
 
 In the following definition, we will choose scalars $a,b$ to be real numbers and are thus dealing with \textit{real} vector spaces. However, we could also choose scalars which are complex numbers. In this case, we would call the vector space $V$ complex. 
 
@@ -53,7 +53,7 @@ Let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they s
 \end{definition}
 
 \begin{definition}{Axioms of scalar multiplication}{vectorspaceaxiomsscalarmult}
-Let $a, b \in \mathbb{R}$ and let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they satisfy the following axioms of scalar multiplication:
+Let $a, b \in \R$ and let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they satisfy the following axioms of scalar multiplication:
 
 \begin{itemize}
 \item Closed under Scalar Multiplication
@@ -80,17 +80,17 @@ a \left( b \vect{v}\right) = (a b) \vect{v}
 \end{itemize}
 \end{definition}
 
-Consider the following example, in which we prove that $\mathbb{R}^n$ is in fact a vector space.
+Consider the following example, in which we prove that $\R^n$ is in fact a vector space.
 
-\begin{example}{$\mathbb{R}^n$}{Rnvectorspace}
-$\mathbb{R}^n$, under the usual operations of vector addition and scalar multiplication, is a vector space.
+\begin{example}{$\R^n$}{Rnvectorspace}
+$\R^n$, under the usual operations of vector addition and scalar multiplication, is a vector space.
 \end{example}
 
 \begin{solution}
-To show that $\mathbb{R}^n$ is a vector space, we need to show that the above axioms hold. Let $\vect{x}, \vect{y}, \vect{z}$ be vectors in $\mathbb{R}^n$. We first prove the axioms for vector addition. 
+To show that $\R^n$ is a vector space, we need to show that the above axioms hold. Let $\vect{x}, \vect{y}, \vect{z}$ be vectors in $\R^n$. We first prove the axioms for vector addition. 
 \begin{itemize}
 \item 
-To show that $\mathbb{R}^n$ is closed under addition, we must show that for two vectors in $\mathbb{R}^n$ their sum is also in $\mathbb{R}^n$. The sum $\vect{x} + \vect{y}$ is given by:
+To show that $\R^n$ is closed under addition, we must show that for two vectors in $\R^n$ their sum is also in $\R^n$. The sum $\vect{x} + \vect{y}$ is given by:
 \[
 \leftB \begin{array}{c}
 x_1 \\
@@ -111,7 +111,7 @@ x_2 + y_2 \\
 x_n + y_n
 \end{array}\rightB
 \]
-The sum is a vector with $n$ entries, showing that it is in $\mathbb{R}^n$. Hence $\mathbb{R}^n$ is closed under vector addition.
+The sum is a vector with $n$ entries, showing that it is in $\R^n$. Hence $\R^n$ is closed under vector addition.
 
 \item
 To show that addition is commutative, consider the following:
@@ -153,10 +153,10 @@ x_n
 &=& \vect{y} + \vect{x}
 \end{eqnarray*}
 
-Hence addition of vectors in $\mathbb{R}^n$ is commutative. 
+Hence addition of vectors in $\R^n$ is commutative. 
 
 \item 
-We will show that addition of vectors in $\mathbb{R}^n$ is associative in a similar way. 
+We will show that addition of vectors in $\R^n$ is associative in a similar way. 
 \begin{eqnarray*} 
 (\vect{x} + \vect{y}) + \vect{z} &=& 
 \left(  \leftB \begin{array}{c}
@@ -318,11 +318,11 @@ x_n-x_n
 Hence $-\vect{x}$ is an additive inverse. 
 \end{itemize}
 
-We now need to prove the axioms related to scalar multiplication. Let $a,b$ be real numbers and let $\vect{x}, \vect{y}$ be vectors in $\mathbb{R}^n$. 
+We now need to prove the axioms related to scalar multiplication. Let $a,b$ be real numbers and let $\vect{x}, \vect{y}$ be vectors in $\R^n$. 
 
 \begin{itemize}
 \item
-We first show that $\mathbb{R}^n$ is closed under scalar multiplication. To do so, we show that $a\vect{x}$ is also a vector with $n$ entries. 
+We first show that $\R^n$ is closed under scalar multiplication. To do so, we show that $a\vect{x}$ is also a vector with $n$ entries. 
 \[
 a\vect{x} = a\leftB 
 \begin{array}{c}
@@ -340,7 +340,7 @@ ax_2 \\
 ax_n 
 \end{array} \rightB
 \]
-The vector $a\vect{x}$ is again a vector with $n$ entries, showing that $\mathbb{R}^n$ is closed under scalar multiplication. 
+The vector $a\vect{x}$ is again a vector with $n$ entries, showing that $\R^n$ is closed under scalar multiplication. 
 
 
 \item
@@ -519,30 +519,30 @@ x_n
 \end{eqnarray*}
 \end{itemize}
 
-By the above proofs, it is clear that $\mathbb{R}^n$ satisfies the vector space axioms. Hence, $\mathbb{R}^n$ is a vector space under the usual operations of vector addition and scalar multiplication. 
+By the above proofs, it is clear that $\R^n$ satisfies the vector space axioms. Hence, $\R^n$ is a vector space under the usual operations of vector addition and scalar multiplication. 
 \end{solution}
 
 We now consider some examples of vector spaces. 
 
 \begin{example}{Vector space of polynomials}{vectorspacepoly}
-Let $\mathbb{P}_2$ be the set of all polynomials of at most degree $2$ as well as the zero polynomial. Define addition to be the standard addition of polynomials, and scalar multiplication the usual multiplication of a polynomial by a number. Then $\mathbb{P}_2$ is a vector space. 
+Let $\Poly_2$ be the set of all polynomials of at most degree $2$ as well as the zero polynomial. Define addition to be the standard addition of polynomials, and scalar multiplication the usual multiplication of a polynomial by a number. Then $\Poly_2$ is a vector space. 
 \end{example}
 
 \begin{solution}
-We can write $\mathbb{P}_2$ explicitly as 
+We can write $\Poly_2$ explicitly as 
 \[
-\mathbb{P}_2 = \left\{ a_2x^2 + a_1x + a_0 | a_i \in \mathbb{R} \; \mbox{for all} \; i \right\}
+\Poly_2 = \left\{ a_2x^2 + a_1x + a_0 | a_i \in \R \; \mbox{for all} \; i \right\}
 \]
-To show that $\mathbb{P}_2$ is a vector space, we verify the axioms. Let $p(x), q(x), r(x)$ be polynomials in $\mathbb{P}_2$ and let $a,b,c$ be real numbers. Write $p(x)=p_2x^2 + p_1x + p_0  $, $q(x)=q_2x^2 + q_1x + q_0  $, and $r(x)=r_2x^2 + r_1x + r_0$. 
+To show that $\Poly_2$ is a vector space, we verify the axioms. Let $p(x), q(x), r(x)$ be polynomials in $\Poly_2$ and let $a,b,c$ be real numbers. Write $p(x)=p_2x^2 + p_1x + p_0  $, $q(x)=q_2x^2 + q_1x + q_0  $, and $r(x)=r_2x^2 + r_1x + r_0$. 
 
 \begin{itemize}
 \item
-We first prove that addition of polynomials in $\mathbb{P}_2$ is closed. For two polynomials in $\mathbb{P}_2$ we need to show that their sum is also a polynomial in $\mathbb{P}_2$. From the definition of $\mathbb{P}_2$, a polynomial is contained in $\mathbb{P}_2$ if it is of degree at most $2$ or the zero polynomial.
+We first prove that addition of polynomials in $\Poly_2$ is closed. For two polynomials in $\Poly_2$ we need to show that their sum is also a polynomial in $\Poly_2$. From the definition of $\Poly_2$, a polynomial is contained in $\Poly_2$ if it is of degree at most $2$ or the zero polynomial.
 \begin{eqnarray*}
 p(x) + q(x) &=& p_2x^2 + p_1x + p_0 + q_2x^2+ q_1x + q_0 \\
 &=& (p_2+q_2)x^2 + (p_1+q_1)x + (p_0+q_0) 
 \end{eqnarray*}
-The sum is a polynomial of degree $2$ and therefore is in $\mathbb{P}_2$. It follows that $\mathbb{P}_2$ is closed under addition. 
+The sum is a polynomial of degree $2$ and therefore is in $\Poly_2$. It follows that $\Poly_2$ is closed under addition. 
 
 \item
 We need to show that addition is commutative, that is $p(x)+q(x) = q(x) + p(x)$.   
@@ -590,11 +590,11 @@ Hence an additive inverse $-p(x)$ exists such that $p(x) + (-p(x)) = 0(x)$.
 We now need to verify the axioms related to scalar multiplication. 
 \begin{itemize}
 \item
-First we prove that $\mathbb{P}_2$ is closed under scalar multiplication. That is, we show that $ap(x)$ is also a polynomial of degree at most $2$. 
+First we prove that $\Poly_2$ is closed under scalar multiplication. That is, we show that $ap(x)$ is also a polynomial of degree at most $2$. 
 \[
 ap(x) = a\left(  p_2x^2 + p_1x + p_0 \right) = ap_2x^2 +ap_1x+ ap_0
 \]
-Therefore $\mathbb{P}_2$ is closed under scalar multiplication. 
+Therefore $\Poly_2$ is closed under scalar multiplication. 
 
 \item
 We need to show that $a(p(x) + q(x)) = ap(x) + aq(x)$. 
@@ -640,21 +640,21 @@ Finally, we show that $1p(x) = p(x)$.
 
 \end{itemize}
 
-Since the above axioms hold, we know that $\mathbb{P}_2$ as described above is a vector space. 
+Since the above axioms hold, we know that $\Poly_2$ as described above is a vector space. 
 \end{solution}
 
 Another important example of a vector space is the set of all matrices of the same size. 
 
 \begin{example}{Vector space of matrices}{vectorspacematrices}
-Let $\mathbb{M}_{2,3}$ be the set of all $2 \times 3$ matrices. Using the usual operations of matrix addition and scalar multiplication, show that $\mathbb{M}_{2,3}$ is a vector space. 
+Let $\Mat_{2,3}$ be the set of all $2 \times 3$ matrices. Using the usual operations of matrix addition and scalar multiplication, show that $\Mat_{2,3}$ is a vector space. 
 \end{example}
 
 \begin{solution}
-Let $A, B$ be $2 \times 3$ matrices in $\mathbb{M}_{2,3}$. We first prove the axioms for addition.
+Let $A, B$ be $2 \times 3$ matrices in $\Mat_{2,3}$. We first prove the axioms for addition.
 
 \begin{itemize}
 \item
-In order to prove that $\mathbb{M}_{2,3}$ is closed under matrix addition, we show that the sum $A+B$ is in $\mathbb{M}_{2,3}$. This means showing that $A+B$ is a $2 \times 3$ matrix. 
+In order to prove that $\Mat_{2,3}$ is closed under matrix addition, we show that the sum $A+B$ is in $\Mat_{2,3}$. This means showing that $A+B$ is a $2 \times 3$ matrix. 
 \begin{eqnarray*}
 A+B &=& \leftB \begin{array}{rrr}
 a_{11} & a_{12} & a_{13}\\
@@ -668,17 +668,17 @@ a_{11} + b_{11} & a_{12}+b_{12} & a_{13}+b_{13}\\
 a_{21} +b_{21}& a_{22}+b_{22} & a_{23}+b_{23}
 \end{array} \rightB
 \end{eqnarray*}
-You can see that the sum is a $2\times 3$ matrix, so it is in $\mathbb{M}_{2,3}$. It follows that $\mathbb{M}_{2,3}$ is closed under matrix addition. 
+You can see that the sum is a $2\times 3$ matrix, so it is in $\Mat_{2,3}$. It follows that $\Mat_{2,3}$ is closed under matrix addition. 
 
 \item 
-The remaining axioms regarding matrix addition follow from properties of matrix addition. Therefore $\mathbb{M}_{2,3}$ satisfies the axioms of matrix addition.
+The remaining axioms regarding matrix addition follow from properties of matrix addition. Therefore $\Mat_{2,3}$ satisfies the axioms of matrix addition.
 \end{itemize}
 
-We now turn our attention to the axioms regarding scalar multiplication. Let $A, B$ be matrices in $\mathbb{M}_{2,3}$ and let $c$ be a real number.
+We now turn our attention to the axioms regarding scalar multiplication. Let $A, B$ be matrices in $\Mat_{2,3}$ and let $c$ be a real number.
 
 \begin{itemize}
 \item
-We first show that $\mathbb{M}_{2,3}$ is closed under scalar multiplication. That is, we show that $cA$ a $2 \times 3$ matrix.
+We first show that $\Mat_{2,3}$ is closed under scalar multiplication. That is, we show that $cA$ a $2 \times 3$ matrix.
 \begin{eqnarray*}
 cA &=& c\leftB \begin{array}{rrr}
 a_{11} & a_{12} & a_{13}\\
@@ -690,15 +690,15 @@ ca_{21} & ca_{22} & ca_{23}
 \end{array} \rightB
 \end{eqnarray*}
 
-This is a $2 \times 3$ matrix in $\mathbb{M}_{2,3}$ which proves that the set is closed under scalar multiplication. 
+This is a $2 \times 3$ matrix in $\Mat_{2,3}$ which proves that the set is closed under scalar multiplication. 
 
-\item The remaining axioms of scalar multiplication follow from properties of scalar multiplication of matrices. Therefore $\mathbb{M}_{2,3}$ satisfies the axioms of scalar multiplication. 
+\item The remaining axioms of scalar multiplication follow from properties of scalar multiplication of matrices. Therefore $\Mat_{2,3}$ satisfies the axioms of scalar multiplication. 
 \end{itemize}
 
-In conclusion, $\mathbb{M}_{2,3}$ satisfies the required axioms and is a vector space. 
+In conclusion, $\Mat_{2,3}$ satisfies the required axioms and is a vector space. 
 \end{solution}
 
-While here we proved that the set of all $2 \times 3$ matrices is a vector space, there is nothing special about this choice of matrix size. In fact if we instead consider $\mathbb{M}_{m,n}$, the set of all $m \times n$ matrices, then  $\mathbb{M}_{m,n}$ is a vector space under the operations of matrix addition and scalar multiplication. 
+While here we proved that the set of all $2 \times 3$ matrices is a vector space, there is nothing special about this choice of matrix size. In fact if we instead consider $\Mat_{m,n}$, the set of all $m \times n$ matrices, then  $\Mat_{m,n}$ is a vector space under the operations of matrix addition and scalar multiplication. 
 
 We now examine an example of a set that does not satisfy all of the above axioms, and is therefore \textit{not} a vector space. 
 
@@ -746,19 +746,19 @@ It follows that $A+B \neq B+A$. Therefore addition as defined for $V$ is not com
 Consider another example of a vector space. 
 
 \begin{example}{Vector space of functions}{vectorspacefunction}
-Let $S$ be a nonempty set and define $\mathbb{F}_S$ to be the set of \textit{real} functions
-defined on $S$. In other words, we write $\mathbb{F}_S: S \mapsto \mathbb{R}$. Letting $a,b,c$ be scalars and $f,g,h$ functions, the
+Let $S$ be a nonempty set and define $\Func_S$ to be the set of \textit{real} functions
+defined on $S$. In other words, we write $\Func_S: S \mapsto \R$. Letting $a,b,c$ be scalars and $f,g,h$ functions, the
 vector operations are defined as
 \begin{eqnarray*}
 \left( f+g\right) \left( x\right)  &=&f\left( x\right) +g\left(
 x\right)  \\
 \left( af\right) \left( x\right)  &=&a\left( f\left( x\right) \right)
 \end{eqnarray*}
-Show that $\mathbb{F}_S$ is a vector space. 
+Show that $\Func_S$ is a vector space. 
 \end{example}
 
 \begin{solution}
-To verify that $\mathbb{F}_S$ is a vector space, we must prove the axioms beginning with those for addition. Let $f, g, h$ be functions in $\mathbb{F}_S$. 
+To verify that $\Func_S$ is a vector space, we must prove the axioms beginning with those for addition. Let $f, g, h$ be functions in $\Func_S$. 
 
 \begin{itemize}
 \item
@@ -766,7 +766,7 @@ First we check that addition is closed.  For functions $f, g$ defined on the set
 \[
 (f+g)(x) = f(x)+g(x)
 \]
-is again a function defined on $S$. Hence this sum is in $\mathbb{F}_S$ and $\mathbb{F}_S$ is closed under addition. 
+is again a function defined on $S$. Hence this sum is in $\Func_S$ and $\Func_S$ is closed under addition. 
 
 \item
 Secondly, we check the commutative law of addition:
@@ -814,8 +814,8 @@ Hence $f+\left( -f\right) =0$.
 Now, check the axioms for scalar multiplication.
 \begin{itemize}
 \item
-We first need to check that $\mathbb{F}_S$ is closed under scalar multiplication. 
-For a function $f(x)$ in $\mathbb{F}_S$ and real number $a$, the function $(af)(x) = a(f(x))$ is again a function defined on the set $S$. Hence $a(f(x))$ is in $\mathbb{F}_S$ and $\mathbb{F}_S$ is closed under scalar multiplication. 
+We first need to check that $\Func_S$ is closed under scalar multiplication. 
+For a function $f(x)$ in $\Func_S$ and real number $a$, the function $(af)(x) = a(f(x))$ is again a function defined on the set $S$. Hence $a(f(x))$ is in $\Func_S$ and $\Func_S$ is closed under scalar multiplication. 
 
 \item
 \begin{equation*}

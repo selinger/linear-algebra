@@ -352,31 +352,31 @@ It can also be referred to using the notation $\ker \left(
 A\right) $. 
 Similarly, we can discuss the image of $A$, denoted by
 $\func{im}\left( A\right)$. The image of $A$ consists of the vectors
-of $\mathbb{R}^{m}$ which ``get hit'' by $A$.  The formal definition
+of $\R^{m}$ which ``get hit'' by $A$.  The formal definition
 is as follows.
 
 \begin{definition}{Image of $A$}{image}
 The image of $A$, written $\func{im}\left( A\right)$ is given by
 \[
-\func{im}\left( A \right) = \left\{ A\vect{x} : \vect{x} \in \mathbb{R}^n \right\}
+\func{im}\left( A \right) = \left\{ A\vect{x} : \vect{x} \in \R^n \right\}
 \]
 \end{definition}
 
 Consider
-$A$ as a mapping from $\mathbb{R}^{n}$ to $\mathbb{R}^{m}$ whose action is given by multiplication. The following diagram displays this scenario. 
+$A$ as a mapping from $\R^{n}$ to $\R^{m}$ whose action is given by multiplication. The following diagram displays this scenario. 
 \begin{equation*}
-\overset{\func{null} \left( A\right) }{\mathbb{R}^{n}}\ \overset{A}{\rightarrow }\ 
+\overset{\func{null} \left( A\right) }{\R^{n}}\ \overset{A}{\rightarrow }\ 
 \overset{
-\func{im}\left( A\right) }{\mathbb{R}^{m}}
+\func{im}\left( A\right) }{\R^{m}}
 \end{equation*}
-As indicated, $\func{im}\left( A\right) $ is a subset of $\mathbb{R}^{m}$
-while $\func{null} \left( A\right) $ is a subset of $\mathbb{R}^{n}$.
+As indicated, $\func{im}\left( A\right) $ is a subset of $\R^{m}$
+while $\func{null} \left( A\right) $ is a subset of $\R^{n}$.
 
 It turns out that the null space and image of $A$ are both subspaces. Consider the following example.
 
 \begin{example}{Null space}{nullsubspace}
 Let $A$ be an $m\times n$ matrix. Then the null space of $A$, $\func{null}(A)$ is 
-a subspace of $\mathbb{R}^n$.
+a subspace of $\R^n$.
 \end{example}
 
 \begin{solution}
@@ -388,18 +388,18 @@ $\vect{0}_n\in\func{null}(A)$.
 Then $A\vect{x}=\vect{0}_m$ and $A\vect{y}=\vect{0}_m$, so
 \[ A(\vect{x}+\vect{y})=A\vect{x}+A\vect{y} = \vect{0}_m+\vect{0}_m=\vect{0}_m,\]
 and thus $\vect{x}+\vect{y}\in\func{null}(A)$.
-\item Let $\vect{x}\in\func{null}(A)$ and $k\in\mathbb{R}$.
+\item Let $\vect{x}\in\func{null}(A)$ and $k\in\R$.
 Then $A\vect{x}=\vect{0}_m$, so
 
 \[ A(k\vect{x}) = k(A\vect{x})=k\vect{0}_m=\vect{0}_m,\]
 
 and thus $k\vect{x}\in\func{null}(A)$.
 \end{itemize}
-Therefore by the subspace test, $\func{null}(A)$ is a subspace of $\mathbb{R}^n$.
+Therefore by the subspace test, $\func{null}(A)$ is a subspace of $\R^n$.
 
 \end{solution}
 
-The proof that $\func{im}(A)$ is a subspace of $\mathbb{R}^m$ is similar and is left as an exercise to the reader. 
+The proof that $\func{im}(A)$ is a subspace of $\R^m$ is similar and is left as an exercise to the reader. 
 
 We now wish to find a way to describe $\func{null}(A)$ for a matrix $A$. However, finding $\func{null} \left( A\right)$ is not new! There is just some new
 terminology being used, as $\func{null} \left( A\right) $ is simply the solution
@@ -457,7 +457,7 @@ $A\vect{x}=\vect{0}$ is given by
 t \\ 
 t
 \end{array}
-\rightB :t\in \mathbb{R}
+\rightB :t\in \R
 \end{equation*}
 which can be written as 
 \begin{equation*}
@@ -468,7 +468,7 @@ t
 1 \\ 
 1
 \end{array}
-\rightB :t\in \mathbb{R}
+\rightB :t\in \R
 \end{equation*}
 
 Therefore, the null space of $A$ is all multiples of this vector, which we can write as
@@ -484,7 +484,7 @@ Therefore, the null space of $A$ is all multiples of this vector, which we can w
 \end{equation*}
 
 Finally $\func{im}\left( A\right) $ is just $\left\{ A\vect{x} :
-\vect{x} \in \mathbb{R}^n \right\}$ and hence consists of the span of
+\vect{x} \in \R^n \right\}$ and hence consists of the span of
 all columns of $A$, that is $\func{im}\left( A\right) = \func{col} (A)$. 
 
 Notice from the above calculation that that the first two columns of the {\rref} are pivot
@@ -559,7 +559,7 @@ s \\
 t \\ 
 r
 \end{array}
-\rightB :s ,t ,r\in \mathbb{R}\text{.}
+\rightB :s ,t ,r\in \R\text{.}
 \end{equation*}
 We write this in the form 
 \begin{equation*}
@@ -587,7 +587,7 @@ s \leftB
 0 \\ 
 1
 \end{array}
-\rightB :s , t , r\in \mathbb{R}\text{.}
+\rightB :s , t , r\in \R\text{.}
 \end{equation*}
 In other words, the null space of this matrix equals the span of the three
 vectors above. Thus 
@@ -692,11 +692,11 @@ Let $A$ be an $m\times n$ matrix.
 The following are equivalent.
 \begin{enumerate}
 \item $\func{rank}(A)=n$.
-\item $\func{row}(A)=\mathbb{R}^n$, i.e., the rows of $A$ span $\mathbb{R}^n$.
-\item The columns of $A$ are independent in $\mathbb{R}^m$.
+\item $\func{row}(A)=\R^n$, i.e., the rows of $A$ span $\R^n$.
+\item The columns of $A$ are independent in $\R^m$.
 \item The $n\times n$ matrix $A^TA$ is invertible.
 \item There exists an $n\times m$ matrix $C$ so that $CA=I_n$.
-\item If $A\vect{x}=\vect{0}_m$ for some $\vect{x}\in\mathbb{R}^n$,
+\item If $A\vect{x}=\vect{0}_m$ for some $\vect{x}\in\R^n$,
 then $\vect{x}=\vect{0}_n$.
 \end{enumerate}
 \end{theorem}
@@ -706,11 +706,11 @@ Let $A$ be an $m\times n$ matrix.
 The following are equivalent.
 \begin{enumerate}
 \item $\func{rank}(A)=m$.
-\item $\func{col}(A)=\mathbb{R}^m$, i.e., the columns of $A$ span $\mathbb{R}^m$.
-\item The rows of $A$ are independent in $\mathbb{R}^n$.
+\item $\func{col}(A)=\R^m$, i.e., the columns of $A$ span $\R^m$.
+\item The rows of $A$ are independent in $\R^n$.
 \item The $m\times m$ matrix $AA^T$ is invertible.
 \item There exists an $n\times m$ matrix $C$ so that $AC=I_m$.
 \item The system $A\vect{x}=\vect{b}$ is consistent for
-every $\vect{b}\in\mathbb{R}^m$.
+every $\vect{b}\in\R^m$.
 \end{enumerate}
 \end{theorem}

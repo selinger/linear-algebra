@@ -95,7 +95,7 @@ The following theorem provides another characterization of positive definite mat
 \begin{theorem}{Positive definite matrix}{positivedefinite}
 Let $A$ be a symmetric matrix. Then $A$ is positive definite if and
 only if $\vect{x}^T A \vect{x} $ is positive for all nonzero $\vect{x}
-\in \mathbb{R}^n$.
+\in \R^n$.
 \end{theorem}
 
 \begin{proof}
@@ -105,7 +105,7 @@ Since $A$ is symmetric, there exists an orthogonal matrix $U$ so that
 
 where $\lambda_1,\lambda_2,\ldots,\lambda_n$ are the (not necessarily
 distinct) eigenvalues of $A$.
-Let $\vect{x}\in\mathbb{R}^n$, $\vect{x}\neq \vect{0}$, and define
+Let $\vect{x}\in\R^n$, $\vect{x}\neq \vect{0}$, and define
 $\vect{y}=U^T\vect{x}$.
 Then
 \[ \vect{x}^TA\vect{x}=\vect{x}^T(UDU^T)\vect{x}
@@ -125,7 +125,7 @@ y_1 & y_2 & \cdots & y_n\end{array}\rightB$,
 
 $(\Rightarrow)$ First we will assume that $A$ is positive definite and prove that $\vect{x}^T A \vect{x} $ is positive. 
 
-Suppose $A$ is positive definite, and $\vect{x}\in\mathbb{R}^n$,
+Suppose $A$ is positive definite, and $\vect{x}\in\R^n$,
 $\vect{x}\neq\vect{0}$.
 Since $U^T$ is invertible, $\vect{y}=U^T\vect{x}\neq \vect{0}$,
 and thus $y_j\neq 0$ for some $j$, implying $y_j^2>0$
@@ -167,7 +167,7 @@ Let $A$ be an $n\times n$ positive definite matrix.  Then each submatrix $A_{k}$
 \end{lemma}
 
 \begin{proof}
-This follows right away from the above definition. Let $\vect{x}\in \mathbb{R}^{k}$ be nonzero. Then 
+This follows right away from the above definition. Let $\vect{x}\in \R^{k}$ be nonzero. Then 
 \begin{equation*}
 \vect{x}^{T}A_{k}\vect{x}=\leftB 
 \begin{array}{cc}
@@ -216,7 +216,7 @@ _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}$ is an element of $\func{span}\left\{
 _{1}\vectlength ^{2}+\left\vert \alpha _{2}\right\vert ^{2}\lambda
 _{2}\vectlength \vect{u}_{2}\vectlength ^{2}<0.
 \end{equation*}
-Now letting $\vect{x}\in \mathbb{R}^{n-1},$ we can use the induction
+Now letting $\vect{x}\in \R^{n-1},$ we can use the induction
 hypothesis to write 
 \begin{equation*}
 \leftB
@@ -230,10 +230,10 @@ x^{T} & 0
 \end{array}
 \rightB =\vect{x}^{T}A_{n-1}\vect{x}>0.
 \end{equation*}
-Now the dimension of $\left\{ \vect{z}\in \mathbb{R}^{n}:z_{n}=0\right\} $ is 
+Now the dimension of $\left\{ \vect{z}\in \R^{n}:z_{n}=0\right\} $ is 
 $n-1$ and the dimension of $\func{span}\left\{ \vect{u}_{1},\vect{u}
-_{2}\right\} =2$ and so there must be some nonzero $\vect{x}\in \mathbb{R}
-^{n} $ which is in both of these subspaces of $\mathbb{R}^{n}$. However, the
+_{2}\right\} =2$ and so there must be some nonzero $\vect{x}\in \R
+^{n} $ which is in both of these subspaces of $\R^{n}$. However, the
 first computation would require that $\vect{x}^{T}A\vect{x}<0$ while the
 second would require that $\vect{x}^{T}A\vect{x}>0.$ This contradiction shows
 that all the eigenvalues must be positive. This proves the if part of the

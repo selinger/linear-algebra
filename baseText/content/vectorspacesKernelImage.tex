@@ -55,40 +55,40 @@ and this last vector is in $\func{im}\left( T\right) $ by definition.
 Consider the following example.
 
 \begin{example}{Kernel and image of a transformation}{kernelimage}
-Let $T:\mathbb{P}_1\to\mathbb{R}$ be the linear transformation defined by
-\[ T(p(x))=p(1)\mbox{ for all } p(x)\in \mathbb{P}_1.\]
+Let $T:\Poly_1\to\R$ be the linear transformation defined by
+\[ T(p(x))=p(1)\mbox{ for all } p(x)\in \Poly_1.\]
 Find the kernel and image of $T$.
 \end{example}
 
 \begin{solution}
-We will first find the kernel of $T$. It consists of all polynomials in $\mathbb{P}_1$ that have $1$ for a root. 
+We will first find the kernel of $T$. It consists of all polynomials in $\Poly_1$ that have $1$ for a root. 
 \begin{eqnarray*}
-\func{ker}(T) & = & \{ p(x)\in \mathbb{P}_1 ~|~ p(1)=0\} \\
-& = & \{ ax+b ~|~ a,b\in\mathbb{R} \mbox{ and }a+b=0\} \\
-& = & \{ ax-a ~|~ a\in\mathbb{R} \}
+\func{ker}(T) & = & \{ p(x)\in \Poly_1 ~|~ p(1)=0\} \\
+& = & \{ ax+b ~|~ a,b\in\R \mbox{ and }a+b=0\} \\
+& = & \{ ax-a ~|~ a\in\R \}
 \end{eqnarray*}
 Therefore a basis for $\func{ker}(T)$ is 
 \[
 \left\{ x-1 \right\}
 \]
-Notice that this is a subspace of $\mathbb{P}_1$. 
+Notice that this is a subspace of $\Poly_1$. 
 
-Now consider the image. It consists of all numbers which can be obtained by evaluating all polynomials in $\mathbb{P}_1$ at $1$. 
+Now consider the image. It consists of all numbers which can be obtained by evaluating all polynomials in $\Poly_1$ at $1$. 
 \begin{eqnarray*}
-\func{im}(T) & = & \{ p(1) ~|~ p(x)\in \mathbb{P}_1 \} \\
- & = & \{ a+b ~|~ ax+b\in \mathbb{P}_1 \} \\
- & = & \{ a+b ~|~ a,b\in\mathbb{R} \}\\
- & = & \mathbb{R}
+\func{im}(T) & = & \{ p(1) ~|~ p(x)\in \Poly_1 \} \\
+ & = & \{ a+b ~|~ ax+b\in \Poly_1 \} \\
+ & = & \{ a+b ~|~ a,b\in\R \}\\
+ & = & \R
 \end{eqnarray*}
 Therefore a basis for $\func{im}(T)$ is 
 \[
 \left\{ 1 \right\}
 \]
-Notice that this is a subspace of $\mathbb{R}$, and in fact is the space $\mathbb{R}$ itself. 
+Notice that this is a subspace of $\R$, and in fact is the space $\R$ itself. 
 \end{solution}
 
 \begin{example}{Kernel and image of a linear transformation}{findingkernelimage}
-Let $T: \mathbb{M}_{22} \mapsto \mathbb{R}^2$ be defined by
+Let $T: \Mat_{22} \mapsto \R^2$ be defined by
 \[
 T \leftB \begin{array}{cc}
 a & b \\
@@ -313,14 +313,14 @@ T\right) =W$.
 \end{proof}
 
 \begin{example}{One to one transformation}{onetoonekernel}
-Let $S:\mathbb{P}_2\to\mathbb{M}_{22}$ be a linear transformation
+Let $S:\Poly_2\to\Mat_{22}$ be a linear transformation
 defined by
 \[ S(ax^2+bx+c)
 =
 \leftB\begin{array}{cc}
 a+b & a+c \\ b-c & b+c \end{array}\rightB
 \mbox{ for all }
- ax^2+bx+c\in \mathbb{P}_2.\]
+ ax^2+bx+c\in \Poly_2.\]
 Prove that $S$ is one to one but not onto.
 \end{example}
 
@@ -328,7 +328,7 @@ Prove that $S$ is one to one but not onto.
 You may recall this example from earlier in Example \ref{exa:onetoonegeneral}. Here we will determine that $S$ is one to one, but not onto, using the method provided in Corollary \ref{cor:oneoneontochar}.
 
 By definition, 
-\[ \ker(S)=\{ax^2+bx+c\in \mathbb{P}_2 ~|~ a+b=0,
+\[ \ker(S)=\{ax^2+bx+c\in \Poly_2 ~|~ a+b=0,
 a+c=0, b-c=0, b+c=0\}.\]
 
 Suppose $p(x)=ax^2+bx+c\in\ker(S)$.
@@ -351,7 +351,7 @@ Putting the augmented matrix in {\rref}:
 Since the unique solution is $a=b=c=0$, $\ker(S)=\{\vect{0}\}$, and thus
 $S$ is one-to-one by Corollary \ref{cor:oneoneontochar}.
 
-Similarly, by Corollary \ref{cor:oneoneontochar}, if $S$ is onto it will have $\func{rank}(S) = \func{dim}(\mathbb{M}_{22}) = 4$. The image of $S$ is given by 
+Similarly, by Corollary \ref{cor:oneoneontochar}, if $S$ is onto it will have $\func{rank}(S) = \func{dim}(\Mat_{22}) = 4$. The image of $S$ is given by 
 \[
 \func{im}(S) = \left\{ \leftB\begin{array}{cc}
 a+b & a+c \\ b-c & b+c \end{array}\rightB \right\} = \func{span} \left\{ \leftB\begin{array}{rr}
