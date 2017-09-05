@@ -126,7 +126,7 @@ $\tup{\vect{v}+\vect{w}} \times \vect{u}=\vect{v} \times \vect{u}+\vect{w}\times
 \begin{proof}
 Formula $1.$ follows immediately from the definition. The vectors 
 $\vect{u}\times \vect{v}$ and $\vect{v}\times \vect{u}$ have the same magnitude, 
-$\left\vert \vect{u}\right\vert \left\vert \vect{v}\right\vert \sin
+$\abs{\vect{u}}\abs{\vect{v}}\sin
 \theta ,$ and an application of the right hand rule shows they have opposite
 direction. 
 
@@ -140,7 +140,7 @@ $k \tup{\vect{u}\times \vect{v}} $ and $\vect{u}\times \tup{
 k \vect{v}} .$ Using this yields equality in $2$. In
 the case where $k <0,$ everything works the same way except the vectors
 are all pointing in the opposite direction and you must multiply by 
-$\left\vert k \right\vert $ when comparing their magnitudes. 
+$\abs{k }$ when comparing their magnitudes. 
 
 The distributive laws, $3.$ and $4.$, are much harder to establish. For now, it suffices to
  notice that if we know that $3.$ is true, $4.$ follows. Thus, assuming $3.$, and using $1.$,
@@ -204,51 +204,35 @@ u_{3}v_{1}-u_{1}v_{3}} \vect{j}+\tup{u_{1}v_{2}-u_{2}v_{1}}
 There is another version of \ref{crossprod1} which may be easier to remember.
 We can express the cross product as the determinant of a matrix, as follows. 
 \begin{equation}
-\vect{u}\times \vect{v} = \left\vert
-\begin{array}{ccc}
+\vect{u}\times \vect{v} = \begin{absmatrix}{ccc}
 \vect{i} & \vect{j} & \vect{k} \\
 u_{1} & u_{2} & u_{3} \\
 v_{1} & v_{2} & v_{3}
-\end{array}
-\right\vert  \label{crossprod3}
+\end{absmatrix} \label{crossprod3}
 \end{equation}
 Expanding the determinant along the top row yields
 \begin{equation*}
-\vect{i}\tup{-1} ^{1+1}\left\vert
-\begin{array}{cc}
+\vect{i}\tup{-1} ^{1+1}\begin{absmatrix}{cc}
 u_{2} & u_{3} \\
 v_{2} & v_{3}
-\end{array}
-\right\vert +\vect{j}\tup{-1} ^{2+1}\left\vert
-\begin{array}{cc}
+\end{absmatrix}+\vect{j}\tup{-1} ^{2+1}\begin{absmatrix}{cc}
 u_{1} & u_{3} \\
 v_{1} & v_{3}
-\end{array}
-\right\vert +\vect{k}\tup{-1} ^{3+1}\left\vert
-\begin{array}{cc}
+\end{absmatrix}+\vect{k}\tup{-1} ^{3+1}\begin{absmatrix}{cc}
 u_{1} & u_{2} \\
 v_{1} & v_{2}
-\end{array}
-\right\vert
-\end{equation*}
+\end{absmatrix}\end{equation*}
 \begin{equation*}
-=\vect{i}\left\vert
-\begin{array}{cc}
+=\vect{i}\begin{absmatrix}{cc}
 u_{2} & u_{3} \\
 v_{2} & v_{3}
-\end{array}
-\right\vert -\vect{j}\left\vert
-\begin{array}{cc}
+\end{absmatrix}-\vect{j}\begin{absmatrix}{cc}
 u_{1} & u_{3} \\
 v_{1} & v_{3}
-\end{array}
-\right\vert +\vect{k}\left\vert
-\begin{array}{cc}
+\end{absmatrix}+\vect{k}\begin{absmatrix}{cc}
 u_{1} & u_{2} \\
 v_{1} & v_{2}
-\end{array}
-\right\vert
-\end{equation*}
+\end{absmatrix}\end{equation*}
 Expanding these determinants leads to 
 \begin{equation*}
 \tup{u_{2}v_{3}-u_{3}v_{2}} \vect{i}-\tup{

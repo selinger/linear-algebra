@@ -58,71 +58,53 @@ We will expand along the
 first column. This gives
 \begin{eqnarray*}
 \det \tup{A} = 
-&&1\left|
-\begin{array}{rrr}
+&&1\begin{absmatrix}{rrr}
 2 & 6 & 7 \\
 0 & 3 & 33.7 \\
 0 & 0 & -1
-\end{array}
-\right| +0\tup{-1} ^{2+1}\left|
-\begin{array}{rrr}
+\end{absmatrix} +0\tup{-1} ^{2+1}\begin{absmatrix}{rrr}
 2 & 3 & 77 \\
 0 & 3 & 33.7 \\
 0 & 0 & -1
-\end{array}
-\right| + \\
-&&0\tup{-1} ^{3+1}\left|
-\begin{array}{rrr}
+\end{absmatrix} + \\
+&&0\tup{-1} ^{3+1}\begin{absmatrix}{rrr}
 2 & 3 & 77 \\
 2 & 6 & 7 \\
 0 & 0 & -1
-\end{array}
-\right| +0\tup{-1} ^{4+1}\left|
-\begin{array}{rrr}
+\end{absmatrix} +0\tup{-1} ^{4+1}\begin{absmatrix}{rrr}
 2 & 3 & 77 \\
 2 & 6 & 7 \\
 0 & 3 & 33.7
-\end{array}
-\right|
+\end{absmatrix}
 \end{eqnarray*}
 and the only nonzero term in the expansion is
 \begin{equation*}
-1\left|
-\begin{array}{rrr}
+1\begin{absmatrix}{rrr}
 2 & 6 & 7 \\
 0 & 3 & 33.7 \\
 0 & 0 & -1
-\end{array}
-\right| 
+\end{absmatrix} 
 \end{equation*}
 Now find the determinant of this $3 \times 3$ matrix, by expanding along the first column to obtain
 \begin{equation*}
 \det \tup{A} 
 =
-1\times \tup{2\times \left|
-\begin{array}{rr}
+1\times \tup{2\times \begin{absmatrix}{rr}
 3 & 33.7 \\
 0 & -1
-\end{array}
-\right| +0\tup{-1} ^{2+1}\left|
-\begin{array}{rr}
+\end{absmatrix} +0\tup{-1} ^{2+1}\begin{absmatrix}{rr}
 6 & 7 \\
 0 & -1
-\end{array}
-\right| +0\tup{-1} ^{3+1}\left|
-\begin{array}{rr}
+\end{absmatrix} +0\tup{-1} ^{3+1}\begin{absmatrix}{rr}
 6 & 7 \\
 3 & 33.7
-\end{array}
-\right| }
+\end{absmatrix} }
 \end{equation*}
 \begin{equation*}
-=1\times 2\times \left|
-\begin{array}{rr}
+=1\times 2\times \begin{absmatrix}{rr}
 3 & 33.7 \\
 0 & -1
-\end{array}
-\right|
+\end{absmatrix}
 \end{equation*}
 Next use Definition \ref{def:twobytwodeterminant} to find the determinant of this $2 \times 2$ matrix, which is
 just $3 \times -1  - 0 \times 33.7 = -3$.

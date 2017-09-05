@@ -62,7 +62,7 @@ else $-1$ times this volume.
 \begin{proposition}{The box product}{boxproduct}
 Let $\vect{u}, \vect{v}, \vect{w}$ be three vectors in $\R^n$ that define a parallelepiped. Then the volume of the parallelepiped is the absolute value of the box product, given by 
 \[
-\left| \tup{\vect{u}\times\vect{v}} \dotprod \vect{w} \right|
+\abs{\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}}
 \]
 \end{proposition}
 
@@ -182,29 +182,21 @@ g & h & i
 a \\
 b \\
 c
-\end{mymatrix} \dotprod \left|
-\begin{array}{rrr}
+\end{mymatrix} \dotprod \begin{absmatrix}{rrr}
 \vect{i} & \vect{j} & \vect{k} \\
 d & e & f \\
 g & h & i
-\end{array}
-\right| \\
-&=&a\left|
-\begin{array}{rr}
+\end{absmatrix} \\
+&=&a\begin{absmatrix}{rr}
 e & f \\
 h & i
-\end{array}
-\right| -b\left|
-\begin{array}{rr}
+\end{absmatrix} -b\begin{absmatrix}{rr}
 d & f \\
 g & i
-\end{array}
-\right| +c\left|
-\begin{array}{rr}
+\end{absmatrix} +c\begin{absmatrix}{rr}
 d & e \\
 g & h
-\end{array}
-\right| \\
+\end{absmatrix} \\
 &= &\det \begin{mymatrix}{rrr}
 a & b & c \\
 d & e & f \\

@@ -22,12 +22,10 @@ vertical lines. Thus
 \det \begin{mymatrix}{rr}
 a & b \\
 c & d
-\end{mymatrix} =\left|
-\begin{array}{rr}
+\end{mymatrix} =\begin{absmatrix}{rr}
 a & b \\
 c & d
-\end{array}
-\right| 
+\end{absmatrix} 
 =ad - bc
 \end{equation*}
 
@@ -213,12 +211,10 @@ Find $\det\tup{A}$ using the method of Laplace Expansion.
 Using Definition \ref{def:threebythreedeterminant}, we take the $1$ in the first column and multiply it 
 by its cofactor,
 \begin{equation*}
-1  \tup{-1} ^{1+1}\left|
-\begin{array}{rr}
+1  \tup{-1} ^{1+1}\begin{absmatrix}{rr}
 3 & 2 \\
 2 & 1
-\end{array}
-\right| 
+\end{absmatrix} 
 =
 (1)(1)(-1) = -1 
 \end{equation*}
@@ -228,24 +224,18 @@ equation.
 \begin{equation*}
 \det \tup{A} = 
 1 \overset{
-\func{cof}\tup{A} _{11}}{\overbrace{\tup{-1} ^{1+1}\left|
-\begin{array}{rr}
+\func{cof}\tup{A} _{11}}{\overbrace{\tup{-1} ^{1+1}\begin{absmatrix}{rr}
 3 & 2 \\
 2 & 1
-\end{array}
-\right| }}+4 \overset{\func{cof}\tup{A} _{21}}{\overbrace{\tup{
--1} ^{2+1}\left|
-\begin{array}{rr}
+\end{absmatrix} }}+4 \overset{\func{cof}\tup{A} _{21}}{\overbrace{\tup{
+-1} ^{2+1}\begin{absmatrix}{rr}
 2 & 3 \\
 2 & 1
-\end{array}
-\right| }}+3 \overset{\func{cof}\tup{A} _{31}}{\overbrace{\tup{
--1} ^{3+1}\left|
-\begin{array}{rr}
+\end{absmatrix} }}+3 \overset{\func{cof}\tup{A} _{31}}{\overbrace{\tup{
+-1} ^{3+1}\begin{absmatrix}{rr}
 2 & 3 \\
 3 & 2
-\end{array}
-\right| }}
+\end{absmatrix} }}
 \end{equation*}
 Calculating each of these, we obtain
 \begin{equation*}
@@ -272,24 +262,18 @@ second row multiplied by its cofactor. The calculation is as follows.
 \det \tup{A}
 =
 4 \overset{\func{cof}\tup{A} _{21}}{\overbrace{\tup{-1}
-^{2+1}\left|
-\begin{array}{rr}
+^{2+1}\begin{absmatrix}{rr}
 2 & 3 \\
 2 & 1
-\end{array}
-\right| }}+3 \overset{\func{cof}\tup{A} _{22}}{\overbrace{\tup{
--1} ^{2+2}\left|
-\begin{array}{rr}
+\end{absmatrix} }}+3 \overset{\func{cof}\tup{A} _{22}}{\overbrace{\tup{
+-1} ^{2+2}\begin{absmatrix}{rr}
 1 & 3 \\
 3 & 1
-\end{array}
-\right| }}+2 \overset{\func{cof}\tup{A} _{23}}{\overbrace{\tup{
--1} ^{2+3}\left|
-\begin{array}{rr}
+\end{absmatrix} }}+2 \overset{\func{cof}\tup{A} _{23}}{\overbrace{\tup{
+-1} ^{2+3}\begin{absmatrix}{rr}
 1 & 2 \\
 3 & 2
-\end{array}
-\right| }}
+\end{absmatrix} }}
 \end{equation*}
 
 Calculating each of these products, we obtain
@@ -350,34 +334,26 @@ column. Lets pick the third column. Then, using Laplace Expansion,
 \begin{equation*}
 \det \tup{A} 
 =
-3\tup{-1} ^{1+3}\left\vert
-\begin{array}{rrr}
+3\tup{-1} ^{1+3}\begin{absmatrix}{rrr}
 5 & 4 & 3 \\
 1 & 3 & 5 \\
 3 & 4 & 2
-\end{array}
-\right\vert +2\tup{-1} ^{2+3}\left\vert
-\begin{array}{rrr}
+\end{absmatrix}+2\tup{-1} ^{2+3}\begin{absmatrix}{rrr}
 1 & 2 & 4 \\
 1 & 3 & 5 \\
 3 & 4 & 2
-\end{array}
-\right\vert +
+\end{absmatrix}+
 \end{equation*}
 \begin{equation*}
-4\tup{-1} ^{3+3}\left\vert
-\begin{array}{rrr}
+4\tup{-1} ^{3+3}\begin{absmatrix}{rrr}
 1 & 2 & 4 \\
 5 & 4 & 3 \\
 3 & 4 & 2
-\end{array}
-\right\vert +3\tup{-1} ^{4+3}\left\vert
-\begin{array}{rrr}
+\end{absmatrix}+3\tup{-1} ^{4+3}\begin{absmatrix}{rrr}
 1 & 2 & 4 \\
 5 & 4 & 3 \\
 1 & 3 & 5
-\end{array}
-\right\vert 
+\end{absmatrix}
 \end{equation*}
 
 Now, you can calculate each $3 \times 3$ determinant using Laplace Expansion, as we did above. 

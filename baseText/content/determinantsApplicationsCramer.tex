@@ -125,19 +125,15 @@ Therefore,
 x=
 \vspace{0.05in}\frac{\det \tup{A_{1}}}{\det \tup{A}}
 =
-\vspace{0.05in}\frac{\left|
-\begin{array}{rrr}
+\vspace{0.05in}\frac{\begin{absmatrix}{rrr}
 1 &  2 & 1 \\
 2 &  2 & 1 \\
 3 & -3 & 2
-\end{array}
-\right| }{\left|
-\begin{array}{rrr}
+\end{absmatrix} }{\begin{absmatrix}{rrr}
 1 & 2 & 1 \\
 3 & 2 & 1 \\
 2 & -3 & 2
-\end{array}
-\right| }=\vspace{0.05in}\frac{1}{2}
+\end{absmatrix} }=\vspace{0.05in}\frac{1}{2}
 \end{equation*}
 
 Similarly, to find $y$ we construct $A_2$ by replacing the second column of $A$ with $B$. Hence, $A_2$ is given by
@@ -153,19 +149,15 @@ A_2
 
 Therefore, 
 \begin{equation*}
-y=\vspace{0.05in}\frac{\det \tup{A_{2}}}{\det \tup{A}} = \vspace{0.05in}\frac{\left|
-\begin{array}{rrr}
+y=\vspace{0.05in}\frac{\det \tup{A_{2}}}{\det \tup{A}} = \vspace{0.05in}\frac{\begin{absmatrix}{rrr}
 1 & 1 & 1 \\
 3 & 2 & 1 \\
 2 & 3 & 2
-\end{array}
-\right| }{\left|
-\begin{array}{rrr}
+\end{absmatrix} }{\begin{absmatrix}{rrr}
 1 & 2 & 1 \\
 3 & 2 & 1 \\
 2 & -3 & 2
-\end{array}
-\right| }=-\vspace{0.05in}\frac{1}{7}
+\end{absmatrix} }=-\vspace{0.05in}\frac{1}{7}
 \end{equation*}
 
 Similarly, $A_3$ is constructed by replacing the third column of $A$ with $B$. Then, $A_3$ is given by
@@ -185,19 +177,15 @@ Therefore, $z$ is calculated as follows.
 z=
 \vspace{0.05in}\frac{\det \tup{A_{3}}}{\det \tup{A}}
 =
-\frac{\left|
-\begin{array}{rrr}
+\frac{\begin{absmatrix}{rrr}
 1 & 2 & 1 \\
 3 & 2 & 2 \\
 2 & -3 & 3
-\end{array}
-\right| }{\left|
-\begin{array}{rrr}
+\end{absmatrix} }{\begin{absmatrix}{rrr}
 1 & 2 & 1 \\
 3 & 2 & 1 \\
 2 & -3 & 2
-\end{array}
-\right| }=\frac{11}{14}
+\end{absmatrix} }=\frac{11}{14}
 \end{equation*}
 \end{solution}
 
@@ -228,18 +216,14 @@ t \\
 \begin{solution} We are asked to find the value of $z$ in the solution. We will solve using Cramer's rule.
  Thus
 \begin{equation*}
-z=\vspace{.05in} \frac{\left|
-\begin{array}{ccc}
+z=\vspace{.05in} \frac{\begin{absmatrix}{ccc}
 1 & 0 & 1 \\
 0 & e^{t}\cos t & t \\
 0 & -e^{t}\sin t & t^{2}
-\end{array}
-\right| }{\left|
-\begin{array}{ccc}
+\end{absmatrix} }{\begin{absmatrix}{ccc}
 1 & 0 & 0 \\
 0 & e^{t}\cos t & e^{t}\sin t \\
 0 & -e^{t}\sin t & e^{t}\cos t
-\end{array}
-\right| }=\allowbreak t\tup{\tup{\cos t} t+\sin t} e^{-t}
+\end{absmatrix} }=\allowbreak t\tup{\tup{\cos t} t+\sin t} e^{-t}
 \end{equation*}
 \end{solution}

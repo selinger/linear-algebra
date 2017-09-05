@@ -146,7 +146,7 @@ The \textbf{Cauchy Schwarz inequality} is a fundamental inequality satisfied by 
 \begin{theorem}{Cauchy Schwarz inequality}{cauchyschwarzinequality}
 The dot product satisfies the inequality
 \begin{equation}
-\left\vert \vect{u}\dotprod \vect{v}\right\vert \leq \vectlength \vect{u}\vectlength \vectlength \vect{v}\vectlength   \label{cauchy}
+\abs{\vect{u}\dotprod \vect{v}}\leq \vectlength \vect{u}\vectlength \vectlength \vect{v}\vectlength   \label{cauchy}
 \end{equation}
 Furthermore equality is obtained if and only if one of $\vect{u}$ or $\vect{v}$ is a scalar multiple of the other.
 \end{theorem}
@@ -184,8 +184,7 @@ zeros and so from the quadratic formula,
 \tup{2\tup{\vect{u}\dotprod \vect{v}} } ^{2}-4\vectlength \vect{u}
 \vectlength ^{2}\vectlength \vect{v}\vectlength ^{2}<0
 \end{equation*}
-which is equivalent to $\left\vert \vect{u}\dotprod \vect{v} \right\vert
-<\vectlength \vect{u}\vectlength \vectlength \vect{v}\vectlength $.
+which is equivalent to $\abs{\vect{u}\dotprod \vect{v} }<\vectlength \vect{u}\vectlength \vectlength \vect{v}\vectlength $.
 \end{proof}
 
 Notice that this proof was based only on the properties of
@@ -220,7 +219,7 @@ inequality,
 \vectlength \vect{u}+\vect{v}\vectlength ^{2} &=& \tup{\vect{u}+\vect{v}} \dotprod \tup{\vect{u}+\vect{v}} \\
 & =&\tup{\vect{u}\dotprod \vect{u}} +\tup{\vect{u}\dotprod \vect{v}} +\tup{\vect{v}\dotprod \vect{u}} +\tup{\vect{v}\dotprod \vect{v}} \\
 &=&\vectlength \vect{u}\vectlength ^{2}+2\tup{\vect{u}\dotprod \vect{v}}+\vectlength \vect{v}\vectlength ^{2} \\
-&\leq& \vectlength \vect{u}\vectlength ^{2}+2\left\vert \vect{u}\dotprod \vect{v}\right\vert +\vectlength \vect{v}\vectlength ^{2} \\
+&\leq& \vectlength \vect{u}\vectlength ^{2}+2\abs{\vect{u}\dotprod \vect{v}}+\vectlength \vect{v}\vectlength ^{2} \\
 &\leq& \vectlength \vect{u}\vectlength ^{2}+2\vectlength \vect{u}\vectlength \vectlength \vect{v}\vectlength +\vectlength \vect{v}\vectlength ^{2} =\tup{\vectlength \vect{u}\vectlength +\vectlength \vect{v}\vectlength} ^{2}
 \end{eqnarray*}
 Hence,
@@ -240,7 +239,7 @@ the other. Say $\vect{v}= k \vect{u}$. If $k <0$ then equality
 cannot occur in \ref{triangleineq1} because in this case
 \begin{equation*}
 \vect{u}\dotprod \vect{v} =k \vectlength \vect{u}\vectlength
-^{2}<0<\left| k \right| \vectlength \vect{u}\vectlength ^{2}=\left| \vect{u}\dotprod \vect{v}\right|
+^{2}<0<\abs{k} \vectlength \vect{u}\vectlength ^{2}=\abs{\vect{u}\dotprod \vect{v}}
 \end{equation*}
 Therefore, $k \geq 0.$
 

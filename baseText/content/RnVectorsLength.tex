@@ -39,11 +39,11 @@ points is shown in the picture as a solid line. Notice that this line
 is the hypotenuse of a right triangle which is half of the rectangle
 shown in dotted lines. We want to find the length of this hypotenuse
 which will give the distance between the two points.  Note the
-lengths of the sides of this triangle are $\left| p_{1}-q_{1}\right| $
-and $\left| p_{2}-q_{2}\right|$, the absolute value of the difference in these values. Therefore, the Pythagorean Theorem
+lengths of the sides of this triangle are $\abs{p_{1}-q_{1}} $
+and $\abs{p_{2}-q_{2}}$, the absolute value of the difference in these values. Therefore, the Pythagorean Theorem
 implies the length of the hypotenuse (and thus the distance between $P$ and $Q$) equals
 \begin{equation}
-d(P,Q)=\sqrt{ \left| p_{1}-q_{1}\right| ^{2}+\left| p_{2}-q_{2}\right| ^{2}}
+d(P,Q)=\sqrt{ \abs{p_{1}-q_{1}} ^{2}+\abs{p_{2}-q_{2}} ^{2}}
 =\sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{p_{2}-q_{2}}
 ^{2}}
 \label{distance2}
@@ -90,7 +90,7 @@ q_{1},q_{2},q_{3}} $ and $\tup{p_{1},p_{2},q_{3}} $ equals
 \sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{p_{2}-q_{2}} ^{2}}
 \end{equation*}
 while the length of the line joining $\tup{p_{1},p_{2},q_{3}} $ to 
-$\tup{p_{1},p_{2},p_{3}} $ is just $\left| p_{3}-q_{3}\right| .$
+$\tup{p_{1},p_{2},p_{3}} $ is just $\abs{p_{3}-q_{3}} .$
 Therefore, by the Pythagorean Theorem again, the length of the line joining
 the points $P = \tup{p_{1},p_{2},p_{3}} $ and $Q = \tup{
 q_{1},q_{2},q_{3}} $ equals
@@ -116,7 +116,7 @@ between these points is defined as
 \text{ distance between }P\text{ and } Q\text{ is } 
 d( P, Q ) =\sqrt{ (p_1-q_1)^2 + \cdots + (p_n-q_n)^2}
 \end{equation*}
-This is called the \textbf{distance formula}\index{distance formula}. We may also write $\left\vert P - Q \right\vert $ as the distance between $P$ and $Q$.
+This is called the \textbf{distance formula}\index{distance formula}. We may also write $\abs{P - Q }$ as the distance between $P$ and $Q$.
 \end{definition}
 
 From the above discussion, you can see that Definition \ref{def:distancebetweenpoints} holds for the special cases $n=1,2,3$, as in 
