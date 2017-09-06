@@ -205,6 +205,7 @@
 
 % Matrices with square brackets.
 \newenvironment{mymatrix}[1]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{mysmallmatrix}[1]{\begingroup\scriptstyle\renewcommand{\arraystretch}{0.5}\arraycolsep=0.5ex\begin{mymatrix}{#1}}{\end{mymatrix}\endgroup}
 \newcommand{\mat}[1]{\left[#1\right]}
 
 % Matrices with vertical bars. Also used for absolute value and cardinality.

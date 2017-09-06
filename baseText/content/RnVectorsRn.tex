@@ -7,50 +7,37 @@
 \end{enumerate}
 \end{outcome}
 
-The notation $\R^{n}$, where n is a positive integer, refers to the collection of ordered lists of 
-$n$ real numbers, that is 
-\[
-\R^{n} = \set{\tup{x_{1},\cdots, x_{n}}
-:x_{j}\in \R\text{ for }j=1,\cdots ,n}
-\]
-where each $\tup{x_{1},\cdots, x_{n}}$ is a point of $\R^n$.
+In this section, we define points and vectors in $n$-dimensional
+space, and discuss some of their interpretations. We start with a
+brief review of Cartesian coordinate systems.
+\bigskip
 
-In this chapter, we take a closer look at vectors in $\R^n$. First, we will consider what $\R^n$ looks like 
-in more detail. Recall that the point given by $0=\tup{0, \cdots, 0 }$ is called the \textbf{origin}.
-
-Now, consider the case of $\R^n$ for $n=1.$ Then from the definition we can identify 
-$\R$ with points in $\R^{1}$ as follows:
-\begin{equation*}
-\R = \R^{1}=
- \set{\tup{x_{1}} :x_{1}\in \R }
-\end{equation*}
-Hence, $\R$ is defined as the set of all real numbers and geometrically,
-we can describe this as all the points on a line.
-
-Now suppose $n=2$. Then, from the definition,
-\begin{equation*}
-\R^{2}=
-\set{\tup{x_{1}, x_{2}}
-:x_{j}\in \R\text{ for }j=1,2 }
-\end{equation*}
-Consider the
-familiar coordinate plane, with an $x$ axis and a $y$ axis. Any point
-within this coordinate plane is identified by where it is located
-along the $x$ axis, and also where it is located along the $y$
-axis. Consider as an example the following diagram.
-
+\noindent\textbf{Points in $n$-dimensional space.}
+You are probably already familiar with Cartesian
+coordinates\index{Cartesian coordinates}, which let you describe
+points\index{point} in $2$- or $3$-dimensional space. Consider the
+familiar coordinate plane, with an $x$-axis and a $y$-axis. Any point
+within this coordinate plane is identified by its $x$- and
+$y$-coordinates\index{coordinate of a point}. For example, the point
+$P$ in the following diagram has $x$-coordinate~$2$ and
+$y$-coordinate~$1$.  We write these coordinates as an ordered pair
+$P=(2,1)$. Here, ``ordered'' means that the $x$-coordinate comes
+first, and then the $y$-coordinate, i.e., $(1,2)$ is not the same
+point as $(2,1)$. Coordinates can be positive, negative, or zero. The
+special point with coordinates $(0,0)$ is called the
+\textbf{origin}\index{origin} of the coordinate system.
 \begin{center}
-\begin{tikzpicture}
-\draw[<->](-4,0)--(4,0);
-\draw[<->](0,-1)--(0,5);
+\begin{tikzpicture}[scale=0.6]
+\draw[thick,->](-4,0)--(4,0);
+\draw[thick,->](0,-1)--(0,5);
 \draw(2,0.2)--(2,-0.2);
 \draw(-3,0.2)--(-3,-0.2);
 \draw(-0.2,1)--(0.2,1);
 \draw(-0.2,4)--(0.2,4);
 \draw[help lines] (-3,0)--(-3,4)--(0,4);
 \draw[help lines](0,1)--(2,1)--(2,0);
-\draw[fill=red](-3,4) circle [radius=3pt];
-\draw[fill=red](2,1) circle [radius=3pt];
+\draw[fill](-3,4) circle [radius=3pt];
+\draw[fill](2,1) circle [radius=3pt];
 \node[below right] at (4,0){$x$};
 \node[left] at(0,5){$y$};
 \node[below] at (-3,-0.5){$-3$};
@@ -61,169 +48,238 @@ axis. Consider as an example the following diagram.
 \node[above] at (2,1){$P = (2,1)$};
 \end{tikzpicture}
 \end{center}
+The situation in $3$ dimensions is analogous. Here, the coordinate
+system has three axes, and each point is described by a triple of
+coordinates, which we can write as $(x,y,z)$.  We can extend these
+ideas beyond $n=3$. A coordinate system for $n$-dimensional space has
+$n$ axes, which we may call $x_1,\ldots,x_n$ (as there are not enough
+letters in the alphabet to continue after $z$). A point of
+$n$-dimensional space is described by an ordered $n$-tuple
+$(x_1,\ldots,x_n)$ of coordinates. For example, $P=(2,1,0,-1)$ is a
+point in $4$-dimensional space which has $x_1$-coordinate $2$,
+$x_2$-coordinate $1$, and so on. While most people cannot really
+picture space beyond $3$ dimensions, it is easy to imagine tuples of
+$n$ real numbers. Thus, although we may not be able to ``see'' the
+points in higher dimensions, we can still talk about their coordinates.
+\bigskip
 
-Hence, every element in $\R^2$ is identified by two
-components, $x$ and $y$, in the usual manner. The coordinates $x, y$ (or $x_1$,$x_2$) uniquely determine a point in the plan. Note that while the definition uses $x_1$ and $x_2$ to label the coordinates and you may be used to $x$ and $y$, these notations are equivalent. Thus $\R^2$ can be represented by the two-dimensional coordinate plane.
-
-Now suppose $n=3$. You may have previously encountered the $3$-dimensional
-coordinate system, given by
-\begin{equation*}
-\R^{3}=
-\set{\tup{x_{1}, x_{2}, x_{3}}
-:x_{j}\in \R\text{ for }j=1,2,3 }
-\end{equation*}
-
-Points in $\R^3$ will be determined by three
-coordinates, often written $\tup{x,y,z}$ which correspond to the $x$, $y$,
-and $z$ axes.  We can think as above that the first two coordinates
-determine a point in a plane. The third component determines the
-height above or below the plane, depending on whether this number is
-positive or negative, and all together this determines a point in
-space. You
-see that the ordered triples correspond to points in space just as the
-ordered pairs correspond to points in a plane and single real numbers
-correspond to points on a line.
-
-The idea behind the more general $\R^n$ is that we can extend
-these ideas beyond $n = 3.$ This discussion regarding points in $\R^n$ leads into a study of vectors in $\R^n$. While we consider $\R^n$ for all $n$,
-we will largely  focus on $n=2,3$ in this section. 
-
-Consider the following definition.
-
-\begin{definition}{The position vector}{positionvector}
-Let $P=\tup{p_{1},\cdots ,p_{n}} $ be the coordinates of a
-point in $\R^{n}.$ Then the vector $\longvect{0P}$ with its tail at
-$0=\tup{0,\cdots ,0} $ and its tip at 
-$P$ is called the \textbf{position vector}\index{position vector}\index{vector!points and vectors} of the point $P$. 
-We write 
-\begin{equation*}
-\longvect{0P} = \begin{mymatrix}{c}
-p_{1} \\
-\vdots \\
-p_{n}
-\end{mymatrix}
-\end{equation*}
-\end{definition}
-
-$\longvect{0P}$ can be interpreted as a set of directions to get from the origin to the point $P$.
-For this reason we may write both $P=\tup{p_{1},\cdots ,p_{n}}  \in \R^{n}$
-and  $$\longvect{0P}= \begin{mymatrix}{c}
-p_{1} \\
-\vdots \\
-p_{n}
-\end{mymatrix} = \mat{p_{1} \cdots p_{n} }^T \in \R^{n}$$ 
-Where $\mat{p_{1} \cdots p_{n} }^T$ is used to lighten the text, the superscript $T$ will be explained in more details in a further chapter.
-
-This definition is illustrated in the following picture for the
-special case of $\R^{3}$.
-
+\noindent\textbf{Vectors in $n$-dimensional space.}
+Unlike a point, which describes a location in a coordinate system, a
+vector\index{vector!geometrically} describes an {\em
+  offset}\index{offset} or a {\em distance and direction}. We usually
+picture a vector as an arrow, starting at one point (called the
+\textbf{tail}\index{tail} of the arrow) and ending at another point
+(called the \textbf{tip}\index{tip} of the arrow).
 \begin{center}
 \begin{tikzpicture}
-\draw[<->](2,0,0)--(0,0,0)--(0,2,0);
-\draw[->](0,0,0)--(0,0,2);
-\draw[thick, blue](0,0,0)--(1.5,1,0);
-\draw[fill=red] (1.5, 1,0) circle [radius=3pt];
-\node[above right] at (1.5, 1.25, 0){$P=(p_1, p_2, p_3)$};
-\node[below right] at (1.5, 0.75, 0){$\longvect{0P}= \begin{mymatrix}{ccc}
-p_1 & p_2 & p_3 
-\end{mymatrix}^T$};
+\draw[->, thick, blue](1,0)--+(1.5,1.125);
+\draw[->, thick, blue](2,1.2)--+(1.5,1.125);
+\draw[->, thick, blue](2,0)--+(1.5,1.125);
+\draw[->, thick, blue](0.7,0.7)--+(1.5,1.125);
 \end{tikzpicture}
 \end{center}
-
-Thus every point $P$ in $\R^{n}$ determines its position
-vector $\longvect{0P}$. Conversely, every such position vector $\longvect{0P}$
-which has its tail at $0$ and point at $P$ determines the point $P$ of
-$\R^{n}$.
-
-Now suppose we are given two points, $P,Q$ whose
-coordinates are $\tup{p_{1},\cdots ,p_{n}} $ and $\tup{
-q_{1},\cdots ,q_{n}} $ respectively. We can also determine the
-\textbf{position vector from $P$ to $Q$} (also called the \textbf{vector from $P$ to $Q$}) defined as follows.
-\begin{equation*}
-\longvect{PQ} = \begin{mymatrix}{c}
-q_{1}-p_{1}\\
- \vdots \\
-q_{n}-p_{n}
-\end{mymatrix} = \longvect{0Q} - \longvect{0P}
-\end{equation*}
-One can verify that $\longvect{0Q}=\longvect{0P}+\longvect{PQ}$.
-
-Now, imagine taking a vector in $\R^n$ and moving it around, always
-keeping it pointing in the same direction as shown in the following picture.
-
+Two vectors are considered equal if they have the same direction and
+length. Thus, all four blue arrows in the above image describe exactly
+the same vector. Mathematically, a vector in $2$-dimensional space is
+described as an offset in the $x$-direction and an offset in the
+$y$-direction.  For example, a certain vector $\vect{v}$ may be
+described by the instruction: ``move $4$ units in the direction
+parallel to the $x$-axis, and move $3$ units in the direction parallel
+to the $y$-axis''. This situation is pictured here:
 \begin{center}
-\begin{tikzpicture}
-\draw[<->](2,0,0)--(0,0,0)--(0,2,0);
-\draw[->](0,0,0)--(0,0,2);
-\draw[->, thick, blue](0,0,0)--(1.5,1,0);
-\draw[->, thick, blue](-1,1,0)--(0.5,2,0);
-\node[right] at (1.5, 1.25, 0){$\longvect{0P}= \begin{mymatrix}{ccc}
-p_1 & p_2 & p_3 \end{mymatrix} ^T$};
-\node[below] at (-1,1,0){$A$};
-\node[below] at (0.5,2,0){$B$};
+\begin{tikzpicture}[scale=0.6]
+  \draw[->, thick, blue](0,0) -- node[above,black]{$\vect{v}$} +(4,3);
+  \draw(0,0) -- node[below]{4 units} (4,0) -- node[right]{3 units} (4,3);
 \end{tikzpicture}
 \end{center}
+The numbers $4$ and $3$ are also called the
+$x$-component\index{component of a vector} and the $y$-component of
+the vector. Notice that a point has ``coordinates'', but a vector has
+``components''. We write the components of a vector as an ordered
+column within square brackets:
+$\vect{v}=\begin{mysmallmatrix}{c}\scriptstyle4\\\scriptstyle3\end{mysmallmatrix}$. Note
+that components can also be negative; for example, a negative
+$x$-component indicates to move left instead of right, and a negative
+$y$-component indicates to move down instead of up. The vector with
+all components equal to $0$ is called the \textbf{zero
+  vector}\index{zero vector}. 
 
-After moving it around, it is regarded as the same vector. On the above picture, both vectors $\longvect{0P}$ and $\longvect{AB}$ have the same length (or magnitude) and direction. Therefore, they are equal, moving a vector in space while preserving its orientation does not alter it.
+The situation in $3$ dimensions is similar. Here, a vector is
+described by three components, namely, its $x$-component,
+$y$-component, and $z$-component. The three components are written as
+$\begin{mysmallmatrix}{c}\scriptstyle x\\\scriptstyle y\\\scriptstyle
+  z\end{mysmallmatrix}$. The same idea generalizes to $n$-dimensional
+vectors when $n$ is greater than $3$. 
 
-Consider now the general definition for a vector in $\R^n$. 
+\begin{definition}{Column vector}{columnvector}
+  A $n$-dimensional
+  \textbf{column vector}\index{column vector}\index{vector, column},
+  often simply called a \textbf{vector}\index{vector}, is an ordered list
+  of $n$ real numbers, written as a column within square brackets:
+  \begin{equation*}
+    \begin{mymatrix}{c}
+      x_1 \\
+      x_2 \\
+      \vdots \\
+      x_n
+    \end{mymatrix}.
+  \end{equation*}
+  We write $\R^n$\index{Rn@$\R^n$} for the set of all $n$-dimensional
+  column vectors.
+\end{definition}
+Vectors are usually denoted by boldface lower-case letters such as
+$\vect{v}$, $\vect{w}$, $\vect{a}$, $\vect{b}$. Some people write a
+small arrow above the vector, but we do not do this here.
+\bigskip
 
-\begin{definition}{Vectors in $\R^n$}{vectorsRn}
-Let $\R^{n} = \set{\tup{x_{1}, \cdots, x_{n}}
-:x_{j}\in \R\text{ for }j=1,\cdots ,n} .$
-Then,
+\noindent\textbf{Points vs. vectors.}
+What is the relationship between points and vectors? Algebraically,
+they seem to be almost the same thing, because a point $(x,y)$ and a
+vector
+$\begin{mysmallmatrix}{c}\scriptstyle x\\\scriptstyle
+  y\end{mysmallmatrix}$ are both an ordered pair of real numbers,
+written in a slightly different way. On the other hand, geometrically,
+a point is a location in space, and has neither a length nor
+direction, whereas a vector has length and direction, but is not fixed
+at any particular location. Indeed, to convince yourself that despite
+the similarity in their notation, points and vectors are different
+kinds of objects, imagine that we moved the origin of the coordinate
+system to a different location. Then the coordinates of all the points
+would change, whereas the components of all the vectors would remain
+the same. To describe the components of a vector, we require axes and
+a scale, but no origin. To describe the components of a point, we
+require axes, a scale, and an origin.  \bigskip
+
+\noindent\textbf{Vectors from points.}
+If $Q$ and $P$ are two points in $n$-dimensional space, we can define
+a \textbf{vector from $Q$ to $P$}\index{vector!from a point to a point}. This
+vector is written $\longvect{QP}$, and is described by the arrow whose
+tail is at $Q$ and whose tip is at $P$, as in the following picture:
+\begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \draw[fill] (0,0) circle [radius=1.8pt] node[below]{$Q$};
+    \draw[fill] (3,2) circle [radius=1.8pt] node[below]{$P$};
+    \draw[thick, blue, ->](0,0) -- node[above left,black]{$\longvect{QP}$} (3,2);
+  \end{tikzpicture}
+\end{center}
+If the point $Q$ has coordinates $(q_1,\ldots,q_n)$ and the point $P$
+has coordinates $(p_1,\ldots,p_n)$, then the components of
+$\longvect{QP}$ are
 \begin{equation*}
-\vect{x}
-=
-\begin{mymatrix}{c}
-x_{1} \\
-\vdots \\
-x_{n}
-\end{mymatrix} 
+  \longvect{QP} =
+  \begin{mymatrix}{c}
+    p_1 - q_1 \\
+    \vdots    \\
+    p_n - q_n
+  \end{mymatrix}.
 \end{equation*}
-is called a \textbf{vector}\index{vector}. Vectors have both size (magnitude) and direction. 
-The numbers $x_{j}$ are called the \textbf{components}\index{vector!components} of $\vect{x}$. 
+An important special case of this is the case when the point $Q$ is
+the origin. The following definition is concerned with that situation.
 
+\begin{definition}{The position vector of a point}{positionvector}
+  Let $P$ be a point in $n$-dimensional space. The \textbf{position
+    vector}\index{position vector} of $P$ is the vector
+  $\vect{p} = \longvect{0P}$ whose tail is at the origin and whose tip
+  is at $P$.
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+      \draw[<->](2,0,0)--(0,0,0)--(0,2,0);
+    \draw[fill] (0,0) circle [radius=1.8pt] node[below]{$0$};
+    \draw[fill] (3,2) circle [radius=1.8pt] node[below]{$P$};
+    \draw[thick, blue, ->](0,0) -- node[above left,black]{$\vect{p}$} (3,2);
+    \end{tikzpicture}
+  \end{center}
+  If the point $P$ has coordinates $(p_1,\ldots,p_n)$, then the
+  components of the position vector are
+  \begin{equation*}
+    \vect{p} =
+    \begin{mymatrix}{c}
+      p_1    \\
+      \vdots \\
+      p_n
+    \end{mymatrix}.
+  \end{equation*}
+  Thus, the coordinates of a point are the same as the components of
+  its position vector. For this reason, the position vector is also
+  sometimes called the
+  \textbf{coordinate vector}\index{coordinate vector} of $P$.
 \end{definition}
 
-Using this notation, we may use $\vect{p}$ to denote the position vector of point $P$. Notice that in this context, $\vect{p} = \longvect{0P}$. These notations may be used interchangeably. 
-
-You can think of the components of a vector as directions for
-obtaining the vector. Consider $n=3$.  Draw a vector with its tail at
-the point $\tup{0,0,0} $ and its tip at the point $\tup{
-a,b,c} $. This vector it is obtained by starting at $\tup{
-0,0,0} $, moving parallel to the $x$ axis to $\tup{
-a,0,0} $ and then from here, moving parallel to the $y$ axis to
-$\tup{a,b,0} $ and finally parallel to the $z$ axis to $\tup{
-a,b,c}. $ Observe that the same vector would result if you began
-at the point $ \tup{d,e,f }$, moved parallel to the $x$ axis
-to $\tup{d+a,e,f} ,$ then parallel to the $y$ axis to $\tup{
-d+a,e+b,f} ,$ and finally parallel to the $z$ axis to $\tup{
-d+a,e+b,f+c}$. Here, the vector would have its tail sitting at
-the point determined by $A= \tup{d,e,f} $ and its point at
-$B=\tup{d+a,e+b,f+c}$. It is the \textbf{same vector} because
-it will point in the same direction and have the same length. It is
-like you took an actual arrow, and moved it from one location to another keeping it pointing
-the same direction.\index{vector!addition, geometric meaning}
-
-Notice that two vectors $\vect{u} = \mat{u_{1} \cdots u_{n}}^T $ and
-$\vect{v}=\mat{v_{1} \cdots v_{n}}^T$ are equal if and only if
-all corresponding components are equal. Precisely,
+\noindent\textbf{Points from vectors.} Conversely, given any vector
+$\vect{p}$, we may find a point $P$ that has $\vect{p}$ as its
+position vector. To do so geometrically, we first have the move the
+vector $\vect{p}$ around until its tail is at the origin. The point
+$P$ will then be located at its tip.
+\begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \draw[<->](2,0,0)--(0,0,0)--(0,2,0);
+    \draw[fill] (0,0) circle [radius=1.8pt] node[below]{$0$};
+    \draw[fill] (3,2) circle [radius=1.8pt] node[below]{$P$};
+    \draw[thick, blue, ->](-2,1) -- node[above left,black]{$\vect{p}$} +(3,2);
+    \draw[thick, blue, ->](2.5,0.5) -- node[below right,black]{$\vect{p}$} +(3,2);
+    \draw[thick, blue, ->](0,0) -- node[above left,black]{$\vect{p}$} +(3,2);
+  \end{tikzpicture}
+\end{center}
+Algebraically, if the vector $\vect{p}$ has components
 \begin{equation*}
-\begin{array}{c}
-\vect{u}=\vect{v} \; \mbox{if and only if}\\
-u_{j}=v_{j} \; \mbox{for all}\; j=1,\cdots ,n
-\end{array}
-\end{equation*} 
-Thus 
-$\begin{mymatrix}{rrr}
-1  & 2 & 4
-\end{mymatrix}^T \in \R^{3}$ and $\begin{mymatrix}{rrr}
-2 & 1 & 4
-\end{mymatrix}^T \in
-\R^{3}$ but $\begin{mymatrix}{rrr}
-1 & 2 & 4
-\end{mymatrix}^T \neq \begin{mymatrix}{rrr}
-2 & 1 & 4
-\end{mymatrix}^T $ because,
-even though the same numbers are involved, the order of the numbers is different. 
+  \vect{p} =
+  \begin{mymatrix}{c}
+    p_1    \\
+    \vdots \\
+    p_n
+  \end{mymatrix},
+\end{equation*}
+then the point $P$ will have coordinates $(p_1,\ldots,p_n)$. This is
+just the opposite process of Definition~\ref{def:positionvector}.
+
+So although we went to some lengths to point out that vectors and
+points are different geometric objects, as soon as an origin of a
+coordinate system has been fixed, we can always talk about a point by
+talking about its coordinate vector. We will systematically do so, and
+eventually the distinction between a point and its coordinate vector
+will become blurred, so that we will be able to talk about $\R^n$ as
+``a set of points'' or ``a set of vectors'' interchangeably.  \bigskip
+
+\noindent\textbf{Equality of vectors.}
+Two vectors are equal precisely when all corresponding components are
+equal. In symbols, if
+\begin{equation*}
+  \vect{u} =
+  \begin{mymatrix}{c}
+    u_1\\
+    \vdots\\
+    u_n
+  \end{mymatrix}
+  \quad\mbox{and}\quad
+  \vect{v} =
+  \begin{mymatrix}{c}
+    v_1\\
+    \vdots\\
+    v_n
+  \end{mymatrix},
+\end{equation*}
+then $\vect{u}=\vect{v}$ if and only if $u_1=v_1$ and $u_2=v_2$ and
+\ldots and $u_n=v_n$.
+\bigskip
+
+\noindent\textbf{Notation.}
+In the text, it is often awkward to write column vectors, because they
+take up so much space. To save space, we sometimes use a superscript
+``$T$'' to denote a column vector. For example, we write $[1, 2, 3]^T$
+to denote the vector
+\begin{equation*}
+  \begin{mymatrix}{c}
+    1\\
+    2\\
+    3\\
+  \end{mymatrix}.
+\end{equation*}
+The letter ``$T$'' stands for ``transpose''. To transpose a vector
+means to turn a row into a column or vice versa.
+
+% ----------------------------------------------------------------------
+
+\begin{ex}
+  What is an element of $\R^1$? Can you describe this as a column
+  vector, as a point, and as a vector?
+\end{ex}
