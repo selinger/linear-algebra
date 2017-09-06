@@ -54,7 +54,8 @@
 % \aftergroups are because this command will be called from inside two
 % nested environments.
 \makeatletter
-\newcommand{\noindentafter}{\aftergroup\aftergroup\aftergroup\@afterindentfalse\aftergroup\aftergroup\aftergroup\@afterheading}
+\newcommand{\noindentafter}{\aftergroup\@afterindentfalse\aftergroup\@afterheading}
+\newcommand{\noindentafterbox}{\aftergroup\noindentafter}
 \makeatother
 
 % Style and setup of Definition, Theorem, and Example environments
@@ -62,13 +63,13 @@
 \def\themytheorem{\thechapter.\arabic{mytheorem}}
 \tcbset{
 	defstyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
-		colback=definitioncolour!5,colframe=definitioncolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafter},top=1mm,bottom=1mm},
+		colback=definitioncolour!5,colframe=definitioncolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafterbox},top=1mm,bottom=1mm},
 	theostyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
-		colback=chaptertitlecolour!5,colframe=chaptertitlecolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafter},top=1mm,bottom=1mm},
+		colback=chaptertitlecolour!5,colframe=chaptertitlecolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafterbox},top=1mm,bottom=1mm},
 	examstyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
-		colback=examplecolour!5,colframe=examplecolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafter},top=1mm,bottom=1mm},
+		colback=examplecolour!5,colframe=examplecolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafterbox},top=1mm,bottom=1mm},
 	solutiontyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
-		colback=solutioncolour!5,colframe=solutioncolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafter},top=1mm,bottom=1mm},
+		colback=solutioncolour!5,colframe=solutioncolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafterbox},top=1mm,bottom=1mm},
 }
 \tcbmaketheorem{definition}{Definition}{defstyle}{mytheorem}{def}
 \tcbmaketheorem{theorem}{Theorem}{theostyle}{mytheorem}{thm}
@@ -87,7 +88,7 @@
 
 % Outcomes
 \newtcolorbox{outcome}{fonttitle=\bfseries\upshape,fontupper=\slshape,
-	colback=white,colframe=outcomecolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafter},top=1mm,bottom=1mm,title=Outcomes}
+	colback=white,colframe=outcomecolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafterbox},top=1mm,bottom=1mm,title=Outcomes}
 
 
 % This bit of code allows the spadesuit ♠ in the Solution & Proof environment to be on the bottom right of the page
@@ -97,7 +98,7 @@
 
 % Solution environment for Examples
 \def\solution{\par\noindent{\solutionfont{\bf{\underline{Solution.}}}} \ignorespaces}
-\def\endsolution{\solutionfont{\bf\xqed{$\spadesuit$}}\par\medskip}
+\def\endsolution{\solutionfont{\bf\xqed{$\spadesuit$}}\par\medskip\noindentafter}
 
 % Proof environment for Theorems
 \def\proof{\par\noindent{\prooffont{\bf{\underline{Proof.}}}} \ignorespaces}
