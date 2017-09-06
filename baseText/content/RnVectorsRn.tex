@@ -28,7 +28,8 @@ $P=(2,1)$. Here, ``ordered'' means that the $x$-coordinate comes
 first, and then the $y$-coordinate, i.e., $(1,2)$ is not the same
 point as $(2,1)$. Coordinates can be positive, negative, or zero. The
 special point with coordinates $(0,0)$ is called the
-\textbf{origin}\index{origin} of the coordinate system.
+\textbf{origin}\index{origin} of the coordinate system, and also
+written as $0$.
 \begin{center}
 \begin{tikzpicture}[scale=0.6]
 \draw[thick,->](-4,0)--(4,0);
@@ -91,7 +92,7 @@ parallel to the $x$-axis, and move $3$ units in the direction parallel
 to the $y$-axis''. This situation is pictured here:
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
-  \draw[->, thick, blue](0,0) -- node[above,black]{$\vect{v}$} +(4,3);
+  \draw[->, thick, blue](0,0) -- node[above]{$\vect{v}$} +(4,3);
   \draw(0,0) -- node[below]{4 units} (4,0) -- node[right]{3 units} (4,3);
 \end{tikzpicture}
 \end{center}
@@ -162,7 +163,7 @@ tail is at $Q$ and whose tip is at $P$, as in the following picture:
   \begin{tikzpicture}[scale=0.6]
     \draw[fill] (0,0) circle [radius=1.8pt] node[below]{$Q$};
     \draw[fill] (3,2) circle [radius=1.8pt] node[below]{$P$};
-    \draw[thick, blue, ->](0,0) -- node[above left,black]{$\longvect{QP}$} (3,2);
+    \draw[thick, blue, ->](0,0) -- node[above left]{$\longvect{QP}$} (3,2);
   \end{tikzpicture}
 \end{center}
 If the point $Q$ has coordinates $(q_1,\ldots,q_n)$ and the point $P$
@@ -189,7 +190,7 @@ the origin. The following definition is concerned with that situation.
       \draw[<->](2,0,0)--(0,0,0)--(0,2,0);
     \draw[fill] (0,0) circle [radius=1.8pt] node[below]{$0$};
     \draw[fill] (3,2) circle [radius=1.8pt] node[below]{$P$};
-    \draw[thick, blue, ->](0,0) -- node[above left,black]{$\vect{p}$} (3,2);
+    \draw[thick, blue, ->](0,0) -- node[above left]{$\vect{p}$} (3,2);
     \end{tikzpicture}
   \end{center}
   If the point $P$ has coordinates $(p_1,\ldots,p_n)$, then the
@@ -218,9 +219,9 @@ $P$ will then be located at its tip.
     \draw[<->](2,0,0)--(0,0,0)--(0,2,0);
     \draw[fill] (0,0) circle [radius=1.8pt] node[below]{$0$};
     \draw[fill] (3,2) circle [radius=1.8pt] node[below]{$P$};
-    \draw[thick, blue, ->](-2,1) -- node[above left,black]{$\vect{p}$} +(3,2);
-    \draw[thick, blue, ->](2.5,0.5) -- node[below right,black]{$\vect{p}$} +(3,2);
-    \draw[thick, blue, ->](0,0) -- node[above left,black]{$\vect{p}$} +(3,2);
+    \draw[thick, blue, ->](-2,1) -- node[above left]{$\vect{p}$} +(3,2);
+    \draw[thick, blue, ->](2.5,0.5) -- node[below right]{$\vect{p}$} +(3,2);
+    \draw[thick, blue, ->](0,0) -- node[above left]{$\vect{p}$} +(3,2);
   \end{tikzpicture}
 \end{center}
 Algebraically, if the vector $\vect{p}$ has components
