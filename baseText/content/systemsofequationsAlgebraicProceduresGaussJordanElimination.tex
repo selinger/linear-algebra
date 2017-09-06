@@ -195,17 +195,81 @@ operations.
   \end{equation*}
 \end{solution}
 
-Which one is the better procedure to use, Gaussian elimination with
-back substitution, or Gauss-Jordan elimination? The answer is: it
-depends. In certain applications, it is not necessary to completely
-solve a system of equations. Sometimes it is sufficient just to figure
-out whether the system is consistent or inconsistent, or whether the
-solution is unique or not. In those situations, you already get the
-required information from the {\ef} and there is no need to do the
-additional steps to reduce the system to {\rref}. Also, in some
-situations, Gauss-Jordan elimination can introduce fractions into your
-augmented matrix, making the matrix more complicated to work with. In
-such cases, it may sometimes be easier to do back substitution. But in
-most cases, Gauss-Jordan elimination is simpler to do than back
-substitution, and therefore I recommend using the Gauss-Jordan method
-most of the time. 
+\begin{discussion}{Which procedure is better?}{g-vs-gj}
+  Which one is the better procedure to use, Gaussian elimination with
+  back substitution, or Gauss-Jordan elimination? The answer is: it
+  depends. In certain applications, it is not necessary to completely
+  solve a system of equations. Sometimes it is sufficient just to figure
+  out whether the system is consistent or inconsistent, or whether the
+  solution is unique or not. In those situations, you already get the
+  required information from the {\ef} and there is no need to do the
+  additional steps to reduce the system to {\rref}. Also, in some
+  situations, Gauss-Jordan elimination can introduce fractions into your
+  augmented matrix, making the matrix more complicated to work with. In
+  such cases, it may sometimes be easier to do back substitution. But in
+  most cases, Gauss-Jordan elimination is simpler to do than back
+  substitution, and therefore I recommend using the Gauss-Jordan method
+  most of the time. 
+\end{discussion}
+
+One situation where Gauss-Jordan elimination excels is when you have
+to solve many systems of equations that all have the same coefficient
+matrix.
+
+\begin{example}{Multiple systems sharing the same left-hand side}{sharing-coeff}
+  Solve the following two systems of equations.
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l@{~}}
+      x       +  z &=& 1 \\
+      2x +  y + 3z &=& 2 \\
+      3x + 2y + 5z &=& 4 \\
+    \end{array}
+    \quad\quad
+    \begin{array}{r@{~}c@{~}l@{~}}
+      x       +  z &=& 2 \\
+      2x +  y + 3z &=& 5 \\
+      3x + 2y + 5z &=& 8 \\
+    \end{array}
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We could certainly solve each system of equations separately. But
+  since the left-hand sides are the same, we will perform exactly the
+  same row operations on both systems. We can save some work by
+  solving both systems together. Instead of a usual augmented matrix
+  with only one constant vector, we create an augmented matrix
+  containing both constant vectors at the same time.
+  \begin{equation*}
+    \begin{mymatrix}{rrr|rr}
+      1 & 0 & 1 & 1 & 2 \\
+      2 & 1 & 3 & 2 & 5 \\
+      3 & 2 & 5 & 4 & 8 \\
+    \end{mymatrix}
+  \end{equation*}
+  Then we row-reduce the coefficient matrix to {\rref} as usual. (We
+  do not need to bother reducing the right-hand size to {\rref}).
+  \begin{equation*}
+    \begin{mymatrix}{rrr|rr}
+      1 & 0 & 1 & 1 & 2 \\
+      2 & 1 & 3 & 2 & 5 \\
+      3 & 2 & 5 & 4 & 8 \\
+    \end{mymatrix}
+    \stackrel{R_2\leftarrow R_2-2R_1}{
+    \stackrel{R_3\leftarrow R_3-3R_1}{\sim}}
+    \begin{mymatrix}{rrr|rr}
+      1 & 0 & 1 & 1 & 2 \\
+      0 & 1 & 1 & 0 & 1 \\
+      0 & 2 & 2 & 1 & 2 \\
+    \end{mymatrix}
+    \stackrel{R_3\leftarrow R_3-2R_2}{\sim}
+    \begin{mymatrix}{rrr|rr}
+      1 & 0 & 1 & 1 & 2 \\
+      0 & 1 & 1 & 0 & 1 \\
+      0 & 0 & 0 & 1 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  We see that the first system is inconsistent, because it contains a
+  row of the form $\mat{0~0~0~|~1}$. The second system is consistent,
+  and we get the general solution $z=t$, $y=1-t$, $x=2-t$. 
+\end{solution}
