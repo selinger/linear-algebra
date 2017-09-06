@@ -83,9 +83,12 @@ field with only two elements.
     \end{array}
   \end{equation*}
   This particular alternative arithmetic is called ``arithmetic modulo
-  2''.   In computer science, the addition is also called the ``logical
-  exclusive or'' operation\index{logical operation!exclusive or}, and multiplication is also called the
-  ``logical and'' operation\index{logical operation!and}.  For example, we can calculate like this:
+  2''.  In computer science, the addition is also called the ``logical
+  exclusive or'' operation\index{logical operation!exclusive or}, and
+  multiplication is also called the ``logical and''
+  operation\index{logical operation!and}. You can also think of $0$ as
+  ``even'' and $1$ as ``odd'', and not that odd plus odd makes
+  even. For example, we can calculate like this:
   \begin{equation*}
     \begin{array}{lll}
       1\cdot((1+0)+1) + 1 &=& 1\cdot(1+1) + 1\\
@@ -227,10 +230,9 @@ instead of the real numbers.
   \end{center}
   Each light is also a button. When a button is pressed, its own
   light, and all the lights neighboring it (i.e., above, below, to the
-  left and to the right) are toggled (i.e., each light is turned on if
-  it was off, and turned off if it was on). Figure out which buttons
-  to press to turn off all the lights if the starting position is as
-  shown above.
+  left and to the right) are toggled (i.e., any light that was off is
+  turned on and vice versa). Figure out which buttons to press to
+  turn off all the lights if the starting position is as shown above.
 \end{example}
 
 \begin{solution}
