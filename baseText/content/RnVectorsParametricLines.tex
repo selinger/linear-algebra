@@ -15,7 +15,7 @@ To begin, consider the case $n=1$ so we have $\R^{1}=\R$. There is only one line
 
 Now consider the case where $n=2$, in other words $\R^2$.  Let $P $ and $P_0$ be
 two different points in $\R^{2}$ which are contained in a line
-$L$. Let $\vect{p}$ and $\vect{p_0}$ be the position vectors for the points $P$ and $P_0$
+$L$. Let $\vect{p}$ and $\vect{p}_0$ be the position vectors for the points $P$ and $P_0$
 respectively. Suppose that $Q$ is an arbitrary point on $L$. Consider the following
 diagram.
 
@@ -30,34 +30,34 @@ diagram.
 \end{tikzpicture}
 \end{center}
 
-Our goal is to be able to define $Q$ in terms of $P$  and $P_0$. Consider the vector $\longvect{P_0P} = \vect{p} - \vect{p_0}$ which
-has its tail at $P_0$ and point at $P$. If we add $\vect{p} - \vect{p_0}$ to the position vector $\vect{p_0}$ for $P_0$,  
+Our goal is to be able to define $Q$ in terms of $P$  and $P_0$. Consider the vector $\longvect{P_0P} = \vect{p} - \vect{p}_0$ which
+has its tail at $P_0$ and point at $P$. If we add $\vect{p} - \vect{p}_0$ to the position vector $\vect{p}_0$ for $P_0$,  
 the sum would be a vector with its point at $P$. 
 In other words,
 \begin{equation*}
-\vect{p} = \vect{p_0} + (\vect{p} - \vect{p_0})
+\vect{p} = \vect{p}_0 + (\vect{p} - \vect{p}_0)
 \end{equation*}
 
-Now suppose we were to add $t(\vect{p} - \vect{p_0})$ to $\vect{p}$ where $t$ is some scalar.
+Now suppose we were to add $t(\vect{p} - \vect{p}_0)$ to $\vect{p}$ where $t$ is some scalar.
 You can see that by doing so, we could find a vector with its point at $Q$. In other words, we can find $t$ such that 
 \begin{equation*}
-\vect{q} = \vect{p_0} + t \tup{\vect{p}- \vect{p_0}}
+\vect{q} = \vect{p}_0 + t \tup{\vect{p}- \vect{p}_0}
 \end{equation*}
 
 This equation determines the line $L$ in $\R^2$. In fact, it determines a line $L$ in $\R^n$. Consider the following definition.
 
 \begin{definition}{Vector equation of a line}{vectorequationofline}
 Suppose a line $L$ in $\R^{n}$ contains the two\index{lines!vector equation} different points $P$ and 
-$P_0$. Let $\vect{p}$ and $\vect{p_0}$ be the position vectors of these two points, respectively.
+$P_0$. Let $\vect{p}$ and $\vect{p}_0$ be the position vectors of these two points, respectively.
 Then, $L$ is the collection of points $Q$ which have the position vector $\vect{q}$ given by
 \begin{equation*}
-\vect{q}=\vect{p_0}+t\tup{\vect{p}-\vect{p_0}}
+\vect{q}=\vect{p}_0+t\tup{\vect{p}-\vect{p}_0}
 \end{equation*}
 where $t\in \R$. 
 
-Let $\vect{d} = \vect{p} - \vect{p_0}$. Then $\vect{d}$ is the \textbf{direction vector for $L$}\index{direction vector} and the \textbf{vector equation} for $L$ is given by 
+Let $\vect{d} = \vect{p} - \vect{p}_0$. Then $\vect{d}$ is the \textbf{direction vector for $L$}\index{direction vector} and the \textbf{vector equation} for $L$ is given by 
 \begin{equation*}
-\vect{p}=\vect{p_0}+t\vect{d}, t\in\R
+\vect{p}=\vect{p}_0+t\vect{d}, t\in\R
 \end{equation*}
 \end{definition}
 
@@ -97,10 +97,10 @@ line.
 \end{proposition}
 
 \begin{proof}
-Let $\vect{x_{1}}, \vect{x_{2}} \in \R^n$. 
-Define $\vect{x_{1}}=\vect{a}$ and let $\vect{x_{2}}-\vect{x_{1}}=\vect{b}$.
-Since $\vect{b} \neq \vect{0}$, it follows that $\vect{x_{2}}\neq \vect{x_{1}}.$ Then
-$\vect{a}+t\vect{b}=\vect{x_{1}} + t\tup{\vect{x_{2}}-\vect{x_{1}}} $. It follows that  
+Let $\vect{x}_1, \vect{x}_2 \in \R^n$. 
+Define $\vect{x}_1=\vect{a}$ and let $\vect{x}_2-\vect{x}_1=\vect{b}$.
+Since $\vect{b} \neq \vect{0}$, it follows that $\vect{x}_2\neq \vect{x}_1.$ Then
+$\vect{a}+t\vect{b}=\vect{x}_1 + t\tup{\vect{x}_2-\vect{x}_1} $. It follows that  
 $\vect{x}=\vect{a}+t\vect{b}$ is a line containing the two different points 
 $X_1$ and $X_2$ whose position vectors are given by $\vect{x}_1$ and $\vect{x}_2$ respectively. 
 \end{proof}
@@ -117,7 +117,7 @@ Find a vector equation for the line through the points $P_0 = \tup{
 We will use the definition of a line given above in Definition \ref{def:vectorequationofline} to write
 this line in the form 
 \begin{equation*}
-\vect{q}=\vect{p_0}+t\tup{\vect{p}-\vect{p_0}}
+\vect{q}=\vect{p}_0+t\tup{\vect{p}-\vect{p}_0}
 \end{equation*}
 Let $\vect{q} = 
 \begin{mymatrix}{c}
@@ -125,11 +125,11 @@ x \\
 y \\
 z
 \end{mymatrix}
-$. Then, we can find $\vect{p}$ and $\vect{p_0}$ by taking the position vectors of points $P$ and $P_0$ 
+$. Then, we can find $\vect{p}$ and $\vect{p}_0$ by taking the position vectors of points $P$ and $P_0$ 
 respectively. 
 Then, 
 \begin{equation*}
-\vect{q}=\vect{p_0}+t\tup{\vect{p}-\vect{p_0}}
+\vect{q}=\vect{p}_0+t\tup{\vect{p}-\vect{p}_0}
 \end{equation*}
 can be written as
 \begin{equation*}
@@ -162,7 +162,7 @@ Here, the direction vector $
 \end{mymatrix}
 $
 is obtained by $
-\vect{p} - \vect{p_0} = 
+\vect{p} - \vect{p}_0 = 
 \begin{mymatrix}{r}
 2 \\
 -4 \\
@@ -210,8 +210,8 @@ $
 
 \begin{solution}
 We will use Definition \ref{def:vectorequationofline} to write this line in the form 
-$\vect{p}=\vect{p_0}+t\vect{d},\; t\in \R$. We are given the direction vector $\vect{d}$. 
-In order to find $\vect{p_0}$, we can use the position vector of the point $P_0$. 
+$\vect{p}=\vect{p}_0+t\vect{d},\; t\in \R$. We are given the direction vector $\vect{d}$. 
+In order to find $\vect{p}_0$, we can use the position vector of the point $P_0$. 
 This is given by 
 $\begin{mymatrix}{c}
 1 \\
@@ -358,7 +358,7 @@ This is the parametric equation for this line.
 Now, we want to write this line in the form given by Definition \ref{def:vectorequationofline}.
 This is the form 
 \begin{equation*}
-\vect{p}=\vect{p_0}+t\vect{d}
+\vect{p}=\vect{p}_0+t\vect{d}
 \end{equation*}
 where $t\in \R$.
 This equation becomes
