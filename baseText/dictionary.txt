@@ -36,7 +36,6 @@ bipoles
 Bogdan
 boxproduct
 cardioid
-cartesian
 cauchyschwarzinequality
 Cayley
 cc
