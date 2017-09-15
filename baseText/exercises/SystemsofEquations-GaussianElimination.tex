@@ -185,15 +185,15 @@ x-y+z+w=1 \\
 \end{equation*}
 \begin{sol}
 There is no solution. The system is inconsistent. You can see this from the
-augmented matrix. $\begin{mymatrix}{rrrrr}
+augmented matrix. $\begin{mymatrix}{rrrr|r}
 1 & 2 & 1 & -1 & 2 \\
 1 & -1 & 1 & 1 & 1 \\
 2 & 1 & -1 & 0 & 1 \\
 4 & 2 & 1 & 0 & 5
-\end{mymatrix} $, {\ef}: $\begin{mymatrix}{rrrrr}
-1 & 0 & 0 & \vspace{0.05in}\frac{1}{3} & 0 \\
-0 & 1 & 0 & -\vspace{0.05in}\frac{2}{3} & 0 \\
-0 & 0 & 1 & 0 & 0 \\
+\end{mymatrix} $, {\ef}: $\begin{mymatrix}{rrrr|r}
+1 & 2 & 1 & -1 & 2 \\
+0 & -3 & 0 & 2 & -1 \\
+0 & 0 & -3 & 0 & -2 \\
 0 & 0 & 0 & 0 & 1
 \end{mymatrix} .$
 \end{sol}
@@ -245,7 +245,7 @@ Solution is: $\mat{w=\frac{3}{2}y-1,x=\frac{2}{3}-\frac{1}{2}y,z=\frac{1}{3
 \end{ex}
 
 \begin{ex}\label{ex:rr-ef}
-Row reduce each of the following matrices to obtain the {\ef}.
+Row reduce each of the following matrices to {\ef}.
 \begin{equation*}
 (a)~
 \begin{mymatrix}{rrrr}
