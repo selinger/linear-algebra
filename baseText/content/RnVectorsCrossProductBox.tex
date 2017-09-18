@@ -1,72 +1,92 @@
 \subsection{The box product}
 
-Recall that we can use the cross product to find the the area of a parallelogram. It follows that we can use the 
-cross product together with the dot product to find the volume of a parallelepiped.
-
-We begin with a definition.
+In this section, we explore another application of the cross product.
+Recall that we can use the cross product to find the the area of a
+parallelogram. As we will now show, we can also use the cross product
+together with the dot product to find the volume of a
+parallelepiped. We begin with a definition.
 
 \begin{definition}{Parallelepiped}{parallelepiped}
-A parallelepiped
-\index{parallelepiped}
- determined by the three vectors, $\vect{u},\vect{v}$, and $\vect{w}$ consists of the set of points
-\begin{equation*}
-\set{r\vect{u}+s\vect{v}+t\vect{w}:r,s,t\in \mat{0,1}
-} 
-\end{equation*}
-That is, if you pick three numbers, $r,s,$ and $t$ each in $\mat{0,1}
-$ and form $r\vect{u}+s\vect{v}+t\vect{w}$ then the collection of all
-such points makes up the parallelepiped
-\index{parallelepiped!volume}determined by these three vectors.
+  The parallelepiped\index{parallelepiped} determined by three
+  vectors $\vect{u}$, $\vect{v}$, and $\vect{w}$ consists of the set of
+  points of the form
+  \begin{equation*}
+    r\/\vect{u}+s\/\vect{v}+t\/\vect{w},
+  \end{equation*}
+  where $r,s,t$ are real numbers between $0$ and $1$, inclusive. The
+  parallelepiped is a three-dimensional body bounded by parallelograms
+  as shown in this picture.
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+      \fill[blue!20] (0,0,0) -- (2,0,0) -- (3.5,1.5,0) -- (1.5,1.5,0) -- cycle;
+      \fill[blue!35] (2,0,0) -- ++(1.5,1.5,0) -- ++(1,0,-1.5) -- ++(-1.5,-1.5,0) -- cycle;
+      \fill[blue!12] (1.5,1.5,0) -- ++(2,0,0) -- ++(1,0,-1.5) -- ++(-2,0,0) -- cycle;
+      \draw[blue,->](0,0,0) -- node [below, near end] {$\vect{u}$} (2,0,0); %% u 
+      \draw[red,dashed,->](0,0,0) -- node [above left, near end] {$\vect{v}$} (1,0,-1.5); %% v 
+      \draw[green!50!black,->](0,0,0) -- node [left, near end] {$\vect{w}$} (1.5,1.5,0); %% w 
+      \draw[dashed](1,0,-1.5)--(3,0,-1.5);
+      \draw[dashed](1,0,-1.5)--(2.5,1.5,-1.5);
+      \draw(1.5,1.5,0)--(3.5,1.5,0)--(4.5,1.5,-1.5)--(2.5,1.5,-1.5)--(1.5,1.5,0);
+      \draw(3.5,1.5,0)--(2,0,0)--(3,0,-1.5)--(4.5,1.5,-1.5);
+    \end{tikzpicture}
+  \end{center}
 \end{definition}
 
-The following is an example of a parallelepiped.
-
-\begin{center}
-\begin{tikzpicture}
-\draw[<-](0,2.5,0)--(0,0,0); 
-\draw[blue,->](0,0,0)--(2,0,0); %% u 
-\draw[blue,dotted,->](0,0,0)--(1,0,-1.5); %% v 
-\draw[blue,->](0,0,0)--(1.5,1.5,0); %% w 
-\draw[dotted](1,0,-1.5)--(3,0,-1.5);
-\draw[dotted](1,0,-1.5)--(2.5,1.5,-1.5);
-\draw(1.5,1.5,0)--(3.5,1.5,0)--(4.5,1.5,-1.5)--(2.5,1.5,-1.5)--(1.5,1.5,0);
-\draw(3.5,1.5,0)--(2,0,0)--(3,0,-1.5)--(4.5,1.5,-1.5);
-\node[left] at (0,2){$\vect{u} \times \vect{v}$};
-\node[above right] at (0,0.5){$\theta$};
-\node[below] at (1.5,0,0){$\vect{u}$};
-\node[right] at (0.7,0,-1){$\vect{v}$};
-\node[left] at (1.2,1.2,0){$\vect{w}$};
-\end{tikzpicture}
-\end{center}
-
 Notice that the base of the parallelepiped is the parallelogram
-determined by the vectors $\vect{u}$ and $\vect{v}$. Therefore, its area is equal to 
-$\norm{\vect{u}\times \vect{v}} $. The height of the parallelepiped
-is $\norm{\vect{w}} \cos \theta $ where $\theta $ is the angle
-shown in the picture between $\vect{w}$ and $\vect{u}\times \vect{v}$.
-The volume of this parallelepiped is the area of the base times
-the height which is just
+determined by the vectors $\vect{u}$ and $\vect{v}$. Therefore, its
+area is equal to $\norm{\vect{u}\times\vect{v}}$. The height of the
+parallelepiped is $\norm{\vect{w}}\cos\theta$, where $\theta$ is the
+angle between $\vect{w}$ and $\vect{u}\times\vect{v}$, as shown in
+this picture.
+\begin{center}
+  \begin{tikzpicture}[scale=1]
+    \filldraw[fill=green!20,draw=green!50!black] (0,0) -- (45:8mm) arc (45:90:8mm) -- cycle;
+    \fill[blue!20] (0,0,0) -- (2,0,0) -- (3.5,1.5,0) -- (1.5,1.5,0) -- cycle;
+    \fill[blue!35] (2,0,0) -- ++(1.5,1.5,0) -- ++(1,0,-1.5) -- ++(-1.5,-1.5,0) -- cycle;
+    \fill[blue!12] (1.5,1.5,0) -- ++(2,0,0) -- ++(1,0,-1.5) -- ++(-2,0,0) -- cycle;
+    \draw[blue,->](0,0,0) -- node [below, near end] {$\vect{u}$} (2,0,0); %% u 
+    \draw[red,dashed,->](0,0,0) -- node [above left, near end] {$\vect{v}$} (1,0,-1.5); %% v 
+    \draw[green!50!black,->](0,0,0) -- node [left, near end] {$\vect{w}$} (1.5,1.5,0); %% w 
+    \draw[->](0,0,0) -- node[left] {$\vect{u}\times\vect{v}$} (0,2.5,0);
+    \draw[dashed](1,0,-1.5)--(3,0,-1.5);
+    \draw[dashed](1,0,-1.5)--(2.5,1.5,-1.5);
+    \draw(1.5,1.5,0)--(3.5,1.5,0)--(4.5,1.5,-1.5)--(2.5,1.5,-1.5)--(1.5,1.5,0);
+    \draw(3.5,1.5,0)--(2,0,0)--(3,0,-1.5)--(4.5,1.5,-1.5);
+    \node at (67.5:5mm){$\theta$};
+  \end{tikzpicture}
+\end{center}
+The volume of this parallelepiped is the area of the base times the
+height which is just
 \begin{equation*}
-\norm{\vect{u}\times \vect{v}} \norm{\vect{w}} \cos \theta =
-\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}
+  \norm{\vect{u}\times \vect{v}} \norm{\vect{w}} \cos \theta =
+  \tup{\vect{u}\times\vect{v}} \dotprod \vect{w}.
 \end{equation*}
-This expression is known as the box product and is sometimes written as 
-$\mat{\vect{u},\vect{v},\vect{w}} .$
-\index{box product}You should consider what happens if you interchange the 
-$\vect{v}$ with the $\vect{w}$ or the $\vect{u}$ with the $\vect{w}$.
-You can see geometrically from drawing pictures that this merely introduces
-a minus sign. In any case the box product of three vectors always equals
-either the volume of the parallelepiped determined by the three vectors or
-else $-1$ times this volume.
+This expression is known as the
+\textbf{box product}\index{box product} and is sometimes written as
+$\mat{\vect{u},\vect{v},\vect{w}}$.
+
+Consider what happens if you interchange $\vect{v}$ with $\vect{w}$ or
+$\vect{u}$ with $\vect{w}$.  Geometrically, we can see that this
+merely introduces a minus sign. We find that the box product of three
+vectors equals the volume of the parallelepiped determined by the
+three vectors if the three vectors form a right-handed system, and the
+negative of the volume if the vectors form a left-handed system.
+We summarize this in the following proposition:
 
 \begin{proposition}{The box product}{boxproduct}
-Let $\vect{u}, \vect{v}, \vect{w}$ be three vectors in $\R^n$ that define a parallelepiped. Then the volume of the parallelepiped is the absolute value of the box product, given by 
-\[
-\abs{\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}}
-\]
+  Let $\vect{u}, \vect{v}, \vect{w}$ be three vectors in $\R^n$ that
+  define a parallelepiped. The box product
+  $\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}$ is equal to:
+  \begin{itemize}
+  \item The volume of the parallelepiped, if
+    $\vect{u}, \vect{v}, \vect{w}$ form a right-handed system.
+  \item The negative of the volume of the parallelepiped, if
+    $\vect{u}, \vect{v}, \vect{w}$ form a left-handed system.
+  \end{itemize}
+  In any case, the volume of the parallelepiped can be computed as the
+  absolute value of the box product, given by
+  $\abs{\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}}$. 
 \end{proposition}
-
-Consider an example of this concept.
 
 \begin{example}{Volume of a parallelepiped}{parallelepipedvolume}
 Find the volume of the parallelepiped determined by the vectors
@@ -77,142 +97,111 @@ Find the volume of the parallelepiped determined by the vectors
 1 \\
 2 \\
 -5
-\end{mymatrix}, 
+\end{mymatrix}, \quad
 \vect{v}
 =
 \begin{mymatrix}{r}
 1 \\
 3 \\
 -6
-\end{mymatrix}, 
+\end{mymatrix}, \quad
 \vect{w}
 =
 \begin{mymatrix}{r}
 3 \\
 2 \\
 3
-\end{mymatrix}
+\end{mymatrix}.
 \end{equation*}
 \end{example}
 
 \begin{solution}
-According to the above discussion, pick any two of these vectors, take the cross
-product and then take the dot product of this with the third of these
-vectors. The result will be either the desired volume or $-1$ times the desired
-volume. Therefore by taking the absolute value of the result, we obtain the volume. 
+  According to the above discussion, we can take the cross product of
+  any two of these vectors, and then the dot product with the third
+  vector. The result will be either plus or minus the desired
+  volume. Therefore we can obtain the volume by taking the absolute value.
 
-We will take the cross product of $\vect{u}$ and $\vect{v}$. 
-This is given by 
-\begin{align*}
-\vect{u} \times \vect{v}
-&=
-\begin{mymatrix}{r}
-1 \\
-2 \\
--5
-\end{mymatrix}
-\times
-\begin{mymatrix}{r}
-1 \\
-3 \\
--6
-\end{mymatrix}\\
-&=((2)(-6)-(-5)(3))\vect{i}+((1)(-6)-(-5)(1))\vect{j}+((1)(3)-(2)(1))\vect{k} \\
-&= 3\vect{i}+\vect{j}+\vect{k}
-=
-\begin{mymatrix}{r}
-3 \\
-1 \\
-1
-\end{mymatrix} 
-\end{align*}
-
-Now take the dot product of this vector with $\vect{w}$ which yields
-\begin{eqnarray*}
-(\vect{u} \times \vect{v}) \dotprod \vect{w}
-&=&
-\begin{mymatrix}{r}
-3 \\
-1 \\
-1
-\end{mymatrix}
-\dotprod
-\begin{mymatrix}{r}
-3 \\
-2 \\
-3 
-\end{mymatrix} \\
-&=&\tup{3\vect{i}+\vect{j}+\vect{k}} \dotprod
- \tup{3\vect{i}+2\vect{j}+3\vect{k}} \\
-&=&9+2+3 \\
-&=&14
-\end{eqnarray*}
-
-This shows the volume of this parallelepiped is 14 cubic units.
+  We first compute the cross product of $\vect{u}$ and $\vect{v}$:
+  \begin{equation*}
+    \vect{u} \times \vect{v}
+    =
+    \begin{mymatrix}{r}
+      1 \\
+      2 \\
+      -5
+    \end{mymatrix}
+    \times
+    \begin{mymatrix}{r}
+      1 \\
+      3 \\
+      -6
+    \end{mymatrix}\\
+    =\begin{mymatrix}{c}
+      (2)(-6) - (-5)(3) \\
+      (-5)(1) - (1)(-6) \\
+      (1)(3)  - (2)(1)  \\
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{r}
+      3 \\
+      1 \\
+      1
+    \end{mymatrix} 
+  \end{equation*}
+  Then we take the dot product of this vector with $\vect{w}$:
+  \begin{equation*}
+    (\vect{u} \times \vect{v}) \dotprod \vect{w}
+    =
+    \begin{mymatrix}{r}
+      3 \\
+      1 \\
+      1
+    \end{mymatrix}
+    \dotprod
+    \begin{mymatrix}{r}
+      3 \\
+      2 \\
+      3 
+    \end{mymatrix} \\
+    = 9+2+3
+    = 14.
+  \end{equation*}
+  Thus, the volume of the parallelepiped is 14 cubic units.
 \end{solution}
 
-There is a fundamental observation which comes directly from the geometric
-definitions of the cross product and the dot product.
+We finish this section with a law involving the dot product and the
+cross product. It represents a fundamental observation that comes
+directly from the geometric definition of the box product. 
 
 \begin{proposition}{Order of the product}{orderofproduct}
-Let $\vect{u},\vect{v}$, and $\vect{w}$ be vectors. Then $\tup{
-\vect{u}\times \vect{v}} \dotprod \vect{w}=\vect{u}\dotprod \tup{\vect{v}\times \vect{w}
-} .$
+  Let $\vect{u}$, $\vect{v}$, and $\vect{w}$ be vectors. Then
+  $\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}=\vect{u}\dotprod
+  \tup{\vect{v}\times \vect{w}}$.
 \end{proposition}
 
-\begin{proof}This follows from observing that either 
-$\tup{\vect{u}\times \vect{v}} \dotprod \vect{w}$ and $\vect{u}\dotprod 
-\tup{\vect{v}\times \vect{w}} $ both give the volume of the parallelepiped or they both
-give $-1$ times the volume.
+\begin{proof}
+  This follows from observing that both
+  $\tup{\vect{u}\times \vect{v}} \dotprod \vect{w}$ and
+  $\vect{u}\dotprod \tup{\vect{v}\times \vect{w}}$ compute the same
+  box product, i.e., they either both give the volume of the
+  parallelepiped or they both give the negative of the volume.
+
+  Alternatively, we can calculate each product explicitly:
+  \begin{eqnarray*}
+    \tup{\vect{u}\times \vect{v}} \dotprod \vect{w}
+    &=&
+        u_2v_3w_1 - u_3v_2w_1
+      + u_3v_1w_2 - u_1v_3w_2
+        + u_1v_2w_3 - u_2v_1w_3,\\
+    \vect{u}\dotprod \tup{\vect{v}\times \vect{w}}
+    &=&
+        u_2v_3w_1 - u_3v_2w_1
+      + u_3v_1w_2 - u_1v_3w_2
+        + u_1v_2w_3 - u_2v_1w_3.
+  \end{eqnarray*}
+  In Chapter~\ref{cha:determinants}, you will learn that these
+  expressions are a special case of a determinant. 
 \end{proof}
 
-\begin{comment}
-Recall that we can express the cross product as the determinant of a particular matrix. It turns out
-that the same can be done for the box product. 
-Suppose you have three vectors, $\vect{u}=\begin{mymatrix}{rrr}
-a & b & c
-\end{mymatrix}^T ,\vect{v}=\begin{mymatrix}{rrr}
- d & e & f
-\end{mymatrix}^T ,$ and $\vect{w}=\begin{mymatrix}{rrr}
-g & h & i
-\end{mymatrix}^T .$ Then the box product $\vect{u}\dotprod \tup{\vect{v}\times \vect{w}}$ is given by the following.
-\begin{eqnarray*}
-\vect{u}\dotprod \tup{\vect{v}\times \vect{w}} &=&
-\begin{mymatrix}{r}
-a \\
-b \\
-c
-\end{mymatrix} \dotprod \begin{absmatrix}{rrr}
-\vect{i} & \vect{j} & \vect{k} \\
-d & e & f \\
-g & h & i
-\end{absmatrix} \\
-&=&a\begin{absmatrix}{rr}
-e & f \\
-h & i
-\end{absmatrix} -b\begin{absmatrix}{rr}
-d & f \\
-g & i
-\end{absmatrix} +c\begin{absmatrix}{rr}
-d & e \\
-g & h
-\end{absmatrix} \\
-&= &\det \begin{mymatrix}{rrr}
-a & b & c \\
-d & e & f \\
-g & h & i
-\end{mymatrix} 
-\end{eqnarray*}
-
-To take the box product, you can simply take the
-determinant of the matrix which results by letting the rows be the
-components of the given vectors in the order in which they occur
-in the box product. 
-
-This follows directly from the definition of the cross product given above
-and the way we expand determinants. Thus the volume of a parallelepiped
-determined by the vectors $\vect{u},\vect{v},\vect{w}$ is just the
-absolute value of the above determinant.
-\end{comment}
 
 

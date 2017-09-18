@@ -1,58 +1,58 @@
 \section{The cross product}
 
 \begin{outcome}
-
 \begin{enumerate}
-
 \item[A.] Compute the cross product and box product of vectors in $\R^3$.
 \end{enumerate}
 \end{outcome}
 
-Recall that the dot product is one of two important products for vectors. The second type of product for vectors is called the cross product. It is important to note that the 
-cross product is only defined in $\R^{3}$ and produces a vector. 
-First we discuss the geometric meaning and then a description in terms of
-coordinates is given, both of which are important. 
-The geometric description is essential in order to understand the
-applications to physics and geometry while the coordinate description is necessary to compute the cross product.
-\index{right handed system}
-\index{cross product}
+Unlike the dot product, the cross product is only defined in $\R^3$,
+i.e., only in 3-dimensional space. The cross product of two vectors is
+a vector.
 
-Consider the following definition.
+We will first discuss the geometric meaning of the cross product, and
+then give an algebraic description. Both descriptions are equally
+important: the geometric description is essential for applications in
+physics and geometry, whereas the algebraic description is necessary
+for computing.
 
-\begin{definition}{Right hand system of vectors}{righthand}
-Three vectors, $\vect{u},\vect{v},\vect{w}$ form a right hand system if when you
-extend the fingers of your right hand along the direction of vector $\vect{u}$ and
-close them in the direction of $\vect{v}$, the thumb points roughly in the
-direction of $\vect{w}$.
+% ----------------------------------------------------------------------
+\subsection{Right-handed systems of vectors}
+
+We begin with a discussion of right-handed systems of vectors in
+3-dimensional space.\index{right handed system}
+
+\begin{definition}{Right-handed system of vectors}{righthand}
+  Three vectors, $\vect{u},\vect{v},\vect{w}$ form a right-handed
+  system if when you extend the thumb of your right hand in the
+  direction of $\vect{u}$ and your index finger in the direction of
+  $\vect{v}$, your relaxed middle finger points roughtly in the
+  direction of $\vect{w}$.
+  \begin{center}
+    \raisebox{0.25in}{
+      \begin{tikzpicture}
+        \draw[->](0,0,0) -- node[right] {$\vect{u}$} (0,2,0);
+        \draw[->](0,0,0) -- node[above] {$\vect{v}$} (-2,0,0);
+        \draw[->](0,0,0) -- node[right] {$\vect{w}$} (0,0,3);
+      \end{tikzpicture}
+    }
+    \hspace{1in}
+    \includegraphics[height=2in]{figures/right-handed}
+  \end{center}
 \end{definition}
 
-For an example of a right handed system of vectors, see the following
-picture.
+You should consider how a right-handed system would differ from a
+left-handed system. Try using your left hand and you will see that the
+vector $\vect{w}$ would need to point in the opposite direction.
 
-\begin{center}
-\begin{tikzpicture}
-\draw[<->](-2,0,0)--(0,0,0)--(0,2,0);
-\draw[->](0,0,0)--(0,0,3);
-\node[above] at (-1,0,0){$\vect{u}$};
-\node[right] at (0,0,1.5){$\vect{v}$};
-\node[right] at (0,1,0){$\vect{w}$};
-\end{tikzpicture}
-\end{center}
-
-In this picture the vector $\vect{w}$ points upwards from the plane
-determined by the other two vectors. Point the fingers of your right hand along $\vect{u}$, and 
-close them in the direction of $\vect{v}$. Notice that if you extend the thumb on your right hand,
-it points in the direction of $\vect{w}$.
-
-You should consider how a right hand
-system would differ from a left hand system. Try using your left hand and
-you will see that the vector $\vect{w}$ would need to point in the
-opposite direction.
-
-Notice that the special vectors, $\vect{i},\vect{j},\vect{k}$ will always form a right handed
-system. If you extend the fingers of your right hand along $\vect{i}$ and 
-close them in the direction $\vect{j}$, the thumb points
-in the direction of $\vect{k}$.
+Recall the special vectors $\vect{i}=\mat{1,0,0}^T$,
+$\vect{j}=\mat{0,1,0}^T$, and $\vect{k}=\mat{0,0,1}^T$ we saw in
+Section~\ref{sec:linear-combinations-rn}. We always assume that our
+coordinate system is drawn in such a way that the vectors $\vect{i}$,
+$\vect{j}$, $\vect{k}$ form a right-handed system. Thus, if the thumb
+of your right hand points along the $x$-axis and your index finger
+points along the $y$-axis, your middle finger should point along the
+$z$-axis. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -65,140 +65,179 @@ in the direction of $\vect{k}$.
 \end{tikzpicture}
 \end{center}
 
-The following is the geometric description of the cross product. Recall that the dot product of 
-two vectors results in a scalar. In contrast, the cross product results in a vector, as the product gives
-a direction as well as magnitude.
-\index{cross product!geometric description}
+% ----------------------------------------------------------------------
+\subsection{Geometric description of the cross product}
+
+The following is the geometric description of the cross
+product. Recall that the dot product of two vectors results in a
+scalar. In contrast, the cross product results in a vector, as the
+cross product gives a direction as well as
+a magnitude.\index{cross product!geometric description}
 
 \begin{definition}{Geometric definition of cross product}{crossprodgeomet}
-Let $\vect{u}$ and $\vect{v}$ be two vectors in $\R^{3}.$ 
-Then the \textbf{cross product}, written $\vect{u}\times \vect{v}$, is defined by
-\index{cross product} the following two rules.
-\index{cross product!geometric description}
+  Let\/ $\vect{u}$ and $\vect{v}$ be two vectors in $\R^{3}.$ Their
+  \textbf{cross product}\index{cross product}, written
+  $\vect{u}\times \vect{v}$, is the vector defined by the following three rules.
+  \index{cross product!geometric description}
 
 \begin{enumerate}
 \item Its length is $\norm{\vect{u}\times \vect{v}} =\norm{\vect{u}} \norm{
-\vect{v}} \sin \theta $, \\
+\vect{v}} \sin \theta $, 
 where $\theta $ is the included angle between $\vect{u}$ and $\vect{v}$.
 
-\item It is perpendicular to both $\vect{u}$ and $\vect{v}$, that is $\tup{\vect{u}\times \vect{v} } \dotprod \vect{u}=0,$ $\tup{\vect{u}\times \vect{v} } \dotprod \vect{v}=0,$ \\
-and  $\vect{u},\vect{v},\vect{u}\times \vect{v}$ form a right hand system.
+\item It is orthogonal to both $\vect{u}$ and $\vect{v}$.
+
+\item The vectors $\vect{u}$, $\vect{v}$, and $\vect{u}\times
+  \vect{v}$, in that order, form a right-handed system.
 \end{enumerate}
 \end{definition}
 
-The cross product of the special vectors $\vect{i}, \vect{j},
-\vect{k}$ is as follows.  
-\begin{equation*}
-\begin{array}{cc}
-\vect{i}\times \vect{j}=\vect{k} & \vect{j}\times \vect{i}=-\vect{k} \\
-\vect{k}\times \vect{i}=\vect{j} & \vect{i}\times \vect{k}=-\vect{j} \\
-\vect{j}\times \vect{k}=\vect{i} & \vect{k}\times \vect{j}=-\vect{i}
-\end{array}
-\end{equation*}
-With this information, the following gives the coordinate description of the
-cross product.
-\index{cross product!coordinate description}
+We note that the length of the cross product,
+$\norm{\vect{u}\times\vect{v}}$, given by the formula
+$\norm{\vect{u}}\norm{\vect{v}}\sin\theta$, is the area of the
+parallelogram determined by $\vect{u}$ and $\vect{v}$, as shown in the
+following picture.\index{cross product!area of parallelogram}
+\begin{center}
+  \begin{tikzpicture}[scale=1.3]
+    \filldraw[fill=green!20,draw=green!50!black] (0,0) -- (0:8mm) arc (0:45:8mm) -- cycle;
+    \draw[->,thick,red] (0,0) -- node[left] {$\vect{v}$} (2,2);
+    \draw[->,thick,blue] (0,0) -- node[below] {$\vect{u}$} (3,0);
+    \draw[thick] (2,2)--(5,2);
+    \draw[thick] (3,0)--(5,2);
+    \draw[dashed] (2,2)--(2,0);
+    \node[green!30!black] at (22.5:5.5mm) {$\theta$};
+    \node[right] at (2,1){$\norm{\vect{v}} \sin(\theta)$};
+  \end{tikzpicture}
+\end{center}
 
-Recall that the vector $\vect{u}= \begin{mymatrix}{ccc}
-u_1 & u_2 & u_3
-\end{mymatrix}^T$
-can be written in terms of $\vect{i}, \vect{j}, \vect{k}$ as $\vect{u}=u_{1}\vect{i}+u_{2}\vect{j}+u_{3}\vect{k}$. 
+% ----------------------------------------------------------------------
+\subsection{Algebraic definition of the cross product}
 
-The cross product satisfies the following properties.
+From its geometric description, we can prove that the cross product
+satisfies the following properties.
 
 \begin{proposition}{Properties of the cross product}{propertiescrossproduct}
-Let $\vect{u}, \vect{v}, \vect{w}$ be vectors in $\R^3$, and $k$ a scalar. Then, the following properties 
-of the cross product hold.
-\begin{enumerate}
-\item 
-$\vect{u}\times \vect{v}= -\tup{\vect{v}\times \vect{u}}, 
-\mbox{and} \; \vect{u}\times \vect{u}=\vect{0}$
-\item 
-$\tup{k \vect{u}}\times \vect{v}= k \tup{\vect{u}\times \vect{v}} 
-=\vect{u}\times \tup{k \vect{v}}$
-\item
-$\vect{u}\times \tup{\vect{v}+\vect{w}} =\vect{u}\times \vect{v}+\vect{u}\times \vect{w}$
-\item 
-$\tup{\vect{v}+\vect{w}} \times \vect{u}=\vect{v} \times \vect{u}+\vect{w}\times \vect{u}$
-\end{enumerate}
+  Let $\vect{u}, \vect{v}, \vect{w}$ be vectors in $\R^3$, and $k$ a
+  scalar. Then the following hold.
+  \begin{enumerate}
+  \item
+    $\vect{u}\times \vect{v}= -\tup{\vect{v}\times \vect{u}}$,
+    and $\vect{u}\times \vect{u}=\vect{0}$.
+  \item $\tup{k \vect{u}}\times \vect{v}= k \tup{\vect{u}\times \vect{v}} 
+    =\vect{u}\times \tup{k \vect{v}}$.
+  \item $\vect{u}\times \tup{\vect{v}+\vect{w}} =\vect{u}\times \vect{v}+\vect{u}\times \vect{w}$.
+  \item $\tup{\vect{v}+\vect{w}} \times \vect{u}=\vect{v} \times \vect{u}+\vect{w}\times \vect{u}$.
+  \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-Formula $1.$ follows immediately from the definition. The vectors 
-$\vect{u}\times \vect{v}$ and $\vect{v}\times \vect{u}$ have the same magnitude, 
-$\abs{\vect{u}}\abs{\vect{v}}\sin
-\theta ,$ and an application of the right hand rule shows they have opposite
-direction. 
+  Formula $1.$ follows immediately from the definition. The vectors
+  $\vect{u}\times \vect{v}$ and $\vect{v}\times \vect{u}$ have the
+  same magnitude, $\norm{\vect{u}}\norm{\vect{v}}\sin \theta ,$ and an
+  application of the right hand rule shows they have opposite
+  direction.
 
-Formula $2.$ is proven as follows. If $k $ is a
-non-negative scalar, the direction of $\tup{k \vect{u}}
-\times \vect{v}$ is the same as the direction of $\vect{u}\times \vect{v},
-k \tup{\vect{u}\times \vect{v}} $ and $\vect{u}\times \tup{
-k \vect{v}} $. The magnitude is  $k$ times the
-magnitude of $\vect{u}\times \vect{v}$ which is the same as the magnitude of 
-$k \tup{\vect{u}\times \vect{v}} $ and $\vect{u}\times \tup{
-k \vect{v}} .$ Using this yields equality in $2$. In
-the case where $k <0,$ everything works the same way except the vectors
-are all pointing in the opposite direction and you must multiply by 
-$\abs{k }$ when comparing their magnitudes. 
+  Formula $2.$ is proven as follows. If $k $ is a non-negative scalar,
+  the direction of $\tup{k \vect{u}} \times \vect{v}$ is the same as
+  the direction of
+  $\vect{u}\times \vect{v}, k \tup{\vect{u}\times \vect{v}} $ and
+  $\vect{u}\times \tup{ k \vect{v}} $. The magnitude is $k$ times the
+  magnitude of $\vect{u}\times \vect{v}$ which is the same as the
+  magnitude of $k \tup{\vect{u}\times \vect{v}} $ and
+  $\vect{u}\times \tup{ k \vect{v}} .$ Using this yields equality in
+  $2$. In the case where $k <0,$ everything works the same way except
+  the vectors are all pointing in the opposite direction and you must
+  multiply by $\abs{k }$ when comparing their magnitudes.
 
-The distributive laws, $3.$ and $4.$, are much harder to establish. For now, it suffices to
- notice that if we know that $3.$ is true, $4.$ follows. Thus, assuming $3.$, and using $1.$,
-\begin{align*}
-\tup{\vect{v}+\vect{w}} \times \vect{u}& =-\vect{u}\times \tup{
-\vect{v}+\vect{w}} \\
-& =-\tup{\vect{u}\times \vect{v}+\vect{u}\times \vect{w}} \\
-& =\vect{v}\times \vect{u}+\vect{w}\times \vect{u}
-\end{align*}
+  The distributive laws, $3.$ and $4.$, are harder to establish. For
+  now, we will content ourselves with noticing that if we know that
+  $3.$ is true, $4.$ follows. Namely, assuming $3.$, and using $1.$,
+  we have
+  \begin{align*}
+    \tup{\vect{v}+\vect{w}} \times \vect{u}
+    & =-\vect{u}\times \tup{
+      \vect{v}+\vect{w}} \\
+    & =-\tup{\vect{u}\times \vect{v}+\vect{u}\times \vect{w}} \\
+    & =\vect{v}\times \vect{u}+\vect{w}\times \vect{u}.
+  \end{align*}
 \end{proof}
+
+In turn, we can use the properties from
+Proposition~\ref{prop:propertiescrossproduct} to get an algebraic
+description of the cross product. We begin by determining the cross
+products of the special vectors $\vect{i}$, $\vect{j}$, and
+$\vect{k}$. They are as follows:
+\begin{equation*}
+  \begin{array}{c@{\quad\quad}c@{\quad\quad}c}
+    \vect{i}\times \vect{j}=\vect{k},
+    & \vect{j}\times \vect{i}=-\vect{k},
+    & \vect{i}\times \vect{i}=\vect{0}, \\
+    \vect{k}\times \vect{i}=\vect{j},
+    & \vect{i}\times \vect{k}=-\vect{j},
+    & \vect{j}\times \vect{j}=\vect{0}, \\
+    \vect{j}\times \vect{k}=\vect{i},
+    & \vect{k}\times \vect{j}=-\vect{i},
+    & \vect{k}\times \vect{k}=\vect{0}.
+  \end{array}
+\end{equation*}
+With this information and the laws of
+Proposition~\ref{prop:propertiescrossproduct}, we can compute the cross
+product of any two vectors from their coordinates.\index{cross product!coordinate description}
+Let
+\begin{equation*}
+  \vect{u}=\begin{mymatrix}{c}u_1\\u_2\\u_3\end{mymatrix}
+  \quad\mbox{and}\quad
+  \vect{v}=\begin{mymatrix}{c}v_1\\v_2\\v_3\end{mymatrix}.
+\end{equation*}
+Then we have:
+\begin{eqnarray*}
+  \vect{u}\times\vect{v}
+  &=& (u_{1}\vect{i}+u_{2}\vect{j}+u_{3}\vect{k})\times (v_{1}\vect{i}+v_{2}\vect{j}+v_{3}\vect{k})\\
+  &=& \begin{array}[t]{@{}c@{~}c@{~}c@{~}c@{~}c@{~}c}
+          & u_1v_1(\vect{i}\times\vect{i})
+        &+& u_1v_2(\vect{i}\times\vect{j})
+        &+& u_1v_3(\vect{i}\times\vect{k})\\
+         +& u_2v_1(\vect{j}\times\vect{i})
+        &+& u_2v_2(\vect{j}\times\vect{j})
+        &+& u_2v_3(\vect{j}\times\vect{k})\\
+         +& u_3v_1(\vect{k}\times\vect{i})
+        &+& u_3v_2(\vect{k}\times\vect{j})
+        &+& u_3v_3(\vect{k}\times\vect{k})
+      \end{array}
+  \\
+  &=&\begin{array}[t]{@{}c@{~}c@{~}c@{~}c@{~}c@{~}c}
+         & u_1v_1\vect{0}
+       &+& u_1v_2\vect{k}
+       &-& u_1v_3\vect{j}\\
+        -& u_2v_1\vect{k}
+       &+& u_2v_2\vect{0}
+       &+& u_2v_3\vect{i}\\
+        +& u_3v_1\vect{j}
+       &-& u_3v_2\vect{i}
+       &+& u_3v_3\vect{0}
+     \end{array}
+  \\
+  &=& (u_{2}v_{3}-u_{3}v_{2}) \vect{i}+
+      (u_{3}v_{1} - u_{1}v_{3}) \vect{j}+
+      (u_{1}v_{2}-u_{2}v_{1}) \vect{k}.
+\end{eqnarray*}
+The resulting formula for the cross product is summarized in the
+following Proposition.
 
 \begin{proposition}{Coordinate description of cross product}{crossprodcoord}
- Let $\vect{u}=u_{1}\vect{i}+u_{2}\vect{j}+u_{3}\vect{k}$
- and $\vect{v}=v_{1}\vect{i}+v_{2}\vect{j}+v_{3}\vect{k}$ be two
-vectors. Then
-\begin{equation}
-\begin{array}{c}
-\vect{u}\times \vect{v} 
- =\tup{u_{2}v_{3}-u_{3}v_{2}} \vect{i}-\tup{
-u_{1}v_{3} - u_{3}v_{1}} \vect{j}+  \\
- +\tup{u_{1}v_{2}-u_{2}v_{1}} \vect{k}  \label{crossprod1}
-\end{array}
-\end{equation}
+  The cross product can be computed as follows:
+  \begin{equation*}
+    \begin{mymatrix}{c}u_1\\u_2\\u_3\end{mymatrix}
+    \times
+    \begin{mymatrix}{c}v_1\\v_2\\v_3\end{mymatrix}
+    =
+    \begin{mymatrix}{c}
+      u_2v_3 - u_3v_2 \\
+      u_3v_1 - u_1v_3 \\
+      u_1v_2 - u_2v_1 \\
+    \end{mymatrix}.
+  \end{equation*}
 \end{proposition}
-
-Note that we will learn a quicker way to evaluate the cross product, further in this course when we learn about determinants.
-
-Writing $\vect{u} \times \vect{v}$ in the usual way, it is given by 
-\begin{equation*}
-\vect{u} \times \vect{v}
-=
-\begin{mymatrix}{r}
- u_{2}v_{3}-u_{3}v_{2} \\
--(u_{1}v_{3}-u_{3}v_{1}) \\
- u_{1}v_{2}-u_{2}v_{1}
-\end{mymatrix}
-\end{equation*}
-
-We now prove this proposition. 
-
-\begin{proof} From the above table and the properties of the cross
-product listed,
-\begin{eqnarray*}
-\vect{u} \times \vect{v} &=& \tup{u_{1}\vect{i}+u_{2}\vect{j}+u_{3}\vect{k}} \times \tup{
-v_{1}\vect{i}+v_{2}\vect{j}+v_{3}\vect{k}} \\
-&=& u_{1}v_{2}\vect{i}\times \vect{j}+u_{1}v_{3}\vect{i}\times \vect{k}+u_{2}v_{1}\vect{j}\times \vect{i}+
-u_{2}v_{3}\vect{j}\times \vect{k}+
-+u_{3}v_{1}\vect{k}\times \vect{i}+u_{3}v_{2}\vect{k}\times \vect{j} \\
-&=&u_{1}v_{2}\vect{k}-u_{1}v_{3}\vect{j}-u_{2}v_{1}\vect{k}+u_{2}v_{3}
-\vect{i}+u_{3}v_{1}\vect{j}-u_{3}v_{2}\vect{i} \\
-&=&\tup{u_{2}v_{3}-u_{3}v_{2}} \vect{i}+\tup{
-u_{3}v_{1}-u_{1}v_{3}} \vect{j}+\tup{u_{1}v_{2}-u_{2}v_{1}}
-\vect{k}  
-\end{eqnarray*}
-\begin{equation}
-\label{crossprod2}
-\end{equation}
-\end{proof}
 
 \begin{comment}
 There is another version of \ref{crossprod1} which may be easier to remember.
@@ -246,7 +285,7 @@ which is the same as \ref{crossprod2}.
 We will now look at an example of how to compute a cross product.
 
 \begin{example}{Find a cross product}{findcrossproduct}
-Find $\vect{u} \times \vect{v}$ for the following vectors
+Find $\vect{u} \times \vect{v}$ for the vectors
 \begin{equation*}
 \vect{u}
 =
@@ -254,181 +293,129 @@ Find $\vect{u} \times \vect{v}$ for the following vectors
 1 \\
 -1 \\
 2
-\end{mymatrix},
+\end{mymatrix}
+\quad\mbox{and}\quad
 \vect{v}
 =
 \begin{mymatrix}{r}
 3 \\
 -2 \\
 1
-\end{mymatrix}
+\end{mymatrix}.
 \end{equation*}
 \end{example}
 
 \begin{solution}
-Note that we can write $\vect{u}, \vect{v}$ in terms of the special vectors $\vect{i},
-\vect{j}, \vect{k}$ as 
-\begin{equation*}
-\begin{array}{c}
-\vect{u}
-=
-\vect{i}-\vect{j}+2\vect{k} \\
-\vect{v}
-=
- 3\vect{i}-2\vect{j}+\vect{k}
-\end{array}
-\end{equation*}
-
-We will use the equation given by \ref{crossprod2} to compute the cross product. 
-\begin{equation*}
-\vect{u} \times \vect{v}
-=((-1)(1)-(2)(-2)) \vect{i}- ((1)(1)-(1)(3)) \vect{j}+((1)(-2)-(-1)(3)) \vect{k}=3\vect{i}+5\vect{j}+\vect{k}
-\end{equation*}
-
-We can write this result in the usual way, as
-\begin{equation*}
-\vect{u} \times \vect{v}
-=
-\begin{mymatrix}{r}
-3 \\
-5 \\
-1
-\end{mymatrix}
-\end{equation*}
-
+  Using Proposition~\ref{prop:crossprodcoord}, we compute
+  \begin{equation*}
+    \begin{mymatrix}{c}1\\-1\\2\end{mymatrix}
+    \times
+    \begin{mymatrix}{c}3\\-2\\1\end{mymatrix}
+    =
+    \begin{mymatrix}{c}
+      (-1)(1) - (2)(-2) \\
+      (2)(3) - (1)(1) \\
+      (1)(-2) - (-1)(3) \\
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{c}
+      3 \\
+      5 \\
+      1
+    \end{mymatrix}.
+  \end{equation*}
 \end{solution}
-
-An important geometrical application of the cross product is as follows. The size of the cross product, $\norm{\vect{u}\times \vect{v}} $, is the area of the
-parallelogram determined by $\vect{u}$ and $\vect{v}$, as shown in the following picture. 
-\index{cross product!area of parallelogram}
-
-\begin{center}
-\begin{tikzpicture}[scale=1.5]
-\draw[->,thick](0,0)--(2,2);
-\draw[->,thick](0,0)--(3,0);
-\draw[thick](2,2)--(5,2);
-\draw[thick](3,0)--(5,2);
-\draw[dashed](2,2)--(2,0);
-\node[below] at (1.5,0){$\vect{u}$};
-\node[left] at (0.8,1){$\vect{v}$};
-\node[above right] at (0.2,0){$\theta$};
-\node[right] at (2,1){$\norm{\vect{v}} \sin(\theta)$};
-\end{tikzpicture}
-\end{center}
 
 We use this concept in the following example.
 
 \begin{example}{Area of a parallelogram}{areaparallelogram}
-Find the area of the
- parallelogram determined by the vectors $\vect{u}$
-and $\vect{v}$ given by 
-\begin{equation*}
-\vect{u}
-=
-\begin{mymatrix}{r}
-1 \\
--1 \\
-2
-\end{mymatrix}, 
-\vect{v}
-=
-\begin{mymatrix}{r}
-3 \\
--2 \\
-1
-\end{mymatrix}
-\end{equation*}
+  Find the area of the parallelogram determined by the following
+  vectors $\vect{u}$ and $\vect{v}$:
+  \begin{equation*}
+    \vect{u}
+    =
+    \begin{mymatrix}{r}
+      1 \\
+      -1 \\
+      2
+    \end{mymatrix}, \quad
+    \vect{v}
+    =
+    \begin{mymatrix}{r}
+      3 \\
+      -2 \\
+      1
+    \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-Notice that these vectors are the same as the ones given in Example \ref{exa:findcrossproduct}.
-Recall from the geometric description of the cross
-product, that the area of the parallelogram is simply the magnitude of $\vect{u} \times \vect{v}$. 
-From Example \ref{exa:findcrossproduct}, $\vect{u} \times \vect{v} = 3\vect{i}+5\vect{j}+\vect{k}$.
-We can also write this as
-\begin{equation*}
-\vect{u} \times \vect{v}
-=
-\begin{mymatrix}{r}
-3 \\
-5 \\
-1
-\end{mymatrix}
-\end{equation*}
-
-Thus the area of the parallelogram is 
-\begin{equation*}
-\norm{\vect{u} \times \vect{v}} = 
-\sqrt{(3)(3) + (5)(5) + (1)(1)} = 
-\sqrt{9+25+1}=\sqrt{35}
-\end{equation*}
+  Notice that these vectors are the same as the ones given in Example
+  \ref{exa:findcrossproduct}.  Recall from the geometric description
+  of the cross product that the area of the parallelogram is the
+  magnitude of $\vect{u} \times \vect{v}$.  From
+  Example~\ref{exa:findcrossproduct},
+  $\vect{u} \times \vect{v} = \mat{3,5,1}^T$.  
+  Thus the area of the parallelogram is 
+  \begin{equation*}
+    \norm{\vect{u} \times \vect{v}} = 
+    \sqrt{3^2+5^2+1^2} = \sqrt{35}.
+  \end{equation*}
 \end{solution}
 
-We can also use this concept to find the area of a triangle. Consider the following
-example.
+We can also use this concept to find the area of a triangle, as in the
+following example.
 
 \begin{example}{Area of triangle}{areatriangle}
-Find the area of the triangle determined by the points $\tup{1, 2, 3 } ,
-\tup{0,2,5},
-\tup{5,1, 2 } $ 
+  Find the area of the triangle determined by the points
+  $\tup{1,2,3}$, $\tup{0,2,5}$, and $\tup{5,1,2}$.
 \end{example}
 
 \begin{solution}
-This triangle is obtained by connecting the three points with lines. Picking
-$\tup{1,2,3} $ as a starting point, there are two displacement
-vectors, $\begin{mymatrix}{rrr}
--1 & 0 & 2
-\end{mymatrix}^T $ and $\begin{mymatrix}{rrr}
-4 & -1 & -1
-\end{mymatrix}^T $. Notice that if we add either of these vectors to the position vector of the 
-starting point, the result is the position vectors of the other two
-points. Now, the area of the triangle is half the area of the parallelogram
-determined by $\begin{mymatrix}{rrr}
--1 & 0 & 2
-\end{mymatrix}^T $ and $\begin{mymatrix}{rrr}
-4 & -1 & -1
-\end{mymatrix}^T.$ 
-The required cross product is given by
-\begin{equation*}
-\begin{mymatrix}{r}
--1 \\
-0 \\
-2
-\end{mymatrix} \times \begin{mymatrix}{r}
-4 \\
--1 \\
--1
-\end{mymatrix} = \begin{mymatrix}{rrr}
-2 \\ 7 \\ 1
-\end{mymatrix} 
-\end{equation*}
-  Taking the size of this vector gives the area of the parallelogram,
-given by 
-\begin{equation*}
-\sqrt{(2)(2) + (7)(7) + (1)(1)}
-=
-\sqrt{4+49+1}
-= \sqrt{54}
-\end{equation*}
-Hence the area of the triangle is $\frac{1}{2}\sqrt{54}= \frac{3}{2}\sqrt{6}.$
+  Let $P=\tup{1,2,3}$, $Q=\tup{0,2,5}$, and $R=\tup{5,1,2}$. The area
+  of the triangle is exactly half of the area of the parallelogram
+  determined by the vectors $\longvect{PQ}$ and $\longvect{PR}$.
+  \begin{center}
+    \begin{tikzpicture}[scale=1]
+      \fill[blue!5] (0,0) -- (2,2) -- (3,0) -- cycle;
+      \draw[->,thick,blue!70!black] (0,0) -- (2,2);
+      \draw[->,thick,red] (0,0) -- (3,0);
+      \draw[thick] (2,2)--(5,2);
+      \draw[thick] (3,0)--(5,2);
+      \draw[dashed] (2,2)--(3,0);
+      \draw[fill](0,0) circle [radius=2.25pt] node[left=1ex]{$P$};
+      \draw[fill](2,2) circle [radius=2.25pt] node[left=1ex]{$Q$};
+      \draw[fill](3,0) circle [radius=2.25pt] node[right=1ex]{$R$};
+    \end{tikzpicture}
+  \end{center}
+  We have $\longvect{PQ}=\mat{-1,0,2}^T$ and
+  $\longvect{PR}=\mat{4,-1,-1}^T$. The area of the parallelogram is
+  the magnitude of the cross product:
+  \begin{equation*}
+    \norm{\longvect{PQ}\times\longvect{PR}}
+    =
+    \norm{\begin{mymatrix}{r}
+        -1 \\
+        0 \\
+        2
+      \end{mymatrix} \times \begin{mymatrix}{r}
+        4 \\
+        -1 \\
+        -1
+      \end{mymatrix}
+    }
+    = \norm{\begin{mymatrix}{rrr}
+        2 \\ 7 \\ 1
+      \end{mymatrix}
+    }
+    = \sqrt{2^2+7^2+1^2}
+    = \sqrt{54}.
+  \end{equation*}
+  Hence the area of the triangle is $\frac{1}{2}\sqrt{54}= \frac{3}{2}\sqrt{6}.$
 \end{solution}
 
-In general, if you have three points in $\R^{3}, P,Q,R$, the area of the triangle is given by
+In general, the area of the triangle determined by three points
+$P,Q,R$ in $\R^3$ is given by
 \begin{equation*}
-\frac{1}{2}\norm{\longvect{PQ} \times  \longvect{PR}} 
+\frac{1}{2}\norm{\longvect{PQ} \times  \longvect{PR}}.
 \end{equation*}
-
-Recall that $\longvect{PQ}$ is the vector running from point $P$ to point $Q$. 
-
-\begin{center}
-\begin{tikzpicture}
-\draw[->](0,0)--(2,2);
-\draw[->](0,0)--(4,0);
-\draw(2,2)--(4,0);
-\node[left] at (0,0){$P$};
-\node[above] at (2,2){$Q$};
-\node[right] at (4,0){$R$};
-\end{tikzpicture}
-\end{center}
-
-In the next section, we explore another application of the cross product.
