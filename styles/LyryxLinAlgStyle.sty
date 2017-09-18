@@ -222,3 +222,20 @@
 
 % To use as a subscript for a collinear vector
 \newcommand{\coll}{\|}
+
+% Use \nospellcheck{\wordd} to exclude a word from being
+% spell-checked. This is used for deliberate typos that should not be
+% corrected by the spell checker, nor added to the spell checker's
+% dictionary.
+
+% Example: Don't spell ``homogeneous'' as ``\nospellcheck{\homogenous}''.
+
+% From https://tex.stackexchange.com/questions/42318/removing-a-backslash-from-a-character-sequence
+\makeatletter
+\newcommand{\nospellcheck}[1]{%
+  \ifcat\relax\noexpand#1%
+    \expandafter\expandafter\expandafter\@gobble\expandafter\string
+  \fi
+  #1%
+}
+\makeatother
