@@ -1,0 +1,58 @@
+\section*{Exercises}
+
+\begin{enumialphparenastyle}
+
+\begin{ex}
+  Find $\begin{mymatrix}{c}
+    1 \\
+    2 \\
+    3
+  \end{mymatrix} +\begin{mymatrix}{c}
+    1 \\
+    5 \\
+    1
+  \end{mymatrix} +\begin{mymatrix}{c}
+    -1 \\
+    2 \\
+    -4
+  \end{mymatrix}$.
+  
+  \begin{sol}
+    $\begin{mymatrix}{r}
+      1 \\
+      9 \\
+      0
+    \end{mymatrix}$
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Use the properties of vector addition from
+  Theorem~\ref{thm:propertiesvectoraddition} to show the following
+  equalities. Justify every step. 
+  \begin{enumerate}
+  \item $(\vect{u}+\vect{v})+\vect{w} = (\vect{v}+\vect{w})+\vect{u}$.
+  \item $(\vect{u}+\vect{0})+(\vect{v}+(-\vect{u}) = \vect{v}$.
+  \end{enumerate}
+
+  \begin{sol}
+    \begin{enumerate}
+    \item
+      $(\vect{u}+\vect{v})+\vect{w} = (\vect{v}+\vect{u})+\vect{w} =
+      \vect{v}+(\vect{u}+\vect{w}) = \vect{v}+(\vect{w}+\vect{u}) =
+      (\vect{v}+\vect{w})+\vect{u}$. Here we have used the commutative
+      law, the associative law, the commutative law, and the
+      associative law, in that order.
+    \item
+      $(\vect{u}+\vect{0})+(\vect{v}+(-\vect{u}) =
+      \vect{u}+(\vect{v}+(-\vect{u}) = \vect{u}+((-\vect{u})+\vect{v})
+      = (\vect{u}+(-\vect{u}))+\vect{v} = \vect{0}+\vect{v} =
+      \vect{v}+\vect{0} = \vect{v}$. Here we have used the additive
+      unit, the commutative law, the associative law, the additive
+      inverse, the commutative law, and the additive unit, in that
+      order.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\end{enumialphparenastyle}

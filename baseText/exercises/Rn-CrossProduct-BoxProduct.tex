@@ -42,35 +42,14 @@ plane.
 \end{sol}
 \end{ex}
 
-\begin{ex} Using Problem \ref{exerboxproductzero}, find an equation of a plane
-containing the two position vectors, $\vect{p}$ and $\vect{q}$ and the
-point $0$. 
-\textbf{Hint: }If $\tup{x,y,z} $ is a point on
-this plane, the volume of the parallelepiped determined by $\tup{
-x,y,z} $ and the vectors $\vect{p},\vect{q}$ equals 0.
-\begin{sol}
-$\vect{x}\dotprod \tup{\vect{a}\times \vect{b}} =0$
-\end{sol}
-\end{ex}
-
-\begin{ex} Find the normal vector to the plane going through the points $P=(1,2,3)$, $Q=(-2,1,8)$ and $R=(2,2,2)$.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Using the notion of the box product yielding either plus or minus the
-volume of the parallelepiped determined by the given three vectors, show
-that
-\begin{equation*}
-\tup{\vect{u}\times \vect{v}} \dotprod \vect{w}=\vect{u}\dotprod \tup{
-\vect{v}\times \vect{w}}
-\end{equation*}
-In other words, the dot and the cross can be switched as long as the order
-of the vectors remains the same. \textbf{Hint:\ }There are two ways to do
-this, by the coordinate description of the dot and cross product and by
-geometric reasoning. 
-%\begin{sol}
-%\end{sol}
+\begin{ex} Show that 
+  \begin{equation*}
+    \tup{\vect{u}\times \vect{v}} \dotprod \vect{w}=
+    \tup{\vect{v}\times \vect{w}} \dotprod \vect{u}=
+    \tup{\vect{w}\times \vect{u}} \dotprod \vect{v}.
+  \end{equation*}
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
 \begin{ex} Simplify $\tup{\vect{u}\times \vect{v}} \dotprod \tup{\tup{
@@ -116,26 +95,28 @@ which implies the expression equals $0$.
 \end{sol}
 \end{ex}
 
-\begin{ex} For $\vect{u},\vect{v},\vect{w}$ functions of $t,$ prove the following product rules:
-\begin{eqnarray*}
-\tup{\vect{u}\times \vect{v}} ^{\prime } &=&\vect{u}^{\prime }\times
-\vect{v}+\vect{u}\times \vect{v}^{\prime } \\
-\tup{\vect{u}\dotprod \vect{v}} ^{\prime } &=&\vect{u}^{\prime }\dotprod
-\vect{v}+\vect{u}\dotprod \vect{v}^{\prime }
-\end{eqnarray*}
-\begin{sol}
-We will show it using the summation convention and permutation symbol.
-\begin{eqnarray*}
-\tup{\tup{\vect{u}\times \vect{v}} ^{\prime }} _{i} &=
-&\tup{\tup{\vect{u}\times \vect{v}} _{i}} ^{\prime }=\tup{
-\varepsilon _{ijk}u_{j}v_{k}} ^{\prime } \\
-&=&\varepsilon _{ijk}u_{j}^{\prime }v_{k}+\varepsilon
-_{ijk}u_{k}v_{k}^{\prime }=\tup{\vect{u}^{\prime } \times
-\vect{v}+\vect{u}\times \vect{v}^{\prime }} _{i}
-\end{eqnarray*}
-and so $\tup{\vect{u}\times \vect{v}} ^{\prime }=\vect{u}^{\prime }
-\times \vect{v}+\vect{u}\times \vect{v}^{\prime }.$ 
-\end{sol}
+\begin{ex} This problem uses calculus. For
+  $\vect{u},\vect{v},\vect{w}$ functions of $t$, prove that the
+  derivative satisfies the following product rules:
+  \begin{eqnarray*}
+    \tup{\vect{u}\times \vect{v}} ^{\prime } &=&\vect{u}^{\prime }\times
+                                                 \vect{v}+\vect{u}\times \vect{v}^{\prime } \\
+    \tup{\vect{u}\dotprod \vect{v}} ^{\prime } &=&\vect{u}^{\prime }\dotprod
+                                                   \vect{v}+\vect{u}\dotprod \vect{v}^{\prime }
+  \end{eqnarray*}
+  \begin{sol}
+    We will show it using the summation convention and permutation symbol.
+    \begin{eqnarray*}
+      \tup{\tup{\vect{u}\times \vect{v}} ^{\prime }} _{i} &=
+      &\tup{\tup{\vect{u}\times \vect{v}} _{i}} ^{\prime }=\tup{
+        \varepsilon _{ijk}u_{j}v_{k}} ^{\prime } \\
+                                                          &=&\varepsilon _{ijk}u_{j}^{\prime }v_{k}+\varepsilon
+                                                              _{ijk}u_{k}v_{k}^{\prime }=\tup{\vect{u}^{\prime } \times
+                                                              \vect{v}+\vect{u}\times \vect{v}^{\prime }} _{i}
+    \end{eqnarray*}
+    and so $\tup{\vect{u}\times \vect{v}} ^{\prime }=\vect{u}^{\prime }
+    \times \vect{v}+\vect{u}\times \vect{v}^{\prime }.$ 
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}

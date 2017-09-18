@@ -1,154 +1,6 @@
+\section*{Exercises}
+
 \begin{enumialphparenastyle}
-
-\begin{ex} Find $-3\begin{mymatrix}{r}
-5 \\
--1 \\
-2 \\
--3
-\end{mymatrix} +5\begin{mymatrix}{r}
--8 \\
-2 \\
--3 \\
-6
-\end{mymatrix} .$ 
-\begin{sol}
-$\begin{mymatrix}{r}
--55 \\
-13 \\
--21 \\
-39
-\end{mymatrix}$
-\end{sol}
-\end{ex}
-
-\begin{ex} Find $-7\begin{mymatrix}{r}
-6 \\
-0 \\
-4 \\
--1
-\end{mymatrix} +6\begin{mymatrix}{r}
--13 \\
--1 \\
-1 \\
-6
-\end{mymatrix} .$ 
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-
-\begin{ex}
-Decide whether 
-\begin{equation*}
-\vect{v}= \begin{mymatrix}{r}
-4 \\
-4 \\
--3
-\end{mymatrix}
-\end{equation*}
-is a linear combination of the vectors 
-\begin{equation*}
-\vect{u}_1 = \begin{mymatrix}{r}
-3 \\
-1 \\
--1
-\end{mymatrix}
-\mbox{ and } 
-\vect{u}_2 = 
-\begin{mymatrix}{r}
-2 \\
--2\\
-1
-\end{mymatrix}.
-\end{equation*}
-
-\begin{sol}
-\begin{equation*}
-\begin{mymatrix}{r}
-4 \\
-4 \\
--3
-\end{mymatrix}
-=
-2
-\begin{mymatrix}{r}
-3 \\
-1 \\
--1
-\end{mymatrix}
--
-\begin{mymatrix}{r}
-2 \\
--2\\
-1
-\end{mymatrix}
-\end{equation*}
-\end{sol}
-\end{ex}
-
-
-\begin{ex}
-Decide whether 
-\begin{equation*}
-\vect{v}= \begin{mymatrix}{r}
-4 \\
-4 \\
-4
-\end{mymatrix}
-\end{equation*}
-is a linear combination of the vectors 
-\begin{equation*}
-\vect{u}_1 = \begin{mymatrix}{r}
-3 \\
-1 \\
--1
-\end{mymatrix} , \ 
-\vect{u}_2 = 
-\begin{mymatrix}{r}
-8 \\
-0\\
--1
-\end{mymatrix}
-\mbox{ and } 
-\vect{u}_3 = 
-\begin{mymatrix}{r}
-2 \\
--2\\
-1
-\end{mymatrix}.
-\end{equation*}
-
-\begin{sol}
-The system 
-\begin{equation*}
-\begin{mymatrix}{r}
-4 \\
-4 \\
-4
-\end{mymatrix}
-=
-a_1
-\begin{mymatrix}{r}
-3 \\
-1 \\
--1
-\end{mymatrix}
-+a_2
-\begin{mymatrix}{r}
-8 \\
-0\\
--1
-\end{mymatrix}
-+a_3
-\begin{mymatrix}{r}
-2 \\
--2\\
-1
-\end{mymatrix}
-\end{equation*}
-has no solution.
-\end{sol}
-\end{ex}
 
 \begin{ex}
   Consider the vectors $\vect{u}$ and $\vect{v}$ drawn below. 
@@ -180,5 +32,66 @@ has no solution.
     \end{center}
   \end{sol}
 \end{ex}
+
+\begin{ex}
+  Find $-3\begin{mymatrix}{r}
+    5 \\
+    -1 \\
+    2 \\
+    -3
+  \end{mymatrix} +5\begin{mymatrix}{r}
+    -8 \\
+    2 \\
+    -3 \\
+    6
+  \end{mymatrix} .$ 
+  \begin{sol}
+    $\begin{mymatrix}{r}
+      -55 \\
+      13 \\
+      -21 \\
+      39
+    \end{mymatrix}$
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Use the properties of scalar multiplication from
+  Theorem~\ref{thm:vectorscalarmult} and the properties of vector
+  addition from Theorem~\ref{thm:propertiesvectoraddition} to prove
+  the following equalities. Justify every step.
+  \begin{enumerate}
+  \item $(k+\ell)(\vect{u}+\vect{v}) = k\vect{u} + k\vect{v} +
+    \ell\vect{u} + \ell\vect{v}$.
+  \item $0\vect{u} = \vect{0}$.
+  \item $(-1)\vect{u} = -\vect{u}$.
+  \item $-(k\vect{u}) = k(-\vect{u}) = (-k)\vect{u}$.
+  \end{enumerate}
+  \begin{sol}
+    \begin{enumerate}
+    \item
+      $(k+\ell)(\vect{u}+\vect{v}) = (k+\ell)\vect{u} +
+      (k+\ell)\vect{v} = k\vect{u} + k\vect{v} + \ell\vect{u} +
+      \ell\vect{v}$. Here we used the distributive law over vector
+      addition in the first step, and the distributive law over scalar
+      addition in the second step.
+    \item We have $0\vect{u} = (0+0)\vect{u} = 0\vect{u} + 0\vect{u}$
+      by properties of scalars and by the distributivity law,
+      respectively. Adding $-(0\vect{u})$ to both sides of the
+      equation, and using the additive unit law and associativity, we
+      have $\vect{0} = 0\vect{u}$.
+    \item We have $(-1)\vect{u} = (-1)\vect{u} + \vect{0} =
+      (-1)\vect{u} + (\vect{u} + (-\vect{u}) = ((-1)\vect{u} +
+      \vect{u}) + (-\vect{u}) = ((-1)\vect{u} + 1\vect{u}) +
+      (-\vect{u}) = ((-1)+1)\vect{u} + (-\vect{u}) = 0\vect{u} +
+      (-\vect{u}) = \vect{0} + (-\vect{u}) = -\vect{u}$. Here, we have
+      used the additive unit law, the additive inverse law, the
+      associative law, the rule for multiplication by 1, the
+      distributive law, properties of scalars, the property of part
+      (b), and the additive unit law, respectively.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
 
 \end{enumialphparenastyle}

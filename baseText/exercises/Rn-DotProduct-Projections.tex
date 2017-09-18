@@ -77,19 +77,29 @@ $\frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod \vect{u}}\vect{u}=\frac{\begi
 \end{sol}
 \end{ex}
 
-\begin{ex} Let $P = (1,2,3)$ be a point in $\R^3$. Let $L$ be the line through the point $P_0 = (1, 4, 5)$ with direction vector $\vect{d} = \begin{mymatrix}{r}
+\begin{ex}  Find $\func{comp}_{\vect{v}}\tup{\vect{w}} $ where $\vect{w}=\begin{mymatrix}{r}
 1 \\
--1 \\
-1
-\end{mymatrix}$. Find the shortest distance from $P$ to $L$, and find the point $Q$ on $L$ that is closest to $P$. 
-%\begin{sol}
-%\end{sol}
+1 \\
+2
+\end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
+0 \\
+3 \\
+3
+\end{mymatrix} .$
 \end{ex}
 
-\begin{ex} Let $P = (0,2,1)$ be a point in $\R^3$. Let $L$ be the line through the points $P_0 = (1, 1, 1)$ and $P_1 = (4, 1, 2)$. Find the shortest distance from $P$ to $L$, and find the point $Q$ on $L$ that is closest to $P$. 
-%\begin{sol}
-%\end{sol}
+\begin{ex} Find $\func{comp}_{\vect{v}}\tup{\vect{w}} $ where 
+$\vect{w}=\begin{mymatrix}{r}
+1 \\
+-1 \\
+0
+\end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
+1 \\
+1 \\
+2
+\end{mymatrix} .$
 \end{ex}
+
 
 \begin{ex} Does it make sense to speak of $\func{proj}_{\vect{0}}\tup{\vect{w}} ?$
 \begin{sol}
@@ -156,10 +166,10 @@ This follows because
 }\tup{\vect{v}} } \dotprod \vect{u}=0
 \end{equation*}
 and conclude every vector in $\R^{n}$ can be written as the sum of
-two vectors, one which is perpendicular and one which is parallel to the
+two vectors, one which is orthogonal and one which is parallel to the
 given vector.
 \begin{sol}
-$\tup{\vect{v}-\func{proj}_{\vect{u}}\tup{\vect{v}} } \dotprod \vect{u} =  \vect{v} \dotprod \vect{u} -\tup{\frac{\tup{\vect{v}\cdot\vect{u}} }{\norm{\vect{u}} ^{2}}\vect{u} } \dotprod \vect{u} = \vect{v} \dotprod \vect{u} - \vect{v} \dotprod \vect{u} =0.$ Therefore, $\vect{v} = \vect{v} - \func{proj}_{\vect{u}}\tup{\vect{v}} + \func{proj}_{\vect{u}}\tup{\vect{v}}.$ The first is perpendicular to $\vect{u}$ and the second is a multiple
+$\tup{\vect{v}-\func{proj}_{\vect{u}}\tup{\vect{v}} } \dotprod \vect{u} =  \vect{v} \dotprod \vect{u} -\tup{\frac{\tup{\vect{v}\cdot\vect{u}} }{\norm{\vect{u}} ^{2}}\vect{u} } \dotprod \vect{u} = \vect{v} \dotprod \vect{u} - \vect{v} \dotprod \vect{u} =0.$ Therefore, $\vect{v} = \vect{v} - \func{proj}_{\vect{u}}\tup{\vect{v}} + \func{proj}_{\vect{u}}\tup{\vect{v}}.$ The first is orthogonal to $\vect{u}$ and the second is a multiple
 of $\vect{u}$ so it is parallel to $\vect{u}$.
 \end{sol}
 \end{ex}
