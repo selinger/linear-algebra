@@ -1,240 +1,216 @@
 \subsection{Projections}
 
-In some applications, we wish to write a vector as a sum of two related vectors. Through the concept of projections, we can find these two vectors. First, we explore an important theorem. The result of 
-this theorem will provide our definition of a vector projection.
+It is sometimes important to find the component of a vector in a
+particular direction. Consider the following picture:
+\begin{center}
+  \begin{tikzpicture}[scale=0.8,rotate=13]
+    \draw[draw=green!50!black] (3,0.5) -- (2.5,0.5) -- (2.5,0);
+    \draw[->, thick, red](0,0) -- node[left]{$\vect{v}$} (3,3.5);
+    \draw[->, thick, blue](0,0) -- node[below, near end]{$\vect{u}$} (8,0);
+    \draw[dashed] (3,3.5) -- (3,0);
+    \draw[fill](0,0) circle [radius=2.25pt] node[below=1ex]{$0$};
+    \draw[fill](3,0) circle [radius=2.25pt] node[below=1ex]{$P$};
+    \draw[fill](3,3.5) circle [radius=2.25pt] node[right=1ex]{$Q$};
+  \end{tikzpicture}
+\end{center}
+Here, $\vect{u}$ is a non-zero vector specifying a {\em direction},
+and $v$ is any vector. We have given the label $Q$ to the tip of
+$v$. The point $P$ lies at the place along $\vect{u}$ that is closest
+to $Q$, or equivalently, such that $(0,P,Q)$ forms a right
+triangle. The distance from $0$ to $P$ (measured positively in the
+direction of $u$) is called the
+\textbf{component}\index{component}\index{vector!component} of
+$\vect{v}$ in the direction of $\vect{u}$, and is denoted
+$\func{comp}_{\vect{u}}(\vect{v})$. The vector $\longvect{0P}$ is
+called the
+\textbf{projection}\index{projection}\index{vector!projection} of
+$\vect{v}$ onto $\vect{u}$, and is denoted
+$\func{proj}_{\vect{u}}(\vect{v})$. We wish to find formulas for these
+quantities.
 
-\begin{theorem}{Vector projections}{projection}
-Let $\vect{v}$ and $\vect{u}$ be nonzero vectors. Then
-there exist unique vectors $\vect{v}_{||}$ and $\vect{v}_{\bot }$ such
-that
-\begin{equation}
-\vect{v}=\vect{v}_{||}+\vect{v}_{\bot }  \label{projection}
+Let $\theta$ be the included angle between $\vect{v}$ and
+$\vect{u}$. From trigonometry, considering the right triangle
+$(0,P,Q)$, we know that
+\begin{equation*}
+  \cos \theta = \frac{|0P|}{|0Q|} = \frac{|0P|}{\norm{\vect{v}}},
+\end{equation*}
+and therefore
+\begin{equation}\label{eqn:component-1}
+  |0P| = \norm{\vect{v}} \cos \theta.
 \end{equation}
-where $\vect{v}_{||}$ is a scalar multiple of $\vect{u}$, 
-and $\vect{v}_{\bot}$ is perpendicular to $\vect{u}$.
+On the other hand, from Proposition~\ref{prop:dotproductangle},  we
+have
+\begin{equation*}
+  \vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}} \cos \theta,
+\end{equation*}
+and therefore
+\begin{equation}\label{eqn:component-2}
+  \norm{\vect{v}} \cos \theta = \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}}}.
+\end{equation}
+Putting equations {\eqref{eqn:component-1}} and
+{\eqref{eqn:component-2}} together, we obtain the desired formula for
+the component of $\vect{v}$ in the direction of $\vect{u}$:
+\begin{equation}\label{eqn:component}
+  \func{comp}_{\vect{u}}(\vect{v})
+  = |0P|
+  = \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}}}.
+\end{equation}
+Note that it is possible for this quantity to be negative; this
+happens when the angle between $\vect{v}$ and $\vect{u}$ is obtuse.
+In this case, $\vect{v}$ will have a negative component along
+$\vect{u}$.
 
+The vector $\func{proj}_{\vect{u}}(\vect{v})=\longvect{0P}$ can now be
+computed by rescaling $\vect{u}$ to the correct length. Specifically,
+we first normalize $\vect{u}$ by dividing it by its own length, and
+then multiply by $|0P|$. In formulas:
+\begin{equation}
+  \func{proj}_{\vect{u}}(\vect{v})
+  = \longvect{0P}
+  = \frac{|0P|}{\norm{\vect{u}}}\vect{u}
+  = \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}}^2}\,\vect{u}
+  = \frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod \vect{u}}\,\vect{u}.
+\end{equation}
+The following definition summarizes what we have just found.
+
+\begin{definition}{Vector projection}{projection}
+  Let $\vect{u}$ by a non-zero vector and $\vect{v}$ any vector. Then
+  the \textbf{component of $\vect{v}$ in the direction of
+    $\vect{u}$}\index{vector!component} is defined to be the scalar
+  \begin{equation*}
+    \func{comp}_{\vect{u}}(\vect{v})
+    = \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}}}.
+  \end{equation*}
+  The \textbf{projection of $\vect{v}$ onto
+    $\vect{u}$}\index{vector!projection} is defined to be the vector
+  \begin{equation*}
+    \func{proj}_{\vect{u}}\tup{\vect{v}} =\tup{
+      \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}} \vect{u}
+    =
+    \frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\,\vect{u}.
+  \end{equation*}
+\end{definition}
+
+\begin{example}{Find the projection of one vector onto another}{vectorprojection}
+  Find $\func{proj}_{\vect{u}}\tup{\vect{v}}$ if
+  \begin{equation*}
+    \vect{u}=
+    \begin{mymatrix}{r}
+      2 \\
+      3 \\
+      -4
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{v}=
+    \begin{mymatrix}{r}
+      1 \\
+      -2 \\
+      1
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We can use the formula provided in Definition \ref{def:projection}
+  to find $\func{proj}_{\vect{u}}\tup{\vect{v}}$.  First, compute
+  $\vect{v} \dotprod \vect{u}$.  This is given by
+  \begin{equation*}
+    \begin{mymatrix}{r}
+      1 \\
+      -2 \\
+      1
+    \end{mymatrix}
+    \dotprod
+    \begin{mymatrix}{r}
+      2 \\
+      3 \\
+      -4
+    \end{mymatrix}
+    = (2)(1) + (3)(-2) + (-4)(1)
+    = -8.
+   \end{equation*}
+   Similarly, $\vect{u} \dotprod \vect{u}$ is given by 
+   \begin{equation*}
+     \begin{mymatrix}{r}
+       2 \\
+       3 \\
+       -4 
+     \end{mymatrix}
+     \dotprod
+     \begin{mymatrix}{r}
+       2 \\
+       3 \\
+       -4
+     \end{mymatrix}
+     = 2^2 + 3^2 + (-4)^2
+     = 29.
+  \end{equation*}
+  Therefore, the projection is equal to  
+  \begin{equation*}
+    \func{proj}_{\vect{u}}\tup{\vect{v}}
+    =-\frac{8}{29} 
+        \begin{mymatrix}{r}
+          2 \\
+          3 \\
+          -4
+        \end{mymatrix}
+    = 
+        \begin{mymatrix}{r}
+          -16/29 \\
+          -24/29 \\
+          32/29
+        \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+An important application of projections is that every vector
+$\vect{v}$ can be uniquely written as a sum of two orthogonal vectors,
+one of which is a scalar multiple of some given non-zero vector
+$\vect{u}$, and the other of which is orthogonal to $\vect{u}$.
+
+\begin{theorem}{Decomposition into components}{projection}
+  Let $\vect{u}$ be a non-zero vector, and let $\vect{v}$ be any
+  vector. Then there exist unique vectors $\vect{v}_{\coll}$ and
+  $\vect{v}_{\bot}$ such that
+  \begin{equation}\label{projection}
+    \vect{v}=\vect{v}_{\coll}+\vect{v}_{\bot }  
+  \end{equation}
+  where $\vect{v}_{\coll}$ is a scalar multiple of $\vect{u}$, 
+  and $\vect{v}_{\bot}$ is orthogonal to $\vect{u}$.
 \end{theorem}
 
 \begin{proof}
-We start by proving that $\vect{v}_{||}$ and $\vect{v}_{\bot}$ are unique, suppose \ref{projection} holds and $\vect{v}_{||}= k \vect{u}$.
- Taking the dot product of both sides of \ref{projection} with $\vect{u}$ and using $\vect{v}_{\bot }\dotprod \vect{u}=0,$
- this yields
-\begin{equation*}
-\begin{array}{ll}
-\vect{v}\dotprod \vect{u} & = ( \vect{v}_{||}+\vect{v}_{\bot }) \dotprod \vect{u} \\
-& =  k\vect{u} \dotprod \vect{u} + \vect{v}_{\bot} \dotprod \vect{u} \\
-& = k \norm{\vect{u}} ^{2}
-\end{array}
-\end{equation*}
-which requires $k =\vect{v}\dotprod \vect{u} / \norm{\vect{u}} ^{2}.$
-Thus there can be no more than one vector $\vect{v}_{||}$. It follows 
-$\vect{v}_{\bot }$ must equal $\vect{v}-\vect{v}_{||}.$ This verifies there can
-be no more than one choice for both $\vect{v}_{||}$ and $\vect{v}_{\bot
-}$ and proves their uniqueness. 
-
-Now let
-\begin{equation*}
-\vect{v}_{||} = 
-\frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\vect{u}
-\end{equation*}
-and let
-\begin{equation*}
-\vect{v}_{\bot }=\vect{v}-\vect{v}_{||}=\vect{v}-\frac{\vect{v}\dotprod \vect{u}}
-{\norm{\vect{u}} ^{2}}\vect{u}
-\end{equation*}
-Then $\vect{v}_{||}= k\vect{u}$ where $k =\frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}$.
- It only remains to
-verify $\vect{v}_{\bot }\dotprod \vect{u}=0.$ But
-\begin{eqnarray*}
-\vect{v}_{\bot }\dotprod \vect{u} &=& \vect{v}\dotprod \vect{u}-\frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\vect{u}\dotprod \vect{u} \\
-&=& \vect{v}\dotprod\vect{u}-\vect{v}\dotprod \vect{u}\\
-&=& 0 
-\end{eqnarray*}
+  To show that such a decomposition exists, let
+  \begin{equation*}
+    \vect{v}_{\coll} = \func{proj}_{\vect{u}}\tup{\vect{v}} = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u},
+  \end{equation*}
+  and define $\vect{v}_{\bot} = \vect{v}-\vect{v}_{\coll}$. By
+  definition, {\eqref{projection}} is satisfied, and
+  $\vect{v}_{\coll}$ is a scalar multiple of $\vect{u}$. We must show
+  that $\vect{v}_{\bot}$ is orthogonal to $\vect{u}$. For this,  
+  we verify that their dot product equals zero:
+  \begin{eqnarray*}
+    \vect{v}_{\bot }\dotprod \vect{u}
+    &=& \vect{v}\dotprod \vect{u}-\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod\vect{u}}\,\vect{u}\dotprod \vect{u} \\
+    &=& \vect{v}\dotprod\vect{u}-\vect{v}\dotprod \vect{u}\\
+    &=& 0.
+  \end{eqnarray*}
+  To show uniqueness, suppose that {\eqref{projection}} holds and
+  $\vect{v}_{\coll}= k \vect{u}$.  Taking the dot product of both
+  sides of {\eqref{projection}} with $\vect{u}$ and using
+  $\vect{v}_{\bot }\dotprod \vect{u}=0,$ this yields
+  \begin{equation*}
+    \begin{array}{ll}
+      \vect{v}\dotprod \vect{u} & = ( \vect{v}_{\coll}+\vect{v}_{\bot }) \dotprod \vect{u} \\
+                                & =  k\vect{u} \dotprod \vect{u} + \vect{v}_{\bot} \dotprod \vect{u} \\
+                                & = k \norm{\vect{u}} ^{2},
+    \end{array}
+  \end{equation*}
+  which requires
+  $k =\vect{v}\dotprod \vect{u} / \norm{\vect{u}} ^{2}$.  Thus there
+  can be no more than one such vector $\vect{v}_{\coll}$. Since
+  $\vect{v}_{\bot}$ must equal $\vect{v}-\vect{v}_{\coll}$, it follows
+  that there can be no more than one choice for both
+  $\vect{v}_{\coll}$ and $\vect{v}_{\bot}$, proving their uniqueness. 
 \end{proof}
 
-The vector $\vect{v}_{||}$ in Theorem \ref{thm:projection} is called the \textbf{projection}
-\index{vector!projection}of $\vect{v}$ onto $\vect{u}$ and is denoted by
-\begin{equation*}
-\vect{v}_{||}
-=
-\func{proj}_{\vect{u}}\tup{\vect{v}}
-\end{equation*}
-
-We now make a formal definition of the vector projection.
-
-\begin{definition}{Vector projection}{projection}
-Let $\vect{u}$ and $\vect{v}$ be vectors. Then, the \textbf{projection of $\vect{v}$ onto
-$\vect{u}$} is given by 
-\begin{equation*}
-\func{proj}_{\vect{u}}\tup{\vect{v}} =\tup{\vspace{0.05in}
-\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}} \vect{u}
-=
-\frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\vect{u}
-\end{equation*}
-\index{vector!projection}
-\end{definition}
-
-Consider the following example of a projection.
-
-\begin{example}{Find the projection of one vector onto another}{vectorprojection}
-Find 
-$\func{proj}_{\vect{u}}\tup{\vect{v}} $ if 
-\begin{equation*}
-\vect{u}=
-\begin{mymatrix}{r}
-2 \\
-3 \\
--4
-\end{mymatrix},
-\vect{v}=
-\begin{mymatrix}{r}
-1 \\
--2 \\
-1
-\end{mymatrix}
-\end{equation*}
-\end{example}
-
-\begin{solution}
-We can use the formula provided in Definition \ref{def:projection} to find $\func{proj}_{\vect{u}}\tup{\vect{v}}$.
-First, compute $\vect{v} \dotprod \vect{u}$. 
-This is given by 
-\begin{eqnarray*}
-\begin{mymatrix}{r}
-1 \\
--2 \\
-1
-\end{mymatrix}
- \dotprod
-\begin{mymatrix}{r}
-2 \\
-3 \\
--4
-\end{mymatrix}
-&=&
-(2)(1) + (3)(-2) + (-4)(1) \\
-&=& 
-2 - 6 - 4 \\
-&=& -8
-\end{eqnarray*}
-Similarly, $\vect{u} \dotprod \vect{u}$ is given by 
-\begin{eqnarray*}
-\begin{mymatrix}{r}
-2 \\
-3 \\
--4 
-\end{mymatrix}
- \dotprod
-\begin{mymatrix}{r}
-2 \\
-3 \\
--4
-\end{mymatrix}
-&=&
-(2)(2) + (3)(3) + (-4)(-4) \\
-&=& 
-4 + 9 + 16 \\
-&=& 29
-\end{eqnarray*}
-
-Therefore, the projection is equal to  
-\begin{eqnarray*}
-\func{proj}_{\vect{u}}\tup{\vect{v}}
-&=&-\frac{8}{29} 
-\begin{mymatrix}{r}
-2 \\
-3 \\
--4
-\end{mymatrix} \\
-&=& 
-\begin{mymatrix}{r}
--\vspace{0.05in}\frac{16}{29} \\
--\vspace{0.05in}\frac{24}{29} \\
-\vspace{0.05in}\frac{32}{29}
-\end{mymatrix}
-\end{eqnarray*}
-\end{solution}
-
-We will conclude this section with an important application of projections. Suppose a line $L$ and a point $P$ are given such that $P$ is not contained in $L$. Through the use of projections, we can determine the shortest distance from $P$ to $L$. 
-
-\begin{example}{Shortest distance from a point to a line}{shortestpointline}
-Let $P = (1,3,5)$ be a point in $\R^3$, and let $L$ be the line which goes through point $P_0 = (0,4,-2)$ with direction vector $\vect{d} = \begin{mymatrix}{r}
-2 \\
-1 \\
-2
-\end{mymatrix}
-$.  Find the shortest distance from $P$ to the line $L$, and find the point $Q$ on $L$ that is closest to $P$. 
-\end{example}
-
-\begin{solution}
-In order to determine the shortest distance from $P$ to $L$, we will first find the vector $\longvect{P_0P}$ and then find the projection of this vector onto $L$. 
-The vector $\longvect{P_0P}$ is given by 
-\[
-\longvect{P_0P}=
-\begin{mymatrix}{r}
-1 \\
-3 \\
-5
-\end{mymatrix}
--
-\begin{mymatrix}{r}
-0 \\
-4 \\
--2
-\end{mymatrix}
- = \begin{mymatrix}{r}
-1 \\
--1 \\
-7
-\end{mymatrix}
-\]
-
-Then, if $Q$ is the point on $L$ closest to $P$, it follows that 
-\begin{eqnarray*}
-\longvect{P_0Q} &=& \func{proj}_{\vect{d}}\longvect{P_0P} \\
-&=& \tup{\frac{ \longvect{P_0P}\bullet \vect{d}}{\norm{\vect{d}}^2}} \vect{d} \\
-&=& 
-\frac{15}{9} \begin{mymatrix}{r}
-2 \\
-1 \\
-2
-\end{mymatrix} \\
-&=&
-\frac{5}{3} \begin{mymatrix}{r}
-2 \\
-1 \\
-2
-\end{mymatrix}
-\end{eqnarray*}
-
-Now, the distance from $P$ to $L$ is given by 
-\[
-\norm{\longvect{QP}} = \norm{\longvect{P_0P} - \longvect{P_0Q}}
- = \sqrt{26} 
-\]
-
-The point $Q$ is found by adding the vector $\longvect{P_0Q}$ to the position vector $\longvect{0P_0}$ for $P_0$ as follows
-\begin{eqnarray*}
-\begin{mymatrix}{r}
-0 \\
-4 \\
--2
-\end{mymatrix}
-+
-\frac{5}{3}
-\begin{mymatrix}{r}
-2 \\
-1 \\
-2
-\end{mymatrix} 
-&=& 
-\begin{mymatrix}{r}
-\vspace{0.05in}\frac{10}{3} \\
-\vspace{0.05in}\frac{17}{3} \\
-\vspace{0.05in}\frac{4}{3}
-\end{mymatrix}
-\end{eqnarray*}
-
-Therefore, $Q = (\frac{10}{3}, \frac{17}{3}, \frac{4}{3})$. 
-
-\end{solution}

@@ -384,3 +384,177 @@ t
 \R
 \end{equation*}
 \end{solution}
+
+% ----------------------------------------------------------------------
+Another application of the geometric description of the dot product is
+in finding the angle between two lines. Typically one would assume that the
+lines intersect. In some situations, however, it may make sense to ask this
+question when the lines do not intersect, such as the angle between
+two object trajectories. In any case we understand it to mean the
+smallest angle between (any of) their direction vectors. The only
+subtlety here is that if $\vect{u}$ is a direction vector for a line,
+then so is any multiple $k\vect{u}$, and thus we will find complementary angles
+among all angles between direction vectors for two lines, and we
+simply take the smaller of the two.
+
+\begin{example}{Find the angle between two lines}{anglebetweentwolines}
+Find the angle between the two lines
+\begin{equation*}
+L_1:  \;
+\begin{mymatrix}{r}
+x \\
+y \\
+z 
+\end{mymatrix}
+ = 
+\begin{mymatrix}{r}
+1 \\
+2 \\
+0
+\end{mymatrix} +t\begin{mymatrix}{r}
+-1 \\
+1 \\
+2
+\end{mymatrix} 
+\end{equation*}
+ and
+\begin{equation*}
+L_2: \;
+\begin{mymatrix}{r}
+x \\
+y \\
+z
+\end{mymatrix}
+ = 
+\begin{mymatrix}{r}
+0 \\
+4 \\
+-3
+\end{mymatrix}
+ +s\begin{mymatrix}{r}
+2 \\
+1 \\
+-1
+\end{mymatrix}
+\end{equation*}
+\end{example}
+
+\begin{solution}
+You can verify that these lines do not intersect, but as discussed
+above this does not matter and we simply find the smallest angle
+between any directions vectors for these lines.
+
+To do so  we first find the angle
+between the direction vectors given above:
+\begin{equation*}
+\vect{u}=\begin{mymatrix}{r}
+-1 \\
+1 \\
+2
+\end{mymatrix},\;
+\vect{v}=\begin{mymatrix}{r}
+2 \\
+1 \\
+-1
+\end{mymatrix}
+\end{equation*}
+
+In order to find the angle, we solve the following equation for $\theta$
+\begin{equation*}
+\vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}
+} \cos \theta
+\end{equation*}
+to obtain $\cos \theta = -\frac{1}{2}$ and since we choose included
+angles between $0$ and $\pi$ we obtain $\theta = \frac{2 \pi}{3}$.
+
+
+Now the angles between any two direction vectors for these lines will
+either be $\frac{2 \pi}{3}$ or its complement $ \phi = \pi -  \frac{2 \pi}{3}
+= \frac{\pi}{3}$. We choose the smaller angle, and therefore conclude that the angle between the two lines is $\frac{\pi}{3}$.
+\end{solution}
+
+% ----------------------------------------------------------------------
+
+We will conclude this section with an important application of projections. Suppose a line $L$ and a point $P$ are given such that $P$ is not contained in $L$. Through the use of projections, we can determine the shortest distance from $P$ to $L$. 
+
+\begin{example}{Shortest distance from a point to a line}{shortestpointline}
+Let $P = (1,3,5)$ be a point in $\R^3$, and let $L$ be the line which goes through point $P_0 = (0,4,-2)$ with direction vector $\vect{d} = \begin{mymatrix}{r}
+2 \\
+1 \\
+2
+\end{mymatrix}
+$.  Find the shortest distance from $P$ to the line $L$, and find the point $Q$ on $L$ that is closest to $P$. 
+\end{example}
+
+\begin{solution}
+In order to determine the shortest distance from $P$ to $L$, we will first find the vector $\longvect{P_0P}$ and then find the projection of this vector onto $L$. 
+The vector $\longvect{P_0P}$ is given by 
+\[
+\longvect{P_0P}=
+\begin{mymatrix}{r}
+1 \\
+3 \\
+5
+\end{mymatrix}
+-
+\begin{mymatrix}{r}
+0 \\
+4 \\
+-2
+\end{mymatrix}
+ = \begin{mymatrix}{r}
+1 \\
+-1 \\
+7
+\end{mymatrix}
+\]
+
+Then, if $Q$ is the point on $L$ closest to $P$, it follows that 
+\begin{eqnarray*}
+\longvect{P_0Q} &=& \func{proj}_{\vect{d}}\longvect{P_0P} \\
+&=& \tup{\frac{ \longvect{P_0P}\bullet \vect{d}}{\norm{\vect{d}}^2}} \vect{d} \\
+&=& 
+\frac{15}{9} \begin{mymatrix}{r}
+2 \\
+1 \\
+2
+\end{mymatrix} \\
+&=&
+\frac{5}{3} \begin{mymatrix}{r}
+2 \\
+1 \\
+2
+\end{mymatrix}
+\end{eqnarray*}
+
+Now, the distance from $P$ to $L$ is given by 
+\[
+\norm{\longvect{QP}} = \norm{\longvect{P_0P} - \longvect{P_0Q}}
+ = \sqrt{26} 
+\]
+
+The point $Q$ is found by adding the vector $\longvect{P_0Q}$ to the position vector $\longvect{0P_0}$ for $P_0$ as follows
+\begin{eqnarray*}
+\begin{mymatrix}{r}
+0 \\
+4 \\
+-2
+\end{mymatrix}
++
+\frac{5}{3}
+\begin{mymatrix}{r}
+2 \\
+1 \\
+2
+\end{mymatrix} 
+&=& 
+\begin{mymatrix}{r}
+\vspace{0.05in}\frac{10}{3} \\
+\vspace{0.05in}\frac{17}{3} \\
+\vspace{0.05in}\frac{4}{3}
+\end{mymatrix}
+\end{eqnarray*}
+
+Therefore, $Q = (\frac{10}{3}, \frac{17}{3}, \frac{4}{3})$. 
+
+\end{solution}

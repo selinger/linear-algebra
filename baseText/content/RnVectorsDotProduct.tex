@@ -7,264 +7,204 @@
 \end{enumerate}
 \end{outcome}
 
-There are two ways of multiplying vectors which are of great importance in
-applications. The first of these is called the \textbf{dot product}. When we take the dot product of vectors, the 
-result is a scalar. For this reason, the dot product is also
-called the \textbf{scalar product }and sometimes the \textbf{inner product}. The definition is as follows.
-\index{dot product}
-\index{scalar product}
-\index{inner product}
+There are two ways of multiplying vectors that are useful in
+applications. The first of these is called the \textbf{dot product},
+and the second is called the \textbf{cross product}. We will consider
+the dot product here, and the cross product in the next section.
+
+% ----------------------------------------------------------------------
+\subsection{Definition and properties}
+
+When we take the dot product of two vectors, the result is a
+scalar. For this reason, the dot product is also called the
+\textbf{scalar product}. Sometimes it is also called the \textbf{inner
+  product}. The definition is as follows.  \index{dot product}
+\index{scalar product} \index{inner product} \index{vector!dot
+  product}
 
 \begin{definition}{Dot product}{dotproductdefn}
-Let $\vect{u}=\begin{mymatrix}{r}
-u_1 \\
-u_2 \\
-\vdots \\
-u_n 
-\end{mymatrix} ,\vect{v}= \begin{mymatrix}{r}
-v_1 \\
-v_2 \\
-\vdots \\
-v_n 
-\end{mymatrix}$ be two vectors in $\R^{n}$. Then we
-define the \textbf{dot product}  $\vect{u}\dotprod \vect{v}$ as
-\begin{equation*}
-\vect{u}\dotprod \vect{v} = u_1v_1+u_2v_2+\cdots+u_nv_n
-\end{equation*}
+  Let $\vect{u}=\begin{mymatrix}{c}
+    u_1 \\
+    u_2 \\
+    \vdots \\
+    u_n 
+  \end{mymatrix}$, $\vect{v}= \begin{mymatrix}{c}
+    v_1 \\
+    v_2 \\
+    \vdots \\
+    v_n 
+  \end{mymatrix}$ be two vectors in $\R^{n}$. We
+  define their \textbf{dot product} as
+  \begin{equation*}
+    \vect{u}\dotprod \vect{v} = u_1v_1+u_2v_2+\cdots+u_nv_n.
+  \end{equation*}
 \end{definition}
 
-The dot product $\vect{u}\dotprod \vect{v}$ is sometimes denoted as $(\vect{u},\vect{v})$ where a comma replaces $\dotprod $.
-%%% Move to later %%%% It can also be written as $\left\langle \vect{u},\vect{v}\right\rangle $. If we write the vectors as column or row matrices, it is equal to the matrix product $\vect{v}\vect{w}^{T}$.
-
-Consider the following example.
-
 \begin{example}{Compute a dot product}{dotproduct}
-Find $\vect{u} \dotprod \vect{v}$ for
-\begin{equation*}
-\vect{u}
-=
-\begin{mymatrix}{r}
-1 \\
-2 \\
-0 \\
--1 
-\end{mymatrix},
-\vect{v}
-=
-\begin{mymatrix}{r}
-0 \\
-1 \\
-2 \\
-3
-\end{mymatrix} 
-\end{equation*}
+  Find $\vect{u} \dotprod \vect{v}$ for $\vect{u}=\mat{1,2,0,-1}^T$
+  and $\vect{v}=\mat{0,1,2,3}^T$.
 \end{example}
 
 \begin{solution}
-By Definition \ref{def:dotproductdefn}, this is given by 
-\begin{eqnarray*}
-\vect{u} \dotprod \vect{v}
-&=&
-(1)(0) + (2)(1) + (0)(2) + (-1)(3) \\
-&=&
-0 + 2 + 0 + -3 \\
-&=&
--1
-\end{eqnarray*}
+  We have
+  \begin{eqnarray*}
+    \vect{u} \dotprod \vect{v}
+    &=&
+        (1)(0) + (2)(1) + (0)(2) + (-1)(3) \\
+    &=&
+        0 + 2 + 0 + -3 \\
+    &=&
+        -1.
+  \end{eqnarray*}
 \end{solution}
 
-With this definition, there are several important properties satisfied
-by the dot product.
-\index{dot product!properties}
+The dot product satisfies a number of important properties. 
 
-\begin{proposition}{Properties of the dot product}{propertiesdotproduct}
-Let $k $ and $p $  denote scalars and $\vect{u},\vect{v},\vect{w}$ denote vectors.
-Then the dot product $\vect{u} \dotprod \vect{v}$ satisfies the following properties.
-\begin{itemize}
-\item
-$\vect{u}\dotprod \vect{v}= \vect{v}\dotprod \vect{u} $
-\item
-$\vect{u}\dotprod \vect{u}\geq 0 \text{ and equals zero if and only if }\vect{u}=\vect{0}$
-\item
-$\tup{k\vect{u}+p\vect{v}} \dotprod \vect{w}=k\tup{\vect{u}\dotprod \vect{w}} +p\tup{\vect{v}\dotprod \vect{w}}$
-\item
-$\vect{u}\dotprod\tup{k\vect{v}+p\vect{w}} =k\tup{
-\vect{u}\dotprod \vect{v}} +p\tup{\vect{u}\dotprod \vect{w}}$
-\item
-$\vect{u}\dotprod \vect{u}=\norm{\vect{u}} ^{2} $
-\end{itemize}
-\end{proposition}
+\begin{theorem}{Properties of the dot product}{propertiesdotproduct}
+  \index{dot product!properties}
+  The dot product satisfies the following properties, where
+  $\vect{u},\vect{v},\vect{w}$ are vectors and $k,\ell$ are
+  scalars.
+  \begin{itemize}
+  \item $\vect{u}\dotprod\vect{v}=\vect{v}\dotprod\vect{u}$.
+  \item $\vect{u}\dotprod\vect{u}\geq 0$, and $\vect{u}\dotprod\vect{u}=0$ if and only if $\vect{u}=\vect{0}$.
+  \item $\tup{k\vect{u}+\ell\vect{v}}\dotprod\vect{w}=k\tup{\vect{u}\dotprod\vect{w}}+\ell\tup{\vect{v}\dotprod\vect{w}}$.
+  \item $\vect{u}\dotprod\tup{k\vect{v}+\ell\vect{w}}
+    =k\tup{\vect{u}\dotprod \vect{v}}+\ell\tup{\vect{u}\dotprod\vect{w}}$.
+  \item $\vect{u}\dotprod\vect{u}=\norm{\vect{u}}^{2}$.
+  \end{itemize}
+\end{theorem}
 
-The proof is left as an exercise. This proposition tells us that we can also use the dot product to find the length of a vector.
+The proof is left as an exercise. Note that, by the last part of the
+theorem, we can also use the dot product to find the length of a
+vector.
 
 \begin{example}{Length of a vector}{dotproductlength}
-Find the length of
-\begin{equation*}
-\vect{u}
-=
-\begin{mymatrix}{r}
-2 \\
-1 \\
-4 \\
-2
-\end{mymatrix} 
-\end{equation*}
- That is, find $\norm{\vect{u}} .$
+  Use a dot product to find $\norm{\vect{u}}$, where
+  \begin{equation*}
+    \vect{u}
+    =
+    \begin{mymatrix}{r}
+      2 \\
+      1 \\
+      4 \\
+      2
+    \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-By Proposition \ref{prop:propertiesdotproduct},  $\norm{\vect{u}} ^{2} = \vect{u} \dotprod \vect{u}$. 
-Therefore, $\norm{\vect{u}} = \sqrt {\vect{u} \dotprod \vect{u}}$.
-First, compute $\vect{u} \dotprod \vect{u}$. 
-
-This is given by 
-\begin{eqnarray*}
-\vect{u} \dotprod \vect{u}
-&=&
-(2)(2) + (1)(1) + (4)(4) + (2)(2) \\
-&=&
-4 + 1 + 16 + 4 \\
-&=&
-25
-\end{eqnarray*}
-
-Then, 
-\begin{eqnarray*}
-\norm{\vect{u}} 
-&=& \sqrt {\vect{u} \dotprod \vect{u}} \\
-&=& \sqrt{25} \\
-&=& 5
-\end{eqnarray*}
+  By the last part of Theorem~\ref{thm:propertiesdotproduct}, we have
+  $\norm{\vect{u}} = \sqrt {\vect{u} \dotprod \vect{u}}$. We have
+  $\vect{u} \dotprod \vect{u} = 2^2+1^2+4^2+2^2 = 25$, and therefore
+  $\norm{\vect{u}} = \sqrt{\vect{u} \dotprod \vect{u}} = \sqrt{25} = 5$.
 \end{solution}
 
-You may wish to compare this to our previous definition of length, 
-given in Definition \ref{def:lengthofvector}. 
+% ----------------------------------------------------------------------
+\subsection{The Cauchy-Schwarz and triangle inequalities}
 
-The \textbf{Cauchy Schwarz inequality} is a fundamental inequality satisfied by the dot product. 
-\index{Cauchy Schwarz inequality} It is given in the following theorem.
+The \textbf{Cauchy-Schwarz inequality}\index{Cauchy-Schwarz inequality}
+is a fundamental inequality satisfied by the dot product.  It is given
+in the following theorem.
 
-\begin{theorem}{Cauchy Schwarz inequality}{cauchyschwarzinequality}
-The dot product satisfies the inequality
-\begin{equation}
-\abs{\vect{u}\dotprod \vect{v}}\leq \norm{\vect{u}} \norm{\vect{v}}   \label{cauchy}
-\end{equation}
-Furthermore equality is obtained if and only if one of $\vect{u}$ or $\vect{v}$ is a scalar multiple of the other.
+\begin{theorem}{Cauchy-Schwarz inequality}{cauchyschwarzinequality}
+  The dot product satisfies the inequality
+  \begin{equation}\label{cauchy}
+    \abs{\vect{u}\dotprod \vect{v}}\leq \norm{\vect{u}} \norm{\vect{v}}
+  \end{equation}
+  Furthermore equality is obtained if and only if one of $\vect{u}$ or $\vect{v}$ is a scalar multiple of the other.
 \end{theorem}
 
 \begin{proof}
-First note that if $\vect{v}=\vect{0}$ both sides of \ref{cauchy}
-equal zero and so the inequality holds in this case. Therefore, it will be
-assumed in what follows that $\vect{v}\neq \vect{0}$.
-
-Define a function of $t\in \R$ by 
-\begin{equation*}
-f\tup{t} =\tup{\vect{u}+t\vect{v}} \dotprod \tup{\vect{u}+
-t\vect{v}} 
-\end{equation*}
-Then by Proposition \ref{prop:propertiesdotproduct}, $f\tup{t} \geq 0$ for all $t\in \R$.
-Also from Proposition \ref{prop:propertiesdotproduct}
-\begin{eqnarray*}
-f\tup{t} &=&\vect{u}\dotprod \tup{\vect{u}+t\vect{v}} +
-t\vect{v}\dotprod \tup{\vect{u}+t\vect{v}} \\
-&=&\vect{u}\dotprod \vect{u}+t\tup{\vect{u}\dotprod \vect{v}} + t \vect{v}\dotprod \vect{u}+
-t^{2}\vect{v}\dotprod \vect{v} \\
-&=&\norm{\vect{u}} ^{2}+2t\tup{\vect{u}\dotprod \vect{v}} +\norm{
-\vect{v}} ^{2}t^{2}
-\end{eqnarray*}
-
-Now this means the graph of $y=f\tup{t} $ is a parabola which opens
-up and either its vertex touches the $t$ axis or else the entire graph is
-above the $t$ axis. In the first case, there exists some $t$ where $f\tup{
-t} =0$ and this requires $\vect{u}+t\vect{v}=\vect{0}$ so one vector is a
-multiple of the other. Then clearly equality holds in \ref{cauchy}. In the
-case where $\vect{v}$ is not a multiple of $\vect{u}$, it follows 
-$f\tup{t} >0$ for all $t$ which says $f\tup{t} $ has no real
-zeros and so from the quadratic formula,
-\begin{equation*}
-\tup{2\tup{\vect{u}\dotprod \vect{v}} } ^{2}-4\norm{\vect{u}
-} ^{2}\norm{\vect{v}} ^{2}<0
-\end{equation*}
-which is equivalent to $\abs{\vect{u}\dotprod \vect{v} }<\norm{\vect{u}} \norm{\vect{v}} $.
+  First note that if $\vect{u}=\vect{0}$, then both sides of
+  \eqref{cauchy} are equal to zero, and so the inequality holds in
+  this case. Therefore, we will assume in what follows that
+  $\vect{u}\neq \vect{0}$.  Define a function of $t\in \R$ by
+  \begin{equation*}
+    f(t) =\tup{t\vect{u}+\vect{v}} \dotprod \tup{t\vect{u}+
+      \vect{v}} 
+  \end{equation*}
+  Then by Theorem~\ref{thm:propertiesdotproduct}, $f(t) \geq 0$
+  for all $t\in \R$.  Also from
+  Theorem~\ref{thm:propertiesdotproduct}, we have
+  \begin{eqnarray*}
+    f(t) &=&t\vect{u}\dotprod \tup{t\vect{u}+\vect{v}} +
+                 \vect{v}\dotprod \tup{t\vect{u}+\vect{v}} \\
+             &=&t^2\vect{u}\dotprod \vect{u}+t\tup{\vect{u}\dotprod \vect{v}} + t \vect{v}\dotprod \vect{u}+
+                 \vect{v}\dotprod \vect{v} \\
+             &=&t^2\norm{\vect{u}}^{2}+2t\tup{\vect{u}\dotprod \vect{v}} +\norm{
+                 \vect{v}} ^{2}
+  \end{eqnarray*}
+  This means the graph of $y=f(t)$ is a parabola which opens upwards
+  and is never negative. It follows that this function has at most one
+  root. From the quadratic formula, we know that a quadratic function
+  $at^2+bt+c$ has one or zero roots if and only if $b^2-4ac\leq
+  0$. Applying this reasoning to the function $f(t)$, we obatin
+  \begin{equation*}
+    \tup{2\tup{\vect{u}\dotprod \vect{v}} } ^{2}-4\norm{\vect{u}
+    } ^{2}\norm{\vect{v}} ^{2}<0,
+  \end{equation*}
+  which is equivalent to
+  $\abs{\vect{u}\dotprod \vect{v} }<\norm{\vect{u}} \norm{\vect{v}}$.
 \end{proof}
 
-Notice that this proof was based only on the properties of
-the dot product listed in Proposition \ref{prop:propertiesdotproduct}. This means that
-whenever an operation satisfies these properties, the Cauchy Schwarz inequality
-holds. There are many other instances of these properties besides vectors in
-$\R^{n}$.
-
-The Cauchy Schwarz inequality provides another proof of the \textbf{triangle
-inequality} for
-\index{triangle inequality}distances in $\R^{n}$.
+An important consequence of the Cauchy-Schwarz inequality is the
+so-called \textbf{triangle inequality}\index{triangle inequality},
+which states that the length of one side of a triangle is less than or
+equal the sum of the lengths of the two other sides.
 
 \begin{theorem}{Triangle inequality}{triangleinequalitydotproduct}
-  For $\vect{u},\vect{v}\in \R^{n}$
-\begin{equation}
-\norm{\vect{u}+\vect{v}} \leq \norm{\vect{u}} +\norm{\vect{v}
-}  \label{triangleineq1}
-\end{equation}
-and equality holds if and only if one of the vectors is a non-negative scalar
-multiple of the other. 
+  For\/ $\vect{u},\vect{v}\in \R^{n}$, we have
+  \begin{equation}\label{triangleineq1}
+    \norm{\vect{u}+\vect{v}} \leq \norm{\vect{u}} +\norm{\vect{v}}.
+  \end{equation}
 
-Also
-\begin{equation}
-\big| \norm{\vect{u}} -\norm{\vect{v}} \big| \leq
-\norm{\vect{u}-\vect{v}}  \label{triangleineq2}
-\end{equation}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.5]
+      \draw[->, thick, purple](0,0) -- node[above left]{$\vect{u}+\vect{v}$}(1.5,1);
+      \draw[->, thick, blue](0,0) -- node[below]{$\vect{u}$} (0.75,0);
+      \draw[->, thick, red](0.75,0) -- node[below right]{$\vect{v}$} (1.5,1);
+    \end{tikzpicture}
+  \end{center}
 \end{theorem}
 
-\begin{proof} By properties of the dot product and the Cauchy Schwarz
-inequality,
-\begin{eqnarray*}
-\norm{\vect{u}+\vect{v}} ^{2} &=& \tup{\vect{u}+\vect{v}} \dotprod \tup{\vect{u}+\vect{v}} \\
-& =&\tup{\vect{u}\dotprod \vect{u}} +\tup{\vect{u}\dotprod \vect{v}} +\tup{\vect{v}\dotprod \vect{u}} +\tup{\vect{v}\dotprod \vect{v}} \\
-&=&\norm{\vect{u}} ^{2}+2\tup{\vect{u}\dotprod \vect{v}}+\norm{\vect{v}} ^{2} \\
-&\leq& \norm{\vect{u}} ^{2}+2\abs{\vect{u}\dotprod \vect{v}}+\norm{\vect{v}} ^{2} \\
-&\leq& \norm{\vect{u}} ^{2}+2\norm{\vect{u}} \norm{\vect{v}} +\norm{\vect{v}} ^{2} =\tup{\norm{\vect{u}} +\norm{\vect{v}}} ^{2}
-\end{eqnarray*}
-Hence,
-\begin{equation*}
-\norm{\vect{u}+\vect{v}} ^{2} \leq \tup{\norm{\vect{u}} +\norm{\vect{v}}
-} ^{2}
-\end{equation*}
-Taking square roots of both sides you obtain \ref{triangleineq1}.
-
-It remains to consider when equality occurs. Suppose $\vect{u} = \vect{0}$.
-Then, $\vect{u} = 0 \vect{v}$ and the claim about when
-equality occurs is verified. The same argument holds if $\vect{v} = \vect{0}$. 
- Therefore, it can be assumed both vectors are
-nonzero. To get equality in \ref{triangleineq1} above, Theorem \ref{thm:cauchyschwarzinequality} 
-implies one of the vectors must be a multiple of
-the other. Say $\vect{v}= k \vect{u}$. If $k <0$ then equality
-cannot occur in \ref{triangleineq1} because in this case
-\begin{equation*}
-\vect{u}\dotprod \vect{v} =k \norm{\vect{u}}
-^{2}<0<\abs{k} \norm{\vect{u}} ^{2}=\abs{\vect{u}\dotprod \vect{v}}
-\end{equation*}
-Therefore, $k \geq 0.$
-
-To get the other form of the triangle inequality write 
-\begin{equation*}
-\vect{u}=\vect{u}-\vect{v}+\vect{v}
-\end{equation*}
-so
-\begin{align*}
-\norm{\vect{u}} & =\norm{\vect{u}-\vect{v}+\vect{v}} \\
-& \leq \norm{\vect{u}-\vect{v}} +\norm{\vect{v}} 
-\end{align*}
-Therefore,
-\begin{equation}
-\norm{\vect{u}} -\norm{\vect{v}} \leq \norm{\vect{u}-\vect{v}
-}  \label{triangleineq3}
-\end{equation}
-Similarly,
-\begin{equation}
-\norm{\vect{v}} -\norm{\vect{u}} \leq \norm{\vect{v}-\vect{u}
-} =\norm{\vect{u}-\vect{v}}  \label{triangleineq4}
-\end{equation}
-It follows from \ref{triangleineq3} and \ref{triangleineq4} that \ref{triangleineq2} holds. This
-is because $\big| \norm{\vect{u}} -\norm{\vect{v}}
-\big| $ equals the left side of either \ref{triangleineq3} or \ref{triangleineq4} and
-either way, $\big| \norm{\vect{u}} -\norm{\vect{v}}
-\big| \leq \norm{\vect{u}-\vect{v}} $. 
+\begin{proof}
+  By properties of the dot product and the Cauchy-Schwarz inequality,
+  we have
+  \begin{eqnarray*}
+    \norm{\vect{u}+\vect{v}}^{2}
+    &=& \tup{\vect{u}+\vect{v}}\dotprod\tup{\vect{u}+\vect{v}} \\
+    & =&\tup{\vect{u}\dotprod\vect{u}}+\tup{\vect{u}\dotprod\vect{v}}+\tup{\vect{v}\dotprod\vect{u}}+\tup{\vect{v}\dotprod\vect{v}} \\
+    &=&\norm{\vect{u}}^{2}+2\tup{\vect{u}\dotprod\vect{v}}+\norm{\vect{v}}^{2} \\
+    &\leq& \norm{\vect{u}}^{2}+2\abs{\vect{u}\dotprod\vect{v}}+\norm{\vect{v}}^{2} \\
+    &\leq& \norm{\vect{u}}^{2}+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^{2} =\tup{\norm{\vect{u}}+\norm{\vect{v}}}^{2}.
+  \end{eqnarray*}
+  Therefore,
+  \begin{equation*}
+    \norm{\vect{u}+\vect{v}}^{2}\leq\tup{\norm{\vect{u}}+\norm{\vect{v}}}^{2}.
+  \end{equation*}
+  Taking square roots of both sides, we obtain \eqref{triangleineq1}.
 \end{proof}
+
+\begin{example}{Triangle inequality}{triangleinequality}
+  Use the triangle inequality to show
+  \begin{equation*}
+    \norm{\vect{u}} -\norm{\vect{v}} \leq \norm{\vect{u}-\vect{v}}
+  \end{equation*}
+  holds for all vectors $\vect{u},\vect{v}\in\R^n$.
+\end{example}
+
+\begin{solution}
+  We have
+  \begin{equation*}
+    \norm{\vect{u}}
+    = \norm{(\vect{u}-\vect{v})+\vect{v}} \\
+    \leq \norm{\vect{u}-\vect{v}}+\norm{\vect{v}},
+  \end{equation*}
+  where we have used the triangle inequality in the last step. Note
+  that this is an inequality between real numbers. Bringing
+  $\norm{\vect{v}}$ to the other side of the equation, we have
+  \begin{equation*}
+    \norm{\vect{u}} - \norm{\vect{v}} \leq \norm{\vect{u}-\vect{v}}.
+  \end{equation*}
+\end{solution}
