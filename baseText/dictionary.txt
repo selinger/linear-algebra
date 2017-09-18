@@ -18,6 +18,7 @@ arbitrarybases
 areaparallelogram
 areatriangle
 Argand
+associativity
 atholic
 augmentedmatrix
 Ax
