@@ -321,6 +321,7 @@ matrixtranspose
 migrationmatrix
 minimizer
 minimizers
+mm
 modulo
 Moivre
 Moivre's
@@ -388,6 +389,7 @@ orthogonaldiagonalization
 orthogonalize
 orthogonally
 orthogonalspanningset
+orthogonalvectors
 OrthoMatrix
 orthonormal
 orthonormaleigenvectors
@@ -579,6 +581,7 @@ transposeanddotprod
 transposedeterminant
 transposematrix
 transposeproperties
+triangleinequality
 triangleinequalitycomplex
 triangleinequalitydotproduct
 triangularmatrices
