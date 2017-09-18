@@ -442,6 +442,7 @@ proofbyinduction
 propertiesconjugate
 propertiescrossproduct
 propertiesdotproduct
+propertieslength
 propertiesmultiplicationcomplexnumbers
 propertiesofaddition
 propertiesofadditioncomplexnumbers

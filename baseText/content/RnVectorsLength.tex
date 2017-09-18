@@ -1,331 +1,208 @@
-\subsection{Length of a vector}
+\section{Length of a vector}
 
-In this section, we explore what is meant by the length of a vector in $\R^n$. 
-We develop this concept by first looking at the distance between two points in $\R^n$. 
-
-First, we will consider the concept of distance for $\R$, that is, for points in $\R^1$. 
- Here, the
-distance between two points $P$ and $Q$ is given by the absolute value
-of their difference. We denote the distance between $P$ and $Q$ by  $d(P,Q)$ which is defined as 
-\begin{equation}
-d(P,Q) = \sqrt{ \tup{P-Q} ^{2}}
-\label{distance1}
-\end{equation}
-
-Consider now the case for $n=2$, demonstrated by the following picture. 
-
-\begin{picture}(1,100)
-\put(100,20){\begin{picture}(1,1)
-\setlength{\unitlength}{2pt}
-\thicklines
-\qbezier[10](0,0)(25,0)(50,0)
-\qbezier[7](0,0)(0,15)(0,30)
-\qbezier[10](0,30)(25,30)(50,30)
-\qbezier[7](50,30)(50,15)(50,0)
-\qbezier(0,0)(25,15)(50,30)
-\put(0,0){\circle*{2}}
-\put(50,0){\circle*{2}}
-\put(50,30){\circle*{2}}
-\put(5,-5){$Q=(q_1,q_2)$}
-\put(55,-5){$(p_1,q_2)$}
-\put(55,33){$P=(p_1,p_2)$}
-\end{picture}}
-\end{picture}
-
-There are two points $P =\tup{p_{1},p_{2}} $ and 
-$Q = \tup{q_{1},q_{2}}$ in the plane. The distance between these
-points is shown in the picture as a solid line. Notice that this line
-is the hypotenuse of a right triangle which is half of the rectangle
-shown in dotted lines. We want to find the length of this hypotenuse
-which will give the distance between the two points.  Note the
-lengths of the sides of this triangle are $\abs{p_{1}-q_{1}} $
-and $\abs{p_{2}-q_{2}}$, the absolute value of the difference in these values. Therefore, the Pythagorean Theorem
-implies the length of the hypotenuse (and thus the distance between $P$ and $Q$) equals
-\begin{equation}
-d(P,Q)=\sqrt{ \abs{p_{1}-q_{1}} ^{2}+\abs{p_{2}-q_{2}} ^{2}}
-=\sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{p_{2}-q_{2}}
-^{2}}
-\label{distance2}
-\end{equation}
-
-Now suppose $n=3$ and let $P = \tup{p_{1},p_{2},p_{3}} $ and $Q = \tup{
-q_{1},q_{2},q_{3}} $ be two points in $\R^{3}.$ Consider the
-following picture in which the solid line joins the two points and a
-dotted line joins the points $\tup{q_{1},q_{2},q_{3}} $ and $\tup{
-p_{1},p_{2},q_{3}} .$
-
-\begin{picture}(1,139)
-\put(100,20){\begin{picture}(1,1)
-\setlength{\unitlength}{2pt}
-\thicklines
-\qbezier[10](0,0)(25,0)(50,0)
-\qbezier[7](0,0)(0,15)(0,30)
-\qbezier[10](0,30)(25,30)(50,30)
-\qbezier[7](50,30)(50,15)(50,0)
-\put(20,20){
-\qbezier[10](0,0)(25,0)(50,0)
-\qbezier[7](0,0)(0,15)(0,30)
-\qbezier[10](0,30)(25,30)(50,30)
-\qbezier[7](50,30)(50,15)(50,0)}
-\qbezier[7](0,0)(10,10)(20,20)
-\put(0,0){\circle*{2}}
-\put(50,0){\circle*{2}}
-\put(0,30){\qbezier[7](0,0)(10,10)(20,20)\put(70,20){\circle*{2}}\put(70,-10){\circle*{2}}}
-\put(50,30){\qbezier[7](0,0)(10,10)(20,20)}
-\put(50,0){\qbezier[7](0,0)(10,10)(20,20)}
-\qbezier[13](0,0)(35,10)(70,20)
-\qbezier(0,0)(35,25)(70,50)
-\put(-30,-5){$Q=(q_1,q_2,q_3)$}
-\put(35,-5){$(p_1,q_2,q_3)$}
-\put(72,18){$(p_1,p_2,q_3)$}
-\put(70,52){$P=(p_1,p_2,p_3)$}
-\end{picture}}
-\end{picture}
-
-Here, we need to use Pythagorean Theorem twice in order to find the length of 
-the solid line. First, by the Pythagorean Theorem, the length of the dotted line joining $\tup{
-q_{1},q_{2},q_{3}} $ and $\tup{p_{1},p_{2},q_{3}} $ equals
+In this section, we explore what is meant by the length of a vector in
+$\R^n$.  We develop this concept by first looking at the distance
+between two points in $\R^n$. Consider two points $P=(p_1,p_2)$ and
+$Q=(q_1,q_2)$ in the plane, as in the following picture.
+\[
+  \begin{tikzpicture}[scale=1]
+    \draw[dashed] (0,0) -- (0,2) -- (3,2);
+    \draw[fill=blue!10] (0,0) -- (3,0) -- (3,2) -- cycle;
+    \draw[thick] (0,0) -- (3,2);
+    \draw[fill](0,0) circle [radius=1.8pt] node[left=1ex]{$Q=(q_1,q_2)$};
+    \draw[fill](3,2) circle [radius=1.8pt] node[right=1ex]{$P=(p_1,p_2)$};
+  \end{tikzpicture}
+\]
+The distance between $P$ and $Q$ is shown in the picture as a solid
+line, which is the hypotenuse of a right triangle.  The lengths of the
+two other sides of this triangle are $\abs{p_{1}-q_{1}} $ and
+$\abs{p_{2}-q_{2}}$. Therefore, the Pythagorean Theorem implies the
+length of the hypotenuse (and thus the distance between $P$ and $Q$)
+equals
 \begin{equation*}
-\sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{p_{2}-q_{2}} ^{2}}
+  d(P,Q)
+  =\sqrt{\abs{p_{1}-q_{1}}^{2}+\abs{p_{2}-q_{2}}^{2}}
+  =\sqrt{\tup{p_{1}-q_{1}}^{2}+\tup{p_{2}-q_{2}}^{2}}.
 \end{equation*}
-while the length of the line joining $\tup{p_{1},p_{2},q_{3}} $ to 
-$\tup{p_{1},p_{2},p_{3}} $ is just $\abs{p_{3}-q_{3}} .$
-Therefore, by the Pythagorean Theorem again, the length of the line joining
-the points $P = \tup{p_{1},p_{2},p_{3}} $ and $Q = \tup{
-q_{1},q_{2},q_{3}} $ equals
+Now consider two points $P=\tup{p_{1},p_{2},p_{3}}$ and
+$Q = \tup{q_{1},q_{2},q_{3}}$ in 3-dimensional space.
+\[
+  \begin{tikzpicture}[scale=1]
+    \draw[dashed] (3,0,-2) -- (0,0,-2) -- (0,0,0);
+    \draw[dashed] (0,0,0) -- (0,2,0);
+    \draw[dashed] (0,0,-2) -- (0,2,-2);
+    \draw[fill=blue!20] (0,0,0) -- (3,0,0) -- (3,0,-2) -- cycle;
+    \draw[fill=blue!10] (0,0,0) -- (3,0,-2) -- (3,2,-2) -- cycle;
+    \draw[dashed] (0,2,0) -- (3,2,0) -- (3,2,-2) -- (0,2,-2) -- cycle;
+    \draw[dashed] (3,0,0) -- (3,2,0);
+    \draw[thick] (0,0,0) -- (3,2,-2);
+    \draw[fill](0,0,0) circle [radius=1.8pt] node[left=1ex]{$Q=(q_1,q_2,q_3)$};
+    \draw[fill](3,2,-2) circle [radius=1.8pt] node[right=1ex]{$P=(p_1,p_2,p_3)$};
+    \draw[fill](3,0,-2) circle [radius=1.8pt] node[right=1ex]{$R=(p_1,p_2,q_3)$};
+    \draw[fill](3,0,0) circle [radius=1.8pt] node[right=1ex]{$S=(p_1,q_2,q_3)$};
+  \end{tikzpicture}
+\]
+We will use the Pythagorean Theorem twice to find the length of the
+solid line connecting $P$ and $Q$. First, by the Pythagorean Theorem
+applied to the right triangle $QSR$, the length of the line joining
+$R$ and $Q$ equals
 \begin{equation*}
-d(P,Q)=\sqrt{ \tup{\sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{
-p_{2}-q_{2}} ^{2}}  } ^{2}+\tup{p_{3}-q_{3}}
-^{2}}
+d(R,Q) = \sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{p_{2}-q_{2}} ^{2}}.
 \end{equation*}
-\begin{equation}
- =\sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{p_{2}-q_{2}}
-^{2}+\tup{p_{3}-q_{3}} ^{2}}
-\label{distance3}
-\end{equation}
-
-This discussion motivates the following definition for the distance between points in $\R^n$. 
+Second, by the Pythagorean Theorem applied to the triangle $QRP$, the
+length of the line joining $P$ and $Q$ equals
+\begin{equation*}
+d(P,Q)=\sqrt{d(R,Q)^{2}+\tup{p_{3}-q_{3}}^{2}}
+ =\sqrt{ \tup{p_{1}-q_{1}}^{2}+\tup{p_{2}-q_{2}}^{2}+\tup{p_{3}-q_{3}}^{2}}
+\end{equation*}
+This discussion motivates the following definition for the distance
+between points in $\R^n$.
 
 \begin{definition}{Distance between points}{distancebetweenpoints}
-Let $P=\tup{p_{1},\cdots ,p_{n}} $ and 
-$Q=\tup{q_{1},\cdots ,q_{n}} $ be two points in 
-$\R^{n}$. Then the distance
-between these points is defined as
-\begin{equation*}
-\text{ distance between }P\text{ and } Q\text{ is } 
-d( P, Q ) =\sqrt{ (p_1-q_1)^2 + \cdots + (p_n-q_n)^2}
-\end{equation*}
-This is called the \textbf{distance formula}\index{distance formula}. We may also write $\abs{P - Q }$ as the distance between $P$ and $Q$.
+  Let $P=\tup{p_{1},\ldots,p_{n}}$ and $Q=\tup{q_{1},\ldots,q_{n}}$ be
+  two points in $\R^{n}$. Then the \textbf{distance}\index{distance}
+  between these points is defined as
+  \begin{equation*}
+    d(P, Q) = \sqrt{(p_1-q_1)^2 + \ldots + (p_n-q_n)^2}.
+  \end{equation*}
+  This formula is also called the \textbf{distance
+    formula}\index{distance formula}. We may also write $\abs{P - Q }$
+  for the distance between $P$ and $Q$.
 \end{definition}
 
-From the above discussion, you can see that Definition \ref{def:distancebetweenpoints} holds for the special cases $n=1,2,3$, as in 
-Equations \ref{distance1}, \ref{distance2}, \ref{distance3}. 
-In the following example, we use Definition \ref{def:distancebetweenpoints} to find the distance between two points in
-$\R^4$.
+In the following example, we use Definition
+\ref{def:distancebetweenpoints} to find the distance between two
+points in $\R^4$.
 
 \begin{example}{Distance between points}{distancebetweenpoints}
-Find the distance between the points $P$ and $Q$ in $\R^{4}$,
-where $P$ and $Q$ are given by 
-\begin{equation*}
-P=\tup{1,2,-4,6}
-\end{equation*}
-and
-\begin{equation*}
-Q=\tup{2,3,-1,0}
-\end{equation*}
+  Find the distance between the points $P=\tup{1,2,-4,6}$ and
+  $Q=\tup{2,3,-1,0}$ in $\R^{4}$.
 \end{example}
 
 \begin{solution}
-We will use the formula given in Definition \ref{def:distancebetweenpoints} to find the distance between
-$P$ and $Q$. 
-Use the distance formula and write
-\begin{equation*}
-d(P,Q)= \sqrt{ \tup{1-2} ^{2}+\tup{2-3}
-^{2}+\tup{-4-\tup{-1} } ^{2}+\tup{6-0}^{2}} = \sqrt{47}
-\end{equation*}
-
-Therefore, $d( P,Q) =
-\sqrt{47}.$
-
+  Using the distance formula, we have
+  \begin{equation*}
+    d(P,Q)= \sqrt{ \tup{1-2} ^{2}+\tup{2-3}
+      ^{2}+\tup{-4-\tup{-1} } ^{2}+\tup{6-0}^{2}} =
+    \sqrt{1^2+1^2+3^2+6^2} = \sqrt{47}.
+  \end{equation*}
 \end{solution}
-
-There are certain properties of the distance between points which are important in our study.
-These are outlined in the following theorem.
-
-\begin{theorem}{Properties of distance}{distanceproperties}
-Let $P$ and $Q$ be points in $\R^n$, and let the distance between them,
-$d( P, Q)$, be given as in Definition \ref{def:distancebetweenpoints}. 
-Then, the following properties hold\index{distance formula!properties}.
-\begin{itemize}
-\item $ d( P, Q) = d( Q, P)  $
-\item $ d( P, Q) \geq 0$, and equals 0 exactly when $P = Q.$
-\end{itemize}
-\end{theorem}
-
-There are many applications of the concept of distance. For instance,
-given two points, we can ask what collection of points are all the
-same distance between the given points. This is explored in the
-following example.
 
 \begin{example}{The plane between two points}{planebetweentwopoints}
-Describe the points in $\R^3$ which are equally distant from both the points $\tup{
-1,2,3} $ and $\tup{0,1,2} .$
+  Describe the points in $\R^3$ which are equally distant from both
+  the points $Q=\tup{1,2,3} $ and $R=\tup{0,1,2}$.
 \end{example}
 
 \begin{solution}
-Let $P = \tup{p_1 , p_2, p_3} $ be such a point. Therefore, $P$ is the same distance from $\tup{
-1,2,3} $ and $\tup{0,1,2} $, thus $d(P,(1,2,3))=d(P,(0,1,2))$.
-Then by Definition \ref{def:distancebetweenpoints},
-\begin{equation*}
-\sqrt{\tup{p_1 -1} ^{2}+\tup{p_2 -2} ^{2}+\tup{p_3-3} ^{2}}=
-\sqrt{\tup{p_1 - 0 }^{2}+\tup{p_2-1} ^{2}+\tup{p_3-2} ^{2}}
-\end{equation*}
-Squaring both sides we obtain 
-\begin{equation*}
-\tup{p_1 -1} ^{2}+\tup{p_2 -2} ^{2}+\tup{p_3 -3}
-^{2}=p_1^{2}+\tup{p_2-1} ^{2}+\tup{p_3 -2} ^{2}
-\end{equation*}
-and so
-\begin{equation*}
-\allowbreak p_1^{2}-2p_1+14+p_2^{2}-4p_2+p_3^{2}-6p_3=p_1^{2}+p_2^{2}-2p_2+5+p_3^{2}-4p_3
-\end{equation*}
-Simplifying, this becomes
-\begin{equation*}
--2p_1+14-4p_2-6p_3=-2p_2+5-4p_3
-\end{equation*}
-which can be written as 
-\begin{equation}
-2p_1+2p_2+2p_3=-9  \label{distanceplane}
-\end{equation}
-Therefore, the points $P = \tup{
-p_1,p_2,p_3} $  which are the same 
-distance from each of the given points form a plane whose equation is given by \ref{distanceplane}.
+  Let $P = \tup{p_1,p_2,p_3}$ be such a point. Then $P$ is the same
+  distance from $Q$ and $R$, thus $d(P,Q)=d(P,R)$. By the distance
+  formula, we have
+  \begin{equation*}
+    \sqrt{\tup{p_1-1}^{2}+\tup{p_2-2}^{2}+\tup{p_3-3}^{2}}=
+    \sqrt{\tup{p_1-0}^{2}+\tup{p_2-1}^{2}+\tup{p_3-2}^{2}}.
+  \end{equation*}
+  Squaring both sides, we obtain 
+  \begin{equation*}
+    \tup{p_1 -1} ^{2}+\tup{p_2 -2} ^{2}+\tup{p_3 -3}
+    ^{2}=p_1^{2}+\tup{p_2-1} ^{2}+\tup{p_3 -2} ^{2},
+  \end{equation*}
+  and so
+  \begin{equation*}
+    \allowbreak (p_1^{2}-2p_1+1)+(p_2^{2}-4p_2+4)+(p_3^{2}-6p_3+9)=p_1^{2}+(p_2^{2}-2p_2+1)+(p_3^{2}-4p_3+4).
+  \end{equation*}
+  Simplifying, this becomes
+  \begin{equation*}
+    -2p_1-4p_2-6p_3+14=-2p_2-4p_3+5,
+  \end{equation*}
+  which can finally be written as 
+  \begin{equation}\label{distanceplane}
+    2p_1+2p_2+2p_3=9.
+  \end{equation}
+  Therefore, the points $P = \tup{p_1,p_2,p_3}$ which are the same
+  distance from $Q$ and $R$ form a plane whose equation is given by
+  \eqref{distanceplane}.
 \end{solution}
 
-We can now use our understanding of the distance between two points to define what is meant by the length of a 
-vector. Consider the following definition.  
+We can now use our understanding of the distance between two points to
+define what is meant by the length of a vector.
 
 \begin{definition}{Length of a vector}{lengthofvector}
-Let $\vect{u} = \mat{u_{1} \cdots u_{n} }^T$ be a vector in
-$\R^n$. Then, the length of $\vect{u}$, written $\norm{\vect{u}}$\index{vector!length}, is given by
-\begin{equation*}
-\norm{
-\vect{u}
-}
-= \sqrt{ u_{1}^2 + \cdots + u_{n}^2}
-\end{equation*}
+  Let
+  \[
+    \vect{u} = \begin{mymatrix}{c}u_1\\\vdots\\u_n\end{mymatrix}
+  \]
+  be a vector in $\R^n$. Then the
+  \textbf{length}\index{vector!length}\index{length of a vector} of
+  $\vect{u}$, written $\norm{\vect{u}}$, is given by
+  \begin{equation*}
+    \norm{\vect{u}} = \sqrt{u_{1}^2 + \ldots + u_{n}^2}.
+  \end{equation*}
 \end{definition}
 
 This definition corresponds to Definition
-\ref{def:distancebetweenpoints}, if you consider the vector $\vect{u}$
-to have its tail at the point $0 = \tup{0, \cdots ,0 }$ and its
-tip at the point $U = \tup{u_1, \cdots, u_n }$.  Then the length of
-$\vect{u}$ is equal to the distance between $0$ and $U$, $d(0,U)$. In general, $d(P,Q) = \norm{\longvect{PQ}}$. 
+\ref{def:distancebetweenpoints}, if we consider the vector $\vect{u}$
+to have its tail at the point $0 = \tup{0, \cdots ,0 }$ and its tip at
+the point $U = \tup{u_1, \cdots, u_n }$.  Then the length of
+$\vect{u}$ is equal to the distance between $0$ and $U$. In general,
+$\norm{\longvect{PQ}} = d(P,Q)$.
 
-Consider Example \ref{exa:distancebetweenpoints}. By Definition \ref{def:lengthofvector}, we could also find the distance between $P$ and $Q$ 
-as the length of the vector connecting them. Hence, if we were to draw a vector $\longvect{PQ}$ 
-with its tail at $P$ and its point at $Q$, this vector would have length equal to 
-$\sqrt{47}$.
+Reconsider Example \ref{exa:distancebetweenpoints}. We could have also
+computed the distance between $P$ and $Q$ as the length of the vector
+connecting them. This vector is $\longvect{PQ} = \mat{1,1,3,-6}^T$,
+and its length is
+\[
+  \norm{\longvect{PQ}} = \sqrt{1^2+1^2+3^2+6^2} = \sqrt{47}.
+\]
 
-We conclude this section with a new definition for the special case of
-vectors of length $1$.
+The following theorem states a few important properties of the length
+of vectors.
+
+\begin{theorem}{Properties of length}{propertieslength}
+  The following hold for all vectors $\vect{u},\vect{v}$ and scalars $k$.
+  \begin{itemize}
+  \item $\norm{\vect{u}}\geq 0$
+  \item $\norm{\vect{u}}=0$ if and only if $\vect{u}=\vect{0}$.
+  \item $\norm{k\vect{u}} = |k|\,\norm{\vect{u}}$.
+  \item $\norm{\vect{u}+\vect{v}} \leq \norm{\vect{u}} + \norm{\vect{v}}$.
+  \end{itemize}
+\end{theorem}
+
+We conclude this section by giving a special name to vectors of length
+$1$.
 
 \begin{definition}{Unit vector}{unitvector}
-Let $\vect{u}$ be a non-zero vector in $\R^{n}$. Then, we call $\vect{u}$ a 
-\textbf{unit vector}\index{unit vector}\index{vector!unit} if it has length 1, that is if
-\begin{equation*}
-\norm{\vect{u}}
-=
-1
-\end{equation*}
+  A vector\/ $\vect{u}\in\R^n$ is called a
+  \textbf{unit vector}\index{unit vector}\index{vector!unit} if it has
+  length $1$, that is, if
+  \begin{equation*}
+    \norm{\vect{u}} = 1.
+  \end{equation*}
 \end{definition}
 
-Let $\vect{v}$ be a vector in $\R^{n}$. Then, the vector $\vect{u}$
-which has the same direction as $\vect{v}$ but length equal to $1$ is the corresponding unit vector of $\vect{v}$. 
-This vector is given by
+Let $\vect{v}$ be a non-zero vector in $\R^{n}$. Then there is a unit
+vector $\vect{u}$ that points in the same direction as $\vect{v}$, but
+has length 1.\index{vector!corresponding unit vector}. This vector is
+given by
 \begin{equation*}
-\vect{u}
-=
-\frac{1}{\norm{\vect{v}}}
-\vect{v}
+\vect{u} = \frac{1}{\norm{\vect{v}}} \vect{v}.
 \end{equation*}
+We often use the term \textbf{normalize}\index{vector!normalize} to refer
+to this process. When we normalize a vector, we find the corresponding
+unit vector.
 
-We often use the term \textbf{normalize} to refer to this process. When we \textbf{normalize} a vector, we find the corresponding unit vector of length $1$. 
-Consider the following example.
-
-\begin{example}{Finding a unit vector}{unitvector}
-Let $\vect{v}$ be given by 
-\begin{equation*}
-\vect{v}
-=
-\begin{mymatrix}{rrr}
-1 & -3 & 4
-\end{mymatrix}^T
-\end{equation*}
-Find the unit vector $\vect{u}$ which has the same direction as $\vect{v}$\index{vector!corresponding unit vector}.
+\begin{example}{Normalizing a vector}{unitvector}
+  Consider the vector $\vect{v} = \mat{1, -3, 4}^T$. Find the unit
+  vector $\vect{u}$ that has the same direction as $\vect{v}$
 \end{example}
 
 \begin{solution}
-We will use Definition \ref{def:unitvector} to solve this. 
-Therefore, we need to find the length of $\vect{v}$ which, by Definition \ref{def:lengthofvector}
-is given by 
-\begin{equation*}
-\norm{
-\vect{v}
-}
-= \sqrt{ v_{1}^2 + v_{2}^2+ v_{3}^2}
-\end{equation*}
-Using the corresponding  values we find that
-\begin{eqnarray*}
-\norm{
-\vect{v}
-}
-&=& \sqrt{ 1^2 + \tup{-3 }^2 + 4^2} \\
-&=& \sqrt{ 1 + 9 + 16} \\
-&=& \sqrt{26} 
-\end{eqnarray*}
-In order to find $\vect{u}$, we divide $\vect{v}$ by $\sqrt{26}$.
-The result is 
-\begin{eqnarray*}
-\vect{u}
-&=&
-\frac{1}{\norm{\vect{v}}}
-\vect{v} \\
-&=&
-\frac{1}{\sqrt{26}}
-\begin{mymatrix}{rrr}
-1 & -3 & 4
-\end{mymatrix}^T \\
-&=&
-\begin{mymatrix}{rrr}
-\frac{1}{\sqrt{26}} & -\frac{3}{\sqrt{26}} & \frac{4}{\sqrt{26}}
-\end{mymatrix}^T
-\end{eqnarray*}
-
-You can verify using the Definition \ref{def:lengthofvector} that $\norm{\vect{u}} = 1 $. 
+  We have $\norm{\vect{v}} = \sqrt{ 1^2 + (-3)^2 + 4^2} =
+  \sqrt{26}$, and therefore
+  \begin{equation*}
+    \vect{u}
+    = \frac{1}{\norm{\vect{v}}} \vect{v}
+    = \frac{1}{\sqrt{26}} \mat{1, -3, 4}^T
+    = \mat{\frac{1}{\sqrt{26}}, -\frac{3}{\sqrt{26}}, \frac{4}{\sqrt{26}}}^T.
+  \end{equation*}
 \end{solution}
-
-% ----------------------------------------------------------------------
-
-
-Now suppose we have a vector $\vect{u} = \mat{u_1, u_2, u_3}^T$ and we
-multiply $\vect{u}$ by a scalar $k$. By Definition
-\ref{def:vectorscalarmultiplication},
-$k\vect{u} = \begin{mymatrix}{rrr} ku_{1} & ku_{2} & ku_{3}
-\end{mymatrix}^T $. 
-Then, by using Definition \ref{def:distancebetweenpoints}, the length of this vector is given by 
-\begin{equation*}
-\sqrt{\tup{\tup{k u_{1}} ^{2}+\tup{k u_{2}}
-^{2}+\tup{k u_{3}} ^{2}} }=\abs{k }\sqrt{u_{1}^{2}+u_{2}^{2}+u_{3}^{2}}
-\end{equation*}
-Thus the following holds.
-\begin{equation*}
-\norm{k \vect{u}} =\abs{k }\norm{\vect{u}} 
-\end{equation*}
-In other words, multiplication by a scalar magnifies or shrinks the
-length of the vector by a factor of $\abs{k}$.  If $\abs{k}> 1$, the
-length of the resulting vector will be magnified. If $\abs{k}<1$, the
-length of the resulting vector will shrink. Remember that by the
-definition of the absolute value, $\abs{k}\geq 0$.
-
 
