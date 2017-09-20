@@ -639,13 +639,17 @@ $, Solution is: $\mat{w=15,x=15,y=20,z=10} .$
 %\end{sol}
 \end{ex}
 
-\begin{ex} Suppose $A$ is an $m\times n$ matrix. Explain why the rank of $A$ is
-always no larger than $\min \tup{m,n} .$
-\begin{sol}
-It is because you cannot
-have more than $\min \tup{m,n} $ nonzero rows in the {\rref}. Recall that the number of pivot columns is the same as the
-number of nonzero rows from the description of this {\rref}.
-\end{sol}
+\begin{ex}
+  Suppose $A$ is an $m\times n$ matrix. Explain why the rank of $A$ is
+  always no larger than $\min \tup{m,n} .$
+  \begin{sol}
+    It is because you cannot have more than $\min\tup{m,n}$ pivot
+    entries in the {\ef}. Recall that each row of the matrix can have
+    at most one pivot entry (the first non-zero entry of that
+    row). Therefore, there are no more than $m$ pivot entries. Also,
+    by the definition of {\ef}s, each pivot entry is in a separate
+    column. So there are no more than $n$ pivot entries. 
+  \end{sol}
 \end{ex}
 
 \begin{ex}
