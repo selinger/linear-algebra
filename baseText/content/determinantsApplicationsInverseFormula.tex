@@ -1,14 +1,14 @@
 \subsection{A formula for the inverse}
 
 The determinant of a matrix also provides a way to find the inverse of a matrix.
-Recall the definition of the inverse of a matrix in Definition \ref{def:invertiblematrix}.
+Recall the definition of the inverse of a matrix in Definition \ref{def:invertible-matrix}.
 We say that $A^{-1}$, an $n \times n$ matrix, is the inverse of $A$, also $n \times n$, if $AA^{-1} = I$ and $A^{-1}A=I$. 
 
 We now define a new matrix called the \textbf{cofactor matrix} of $A$.  
 The cofactor matrix of $A$ is the matrix whose $ij^{th}$ entry is the $ij^{th}$ cofactor of $A$.
 The formal definition is as follows.
 
-\begin{definition}{The cofactor matrix}{cofactormatrix}
+\begin{definition}{The cofactor matrix}{cofactor-matrix}
 Let $A=\mat{a_{ij}}$ be an $n\times n$ matrix. Then the
 \textbf{cofactor matrix of $A$}\index{cofactor matrix}, denoted 
 $\func{cof}\tup{A}$, is defined by $\func{cof}\tup{A} =\mat{
@@ -40,7 +40,7 @@ d & -b \\
 
 In general, $\func{adj}\tup{A}$ can always be found by taking the transpose of the cofactor matrix of $A$. The following theorem provides a formula for $A^{-1}$ using the determinant and adjugate of $A$.
 
-\begin{theorem}{The inverse and the determinant}{inverseanddeterminant}
+\begin{theorem}{The inverse and the determinant}{inverse-and-determinant}
 Let $A$ be an  $n\times n$ matrix. Then  
 \begin{equation*}
 A \; \func{adj}\tup{A} = \func{adj}\tup{A}A = {\det \tup{A}} I
@@ -58,7 +58,7 @@ Notice that the first formula holds for any $n \times n$ matrix $A$, and in the 
 
 Consider the following example.
 
-\begin{example}{Find inverse using the determinant}{inverseanddeterminant}
+\begin{example}{Find inverse using the determinant}{inverse-and-determinant}
 Find the inverse of the matrix
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
@@ -67,17 +67,17 @@ A=\begin{mymatrix}{rrr}
 1 & 2 & 1
 \end{mymatrix}
 \end{equation*}
-using the formula in Theorem \ref{thm:inverseanddeterminant}.
+using the formula in Theorem \ref{thm:inverse-and-determinant}.
 \end{example}
 
 \begin{solution} 
-According to Theorem \ref{thm:inverseanddeterminant}, 
+According to Theorem \ref{thm:inverse-and-determinant}, 
 \begin{equation*}
 A^{-1} = \frac{1}{\det \tup{A}} \func{adj}\tup{A}
 \end{equation*}
 
-First we will find the determinant of this matrix. Using Theorems \ref{thm:switchingrows}, \ref{thm:multiplyingrowbyscalar},
-and \ref{thm:addingmultipleofrow}, we can first simplify the matrix through row operations. First, add $-3$ times the first row to the second row. Then
+First we will find the determinant of this matrix. Using Theorems \ref{thm:switching-rows}, \ref{thm:multiplying-row-by-scalar},
+and \ref{thm:adding-multiple-of-row}, we can first simplify the matrix through row operations. First, add $-3$ times the first row to the second row. Then
 add $-1$ times the first row to the third row to obtain
 \begin{equation*}
 B = \begin{mymatrix}{rrr}
@@ -86,7 +86,7 @@ B = \begin{mymatrix}{rrr}
 0 & 0 & -2
 \end{mymatrix}
 \end{equation*}
-By Theorem \ref{thm:addingmultipleofrow}, $\det \tup{A} = \det \tup{B}$. By Theorem \ref{thm:determinantoftriangularmatrix}, 
+By Theorem \ref{thm:adding-multiple-of-row}, $\det \tup{A} = \det \tup{B}$. By Theorem \ref{thm:determinant-of-triangular-matrix}, 
 $\det \tup{B} = 1 \times -6 \times -2 = 12$. Hence, $\det \tup{A} = 12$. 
 
 Now, we need to find $\func{adj} \tup{A}$. To do so, first we will find the cofactor matrix of $A$. 
@@ -100,7 +100,7 @@ This is given by
 2 & 8 & -6
 \end{mymatrix} 
 \end{equation*}
-Here, the $ij^{th}$ entry is the $ij^{th}$ cofactor of the original matrix $A$ which you can verify. Therefore, from Theorem \ref{thm:inverseanddeterminant},
+Here, the $ij^{th}$ entry is the $ij^{th}$ cofactor of the original matrix $A$ which you can verify. Therefore, from Theorem \ref{thm:inverse-and-determinant},
  the inverse of $A$ is given by 
 \begin{equation*}
 A^{-1}
@@ -147,7 +147,7 @@ You can verify that $AA^{-1} = I$ and hence our answer is correct.
 
 We will look at another example of how to use this formula to find $A^{-1}$.
 
-\begin{example}{Find the inverse from a formula}{inverseformula}
+\begin{example}{Find the inverse from a formula}{inverse-formula}
 Find the inverse of the matrix
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
@@ -158,7 +158,7 @@ A=\begin{mymatrix}{rrr}
 \frac{1}{2}
 \end{mymatrix}
 \end{equation*}
-using the formula given in Theorem \ref{thm:inverseanddeterminant}.
+using the formula given in Theorem \ref{thm:inverse-and-determinant}.
 \end{example}
 
 \begin{solution} First we need to find $\det \tup{A}$. 
@@ -253,10 +253,10 @@ The verification step is very important, as it is a simple way to check your wor
 these products are not both equal to $I$, be sure to go back and double check each step. 
 One common error is to forget to take the transpose of the cofactor matrix, so be sure to complete this step.
 
-We will now prove Theorem \ref{thm:inverseanddeterminant}.
+We will now prove Theorem \ref{thm:inverse-and-determinant}.
 
 %Ilijas' proof
-\begin{proof} (of Theorem \ref{thm:inverseanddeterminant})
+\begin{proof} (of Theorem \ref{thm:inverse-and-determinant})
 Recall that the $(i,j)$-entry of $\func{adj}(A)$ is equal to $\func{cof}(A)_{ji}$.  Thus the $(i,j)$-entry of   $B=A\cdot \func{adj}(A)$ is : 
 \[
 B_{ij}=\sum_{k=1}^n a_{ik} \func{adj} (A)_{kj}= \sum_{k=1}^n a_{ik} \func{cof} (A)_{jk}
@@ -276,7 +276,7 @@ Similarly we can verify that:
 \end{equation*}
 And this proves the first part of the theorem. 
 
-Further if $A$ is  invertible, then by Theorem \ref{thm:determinantofproduct} we have:
+Further if $A$ is  invertible, then by Theorem \ref{thm:determinant-of-product} we have:
 \[ 1 = \det \tup{I } = \det \tup{A A^{-1} } = \det \tup{A } \det \tup{A^{-1} } \]
 and thus $\det \tup{A } \neq 0$. Equivalently, if  $\det \tup{A } = 0$, then $A$ is not invertible. 
 
@@ -291,7 +291,7 @@ This completes the proof.
 
 %%the following is Kuttler's proof
 %\begin{proof}
-%First if $A$ is  invertible, then by Theorem \ref{thm:determinantofproduct} we have:
+%First if $A$ is  invertible, then by Theorem \ref{thm:determinant-of-product} we have:
 %\[ 1 = \det \tup{I } = \det \tup{A A^{-1} } = \det \tup{A } \det \tup{A^{-1} } \]
 %and thus $\det \tup{A } \neq 0$. Equivalently, if  $\det \tup{A } = 0$, then $A$ is not invertible. 
 %
@@ -310,7 +310,7 @@ This completes the proof.
 %
 %\noindent By replacing the $k^{th}$ column of $A$ with its $r^{th}$ column, we
 %obtain a matrix $B_{k}$ whose determinant equals zero by Theorem
-%\ref{thm:switchingrows}.  However, now expanding this matrix $B_{k}$ along
+%\ref{thm:switching-rows}.  However, now expanding this matrix $B_{k}$ along
 %the $k^{th}$ column yields
 %\begin{equation*}
 %0=\det \tup{B_{k}} \det \tup{A} ^{-1}=\sum_{i=1}^{n}a_{ir}
@@ -340,7 +340,7 @@ This completes the proof.
 %\begin{equation}
 %\vspace{0.05in}\frac{\func{adj}\tup{A}}{\det \tup{A} } A=I
 %\end{equation}
-%Using the other formula in Definition \ref{def:nbyndeterminant}, and similar reasoning we obtain 
+%Using the other formula in Definition \ref{def:n-by-n-determinant}, and similar reasoning we obtain 
 %
 %\begin{equation}
 %\vspace{0.05in}A \frac{\func{adj}\tup{A}}{\det \tup{A} } =I
@@ -359,7 +359,7 @@ is useful with complicated matrices where the entries are functions, rather than
 
 Consider the following example. 
 
-\begin{example}{Inverse for non-constant matrix}{inversenonconstantmatrix}
+\begin{example}{Inverse for non-constant matrix}{inverse-non-constant-matrix}
 Suppose
 \begin{equation*}
 A\tup{t} =\begin{mymatrix}{ccc}

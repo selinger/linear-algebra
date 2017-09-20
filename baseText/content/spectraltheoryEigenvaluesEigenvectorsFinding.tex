@@ -22,7 +22,7 @@ We will now look at how to find the eigenvalues and eigenvectors for a
 matrix $A$ in detail.  The steps used are summarized in the following
 procedure.
 
-\begin{procedure}{Finding eigenvalues and eigenvectors}{findeigenvaluesvectors}
+\begin{procedure}{Finding eigenvalues and eigenvectors}{find-eigenvalues-vectors}
 \index{eigenvalues!calculating}\index{eigenvectors!calculating}%
 Let $A$ be an $n \times n$ matrix. 
 \begin{enumerate}
@@ -37,7 +37,7 @@ for each $\lambda$ and associated eigenvector $X$.
 
 We will explore these steps further in the following example.
 
-\begin{example}{Find the eigenvalues and eigenvectors}{findeigenvectors2x2}
+\begin{example}{Find the eigenvalues and eigenvectors}{find-eigenvectors-2x2}
 Let $A = \begin{mymatrix}{rr}
 -5 & 2 \\
 -7 & 4 
@@ -45,7 +45,7 @@ Let $A = \begin{mymatrix}{rr}
 \end{example}
 
 \begin{solution}
-We will use Procedure \ref{proc:findeigenvaluesvectors}. First we find the eigenvalues of $A$ by solving the equation
+We will use Procedure \ref{proc:find-eigenvalues-vectors}. First we find the eigenvalues of $A$ by solving the equation
 \[
 \det \tup{\eigenVar I - A } =0
 \]
@@ -266,9 +266,9 @@ To check, we verify that $AX = -3X$ for this basic eigenvector.
 This is what we wanted, so we know this basic eigenvector is correct. 
 \end{solution}
 
-The following is an example using Procedure \ref{proc:findeigenvaluesvectors} for a $3 \times 3$ matrix. 
+The following is an example using Procedure \ref{proc:find-eigenvalues-vectors} for a $3 \times 3$ matrix. 
 
-\begin{example}{Find the eigenvalues and eigenvectors}{findeigenvectors}
+\begin{example}{Find the eigenvalues and eigenvectors}{find-eigenvectors}
 Find the eigenvalues and eigenvectors for the matrix
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
@@ -280,7 +280,7 @@ A=\begin{mymatrix}{rrr}
 \end{example}
 
 \begin{solution}
-We will use Procedure \ref{proc:findeigenvaluesvectors}.
+We will use Procedure \ref{proc:find-eigenvalues-vectors}.
 First we need to find the eigenvalues of $A$. Recall that they are the
 solutions of the equation
 \begin{equation*}
@@ -567,7 +567,7 @@ This is what we wanted. Checking the second basic eigenvector, $X_3$, is left as
 It is important to remember that for any eigenvector $X$, $X \neq 0$. However, it is possible 
 to have eigenvalues equal to zero. This is illustrated in the following example. 
 
-\begin{example}{A zero eigenvalue}{zeroeigenvalue}
+\begin{example}{A zero eigenvalue}{zero-eigenvalue}
 Let
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
@@ -581,7 +581,7 @@ Find the eigenvalues and eigenvectors of $A$.
 
 \begin{solution}
 First we find the eigenvalues of $A$. We will do so using Definition
-\ref{def:eigenvaluesandeigenvectors}. 
+\ref{def:eigenvalues-and-eigenvectors}. 
 
 In order to find the eigenvalues of $A$, we solve the following equation.
 \begin{equation*}

@@ -4,7 +4,7 @@ Another important theorem is the existence of a specific factorization of positi
 
 \index{Cholesky factorization!positive definite}
 \index{positive definite!Cholesky factorization} 
-\begin{theorem}{Cholesky factorization}{choleskyfactorization}
+\begin{theorem}{Cholesky factorization}{cholesky-factorization}
 Let $A$ be a positive definite matrix. Then
 there exists an upper triangular matrix $U$ whose main diagonal entries are positive, such that $A$ can be written
 
@@ -17,7 +17,7 @@ This factorization is unique.
 
 The process for finding such a matrix $U$ relies on simple row operations.
 
-\begin{procedure}{Finding the Cholesky factorization}{findingcholesky}
+\begin{procedure}{Finding the Cholesky factorization}{finding-cholesky}
 Let $A$ be a positive definite matrix. The matrix $U$ that creates the Cholesky Factorization can be found through two steps.
 \begin{enumerate}
 \item Using only type $3$ elementary row operations (multiples of rows added to other rows) put $A$ in upper triangular form. Call this matrix $\hat{U}$. Then $\hat{U}$ has positive entries on the main diagonal. 
@@ -45,7 +45,7 @@ A_{2}=\begin{mymatrix}{rr} 9 & -6 \\ -6 & 5 \end{mymatrix},\]
 so $\det(A_{1})=9$ and $\det(A_{2})=9$.
 Since $\det(A)=36$, it follows that $A$ is positive definite.
 
-Now we use Procedure \ref{proc:findingcholesky} to find the Cholesky Factorization. Row reduce (using only type $3$ row operations) until an upper triangular matrix is obtained. 
+Now we use Procedure \ref{proc:finding-cholesky} to find the Cholesky Factorization. Row reduce (using only type $3$ row operations) until an upper triangular matrix is obtained. 
 \[ \begin{mymatrix}{rrr}
 9 & -6 & 3 \\ -6 & 5 & -3 \\ 3 & -3 & 6
 \end{mymatrix}

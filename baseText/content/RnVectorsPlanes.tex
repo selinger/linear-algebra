@@ -12,7 +12,7 @@
 
 Much like the above discussion with lines, vectors can be used to determine planes in $\R^n$. Given a vector $\vect{n}$ in $\R^n$ and a point $P_0$, it is possible to find a \textbf{unique} plane which contains $P_0$ and is perpendicular to the given vector. 
 
-\begin{definition}{Normal vector}{normalvector}
+\begin{definition}{Normal vector}{normal-vector}
 Let $\vect{n}$ be a nonzero vector in $\R^n$. Then $\vect{n}$ is called a \textbf{normal vector}\index{plane!normal vector} to a plane if and only if 
 \[
 \vect{n} \dotprod \vect{v} = 0
@@ -33,7 +33,7 @@ or
 
 The first of these equations gives the \textbf{vector equation} of the plane. 
 
-\begin{definition}{Vector equation of a plane}{vecteqnplane}
+\begin{definition}{Vector equation of a plane}{vect-eqn-plane}
 Let $\vect{n}$ be the normal vector for a plane which contains a point $P_0$. If $P$ is an arbitrary point on this plane, then the \textbf{vector equation}\index{plane!vector equation} of the plane is given by 
 \[
 \vect{n} \dotprod (\longvect{0P} - \longvect{0P_0}) = 0
@@ -42,7 +42,7 @@ Let $\vect{n}$ be the normal vector for a plane which contains a point $P_0$. If
 
 Notice that this equation can be used to determine if a point $P$ is contained in a certain plane. 
 
-\begin{example}{A point in a plane}{pointplane}
+\begin{example}{A point in a plane}{point-plane}
 Let $\vect{n} = 
 \begin{mymatrix}{r}
 1 \\
@@ -52,7 +52,7 @@ Let $\vect{n} =
 \end{example}
 
 \begin{solution}
-By Definition \ref{def:vecteqnplane}, $P$ is a point in the plane if it satisfies the equation
+By Definition \ref{def:vect-eqn-plane}, $P$ is a point in the plane if it satisfies the equation
 \[
 \vect{n} \dotprod (\longvect{0P} - \longvect{0P_0}) = 0
 \]
@@ -155,7 +155,7 @@ Notice that since $P_0$ is given, $ax_0+by_0+cz_0$ is a known scalar, which we c
 ax + by + cz = d
 \]
 
-\begin{definition}{Scalar equation of a plane}{scalareqnplane}
+\begin{definition}{Scalar equation of a plane}{scalar-eqn-plane}
 Let $\vect{n} = \begin{mymatrix}{c}
 a \\
 b \\
@@ -170,7 +170,7 @@ where $ a,b,c,d \in \R$ and $d = ax_0 + by_0 + cz_0$.
 
 Consider the following equation.
 
-\begin{example}{Finding the equation of a plane}{findingeqnplane}
+\begin{example}{Finding the equation of a plane}{finding-eqn-plane}
 Find an equation of the plane containing $P_0 = (3, -2, 5)$ and orthogonal to $\vect{n} = 
 \begin{mymatrix}{r}
 -2 \\
@@ -181,7 +181,7 @@ Find an equation of the plane containing $P_0 = (3, -2, 5)$ and orthogonal to $\
 
 \begin{solution}
 The above vector $\vect{n}$ is the normal vector for this plane.
-Using Definition \ref{def:vecteqnplane}, we can determine the vector equation for this plane. 
+Using Definition \ref{def:vect-eqn-plane}, we can determine the vector equation for this plane. 
 \begin{eqnarray*}
 \vect{n} \dotprod (\longvect{0P} - \longvect{0P_0}) &=& 0 \\
 \begin{mymatrix}{r}
@@ -215,7 +215,7 @@ z - 5
 &=& 0 
 \end{eqnarray*} 
 
-Using Definition \ref{def:scalareqnplane}, we can determine the scalar equation of the plane. 
+Using Definition \ref{def:scalar-eqn-plane}, we can determine the scalar equation of the plane. 
 \[
 -2x + 4y + 1z = -2(3) + 4(-2) + 1(5) = -9
 \]
@@ -243,7 +243,7 @@ and the scalar equation is
 
 Suppose a point $P$ is not contained in a given plane. We are then interested in the shortest distance from that point $P$ to the given plane. Consider the following example. 
 
-\begin{example}{Shortest distance from a point to a plane}{shortestdistanceplane}
+\begin{example}{Shortest distance from a point to a plane}{shortest-distance-plane}
 Find the shortest distance from the point $P = (3,2,3)$ to the plane given by \\ $ 2x + y + 2z = 2$, and find the point $Q$ on the plane that is closest to $P$. 
 \end{example}
 

@@ -6,7 +6,7 @@ by $\det \tup{A} $ is a very important number which we will explore throughout t
 If $A$ is a 2$\times 2$
 matrix, the determinant is given by the following formula.
 
-\begin{definition}{Determinant of a two by two matrix}{twobytwodeterminant}
+\begin{definition}{Determinant of a two by two matrix}{two-by-two-determinant}
 Let $A=\begin{mymatrix}{rr}
 a & b \\
 c & d
@@ -31,7 +31,7 @@ c & d
 
 The following is an example of finding the determinant of a $2 \times 2$ matrix.
 
-\begin{example}{A two by two determinant}{twobytwodeterminant}
+\begin{example}{A two by two determinant}{two-by-two-determinant}
 Find $\det\tup{A} $ for the matrix
 $A =  \begin{mymatrix}{rr}
 2 & 4 \\
@@ -39,7 +39,7 @@ $A =  \begin{mymatrix}{rr}
 \end{mymatrix} .$
 \end{example}
 
-\begin{solution} From Definition \ref{def:twobytwodeterminant},
+\begin{solution} From Definition \ref{def:two-by-two-determinant},
 \begin{equation*}
 \det \tup{A} = \tup{2} \tup{6} -\tup{
 -1} \tup{4} = 12 + 4 = 16
@@ -52,7 +52,7 @@ including the $2 \times 2$ determinant.
 
 We begin with the following definition. 
 
-\begin{definition}{The $ij^{th}$ minor of a matrix}{ijthminor}
+\begin{definition}{The $ij^{th}$ minor of a matrix}{ijth-minor}
 Let $A$ be a $3\times 3$ matrix. The $ij^{th}$ \textbf{minor}\index{determinant!minor} of $A$, denoted as $minor\tup{A} _{ij},$ is the determinant
 of the $2\times 2$ matrix which results from deleting the $i^{th}$ row and
 the $j^{th}$ column of $A$.
@@ -62,7 +62,7 @@ In general, if $A$ is an $n\times n$ matrix, then the $ij^{th}$ minor of $A$ is 
 
 Hence, there is a minor associated with each entry of $A$. Consider the following example which demonstrates this definition. 
 
-\begin{example}{Finding minors of a matrix}{findingminors}
+\begin{example}{Finding minors of a matrix}{finding-minors}
 Let 
 \begin{equation*}
 A = \begin{mymatrix}{rrr}
@@ -75,7 +75,7 @@ Find $minor\tup{A} _{12}$ and $minor\tup{A} _{23}$.
 \end{example}
 
 \begin{solution} First we will find $minor\tup{A} _{12}$. By Definition
-\ref{def:ijthminor}, this is the determinant of the $2\times 2$ matrix
+\ref{def:ijth-minor}, this is the determinant of the $2\times 2$ matrix
 which results when you delete the first row and the second column. This
 minor is given by
 \begin{equation*}
@@ -86,7 +86,7 @@ minor \tup{A}_{12}
 3 & 1
 \end{mymatrix}
 \end{equation*}
-Using Definition \ref{def:twobytwodeterminant}, we see that 
+Using Definition \ref{def:two-by-two-determinant}, we see that 
 \begin{equation*}
 \det \begin{mymatrix}{rr}
 4 & 2 \\
@@ -112,7 +112,7 @@ Finding the other minors of $A$ is left as an exercise.
 
 The $ij^{th}$ minor of a matrix $A$ is used in another important definition, given next.
 
-\begin{definition}{The $ij^{th}$ cofactor of a matrix}{ijthcofactor}
+\begin{definition}{The $ij^{th}$ cofactor of a matrix}{ijth-cofactor}
 Suppose $A$ is an $n\times n$ matrix. The $ij^{th}$ \textbf{cofactor}\index{determinant!cofactor}, denoted by $\func{cof}\tup{A} _{ij}$ is
 defined to be 
 \begin{equation*}
@@ -124,7 +124,7 @@ It is also convenient to refer to the
 cofactor of an entry of a matrix as follows. If $a_{ij}$ is the $ij^{th}$ entry of the
 matrix, then its cofactor is just $\func{cof}\tup{A} _{ij}.$
 
-\begin{example}{Finding cofactors of a matrix}{findingcofactors}
+\begin{example}{Finding cofactors of a matrix}{finding-cofactors}
 Consider the matrix
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
@@ -136,7 +136,7 @@ A=\begin{mymatrix}{rrr}
 Find $\func{cof}\tup{A} _{12}$ and $\func{cof}\tup{A} _{23}$.
 \end{example}
 
-\begin{solution} We will use Definition \ref{def:ijthcofactor} to compute these cofactors. 
+\begin{solution} We will use Definition \ref{def:ijth-cofactor} to compute these cofactors. 
 
 First, we will compute $\func{cof}\tup{A} _{12}$. 
 Therefore, we need to find $minor\tup{A}_{12}$. This is the determinant of the $2\times 2$ matrix
@@ -173,7 +173,7 @@ for every entry in the matrix.
 
 We have now established the tools we need to find the determinant of a $3 \times3 $ matrix.
 
-\begin{definition}{The determinant of a three by three matrix}{threebythreedeterminant}
+\begin{definition}{The determinant of a three by three matrix}{three-by-three-determinant}
 Let $A$ be a $3\times 3$ matrix. Then, $\det \tup{A}$ is calculated by picking a row
 (or column) and taking the product of each entry in that row (column) with its
 cofactor and adding these products together. 
@@ -195,7 +195,7 @@ Expansion}\index{Laplace expansion} or \textbf{Cofactor Expansion}\index{Cofacto
 
 Consider the following example. 
 
-\begin{example}{Finding the determinant of a three by three matrix}{determinantthreebythree}
+\begin{example}{Finding the determinant of a three by three matrix}{determinant-three-by-three}
 Let 
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
@@ -208,7 +208,7 @@ Find $\det\tup{A}$ using the method of Laplace Expansion.
 \end{example}
 
 \begin{solution} First, we will calculate $\det \tup{A}$ by expanding along the first column.
-Using Definition \ref{def:threebythreedeterminant}, we take the $1$ in the first column and multiply it 
+Using Definition \ref{def:three-by-three-determinant}, we take the $1$ in the first column and multiply it 
 by its cofactor,
 \begin{equation*}
 1  \tup{-1} ^{1+1}\begin{absmatrix}{rr}
@@ -253,7 +253,7 @@ Calculating each of these, we obtain
 \end{equation*}
 Hence, $\det\tup{A} = 0$. 
 
-As mentioned in Definition \ref{def:threebythreedeterminant}, we can choose to 
+As mentioned in Definition \ref{def:three-by-three-determinant}, we can choose to 
 expand along any row or column. Let's try now by expanding along the second row.
 Here, we take the $4$ in the second row and multiply it to its cofactor, then 
 add this to the $3$ in the second row multiplied by its cofactor, and the $2$ in the 
@@ -299,7 +299,7 @@ with the same number each time!
 
 We present this idea formally in the following theorem.
 
-\begin{theorem}{The determinant is well defined}{welldefineddeterminant}
+\begin{theorem}{The determinant is well defined}{well-defined-determinant}
 Expanding the $n\times n$ matrix along any row or column always gives the
 same answer, which is the determinant.
 \end{theorem}
@@ -307,7 +307,7 @@ same answer, which is the determinant.
 We have now looked at the determinant of $2 \times 2$ and $3 \times 3$ matrices. It turns
 out that the method used to calculate the determinant of a $3 \times 3$ matrix 
 can be used to calculate the determinant of any sized matrix. Notice that
-Definition \ref{def:ijthminor}, Definition \ref{def:ijthcofactor} and Definition \ref{def:threebythreedeterminant}
+Definition \ref{def:ijth-minor}, Definition \ref{def:ijth-cofactor} and Definition \ref{def:three-by-three-determinant}
 can all be applied to a matrix of any size. 
 
 For example, the $ij^{th}$ minor of a $4 \times 4$ matrix is the determinant
@@ -317,7 +317,7 @@ along any row or column
 
 Consider the following example. 
 
-\begin{example}{Determinant of a four by four matrix}{fourbyfourdeterminant}
+\begin{example}{Determinant of a four by four matrix}{four-by-four-determinant}
 Find $\det \tup{A} $ where
 \begin{equation*}
 A=\begin{mymatrix}{rrrr}
@@ -364,7 +364,7 @@ The following provides a formal definition for the determinant of an $n \times n
 wish to take a moment and consider the above definitions for $2 \times 2$ and $3 \times 3$ determinants 
 in context of this definition.
 
-\begin{definition}{The determinant of an $n\times n$ matrix}{nbyndeterminant}
+\begin{definition}{The determinant of an $n\times n$ matrix}{n-by-n-determinant}
 Let $A$ be an $n\times n$ matrix where $n\geq 2$ and suppose the
 determinant of an $\tup{n-1} \times \tup{n-1} $ has been
 defined. Then

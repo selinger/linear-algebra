@@ -2,7 +2,7 @@
 
 We begin this section with an important definition.
 
-\begin{definition}{Singular values}{singularvalues}
+\begin{definition}{Singular values}{singular-values}
 Let $A$ be an $m\times n$ matrix. The singular values of $A$ are the square roots of the positive
 eigenvalues of $A^TA$\index{singular values}.
 \end{definition}
@@ -13,7 +13,7 @@ to an arbitrary $m\times n$ matrix. This decomposition is the focus of this sect
 
 The following is a useful result that will help when computing the SVD of matrices.
 
-\begin{proposition}{}{samenonzeroeigenvalues}
+\begin{proposition}{}{same-non-zero-eigenvalues}
 Let $A$ be an $m \times n$ matrix. Then $A^TA$ and $AA^T$ have the same \bf{nonzero} eigenvalues.
 \end{proposition}
 
@@ -100,7 +100,7 @@ the same for $A^TA$ to get $V$.
 
 We formalize this discussion in the following theorem. 
 
-\begin{theorem}{Singular value decomposition}{singvaldecomp}
+\begin{theorem}{Singular value decomposition}{sing-val-decomp}
 Let $A$ be an $m\times n$ matrix. Then there exist
 orthogonal matrices $U$ and $V$ of the appropriate size such that $A= U \Sigma V^T$ where $\Sigma$ is of the form
 \[
@@ -189,7 +189,7 @@ where $\sigma $ is given in the statement of the theorem.
 
 The singular value decomposition has as an immediate corollary which is given in the following interesting result. 
 
-\begin{corollary}{Rank and singular values}{ranksingularvalues}
+\begin{corollary}{Rank and singular values}{rank-singular-values}
 Let $A$ be an $m\times n$ matrix. Then the rank of $A$ and $A^T$equals
 the number of singular values.
 \end{corollary}
@@ -244,7 +244,7 @@ To begin, we compute $AA^T$ and $A^TA$.
 
 Since $AA^T$ is $2\times 2$ while $A^T A$ is $3\times 3$, and $AA^T$
 and $A^TA$ have the same {\em nonzero} eigenvalues (by Proposition
-\ref{prop:samenonzeroeigenvalues}), we compute the characteristic polynomial  $c_{AA^T}(x)$ (because it's
+\ref{prop:same-non-zero-eigenvalues}), we compute the characteristic polynomial  $c_{AA^T}(x)$ (because it's
 easier to compute than $c_{A^TA}(x)$).
 
 \begin{eqnarray*}

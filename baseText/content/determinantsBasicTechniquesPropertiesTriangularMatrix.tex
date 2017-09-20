@@ -4,7 +4,7 @@ There is a certain type of matrix for which finding the determinant is
 a very simple procedure. 
 Consider the following definition. 
 
-\begin{definition}{Triangular matrices}{triangularmatrices}
+\begin{definition}{Triangular matrices}{triangular-matrices}
 A matrix $A$ is upper triangular
 \index{matrix!upper triangular} if $a_{ij}=0$ whenever $i>j$. Thus the entries of such a
 matrix below the main diagonal equal $0$, 
@@ -26,7 +26,7 @@ entries above the
 The following theorem provides a useful way to calculate the determinant
 of a triangular matrix. 
 
-\begin{theorem}{Determinant of a triangular matrix}{determinantoftriangularmatrix}
+\begin{theorem}{Determinant of a triangular matrix}{determinant-of-triangular-matrix}
 Let $A$ be an upper or lower triangular matrix. Then $\det \tup{A} $
 is obtained by taking the product of the entries on the main diagonal.
 \end{theorem}
@@ -36,7 +36,7 @@ determinant using Laplace Expansion along the first row or column.
 
 Consider the following example. 
 
-\begin{example}{Determinant of a triangular matrix}{determinantoftriangularmatrix}
+\begin{example}{Determinant of a triangular matrix}{determinant-of-triangular-matrix}
 Let
 \begin{equation*}
 A=\begin{mymatrix}{rrrr}
@@ -49,11 +49,11 @@ A=\begin{mymatrix}{rrrr}
 Find $\det \tup{A} .$
 \end{example}
 
-\begin{solution} From Theorem \ref{thm:determinantoftriangularmatrix}, it suffices to take the product of the elements on 
+\begin{solution} From Theorem \ref{thm:determinant-of-triangular-matrix}, it suffices to take the product of the elements on 
 the main diagonal. Thus $\det \tup{A} =1\times 2\times 3\times \tup{
 -1} =-6.$ 
 
-Without using Theorem \ref{thm:determinantoftriangularmatrix}, you could use Laplace Expansion. 
+Without using Theorem \ref{thm:determinant-of-triangular-matrix}, you could use Laplace Expansion. 
 We will expand along the
 first column. This gives
 \begin{eqnarray*}
@@ -106,7 +106,7 @@ Now find the determinant of this $3 \times 3$ matrix, by expanding along the fir
 0 & -1
 \end{absmatrix}
 \end{equation*}
-Next use Definition \ref{def:twobytwodeterminant} to find the determinant of this $2 \times 2$ matrix, which is
+Next use Definition \ref{def:two-by-two-determinant} to find the determinant of this $2 \times 2$ matrix, which is
 just $3 \times -1  - 0 \times 33.7 = -3$.
 Putting all these steps together, we have 
 \begin{equation*}
@@ -118,7 +118,7 @@ which is just the product of the entries down the main diagonal of the
 original matrix!
 \end{solution}
 
-You can see that while both methods result in the same answer, Theorem \ref{thm:determinantoftriangularmatrix} provides
+You can see that while both methods result in the same answer, Theorem \ref{thm:determinant-of-triangular-matrix} provides
 a much quicker method. 
 
 In the next section, we explore some important properties of determinants.

@@ -8,7 +8,7 @@ Let $R$ be the {\rref} of an $m \times n$ matrix $A$. $R$ is obtained by iterati
 
 Now, we will consider some preliminary lemmas. 
 
-\begin{lemma}{Invertible matrix and zeros}{nozerorow}
+\begin{lemma}{Invertible matrix and zeros}{no-zero-row}
 Suppose that $A$ and $B$ are matrices such that the product $AB$ is an identity matrix. Then the {\rref} of $A$ does not have a row of zeros.
 \end{lemma}
 
@@ -32,24 +32,24 @@ If $R$ would have a row of zeros, then so would the product $R(BE^{-1})$. But si
 
 We now consider a second important lemma.
 
-\begin{lemma}{Size of invertible matrix}{sizeinvertible}
+\begin{lemma}{Size of invertible matrix}{size-invertible}
 Suppose that $A$ and $B$ are matrices such that the product $AB$ is an identity matrix. Then $A$ has at least as many columns as it has rows.
 \end{lemma}
 
 \begin{proof}
-Let $R$ be the {\rref} of $A$. By Lemma \ref{lem:nozerorow}, we know that $R$ does not have a row of zeros, and therefore each row of $R$ has a leading $1$. Since each column of $R$ contains at most one of these leading $1$s, $R$ must have at least as many columns as it has rows.
+Let $R$ be the {\rref} of $A$. By Lemma \ref{lem:no-zero-row}, we know that $R$ does not have a row of zeros, and therefore each row of $R$ has a leading $1$. Since each column of $R$ contains at most one of these leading $1$s, $R$ must have at least as many columns as it has rows.
 \end{proof}
 
 An important theorem follows from this lemma. 
 
-\begin{theorem}{Invertible matrices are square}{squareinvertible}
+\begin{theorem}{Invertible matrices are square}{square-invertible}
 Only square matrices can be invertible.
 \end{theorem}
 
 \begin{proof}
 Suppose that $A$ and $B$ are matrices such that both products $AB$ and $BA$ are identity matrices. We will show that $A$ and $B$ must be square matrices of the same size. Let the matrix $A$ have $m$ rows and $n$ columns, so that $A$ is an $m \times n$ matrix. Since the product $AB$ exists, $B$ must have $n$ rows, and since the product $BA$ exists, $B$ must have $m$ columns so that $B$ is an $n \times m$ matrix. To finish the proof, we need only verify that $m=n$. 
 
-We first apply Lemma \ref{lem:sizeinvertible} with $A$ and $B$, to obtain the inequality $m \leq n$. We then apply Lemma \ref{lem:sizeinvertible} again (switching the order of the matrices), to obtain the inequality $n \leq m$. It follows that $m=n$, as we wanted.
+We first apply Lemma \ref{lem:size-invertible} with $A$ and $B$, to obtain the inequality $m \leq n$. We then apply Lemma \ref{lem:size-invertible} again (switching the order of the matrices), to obtain the inequality $n \leq m$. It follows that $m=n$, as we wanted.
 \end{proof}
 
 Of course, not all square matrices are invertible. In particular, zero matrices are not invertible, along with many other square matrices. 
@@ -63,12 +63,12 @@ If $R$ is the {\rref} of a square matrix, then either $R$ has a row of zeros or 
 The proof of this proposition is left as an exercise to the reader. 
 We now consider the second important theorem of this section. 
 
-\begin{theorem}{Unique inverse of a matrix}{uniqueinverseofmatrix}
+\begin{theorem}{Unique inverse of a matrix}{unique-inverse-of-matrix}
 Suppose $A$ and $B$ are square matrices such that $AB=I$ where $I$ is an identity matrix. Then it follows that $BA=I$. Further, both $A$ and $B$ are invertible and $B=A^{-1}$ and $A=B^{-1}$.
 \end{theorem}
 
 \begin{proof}
-Let $R$ be the {\rref} of a square matrix $A$. Then, $R=EA$ where $E$ is an invertible matrix. Since $AB=I$, Lemma \ref{lem:nozerorow} gives us that $R$ does not have a row of zeros. By noting that $R$ is a square matrix and applying Proposition \ref{prop:rrefsquare}, we see that $R=I$. Hence, $EA=I$. 
+Let $R$ be the {\rref} of a square matrix $A$. Then, $R=EA$ where $E$ is an invertible matrix. Since $AB=I$, Lemma \ref{lem:no-zero-row} gives us that $R$ does not have a row of zeros. By noting that $R$ is a square matrix and applying Proposition \ref{prop:rrefsquare}, we see that $R=I$. Hence, $EA=I$. 
 
 Using both that $EA=I$ and $AB=I$, we can finish the proof with a chain of equalities as given by
 \begin{eqnarray*}
@@ -85,7 +85,7 @@ This theorem is very useful, since with it we need only test one of the products
 
 We will now consider an example.
 
-\begin{example}{Non square matrices}{nonsquare}
+\begin{example}{Non square matrices}{non-square}
 Let 
 \begin{equation*}
 A =
@@ -135,7 +135,7 @@ However, the product $AA^{T}$ is
 0 & 0 & 0
 \end{mymatrix}
 \end{equation*}
-Hence $AA^{T}$ is not the $3 \times 3$ identity matrix. This shows that for Theorem \ref{thm:uniqueinverseofmatrix}, it is essential that both matrices be square and of the same size.
+Hence $AA^{T}$ is not the $3 \times 3$ identity matrix. This shows that for Theorem \ref{thm:unique-inverse-of-matrix}, it is essential that both matrices be square and of the same size.
 \end{solution}
 
 Is it possible to have matrices $A$ and $B$ such that $AB=I$, while $BA=0$? This question is left to the reader to answer, and you should take a moment to consider the answer.
@@ -153,11 +153,11 @@ For any matrix $A$ the following conditions are equivalent:
 \begin{proof}
 In order to prove this, we show that for any given matrix $A$, each condition implies the other. We first show that if $A$ is invertible, then its {\rref} is an identity matrix, then we show that if the {\rref} of $A$ is an identity matrix, then $A$ is invertible. 
 
-If $A$ is invertible, there is some matrix $B$ such that $AB = I$. By Lemma \ref{lem:nozerorow}, we get that the {\rref} of $A$ does not have a row of zeros. Then by Theorem \ref{thm:squareinvertible}, it follows that $A$ and the {\rref} of $A$ are square matrices. Finally, by Proposition \ref{prop:rrefsquare}, this {\rref} of $A$ must be an identity matrix. This proves the first implication.
+If $A$ is invertible, there is some matrix $B$ such that $AB = I$. By Lemma \ref{lem:no-zero-row}, we get that the {\rref} of $A$ does not have a row of zeros. Then by Theorem \ref{thm:square-invertible}, it follows that $A$ and the {\rref} of $A$ are square matrices. Finally, by Proposition \ref{prop:rrefsquare}, this {\rref} of $A$ must be an identity matrix. This proves the first implication.
 
-Now suppose the {\rref} of $A$ is an identity matrix $I$. Then $I=EA$ for some product $E$ of elementary matrices. By Theorem \ref{thm:uniqueinverseofmatrix}, we can conclude that $A$ is invertible.
+Now suppose the {\rref} of $A$ is an identity matrix $I$. Then $I=EA$ for some product $E$ of elementary matrices. By Theorem \ref{thm:unique-inverse-of-matrix}, we can conclude that $A$ is invertible.
 \end{proof}
 
-Theorem \ref{thm:invertiblerref} corresponds to Algorithm \ref{algo:matrixinversionalgorithm}, which claims that $A^{-1}$ is found by row reducing the augmented matrix $\mat{A|I}$ to the form $\mat{I|A^{-1}}$. This will be a matrix product $E\mat{A|I}$ where $E$ is a product of elementary matrices. By the rules of matrix multiplication, we have that $E\mat{A|I} = \mat{EA|EI} = \mat{EA|E}$.
+Theorem \ref{thm:invertiblerref} corresponds to Algorithm \ref{algo:matrix-inversion-algorithm}, which claims that $A^{-1}$ is found by row reducing the augmented matrix $\mat{A|I}$ to the form $\mat{I|A^{-1}}$. This will be a matrix product $E\mat{A|I}$ where $E$ is a product of elementary matrices. By the rules of matrix multiplication, we have that $E\mat{A|I} = \mat{EA|EI} = \mat{EA|E}$.
 
-It follows that the {\rref} of $\mat{A|I}$ is $\mat{EA|E}$, where $EA$ gives the {\rref} of $A$. By Theorem \ref{thm:invertiblerref}, if $EA \neq I$, then $A$ is not invertible, and if $EA=I$, $A$ is invertible. If $EA=I$, then by Theorem \ref{thm:uniqueinverseofmatrix}, $E=A^{-1}$. This proves that Algorithm \ref{algo:matrixinversionalgorithm} does in fact find $A^{-1}$.
+It follows that the {\rref} of $\mat{A|I}$ is $\mat{EA|E}$, where $EA$ gives the {\rref} of $A$. By Theorem \ref{thm:invertiblerref}, if $EA \neq I$, then $A$ is not invertible, and if $EA=I$, $A$ is invertible. If $EA=I$, then by Theorem \ref{thm:unique-inverse-of-matrix}, $E=A^{-1}$. This proves that Algorithm \ref{algo:matrix-inversion-algorithm} does in fact find $A^{-1}$.

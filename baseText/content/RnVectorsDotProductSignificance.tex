@@ -14,7 +14,7 @@ such that $0 \leq \theta \leq \pi$.
 The dot product can be used to determine the included angle between
 two vectors.
 
-\begin{proposition}{The dot product and the included angle}{dotproductangle}
+\begin{proposition}{The dot product and the included angle}{dotproduct-angle}
   Let $\vect{u}$ and $\vect{v}$ be two vectors in $\R^n$, and let 
   $\theta$ be the included angle. Then the following equation holds.
   \begin{equation*}
@@ -28,7 +28,7 @@ the included angle. Note that this gives a geometric description of
 the dot product that does not depend explicitly on the coordinates of
 the vectors.
 
-\begin{example}{Find the angle between two vectors}{angletwovectors}
+\begin{example}{Find the angle between two vectors}{angle-two-vectors}
 Find the angle between the vectors
 \begin{equation*}
   \vect{u}
@@ -48,7 +48,7 @@ Find the angle between the vectors
 \end{example}
 
 \begin{solution}
-  By Proposition~\ref{prop:dotproductangle},
+  By Proposition~\ref{prop:dotproduct-angle},
   \begin{equation*}
     \vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}} \cos \theta.
   \end{equation*}
@@ -72,13 +72,13 @@ Find the angle between the vectors
   that $\theta =\frac{\pi}{4}$ radians, or 45 degrees.
 \end{solution}
 
-\begin{example}{Computing a dot product from an angle}{geometricdotproduct}
+\begin{example}{Computing a dot product from an angle}{geometric-dot-product}
   Let $\vect{u},\vect{v}$ be vectors with $ \norm{\vect{u}} = 3$ and $\norm{\vect{v}} = 4$. 
   Suppose the angle between $\vect{u}$ and $\vect{v}$ is $\pi / 3$. Find $\vect{u}\dotprod \vect{v}$.
 \end{example}
 
 \begin{solution}
-  From Proposition~\ref{prop:dotproductangle}, we have
+  From Proposition~\ref{prop:dotproduct-angle}, we have
   \begin{equation*}
     \vect{u}\dotprod \vect{v}
     =\norm{\vect{u}} \norm{\vect{v}} \cos \theta
@@ -98,7 +98,7 @@ if the included angle is $\pi /2$ radians ($90^{\circ })$. By
 convention, we also say that the zero vector is orthogonal to all
 vectors.
 
-\begin{proposition}{Orthogonal vectors}{perpvectors}
+\begin{proposition}{Orthogonal vectors}{perp-vectors}
   Let $\vect{u}$ and $\vect{v}$ be vectors in $\R^n$. Then $\vect{u}$
   and $\vect{v}$ are orthogonal\index{vector!orthogonal} if and only
   if
@@ -111,14 +111,14 @@ vectors.
   If $\vect{u}$ or $\vect{v}$ is zero, the vectors are orthogonal by
   definition, and the dot product is $0$ in that case, so the
   proposition holds. Now assume $\vect{u}$ and $\vect{v}$ are both
-  non-zero.  Then by Proposition~\ref{prop:dotproductangle}, we have
+  non-zero.  Then by Proposition~\ref{prop:dotproduct-angle}, we have
   $\vect{u} \dotprod \vect{v} = 0$ if and only if
   $\norm{\vect{u}} \norm{\vect{v}} \cos \theta$ if and only if
   $\cos\theta=0$. Recall that the included angle is between $0$ and
   $\pi$. Therefore, $\cos\theta=0$ if and only if $\theta=\pi/2$.
 \end{proof}
 
-\begin{example}{Determine whether two vectors are orthogonal}{orthogonalvectors}
+\begin{example}{Determine whether two vectors are orthogonal}{orthogonal-vectors}
 Determine whether the vectors
 \begin{equation*}
 \vect{u}=
@@ -149,5 +149,5 @@ are orthogonal.
     =
     0,
   \end{equation*}
-  and therefore, by Proposition \ref{prop:perpvectors}, the two vectors are orthogonal.
+  and therefore, by Proposition \ref{prop:perp-vectors}, the two vectors are orthogonal.
 \end{solution}

@@ -10,7 +10,7 @@ roots of a complex number.
 A fundamental identity is the
 \index{De Moivre's theorem} formula of De Moivre with which we begin this section.
 
-\begin{theorem}{De Moivre's theorem}{demoivretheorem}
+\begin{theorem}{De Moivre's theorem}{de-moivre-theorem}
 For any positive integer $n$, we have
 \begin{equation*}
 \tup{e^{i \theta} }^n = e^{i n \theta}
@@ -43,9 +43,9 @@ The process used in the previous proof, called {\em mathematical
 induction\em} is very powerful in Mathematics and Computer Science
 and explored in more detail in the Appendix.
 
-Now, consider a corollary of Theorem \ref{thm:demoivretheorem}.
+Now, consider a corollary of Theorem \ref{thm:de-moivre-theorem}.
 
-\begin{corollary}{Roots of complex numbers}{rootscomplexnumbers}
+\begin{corollary}{Roots of complex numbers}{roots-complex-numbers}
 Let $z$ be a non zero complex number.
 \index{complex numbers!roots}Then there are always exactly $k$ many  $k^{th}$
 roots of $z$ in $\C$.
@@ -83,7 +83,7 @@ k$ distinct numbers which result from this formula.
 
 The procedure for finding the $k$ $k^{th}$ roots of $z \in \C$ is as follows.
 
-\begin{procedure}{Finding roots of a complex number}{findingkthroots}
+\begin{procedure}{Finding roots of a complex number}{finding-kth-roots}
 Let $w$ be a complex number. We wish to find the $n^{th}$ roots of $w$, that is all $z$ such that $z^n = w$. 
 
 There are $n$ distinct $n^{th}$ roots and they can be found as follows:. 
@@ -118,10 +118,10 @@ construct the $n^{th}$ roots of the form $z = re^{i\theta}$.
 \end{enumerate}
 \end{procedure}
 
-Notice that once the roots are obtained in the final step, they can then be converted to standard form if necessary. Let's consider an example of this concept. Note that according to Corollary \ref{cor:rootscomplexnumbers}, 
+Notice that once the roots are obtained in the final step, they can then be converted to standard form if necessary. Let's consider an example of this concept. Note that according to Corollary \ref{cor:roots-complex-numbers}, 
 there are exactly $3$ cube roots of a complex number.
 
-\begin{example}{Finding cube roots}{cuberoots}
+\begin{example}{Finding cube roots}{cube-roots}
 Find the three cube roots of $i.$ In other words find all $z$ such that $z^3 = i$. 
 \end{example}
 
@@ -167,7 +167,7 @@ Written in standard form, these roots are, respectively,
 The ability to find $k^{th}$ roots can also be used to factor some
 polynomials.
 
-\begin{example}{Solving a polynomial equation}{solvingpolynomial}
+\begin{example}{Solving a polynomial equation}{solving-polynomial}
 Factor the polynomial $x^{3}-27.$
 \end{example}
 

@@ -4,14 +4,14 @@ Positive definite matrices are often encountered in applications such mechanics 
 
 We begin with a definition.
 
-\begin{definition}{Positive definite matrix}{positivedefinitematrix}
+\begin{definition}{Positive definite matrix}{positive-definite-matrix}
 Let $A$ be an $n \times n$ symmetric matrix. Then $A$ is positive definite if all of its eigenvalues are positive.
 \index{positive definite}
 \end{definition}
 
 The relationship between a negative definite matrix and positive definite matrix is as follows. 
 
-\begin{lemma}{Negative definite matrix}{negativedefinitematrix}
+\begin{lemma}{Negative definite matrix}{negative-definite-matrix}
 An $n\times n$ matrix $A$ is negative definite if and only if $-A$ is
 positive definite.
 \end{lemma}
@@ -37,7 +37,7 @@ positive definite.
 %%
 %%\medskip
 %%
-%%\begin{theorem}{Positive definite matrix and eigenvalues}{posdefeigen}  %%\label{3oct3f}
+%%\begin{theorem}{Positive definite matrix and eigenvalues}{pos-def-eigen}  %%\label{3oct3f}
 %%A symmetric matrix $A$ is positive definite if and only if all
 %%of its eigenvalues are positive. (Recall that all of the eigenvalues of a symmetric matrix are real.)
 %%\index{positive definite!positive eigenvalues}
@@ -78,7 +78,7 @@ positive definite.
 Consider the following lemma.
 
 \index{positive definite!invertible}
-\begin{lemma}{Positive definite matrix and invertibility}{posdefiniteinvertible}
+\begin{lemma}{Positive definite matrix and invertibility}{pos-definite-invertible}
 If $A$ is positive definite, then it is invertible.
 \end{lemma}
 
@@ -92,7 +92,7 @@ Notice that this lemma implies that if a matrix $A$ is positive definite, then $
 
 The following theorem provides another characterization of positive definite matrices. It gives a useful test for verifying if a matrix is positive definite. 
 
-\begin{theorem}{Positive definite matrix}{positivedefinite}
+\begin{theorem}{Positive definite matrix}{positive-definite}
 Let $A$ be a symmetric matrix. Then $A$ is positive definite if and
 only if $\vect{x}^T A \vect{x} $ is positive for all nonzero $\vect{x}
 \in \R^n$.
@@ -154,7 +154,7 @@ There are some other very interesting consequences which result from a
 matrix being positive definite. First one can note that the property of
 being positive definite is transferred to each of the principal submatrices which we will now define.
 
-\begin{definition}{The submatrix $A_k$}{submatrixAk}
+\begin{definition}{The submatrix $A_k$}{submatrix-Ak}
 Let $A$ be an $n\times n$ matrix. Denote by $A_{k}$ the $k\times k$ matrix
 obtained by deleting the $k+1,\cdots ,n$ columns and the $k+1,\cdots ,n$
 rows from $A.$ Thus $A_{n}=A$ and $A_{k}$ is the $k\times k$ submatrix of $A$
@@ -162,7 +162,7 @@ which occupies the upper left corner of $A.$
 \index{principal submatrices}
 \end{definition}
 
-\begin{lemma}{Positive definite and submatrices}{positivematrixsubmatrix}
+\begin{lemma}{Positive definite and submatrices}{positive-matrix-submatrix}
 Let $A$ be an $n\times n$ positive definite matrix.  Then each submatrix $A_{k}$ is also positive definite.
 \end{lemma}
 
@@ -233,7 +233,7 @@ theorem. The converse can also be shown to be correct, but it is the
 direction which was just shown which is of most interest. 
 \end{proof}
 
-\begin{corollary}{Symmetric and negative definite matrix}{symmetricdefinitematrix} %\label{pd3} 
+\begin{corollary}{Symmetric and negative definite matrix}{symmetric-definite-matrix} %\label{pd3} 
 Let $A$ be symmetric. Then $A$ is negative definite if and only
 if 
 \begin{equation*}

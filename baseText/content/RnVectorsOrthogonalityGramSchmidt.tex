@@ -3,7 +3,7 @@
 The Gram-Schmidt process is an algorithm to transform a set of vectors
 into an orthonormal set spanning the same subspace, that is generating
 the same collection of linear combinations (see Definition
-\ref{def:linearcombination}).
+\ref{def:linear-combination}).
 
 The goal of the Gram-Schmidt process is to take a linearly
 independent set of vectors and transform it into an orthonormal set
@@ -11,7 +11,7 @@ with the same span.  The first objective is to construct an orthogonal
 set of vectors with the same span, since from there an orthonormal set
 can be obtained by simply dividing each vector by its length.
 
-\begin{algorithm}{Gram-Schmidt process}{gramschmidtalgorithm}
+\begin{algorithm}{Gram-Schmidt process}{gram-schmidt-algorithm}
 Let $\{\vect{u}_1,\cdots ,\vect{u}_n\} $ be a set of
 linearly independent vectors in $\R^{n}$.
 
@@ -67,8 +67,8 @@ the span either and the proof would be complete.
 
 Consider the following example.
 
-\begin{example}{Find orthonormal set with same span}{orthosamespan}
-Consider the set of vectors $\{\vect{u}_1, \vect{u}_2\}$ given as in Example \ref{exa:spanvectors}. That is  
+\begin{example}{Find orthonormal set with same span}{ortho-same-span}
+Consider the set of vectors $\{\vect{u}_1, \vect{u}_2\}$ given as in Example \ref{exa:span-vectors}. That is  
 \[
 \vect{u}_1=\begin{mymatrix}{r}
 1 \\
@@ -137,7 +137,7 @@ $\{\vect{u}_1, \vect{u}_2\}$,  namely the $XY$-plane.
 
 In this example, we began with a linearly independent set and found an orthonormal set of vectors which had the same span. It turns out that if we start with a basis of a subspace and apply the Gram-Schmidt algorithm, the result will be an orthogonal basis of the same subspace. We examine this in the following example. 
 
-\begin{example}{Find a corresponding orthogonal basis}{orthogonalbasis}
+\begin{example}{Find a corresponding orthogonal basis}{orthogonal-basis}
 Let
 \[ \vect{x}_1=\begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix},
 \vect{x}_2=\begin{mymatrix}{c} 1\\ 0\\ 1\\ 1 \end{mymatrix},

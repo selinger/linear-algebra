@@ -57,7 +57,7 @@ T \tup{k \begin{mymatrix}{cc} a_1 & b_1 \\ c_1 & d_1 \end{mymatrix} +  p \begin{
 Therefore $T$ is linear. 
 
 \textbf{$T$ is one-to-one:}
-By Lemma \ref{lem:onetooneabstract} we need to show that if $T(A) = 0$ then $A = 0$ for some matrix $A \in \Mat_{22}$. 
+By Lemma \ref{lem:one-to-one-abstract} we need to show that if $T(A) = 0$ then $A = 0$ for some matrix $A \in \Mat_{22}$. 
 \[
 T\begin{mymatrix}{cc} a & b \\ c & d \end{mymatrix}
 = \begin{mymatrix}{c} a\\ b\\ c \\ d \end{mymatrix} 
@@ -87,7 +87,7 @@ An important property of isomorphisms is that the inverse of an isomorphism
 is itself an isomorphism and the composition of isomorphisms is an
 isomorphism. We first recall the definition of composition.
 
-\begin{definition}{Composition of transformations}{compositetransformation}
+\begin{definition}{Composition of transformations}{composite-transformation}
 Let $V, W, Z$ be vector spaces and suppose $T: V \mapsto W$ and $S: W \mapsto Z$ are linear transformations. Then the composite of $S$ and $T$ is
 \[
 S \circ T: V \mapsto Z
@@ -100,7 +100,7 @@ and is defined by
 
 Consider now the following proposition.
 
-\begin{proposition}{Composite and inverse isomorphism}{compositeinverse}
+\begin{proposition}{Composite and inverse isomorphism}{composite-inverse}
 Let $T:V\rightarrow W$ be an isomorphism. Then $T^{-1}:W\rightarrow V$ is
 also an isomorphism. Also if $T:V\rightarrow W$ is an isomorphism and if $
 S:W\rightarrow Z$ is an isomorphism for the vector spaces $V,W,Z,$ then $
@@ -165,7 +165,7 @@ We leave the proof of these to the reader.
 The following fundamental lemma describes the relation between bases and
 isomorphisms.
 
-\begin{lemma}{Bases and isomorphisms}{basesisomorphism}
+\begin{lemma}{Bases and isomorphisms}{bases-isomorphism}
 Let $T:V\rightarrow W$ be a
 \index{isomorphism!invertible matrices}
 \index{invertible matrices!isomorphism} linear map where $V,W$ are vector spaces.  Then a linear transformation $T$ which is one to one has the property that
@@ -233,7 +233,7 @@ The following theorem illustrates a very useful idea for defining an
 isomorphism. Basically, if you know what it does to a basis, then you can
 construct the isomorphism.
 
-\begin{theorem}{Isomorphic vector spaces}{isomorphicvectorspaces}
+\begin{theorem}{Isomorphic vector spaces}{isomorphic-vector-spaces}
 Suppose $V$ and $W$ are two vector spaces. Then the two vector spaces are isomorphic if and only
 if they have the same dimension. In the case that the two vector spaces have
 the same dimension, then for

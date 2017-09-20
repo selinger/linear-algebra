@@ -70,7 +70,7 @@ d(P,Q)=\sqrt{d(R,Q)^{2}+\tup{p_{3}-q_{3}}^{2}}
 This discussion motivates the following definition for the distance
 between points in $\R^n$.
 
-\begin{definition}{Distance between points}{distancebetweenpoints}
+\begin{definition}{Distance between points}{distance-between-points}
   Let $P=\tup{p_{1},\ldots,p_{n}}$ and $Q=\tup{q_{1},\ldots,q_{n}}$ be
   two points in $\R^{n}$. Then the \textbf{distance}\index{distance}
   between these points is defined as
@@ -83,10 +83,10 @@ between points in $\R^n$.
 \end{definition}
 
 In the following example, we use Definition
-\ref{def:distancebetweenpoints} to find the distance between two
+\ref{def:distance-between-points} to find the distance between two
 points in $\R^4$.
 
-\begin{example}{Distance between points}{distancebetweenpoints}
+\begin{example}{Distance between points}{distance-between-points}
   Find the distance between the points $P=\tup{1,2,-4,6}$ and
   $Q=\tup{2,3,-1,0}$ in $\R^{4}$.
 \end{example}
@@ -100,7 +100,7 @@ points in $\R^4$.
   \end{equation*}
 \end{solution}
 
-\begin{example}{The plane between two points}{planebetweentwopoints}
+\begin{example}{The plane between two points}{plane-between-two-points}
   Describe the points in $\R^3$ that are equally distant from the two
   points $Q=\tup{1,2,3} $ and $R=\tup{0,1,2}$.
 \end{example}
@@ -138,7 +138,7 @@ points in $\R^4$.
 We can now use our understanding of the distance between two points to
 define what is meant by the length of a vector.
 
-\begin{definition}{Length of a vector}{lengthofvector}
+\begin{definition}{Length of a vector}{length-of-vector}
   Let
   \[
     \vect{u} = \begin{mymatrix}{c}u_1\\\vdots\\u_n\end{mymatrix}
@@ -154,13 +154,13 @@ define what is meant by the length of a vector.
 \end{definition}
 
 This definition corresponds to Definition
-\ref{def:distancebetweenpoints}, if we consider the vector $\vect{u}$
+\ref{def:distance-between-points}, if we consider the vector $\vect{u}$
 to have its tail at the point $0 = \tup{0, \cdots ,0 }$ and its tip at
 the point $U = \tup{u_1, \cdots, u_n }$.  Then the length of
 $\vect{u}$ is equal to the distance between $0$ and $U$. In general,
 $\norm{\longvect{PQ}} = d(P,Q)$.
 
-Reconsider Example \ref{exa:distancebetweenpoints}. We could have also
+Reconsider Example \ref{exa:distance-between-points}. We could have also
 computed the distance between $P$ and $Q$ as the length of the vector
 connecting them. This vector is $\longvect{PQ} = \mat{1,1,3,-6}^T$,
 and its length is
@@ -171,7 +171,7 @@ and its length is
 The following theorem states a few important properties of the length
 of vectors.
 
-\begin{theorem}{Properties of length}{propertieslength}
+\begin{theorem}{Properties of length}{properties-length}
   The following hold for all vectors $\vect{u},\vect{v}$ and scalars $k$.
   \begin{itemize}
   \item $\norm{\vect{u}}\geq 0$
@@ -183,7 +183,7 @@ of vectors.
 We conclude this section by giving a special name to vectors of length
 $1$.
 
-\begin{definition}{Unit vector}{unitvector}
+\begin{definition}{Unit vector}{unit-vector}
   A vector\/ $\vect{u}\in\R^n$ is called a
   \textbf{unit vector}\index{unit vector}\index{vector!unit} if it has
   length $1$, that is, if
@@ -203,7 +203,7 @@ We often use the term \textbf{normalize}\index{vector!normalize} to refer
 to this process. When we normalize a vector, we find the corresponding
 unit vector.
 
-\begin{example}{Normalizing a vector}{unitvector}
+\begin{example}{Normalizing a vector}{unit-vector}
   Consider the vector $\vect{v} = \mat{1, -3, 4}^T$. Find the unit
   vector $\vect{u}$ that has the same direction as $\vect{v}$
 \end{example}

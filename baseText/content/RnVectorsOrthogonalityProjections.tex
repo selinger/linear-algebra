@@ -38,7 +38,7 @@ vector contained in $W$) as in the following diagram.
 The vector $\vect{z}$ is called the \textbf{orthogonal projection} of
 $\vec{y}$ on $W$. The definition is given as follows.
 
-\begin{definition}{Orthogonal projection}{orthproj}
+\begin{definition}{Orthogonal projection}{orth-proj}
 Let $W$ be a subspace of $\R^n$, and $Y$ be any point in
 $\R^n$. Then the orthogonal projection of $Y$ onto $W$ is given by
 \[
@@ -97,7 +97,7 @@ side, we obtain the desired result.
 
 Consider the following example.
 
-\begin{example}{Orthogonal projection}{orthproj}
+\begin{example}{Orthogonal projection}{orth-proj}
 Let $W$ be the plane through the origin given by the equation $x - 2y
 + z = 0$. \\
 Find the point in $W$ closest to the point $Y = (1,0,3)$.
@@ -217,7 +217,7 @@ Therefore an orthogonal basis of $W$ is
 We can now use this basis to find the orthogonal projection of the
 point $Y=(1,0,3)$ on the subspace $W$. We will write the position
 vector $\vect{y}$ of $Y$ as $\vect{y} = \begin{mymatrix}{c} 1 \\ 0 \\ 3
-\end{mymatrix}$. Using Definition \ref{def:orthproj}, we compute the projection as follows:
+\end{mymatrix}$. Using Definition \ref{def:orth-proj}, we compute the projection as follows:
 \begin{eqnarray*}
 \vect{z} &=& \func{proj}_{W}\tup{\vect{y}}\\
 &=&
@@ -256,7 +256,7 @@ perpendicular to $W$. We call this set of vectors the
 \textbf{orthogonal complement}\index{orthogonal complement} of $W$ and
 denote it $W^{\perp}$.
 
-\begin{definition}{Orthogonal complement}{orthcomp}
+\begin{definition}{Orthogonal complement}{orth-comp}
 Let $W$ be a subspace of $\R^n$. Then the orthogonal
 complement of $W$, written $W^{\perp}$, is the set of all vectors
 $\vect{x}$ such that $\vect{x} \dotprod \vect{z} = 0$ for all vectors
@@ -269,19 +269,19 @@ W^{\perp} = \{\vect{x} \in \R^n \; \mbox{such that} \;
 
 The orthogonal complement is defined as the set of all vectors which are orthogonal to all vectors in the original subspace. It turns out that it is sufficient that the vectors in the orthogonal complement be orthogonal to a spanning set of the original space.
 
-\begin{proposition}{Orthogonal to spanning set}{orthogonalspanningset}
+\begin{proposition}{Orthogonal to spanning set}{orthogonal-spanning-set}
 Let $W$ be a subspace of $\R^n$ such that $W = \func{span} \set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m }$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set. 
 \end{proposition}
 
 The following proposition demonstrates that the orthogonal complement of a subspace is itself a subspace. 
 
-\begin{proposition}{The orthogonal complement}{subspacecomplement}
+\begin{proposition}{The orthogonal complement}{subspace-complement}
 Let $W$ be a subspace of $\R^n$. Then the orthogonal complement $W^{\perp}$ is also a subspace of $\R^n$.
 \end{proposition}
 
 Consider the following proposition.
 
-\begin{proposition}{Orthogonal complement of $\R^n$}{complementofrn}
+\begin{proposition}{Orthogonal complement of $\R^n$}{complement-of-rn}
 The complement of $\R^n$ is the set containing the zero vector:
 \[
  (\R^n)^{\perp} = \set{\vect{0} }
@@ -311,14 +311,14 @@ $(\R^n)^{\perp}=\{\vect{0}\}$.
 In the next example, we will look at how to find
 $W^{\perp}$.
 
-\begin{example}{Orthogonal complement}{orthcomp}
+\begin{example}{Orthogonal complement}{orth-comp}
 Let $W$ be the  plane through the origin given by the equation  $x - 2y + z = 0$. Find
 a basis for the orthogonal complement of $W$.
 \end{example}
 
 \begin{solution}
 
-From Example \ref{exa:orthproj} we know that we can write $W$ as 
+From Example \ref{exa:orth-proj} we know that we can write $W$ as 
 \[
 W = \mbox{span} \set{\vect{u}_1, \vect{u}_2 } = \mbox{span} 
 \set{
@@ -385,7 +385,7 @@ $\set{\begin{mymatrix}{r}
 
 The following results summarize the important properties of the orthogonal projection. 
 
-\begin{theorem}{Orthogonal projection}{orthproj}
+\begin{theorem}{Orthogonal projection}{orth-proj}
 Let $W$ be a subspace of $\R^n$, $Y$ be any point in $\R^n$, and let $Z$ be the point in $W$ closest to $Y$. Then, 
 \begin{enumerate}
 \item 
@@ -399,7 +399,7 @@ $| Y - Z | < | Y - Z_1 |$ for all $Z_1 \neq Z \in W$
 
 Consider the following example of this concept.
 
-\begin{example}{Find a vector closest to a given vector}{vectorclosestvector}
+\begin{example}{Find a vector closest to a given vector}{vector-closest-vector}
 
 Let
 \[ \vect{x}_1=\begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix},
@@ -420,7 +420,7 @@ We will first use the Gram-Schmidt Process to construct the orthogonal basis, $B
 \begin{mymatrix}{r} 1\\ 2\\ -1\\ 0 \end{mymatrix}
 }.\]
 
-By Theorem \ref{thm:orthproj},
+By Theorem \ref{thm:orth-proj},
 \[ \func{proj}_U(\vect{v}) = 
 \frac{2}{2} \begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix} +
 \frac{5}{1}\begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix} +
@@ -432,7 +432,7 @@ is the vector in $U$ closest to $\vect{y}$.
 
 Consider the next example. 
 
-\begin{example}{Vector written as a sum of two vectors}{sumoftwovectors}
+\begin{example}{Vector written as a sum of two vectors}{sum-of-two-vectors}
 Let $W$ be a subspace given by $W = \mbox{span} \set{
 \begin{mymatrix}{c}
 1 \\
@@ -542,7 +542,7 @@ Therefore, we can write $\vect{y}$ as
 \]
 \end{solution}
 
-\begin{example}{Point in a plane closest to a given point}{closestplane}
+\begin{example}{Point in a plane closest to a given point}{closest-plane}
 Find the point $Z$ in the plane $3x+y-2z=0$ that is closest to
 the point $Y=(1,1,1)$.
 \end{example}

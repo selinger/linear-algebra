@@ -20,7 +20,7 @@ Let $V$ be a vector space. A subset $W\subseteq V$ is said to be a \textbf{subsp
 The span of a set of vectors as described in Definition \ref{def:span} is an example of a subspace. The following fundamental result says that subspaces are subsets of a
 vector space which are themselves vector spaces.
 
-\begin{theorem}{Subspaces are vector spaces}{subspacesarevectorspaces}
+\begin{theorem}{Subspaces are vector spaces}{subspaces-are-vector-spaces}
 Let $W$ be a nonempty collection of vectors in a vector space $V$. Then $W$
 is a subspace if and only if $W$ satisfies the vector space axioms, using the same
 operations as those defined on $V$.
@@ -31,13 +31,13 @@ Suppose first that $W$ is a subspace. It is obvious that
 all the algebraic laws hold on $W$ because it is a subset of $V$ and they
 hold on $V$. Thus $\vect{u}+\vect{v}=\vect{v}+\vect{u}$ along with the other axioms. Does $W$
 contain $\vect{0}?$ Yes because it contains $0\vect{u}=\vect{0}$. See
-Theorem \ref{thm:axiomuniqueness}.
+Theorem \ref{thm:axiom-uniqueness}.
 
  Are the operations of $V$ defined on $W?$ That is,
 when you add vectors of $W$ do you get a vector in $W?$ When you multiply a
 vector in $W$ by a scalar, do you get a vector in $W?$ Yes. This is
 contained in the definition. Does every vector in $W$ have an additive
-inverse? Yes by Theorem \ref{thm:axiomuniqueness} because $-\vect{v}=\tup{
+inverse? Yes by Theorem \ref{thm:axiom-uniqueness} because $-\vect{v}=\tup{
 -1} \vect{v}$ which is given to be in $W$ provided $\vect{v}\in W$.
 
 Next suppose $W$ is a vector space. Then by definition, it is closed with
@@ -46,13 +46,13 @@ respect to linear combinations. Hence it is a subspace.
 
 Consider the following useful Corollary.
 
-\begin{corollary}{Span is a subspace}{spansubspace}
+\begin{corollary}{Span is a subspace}{span-subspace}
 Let $V$ be a vector space with $W \subseteq V$. If $W = \func{span} \set{\vect{v}_1, \cdots,  \vect{v}_n }$ then $W$ is a subspace of $V$.
 \end{corollary}
 
 When determining spanning sets the following theorem proves useful.
 
-\begin{theorem}{Spanning set}{spanningset}
+\begin{theorem}{Spanning set}{spanning-set}
 Let $W \subseteq V$ for a vector space $V$ and suppose $W = \func{span} \set{\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n }$. 
 
 Let $U \subseteq V$ be a subspace such that $\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n \in U$. Then it follows that $W \subseteq U$. 
@@ -62,16 +62,16 @@ In other words, this theorem claims that any subspace that contains a set of vec
 
 The following example will show that two spans, described differently, can in fact be equal. 
 
-\begin{example}{Equal span}{equalspan}
+\begin{example}{Equal span}{equal-span}
 Let $p(x), q(x)$ be polynomials and suppose $U = \func{span}\set{2p(x) - q(x), p(x) + 3q(x)} $ and $W =  \func{span}\set{p(x), q(x) }$. Show that $U = W$. 
 \end{example}
 
 \begin{solution}
-We will use Theorem \ref{thm:spanningset} to show that $U \subseteq W$ and $W \subseteq U$. It will then follow that $U=W$. 
+We will use Theorem \ref{thm:spanning-set} to show that $U \subseteq W$ and $W \subseteq U$. It will then follow that $U=W$. 
 \begin{enumerate}
 \item $U \subseteq W$
 
-Notice that $2p(x) - q(x)$ and $p(x) + 3q(x)$  are both in $W = \func{span} \set{p(x), q(x) }$. Then by Theorem \ref{thm:spanningset} $W$ must contain the span of these polynomials and so $U \subseteq W$. 
+Notice that $2p(x) - q(x)$ and $p(x) + 3q(x)$  are both in $W = \func{span} \set{p(x), q(x) }$. Then by Theorem \ref{thm:spanning-set} $W$ must contain the span of these polynomials and so $U \subseteq W$. 
 
 \item $W \subseteq U$
 
@@ -80,13 +80,13 @@ Notice that
 p(x) &=& \frac{3}{7} \tup{2p(x) - q(x) }  + \frac{2}{7} \tup{p(x) + 3q(x)} \\
 q(x) &=& -\frac{1}{7} \tup{2p(x) - q(x) }  + \frac{2}{7} \tup{p(x) + 3q(x)}
 \end{eqnarray*}
-Hence $p(x), q(x)$ are in $\func{span} \set{2p(x) - q(x), p(x) + 3q(x) }$. By Theorem \ref{thm:spanningset} $U$ must contain the span of these polynomials and so $W \subseteq U$. 
+Hence $p(x), q(x)$ are in $\func{span} \set{2p(x) - q(x), p(x) + 3q(x) }$. By Theorem \ref{thm:spanning-set} $U$ must contain the span of these polynomials and so $W \subseteq U$. 
 \end{enumerate}
 \end{solution}
 
-To prove that a set is a vector space, one must verify each of the axioms given in Definition \ref{def:vectorspaceaxiomsaddition} and \ref{def:vectorspaceaxiomsscalarmult}. This is a cumbersome task, and therefore a shorter procedure is used to verify a subspace. 
+To prove that a set is a vector space, one must verify each of the axioms given in Definition \ref{def:vector-space-axioms-addition} and \ref{def:vector-space-axioms-scalar-mult}. This is a cumbersome task, and therefore a shorter procedure is used to verify a subspace. 
 
-\begin{procedure}{Subspace test}{subspacetest}
+\begin{procedure}{Subspace test}{subspace-test}
 Suppose $W$ is a subset of a vector space $V$. To determine if $W$ is a subspace of $V$, it is sufficient to determine if the following three conditions hold, using the operations of $V$: 
 \begin{enumerate}
 \item
@@ -102,12 +102,12 @@ Therefore it suffices to prove these three steps to show that a set is a subspac
 
 Consider the following example.
 
-\begin{example}{Improper subspaces}{impropersubspaces}
+\begin{example}{Improper subspaces}{improper-subspaces}
 Let $V$ be an arbitrary vector space. Then $V$ is a subspace of itself. Similarly, the set $\set{\vect{0} }$ containing only the zero vector is also a subspace. 
 \end{example}
 
 \begin{solution}
-Using the subspace test in Procedure \ref{proc:subspacetest} we can show that $V$ and $\set{\vect{0} }$ are subspaces of $V$. 
+Using the subspace test in Procedure \ref{proc:subspace-test} we can show that $V$ and $\set{\vect{0} }$ are subspaces of $V$. 
 
 Since $V$ satisfies the vector space axioms it also satisfies the three steps of the subspace test. Therefore $V$ is a subspace.
 
@@ -138,7 +138,7 @@ The two subspaces described above are called \textbf{improper subspaces}\index{i
 
 Consider another example.
 
-\begin{example}{Subspace of polynomials}{polysubspace}
+\begin{example}{Subspace of polynomials}{poly-subspace}
 Let $\Poly_2$ be the vector space of polynomials of degree two or less. Let $W \subseteq \Poly_2$ be all polynomials of degree two or less which have $1$ as a root. Show that $W$ is a subspace of $\Poly_2$. 
 \end{example}
 
@@ -148,7 +148,7 @@ First, express $W$ as follows:
 W = \set{p(x) = ax^2 +bx +c, a,b,c, \in \R | p(1)  = 0 }
 \]
 
-We need to show that $W$ satisfies the three conditions of Procedure \ref{proc:subspacetest}. 
+We need to show that $W$ satisfies the three conditions of Procedure \ref{proc:subspace-test}. 
 \begin{enumerate}
 \item
 The zero polynomial of $\Poly_2$ is given by $0(x) = 0x^2 + 0x + 0 = 0$. Clearly $0(1) = 0$ so $0(x)$ is contained in $W$. 
@@ -178,7 +178,7 @@ It follows that $W$ is a subspace of $\Poly_2$.
 
 Recall the definition of basis, considered now in the context of vector spaces.
 
-\begin{definition}{Basis}{basisvectorspace}
+\begin{definition}{Basis}{basis-vector-space}
 Let $V$ be a vector space. Then $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is called a basis\index{basis} for $V$ if the following conditions hold.
 \begin{enumerate}
 \item
@@ -190,7 +190,7 @@ $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is linearly independent
 
 Consider the following example.
 
-\begin{example}{Polynomials of degree two}{polydegreetwo}
+\begin{example}{Polynomials of degree two}{poly-degree-two}
 Let $\Poly_2$ be the set polynomials of degree no more than 2. We can write
 $\Poly_2=\func{span}\set{x^{2}, x, 1} .$ Is $\set{x^{2}, x, 1} $ a
 basis for $\Poly_2$?
@@ -208,7 +208,7 @@ where $a,b,c$ are real numbers. It is clear that this can only occur if $a=b=c=0
 
 The next theorem is an essential result in linear algebra and is called the exchange theorem\index{exchange theorem}.
 
-\begin{theorem}{Exchange theorem}{exchangetheorem}
+\begin{theorem}{Exchange theorem}{exchange-theorem}
 Let $\set{\vect{x}_{1},\cdots ,\vect{x}_{r}} $
 be a linearly independent set of vectors such that each $\vect{x}_{i}$ is
 contained in span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} .$ Then $
@@ -306,11 +306,11 @@ r\leq s$ as claimed.
 
 The following corollary follows from the exchange theorem.
 
-\begin{corollary}{Two bases of the same length}{baseslength}
+\begin{corollary}{Two bases of the same length}{bases-length}
 Let $B_1$, $B_2$ be two bases of a vector space $V$. Suppose $B_1$ contains $m$ vectors and $B_2$ contains $n$ vectors. Then $m = n$.\index{basis!any two same size}
 \end{corollary}
 
-\begin{proof} By Theorem \ref{thm:exchangetheorem}, $m\leq n$ and $n\leq m$. Therefore $m=n$. 
+\begin{proof} By Theorem \ref{thm:exchange-theorem}, $m\leq n$ and $n\leq m$. Therefore $m=n$. 
 \end{proof}
 
 This corollary is very important so we provide another proof independent of the exchange theorem above.
@@ -352,11 +352,11 @@ that $m > n$.
 
 Given the result of the previous corollary, the following definition follows.
 
-\begin{definition}{Dimension}{dimensionvectorspace}
+\begin{definition}{Dimension}{dimension-vector-space}
  A vector space $V$ is of dimension $n$ if it has a basis consisting of $n$ vectors\index{dimension of vector space}\index{vector space!dimension}.
 \end{definition}
 
-Notice that the dimension is well defined by Corollary \ref{cor:baseslength}. It is assumed here
+Notice that the dimension is well defined by Corollary \ref{cor:bases-length}. It is assumed here
 that $n<\infty $ and therefore such a vector space is said to be \textbf{finite
 dimensional}\index{finite dimensional}.
 
@@ -365,7 +365,7 @@ Let $\Poly_2$ be the set of all polynomials of degree at most $2$. Find the dime
 \end{example}
 
 \begin{solution}
-If we can find a basis of $\Poly_2$ then the number of vectors in the basis will give the dimension. Recall from Example \ref{exa:polydegreetwo} that a basis of $\Poly_2$ is given by 
+If we can find a basis of $\Poly_2$ then the number of vectors in the basis will give the dimension. Recall from Example \ref{exa:poly-degree-two} that a basis of $\Poly_2$ is given by 
 \[
 S  = \set{x^2, x, 1 }
 \]
@@ -374,13 +374,13 @@ There are three polynomials in $S$ and hence the dimension of $\Poly_2$ is three
 
 It is important to note that a basis for a vector space is not unique. A vector space can have many bases. Consider the following example.
 
-\begin{example}{A different basis for polynomials of degree two}{polydegtwodifferentbasis}
+\begin{example}{A different basis for polynomials of degree two}{poly-deg-two-different-basis}
 Let $\Poly_2$ be the polynomials of degree no more than 2. Is $\set{
 x^{2}+x+1,2x+1,3x^{2}+1} $ a basis for $\Poly_2$?
 \end{example}
 
 \begin{solution}
-Suppose these vectors are linearly independent but do not form a spanning set for $\Poly_2$. Then by Lemma \ref{lem:addinglinearlyindependent}, we could find a fourth polynomial in $\Poly_2$ to create a new linearly independent 
+Suppose these vectors are linearly independent but do not form a spanning set for $\Poly_2$. Then by Lemma \ref{lem:adding-linearly-independent}, we could find a fourth polynomial in $\Poly_2$ to create a new linearly independent 
 set containing four polynomials. However this would imply that we could find a basis of $\Poly_2$ of more than three polynomials. This contradicts the result of Example \ref{exa:dimension} in which we determined the dimension of $\Poly_2$ is three.  Therefore if these vectors are linearly independent they must also form a spanning set and thus a basis for $\Poly_2$. 
 
 Suppose then that 
@@ -400,7 +400,7 @@ Therefore, these are linearly independent and form a basis for $\Poly_2$.
 
 Consider the following theorem. 
 
-\begin{theorem}{Every subspace has a basis}{everysubspacebasis}
+\begin{theorem}{Every subspace has a basis}{every-subspace-basis}
 Let $W$ be a nonzero subspace of a finite dimensional vector
 space $V$. Suppose $V$ has dimension $n$.
 Then $W$ has a basis\index{subspace!has a basis}
@@ -412,7 +412,7 @@ Let $\vect{v}_{1}\in V$ where $\vect{v}_{1}\neq 0.$ If $
 \func{span}\set{\vect{v}_{1}} =V,$ then it follows that $\set{\vect{v}
 _{1}} $ is a basis for $V$. Otherwise, there exists $\vect{v}
 _{2}\in V$ which is not in $\func{span}\set{\vect{v}_{1}} .$ By
-Lemma \ref{lem:addinglinearlyindependent} $\set{\vect{v}_{1},\vect{v}_{2}} $ is a
+Lemma \ref{lem:adding-linearly-independent} $\set{\vect{v}_{1},\vect{v}_{2}} $ is a
 linearly independent set of vectors. Then $\set{\vect{v}_{1},\vect{v}
 _{2}} $ is a basis for $V$ and we are done. If $\func{span}\set{\vect{v}_{1},
 \vect{v}_{2}} \neq V,$ then there exists $\vect{v}_{3}\notin \func{
@@ -420,12 +420,12 @@ span}\set{\vect{v}_{1},\vect{v}_{2}} $ and $\set{\vect{v}
 _{1},\vect{v}_{2},\vect{v}_{3}} $ is a larger linearly
 independent set of vectors. Continuing this way, the process must stop
 before $n+1$ steps because if not, it would be possible to obtain $n+1$
-linearly independent vectors contrary to the exchange theorem, Theorem \ref{thm:exchangetheorem}. 
+linearly independent vectors contrary to the exchange theorem, Theorem \ref{thm:exchange-theorem}. 
 \end{proof}
 
 If in fact $W$ has $n$ vectors, then it follows that $W=V$. 
 
-\begin{theorem}{Subspace of same dimension}{subspacevectorspace}
+\begin{theorem}{Subspace of same dimension}{subspace-vector-space}
 Let $V$ be a vector space of dimension $n$ and let $W$ be a
 subspace. Then $W=V$ if and only if the dimension of $W$ is also $n$.
 \end{theorem}
@@ -436,15 +436,15 @@ Now suppose that the dimension of $W$ is $n$. Let a basis for $W$ be $
 \set{\vect{w}_{1},\cdots ,\vect{w}_{n}} $. If $W$ is not equal to $V$
 , then let $\vect{v}$ be a vector of $V$ which is not contained in $W.$ Thus $
 \vect{v}$ is not in $\func{span}\set{\vect{w}_{1},\cdots ,\vect{w}
-_{n}} $ and by Lemma \ref{lem:basesisomorphism}, $\set{\vect{w}_{1},\cdots ,\vect{w}_{n},\vect{v}} $ is linearly independent which contradicts
-Theorem \ref{thm:exchangetheorem} because it would be an independent set of $n+1$
+_{n}} $ and by Lemma \ref{lem:bases-isomorphism}, $\set{\vect{w}_{1},\cdots ,\vect{w}_{n},\vect{v}} $ is linearly independent which contradicts
+Theorem \ref{thm:exchange-theorem} because it would be an independent set of $n+1$
 vectors even though each of these vectors is in a spanning set of $n$
 vectors, a basis of $V$. 
 \end{proof}
 
 Consider the following example.
 
-\begin{example}{Basis of a subspace}{basissubspace}
+\begin{example}{Basis of a subspace}{basis-subspace}
 Let $U=\set{A\in\Mat_{22} ~\abs{~
 A\begin{mymatrix}{rr}
 1 & 0 \\ 1 & -1 \end{mymatrix}\right. 
@@ -504,7 +504,7 @@ Therefore $B$ is a basis of $U$, and $\dim(U)=2$.
 
 The following theorem claims that a spanning set of a vector space $V$ can be shrunk down to a basis of $V$. Similarly, a linearly independent set within $V$ can be enlarged to create a basis of $V$.
 
-\begin{theorem}{Basis of $V$}{basisfromspanninglinind}
+\begin{theorem}{Basis of $V$}{basis-from-spanning-lin-ind}
  If $V=\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}
 _{n}} $ is a vector space, then some subset of $\{\vect{u}_{1},\cdots ,\vect{u}_{n}\}$
 is a basis for $V.$ Also, if $\{\vect{u}_{1},\cdots ,\vect{u}
@@ -565,7 +565,7 @@ then $k=n$. If not, there exists a vector
 \vect{u}_{k+1}\notin \func{span}\set{\vect{u}_{1},\cdots ,\vect{u}
 _{k}}
 \end{equation*}
-Then from Lemma \ref{lem:addinglinearlyindependent}, $\{\vect{u}_{1},\cdots ,\vect{u}_{k},
+Then from Lemma \ref{lem:adding-linearly-independent}, $\{\vect{u}_{1},\cdots ,\vect{u}_{k},
 \vect{u}_{k+1}\}$ is also linearly independent. Continue adding vectors in
 this way until $n$ linearly independent vectors have been obtained. Then 
 \begin{equation*}
@@ -574,13 +574,13 @@ this way until $n$ linearly independent vectors have been obtained. Then
 because if it did not do so, there would exist $\vect{u}_{n+1}$ as just
 described and $\set{\vect{u}_{1},\cdots ,\vect{u}_{n+1}} $
 would be a linearly independent set of vectors having $n+1$ elements. This contradicts the fact that $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} $ is a basis.
- In turn this would contradict Theorem \ref{thm:exchangetheorem}. Therefore, this list is a
+ In turn this would contradict Theorem \ref{thm:exchange-theorem}. Therefore, this list is a
 basis. 
 \end{proof}
 
-Recall Example \ref{exa:addinglinind} in which we added a matrix to a linearly independent set to create a larger linearly independent set. By Theorem \ref{thm:basisfromspanninglinind} we can extend a linearly independent set to a basis.  
+Recall Example \ref{exa:adding-lin-ind} in which we added a matrix to a linearly independent set to create a larger linearly independent set. By Theorem \ref{thm:basis-from-spanning-lin-ind} we can extend a linearly independent set to a basis.  
 
-\begin{example}{Adding to a linearly independent set}{addinglinearindbasis}
+\begin{example}{Adding to a linearly independent set}{adding-linear-ind-basis}
 Let $S \subseteq M_{22}$ be a linearly independent set given by 
 \[
 S  = \set{\begin{mymatrix}{rr}
@@ -595,7 +595,7 @@ Enlarge $S$ to a basis of $M_{22}$.
 \end{example}
 
 \begin{solution}
-Recall from the solution of Example \ref{exa:addinglinind} that the set  $R \subseteq M_{22}$ given by 
+Recall from the solution of Example \ref{exa:adding-lin-ind} that the set  $R \subseteq M_{22}$ given by 
 \[
 R = \set{\begin{mymatrix}{rr}
 1 & 0 \\
@@ -612,7 +612,7 @@ is also linearly independent.
 However this set is still not a basis for $M_{22}$ as it is not a spanning set. In particular, $\begin{mymatrix}{rr}
 0 & 0 \\
 0 & 1 
-\end{mymatrix}$ is not in $\func{span} R$. Therefore, this matrix can be added to the set by Lemma \ref{lem:addinglinearlyindependent} to obtain a new linearly independent set given by 
+\end{mymatrix}$ is not in $\func{span} R$. Therefore, this matrix can be added to the set by Lemma \ref{lem:adding-linearly-independent} to obtain a new linearly independent set given by 
 \[
 T = \set{\begin{mymatrix}{rr}
 1 & 0 \\
@@ -760,7 +760,7 @@ Note also that, since all linear relations are preserved by an isomorphism,
 
 Consider the following example.
 
-\begin{example}{Shrinking a spanning set}{shrinkspanning}
+\begin{example}{Shrinking a spanning set}{shrink-spanning}
 Consider the set $S \subseteq \Poly_2$ given by 
 \[
 S = \set{1, x, x^2, x^2 + 1 }
@@ -786,7 +786,7 @@ b &=& s \\
 c &=& r + u 
 \end{eqnarray*}
 
-Clearly a solution exists for all $a,b,c$ and so $S$ is a spanning set for $\Poly_2$. By Theorem \ref{thm:basisfromspanninglinind}, some subset of $S$ is a basis for $\Poly_2$. 
+Clearly a solution exists for all $a,b,c$ and so $S$ is a spanning set for $\Poly_2$. By Theorem \ref{thm:basis-from-spanning-lin-ind}, some subset of $S$ is a basis for $\Poly_2$. 
 
 Recall that a basis must be both a spanning set and a linearly independent set.
 Therefore we must remove a vector from $S$ keeping this in mind. Suppose we remove $x$ from $S$. The resulting set would be $\set{1, x^2, x^2 + 1 }$. This set is clearly linearly dependent (and also does not span $\Poly_2$) and so is not a basis. 
@@ -796,7 +796,7 @@ Suppose we remove $x^2 + 1$ from $S$. The resulting set is $\set{1, x, x^2 }$ wh
 
 Now the following is a fundamental result about subspaces.
 
-\begin{theorem}{Basis of a vector space}{basisvectorspace}
+\begin{theorem}{Basis of a vector space}{basis-vector-space}
 Let $V$ be a finite dimensional vector space and let $W$ be
 a non-zero subspace. Then $W$ has a basis. That is, there exists a linearly
 independent set of vectors $\set{\vect{w}_{1},\cdots ,\vect{w}_{r}} $

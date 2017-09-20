@@ -12,7 +12,7 @@ In the previous section, we saw how to solve a system of equations by
 using Gaussian elimination and back substitution. The back
 substitution step can be quite confusing and error prone, especially
 when there are parameters. For example, in
-Example~\ref{exa:twoparametersetofsoln}, we had to substitute $y=s$,
+Example~\ref{exa:two-parameter-set-of-soln}, we had to substitute $y=s$,
 $z=2-t$, and $w=t$ into the equation $x=3-2y+2z-2w$, which required
 another simplification step.
 
@@ -34,7 +34,7 @@ The key to this technique is a special kind of {\ef} called a
   \end{enumerate}
 \end{definition}
 
-\begin{example}{{\Rref}}{rrefmatrices}
+\begin{example}{{\Rref}}{rref-matrices}
 The following augmented matrices are in {\rref}. The leading entries
 have been circled for emphasis. Note how all of the leading entries
 are equal to $1$, and they have zeros above them.
@@ -61,13 +61,13 @@ are equal to $1$, and they have zeros above them.
 We can carry every augmented matrix to {\rref} by doing elementary row
 operations.
 
-\begin{algorithm}{Gauss-Jordan elimination}{gaussjordan}
+\begin{algorithm}{Gauss-Jordan elimination}{gauss-jordan}
   This algorithm provides a method for using row operations to take a
   matrix to its
   {\rref} \eindex{\rref!algorithm}\index{Gauss-Jordan elimination}.
   \begin{enumerate}
   \item First, use Gaussian elimination
-    (Algorithm~\ref{algo:gaussianelimination}) to reduce the matrix to
+    (Algorithm~\ref{algo:gaussian-elimination}) to reduce the matrix to
     {\ef}.
   \item Moving from right to left, consider each pivot entry. Without
     changing the row containing the pivot entry, or any rows below it,
@@ -77,9 +77,9 @@ operations.
   \end{enumerate}
 \end{algorithm}
 
-\begin{example}{Gauss-Jordan elimination}{gaussjordan1}
+\begin{example}{Gauss-Jordan elimination}{gauss-jordan1}
   Solve the system of equations from
-  Example~\ref{exa:systemwithonesoln} using Gauss-Jordan elimination.
+  Example~\ref{exa:system-with-one-soln} using Gauss-Jordan elimination.
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
       x+4y+3z &=& 11\\
@@ -90,7 +90,7 @@ operations.
 \end{example}
 
 \begin{solution}
-  In Example~\ref{exa:systemwithonesoln}, we had already reduced the
+  In Example~\ref{exa:system-with-one-soln}, we had already reduced the
   system to {\ef}:
   \begin{equation*}
     \begin{mymatrix}{rrr|r}
@@ -130,9 +130,9 @@ operations.
   are $x=-2$, $y=1$, and $z=3$. No back substitution is needed.
 \end{solution}
 
-\begin{example}{Gauss-Jordan elimination}{gaussjordan2}
+\begin{example}{Gauss-Jordan elimination}{gauss-jordan2}
   Solve the system of equations from
-  Example~\ref{exa:twoparametersetofsoln} using Gauss-Jordan
+  Example~\ref{exa:two-parameter-set-of-soln} using Gauss-Jordan
   elimination.
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
@@ -144,7 +144,7 @@ operations.
 \end{example}
 
 \begin{solution}
-  In Example~\ref{exa:twoparametersetofsoln}, we had obtained the
+  In Example~\ref{exa:two-parameter-set-of-soln}, we had obtained the
   following {\ef}:
   \begin{equation*}
     \begin{mymatrix}{rrrr|r}

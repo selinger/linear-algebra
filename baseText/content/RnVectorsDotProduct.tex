@@ -30,7 +30,7 @@ scalar. For this reason, the dot product is also called the
 \index{scalar product} \index{inner product} \index{vector!dot
   product}
 
-\begin{definition}{Dot product}{dotproductdefn}
+\begin{definition}{Dot product}{dotproduct-defn}
   Let $\vect{u}=\begin{mymatrix}{c}
     u_1 \\
     u_2 \\
@@ -68,7 +68,7 @@ scalar. For this reason, the dot product is also called the
 
 The dot product satisfies a number of important properties. 
 
-\begin{theorem}{Properties of the dot product}{propertiesdotproduct}
+\begin{theorem}{Properties of the dot product}{properties-dot-product}
   \index{dot product!properties}
   The dot product satisfies the following properties, where
   $\vect{u},\vect{v},\vect{w}$ are vectors and $k,\ell$ are
@@ -87,7 +87,7 @@ The proof is left as an exercise. Note that, by the last part of the
 theorem, we can also use the dot product to find the length of a
 vector.
 
-\begin{example}{Length of a vector}{dotproductlength}
+\begin{example}{Length of a vector}{dotproduct-length}
   Use a dot product to find $\norm{\vect{u}}$, where
   \begin{equation*}
     \vect{u}
@@ -102,7 +102,7 @@ vector.
 \end{example}
 
 \begin{solution}
-  By the last part of Theorem~\ref{thm:propertiesdotproduct}, we have
+  By the last part of Theorem~\ref{thm:properties-dot-product}, we have
   $\norm{\vect{u}} = \sqrt {\vect{u} \dotprod \vect{u}}$. We have
   $\vect{u} \dotprod \vect{u} = 2^2+1^2+4^2+2^2 = 25$, and therefore
   $\norm{\vect{u}} = \sqrt{\vect{u} \dotprod \vect{u}} = \sqrt{25} = 5$.
@@ -115,7 +115,7 @@ The \textbf{Cauchy-Schwarz inequality}\index{Cauchy-Schwarz inequality}
 is a fundamental inequality satisfied by the dot product.  It is given
 in the following theorem.
 
-\begin{theorem}{Cauchy-Schwarz inequality}{cauchyschwarzinequality}
+\begin{theorem}{Cauchy-Schwarz inequality}{cauchy-schwarz-inequality}
   The dot product satisfies the inequality
   \begin{equation}\label{cauchy}
     \abs{\vect{u}\dotprod \vect{v}}\leq \norm{\vect{u}} \norm{\vect{v}}
@@ -132,9 +132,9 @@ in the following theorem.
     f(t) =\tup{t\vect{u}+\vect{v}} \dotprod \tup{t\vect{u}+
       \vect{v}} 
   \end{equation*}
-  Then by Theorem~\ref{thm:propertiesdotproduct}, $f(t) \geq 0$
+  Then by Theorem~\ref{thm:properties-dot-product}, $f(t) \geq 0$
   for all $t\in \R$.  Also from
-  Theorem~\ref{thm:propertiesdotproduct}, we have
+  Theorem~\ref{thm:properties-dot-product}, we have
   \begin{eqnarray*}
     f(t) &=&t\vect{u}\dotprod \tup{t\vect{u}+\vect{v}} +
                  \vect{v}\dotprod \tup{t\vect{u}+\vect{v}} \\
@@ -161,7 +161,7 @@ so-called \textbf{triangle inequality}\index{triangle inequality},
 which states that the length of one side of a triangle is less than or
 equal the sum of the lengths of the two other sides.
 
-\begin{theorem}{Triangle inequality}{triangleinequalitydotproduct}
+\begin{theorem}{Triangle inequality}{triangle-inequality-dot-product}
   For\/ $\vect{u},\vect{v}\in \R^{n}$, we have
   \begin{equation}\label{triangleineq1}
     \norm{\vect{u}+\vect{v}} \leq \norm{\vect{u}} +\norm{\vect{v}}.
@@ -194,7 +194,7 @@ equal the sum of the lengths of the two other sides.
   Taking square roots of both sides, we obtain \eqref{triangleineq1}.
 \end{proof}
 
-\begin{example}{Triangle inequality}{triangleinequality}
+\begin{example}{Triangle inequality}{triangle-inequality}
   Use the triangle inequality to show
   \begin{equation*}
     \norm{\vect{u}} -\norm{\vect{v}} \leq \norm{\vect{u}-\vect{v}}

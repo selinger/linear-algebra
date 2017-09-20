@@ -5,7 +5,7 @@ to multiply matrices in one order
 but not in the other order. However, even if both $AB$ and $BA$ are defined,
 they may not be equal. 
 
-\begin{example}{Matrix multiplication is not commutative}{noncommutativemultiplication}
+\begin{example}{Matrix multiplication is not commutative}{non-commutative-multiplication}
 Compare the products $AB$ and $BA$, for matrices $ A = \begin{mymatrix}{rr}
 1 & 2 \\
 3 & 4
@@ -55,7 +55,7 @@ important property of matrix multiplication.
 The following are other important properties of matrix multiplication.
 Notice that these properties hold only when the size of matrices are such that the products are defined. 
 
-\begin{proposition}{Properties of matrix multiplication}{propertiesofmatrixmultiplication}
+\begin{proposition}{Properties of matrix multiplication}{properties-of-matrix-multiplication}
 The following hold\index{matrix multiplication!properties} for matrices $A,B,$ and $C$ and for scalars $r$ and $s$,
 
 \begin{equation}
@@ -72,7 +72,7 @@ A\tup{BC} =\tup{AB} C  \label{matrixproperties3}
 \end{proposition}
 
 \begin{proof}
- First we will prove \ref{matrixproperties1}. We will use Definition \ref{def:ijentryofproduct} 
+ First we will prove \ref{matrixproperties1}. We will use Definition \ref{def:ij-entry-of-product} 
 and prove this statement using the $ij^{th}$ entries of a matrix. 
 Therefore, 
 \begin{equation*}
@@ -91,7 +91,7 @@ Thus $A\tup{rB+sC} =r(AB)+s(AC)$ as claimed.
 The proof of \ref{matrixproperties2} follows the same pattern and is left as an exercise. 
 
 Statement \ref{matrixproperties3} is the associative law of multiplication. Using
-Definition \ref{def:ijentryofproduct},
+Definition \ref{def:ij-entry-of-product},
 \begin{equation*}
 \tup{A\tup{BC} } _{ij}=\sum_{k}a_{ik}\tup{BC}
 _{kj}=\sum_{k}a_{ik}\sum_{l}b_{kl}c_{lj}

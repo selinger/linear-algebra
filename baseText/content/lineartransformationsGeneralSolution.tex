@@ -22,7 +22,7 @@ systems of equations. Indeed given a system of linear equations of the
 form $A\vect{x}=\vect{b}$, one may rephrase this as $T(\vect{x})=\vect{b}$ where $T$ is the linear
 transformation $T_A$ induced by the coefficient matrix $A$. With this in mind consider the following definition. 
 
-\begin{definition}{Particular solution of a system of equations}{particularsolutions}
+\begin{definition}{Particular solution of a system of equations}{particular-solutions}
 Suppose a linear system of equations can be written in the form
 \begin{equation*}
 T\tup{\vect{x}}=\vect{b}
@@ -39,7 +39,7 @@ of $T$. We may also refer to the null space as the \textbf{kernel} of $T$, and w
 
 Consider the following definition.
 
-\begin{definition}{Null space or kernel of a linear transformation}{nullspaceoflineartransformation}
+\begin{definition}{Null space or kernel of a linear transformation}{null-space-of-linear-transformation}
 Let $T$ be a linear transformation. Define
 \begin{equation*}
 \ker \tup{T} = \set{\vect{x}:T \tup{\vect{x} }= \vect{0} } 
@@ -55,7 +55,7 @@ We may also refer to the kernel of $T$ as the
 
 Consider the following example.
 
-\begin{example}{The kernel of the derivative}{kernelderivative}
+\begin{example}{The kernel of the derivative}{kernel-derivative}
 Let $\frac{d}{dx}$ denote the linear transformation defined on $f,$ the functions
 which are defined on $\R$ and have a continuous derivative. Find 
 $\ker \tup{\frac{d}{dx}} .$
@@ -66,7 +66,7 @@ $\ker \tup{\frac{d}{dx}} .$
 Thus $\ker \tup{\frac{d}{dx}}$ is the set of constant functions.
 \end{solution} 
 
-Definition \ref{def:nullspaceoflineartransformation} states that $\ker \tup{T} $ is the set of
+Definition \ref{def:null-space-of-linear-transformation} states that $\ker \tup{T} $ is the set of
 solutions to the equation,
 \begin{equation*}
 T\tup{\vect{x} } = \vect{0}
@@ -82,7 +82,7 @@ system and the solutions of the associated homogeneous system. In the following
 theorem, we use linear transformations to denote a system of equations. Remember that
 $T\tup{\vect{x}} = A\vect{x}$.
 
-\begin{theorem}{Particular solution and general solution}{particularandgeneralsolution}
+\begin{theorem}{Particular solution and general solution}{particular-and-general-solution}
 Suppose $\vect{x}_{p}$ is a solution to the linear system given by
 \begin{equation*}
 T\tup{\vect{x} } = \vect{b}.
@@ -118,7 +118,7 @@ For now, we have been speaking about the kernel or null space of a linear transf
 we know that every linear transformation $T$ is determined by some matrix $A$. Therefore,
 we can also speak about the null space of a matrix. Consider the following example.  
 
-\begin{example}{The null space of a matrix}{matrixnullspace}
+\begin{example}{The null space of a matrix}{matrix-null-space}
 Let
 \begin{equation*}
 A=\begin{mymatrix}{rrrr}
@@ -203,7 +203,7 @@ w
 
 Consider the following example.
 
-\begin{example}{A general solution}{generalsolution}
+\begin{example}{A general solution}{general-solution}
 The \textbf{general solution}\index{general solution} of a linear system of equations 
 is the set of
 all possible solutions. Find the general solution to the linear system,
@@ -237,7 +237,7 @@ w
 \end{example}
 
 \begin{solution} Note the matrix of this system is the same as the matrix in Example 
-\ref{exa:matrixnullspace}. Therefore, from Theorem \ref{thm:particularandgeneralsolution}, you will obtain all
+\ref{exa:matrix-null-space}. Therefore, from Theorem \ref{thm:particular-and-general-solution}, you will obtain all
 solutions to the above linear system by adding a particular solution $\vect{x}_p$ to the solutions of the associated homogeneous 
 system, $\vect{x}$. One particular solution is given above by
 \begin{equation}
@@ -256,7 +256,7 @@ w
 \end{mymatrix}
 \end{equation}
 
-Using this particular solution along with the solutions found in Example \ref{exa:matrixnullspace}, we
+Using this particular solution along with the solutions found in Example \ref{exa:matrix-null-space}, we
 obtain the following solutions, 
 \begin{equation*}
 z\begin{mymatrix}{r}

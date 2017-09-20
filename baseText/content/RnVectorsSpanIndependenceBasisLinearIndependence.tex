@@ -11,7 +11,7 @@ You can create examples where this easily happens. For example if $\vec{u}_1=\ve
 $1\vect{u}_1 - \vect{u}_2+ 0 \vect{u}_3 + \cdots  + 0 \vect{u}_k = \vect{0}$, no matter the vectors 
  $\{\vect{u}_3, \cdots ,\vect{u}_k\}$. 0But sometimes it can be more subtle. 
 
-\begin{example}{Linearly dependent set of vectors}{linearlydependentvectors}
+\begin{example}{Linearly dependent set of vectors}{linearly-dependent-vectors}
 Consider the vectors 
 \begin{equation*}
 \vect{u}_1=\begin{mymatrix}{rrr}
@@ -39,7 +39,7 @@ You can see that the linear combination does yield the zero vector but
 has some non-zero coefficients. Thus we define a set of vectors to be
 {\em linearly dependent} if this happens.
 
-\begin{definition}{Linearly dependent set of vectors}{lineardependent}
+\begin{definition}{Linearly dependent set of vectors}{linear-dependent}
 A set of non-zero vectors $\{\vect{u}_1, \cdots ,\vect{u}_k\}$ in $\R^{n}$ is said to be 
 \textbf{linearly dependent} if a linear combination of these vectors without all  coefficients being zero does yield the zero vector.
 \index{linear dependence}\index{vectors!linear dependent}
@@ -62,7 +62,7 @@ any linear combination of these vectors which yields the zero vector
 must use all zero coefficients. This is a very important notion, and we give it its own name of {\em
 linear independence}. 
 
-\begin{definition}{Linearly independent set of vectors}{linearindependent}
+\begin{definition}{Linearly independent set of vectors}{linear-independent}
 A set of non-zero vectors $\{\vect{u}_1, \cdots ,\vect{u}_k\}$ in $\R^{n}$ is said to be 
 \textbf{linearly independent} if whenever 
 \begin{equation*}
@@ -83,7 +83,7 @@ precisely when $AX=0$ has only the trivial solution.
 
 Here is an example.  
 
-\begin{example}{Linearly independent vectors}{linearlyindependentvectors}
+\begin{example}{Linearly independent vectors}{linearly-independent-vectors}
 Consider the vectors $\vect{u}=\begin{mymatrix}{rrr}
 1  & 1 & 0
 \end{mymatrix}^T$, 
@@ -116,7 +116,7 @@ does not contain unnecessary vectors, that is not vector is in the span of the o
 
 Thus we put all this together in the following important theorem.
 
-\begin{theorem}{Linear independence as a linear combination}{linearindependencecombination}
+\begin{theorem}{Linear independence as a linear combination}{linear-independence-combination}
 Let $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ be a collection of vectors  in
 $\R^{n}$. Then the following are equivalent:
 
@@ -148,7 +148,7 @@ a trivial linear combination is one in which all scalars equal zero.
 
 Here is a detailed  example in  $\R^{4}$. 
 
-\begin{example}{Linear independence}{linearindependence2}
+\begin{example}{Linear independence}{linear-independence2}
 Determine whether the set of vectors given by  
 \[ \set{\begin{mymatrix}{r}
 1 \\
@@ -202,7 +202,7 @@ as a linear combination of the others.
 
 Consider another example.
 
-\begin{example}{Linear independence}{linearindependence}
+\begin{example}{Linear independence}{linear-independence}
 Determine whether the set of vectors given by  
 \[\set{
 \begin{mymatrix}{r}
@@ -240,7 +240,7 @@ A= \begin{mymatrix}{rrrr}
 0 & 1 & 2 & -1
 \end{mymatrix}
 \end{equation*}
-Then by Theorem \ref{thm:linearindependencecombination}, the given set of vectors is linearly independent
+Then by Theorem \ref{thm:linear-independence-combination}, the given set of vectors is linearly independent
 exactly if the system $AX=0$ has only the trivial solution.
 
 The augmented matrix for this system and corresponding {\rref} are given by  
@@ -332,7 +332,7 @@ Notice that we could rearrange this equation to write any of the four vectors as
 
 When given a linearly independent set of vectors, we can determine if related sets are linearly independent. 
 
-\begin{example}{Related sets of vectors}{relatedlinearindependence}
+\begin{example}{Related sets of vectors}{related-linear-independence}
 Let $\{\vect{u},\vect{v},\vect{w}\}$ be an independent set of $\R^n$.
 Is $\{\vect{u}+\vect{v}, 2\vect{u}+\vect{w}, \vect{v}-5\vect{w}\}$ linearly
 independent?
@@ -360,7 +360,7 @@ The following corollary follows from the fact that if the augmented matrix of a 
 system of linear equations has more columns than rows, the system has infinitely many
 solutions.
 
-\begin{corollary}{Linear dependence in $\R^{n}$}{lineardependenceRn}
+\begin{corollary}{Linear dependence in $\R^{n}$}{linear-dependence-Rn}
 Let $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $
 be a set of vectors in $\R^{n}$. 
 If $k>n$, then the set is linearly dependent (i.e. NOT linearly independent).
@@ -369,12 +369,12 @@ If $k>n$, then the set is linearly dependent (i.e. NOT linearly independent).
 \begin{proof}
 Form the $n \times k$ matrix $A$ having the vectors $\set{
 \vect{u}_{1},\cdots ,\vect{u}_{k}} $ as its columns and suppose $k > n$. Then $A$ has rank $r \leq n <k$, so 
-the system $AX=0$ has a nontrivial solution % by \ref{thm:rankhomogeneoussolutions}
+the system $AX=0$ has a nontrivial solution % by \ref{thm:rank-homogeneous-solutions}
  and thus not linearly independent by Theorem 
- \ref{thm:linearindependencecombination}.
+ \ref{thm:linear-independence-combination}.
 \end{proof}
 
-\begin{example}{Linear dependence}{lineardependence}
+\begin{example}{Linear dependence}{linear-dependence}
 Consider the vectors 
 \[
 \set{\begin{mymatrix}{r}
@@ -394,7 +394,7 @@ Are these vectors linearly independent?
 \end{example}
 
 \begin{solution}
-This set contains three vectors in $\R^2$. By Corollary \ref{cor:lineardependenceRn} these vectors are linearly dependent.
+This set contains three vectors in $\R^2$. By Corollary \ref{cor:linear-dependence-Rn} these vectors are linearly dependent.
 In fact, we can write
 \[
 (-1) \begin{mymatrix}{r}
@@ -415,7 +415,7 @@ showing that this set is linearly dependent.
 
 The third vector in the previous example is in the span of the first two vectors. We could find a way to write this vector as a linear combination of the other two vectors. It turns out that the linear combination which we found is the \textbf{only} one, provided that the set is linearly independent. 
 
-\begin{theorem}{Unique linear combination}{uniquelinearcombination}
+\begin{theorem}{Unique linear combination}{unique-linear-combination}
 Let $U \subseteq\R^n$ be an independent set.
 Then any vector $\vect{x}\in\func{span}(U)$ can be written uniquely as a linear combination of vectors of $U$.
 \end{theorem}
@@ -475,7 +475,7 @@ Therefore, $\{\vect{u},\vect{v},\vect{w}\}$ is independent.
 
 Consider the following useful theorem.
 
-\begin{theorem}{Invertible matrices}{invertiblematrices}
+\begin{theorem}{Invertible matrices}{invertible-matrices}
 Let $A$ be an invertible $n \times n$ matrix. Then the columns of $A$ are independent and span $\R^n$. Similarly, the rows of $A$ are independent and span the set of all $1 \times n$ vectors. 
 \end{theorem}
 

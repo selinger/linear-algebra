@@ -1,7 +1,7 @@
 
 \subsection{Finding the inverse of a matrix}
 
-In Example \ref{exa:verifyinginverse}, we were given $A^{-1}$ and asked to verify that this matrix
+In Example \ref{exa:verifying-inverse}, we were given $A^{-1}$ and asked to verify that this matrix
 was in fact the inverse of $A$. In this section, we explore how to find $A^{-1}$. 
 
 Let 
@@ -11,7 +11,7 @@ A=\begin{mymatrix}{rr}
 1 & 2
 \end{mymatrix}
 \end{equation*}
-as in Example \ref{exa:verifyinginverse}. 
+as in Example \ref{exa:verifying-inverse}. 
 In order to find $A^{-1}$, we need to find
 a matrix $\begin{mymatrix}{rr}
 x & z \\
@@ -136,7 +136,7 @@ and read off the inverse as the $2\times 2$ matrix on the right side.
 
 This exploration motivates the following important algorithm.
 
-\begin{algorithm}{Matrix inverse algorithm}{matrixinversionalgorithm}
+\begin{algorithm}{Matrix inverse algorithm}{matrix-inversion-algorithm}
 Suppose $A$ is an $n\times n$ matrix. To find $A^{-1}$ if it exists\index{matrix!finding the inverse}, form
 the augmented $n\times 2n$ matrix
 \begin{equation*}
@@ -157,7 +157,7 @@ $A$ does not have an inverse.
 
 Consider the following example.
 
-\begin{example}{Finding the inverse}{findinginverse}
+\begin{example}{Finding the inverse}{finding-inverse}
 Let $A=\begin{mymatrix}{rrr}
 1 & 2 & 2 \\
 1 & 0 & 2 \\
@@ -238,7 +238,7 @@ Therefore, the inverse is the $3 \times 3$ matrix on the right hand side, given 
 It may happen that through this algorithm, you discover that the left hand side cannot 
 be row reduced to the identity matrix. Consider the following example of this situation. 
 
-\begin{example}{A matrix which has no inverse}{matrixnoinverse}
+\begin{example}{A matrix which has no inverse}{matrix-no-inverse}
 Let $A=\begin{mymatrix}{rrr}
 1 & 2 & 2 \\
 1 & 0 & 2 \\
@@ -280,11 +280,11 @@ exist. In this case, we say that $A$ is not invertible.
 \end{solution}
 
 If the algorithm provides an inverse for the original matrix, it is always possible to check your answer.
-To do so, use the method demonstrated in Example \ref{exa:verifyinginverse}. Check that the products $AA^{-1}$ and $A^{-1}A$ both equal the 
+To do so, use the method demonstrated in Example \ref{exa:verifying-inverse}. Check that the products $AA^{-1}$ and $A^{-1}A$ both equal the 
 identity matrix. Through this method, you can always be sure that you have calculated $A^{-1}$ properly!
 
 One way in which the inverse of a matrix is useful is to find the solution of a system of linear equations.
-Recall from Definition \ref{def:matrixform} that we can write a system of equations in matrix form, 
+Recall from Definition \ref{def:matrix-form} that we can write a system of equations in matrix form, 
 which is of the form $AX=B$. Suppose you find the
 inverse of the matrix $A^{-1}$. Then you could multiply both sides of this
 equation on the left by $A^{-1}$ and simplify to obtain
@@ -303,7 +303,7 @@ hand sides (different $B$). It is always just $A^{-1}B$.
  
 We will explore this method of finding the solution to a system in the following example. 
 
-\begin{example}{Using the inverse to solve a system of equations}{inversetosolvesystem}
+\begin{example}{Using the inverse to solve a system of equations}{inverse-to-solve-system}
  Consider the following system of
 equations. Use the inverse of a suitable matrix to give the solutions to
 this system.
@@ -421,7 +421,7 @@ it is easy to find the solution when the vector $B$ is changed.
 
 We conclude this section with some important properties of the inverse. 
 
-\begin{theorem}{Inverses of transposes and products}{inversetransposeprod}
+\begin{theorem}{Inverses of transposes and products}{inverse-transpose-prod}
 Let $A, B$, and $A_i$ for $i=1,...,k$ be $n \times n$ matrices. 
 \begin{enumerate}
 \item
@@ -435,7 +435,7 @@ If $A_1, A_2, ..., A_k$ are invertible, then the product $A_1A_2 \cdots A_k$ is 
 
 Consider the following theorem.
 
-\begin{theorem}{Properties of the inverse}{inverseproperties}
+\begin{theorem}{Properties of the inverse}{inverse-properties}
 Let $A$ be an $n \times n$ matrix and $I$ the usual identity matrix. 
 \begin{enumerate}
 \item

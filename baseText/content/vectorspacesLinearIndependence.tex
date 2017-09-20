@@ -8,7 +8,7 @@
 
 In this section, we will again explore concepts introduced earlier in terms of $\R^n$ and extend them to apply to abstract vector spaces. 
 
-\begin{definition}{Linear independence}{linearindependencevectorspace}
+\begin{definition}{Linear independence}{linear-independence-vector-space}
 Let $V$ be a vector space. If $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\} \subseteq V,$ then it is linearly independent
 \index{linearly independent} if
 \begin{equation*}
@@ -22,7 +22,7 @@ The
 set of vectors is called linearly dependent if it is not linearly independent.
 \index{linearly dependent}
 
-\begin{example}{Linear independence}{linearindependencepoly}
+\begin{example}{Linear independence}{linear-independence-poly}
 Let $S \subseteq \Poly_2$ be a set of polynomials given by
 \[
 S = \set{x^2 + 2x - 1, 2x^2 - x + 3 }
@@ -109,7 +109,7 @@ By Lemma \ref{lem:dependent} this set is dependent.
 
 If we know that one particular set is linearly independent, we can use this information to determine if a related set is linearly independent. Consider the following example.
 
-\begin{example}{Related independent sets}{relatedindependent}
+\begin{example}{Related independent sets}{related-independent}
 Let $V$ be a vector space and suppose $S \subseteq V$ is a set of linearly independent vectors given by $S = \set{\vect{u}, \vect{v}, \vect{w} }$. Let $R \subseteq V$ be given by $R = \set{2\vect{u} - \vect{w}, \vect{w} + \vect{v}, 3\vect{v} + \frac{1}{2} \vect{u} }$. Show that $R$ is also linearly independent. 
 \end{example}
 
@@ -151,13 +151,13 @@ Hence the solution is $a=b=c=0$ and the set is linearly independent.
 
 The following theorem was discussed in terms in $\R^n$. We consider it here in the general case.
 
-\begin{theorem}{Unique representation}{uniquerepresentation}
+\begin{theorem}{Unique representation}{unique-representation}
 Let $V$ be a vector space and let $U = \set{\vect{v}_1, \cdots, \vect{v}_k } \subseteq V$ be an independent set. If $\vect{v} \in \func{span} \;U$, then $\vect{v}$ can be written uniquely as a linear combination of the vectors in $U$. 
 \end{theorem}
 
 Consider the span of a linearly independent set of vectors. Suppose we take a vector which is not in this span and add it to the set. The following lemma claims that the resulting set is still linearly independent. 
 
-\begin{lemma}{Adding to a linearly independent set}{addinglinearlyindependent}
+\begin{lemma}{Adding to a linearly independent set}{adding-linearly-independent}
 Suppose $\vect{v}\notin \func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ and $\set{\vect{u}_{1},\cdots ,
 \vect{u}_{k}} $ is linearly independent. Then the set
 \begin{equation*}
@@ -182,7 +182,7 @@ _{1},\cdots ,\vect{u}_{k}} $ implies each $c_{i}=0$ also.
 
 Consider the following example.
 
-\begin{example}{Adding to a linearly independent set}{addinglinind}
+\begin{example}{Adding to a linearly independent set}{adding-lin-ind}
 Let $S \subseteq M_{22}$ be a linearly independent set given by 
 \[
 S  = \set{\begin{mymatrix}{rr}
@@ -212,7 +212,7 @@ is also linearly independent.
 \begin{solution}
 Instead of writing a linear combination of the matrices which equals
 $0$ and showing that the coefficients must equal $0$, we can instead
-use Lemma \ref{lem:addinglinearlyindependent}.
+use Lemma \ref{lem:adding-linearly-independent}.
 
 To do so, we show that 
 \[
@@ -257,5 +257,5 @@ a & b \\
 \end{mymatrix}
 \end{eqnarray*}
 
-Clearly there are no possible $a,b$ to make this equation true. Hence the new matrix does not lie in the span of the matrices in $S$. By Lemma \ref{lem:addinglinearlyindependent}, $R$ is also linearly independent.
+Clearly there are no possible $a,b$ to make this equation true. Hence the new matrix does not lie in the span of the matrices in $S$. By Lemma \ref{lem:adding-linearly-independent}, $R$ is also linearly independent.
 \end{solution}

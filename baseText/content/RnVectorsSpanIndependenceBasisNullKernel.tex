@@ -2,7 +2,7 @@
 
 We begin this section with a new definition.
 
-\begin{definition}{Row and column space}{rowcolumnspace}
+\begin{definition}{Row and column space}{row-column-space}
 Let $A$ be an $m\times n$ matrix. The \textbf{column space}\index{column space}\index{matrix!column space} of $A$, written $\func{col}(A)$, is the
 span of the columns. The \textbf{row space}\index{row space}\index{matrix!row space} of $A$, written $\func{row}(A)$, is the span of the rows.
 \end{definition}
@@ -10,7 +10,7 @@ span of the columns. The \textbf{row space}\index{row space}\index{matrix!row sp
 Using the {\rref}, we can obtain an efficient description of the row and column space of
 a matrix. Consider the following lemma.
 
-\begin{lemma}{Effect of row operations on row space}{rowoperationsrowspace}
+\begin{lemma}{Effect of row operations on row space}{row-operations-row-space}
 Let $A$ and $B$ be $m\times n$ matrices such that $A$ can be carried to $B$ by elementary row $\mat{\mbox{column}}$ operations. Then $\func{row}(A)=\func{row}(B)$ $\mat{\func{col}(A)=\func{col}(B)}$.
 \end{lemma}
 
@@ -72,7 +72,7 @@ Therefore, $\func{row}(B)=\func{row}(A)$.
 
 Consider the following lemma. 
 
-\begin{lemma}{Row space of a {\ef} matrix}{echelonformrowspace}
+\begin{lemma}{Row space of a {\ef} matrix}{echelon-form-row-space}
 Let $A$ be an $m \times n$ matrix and let $R$ be its {\ef}. Then the nonzero rows of $R$ form a basis of $\func{row}(R)$, and consequently of $\func{row}(A)$. 
 \end{lemma}
 
@@ -82,7 +82,7 @@ space as the span of fewer columns than this. A variation of the previous lemma 
 
 Before proceeding to an example of this concept, we revisit the definition of rank. 
 
-\begin{definition}{Rank of a matrix}{rankrowspace}
+\begin{definition}{Rank of a matrix}{rank-row-space}
 Previously, we defined $\func{rank}(A)$ to be the number of leading entries in the {\ef} of $A$. Using an understanding of dimension and row space, we can now define rank as follows:
 \[
 \mbox{rank}(A) = \dim(\func{row}(A))
@@ -91,7 +91,7 @@ Previously, we defined $\func{rank}(A)$ to be the number of leading entries in t
 
 Consider the following example. 
 
-\begin{example}{Rank, column and row space}{rankcolumnrowspace}
+\begin{example}{Rank, column and row space}{rank-column-row-space}
 Find the rank of the following matrix and describe the column and row spaces.
 \begin{equation*}
 A = 
@@ -114,7 +114,7 @@ The {\rref} of $A$ is
 \end{equation*}
 Therefore, the rank is $2$.
 
-Notice that the first two columns of $R$ are pivot columns. By the discussion following Lemma \ref{lem:echelonformrowspace}, we find the corresponding columns of $A$, in this case the first two columns. Therefore a basis for $\func{col}(A)$ is given by
+Notice that the first two columns of $R$ are pivot columns. By the discussion following Lemma \ref{lem:echelon-form-row-space}, we find the corresponding columns of $A$, in this case the first two columns. Therefore a basis for $\func{col}(A)$ is given by
 \[
 \set{\begin{mymatrix}{r}
 1 \\ 
@@ -146,7 +146,7 @@ example, consider the third column of the original matrix. It can be written as 
 \end{mymatrix} 
 \end{equation*}
 
-What about an efficient description of the row space? By Lemma \ref{lem:echelonformrowspace} we know that the nonzero rows of $R$ create a basis of $\func{row}(A)$.  For the above matrix, the row space equals 
+What about an efficient description of the row space? By Lemma \ref{lem:echelon-form-row-space} we know that the nonzero rows of $R$ create a basis of $\func{row}(A)$.  For the above matrix, the row space equals 
 \[
 \func{row}(A) = 
 \func{span} \set{
@@ -163,7 +163,7 @@ Notice that the column space of $A$ is given as the span of columns of the origi
 
 Consider another example.
 
-\begin{example}{Rank, column and row space}{rankcolumnrowspace2}
+\begin{example}{Rank, column and row space}{rank-column-row-space2}
 Find the rank of the following matrix and describe the
 column and row spaces.
 \begin{equation*}
@@ -223,19 +223,19 @@ Notice that the first three columns of the {\rref} are pivot columns. The column
 \end{solution}
 
 Consider the solution given above for Example
-\ref{exa:rankcolumnrowspace2}, where the rank of $A$ equals
+\ref{exa:rank-column-row-space2}, where the rank of $A$ equals
 $3$. Notice that the row space and the column space each had dimension
 equal to $3$. It turns out that this is not a coincidence, and this
 essential result is referred to as the Rank Theorem and is given
 now. Recall that we defined $\func{rank}(A) = \func{dim}(\func{row}(A))$. 
 
-\begin{theorem}{Rank theorem}{ranktheorem}
+\begin{theorem}{Rank theorem}{rank-theorem}
 Let $A$ be an $m \times n$ matrix. Then $\func{dim}(\func{col} (A))$, the dimension of the column space, is equal to the dimension of the row space, $\func{dim}(\func{row}(A))$.
 \end{theorem}
 
 The following statements all follow from the Rank Theorem.
 
-\begin{corollary}{Results of the rank theorem}{ranktheorem}
+\begin{corollary}{Results of the rank theorem}{rank-theorem}
 Let $A$ be a matrix. Then the following are true:
 \begin{enumerate}
 \item
@@ -252,7 +252,7 @@ $\func{rank}(A) = \func{rank}(BA) = \func{rank}(AC)$.
 
 Consider the following example.
 
-\begin{example}{Rank of the transpose}{ranktranspose}
+\begin{example}{Rank of the transpose}{rank-transpose}
 Let \[
 A = 
 \begin{mymatrix}{rr}
@@ -303,7 +303,7 @@ You can see that $\func{rank}(A^T) = 2$, the same as $\func{rank}(A)$.
 
 We now define what is meant by the null space of a general $m\times n$ matrix.
 
-\begin{definition}{Null space, or kernel, of $A$}{nullspace}
+\begin{definition}{Null space, or kernel, of $A$}{null-space}
 The null space of a matrix $A$, also referred to as the kernel of $A$, 
 is defined as follows.\index{kernel}\index{matrix!kernel}%
 \index{null space}\index{matrix!null space}
@@ -338,7 +338,7 @@ while $\func{null} \tup{A} $ is a subset of $\R^{n}$.
 
 It turns out that the null space and image of $A$ are both subspaces. Consider the following example.
 
-\begin{example}{Null space}{nullsubspace}
+\begin{example}{Null space}{null-subspace}
 Let $A$ be an $m\times n$ matrix. Then the null space of $A$, $\func{null}(A)$ is 
 a subspace of $\R^n$.
 \end{example}
@@ -369,13 +369,13 @@ We now wish to find a way to describe $\func{null}(A)$ for a matrix $A$. However
 terminology being used, as $\func{null} \tup{A} $ is simply the solution
 to the system $A\vect{x}=\vect{0}$.
 
-\begin{theorem}{Basis of $\func{null}(A)$}{nullspacebasis}
+\begin{theorem}{Basis of $\func{null}(A)$}{null-space-basis}
 Let $A$ be an $m \times n$ matrix such that $\func{rank}(A) = r$. Then the system $A\vect{x}=\vect{0}_m$ has $n-r$ basic solutions, providing a basis of $\func{null}(A)$ with $\dim(\func{null}(A))=n-r$.
 \end{theorem}
 
 Consider the following example. 
 
-\begin{example}{Null space of $A$}{nullspace}
+\begin{example}{Null space of $A$}{null-space}
 Let
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
@@ -459,7 +459,7 @@ the \textbf{original matrix}, and we get
 
 Here is a larger example, but the method is entirely similar.
 
-\begin{example}{Null space of $A$}{nullspace2}
+\begin{example}{Null space of $A$}{null-space2}
 Let
 \begin{equation*}
 A=\begin{mymatrix}{rrrrr}
@@ -564,13 +564,13 @@ The dimension of the null space of a matrix is called the \textbf{nullity}\index
 
 From our observation above we can now state an important theorem.
 
-\begin{theorem}{Rank and nullity}{ranknullity}
+\begin{theorem}{Rank and nullity}{rank-nullity}
 Let $A$ be an $m\times n$ matrix. Then $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) =n$. 
 \end{theorem}
 
-Consider the following example, which we first explored above in Example \ref{exa:nullspace}
+Consider the following example, which we first explored above in Example \ref{exa:null-space}
 
-\begin{example}{Rank and nullity}{ranknullity}
+\begin{example}{Rank and nullity}{rank-nullity}
 Let
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
@@ -585,7 +585,7 @@ Find $\func{rank}\tup{A}$ and $\dim( \func{null}\tup{A})$.
 
 \medskip
 \begin{solution}
-In the above Example \ref{exa:nullspace} we determined that the {\rref} of $A$ is given by 
+In the above Example \ref{exa:null-space} we determined that the {\rref} of $A$ is given by 
 \[
 \begin{mymatrix}{rrr}
 1 & 0 & 3 \\ 
@@ -604,7 +604,7 @@ Therefore the rank of $A$ is $2$. We also determined that the null space of $A$ 
 }
 \]
 
-Therefore the nullity of $A$ is $1$. It follows from Theorem \ref{thm:ranknullity} that $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) = 2 + 1 = 3$, which is the number of columns of $A$.
+Therefore the nullity of $A$ is $1$. It follows from Theorem \ref{thm:rank-nullity} that $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) = 2 + 1 = 3$, which is the number of columns of $A$.
 \end{solution} 
 
 We conclude this section with two similar, and important, theorems.

@@ -9,7 +9,7 @@
 In this section we will consider the case where the linear transformation is not necessarily an
 isomorphism. First consider the following important definition.
 
-\begin{definition}{Kernel and image}{kernelimage}
+\begin{definition}{Kernel and image}{kernel-image}
 Let $V$ and $W$ be subspaces of $\R^n$ and let $T:V\mapsto W$ be a linear transformation. Then the image of $T$
 denoted as $\func{im}\tup{T} $ is defined to be the set 
 \index{linear map!image}
@@ -29,7 +29,7 @@ The kernel of $T$, written $\ker \tup{T} $, consists of all $\vect{v}\in V$ such
 It follows that $\func{im}\tup{T} $ and $\ker \tup{T} $
 are subspaces of $W$ and $V$ respectively.
 
-\begin{proposition}{Kernel and image as subspaces}{kernelimagesubspaces}
+\begin{proposition}{Kernel and image as subspaces}{kernel-image-subspaces}
 Let $V, W$ be subspaces of $\R^n$ and let $T:V\rightarrow W$ be a linear transformation. Then $\ker \tup{
 T} $ is a subspace of $V$ and $\func{im}\tup{T} $ is a
 subspace of $W$.
@@ -55,7 +55,7 @@ and this last vector is in $\func{im}\tup{T} $ by definition.
 
 We will now examine how to find the kernel and image of a linear transformation and describe the basis of each. 
 
-\begin{example}{Kernel and image of a linear transformation}{kernelimage}
+\begin{example}{Kernel and image of a linear transformation}{kernel-image}
 Let $T: \R^4 \mapsto \R^2$ be defined by
 \[
 T \begin{mymatrix}{c}
@@ -171,14 +171,14 @@ This set is clearly not linearly independent. By removing unnecessary vectors fr
 
 Recall that a linear transformation $T$ is called one to one if and only if $T(\vect{x}) = \vect{0}$ implies $\vect{x} = \vect{0}$. Using the concept of kernel, we can state this theorem in another way.
 
-\begin{theorem}{One to one and kernel}{onetoonekernel}
+\begin{theorem}{One to one and kernel}{one-to-one-kernel}
 Let $T$ be a linear transformation where $\func{ker}(T)$ is the kernel of $T$. Then $T$ is one to one if and only if $\func{ker}(T)$ consists of \textbf{only} the zero vector. 
 \end{theorem}
 
 A major result is the relation between the dimension of the kernel and
 dimension of the image of a linear transformation. In the previous example $\func{ker}(T)$ had dimension $2$, and $\func{im}(T)$ also had dimension of $2$. Is it a coincidence that the dimension of $\Mat_{22}$ is $4 = 2 + 2$? Consider the following theorem. 
 
-\begin{theorem}{Dimension of kernel and image}{dimensionkernelimage}
+\begin{theorem}{Dimension of kernel and image}{dimension-kernel-image}
 Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are subspaces of $\R^n$. Suppose the dimension of $V$ is $m$. Then 
 \[
 m=\dim \tup{\ker \tup{T} } +\dim \tup{\func{im}\tup{
@@ -190,7 +190,7 @@ T} }
 \end{theorem}
 
 \begin{proof}
-From Proposition \ref{prop:kernelimagesubspaces}, $\func{im}\tup{T} $ is a subspace of $W.$ We know that there exists a basis for $\func{im}\tup{T}$, $\set{T(\vect{v}
+From Proposition \ref{prop:kernel-image-subspaces}, $\func{im}\tup{T} $ is a subspace of $W.$ We know that there exists a basis for $\func{im}\tup{T}$, $\set{T(\vect{v}
 _{1}),\cdots ,T(\vect{v}_{r})} . $ Similarly, there is a basis for $\ker
 \tup{T} ,\set{\vect{u}_{1},\cdots ,\vect{u}_{s}} $. Then if $
 \vect{v}\in V,$ there exist scalars $c_{i}$ such that 
@@ -264,7 +264,7 @@ T} $ equals $T^{-1}$.
 \end{example}
 
 \begin{solution}
-Since the two columns of the above matrix are linearly independent, we conclude that $\func{dim}(\func{im}(T)) = 2$ and therefore $\func{dim}(\func{ker}(T)) = 2 - \func{dim}(\func{im}(T)) = 2-2 = 0$ by Theorem \ref{thm:dimensionkernelimage}. Then by Theorem \ref{thm:onetoonekernel} it follows that $T$ is one to one. 
+Since the two columns of the above matrix are linearly independent, we conclude that $\func{dim}(\func{im}(T)) = 2$ and therefore $\func{dim}(\func{ker}(T)) = 2 - \func{dim}(\func{im}(T)) = 2-2 = 0$ by Theorem \ref{thm:dimension-kernel-image}. Then by Theorem \ref{thm:one-to-one-kernel} it follows that $T$ is one to one. 
 
 Thus $T$ is an isomorphism of $\R^{2}$ and the two dimensional subspace of $\R^{3}$ which is the
 span of the columns of the given matrix. Now in particular, 

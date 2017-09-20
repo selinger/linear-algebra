@@ -14,7 +14,7 @@ In this section we consider the idea of an abstract vector space. A vector space
 something which has two operations satisfying the following vector space
 axioms.
 
-\begin{definition}{Vector space}{vectorspace}
+\begin{definition}{Vector space}{vector-space}
 A vector space\index{vector space} $V$ is a set of vectors with two operations defined, addition and scalar multiplication, which satisfy the axioms of addition and scalar multiplication. 
 \end{definition}
 
@@ -25,7 +25,7 @@ It is important to note that we have seen much of this content before, in terms 
 
 In the following definition, we will choose scalars $a,b$ to be real numbers and are thus dealing with \textit{real} vector spaces. However, we could also choose scalars which are complex numbers. In this case, we would call the vector space $V$ complex. 
 
-\begin{definition}{Axioms of addition}{vectorspaceaxiomsaddition}
+\begin{definition}{Axioms of addition}{vector-space-axioms-addition}
 Let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they satisfy the following axioms of addition:
 
 \begin{itemize}
@@ -52,7 +52,7 @@ Let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they s
 \end{itemize}
 \end{definition}
 
-\begin{definition}{Axioms of scalar multiplication}{vectorspaceaxiomsscalarmult}
+\begin{definition}{Axioms of scalar multiplication}{vector-space-axioms-scalar-mult}
 Let $a, b \in \R$ and let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they satisfy the following axioms of scalar multiplication:
 
 \begin{itemize}
@@ -82,7 +82,7 @@ a \tup{b \vect{v}} = (a b) \vect{v}
 
 Consider the following example, in which we prove that $\R^n$ is in fact a vector space.
 
-\begin{example}{$\R^n$}{Rnvectorspace}
+\begin{example}{$\R^n$}{Rn-vector-space}
 $\R^n$, under the usual operations of vector addition and scalar multiplication, is a vector space.
 \end{example}
 
@@ -507,7 +507,7 @@ By the above proofs, it is clear that $\R^n$ satisfies the vector space axioms. 
 
 We now consider some examples of vector spaces. 
 
-\begin{example}{Vector space of polynomials}{vectorspacepoly}
+\begin{example}{Vector space of polynomials}{vector-space-poly}
 Let $\Poly_2$ be the set of all polynomials of at most degree $2$ as well as the zero polynomial. Define addition to be the standard addition of polynomials, and scalar multiplication the usual multiplication of a polynomial by a number. Then $\Poly_2$ is a vector space. 
 \end{example}
 
@@ -628,7 +628,7 @@ Since the above axioms hold, we know that $\Poly_2$ as described above is a vect
 
 Another important example of a vector space is the set of all matrices of the same size. 
 
-\begin{example}{Vector space of matrices}{vectorspacematrices}
+\begin{example}{Vector space of matrices}{vector-space-matrices}
 Let $\Mat_{2,3}$ be the set of all $2 \times 3$ matrices. Using the usual operations of matrix addition and scalar multiplication, show that $\Mat_{2,3}$ is a vector space. 
 \end{example}
 
@@ -685,7 +685,7 @@ While here we proved that the set of all $2 \times 3$ matrices is a vector space
 
 We now examine an example of a set that does not satisfy all of the above axioms, and is therefore \textit{not} a vector space. 
 
-\begin{example}{Not a vector space}{notvectorspace}
+\begin{example}{Not a vector space}{not-vector-space}
 Let $V$ denote the set of $2 \times 3$ matrices. Let addition in $V$ be defined by $A + B = A$ for matrices $A,B$ in $V$. Let scalar multiplication in $V$ be the usual scalar multiplication of matrices. Show that $V$ is not a vector space.
 \end{example}
 
@@ -728,7 +728,7 @@ It follows that $A+B \neq B+A$. Therefore addition as defined for $V$ is not com
 
 Consider another example of a vector space. 
 
-\begin{example}{Vector space of functions}{vectorspacefunction}
+\begin{example}{Vector space of functions}{vector-space-function}
 Let $S$ be a nonempty set and define $\Func_S$ to be the set of \textit{real} functions
 defined on $S$. In other words, we write $\Func_S: S \mapsto \R$. Letting $a,b,c$ be scalars and $f,g,h$ functions, the
 vector operations are defined as
@@ -837,7 +837,7 @@ It follows that $V$ satisfies all the required axioms and is a vector space.
 
 Consider the following important theorem.
 
-\begin{theorem}{Uniqueness}{axiomuniqueness}
+\begin{theorem}{Uniqueness}{axiom-uniqueness}
 In any vector space, the following are true:
 \begin{enumerate}
 \item

@@ -1,6 +1,6 @@
 \subsection{Finding determinants using row operations}
 
-Theorems \ref{thm:switchingrows}, \ref{thm:multiplyingrowbyscalar} and \ref{thm:addingmultipleofrow} illustrate 
+Theorems \ref{thm:switching-rows}, \ref{thm:multiplying-row-by-scalar} and \ref{thm:adding-multiple-of-row} illustrate 
 how row operations affect the determinant of a matrix. In this section, we look at two examples where row operations are 
 used to find the determinant of a large matrix. Recall that when working with large matrices, Laplace Expansion
 is effective but timely, as there are many steps involved. This section provides useful tools for
@@ -9,7 +9,7 @@ an alternative method. By first applying row operations, we can obtain a simpler
 While working through questions such as these, it is useful to record your row operations as you go along. Keep this in mind
 as you read through the next example. 
 
-\begin{example}{Finding a determinant}{findingdeterminant}
+\begin{example}{Finding a determinant}{finding-determinant}
 Find the determinant of the matrix
 \begin{equation*}
 A=\begin{mymatrix}{rrrr}
@@ -33,12 +33,12 @@ B=\begin{mymatrix}{rrrr}
 \end{mymatrix}
 \end{equation*}
 Notice that the only row operation we have done so far is adding a multiple 
-of a row to another row. Therefore, by Theorem \ref{thm:addingmultipleofrow}, $\det \tup{B} = \det \tup{A}.$ 
+of a row to another row. Therefore, by Theorem \ref{thm:adding-multiple-of-row}, $\det \tup{B} = \det \tup{A}.$ 
 
 At this stage, you could use Laplace Expansion to find $\det \tup{B}$. However, we will continue with row operations 
 to find an even simpler matrix to work with.
 
-Add $-3$ times the third row to the second row. By Theorem \ref{thm:addingmultipleofrow} this does not change the value of
+Add $-3$ times the third row to the second row. By Theorem \ref{thm:adding-multiple-of-row} this does not change the value of
 the determinant. Then, multiply the fourth row by $-3$. This results in the matrix
 \begin{equation*}
 C=\begin{mymatrix}{rrrr}
@@ -56,7 +56,7 @@ $\det \tup{A} = \tup{-\frac{1}{3}} \det \tup{C}$. Again, you could use Laplace E
 we will continue with row operations.
 
 Now replace the add $2$ times the third row to the fourth row. This does not change the
-value of the determinant by Theorem \ref{thm:addingmultipleofrow}. Finally switch the third
+value of the determinant by Theorem \ref{thm:adding-multiple-of-row}. Finally switch the third
 and second rows. This causes the determinant to be multiplied by $-1.$ Thus $\det \tup{C} = -\det \tup{D} $ where
 \begin{equation*}
 D=\begin{mymatrix}{rrrr}
@@ -84,13 +84,13 @@ and so  $\det \tup{A} =\tup{\frac{1}{3}} \tup{1485}
 
 You can see that by using row operations, we can simplify a matrix
 to the point where Laplace Expansion involves only a few steps. In Example
-\ref{exa:findingdeterminant}, we also could have continued until the matrix was in 
+\ref{exa:finding-determinant}, we also could have continued until the matrix was in 
 upper triangular form, and taken the product of the entries on the main diagonal. Whenever 
 computing the determinant, it is useful to consider all the possible methods and tools.
 
 Consider the next example.
 
-\begin{example}{Find the determinant}{finddeterminant}
+\begin{example}{Find the determinant}{find-determinant}
 Find the determinant of the matrix
 \begin{equation*}
 A = \begin{mymatrix}{rrrr}
@@ -115,7 +115,7 @@ B = \begin{mymatrix}{rrrr}
 0 & -10 & -8 & -4
 \end{mymatrix} 
 \end{equation*}
-By Theorem \ref{thm:addingmultipleofrow}, $\det \tup{A} = \det \tup{B}$. 
+By Theorem \ref{thm:adding-multiple-of-row}, $\det \tup{A} = \det \tup{B}$. 
 
 Remember you can work with the columns also. Take $-5$
 times the fourth column and add to the second column. This yields
@@ -127,7 +127,7 @@ C = \begin{mymatrix}{rrrr}
 0 & 10 & -8 & -4
 \end{mymatrix}
 \end{equation*}
-By Theorem \ref{thm:addingmultipleofrow} $\det \tup{A} = \det \tup{C}$. 
+By Theorem \ref{thm:adding-multiple-of-row} $\det \tup{A} = \det \tup{C}$. 
 
 Now take $-1$ times the third row and add to
 the top row. This gives.
@@ -139,7 +139,7 @@ D = \begin{mymatrix}{rrrr}
 0 & 10 & -8 & -4
 \end{mymatrix}
 \end{equation*}
-which by Theorem \ref{thm:addingmultipleofrow} has the same determinant as $A$.
+which by Theorem \ref{thm:adding-multiple-of-row} has the same determinant as $A$.
 
 Now, we can find $\det \tup{D}$ by expanding along the first column as follows. You can see that there will be only one non zero term.
 \begin{equation*}

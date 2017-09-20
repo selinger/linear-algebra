@@ -2,7 +2,7 @@
 
 The goal of this section is to develop an understanding of a subspace of $\R^n$. Before a precise definition is considered, we first examine the subspace test given below.
 
-\begin{theorem}{Subspace test}{subspacetest}
+\begin{theorem}{Subspace test}{subspace-test}
 A subset $V$ of $\R^n$ is a subspace of $\R^n$ if 
 \begin{enumerate}
 \item the zero vector of $\R^n$, $\vect{0}_n$, is in $V$;
@@ -22,7 +22,7 @@ the origin, or the entire space $\R^{3}$.
 
 Consider the following example of a line in $\R^3$. 
 
-\begin{example}{Subspace of $\R^3$}{linesubspace}
+\begin{example}{Subspace of $\R^3$}{line-subspace}
 In $\R^3$, the line $L$ through the origin that is
 parallel to the vector
 ${\vect{d}}= \begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix}$ 
@@ -72,7 +72,7 @@ finite collection vectors in that subspace. It turns out that in
 $\R^{n}$, a subspace is exactly the span of finitely many of
 its vectors.
 
-\begin{theorem}{Subspaces are spans}{subspacesarespans}
+\begin{theorem}{Subspaces are spans}{subspaces-are-spans}
 Let $V$ be a nonempty collection of vectors in $\R^{n}.$ Then $V$ is a subspace of $\R^{n}$ if and only if there
 exist vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ in $V$ such that 
 \[
@@ -95,7 +95,7 @@ If $V=\func{span}\set{\vect{u}_{1},\vect{u}_{2}}$, we are
 done. Otherwise, pick $\vect{u}_{3}$ not in $\func{span}\set{\vect{u}_{1},\vect{u}_{2}} .$ Continue this way.
 Note that since $V $ is a subspace, these spans are each contained in
 $V$.  The process must stop with $\vect{u}_{k}$ for some $k\leq n$
-by Corollary \ref{cor:lineardependenceRn}, and thus $V=\func{span}\set{\vect{u}_{1},\cdots ,
+by Corollary \ref{cor:linear-dependence-Rn}, and thus $V=\func{span}\set{\vect{u}_{1},\cdots ,
 \vect{u}_{k}}$.
 
 Now suppose $V=\func{span}\set{\vect{u}_{1},\cdots ,
@@ -122,7 +122,7 @@ Since the vectors $\vect{u}_i$ we constructed in the proof above are not in the 
 of the previous vectors (by definition), they must be linearly independent and thus we
 obtain the following corollary.
 
-\begin{corollary}{Subspaces are spans of independent vectors}{subspacesarespansindependentvectors}
+\begin{corollary}{Subspaces are spans of independent vectors}{subspaces-are-spans-independent-vectors}
 If $V$ is a subspace of $\R^{n},$ then there exist linearly independent 
 vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ in $V$ such
 that $V=\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $.
@@ -132,7 +132,7 @@ In summary, subspaces of $\R^{n}$ consist of spans of finite,
 linearly independent collections of vectors of $\R^{n}$.  Such
 a collection of vectors is called a basis.\index{basis}
 
-\begin{definition}{Basis of a subspace}{subspacebasis}
+\begin{definition}{Basis of a subspace}{subspace-basis}
 Let $V$ be a subspace of $\R^{n}$. Then $\set{
 \vect{u}_{1},\cdots ,\vect{u}_{k}} $ is a \textbf{basis} for $V$ if the following two conditions hold.\index{basis}\index{vectors!basis}
 
@@ -147,7 +147,7 @@ Note the plural of basis is \textbf{bases}.\index{subspace!basis}
 
 The following is a simple but very useful example of a basis, called the standard basis.
 
-\begin{definition}{Standard basis of $\R^n$}{standardbasis}
+\begin{definition}{Standard basis of $\R^n$}{standard-basis}
 Let $\vect{e}_i$ be the vector in $\R^n$ which has a $1$ in the $i^{th}$ entry and zeros elsewhere, that is the $i^{th}$ column of the identity matrix. Then the collection $\set{\vect{e}_1, \vect{e}_2, \cdots, \vect{e}_n
 }$ is a basis for
 $\R^n$ and is called the standard basis\index{standard basis} of $\R^n$.
@@ -157,7 +157,7 @@ The main theorem about bases is not only they exist, but that they
 must be of the same size. To show this, we will need the the following
 fundamental result, called the Exchange Theorem.
 
-\begin{theorem}{Exchange theorem}{exchangetheorem}
+\begin{theorem}{Exchange theorem}{exchange-theorem}
 Suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{r}} $ is a
 linearly independent set of vectors in $\R^n$, and each
 $\vect{u}_{k}$ is contained in $\func{span}\set{\vect{v}_{1},\cdots
@@ -174,7 +174,7 @@ $, there exist scalars $a_{ij}$ such that
 \end{equation*}
 Suppose for a contradiction that $s<r$. Then the matrix $A = \mat{
 a_{ij} }$ has fewer rows, $s$ than columns, $r$. Then the system
-$AX=0$ has %Theorem \ref{thm:rankhomogeneoussolutions} 
+$AX=0$ has %Theorem \ref{thm:rank-homogeneous-solutions} 
 a non trivial solution $\vect{d}$, that is there is a  $\vect{d}\neq \vect{0}$ such that  $A\vect{d}=\vect{0}$. In other
 words, 
 \begin{equation*}
@@ -198,7 +198,7 @@ Let $V$ be a subspace of $\R^{n}$ with two bases $B_1$ and $B_2$. Suppose $B_1$ 
 \end{theorem}
 
 \begin{proof}
-This follows right away from Theorem \ref{thm:exchangetheorem}. Indeed
+This follows right away from Theorem \ref{thm:exchange-theorem}. Indeed
 observe that $B_1 = \set{
 \vect{u}_{1},\cdots ,\vect{u}_{s}} $ is a spanning set for $V$ while $
 B_2 = \set{\vect{v}_{1},\cdots ,\vect{v}_{r}} $ is linearly
@@ -216,7 +216,7 @@ is defined to be the number of vectors in a basis.\index{dimension}\index{subspa
 
 The next result follows.
 
-\begin{corollary}{Dimension of $\R^n$}{dimensionRn}
+\begin{corollary}{Dimension of $\R^n$}{dimension-Rn}
 The dimension of $\R^{n}$ is $n.$ 
 \end{corollary}
 
@@ -227,7 +227,7 @@ has $n$ vectors. Such a basis is the standard basis $\set{\vect{e}_{1},\cdots , 
 
 Consider the following example.
 
-\begin{example}{Basis of subspace}{basissubspace}
+\begin{example}{Basis of subspace}{basis-subspace}
 Let 
 \[ V=\set{
 \begin{mymatrix}{c} a\\ b\\ c\\ d\end{mymatrix}\in\R^4
@@ -302,7 +302,7 @@ $V$ has dimension three.
 
 We continue by stating further properties of a set of vectors in  $\R^{n}$.
 
-\begin{corollary}{Linearly independent and spanning sets in  $\R^{n}$}{independentspanningRn}
+\begin{corollary}{Linearly independent and spanning sets in  $\R^{n}$}{independent-spanning-Rn}
 The following properties hold in $\R^{n}$:
 \begin{itemize}
 \item Suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is linearly independent. Then $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is a basis for $\R^{n}$. 
@@ -340,7 +340,7 @@ matrix
 \end{equation*}
 it follows $k\leq m<n$ and these $k$ pivot columns would be a basis
 for $\R^{n}$ having fewer than $n$ vectors, contrary to
-Corollary \ref{cor:dimensionRn}.
+Corollary \ref{cor:dimension-Rn}.
 
 Finally consider the third claim. If $\set{\vect{u}_{1},\cdots
 ,\vect{u}_{n}} $ is not linearly independent, then replace this
@@ -353,21 +353,21 @@ are the pivot columns of the matrix
 \end{equation*}
 Then $\set{\vect{u}_{i_{1}},\cdots ,\vect{u}_{i_{k}}} $ spans
 $\R^{n}$ and is linearly independent, so it is a basis having
-less than $n$ vectors again contrary to Corollary \ref{cor:dimensionRn}.
+less than $n$ vectors again contrary to Corollary \ref{cor:dimension-Rn}.
 \end{proof}
 
 The next theorem follows from the above claim.
 
-\begin{theorem}{Existence of basis}{existencebasis}
+\begin{theorem}{Existence of basis}{existence-basis}
 Let $V$ be a subspace of $\R^n$. Then there exists a basis of $V$ with 
  $\dim(V)\leq n$.
 \end{theorem}
 
-Consider Corollary \ref{cor:independentspanningRn} together with Theorem \ref{thm:existencebasis}. Let $\dim(V) = r$. Suppose there exists an independent set of vectors in $V$. If this set contains $r$ vectors, then it is a basis for $V$. If it contains less than $r$ vectors, then vectors can be added to the set to create a basis of $V$. Similarly, any spanning set of $V$ which contains more than $r$ vectors can have vectors removed to create a basis of $V$.
+Consider Corollary \ref{cor:independent-spanning-Rn} together with Theorem \ref{thm:existence-basis}. Let $\dim(V) = r$. Suppose there exists an independent set of vectors in $V$. If this set contains $r$ vectors, then it is a basis for $V$. If it contains less than $r$ vectors, then vectors can be added to the set to create a basis of $V$. Similarly, any spanning set of $V$ which contains more than $r$ vectors can have vectors removed to create a basis of $V$.
 
 We illustrate this concept in the next example.
 
-\begin{example}{Extending an independent set}{extendindependent}
+\begin{example}{Extending an independent set}{extend-independent}
 Consider the set $U$ given by 
 \[ U=\set{\left.\begin{mymatrix}{c} a\\ b\\ c\\ d\end{mymatrix}
 \in\R^4 \right\vert a-b=d-c }\]
@@ -452,7 +452,7 @@ _{1},\cdots ,\vect{w}_{m}} $.
 The following example illustrates how to carry out this shrinking process which will obtain a subset of a span
 of vectors which is linearly independent.
 
-\begin{example}{Subset of a span}{subsetbasis}
+\begin{example}{Subset of a span}{subset-basis}
 Let $W$ be the subspace 
 \begin{equation*}
 \limfunc{span}\set{\begin{mymatrix}{r}
@@ -536,12 +536,12 @@ is true for the matrix having the given vectors as columns.
 
 Consider the following theorems regarding a subspace contained in another subspace. 
 
-\begin{theorem}{Subset of a subspace}{subsetdimension}
+\begin{theorem}{Subset of a subspace}{subset-dimension}
 Let $V$ and $W$ be subspaces of $\R^n$, and suppose that $W\subseteq V$.
 Then  $\dim(W) \leq \dim(V)$ with equality when $W=V$.
 \end{theorem}
 
-\begin{theorem}{Extending a basis}{extendingbasis}
+\begin{theorem}{Extending a basis}{extending-basis}
 Let $W$ be any non-zero subspace $\R^{n}$ and let $W\subseteq V$
 where $V$ is also a subspace of $\R^{n}$. Then every basis of $W$
 can be extended to a basis for $V$.\index{extending a basis}
@@ -552,7 +552,7 @@ Not that the process will stop because the dimension of $V$ is no more than $n$.
 
 Consider the following example.
 
-\begin{example}{Extending a basis}{extendingbasis}
+\begin{example}{Extending a basis}{extending-basis}
 Let $V=\R^{4}$ and let 
 \begin{equation*}
 W=\func{span}\set{\begin{mymatrix}{c}

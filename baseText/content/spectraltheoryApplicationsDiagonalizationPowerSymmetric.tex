@@ -5,7 +5,7 @@ We already have seen how to use matrix diagonalization to compute
 powers of matrices. This requires computing eigenvalues of the matrix
 $A$, and finding an invertible matrix of eigenvectors $P$ such that
 $P^{-1}AP$ is diagonal. In this section we will see that if the matrix
-$A$ is symmetric (see Definition \ref{def:symmetricandskewsymmetric}),
+$A$ is symmetric (see Definition \ref{def:symmetric-and-skew-symmetric}),
 then we can actually find such a matrix $P$ that is an orthogonal
 matrix of eigenvectors. Thus $P^{-1}$ is simply its transpose
 $P^T$, and $P^TAP$ is diagonal. When this happens we say that $A$ is
@@ -15,7 +15,7 @@ $P^T$, and $P^TAP$ is diagonal. When this happens we say that $A$ is
 In fact this happens if and only if $A$ is a symmetric matrix as
 shown in the following important theorem.
 
-\begin{theorem}{Principal axis theorem}{principalaxis}
+\begin{theorem}{Principal axis theorem}{principal-axis}
 The following conditions are equivalent for an $n \times n$ matrix $A$:
 \begin{enumerate}
 \item $A$ is symmetric. 
@@ -39,7 +39,7 @@ eigenvectors of each eigenvalue to obtain an orthonormal set of eigenvectors.
 
 We demonstrate this in the following example. 
 
-\begin{example}{Orthogonal diagonalization of a symmetric matrix}{orthogonaldiagonalization}
+\begin{example}{Orthogonal diagonalization of a symmetric matrix}{orthogonal-diagonalization}
 Let $A=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & \vspace{0.05in}\frac{3}{2} & \vspace{0.05in}\frac{1}{2} \\
@@ -178,7 +178,7 @@ which is the desired diagonal matrix.
 
 We can now apply this technique to efficiently compute high powers of a symmetric matrix. 
 
-\begin{example}{Powers of a symmetric matrix}{powerssymmetricmatrix}
+\begin{example}{Powers of a symmetric matrix}{powers-symmetric-matrix}
 Let $A=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & \vspace{0.05in}\frac{3}{2} & \vspace{0.05in}\frac{1}{2} \\
@@ -188,7 +188,7 @@ Compute $A^7$.
 \end{example}
 
 \begin{solution}
-We found in Example \ref{exa:orthogonaldiagonalization} that $P^TAP=D$ is diagonal, where 
+We found in Example \ref{exa:orthogonal-diagonalization} that $P^TAP=D$ is diagonal, where 
 
 \begin{equation*}
 P= \begin{mymatrix}{ccc}

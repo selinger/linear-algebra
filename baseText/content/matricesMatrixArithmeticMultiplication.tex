@@ -9,7 +9,7 @@ of equations.
 
 First, we provide a formal definition of row and column vectors. 
 
-\begin{definition}{Row and column vectors}{rowandcolumnvectors}
+\begin{definition}{Row and column vectors}{row-and-column-vectors}
 Matrices of size $n\times 1$ or $1\times n$ are called \textbf{vectors}\index{vectors}. If $X$ is such a matrix, then we write $x_{i}$ to 
 denote the entry of $X$ in the $i^{th}$ row of a column matrix, or the $i^{th}$ column of a row matrix\index{vectors!column}. 
 
@@ -37,7 +37,7 @@ We may simply use the term \textbf{vector} throughout this text to refer to eith
 If we do so, the context will make it clear which we are referring to.
 
 In this chapter, we will again use the notion of linear combination of
-vectors as in  Definition \ref{def:linearcombination}.  In this context, a linear combination is a sum
+vectors as in  Definition \ref{def:linear-combination}.  In this context, a linear combination is a sum
 consisting of vectors multiplied by scalars.  For example,
 \begin{equation*}
 \begin{mymatrix}{r}
@@ -61,7 +61,7 @@ is a linear combination of three vectors.
 It turns out that we can express any system of linear equations as a linear combination of vectors. In fact,
 the vectors that we will use are just the columns of the corresponding augmented matrix! 
 
-\begin{definition}{The vector form of a system of linear equations}{vectorform}
+\begin{definition}{The vector form of a system of linear equations}{vector-form}
 Suppose we have a system of equations given by
 \begin{equation*}
 \begin{array}{c}
@@ -172,7 +172,7 @@ linear combination of the columns as illustrated above.
 Here is the formal definition of how to multiply an $m\times
 n $ matrix by an $ n\times 1 $ column vector.
 
-\begin{definition}{Multiplication of vector by matrix}{multiplicationvectormatrix}
+\begin{definition}{Multiplication of vector by matrix}{multiplication-vector-matrix}
 Let $A=\mat{a_{ij} }$ be an $m\times n$ matrix and let $X$
 be an $n\times 1$ matrix given by 
 \begin{equation*}
@@ -228,7 +228,7 @@ Note that multiplication of an $m \times n$ matrix and an $n \times 1$ vector pr
 
 Here is an example.
 
-\begin{example}{A vector multiplied by a matrix}{vectormultbymatrix}
+\begin{example}{A vector multiplied by a matrix}{vector-mult-by-matrix}
 Compute the product $AX$ for 
 \begin{equation*}
 A = \begin{mymatrix}{rrrr}
@@ -244,7 +244,7 @@ A = \begin{mymatrix}{rrrr}
 \end{equation*}
 \end{example}
 
-\begin{solution} We will use Definition \ref{def:multiplicationvectormatrix} to compute the product.
+\begin{solution} We will use Definition \ref{def:multiplication-vector-matrix} to compute the product.
 Therefore, we compute the product $AX$ as follows. 
 \begin{eqnarray*}
 & 1\begin{mymatrix}{r}
@@ -294,7 +294,7 @@ Therefore, we compute the product $AX$ as follows.
 Using the above operation, we can also write a system of linear equations in \textbf{matrix form}. In this form, 
 we express the system as a matrix multiplied by a vector. Consider the following definition.
 
-\begin{definition}{The matrix form of a system of linear equations}{matrixform}
+\begin{definition}{The matrix form of a system of linear equations}{matrix-form}
 Suppose we have a system of equations given by
 \begin{equation*}
 \begin{array}{c}
@@ -356,7 +356,7 @@ only when the entries $x_{1}, x_{2}, \cdots, x_{n}$ of the vector $X$ are soluti
 Now that we have examined how to multiply a matrix by a vector, we
 wish to consider the case where we multiply two matrices of more
 general sizes, although these sizes still need to be appropriate as we
-will see. For example, in Example \ref{exa:vectormultbymatrix}, we
+will see. For example, in Example \ref{exa:vector-mult-by-matrix}, we
 multiplied a $3 \times 4$ matrix by a $4 \times 1$ vector.  We want to
 investigate how to multiply other sizes of matrices.
 
@@ -379,7 +379,7 @@ of $B$ the two matrices are said to be
 \textbf{conformable}\index{matrix!conformable} and the product
 $AB$\index{matrix multiplication}  is obtained as follows.
 
-\begin{definition}{Multiplication of two matrices}{multiplicationoftwomatrices}
+\begin{definition}{Multiplication of two matrices}{multiplication-of-two-matrices}
  Let $A$ be an $m\times n$ matrix
 and let $B$ be an $n\times p$ matrix of the form
 \begin{equation*}
@@ -396,7 +396,7 @@ gives the $k^{th}$ column of $AB$.
 
 Consider the following example.
 
-\begin{example}{Multiplying two matrices}{multiplicationoftwomatrices}
+\begin{example}{Multiplying two matrices}{multiplication-of-two-matrices}
 Find $AB$ if possible.
 \begin{equation*}
 A = \begin{mymatrix}{rrr}
@@ -415,7 +415,7 @@ product is whether the multiplication is possible.  The first matrix
 has size $2\times 3$ and the second matrix has size $3\times 3$. The
 inside numbers are equal, so $A$ and $B$ are conformable matrices.
 According to the above discussion $AB$ will be a $2\times 3$ matrix.
-Definition \ref{def:multiplicationoftwomatrices} gives us a way to
+Definition \ref{def:multiplication-of-two-matrices} gives us a way to
 calculate each column of $AB$, as follows.
 \begin{equation*}
 \mat{\overset{
@@ -442,7 +442,7 @@ calculate each column of $AB$, as follows.
 1
 \end{mymatrix} }}}
 \end{equation*}
-You know how to multiply a matrix times a vector, using Definition \ref{def:multiplicationvectormatrix} for 
+You know how to multiply a matrix times a vector, using Definition \ref{def:multiplication-vector-matrix} for 
 each of the three columns. Thus
 \begin{equation*}
 \begin{mymatrix}{rrr}
@@ -462,7 +462,7 @@ each of the three columns. Thus
 Since vectors are simply $ n \times 1$ or $1 \times m$
 matrices, we can also multiply a vector by another vector. 
 
-\begin{example}{Vector times vector multiplication}{vectormultiplication}
+\begin{example}{Vector times vector multiplication}{vector-multiplication}
 Multiply if possible $\begin{mymatrix}{r}
 1 \\
 2 \\
@@ -474,7 +474,7 @@ Multiply if possible $\begin{mymatrix}{r}
 
 \begin{solution} In this case we are multiplying a matrix of size $3 \times 1$ by a matrix of size $1 \times
 4.$ The inside numbers match so the product is defined. Note that the product will be a matrix of size $3 \times 4$. 
-Using Definition \ref{def:multiplicationoftwomatrices}, we can compute this product as follows $\:$
+Using Definition \ref{def:multiplication-of-two-matrices}, we can compute this product as follows $\:$
 \begin{equation*}
 \begin{mymatrix}{r}
 1 \\
@@ -512,7 +512,7 @@ Using Definition \ref{def:multiplicationoftwomatrices}, we can compute this prod
 }
 \end{equation*}
 
-You can use Definition \ref{def:multiplicationvectormatrix} to verify that this product is
+You can use Definition \ref{def:multiplication-vector-matrix} to verify that this product is
 \begin{equation*}
 \begin{mymatrix}{cccc}
 1 & 2 & 1 & 0 \\
@@ -522,7 +522,7 @@ You can use Definition \ref{def:multiplicationvectormatrix} to verify that this 
 \end{equation*}
 \end{solution}
 
-\begin{example}{A multiplication which is not defined}{undefinedmatrixmultiplication}
+\begin{example}{A multiplication which is not defined}{undefined-matrix-multiplication}
 Find $BA$ if possible.
 \begin{equation*}
 B = \begin{mymatrix}{ccc}
@@ -542,7 +542,7 @@ do this multiplication.
 \end{solution}
 
 In this case, we say that the multiplication is not defined. 
-Notice that these are the same matrices which we used in Example \ref{exa:multiplicationoftwomatrices}.
+Notice that these are the same matrices which we used in Example \ref{exa:multiplication-of-two-matrices}.
 In this example, we tried to calculate $BA$ instead of $AB$. This demonstrates another property 
 of matrix multiplication. While the product $AB$ maybe be defined, we cannot assume that
 the product $BA$ will be possible. Therefore, it is important to always check that the product is defined
@@ -552,7 +552,7 @@ Earlier, we defined the zero matrix $0$ to be the matrix (of
 appropriate size) containing zeros in all entries.  Consider the
 following example for multiplication by the zero matrix.
 
-\begin{example}{Multiplication by the zero matrix}{multbyzeromatrix}
+\begin{example}{Multiplication by the zero matrix}{mult-by-zero-matrix}
 Compute the product $A0$ for the matrix
 \begin{equation*}
 A=

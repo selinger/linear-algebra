@@ -30,7 +30,7 @@ what point should we stop performing row operations? The answer is
 that we will stop performing row operations when the system of
 equations is in a special form called {\em {\ef}}, which we now define.
 
-\begin{definition}{\Ef}{echelonform}
+\begin{definition}{\Ef}{echelon-form}
   An entry of an augmented matrix is called a
   \textbf{leading entry}\index{leading entry} or
   \textbf{pivot entry}\index{pivot entry}
@@ -53,7 +53,7 @@ ladder. This is because an echelon form looks a bit like a ladder or
 staircase. Here are some examples of {\ef}s.
 
 
-\begin{example}{Matrices in {\ef}}{matricesnotrref}
+\begin{example}{Matrices in {\ef}}{matrices-not-rref}
   The following augmented matrices are in {\ef}. We have circled the
   pivot entries for clarity.
   \begin{equation*}
@@ -76,7 +76,7 @@ staircase. Here are some examples of {\ef}s.
   \end{equation*}
 \end{example}
 
-\begin{example}{Not in {\ef}}{matricesnotechelon}
+\begin{example}{Not in {\ef}}{matrices-not-echelon}
 The following augmented matrices are not in {\ef}. 
 
 \begin{equation*}
@@ -106,7 +106,7 @@ An augmented matrix can always be converted to {\ef} by using
 elementary row operations. The following algorithm shows how to do
 this.
 
-\begin{algorithm}{Gaussian elimination}{gaussianelimination}
+\begin{algorithm}{Gaussian elimination}{gaussian-elimination}
   This algorithm provides a method for using row operations to take a
   matrix to its {\ef} \eindex{\ef!algorithm}\index{Gaussian elimination}.
   We begin with the matrix in its original form.
@@ -133,7 +133,7 @@ linear equations. This works by first converting the system to {\ef},
 then using back substitution to find the solutions. The next few
 examples show how to do this.
 
-\begin{example}{Solving a system of equations: one solution}{systemwithonesoln}
+\begin{example}{Solving a system of equations: one solution}{system-with-one-soln}
   Solve the following system of equations:
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
@@ -153,7 +153,7 @@ examples show how to do this.
     \end{mymatrix}.
   \end{equation*}
   In order to find the solution(s) to this system, we first use
-  Algorithm~\ref{algo:gaussianelimination} to carry the augmented
+  Algorithm~\ref{algo:gaussian-elimination} to carry the augmented
   matrix to {\ef}. Notice that the first column is nonzero, so this is
   our first pivot column. The first entry in the first row, $1$, is
   the first pivot entry. We will use row operations to create zeros in
@@ -236,13 +236,13 @@ examples show how to do this.
 
   Finally, we note that $(x,y,z)=(-2,1,3)$ is the {\em only} solution
   to this system of equations. There cannot be any other solutions,
-  because by Theorem~\ref{thm:elementaryoperationsandsolns}, any
+  because by Theorem~\ref{thm:elementary-operations-and-solns}, any
   solution of the original system of equations would also have to be a
   solution of {\eqref{eqn:systemwithonesoln-1}}, and the back
   substitution leaves us no choice except $z=3$, $y=1$, and $x=-2$.
 \end{solution}
 
-\begin{example}{Solving a system of equations: no solution}{systemwithnosoln}
+\begin{example}{Solving a system of equations: no solution}{system-with-no-soln}
   Solve the following system of equations:
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
@@ -261,7 +261,7 @@ examples show how to do this.
       4 & -1 & -10 & 4      
     \end{mymatrix}.
   \end{equation*}
-  We use Algorithm~\ref{algo:gaussianelimination} to carry the
+  We use Algorithm~\ref{algo:gaussian-elimination} to carry the
   augmented matrix to {\ef}. The first column is nonzero and will be the
   first pivot column. We switch the first two rows to move a non-zero
   number into the pivot position:
@@ -306,7 +306,7 @@ examples show how to do this.
   system is inconsistent.
 \end{solution}
 
-\begin{example}{Solving a system of equations: an infinite set of solutions}{infinitesetofsoln}
+\begin{example}{Solving a system of equations: an infinite set of solutions}{infinite-set-of-soln}
   Solve the following system of equations:
   \begin{equation}
     \begin{array}{r@{~}c@{~}l}
@@ -393,11 +393,11 @@ examples show how to do this.
   \]
 \end{solution}
 
-In Example \ref{exa:infinitesetofsoln} the solution involved a
+In Example \ref{exa:infinite-set-of-soln} the solution involved a
 parameter. It may happen that the solution to a system involves more
 than one parameter, as shown in the following example.
 
-\begin{example}{Solving a system of equations: a two parameter set of solutions}{twoparametersetofsoln}
+\begin{example}{Solving a system of equations: a two parameter set of solutions}{two-parameter-set-of-soln}
   Solve the following system of equations:
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
@@ -469,7 +469,7 @@ than one parameter, as shown in the following example.
 \end{solution}
 
 In
-Examples~\ref{exa:systemwithonesoln}--\ref{exa:twoparametersetofsoln},
+Examples~\ref{exa:system-with-one-soln}--\ref{exa:two-parameter-set-of-soln},
 we have seem systems of equations with one solution, no solution, and
 infinitely many solutions with one parameter as well as two
 parameters. Moreover, in each case, we have been able to determine the
@@ -544,7 +544,7 @@ of equations. It is called the {\em rank} of the system.
   It is equal to the number of pivot variables.
 \end{definition}
 
-\begin{example}{Finding the rank of a matrix}{rankofamatrix}
+\begin{example}{Finding the rank of a matrix}{rank-of-a-matrix}
 Consider the matrix
 \begin{equation*}
 \begin{mymatrix}{rrr}
@@ -586,7 +586,7 @@ inconsistent (have no solutions).
 
 By refining the above argument, we get the following theorem:
 
-\begin{theorem}{Rank and solutions of consistent system of equations}{rankconsistentsolutions}
+\begin{theorem}{Rank and solutions of consistent system of equations}{rank-consistent-solutions}
   Consider a system of $m$ equations in $n$ variables, and assume that
   the coefficient matrix has rank $r$. Assume further that the system
   is consistent.

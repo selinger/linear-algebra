@@ -1,7 +1,7 @@
 \subsection{Cramer's rule}
 
 Another context in which the formula given in Theorem
-\ref{thm:inverseanddeterminant} is important is \textbf{Cramer's
+\ref{thm:inverse-and-determinant} is important is \textbf{Cramer's
 Rule}.  Recall that we can represent a system of linear equations in
 the form $AX=B$, where the solutions to this system are given by $X$.
 Cramer's Rule gives a formula for the solutions $X$ in the special
@@ -50,7 +50,7 @@ formula is known as Cramer's rule.
 
 We formally define this method now. 
 
-\begin{procedure}{Using Cramer's rule}{cramersrule}
+\begin{procedure}{Using Cramer's rule}{cramers-rule}
 Suppose $A$ is an $n\times n$ invertible matrix and we wish to solve the system 
 $AX=B$ for $X
 =\mat{x_{1},\cdots ,x_{n}} ^{T}.$ Then Cramer's rule says
@@ -72,7 +72,7 @@ b_n
 
 We illustrate this procedure in the following example.
 
-\begin{example}{Using Cramer's rule}{cramersrule}
+\begin{example}{Using Cramer's rule}{cramers-rule}
 Find $x,y,z$ if
 \begin{equation*}
 \begin{mymatrix}{rrr}
@@ -91,7 +91,7 @@ z
 \end{equation*}
 \end{example}
 
-\begin{solution} We will use method outlined in Procedure \ref{proc:cramersrule} to find the values for
+\begin{solution} We will use method outlined in Procedure \ref{proc:cramers-rule} to find the values for
 $x,y,z$ which give the solution to this system. 
 Let
 \begin{equation*}
@@ -194,7 +194,7 @@ Cramer's Rule gives you another tool to consider when solving a system of linear
 We can also use Cramer's Rule for systems of non linear equations. Consider the following system 
 where the matrix $A$ has functions rather than numbers for entries. 
 
-\begin{example}{Use Cramer's rule for non-constant matrix}{cramersrulenonconstantmatrix}
+\begin{example}{Use Cramer's rule for non-constant matrix}{cramers-rule-non-constant-matrix}
 Solve for $z$ if
 \begin{equation*}
 \begin{mymatrix}{ccc}

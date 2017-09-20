@@ -14,7 +14,7 @@ We begin with a lemma.
 
 Recall that we can form the image of an $m \times n$ matrix $A$ by
 $\func{im}\tup{A} = = \set{A\vect{x} : \vect{x} \in
-\R^n }$. Rephrasing Theorem \ref{thm:orthproj} using
+\R^n }$. Rephrasing Theorem \ref{thm:orth-proj} using
 the subspace $W=\func{im}\tup{A}$  gives the
 equivalence of an orthogonality condition with a minimization
 condition\index{orthogonality and minimization}. The following picture
@@ -54,7 +54,7 @@ Then
 
 We note a simple but useful observation.
 
-\begin{lemma}{Transpose and dot product}{transposeanddotprod}
+\begin{lemma}{Transpose and dot product}{transposeand-dot-prod}
 Let $A$ be an $m\times n$ matrix. Then 
 \begin{equation*}
 A\vect{x} \dotprod \vect{y} = \vect{x}\dotprod A^T\vect{y} 
@@ -69,7 +69,7 @@ This follows from the definitions:
 
 The next corollary gives the technique of least squares.
 
-\begin{corollary}{Least squares and normal equation}{normalEquation}
+\begin{corollary}{Least squares and normal equation}{normal-equation}
 A specific value of $\vect{x}$ which solves the problem of Theorem 
 \ref{thm:existenceminimizerhs} is obtained by solving the equation
 \begin{equation*}
@@ -81,7 +81,7 @@ Furthermore, there always exists a solution to this system of equations.
 \begin{proof} 
 For $\vect{x}$ the minimizer of Theorem \ref{thm:existenceminimizerhs}, $\tup{
 \vect{y}-A\vect{x}} \dotprod A \vect{u} =0$ for all $\vect{u} \in \R^{n}$ and from
-Lemma \ref{lem:transposeanddotprod}, this is the same as saying
+Lemma \ref{lem:transposeand-dot-prod}, this is the same as saying
 \begin{equation*}
 A^T\tup{\vect{y}-A\vect{x}} \dotprod \vect{u}=0
 \end{equation*}
@@ -269,7 +269,7 @@ y
 which is the same as the solution found above. 
 \end{solution}
 
-An important application of Corollary \ref{cor:normalEquation} is the
+An important application of Corollary \ref{cor:normal-equation} is the
 problem of finding the least squares regression
 line\index{regression line} in statistics.  Suppose you are given points in the $xy$ plane
 \begin{equation*}
@@ -306,7 +306,7 @@ y_{n}
 \end{mymatrix} \right} ^{2}
 \end{equation*}
 as small as possible. According to Theorem \ref{thm:existenceminimizerhs} and
-Corollary \ref{cor:normalEquation}, the best values for $m$ and $b$ occur as the
+Corollary \ref{cor:normal-equation}, the best values for $m$ and $b$ occur as the
 solution to 
 \begin{equation*}
 A^{T}A\begin{mymatrix}{c}
@@ -351,7 +351,7 @@ b=\frac{-\tup{\sum_{i=1}^{n}x_{i}} \sum_{i=1}^{n}x_{i}y_{i}+\tup{
 
 Consider the following example.
 
-\begin{example}{Least squares regression line}{leastSquaresLine}
+\begin{example}{Least squares regression line}{least-squares-line}
 Find the least squares regression line $\vect{y}=m\vect{x}+b$ for the following set of data points:
 \[ \set{(0,1), (1,2), (2,2), (3,4), (4,5) } \]
 \end{example}

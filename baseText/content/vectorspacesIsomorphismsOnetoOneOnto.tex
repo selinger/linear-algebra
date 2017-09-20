@@ -2,20 +2,20 @@
 
 Recall the following definitions, given here in terms of vector spaces.
 
-\begin{definition}{One to one}{onetoonevectorspace}
+\begin{definition}{One to one}{one-to-one-vector-space}
 Let $V, W$ be vector spaces with $\vect{v}_1, \vect{v}_2$ vectors in $V$. Then a linear transformation $T: V \mapsto W$ is called one to one if whenever $\vect{v}_1 \neq \vect{v}_2$ it follows that 
 \[
 T(\vect{v}_1) \neq T (\vect{v}_2)
 \]
 \end{definition}
 
-\begin{definition}{Onto}{ontovectorspace}
+\begin{definition}{Onto}{onto-vector-space}
 Let $V, W$ be vector spaces. Then a linear transformation $T: V \mapsto W$ is called onto if for all $\vect{w} \in \vect{W}$ there exists $\vect{v} \in V$ such that $T(\vect{v}) = \vect{w}$. 
 \end{definition}
 
 Recall that every linear transformation $T$ has the property that $T(\vect{0})=\vect{0}$. This will be necessary to prove the following useful lemma. 
 
-\begin{lemma}{One to one}{onetooneabstract}
+\begin{lemma}{One to one}{one-to-one-abstract}
 The assertion that a linear transformation $T$ is one to one is equivalent to
 saying that if $T(\vect{v})=\vect{0},$ then $\vect{v}=0.$ 
 \end{lemma}
@@ -35,7 +35,7 @@ shows that $\vect{v}-\vect{u}=0$ or in other words, $\vect{v}=\vect{u}$.
 
 Consider the following example.
 
-\begin{example}{One to one transformation}{onetoonegeneral}
+\begin{example}{One to one transformation}{one-to-one-general}
 Let $S:\Poly_2\to\Mat_{22}$ be a linear transformation
 defined by
 \[ S(ax^2+bx+c)
@@ -119,7 +119,7 @@ $T\begin{mymatrix}{cc} x & y \\ 0 & 0 \end{mymatrix}
 =\begin{mymatrix}{c} x \\ y \end{mymatrix}$,
 $T$  is onto.
 
-By Lemma \ref{lem:onetooneabstract} $T$ is one to one if and only if $T(A) = \vect{0} $ implies that $A = 0$ the zero matrix.
+By Lemma \ref{lem:one-to-one-abstract} $T$ is one to one if and only if $T(A) = \vect{0} $ implies that $A = 0$ the zero matrix.
 Observe that
 \[
 T \tup{\begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix} }
@@ -139,7 +139,7 @@ There exists a nonzero matrix $A$ such that $T(A) = \vect{0}$. It follows that $
 
 The following example demonstrates that a one to one transformation preserves linear independence.
 
-\begin{example}{One to one and independence}{preservesindependence}
+\begin{example}{One to one and independence}{preserves-independence}
 Let $V$ and $W$ be vector spaces and $T: V \mapsto W$ a linear
 transformation.
 Prove that if $T$ is one to one and
@@ -173,7 +173,7 @@ is independent.
 
 A similar claim can be made regarding onto transformations. In this case, an onto transformation preserves a spanning set.
 
-\begin{example}{Onto and spanning}{preservesspanning}
+\begin{example}{Onto and spanning}{preserves-spanning}
 Let $V$ and $W$ be vector spaces and $T:V\to W$ a linear
 transformation.
 Prove that if $T$ is onto and

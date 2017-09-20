@@ -2,7 +2,7 @@
 
 In this section, a reliable factorization of matrices is studied. Called the $QR$ factorization of a matrix, it \textit{always} exists. While much can be said about the $QR$ factorization, this section will be limited to real matrices. Therefore we assume the dot product used below is the usual dot product. We begin with a definition. 
 
-\begin{definition}{$QR$ factorization}{qrfactorization}
+\begin{definition}{$QR$ factorization}{qr-factorization}
 Let $A$ be a real $m\times n$ matrix. Then a $QR$ factorization of $A$ consists
 of two matrices, $Q$ orthogonal and $R$ upper
 triangular, such that $A=QR.$\index{QR factorization} 
@@ -10,7 +10,7 @@ triangular, such that $A=QR.$\index{QR factorization}
 
 The following theorem claims that such a factorization exists. 
 
-\begin{theorem}{Existence of $QR$ factorization}{existenceqr}
+\begin{theorem}{Existence of $QR$ factorization}{existence-qr}
 Let $A$ be any real $m\times n$ matrix with linearly independent columns. Then there exists an orthogonal
 matrix $Q$ and an upper triangular matrix $R$ having non-negative entries
 on the main diagonal such that
@@ -21,13 +21,13 @@ A=QR
 
 The procedure for obtaining the $QR$ factorization for any matrix $A$ is as follows.
 
-\begin{procedure}{$QR$ factorization}{qrfactorization}
+\begin{procedure}{$QR$ factorization}{qr-factorization}
 Let $A$ be an $m \times n$ matrix given by $A = \begin{mymatrix}{cccc}
 A_1 & A_2 & \cdots & A_n 
 \end{mymatrix}$ where the $A_i$ are the linearly independent columns of $A$. 
 \begin{enumerate}
 \item
-Apply the Gram-Schmidt Process \ref{algo:gramschmidtalgorithm} to the columns of $A$, writing $B_i$ for the resulting columns.
+Apply the Gram-Schmidt Process \ref{algo:gram-schmidt-algorithm} to the columns of $A$, writing $B_i$ for the resulting columns.
 
 \item
 Normalize the $B_i$, to find $C_i = \frac{1}{\norm{B_i}} B_i$. 
@@ -58,7 +58,7 @@ Notice that $Q$ is an orthogonal matrix as the $C_i$ form an orthonormal set. Si
 
 Consider the following example.
 
-\begin{example}{Finding a $QR$ factorization}{qrfactorization}
+\begin{example}{Finding a $QR$ factorization}{qr-factorization}
 Let \[
 A = \begin{mymatrix}{rr}
 1 & 2 \\

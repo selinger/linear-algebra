@@ -29,7 +29,7 @@ consists of all $\vect{v}\in V$ such that $T(\vect{v})=\vect{0}$. That is,
 Then in fact, both $\func{im}\tup{T} $ and $\ker \tup{T} $
 are subspaces of $W$ and $V$ respectively.
 
-\begin{proposition}{Kernel and image as subspaces}{kernelimagevectorspaces}
+\begin{proposition}{Kernel and image as subspaces}{kernel-image-vector-spaces}
 Let $V,W$ be vector spaces and let $T:V\rightarrow W$ be a linear transformation. Then $\ker \tup{
 T} \subseteq V$ and $\func{im}\tup{T} \subseteq W$. In fact, they are both subspaces. 
 \end{proposition}
@@ -54,7 +54,7 @@ and this last vector is in $\func{im}\tup{T} $ by definition.
 
 Consider the following example.
 
-\begin{example}{Kernel and image of a transformation}{kernelimage}
+\begin{example}{Kernel and image of a transformation}{kernel-image}
 Let $T:\Poly_1\to\R$ be the linear transformation defined by
 \[ T(p(x))=p(1)\mbox{ for all } p(x)\in \Poly_1.\]
 Find the kernel and image of $T$.
@@ -87,7 +87,7 @@ Therefore a basis for $\func{im}(T)$ is
 Notice that this is a subspace of $\R$, and in fact is the space $\R$ itself. 
 \end{solution}
 
-\begin{example}{Kernel and image of a linear transformation}{findingkernelimage}
+\begin{example}{Kernel and image of a linear transformation}{finding-kernel-image}
 Let $T: \Mat_{22} \mapsto \R^2$ be defined by
 \[
 T \begin{mymatrix}{cc}
@@ -219,8 +219,8 @@ Then $n=\dim \tup{\ker \tup{T} } +\dim \tup{\func{im}
 \end{theorem}
 
 \begin{proof}
-From Proposition \ref{prop:kernelimagevectorspaces}, $\func{im}\tup{T} $
-is a subspace of $W.$ By Theorem \ref{thm:basisvectorspace}, there exists a basis for $
+From Proposition \ref{prop:kernel-image-vector-spaces}, $\func{im}\tup{T} $
+is a subspace of $W.$ By Theorem \ref{thm:basis-vector-space}, there exists a basis for $
 \func{im}\tup{T} ,\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})}
 . $ Similarly, there is a basis for $\ker \tup{T} ,\set{\vect{u}
 _{1},\cdots ,\vect{u}_{s}} $. Then if $\vect{v}\in V,$ there exist
@@ -276,14 +276,14 @@ dimension of $\ker \tup{T} .$ Thus the above theorem says that $
 
 Recall the following important result. 
 
-\begin{theorem}{Subspace of same dimension}{subspacevectorspace}
+\begin{theorem}{Subspace of same dimension}{subspace-vector-space}
 Let $V$ be a vector space of dimension $n$ and let $W$ be a
 subspace. Then $W=V$ if and only if the dimension of $W$ is also $n$.
 \end{theorem}
 
 From this theorem follows the next corollary.
 
-\begin{corollary}{One to one and onto characterization}{oneoneontochar}
+\begin{corollary}{One to one and onto characterization}{one-one-onto-char}
 Let $T:V\rightarrow W$ be a linear map where the dimension of $V$ is $n$ and
 the dimension of $W$ is $m$. Then $T$ is one to one if and only if $\ker
 \tup{T} =\set{\vect{0}} $ and $T$ is onto if and only if $
@@ -293,15 +293,15 @@ the dimension of $W$ is $m$. Then $T$ is one to one if and only if $\ker
 \begin{proof}
 The statement $\ker \tup{T } =\set{\vect{0}} $
 is equivalent to saying if $T \tup{\vect{v} }=\vect{0},$ it follows that $\vect{v}=\vect{0}$
-. Thus by Lemma \ref{lem:onetooneabstract} $T$ is one to one. If $T$ is onto, then $
+. Thus by Lemma \ref{lem:one-to-one-abstract} $T$ is one to one. If $T$ is onto, then $
 \func{im}\tup{T} =W$ and so $\func{rank}\tup{T} $ which is
 defined as the dimension of $\func{im}\tup{T} $ is $m$. If $\func{
-rank}\tup{T} =m,$ then by Theorem \ref{thm:subspacevectorspace}, since $\func{im}
+rank}\tup{T} =m,$ then by Theorem \ref{thm:subspace-vector-space}, since $\func{im}
 \tup{T} $ is a subspace of $W,$ it follows that $\func{im}\tup{
 T} =W$. 
 \end{proof}
 
-\begin{example}{One to one transformation}{onetoonekernel}
+\begin{example}{One to one transformation}{one-to-one-kernel}
 Let $S:\Poly_2\to\Mat_{22}$ be a linear transformation
 defined by
 \[ S(ax^2+bx+c)
@@ -314,7 +314,7 @@ Prove that $S$ is one to one but not onto.
 \end{example}
 
 \begin{solution}
-You may recall this example from earlier in Example \ref{exa:onetoonegeneral}. Here we will determine that $S$ is one to one, but not onto, using the method provided in Corollary \ref{cor:oneoneontochar}.
+You may recall this example from earlier in Example \ref{exa:one-to-one-general}. Here we will determine that $S$ is one to one, but not onto, using the method provided in Corollary \ref{cor:one-one-onto-char}.
 
 By definition, 
 \[ \ker(S)=\{ax^2+bx+c\in \Poly_2 ~|~ a+b=0,
@@ -338,9 +338,9 @@ Putting the augmented matrix in {\rref}:
 0 & 0 & 0 & 0  \end{mymatrix}. \]
 
 Since the unique solution is $a=b=c=0$, $\ker(S)=\{\vect{0}\}$, and thus
-$S$ is one-to-one by Corollary \ref{cor:oneoneontochar}.
+$S$ is one-to-one by Corollary \ref{cor:one-one-onto-char}.
 
-Similarly, by Corollary \ref{cor:oneoneontochar}, if $S$ is onto it will have $\func{rank}(S) = \func{dim}(\Mat_{22}) = 4$. The image of $S$ is given by 
+Similarly, by Corollary \ref{cor:one-one-onto-char}, if $S$ is onto it will have $\func{rank}(S) = \func{dim}(\Mat_{22}) = 4$. The image of $S$ is given by 
 \[
 \func{im}(S) = \set{\begin{mymatrix}{cc}
 a+b & a+c \\ b-c & b+c \end{mymatrix} } = \func{span} \set{\begin{mymatrix}{rr}

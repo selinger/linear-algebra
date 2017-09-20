@@ -2,7 +2,7 @@
 \subsection{Elementary matrices}
 
 We now turn our attention to a special type of matrix called an \textbf{elementary matrix}. 
-An elementary matrix is always a square matrix. Recall the row operations given in Definition \ref{def:rowoperations}.
+An elementary matrix is always a square matrix. Recall the row operations given in Definition \ref{def:row-operations}.
 Any elementary matrix, which we often denote by $E$, is obtained from applying
 {\em one\em} row operation to the identity matrix of the same size. 
 
@@ -40,7 +40,7 @@ You may construct an elementary matrix from any row operation, but remember that
 
 Consider the following definition. 
 
-\begin{definition}{Elementary matrices and row operations}{elementarymatricesandrowops}
+\begin{definition}{Elementary matrices and row operations}{elementary-matrices-and-rowops}
 Let $E$ be an $n \times n$ matrix. Then $E$ is an \textbf{elementary matrix}\index{elementary matrix} 
 if it is the result of applying one row operation to the $n \times n$ identity matrix $I_n$. 
 
@@ -56,7 +56,7 @@ same effect as doing the row operation used to obtain $E$.
 
 The following theorem is an important result which we will use throughout this text. 
 
-\begin{theorem}{Multiplication by an elementary matrix and row operations}{multbyelemmatrix}
+\begin{theorem}{Multiplication by an elementary matrix and row operations}{mult-by-elem-matrix}
 To perform any of the three row operations on a matrix $A$
 it suffices to take the product $EA$, where $E$ is the elementary matrix obtained by 
 using the desired row operation on the identity matrix.
@@ -65,11 +65,11 @@ using the desired row operation on the identity matrix.
 Therefore, instead of performing row operations on a matrix $A$, we
 can row reduce through matrix multiplication with the appropriate
 elementary matrix. We will examine this theorem in detail for each of
-the three row operations given in Definition \ref{def:rowoperations}.
+the three row operations given in Definition \ref{def:row-operations}.
 
 First, consider the following lemma.
 
-\begin{lemma}{Action of permutation matrix}{permutationmatrix}
+\begin{lemma}{Action of permutation matrix}{permutation-matrix}
 Let $P^{ij}$ denote the elementary matrix which involves
 switching the $i^{th}$ and the $j^{th}$ rows. Then $P^{ij}$ is a permutation matrix and 
 \begin{equation*}
@@ -81,7 +81,7 @@ rows.
 
 We will explore this idea more in the following example.
 
-\begin{example}{Switching rows with an elementary matrix}{elementarymatrixswitchingrows}
+\begin{example}{Switching rows with an elementary matrix}{elementary-matrix-switching-rows}
 Let
 \begin{equation*}
 P^{12} = \begin{mymatrix}{rrr}
@@ -113,10 +113,10 @@ Notice that $B$ is the matrix obtained by switching rows $1$ and $2$ of $A$. The
 $A$ by $P^{12}$, the row operation which was applied to $I$ to obtain $P^{12}$ is applied to $A$ to obtain $B$. 
 \end{solution}
 
-Theorem \ref{thm:multbyelemmatrix} applies to all three row operations, and we now 
+Theorem \ref{thm:mult-by-elem-matrix} applies to all three row operations, and we now 
 look at the row operation of multiplying a row by a scalar.  Consider the following lemma.
 
-\begin{lemma}{Multiplication by a scalar and elementary matrices}{elemmatrixmultbyscalar}
+\begin{lemma}{Multiplication by a scalar and elementary matrices}{elem-matrix-mult-by-scalar}
 Let $E\tup{k,i} $ denote the elementary matrix
 corresponding to the row operation in which the $i^{th}$ row is multiplied
 by the nonzero scalar, $k.$  Then
@@ -128,7 +128,7 @@ where $B$ is obtained from $A$ by multiplying the $i^{th}$ row of $A$ by $k$.
 
 We will explore this lemma further in the following example.
 
-\begin{example}{Multiplication of a row by 5 using elementary matrix}{elemmatrixmultbyscalar}
+\begin{example}{Multiplication of a row by 5 using elementary matrix}{elem-matrix-mult-by-scalar}
 Let
 \begin{equation*}
 E \tup{5, 2} = \begin{mymatrix}{rrr}
@@ -165,7 +165,7 @@ Notice that $B$ is obtained by multiplying the second row of $A$ by the scalar $
 There is one last row operation to consider. The following lemma discusses the final
 operation of adding a multiple of a row to another row.
 
-\begin{lemma}{Adding multiples of rows and elementary matrices}{addingrowselemmatrix}
+\begin{lemma}{Adding multiples of rows and elementary matrices}{adding-rows-elem-matrix}
 Let $E\tup{k \times i+j} $ denote the elementary
 matrix obtained from $I$ by adding $k$ times the $i^{th}$ row to the $j^{th}$. Then
 \begin{equation*}
@@ -176,7 +176,7 @@ where $B$ is obtained from $A$ by adding $k$ times the $i^{th}$ row to the $j^{t
 
 Consider the following example.
 
-\begin{example}{Adding two times the first row to the last}{twotimesrowelemmatrix}
+\begin{example}{Adding two times the first row to the last}{two-times-row-elem-matrix}
 Let
 \begin{equation*}
 E\tup{2 \times 1+3} = \begin{mymatrix}{rrr}
@@ -215,7 +215,7 @@ the row operation. It turns out that this action is how we find the inverse of a
 
 Consider the following theorem.
 
-\begin{theorem}{Elementary matrices and inverses}{inverseelemmatrix}
+\begin{theorem}{Elementary matrices and inverses}{inverse-elem-matrix}
 Every elementary matrix is invertible and its inverse is also an elementary matrix\index{elementary matrix!inverse}.
 \end{theorem}
 
@@ -234,7 +234,7 @@ subtracting $k$ times row $i$ from row $j$.
 
 Consider the following example.
 
-\begin{example}{Inverse of an elementary matrix}{inverseelemmatrix}
+\begin{example}{Inverse of an elementary matrix}{inverse-elem-matrix}
 Let 
 \begin{equation*}
 E
@@ -294,13 +294,13 @@ This equals $I$ so we know that we have compute $E^{-1}$ properly.
 
 Suppose an $m \times n$ matrix $A$ is row reduced to its {\rref}. By tracking each row operation completed, this row reduction can be completed through multiplication by elementary matrices. Consider the following definition.
 
-\begin{definition}{The form $B=UA$}{formbua}
+\begin{definition}{The form $B=UA$}{form-bua}
 Let $A$ be an $m \times n$ matrix and let $B$ be the {\rref} of $A$. Then we can write $B = UA$ where $U$ is the product of all elementary matrices representing the row operations done to $A$ to obtain $B$. 
 \end{definition}
 
 Consider the following example.
 
-\begin{example}{The form $B=UA$}{formbua}
+\begin{example}{The form $B=UA$}{form-bua}
 Let $A = \begin{mymatrix}{rr}
 0 & 1 \\
 1 & 0 \\
@@ -404,18 +404,18 @@ UA &=& \begin{mymatrix}{rrr}
 
 While the process used in the above example is reliable and simple when only a few row operations are used, it becomes cumbersome in a case where many row operations are needed to carry $A$ to $B$. The following theorem provides an alternate way to find the matrix $U$. 
 
-\begin{theorem}{Finding the matrix $U$}{findingu}
+\begin{theorem}{Finding the matrix $U$}{finding-u}
 Let $A$ be an $m \times n$ matrix and let $B$ be its {\rref}. Then $B = UA$ where $U$ is an invertible $m \times m$ matrix found by forming the matrix $ \mat{A | I_m }$ and row reducing to $\mat{B | U }$. 
 \end{theorem}
 
-Let's revisit the above example using the process outlined in Theorem \ref{thm:findingu}.
+Let's revisit the above example using the process outlined in Theorem \ref{thm:finding-u}.
 
-\begin{example}{The form $B=UA$, revisited}{formbuarevisited}
+\begin{example}{The form $B=UA$, revisited}{form-bua-revisited}
 Let $A = \begin{mymatrix}{rr} 
 0 & 1 \\
 1 & 0 \\
 2 & 0 
-\end{mymatrix}$. Using the process outlined in Theorem \ref{thm:findingu}, find $U$ such that $B=UA$. 
+\end{mymatrix}$. Using the process outlined in Theorem \ref{thm:finding-u}, find $U$ such that $B=UA$. 
 \end{example}
 
 \begin{solution}
@@ -449,10 +449,10 @@ Now, row reduce this matrix until the left side equals the {\rref} of $A$.
 \end{mymatrix}
 \end{eqnarray*}
 
-The left side of this matrix is $B$, and the right side is $U$. Comparing this to the matrix $U$ found above in Example \ref{exa:formbua}, you can see that the same matrix is obtained regardless of which process is used. 
+The left side of this matrix is $B$, and the right side is $U$. Comparing this to the matrix $U$ found above in Example \ref{exa:form-bua}, you can see that the same matrix is obtained regardless of which process is used. 
 \end{solution}
 
-Recall from Algorithm \ref{algo:matrixinversionalgorithm} that an $n \times n$  matrix $A$ is invertible if and only if $A$ can be carried to the $n \times n$ identity matrix using the usual row operations. This leads to an important consequence related to the above discussion. 
+Recall from Algorithm \ref{algo:matrix-inversion-algorithm} that an $n \times n$  matrix $A$ is invertible if and only if $A$ can be carried to the $n \times n$ identity matrix using the usual row operations. This leads to an important consequence related to the above discussion. 
 
 Suppose $A$ is an $n \times n$ invertible matrix. Then, set up the matrix $\mat{A | I_n }$ as done above, and row reduce until it is of the form $\mat{B | U }$. In this case, $B = I_n$ because $A$ is invertible. 
 
@@ -475,13 +475,13 @@ A&=& U^{-1} \\
 \end{eqnarray*}
 and $A$ can be written as a product of elementary matrices. 
 
-\begin{theorem}{Product of elementary matrices}{prodelem}
+\begin{theorem}{Product of elementary matrices}{prod-elem}
 Let $A$ be an $n \times n$ matrix. Then $A$ is invertible if and only if it can be written as a product of elementary matrices.
 \end{theorem}
 
 Consider the following example.
 
-\begin{example}{Product of elementary matrices}{prodelem}
+\begin{example}{Product of elementary matrices}{prod-elem}
 Let $A = \begin{mymatrix}{rrr}
 0 & 1 & 0 \\
 1 & 1 & 0 \\
@@ -491,7 +491,7 @@ Write $A$ as a product of elementary matrices.
 \end{example}
 
 \begin{solution}
-We will use the process outlined in Theorem \ref{thm:findingu} to write $A$ as a product of elementary matrices. We will set up the matrix $\mat{A | I }$ and row reduce, recording each row operation as an elementary matrix. 
+We will use the process outlined in Theorem \ref{thm:finding-u} to write $A$ as a product of elementary matrices. We will set up the matrix $\mat{A | I }$ and row reduce, recording each row operation as an elementary matrix. 
 
 First: 
 \[
@@ -576,5 +576,5 @@ U^{-1} &=& \tup{E_3 E_2 E_1 }^{-1}\\
 &=& A
 \end{eqnarray*}
 
-This gives $A$ written as a product of elementary matrices. By Theorem \ref{thm:prodelem} it follows that $A$ is invertible. 
+This gives $A$ written as a product of elementary matrices. By Theorem \ref{thm:prod-elem} it follows that $A$ is invertible. 
 \end{solution}

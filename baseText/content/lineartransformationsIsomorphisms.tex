@@ -205,7 +205,7 @@ Therefore $T$ is an isomorphism.
 
 An important property of isomorphisms is that its inverse is also an isomorphism. 
 
-\begin{proposition}{Inverse of an isomorphism}{inverseisomorphism}
+\begin{proposition}{Inverse of an isomorphism}{inverse-isomorphism}
 Let $T:V\rightarrow W$ be an isomorphism and $V,W$ be subspaces of $\R^n$. Then $T^{-1}:W\rightarrow V$ is
 also an isomorphism.
 \index{isomorphism!inverse}
@@ -236,7 +236,7 @@ and so $T^{-1}$ is one to one.
 
 Another important result is that the composition of multiple isomorphisms is also an isomorphism.
 
-\begin{proposition}{Composition of isomorphisms}{compositionisomorphisms}
+\begin{proposition}{Composition of isomorphisms}{composition-isomorphisms}
 Let $T:V\rightarrow W$ and  $S:W\rightarrow Z$ be isomorphisms where $V,W,Z$ are subspaces of $\R^n$. Then $S\circ
 T $ defined by $\tup{S\circ T} \tup{\vect{v} } = S\tup{
 T\tup{\vect{v} } } $ is also an isomorphism.
@@ -276,7 +276,7 @@ We leave the verification of these conditions as an exercise.
 
 Consider the following example. 
 
-\begin{example}{Matrix isomorphism}{matrixisomorphism}
+\begin{example}{Matrix isomorphism}{matrix-isomorphism}
 Let $T:\R^{n}\rightarrow \R^{n}$ be defined by $T(\vect{x}) = A(\vect{x})$ where $A$ is an invertible $n\times n$ matrix. Then $T$ is
 an isomorphism.
 \end{example}
@@ -294,7 +294,7 @@ simply considers the matrix whose $i^{th}$ column is $T\vect{e}_{i}$.
 Recall that a basis of a subspace $V$ is a set of linearly independent vectors which span $V$. The following fundamental lemma describes the relation between bases and
 isomorphisms.
 
-\begin{lemma}{Mapping bases}{mappingbases}
+\begin{lemma}{Mapping bases}{mapping-bases}
 Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are
 subspaces of $\R^n$. If $T$ is one to one, then it has the property that if $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is linearly independent, so is $\set{T(\vect{u}_{1}),\cdots ,T(\vect{u}_{k})} $.
 
@@ -358,7 +358,7 @@ The following theorem illustrates a very useful idea for defining an
 isomorphism. Basically, if you know what it does to a basis, then you can
 construct the isomorphism.
 
-\begin{theorem}{Isomorphic subspaces}{isomorphicsubspaces}
+\begin{theorem}{Isomorphic subspaces}{isomorphic-subspaces}
 Suppose $V$ and $W$ are two subspaces of $\R^n$. Then the two
 subspaces are isomorphic if and only if they have the same dimension. In the
 case that the two subspaces have the same dimension, then for
@@ -505,7 +505,7 @@ Show that $V$ and $W$ are isomorphic.
 \end{example}
 
 \begin{solution}
-First observe that these subspaces are both of dimension 3 and so they are isomorphic by Theorem \ref{thm:isomorphicsubspaces}. The
+First observe that these subspaces are both of dimension 3 and so they are isomorphic by Theorem \ref{thm:isomorphic-subspaces}. The
 three vectors which span $W$ are easily seen to be linearly independent by
 making them the columns of a matrix and row reducing to the {\rref}.
 
@@ -545,7 +545,7 @@ reproduce the claimed effect resulting from an application by $T$.
 
 Consider the following example. 
 
-\begin{example}{Finding the matrix of an isomorphism}{matrixofisomorphism}
+\begin{example}{Finding the matrix of an isomorphism}{matrix-of-isomorphism}
 Let $V=\R^{3}$ and let $W$ denote 
 \begin{equation*}
 \func{span}\set{\begin{mymatrix}{c}

@@ -25,7 +25,7 @@ homogeneous system of equations, and how the solutions of
 non-homogeneous systems are related to those of their homogeneous
 counterparts.
 
-\begin{definition}{Homogeneous system of equations}{homogeneoussystem}
+\begin{definition}{Homogeneous system of equations}{homogeneous-system}
   A system of equations is called
   \textbf{homogeneous}\index{system of linear equations!homogeneous}\index{homogeneous system}
   if each of the constant terms is equal to $0$. A homogeneous system
@@ -54,11 +54,11 @@ systems of equations, since the trivial solution always exists, we are
 usually interested in finding whether there are non-trivial solutions.
 
 The following theorem is a special case of
-Theorem~\ref{thm:rankconsistentsolutions}. Recall that the
+Theorem~\ref{thm:rank-consistent-solutions}. Recall that the
 {\em rank}\index{rank}
 of a system is the number of pivot variables in its {\ef}.
 
-\begin{theorem}{Rank and solutions of homogeneous system of equations}{rankhomogeneoussolutions}
+\begin{theorem}{Rank and solutions of homogeneous system of equations}{rank-homogeneous-solutions}
   Consider a homogeneous system of $m$ equations in $n$ variables, and
   assume that the coefficient matrix has rank $r$. Then the system is
   consistent, and 
@@ -68,7 +68,7 @@ of a system is the number of pivot variables in its {\ef}.
 \end{enumerate}
 \end{theorem}
 
-\begin{example}{Homogeneous system with more variables than equations}{homomorevars}
+\begin{example}{Homogeneous system with more variables than equations}{homo-more-vars}
   True or false: Suppose a homogeneous system has more variables than
   equations. Then the system has infinitely many solutions.  
 \end{example}
@@ -81,7 +81,7 @@ of a system is the number of pivot variables in its {\ef}.
   trivial solution.
 \end{solution} 
 
-\begin{example}{Homogeneous system with an equal number of variables and equations}{homolessvars}
+\begin{example}{Homogeneous system with an equal number of variables and equations}{homo-less-vars}
   True or false: Suppose a homogeneous system has the same number of
   variables as equations. Then the system has a unique solution.
 \end{example}
@@ -97,7 +97,7 @@ of a system is the number of pivot variables in its {\ef}.
 
 We now consider an example of solving a homogeneous system of equations.
 
-\begin{example}{Solutions to a homogeneous system of equations}{homogeneoussolution}
+\begin{example}{Solutions to a homogeneous system of equations}{homogeneous-solution}
 Find the general solution to the following homogeneous system of
 equations. Does the system have non-trivial solutions?
 \begin{equation*}
@@ -212,7 +212,7 @@ say that the general solution of the homogeneous system is a
 
 We explore this further in the following example.
 
-\begin{example}{Basic solutions of a homogeneous system}{basicsolutions}
+\begin{example}{Basic solutions of a homogeneous system}{basic-solutions}
   Consider the following homogeneous system of equations. 
   \begin{equation}\label{eqn:basicsolutions-1}
     \begin{array}{c}
@@ -297,7 +297,7 @@ of the system of equations. We end this section by investigating how
 the solutions of a system of equations are related to the solutions of
 its associated homogeneous system.
 
-\begin{example}{Non-homogeneous vs. homogeneous system}{nonhomo-vs-homo}
+\begin{example}{Non-homogeneous vs. homogeneous system}{non-homo-vs-homo}
   Solve the system of equations
   \begin{equation}\label{eqn:nonhomo-vs-homo-1}
     \begin{array}{c}
@@ -306,13 +306,13 @@ its associated homogeneous system.
     \end{array}
   \end{equation}
   How are the solutions related to those of the associated homogeneous
-  system in Example~\ref{exa:basicsolutions}?
+  system in Example~\ref{exa:basic-solutions}?
 \end{example}
 
 \begin{solution}
   We note that the associated homogeneous system of
   {\eqref{eqn:nonhomo-vs-homo-1}} is the system we saw in
-  Example~\ref{exa:basicsolutions}. We solve the system
+  Example~\ref{exa:basic-solutions}. We solve the system
   {\eqref{eqn:nonhomo-vs-homo-1}} in the usual way by reducing its
   augmented matrix to {\rref}
   \begin{equation*}
@@ -364,7 +364,7 @@ its associated homogeneous system.
     \end{mymatrix}.
   \end{equation}
   We see that the general solution is almost exactly the same as that
-  of the homogeneous system in Example~\ref{exa:basicsolutions}. The
+  of the homogeneous system in Example~\ref{exa:basic-solutions}. The
   only difference is the additional column
   \begin{equation}\label{eqn:nonhomo-vs-homo-3}
     \begin{mymatrix}{r}
@@ -386,7 +386,7 @@ non-homogeneous system, plus the general solution of the associated
 homogeneous system. The same is true in general, and we summarize it
 as a theorem.
 
-\begin{theorem}{Non-homogeneous vs. homogeneous system}{nonhomo-vs-homo}
+\begin{theorem}{Non-homogeneous vs. homogeneous system}{non-homo-vs-homo}
   Let $A$ be a system of equations, and let $B$ be the associated
   homogeneous system. Then
   \begin{equation*}

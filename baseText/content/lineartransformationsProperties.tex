@@ -38,7 +38,7 @@ T(\vect{y}) = T(a_1\vect{x}_1 + a_2\vect{x}_2 + ...+a_k \vect{x}_k) = a_1T(\vect
 
 These properties are useful in determining the action of a transformation on a given vector. Consider the following example.
 
-\begin{example}{Linear combination}{lintransfcombination}
+\begin{example}{Linear combination}{lin-transf-combination}
 Let $T:\R^3 \mapsto \R^4$ be a linear transformation such that 
 \[
 T \begin{mymatrix}{r}
@@ -230,7 +230,7 @@ $.
 
 Suppose two linear transformations act in the same way on $\vect{x}$ for all vectors. Then we say that these transformations are equal.
 
-\begin{definition}{Equal transformations}{equaltransformations}
+\begin{definition}{Equal transformations}{equal-transformations}
 Let $S$ and $T$ be linear transformations from $\R^n$ to $\R^m$. Then $S = T$ if and only if for every $\vect{x} \in \R^n$, 
 \[
 S \tup{\vect{x} } = T \tup{\vect{x} }
@@ -239,7 +239,7 @@ S \tup{\vect{x} } = T \tup{\vect{x} }
 
 Suppose two linear transformations act on the same vector $\vect{x}$, first the transformation $T$ and then a second transformation given by $S$. We can find the \textbf{composite} transformation that results from applying both transformations.
 
-\begin{definition}{Composition of linear transformations}{compositetransformations}
+\begin{definition}{Composition of linear transformations}{composite-transformations}
 Let $T: \R^k \mapsto \R^n$ and $S: \R^n \mapsto \R^m$ be linear transformations. Then the \textbf{composite}\index{linear transformation!composite}\index{composite} of $S$ and $T$ is 
 \[
 S \circ T: \R^k \mapsto \R^m
@@ -252,13 +252,13 @@ The action of $S \circ T$ is given by
 
 Notice that the resulting vector will be in $\R^m$. Be careful to observe the order of transformations. We write $S \circ T$ but apply the transformation $T$ first, followed by $S$. 
 
-\begin{theorem}{Composition of transformations}{compositetransformation}
+\begin{theorem}{Composition of transformations}{composite-transformation}
 Let $T: \R^k \mapsto \R^n$ and $S: \R^n \mapsto \R^m$ be linear transformations such that $T$ is induced by the matrix $A$ and $S$ is induced by the matrix $B$. Then $S \circ T$ is a linear transformation which is induced by the matrix $BA$.
 \end{theorem}
 
 Consider the following example. 
 
-\begin{example}{Composition of transformations}{compositetransformation}
+\begin{example}{Composition of transformations}{composite-transformation}
 Let $T$ be a linear transformation induced by the matrix 
 \[
 A = 
@@ -282,7 +282,7 @@ Find the matrix of the composite transformation $S \circ T$. Then, find $(S \cir
 \end{example}
 
 \begin{solution}
-By Theorem \ref{thm:compositetransformation}, the matrix of $S \circ T$ is given by $BA$. 
+By Theorem \ref{thm:composite-transformation}, the matrix of $S \circ T$ is given by $BA$. 
 \[
 BA 
 =
@@ -355,7 +355,7 @@ Then, compute $S(T(\vect{x}))$ as follows:
 
 Consider a composite transformation $S \circ T$, and suppose that this transformation acted such that $(S \circ T) (\vect{x}) = \vect{x}$. That is, the transformation $S$ took the vector $T(\vect{x})$ and returned it to $\vect{x}$. In this case, $S$ and $T$ are inverses of each other. Consider the following definition.  
 
-\begin{definition}{Inverse of a transformation}{inversetransformation}
+\begin{definition}{Inverse of a transformation}{inverse-transformation}
 Let $T: \R^n \mapsto \R^n$ and $S:\R^n \mapsto \R^n$ be linear transformations. Suppose that for each $\vect{x} \in \R^n$, 
 \[
 (S \circ T)(\vect{x}) = \vect{x}
@@ -369,13 +369,13 @@ Then, $S$ is called an inverse of $T$  and $T$ is called an inverse of $S$. Geom
 
 The following theorem is crucial, as it claims that the above inverse transformations are unique. 
 
-\begin{theorem}{Inverse of a transformation}{inversetransformation}
+\begin{theorem}{Inverse of a transformation}{inverse-transformation}
 Let $T:\R^n \mapsto \R^n$ be a linear transformation induced by the matrix $A$. Then $T$ has an inverse transformation if and only if the matrix $A$ is invertible. In this case, the inverse transformation is unique and denoted $T^{-1}: \R^n \mapsto \R^n$. $T^{-1}$ is induced by the matrix $A^{-1}$. 
 \end{theorem}
 
 Consider the following example. 
 
-\begin{example}{Inverse of a transformation}{inversetransformation}
+\begin{example}{Inverse of a transformation}{inverse-transformation}
 Let $T: \R^2 \mapsto \R^2$ be a linear transformation induced by the matrix 
 \[
 A = 

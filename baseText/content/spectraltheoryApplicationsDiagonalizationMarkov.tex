@@ -4,7 +4,7 @@ There are applications of great importance which feature a special type of matri
 called \textbf{Markov matrices}\index{Markov matrices}. An important application of Markov matrices is
 in population migration, as illustrated in the following definition. 
 
-\begin{definition}{Migration matrices}{migrationmatrix}
+\begin{definition}{Migration matrices}{migration-matrix}
 Let $m$ locations be denoted by the numbers $1,2,\cdots ,m.$ Suppose
 it is the case that each year the proportion of residents in location
 $j$ which move to location $i$ is $a_{ij}$. Also suppose no one
@@ -16,7 +16,7 @@ $A$ is also called a \textbf{migration matrix}\index{migration matrix}.
 
 Consider the following example which demonstrates this situation.
 
-\begin{example}{Migration matrix}{migrationmatrix}
+\begin{example}{Migration matrix}{migration-matrix}
 Let $A$ be a Markov matrix given by 
 \begin{equation*}
 A = 
@@ -46,7 +46,7 @@ resident of location one will stay in location one in the time period
 is $.4$.
 \end{solution}
 
-Observe that in Example \ref{exa:migrationmatrix} if there was initially say 15
+Observe that in Example \ref{exa:migration-matrix} if there was initially say 15
 thousand people in location 1 and 10 thousands in location 2, then
 after one year there would be $.4 \times 15 + .2 \times 10 = 8$
 thousands people in location 1 the following year, and similarly 
@@ -57,7 +57,7 @@ More generally let $X_n=\mat{x_{1n} \cdots x_{mn}} ^{T}$ where $x_{in}$ is the
 population of location $i$ at time period $n$. We call $X_n$ the \textbf{state vector at period $n$}\index{state vector}. In particular, we call $X_0$ the initial state vector. Letting $A$ be the migration matrix, we compute the population in each location $i$ one time period later by $AX_n$. In order to find the population of location $i$ after $k$
 years, we compute the $i^{th}$ component of $A^{k}X.$ This discussion is summarized in the following theorem. 
 
-\begin{theorem}{State vector}{statevector}
+\begin{theorem}{State vector}{state-vector}
 Let $A$ be the migration matrix of a population and let $X_n$ be the vector whose entries give the population of each location at time period $n$. Then $X_n$ is the state vector at period $n$ and it follows that 
 \[
 X_{n+1} = A X_n
@@ -74,7 +74,7 @@ multiplication by $A$ as demonstrated below.
 
 Consider the following example.
 
-\begin{example}{Using a migration matrix}{usingmigrationmatrix}
+\begin{example}{Using a migration matrix}{using-migration-matrix}
 Consider the migration matrix 
 \begin{equation*}
 A = 
@@ -90,7 +90,7 @@ population in the three locations after $1,2,$ and $10$ units of time.
 \end{example}
 
 \begin{solution}
-Using Theorem \ref{thm:statevector} we can find the population in each location using the equation $X_{n+1} = AX_n$. For the population after $1$ unit, we calculate $X_1 = AX_0$ as follows.
+Using Theorem \ref{thm:state-vector} we can find the population in each location using the equation $X_{n+1} = AX_n$. For the population after $1$ unit, we calculate $X_1 = AX_0$ as follows.
 \begin{eqnarray*}
 X_1 &=& AX_0 \\
 \begin{mymatrix}{r}
@@ -180,7 +180,7 @@ A second important application of Markov matrices is the concept of random walks
 \]
 In this context, the vector $X_n=\mat{x_{1n} \cdots x_{mn}} ^{T}$ contains the probabilities $x_{in}$ the walker ends up in location $i, 1\leq i \leq m$ at time $n$. 
 
-\begin{example}{Random walks}{randomwalks}
+\begin{example}{Random walks}{random-walks}
 Suppose three locations exist, referred to as locations $1, 2$ and $3$. The Markov matrix of probabilities $A = [a_{ij}]$ is given by
 \[
 \begin{mymatrix}{rrr}
@@ -245,11 +245,11 @@ Returning to the context of migration, suppose we wish to know how many resident
 after a very long time. It turns out that if some power of the
 migration matrix has all positive entries, then there is a vector $X_s$ such that $A^{n}X_{0}$ approaches $X_s$ as $n$ becomes very large. Hence as more time passes and $n$ increases, $A^{n}X_{0}$ will become closer to the vector $X_s$. 
 
-Consider Theorem \ref{thm:statevector}. Let $n$ increase so that $X_n$ approaches $X_s$. As $X_n$ becomes closer to $X_s$, so too does $X_{n+1}$. For sufficiently large $n$, the statement $X_{n+1} = AX_n$ can be written as $X_s = AX_s$. 
+Consider Theorem \ref{thm:state-vector}. Let $n$ increase so that $X_n$ approaches $X_s$. As $X_n$ becomes closer to $X_s$, so too does $X_{n+1}$. For sufficiently large $n$, the statement $X_{n+1} = AX_n$ can be written as $X_s = AX_s$. 
 
 This discussion motivates the following theorem.
 
-\begin{theorem}{Steady state vector}{steadystate}
+\begin{theorem}{Steady state vector}{steady-state}
 Let $A$ be a migration matrix. Then there exists a \textbf{steady state vector} written $X_s$ such that 
 \[
 X_s = AX_s
@@ -259,12 +259,12 @@ where $X_s$ has positive entries which have the same sum as the entries of $X_0$
 As $n$ increases, the state vectors $X_n$ will approach $X_s$. 
 \end{theorem}
 
-Note that the condition in Theorem \ref{thm:steadystate} can be written as $(I - A)X_s=0$, representing a homogeneous system of equations. 
+Note that the condition in Theorem \ref{thm:steady-state} can be written as $(I - A)X_s=0$, representing a homogeneous system of equations. 
 
-Consider the following example. Notice that it is the same example as the Example \ref{exa:usingmigrationmatrix} but here it will
+Consider the following example. Notice that it is the same example as the Example \ref{exa:using-migration-matrix} but here it will
 involve a longer time frame.
 
-\begin{example}{Populations over the long run}{longrunpopulation}
+\begin{example}{Populations over the long run}{long-run-population}
 Consider the migration matrix 
 \begin{equation*}
 A
@@ -281,7 +281,7 @@ population in the three locations after a long time.
 \end{example}
 
 \begin{solution}
-By Theorem \ref{thm:steadystate} the steady state vector $X_s$ can be found by solving the system $(I-A)X_s = 0$. 
+By Theorem \ref{thm:steady-state} the steady state vector $X_s$ can be found by solving the system $(I-A)X_s = 0$. 
 
 Thus we need to find a solution to
 \begin{equation*}
@@ -363,12 +363,12 @@ Again, because we are working with populations, these values need to be rounded.
 \]
 \end{solution}
 
-We can see that the numbers we calculated in Example \ref{exa:usingmigrationmatrix} for the populations
+We can see that the numbers we calculated in Example \ref{exa:using-migration-matrix} for the populations
 after the $10^{th}$ unit of time are not far from the long term values. 
 
 Consider another example.
 
-\begin{example}{Populations after a long time}{populationafterlongtime}
+\begin{example}{Populations after a long time}{population-after-long-time}
 Suppose a migration matrix is given by 
 \begin{equation*}
 A = \begin{mymatrix}{ccc}

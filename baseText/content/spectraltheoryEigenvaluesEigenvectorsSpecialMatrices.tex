@@ -5,7 +5,7 @@ Throughout this section, we will discuss similar matrices, elementary matrices, 
 
 We begin with a definition.
 
-\begin{definition}{Similar matrices}{similarmatrices}
+\begin{definition}{Similar matrices}{similar-matrices}
 Let $A$ and $B$ be $n \times n$ matrices. Suppose there exists an invertible matrix $P$ such that 
 \begin{equation*}
 A = P^{-1}BP
@@ -16,7 +16,7 @@ Then $A$ and $B$ are called \textbf{similar matrices}\index{similar matrix}.
 It turns out that we can use the concept of similar matrices to help us find the eigenvalues
 of matrices. Consider the following lemma.
 
-\begin{lemma}{Similar matrices and eigenvalues}{similarmatrices}
+\begin{lemma}{Similar matrices and eigenvalues}{similar-matrices}
 Let $A$ and $B$ be similar matrices, so that $A=P^{-1}BP$ where $A,B$ are $n\times n$ matrices and $P$ is invertible. Then $A,B$ have the
 same eigenvalues.
 \end{lemma}
@@ -52,14 +52,14 @@ for an eigenvalue $\lambda$, $A$ will have the eigenvector $X$ while $B$ will ha
 
 
 The second special type of matrices we discuss in this section is elementary matrices.  
-Recall from Definition \ref{def:elementarymatricesandrowops} that an elementary matrix $E$ is obtained by applying
+Recall from Definition \ref{def:elementary-matrices-and-rowops} that an elementary matrix $E$ is obtained by applying
 one row operation to the identity matrix. 
 
 It is possible to use elementary matrices to simplify a matrix before searching for its
 eigenvalues and eigenvectors. This is illustrated in the following
 example.
 
-\begin{example}{Simplify using elementary matrices}{simplifyusingelementarymatrices}
+\begin{example}{Simplify using elementary matrices}{simplify-using-elementary-matrices}
 Find the eigenvalues for the matrix
 \begin{equation*}
 A = \begin{mymatrix}{rrr}
@@ -95,7 +95,7 @@ Then right multiply $A$ by the inverse of $E \tup{2,2}$ as illustrated.
 0 & 0 & -2
 \end{mymatrix}
 \end{equation*}
-By Lemma \ref{lem:similarmatrices}, the resulting matrix has the same eigenvalues as $A$ where here, the matrix $E \tup{2,2}$ plays the role of $P$.
+By Lemma \ref{lem:similar-matrices}, the resulting matrix has the same eigenvalues as $A$ where here, the matrix $E \tup{2,2}$ plays the role of $P$.
 
 We do this step again, as follows. In this step, we use the elementary matrix obtained by adding $-3$
 times the second row to the first row. 
@@ -118,7 +118,7 @@ times the second row to the first row.
 0  & 0  & -2
 \end{mymatrix}  \label{elemeigenvalue}
 \end{equation}
-Again by Lemma \ref{lem:similarmatrices}, this resulting matrix has the same eigenvalues as $A$. 
+Again by Lemma \ref{lem:similar-matrices}, this resulting matrix has the same eigenvalues as $A$. 
 At this point, we can easily find the eigenvalues.
 Let 
 \begin{equation*}
@@ -169,7 +169,7 @@ illustrated by
 \end{equation*}
 
 The third special type of matrix we will consider in this section is
-the triangular matrix.  Recall Definition \ref{def:triangularmatrices}
+the triangular matrix.  Recall Definition \ref{def:triangular-matrices}
 which states that an upper (lower) triangular matrix contains all
 zeros below (above) the main diagonal. Remember that finding the
 determinant of a triangular matrix is a simple procedure of taking the product of the entries on the main diagonal.. It turns out
@@ -179,7 +179,7 @@ triangular matrix.
 In the next example we will demonstrate that the eigenvalues of a 
 triangular matrix are the entries on the main diagonal. 
 
-\begin{example}{Eigenvalues for a triangular matrix}{eigenvaluestriangularmatrix}
+\begin{example}{Eigenvalues for a triangular matrix}{eigenvalues-triangular-matrix}
 Let $A=\begin{mymatrix}{rrr}
 1 & 2 & 4 \\
 0 & 4 & 7 \\
