@@ -59,20 +59,20 @@ Notice that these properties hold only when the size of matrices are such that t
 The following hold\index{matrix multiplication!properties} for matrices $A,B,$ and $C$ and for scalars $r$ and $s$,
 
 \begin{equation}
-A\tup{rB+sC} =r\tup{AB} +s\tup{AC}  \label{matrixproperties1}
+A\tup{rB+sC} =r\tup{AB} +s\tup{AC}  \label{matrix-properties1}
 \end{equation}
 
 \begin{equation}
-\tup{B+C} A=BA+CA  \label{matrixproperties2}
+\tup{B+C} A=BA+CA  \label{matrix-properties2}
 \end{equation}
 
 \begin{equation}
-A\tup{BC} =\tup{AB} C  \label{matrixproperties3}
+A\tup{BC} =\tup{AB} C  \label{matrix-properties3}
 \end{equation}
 \end{proposition}
 
 \begin{proof}
- First we will prove \ref{matrixproperties1}. We will use Definition \ref{def:ij-entry-of-product} 
+ First we will prove \ref{matrix-properties1}. We will use Definition \ref{def:ij-entry-of-product} 
 and prove this statement using the $ij^{th}$ entries of a matrix. 
 Therefore, 
 \begin{equation*}
@@ -88,9 +88,9 @@ AC} _{ij}
 \end{equation*}
 Thus $A\tup{rB+sC} =r(AB)+s(AC)$ as claimed. 
 
-The proof of \ref{matrixproperties2} follows the same pattern and is left as an exercise. 
+The proof of \ref{matrix-properties2} follows the same pattern and is left as an exercise. 
 
-Statement \ref{matrixproperties3} is the associative law of multiplication. Using
+Statement \ref{matrix-properties3} is the associative law of multiplication. Using
 Definition \ref{def:ij-entry-of-product},
 \begin{equation*}
 \tup{A\tup{BC} } _{ij}=\sum_{k}a_{ik}\tup{BC}
@@ -99,5 +99,5 @@ _{kj}=\sum_{k}a_{ik}\sum_{l}b_{kl}c_{lj}
 \begin{equation*}
 =\sum_{l}\tup{AB} _{il}c_{lj}=\tup{\tup{AB} C} _{ij}.
 \end{equation*}
-This proves \ref{matrixproperties3}.
+This proves \ref{matrix-properties3}.
 \end{proof}

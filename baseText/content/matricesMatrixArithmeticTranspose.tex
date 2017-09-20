@@ -70,14 +70,14 @@ Let $A$ be an $m\times n$ matrix, $B$ an $n\times p$ matrix, and $r$ and $s$ sca
 \item
 $\tup{A^{T}}^{T} = A$
 \item
-$\tup{AB} ^{T}=B^{T}A^{T} $ \label{matrixtranspose1}
+$\tup{AB} ^{T}=B^{T}A^{T} $ \label{matrix-transpose1}
 \item
-$\tup{rA+ sB} ^{T}=rA^{T}+ sB^{T}$  \label{matrixtranspose2}
+$\tup{rA+ sB} ^{T}=rA^{T}+ sB^{T}$  \label{matrix-transpose2}
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-First we prove \ref{matrixtranspose1}. From Definition \ref{def:matrix-transpose},
+First we prove \ref{matrix-transpose1}. From Definition \ref{def:matrix-transpose},
 \begin{equation*}
 \tup{AB}^{T} = \mat{(AB) _{ij} } ^{T}=\mat{(AB)_{ji} }=\sum_{k}a_{jk}b_{ki}= \sum_{k}b_{ki}a_{jk} 
 \end{equation*}
@@ -85,7 +85,7 @@ First we prove \ref{matrixtranspose1}. From Definition \ref{def:matrix-transpose
 = \sum_{k}\mat{b_{ik}}^{T}\mat{
 a_{kj}}^{T}=\mat{b_{ij}} ^{T} \mat{a_{ij}}^{T} = B^{T}A^{T} 
 \end{equation*}
-The proof of Formula \ref{matrixtranspose2} is left as an exercise. 
+The proof of Formula \ref{matrix-transpose2} is left as an exercise. 
 \end{proof}
 
 The transpose of a matrix is related to other important topics. Consider the following definition.  

@@ -14,14 +14,14 @@ to an arbitrary $m\times n$ matrix. This decomposition is the focus of this sect
 The following is a useful result that will help when computing the SVD of matrices.
 
 \begin{proposition}{}{same-non-zero-eigenvalues}
-Let $A$ be an $m \times n$ matrix. Then $A^TA$ and $AA^T$ have the same \bf{nonzero} eigenvalues.
+Let $A$ be an $m \times n$ matrix. Then $A^TA$ and $AA^T$ have the same \bf{non-zero} eigenvalues.
 \end{proposition}
 
 \begin{proof}
 Suppose $A$ is an $m\times n$ matrix, and suppose that  $\lambda$ is a nonzero eigenvalue of $A^TA$.
 Then there exists a nonzero vector $X\in \R^n$ such that
 
-\begin{equation}\label{nonzero}
+\begin{equation}\label{non-zero}
 (A^TA)X=\lambda X.
 \end{equation}
 
@@ -31,7 +31,7 @@ A(A^TA)X & = & A\lambda X\\
 (AA^T)(AX) & = & \lambda (AX).
 \end{eqnarray*}
 Since $\lambda\neq 0$ and $X\neq 0_n$, $\lambda X\neq 0_n$,
-and thus by equation~(\ref{nonzero}),
+and thus by equation~(\ref{non-zero}),
 $(A^TA)X\neq 0_m$; thus $A^T(AX)\neq 0_m$, 
 implying that $AX\neq 0_m$.
 

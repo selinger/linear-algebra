@@ -12,7 +12,7 @@ If $T$ is \textbf{any} linear transformation which maps $\R^{n}$ to
 $\R^{m},$ there is \textbf{always} an $m\times n$ matrix $A$ with the
 property that
 \begin{equation}
-T\tup{\vect{x}} = A\vect{x} \label{matrixoftransf}
+T\tup{\vect{x}} = A\vect{x} \label{matrix-of-transf}
 \end{equation}
 for all $\vect{x} \in \R^{n}$.
 
@@ -23,7 +23,7 @@ by the matrix $A$.
 \end{theorem}
 
 Here is why. Suppose $T:\R^{n}\mapsto \R^{m}$ is a linear transformation and you want to find
-the matrix defined by this linear transformation as described in \ref{matrixoftransf}.
+the matrix defined by this linear transformation as described in \ref{matrix-of-transf}.
  Note that
 \begin{equation*}
 \vect{x} =\begin{mymatrix}{c}
@@ -186,7 +186,7 @@ of $T$ on $\vect{e}_{1}$ and $\vect{e}_{2}$? In particular for $\vect{e}_{1}$, s
 0 \\
 -1 
 \end{mymatrix} 
-\label{matrixvalues}
+\label{matrix-values}
 \end{equation}
 
 Then, since $T$ is linear,
@@ -216,13 +216,13 @@ T\begin{mymatrix}{r}
 3 \\
 2
 \end{mymatrix} 
-\label{matrixvalues2}
+\label{matrix-values2}
 \end{equation}
 
-Therefore, if we know the values of $x$ and $y$ which satisfy \ref{matrixvalues}, we can substitute these into equation \ref{matrixvalues2}. By doing so,
+Therefore, if we know the values of $x$ and $y$ which satisfy \ref{matrix-values}, we can substitute these into equation \ref{matrix-values2}. By doing so,
 we find $T\tup{\vect{e}_1}$ which is the first column of the matrix $A$. 
 
-We proceed to find $x$ and $y$. We do so by solving \ref{matrixvalues}, which can be done by solving the system
+We proceed to find $x$ and $y$. We do so by solving \ref{matrix-values}, which can be done by solving the system
 \begin{equation*}
 \begin{array}{c}
 x = 1 \\
@@ -231,7 +231,7 @@ x - y = 0
 \end{equation*}
 
 We see that $x=1$ and $y=1$ is the solution to this system. 
-Substituting these values into equation \ref{matrixvalues2}, we have 
+Substituting these values into equation \ref{matrix-values2}, we have 
 \begin{equation*}
 T\begin{mymatrix}{r}
 1 \\

@@ -152,7 +152,7 @@ x + 2y - 2z + 3w = 0
 
 Let us write the solution of the last example in another form.
 Specifically, it can be written as 
-\begin{equation}\label{eqn:homogeneoussolution-1}
+\begin{equation}\label{eqn:homogeneous-solution-1}
   \begin{mymatrix}{r}
     x\\
     y\\
@@ -181,7 +181,7 @@ in each equation, and another column from the coefficients of $t$.  We
 will discuss this notation more in later chapters. For now, consider
 what happens when we choose the parameters to be $s=1$ and $t=0$. In
 this case, we get the solution
-\begin{equation}\label{eqn:homogeneoussolution-2}
+\begin{equation}\label{eqn:homogeneous-solution-2}
   \begin{mymatrix}{r}
     -1\\
     1\\
@@ -193,7 +193,7 @@ which is the same as the column of coefficients for $s$. This is
 called a \textbf{basic solution}\index{basic solution}\index{solution!basic} of the
 homogeneous system of equations. The other basic solution is obtained
 by setting $s=0$ and $t=1$. In this case,
-\begin{equation}\label{eqn:homogeneoussolution-3}
+\begin{equation}\label{eqn:homogeneous-solution-3}
   \begin{mymatrix}{r}
     -1\\
     -2\\
@@ -203,9 +203,9 @@ by setting $s=0$ and $t=1$. In this case,
 \end{equation}
 The basic solutions of a system are columns constructed from the
 coefficients on parameters in the solution. If $X_1$ and $X_2$ are the
-basic solutions {\eqref{eqn:homogeneoussolution-2}} and
-{\eqref{eqn:homogeneoussolution-3}}, then the general solution
-{\eqref{eqn:homogeneoussolution-1}} is of the form $sX_1+tX_2$.  We
+basic solutions {\eqref{eqn:homogeneous-solution-2}} and
+{\eqref{eqn:homogeneous-solution-3}}, then the general solution
+{\eqref{eqn:homogeneous-solution-1}} is of the form $sX_1+tX_2$.  We
 say that the general solution of the homogeneous system is a
 \textbf{linear combination}\index{linear combination!of basic
   solutions} of its basic solutions.
@@ -214,7 +214,7 @@ We explore this further in the following example.
 
 \begin{example}{Basic solutions of a homogeneous system}{basic-solutions}
   Consider the following homogeneous system of equations. 
-  \begin{equation}\label{eqn:basicsolutions-1}
+  \begin{equation}\label{eqn:basic-solutions-1}
     \begin{array}{c}
       x + 4y + 3z = 0 \\
       3x + 12y + 9z = 0.
@@ -299,7 +299,7 @@ its associated homogeneous system.
 
 \begin{example}{Non-homogeneous vs. homogeneous system}{non-homo-vs-homo}
   Solve the system of equations
-  \begin{equation}\label{eqn:nonhomo-vs-homo-1}
+  \begin{equation}\label{eqn:non-homo-vs-homo-1}
     \begin{array}{c}
       x + 4y + 3z = 2 \\
       3x + 12y + 9z = 6.
@@ -311,9 +311,9 @@ its associated homogeneous system.
 
 \begin{solution}
   We note that the associated homogeneous system of
-  {\eqref{eqn:nonhomo-vs-homo-1}} is the system we saw in
+  {\eqref{eqn:non-homo-vs-homo-1}} is the system we saw in
   Example~\ref{exa:basic-solutions}. We solve the system
-  {\eqref{eqn:nonhomo-vs-homo-1}} in the usual way by reducing its
+  {\eqref{eqn:non-homo-vs-homo-1}} in the usual way by reducing its
   augmented matrix to {\rref}
   \begin{equation*}
     \begin{mymatrix}{rrr|r}
@@ -336,7 +336,7 @@ its associated homogeneous system.
     \end{array}
   \end{equation*}
   which can be written as 
-  \begin{equation}\label{eqn:nonhomo-vs-homo-2}
+  \begin{equation}\label{eqn:non-homo-vs-homo-2}
     \begin{mymatrix}{r}
       x\\
       y\\
@@ -366,7 +366,7 @@ its associated homogeneous system.
   We see that the general solution is almost exactly the same as that
   of the homogeneous system in Example~\ref{exa:basic-solutions}. The
   only difference is the additional column
-  \begin{equation}\label{eqn:nonhomo-vs-homo-3}
+  \begin{equation}\label{eqn:non-homo-vs-homo-3}
     \begin{mymatrix}{r}
       2 \\
       0 \\
@@ -375,11 +375,11 @@ its associated homogeneous system.
   \end{equation}    
 \end{solution}
 
-Note that the column {\eqref{eqn:nonhomo-vs-homo-3}}, by itself, is a
+Note that the column {\eqref{eqn:non-homo-vs-homo-3}}, by itself, is a
 solution of the non-homogeneous system. It is not the most general
 solution, but rather the particular solution resulting from the
 parameters $s=0$ and $t=0$. We can therefore interpret equation
-{\eqref{eqn:nonhomo-vs-homo-2}} as saying that the general
+{\eqref{eqn:non-homo-vs-homo-2}} as saying that the general
 solution\index{general solution} of the non-homogeneous system is
 equal to a particular solution\index{particular solution} of the
 non-homogeneous system, plus the general solution of the associated

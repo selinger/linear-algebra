@@ -110,14 +110,14 @@ Then the following systems are equivalent to \eqref{system}:
 	E_{2}=b_{2}\\
 	E_{1}=b_{1}.
 	\end{array}
-	\label{thm1.9.1}
+	\label{thm-1.9.1}
 	\end{equation}
 \item  \begin{equation}
 	\begin{array}{c}
 	E_{1}=b_{1} \\
 	kE_{2}=kb_{2}\\        
 	\end{array}
-	\label{thm1.9.2}
+	\label{thm-1.9.2}
 	\end{equation}
   for any scalar $k$, provided $k\neq0$.
 \item \begin{equation}
@@ -125,7 +125,7 @@ Then the following systems are equivalent to \eqref{system}:
        E_{1}=b_{1} \\
        E_{2}+kE_{1}=b_{2}+kb_{1}
        \end{array}  
-	\label{thm1.9.3}
+	\label{thm-1.9.3}
 	\end{equation}
 	for any scalar $k$ (including $k=0$).
 
@@ -137,30 +137,30 @@ Then the following systems are equivalent to \eqref{system}:
 \item By definition, a solution of \eqref{system} is an assignment of
   scalars to the variables that is a solution to $E_1=b_1$ and to
   $E_2=b_2$. But that is exactly the same thing as a solution of
-  \eqref{thm1.9.1}.
+  \eqref{thm-1.9.1}.
 
-\item To prove that the systems \eqref{system} and \eqref{thm1.9.2}
+\item To prove that the systems \eqref{system} and \eqref{thm-1.9.2}
   have the same solution set, let $\tup{x_{1},\cdots,x_{n}}$ be
   any solution of \eqref{system}. Then $E_1=b_1$ and $E_2=b_2$ are
   both true. Multiplying both sides of the last equation by $k$, we
   know that $kE_2=kb_2$ is true, and so
   $\tup{x_{1},\cdots,x_{n}}$ is a solution of
-  \eqref{thm1.9.2}. Conversely, let $\tup{x_{1},\cdots,x_{n}}$
-  be any solution of \eqref{thm1.9.2}.  Then $E_1=b_1$ and $kE_2=kb_2$
+  \eqref{thm-1.9.2}. Conversely, let $\tup{x_{1},\cdots,x_{n}}$
+  be any solution of \eqref{thm-1.9.2}.  Then $E_1=b_1$ and $kE_2=kb_2$
   are true. Because $k\neq 0$, we are allowed to divide both sides of
   the last equation by $k$, and therefore $E_2=b_2$ is true. Hence,
   $\tup{x_{1},\cdots,x_{n}}$ is also a solution of
   \eqref{system}. Since we have shown that every solution of
-  \eqref{system}  is a solution of \eqref{thm1.9.2} and vice versa,
+  \eqref{system}  is a solution of \eqref{thm-1.9.2} and vice versa,
   the two systems are equivalent.
 
-\item To prove that the systems \eqref{system} and \eqref{thm1.9.3}
+\item To prove that the systems \eqref{system} and \eqref{thm-1.9.3}
   have the same solution set, let $\tup{x_{1},\cdots,x_{n}}$ be
   any solution of \eqref{system}. Then $E_1=b_1$ and $E_2=b_2$ are
   both true. We multiply both sides of the first equation by $k$ to
   obtain $kE_1=kb_1$. Then $kE_1+E_2 = kb_1+b_2$, and hence
   $\tup{x_{1},\cdots,x_{n}}$ is a solution of
-  \eqref{thm1.9.3}. For the converse direction, assume
+  \eqref{thm-1.9.3}. For the converse direction, assume
   $\tup{x_{1},\cdots,x_{n}}$ is a solution of $E_1=b_1$ and
   $kE_1+E_2 = kb_1+b_2$. From the first equation, we have $kE_1=kb_1$,
   and subtracting this from the second equation, we get $E_2=b_2$,
@@ -181,7 +181,7 @@ x&+&3y&+&6z&=&25 \\
 2x&+&7y&+&14z&=&58 \\
 &&2y&+&5z&=&19.
 \end{array}
-\label{solvingasystem1}
+\label{solving-a-system1}
 \end{equation*}
 \end{example}
 
@@ -197,7 +197,7 @@ x&+&3y&+&6z&=&25 \\
        &&y&+&2z&=&8 \\
        &&2y&+&5z&=&19.
     \end{array}
-    \label{solvingasystem2}
+    \label{solving-a-system2}
   \end{equation*}
   Next, we add $\tup{-2}$ times the second equation to the
   third equation. This yields the system
@@ -207,7 +207,7 @@ x&+&3y&+&6z&=&25 \\
       &&y&+&2z&=&8 \\
       &&&&z&=&3.
     \end{array}
-    \label{solvingasystem3}
+    \label{solving-a-system3}
   \end{equation}
   At this point, it is easy to find the solution. The last equation
   tells us that $z=3$. We can substitute this value of $z$ back into
@@ -224,10 +224,10 @@ x&+&3y&+&6z&=&25 \\
   Simplifying and solving for $x$, we find that $x=1$. Hence, the
   solution to the system is $(x,y,z)=(1,2,3)$.
 
-  The process we followed for solving \eqref{solvingasystem3} by first
+  The process we followed for solving \eqref{solving-a-system3} by first
   computing $z$, then $y$, then $x$ is called \textbf{back
     substitution}\index{back substitution}.  Alternatively, we could
-  have continued from \eqref{solvingasystem3} with more elementary
+  have continued from \eqref{solving-a-system3} with more elementary
   operations as follows. Add $\tup{-2} $ times the third
   equation to the second and then add $\tup{-6} $ times the
   second to the first. This yields
@@ -390,7 +390,7 @@ same set of solutions.
       &&&&z&=&3,
     \end{array}
   \end{equation*}
-  which is the same as \ref{solvingasystem3}. We can solve it by back
+  which is the same as \ref{solving-a-system3}. We can solve it by back
   substitution to obtain the solution $x=1,y=2,$ and $z=3$.
 
   Alternatively, we can continue with additional row operations:

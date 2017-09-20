@@ -220,7 +220,7 @@ r\leq s.$
 Define span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} = V.$ Since each $\vect{x}_i$ is in  span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}}$, it follows there exist scalars $c_{1},\cdots ,c_{s}$
 such that 
 \begin{equation}
-\vect{x}_{1}=\sum_{i=1}^{s}c_{i}\vect{y}_{i}  \label{lincomb}
+\vect{x}_{1}=\sum_{i=1}^{s}c_{i}\vect{y}_{i}  \label{lin-comb}
 \end{equation}
 Note that not all of these scalars $c_i$ can equal zero. Suppose that all the $c_i=0$. Then it
 would follow that $\vect{x}_{1}=\vect{0}$ and so $\set{\vect{x}
@@ -230,7 +230,7 @@ Indeed, if $\vect{x}_{1}=\vect{0}$, $1\vect{x}_{1}+\sum_{i=2}^{r}0
 nontrivial linear combination of the vectors $\set{\vect{x}_{1},\cdots ,
 \vect{x}_{r}} $ which equals zero. Therefore at least one $c_i$ is nonzero. 
 
-Say $c_{k}\neq 0.$ Then solve \ref{lincomb} for $\vect{y}_{k}$ and obtain 
+Say $c_{k}\neq 0.$ Then solve \ref{lin-comb} for $\vect{y}_{k}$ and obtain 
 \begin{equation*}
 \vect{y}_{k}\in \func{span}\set{\vect{x}_{1},\overset{\text{s-1
 vectors here}}{\overbrace{\vect{y}_{1},\cdots ,\vect{y}_{k-1},\vect{y}
@@ -280,12 +280,12 @@ _{1},\cdots ,\vect{z}_{p}} =V
 d_{j}$ such that 
 \begin{equation}
 \vect{x}_{l+1}=\sum_{i=1}^{l}c_{i}\vect{x}_{i}+\sum_{j=1}^{p}d_{j}
-\vect{z}_{j}.  \label{lincomb2}
+\vect{z}_{j}.  \label{lin-comb2}
 \end{equation}
 Not all the $d_{j}$ can equal zero because if this were so, it would follow
 that $\set{\vect{x}_{1},\cdots ,\vect{x}_{r}} $ would be a
 linearly dependent set because one of the vectors would equal a linear
-combination of the others. Therefore, \ref{lincomb2} can be solved for one of the 
+combination of the others. Therefore, \ref{lin-comb2} can be solved for one of the 
 $\vect{z}_{i},$ say $\vect{z}_{k},$ in terms of $\vect{x}_{l+1}$ and
 the other $\vect{z}_{i}$ and just as in the above argument, replace that $
 \vect{z}_{i}$ with $\vect{x}_{l+1}$ to obtain 
@@ -863,7 +863,7 @@ An easy way to do this is to take the {\rref} of the matrix
 0 & 1 & 0 & 1 & 0 & 0 \\ 
 1 & 0 & 0 & 0 & 1 & 0 \\ 
 1 & 1 & 0 & 0 & 0 & 1
-\end{mymatrix}  \label{vectorspaceeq1}
+\end{mymatrix}  \label{vector-space-eq1}
 \end{equation}
 Note how the given vectors were placed as the first two and then the matrix
 was extended in such a way that it is clear that the span of the columns of
@@ -875,7 +875,7 @@ The {\rref} is
 0 & 1 & 0 & 0 & -1 & 1 \\ 
 0 & 0 & 1 & 0 & -1 & 0 \\ 
 0 & 0 & 0 & 1 & 1 & -1
-\end{mymatrix}  \label{vectorspaceeq2}
+\end{mymatrix}  \label{vector-space-eq2}
 \end{equation}
 These are 
 \begin{equation*}
@@ -904,7 +904,7 @@ These are
 and now this is an extension of the given basis for $W$ to a basis for $
 \R^{4}$.
 
-Why does this work? The columns of \ref{vectorspaceeq1} obviously span $\R
+Why does this work? The columns of \ref{vector-space-eq1} obviously span $\R
 ^{4}$  the span of the first four is the same as the span of all
 six.
 \end{solution}
