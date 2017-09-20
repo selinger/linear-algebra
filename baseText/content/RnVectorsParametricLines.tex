@@ -1,391 +1,402 @@
+\chapter{Lines and planes in \texorpdfstring{$\R^{n}$}{Rn}}
+
 \section{Parametric lines}
 
 \begin{outcome}
-
-\begin{enumerate}
-
-\item[A.] Find the vector and parametric equations of a line.
-
-\end{enumerate}
+  \begin{enumerate}
+  \item[A.] Find the vector, parametric, and symmetric equations of a line.
+  \item[B.] Determine whether a point is on a given line.
+  \item[C.] Determine whether two lines intersect.
+  \item[D.] Find the angle between two lines.
+  \item[E.] Find the projection of a point onto a line.
+  \end{enumerate}
 \end{outcome}
 
-We can use the concept of vectors and points to find equations for arbitrary lines in $\R^n$, although in this section the focus will be on lines in $\R^3$. 
-
-To begin, consider the case $n=1$ so we have $\R^{1}=\R$. There is only one line here which is the familiar number line, that is $\R$ itself. Therefore it is not necessary to explore the case of $n=1$ further. 
-
-Now consider the case where $n=2$, in other words $\R^2$.  Let $P $ and $P_0$ be
-two different points in $\R^{2}$ which are contained in a line
-$L$. Let $\vect{p}$ and $\vect{p}_0$ be the position vectors for the points $P$ and $P_0$
-respectively. Suppose that $Q$ is an arbitrary point on $L$. Consider the following
-diagram.
-
+We can use the concept of vectors and points to find equations for
+lines in $\R^n$. Consider a straight line $L$ that passes through a
+point $P$ in the direction given by a non-zero vector $\vect{d}$.
 \begin{center}
-\begin{tikzpicture}
-\draw[<->,thick,blue](-0.5,-0.5)--(2.5,2.5);
-\draw[help lines](0,0)--(1,0)--(1,1);
-\draw[help lines](0,0)--(2,0)--(2,2);
-\node[above left] at (0,0){$P_0$};
-\node[above left] at (1,1){$P$};
-\node[above left] at (2,2){$Q$};
-\end{tikzpicture}
+  \begin{tikzpicture}[rotate=10]
+    % Note: I deliberately made the red a bit lighter and the blue a bit
+    % darker, so that it will also look okay in black-and-white.
+    \draw[red!80](-4,0) -- node [above=3pt, pos=0.875] {$L$} (9,0);
+    \draw[->,thick,blue!80!black](0,0) -- node[above left] {$\vect{d}$} (2,0);
+    \fill (0,0) circle [radius=2.2pt] node [above=3pt] {$P$};
+    \fill (5,0) circle [radius=2.2pt] node [above=3pt] {$Q$};
+  \end{tikzpicture}
 \end{center}
-
-Our goal is to be able to define $Q$ in terms of $P$  and $P_0$. Consider the vector $\longvect{P_0P} = \vect{p} - \vect{p}_0$ which
-has its tail at $P_0$ and point at $P$. If we add $\vect{p} - \vect{p}_0$ to the position vector $\vect{p}_0$ for $P_0$,  
-the sum would be a vector with its point at $P$. 
-In other words,
+The line $L$ is infinitely long in both directions, although the
+picture only shows a finite part of it. To find an equation for this
+line, suppose that $Q$ is an aribtrary point on $L$. Then the vector
+$\longvect{PQ}$ is parallel to $\vect{d}$. In other words, there
+exists some real number $t$ such that
 \begin{equation*}
-\vect{p} = \vect{p}_0 + (\vect{p} - \vect{p}_0)
+  \longvect{PQ} = t\,\vect{d}.
 \end{equation*}
-
-Now suppose we were to add $t(\vect{p} - \vect{p}_0)$ to $\vect{p}$ where $t$ is some scalar.
-You can see that by doing so, we could find a vector with its point at $Q$. In other words, we can find $t$ such that 
+If $\vect{p}$ is the position vector of $P$ and $\vect{q}$ is the
+position vector of $Q$, we can write
 \begin{equation*}
-\vect{q} = \vect{p}_0 + t \tup{\vect{p}- \vect{p}_0}
+  \longvect{PQ} = \vect{q}-\vect{p}.
 \end{equation*}
-
-This equation determines the line $L$ in $\R^2$. In fact, it determines a line $L$ in $\R^n$. Consider the following definition.
+Putting together the last two equations, we get $\vect{q}-\vect{p} =
+t\,\vect{d}$, which we can write as
+\begin{equation*}
+  \vect{q} = \vect{p} + t\,\vect{d}.
+\end{equation*}
+This is called the \textbf{vector equation}%
+\index{vector equation of a line}\index{line!vector equation} of the
+line $L$. The vector $\vect{d}$ is called the \textbf{direction
+  vector}%
+\index{direction vector}\index{vector!direction vector}, and $t$ is
+called a \textbf{parameter}\index{parameter}. The parameter $t$ can be
+any real number; each time we plug in a different number for $t$, we
+get a different point $Q$ on the line. The following picture shows the
+effect of the parameter:
+\begin{center}
+  \begin{tikzpicture}[rotate=10]
+    % Note: I deliberately made the red a bit lighter and the blue a bit
+    % darker, so that it will also look okay in black-and-white.
+    \draw[red!80](-4,0) -- node [above=3pt, pos=0.92] {$L$} (10,0);
+    \draw[->,thick,blue!80!black](0,0) -- node[above=3pt] {$\vect{d}$} (2,0);
+    \fill (0,0) circle [radius=2.2pt] node [above=3pt] {$P$};
+    \fill (-2,0) circle [radius=2.2pt] node [below=9pt] {$t=-1$};
+    \fill (0,0) circle [radius=2.2pt] node [below=10pt] {$t=0$};
+    \fill (2,0) circle [radius=2.2pt] node [below=10pt] {$t=1$};
+    \fill (4,0) circle [radius=2.2pt] node [below=10pt] {$t=2$};
+    \fill (6,0) circle [radius=2.2pt] node [below=10pt] {$t=3$};
+    \fill (8,0) circle [radius=2.2pt] node [below=10pt] {$t=3$};
+  \end{tikzpicture}
+\end{center}
+The following definition summarizes the above.
 
 \begin{definition}{Vector equation of a line}{vectorequationofline}
-Suppose a line $L$ in $\R^{n}$ contains the two\index{lines!vector equation} different points $P$ and 
-$P_0$. Let $\vect{p}$ and $\vect{p}_0$ be the position vectors of these two points, respectively.
-Then, $L$ is the collection of points $Q$ which have the position vector $\vect{q}$ given by
-\begin{equation*}
-\vect{q}=\vect{p}_0+t\tup{\vect{p}-\vect{p}_0}
-\end{equation*}
-where $t\in \R$. 
-
-Let $\vect{d} = \vect{p} - \vect{p}_0$. Then $\vect{d}$ is the \textbf{direction vector for $L$}\index{direction vector} and the \textbf{vector equation} for $L$ is given by 
-\begin{equation*}
-\vect{p}=\vect{p}_0+t\vect{d}, t\in\R
-\end{equation*}
-\end{definition}
-
-Note that this definition agrees with the usual notion of a
-line in two dimensions and so this is consistent with earlier concepts. Consider now points in $\R^3$. If a point $P \in \R^3$ is given by $P = \tup{x,y,z }$, $P_0 \in \R^3$ by $P_0 = \tup{x_0, y_0, z_0 }$, then we can write
-\begin{equation*}
-\begin{mymatrix}{c}
-x \\
-y \\
-z 
-\end{mymatrix} = 
-\begin{mymatrix}{c}
-x_0 \\
-y_0 \\
-z_0 
-\end{mymatrix}
-+
-t
-\begin{mymatrix}{c}
-a \\
-b \\
-c 
-\end{mymatrix}
-\end{equation*}
-where $\vect{d} = \begin{mymatrix}{c}
-a \\
-b \\
-c 
-\end{mymatrix}$. This is the vector equation of $L$ written in \textbf{component form}\index{component form}.
-
-The following theorem claims that such an equation is in fact a line. 
-
-\begin{proposition}{Algebraic description of a straight line}{algebraicstraightline}
-Let $\vect{a},\vect{b}\in \R^{n}$ with $\vect{b}\neq \vect{0}$. 
-Then $\vect{x}=\vect{a}+t\vect{b},\; t\in \R$, is a
-line.
-\end{proposition}
-
-\begin{proof}
-Let $\vect{x}_1, \vect{x}_2 \in \R^n$. 
-Define $\vect{x}_1=\vect{a}$ and let $\vect{x}_2-\vect{x}_1=\vect{b}$.
-Since $\vect{b} \neq \vect{0}$, it follows that $\vect{x}_2\neq \vect{x}_1.$ Then
-$\vect{a}+t\vect{b}=\vect{x}_1 + t\tup{\vect{x}_2-\vect{x}_1} $. It follows that  
-$\vect{x}=\vect{a}+t\vect{b}$ is a line containing the two different points 
-$X_1$ and $X_2$ whose position vectors are given by $\vect{x}_1$ and $\vect{x}_2$ respectively. 
-\end{proof}
-
-We can use the above discussion to find the equation of a line when given two distinct points.
-Consider the following example. 
-
-\begin{example}{A line from two points}{linefromtwopoints}
-Find a vector equation for the line through the points $P_0 = \tup{
-1,2,0} $ and $P = \tup{2,-4,6}.$
-\end{example}
-
-\begin{solution}
-We will use the definition of a line given above in Definition \ref{def:vectorequationofline} to write
-this line in the form 
-\begin{equation*}
-\vect{q}=\vect{p}_0+t\tup{\vect{p}-\vect{p}_0}
-\end{equation*}
-Let $\vect{q} = 
-\begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix}
-$. Then, we can find $\vect{p}$ and $\vect{p}_0$ by taking the position vectors of points $P$ and $P_0$ 
-respectively. 
-Then, 
-\begin{equation*}
-\vect{q}=\vect{p}_0+t\tup{\vect{p}-\vect{p}_0}
-\end{equation*}
-can be written as
-\begin{equation*}
-\begin{mymatrix}{c}
-x \\
-y \\
-z \\
-\end{mymatrix}
- =
-\begin{mymatrix}{c}
-1 \\
-2 \\
-0
-\end{mymatrix}
-+
-t
-\begin{mymatrix}{r}
- 1 \\
--6 \\
-6  
-\end{mymatrix},
-\;t\in
-\R
-\end{equation*}
-Here, the direction vector $
-\begin{mymatrix}{r}
-1 \\
--6 \\
-6 
-\end{mymatrix}
-$
-is obtained by $
-\vect{p} - \vect{p}_0 = 
-\begin{mymatrix}{r}
-2 \\
--4 \\
-6
-\end{mymatrix}
--
-\begin{mymatrix}{r}
-1 \\
-2 \\
-0
-\end{mymatrix}
-$
-as indicated above in Definition \ref{def:vectorequationofline}.
-\end{solution} 
-
-Notice that in the above example we said that we found ``a'' vector
-equation for the line, not ``the'' equation.  The reason for this
-terminology is that there are infinitely many different vector 
-equations for the same line. To see this, replace $t$ with another
-parameter, say $3s.$ Then you obtain a different vector equation for the same
-line because the same set of points is obtained.
-
-In Example \ref{exa:linefromtwopoints}, the vector given by 
-$\begin{mymatrix}{r}
- 1 \\
--6 \\
-6 
-\end{mymatrix}$
-is the direction vector defined in Definition \ref{def:vectorequationofline}.
-If we know the direction vector of a line, as well as a point on the line,
-we can find the vector equation. 
-
-Consider the following example. 
+  Let $\vect{p}$ be a vector and $\vect{d}$ a non-zero vector. Then
+  \begin{equation*}
+    \vect{q} = \vect{p} + t\,\vect{d}
+  \end{equation*}
+  is the \textbf{vector equation}%
+  \index{vector equation of a line}\index{line!vector equation} of a
+  straight line $L$. Specifically, as the parameter $t$ ranges over
+  the real numbers, $\vect{q}$ ranges over the position vectors of all
+  the points $Q$ on the line $L$.  The vector $\vect{d}$ is called the
+  \textbf{direction vector}%
+  \index{direction vector}\index{vector!direction vector} of the line.
+\end{definition} 
 
 \begin{example}{A line from a point and a direction vector}{linepointanddirectionvector}
-Find a vector equation for the line which contains the point $P_0 = \tup{
-1,2,0} $ and has direction vector $\vect{d} = 
-\begin{mymatrix}{c}
-1 \\
-2 \\
-1
-\end{mymatrix}
-$
+  Find a vector equation for the line which contains the point
+  $P = \tup{2,0,3}$ and has direction vector
+  $\vect{d} = \mat{1,2,1}^T$.
 \end{example}
 
 \begin{solution}
-We will use Definition \ref{def:vectorequationofline} to write this line in the form 
-$\vect{p}=\vect{p}_0+t\vect{d},\; t\in \R$. We are given the direction vector $\vect{d}$. 
-In order to find $\vect{p}_0$, we can use the position vector of the point $P_0$. 
-This is given by 
-$\begin{mymatrix}{c}
-1 \\
-2 \\
-0
-\end{mymatrix}.
-$
-Letting $\vect{p}
-=
-\begin{mymatrix}{c}
- x \\
-y \\
-z
-\end{mymatrix}
-$,
-the equation for the line is given by 
-\begin{equation}
-\begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix}
-=
-\begin{mymatrix}{c}
-1 \\
-2 \\
-0
-\end{mymatrix}
-+ 
-t
-\begin{mymatrix}{c}
-1 \\
-2 \\
-1
-\end{mymatrix},
-\;t\in
-\R \label{vectoreqn}
-\end{equation}
+  The position vector of the point $P$ is
+  $\vect{p}=\mat{2,0,3}^T$. The equation of the line is
+  $\vect{q}= \vect{p} + t\,\vect{d}$, which we can write as
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    = \begin{mymatrix}{c} 2 \\ 0 \\ 3 \end{mymatrix}
+    + t \begin{mymatrix}{c} 1 \\ 2 \\ 1 \end{mymatrix}.
+  \end{equation*}
 \end{solution}
 
-We sometimes elect to write a line such as the one given in \ref{vectoreqn} in the form
-\begin{equation}
-\begin{array}{ll}
-\left. \begin{array}{l}
-x=1+t \\
-y=2+2t \\
-z=t 
-\end{array} \right\} & 
-\mbox{where} \; t\in \R 
-\end{array}
-\label{parameqn}
-\end{equation}
-This set of equations give the same information as \ref{vectoreqn}, and is called the \textbf{parametric equation of the line}. 
+\begin{example}{A line from two points}{linefromtwopoints}
+  Find a vector equation for the line through the points
+  $P = \tup{1,2,0,1}$ and $R = \tup{2,-4,6,3}$.
+\end{example}
 
-Consider the following definition. 
+\begin{solution}
+  We can use $P$ as the base point; its position vector is
+  $\vect{p}=\mat{1,2,0,1}^T$. We can use
+  $\vect{d}=\longvect{PR}=\mat{1,-6,6,2}$ as the direction vector. Then
+  a vector equation of the line is
+  $\vect{q} = \vect{p} + t\,\vect{d}$,
+  which we can also write as
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \\ z \\ w \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 2 \\ 0 \\ 1\end{mymatrix}
+    + t \begin{mymatrix}{r} 1 \\ -6 \\ 6 \\ 2\end{mymatrix}.
+  \end{equation*}
+\end{solution} 
 
-\begin{definition}{Parametric equation of a line}{parametricequation}
-Let $L$ be a line in $\R^3$ which has direction vector $\vect{d} = \begin{mymatrix}{c}
-a \\
-b \\
-c
-\end{mymatrix}$
-and goes through the point $P_0 = \tup{x_0, y_0, z_0 }$.
-Then, letting $t$ be a parameter, we can write $L$ as 
+When we write a vector equation in the form
 \begin{equation*}
-\begin{array}{ll}
-\left.
-\begin{array}{c}
-x = x_0 + ta \\
-y = y_0 + tb \\
-z = z_0 + tc
-\end{array}
-\right\} & 
-\mbox{where} \; t\in \R 
-\end{array}
+  \begin{mymatrix}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{mymatrix}
+  = \begin{mymatrix}{c} p_1 \\ p_2 \\ \vdots \\ p_n \end{mymatrix}
+  + t \begin{mymatrix}{r} d_1 \\ d_2 \\ \vdots \\ d_n \end{mymatrix},
 \end{equation*}
-This is called a \textbf{parametric equation}\index{lines!parametric equation} of the line $L$.
+it is also called the \textbf{component form}%
+\index{vector equation of a line!component form}%
+\index{component form}\index{line!component form}
+of the vector equation.
+
+Notice that the vector equation of a line is not unique. In fact,
+there are infinitely many vector equations for the same line. For
+example, we can replace the parameter $t$ with another parameter, say
+$3s$ or $1-r$.
+
+\begin{example}{Change of parameter}{change-of-parameter}
+  Consider the vector equation from
+  Example~\ref{exa:linepointanddirectionvector},
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    = \begin{mymatrix}{c} 2 \\ 0 \\ 3 \end{mymatrix}
+    + t \begin{mymatrix}{c} 1 \\ 2 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Find two other equations for the same line, by changing the
+  parameter to $3s$ and to $1-r$.
+\end{example}
+
+\begin{solution}
+  If we let $t=3s$, we get
+  \begin{equation*}
+    \begin{array}{rcl}
+      \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+      &=& \begin{mymatrix}{c} 2 \\ 0 \\ 3 \end{mymatrix}
+      + 3s \begin{mymatrix}{c} 1 \\ 2 \\ 1 \end{mymatrix}\\\\[-1ex]
+      &=& \begin{mymatrix}{c} 2 \\ 0 \\ 3 \end{mymatrix}
+      + s \begin{mymatrix}{c} 3 \\ 6 \\ 3 \end{mymatrix}.
+    \end{array}
+  \end{equation*}
+  If we let $t=1-r$, we get
+  \begin{equation*}
+    \begin{array}{rcl}
+      \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+      &=& \begin{mymatrix}{c} 2 \\ 0 \\ 3 \end{mymatrix}
+      + (1-r) \begin{mymatrix}{c} 1 \\ 2 \\ 1 \end{mymatrix}\\\\[-1ex]
+      &=& \begin{mymatrix}{c} 2 \\ 0 \\ 3 \end{mymatrix}
+      + \begin{mymatrix}{c} 1 \\ 2 \\ 1 \end{mymatrix}
+      - r \begin{mymatrix}{c} 1 \\ 2 \\ 1 \end{mymatrix}\\\\[-1ex]
+      &=& \begin{mymatrix}{c} 3 \\ 2 \\ 4 \end{mymatrix}
+      + r \begin{mymatrix}{c} -1 \\ -2 \\ -1 \end{mymatrix}.
+    \end{array}
+  \end{equation*}
+\end{solution}
+
+\begin{definition}{Parametric equations of a line}{parametric-equations}
+  A line with vector equation
+  \begin{equation*}
+    \begin{mymatrix}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{mymatrix}
+    = \begin{mymatrix}{c} p_1 \\ p_2 \\ \vdots \\ p_n \end{mymatrix}
+    + t \begin{mymatrix}{r} d_1 \\ d_2 \\ \vdots \\ d_n \end{mymatrix}
+  \end{equation*}
+  can also be written as a set of $n$ scalar equations:
+  \begin{equation*}
+    \begin{array}{c@{~}c@{~}c}
+      x_1 &=& p_1 + t\,d_1, \\
+      x_2 &=& p_2 + t\,d_2, \\
+          &\vdots&             \\
+      x_n &=& p_n + t\,d_n,
+    \end{array}
+  \end{equation*}
+  When written in this form, they are called the \textbf{parametric
+    equations}%
+  \index{parametric equations of a line}\index{line!parametric
+    equations} of the line.
 \end{definition}
 
-You can verify that the form discussed following Example \ref{exa:linepointanddirectionvector} in equation  \ref{parameqn} is of the form
-given in Definition \ref{def:parametricequation}.
-
-There is one other form for a line which is useful, which is the \textbf{symmetric form}. 
-Consider the line given by  \ref{parameqn}. You can
-solve for the parameter $t$ to write
-\begin{equation*}
-\begin{array}{l}
-t=x-1 \\
-t=\frac{y-2}{2} \\
-t=z
-\end{array}
-\end{equation*}
-Therefore, 
-\begin{equation*}
-x-1=\frac{y-2}{2}=z
-\end{equation*}
-This is the \textbf{symmetric form} of the line.\index{lines!symmetric form}
-
-In the following example, we look at how to take the equation of a line from symmetric form to 
-parametric form.
-
-\begin{example}{Change symmetric form to parametric form}{symmetrictoparametric}
-Suppose the
-\textbf{symmetric form of a line} is
-\begin{equation*}
-\frac{x-2}{3}=\frac{y-1}{2}=z+3
-\end{equation*}
-Write the line in parametric form as well as vector form.
+\begin{example}{Parametric equations}{parametric-equation}
+  Find parametric equations for the line through the points
+  $P = \tup{1,2,0,1}$ and $R = \tup{2,-4,6,3}$.
 \end{example}
 
 \begin{solution}
-We want to write this line in the form given by Definition \ref{def:parametricequation}. This is of the form 
-\begin{equation*}
-\begin{array}{ll}
-\left.
-\begin{array}{c}
-x = x_0 + ta \\
-y = y_0 + tb \\
-z = z_0 + tc
-\end{array}
-\right\} & 
-\mbox{where} \; t\in \R 
-\end{array}
-\end{equation*}
-
-Let $t=\frac{x-2}{3},t=\frac{y-1}{2}$ and $t=z+3$, as given in the symmetric form of the line.
- Then solving for $x,y,z,$
-yields
-\begin{equation*}
-\begin{array}{ll}
-\left.
-\begin{array}{c}
-x=2 + 3t \\
-y=1 + 2t \\
-z=-3 + t 
-\end{array}
-\right\} & 
-\mbox{with} \;t\in \R
-\end{array}
-\end{equation*}
-
-This is the parametric equation for this line. 
-
-Now, we want to write this line in the form given by Definition \ref{def:vectorequationofline}.
-This is the form 
-\begin{equation*}
-\vect{p}=\vect{p}_0+t\vect{d}
-\end{equation*}
-where $t\in \R$.
-This equation becomes
-\begin{equation*}
-\begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix} =
-\begin{mymatrix}{r}
-2 \\
-1 \\
--3 
-\end{mymatrix}
-+
-t
-\begin{mymatrix}{r}
-3 \\
-2 \\
-1 
-\end{mymatrix},
-\;t\in
-\R
-\end{equation*}
+  This is a same line as in Example~\ref{exa:linefromtwopoints}. We
+  can easily convert the vector equation
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \\ z \\ w \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 2 \\ 0 \\ 1\end{mymatrix}
+    + t \begin{mymatrix}{r} 1 \\ -6 \\ 6 \\ 2\end{mymatrix}
+  \end{equation*}
+  to a set of parametric equations:
+  \begin{equation*}
+    \begin{array}{c@{~}c@{~}l}
+      x &=& 1 + t, \\
+      y &=& 2 - 6t, \\
+      z &=& 6t, \\
+      w &=& 1 + 2t.
+    \end{array}
+  \end{equation*}
 \end{solution}
 
-% ----------------------------------------------------------------------
+\begin{example}{Determine whether a point is on a line}{point-on-line}
+  Determine whether the point $P=(5,8,4)$ is on the line $L$ given by
+  the vector equation
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 2 \\ 1 \end{mymatrix}
+    + t \begin{mymatrix}{c} 2 \\ 3 \\ 1 \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  The point $P$ is on the line $L$ if and only if there exists some
+  $t\in\R$ such that 
+  \begin{equation*}
+    \begin{mymatrix}{c} 1 \\ 2 \\ 1 \end{mymatrix}
+    + t \begin{mymatrix}{c} 2 \\ 3 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 5 \\ 8 \\ 4 \end{mymatrix}.
+  \end{equation*}
+  Subtracting $\mat{1,2,1}^T$ from both sides of the equation, this is
+  equivalent to
+  \begin{equation*}
+    t \begin{mymatrix}{c} 2 \\ 3 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 4 \\ 6 \\ 3 \end{mymatrix}.
+  \end{equation*}
+  We can write this as a set of parametric equations:
+  \begin{equation*}
+    \begin{array}{c@{~}c@{~}l}
+      2t &=& 4, \\
+      3t &=& 6, \\
+      t &=& 3.
+    \end{array}
+  \end{equation*}
+  This is a system of three linear equations in one variable, and we
+  quickly see that it is inconsistent. Therefore, the point $P$ does
+  not lie on the line $L$.
+\end{solution}
+
+\begin{example}{Determine whether two lines intersect}{lines-intersect}
+  Determine whether the lines
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    = \begin{mymatrix}{c} 3 \\ 1 \\ 0 \end{mymatrix}
+    + t \begin{mymatrix}{c} 2 \\ 0 \\ 1 \end{mymatrix}
+    \quad\mbox{and}\quad
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ -1 \\ 5 \end{mymatrix}
+    + s \begin{mymatrix}{c} 2 \\ 1 \\ -2 \end{mymatrix}
+  \end{equation*}
+  intersect. If yes, find the point of intersection.
+\end{example}
+
+\begin{solution}
+  The two lines intersect if and only if there exist $t,s\in\R$ such
+  that
+  \begin{equation*}
+    \begin{mymatrix}{c} 3 \\ 1 \\ 0 \end{mymatrix}
+    + t \begin{mymatrix}{c} 2 \\ 0 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ -1 \\ 5 \end{mymatrix}
+    + s \begin{mymatrix}{c} 2 \\ 1 \\ -2 \end{mymatrix}.
+  \end{equation*}
+  Bringing $s$ to the left-hand side, and subtracting $\mat{3,1,0}^T$
+  from both sides of the equation, this is equivalent to
+  \begin{equation*}
+    t \begin{mymatrix}{c} 2 \\ 0 \\ 1 \end{mymatrix}
+    - s \begin{mymatrix}{c} 2 \\ 1 \\ -2 \end{mymatrix}
+    = \begin{mymatrix}{c} -2 \\ -2 \\ 5 \end{mymatrix}.
+  \end{equation*}
+  If we write this vector equation as a set of three parametric
+  equations, it is a system of 3 linear equations in 2 variables. The
+  augmented matrix of the system is
+  \begin{equation*}
+    \begin{mymatrix}{cc|c}
+      2 & -2 & -2 \\
+      0 & -1 & -2 \\
+      1 & 2 & 5   \\
+    \end{mymatrix}.
+  \end{equation*}
+  This system has reduced echelon form
+  \begin{equation*}
+    \begin{mymatrix}{cc|c}
+      1 & 0 & 1 \\
+      0 & 1 & 2 \\
+      0 & 0 & 0 \\
+    \end{mymatrix},
+  \end{equation*}
+  and has the unique solution $t=1$ and $s=2$. Therefore, the lines
+  intersect. (If the lines had not intersected, the system of
+  equations would have been inconsistent). We find the point of
+  intersection by plugging the parameter $t=1$ into the equation of
+  the first line (or equivalently, but plugging $s=2$ into the
+  equation of the second line - doing it both ways is a good way to
+  double-check your answer). Therefore, the point of intersection is
+  \begin{equation*}
+    \begin{mymatrix}{c} 3 \\ 1 \\ 0 \end{mymatrix}
+    + 1 \begin{mymatrix}{c} 2 \\ 0 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 5 \\ 1 \\ 1 \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+There is one other form for a line which is useful, which is the
+\textbf{symmetric form}.  Consider the line given by
+\begin{equation*}
+  \begin{array}{c@{~}c@{~}l}
+    x &=& 1 + 2t, \\
+    y &=& 1 - t, \\
+    z &=& 3 + 2t. \\
+  \end{array}
+\end{equation*}
+We can solve each equation for $t$:
+\begin{equation*}
+  \begin{array}{c@{~}c@{~}l}
+    t &=& \frac{x-1}{2}, \\\\[-2ex]
+    t &=& \frac{y-1}{-1}, \\\\[-2ex]
+    t &=& \frac{z-3}{2}.
+  \end{array}
+\end{equation*}
+Finally, we can eliminate $t$ from the equations by setting all three
+equations equal to one another:
+\begin{equation*}
+  \frac{x-1}{2} = \frac{y-1}{-1} = \frac{z-3}{2}.
+\end{equation*}
+The latter is really a system of 2 equations in 3 variables.  This is
+the \textbf{symmetric form}%
+\index{line!symmetric form equation}\index{symmetric form} of the
+equation of the line.  In the following example, we look at how to
+convert the equation of a line from symmetric form to parametric form.
+
+\begin{example}{Change symmetric form to parametric form}{symmetrictoparametric}
+  Consider the line whose equations are given in \textbf{symmetric form} as
+  \begin{equation*}
+    \frac{x-2}{3}=\frac{y-1}{2}=\frac{z+3}{1}.
+  \end{equation*}
+  Find parametric and vector equations for this line.
+\end{example}
+
+\begin{solution}
+  We set all three quantities equal to $t$:
+  \begin{equation*}
+    t=\frac{x-2}{3}, \quad
+    t=\frac{y-1}{2}, \quad
+    t=\frac{z+3}{1}.
+  \end{equation*}
+  Solving these equations for $x,y,z$ yields
+  \begin{equation*}
+    \begin{array}{c}
+      x = 2 + 3t, \\
+      y = 1 + 2t, \\
+      z = -3 + t.
+    \end{array}
+  \end{equation*}
+  These are the parametric equations for the line. The vector equation
+  is
+  \begin{equation*}
+    \begin{mymatrix}{c}
+      x \\
+      y \\
+      z
+    \end{mymatrix} =
+    \begin{mymatrix}{r}
+      2 \\
+      1 \\
+      -3 
+    \end{mymatrix}
+    +
+    t
+    \begin{mymatrix}{r}
+      3 \\
+      2 \\
+      1 
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+% ---------------------------------------------------------------------
+% ### CONTINUE HERE
+
+\subsection{Stuff... CONTINUE HERE}
+
 Another application of the geometric description of the dot product is
 in finding the angle between two lines. Typically one would assume that the
 lines intersect. In some situations, however, it may make sense to ask this
