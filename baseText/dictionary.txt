@@ -366,6 +366,7 @@ nullspacebasis
 nullspaceoflineartransformation
 nullsubspace
 NW
+okay
 oneoneontochar
 onetoone
 onetooneabstract
