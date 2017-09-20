@@ -1,3 +1,4 @@
+abs
 actionlinear
 addinglinearindbasis
 addinglinearlyindependent
@@ -9,6 +10,7 @@ additionofmatrices
 adj
 adjoint
 adjugate
+Ak
 algebraicstraightline
 american
 Andrée
@@ -36,11 +38,14 @@ Bauslaugh
 bipoles
 Bogdan
 boxproduct
+bua
 cardioid
+cauchy
 cauchyschwarzinequality
 Cayley
 cc
 centimeters
+chem
 cholesky
 choleskyfactorization
 circuitikz
@@ -55,6 +60,7 @@ col
 columnvector
 com
 comm
+comp
 complementofrn
 complexabsvalue
 complexconjugate
@@ -70,6 +76,7 @@ compositetransformations
 compositionisomorphisms
 conformable
 consistentandinconsistent
+coord
 coordinateinverse
 coordinateisomorphism
 coordinatevector
@@ -77,6 +84,7 @@ coordlintransf
 coords
 cos
 Cramer's
+cramers
 cramersrule
 cramersrulenonconstantmatrix
 creativecommons
@@ -88,7 +96,11 @@ cyan
 DA
 Dal
 Dalhousie
-De
+de
+decomp
+def
+defn
+deg
 demoivretheorem
 det
 determinantofproduct
@@ -98,6 +110,7 @@ determinelincomb
 detinverse
 detinvertiblematrix
 dettrace
+diag
 diagonalizability
 diagonalizable
 diagonalization
@@ -127,6 +140,7 @@ echelonform
 echelonformrowspace
 effectofscalarmult
 Ehsun
+eigen
 eigenspace
 eigenvaluemigrationmatrix
 eigenvaluesandeigenvectors
@@ -136,6 +150,7 @@ eigenvector
 eigenvectors
 eigenvectorsanddiagonalizable
 eigenvectorsandeigenvalues
+elem
 elementarymatricesandrowops
 elementarymatrixswitchingrows
 elementaryoperations
@@ -145,6 +160,7 @@ endpoints
 entriesofproduct
 enuitem
 eq
+eqn
 equalities
 equalityofmatrices
 equalspan
@@ -190,10 +206,13 @@ Friess
 functiontransformation
 fundtheorem
 Gaston
+gauss
+gaussian
 gaussianelimination
 gaussjordan
 generalsolution
 geo
+geomet
 geometricdotproduct
 geometryofvectoraddition
 gj
@@ -208,10 +227,12 @@ homogeneoussolution
 homogeneoussystem
 homolessvars
 homomorevars
+hs
 https
 Ichabod
 idempotent
 II
+ij
 ijentryofproduct
 ijth
 ijthcofactor
@@ -222,6 +243,8 @@ impossiblediagonalize
 impropersubspaces
 inconvenientmatrixlintransf
 inconvenientmatrixoflintransf
+ind
+indep
 independentspanningRn
 inequalityproofbyinduction
 infinitesetofsoln
@@ -246,6 +269,7 @@ isomorphicvectorspaces
 isomorphism
 isomorphisms
 iteratively
+jordan
 kernelderivative
 kernelimage
 kernelimagesubspaces
@@ -253,9 +277,11 @@ kernelimagevectorspaces
 Keyowski
 kg
 ki
+kirchhoff
 Kirchhoff's
 kirchhofflaw
 km
+kth
 Kuttler
 Kuttler's
 Laflamme
@@ -266,6 +292,7 @@ leastSquaresLine
 leftmargin
 lengthofvector
 lightgray
+lin
 linearcombination
 lineardependence
 lineardependenceRn
@@ -289,6 +316,7 @@ linindepeigenvectors
 lintransfcombination
 longrunpopulation
 Lotka
+lu
 lufactorization
 lyryx
 lyryxcolour
@@ -324,7 +352,7 @@ minimizer
 minimizers
 mm
 modulo
-Moivre
+moivre
 Moivre's
 mol
 mols
@@ -378,13 +406,16 @@ onetoonevectorspace
 ontotransformation
 ontotransformationmatrix
 ontovectorspace
+ops
 orderofproduct
 org
+orth
 orthbasis
 orthbasiseigenvectors
 orthcomp
 orthdiag
 orthdiagonalizable
+ortho
 orthoDet
 orthogonalbasis
 orthogonaldiagonalization
@@ -409,6 +440,7 @@ particularandgeneralsolution
 particularsolutions
 pdf
 permutationmatrix
+perp
 perpendicularvectors
 perpvectors
 pivotfree
@@ -418,6 +450,7 @@ planebetweentwopoints
 pointplane
 polarform
 polarstandardform
+poly
 polydegreetwo
 polydegtwodifferentbasis
 polynomialinterpolation
@@ -441,6 +474,7 @@ principalaxes
 principalaxis
 prodelem
 productinverseorthogonal
+proj
 projectionmatrix
 proofbyinduction
 propertiesconjugate
@@ -455,7 +489,7 @@ propertiesscalarmult
 propertiessimilar
 propertiesvectoraddition
 pt
-QR
+qr
 qreigenvalues
 qrfactorization
 quadraticequation
@@ -481,6 +515,7 @@ resultantthreeforces
 Reynold's
 righthand
 rk
+rn
 Rnvectorspace
 rootscomplexnumbers
 rotationmatrixtwoangles
@@ -504,7 +539,8 @@ saylor
 scalareqnplane
 scalarmultdet
 scalarmultofmatrices
-Schwarz
+schmidt
+schwarz
 seealso
 Selinger
 sextuple
@@ -520,6 +556,8 @@ sizeinvertible
 skewsymmeigenvalues
 skewsymmetriceigen
 skewsymmetricmatrix
+soln
+solns
 solutionsdynamicalsystem
 solvecurrent
 solvingasystemwithelementaryops
@@ -558,6 +596,7 @@ surjection
 SVD
 SW
 switchingrows
+symm
 symmetricandskewsymmetric
 symmetricdefinitematrix
 symmetricmatrix
@@ -577,6 +616,7 @@ titlemainbgcolour
 titlemainboxcolour
 toc
 traceproperties
+transf
 transformationbasis
 transformationspanningset
 transposeanddotprod
@@ -605,6 +645,9 @@ unknowncurrent
 uploads
 usingmigrationmatrix
 UU
+val
+vars
+vect
 vecteqnplane
 vectoraddition
 vectorclosestvector
