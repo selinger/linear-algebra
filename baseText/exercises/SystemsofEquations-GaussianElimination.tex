@@ -643,12 +643,10 @@ $, Solution is: $\mat{w=15,x=15,y=20,z=10} .$
   Suppose $A$ is an $m\times n$ matrix. Explain why the rank of $A$ is
   always no larger than $\min \tup{m,n} .$
   \begin{sol}
-    It is because you cannot have more than $\min\tup{m,n}$ pivot
-    entries in the {\ef}. Recall that each row of the matrix can have
-    at most one pivot entry (the first non-zero entry of that
-    row). Therefore, there are no more than $m$ pivot entries. Also,
-    by the definition of {\ef}s, each pivot entry is in a separate
-    column. So there are no more than $n$ pivot entries. 
+    The rank is the number of pivot entries in the {\ef}. There is at
+    most one pivot entry in each row and column. Therefore, the rank
+    cannot be larger than the number of rows or the number of columns;
+    in other words, the rank is at most $\min\tup{m,n}$.
   \end{sol}
 \end{ex}
 
