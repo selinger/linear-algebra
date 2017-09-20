@@ -74,7 +74,7 @@ following observation.
 Using this proposition, we prove a lemma which will be used in the
 proof of the main result of this section.
 
-\begin{lemma}{Solutions and the {\rref} of a matrix}{rrefsolutions}
+\begin{lemma}{Solutions and the {\rref} of a matrix}{rref-solutions}
   Let $A$ and $B$ be two augmented matrices for two homogeneous
   systems of $m$ equations in $n$ variables, such that $A$ and $B$ are
   each in {\rref}. If $A$ and $B$ are different, then the two systems
@@ -92,7 +92,7 @@ In case $1$, the two matrices will have exactly the same pivot positions. Howeve
 In case $2$, there is a variable $x_i$ which is a pivot variable for one matrix, let's say $A$, and a free variable for the other matrix $B$. The system for matrix $B$ has a solution in which $x_i=1$ and $x_j=0$ for all other free variables $x_j$. However, by Proposition \ref{prop:pivot-free} this cannot be a solution of the system for the matrix $A$. This completes the proof of case $2$.
 \end{proof}
 
-Now, we say that the matrix $B$ is \textbf{row equivalent}\index{matrix!row equivalence}\index{row equivalence} to the matrix $A$ if $B$ can be obtained from $A$ by performing a sequence of elementary row operations. By Theorem~\ref{thm:elementary-operations-and-solns}, we know that row equivalent systems have exactly the same solutions. Now, we can use Lemma \ref{lem:rrefsolutions} to prove the main result of this section, which is that each matrix $A$ has a unique {\rref}.
+Now, we say that the matrix $B$ is \textbf{row equivalent}\index{matrix!row equivalence}\index{row equivalence} to the matrix $A$ if $B$ can be obtained from $A$ by performing a sequence of elementary row operations. By Theorem~\ref{thm:elementary-operations-and-solns}, we know that row equivalent systems have exactly the same solutions. Now, we can use Lemma \ref{lem:rref-solutions} to prove the main result of this section, which is that each matrix $A$ has a unique {\rref}.
 
 \begin{theorem}{Uniqueness of the {\rref}}{unique-rref}
   Every matrix $A$ is row equivalent to a unique matrix in {\rref}.
@@ -120,7 +120,7 @@ Now, we say that the matrix $B$ is \textbf{row equivalent}\index{matrix!row equi
   augmented matrices of homogeneous linear systems in the variables
   $x_1, x_2, \cdots, x_n$. Because all three systems are row
   equivalent, they have exactly the same solutions. By
-  Lemma~\ref{lem:rrefsolutions}, we conclude that $B^{+}=C^{+}$.
+  Lemma~\ref{lem:rref-solutions}, we conclude that $B^{+}=C^{+}$.
   Omitting the final column of zeros, we must also have $B=C$.
 \end{proof}
 
@@ -222,7 +222,7 @@ Now, we say that the matrix $B$ is \textbf{row equivalent}\index{matrix!row equi
     \end{mymatrix}.
   \end{equation*}
   Since the two systems have different {\rref}s, they are not row
-  equivalent.  Following the proof of Lemma~\ref{lem:rrefsolutions},
+  equivalent.  Following the proof of Lemma~\ref{lem:rref-solutions},
   we see that $z$ is a free variable for the first system, but a pivot
   variable for the second system. Therefore, there exists a solution
   of the first system with $z=1$, namely $(x,y,z) = (-1,-3,1)$. But

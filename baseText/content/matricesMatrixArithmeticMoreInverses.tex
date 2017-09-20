@@ -56,7 +56,7 @@ Of course, not all square matrices are invertible. In particular, zero matrices 
 
 The following proposition will be useful in proving the next theorem.
 
-\begin{proposition}{{\Rref} of a square matrix}{rrefsquare}
+\begin{proposition}{{\Rref} of a square matrix}{rref-square}
 If $R$ is the {\rref} of a square matrix, then either $R$ has a row of zeros or $R$ is an identity matrix. 
 \end{proposition}
 
@@ -68,7 +68,7 @@ Suppose $A$ and $B$ are square matrices such that $AB=I$ where $I$ is an identit
 \end{theorem}
 
 \begin{proof}
-Let $R$ be the {\rref} of a square matrix $A$. Then, $R=EA$ where $E$ is an invertible matrix. Since $AB=I$, Lemma \ref{lem:no-zero-row} gives us that $R$ does not have a row of zeros. By noting that $R$ is a square matrix and applying Proposition \ref{prop:rrefsquare}, we see that $R=I$. Hence, $EA=I$. 
+Let $R$ be the {\rref} of a square matrix $A$. Then, $R=EA$ where $E$ is an invertible matrix. Since $AB=I$, Lemma \ref{lem:no-zero-row} gives us that $R$ does not have a row of zeros. By noting that $R$ is a square matrix and applying Proposition \ref{prop:rref-square}, we see that $R=I$. Hence, $EA=I$. 
 
 Using both that $EA=I$ and $AB=I$, we can finish the proof with a chain of equalities as given by
 \begin{eqnarray*}
@@ -142,7 +142,7 @@ Is it possible to have matrices $A$ and $B$ such that $AB=I$, while $BA=0$? This
 
 We conclude this section with an important theorem.
 
-\begin{theorem}{The {\rref} of an invertible matrix}{invertiblerref}
+\begin{theorem}{The {\rref} of an invertible matrix}{invertible-rref}
 For any matrix $A$ the following conditions are equivalent:
 \begin{itemize}
 \item $A$ is invertible
@@ -153,11 +153,11 @@ For any matrix $A$ the following conditions are equivalent:
 \begin{proof}
 In order to prove this, we show that for any given matrix $A$, each condition implies the other. We first show that if $A$ is invertible, then its {\rref} is an identity matrix, then we show that if the {\rref} of $A$ is an identity matrix, then $A$ is invertible. 
 
-If $A$ is invertible, there is some matrix $B$ such that $AB = I$. By Lemma \ref{lem:no-zero-row}, we get that the {\rref} of $A$ does not have a row of zeros. Then by Theorem \ref{thm:square-invertible}, it follows that $A$ and the {\rref} of $A$ are square matrices. Finally, by Proposition \ref{prop:rrefsquare}, this {\rref} of $A$ must be an identity matrix. This proves the first implication.
+If $A$ is invertible, there is some matrix $B$ such that $AB = I$. By Lemma \ref{lem:no-zero-row}, we get that the {\rref} of $A$ does not have a row of zeros. Then by Theorem \ref{thm:square-invertible}, it follows that $A$ and the {\rref} of $A$ are square matrices. Finally, by Proposition \ref{prop:rref-square}, this {\rref} of $A$ must be an identity matrix. This proves the first implication.
 
 Now suppose the {\rref} of $A$ is an identity matrix $I$. Then $I=EA$ for some product $E$ of elementary matrices. By Theorem \ref{thm:unique-inverse-of-matrix}, we can conclude that $A$ is invertible.
 \end{proof}
 
-Theorem \ref{thm:invertiblerref} corresponds to Algorithm \ref{algo:matrix-inversion-algorithm}, which claims that $A^{-1}$ is found by row reducing the augmented matrix $\mat{A|I}$ to the form $\mat{I|A^{-1}}$. This will be a matrix product $E\mat{A|I}$ where $E$ is a product of elementary matrices. By the rules of matrix multiplication, we have that $E\mat{A|I} = \mat{EA|EI} = \mat{EA|E}$.
+Theorem \ref{thm:invertible-rref} corresponds to Algorithm \ref{algo:matrix-inversion-algorithm}, which claims that $A^{-1}$ is found by row reducing the augmented matrix $\mat{A|I}$ to the form $\mat{I|A^{-1}}$. This will be a matrix product $E\mat{A|I}$ where $E$ is a product of elementary matrices. By the rules of matrix multiplication, we have that $E\mat{A|I} = \mat{EA|EI} = \mat{EA|E}$.
 
-It follows that the {\rref} of $\mat{A|I}$ is $\mat{EA|E}$, where $EA$ gives the {\rref} of $A$. By Theorem \ref{thm:invertiblerref}, if $EA \neq I$, then $A$ is not invertible, and if $EA=I$, $A$ is invertible. If $EA=I$, then by Theorem \ref{thm:unique-inverse-of-matrix}, $E=A^{-1}$. This proves that Algorithm \ref{algo:matrix-inversion-algorithm} does in fact find $A^{-1}$.
+It follows that the {\rref} of $\mat{A|I}$ is $\mat{EA|E}$, where $EA$ gives the {\rref} of $A$. By Theorem \ref{thm:invertible-rref}, if $EA \neq I$, then $A$ is not invertible, and if $EA=I$, $A$ is invertible. If $EA=I$, then by Theorem \ref{thm:unique-inverse-of-matrix}, $E=A^{-1}$. This proves that Algorithm \ref{algo:matrix-inversion-algorithm} does in fact find $A^{-1}$.

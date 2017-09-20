@@ -9,7 +9,6 @@ Argand
 associativity
 atholic
 Ax
-basessamesize
 Bauslaugh
 bipoles
 Bogdan
@@ -99,7 +98,6 @@ ind
 indep
 invertibility
 invertible
-invertiblerref
 ir
 isomorphism
 isomorphisms
@@ -146,8 +144,6 @@ NDlogis
 NDsupp
 nilpotent
 nofield
-nonlinear
-nonnegative
 notational
 NW
 okay
@@ -166,7 +162,6 @@ perp
 poly
 Poohbah
 pos
-positivematrixdeterminantAk
 proj
 pt
 qr
@@ -177,8 +172,6 @@ Reynold's
 rk
 rn
 rref
-rrefsolutions
-rrefsquare
 rrrr
 Sava
 saylor
