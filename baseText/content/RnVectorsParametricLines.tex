@@ -305,8 +305,9 @@ $3s$ or $1-r$.
     \end{mymatrix},
   \end{equation*}
   and has the unique solution $t=1$ and $s=2$. Therefore, the lines
-  intersect. (If the lines had not intersected, the system of
-  equations would have been inconsistent). We find the point of
+  intersect. (Other possible cases are: If the system is inconsistent,
+  the lines do not intersect. If the system has more than one
+  solution, the lines are identical). We find the point of
   intersection by plugging the parameter $t=1$ into the equation of
   the first line (or equivalently, but plugging $s=2$ into the
   equation of the second line - doing it both ways is a good way to
@@ -392,180 +393,119 @@ convert the equation of a line from symmetric form to parametric form.
   \end{equation*}
 \end{solution}
 
-% ---------------------------------------------------------------------
-% ### CONTINUE HERE
-
-\subsection{Stuff... CONTINUE HERE}
-
-Another application of the geometric description of the dot product is
-in finding the angle between two lines. Typically one would assume that the
-lines intersect. In some situations, however, it may make sense to ask this
-question when the lines do not intersect, such as the angle between
-two object trajectories. In any case we understand it to mean the
-smallest angle between (any of) their direction vectors. The only
-subtlety here is that if $\vect{u}$ is a direction vector for a line,
-then so is any multiple $k\vect{u}$, and thus we will find complementary angles
-among all angles between direction vectors for two lines, and we
-simply take the smaller of the two.
+We can use the dot product to find the angle between two intersecting
+lines. This is simply the smallest angle between (any of) their
+direction vectors. The only subtlety here is that if $\vect{u}$ is a
+direction vector for a line, then so is $-\vect{u}$, and thus we will
+find pairs of complementary angles. We will take the smaller of the
+two angles.
+\begin{center} \begin{tikzpicture}
+    \filldraw[fill=green!20,draw=green!50!black] (0,0) -- (-25:8mm)
+    arc (-25:25:8mm) -- cycle;
+    \filldraw[fill=yellow!20,draw=yellow!50!black] (0,0) -- (25:8mm)
+    arc (25:155:8mm) -- cycle;
+    \node at (0:5mm) {$\theta$};
+    \node at (90:4.2mm) {$\pi-\theta$};
+    \draw[red!80](25:-2.5) -- (25:2.5);
+    \draw[red!80](-25:-2.5) -- (-25:2.5);
+    \draw[->,thick,red!80!black](0,0) -- node[above,pos=0.6]{$\vect{v}$} (25:2);
+    \draw[->,thick,blue!80!black](0,0) -- node[below,pos=0.3]{$\vect{u}$} (-25:1.5);
+    \draw[->,thick,blue!80!black](0,0) -- node[below,pos=0.6]{$-\vect{u}$} (155:1.5);
+  \end{tikzpicture}
+\end{center}
 
 \begin{example}{Find the angle between two lines}{angle-between-two-lines}
-Find the angle between the two lines
-\begin{equation*}
-L_1:  \;
-\begin{mymatrix}{r}
-x \\
-y \\
-z 
-\end{mymatrix}
- = 
-\begin{mymatrix}{r}
-1 \\
-2 \\
-0
-\end{mymatrix} +t\begin{mymatrix}{r}
--1 \\
-1 \\
-2
-\end{mymatrix} 
-\end{equation*}
- and
-\begin{equation*}
-L_2: \;
-\begin{mymatrix}{r}
-x \\
-y \\
-z
-\end{mymatrix}
- = 
-\begin{mymatrix}{r}
-0 \\
-4 \\
--3
-\end{mymatrix}
- +s\begin{mymatrix}{r}
-2 \\
-1 \\
--1
-\end{mymatrix}
-\end{equation*}
+  Find the angle between the two lines
+  \begin{equation*}
+    L_1:  \;
+    \begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}
+    = \begin{mymatrix}{r} 1 \\ 2 \\ 0 \end{mymatrix}
+    + t \begin{mymatrix}{r} -1 \\ 1 \\ 2 \end{mymatrix} 
+  \end{equation*}
+  and
+  \begin{equation*}
+    L_2: \;
+    \begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}
+    = \begin{mymatrix}{r} 0 \\ 3 \\ 2 \end{mymatrix}
+    + s \begin{mymatrix}{r} 2 \\ 1 \\ -1 \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-You can verify that these lines do not intersect, but as discussed
-above this does not matter and we simply find the smallest angle
-between any directions vectors for these lines.
-
-To do so  we first find the angle
-between the direction vectors given above:
-\begin{equation*}
-\vect{u}=\begin{mymatrix}{r}
--1 \\
-1 \\
-2
-\end{mymatrix},\;
-\vect{v}=\begin{mymatrix}{r}
-2 \\
-1 \\
--1
-\end{mymatrix}
-\end{equation*}
-
-In order to find the angle, we solve the following equation for $\theta$
-\begin{equation*}
-\vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}
-} \cos \theta
-\end{equation*}
-to obtain $\cos \theta = -\frac{1}{2}$ and since we choose included
-angles between $0$ and $\pi$ we obtain $\theta = \frac{2 \pi}{3}$.
-
-
-Now the angles between any two direction vectors for these lines will
-either be $\frac{2 \pi}{3}$ or its complement $ \phi = \pi -  \frac{2 \pi}{3}
-= \frac{\pi}{3}$. We choose the smaller angle, and therefore conclude that the angle between the two lines is $\frac{\pi}{3}$.
+  The direction vectors are
+  \begin{equation*}
+    \vect{u}=\begin{mymatrix}{r} -1 \\ 1 \\ 2 \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{v}=\begin{mymatrix}{r} 2 \\ 1 \\ -1 \end{mymatrix}.
+  \end{equation*}
+  The answer is given by 
+  \begin{equation*}
+    \cos\theta =
+    \frac{\vect{u}\dotprod\vect{v}}{\norm{\vect{u}}\norm{\vect{v}}} = -\frac{1}{2},
+  \end{equation*}
+  which gives $\theta=\frac{2\pi}{3}$.  Now the angles between any two
+  direction vectors for these lines will either be $\frac{2 \pi}{3}$ or
+  its complement $ \phi = \pi - \frac{2 \pi}{3} = \frac{\pi}{3}$. We
+  choose the smaller angle, and therefore conclude that the angle
+  between the two lines is $\frac{\pi}{3}$.
 \end{solution}
 
-% ----------------------------------------------------------------------
-
-We will conclude this section with an important application of projections. Suppose a line $L$ and a point $P$ are given such that $P$ is not contained in $L$. Through the use of projections, we can determine the shortest distance from $P$ to $L$. 
+Finally, we will show how to use projections to find the shortest
+distance from a point to a line. 
 
 \begin{example}{Shortest distance from a point to a line}{shortest-point-line}
-Let $P = (1,3,5)$ be a point in $\R^3$, and let $L$ be the line which goes through point $P_0 = (0,4,-2)$ with direction vector $\vect{d} = \begin{mymatrix}{r}
-2 \\
-1 \\
-2
-\end{mymatrix}
-$.  Find the shortest distance from $P$ to the line $L$, and find the point $Q$ on $L$ that is closest to $P$. 
+  Let $L$ be the line which goes through the point $P = (0,4,-2)$ with
+  direction vector
+  $\vect{d} = \begin{mysmallmatrix}{r} 2 \\ 1 \\
+    2 \end{mysmallmatrix}$, and let $Q=(1,3,5)$. Find the shortest
+  distance from $Q$ to the line $L$, and find the point $R$ on $L$
+  that is closest to $Q$.
+  \begin{center}
+    \begin{tikzpicture}[rotate=-20]
+      \draw[red!80](-1.5,0) -- node[above, pos=0.9]{$L$} (4.5,0);
+      \draw[->,thick,blue!80!black](0,0) -- node[above right]{$\vect{d}$} (2,0);
+      \draw[dashed] (3,1.5) -- (3,0);
+      \draw[fill](0,0) circle [radius=2.25pt] node[below=1ex]{$P$};
+      \draw[fill](3,1.5) circle [radius=2.25pt] node[right=0.5ex]{$Q$};
+      \draw[fill](3,0) circle [radius=2.25pt] node[below=1ex]{$R$};
+    \end{tikzpicture}
+  \end{center}
 \end{example}
 
 \begin{solution}
-In order to determine the shortest distance from $P$ to $L$, we will first find the vector $\longvect{P_0P}$ and then find the projection of this vector onto $L$. 
-The vector $\longvect{P_0P}$ is given by 
-\[
-\longvect{P_0P}=
-\begin{mymatrix}{r}
-1 \\
-3 \\
-5
-\end{mymatrix}
--
-\begin{mymatrix}{r}
-0 \\
-4 \\
--2
-\end{mymatrix}
- = \begin{mymatrix}{r}
-1 \\
--1 \\
-7
-\end{mymatrix}
-\]
-
-Then, if $Q$ is the point on $L$ closest to $P$, it follows that 
-\begin{eqnarray*}
-\longvect{P_0Q} &=& \func{proj}_{\vect{d}}\longvect{P_0P} \\
-&=& \tup{\frac{ \longvect{P_0P}\bullet \vect{d}}{\norm{\vect{d}}^2}} \vect{d} \\
-&=& 
-\frac{15}{9} \begin{mymatrix}{r}
-2 \\
-1 \\
-2
-\end{mymatrix} \\
-&=&
-\frac{5}{3} \begin{mymatrix}{r}
-2 \\
-1 \\
-2
-\end{mymatrix}
-\end{eqnarray*}
-
-Now, the distance from $P$ to $L$ is given by 
-\[
-\norm{\longvect{QP}} = \norm{\longvect{P_0P} - \longvect{P_0Q}}
- = \sqrt{26} 
-\]
-
-The point $Q$ is found by adding the vector $\longvect{P_0Q}$ to the position vector $\longvect{0P_0}$ for $P_0$ as follows
-\begin{eqnarray*}
-\begin{mymatrix}{r}
-0 \\
-4 \\
--2
-\end{mymatrix}
-+
-\frac{5}{3}
-\begin{mymatrix}{r}
-2 \\
-1 \\
-2
-\end{mymatrix} 
-&=& 
-\begin{mymatrix}{r}
-\vspace{0.05in}\frac{10}{3} \\
-\vspace{0.05in}\frac{17}{3} \\
-\vspace{0.05in}\frac{4}{3}
-\end{mymatrix}
-\end{eqnarray*}
-
-Therefore, $Q = (\frac{10}{3}, \frac{17}{3}, \frac{4}{3})$. 
-
+  In order to determine the shortest distance from $Q$ to $L$, we will
+  first find the vector $\longvect{PQ}$ and then find the projection
+  of this vector onto $L$.  The vector $\longvect{PQ}$ is given by
+  \[
+    \longvect{PQ}=
+    \begin{mymatrix}{r} 1 \\ 3 \\ 5 \end{mymatrix}
+    - \begin{mymatrix}{r} 0 \\ 4 \\ -2 \end{mymatrix}
+    = \begin{mymatrix}{r} 1 \\ -1 \\ 7 \end{mymatrix}.
+  \]
+  Then, if $R$ is the point on $L$ closest to $Q$, it follows that 
+  \begin{equation*}
+    \longvect{PR}
+    ~=~ \func{proj}_{\vect{d}}\longvect{PQ} \\
+    ~=~ \frac{ \longvect{PQ}\bullet \vect{d}}{\norm{\vect{d}}^2}\,\vect{d} \\
+    ~=~ \frac{15}{9} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix} \\
+    ~=~ \frac{5}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix}.
+  \end{equation*}
+  Now, the distance from $Q$ to $L$ is given by 
+  \[
+    \norm{\longvect{RQ}} = \norm{\longvect{PQ} - \longvect{PR}}
+    = \sqrt{26}.
+  \]
+  The point $R$ is found by adding the vector $\longvect{PR}$ to the
+  position vector $\longvect{0P}$ for $P$ as follows
+  \begin{equation*}
+    \begin{mymatrix}{r} 0 \\ 4 \\ -2 \end{mymatrix}
+    + \frac{5}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix} 
+    ~=~
+    \begin{mymatrix}{c}
+      10/3 \\
+      17/3 \\
+      4/3
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore, $R = (\frac{10}{3}, \frac{17}{3}, \frac{4}{3})$. 
 \end{solution}
