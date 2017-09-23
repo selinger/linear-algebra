@@ -58,6 +58,7 @@ effect of the parameter:
     % darker, so that it will also look okay in black-and-white.
     \draw[red!80](-4,0) -- node [above=3pt, pos=0.92] {$L$} (10,0);
     \draw[->,thick,blue!80!black](0,0) -- node[above=3pt] {$\vect{d}$} (2,0);
+    \draw[->,thick,blue!80!black](3,-2) -- node[below=3pt] {$\vect{p}$} (0,0);
     \fill (0,0) circle [radius=2.2pt] node [above=3pt] {$P$};
     \fill (-2,0) circle [radius=2.2pt] node [below=9pt] {$t=-1$};
     \fill (0,0) circle [radius=2.2pt] node [below=10pt] {$t=0$};
@@ -65,6 +66,7 @@ effect of the parameter:
     \fill (4,0) circle [radius=2.2pt] node [below=10pt] {$t=2$};
     \fill (6,0) circle [radius=2.2pt] node [below=10pt] {$t=3$};
     \fill (8,0) circle [radius=2.2pt] node [below=10pt] {$t=3$};
+    \fill (3,-2) circle [radius=2.2pt] node [right=3pt] {$0$};
   \end{tikzpicture}
 \end{center}
 The following definition summarizes the above.
@@ -191,8 +193,8 @@ $3s$ or $1-r$.
   \end{equation*}
   When written in this form, they are called the \textbf{parametric
     equations}%
-  \index{parametric equations of a line}\index{line!parametric
-    equations} of the line.
+  \index{parametric equations!of a line}%
+  \index{line!parametric equations} of the line.
 \end{definition}
 
 \begin{example}{Parametric equations}{parametric-equation}
