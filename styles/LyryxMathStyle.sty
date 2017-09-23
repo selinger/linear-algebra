@@ -211,11 +211,11 @@
 % Redefining enumerate styles for only part of the book
 % Changes all first level items in listed to (a),(b),(c),etc
 
-\newenvironment{enumialphparenastyle}{
-	\let\oldlabelenumi=\labelenumi
-	\renewcommand{\labelenumi}{\textrm{(\alph{enumi})}}
-}{
-\let\labelenumi=\oldlabelenumi
+\newenvironment{enumialphparenastyle}{%
+  \begingroup%
+  \def\labelenumi{\textrm{(\alph{enumi})}}%
+}{%
+  \endgroup%
 }
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
