@@ -333,6 +333,26 @@ Since both sides of the equation are equal to $16$, the equation is
   $\vect{n}$ and $P$.
 \end{solution}
 
+\begin{example}{Vector equation from normal equation}{vector-from-normal}
+  Find a vector equation for the plane $x+3y-2z=7$.
+\end{example}
+
+\begin{solution}
+  This is the same thing as finding the general solution of a system
+  of one linear equation in 3 variables. Since there is only a single
+  equation $x+3y-2z=7$, it is already in echelon form. The variables
+  $y$ and $z$ are free, so we set them equal to parameters: $z=t$ and
+  $y=s$. The variable $x$ is a pivot variable, and we get
+  $x=7+2t-3s$. So the general solution of the equation is
+  \begin{equation*}
+    \begin{mymatrix}{c} x\\y\\z \end{mymatrix}
+    = \begin{mymatrix}{r} 7\\0\\0 \end{mymatrix}
+    + t\,\begin{mymatrix}{r} 2\\0\\1 \end{mymatrix}
+    + s\,\begin{mymatrix}{r} -3\\1\\0 \end{mymatrix}.
+  \end{equation*}
+  This is also a vector equation for the plane.
+\end{solution}
+
 \begin{example}{Intersection of two planes}{intersection-planes}
   Find the intersection between the planes $x-2y+z=0$ and $2x-3y-z=4$.
 \end{example}
@@ -505,7 +525,7 @@ between points and planes.
 
 \begin{example}{Shortest distance from a point to a plane}{shortest-distance-plane}
   Find the shortest distance from the point $P = (3,2,3)$ to the plane
-  given by \\ $ 2x + y + 2z = 2$, and find the point $Q$ on the plane
+  given by $2x + y + 2z = 2$, and find the point $Q$ on the plane
   that is closest to $P$.
 \end{example}
 
