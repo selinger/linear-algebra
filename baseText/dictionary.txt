@@ -56,6 +56,7 @@ diagonalization
 diagonalize
 diagonalized
 diagonalizing
+distributivity
 Dolittle's
 dotproduct
 DU
@@ -162,6 +163,7 @@ perp
 poly
 Poohbah
 pos
+pre
 proj
 pt
 qr
