@@ -220,6 +220,18 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Locally redefine enumerate style.
+% Changes all first level items in listed to A., B., C., etc.
+
+\newenvironment{enumiABCstyle}{%
+  \begingroup%
+  \def\labelenumi{\textrm{\Alph{enumi}.}}%
+}{%
+  \endgroup%
+}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Used for Lyryx with Open Text icons (4 of them) on back cover of text
