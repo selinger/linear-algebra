@@ -537,7 +537,7 @@ between points and planes.
   \[
     \longvect{QP} = \func{proj}_{\vect{n}}\,\longvect{RP}
   \]
-  and $\norm{\longvect{QP}}$ is the shortest distance from $P$ to the plane. Further, the vector $\longvect{0Q} = \longvect{0P} - \longvect{QP}$ gives the necessary point $Q$.
+  and $\norm{\longvect{QP}}$ is the shortest distance from $P$ to the plane. Further, the vector $\vect{q} = \vect{p} - \longvect{QP}$ gives the necessary point $Q$.
   \begin{center}
     \begin{tikzpicture}[x={(1cm,-0.2cm)},y={(0.5cm,0.5cm)},z={(0cm,1cm)}]
       \filldraw[draw=red!80,fill=red!10](-3,-2,0) -- (4,-2,0) -- (4,2,0) -- (-3,2,0) -- cycle;
@@ -570,7 +570,7 @@ between points and planes.
   to the plane is $4$.  To find the point $Q$ on the plane that is
   closest to $P$, we have
   \begin{equation*}
-    \longvect{0Q} ~=~ \longvect{0P} - \longvect{QP} 
+    \vect{q} ~=~ \vect{p} - \longvect{QP} 
     ~=~ \begin{mymatrix}{r} 3 \\ 2 \\ 3 \end{mymatrix}
     -
     \frac{4}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix} 
