@@ -34,7 +34,7 @@
 \end{ex} 
 
 \begin{ex}
-  The equation of a line in two dimensions is written as $y=x-5.$ Find
+  The equation of a line in two dimensions is written as $y=x-5$. Find
   a vector equation for this line.
   % \begin{sol}
   % \end{sol}
@@ -43,6 +43,41 @@
 \begin{ex}
   Find parametric equations for the line through $\tup{6, 5, -2, 3}$
   and $\tup{5, 1, 2, 1}$.
+  % \begin{sol}
+  % \end{sol}
+\end{ex} 
+
+\begin{ex}
+  Consider the following vector equation for a line in $\R^3$:
+  \begin{equation*}
+    \begin{mymatrix}{c} x\\y\\z \end{mymatrix}
+    = \begin{mymatrix}{r} 1\\2\\0 \end{mymatrix}
+    + t\,\begin{mymatrix}{r} 1\\0\\1 \end{mymatrix}.
+  \end{equation*}
+  Find a new vector equation for the same line by doing the change of
+  parameter $t=2-s$.
+  \begin{sol}
+    We have
+    \begin{equation*}
+      \begin{mymatrix}{c} x\\y\\z \end{mymatrix}
+      = \begin{mymatrix}{r} 1\\2\\0 \end{mymatrix}
+      + (2-s)\,\begin{mymatrix}{c} 1\\0\\1 \end{mymatrix}
+      = \begin{mymatrix}{r} 3\\2\\2 \end{mymatrix}
+      + s\,\begin{mymatrix}{r} -1\\0\\-1 \end{mymatrix}.
+    \end{equation*}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Consider the line given by the following parametric equations:
+  \begin{equation*}
+    \begin{array}{c}
+      x = 2t+2,\\
+      y = 5-4t,\\
+      z= -t-3.
+    \end{array}
+  \end{equation*}
+  Find symmetric equations for the line.
   % \begin{sol}
   % \end{sol}
 \end{ex} 
@@ -61,36 +96,6 @@
   a point and find the coordinates of this point.
 %\begin{sol}
 %\end{sol}
-\end{ex} 
-
-\begin{ex} Let $P = (1,2,3)$ be a point in $\R^3$. Let $L$ be the line
-  through the point $P_0 = (1, 4, 5)$ with direction vector
-  $\vect{d} = \begin{mysmallmatrix}{r} 1 \\ -1 \\
-    1 \end{mysmallmatrix}$. Find the shortest distance from $P$ to
-  $L$, and find the point $Q$ on $L$ that is closest to $P$.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $P = (0,2,1)$ be a point in $\R^3$. Let $L$ be the line through the points $P_0 = (1, 1, 1)$ and $P_1 = (4, 1, 2)$. Find the shortest distance from $P$ to $L$, and find the point $Q$ on $L$ that is closest to $P$. 
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-% ----------------------------------------------------------------------
-
-\begin{ex}
-  Parametric equations of the line are
-  \begin{equation*}
-    \begin{array}{c}
-      x = 2t+2\\
-      y = 5-4t\\
-      z= -t-3
-    \end{array}
-  \end{equation*}
-  Find symmetric equations for the line.
-  % \begin{sol}
-  % \end{sol}
 \end{ex} 
 
 \begin{ex}
@@ -135,6 +140,20 @@
 %\begin{sol}
 %\end{sol}
 \end{ex} 
+
+\begin{ex} Let $P = (1,2,3)$ be a point in $\R^3$. Let $L$ be the line
+  through the point $P_0 = (1, 4, 5)$ with direction vector
+  $\vect{d} = \begin{mysmallmatrix}{r} 1 \\ -1 \\
+    1 \end{mysmallmatrix}$. Find the shortest distance from $P$ to
+  $L$, and find the point $Q$ on $L$ that is closest to $P$.
+%\begin{sol}
+%\end{sol}
+\end{ex}
+
+\begin{ex} Let $P = (0,2,1)$ be a point in $\R^3$. Let $L$ be the line through the points $P_0 = (1, 1, 1)$ and $P_1 = (4, 1, 2)$. Find the shortest distance from $P$ to $L$, and find the point $Q$ on $L$ that is closest to $P$. 
+%\begin{sol}
+%\end{sol}
+\end{ex}
 
 \begin{ex}\label{ex:angle-lines}
   When we computed the angle between two lines in

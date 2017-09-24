@@ -13,9 +13,9 @@
   Consider the following vector equation for a plane in $\R^4$:
   \begin{equation*}
     \begin{mymatrix}{c} x\\y\\z\\w \end{mymatrix}
-    = \begin{mymatrix}{c} 1\\2\\0\\0 \end{mymatrix}
-    + t\,\begin{mymatrix}{c} 1\\0\\0\\1 \end{mymatrix}
-    + s\,\begin{mymatrix}{c} -1\\-1\\1\\0 \end{mymatrix}.
+    = \begin{mymatrix}{r} 1\\2\\0\\0 \end{mymatrix}
+    + t\,\begin{mymatrix}{r} 1\\0\\0\\1 \end{mymatrix}
+    + s\,\begin{mymatrix}{r} -1\\-1\\1\\0 \end{mymatrix}.
   \end{equation*}
   Find a new vector equation for the same plane by doing the change of
   parameters%
@@ -25,12 +25,12 @@
     We have
     \begin{equation*}
       \begin{mymatrix}{c} x\\y\\z\\w \end{mymatrix}
-      = \begin{mymatrix}{c} 1\\2\\0\\0 \end{mymatrix}
-      + (1-r_1)\,\begin{mymatrix}{c} 1\\0\\0\\1 \end{mymatrix}
-      + (r_1+r_2)\,\begin{mymatrix}{c} -1\\-1\\1\\0 \end{mymatrix}
-      = \begin{mymatrix}{c} 2\\2\\0\\1 \end{mymatrix}
-      + r_1\,\begin{mymatrix}{c} -2\\-1\\1\\-1 \end{mymatrix}
-      + r_2\,\begin{mymatrix}{c} -1\\-1\\1\\0 \end{mymatrix}.
+      = \begin{mymatrix}{r} 1\\2\\0\\0 \end{mymatrix}
+      + (1-r_1)\,\begin{mymatrix}{r} 1\\0\\0\\1 \end{mymatrix}
+      + (r_1+r_2)\,\begin{mymatrix}{r} -1\\-1\\1\\0 \end{mymatrix}
+      = \begin{mymatrix}{r} 2\\2\\0\\1 \end{mymatrix}
+      + r_1\,\begin{mymatrix}{r} -2\\-1\\1\\-1 \end{mymatrix}
+      + r_2\,\begin{mymatrix}{r} -1\\-1\\1\\0 \end{mymatrix}.
     \end{equation*}
   \end{sol}
 \end{ex}
@@ -158,7 +158,7 @@ Find the intersection of the line
   plane, the volume of the parallelepiped determined by $\tup{x,y,z}$
   and the vectors $\vect{p}$, $\vect{q}$ equals 0.
   \begin{sol}
-    $\vect{x}\dotprod \tup{\vect{a}\times \vect{b}} =0$
+    $\vect{x}\dotprod \tup{\vect{a}\times \vect{b}} =0$.
   \end{sol}
 \end{ex}
 
