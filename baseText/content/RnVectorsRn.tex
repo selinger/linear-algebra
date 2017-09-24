@@ -129,7 +129,8 @@ vectors when $n$ is greater than $3$.
     \end{mymatrix}.
   \end{equation*}
   We write $\R^n$\index{Rn@$\R^n$} for the set of all $n$-dimensional
-  column vectors.
+  column vectors. It is also known as \textbf{$n$-dimensional
+    Euclidean space}\index{Euclidean space}.
 \end{definition}
 Vectors are usually denoted by boldface lower-case letters such as
 $\vect{v}$, $\vect{w}$, $\vect{a}$, $\vect{b}$. Some people write a
@@ -160,10 +161,10 @@ a \textbf{vector from $Q$ to $P$}\index{vector!from a point to a point}. This
 vector is written $\longvect{QP}$, and is described by the arrow whose
 tail is at $Q$ and whose tip is at $P$, as in the following picture:
 \begin{center}
-  \begin{tikzpicture}[scale=0.6]
+  \begin{tikzpicture}[scale=0.55]
     \draw[fill] (0,0) circle [radius=1.8pt] node[below]{$Q$};
-    \draw[fill] (3,2) circle [radius=1.8pt] node[below]{$P$};
-    \draw[thick, blue, ->](0,0) -- node[above left]{$\longvect{QP}$} (3,2);
+    \draw[fill] (4,0.5) circle [radius=1.8pt] node[below]{$P$};
+    \draw[thick, blue, ->](0,0) -- node[above, pos=0.45]{$\longvect{QP}$} (4,0.5);
   \end{tikzpicture}
 \end{center}
 If the point $Q$ has coordinates $(q_1,\ldots,q_n)$ and the point $P$

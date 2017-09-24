@@ -417,7 +417,8 @@ two angles.
 \end{center}
 
 \begin{example}{Find the angle between two lines}{angle-between-two-lines}
-  Find the angle between the two lines
+  Find the angle between the two lines%
+  \index{line!angle between}\index{angle!between two lines}
   \begin{equation*}
     L_1:  \;
     \begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}
@@ -460,8 +461,10 @@ distance from a point to a line.
   direction vector
   $\vect{d} = \begin{mysmallmatrix}{r} 2 \\ 1 \\
     2 \end{mysmallmatrix}$, and let $Q=(1,3,5)$. Find the shortest
-  distance from $Q$ to the line $L$, and find the point $R$ on $L$
-  that is closest to $Q$.
+  distance%
+  \index{distance!point to line} from $Q$ to the line $L$, and find
+  the point $R$ on $L$ that is closest to $Q$.%
+  \index{projection!point to line}
   \begin{center}
     \begin{tikzpicture}[rotate=-20]
       \draw[red!80](-1.5,0) -- node[above, pos=0.9]{$L$} (4.5,0);
