@@ -18,7 +18,9 @@
     + s\,\begin{mymatrix}{c} -1\\-1\\1\\0 \end{mymatrix}.
   \end{equation*}
   Find a new vector equation for the same plane by doing the change of
-  parameters: $t=1-r_1$, $s=r_1+r_2$.
+  parameters%
+  \index{plane!change of parameters}\index{change of parameters!plane}
+  $t=1-r_1$, $s=r_1+r_2$.
   \begin{sol}
     We have
     \begin{equation*}
@@ -60,6 +62,20 @@
 
 \begin{ex}
   Find a vector equation for the plane $2x+y-z=1$.
+\end{ex}
+
+\begin{ex}
+  The chapter mentions that the normal equation and general equation
+  of a plane only work in $\R^3$, and not in general $\R^n$. Why does
+  the equation $ax+by+cz+dw=e$ not describe a plane in $\R^4$?
+  \begin{sol}
+    The general solution of $ax+by+cz+dw=e$ involves at least three
+    parameters.  But the vector equation of a plane only has two
+    parameters, therefore $ax+by+cz+dw=e$ does not describe a
+    plane. (It describes a 3-dimensional so-called {\em
+      hyperplane}\index{hyperplane}\index{plane!hyperplane} inside
+    $\R^4$).
+  \end{sol}
 \end{ex}
 
 \begin{ex}
