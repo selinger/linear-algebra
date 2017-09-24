@@ -10,6 +10,30 @@
 \end{ex}
 
 \begin{ex}
+  Consider the following vector equation for a plane in $\R^4$:
+  \begin{equation*}
+    \begin{mymatrix}{c} x\\y\\z\\w \end{mymatrix}
+    = \begin{mymatrix}{c} 1\\2\\0\\0 \end{mymatrix}
+    + t\,\begin{mymatrix}{c} 1\\0\\0\\1 \end{mymatrix}
+    + s\,\begin{mymatrix}{c} -1\\-1\\1\\0 \end{mymatrix}.
+  \end{equation*}
+  Find a new vector equation for the same plane by doing the change of
+  parameters: $t=1-r_1$, $s=r_1+r_2$.
+  \begin{sol}
+    We have
+    \begin{equation*}
+      \begin{mymatrix}{c} x\\y\\z\\w \end{mymatrix}
+      = \begin{mymatrix}{c} 1\\2\\0\\0 \end{mymatrix}
+      + (1-r_1)\,\begin{mymatrix}{c} 1\\0\\0\\1 \end{mymatrix}
+      + (r_1+r_2)\,\begin{mymatrix}{c} -1\\-1\\1\\0 \end{mymatrix}
+      = \begin{mymatrix}{c} 2\\2\\0\\1 \end{mymatrix}
+      + r_1\,\begin{mymatrix}{c} -2\\-1\\1\\-1 \end{mymatrix}
+      + r_2\,\begin{mymatrix}{c} -1\\-1\\1\\0 \end{mymatrix}.
+    \end{equation*}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
   Determine which of the following points lie on the plane through the
   points $P = \tup{2,6,1}$, $R = \tup{1,4,1}$, and $Q = \tup{1,2,-1}$.
   \begin{enumerate}
@@ -66,6 +90,43 @@ Find the intersection of the line
     + t \begin{mymatrix}{r} 1 \\ 1 \\ 4 \end{mymatrix}
   \end{equation*}
   and the plane $4x+7y+4z = 6$.
+\end{ex}
+
+\begin{ex}
+  In Example~\ref{exa:angle-line-plane}, we calculated the angle
+  $\theta$ between a line and a plane by calculating the angle $\phi$
+  between the direction vector of the line and the normal vector of
+  the plane according to the formula
+  \begin{equation*}
+    \cos\phi =
+    \frac{\vect{n}\dotprod\vect{d}}{\norm{\vect{n}}\norm{\vect{d}}}
+  \end{equation*}
+  and then taking $\theta = \frac{\pi}{2}-\phi$.
+  \begin{enumerate}
+  \item Explain what happens when the dot product is negative. How
+    should we adjust the formula to ensure that $\theta$ is always
+    between $0$ and $\frac{\pi}{2}$?
+  \item Show that one can get the answer in a single step with the
+    formula
+    \begin{equation*}
+      \sin\theta =
+      \frac{\abs{\vect{n}\dotprod\vect{d}}}{\norm{\vect{n}}\norm{\vect{d}}}.
+    \end{equation*}
+  \end{enumerate}
+  \begin{sol}
+    (a) If the dot product is negative, $\phi$ will be greater than
+    $\frac{\pi}{2}$, and therefore $\theta$ will end up being
+    negative. We can fix this, similarly to
+    Exercise~\ref{ex:angle-lines}, by taking the absolute value of the
+    dot product, i.e., by solving
+    \begin{equation}\label{eqn:ex-angle-line-plane}
+      \cos\phi =
+      \frac{\abs{\vect{n}\dotprod\vect{d}}}{\norm{\vect{n}}\norm{\vect{d}}}
+    \end{equation}
+    (b) From trigonometry, we know that $\sin\theta =
+    \sin(\frac{\pi}{2}-\phi) = \cos\phi$. Together with
+    {\eqref{eqn:ex-angle-line-plane}}, this gives the desired formula.
+  \end{sol}
 \end{ex}
 
 \begin{ex}
