@@ -543,7 +543,10 @@ between points and planes.
   \[
     \longvect{QP} = \func{proj}_{\vect{n}}\,\longvect{RP}
   \]
-  and $\norm{\longvect{QP}}$ is the shortest distance from $P$ to the plane. Further, the vector $\vect{q} = \vect{p} - \longvect{QP}$ gives the necessary point $Q$.
+  and $\norm{\longvect{QP}}$ is the shortest distance from $P$ to the
+  plane. Further, the position vector of the point $Q$ can be computed
+  as $\vect{q} = \vect{p} - \longvect{QP}$, where $\vect{p}$ is the
+  position vector of $P$.
   \begin{center}
     \begin{tikzpicture}[x={(1cm,-0.2cm)},y={(0.5cm,0.5cm)},z={(0cm,1cm)}]
       \filldraw[draw=red!80,fill=red!10](-3,-2,0) -- (4,-2,0) -- (4,2,0) -- (-3,2,0) -- cycle;
