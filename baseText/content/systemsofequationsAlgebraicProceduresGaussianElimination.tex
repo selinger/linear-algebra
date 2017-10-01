@@ -32,12 +32,12 @@ equations is in a special form called {\em {\ef}}, which we now define.
   An entry of an augmented matrix is called a
   \textbf{leading entry}\index{leading entry} or
   \textbf{pivot entry}\index{pivot entry}
-  if it is the leftmost nonzero entry of a row. 
+  if it is the leftmost non-zero entry of a row. 
   An augmented matrix is in
   \textbf{\ef}\eindex{\ef}
   (also called \textbf{row echelon form}\index{row echelon form|see {\ef}}) if
   \begin{enumerate}
-  \item All rows of zeros are below all nonzero rows.
+  \item All rows of zeros are below all non-zero rows.
     
   \item Each leading entry of a row is in a column to the right of the
     leading entry of any row above it.
@@ -95,7 +95,7 @@ The following augmented matrices are not in {\ef}.
 0 & 0 & 0 & 0
 \end{mymatrix} 
 \end{equation*}
-In the first matrix, a row of zeros is above a nonzero row. In the
+In the first matrix, a row of zeros is above a non-zero row. In the
 second and third matrix, the leading entries of some rows are not to
 the right of the leading entries of previous rows.
 \end{example}
@@ -110,10 +110,10 @@ this.
   We begin with the matrix in its original form.
 
   \begin{enumerate}
-  \item Starting from the left, find the first nonzero column. This is
+  \item Starting from the left, find the first non-zero column. This is
     the first pivot column, and the position at the top of this column
     will be the position of the first pivot entry. Switch rows if
-    necessary to place a nonzero number in the first pivot position.
+    necessary to place a non-zero number in the first pivot position.
 
   \item Use row operations to make the entries below the first pivot
     entry (in the first pivot column) equal to zero.
@@ -151,7 +151,7 @@ examples show how to do this.
   \end{equation*}
   In order to find the solution(s) to this system, we first use
   Algorithm~\ref{algo:gaussian-elimination} to carry the augmented
-  matrix to {\ef}. Notice that the first column is nonzero, so this is
+  matrix to {\ef}. Notice that the first column is non-zero, so this is
   our first pivot column. The first entry in the first row, $1$, is
   the first pivot entry. We will use row operations to create zeros in
   the entries below the $1$.
@@ -259,7 +259,7 @@ examples show how to do this.
     \end{mymatrix}.
   \end{equation*}
   We use Algorithm~\ref{algo:gaussian-elimination} to carry the
-  augmented matrix to {\ef}. The first column is nonzero and will be the
+  augmented matrix to {\ef}. The first column is non-zero and will be the
   first pivot column. We switch the first two rows to move a non-zero
   number into the pivot position:
   \begin{equation*}

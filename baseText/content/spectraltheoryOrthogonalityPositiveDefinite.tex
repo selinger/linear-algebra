@@ -83,7 +83,7 @@ If $A$ is positive definite, then it is invertible.
 \end{lemma}
 
 \begin{proof}
-If $A\vect{v}=\vect{0},$ then $0$ is an eigenvalue if $\vect{v}$ is nonzero, which
+If $A\vect{v}=\vect{0},$ then $0$ is an eigenvalue if $\vect{v}$ is non-zero, which
 does not happen for a positive definite matrix. Hence $\vect{v}=\vect{0}$ and
 so $A$ is one to one. This is sufficient to conclude that it is invertible.
 \end{proof}
@@ -94,7 +94,7 @@ The following theorem provides another characterization of positive definite mat
 
 \begin{theorem}{Positive definite matrix}{positive-definite}
 Let $A$ be a symmetric matrix. Then $A$ is positive definite if and
-only if $\vect{x}^T A \vect{x} $ is positive for all nonzero $\vect{x}
+only if $\vect{x}^T A \vect{x} $ is positive for all non-zero $\vect{x}
 \in \R^n$.
 \end{theorem}
 
@@ -167,7 +167,7 @@ Let $A$ be an $n\times n$ positive definite matrix.  Then each submatrix $A_{k}$
 \end{lemma}
 
 \begin{proof}
-This follows right away from the above definition. Let $\vect{x}\in \R^{k}$ be nonzero. Then 
+This follows right away from the above definition. Let $\vect{x}\in \R^{k}$ be non-zero. Then 
 \begin{equation*}
 \vect{x}^{T}A_{k}\vect{x}=\begin{mymatrix}{cc}
 \vect{x}^{T} & 0
@@ -194,7 +194,7 @@ and only if $\det \tup{A_{k}}$ is greater than $0$ for every submatrix $A_{k}$, 
 We prove this theorem by induction on $n.$ It is clearly
 true if $n=1.$ Suppose then that it is true for $n-1$ where $n\geq 2$. Since 
 $\det \tup{A} =\det \tup{A_{n}} >0,$ it follows that all the
-eigenvalues are nonzero. We need to show that they are all positive. Suppose
+eigenvalues are non-zero. We need to show that they are all positive. Suppose
 not. Then there is some even number of them which are negative, even because
 the product of all the eigenvalues is known to be positive, equalling $\det
 \tup{A} $. Pick two, $\lambda _{1}$ and $\lambda _{2}$ and let $A
@@ -224,7 +224,7 @@ x^{T} & 0
 \end{equation*}
 Now the dimension of $\set{\vect{z}\in \R^{n}:z_{n}=0} $ is 
 $n-1$ and the dimension of $\func{span}\set{\vect{u}_{1},\vect{u}
-_{2}} =2$ and so there must be some nonzero $\vect{x}\in \R
+_{2}} =2$ and so there must be some non-zero $\vect{x}\in \R
 ^{n} $ which is in both of these subspaces of $\R^{n}$. However, the
 first computation would require that $\vect{x}^{T}A\vect{x}<0$ while the
 second would require that $\vect{x}^{T}A\vect{x}>0.$ This contradiction shows
