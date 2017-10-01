@@ -1,88 +1,95 @@
 \section{Scalar multiplication of matrices}
 
-Recall that we use the word {\em scalar \em}when referring to numbers. Therefore, {\em scalar multiplication of a matrix \em}is the multiplication of a matrix by a number.  
-To illustrate this concept, consider the following example in which a
-matrix is multiplied by the scalar $3$.
+The multiplication of a scalar by a matrix is called the
+\textbf{scalar multiplication} of matrices. The new matrix is obtained
+by multiplying every entry of the original matrix by the given scalar,
+as in the following example.
 \begin{equation*}
-3\begin{mymatrix}{rrrr}
-1 & 2 & 3 & 4 \\
-5 & 2 & 8 & 7 \\
-6 & -9 & 1 & 2
-\end{mymatrix} = \begin{mymatrix}{rrrr}
-3 & 6 & 9 & 12 \\
-15 & 6 & 24 & 21 \\
-18 & -27 & 3 & 6
-\end{mymatrix} 
+  3~\begin{mymatrix}{rrrr}
+    1 & 2 & 3 & 4 \\
+    5 & 2 & 8 & 7 \\
+    6 & -9 & 1 & 2
+  \end{mymatrix} = \begin{mymatrix}{rrrr}
+    3 & 6 & 9 & 12 \\
+    15 & 6 & 24 & 21 \\
+    18 & -27 & 3 & 6
+  \end{mymatrix}.
 \end{equation*}
-
-The new matrix is obtained by multiplying every entry of the original matrix
-by the given scalar. 
-
 The formal definition of scalar multiplication is as follows.
 
-\begin{definition}{Scalar multiplication of matrices}{scalar-mult-of-matrices}
-If $A=\mat{a_{ij}} $ and $k$ is a scalar,
-then $kA=\mat{ka_{ij}}$\index{matrix!scalar multiplication}.
+\begin{definition}{Scalar multiplication of a matrix}{scalar-mult-of-matrices}
+  If $k$ is a scalar and $A=\mat{a_{ij}}$ is a matrix, then
+  $kA=\mat{ka_{ij}}$\index{matrix!scalar multiplication}%
+  \index{scalar multiplication!of a matrix}.
 \end{definition}
 
-Consider the following example.
-
-\begin{example}{Effect of multiplication by a scalar}{effect-of-scalar-mult}
-Find the result of multiplying the following matrix $A$ by $7$.
-\begin{equation*}
-A=\begin{mymatrix}{rr}
-2 & 0 \\
-1 & -4
-\end{mymatrix}
-\end{equation*}
+\begin{example}{Linear combination of matrices}{matrix-linear-combination}
+  Find $2A-3B$, where\index{linear combination!of matrices}
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      1 & 2 & 3 \\
+      1 & 0 & 4
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    B = \begin{mymatrix}{rrr}
+      5 & 2 & 3 \\
+      -6 & 2 & 1
+    \end{mymatrix}
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-By Definition \ref{def:scalar-mult-of-matrices}, we multiply each element of $A$ by $7$.
-Therefore,
-\begin{equation*}
-7A = 
-7\begin{mymatrix}{rr}
-2 & 0 \\
-1 & -4
-\end{mymatrix} =
-\begin{mymatrix}{rr}
-7(2) & 7(0) \\
-7(1) & 7(-4)
-\end{mymatrix} =
-\begin{mymatrix}{rr}
-14 & 0 \\
-7 & -28
-\end{mymatrix}
-\end{equation*}
+  \begin{equation*}
+    2A-3B = 
+    2 \begin{mymatrix}{rrr}
+      1 & 2 & 3 \\
+      1 & 0 & 4
+    \end{mymatrix}
+    - 3 \begin{mymatrix}{rrr}
+      5 & 2 & 3 \\
+      -6 & 2 & 1
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{rrr}
+      2 & 4 & 6 \\
+      2 & 0 & 8
+    \end{mymatrix}
+    - \begin{mymatrix}{rrr}
+      15 & 6 & 9 \\
+      -18 & 6 & 3
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{rrr}
+      -13 & -2 & -3 \\
+      20 & -6 & 5
+    \end{mymatrix}.
+  \end{equation*}
 \end{solution}
 
-Similarly to addition of matrices, there are several properties of scalar multiplication which hold.
+Scalar multiplication of matrices obeys the same properties as scalar
+multiplication of vectors.
 
 \begin{proposition}{Properties of scalar multiplication}{properties-scalar-mult}
-Let $A, B$ be matrices, and $k, p$ be scalars. Then, the following properties\index{matrix!properties of scalar multiplication} hold.
-\begin{itemize}
-\item Distributive Law over Matrix Addition
-\begin{equation*}
-k \tup{A+B} =k A+ kB  
-\end{equation*}
-
-\item Distributive Law over Scalar Addition
-\begin{equation*}
-\tup{k +p } A= k A+p A
-\end{equation*}
-
-\item Associative Law for Scalar Multiplication
-\begin{equation*}
-k \tup{p A} = \tup{k p } A 
-\end{equation*}
-
-\item Rule for Multiplication by $1$
-\begin{equation*}
-1A=A  
-\end{equation*}
-\end{itemize}
-
+  Let $A$ and $B$ be matrices of the same size, and let $k,\ell$ be
+  scalars. Then the following properties\index{matrix!properties of
+    scalar multiplication}%
+  \index{properties of scalar multiplication!matrix} hold.
+  \begin{itemize}
+  \item The distributive law over matrix addition
+    \begin{equation*}
+      k \tup{A+B} = kA + kB.
+    \end{equation*}
+  \item The distributive law over scalar addition
+    \begin{equation*}
+      \tup{k + \ell} A = k A + \ell A.
+    \end{equation*}
+  \item The associative law for scalar multiplication
+    \begin{equation*}
+      k \tup{\ell A} = \tup{k \ell} A.
+    \end{equation*}
+  \item The rule for multiplication by $1$
+    \begin{equation*}
+      1A=A.
+    \end{equation*}
+  \end{itemize}
 \end{proposition}
-
-The proof of this proposition is similar to the proof of Proposition \ref{prop:properties-of-addition} and is left an exercise to the reader.
