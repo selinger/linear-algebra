@@ -20,8 +20,9 @@ u_{n}
 v_{1} \\
 \vdots \\
 v_{n}
-\end{mymatrix} \in \R^{n}$, the sum\index{vector!addition}
- $\vect{u}+\vect{v}\in \R^{n}$ is defined by
+\end{mymatrix} \in \R^{n}$, the
+sum\index{vector!addition}\index{addition!of vectors}
+$\vect{u}+\vect{v}\in \R^{n}$ is defined by
 \begin{equation*}
 \vect{u}+\vect{v} = \begin{mymatrix}{c}
 u_{1} \\
@@ -88,7 +89,8 @@ the following proposition.
 \end{solution}
 
 \begin{definition}{Negative}{vector-negative}
-  The \textbf{negative}\index{vector!negative} of a vector
+  The \textbf{negative}\index{vector!negative}%
+  \index{negative!of a vector} of a vector
   $\vect{u}=\begin{mymatrix}{c}
     u_{1} \\
     \vdots \\
@@ -110,8 +112,9 @@ $\vect{u}$, but the opposite direction.
   \end{tikzpicture}
 \end{center}
 
-To define the \textbf{subtraction}\index{vector!subtraction} of two
-vectors, we simply regard $\vect{u}-\vect{v}$ as an abbreviation for
+To define the \textbf{subtraction}\index{vector!subtraction}%
+\index{subtraction!of vectors} of two vectors, we simply regard
+$\vect{u}-\vect{v}$ as an abbreviation for
 $\vect{u} + \tup{-\vect{v}}$, exactly as we do with real
 numbers. Algebraically, this just amounts to componentwise
 subtraction:
@@ -205,24 +208,27 @@ outlined in the following theorem.  Recall that $\vect{0}$ is the
 from $\R^{n}$ in which all components are equal to $0$.
 
 \begin{theorem}{Properties of vector addition}{properties-vector-addition}
-The following properties hold for vectors $\vect{u},\vect{v}, \vect{w} \in \R^{n}$.
-\begin{itemize}
-\item The commutative law of addition
-\begin{equation*}
-\vect{u}+\vect{v}=\vect{v}+\vect{u}
-\end{equation*}
-\item The associative law of addition
-\begin{equation*}
-\tup{\vect{u}+\vect{v}} +\vect{w}=\vect{u}+\tup{\vect{v}+\vect{w}}
-\end{equation*}
-\item The existence of an additive unit
-\begin{equation*}
-\vect{u}+\vect{0}=\vect{u}
-\end{equation*}
-\item The existence of an additive inverse
-\begin{equation*}
-\vect{u}+\tup{-\vect{u}} =\vect{0}  
-\end{equation*}
-\end{itemize}
+  The following properties hold for vectors
+  $\vect{u},\vect{v},\vect{w}\in\R^{n}$.%
+  \index{vector!properties of addition}%
+  \index{properties of addition!vectors}
+  \begin{itemize}
+  \item The commutative law of addition
+    \begin{equation*}
+      \vect{u}+\vect{v}=\vect{v}+\vect{u}.
+    \end{equation*}
+  \item The associative law of addition
+    \begin{equation*}
+      \tup{\vect{u}+\vect{v}} +\vect{w}=\vect{u}+\tup{\vect{v}+\vect{w}}.
+    \end{equation*}
+  \item The existence of an additive unit
+    \begin{equation*}
+      \vect{u}+\vect{0}=\vect{u}.
+    \end{equation*}
+  \item The existence of an additive inverse
+    \begin{equation*}
+      \vect{u}+\tup{-\vect{u}} =\vect{0}.
+    \end{equation*}
+  \end{itemize}
 \end{theorem}
 
