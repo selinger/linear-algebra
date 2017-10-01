@@ -60,8 +60,8 @@ Entries of the matrix are identified according to their position. The
 \textbf{$(i,j)$-entry}\index{matrix!ij-entry@$(i,j)$-entry}%
 \index{ij-entry of a matrix@$(i,j)$-entry of a matrix} of a matrix is
 the entry in the $i\th$ row and $j\th$ column, and is often denoted
-$a_{ij}$. For example, in the above matrix, the $(2,3)$-entry is equal
-to $8$, because it is in the second row and the third column.  We
+$a_{ij}$. For example, in the above matrix, the $(2,3)$-entry is the
+entry in the second row and the third column, and is equal to $8$. We
 sometimes use $A=\mat{a_{ij}}$ as a short-hand notation for the entire
 $m\times n$-matrix whose $(i,j)$-entry is equal to $a_{ij}$ for all
 $i=1,\ldots m$ and $j=1,\ldots,n$.
@@ -73,46 +73,18 @@ $i=1,\ldots m$ and $j=1,\ldots,n$.
   columns.
 \end{definition}
 
-% ======================================================================
-% CONTINUE HERE
-
 There are various operations which are done on matrices of appropriate
-sizes. Matrices can be added to and subtracted from other matrices,
-multiplied by a scalar, and multiplied by other matrices. We will
-never divide a matrix by another matrix, but we will see later how
-matrix inverses play a similar role.
+sizes. Matrices can be added and subtracted, multiplied by a scalar,
+and multiplied by other matrices. We will never divide a matrix by
+another matrix, but we will see later how matrix inverses play a
+similar role.
 
-In doing arithmetic with matrices, we often define the action by what
-happens in terms of the entries (or components) of the
-matrices. Before looking at these operations in depth, consider a few
-general definitions.
-
-\begin{definition}{The zero matrix}{zero-matrix}
-The \textbf{$m\times n$ zero matrix} is the $m\times n$ matrix
-having every entry equal to zero. It is\index{zero matrix} denoted by $0.$
-\end{definition}
-
-One possible zero matrix is shown in the following example.
-
-\begin{example}{The zero matrix}{zero-matrix}
-The $2\times 3$ zero matrix is $0= \begin{mymatrix}{ccc}
-0 & 0 & 0 \\
-0 & 0 & 0
-\end{mymatrix} $.
-\end{example}
-
-Note there is a $2\times 3$ zero matrix, a $3\times 4$ zero matrix, etc. In
-fact there is a zero matrix for every size!
-
-\begin{definition}{Equality of matrices}{equality-of-matrices}
- Let $A$ and $B$ be two $m \times n$ matrices. Then $A=B$\index{matrix!equality} means
-that for $A=\mat{a_{ij}} $
-and $B=\mat{b_{ij}} ,$ $a_{ij}=b_{ij}$ for all $1\leq i\leq m$ and
-$1\leq j\leq n.$
-\end{definition}
-
-In other words, two matrices are equal exactly when they are the same size and the
-corresponding entries are identical. Thus
+Two matrices are \textbf{equal}\index{matrix!equality}%
+\index{equality!of matrices} if they have the same size and the same
+corresponding entries. More precisely, if $A=\mat{a_{ij}}$ and
+$B=\mat{b_{ij}}$ are two $m\times n$-matrices, then $A=B$ means that
+$a_{ij}=b_{ij}$ for all $i=1,\ldots m$ and $j=1,\ldots,n$.
+For example, 
 \begin{equation*}
 \begin{mymatrix}{rr}
 0 & 0 \\
@@ -136,4 +108,3 @@ Also,
 \end{equation*}
 because, although they are the same size, their corresponding entries are not identical.
 
-In the following section, we explore addition of matrices.
