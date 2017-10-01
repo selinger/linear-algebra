@@ -12,68 +12,75 @@
   \item Compute the inverse of a matrix using row operations, and prove
     identities involving matrix inverses.
   \item Solve a linear system using matrix algebra.
-  \item Use multiplication by an elementary matrix to apply row operations. 
+  \item Use multiplication by an elementary matrix to apply row operations.
   \item Write a matrix as a product of elementary matrices.
   \end{enumerate}
 \end{outcome}
 
-You have now solved systems of equations by writing them in terms of an
-augmented matrix and then doing row operations on this augmented matrix. It
-turns out that matrices are important not only for systems of equations but also in many applications.
+We have solved systems of equations by writing them in terms of an
+augmented matrix and then doing row operations. It turns out that
+matrices are important not only for systems of equations but also for
+many other purposes.
 
-Recall that a \textbf{matrix}\index{matrix} is a rectangular array of numbers. Several of them are
-referred to as \textbf{matrices}. For example, here is a matrix.
-\begin{equation}
-\begin{mymatrix}{rrrr}
-1 & 2 & 3 & 4 \\
-5 & 2 & 8 & 7 \\
-6 & -9 & 1 & 2
-\end{mymatrix}
-\label{matrix}
-\end{equation}
-Recall that the size or dimension of a matrix is defined as $m\times n$ where $m$ is the
-number of rows and $n$ is the number of columns. The above matrix is a 
-$3\times 4$ matrix because there are three rows and four columns.  You can remember the columns are
-like columns in a Greek temple. They stand upright while the rows lay
-flat like rows made by a tractor in a plowed field.
-
-When specifying the size of a matrix, you always list the number
-of rows before the number of columns.You
-might remember that you always list the rows before the columns by using the
-phrase \textbf{Row}man \textbf{C}atholic. 
-
-Consider the following definition.
-
-\begin{definition}{Square matrix}{square-matrix}
-A matrix $A$ which has size $n \times n$ is called a \textbf{square matrix}\index{matrix!square}.
-In other words, $A$ is a square matrix if it has the same number of rows
-and columns.
+\begin{definition}{Matrix}{matrix}
+  A \textbf{matrix}\index{matrix} is a rectangular array of numbers
+  \begin{equation*}
+    A = \begin{mymatrix}{cccc}
+      a_{11} & a_{12} & \cdots & a_{1n} \\
+      a_{21} & a_{22} & \cdots & a_{2n} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      a_{m1} & a_{m2} & \cdots & a_{mn} \\
+    \end{mymatrix},
+  \end{equation*}
+  where the $a_{ij}$ are scalars, called the
+  \textbf{entries}\index{matrix!entry of}%
+  \index{entry of a matrix} or
+  \textbf{components}\index{matrix!component of}%
+  \index{component!of a matrix} of $A$.  The
+  \textbf{size}\index{matrix!size of}\index{size of a matrix} or
+  \textbf{dimension}\index{matrix!dimension of}%
+  \index{dimension!of a matrix} of a matrix is defined as $m\times n$,
+  where $m$ is the number of rows and $n$ is the number of columns.
 \end{definition}
 
-There is some notation specific to matrices which we now introduce. We denote the columns of a matrix $A$ 
-by $A_{j}$ as follows
+For example, here is a $3\times 4$-matrix (pronounced ``three-by-four
+matrix''):
 \begin{equation*}
-A = 
-\begin{mymatrix}{rrrr}
-A_{1} & A_{2} & \cdots & A_{n}
-\end{mymatrix}
+  \begin{mymatrix}{rrrr}
+    1 & 2 & 3 & 4 \\
+    5 & 2 & 8 & 7 \\
+    6 & -9 & 1 & 2
+  \end{mymatrix}.
 \end{equation*}
-Therefore, $A_{j}$ is the $j^{th}$ column of $A$, when counted from left to right. 
+This is a $3\times 4$ matrix because there are three rows and four
+columns. When specifying the size of a matrix, we always list the
+number of rows before the number of columns.
 
-The individual elements of the matrix are called \textbf{entries}\index{matrix!entries of a matrix} or \textbf{components}\index{matrix!components of a matrix} of $A$. Elements of the matrix
-are identified according to their position. The $\mathbf{\tup{i, j }}$\textbf{-entry} of a matrix is the entry 
-in the $i^{th}$ row and $j^{th}$ column. For example, in the matrix \ref{matrix} above,  $8$ is in
-position $\tup{2,3 }$ (and is called the $\tup{2,3 }$-entry) because it is in the second row and the third column. 
+Entries of the matrix are identified according to their position. The
+\textbf{$(i,j)$-entry}\index{matrix!ij-entry@$(i,j)$-entry}%
+\index{ij-entry of a matrix@$(i,j)$-entry of a matrix} of a matrix is
+the entry in the $i\th$ row and $j\th$ column, and is often denoted
+$a_{ij}$. For example, in the above matrix, the $(2,3)$-entry is equal
+to $8$, because it is in the second row and the third column.  We
+sometimes use $A=\mat{a_{ij}}$ as a short-hand notation for the entire
+$m\times n$-matrix whose $(i,j)$-entry is equal to $a_{ij}$ for all
+$i=1,\ldots m$ and $j=1,\ldots,n$.
 
-In order to remember which matrix we are speaking of, we 
-will denote the entry in the $i^{th}$ row  and the $j^{th}$ column of matrix $A$ by $a_{ij}$. Then, we can write $A$ in terms of its entries,
-as $A= \mat{a_{ij} }$. Using this notation on the matrix in \ref{matrix},
-$a_{23}=8, a_{32}=-9, a_{12}=2,$ etc.
+\begin{definition}{Square matrix}{square-matrix}
+  A matrix $A$ of size $n\times n$ is called a \textbf{square
+    matrix}\index{matrix!square}\index{square matrix}.  In other
+  words, $A$ is a square matrix if it has the same number of rows and
+  columns.
+\end{definition}
+
+% ======================================================================
+% CONTINUE HERE
 
 There are various operations which are done on matrices of appropriate
 sizes. Matrices can be added to and subtracted from other matrices,
 multiplied by a scalar, and multiplied by other matrices. We will
-never divide a matrix by another matrix, but we will see later how matrix inverses play a similar role. 
+never divide a matrix by another matrix, but we will see later how
+matrix inverses play a similar role.
 
 In doing arithmetic with matrices, we often define the action by what
 happens in terms of the entries (or components) of the
@@ -95,12 +102,12 @@ The $2\times 3$ zero matrix is $0= \begin{mymatrix}{ccc}
 \end{example}
 
 Note there is a $2\times 3$ zero matrix, a $3\times 4$ zero matrix, etc. In
-fact there is a zero matrix for every size! 
+fact there is a zero matrix for every size!
 
 \begin{definition}{Equality of matrices}{equality-of-matrices}
  Let $A$ and $B$ be two $m \times n$ matrices. Then $A=B$\index{matrix!equality} means
 that for $A=\mat{a_{ij}} $
-and $B=\mat{b_{ij}} ,$ $a_{ij}=b_{ij}$ for all $1\leq i\leq m$ and 
+and $B=\mat{b_{ij}} ,$ $a_{ij}=b_{ij}$ for all $1\leq i\leq m$ and
 $1\leq j\leq n.$
 \end{definition}
 
@@ -116,12 +123,12 @@ corresponding entries are identical. Thus
 0 & 0
 \end{mymatrix}
 \end{equation*}
-because they are different sizes. 
+because they are different sizes.
 Also,
 \begin{equation*}
 \begin{mymatrix}{rr}
 0 & 1 \\
-3 & 2 
+3 & 2
 \end{mymatrix} \neq \begin{mymatrix}{rr}
 1 & 0 \\
 2 & 3
@@ -129,4 +136,4 @@ Also,
 \end{equation*}
 because, although they are the same size, their corresponding entries are not identical.
 
-In the following section, we explore addition of matrices. 
+In the following section, we explore addition of matrices.
