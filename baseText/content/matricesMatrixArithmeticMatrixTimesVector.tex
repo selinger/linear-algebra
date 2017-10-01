@@ -1,0 +1,366 @@
+\section{Multiplying a matrix and a vector}
+
+The next important matrix operation we will explore is multiplication
+of matrices. The operation of matrix multiplication is one of the most
+important and useful of the matrix operations.  Throughout this
+section, we will also demonstrate how matrix multiplication relates to
+system of linear equations.
+
+First, we provide a formal definition of row and column vectors.
+
+\begin{definition}{Row and column vectors}{row-and-column-vectors}
+  Matrices of size $n\times 1$ or $1\times n$ are called
+  \textbf{vectors}\index{vectors}. If $X$ is such a matrix, then we
+  write $x_{i}$ to denote the entry of $X$ in the $i^{th}$ row of a
+  column matrix, or the $i^{th}$ column of a row
+  matrix\index{vectors!column}.
+
+
+  The $n\times 1$ matrix
+  \begin{equation*}
+    X=\begin{mymatrix}{c}
+      x_{1} \\
+      \vdots \\
+      x_{n}
+    \end{mymatrix}
+  \end{equation*}
+  is called
+  a \textbf{column vector}\index{vectors!row vector}.
+  The $1\times n$ matrix
+  \begin{equation*}
+    X = \begin{mymatrix}{ccc}
+      x_{1} & \cdots & x_{n}
+    \end{mymatrix}
+  \end{equation*}
+  is called a \textbf{row vector}.
+\end{definition}
+
+We may simply use the term \textbf{vector} throughout this text to
+refer to either a column or row vector.  If we do so, the context will
+make it clear which we are referring to.
+
+In this chapter, we will again use the notion of linear combination of
+vectors as in Definition \ref{def:linear-combination}.  In this
+context, a linear combination is a sum consisting of vectors
+multiplied by scalars.  For example,
+\begin{equation*}
+  \begin{mymatrix}{r}
+    50 \\
+    122
+  \end{mymatrix}
+  =
+  7\begin{mymatrix}{r}
+    1 \\
+    4
+  \end{mymatrix} +8\begin{mymatrix}{r}
+    2 \\
+    5
+  \end{mymatrix} +9\begin{mymatrix}{r}
+    3 \\
+    6
+  \end{mymatrix}
+\end{equation*}
+is a linear combination of three vectors. 
+
+It turns out that we can express any system of linear equations as a
+linear combination of vectors. In fact, the vectors that we will use
+are just the columns of the corresponding augmented matrix!
+
+\begin{definition}{The vector form of a system of linear equations}{vector-form}
+  Suppose we have a system of equations given by
+  \begin{equation*}
+    \begin{array}{c}
+      a_{11}x_{1}+\cdots +a_{1n}x_{n}=b_{1} \\
+      \vdots \\
+      a_{m1}x_{1}+\cdots +a_{mn}x_{n}=b_{m}
+    \end{array}
+  \end{equation*}
+  We can express this system in \textbf{vector form}\index{system of equations!vector form} which is as follows:
+  \begin{equation*}
+    x_1
+    \begin{mymatrix}{c}
+      a_{11}\\
+      a_{21}\\
+      \vdots \\
+      a_{m1}
+    \end{mymatrix}
+    +
+    x_2
+    \begin{mymatrix}{c}
+      a_{12}\\
+      a_{22}\\
+      \vdots \\
+      a_{m2}
+    \end{mymatrix}
+    +
+    \cdots
+    +
+    x_n
+    \begin{mymatrix}{c}
+      a_{1n}\\
+      a_{2n}\\
+      \vdots \\
+      a_{mn}
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{c}
+      b_1\\
+      b_2\\
+      \vdots \\
+      b_m
+    \end{mymatrix}
+  \end{equation*}
+\end{definition}
+
+Notice that each vector used here is one column from the corresponding
+augmented matrix. There is one vector for each variable in the system,
+along with the constant vector.
+
+The first important form of matrix multiplication is multiplying a
+matrix by a vector.  Consider the product given by
+\begin{equation*}
+  \begin{mymatrix}{rrr}
+    1 & 2 & 3 \\
+    4 & 5 & 6
+  \end{mymatrix} \begin{mymatrix}{r}
+    7 \\
+    8 \\
+    9
+  \end{mymatrix}
+\end{equation*}
+We will soon see that this equals
+\begin{equation*}
+  7\begin{mymatrix}{c}
+    1 \\
+    4
+  \end{mymatrix} +8\begin{mymatrix}{c}
+    2 \\
+    5
+  \end{mymatrix} +9\begin{mymatrix}{c}
+    3 \\
+    6
+  \end{mymatrix} =\begin{mymatrix}{c}
+    50 \\
+    122
+  \end{mymatrix}
+\end{equation*}
+
+In general terms,
+\begin{eqnarray*}
+  \begin{mymatrix}{ccc}
+    a_{11} & a_{12} & a_{13} \\
+    a_{21} & a_{22} & a_{23}
+  \end{mymatrix} \begin{mymatrix}{c}
+    x_{1} \\
+    x_{2} \\
+    x_{3}
+  \end{mymatrix} &=&\allowbreak x_{1}\begin{mymatrix}{c}
+    a_{11} \\
+    a_{21}
+  \end{mymatrix} +x_{2}\begin{mymatrix}{c}
+    a_{12} \\
+    a_{22}
+  \end{mymatrix} +x_{3}\begin{mymatrix}{c}
+    a_{13} \\
+    a_{23}
+  \end{mymatrix} \\
+           &=&\begin{mymatrix}{c}
+             a_{11}x_{1}+a_{12}x_{2}+a_{13}x_{3} \\
+             a_{21}x_{1}+a_{22}x_{2}+a_{23}x_{3}
+           \end{mymatrix} 
+\end{eqnarray*}
+Thus you take $x_{1}$ times the first column, add to $x_{2}$ times the
+second column, and finally $x_{3}$ times the third column. The above
+sum is a linear combination of the columns of the matrix.  When you
+multiply a matrix on the left by a vector on the right, the numbers
+making up the vector are just the scalars to be used in the linear
+combination of the columns as illustrated above.
+
+Here is the formal definition of how to multiply an $m\times n $
+matrix by an $ n\times 1 $ column vector.
+
+\begin{definition}{Multiplication of vector by matrix}{multiplication-vector-matrix}
+  Let $A=\mat{a_{ij} }$ be an $m\times n$ matrix and let $X$ be an
+  $n\times 1$ matrix given by
+  \begin{equation*}
+    A=\mat{A_{1} \cdots A_{n}},  X = \begin{mymatrix}{r}
+      x_{1} \\
+      \vdots \\
+      x_{n}
+    \end{mymatrix} 
+  \end{equation*}
+
+  Then the product $AX$ is the $m\times 1$ column
+  vector\index{matrix multiplication!vectors}
+  which equals the following
+  linear combination of the columns of $A$:
+  \begin{equation*}
+    x_{1}A_{1}+x_{2}A_{2}+\cdots +x_{n}A_{n} = 
+    \sum_{j=1}^{n}x_{j}A_{j}  
+  \end{equation*}
+\end{definition}
+
+If we write the columns of $A$ in terms of their entries, they are of the form
+\begin{equation*}
+  A_{j}  =
+  \begin{mymatrix}{c}
+    a_{1j} \\
+    a_{2j} \\
+    \vdots \\
+    a_{mj}
+  \end{mymatrix} 
+\end{equation*}
+Then, we can write the product $AX$ as
+\begin{equation*}
+  AX = 
+  x_{1}\begin{mymatrix}{c}
+    a_{11} \\
+    a_{21} \\
+    \vdots \\
+    a_{m1}
+  \end{mymatrix} + x_{2}\begin{mymatrix}{c}
+    a_{12} \\
+    a_{22} \\
+    \vdots \\
+    a_{m2}
+  \end{mymatrix} +\cdots + x_{n}\begin{mymatrix}{c}
+    a_{1n} \\
+    a_{2n} \\
+    \vdots \\
+    a_{mn}
+  \end{mymatrix} 
+\end{equation*}
+
+Note that multiplication of an $m \times n$ matrix and an $n \times 1$
+vector produces an $m \times 1$ vector.
+
+Here is an example.
+
+\begin{example}{A vector multiplied by a matrix}{vector-mult-by-matrix}
+  Compute the product $AX$ for 
+  \begin{equation*}
+    A = \begin{mymatrix}{rrrr}
+      1 & 2 & 1 & 3 \\
+      0 & 2 & 1 & -2 \\
+      2 & 1 & 4 & 1
+    \end{mymatrix}, X =  \begin{mymatrix}{r}
+      1 \\
+      2 \\
+      0 \\
+      1
+    \end{mymatrix} 
+  \end{equation*}
+\end{example}
+
+\begin{solution} We will use Definition \ref{def:multiplication-vector-matrix} to compute the product.
+  Therefore, we compute the product $AX$ as follows. 
+  \begin{eqnarray*}
+    & 1\begin{mymatrix}{r}
+      1 \\
+      0 \\
+      2
+    \end{mymatrix} + 2\begin{mymatrix}{r}
+      2 \\
+      2 \\
+      1
+    \end{mymatrix} + 0\begin{mymatrix}{r}
+      1 \\
+      1 \\
+      4
+    \end{mymatrix} + 1 \begin{mymatrix}{r}
+      3 \\
+      -2\\
+      1
+    \end{mymatrix} \\ 
+    &=
+      \begin{mymatrix}{r}
+        1 \\
+        0 \\
+        2
+      \end{mymatrix} + \begin{mymatrix}{r}
+        4 \\
+        4 \\
+        2
+      \end{mymatrix} + \begin{mymatrix}{r}
+        0 \\
+        0 \\
+        0
+      \end{mymatrix} +  \begin{mymatrix}{r}
+        3 \\
+        -2\\
+        1
+      \end{mymatrix} \\
+    &=
+      \begin{mymatrix}{r}
+        8 \\
+        2 \\
+        5
+      \end{mymatrix}
+  \end{eqnarray*}
+\end{solution}
+
+Using the above operation, we can also write a system of linear
+equations in \textbf{matrix form}. In this form, we express the system
+as a matrix multiplied by a vector. Consider the following definition.
+
+\begin{definition}{The matrix form of a system of linear equations}{matrix-form}
+  Suppose we have a system of equations given by
+  \begin{equation*}
+    \begin{array}{c}
+      a_{11}x_{1}+\cdots +a_{1n}x_{n}=b_{1} \\
+      a_{21}x_{1}+ \cdots + a_{2n}x_{n} = b_{2} \\
+      \vdots \\
+      a_{m1}x_{1}+\cdots +a_{mn}x_{n}=b_{m}
+    \end{array}
+  \end{equation*}
+  Then we can express this system in \textbf{matrix form}\index{system
+    of equations!matrix form} as follows.
+  \begin{equation*}
+    \begin{mymatrix}{cccc}
+      a_{11} & a_{12} & \cdots & a_{1n} \\
+      a_{21} & a_{22} & \cdots & a_{2n} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      a_{m1} & a_{m2} & \cdots & a_{mn}
+    \end{mymatrix}
+    \begin{mymatrix}{c}
+      x_{1} \\
+      x_{2} \\
+      \vdots \\
+      x_{n}
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{c}
+      b_{1}\\
+      b_{2}\\
+      \vdots \\
+      b_{m}
+    \end{mymatrix}
+  \end{equation*}
+  
+\end{definition}
+
+The expression $AX=B$ is also known as the \textbf{Matrix
+  Form}\index{matrix form AX=B} of the corresponding system of linear
+equations. The matrix $A$ is simply the coefficient matrix of the
+system, the vector $X$ is the column vector constructed from the
+variables of the system, and finally the vector $B$ is the column
+vector constructed from the constants of the system.  It is important
+to note that any system of linear equations can be written in this
+form.
+
+Notice that if we write a homogeneous system of equations in matrix
+form, it would have the form $AX=0$, for the zero vector $0$.
+
+You can see from this definition that a vector 
+\begin{equation*}
+  X =
+  \begin{mymatrix}{c}
+    x_{1} \\
+    x_{2} \\
+    \vdots \\
+    x_{n}
+  \end{mymatrix}
+\end{equation*}
+will satisfy the equation $AX=B$ only when the entries
+$x_{1}, x_{2}, \cdots, x_{n}$ of the vector $X$ are solutions to the
+original system.
