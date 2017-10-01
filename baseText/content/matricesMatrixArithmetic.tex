@@ -66,25 +66,21 @@ sometimes use $A=\mat{a_{ij}}$ as a short-hand notation for the entire
 $m\times n$-matrix whose $(i,j)$-entry is equal to $a_{ij}$ for all
 $i=1,\ldots m$ and $j=1,\ldots,n$.
 
-\begin{definition}{Square matrix}{square-matrix}
-  A matrix $A$ of size $n\times n$ is called a \textbf{square
-    matrix}\index{matrix!square}\index{square matrix}.  In other
-  words, $A$ is a square matrix if it has the same number of rows and
-  columns.
-\end{definition}
-
 There are various operations which are done on matrices of appropriate
 sizes. Matrices can be added and subtracted, multiplied by a scalar,
 and multiplied by other matrices. We will never divide a matrix by
 another matrix, but we will see later how matrix inverses play a
 similar role.
 
-Two matrices are \textbf{equal}\index{matrix!equality}%
-\index{equality!of matrices} if they have the same size and the same
-corresponding entries. More precisely, if $A=\mat{a_{ij}}$ and
-$B=\mat{b_{ij}}$ are two $m\times n$-matrices, then $A=B$ means that
-$a_{ij}=b_{ij}$ for all $i=1,\ldots m$ and $j=1,\ldots,n$.
-For example, 
+\begin{definition}{Equality of matrices}{matrix-equality}
+  Two matrices are \textbf{equal}\index{matrix!equality}%
+  \index{equality!of matrices} if they have the same size and the same
+  corresponding entries. More precisely, if $A=\mat{a_{ij}}$ and
+  $B=\mat{b_{ij}}$ are two $m\times n$-matrices, then $A=B$ means that
+  $a_{ij}=b_{ij}$ for all $i=1,\ldots m$ and $j=1,\ldots,n$.
+\end{definition}
+
+For example,
 \begin{equation*}
 \begin{mymatrix}{rr}
 0 & 0 \\
@@ -108,3 +104,37 @@ Also,
 \end{equation*}
 because, although they are the same size, their corresponding entries are not identical.
 
+There are special names for matrices of certain dimensions: some
+matrices are called square matrices, columns vectors, or row vectors.
+
+\begin{definition}{Square matrix}{square-matrix}
+  A matrix of size $n\times n$ is called a \textbf{square
+    matrix}\index{matrix!square}\index{square matrix}.  In other
+  words, $A$ is a square matrix if it has the same number of rows and
+  columns.
+\end{definition}
+
+\begin{definition}{Column vectors and row vectors}{row-and-column-vectors}
+  A matrix of size $n\times 1$ is called a \textbf{column vector}%
+  \index{vectors!column vector}\index{column vector}. A matrix of size
+  $1\times n$ is called a \textbf{row vector}%
+  \index{vectors!row vector}\index{row vector}.
+  Here is an example of a column vector $X$ and a row vector $Y$:
+  \begin{equation*}
+    X=\begin{mymatrix}{c}
+      x_{1} \\
+      \vdots \\
+      x_{n}
+    \end{mymatrix},
+    \quad
+    Y = \begin{mymatrix}{ccc}
+      y_{1} & \cdots & y_{n}
+    \end{mymatrix}.
+  \end{equation*}
+\end{definition}
+
+We have already encountered column vectors in
+Chapter~\ref{cha:vectors-rn}.  When we use the term \textbf{vector}
+without further qualification, we always mean a column vector. Also
+recall from Definition~\ref{def:column-vector} that the set of
+$n$-dimensional column vectors is called $\R^n$.

@@ -1,70 +1,92 @@
 \section{Multiplying a matrix and a vector}
 
-The next important matrix operation we will explore is multiplication
-of matrices. The operation of matrix multiplication is one of the most
-important and useful of the matrix operations.  Throughout this
-section, we will also demonstrate how matrix multiplication relates to
-system of linear equations.
+One of the most important uses of a matrix is to multiply a matrix by
+a vector. In fact, this is one of the reasons matrices were invented.
+The formula for the product of a matrix and a vector may seem strange
+at first, but we will explain it soon.
 
-First, we provide a formal definition of row and column vectors.
-
-\begin{definition}{Row and column vectors}{row-and-column-vectors}
-  Matrices of size $n\times 1$ or $1\times n$ are called
-  \textbf{vectors}\index{vectors}. If $X$ is such a matrix, then we
-  write $x_{i}$ to denote the entry of $X$ in the $i^{th}$ row of a
-  column matrix, or the $i^{th}$ column of a row
-  matrix\index{vectors!column}.
-
-
-  The $n\times 1$ matrix
+\begin{definition}{The product of a matrix and a vector}{matrix-times-vector}
+  The product of an $m\times n$-matrix $A$ and an $n$-dimensional
+  column vector $\vect{x}$ is an $m$-dimensional column vector,
+  defined as follows:
   \begin{equation*}
-    X=\begin{mymatrix}{c}
+    A\vect{x} ~=~
+    \begin{mymatrix}{cccc}
+      a_{11} & a_{12} & \cdots & a_{1n} \\
+      a_{21} & a_{22} & \cdots & a_{2n} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      a_{m1} & a_{m2} & \cdots & a_{mn} \\
+    \end{mymatrix}
+    \begin{mymatrix}{c}
       x_{1} \\
+      x_{2} \\
       \vdots \\
       x_{n}
     \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{c}
+      a_{11}x_{1}+a_{12}x_{2}+\ldots+a_{13}x_{3} \\
+      a_{21}x_{1}+a_{22}x_{2}+\ldots+a_{23}x_{3} \\
+      \vdots \\
+      a_{m1}x_{1}+a_{m2}x_{2}+\ldots+a_{m3}x_{3} \\
+    \end{mymatrix}.
   \end{equation*}
-  is called
-  a \textbf{column vector}\index{vectors!row vector}.
-  The $1\times n$ matrix
-  \begin{equation*}
-    X = \begin{mymatrix}{ccc}
-      x_{1} & \cdots & x_{n}
-    \end{mymatrix}
-  \end{equation*}
-  is called a \textbf{row vector}.
 \end{definition}
 
-We may simply use the term \textbf{vector} throughout this text to
-refer to either a column or row vector.  If we do so, the context will
-make it clear which we are referring to.
+\begin{example}{The product of a matrix and a vector}{matrix-times-vector}
+  Compute the product
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 2 & 3 \\
+      4 & 5 & 6
+    \end{mymatrix} \begin{mymatrix}{r}
+      7 \\
+      8 \\
+      9
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
 
-In this chapter, we will again use the notion of linear combination of
-vectors as in Definition \ref{def:linear-combination}.  In this
-context, a linear combination is a sum consisting of vectors
-multiplied by scalars.  For example,
-\begin{equation*}
-  \begin{mymatrix}{r}
-    50 \\
-    122
-  \end{mymatrix}
-  =
-  7\begin{mymatrix}{r}
-    1 \\
-    4
-  \end{mymatrix} +8\begin{mymatrix}{r}
-    2 \\
-    5
-  \end{mymatrix} +9\begin{mymatrix}{r}
-    3 \\
-    6
-  \end{mymatrix}
+\begin{solution}
+  We have
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 2 & 3 \\
+      4 & 5 & 6
+    \end{mymatrix} \begin{mymatrix}{r}
+      7 \\
+      8 \\
+      9
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{c}
+      1\cdot 7 + 2\cdot 8 + 3\cdot 9 \\
+      4\cdot 7 + 5\cdot 8 + 6\cdot 9
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{c}
+      50 \\
+      122
+    \end{mymatrix}.
 \end{equation*}
-is a linear combination of three vectors. 
+\end{solution}
 
-It turns out that we can express any system of linear equations as a
-linear combination of vectors. In fact, the vectors that we will use
-are just the columns of the corresponding augmented matrix!
+To understand better what is going on, consider the right-hand side of
+the formula in Definition~\ref{def:matrix-times-vector}, and observe
+that it can be written as a linear combination of the columns of $A$:
+\begin{equation*}
+  \begin{mymatrix}{c}
+    a_{11}x_{1}+a_{12}x_{2}+\ldots+a_{13}x_{3} \\
+    a_{21}x_{1}+a_{22}x_{2}+\ldots+a_{23}x_{3} \\
+    \vdots \\
+    a_{m1}x_{1}+a_{m2}x_{2}+\ldots+a_{m3}x_{3} \\
+  \end{mymatrix}
+  ~=~
+  x_1 \begin{mymatrix}{c} a_{11}\\ a_{21}\\ \vdots \\ a_{m1}\end{mymatrix}
+  + x_2 \begin{mymatrix}{c} a_{12}\\ a_{22}\\ \vdots \\ a_{m2}\end{mymatrix}
+  + \cdots
+  + x_n \begin{mymatrix}{c} a_{1n}\\ a_{2n}\\ \vdots \\ a_{mn}\end{mymatrix}.
+\end{equation*}
 
 \begin{definition}{The vector form of a system of linear equations}{vector-form}
   Suppose we have a system of equations given by
@@ -167,7 +189,7 @@ In general terms,
            &=&\begin{mymatrix}{c}
              a_{11}x_{1}+a_{12}x_{2}+a_{13}x_{3} \\
              a_{21}x_{1}+a_{22}x_{2}+a_{23}x_{3}
-           \end{mymatrix} 
+           \end{mymatrix}
 \end{eqnarray*}
 Thus you take $x_{1}$ times the first column, add to $x_{2}$ times the
 second column, and finally $x_{3}$ times the third column. The above
@@ -187,7 +209,7 @@ matrix by an $ n\times 1 $ column vector.
       x_{1} \\
       \vdots \\
       x_{n}
-    \end{mymatrix} 
+    \end{mymatrix}
   \end{equation*}
 
   Then the product $AX$ is the $m\times 1$ column
@@ -195,8 +217,8 @@ matrix by an $ n\times 1 $ column vector.
   which equals the following
   linear combination of the columns of $A$:
   \begin{equation*}
-    x_{1}A_{1}+x_{2}A_{2}+\cdots +x_{n}A_{n} = 
-    \sum_{j=1}^{n}x_{j}A_{j}  
+    x_{1}A_{1}+x_{2}A_{2}+\cdots +x_{n}A_{n} =
+    \sum_{j=1}^{n}x_{j}A_{j}
   \end{equation*}
 \end{definition}
 
@@ -208,11 +230,11 @@ If we write the columns of $A$ in terms of their entries, they are of the form
     a_{2j} \\
     \vdots \\
     a_{mj}
-  \end{mymatrix} 
+  \end{mymatrix}
 \end{equation*}
 Then, we can write the product $AX$ as
 \begin{equation*}
-  AX = 
+  AX =
   x_{1}\begin{mymatrix}{c}
     a_{11} \\
     a_{21} \\
@@ -228,7 +250,7 @@ Then, we can write the product $AX$ as
     a_{2n} \\
     \vdots \\
     a_{mn}
-  \end{mymatrix} 
+  \end{mymatrix}
 \end{equation*}
 
 Note that multiplication of an $m \times n$ matrix and an $n \times 1$
@@ -237,7 +259,7 @@ vector produces an $m \times 1$ vector.
 Here is an example.
 
 \begin{example}{A vector multiplied by a matrix}{vector-mult-by-matrix}
-  Compute the product $AX$ for 
+  Compute the product $AX$ for
   \begin{equation*}
     A = \begin{mymatrix}{rrrr}
       1 & 2 & 1 & 3 \\
@@ -248,12 +270,12 @@ Here is an example.
       2 \\
       0 \\
       1
-    \end{mymatrix} 
+    \end{mymatrix}
   \end{equation*}
 \end{example}
 
 \begin{solution} We will use Definition \ref{def:multiplication-vector-matrix} to compute the product.
-  Therefore, we compute the product $AX$ as follows. 
+  Therefore, we compute the product $AX$ as follows.
   \begin{eqnarray*}
     & 1\begin{mymatrix}{r}
       1 \\
@@ -271,7 +293,7 @@ Here is an example.
       3 \\
       -2\\
       1
-    \end{mymatrix} \\ 
+    \end{mymatrix} \\
     &=
       \begin{mymatrix}{r}
         1 \\
@@ -336,7 +358,7 @@ as a matrix multiplied by a vector. Consider the following definition.
       b_{m}
     \end{mymatrix}
   \end{equation*}
-  
+
 \end{definition}
 
 The expression $AX=B$ is also known as the \textbf{Matrix
@@ -351,7 +373,7 @@ form.
 Notice that if we write a homogeneous system of equations in matrix
 form, it would have the form $AX=0$, for the zero vector $0$.
 
-You can see from this definition that a vector 
+You can see from this definition that a vector
 \begin{equation*}
   X =
   \begin{mymatrix}{c}
@@ -364,3 +386,33 @@ You can see from this definition that a vector
 will satisfy the equation $AX=B$ only when the entries
 $x_{1}, x_{2}, \cdots, x_{n}$ of the vector $X$ are solutions to the
 original system.
+
+% ======================================================================
+\subsubsection{Stuff}
+
+In this chapter, we will again use the notion of linear combination of
+vectors as in Definition \ref{def:linear-combination}.  In this
+context, a linear combination is a sum consisting of vectors
+multiplied by scalars.  For example,
+\begin{equation*}
+  \begin{mymatrix}{r}
+    50 \\
+    122
+  \end{mymatrix}
+  =
+  7\begin{mymatrix}{r}
+    1 \\
+    4
+  \end{mymatrix} +8\begin{mymatrix}{r}
+    2 \\
+    5
+  \end{mymatrix} +9\begin{mymatrix}{r}
+    3 \\
+    6
+  \end{mymatrix}
+\end{equation*}
+is a linear combination of three vectors.
+
+It turns out that we can express any system of linear equations as a
+linear combination of vectors. In fact, the vectors that we will use
+are just the columns of the corresponding augmented matrix!
