@@ -111,7 +111,7 @@ As this example shows, calculating matrix products one component at a
 time can be an extremely repetitive and tedious process. Fortunately,
 we can speed this up by considering whole columns at once.
 
-\begin{observation}{Matrix multiplication, column method}{matrix-multiplication-columns}
+\begin{proposition}{Matrix multiplication, column method}{matrix-multiplication-columns}
   Let $A$ be an $m\times n$-matrix, and let $B$ be an
   $n\times p$-matrix.  Suppose that the columns of $B$ are
   $\vect{b}_1,\vect{b}_2,\ldots,\vect{b}_p$. Then the columns of $AB$
@@ -123,7 +123,7 @@ we can speed this up by considering whole columns at once.
   \end{equation*}
   In other words, the $k\th$ column of the matrix product $AB$ is
   equal to $A$ times the $k\th$ column of $B$.
-\end{observation}
+\end{proposition}
 
 \begin{example}{Matrix multiplication by the column method}{matrix-multiplication-columns}
   Find the matrix product $AB$ by the column method, where
@@ -162,7 +162,7 @@ we can speed this up by considering whole columns at once.
       -1 \\
       -2
     \end{mymatrix},
-  \end{equation*}    
+  \end{equation*}
   \begin{equation*}
     \begin{mymatrix}{rrr}
       1 & 2 & 1 \\
@@ -182,7 +182,7 @@ we can speed this up by considering whole columns at once.
       9 \\
       7
     \end{mymatrix},
-  \end{equation*}    
+  \end{equation*}
   \begin{equation*}
     \begin{mymatrix}{rrr}
       1 & 2 & 1 \\
@@ -202,13 +202,13 @@ we can speed this up by considering whole columns at once.
       3 \\
       3
     \end{mymatrix}.
-  \end{equation*}    
+  \end{equation*}
   The resulting three column vectors form the columns of $AB$.  Thus,
   \begin{equation*}
     AB ~=~ \begin{mymatrix}{rrr}
       -1 & 9 & 3 \\
       -2 & 7 & 3
-    \end{mymatrix}. 
+    \end{mymatrix}.
   \end{equation*}
 \end{solution}
 
@@ -250,7 +250,7 @@ row vector or vice versa.
       1
     \end{mymatrix} \begin{mymatrix}{rrrr}
       1 & 2 & 1 & 0
-    \end{mymatrix} = 
+    \end{mymatrix} =
     \mat{\overset{
         \text{First column}}{\overbrace{\begin{mymatrix}{r}
             1 \\
@@ -263,7 +263,7 @@ row vector or vice versa.
             2\\
             1
           \end{mymatrix} \begin{mymatrix}{r}
-            2 
+            2
           \end{mymatrix} }},\overset{\text{Third column}}{\overbrace{\begin{mymatrix}{r}
             1 \\
             2 \\
@@ -345,7 +345,7 @@ row vector or vice versa.
 
 Notice that the matrices in
 Example~\ref{exa:undefined-matrix-multiplication} are the same as
-those in Example \ref{exa:multiplication-of-two-matrices}.  This
+those in Example \ref{exa:matrix-multiplication}.  This
 demonstrates an important property of matrix multiplication: it is
 possible that $AB$ is defined by $BA$ is undefined. Even if $AB$ and
 $BA$ are both defined, they may not be equal, as the following example
@@ -360,8 +360,8 @@ shows. Therefore, matrix multiplication is not commutative.
     \end{mymatrix}
     \quad\mbox{and}\quad
     B ~=~ \begin{mymatrix}{rr}
-      1 & 0 \\
-      0 & 2
+      0 & 1 \\
+      1 & 0
     \end{mymatrix}
   \end{equation*}
   Are they equal?
@@ -376,21 +376,21 @@ shows. Therefore, matrix multiplication is not commutative.
       3 & 4
     \end{mymatrix}
     \begin{mymatrix}{rr}
-      1 & 0 \\
-      0 & 2
+      0 & 1 \\
+      1 & 0
     \end{mymatrix}
     ~=~
     \begin{mymatrix}{rr}
-      1 & 4 \\
-      3 & 8
+      2 & 1 \\
+      4 & 3
     \end{mymatrix}
   \end{equation*}
   and
   \begin{equation*}
     BA ~=~
     \begin{mymatrix}{rr}
-      1 & 0 \\
-      0 & 2
+      0 & 1 \\
+      1 & 0
     \end{mymatrix}
     \begin{mymatrix}{rr}
       1 & 2 \\
@@ -398,8 +398,8 @@ shows. Therefore, matrix multiplication is not commutative.
     \end{mymatrix}
     ~=~
     \begin{mymatrix}{rr}
-      1 & 2 \\
-      6 & 8
+      3 & 4 \\
+      1 & 2
     \end{mymatrix}.
   \end{equation*}
   Therefore, $AB$ and $BA$ are not equal. Matrix multiplication is not
@@ -410,7 +410,7 @@ We have seen two methods for matrix multiplication: one component at a
 time, and by the column method. There is also a third method, called
 the row method. It is exactly symmetric to the column method.
 
-\begin{observation}{Matrix multiplication, row method}{matrix-multiplication-rows}
+\begin{proposition}{Matrix multiplication, row method}{matrix-multiplication-rows}
   Let $A$ be an $m\times n$-matrix, and let $B$ be an
   $n\times p$-matrix.  Suppose that the rows of $A$ are
   $\vect{a}_1,\vect{a}_2,\ldots,\vect{a}_m$. Then the rows of $AB$
@@ -422,7 +422,7 @@ the row method. It is exactly symmetric to the column method.
   \end{equation*}
   In other words, the $i\th$ column of the matrix product $AB$ is
   equal to the $i\th$ column of $A$ times $B$.
-\end{observation}
+\end{proposition}
 
 \begin{example}{Matrix multiplication by the row method}{matrix-multiplication-columns}
   Find the matrix product $AB$ by the row method, where
@@ -457,7 +457,7 @@ the row method. It is exactly symmetric to the column method.
     + 1 \begin{mymatrix}{rrr} -2 & 1 & 1 \end{mymatrix}
     ~=~
     \begin{mymatrix}{rrr} -1 & 9 & 3 \end{mymatrix},
-  \end{equation*}    
+  \end{equation*}
   \begin{equation*}
     \begin{mymatrix}{rrr}
       0 & 2 & 1
@@ -473,13 +473,13 @@ the row method. It is exactly symmetric to the column method.
     + 1 \begin{mymatrix}{rrr} -2 & 1 & 1 \end{mymatrix}
     ~=~
     \begin{mymatrix}{rrr} -2 & 7 & 3 \end{mymatrix}.
-  \end{equation*}    
+  \end{equation*}
   The resulting two row vectors form the rows of $AB$.  Thus,
   \begin{equation*}
     AB ~=~ \begin{mymatrix}{rrr}
       -1 & 9 & 3 \\
       -2 & 7 & 3
-    \end{mymatrix}. 
+    \end{mymatrix}.
   \end{equation*}
   Once again this is the same answer as in
   Examples~\ref{exa:matrix-multiplication-columns} and
@@ -487,3 +487,147 @@ the row method. It is exactly symmetric to the column method.
   result. But notice how in the row method, each row of $A$ provides
   instructions for taking a linear combinations of the rows of $B$.
 \end{solution}
+
+We finish this section by introducing an important square matrix
+called the identity matrix.
+
+\begin{definition}{Identity matrix}{identity-matrix}
+  The \textbf{identity matrix}\index{matrix!identity}%
+  \index{identity matrix} of size $n\times n$ has ones along the
+  diagonal, and zeros everywhere else. In other words, it is the
+  matrix $\mat{\delta_{ij}}$ where $\delta_{ij}=1$ if $i=j$ and
+  $\delta_{ij}=0$ otherwise. The identity matrix is always a square
+  matrix. Here are some identity matrices of various sizes.
+  \begin{equation*}
+    \begin{mymatrix}{r}
+      1
+    \end{mymatrix},
+    \quad
+    \begin{mymatrix}{cc}
+      1 & 0 \\
+      0 & 1
+    \end{mymatrix},
+    \quad
+    \begin{mymatrix}{ccc}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{mymatrix},
+    \quad
+    \begin{mymatrix}{cccc}
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1
+    \end{mymatrix}.
+  \end{equation*}
+  When it is necessary to distinguish which size of identity matrix is
+  being discussed, we will use the notation $I_n$ for the $n\times n$
+  identity matrix.
+\end{definition}
+
+\begin{example}{Multiplying by the identity matrix}{identity-multiply}
+  Calculate $AI$, where $I$ is the $2\times 2$ identity matrix and
+  \begin{equation*}
+    A ~=~ \begin{mymatrix}{rr}
+      1 & 2 \\
+      -1 & 0 \\
+      4 & 1
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We need to calculate
+  \begin{equation*}
+    AI ~=~
+    \begin{mymatrix}{rr}
+      a_{11} & a_{12} \\
+      a_{21} & a_{22} \\
+      a_{31} & a_{32} \\
+    \end{mymatrix}
+    \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1
+    \end{mymatrix}.
+  \end{equation*}
+  Using the column method, we find that the first column of $AI$ is
+  \begin{equation*}
+    \begin{mymatrix}{rr}
+      a_{11} & a_{12} \\
+      a_{21} & a_{22} \\
+      a_{31} & a_{32} \\
+    \end{mymatrix}
+    \begin{mymatrix}{r}
+      1 \\
+      0
+    \end{mymatrix}
+    ~=~
+    1 \begin{mymatrix}{rr}
+      a_{11} \\
+      a_{21} \\
+      a_{31} \\
+    \end{mymatrix}
+    + 0 \begin{mymatrix}{rr}
+      a_{12} \\
+      a_{22} \\
+      a_{32} \\
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{rr}
+      a_{11} \\
+      a_{21} \\
+      a_{31} \\
+    \end{mymatrix},
+  \end{equation*}
+  which is exactly the same as the first column of $A$.
+  Similarly, the second column of $AI$ is
+  \begin{equation*}
+    \begin{mymatrix}{rr}
+      a_{11} & a_{12} \\
+      a_{21} & a_{22} \\
+      a_{31} & a_{32} \\
+    \end{mymatrix}
+    \begin{mymatrix}{r}
+      0 \\
+      1
+    \end{mymatrix}
+    ~=~
+    0 \begin{mymatrix}{rr}
+      a_{11} \\
+      a_{21} \\
+      a_{31} \\
+    \end{mymatrix}
+    + 1 \begin{mymatrix}{rr}
+      a_{12} \\
+      a_{22} \\
+      a_{32} \\
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{rr}
+      a_{12} \\
+      a_{22} \\
+      a_{32} \\
+    \end{mymatrix},
+  \end{equation*}
+  which is exactly the same as the second column of $A$. Therefore
+  \begin{equation*}
+    AI ~=~
+    \begin{mymatrix}{rr}
+      a_{11} & a_{12} \\
+      a_{21} & a_{22} \\
+      a_{31} & a_{32} \\
+    \end{mymatrix}
+    ~=~ A.
+  \end{equation*}
+\end{solution}
+
+The calculation of the last example generalizes to matrices of all
+sizes, and is summarized in the following proposition.
+
+\begin{proposition}{Multiplying by the identity matrix}{identity-matrix}
+  Let $A$ be any $m\times n$-matrix. Then
+  \begin{equation*}
+    I_mA = A = AI_n.
+  \end{equation*}
+\end{proposition}
