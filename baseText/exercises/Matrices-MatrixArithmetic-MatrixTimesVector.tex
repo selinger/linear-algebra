@@ -1,0 +1,82 @@
+\section*{Exercises}
+
+\begin{enumialphparenastyle}
+
+\begin{ex}
+  Let $A=\begin{mymatrix}{rrr} 1 & 2 & 0 \\ -1 & 1 & 1\end{mymatrix}$.
+  Multiply $A$ by each of the following vectors.
+  \begin{equation*}
+    (a)~ \begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},\quad
+    (b)~ \begin{mymatrix}{r} 0 \\ 1 \\ -1 \end{mymatrix},\quad
+    (c)~ \begin{mymatrix}{r} 2 \\ 1 \\ 0 \end{mymatrix},\quad
+    (d)~ \begin{mymatrix}{r} 0 \\ 0 \\ 0 \end{mymatrix},\quad
+    (e)~ \begin{mymatrix}{r} 1 \\ 0 \\ 3 \end{mymatrix}.\quad
+  \end{equation*}
+  \begin{sol}
+  \begin{equation*}
+    (a)~ \begin{mymatrix}{r} 1 \\ -1 \end{mymatrix},\quad
+    (b)~ \begin{mymatrix}{r} 2 \\ 0 \end{mymatrix},\quad
+    (c)~ \begin{mymatrix}{r} 4 \\ -1 \end{mymatrix},\quad
+    (d)~ \begin{mymatrix}{r} 0 \\ 0 \end{mymatrix},\quad
+    (e)~ \begin{mymatrix}{r} 1 \\ 2 \end{mymatrix}.\quad
+  \end{equation*}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Write the following system of equations in vector form and matrix
+  form.
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      2x + 3y + z &=& 4, \\
+      x       - 2z &=& 3, \\
+           2y + z &=& 1. \\
+    \end{array}
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
+  Compute the following by columns and by rows. Convince yourself that
+  both method give the same result.
+  \begin{equation*}
+    \begin{mymatrix}{cccc}
+      a_{11} & a_{12} & a_{13} \\
+      a_{21} & a_{22} & a_{23} \\
+      a_{31} & a_{32} & a_{33} \\
+    \end{mymatrix}
+    \begin{mymatrix}{c}
+      x_{1} \\
+      x_{2} \\
+      x_{3}
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    By columns:
+    \begin{equation*}
+      x_1\begin{mymatrix}{c}
+        a_{11} \\
+        a_{21} \\
+        a_{31} \\
+      \end{mymatrix}
+      +x_2\begin{mymatrix}{c}
+        a_{12} \\
+        a_{22} \\
+        a_{32} \\
+      \end{mymatrix}
+      +x_3\begin{mymatrix}{c}
+        a_{13} \\
+        a_{23} \\
+        a_{33} \\
+      \end{mymatrix}
+      ~=~
+      \begin{mymatrix}{c}
+        a_{11}x_1+a_{12}x_2+a_{13}x_3\\
+        a_{21}x_1+a_{22}x_2+a_{23}x_3\\
+        a_{31}x_1+a_{32}x_2+a_{33}x_3\\
+      \end{mymatrix}.
+    \end{equation*}
+    This is exactly the same as the ``by rows'' formula.
+  \end{sol}
+\end{ex}
+
+\end{enumialphparenastyle}
