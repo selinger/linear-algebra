@@ -28,6 +28,7 @@ cofactor
 cofactors
 com
 comm
+commutativity
 comp
 componentnode
 componentwise
