@@ -1,36 +1,39 @@
 \begin{enumialphparenastyle}
 
-\begin{ex} Find the volume of the parallelepiped determined by the vectors
-$\begin{mymatrix}{r}
-1 \\
--7 \\
--5
-\end{mymatrix} $, \\
- $\begin{mymatrix}{r}
-1 \\
--2 \\
--6
-\end{mymatrix}$, and $\begin{mymatrix}{r}
-3 \\
-2 \\
-3
-\end{mymatrix}$.
-\begin{sol}
- $\begin{absmatrix}{rrr}
-1 & -7 & -5 \\
-1 & -2 & -6 \\
-3 & 2 & 3
-\end{absmatrix}= 113$
-\end{sol}
+\begin{ex}
+  Find the volume of the parallelepiped determined by the vectors
+  $\begin{mymatrix}{r}
+    1 \\
+    -7 \\
+    -5
+  \end{mymatrix} $, \\
+  $\begin{mymatrix}{r}
+    1 \\
+    -2 \\
+    -6
+  \end{mymatrix}$, and $\begin{mymatrix}{r}
+    3 \\
+    2 \\
+    3
+  \end{mymatrix}$.
+  \begin{sol}
+    $\begin{absmatrix}{rrr}
+      1 & -7 & -5 \\
+      1 & -2 & -6 \\
+      3 & 2 & 3
+    \end{absmatrix}= 113$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Suppose $\vect{u},\vect{v}$, and $\vect{w}$ are three vectors whose
-components are all integers. Can you conclude the volume of the
-parallelepiped determined from these three vectors will always be an integer?
-\begin{sol}
-Yes. It will involve the sum of product of integers and so it will
-be an integer.
-\end{sol}
+\begin{ex}
+  Suppose $\vect{u},\vect{v}$, and $\vect{w}$ are three vectors whose
+  components are all integers. Can you conclude the volume of the
+  parallelepiped determined from these three vectors will always be an
+  integer?
+  \begin{sol}
+    Yes. It will involve the sum of product of integers and so it will
+    be an integer.
+  \end{sol}
 \end{ex}
 
 \begin{ex} \label{exer-box-product-zero}
@@ -42,7 +45,8 @@ be an integer.
   \end{sol}
 \end{ex}
 
-\begin{ex} Show that 
+\begin{ex}
+  Show that
   \begin{equation*}
     \tup{\vect{u}\times \vect{v}} \dotprod \vect{w}=
     \tup{\vect{v}\times \vect{w}} \dotprod \vect{u}=
@@ -52,71 +56,46 @@ be an integer.
   % \end{sol}
 \end{ex}
 
-\begin{ex} Simplify $\tup{\vect{u}\times \vect{v}} \dotprod \tup{\tup{
-\vect{v}\times \vect{w}} \times \tup{\vect{w}\times \vect{z}}} .$
-\begin{sol}
-Here $\mat{\vect{v},\vect{w},\vect{z}}$ denotes the box product. Consider the cross product term. From the above,
-\begin{eqnarray*}
-\tup{\vect{v}\times \vect{w}} \times \tup{\vect{w}\times \vect{z}} &=& 
-\mat{\vect{v},\vect{w},\vect{z}} \vect{w}-\mat{\vect{w},\vect{w},\vect{z}} \vect{v} \\
-&=&\mat{\vect{v},\vect{w},\vect{z}} \vect{w}
-\end{eqnarray*}
-Thus it reduces to
-\[
-\tup{\vect{u}\times \vect{v}} \dotprod \mat{\vect{v},\vect{w},\vect{z}} \vect{w}=\mat{\vect{v},\vect{w},\vect{z}} \mat{\vect{u},\vect{v},\vect{w}}
-\]
-\end{sol}
+\begin{ex}
+  Simplify
+  $\tup{\vect{u}\times \vect{v}} \dotprod \tup{\tup{ \vect{v}\times
+      \vect{w}} \times \tup{\vect{w}\times \vect{z}}}$.
 \end{ex}
 
-\begin{ex} Simplify $\norm{\vect{u}\times \vect{v}} ^{2}+\tup{
-\vect{u}\dotprod \vect{v}} ^{2}-\norm{\vect{u}} ^{2}\norm{
-\vect{v}} ^{2}.$
-\begin{sol}
-\begin{eqnarray*}
-\norm{\vect{u}\times \vect{v}} ^{2} &=&\varepsilon
-_{ijk}u_{j}v_{k}\varepsilon _{irs}u_{r}v_{s}=\tup{\delta _{jr}\delta
-_{ks}-\delta _{kr}\delta _{js}} u_{r}v_{s}u_{j}v_{k} \\
-&=&u_{j}v_{k}u_{j}v_{k}-u_{k}v_{j}u_{j}v_{k}=\norm{\vect{u}
-} ^{2}\norm{\vect{v}} ^{2}-\tup{\vect{u}\dotprod \vect{v}} ^{2}
-\end{eqnarray*}
-It follows that the expression reduces to $0$. You can also do the following.
-\begin{eqnarray*}
-\norm{\vect{u}\times \vect{v}} ^{2} &=&\norm{\vect{u}
-} ^{2}\norm{\vect{v}} ^{2}\sin ^{2}\theta \\
-&=&\norm{\vect{u}} ^{2}\norm{\vect{v}}
-^{2}\tup{1-\cos ^{2}\theta } \\
-&=&\norm{\vect{u}} ^{2}\norm{\vect{v}}
-^{2}-\norm{\vect{u}} ^{2}\norm{\vect{v}}
-^{2}\cos ^{2}\theta \\
-&=&\norm{\vect{u}} ^{2}\norm{\vect{v}}
-^{2}-\tup{\vect{u}\dotprod \vect{v}} ^{2}
-\end{eqnarray*}
-which implies the expression equals $0$.
-\end{sol}
-\end{ex}
-
-\begin{ex} This problem uses calculus. For
-  $\vect{u},\vect{v},\vect{w}$ functions of $t$, prove that the
-  derivative satisfies the following product rules:
-  \begin{eqnarray*}
-    \tup{\vect{u}\times \vect{v}} ^{\prime } &=&\vect{u}^{\prime }\times
-                                                 \vect{v}+\vect{u}\times \vect{v}^{\prime } \\
-    \tup{\vect{u}\dotprod \vect{v}} ^{\prime } &=&\vect{u}^{\prime }\dotprod
-                                                   \vect{v}+\vect{u}\dotprod \vect{v}^{\prime }
-  \end{eqnarray*}
+\begin{ex}
+  Simplify
+  $\norm{\vect{u}\times \vect{v}} ^{2}+\tup{ \vect{u}\dotprod
+    \vect{v}} ^{2}-\norm{\vect{u}} ^{2}\norm{ \vect{v}} ^{2}$.
   \begin{sol}
-    We will show it using the summation convention and permutation symbol.
+    We have
     \begin{eqnarray*}
-      \tup{\tup{\vect{u}\times \vect{v}} ^{\prime }} _{i} &=
-      &\tup{\tup{\vect{u}\times \vect{v}} _{i}} ^{\prime }=\tup{
-        \varepsilon _{ijk}u_{j}v_{k}} ^{\prime } \\
-                                                          &=&\varepsilon _{ijk}u_{j}^{\prime }v_{k}+\varepsilon
-                                                              _{ijk}u_{k}v_{k}^{\prime }=\tup{\vect{u}^{\prime } \times
-                                                              \vect{v}+\vect{u}\times \vect{v}^{\prime }} _{i}
+      \norm{\vect{u}\times \vect{v}} ^{2}
+      &=&\norm{\vect{u}
+          } ^{2}\norm{\vect{v}} ^{2}\sin ^{2}\theta \\
+      &=&\norm{\vect{u}} ^{2}\norm{\vect{v}}
+          ^{2}\tup{1-\cos ^{2}\theta } \\
+      &=&\norm{\vect{u}} ^{2}\norm{\vect{v}}
+          ^{2}-\norm{\vect{u}} ^{2}\norm{\vect{v}}
+          ^{2}\cos ^{2}\theta \\
+      &=&\norm{\vect{u}} ^{2}\norm{\vect{v}}
+          ^{2}-\tup{\vect{u}\dotprod \vect{v}} ^{2},
     \end{eqnarray*}
-    and so $\tup{\vect{u}\times \vect{v}} ^{\prime }=\vect{u}^{\prime }
-    \times \vect{v}+\vect{u}\times \vect{v}^{\prime }.$ 
+    which implies the expression equals $0$.
   \end{sol}
+\end{ex}
+
+\begin{ex}
+  This problem uses calculus. For $\vect{u},\vect{v},\vect{w}$
+  functions of $t$, prove that the derivative satisfies the following
+  product rules:
+  \begin{eqnarray*}
+    \tup{\vect{u}\times \vect{v}} ^{\prime }
+    &=&\vect{u}^{\prime }\times
+        \vect{v}+\vect{u}\times \vect{v}^{\prime } \\
+    \tup{\vect{u}\dotprod \vect{v}} ^{\prime }
+    &=&\vect{u}^{\prime }\dotprod
+        \vect{v}+\vect{u}\dotprod \vect{v}^{\prime }
+  \end{eqnarray*}
 \end{ex}
 
 \end{enumialphparenastyle}

@@ -1,110 +1,118 @@
 \begin{enumialphparenastyle}
 
-\begin{ex}  Find $\func{proj}_{\vect{v}}\tup{\vect{w}} $ where $\vect{w}=\begin{mymatrix}{r}
-1 \\
-0 \\
--2
-\end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
-1 \\
-2 \\
-3
-\end{mymatrix}$.
-\begin{sol}
-$\frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod \vect{u}}\vect{u}=\frac{-5}{14}\begin{mymatrix}{r}
-1 \\
-2 \\
-3
-\end{mymatrix} =\begin{mymatrix}{r}
--\vspace{0.05in}\frac{5}{14} \\
--\vspace{0.05in}\frac{5}{7} \\
--\vspace{0.05in}\frac{15}{14}
-\end{mymatrix} $
-\end{sol}
+\begin{ex}
+  Find $\func{proj}_{\vect{v}}\tup{\vect{w}} $ where
+  $\vect{w}=\begin{mymatrix}{r}
+    1 \\
+    0 \\
+    -2
+  \end{mymatrix}$ and $\vect{v}=\begin{mymatrix}{r}
+    1 \\
+    2 \\
+    3
+  \end{mymatrix}$.
+  \begin{sol}
+    $\displaystyle\frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod
+      \vect{u}}\,\vect{u}=\frac{-5}{14}\begin{mymatrix}{r}
+      1 \\
+      2 \\
+      3
+    \end{mymatrix} =\begin{mymatrix}{r}
+      -\vspace{0.05in}\frac{5}{14} \\
+      -\vspace{0.05in}\frac{5}{7} \\
+      -\vspace{0.05in}\frac{15}{14}
+    \end{mymatrix}$.
+  \end{sol}
 \end{ex}
 
 \begin{ex} Find $\func{proj}_{\vect{v}}\tup{\vect{w}} $ where 
-$\vect{w}=\begin{mymatrix}{r}
-1 \\
-2 \\
--2
-\end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
-1 \\
-0 \\
-3
-\end{mymatrix}$.
-\begin{sol}
- $\frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod \vect{u}}\vect{u}=\frac{-5}{10}\begin{mymatrix}{r}
-1 \\
-0 \\
-3
-\end{mymatrix} =\begin{mymatrix}{r}
--\vspace{0.05in}\frac{1}{2} \\
-0 \\
--\vspace{0.05in}\frac{3}{2}
-\end{mymatrix} $
-\end{sol}
+  $\vect{w}=\begin{mymatrix}{r}
+    1 \\
+    2 \\
+    -2
+  \end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
+    1 \\
+    0 \\
+    3
+  \end{mymatrix}$.
+  \begin{sol}
+    $\displaystyle\frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod
+      \vect{u}}\,\vect{u}=\frac{-5}{10}\begin{mymatrix}{r}
+      1 \\
+      0 \\
+      3
+    \end{mymatrix} =\begin{mymatrix}{r}
+      -\vspace{0.05in}\frac{1}{2} \\
+      0 \\
+      -\vspace{0.05in}\frac{3}{2}
+    \end{mymatrix}$.
+  \end{sol}
 \end{ex}
 
 \begin{ex} Find $\func{proj}_{\vect{v}}\tup{\vect{w}} $ where 
-$\vect{w}=\begin{mymatrix}{r}
-1 \\
-2 \\
--2 \\
-1
-\end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
-1 \\
-2 \\
-3 \\
-0
-\end{mymatrix}$.
-\begin{sol}
-$\frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod \vect{u}}\vect{u}=\frac{\begin{mymatrix}{cccc}
-1 & 2 & -2 & 1 
-\end{mymatrix}^T \dotprod \begin{mymatrix}{cccc}
-1 & 2 & 3 & 0
-\end{mymatrix}^T}{1+4+9}\begin{mymatrix}{r}
-1 \\
-2 \\
-3 \\
-0
-\end{mymatrix}
-=\begin{mymatrix}{r}
--\vspace{0.05in}\frac{1}{14} \\
--\vspace{0.05in}\frac{1}{7} \\
--\vspace{0.05in}\frac{3}{14} \\
- 0
-\end{mymatrix} $
-\end{sol}
+  $\vect{w}=\begin{mymatrix}{r}
+    1 \\
+    2 \\
+    -2 \\
+    1
+  \end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
+    1 \\
+    2 \\
+    3 \\
+    0
+  \end{mymatrix}$.
+  \begin{sol}
+    $\displaystyle\frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod
+      \vect{u}}\,\vect{u}=\frac{\begin{mymatrix}{cccc} 1 & 2 & -2 & 1
+      \end{mymatrix}^T \dotprod \begin{mymatrix}{cccc}
+        1 & 2 & 3 & 0
+      \end{mymatrix}^T}{1+4+9}\begin{mymatrix}{r}
+      1 \\
+      2 \\
+      3 \\
+      0
+    \end{mymatrix}
+    =\begin{mymatrix}{c}
+      -\vspace{0.05in}\frac{1}{14} \\
+      -\vspace{0.05in}\frac{2}{14} \\
+      -\vspace{0.05in}\frac{3}{14} \\
+      0
+    \end{mymatrix}$.
+  \end{sol}
 \end{ex}
 
-\begin{ex}  Find $\func{comp}_{\vect{v}}\tup{\vect{w}} $ where $\vect{w}=\begin{mymatrix}{r}
-1 \\
-1 \\
-2
-\end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
-0 \\
-3 \\
-3
-\end{mymatrix}$.
+\begin{ex}
+  Find $\func{comp}_{\vect{v}}\tup{\vect{w}} $ where
+  $\vect{w}=\begin{mymatrix}{r}
+    1 \\
+    1 \\
+    2
+  \end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
+    0 \\
+    3 \\
+    3
+  \end{mymatrix}$.
 \end{ex}
 
 \begin{ex} Find $\func{comp}_{\vect{v}}\tup{\vect{w}} $ where 
-$\vect{w}=\begin{mymatrix}{r}
-1 \\
--1 \\
-0
-\end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
-1 \\
-1 \\
-2
-\end{mymatrix}$.
+  $\vect{w}=\begin{mymatrix}{r}
+    1 \\
+    -1 \\
+    0
+  \end{mymatrix} $ and $\vect{v}=\begin{mymatrix}{r}
+    1 \\
+    1 \\
+    2
+  \end{mymatrix}$.
 \end{ex}
 
 
-\begin{ex} Does it make sense to speak of $\func{proj}_{\vect{0}}\tup{\vect{w}} ?$
-\begin{sol}
-No, it does not. The $0$ vector has no direction. The formula for $\func{proj}_{\vect{0}}\tup{\vect{w}}$ doesn't make sense either.
-\end{sol}
+\begin{ex}
+  Does it make sense to speak of $\func{proj}_{\vect{0}}\tup{\vect{w}}$?
+  \begin{sol}
+    No, it does not. The $0$ vector has no direction. The formula for
+    $\func{proj}_{\vect{0}}\tup{\vect{w}}$ doesn't make sense either.
+  \end{sol}
 \end{ex}
 
 \begin{ex}
@@ -124,71 +132,84 @@ No, it does not. The $0$ vector has no direction. The formula for $\func{proj}_{
   \end{sol}
 \end{ex}
 
-\begin{ex} Prove the Cauchy Schwarz inequality in $\R^{n}$ as follows.
-For $\vect{u},\vect{v}$ vectors, consider 
-\begin{equation*}
-\tup{\vect{w}-
-\func{proj}_{\vect{v}}(\vect{w})} \dotprod \tup{\vect{w}-
-\func{proj}_{\vect{v}}(\vect{w})} \geq 0
-\end{equation*}
-Simplify using the axioms of the dot product and then put in the formula
-for the projection. Notice that this expression equals $0$ and you get equality
-in the Cauchy Schwarz inequality if and only if 
-$\vect{w}=\func{proj}_{\vect{v}}(\vect{w})$. What is the geometric meaning of 
-$\vect{w}=\func{proj}_{\vect{v}}(\vect{w})$?
-\begin{sol}
-\[
-\tup{\vect{u}-\frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{v}}
-^{2}}\vect{v}} \dotprod \tup{\vect{u}-\frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{v}} ^{2}}\vect{v}} =\norm{\vect{u
-}} ^{2}-2\tup{\vect{u}\dotprod \vect{v}} ^{2}\frac{1}{\norm{
-\vect{v}} ^{2}}+\tup{\vect{u}\dotprod \vect{v}} ^{2}\frac{1}{
-\norm{\vect{v}} ^{2}}\geq 0
-\]
-And so
-\[
-\norm{\vect{u}} ^{2}\norm{\vect{v}}
-^{2}\geq \tup{\vect{u}\dotprod \vect{v}} ^{2}
-\]
-You get equality exactly when $\vect{u}=\func{proj}_{\vect{v}}(\vect{u})
-= \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{v}} ^{2}}\vect{v}$
-in other words, when $\vect{u}$ is a multiple of $\vect{v}$.
-\end{sol}
+\begin{ex}
+  Prove the Cauchy Schwarz inequality in $\R^{n}$ as follows.  For
+  $\vect{u},\vect{v}$ vectors, consider
+  \begin{equation*}
+    \tup{\vect{w}-
+      \func{proj}_{\vect{v}}(\vect{w})} \dotprod \tup{\vect{w}-
+      \func{proj}_{\vect{v}}(\vect{w})} \geq 0
+  \end{equation*}
+  Simplify using the axioms of the dot product and then put in the
+  formula for the projection. Notice that this expression equals $0$
+  and you get equality in the Cauchy Schwarz inequality if and only if
+  $\vect{w}=\func{proj}_{\vect{v}}(\vect{w})$. What is the geometric
+  meaning of $\vect{w}=\func{proj}_{\vect{v}}(\vect{w})$?
+  \begin{sol}
+    \[
+      \tup{\vect{u}-\frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{v}}
+          ^{2}}\,\vect{v}} \dotprod \tup{\vect{u}-\frac{\vect{u}\dotprod
+          \vect{v}}{\norm{\vect{v}} ^{2}}\,\vect{v}} =\norm{\vect{u}}
+      ^{2}-2\tup{\vect{u}\dotprod \vect{v}} ^{2}\frac{1}{\norm{
+          \vect{v}} ^{2}}+\tup{\vect{u}\dotprod \vect{v}}
+      ^{2}\frac{1}{ \norm{\vect{v}} ^{2}}\geq 0,
+    \]
+    and so
+    \[
+      \norm{\vect{u}} ^{2}\norm{\vect{v}}
+      ^{2}\geq \tup{\vect{u}\dotprod \vect{v}} ^{2}.
+    \]
+    We get equality exactly when
+    $\vect{u}=\func{proj}_{\vect{v}}(\vect{u}) =
+    \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{v}} ^{2}}\,\vect{v}$,
+    or in other words, when $\vect{u}$ is a multiple of $\vect{v}$.
+  \end{sol}
 \end{ex}
 
 
-\begin{ex} \label{perp-linear} Let $\vect{v},\vect{w}$ $\vect{u}$ be vectors. Show
-that $\tup{\vect{w}+\vect{u}} _{\perp }=\vect{w}_{\perp }+\vect{u}_{\perp }$
- where $\vect{w}_{\perp }=\vect{w}-\func{proj}_{\vect{v}}\tup{\vect{w}}$.
-\begin{sol}
-\begin{eqnarray*}
-\vect{w}-\func{proj}_{\vect{v}}\tup{\vect{w}} +\vect{u}- \func{proj}_{\vect{v}}\tup{\vect{u}} \\
-&=&\vect{w}+\vect{u}-\tup{\func{proj}_{\vect{v}}\tup{\vect{w}} +\func{proj}_{\vect{v}}\tup{\vect{u}} } \\
-&=&\vect{w}+\vect{u}-\func{proj}_{\vect{v}}\tup{\vect{w}+\vect{u}} 
-\end{eqnarray*}
-This follows because 
-\begin{eqnarray*}
-\func{proj}_{\vect{v}}\tup{\vect{w}} +\func{proj}_{\vect{v}}\tup{
-\vect{u}} &=& \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{v}} ^{2}}\vect{v}+
-\frac{\vect{w}\dotprod \vect{v}}{\norm{\vect{v}} ^{2}}\vect{v} \\
-&=& \frac{\tup{\vect{u}+\vect{w}} \dotprod \vect{v}}{\norm{\vect{v}
-} ^{2}}\vect{v} \\
-&=& \func{proj}_{\vect{v}}\tup{\vect{w}+\vect{u}}
-\end{eqnarray*}
-\end{sol}
+\begin{ex}\label{perp-linear}
+  Let $\vect{v},\vect{w}$ $\vect{u}$ be vectors. Show that
+  $\tup{\vect{w}+\vect{u}} _{\perp }=\vect{w}_{\perp }+\vect{u}_{\perp
+  }$ where
+  $\vect{w}_{\perp }=\vect{w}-\func{proj}_{\vect{v}}\tup{\vect{w}}$.
+  \begin{sol}
+    \begin{eqnarray*}
+      \vect{w}-\func{proj}_{\vect{v}}\tup{\vect{w}} +\vect{u}- \func{proj}_{\vect{v}}\tup{\vect{u}} 
+      &=& \vect{w}+\vect{u}-\tup{\func{proj}_{\vect{v}}\tup{\vect{w}} +\func{proj}_{\vect{v}}\tup{\vect{u}} } \\
+      &=&\vect{w}+\vect{u}-\func{proj}_{\vect{v}}\tup{\vect{w}+\vect{u}}.
+    \end{eqnarray*}
+    This follows because 
+    \begin{eqnarray*}
+      \func{proj}_{\vect{v}}\tup{\vect{w}} +\func{proj}_{\vect{v}}\tup{
+      \vect{u}}
+      &=& \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{v}} ^{2}}\vect{v}+
+          \frac{\vect{w}\dotprod \vect{v}}{\norm{\vect{v}} ^{2}}\vect{v} \\
+      &=& \frac{\tup{\vect{u}+\vect{w}} \dotprod \vect{v}}{\norm{\vect{v}
+          } ^{2}}\vect{v} \\
+      &=& \func{proj}_{\vect{v}}\tup{\vect{w}+\vect{u}}.
+    \end{eqnarray*}
+  \end{sol}
 \end{ex}
 
 \begin{ex} Show that
-\begin{equation*}
- \tup{\vect{v}-\func{proj}_{\vect{u}
-}\tup{\vect{v}} } \dotprod \vect{u}=0
-\end{equation*}
-and conclude every vector in $\R^{n}$ can be written as the sum of
-two vectors, one which is orthogonal and one which is parallel to the
-given vector.
-\begin{sol}
-$\tup{\vect{v}-\func{proj}_{\vect{u}}\tup{\vect{v}} } \dotprod \vect{u} =  \vect{v} \dotprod \vect{u} -\tup{\frac{\tup{\vect{v}\cdot\vect{u}} }{\norm{\vect{u}} ^{2}}\vect{u} } \dotprod \vect{u} = \vect{v} \dotprod \vect{u} - \vect{v} \dotprod \vect{u} =0$. Therefore, $\vect{v} = \vect{v} - \func{proj}_{\vect{u}}\tup{\vect{v}} + \func{proj}_{\vect{u}}\tup{\vect{v}}$. The first is orthogonal to $\vect{u}$ and the second is a multiple
-of $\vect{u}$ so it is parallel to $\vect{u}$.
-\end{sol}
+  \begin{equation*}
+    \tup{\vect{v}-\func{proj}_{\vect{u}
+      }\tup{\vect{v}} } \dotprod \vect{u}=0
+  \end{equation*}
+  and conclude every vector in $\R^{n}$ can be written as the sum of
+  two vectors, one which is orthogonal and one which is parallel to
+  the given vector.
+  \begin{sol}
+    $\tup{\vect{v}-\func{proj}_{\vect{u}}\tup{\vect{v}} } \dotprod
+    \vect{u} = \vect{v} \dotprod \vect{u}
+    -\tup{\frac{\tup{\vect{v}\cdot\vect{u}} }{\norm{\vect{u}}
+        ^{2}}\vect{u} } \dotprod \vect{u} = \vect{v} \dotprod \vect{u}
+    - \vect{v} \dotprod \vect{u} =0$. Therefore,
+    $\vect{v} = \vect{v} - \func{proj}_{\vect{u}}\tup{\vect{v}} +
+    \func{proj}_{\vect{u}}\tup{\vect{v}}$. The first is orthogonal to
+    $\vect{u}$ and the second is a multiple of $\vect{u}$ so it is
+    parallel to $\vect{u}$.
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}
