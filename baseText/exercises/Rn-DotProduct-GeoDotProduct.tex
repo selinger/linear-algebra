@@ -1,73 +1,78 @@
 \begin{enumialphparenastyle}
 
-\begin{ex} Find $\cos \theta$ where $\theta$ is the angle between the vectors 
-\begin{equation*}
-\vect{u}
-=
-\begin{mymatrix}{r}
-3 \\
--1 \\
--1
-\end{mymatrix},
-\vect{v}
-=
-\begin{mymatrix}{r}
-1 \\
-4 \\
-2
-\end{mymatrix}
-\end{equation*}
-\begin{sol}
- $\frac{\begin{mymatrix}{ccc} 
-3 & -1 & -1
-\end{mymatrix}^T \dotprod
-\begin{mymatrix}{ccc}
-1 & 4 & 2
-\end{mymatrix}^T }{\sqrt{9+1+1}\sqrt{1+16+4}}= \frac{-3}{\sqrt{11}\sqrt{21}}= \cos \theta $ 
-\end{sol}
+\begin{ex}
+  Find $\cos \theta$ where $\theta$ is the angle between the vectors
+  \begin{equation*}
+    \vect{u}
+    =
+    \begin{mymatrix}{r}
+      3 \\
+      -1 \\
+      -1
+    \end{mymatrix},
+    \vect{v}
+    =
+    \begin{mymatrix}{r}
+      1 \\
+      4 \\
+      2
+    \end{mymatrix}
+  \end{equation*}
+  \begin{sol}
+    $\displaystyle\cos\theta=\frac{\begin{mymatrix}{ccc} 
+        3 & -1 & -1
+      \end{mymatrix}^T \dotprod
+      \begin{mymatrix}{ccc}
+        1 & 4 & 2
+      \end{mymatrix}^T }
+    {\sqrt{9+1+1}\sqrt{1+16+4}}= \frac{-3}{\sqrt{11}\sqrt{21}}$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Find $\cos \theta$ where $\theta$ is the angle between the vectors  
-\begin{equation*}
-\vect{u}
-=
-\begin{mymatrix}{r}
-1 \\
--2 \\
-1
-\end{mymatrix},
-\vect{v}
-=
-\begin{mymatrix}{r}
-1 \\
-2 \\
--7
-\end{mymatrix}
-\end{equation*}
-\begin{sol}
- $\frac{-10}{\sqrt{1+4+1}\sqrt{1+4+49}}=\cos \theta $ 
-
-\end{sol}
+\begin{ex}
+  Find $\cos \theta$ where $\theta$ is the angle between the vectors
+  \begin{equation*}
+    \vect{u}
+    =
+    \begin{mymatrix}{r}
+      1 \\
+      -2 \\
+      1
+    \end{mymatrix},
+    \vect{v}
+    =
+    \begin{mymatrix}{r}
+      1 \\
+      2 \\
+      -7
+    \end{mymatrix}
+  \end{equation*}
+  \begin{sol}
+    $\displaystyle\cos\theta =
+    \frac{-10}{\sqrt{1+4+1}\sqrt{1+4+49}}$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Show that the triangle with vertices $A=(2,0,-3)$, $B=(5,-2,1)$ and $C=(7,5,3)$ is a right triangle. 
-\begin{sol}
-
-This triangle has sides $\overrightarrow{AB}$, $\overrightarrow{BC}$, $\overrightarrow{CA}$, order does not matter since scalar multiplication preserves orthogonality:
-\begin{align*}
-\overrightarrow{PQ}&=(5,-2,1)-(2,0,3)=(3,-2,4)\\
-\overrightarrow{QR}&=(7,5,3)-(5,-2,1)=(2,7,2)\\
-\overrightarrow{RP}&=(2,0,-3)-(7,5,3)=(-5,-5,-6)
-\end{align*}
-if any pair of these is orthogonal then we are done:
-$$\overrightarrow{AB}\cdot\overrightarrow{BC}=(3,-2,4)\cdot (2,7,2)=6-14+8=0$$
-The triangle has a right angle at $B$.
-
-
-\end{sol}
+\begin{ex}
+  Show that the triangle with vertices $A=(2,0,-3)$, $B=(5,-2,1)$ and
+  $C=(7,5,3)$ is a right triangle.
+  \begin{sol}
+    This triangle has sides $\overrightarrow{AB}$,
+    $\overrightarrow{BC}$, $\overrightarrow{CA}$. The direction of the
+    sides does not matter, since scalar multiplication preserves
+    orthogonality.
+    \begin{align*}
+      \overrightarrow{PQ}&=(5,-2,1)-(2,0,3)=(3,-2,4),\\
+      \overrightarrow{QR}&=(7,5,3)-(5,-2,1)=(2,7,2),\\
+      \overrightarrow{RP}&=(2,0,-3)-(7,5,3)=(-5,-5,-6).
+    \end{align*}
+    If any pair of these is orthogonal then we are done:
+    \begin{equation*}
+      \overrightarrow{AB}\cdot\overrightarrow{BC}
+      =(3,-2,4)\cdot (2,7,2)=6-14+8=0.
+    \end{equation*}
+    The triangle has a right angle at $B$.
+  \end{sol}
 \end{ex}
-
-
-
 
 \end{enumialphparenastyle}
