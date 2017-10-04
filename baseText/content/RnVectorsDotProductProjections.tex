@@ -170,7 +170,7 @@ $\vect{v}$ can be uniquely written as a sum of two orthogonal vectors,
 one of which is a scalar multiple of some given non-zero vector
 $\vect{u}$, and the other of which is orthogonal to $\vect{u}$.
 
-\begin{theorem}{Decomposition into components}{projection}
+\begin{theorem}{Decomposition into components}{decomposition-into-components}
   Let $\vect{u}$ be a non-zero vector, and let $\vect{v}$ be any
   vector. Then there exist unique vectors $\vect{v}_{\coll}$ and
   $\vect{v}_{\bot}$ such that
@@ -182,6 +182,18 @@ $\vect{u}$, and the other of which is orthogonal to $\vect{u}$.
 \end{theorem}
 
 \begin{proof}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.7,rotate=-8]
+      \draw[draw=green!50!black] (3,0.5) -- (2.5,0.5) -- (2.5,0);
+      \draw[->, thick, blue](0,0) -- node[left]{$\vect{v}$} (3,3.5);
+      \draw[->, thick, blue](0,0) -- node[below]{$\vect{u}$} (10,0);
+      \draw[->, thick, red] (0,0) -- node[below]{$\vect{v}_{\coll}$} (3,0);
+      \draw[->, thick, red] (3,0) -- node[right]{$\vect{v}_{\bot}$} (3,3.5);
+      \draw[fill](0,0) circle [radius=2.25pt];
+      \draw[fill](3,0) circle [radius=2.25pt];
+      \draw[fill](3,3.5) circle [radius=2.25pt];
+    \end{tikzpicture}
+  \end{center}
   To show that such a decomposition exists, let
   \begin{equation*}
     \vect{v}_{\coll} = \func{proj}_{\vect{u}}\tup{\vect{v}} = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u},
@@ -216,3 +228,33 @@ $\vect{u}$, and the other of which is orthogonal to $\vect{u}$.
   $\vect{v}_{\coll}$ and $\vect{v}_{\bot}$, proving their uniqueness. 
 \end{proof}
 
+\begin{example}{Decomposition into components}{decomposition-into-components}
+  Decompose the vector $\vect{v}$ into $\vect{v}=\vect{a}+\vect{b}$
+  where $\vect{a}$ is parallel to $\vect{u}$ and $\vect{b}$ is
+  orthogonal to $\vect{u}$.
+  \begin{equation*}
+    \vect{v} = \begin{mymatrix}{r} -5\\3\\-5 \end{mymatrix},\quad
+    \vect{u} = \begin{mymatrix}{r} 1\\2\\-2 \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We can let $\vect{a}=\vect{v}_{\coll}$ and $\vect{b}=\vect{v}_{\bot}$
+  as in the proof of Theorem~\ref{thm:decomposition-into-components}.
+  Then
+  \begin{equation*}
+    \vect{a} ~=~ \vect{v}_{\coll}
+    ~=~ \func{proj}_{\vect{u}}\tup{\vect{v}}
+    ~=~ \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u}
+    ~=~ \frac{11}{9}\, \begin{mymatrix}{r} 1\\2\\-2 \end{mymatrix}
+    ~=~ \begin{mymatrix}{r} 11/9\\22/9\\-22/9 \end{mymatrix}
+  \end{equation*}
+  and
+  \begin{equation*}
+    \vect{b} ~=~ \vect{v}_{\bot}
+    ~=~ \vect{v}-\vect{v}_{\coll}
+    ~=~ \begin{mymatrix}{r} -5\\3\\-5 \end{mymatrix}
+    - \begin{mymatrix}{r} 11/9\\22/9\\-22/9 \end{mymatrix}
+    ~=~ \begin{mymatrix}{r} -56/9\\5/9 \\-23/9 \end{mymatrix}.
+  \end{equation*}
+\end{solution}
