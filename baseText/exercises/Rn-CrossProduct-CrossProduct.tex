@@ -159,5 +159,92 @@
   correct magnitude.
 \end{ex}
 
+\begin{ex}\label{ex:triple-cross-product}
+  Prove the following formula by direct calculation:
+  $\vect{u}\times(\vect{v}\times\vect{w}) ~=~
+  (\vect{u}\dotprod\vect{w})\,\vect{v} -
+  (\vect{u}\dotprod\vect{v})\,\vect{w}$.
+  \begin{sol}
+    Let $\vect{u}=\mat{u_1,u_2,u_3}^T$,
+    $\vect{v}=\mat{v_1,v_2,v_3}^T$, and
+    $\vect{w}=\mat{w_1,w_2,w_3}^T$.
+    Then
+    \begin{eqnarray*}
+      \vect{u}\times(\vect{v}\times\vect{w})
+      &=&
+      \begin{mymatrix}{c}u_1\\u_2\\u_3\end{mymatrix}
+      \times
+      \begin{mymatrix}{c}
+        v_2w_3 - v_3w_2 \\
+        v_3w_1 - v_1w_3 \\
+        v_1w_2 - v_2w_1 \\
+      \end{mymatrix}
+      ~=~
+      \begin{mymatrix}{c}
+        u_2(v_1w_2 - v_2w_1) - u_3(v_3w_1 - v_1w_3) \\
+        u_3(v_2w_3 - v_3w_2) - u_1(v_1w_2 - v_2w_1) \\
+        u_1(v_3w_1 - v_1w_3) - u_2(v_2w_3 - v_3w_2) \\
+      \end{mymatrix}\\
+      &=&
+      \begin{mymatrix}{c}
+        u_2v_1w_2 - u_2v_2w_1 - u_3v_3w_1 + u_3v_1w_3 \\
+        u_3v_2w_3 - u_3v_3w_2 - u_1v_1w_2 + u_1v_2w_1 \\
+        u_1v_3w_1 - u_1v_1w_3 - u_2v_2w_3 + u_2v_3w_2 \\
+      \end{mymatrix}
+    \end{eqnarray*}
+    and
+    \begin{eqnarray*}
+      (\vect{u}\dotprod\vect{w})\,\vect{v} -
+      (\vect{u}\dotprod\vect{v})\,\vect{w}
+      &=& (u_1w_1+u_2w_2+u_3w_3)
+          \begin{mymatrix}{c} v_1\\v_2\\v_3 \end{mymatrix}
+      - (u_1v_1+u_2v_2+u_3v_3)
+      \begin{mymatrix}{c} w_1\\w_2\\w_3 \end{mymatrix}
+      \\
+      &=& \begin{mymatrix}{c}
+        u_1w_1v_1+u_2w_2v_1+u_3w_3v_1 - u_1v_1w_1-u_2v_2w_1-u_3v_3w_1 \\
+        u_1w_1v_2+u_2w_2v_2+u_3w_3v_2 - u_1v_1w_2-u_2v_2w_2-u_3v_3w_2 \\
+        u_1w_1v_3+u_2w_2v_3+u_3w_3v_3 - u_1v_1w_3-u_2v_2w_3-u_3v_3w_3 \\
+      \end{mymatrix}.
+    \end{eqnarray*}
+    We can see by careful inspection that these are equal.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Use the formula from Exercise~\ref{ex:triple-cross-product} to prove
+  that the cross product satisfies the so-called \textbf{Jacobi
+    identity}%
+  \index{Jacobi identity}\index{cross product!Jacobi identity}:
+  \begin{equation*}
+    \vect{u}\times(\vect{v}\times\vect{w})
+    + \vect{v}\times(\vect{w}\times\vect{u})
+    + \vect{w}\times(\vect{u}\times\vect{v})
+    = \vect{0}.
+  \end{equation*}
+  \begin{sol}
+    \begin{equation*}
+      \begin{array}{l}
+        \vect{u}\times(\vect{v}\times\vect{w}) 
+        ~+~ \vect{v}\times(\vect{w}\times\vect{u}) 
+        ~+~ \vect{w}\times(\vect{u}\times\vect{v}) \\
+        {} = ((\vect{u}\dotprod\vect{w})\,\vect{v}
+        - (\vect{u}\dotprod\vect{v})\,\vect{w})
+        ~+~ ((\vect{v}\dotprod\vect{u})\,\vect{w}
+        - (\vect{v}\dotprod\vect{w})\,\vect{u})
+        ~+~ ((\vect{w}\dotprod\vect{v})\,\vect{u}
+        - (\vect{w}\dotprod\vect{u})\,\vect{v}) \\
+        {} = ((\vect{u}\dotprod\vect{w})\,\vect{v}
+        - (\vect{w}\dotprod\vect{u})\,\vect{v})
+        ~+~ ((\vect{v}\dotprod\vect{u})\,\vect{w}
+        - (\vect{u}\dotprod\vect{v})\,\vect{w})
+        ~+~ ((\vect{w}\dotprod\vect{v})\,\vect{u}
+        - (\vect{v}\dotprod\vect{w})\,\vect{u}) \\
+        {} = \vect{0}.
+      \end{array}
+    \end{equation*}
+  \end{sol}
+  \vspace{-4ex}
+\end{ex}
 
 \end{enumialphparenastyle}

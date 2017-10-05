@@ -57,9 +57,38 @@
 \end{ex}
 
 \begin{ex}
-  Simplify
-  $\tup{\vect{u}\times \vect{v}} \dotprod \tup{\tup{ \vect{v}\times
-      \vect{w}} \times \tup{\vect{w}\times \vect{z}}}$.
+  Use the formula from Exercise~\ref{ex:triple-cross-product} to show
+  that
+  \begin{equation*}
+    (\vect{u}\times\vect{v}) \dotprod ((\vect{v}\times\vect{w}) \times
+    (\vect{w}\times\vect{z})) =
+    ((\vect{v}\times\vect{w})\dotprod\vect{z})\,((\vect{u}\times\vect{v})\dotprod\vect{w}).
+  \end{equation*}
+  \vspace{-4ex}
+  \begin{sol}
+    First, we have
+    \begin{equation*}
+      (\vect{v}\times\vect{w})\times(\vect{w}\times\vect{z})
+      ~=~ ((\vect{v}\times\vect{w})\dotprod\vect{z})\,\vect{w}
+          - ((\vect{v}\times\vect{w})\dotprod\vect{w})\,\vect{z}.
+    \end{equation*}
+    Since $\vect{v}\times\vect{w}$ is orthogonal to $\vect{w}$, their
+    dot product $(\vect{v}\times\vect{w})\dotprod\vect{w}$ is zero,
+    and therefore
+    \begin{equation*}
+      (\vect{v}\times\vect{w})\times(\vect{w}\times\vect{z})
+      ~=~ ((\vect{v}\times\vect{w})\dotprod\vect{z})\,\vect{w}.
+    \end{equation*}
+    But then
+    \begin{equation*}
+      (\vect{u}\times\vect{v})\dotprod
+      ((\vect{v}\times\vect{w})\times(\vect{w}\times\vect{z}))
+      ~=~
+      (\vect{u}\times\vect{v})\dotprod(((\vect{v}\times\vect{w})\dotprod\vect{z})\,\vect{w})
+      ~=~ ((\vect{v}\times\vect{w})\dotprod\vect{z})\,((\vect{u}\times\vect{v})\dotprod\vect{w}).
+    \end{equation*}
+    
+  \end{sol}
 \end{ex}
 
 \begin{ex}
