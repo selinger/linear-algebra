@@ -1,174 +1,151 @@
-\section{The identity and inverses}
+\section{Inverse matrices}
 
-The identity matrix is so important that there
-is a special symbol to denote the $ij^{th}$ entry of the identity matrix. This symbol is given by 
-$I_{ij}=\delta _{ij}$ where $\delta _{ij}$ is the \textbf{Kronecker symbol}
-defined
-\index{Kronecker symbol} by
-\begin{equation*}
-\delta _{ij}=\left\{
-\begin{array}{c}
-1
-\text{ if }i=j \\
-0\text{ if }i\neq j
-\end{array}
-\right.
-\end{equation*}
-
-$I_n$ is called the \textbf{identity matrix} because it is a \textbf{multiplicative identity} in the following sense.
-
-\begin{lemma}{Multiplication by the identity matrix}{mult-by-identity}
-Suppose $A$ is an $m\times n$ matrix and $I_{n}$ is the $n\times n$ identity
-matrix\textbf{.} Then $AI_{n}=A.$ If $I_{m}$ is the $m\times m$ identity
-matrix, it also follows that $I_{m}A=A.$
-\end{lemma}
-
-\begin{proof}
-The $(i,j)$-entry of $AI_n$ is given by:
-\begin{equation*}
-\sum_{k}a_{ik}\delta _{kj}=a_{ij}
-\end{equation*}
-and so $AI_{n}=A.$ The other case is left as an exercise for you. 
-\end{proof}
-
-We now define the matrix operation which in some ways plays the role of division. 
+We now define a matrix operation which in some ways plays the role
+of division. We cannot divide by a matrix, but we can multiply by the
+inverse of a matrix, which is almost as good.
 
 \begin{definition}{The inverse of a matrix}{invertible-matrix}
-A square  $n\times n$ matrix $A$ is said to have an \textbf{inverse} $A^{-1}$
-if and only if 
-\begin{equation*}
-AA^{-1}=A^{-1}A=I_n
-\end{equation*}
-In this case, the matrix $A$ is called
-\index{matrix!inverse} \textbf{invertible}.
-\index{matrix!invertible}
+  Let $A$ and $B$ be $n\times n$-matrices. We say that $B$ is an
+  \textbf{inverse}\index{inverse!of a matrix}%
+  \index{matrix!inverse} of $A$ if
+  \begin{equation*}
+    AB=I\quad\mbox{and}\quad
+    BA=I.
+  \end{equation*}
+  If this is the case, we also write $B=A^{-1}$. When a matrix has an
+  inverse, it is called \textbf{invertible}\index{matrix!invertible}%
+  \index{invertible matrix}.
 \end{definition}
 
-Such a  matrix $A^{-1}$ will have the same size as the matrix $A$. 
-It is very important to observe that the inverse of a matrix, if it exists,
-is unique. Another way to think of this is that if it acts like the inverse,
-then it $\textbf{is}$ the inverse.
-
-\begin{theorem}{Uniqueness of inverse}{unique-inverse}
-Suppose $A$ is an $n \times\ n$ matrix such that an inverse  $A^{-1}$ exists. Then there is only one such 
-inverse matrix. 
-That is, given any matrix $B$ such that $AB=BA=I$, $B=A^{-1}$.
-\end{theorem}
-
-\begin{proof} In this proof, it is assumed that $I$ is the $n \times n$ identity matrix. 
-Let $A, B$ be $n \times n$ matrices such that $A^{-1}$ exists and $AB=BA=I$. 
-We want to show that $A^{-1} = B$. 
-Now using properties we have seen, we get: 
-\begin{equation*}
-A^{-1}=A^{-1}I=A^{-1}\tup{AB} =\tup{A^{-1}A} B=IB=B
-\end{equation*}
-Hence, $A^{-1} = B$ which tells us that the inverse is unique.
-\end{proof}
-
-The next example demonstrates how to check the inverse of a matrix. 
-
 \begin{example}{Verifying the inverse of a matrix}{verifying-inverse}
-Let $A=\begin{mymatrix}{rr}
-1 & 1 \\
-1 & 2
-\end{mymatrix} .$ Show $\begin{mymatrix}{rr}
-2 & -1 \\
--1 & 1
-\end{mymatrix} $ is the inverse of $A.$
+  Let $A=\begin{mymatrix}{rr}
+    1 & 1 \\
+    1 & 2
+  \end{mymatrix}$. Check that $B=\begin{mymatrix}{rr}
+    2 & -1 \\
+    -1 & 1
+  \end{mymatrix}$ is an inverse of $A$.
 \end{example}
 
-\begin{solution} To check this, multiply
-\begin{equation*}
-\begin{mymatrix}{rr}
-1 & 1 \\
-1 & 2
-\end{mymatrix} \begin{mymatrix}{rr}
-2 & -1 \\
--1 & 1
-\end{mymatrix} =\allowbreak \begin{mymatrix}{rr}
-1 & 0 \\
-0 & 1
-\end{mymatrix} = I 
-\end{equation*}
-and
-\begin{equation*}
-\begin{mymatrix}{rr}
-2 & -1 \\
--1 & 1
-\end{mymatrix} \begin{mymatrix}{rr}
-1 & 1 \\
-1 & 2
-\end{mymatrix} =\allowbreak \begin{mymatrix}{rr}
-1 & 0 \\
-0 & 1
-\end{mymatrix} = I 
-\end{equation*}
-showing that this matrix is indeed the inverse of $A.$
+\begin{solution}
+  To check this, multiply
+  \begin{equation*}
+    AB = \begin{mymatrix}{rr}
+      1 & 1 \\
+      1 & 2
+    \end{mymatrix} \begin{mymatrix}{rr}
+      2 & -1 \\
+      -1 & 1
+    \end{mymatrix} =\allowbreak \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1
+    \end{mymatrix} = I 
+  \end{equation*}
+  and
+  \begin{equation*}
+    BA = \begin{mymatrix}{rr}
+      2 & -1 \\
+      -1 & 1
+    \end{mymatrix} \begin{mymatrix}{rr}
+      1 & 1 \\
+      1 & 2
+    \end{mymatrix} =\allowbreak \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1
+    \end{mymatrix} = I.
+  \end{equation*}
+  This shows that $B$ is indeed an inverse of $A$.
 \end{solution}
 
-Unlike ordinary multiplication of numbers, it can happen that $A\neq 0$ but 
-$A$ may fail to have an inverse. This is illustrated in the following example.
+Unlike multiplication of scalars, it can happen that $A\neq 0$ but $A$
+does not have an inverse. This is illustrated in the following
+example.
 
 \begin{example}{A non-zero matrix with no inverse}{non-invertible-matrix}
-Let $A=\begin{mymatrix}{rr}
-1 & 1 \\
-1 & 1
-\end{mymatrix} .$ Show that $A$ does not have an inverse.
+  Let $A=\begin{mymatrix}{rr}
+    1 & 1 \\
+    1 & 1
+  \end{mymatrix}$. Show that $A$ is not invertible.
 \end{example}
 
-\begin{solution} One might think $A$ would have an inverse because it does not equal zero.
-However, note that 
-\begin{equation*}
-\begin{mymatrix}{rr}
-1 & 1 \\
-1 & 1
-\end{mymatrix} \begin{mymatrix}{r}
--1 \\
-1
-\end{mymatrix} =\begin{mymatrix}{r}
-0 \\
-0
-\end{mymatrix}
-\end{equation*}
-If $A^{-1}$ existed, we would have the following
-\begin{eqnarray*}
-\begin{mymatrix}{r}
-0 \\
-0
-\end{mymatrix} &=& A^{-1}\tup{\begin{mymatrix}{r}
-0 \\
-0
-\end{mymatrix} } \\
-&=& A^{-1}\tup{A\begin{mymatrix}{r}
--1 \\
-1
-\end{mymatrix} } \\
-&=&\tup{A^{-1}A} \begin{mymatrix}{r}
--1 \\
-1
-\end{mymatrix} \\
-&=&I\begin{mymatrix}{r}
--1 \\
-1
-\end{mymatrix} \\
-&=&\begin{mymatrix}{r}
--1 \\
-1
-\end{mymatrix}
+\begin{solution}
+  One might think $A$ has an inverse because it does not equal zero.
+  However, note that
+  \begin{equation*}
+    \begin{mymatrix}{rr}
+      1 & 1 \\
+      1 & 1
+    \end{mymatrix} \begin{mymatrix}{r}
+      -1 \\
+      1
+    \end{mymatrix} =\begin{mymatrix}{r}
+      0 \\
+      0
+    \end{mymatrix}.
+  \end{equation*}
+  If an inverse $A^{-1}$ existed, we would have the following:
+  \begin{eqnarray*}
+    \begin{mymatrix}{r}
+      -1 \\
+      1
+    \end{mymatrix}
+    &=&
+        I\begin{mymatrix}{r}
+          -1 \\
+          1
+        \end{mymatrix} \\
+    &=&
+        \tup{A^{-1}A} \begin{mymatrix}{r}
+          -1 \\
+          1
+        \end{mymatrix} \\
+    &=&
+        A^{-1}\tup{A\begin{mymatrix}{r}
+            -1 \\
+            1
+          \end{mymatrix} } \\
+    &=&
+        A^{-1}\tup{\begin{mymatrix}{r}
+            0 \\
+            0
+          \end{mymatrix} } \\
+    &=&
+        \begin{mymatrix}{r}
+          0 \\
+          0
+        \end{mymatrix}.
 \end{eqnarray*}
-This says that 
-\begin{equation*}
-\begin{mymatrix}{r}
-0 \\
-0
-\end{mymatrix}
-=
-\begin{mymatrix}{r}
--1 \\
-1
-\end{mymatrix}
-\end{equation*}
-which is impossible! Therefore, $A$ does not have an inverse. 
+  This says that 
+  \begin{equation*}
+    \begin{mymatrix}{r}
+      -1 \\
+      1
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{r}
+      0 \\
+      0
+    \end{mymatrix},
+  \end{equation*}
+  which is impossible! Therefore, $A$ does not have an inverse.
 \end{solution}
 
-In the next section, we will explore how to find the inverse of a matrix, if it exists. 
+Can a matrix have more than one inverse? It turns out that this is not
+the case: the following theorem shows that if $A$ has an inverse, then
+the inverse is unique. We can therefore speak of ``the'' inverse,
+rather than just ``an'' inverse, of $A$.
+
+\begin{theorem}{Uniqueness of inverse}{unique-inverse}
+  Suppose $A$ is an $n\times n$-matrix such that both $B$ and $C$ are
+  inverses of $A$. Then $B=C$.
+\end{theorem}
+
+\begin{proof}
+  By assumption, both $B$ and $C$ are inverses of $A$, so we have
+  $AB=I$, $BA=I$, $AC=I$, and $CA=I$. Using the associative and unit
+  properties of matrix multiplication, we have:
+  \begin{equation*}
+    B = BI = B(AC) = (BA)C = IC = C.
+  \end{equation*}
+  Therefore, $B=C$, as desired.
+\end{proof}
