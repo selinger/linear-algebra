@@ -22,7 +22,6 @@ chem
 cholesky
 circuitikz
 cm
-coeff
 cof
 cofactor
 cofactors
