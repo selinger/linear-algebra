@@ -62,9 +62,9 @@ a subspace of $\R^3$.
 We are now prepared to examine the precise definition of a subspace as follows.
 
 \begin{definition}{Subspace}{subspace}
-Let $V$ be a nonempty collection of vectors in $\R^{n}.$ Then
+Let $V$ be a nonempty collection of vectors in $\R^{n}$. Then
 $V$ is called a subspace\index{subspace} if whenever $a$ and $b$  are scalars and $\vect{u}$ and $\vect{v}$
-are vectors in $V,$ the linear combination $a \vect{u}+ b \vect{v}$ is also in $V$.
+are vectors in $V$, the linear combination $a \vect{u}+ b \vect{v}$ is also in $V$.
 \end{definition}
 
 More generally this means that a subspace contains the span of any
@@ -73,7 +73,7 @@ $\R^{n}$, a subspace is exactly the span of finitely many of
 its vectors.
 
 \begin{theorem}{Subspaces are spans}{subspaces-are-spans}
-Let $V$ be a nonempty collection of vectors in $\R^{n}.$ Then $V$ is a subspace of $\R^{n}$ if and only if there
+Let $V$ be a nonempty collection of vectors in $\R^{n}$. Then $V$ is a subspace of $\R^{n}$ if and only if there
 exist vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ in $V$ such that 
 \[
 V= \func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}. 
@@ -86,13 +86,13 @@ Note that since $W$ is arbitrary, the statement that $V \subseteq W$ means that 
 
 \begin{proof}
 We first show that if $V$ is a subspace, then it can be written as $V= \func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$. Pick a vector $\vect{u}_{1}$ in $V$. If $V=
-\func{span}\set{\vect{u}_{1}} ,$ then you have found your
-list of vectors and are done. If $V\neq \func{span}\set{\vect{u}_{1}} ,$ then
+\func{span}\set{\vect{u}_{1}} $, then you have found your
+list of vectors and are done. If $V\neq \func{span}\set{\vect{u}_{1}} $, then
 there exists $\vect{u}_{2}$ a vector of $V$ which is not in $
-\func{span}\set{\vect{u}_{1}} .$ Consider $\func{span}\set{
-\vect{u}_{1},\vect{u}_{2}}.$ 
+\func{span}\set{\vect{u}_{1}} $. Consider $\func{span}\set{
+\vect{u}_{1},\vect{u}_{2}}$. 
 If $V=\func{span}\set{\vect{u}_{1},\vect{u}_{2}}$, we are
-done. Otherwise, pick $\vect{u}_{3}$ not in $\func{span}\set{\vect{u}_{1},\vect{u}_{2}} .$ Continue this way.
+done. Otherwise, pick $\vect{u}_{3}$ not in $\func{span}\set{\vect{u}_{1},\vect{u}_{2}} $. Continue this way.
 Note that since $V $ is a subspace, these spans are each contained in
 $V$.  The process must stop with $\vect{u}_{k}$ for some $k\leq n$
 by Corollary \ref{cor:linear-dependence-Rn}, and thus $V=\func{span}\set{\vect{u}_{1},\cdots ,
@@ -123,7 +123,7 @@ of the previous vectors (by definition), they must be linearly independent and t
 obtain the following corollary.
 
 \begin{corollary}{Subspaces are spans of independent vectors}{subspaces-are-spans-independent-vectors}
-If $V$ is a subspace of $\R^{n},$ then there exist linearly independent 
+If $V$ is a subspace of $\R^{n}$, then there exist linearly independent 
 vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ in $V$ such
 that $V=\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $.
 \end{corollary}
@@ -161,7 +161,7 @@ fundamental result, called the Exchange Theorem.
 Suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{r}} $ is a
 linearly independent set of vectors in $\R^n$, and each
 $\vect{u}_{k}$ is contained in $\func{span}\set{\vect{v}_{1},\cdots
-,\vect{v}_{s}}$ Then $s\geq r.$ \\
+,\vect{v}_{s}}$ Then $s\geq r$. \\
 In words, spanning\index{exchange theorem} sets have at least as many vectors as linearly
 independent sets.
 \end{theorem}
@@ -194,7 +194,7 @@ is linearly independent, because not all the $d_{j}$ are zero. Thus this contrad
 We are now ready to show that any two bases are of the same size. 
 
 \begin{theorem}{Bases of $\R^{n}$ are of the same size}{bases-same-size}
-Let $V$ be a subspace of $\R^{n}$ with two bases $B_1$ and $B_2$. Suppose $B_1$ contains $s$ vectors and $B_2$ contains $r$ vectors. Then $s=r.$
+Let $V$ be a subspace of $\R^{n}$ with two bases $B_1$ and $B_2$. Suppose $B_1$ contains $s$ vectors and $B_2$ contains $r$ vectors. Then $s=r$.
 \end{theorem}
 
 \begin{proof}
@@ -202,7 +202,7 @@ This follows right away from Theorem \ref{thm:exchange-theorem}. Indeed
 observe that $B_1 = \set{
 \vect{u}_{1},\cdots ,\vect{u}_{s}} $ is a spanning set for $V$ while $
 B_2 = \set{\vect{v}_{1},\cdots ,\vect{v}_{r}} $ is linearly
-independent, so $s \geq r.$ Similarly $B_2 = \set{\vect{v}_{1},\cdots ,\vect{v}
+independent, so $s \geq r$. Similarly $B_2 = \set{\vect{v}_{1},\cdots ,\vect{v}
 _{r}} $ is a spanning set for $V$ while $B_1 = \set{\vect{u}_{1},\cdots ,
 \vect{u}_{s}} $ is linearly independent,  so $r\geq s$.
 \end{proof}
@@ -217,7 +217,7 @@ is defined to be the number of vectors in a basis.\index{dimension}\index{subspa
 The next result follows.
 
 \begin{corollary}{Dimension of $\R^n$}{dimension-Rn}
-The dimension of $\R^{n}$ is $n.$ 
+The dimension of $\R^{n}$ is $n$. 
 \end{corollary}
 
 \begin{proof}
@@ -306,8 +306,8 @@ We continue by stating further properties of a set of vectors in  $\R^{n}$.
 The following properties hold in $\R^{n}$:
 \begin{itemize}
 \item Suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is linearly independent. Then $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is a basis for $\R^{n}$. 
-\item Suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{m}} $ spans $\R^{n}.$ Then $m\geq n.$
-\item If $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ spans $\R^{n},$ then $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is
+\item Suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{m}} $ spans $\R^{n}$. Then $m\geq n$.
+\item If $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ spans $\R^{n}$, then $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is
 linearly independent.
 \end{itemize}
 \end{corollary}
@@ -330,7 +330,7 @@ the identity matrix.  Therefore the system $A\vect{x}=
 \vect{v}$ has a (unique) solution, so $\vect{v}$ is a linear combination
 of the $\vect{u}_i$'s.
 
-To establish the second claim, suppose that $m<n.$ Then letting
+To establish the second claim, suppose that $m<n$. Then letting
 $\vect{u}_{i_{1}},\cdots ,\vect{u}_{i_{k}}$ be the pivot columns of the
 matrix
 \begin{equation*}
@@ -427,16 +427,16 @@ _{1},\cdots ,\vect{w}_{m}} $. Then there exists a subset of $\set{
 
 \begin{proof}
 Let $S$ denote the set of positive integers such that for $
-k\in S,$ there exists a subset of $\set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $ consisting of exactly $k$ vectors
+k\in S$, there exists a subset of $\set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $ consisting of exactly $k$ vectors
 which is a spanning set for $W$. Thus $m\in S$. Pick the smallest positive
 integer in $S$. Call it $k$. Then there exists $\set{\vect{u}_{1},\cdots ,
 \vect{u}_{k}} \subseteq \set{\vect{w}_{1},\cdots ,\vect{w}
 _{m}} $ such that $\limfunc{span}\set{\vect{u}_{1},\cdots ,\vect{u}
-_{k}} =W.$ If 
+_{k}} =W$. If 
 \begin{equation*}
 \sum_{i=1}^{k}c_{i}\vect{w}_{i}=\vect{0}
 \end{equation*}
-and not all of the $c_{i}=0,$ then you could pick $c_{j}\neq 0$, divide by
+and not all of the $c_{i}=0$, then you could pick $c_{j}\neq 0$, divide by
 it and solve for $\vect{u}_{j}$ in terms of the others, 
 \begin{equation*}
 \vect{w}_{j}=\sum_{i\neq j}\tup{-\frac{c_{i}}{c_{j}}} \vect{w}_{i}

@@ -17,12 +17,12 @@ positive definite.
 \end{lemma}
 
 %%\begin{proof}
-%%Suppose $A$ is negative definite. For all $\vect{x},$ 
+%%Suppose $A$ is negative definite. For all $\vect{x}$, 
 %%\begin{equation*}
 %%\vect{x}^{T}A\vect{x}\leq -\delta \norm{\vect{x}} ^{2}
 %\end{equation*}
 %%Then multiply both sides by $-1$ to find that $-A$ is positive definite.
-%%Next suppose for all $\vect{x},$
+%%Next suppose for all $\vect{x}$,
 %%\begin{equation*}
 %%\vect{x}^{T}\tup{-A} \vect{x}\geq \delta \norm{\vect{x}}
 %%^{2}.
@@ -47,17 +47,17 @@ positive definite.
 %%
 %%\begin{proof}Suppose first that $A$ is positive definite. Let $\lambda $
 %%is an eigenvalue with eigenvector $
-%%\vect{u}.$ Then, since $\lambda $ is real, 
+%%\vect{u}$. Then, since $\lambda $ is real, 
 %%\begin{equation*}
 %%\vect{u}^{T}A\vect{u}=\lambda \vect{u}^{T}\vect{u}=\lambda \norm{
 %%u} ^{2}\geq \delta \norm{\vect{u}} ^{2}
 %%\end{equation*}
-%%Hence $0<\delta \leq \lambda ,$ this for any eigenvalue. Hence all
+%%Hence $0<\delta \leq \lambda $, this for any eigenvalue. Hence all
 %%eigenvalues are positive.
 %%
 %%Next suppose that all eigenvalues are positive. Then letting $\delta $ be
 %%the smallest eigenvalue and $U$ a real orthogonal matrix such that $
-%%U^{T}AU=D,$ a diagonal matrix having the eigenvalues of $A$ on the main
+%%U^{T}AU=D$, a diagonal matrix having the eigenvalues of $A$ on the main
 %%diagonal, 
 %%\begin{equation*}
 %%\vect{x}^{T}A\vect{x}=\vect{x}^{T}UDU^{T}\vect{x}=\tup{U^{T}\vect{x}}
@@ -83,7 +83,7 @@ If $A$ is positive definite, then it is invertible.
 \end{lemma}
 
 \begin{proof}
-If $A\vect{v}=\vect{0},$ then $0$ is an eigenvalue if $\vect{v}$ is non-zero, which
+If $A\vect{v}=\vect{0}$, then $0$ is an eigenvalue if $\vect{v}$ is non-zero, which
 does not happen for a positive definite matrix. Hence $\vect{v}=\vect{0}$ and
 so $A$ is one to one. This is sufficient to conclude that it is invertible.
 \end{proof}
@@ -157,8 +157,8 @@ being positive definite is transferred to each of the principal submatrices whic
 \begin{definition}{The submatrix $A_k$}{submatrix-Ak}
 Let $A$ be an $n\times n$ matrix. Denote by $A_{k}$ the $k\times k$ matrix
 obtained by deleting the $k+1,\cdots ,n$ columns and the $k+1,\cdots ,n$
-rows from $A.$ Thus $A_{n}=A$ and $A_{k}$ is the $k\times k$ submatrix of $A$
-which occupies the upper left corner of $A.$
+rows from $A$. Thus $A_{n}=A$ and $A_{k}$ is the $k\times k$ submatrix of $A$
+which occupies the upper left corner of $A$.
 \index{principal submatrices}
 \end{definition}
 
@@ -191,18 +191,18 @@ and only if $\det \tup{A_{k}}$ is greater than $0$ for every submatrix $A_{k}$, 
 \end{theorem}
 
 \begin{proof}
-We prove this theorem by induction on $n.$ It is clearly
-true if $n=1.$ Suppose then that it is true for $n-1$ where $n\geq 2$. Since 
-$\det \tup{A} =\det \tup{A_{n}} >0,$ it follows that all the
+We prove this theorem by induction on $n$. It is clearly
+true if $n=1$. Suppose then that it is true for $n-1$ where $n\geq 2$. Since 
+$\det \tup{A} =\det \tup{A_{n}} >0$, it follows that all the
 eigenvalues are non-zero. We need to show that they are all positive. Suppose
 not. Then there is some even number of them which are negative, even because
 the product of all the eigenvalues is known to be positive, equalling $\det
 \tup{A} $. Pick two, $\lambda _{1}$ and $\lambda _{2}$ and let $A
 \vect{u}_{i}=\lambda _{i}\vect{u}_{i}$ where $\vect{u}_{i}\neq \vect{0}$ for $
-i=1,2$ and $\vect{u}_{1}\dotprod \vect{u}_{2}=0.$ Now if $\vect{y}\equiv \alpha
+i=1,2$ and $\vect{u}_{1}\dotprod \vect{u}_{2}=0$. Now if $\vect{y}\equiv \alpha
 _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}$ is an element of $\func{span}\set{
-\vect{u}_{1},\vect{u}_{2}} ,$ then since these are eigenvalues and $\ 
-\vect{u}_{1}\dotprod \vect{u}_{2}=0,$ a short computation shows 
+\vect{u}_{1},\vect{u}_{2}} $, then since these are eigenvalues and $\ 
+\vect{u}_{1}\dotprod \vect{u}_{2}=0$, a short computation shows 
 \begin{equation*}
 \tup{\alpha _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}} ^{T}A\tup{
 \alpha _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}}
@@ -212,7 +212,7 @@ _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}$ is an element of $\func{span}\set{
 _{1}} ^{2}+\abs{\alpha _{2}}^{2}\lambda
 _{2}\norm{\vect{u}_{2}} ^{2}<0.
 \end{equation*}
-Now letting $\vect{x}\in \R^{n-1},$ we can use the induction
+Now letting $\vect{x}\in \R^{n-1}$, we can use the induction
 hypothesis to write 
 \begin{equation*}
 \begin{mymatrix}{cc}
@@ -227,7 +227,7 @@ $n-1$ and the dimension of $\func{span}\set{\vect{u}_{1},\vect{u}
 _{2}} =2$ and so there must be some non-zero $\vect{x}\in \R
 ^{n} $ which is in both of these subspaces of $\R^{n}$. However, the
 first computation would require that $\vect{x}^{T}A\vect{x}<0$ while the
-second would require that $\vect{x}^{T}A\vect{x}>0.$ This contradiction shows
+second would require that $\vect{x}^{T}A\vect{x}>0$. This contradiction shows
 that all the eigenvalues must be positive. This proves the if part of the
 theorem. The converse can also be shown to be correct, but it is the
 direction which was just shown which is of most interest. 
@@ -244,7 +244,7 @@ for every $k=1,\cdots ,n$.
 
 \begin{proof}This is immediate from the above theorem when we notice,
 that $A$ is negative definite if and only if $-A$ is positive definite.
-Therefore, if $\det \tup{-A_{k}} >0$ for all $k=1,\cdots ,n,$ it
+Therefore, if $\det \tup{-A_{k}} >0$ for all $k=1,\cdots ,n$, it
 follows that $A$ is negative definite. However, $\det \tup{-A_{k}}
-=\tup{-1} ^{k}\det \tup{A_{k}} .$ 
+=\tup{-1} ^{k}\det \tup{A_{k}} $. 
 \end{proof}

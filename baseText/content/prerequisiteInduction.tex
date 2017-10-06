@@ -38,8 +38,8 @@ principles in math. They are often used to prove significant things which
 would be hard to prove otherwise.
 
 \begin{definition}{Well ordered}{well-ordered}
- A set is well ordered if every nonempty subset $S,$ contains a
-smallest element $z$ having the property that $z\leq x$ for all $x\in S.$
+ A set is well ordered if every nonempty subset $S$, contains a
+smallest element $z$ having the property that $z\leq x$ for all $x\in S$.
 \end{definition}
 
 In particular, the set of natural numbers defined as
@@ -59,24 +59,24 @@ then this set is well ordered.
 
 Further, this proposition implies the principle of mathematical induction\index{mathematical induction}. The symbol $\Z$ denotes the set of all
 integers. Note that if $a$ is an integer, then there are no integers between
-$a$ and $a+1.$
+$a$ and $a+1$.
 
 \begin{theorem}{Mathematical induction}{math-induction}
- A set $S\subseteq \Z,$ having
+ A set $S\subseteq \Z$, having
 the property that $a\in S$ and $n+1\in S$ whenever $n\in S$, contains all
-integers $x\in \Z$ such that $x\geq a.$
+integers $x\in \Z$ such that $x\geq a$.
 \end{theorem}
 
 \begin{proof} 
 Let $T$ consist of all integers larger than or equal to $a$
-which are not in $S.$ The theorem will be proved if $T=\emptyset .$ If 
+which are not in $S$. The theorem will be proved if $T=\emptyset $. If 
 $T\neq \emptyset $ then by the well ordering principle, there would have to
-exist a smallest element of $T,$ denoted as $b.$ It must be the case that 
-$b>a$ since by definition, $a\notin T.$ Thus $b\geq a+1$, and so $b-1\geq a$
-and $b-1\notin S$ because if $b-1\in $ $S,$ then $b-1+1=b\in S$ by the
-assumed property of $S.$ Therefore, $b-1\in T$ which contradicts the choice
-of $b$ as the smallest element of $T.$ ($b-1$ is smaller.) Since a
-contradiction is obtained by assuming $T\neq \emptyset ,$ it must be the
+exist a smallest element of $T$, denoted as $b$. It must be the case that 
+$b>a$ since by definition, $a\notin T$. Thus $b\geq a+1$, and so $b-1\geq a$
+and $b-1\notin S$ because if $b-1\in $ $S$, then $b-1+1=b\in S$ by the
+assumed property of $S$. Therefore, $b-1\in T$ which contradicts the choice
+of $b$ as the smallest element of $T$. ($b-1$ is smaller.) Since a
+contradiction is obtained by assuming $T\neq \emptyset $, it must be the
 case that $T=\emptyset $ and this says that every integer at least as large
 as $a$ is also in $S$.
 \end{proof}
@@ -130,7 +130,7 @@ Suppose we add $(n+1)^2$ to both sides of equation \ref{induction1}.
 &=&\frac{n\tup{n+1} \tup{2n+1} }{6}+\tup{n+1} ^{2}
 \end{eqnarray*}
 The step going from the first to the second line is based on the assumption
-that the formula is true for $n.$
+that the formula is true for $n$.
 Now simplify the expression in the second line,
 \begin{equation*}
 \frac{n\tup{n+1} \tup{2n+1} }{6}+\tup{n+1} ^{2}
@@ -151,7 +151,7 @@ Therefore,
 \tup{2n+3} }{6}=\frac{\allowbreak \tup{n+1} \tup{\tup{
 n+1} +1} \tup{2\tup{n+1} +1} }{6}
 \end{equation*}
-showing the formula holds for $n+1$ whenever it holds for $n.$ This proves
+showing the formula holds for $n+1$ whenever it holds for $n$. This proves
 the formula by mathematical induction. In other words, this formula is true for all $n = 1, 2, \cdots$.
 \end{solution}
 
@@ -160,7 +160,7 @@ Consider another example.
 \begin{example}{Proving an inequality by induction}{inequality-proof-by-induction}
 Show that for all $n\in \N$, $\displaystyle \frac{1}{2}\cdot 
 \displaystyle \frac{3}{4}\cdots \displaystyle \frac{2n-1}{2n}<\displaystyle
-\frac{1}{\sqrt{2n+1}}.$
+\frac{1}{\sqrt{2n+1}}$.
 \end{example}
 
 \begin{solution}
@@ -172,7 +172,7 @@ Suppose $n=1$. Then the statement says
  which is true. 
 
 Suppose then that
-the inequality holds for $n.$ In other words, 
+the inequality holds for $n$. In other words, 
 \begin{equation*}
  \frac{1}{2}\cdot \frac{3}{4}\cdots \frac{2n-1}{2n} < \frac{1}{\sqrt{2n+1}}
 \end{equation*}
@@ -185,7 +185,7 @@ This yields
 \frac{1}{\sqrt{2n+1}}\frac{2n+1}{2n+2}=\frac{\sqrt{2n+1}}{2n+2}
 \end{equation*}
 The theorem will be proved if this last expression is less than $
-\displaystyle\frac{1}{\sqrt{2n+3}}.$ This happens if and only if
+\displaystyle\frac{1}{\sqrt{2n+3}}$. This happens if and only if
 \begin{equation*}
 \tup{\frac{1}{\sqrt{2n+3}}} ^{2}=\frac{1}{2n+3}>\frac{2n+1}{\tup{
 2n+2} ^{2}}
@@ -197,7 +197,7 @@ expanding both sides. This proves the inequality.
 
 Let's review the process just used. If $S$ is the set of integers at least as
 large as $1$ for which the formula holds, the first step was to show $1\in S$
-and then that whenever $n\in S,$ it follows $n+1\in S.$ Therefore, by the
+and then that whenever $n\in S$, it follows $n+1\in S$. Therefore, by the
 principle of mathematical induction, $S$ contains $[1,\infty )\cap \Z
-,$ all positive integers. In doing an inductive proof of this sort, the set $
+$, all positive integers. In doing an inductive proof of this sort, the set $
 S$ is normally not mentioned. One just verifies the steps above. 

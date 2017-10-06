@@ -15,7 +15,7 @@ Consider the definition of a subspace.
 
 \begin{definition}{Subspace}{subspace}
 Let $V$ be a vector space. A subset $W\subseteq V$ is said to be a \textbf{subspace}\index{subspace} of $V$ if $a\vect{x}+b\vect{y}
-\in W$ whenever $a,b\in \R$ and $\vect{x},\vect{y}\in W.$
+\in W$ whenever $a,b\in \R$ and $\vect{x},\vect{y}\in W$.
 \end{definition}
 
 The span of a set of vectors as described in Definition \ref{def:span} is an example of a subspace. The following fundamental result says that subspaces are subsets of a
@@ -31,12 +31,12 @@ operations as those defined on $V$.
 Suppose first that $W$ is a subspace. It is obvious that
 all the algebraic laws hold on $W$ because it is a subset of $V$ and they
 hold on $V$. Thus $\vect{u}+\vect{v}=\vect{v}+\vect{u}$ along with the other axioms. Does $W$
-contain $\vect{0}?$ Yes because it contains $0\vect{u}=\vect{0}$. See
+contain $\vect{0}$? Yes because it contains $0\vect{u}=\vect{0}$. See
 Theorem \ref{thm:axiom-uniqueness}.
 
- Are the operations of $V$ defined on $W?$ That is,
-when you add vectors of $W$ do you get a vector in $W?$ When you multiply a
-vector in $W$ by a scalar, do you get a vector in $W?$ Yes. This is
+ Are the operations of $V$ defined on $W$? That is,
+when you add vectors of $W$ do you get a vector in $W$? When you multiply a
+vector in $W$ by a scalar, do you get a vector in $W$? Yes. This is
 contained in the definition. Does every vector in $W$ have an additive
 inverse? Yes by Theorem \ref{thm:axiom-uniqueness} because $-\vect{v}=\tup{
 -1} \vect{v}$ which is given to be in $W$ provided $\vect{v}\in W$.
@@ -193,7 +193,7 @@ Consider the following example.
 
 \begin{example}{Polynomials of degree two}{poly-degree-two}
 Let $\Poly_2$ be the set polynomials of degree no more than 2. We can write
-$\Poly_2=\func{span}\set{x^{2}, x, 1} .$ Is $\set{x^{2}, x, 1} $ a
+$\Poly_2=\func{span}\set{x^{2}, x, 1} $. Is $\set{x^{2}, x, 1} $ a
 basis for $\Poly_2$?
 \end{example}
 
@@ -212,13 +212,13 @@ The next theorem is an essential result in linear algebra and is called the exch
 \begin{theorem}{Exchange theorem}{exchange-theorem}
 Let $\set{\vect{x}_{1},\cdots ,\vect{x}_{r}} $
 be a linearly independent set of vectors such that each $\vect{x}_{i}$ is
-contained in span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} .$ Then $
-r\leq s.$
+contained in span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} $. Then $
+r\leq s$.
 \end{theorem}
 
 \begin{proof} The proof will proceed as follows. First, we set up the necessary steps for the proof. Next, we will assume that $r > s$ and show that this leads to a contradiction, thus requiring that $r \leq s$. 
 
-Define span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} = V.$ Since each $\vect{x}_i$ is in  span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}}$, it follows there exist scalars $c_{1},\cdots ,c_{s}$
+Define span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} = V$. Since each $\vect{x}_i$ is in  span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}}$, it follows there exist scalars $c_{1},\cdots ,c_{s}$
 such that 
 \begin{equation}
 \vect{x}_{1}=\sum_{i=1}^{s}c_{i}\vect{y}_{i}  \label{lin-comb}
@@ -231,7 +231,7 @@ Indeed, if $\vect{x}_{1}=\vect{0}$, $1\vect{x}_{1}+\sum_{i=2}^{r}0
 nontrivial linear combination of the vectors $\set{\vect{x}_{1},\cdots ,
 \vect{x}_{r}} $ which equals zero. Therefore at least one $c_i$ is non-zero. 
 
-Say $c_{k}\neq 0.$ Then solve \ref{lin-comb} for $\vect{y}_{k}$ and obtain 
+Say $c_{k}\neq 0$. Then solve \ref{lin-comb} for $\vect{y}_{k}$ and obtain 
 \begin{equation*}
 \vect{y}_{k}\in \func{span}\set{\vect{x}_{1},\overset{\text{s-1
 vectors here}}{\overbrace{\vect{y}_{1},\cdots ,\vect{y}_{k-1},\vect{y}
@@ -256,11 +256,11 @@ c_{1},\cdots ,c_{s}$ such that
 Replace this $\vect{y}_{k}$ with a linear combination of the
 vectors $\set{\vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z}_{s-1}}$
 to obtain $\vect{v}\in \func{span}\set{\vect{x}_{1},\vect{z}
-_{1},\cdots ,\vect{z}_{s-1}} .$ The vector $\vect{y}_{k},$ in the
-list $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} ,$ has now been
+_{1},\cdots ,\vect{z}_{s-1}} $. The vector $\vect{y}_{k}$, in the
+list $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} $, has now been
 replaced with the vector $\vect{x}_{1}$ and the resulting modified list of
 vectors has the same span as the original list of vectors, $\set{\vect{y
-}_{1},\cdots ,\vect{y}_{s}} .$
+}_{1},\cdots ,\vect{y}_{s}} $.
 
 We are now ready to move on to the proof. Suppose that $r>s$ and that 
 \[
@@ -268,9 +268,9 @@ We are now ready to move on to the proof. Suppose that $r>s$ and that
 \vect{x}_{l},\vect{z}_{1},\cdots ,\vect{z}_{p}} =V
 \]
  where the process established above has continued. In other words, the vectors $\vect{z}_{1},\cdots ,\vect{z}_{p}$ are each taken from the
-set $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} $ and $l+p=s.$
-This was done for $l=1$ above. Then since $r>s,$ it follows that $
-l\leq s<r$ and so $l+1\leq r.$ Therefore, $\vect{x}_{l+1}$ is a vector not
+set $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} $ and $l+p=s$.
+This was done for $l=1$ above. Then since $r>s$, it follows that $
+l\leq s<r$ and so $l+1\leq r$. Therefore, $\vect{x}_{l+1}$ is a vector not
 in the list, $\set{\vect{x}_{1},\cdots ,\vect{x}_{l}} $ and
 since 
 \[
@@ -287,7 +287,7 @@ Not all the $d_{j}$ can equal zero because if this were so, it would follow
 that $\set{\vect{x}_{1},\cdots ,\vect{x}_{r}} $ would be a
 linearly dependent set because one of the vectors would equal a linear
 combination of the others. Therefore, \ref{lin-comb2} can be solved for one of the 
-$\vect{z}_{i},$ say $\vect{z}_{k},$ in terms of $\vect{x}_{l+1}$ and
+$\vect{z}_{i}$, say $\vect{z}_{k}$, in terms of $\vect{x}_{l+1}$ and
 the other $\vect{z}_{i}$ and just as in the above argument, replace that $
 \vect{z}_{i}$ with $\vect{x}_{l+1}$ to obtain 
 \begin{equation*}
@@ -316,8 +316,8 @@ Let $B_1$, $B_2$ be two bases of a vector space $V$. Suppose $B_1$ contains $m$ 
 
 This corollary is very important so we provide another proof independent of the exchange theorem above.
 
-\begin{proof}Suppose $n > m.$ Then since the vectors $\set{\vect{u}
-_{1},\cdots ,\vect{u}_{m}} $ span $V,$ there exist scalars $c_{ij}$
+\begin{proof}Suppose $n > m$. Then since the vectors $\set{\vect{u}
+_{1},\cdots ,\vect{u}_{m}} $ span $V$, there exist scalars $c_{ij}$
 such that 
 \begin{equation*}
 \sum_{i=1}^{m}c_{ij}\vect{u}_{i}=\vect{v}_{j}.
@@ -339,7 +339,7 @@ happens if and only if
 \sum_{j=1}^{n}c_{ij}d_{j}=0,\;i=1,2,\cdots ,m.
 \end{equation*}
 However, this is a system of $m$ equations in $n$ variables, $d_{1},\cdots
-,d_{n}$ and $m<n.$ Therefore, there exists a solution to this system of
+,d_{n}$ and $m<n$. Therefore, there exists a solution to this system of
 equations in which not all the $d_{j}$ are equal to zero. Recall why this is
 so. The augmented matrix for the system is of the form 
 $\begin{mymatrix}{c|c}
@@ -409,14 +409,14 @@ with no more than $n$ vectors.
 \end{theorem}
 
 \begin{proof}
-Let $\vect{v}_{1}\in V$ where $\vect{v}_{1}\neq 0.$ If $
-\func{span}\set{\vect{v}_{1}} =V,$ then it follows that $\set{\vect{v}
+Let $\vect{v}_{1}\in V$ where $\vect{v}_{1}\neq 0$. If $
+\func{span}\set{\vect{v}_{1}} =V$, then it follows that $\set{\vect{v}
 _{1}} $ is a basis for $V$. Otherwise, there exists $\vect{v}
-_{2}\in V$ which is not in $\func{span}\set{\vect{v}_{1}} .$ By
+_{2}\in V$ which is not in $\func{span}\set{\vect{v}_{1}} $. By
 Lemma \ref{lem:adding-linearly-independent} $\set{\vect{v}_{1},\vect{v}_{2}} $ is a
 linearly independent set of vectors. Then $\set{\vect{v}_{1},\vect{v}
 _{2}} $ is a basis for $V$ and we are done. If $\func{span}\set{\vect{v}_{1},
-\vect{v}_{2}} \neq V,$ then there exists $\vect{v}_{3}\notin \func{
+\vect{v}_{2}} \neq V$, then there exists $\vect{v}_{3}\notin \func{
 span}\set{\vect{v}_{1},\vect{v}_{2}} $ and $\set{\vect{v}
 _{1},\vect{v}_{2},\vect{v}_{3}} $ is a larger linearly
 independent set of vectors. Continuing this way, the process must stop
@@ -431,11 +431,11 @@ Let $V$ be a vector space of dimension $n$ and let $W$ be a
 subspace. Then $W=V$ if and only if the dimension of $W$ is also $n$.
 \end{theorem}
 
-\begin{proof}First suppose $W=V.$ Then obviously the dimension of $W=n.$
+\begin{proof}First suppose $W=V$. Then obviously the dimension of $W=n$.
 
 Now suppose that the dimension of $W$ is $n$. Let a basis for $W$ be $
 \set{\vect{w}_{1},\cdots ,\vect{w}_{n}} $. If $W$ is not equal to $V$
-, then let $\vect{v}$ be a vector of $V$ which is not contained in $W.$ Thus $
+, then let $\vect{v}$ be a vector of $V$ which is not contained in $W$. Thus $
 \vect{v}$ is not in $\func{span}\set{\vect{w}_{1},\cdots ,\vect{w}
 _{n}} $ and by Lemma \ref{lem:bases-isomorphism}, $\set{\vect{w}_{1},\cdots ,\vect{w}_{n},\vect{v}} $ is linearly independent which contradicts
 Theorem \ref{thm:exchange-theorem} because it would be an independent set of $n+1$
@@ -508,11 +508,11 @@ The following theorem claims that a spanning set of a vector space $V$ can be sh
 \begin{theorem}{Basis of $V$}{basis-from-spanning-lin-ind}
  If $V=\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}
 _{n}} $ is a vector space, then some subset of $\{\vect{u}_{1},\cdots ,\vect{u}_{n}\}$
-is a basis for $V.$ Also, if $\{\vect{u}_{1},\cdots ,\vect{u}
+is a basis for $V$. Also, if $\{\vect{u}_{1},\cdots ,\vect{u}
 _{k}\}\subseteq V$ is linearly independent and the vector space is finite
 dimensional,
 then the set $\{
-\vect{u}_{1},\cdots ,\vect{u}_{k}\},$ can be enlarged to obtain a basis
+\vect{u}_{1},\cdots ,\vect{u}_{k}\}$, can be enlarged to obtain a basis
 of $V$\index{linear independence!enlarging to form a basis}.
 \end{theorem}
 
@@ -521,8 +521,8 @@ of $V$\index{linear independence!enlarging to form a basis}.
 S=\{E\subseteq \{\vect{u}_{1},\cdots ,\vect{u}_{n}\}\text{ such that }%
 \func{span}\set{E} =V\}.
 \end{equation*}
-For $E\in S,$ let $\abs{E}$ denote the number of elements
-of $E.$ Let 
+For $E\in S$, let $\abs{E}$ denote the number of elements
+of $E$. Let 
 \begin{equation*}
 m= \min \{\abs{E}\text{ such that }E\in S\}.
 \end{equation*}
@@ -542,7 +542,7 @@ scalars, $c_{1},\cdots ,c_{m}$ such that
 \begin{equation*}
 \vect{0}=\sum_{i=1}^{m}c_{i}\vect{v}_{i}
 \end{equation*}
-and not all the $c_{i}$ are equal to zero. Suppose $c_{k}\neq 0.$ Then solve for the
+and not all the $c_{i}$ are equal to zero. Suppose $c_{k}\neq 0$. Then solve for the
 vector $\vect{v}_{k}$ in terms of the other vectors.
 Consequently, 
 \begin{equation*}
@@ -645,16 +645,16 @@ _{m}} $. Then there exists a subset of $\set{\vect{w}_{1},\cdots ,
 
 \begin{proof}
 Let $S$ denote the set of positive integers such that for $
-k\in S,$ there exists a subset of $\set{\vect{w}_{1},\cdots ,\vect{w}
+k\in S$, there exists a subset of $\set{\vect{w}_{1},\cdots ,\vect{w}
 _{m}} $ consisting of exactly $k$ vectors which is a spanning set for 
 $W$. Thus $m\in S$. Pick the smallest positive integer in $S$. Call it $k$.
 Then there exists $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} \subseteq
 \set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $ such that $\limfunc{span}
-\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =W.$ If 
+\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =W$. If 
 \begin{equation*}
 \sum_{i=1}^{k}c_{i}\vect{w}_{i}=\vect{0}
 \end{equation*}
-and not all of the $c_{i}=0,$ then you could pick $c_{j}\neq 0$, divide by
+and not all of the $c_{i}=0$, then you could pick $c_{j}\neq 0$, divide by
 it and solve for $\vect{u}_{j}$ in terms of the others. 
 \begin{equation*}
 \vect{w}_{j}=\sum_{i\neq j}\tup{-\frac{c_{i}}{c_{j}}} \vect{w}_{i}
@@ -697,7 +697,7 @@ Consider an isomorphism which maps $\R%
 \end{equation*}
 corresponds to $2x^{2}+x+1$ through the use of this isomorphism. Then
 corresponding to the above vectors in $V$ we would have the following
-vectors in $\R^{4}.$ 
+vectors in $\R^{4}$. 
 \begin{equation*}
 \begin{mymatrix}{c}
 1 \\ 
@@ -812,10 +812,10 @@ _{1},\cdots ,\vect{w}_{s},\cdots ,\vect{w}_{r}} $ for $r\geq s$.
 
 \begin{proof}
 Let the dimension of $V$ be $n$. Pick $\vect{w}_{1}\in W$
-where $\vect{w}_{1}\neq \vect{0}.$ If $\vect{w}_{1},\cdots ,\vect{w}_{s}$ have
+where $\vect{w}_{1}\neq \vect{0}$. If $\vect{w}_{1},\cdots ,\vect{w}_{s}$ have
 been chosen such that $\set{\vect{w}_{1},\cdots ,\vect{w}_{s}} $ is
 linearly independent, if $\limfunc{span}\set{\vect{w}_{1},\cdots ,\vect{w}
-_{r}} =W,$ stop. You have the desired basis. Otherwise, there exists $
+_{r}} =W$, stop. You have the desired basis. Otherwise, there exists $
 \vect{w}_{s+1}\notin \limfunc{span}\set{\vect{w}_{1},\cdots ,\vect{w}
 _{s}} $ and $\set{\vect{w}_{1},\cdots ,
 \vect{w}_{s},\vect{w}_{s+1}} $ is linearly independent. Continue this
