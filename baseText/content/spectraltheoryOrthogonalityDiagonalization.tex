@@ -7,7 +7,7 @@ An orthogonal matrix $U$, from Definition \ref{def:Ortho-Matrix}, is one in whic
 We now recall another important definition. 
 
 \begin{definition}{Symmetric and skew symmetric matrices}{symmetric-skew-matrices}
-A real $n\times n$ matrix $A$, is \textbf{symmetric }if $A^{T}=A$. If $%
+A real $n\times n$-matrix $A$, is \textbf{symmetric }if $A^{T}=A$. If $%
 A=-A^{T}$, then $A$ is called \textbf{skew symmetric. }
 \index{symmetric matrix}
 \end{definition}
@@ -15,7 +15,7 @@ A=-A^{T}$, then $A$ is called \textbf{skew symmetric. }
 Before proving an essential theorem, we first examine the following lemma which will be used below.
 
 \begin{lemma}{The dot product}{dotproduct-lemma}
-Let $A=\mat{a_{ij} }$ be a real symmetric $n \times n$ matrix, and let $\vect{x}, \vect{y} \in \R^n$. Then
+Let $A=\mat{a_{ij} }$ be a real symmetric $n \times n$-matrix, and let $\vect{x}, \vect{y} \in \R^n$. Then
 \[
 A\vect{x} \dotprod \vect{y} = \vect{x} \dotprod A \vect{y}
 \]
@@ -202,7 +202,7 @@ _{i}} $ form an orthonormal set.
 \end{proof}
 
 \begin{definition}{Principal axes}{principal-axes}
-Let $A$ be an $n \times n$ matrix. Then the principal axes of $A$ is a set of orthonormal eigenvectors of $A$.
+Let $A$ be an $n \times n$-matrix. Then the principal axes of $A$ is a set of orthonormal eigenvectors of $A$.
 \index{principal axes}
 \end{definition}
 
@@ -450,7 +450,7 @@ orthonormal set.
 Recall the following definition.
 
 \begin{definition}{Diagonalizable}{non-defective}
-An $n\times n$ matrix $A$ is said to be \textbf{non defective}
+An $n\times n$-matrix $A$ is said to be \textbf{non defective}
 \index{non defective}or \textbf{diagonalizable}
 \index{diagonalizable} if there exists an invertible matrix $P$ such that $
 P^{-1}AP=D$ where $D$ is a diagonal matrix.
@@ -462,7 +462,7 @@ every symmetric matrix is diagonalizable because if $U$ is an orthogonal
 matrix, it is invertible and its inverse is $U^{T}$. In this case, we say that $A$ is \textbf{orthogonally diagonalizable}\index{orthogonally diagonalizable}. Therefore every symmetric matrix is in fact orthogonally diagonalizable. The next theorem provides another way to determine if a matrix is orthogonally diagonalizable. 
 
 \begin{theorem}{Orthogonally diagonalizable}{orth-diagonalizable}
-Let $A$ be an $n \times n$ matrix. Then $A$ is orthogonally diagonalizable if and only if $A$ has an orthonormal set of eigenvectors. 
+Let $A$ be an $n \times n$-matrix. Then $A$ is orthogonally diagonalizable if and only if $A$ has an orthonormal set of eigenvectors. 
 \end{theorem}
 
 Recall from Corollary \ref{cor:orthonormal-eigenvectors} that every symmetric matrix has an orthonormal set of eigenvectors. In fact these three conditions are equivalent. 
@@ -585,13 +585,13 @@ the desired diagonal matrix. Notice that the eigenvectors, which construct the c
 We conclude this section with a Theorem that generalizes earlier results.
 
 \begin{theorem}{Triangulation of a matrix}{triangulation}
-Let $A$ be an $n \times n$ matrix. If $A$ has $n$ real eigenvalues, then an orthogonal matrix $U$ can be found to result in the upper triangular matrix $U^T A U$. 
+Let $A$ be an $n \times n$-matrix. If $A$ has $n$ real eigenvalues, then an orthogonal matrix $U$ can be found to result in the upper triangular matrix $U^T A U$. 
 \end{theorem}
 
 This Theorem provides a useful Corollary.
 
 \begin{corollary}{Determinant and trace}{det-trace}
-Let $A$ be an $n \times n$ matrix with eigenvalues $\lambda_1, \cdots, \lambda_n$. Then it follows that $\det(A)$ is equal to the product of the $\lambda_1$, while $\func{trace}(A)$ is equal to the sum of the $\lambda_i$. 
+Let $A$ be an $n \times n$-matrix with eigenvalues $\lambda_1, \cdots, \lambda_n$. Then it follows that $\det(A)$ is equal to the product of the $\lambda_1$, while $\func{trace}(A)$ is equal to the sum of the $\lambda_i$. 
 \end{corollary}
 
 \begin{proof}

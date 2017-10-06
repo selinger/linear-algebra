@@ -3,7 +3,7 @@
 The most important theorem about diagonalizability is the following major result.
 
 \begin{theorem}{Eigenvectors and diagonalizable matrices}{eigenvectors-and-diagonalizable}
-An $n\times n$ matrix $A$ is diagonalizable if and only if there is an
+An $n\times n$-matrix $A$ is diagonalizable if and only if there is an
 invertible matrix $P$ given by 
 \begin{equation*}
 P=\begin{mymatrix}{cccc}
@@ -243,7 +243,7 @@ Theorem \ref{thm:eigenvectors-and-diagonalizable}. Notice that eigenvalues on th
 Consider the next important theorem.
 
 \begin{theorem}{Linearly independent eigenvectors}{lin-indep-eigenvectors}
-Let $A$ be an $n\times n$ matrix, and suppose that $A$ 
+Let $A$ be an $n\times n$-matrix, and suppose that $A$ 
 has distinct eigenvalues $\lambda_1, \lambda_2, \ldots, \lambda_m$.
 For each $i$, let $X_i$ be a $\lambda_i$-eigenvector of $A$.
 Then $\{X_1, X_2, \ldots, X_m\}$ is 
@@ -253,7 +253,7 @@ linearly independent.
 The corollary that follows from this theorem gives a useful tool in determining if $A$ is diagonalizable. 
 
 \begin{corollary}{Distinct eigenvalues}{distinct-eigenvalues}
-Let $A$ be an $n \times n$ matrix and suppose it has $n$ distinct eigenvalues. Then it follows that $A$ is diagonalizable.
+Let $A$ be an $n \times n$-matrix and suppose it has $n$ distinct eigenvalues. Then it follows that $A$ is diagonalizable.
 \end{corollary}
 
 It is possible that a matrix $A$ cannot be diagonalized. In other words, we cannot find an invertible matrix $P$ so that $P^{-1}AP=D$.
@@ -329,18 +329,18 @@ X_1
 
 In this case, the matrix $A$ has one eigenvalue of multiplicity two, 
 but only one basic eigenvector. In order to diagonalize $A$, we need to construct
-an invertible $2\times 2$ matrix $P$. However, because $A$ only has one basic eigenvector,
+an invertible $2\times 2$-matrix $P$. However, because $A$ only has one basic eigenvector,
 we cannot construct this $P$. Notice that if we were to use $X_1$ as both columns of $P$, $P$ would not be invertible. For this reason, we cannot repeat eigenvectors in $P$.
 
 Hence this matrix cannot be diagonalized. 
 \end{solution}
 
-The idea that a matrix may not be diagonalizable suggests that conditions exist to determine when it is possible to diagonalize a matrix. We saw earlier in Corollary \ref{cor:distinct-eigenvalues} that an $n \times n$ matrix with $n$ distinct eigenvalues is diagonalizable. It turns out that there are other useful diagonalizability tests. 
+The idea that a matrix may not be diagonalizable suggests that conditions exist to determine when it is possible to diagonalize a matrix. We saw earlier in Corollary \ref{cor:distinct-eigenvalues} that an $n \times n$-matrix with $n$ distinct eigenvalues is diagonalizable. It turns out that there are other useful diagonalizability tests. 
 
 First we need the following definition.
 
 \begin{definition}{Eigenspace}{eigenspace}
-Let $A$ be an $n\times n$ matrix and $\lambda\in\R$.
+Let $A$ be an $n\times n$-matrix and $\lambda\in\R$.
 The eigenspace of $A$ corresponding to $\lambda$, written $E_{\lambda}(A)$
 is the set of all eigenvectors corresponding to $\lambda$. 
 \end{definition}
@@ -352,7 +352,7 @@ Recall that the multiplicity of an eigenvalue $\lambda$ is the number of times t
 Consider now the following lemma.
 
 \begin{lemma}{Dimension of the eigenspace}{dimension-eigenspace}
-If $A$ is an $n\times n$ matrix,  then 
+If $A$ is an $n\times n$-matrix,  then 
 \[ \dim(E_{\lambda}(A))\leq m\]
 where $\lambda$ is an
 eigenvalue of $A$ of multiplicity $m$.
@@ -363,7 +363,7 @@ the number of linearly independent $\lambda$-eigenvectors
 is never more than the multiplicity of $\lambda$. We now use this fact to provide a useful diagonalizability condition.
 
 \begin{theorem}{Diagonalizability condition}{diagonalizability}
-Let $A$ be an $n \times n$ matrix $A$. Then $A$ is diagonalizable if and only if for each eigenvalue $\lambda$ of $A$, $\dim(E_{\lambda}(A))$ is equal to the multiplicity of $\lambda$.
+Let $A$ be an $n \times n$-matrix $A$. Then $A$ is diagonalizable if and only if for each eigenvalue $\lambda$ of $A$, $\dim(E_{\lambda}(A))$ is equal to the multiplicity of $\lambda$.
 \end{theorem}
 
 %%Consider an example utilizing this condition.

@@ -628,15 +628,15 @@ Since the above axioms hold, we know that $\Poly_2$ as described above is a vect
 Another important example of a vector space is the set of all matrices of the same size. 
 
 \begin{example}{Vector space of matrices}{vector-space-matrices}
-Let $\Mat_{2,3}$ be the set of all $2 \times 3$ matrices. Using the usual operations of matrix addition and scalar multiplication, show that $\Mat_{2,3}$ is a vector space. 
+Let $\Mat_{2,3}$ be the set of all $2 \times 3$-matrices. Using the usual operations of matrix addition and scalar multiplication, show that $\Mat_{2,3}$ is a vector space. 
 \end{example}
 
 \begin{solution}
-Let $A, B$ be $2 \times 3$ matrices in $\Mat_{2,3}$. We first prove the axioms for addition.
+Let $A, B$ be $2 \times 3$-matrices in $\Mat_{2,3}$. We first prove the axioms for addition.
 
 \begin{itemize}
 \item
-In order to prove that $\Mat_{2,3}$ is closed under matrix addition, we show that the sum $A+B$ is in $\Mat_{2,3}$. This means showing that $A+B$ is a $2 \times 3$ matrix. 
+In order to prove that $\Mat_{2,3}$ is closed under matrix addition, we show that the sum $A+B$ is in $\Mat_{2,3}$. This means showing that $A+B$ is a $2 \times 3$-matrix. 
 \begin{eqnarray*}
 A+B &=& \begin{mymatrix}{rrr}
 a_{11} & a_{12} & a_{13}\\
@@ -650,7 +650,7 @@ a_{11} + b_{11} & a_{12}+b_{12} & a_{13}+b_{13}\\
 a_{21} +b_{21}& a_{22}+b_{22} & a_{23}+b_{23}
 \end{mymatrix}
 \end{eqnarray*}
-You can see that the sum is a $2\times 3$ matrix, so it is in $\Mat_{2,3}$. It follows that $\Mat_{2,3}$ is closed under matrix addition. 
+You can see that the sum is a $2\times 3$-matrix, so it is in $\Mat_{2,3}$. It follows that $\Mat_{2,3}$ is closed under matrix addition. 
 
 \item 
 The remaining axioms regarding matrix addition follow from properties of matrix addition. Therefore $\Mat_{2,3}$ satisfies the axioms of matrix addition.
@@ -660,7 +660,7 @@ We now turn our attention to the axioms regarding scalar multiplication. Let $A,
 
 \begin{itemize}
 \item
-We first show that $\Mat_{2,3}$ is closed under scalar multiplication. That is, we show that $cA$ a $2 \times 3$ matrix.
+We first show that $\Mat_{2,3}$ is closed under scalar multiplication. That is, we show that $cA$ a $2 \times 3$-matrix.
 \begin{eqnarray*}
 cA &=& c\begin{mymatrix}{rrr}
 a_{11} & a_{12} & a_{13}\\
@@ -672,7 +672,7 @@ ca_{21} & ca_{22} & ca_{23}
 \end{mymatrix}
 \end{eqnarray*}
 
-This is a $2 \times 3$ matrix in $\Mat_{2,3}$ which proves that the set is closed under scalar multiplication. 
+This is a $2 \times 3$-matrix in $\Mat_{2,3}$ which proves that the set is closed under scalar multiplication. 
 
 \item The remaining axioms of scalar multiplication follow from properties of scalar multiplication of matrices. Therefore $\Mat_{2,3}$ satisfies the axioms of scalar multiplication. 
 \end{itemize}
@@ -680,12 +680,12 @@ This is a $2 \times 3$ matrix in $\Mat_{2,3}$ which proves that the set is close
 In conclusion, $\Mat_{2,3}$ satisfies the required axioms and is a vector space. 
 \end{solution}
 
-While here we proved that the set of all $2 \times 3$ matrices is a vector space, there is nothing special about this choice of matrix size. In fact if we instead consider $\Mat_{m,n}$, the set of all $m \times n$ matrices, then  $\Mat_{m,n}$ is a vector space under the operations of matrix addition and scalar multiplication. 
+While here we proved that the set of all $2 \times 3$-matrices is a vector space, there is nothing special about this choice of matrix size. In fact if we instead consider $\Mat_{m,n}$, the set of all $m \times n$-matrices, then  $\Mat_{m,n}$ is a vector space under the operations of matrix addition and scalar multiplication. 
 
 We now examine an example of a set that does not satisfy all of the above axioms, and is therefore \textit{not} a vector space. 
 
 \begin{example}{Not a vector space}{not-vector-space}
-Let $V$ denote the set of $2 \times 3$ matrices. Let addition in $V$ be defined by $A + B = A$ for matrices $A,B$ in $V$. Let scalar multiplication in $V$ be the usual scalar multiplication of matrices. Show that $V$ is not a vector space.
+Let $V$ denote the set of $2 \times 3$-matrices. Let addition in $V$ be defined by $A + B = A$ for matrices $A,B$ in $V$. Let scalar multiplication in $V$ be the usual scalar multiplication of matrices. Show that $V$ is not a vector space.
 \end{example}
 
 \begin{solution}
@@ -693,7 +693,7 @@ In order to show that $V$ is not a vector space, it suffices to find only one ax
 
 \begin{itemize}
 \item
-We first want to check if addition is closed. Consider $A+B$. By the definition of addition in the example, we have that $A+B = A$. Since $A$ is a $2 \times 3$ matrix, it follows that the sum $A+B$ is in $V$, and $V$ is closed under addition. 
+We first want to check if addition is closed. Consider $A+B$. By the definition of addition in the example, we have that $A+B = A$. Since $A$ is a $2 \times 3$-matrix, it follows that the sum $A+B$ is in $V$, and $V$ is closed under addition. 
 
 \item
 We now wish to check if addition is commutative. That is, we want to check if $A + B = B + A$ \textbf{for all} choices of $A$ and $B$ in $V$. From the definition of addition, we have that $A + B = A$ and $B + A = B$. Therefore, we can find $A$, $B$ in $V$ such that these sums are not equal. One example is 

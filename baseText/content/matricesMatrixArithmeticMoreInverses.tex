@@ -2,9 +2,9 @@
 
 In this section, we will prove three theorems which will clarify the concept of matrix inverses. In order to do this, first recall some important properties of elementary matrices. 
 
-Recall that an elementary matrix is a square matrix obtained by performing an elementary operation on an identity matrix. Each elementary matrix is invertible, and its inverse is also an elementary matrix. If $E$ is an $m \times m$ elementary matrix and $A$ is an $m \times n$ matrix, then the product $EA$ is the result of applying to $A$ the same elementary row operation that was applied to the $m \times m$ identity matrix in order to obtain $E$.
+Recall that an elementary matrix is a square matrix obtained by performing an elementary operation on an identity matrix. Each elementary matrix is invertible, and its inverse is also an elementary matrix. If $E$ is an $m \times m$ elementary matrix and $A$ is an $m \times n$-matrix, then the product $EA$ is the result of applying to $A$ the same elementary row operation that was applied to the $m \times m$ identity matrix in order to obtain $E$.
 
-Let $R$ be the {\rref} of an $m \times n$ matrix $A$. $R$ is obtained by iteratively applying a sequence of elementary row operations to $A$. Denote by $E_1, E_2, \cdots, E_k$ the elementary matrices associated with the elementary row operations which were applied, in order, to the matrix $A$ to obtain the resulting $R$. We then have that $R = \tup{E_k \cdots \tup{E_2 \tup{E_1A } }} = E_k \cdots E_2E_1A$. Let $E$ denote the product matrix $E_k \cdots E_2E_1$ so that we can write $R=EA$ where $E$ is an invertible matrix whose inverse is the product $(E_1)^{-1}(E_2)^{-1} \cdots (E_k)^{-1}$.
+Let $R$ be the {\rref} of an $m \times n$-matrix $A$. $R$ is obtained by iteratively applying a sequence of elementary row operations to $A$. Denote by $E_1, E_2, \cdots, E_k$ the elementary matrices associated with the elementary row operations which were applied, in order, to the matrix $A$ to obtain the resulting $R$. We then have that $R = \tup{E_k \cdots \tup{E_2 \tup{E_1A } }} = E_k \cdots E_2E_1A$. Let $E$ denote the product matrix $E_k \cdots E_2E_1$ so that we can write $R=EA$ where $E$ is an invertible matrix whose inverse is the product $(E_1)^{-1}(E_2)^{-1} \cdots (E_k)^{-1}$.
 
 Now, we will consider some preliminary lemmas. 
 
@@ -47,7 +47,7 @@ Only square matrices can be invertible.
 \end{theorem}
 
 \begin{proof}
-Suppose that $A$ and $B$ are matrices such that both products $AB$ and $BA$ are identity matrices. We will show that $A$ and $B$ must be square matrices of the same size. Let the matrix $A$ have $m$ rows and $n$ columns, so that $A$ is an $m \times n$ matrix. Since the product $AB$ exists, $B$ must have $n$ rows, and since the product $BA$ exists, $B$ must have $m$ columns so that $B$ is an $n \times m$ matrix. To finish the proof, we need only verify that $m=n$. 
+Suppose that $A$ and $B$ are matrices such that both products $AB$ and $BA$ are identity matrices. We will show that $A$ and $B$ must be square matrices of the same size. Let the matrix $A$ have $m$ rows and $n$ columns, so that $A$ is an $m \times n$-matrix. Since the product $AB$ exists, $B$ must have $n$ rows, and since the product $BA$ exists, $B$ must have $m$ columns so that $B$ is an $n \times m$-matrix. To finish the proof, we need only verify that $m=n$. 
 
 We first apply Lemma \ref{lem:size-invertible} with $A$ and $B$, to obtain the inequality $m \leq n$. We then apply Lemma \ref{lem:size-invertible} again (switching the order of the matrices), to obtain the inequality $n \leq m$. It follows that $m=n$, as we wanted.
 \end{proof}

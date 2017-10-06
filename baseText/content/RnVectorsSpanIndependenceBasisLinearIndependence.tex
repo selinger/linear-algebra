@@ -76,7 +76,7 @@ it follows that each $a_{i}=0$.
 Note also that we require all vectors to be non-zero to form a
 linearly independent set.
 
-To view this in a more familiar setting, form the $n \times k$ matrix
+To view this in a more familiar setting, form the $n \times k$-matrix
 $A$ having these vectors as columns. Then all we are saying is that
 the set $\{\vect{u}_1, \cdots ,\vect{u}_k\}$ is linearly independent
 precisely when $AX=0$ has only the trivial solution.
@@ -101,7 +101,7 @@ So suppose that we have a linear combinations $a\vect{u} + b \vect{v}
 + c\vect{w} = \vect{0}$. Then you can see that this can only happen
 with $a=b=c=0$.
 
-As mentioned above, you can equivalently form the $3 \times 3$ matrix $A = 
+As mentioned above, you can equivalently form the $3 \times 3$-matrix $A = 
 \begin{mymatrix}{ccc}
 1  & 1 & 0 \\
 1  & 0 & 1 \\
@@ -129,7 +129,7 @@ it follows that each coefficient $a_{i}=0$.
 \item No vector is in the span of the others.
 \item The system of
 linear equations $AX=0$ has only the trivial solution, where $A$ is
-the $n \times k$ matrix having these vectors as columns. 
+the $n \times k$-matrix having these vectors as columns. 
 \end{enumerate}
 \end{theorem}
 
@@ -231,7 +231,7 @@ express one of the vectors as a linear combination of the others.
 \end{example}
 
 \begin{solution}
-Form the $4 \times 4$  matrix $A$ having these vectors as columns:
+Form the $4 \times 4$-matrix $A$ having these vectors as columns:
 \begin{equation*}
 A= \begin{mymatrix}{rrrr}
 1 & 2 & 0 & 3 \\ 
@@ -367,7 +367,7 @@ If $k>n$, then the set is linearly dependent (i.e. NOT linearly independent).
 \end{corollary}
 
 \begin{proof}
-Form the $n \times k$ matrix $A$ having the vectors $\set{
+Form the $n \times k$-matrix $A$ having the vectors $\set{
 \vect{u}_{1},\cdots ,\vect{u}_{k}} $ as its columns and suppose $k > n$. Then $A$ has rank $r \leq n <k$, so 
 the system $AX=0$ has a nontrivial solution % by \ref{thm:rank-homogeneous-solutions}
  and thus not linearly independent by Theorem 
@@ -476,7 +476,7 @@ Therefore, $\{\vect{u},\vect{v},\vect{w}\}$ is independent.
 Consider the following useful theorem.
 
 \begin{theorem}{Invertible matrices}{invertible-matrices}
-Let $A$ be an invertible $n \times n$ matrix. Then the columns of $A$ are independent and span $\R^n$. Similarly, the rows of $A$ are independent and span the set of all $1 \times n$ vectors. 
+Let $A$ be an invertible $n \times n$-matrix. Then the columns of $A$ are independent and span $\R^n$. Similarly, the rows of $A$ are independent and span the set of all $1 \times n$ vectors. 
 \end{theorem}
 
-This theorem also allows us to determine if a matrix is invertible. If an $n \times n$ matrix $A$ has columns which are independent, or span $\R^n$, then it follows that $A$ is invertible. If it has rows that are independent, or span the set of all $1 \times n$ vectors, then $A$ is invertible.
+This theorem also allows us to determine if a matrix is invertible. If an $n \times n$-matrix $A$ has columns which are independent, or span $\R^n$, then it follows that $A$ is invertible. If it has rows that are independent, or span the set of all $1 \times n$ vectors, then $A$ is invertible.

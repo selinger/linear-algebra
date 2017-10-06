@@ -134,14 +134,14 @@ The example suggests a general method for finding the inverse of a
 matrix, which we summarize in the following algorithm.
 
 \begin{algorithm}{Finding the inverse of a matrix}{matrix-inversion-algorithm}
-  Suppose $A$ is an $n\times n$ matrix. To find $A^{-1}$ if it
+  Suppose $A$ is an $n\times n$-matrix. To find $A^{-1}$ if it
   exists\index{matrix!finding the inverse}, form the augmented
-  $n\times 2n$ matrix
+  $n\times 2n$-matrix
   \begin{equation*}
     \mat{A\mid I}.
   \end{equation*}
-  If possible, do row operations until you obtain an $n\times 2n$
-  matrix of the form
+  If possible, do row operations until you obtain an
+  $n\times 2n$-matrix of the form
   \begin{equation*}
     \mat{I\mid B}.
   \end{equation*}
@@ -204,7 +204,7 @@ tells us if $A$ does not have an inverse.
   \end{eqnarray*}
   Notice that the last augmented matrix is of the form
   $\mat{I\mid B}$, where the left-hand side is the $3 \times 3$
-  identity matrix.  Therefore, the inverse is the $3 \times 3$ matrix
+  identity matrix.  Therefore, the inverse is the $3 \times 3$-matrix
   on the right-hand side, given by
   \begin{equation*}
     A^{-1} ~=~
@@ -386,7 +386,7 @@ it is easy to find the solution when the vector $\vect{b}$ is changed.
 We conclude this section with some important properties of the inverse. 
 
 \begin{theorem}{Inverses of transposes and products}{inverse-transpose-prod}
-  Let $A, B$, and $A_i$ for $i=1,...,k$ be $n \times n$ matrices. 
+  Let $A, B$, and $A_i$ for $i=1,...,k$ be $n \times n$-matrices. 
   \begin{enumerate}
   \item
     If $A$ is an invertible matrix, then $(A^{T})^{-1} = (A^{-1})^{T}$
@@ -400,7 +400,7 @@ We conclude this section with some important properties of the inverse.
 Consider the following theorem.
 
 \begin{theorem}{Properties of the inverse}{inverse-properties}
-  Let $A$ be an $n \times n$ matrix and $I$ the usual identity matrix. 
+  Let $A$ be an $n \times n$-matrix and $I$ the usual identity matrix. 
   \begin{enumerate}
   \item
     $I$ is invertible and $I^{-1} = I$

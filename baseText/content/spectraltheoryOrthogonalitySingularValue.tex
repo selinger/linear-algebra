@@ -3,22 +3,22 @@
 We begin this section with an important definition.
 
 \begin{definition}{Singular values}{singular-values}
-Let $A$ be an $m\times n$ matrix. The singular values of $A$ are the square roots of the positive
+Let $A$ be an $m\times n$-matrix. The singular values of $A$ are the square roots of the positive
 eigenvalues of $A^TA$\index{singular values}.
 \end{definition}
 
 Singular Value Decomposition (SVD) can be thought of as 
 a generalization of orthogonal diagonalization of a symmetric matrix
-to an arbitrary $m\times n$ matrix. This decomposition is the focus of this section. 
+to an arbitrary $m\times n$-matrix. This decomposition is the focus of this section. 
 
 The following is a useful result that will help when computing the SVD of matrices.
 
 \begin{proposition}{}{same-non-zero-eigenvalues}
-Let $A$ be an $m \times n$ matrix. Then $A^TA$ and $AA^T$ have the same \bf{non-zero} eigenvalues.
+Let $A$ be an $m \times n$-matrix. Then $A^TA$ and $AA^T$ have the same \bf{non-zero} eigenvalues.
 \end{proposition}
 
 \begin{proof}
-Suppose $A$ is an $m\times n$ matrix, and suppose that  $\lambda$ is a non-zero eigenvalue of $A^TA$.
+Suppose $A$ is an $m\times n$-matrix, and suppose that  $\lambda$ is a non-zero eigenvalue of $A^TA$.
 Then there exists a non-zero vector $X\in \R^n$ such that
 
 \begin{equation}\label{non-zero}
@@ -41,7 +41,7 @@ non-zero eigenvalue of $AA^T$ is an eigenvalue of $A^TA$, thus
 completing the proof.
 \end{proof}
 
-Given an $m\times n$ matrix $A$, we will see how to express $A$ as a product
+Given an $m\times n$-matrix $A$, we will see how to express $A$ as a product
 \[ A=U\Sigma V^T\]
 where
 \begin{itemize}
@@ -49,7 +49,7 @@ where
 eigenvectors of $AA^T$.
 \item $V$ is an $n\times n$ orthogonal matrix whose columns are
 eigenvectors of $A^TA$.
-\item $\Sigma$ is an $m\times n$ matrix whose only non-zero values
+\item $\Sigma$ is an $m\times n$-matrix whose only non-zero values
 lie on its main diagonal, and are the singular values of $A$.
 \end{itemize}
 
@@ -101,7 +101,7 @@ the same for $A^TA$ to get $V$.
 We formalize this discussion in the following theorem. 
 
 \begin{theorem}{Singular value decomposition}{sing-val-decomp}
-Let $A$ be an $m\times n$ matrix. Then there exist
+Let $A$ be an $m\times n$-matrix. Then there exist
 orthogonal matrices $U$ and $V$ of the appropriate size such that $A= U \Sigma V^T$ where $\Sigma$ is of the form
 \[
 \Sigma = 
@@ -190,7 +190,7 @@ where $\sigma $ is given in the statement of the theorem.
 The singular value decomposition has as an immediate corollary which is given in the following interesting result. 
 
 \begin{corollary}{Rank and singular values}{rank-singular-values}
-Let $A$ be an $m\times n$ matrix. Then the rank of $A$ and $A^T$equals
+Let $A$ be an $m\times n$-matrix. Then the rank of $A$ and $A^T$equals
 the number of singular values.
 \end{corollary}
 
@@ -386,9 +386,9 @@ $A=\begin{mymatrix}{r} -1 \\ 2\\ 2 \end{mymatrix}$.
 \end{example}
 
 \begin{solution}
-Since $A$ is $3\times 1$, $A^T A$ is a $1\times 1$ matrix
+Since $A$ is $3\times 1$, $A^T A$ is a $1\times 1$-matrix
 whose eigenvalues are easier to find than the eigenvalues of
-the $3\times 3$ matrix $AA^T$.
+the $3\times 3$-matrix $AA^T$.
 
 \[ A^TA=\begin{mymatrix}{ccc} -1 & 2 & 2 \end{mymatrix}
 \begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix}
