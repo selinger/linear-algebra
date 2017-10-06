@@ -193,7 +193,7 @@ Consider the following example.
 
 \begin{example}{Polynomials of degree two}{poly-degree-two}
 Let $\Poly_2$ be the set polynomials of degree no more than 2. We can write
-$\Poly_2=\func{span}\set{x^{2}, x, 1} $. Is $\set{x^{2}, x, 1} $ a
+$\Poly_2=\func{span}\set{x^{2}, x, 1}$. Is $\set{x^{2}, x, 1} $ a
 basis for $\Poly_2$?
 \end{example}
 
@@ -212,7 +212,7 @@ The next theorem is an essential result in linear algebra and is called the exch
 \begin{theorem}{Exchange theorem}{exchange-theorem}
 Let $\set{\vect{x}_{1},\cdots ,\vect{x}_{r}} $
 be a linearly independent set of vectors such that each $\vect{x}_{i}$ is
-contained in span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} $. Then $
+contained in span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}}$. Then $
 r\leq s$.
 \end{theorem}
 
@@ -256,8 +256,8 @@ c_{1},\cdots ,c_{s}$ such that
 Replace this $\vect{y}_{k}$ with a linear combination of the
 vectors $\set{\vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z}_{s-1}}$
 to obtain $\vect{v}\in \func{span}\set{\vect{x}_{1},\vect{z}
-_{1},\cdots ,\vect{z}_{s-1}} $. The vector $\vect{y}_{k}$, in the
-list $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} $, has now been
+_{1},\cdots ,\vect{z}_{s-1}}$. The vector $\vect{y}_{k}$, in the
+list $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}}$, has now been
 replaced with the vector $\vect{x}_{1}$ and the resulting modified list of
 vectors has the same span as the original list of vectors, $\set{\vect{y
 }_{1},\cdots ,\vect{y}_{s}} $.
@@ -347,7 +347,7 @@ C & \vect{0}
 \end{mymatrix} $ where $C$ is a matrix which has more columns than rows. Therefore,
 there are free variables and hence non-zero solutions to the system of
 equations. However, this contradicts the linear independence of $\set{
-\vect{u}_{1},\cdots ,\vect{u}_{m}} $. Similarly it cannot happen
+\vect{u}_{1},\cdots ,\vect{u}_{m}}$. Similarly it cannot happen
 that $m > n$.
 \end{proof}
 
@@ -412,7 +412,7 @@ with no more than $n$ vectors.
 Let $\vect{v}_{1}\in V$ where $\vect{v}_{1}\neq 0$. If $
 \func{span}\set{\vect{v}_{1}} =V$, then it follows that $\set{\vect{v}
 _{1}} $ is a basis for $V$. Otherwise, there exists $\vect{v}
-_{2}\in V$ which is not in $\func{span}\set{\vect{v}_{1}} $. By
+_{2}\in V$ which is not in $\func{span}\set{\vect{v}_{1}}$. By
 Lemma \ref{lem:adding-linearly-independent} $\set{\vect{v}_{1},\vect{v}_{2}} $ is a
 linearly independent set of vectors. Then $\set{\vect{v}_{1},\vect{v}
 _{2}} $ is a basis for $V$ and we are done. If $\func{span}\set{\vect{v}_{1},
@@ -434,7 +434,7 @@ subspace. Then $W=V$ if and only if the dimension of $W$ is also $n$.
 \begin{proof}First suppose $W=V$. Then obviously the dimension of $W=n$.
 
 Now suppose that the dimension of $W$ is $n$. Let a basis for $W$ be $
-\set{\vect{w}_{1},\cdots ,\vect{w}_{n}} $. If $W$ is not equal to $V$
+\set{\vect{w}_{1},\cdots ,\vect{w}_{n}}$. If $W$ is not equal to $V$
 , then let $\vect{v}$ be a vector of $V$ which is not contained in $W$. Thus $
 \vect{v}$ is not in $\func{span}\set{\vect{w}_{1},\cdots ,\vect{w}
 _{n}} $ and by Lemma \ref{lem:bases-isomorphism}, $\set{\vect{w}_{1},\cdots ,\vect{w}_{n},\vect{v}} $ is linearly independent which contradicts
@@ -639,7 +639,7 @@ spanning set and you want a subset which is a basis. The above discussion involv
 \begin{theorem}{Basis from a spanning set}{}
 Let $V$ be a vector space and let $W$ be a subspace. Also
 suppose that $W=\func{span}\set{\vect{w}_{1},\cdots ,\vect{w}
-_{m}} $. Then there exists a subset of $\set{\vect{w}_{1},\cdots ,
+_{m}}$. Then there exists a subset of $\set{\vect{w}_{1},\cdots ,
 \vect{w}_{m}} $ which is a basis for $W$.
 \end{theorem}
 
@@ -666,7 +666,7 @@ above sum, showing that it could have been obtained as a linear combination
 of $\vect{w}_{i}$ for $i\neq j$. Thus $k-1\in S$ contrary to the choice of $k$
 . Hence each $c_{i}=0$ and so $\set{\vect{u}_{1},\cdots ,\vect{u}
 _{k}} $ is a basis for $W$ consisting of vectors of $\set{\vect{w}
-_{1},\cdots ,\vect{w}_{m}} $. 
+_{1},\cdots ,\vect{w}_{m}}$. 
 \end{proof}
 
 Consider the following example of this concept. 
@@ -680,7 +680,7 @@ denoted earlier as $\Poly_{3}$. Consider the following vectors in $V$.
 \end{eqnarray*}
 Then, as mentioned above, $V$ has dimension 4 and so clearly these vectors
 are not linearly independent. A basis for $V$ is $\set{
-1,x,x^{2},x^{3}} $. Determine a linearly independent subset of these
+1,x,x^{2},x^{3}}$. Determine a linearly independent subset of these
 which has the same span. Determine whether this subset is a basis for $V$.
 \end{example}
 
