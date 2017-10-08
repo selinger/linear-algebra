@@ -148,7 +148,7 @@ instead of the real numbers.
       1 & 0 & 1 & 1 \\
       0 & 1 & 1 & 1 \\
     \end{mymatrix}
-    \stackrel{R_2\leftarrow R_2+R_1}{\sim}
+    \stackrel{R_2\rowop R_2+R_1}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 1 & 0 & 0 \\
       0 & 1 & 1 & 1 \\
@@ -164,13 +164,13 @@ instead of the real numbers.
       0 & \circled{1} & 1 & 1 \\
       0 & 1 & 1 & 1 \\
     \end{mymatrix}
-    \stackrel{R_3\leftarrow R_3-R_2}{\sim}
+    \stackrel{R_3\rowop R_3-R_2}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 1 & 0 & 0 \\
       0 & \circled{1} & 1 & 1 \\
       0 & 0 & 0 & 0 \\
     \end{mymatrix}
-    \stackrel{R_1\leftarrow R_1-R_2}{\sim}
+    \stackrel{R_1\rowop R_1-R_2}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 1 & 1 \\
       0 & \circled{1} & 1 & 1 \\
@@ -388,19 +388,19 @@ we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
       1 & 4 & 1 & 3 \\
       1 & 2 & 3 & 2
     \end{mymatrix}
-    \stackrel{R_1\leftarrow 3R_1}{\sim}
+    \stackrel{R_1\rowop 3R_1}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 3 & 3 \\
       1 & 4 & 1 & 3 \\
       1 & 2 & 3 & 2
     \end{mymatrix}
-    \stackrel{R_2\leftarrow R_2-R_1}{\stackrel{R_3\leftarrow R_3-R_1}{\sim}}
+    \stackrel{R_2\rowop R_2-R_1}{\stackrel{R_3\rowop R_3-R_1}{\sim}}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 3 & 3 \\
       0 & \circled{4} & 3 & 0 \\
       0 & 2 & 0 & 4
     \end{mymatrix}
-    \stackrel{R_2\leftarrow 4R_2}{\sim}
+    \stackrel{R_2\rowop 4R_2}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 3 & 3 \\
       0 & \circled{1} & 2 & 0 \\
@@ -409,13 +409,13 @@ we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
   \end{equation*}
   \begin{equation*}
     {}
-    \stackrel{R_3\leftarrow R_3-2R_2}{\sim}
+    \stackrel{R_3\rowop R_3-2R_2}{\sim}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 3 & 3 \\
       0 & \circled{1} & 2 & 0 \\
       0 & 0 & \circled{1} & 4
     \end{mymatrix}
-    \stackrel{R_1\leftarrow R_1-3R_3}{\stackrel{R_2\leftarrow R_2-2R_3}{\sim}}
+    \stackrel{R_1\rowop R_1-3R_3}{\stackrel{R_2\rowop R_2-2R_3}{\sim}}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 0 & 1 \\
       0 & \circled{1} & 0 & 2 \\

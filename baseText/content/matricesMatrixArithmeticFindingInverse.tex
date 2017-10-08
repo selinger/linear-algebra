@@ -83,12 +83,12 @@ already known what it is.
       1 & -2 & 1 & 0 \\
       2 & -3 & 0 & 1
     \end{mymatrix}
-    \stackrel{R_2\leftarrow R_2-2R_1}{\sim}
+    \stackrel{R_2\rowop R_2-2R_1}{\sim}
     \begin{mymatrix}{rr|rr}
       1 & -2 &  1 & 0 \\
       0 &  1 & -2 & 1
     \end{mymatrix}
-    \stackrel{R_1\leftarrow R_1+2R_2}{\sim}
+    \stackrel{R_1\rowop R_1+2R_2}{\sim}
     \begin{mymatrix}{rr|rr}
       1 & 0 & -3 & 2 \\
       0 & 1 & -2 & 1
@@ -170,31 +170,31 @@ tells us if $A$ does not have an inverse.
       1 & 0 &  2 & 0 & 1 & 0 \\
       3 & 1 & -1 & 0 & 0 & 1
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_2\leftarrow R_2-R_1}{\stackrel{R_3\leftarrow R_3-3R_1}{\sim}}&
+    &\stackrel{R_2\rowop R_2-R_1}{\stackrel{R_3\rowop R_3-3R_1}{\sim}}&
     \begin{mymatrix}{rrr|rrr}
       1 &  2 &  2 &  1 & 0 & 0 \\
       0 & -2 &  0 & -1 & 1 & 0 \\
       0 & -5 & -7 & -3 & 0 & 1
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_1\leftarrow 7R_1}{\stackrel{R_3\leftarrow -2R_3}{\sim}}&
+    &\stackrel{R_1\rowop 7R_1}{\stackrel{R_3\rowop -2R_3}{\sim}}&
     \begin{mymatrix}{rrr|rrr}
       7 & 14 & 14 &  7 & 0 &  0 \\
       0 & -2 &  0 & -1 & 1 &  0 \\
       0 & 10 & 14 &  6 & 0 & -2
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_1\leftarrow R_1+7R_2}{\stackrel{R_3\leftarrow R_3+5R_2}{\sim}}&
+    &\stackrel{R_1\rowop R_1+7R_2}{\stackrel{R_3\rowop R_3+5R_2}{\sim}}&
     \begin{mymatrix}{rrr|rrr}
       7 &  0 & 14 &  0 & 7 &  0 \\
       0 & -2 &  0 & -1 & 1 &  0 \\
       0 &  0 & 14 &  1 & 5 & -2
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_1\leftarrow R_1-R_3}{\sim}&
+    &\stackrel{R_1\rowop R_1-R_3}{\sim}&
     \begin{mymatrix}{rrr|rrr}
       7 &  0 &  0 & -1 & 2 &  2 \\
       0 & -2 &  0 & -1 & 1 &  0 \\
       0 &  0 & 14 &  1 & 5 & -2
     \end{mymatrix}\\[-1ex]
-    &\stackrel{R_1\leftarrow \frac{1}{7}R_1}{\stackrel{R_2\leftarrow -\frac{1}{2}R_2}{\stackrel{R_3\leftarrow \frac{1}{14}R_3}{\sim}}}&
+    &\stackrel{R_1\rowop \frac{1}{7}R_1}{\stackrel{R_2\rowop -\frac{1}{2}R_2}{\stackrel{R_3\rowop \frac{1}{14}R_3}{\sim}}}&
     \def\arraystretch{1.5}
     \begin{mymatrix}{rrr|rrr}
       1 & 0 & 0 & -\frac{1}{7} & \frac{2}{7} & \frac{2}{7} \\

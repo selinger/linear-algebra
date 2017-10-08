@@ -173,7 +173,7 @@ corresponding to any elementary row operation.
       0 & 0 & 0 & 1 \\
     \end{mymatrix}
     \quad
-    \stackrel{R_1\leftarrow R_1+5R_3}{\sim}
+    \stackrel{R_1\rowop R_1+5R_3}{\sim}
     \quad
     \begin{mymatrix}{rrrr}
       1 & 0 & 5 & 0 \\
@@ -317,7 +317,7 @@ theorem uses this fact.
       1 & 0 \\
       2 & 0
     \end{mymatrix}
-    \quad\stackrel{R_1\leftrightarrow R_2}{\sim}\quad
+    \quad\stackrel{R_1\rowswap R_2}{\sim}\quad
     \begin{mymatrix}{rr}
       1 & 0 \\
       0 & 1 \\
@@ -354,7 +354,7 @@ theorem uses this fact.
       0 & 1 \\
       2 & 0
     \end{mymatrix}
-    \quad\stackrel{R_3\leftarrow R_3-2R_1}{\sim}\quad
+    \quad\stackrel{R_3\rowop R_3-2R_1}{\sim}\quad
     \begin{mymatrix}{rr}
       1 & 0 \\
       0 & 1 \\
@@ -470,14 +470,14 @@ Theorem~\ref{thm:finding-u}.
       1 & 0 & 0 & 1 & 0 \\
       2 & 0 & 0 & 0 & 1
     \end{mymatrix}
-        &\stackrel{R_1\leftrightarrow R_2}{\sim}
+        &\stackrel{R_1\rowswap R_2}{\sim}
             &
               \begin{mymatrix}{rr|rrr}
                 1 & 0 & 0 & 1 & 0 \\
                 0 & 1 & 1 & 0 & 0 \\
                 2 & 0 & 0 & 0 & 1
               \end{mymatrix} \\
-        &\stackrel{R_3\leftarrow R_3-2R_1}{\sim}
+        &\stackrel{R_3\rowop R_3-2R_1}{\sim}
             &
               \begin{mymatrix}{rr|rrr}
                 1 & 0 & 0 & 1 & 0 \\
@@ -541,7 +541,7 @@ theorem.
       1 & 1 & 0 \\
       0 & -2 & 1 \\
     \end{mymatrix}
-    \quad\stackrel{R_1\leftrightarrow R_2}{\sim}\quad
+    \quad\stackrel{R_1\rowswap R_2}{\sim}\quad
     \begin{mymatrix}{rrr}
       1 & 1 & 0 \\
       0 & 1 & 0 \\
@@ -560,7 +560,7 @@ theorem.
       0 & 1 & 0 \\
       0 & -2 & 1 \\
     \end{mymatrix}
-    \quad\stackrel{R_1\leftarrow R_1-R_2}{\sim}\quad
+    \quad\stackrel{R_1\rowop R_1-R_2}{\sim}\quad
     \begin{mymatrix}{rrr}
       1 & 0 & 0 \\
       0 & 1 & 0 \\
@@ -579,7 +579,7 @@ theorem.
       0 & 1 & 0 \\
       0 & -2 & 1 \\
     \end{mymatrix}
-    \quad\stackrel{R_3\leftarrow R_3+2R_2}{\sim}\quad
+    \quad\stackrel{R_3\rowop R_3+2R_2}{\sim}\quad
     \begin{mymatrix}{rrr}
       1 & 0 & 0 \\
       0 & 1 & 0 \\
