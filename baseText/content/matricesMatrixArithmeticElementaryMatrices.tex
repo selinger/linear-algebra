@@ -283,18 +283,18 @@ tracking each row operation completed, this row reduction can be
 performed through multiplication by elementary matrices. The following
 theorem uses this fact.
 
-\begin{theorem}{The form $B=UA$}{form-bua}
-  Let $A$ be any $m\times n$-matrix and let $B$ be its {\rref}. Then
+\begin{theorem}{The form $R=UA$}{form-rua}
+  Let $A$ be any $m\times n$-matrix and let $R$ be its {\rref}. Then
   there exists an invertible $m\times m$-matrix $U$ such that
   \begin{equation*}
-    B=UA.
+    R=UA.
   \end{equation*}
   Specifically, $U$ can be computed as the product (from right to
   left) of the elementary matrices of all row operations used to
   convert $A$ to {\rref}.
 \end{theorem}
 
-\begin{example}{The form $B=UA$}{form-bua}
+\begin{example}{The form $R=UA$}{form-rua}
   Let
   \begin{equation*}
     A = \begin{mymatrix}{rr}
@@ -303,12 +303,12 @@ theorem uses this fact.
       2 & 0
     \end{mymatrix}.
   \end{equation*}
-  Find the {\rref} of $A$ and write it in the form $B=UA$, where $U$
+  Find the {\rref} of $A$ and write it in the form $R=UA$, where $U$
   is invertible.
 \end{example}
 
 \begin{solution}
-  To find the {\rref} $B$, we row reduce $A$. For each step, we will
+  To find the {\rref} $R$, we row reduce $A$. For each step, we will
   record the appropriate elementary matrix. First, switch rows $1$
   and $2$.
   \[
@@ -384,10 +384,10 @@ theorem uses this fact.
       0 & 0
     \end{mymatrix}.
   \end{equation*}
-  Notice that the resulting matrix is $B$, the required {\rref} of
+  Notice that the resulting matrix is $R$, the required {\rref} of
   $A$. We can then write
   \begin{eqnarray*}
-    B &=& E_2E_1A \\
+    R &=& E_2E_1A \\
       &=& U A.
   \end{eqnarray*}
   It remains to compute $U$:
@@ -409,7 +409,7 @@ theorem uses this fact.
       0 & -2  & 1
     \end{mymatrix}.
   \end{equation*}
-  We can verify that $B = UA$ holds for this matrix $U$:
+  We can verify that $R = UA$ holds for this matrix $U$:
   \begin{equation*}
     UA ~=~ \begin{mymatrix}{rrr}
       0 & 1 & 0\\
@@ -426,32 +426,32 @@ theorem uses this fact.
       0 & 1 \\
       0 & 0
     \end{mymatrix} \\
-    ~=~ B.
+    ~=~ R.
   \end{equation*}
 \end{solution}
 
 While the process used in the above example is reliable and simple
 when only a few row operations are used, it becomes cumbersome in a
-case where many row operations are needed to carry $A$ to $B$. The
+case where many row operations are needed to carry $A$ to $R$. The
 following theorem provides an alternate way to find the matrix $U$.
 
 \begin{theorem}{Finding the matrix $U$}{finding-u}
-  Let $A$ be an $m\times n$-matrix and let $B$ be its {\rref}. Then
-  $B = UA$, where $U$ is an invertible $m \times m$-matrix found by
+  Let $A$ be an $m\times n$-matrix and let $R$ be its {\rref}. Then
+  $R = UA$, where $U$ is an invertible $m \times m$-matrix found by
   forming the augmented matrix $\mat{A\mid I}$ and row reducing to
-  $\mat{B\mid U}$.
+  $\mat{R\mid U}$.
 \end{theorem}
 
 Let's revisit the above example using the process outlined in
 Theorem~\ref{thm:finding-u}.
 
-\begin{example}{The form $B=UA$, revisited}{form-bua-revisited}
+\begin{example}{The form $R=UA$, revisited}{form-rua-revisited}
   Let $A = \begin{mymatrix}{rr}
     0 & 1 \\
     1 & 0 \\
     2 & 0
   \end{mymatrix}$. Use the process of Theorem~\ref{thm:finding-u} to
-  find $U$ such that $B=UA$.
+  find $U$ such that $R=UA$.
 \end{example}
 
 \begin{solution}
@@ -485,9 +485,9 @@ Theorem~\ref{thm:finding-u}.
                 0 & 0 & 0 & -2 & 1
               \end{mymatrix}.
   \end{eqnarray*}
-  The left-hand side of this augmented matrix is $B$, and the
-  right-hand side is $U$. Comparing this to the matrices $B$ and $U$
-  we found in Example~\ref{exa:form-bua}, we see that the same
+  The left-hand side of this augmented matrix is $R$, and the
+  right-hand side is $U$. Comparing this to the matrices $R$ and $U$
+  we found in Example~\ref{exa:form-rua}, we see that the same
   matrices are obtained regardless of which process is used.
 \end{solution}
 
@@ -509,7 +509,7 @@ theorem.
 
 \begin{proof}
   If $A$ is an invertible $n\times n$-matrix, then its {\rref} is the
-  $n\times n$ identity matrix $I$. By Theorem~\ref{thm:form-bua}, we
+  $n\times n$ identity matrix $I$. By Theorem~\ref{thm:form-rua}, we
   can write $I=UA$, where $U = E_k\cdots E_2E_1$ is a product of
   elementary matrices. Then
   \begin{equation*}
