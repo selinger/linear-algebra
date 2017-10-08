@@ -41,12 +41,12 @@ Knowing that $\det \tup{A } =-2$, find $\det \tup{B}$.
 \end{example}
 
 \begin{solution}
-By Definition \ref{def:two-by-two-determinant}, 
+By Definition~\ref{def:two-by-two-determinant}, 
 $\det \tup{A} = 1 \times 4 - 3 \times 2 = -2$. 
 Notice that the rows of $B$ are the rows of $A$ but switched. 
-By Theorem \ref{thm:switching-rows} since two rows of $A$ have been switched,
+By Theorem~\ref{thm:switching-rows} since two rows of $A$ have been switched,
 $\det \tup{B} = - \det \tup{A} = - \tup{-2} = 2$.
-You can verify this using Definition \ref{def:two-by-two-determinant}. 
+You can verify this using Definition~\ref{def:two-by-two-determinant}. 
 \end{solution}
 
 The next theorem demonstrates the effect on the determinant of a matrix when we multiply
@@ -82,13 +82,13 @@ Knowing that $\det \tup{A } =-2$, find  $\det \tup{B}$.
 \end{example}
 
 \begin{solution} 
-By Definition \ref{def:two-by-two-determinant}, $\det \tup{A} =-2$. We can also compute
-$\det \tup{B}$ using Definition \ref{def:two-by-two-determinant}, and we see that $\det \tup{B} = -10$. 
+By Definition~\ref{def:two-by-two-determinant}, $\det \tup{A} =-2$. We can also compute
+$\det \tup{B}$ using Definition~\ref{def:two-by-two-determinant}, and we see that $\det \tup{B} = -10$. 
 
-Now, let's compute  $\det \tup{B}$ using Theorem \ref{thm:multiplying-row-by-scalar} and see if we
+Now, let's compute  $\det \tup{B}$ using Theorem~\ref{thm:multiplying-row-by-scalar} and see if we
 obtain the same answer. Notice that the first row of $B$ is $5$ times the first row of $A$, while the
 second row of $B$ is equal to the second row of $A$. 
-By Theorem \ref{thm:multiplying-row-by-scalar}, 
+By Theorem~\ref{thm:multiplying-row-by-scalar}, 
 $\det  \tup{B} = 5 \times \det \tup{A } = 5 \times -2 = -10$.
 
 You can see that this matches our answer above.
@@ -106,7 +106,7 @@ which results from adding a multiple of a row to another row.
 
 Therefore, when we add a multiple of a row to another row, the determinant of the matrix is unchanged. 
 Note that if a matrix $A$ contains a row which is a multiple of another row, $\det \tup{A}$ will equal $0$. To see this,
-suppose the first row of $A$ is equal to $-1$ times the second row. By Theorem \ref{thm:adding-multiple-of-row}, we can 
+suppose the first row of $A$ is equal to $-1$ times the second row. By Theorem~\ref{thm:adding-multiple-of-row}, we can 
 add the first row to the second row, and the determinant will be unchanged. However, this row operation will result in a row of zeros.
 Using Laplace Expansion along the row of zeros, we find that the determinant is $0$. 
 
@@ -124,12 +124,12 @@ Find $\det \tup{B}$.
 \end{example}
 
 \begin{solution}
-By Definition \ref{def:two-by-two-determinant}, $\det \tup{A} = -2$. 
+By Definition~\ref{def:two-by-two-determinant}, $\det \tup{A} = -2$. 
 Notice that the second row of $B$ is two times the first row of $A$ added
 to the second row. 
-By Theorem \ref{thm:switching-rows}, $\det \tup{B} = \det \tup{A }
+By Theorem~\ref{thm:switching-rows}, $\det \tup{B} = \det \tup{A }
 =-2$.
-As usual, you can verify this answer using Definition \ref{def:two-by-two-determinant}.
+As usual, you can verify this answer using Definition~\ref{def:two-by-two-determinant}.
 \end{solution}
 
 \begin{example}{Multiple of a row}{multiple-rows}
@@ -140,19 +140,19 @@ Let $A = \begin{mymatrix}{rr}
 \end{example}
 
 \begin{solution}
-Using Definition \ref{def:two-by-two-determinant}, the determinant is given by
+Using Definition~\ref{def:two-by-two-determinant}, the determinant is given by
 \[
 \det \tup{A } = 1 \times 4 - 2 \times 2 = 0
 \]
 
-However notice that the second row is equal to $2$ times the first row. Then by the discussion above following Theorem \ref{thm:adding-multiple-of-row} the determinant will equal $0$.
+However notice that the second row is equal to $2$ times the first row. Then by the discussion above following Theorem~\ref{thm:adding-multiple-of-row} the determinant will equal $0$.
 \end{solution}
 
 Until now, our focus has primarily been on row operations. However, we can carry out the 
 same operations with columns, rather than rows. The three operations outlined in
-Definition \ref{def:operations} can be done with columns instead of rows. 
-In this case, in Theorems \ref{thm:switching-rows}, \ref{thm:multiplying-row-by-scalar}, 
-and \ref{thm:adding-multiple-of-row} you can replace
+Definition~\ref{def:operations} can be done with columns instead of rows. 
+In this case, in Theorems~\ref{thm:switching-rows}, {\ref{thm:multiplying-row-by-scalar}}, 
+and {\ref{thm:adding-multiple-of-row}} you can replace
 the word, "row" with the word "column".
 
 There are several other major properties of determinants which do not involve
@@ -196,7 +196,7 @@ AB=\begin{mymatrix}{rr}
 -1 & -4
 \end{mymatrix}
 \end{equation*}
-and so by Definition \ref{def:two-by-two-determinant}
+and so by Definition~\ref{def:two-by-two-determinant}
 \begin{equation*}
 \det \tup{AB} =\det \begin{mymatrix}{rr}
 11 & 4 \\
@@ -260,7 +260,7 @@ A^{T}
 \end{mymatrix}
 \end{equation*}
 
-Using Definition \ref{def:two-by-two-determinant}, we can compute $\det \tup{A}$ and $\det \tup{A^T}$. It follows that
+Using Definition~\ref{def:two-by-two-determinant}, we can compute $\det \tup{A}$ and $\det \tup{A^T}$. It follows that
 $\det \tup{A} = 2 \times 3 - 4 \times 5 = -14$ and $\det \tup{A^T} = 2 \times 3 - 5 \times 4 = -14$. 
 Hence, $\det \tup{A} = \det \tup{A^T}$.
 \end{solution}
@@ -287,17 +287,17 @@ Let $A = \begin{mymatrix}{rr}
 \end{example}
 
 \begin{solution}
-Consider the matrix $A$ first. Using Definition \ref{def:two-by-two-determinant} we can find the determinant as follows:
+Consider the matrix $A$ first. Using Definition~\ref{def:two-by-two-determinant} we can find the determinant as follows:
 \[
 \det \tup{A } = 3 \times 4 - 2 \times 6 = 12 - 12 = 0
 \]
-By Theorem \ref{thm:det-inverse} $A$ is not invertible.
+By Theorem~\ref{thm:det-inverse} $A$ is not invertible.
 
-Now consider the matrix $B$. Again by Definition \ref{def:two-by-two-determinant} we have 
+Now consider the matrix $B$. Again by Definition~\ref{def:two-by-two-determinant} we have 
 \[
 \det \tup{B} = 2 \times 1 - 5 \times 3 = 2 - 15 = -13
 \]
-By Theorem \ref{thm:det-inverse} $B$ is invertible and the determinant of the inverse is given by 
+By Theorem~\ref{thm:det-inverse} $B$ is invertible and the determinant of the inverse is given by 
 \begin{eqnarray*}
 \det \tup{A^{-1} } &=& \frac{1}{\det(A)} \\
 &=& \frac{1}{-13} \\

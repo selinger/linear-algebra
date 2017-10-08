@@ -1,7 +1,7 @@
 % ----------------------------------------------------------------------
 \subsection{Computing inverses}
 
-In Example \ref{exa:verifying-inverse}, we verified that a matrix $A$
+In Example~\ref{exa:verifying-inverse}, we verified that a matrix $A$
 had an inverse. But we did not actually compute the inverse: the
 inverse $B$ was already given, and we merely checked that $AB=I$ and
 $BA=I$. We now explore a method for finding the inverse when it is not
@@ -54,7 +54,7 @@ already known what it is.
     \begin{mymatrix}{rr|r}
       1 & -2 & 1 \\
       2 & -3 & 0
-    \end{mymatrix}  
+    \end{mymatrix}
     % \label{inverse-1a}
   \end{equation*}
   for the first system and
@@ -83,12 +83,12 @@ already known what it is.
       1 & -2 & 1 & 0 \\
       2 & -3 & 0 & 1
     \end{mymatrix}
-    \stackrel{R_2\leftarrow R_2-2R_1}{\sim}
+    \stackrel{R_2\rowop R_2-2R_1}{\sim}
     \begin{mymatrix}{rr|rr}
       1 & -2 &  1 & 0 \\
       0 &  1 & -2 & 1
     \end{mymatrix}
-    \stackrel{R_1\leftarrow R_1+2R_2}{\sim}
+    \stackrel{R_1\rowop R_1+2R_2}{\sim}
     \begin{mymatrix}{rr|rr}
       1 & 0 & -3 & 2 \\
       0 & 1 & -2 & 1
@@ -112,7 +112,7 @@ already known what it is.
   found for $x$, $y$, $z$, and $w$ and put them into our inverse
   matrix, we see that the inverse is
   \begin{equation*}
-    A^{-1} = 
+    A^{-1} =
     \begin{mymatrix}{rr}
       x & z \\
       y & w
@@ -164,37 +164,37 @@ tells us if $A$ does not have an inverse.
 \begin{solution}
   We set up the augmented matrix and reduce it to {\rref}.
   \begin{eqnarray*}
-    \mat{A\mid I} &=&  
+    \mat{A\mid I} &=&
     \begin{mymatrix}{rrr|rrr}
       1 & 2 &  2 & 1 & 0 & 0 \\
       1 & 0 &  2 & 0 & 1 & 0 \\
       3 & 1 & -1 & 0 & 0 & 1
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_2\leftarrow R_2-R_1}{\stackrel{R_3\leftarrow R_3-3R_1}{\sim}}&
+    &\stackrel{R_2\rowop R_2-R_1}{\stackrel{R_3\rowop R_3-3R_1}{\sim}}&
     \begin{mymatrix}{rrr|rrr}
       1 &  2 &  2 &  1 & 0 & 0 \\
       0 & -2 &  0 & -1 & 1 & 0 \\
       0 & -5 & -7 & -3 & 0 & 1
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_1\leftarrow 7R_1}{\stackrel{R_3\leftarrow -2R_3}{\sim}}&
+    &\stackrel{R_1\rowop 7R_1}{\stackrel{R_3\rowop -2R_3}{\sim}}&
     \begin{mymatrix}{rrr|rrr}
       7 & 14 & 14 &  7 & 0 &  0 \\
       0 & -2 &  0 & -1 & 1 &  0 \\
       0 & 10 & 14 &  6 & 0 & -2
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_1\leftarrow R_1+7R_2}{\stackrel{R_3\leftarrow R_3+5R_2}{\sim}}&
+    &\stackrel{R_1\rowop R_1+7R_2}{\stackrel{R_3\rowop R_3+5R_2}{\sim}}&
     \begin{mymatrix}{rrr|rrr}
       7 &  0 & 14 &  0 & 7 &  0 \\
       0 & -2 &  0 & -1 & 1 &  0 \\
       0 &  0 & 14 &  1 & 5 & -2
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_1\leftarrow R_1-R_3}{\sim}&
+    &\stackrel{R_1\rowop R_1-R_3}{\sim}&
     \begin{mymatrix}{rrr|rrr}
       7 &  0 &  0 & -1 & 2 &  2 \\
       0 & -2 &  0 & -1 & 1 &  0 \\
       0 &  0 & 14 &  1 & 5 & -2
     \end{mymatrix}\\[-1ex]
-    &\stackrel{R_1\leftarrow \frac{1}{7}R_1}{\stackrel{R_2\leftarrow -\frac{1}{2}R_2}{\stackrel{R_3\leftarrow \frac{1}{14}R_3}{\sim}}}&
+    &\stackrel{R_1\rowop \frac{1}{7}R_1}{\stackrel{R_2\rowop -\frac{1}{2}R_2}{\stackrel{R_3\rowop \frac{1}{14}R_3}{\sim}}}&
     \def\arraystretch{1.5}
     \begin{mymatrix}{rrr|rrr}
       1 & 0 & 0 & -\frac{1}{7} & \frac{2}{7} & \frac{2}{7} \\
@@ -231,11 +231,11 @@ following is an example of this situation.
   \index{inverse!of a matrix!does not exist}
 \end{example}
 
-\begin{solution} 
-  We write the augmented matrix 
+\begin{solution}
+  We write the augmented matrix
   \begin{equation*}
-    \mat{A\mid I} 
-    ~=~ 
+    \mat{A\mid I}
+    ~=~
     \begin{mymatrix}{rrr|rrr}
       1 & -2 & 2 & 1 & 0 & 0 \\
       1 &  0 & 2 & 0 & 1 & 0 \\
@@ -260,7 +260,7 @@ following is an example of this situation.
 
 If the algorithm provides an inverse, it is always possible to
 double-check that your answer is correct.  To do so, use the method
-demonstrated in Example \ref{exa:verifying-inverse}. Check that the
+demonstrated in Example~\ref{exa:verifying-inverse}. Check that the
 products $AA^{-1}$ and $A^{-1}A$ both equal the identity
 matrix. Through this method, you can always ensure that you have
 calculated $A^{-1}$ properly.
@@ -269,8 +269,7 @@ calculated $A^{-1}$ properly.
 \subsection{Using the inverse to solve a system of equations}
 
 One way in which the inverse of a matrix is useful is to find the
-solution of a system of linear equations.  Recall from Definition
-\ref{def:matrix-form} that we can write a system of equations in
+solution of a system of linear equations.  Recall from Definition~\ref{def:matrix-form} that we can write a system of equations in
 matrix form, which is in the form
 \begin{equation*}
   A\vect{x}=\vect{b}.
@@ -301,7 +300,7 @@ sides (different $\vect{b}$). It is always just $A^{-1}\vect{b}$.
 \begin{solution}
   First, we can write the system in matrix form
   \begin{equation*}
-    A\vect{x} = 
+    A\vect{x} =
     \begin{mymatrix}{rrr}
       1 & 0 & 1 \\
       1 & -1 & 1 \\
@@ -356,7 +355,7 @@ What if the right-hand side had been $\vect{b}=\begin{mymatrix}{r}
   0 \\
   1 \\
   3
-\end{mymatrix}$? In this case, the solution would be given by 
+\end{mymatrix}$? In this case, the solution would be given by
 \begin{equation*}
   \def\arraystretch{1.2}
   \begin{mymatrix}{r}
@@ -377,48 +376,17 @@ What if the right-hand side had been $\vect{b}=\begin{mymatrix}{r}
     -2
   \end{mymatrix}.
 \end{equation*}
-This illustrates that for a system $A\vect{x}=\vect{b}$ where $A^{-1}$ exists, 
+This illustrates that for a system $A\vect{x}=\vect{b}$ where $A^{-1}$ exists,
 it is easy to find the solution when the vector $\vect{b}$ is changed.
 
 % ----------------------------------------------------------------------
 \subsection{Properties of the inverse}
 
-So far, we have only talked about the inverses of square matrices. But
-what about matrices that are not square? Can they be invertible? It
-turns out that non-square matrices can never be invertible, as the
-following theorem shows.
-
-\begin{theorem}{Invertible matrices are square}{invertible-square}
-  Only square matrices can be invertible.
-\end{theorem}
-
-\begin{proof}
-  Assume that $A$ and $B$ are matrices such that $AB=I$ and $BA=I$,
-  and suppose that $A$ is an $m\times n$-matrix. Since both products
-  $AB$ and $BA$ are defined, $B$ must be an $n\times m$-matrix. Assume
-  $m\neq n$. Then we must either have $m<n$ or $n<m$.
-  \begin{itemize}
-  \item Case 1: $m<n$. In this case, $A$ has more columns than
-    rows. It follows that the homogeneous system of equations
-    $A\vect{x}=\vect{0}$ has a non-trivial solution; let $\vect{x}$ be
-    such a solution. We obtain a contradiction by a similar method as
-    in Example~\ref{exa:non-invertible-matrix}. Namely, we have
-    $\vect{x}=I\,\vect{x} = (BA)\vect{x}=B(A\vect{x}) = B\vect{0} =
-    \vect{0}$, contradicting the fact that $\vect{x}$ was
-    non-trivial. Therefore, case 1 is impossible.
-  \item Case 2: $n<m$. We can use exactly the same argument as in case
-    1, but using the matrix $B$ instead of $A$. Therefore, case 2 is
-    also impossible.
-  \end{itemize}
-  Since we got a contradiction from the assumption that $m\neq n$, it
-  follows that $m=n$, i.e., $A$ and $B$ are square.
-\end{proof}
-
-We conclude this section by listing some algebraic properties of the inverse.
+The following are some algebraic properties of matrix inverses.
 
 \begin{theorem}{Properties of the inverse}{inverse-properties}
   Let $A$ and $B$ be $n \times n$-matrices, $I$ the $n\times
-  n$-identity matrix. Then the following hold. 
+  n$-identity matrix. Then the following hold.
   \begin{enumerate}
   \item $I$ is invertible and $I^{-1} = I$.
   \item If $A$ and $B$ are invertible then $AB$ is invertible, and
@@ -431,3 +399,132 @@ We conclude this section by listing some algebraic properties of the inverse.
     is invertible and $(pA)^{-1} = \frac{1}{p}A^{-1}$.
   \end{enumerate}
 \end{theorem}
+
+% ----------------------------------------------------------------------
+\subsection{Right and left inverses}
+
+So far, we have only talked about the inverses of square matrices. But
+what about matrices that are not square? Can they be invertible? It
+turns out that non-square matrices can never be invertible. However,
+they can have left inverses or right inverses.
+
+\begin{definition}{Left and right inverses}{left-and-right-inverse}
+  Let $A$ be an $m\times n$-matrix and $B$ an $n\times m$-matrix.
+  We say that $B$ is a \textbf{left inverse}%
+  \index{inverse!left inverse}\index{left inverse}%
+  \index{matrix!left inverse}\index{matrix!inverse!left inverse} of
+  $A$ if
+  \begin{equation*}
+    BA=I.
+  \end{equation*}
+  We say that $B$ is a \textbf{right inverse}%
+  \index{inverse!right inverse}\index{right inverse}%
+  \index{matrix!right inverse}\index{matrix!inverse!right inverse} of
+  $A$ if
+  \begin{equation*}
+    AB=I.
+  \end{equation*}
+  If $A$ has a left inverse, we also say that $A$ is
+  \textbf{left-invertible}. Similarly, if $A$ has a right inverse, we
+  say that $A$ is \textbf{right-invertible}.
+\end{definition}
+
+\begin{example}{Right inverse}{right-inverse}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    B = \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1 \\
+      0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Show that $B$ is a right inverse, but not a left inverse, of $A$.
+\end{example}
+
+\begin{solution}
+  We compute
+  \begin{equation*}
+    AB
+    ~=~ \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+    \end{mymatrix}
+    \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1 \\
+      0 & 0 \\
+    \end{mymatrix}
+    ~=~ \begin{mymatrix}{rrr}
+      1 & 0 \\
+      0 & 1 \\
+    \end{mymatrix}
+    ~=~ I,
+  \end{equation*}
+  \begin{equation*}
+    BA
+    ~=~ \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1 \\
+      0 & 0 \\
+    \end{mymatrix}
+    \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+    \end{mymatrix}
+    ~=~ \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 0 \\
+    \end{mymatrix}
+    ~\neq~ I.
+  \end{equation*}
+  Therefore, $B$ is a right inverse, but not a left inverse, of $A$.
+\end{solution}
+
+Recall from Definition~\ref{def:invertible-matrix} that $B$ is called
+an \textbf{inverse}%
+\index{inverse!of a matrix}\index{matrix!inverse} of $A$ if it is both
+a left inverse and a right inverse. A crucial fact is that invertible
+matrices are always square.
+
+\begin{theorem}{Invertible matrices are square}{invertible-square}
+  Let $A$ be an $m\times n$-matrix.
+  \begin{itemize}
+  \item If $A$ is left-invertible, then $m\geq n$.
+  \item If $A$ is right-invertible, then $m\leq n$.
+  \item If $A$ is invertible, then $m=n$.
+  \end{itemize}
+  In particular, only square matrices can be invertible.
+\end{theorem}
+
+\begin{proof}
+  To prove the first claim, assume that $A$ is left-invertible, i.e.,
+  assume that $BA=I$ for some $n\times m$-matrix $B$. We must show
+  that $m\geq n$. Assume, for the sake of obtaining a contradiction,
+  that this is not the case, i.e., that $m<n$. Then the matrix $A$ has
+  more columns than rows. It follows that the homogeneous system of
+  equations $A\vect{x}=\vect{0}$ has a non-trivial solution; let
+  $\vect{x}$ be such a solution. We obtain a contradiction by a
+  similar method as in
+  Example~\ref{exa:non-invertible-matrix}. Namely, we have
+  \begin{equation*}
+    \vect{x} ~=~ I\,\vect{x} ~=~ (BA)\vect{x} ~=~ B(A\vect{x}) ~=~ B\vect{0} ~=~
+    \vect{0},
+  \end{equation*}
+  contradicting the fact that $\vect{x}$ was non-trivial.  Since we
+  got a contradiction from the assumption that $m<n$, it follows that
+  $m\geq n$.
+
+  The second claim is proved similarly, but exchanging the roles of
+  $A$ and $B$.  The third claim follows directly from the first two
+  claims, because every invertible matrix is both left and right
+  invertible.
+\end{proof}
+
+Of course, not all square matrices are invertible. In particular, zero
+matrices are not invertible, along with many other square matrices.

@@ -185,7 +185,7 @@ x&+&3y&+&6z&=&25 \\
 \end{example}
 
 \begin{solution}
-  By Theorem \ref{thm:elementary-operations-and-solns}, we can do
+  By Theorem~\ref{thm:elementary-operations-and-solns}, we can do
   elementary operations on this system without changing the solution
   set. We will therefore use elementary operations to try to simplify
   the system of equations.  First, we add $\tup{-2}$ times the
@@ -200,13 +200,12 @@ x&+&3y&+&6z&=&25 \\
   \end{equation*}
   Next, we add $\tup{-2}$ times the second equation to the
   third equation. This yields the system
-  \begin{equation}
+  \begin{equation}\label{solving-a-system3}
     \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
       x&+&3y&+&6z&=&25 \\
       &&y&+&2z&=&8 \\
       &&&&z&=&3.
     \end{array}
-    \label{solving-a-system3}
   \end{equation}
   At this point, it is easy to find the solution. The last equation
   tells us that $z=3$. We can substitute this value of $z$ back into
@@ -259,7 +258,7 @@ variables line up on columns: one column for $x$, one column for $y$,
 and one column for $z$. This makes it easier to perform elementary
 operations. It is often useful to simplify the notation further,
 writing systems of equations in \textbf{augmented matrix}\index{augmented matrix|seealso{matrix}}\index{augmented matrix}\index{matrix!augmented matrix} notation. Recall the
-system of equations from Example \ref{exa:solving-a-system-with-elementary-ops}:
+system of equations from Example~\ref{exa:solving-a-system-with-elementary-ops}:
 \begin{equation*}
 \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
 x&+&3y&+&6z&=&25 \\
@@ -326,24 +325,24 @@ We can consider elementary operations in the context of the augmented
 matrix. The elementary operations can be used on the rows of an
 augmented matrix just as we used them on equations previously. For
 example, instead of adding a multiple of one equation to another, we
-will now be adding a multiple of one row to another. Note that Theorem
-\ref{thm:elementary-operations-and-solns} implies that any elementary row
-operation used on an augmented matrix will not change the solutions
-to the corresponding system of equations. For reference, here are the
-three kinds of elementary row operations, along with a shorthand
-notation we are going to use for them.
+will now be adding a multiple of one row to another. Note that
+Theorem~\ref{thm:elementary-operations-and-solns} implies that any
+elementary row operation used on an augmented matrix will not change
+the solutions to the corresponding system of equations. For reference,
+here are the three kinds of elementary row operations, along with a
+shorthand notation we are going to use for them.
 
 \begin{definition}{Elementary row operations}{row-operations}
   The \textbf{elementary row operations}%
   \index{row operations}\index{elementary row operations} are the
   following:
   \begin{enumerate}
-  \item Switch two rows. (Notation: $R_i\leftrightarrow R_j$ to switch
+  \item Switch two rows. (Notation: $R_i\rowswap R_j$ to switch
     rows $i$ and $j$).
-  \item Multiply a row by a non-zero number.  (Notation: $R_i\leftarrow
+  \item Multiply a row by a non-zero number.  (Notation: $R_i\rowop
     kR_i$ to multiply row $i$ by $k$).    
   \item Add a multiple of one row to another row. (Notation:
-    $R_i\leftarrow R_i+kR_j$ to add $k$ times row $j$ to row $i$.)
+    $R_i\rowop R_i+kR_j$ to add $k$ times row $j$ to row $i$.)
   \end{enumerate}
 \end{definition}
 
@@ -352,9 +351,9 @@ equivalent, i.e., that the corresponding systems of equations have the
 same set of solutions.
 
 \begin{example}{Elementary row operations}{}
-  Repeat the calculations of Example
-  \ref{exa:solving-a-system-with-elementary-ops}, using the notations we
-  just introduced.
+  Repeat the calculations of
+  Example~\ref{exa:solving-a-system-with-elementary-ops}, using the
+  notations we just introduced.
 \end{example}
 
 \begin{solution}
@@ -365,13 +364,13 @@ same set of solutions.
       2 & 7 & 14 &  58 \\
       0 & 2 & 5 &  19
     \end{mymatrix} 
-    \stackrel{R_2\leftarrow R_2-2R_1}{\sim}
+    \stackrel{R_2\rowop R_2-2R_1}{\sim}
     \begin{mymatrix}{rrr|r}
       1 & 3 & 6 & 25 \\
       0 & 1 & 2 & 8 \\
       0 & 2 & 5 & 19
     \end{mymatrix} 
-    \stackrel{R_3\leftarrow R_3-2R_2}{\sim}
+    \stackrel{R_3\rowop R_3-2R_2}{\sim}
     \begin{mymatrix}{rrr|r}
       1 & 3 & 6 & 25 \\
       0 & 1 & 2 & 8 \\
@@ -386,8 +385,8 @@ same set of solutions.
       &&&&z&=&3,
     \end{array}
   \end{equation*}
-  which is the same as \ref{solving-a-system3}. We can solve it by back
-  substitution to obtain the solution $x=1,y=2$, and $z=3$.
+  which is the same as {\eqref{solving-a-system3}}. We solve it by back
+  substitution to obtain the solution $x=1$, $y=2$, and $z=3$.
 
   Alternatively, we can continue with additional row operations:
   \begin{equation*}
@@ -396,13 +395,13 @@ same set of solutions.
       0 & 1 & 2 & 8 \\
       0 & 0 & 1 & 3
     \end{mymatrix}
-    \stackrel{R_1\leftarrow R_1-6R_3}{\stackrel{R_2\leftarrow R_2-2R_3}{\sim}}
+    \stackrel{R_1\rowop R_1-6R_3}{\stackrel{R_2\rowop R_2-2R_3}{\sim}}
     \begin{mymatrix}{rrr|r}
       1 & 3 & 0 & 7 \\
       0 & 1 & 0 & 2\\
       0 & 0 & 1 & 3
     \end{mymatrix}
-    \stackrel{R_1\leftarrow R_1-3R_2}{\sim}
+    \stackrel{R_1\rowop R_1-3R_2}{\sim}
     \begin{mymatrix}{rrr|r}
       1 & 0 & 0 & 1\\
       0 & 1 & 0 & 2\\
@@ -419,8 +418,8 @@ would not be correct to simultaneously add $R_1$ to $R_2$ and add
 $R_2$ to $R_1$. What is permitted is to first add $R_1$ to $R_2$, then
 then add the {\em new} $R_2$ to $R_1$. Although we may sometimes try
 to save space by skipping an intermediate step, as in the last example
-where we applied the row operations $R_1\leftarrow R_1-6R_3$ and
-$R_2\leftarrow R_2-2R_3$ in one step, it is important to realize that
+where we applied the row operations $R_1\rowop R_1-6R_3$ and
+$R_2\rowop R_2-2R_3$ in one step, it is important to realize that
 logically, each row operation must be performed separately before the
 next one can be done. When in doubt, the only safe course of action is
 not to skip any steps.

@@ -71,12 +71,12 @@ it follows that $T$ is one to one. Recall that a linear transformation has the p
 %%
 %%Observe that $A\vect{0}=A\tup{\vect{0}+\vect{0} } =A\vect{0} +A\vect{0}$ and so $A\vect{0}=\vect{0}$.
 %% 
-%%Now suppose $A$ is one to one and $A\vect{x}=\vect{0}$. We need to show that this implies $\vect{x}=\vect{0}$. Since $A$ is one to one, by Definition  \ref{def:one-to-one} $A$ can only map one vector to the zero vector $\vect{0}$. Now $A\vect{x}=\vect{0}$ and $A\vect{0}=\vect{0}$, so it follows that $\vect{x}=\vect{0}$. Thus if $A$ is one to one and $A\vect{x}=\vect{0}$, then $\vect{x}=\vect{0}$. 
+%%Now suppose $A$ is one to one and $A\vect{x}=\vect{0}$. We need to show that this implies $\vect{x}=\vect{0}$. Since $A$ is one to one, by Definition~\ref{def:one-to-one} $A$ can only map one vector to the zero vector $\vect{0}$. Now $A\vect{x}=\vect{0}$ and $A\vect{0}=\vect{0}$, so it follows that $\vect{x}=\vect{0}$. Thus if $A$ is one to one and $A\vect{x}=\vect{0}$, then $\vect{x}=\vect{0}$. 
 %%
 %%Next assume that $A\vect{x}=\vect{0}$ implies $\vect{x}=\vect{0}$.  We need to show that $A$ is one to one. Suppose $A\vect{x}=A\vect{y}$. Then $A\vect{x} - A\vect{y} = \vect{0}$. 
 %%Hence $A\vect{x}-A\vect{y} =  A\tup{\vect{x}-\vect{y}} = \vect{0}$. However, we have assumed that $A\vect{x}=\vect{0}$ implies $\vect{x}=\vect{0}$. This means that
 %%whenever $A$ times a vector equals $\vect{0}$, that vector is also equal to $\vect{0}$. Therefore,  $\vect{x}-\vect{y} = \vect{0}$ and so $\vect{x}=\vect{y}$.
-%%Thus $A$ is one to one by Definition \ref{def:one-to-one}.
+%%Thus $A$ is one to one by Definition~\ref{def:one-to-one}.
 %%\end{proof}
 
 Suppose first that $T$ is one to one and consider $T(\vect{0})$. 
@@ -190,7 +190,7 @@ b
 Thus $T$ is onto.
 
 Now we want to know if $T$ is one to one. 
-By Proposition \ref{prop:one-to-one-matrices} it is enough to show that $A\vect{x}=0$ implies $\vect{x}=0$. 
+By Proposition~\ref{prop:one-to-one-matrices} it is enough to show that $A\vect{x}=0$ implies $\vect{x}=0$. 
 Consider the system $A\vect{x}=0$ given by:
 \begin{equation*}
 \begin{mymatrix}{cc}
@@ -256,10 +256,10 @@ y
 \end{equation*}
 
 In other words, $A\vect{x}=0$ implies that $\vect{x}=0$. By 
-Proposition \ref{prop:one-to-one-matrices}, $A$ is one to one, and so $T$ is also one to one.
+Proposition~\ref{prop:one-to-one-matrices}, $A$ is one to one, and so $T$ is also one to one.
 
 We also could have seen that $T$ is one to one from our above solution for onto. By looking at the matrix given 
-by \ref{onto-matrix}, you can see that there is a \textbf{unique} solution given
+by {\eqref{onto-matrix}}, you can see that there is a \textbf{unique} solution given
 by $x=2a-b$ and $y=b-a$. Therefore, there
 is only one vector, specifically 
 $\begin{mymatrix}{c}
@@ -276,7 +276,7 @@ y
 \end{mymatrix} =\begin{mymatrix}{c}
 a \\
 b
-\end{mymatrix}$. Hence by Definition \ref{def:one-to-one}, $T$ is one to one.
+\end{mymatrix}$. Hence by Definition~\ref{def:one-to-one}, $T$ is one to one.
 \end{solution}
 
 \begin{example}{An onto transformation}{onto-transformation}
@@ -332,7 +332,7 @@ y
 \]
 This shows that $T$ is onto. 
 
-By Proposition \ref{prop:one-to-one-matrices} $T$ is one to one if and only if $T(\vect{x}) = \vect{0}$ implies that $\vect{x} = \vect{0}$. Observe that 
+By Proposition~\ref{prop:one-to-one-matrices} $T$ is one to one if and only if $T(\vect{x}) = \vect{0}$ implies that $\vect{x} = \vect{0}$. Observe that 
 \[
 T \begin{mymatrix}{r}
 1 \\
@@ -358,7 +358,7 @@ The above examples demonstrate a method to determine if a linear transformation 
 Let $T: \R^n \mapsto \R^m$ be a linear transformation induced by the $m \times n$-matrix $A$. Then $T$ is one to one if and only if the rank of $A$ is $n$. $T$ is onto if and only if the rank of $A$ is $m$. 
 \end{theorem}
 
-Consider Example \ref{exa:onto-transformation}. Above we showed that $T$ was onto but not one to one. We can now use this theorem to determine this fact about $T$. 
+Consider Example~\ref{exa:onto-transformation}. Above we showed that $T$ was onto but not one to one. We can now use this theorem to determine this fact about $T$. 
 
 \begin{example}{An onto transformation}{onto-transformation-matrix}
 Let $T: \R^4 \mapsto \R^2$ be a linear transformation defined by
@@ -384,7 +384,7 @@ Prove that $T$ is onto but not one to one.
 \end{example}
 
 \begin{solution}
-Using Theorem \ref{thm:matrix-one-to-one-onto} we can show that $T$ is onto but not one to one from the matrix of $T$. Recall that to find the matrix $A$ of $T$, we apply $T$ to each of the standard basis vectors $\vect{e}_i$ of $\R^4$. The result is the $2 \times 4$-matrix A given by 
+Using Theorem~\ref{thm:matrix-one-to-one-onto} we can show that $T$ is onto but not one to one from the matrix of $T$. Recall that to find the matrix $A$ of $T$, we apply $T$ to each of the standard basis vectors $\vect{e}_i$ of $\R^4$. The result is the $2 \times 4$-matrix A given by 
 \[
 A = \begin{mymatrix}{rrrr}
 1 & 0 & 0 & 1 \\

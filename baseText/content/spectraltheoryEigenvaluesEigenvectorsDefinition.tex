@@ -119,11 +119,11 @@ In this case, $AX$ did not result in a vector of the form $kX$ for some scalar $
 \end{solution}
 
 There is something special about the first two products calculated in
-Example \ref{exa:eigenvectors-and-eigenvalues}.  Notice that for each,
+Example~\ref{exa:eigenvectors-and-eigenvalues}.  Notice that for each,
 $AX=kX$ where $k$ is some scalar.  When this equation holds for some
 $X$ and $k$, we call the scalar $k$ an \textbf{eigenvalue} of $A$. We
 often use the special symbol $\lambda$ instead of $k$ when referring
-to eigenvalues. In Example \ref{exa:eigenvectors-and-eigenvalues}, the
+to eigenvalues. In Example~\ref{exa:eigenvectors-and-eigenvalues}, the
 values $10$ and $0$ are eigenvalues for the matrix $A$ and we can
 label these as $\lambda_1 = 10$ and $\lambda_2 = 0$.
 
@@ -162,7 +162,7 @@ direction to $X$. Since the zero vector $0$ has no
 direction this would make no sense for the zero vector. As noted above, 
 $0$ is never allowed to be an eigenvector. 
 
-Let's look at eigenvectors in more detail. Suppose $X$ satisfies \ref{eigen1}. Then
+Let's look at eigenvectors in more detail. Suppose $X$ satisfies {\eqref{eigen1}}. Then
 \begin{equation*}
 \begin{array}{c}
 AX - \lambda X = 0 \\
@@ -213,7 +213,7 @@ the eigenvalues of $A$ as \textbf{characteristic values}, but the
 former is often used for historical reasons.
 
 The following theorem claims that the roots of the characteristic
-polynomial are the eigenvalues of $A$.  Thus when \ref{eigen2}
+polynomial are the eigenvalues of $A$.  Thus when {\eqref{eigen2}}
 holds, $A$ has a non-zero eigenvector.
 
 \begin{theorem}{The existence of an eigenvector}{existence-of-eigenvector}
@@ -227,6 +227,6 @@ vector $X \in \C^{n}$ such that $AX=\lambda X$.
 For $A$ an $n\times n$-matrix, the method of Laplace
 Expansion demonstrates that $\det \tup{\lambda I - A } $ is a
 polynomial of degree $n$. As such, the equation
-\ref{eigen2} has a solution $\lambda \in \C$ by the Fundamental
+{\eqref{eigen2}} has a solution $\lambda \in \C$ by the Fundamental
 Theorem of Algebra. The fact that $\lambda$ is an eigenvalue is left as an exercise. 
 \end{proof}

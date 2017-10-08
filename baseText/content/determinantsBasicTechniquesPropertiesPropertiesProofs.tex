@@ -182,7 +182,7 @@ If $k=0$ then $A=B$ and there is nothing to prove, so we may assume $k\neq 0$.
 
 Let $C$ be the matrix obtained by replacing the $j$th row of $B$ by the $i$th row of $B$ 
 multiplied by $k$. 
-By Lemma \ref{lem:L2}, we have that 
+By Lemma~\ref{lem:L2}, we have that 
 \[
 \det A=\det B+\det C
 \]
@@ -202,8 +202,8 @@ Let $A$ and $B$ be two $n\times n$-matrices. Then\index{determinant!product}
 
 \begin{proof} If $A$ is an elementary matrix of either type, then multiplying
 by $A$ on the left has the same effect as performing the corresponding elementary 
-row operation. Therefore the equality $\det (AB) =\det A\det B$  in this case follows by Example \ref{exa:EX1} 
-and Theorem \ref{thm:T1}. 
+row operation. Therefore the equality $\det (AB) =\det A\det B$  in this case follows by Example~\ref{exa:EX1} 
+and Theorem~\ref{thm:T1}. 
 
 If $C$ is the {\rref} of $A$ then we can write $A=E_1\cdot E_2\cdot\dots\cdot E_m\cdot C$
 for some elementary matrices $E_1,\dots, E_m$. 
@@ -221,8 +221,8 @@ we have that
 \end{align*} 
 
 Now assume $C\neq I$. Since it is in {\rref}, its last row consists of zeros 
-and by (4) of Example \ref{exa:EX1} the last row of $CB$ consists of zeros. 
-By Lemma \ref{lem:L1} we have $\det C=\det (CB)=0$ and therefore 
+and by (4) of Example~\ref{exa:EX1} the last row of $CB$ consists of zeros. 
+By Lemma~\ref{lem:L1} we have $\det C=\det (CB)=0$ and therefore 
 \[
 \det A=\det (E_1\cdot E_2\cdot  E_m)\cdot  \det (C)
 =
@@ -247,21 +247,21 @@ Let $A$ be a matrix where $A^T$ is the transpose of $A$. Then,
 \end{theorem} 
 
 \begin{proof} 
-Note first that the conclusion is true if $A$ is elementary by (5) of Example \ref{exa:EX1}. 
+Note first that the conclusion is true if $A$ is elementary by (5) of Example~\ref{exa:EX1}. 
 
 Let $C$ be the {\rref} of $A$. Then we can write 
 $A= E_1\cdot E_2\cdot \dots\cdot E_m C$. 
 Then $A^T=C^T\cdot E_m^T\cdot \dots \cdot E_2^T\cdot E_1$. 
-By Theorem \ref{thm:T2} we have 
+By Theorem~\ref{thm:T2} we have 
 \[
 \det (A^T)=\det (C^T)\cdot \det (E_m^T)\cdot \dots \cdot \det (E_2^T)\cdot \det(E_1).
 \] 
-By (5) of Example \ref{exa:EX1} we have that $\det E_j=\det E_j^T$ for all $j$. 
+By (5) of Example~\ref{exa:EX1} we have that $\det E_j=\det E_j^T$ for all $j$. 
 Also, $\det C$ is either 0 or 1 (depending on whether $C=I$ or not) and in either 
 case $\det C=\det C^T$. Therefore $\det A=\det A^T$. 
 \end{proof} 
 
-The above discussions allow us to now prove Theorem \ref{thm:well-defined-determinant}. It is restated below. 
+The above discussions allow us to now prove Theorem~\ref{thm:well-defined-determinant}. It is restated below. 
  
 \begin{theorem}{}{}
 Expanding an $n\times n$-matrix along any row or column always gives the same result, which is the determinant. 
@@ -278,7 +278,7 @@ Let $A$be an $n\times n$-matrix and fix $j>1$. We need to prove that
 Let us prove the case when $j=2$. 
 
 Let $B$ be the matrix obtained from $A$ by interchanging its $1$st and $2$nd rows. 
-Then by  Theorem \ref{thm:T1} we have
+Then by  Theorem~\ref{thm:T1} we have
 \[
 \det A=-\det B. 
 \]
@@ -309,7 +309,7 @@ result just proved equal to the cofactor expansion along row 1 of
 $A^T$, which is equal to the cofactor expansion along column $1$ of
 $A$. Thus the cofactor cofactor along any column yields the same result. 
 
-Finally, since $\det A=\det A^T$ by  Theorem \ref{thm:T.T}, we conclude that 
+Finally, since $\det A=\det A^T$ by  Theorem~\ref{thm:T.T}, we conclude that 
 the cofactor expansion along row $1$ of $A$ is equal to 
 the cofactor expansion along row $1$ of $A^T$, which  is equal to 
 the cofactor expansion along column $1$ of $A$. Thus the proof is complete. 

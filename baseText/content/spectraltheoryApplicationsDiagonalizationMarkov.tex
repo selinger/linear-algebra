@@ -46,7 +46,7 @@ resident of location one will stay in location one in the time period
 is $0.4$.
 \end{solution}
 
-Observe that in Example \ref{exa:migration-matrix} if there was initially say 15
+Observe that in Example~\ref{exa:migration-matrix} if there was initially say 15
 thousand people in location 1 and 10 thousands in location 2, then
 after one year there would be $0.4 \times 15 + 0.2 \times 10 = 8$
 thousands people in location 1 the following year, and similarly 
@@ -90,7 +90,7 @@ population in the three locations after $1,2$, and $10$ units of time.
 \end{example}
 
 \begin{solution}
-Using Theorem \ref{thm:state-vector} we can find the population in each location using the equation $X_{n+1} = AX_n$. For the population after $1$ unit, we calculate $X_1 = AX_0$ as follows.
+Using Theorem~\ref{thm:state-vector} we can find the population in each location using the equation $X_{n+1} = AX_n$. For the population after $1$ unit, we calculate $X_1 = AX_0$ as follows.
 \begin{eqnarray*}
 X_1 &=& AX_0 \\
 \begin{mymatrix}{r}
@@ -245,7 +245,7 @@ Returning to the context of migration, suppose we wish to know how many resident
 after a very long time. It turns out that if some power of the
 migration matrix has all positive entries, then there is a vector $X_s$ such that $A^{n}X_{0}$ approaches $X_s$ as $n$ becomes very large. Hence as more time passes and $n$ increases, $A^{n}X_{0}$ will become closer to the vector $X_s$. 
 
-Consider Theorem \ref{thm:state-vector}. Let $n$ increase so that $X_n$ approaches $X_s$. As $X_n$ becomes closer to $X_s$, so too does $X_{n+1}$. For sufficiently large $n$, the statement $X_{n+1} = AX_n$ can be written as $X_s = AX_s$. 
+Consider Theorem~\ref{thm:state-vector}. Let $n$ increase so that $X_n$ approaches $X_s$. As $X_n$ becomes closer to $X_s$, so too does $X_{n+1}$. For sufficiently large $n$, the statement $X_{n+1} = AX_n$ can be written as $X_s = AX_s$. 
 
 This discussion motivates the following theorem.
 
@@ -259,9 +259,9 @@ where $X_s$ has positive entries which have the same sum as the entries of $X_0$
 As $n$ increases, the state vectors $X_n$ will approach $X_s$. 
 \end{theorem}
 
-Note that the condition in Theorem \ref{thm:steady-state} can be written as $(I - A)X_s=0$, representing a homogeneous system of equations. 
+Note that the condition in Theorem~\ref{thm:steady-state} can be written as $(I - A)X_s=0$, representing a homogeneous system of equations. 
 
-Consider the following example. Notice that it is the same example as the Example \ref{exa:using-migration-matrix} but here it will
+Consider the following example. Notice that it is the same example as the Example~\ref{exa:using-migration-matrix} but here it will
 involve a longer time frame.
 
 \begin{example}{Populations over the long run}{long-run-population}
@@ -281,7 +281,7 @@ population in the three locations after a long time.
 \end{example}
 
 \begin{solution}
-By Theorem \ref{thm:steady-state} the steady state vector $X_s$ can be found by solving the system $(I-A)X_s = 0$. 
+By Theorem~\ref{thm:steady-state} the steady state vector $X_s$ can be found by solving the system $(I-A)X_s = 0$. 
 
 Thus we need to find a solution to
 \begin{equation*}
@@ -363,7 +363,7 @@ Again, because we are working with populations, these values need to be rounded.
 \]
 \end{solution}
 
-We can see that the numbers we calculated in Example \ref{exa:using-migration-matrix} for the populations
+We can see that the numbers we calculated in Example~\ref{exa:using-migration-matrix} for the populations
 after the $10^{th}$ unit of time are not far from the long term values. 
 
 Consider another example.
