@@ -24,7 +24,7 @@ by the matrix $A$.
 \end{theorem}
 
 Here is why. Suppose $T:\R^{n}\mapsto \R^{m}$ is a linear transformation and you want to find
-the matrix defined by this linear transformation as described in \ref{matrix-of-transf}.
+the matrix defined by this linear transformation as described in {\eqref{matrix-of-transf}}.
  Note that
 \begin{equation*}
 \vect{x} =\begin{mymatrix}{c}
@@ -126,7 +126,7 @@ T\begin{mymatrix}{r}
 Find the matrix $A$ of $T$ such that $T \tup{\vect{x} }=A\vect{x}$  for all $\vect{x}$.
 \end{example}
 
-\begin{solution} By Theorem \ref{thm:matrix-of-linear-transformation} we construct $A$ as follows:
+\begin{solution} By Theorem~\ref{thm:matrix-of-linear-transformation} we construct $A$ as follows:
 \begin{equation*}
 A = 
 \begin{mymatrix}{ccc}
@@ -172,8 +172,8 @@ T\begin{mymatrix}{r}
 Find the matrix $A$ of $T$ such that $T \tup{\vect{x} }=A\vect{x}$  for all $\vect{x}$.
 \end{example}
 
-\begin{solution} By Theorem \ref{thm:matrix-of-linear-transformation} to find this matrix, we need to determine the action of $T$ on
-$\vect{e}_{1}$ and $\vect{e}_{2}$. In Example \ref{exa:matrix-of-linear-transformation}, we were given these resulting vectors.
+\begin{solution} By Theorem~\ref{thm:matrix-of-linear-transformation} to find this matrix, we need to determine the action of $T$ on
+$\vect{e}_{1}$ and $\vect{e}_{2}$. In Example~\ref{exa:matrix-of-linear-transformation}, we were given these resulting vectors.
 However, in this example, we have been given $T$ of two different vectors. How can we find out the action
 of $T$ on $\vect{e}_{1}$ and $\vect{e}_{2}$? In particular for $\vect{e}_{1}$, suppose there exist $x$ and $y$ such that
 \begin{equation}
@@ -220,10 +220,10 @@ T\begin{mymatrix}{r}
 \label{matrix-values2}
 \end{equation}
 
-Therefore, if we know the values of $x$ and $y$ which satisfy \ref{matrix-values}, we can substitute these into equation \ref{matrix-values2}. By doing so,
+Therefore, if we know the values of $x$ and $y$ which satisfy {\eqref{matrix-values}}, we can substitute these into equation {\eqref{matrix-values2}}. By doing so,
 we find $T\tup{\vect{e}_1}$ which is the first column of the matrix $A$. 
 
-We proceed to find $x$ and $y$. We do so by solving \ref{matrix-values}, which can be done by solving the system
+We proceed to find $x$ and $y$. We do so by solving {\eqref{matrix-values}}, which can be done by solving the system
 \begin{equation*}
 \begin{array}{c}
 x = 1 \\
@@ -232,7 +232,7 @@ x - y = 0
 \end{equation*}
 
 We see that $x=1$ and $y=1$ is the solution to this system. 
-Substituting these values into equation \ref{matrix-values2}, we have 
+Substituting these values into equation {\eqref{matrix-values2}}, we have 
 \begin{equation*}
 T\begin{mymatrix}{r}
 1 \\
@@ -300,7 +300,7 @@ Then the matrix of $T$ must be of the form
 \end{procedure}
 
 We will illustrate this procedure in the following example. You may also find it useful
-to work through Example \ref{exa:2x2-inconvenient-matrix-of-lin-transf} using this procedure.
+to work through Example~\ref{exa:2x2-inconvenient-matrix-of-lin-transf} using this procedure.
 
 \begin{example}{Matrix of a linear transformation \\ given inconveniently}{inconvenient-matrix-lin-transf}
 Suppose $T:\R^{3}\rightarrow \R^{3}$ is a linear
@@ -336,7 +336,7 @@ Find the matrix of this linear transformation.
 \end{example}
 
 \begin{solution}
-By Procedure \ref{proc:finding-matrix-of-linear-transformation}, 
+By Procedure~\ref{proc:finding-matrix-of-linear-transformation}, 
 $A=  \begin{mymatrix}{rrr}
 1 & 0 & 1 \\
 3 & 1 & 1 \\
@@ -348,7 +348,7 @@ $A=  \begin{mymatrix}{rrr}
 1 & 3 & 1
 \end{mymatrix}$
 
-Then, Procedure \ref{proc:finding-matrix-of-linear-transformation} claims that the matrix of $T$ is 
+Then, Procedure~\ref{proc:finding-matrix-of-linear-transformation} claims that the matrix of $T$ is 
 \begin{equation*}
 C= BA^{-1} 
 =\begin{mymatrix}{rrr}
@@ -444,7 +444,7 @@ multiplication by a matrix?
 \begin{solution}
 \begin{enumerate}
 \item
-First, we have just seen that $T (\vect{v}) = \func{proj}_{\vect{u}}\tup{\vect{v}}$ is linear. Therefore by Theorem \ref{thm:matrix-lin-transf}, we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
+First, we have just seen that $T (\vect{v}) = \func{proj}_{\vect{u}}\tup{\vect{v}}$ is linear. Therefore by Theorem~\ref{thm:matrix-lin-transf}, we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
 
 \item
 The columns of the matrix for $T$ are defined above as $T(\vect{e}_{i})$. 

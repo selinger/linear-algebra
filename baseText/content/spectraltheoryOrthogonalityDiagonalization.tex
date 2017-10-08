@@ -1,8 +1,8 @@
 \subsection{Orthogonal diagonalization}
 
-We begin this section by recalling some important definitions. Recall from Definition \ref{def:orth-set} that non-zero vectors are called orthogonal if their dot product equals $0$.  A set is orthonormal if it is orthogonal and each vector is a unit vector. 
+We begin this section by recalling some important definitions. Recall from Definition~\ref{def:orth-set} that non-zero vectors are called orthogonal if their dot product equals $0$.  A set is orthonormal if it is orthogonal and each vector is a unit vector. 
 
-An orthogonal matrix $U$, from Definition \ref{def:Ortho-Matrix}, is one in which $UU^{T} = I$. In other words, the transpose of an orthogonal matrix is equal to its inverse. A key characteristic of orthogonal matrices, which will be essential in this section, is that the columns of an orthogonal matrix form an orthonormal set. 
+An orthogonal matrix $U$, from Definition~\ref{def:Ortho-Matrix}, is one in which $UU^{T} = I$. In other words, the transpose of an orthogonal matrix is equal to its inverse. A key characteristic of orthogonal matrices, which will be essential in this section, is that the columns of an orthogonal matrix form an orthonormal set. 
 
 We now recall another important definition. 
 
@@ -58,7 +58,7 @@ Dividing by $\overline{\vect{x}}^{T}\vect{x}$ on both sides yields $
 
 Now suppose $A$ is real symmetric and $A\vect{x}=\lambda \vect{x}$, $A
 \vect{y}=\mu \vect{y}$ where $\mu \neq \lambda$. Then since $A$
-is symmetric, it follows from Lemma \ref{lem:dotproduct-lemma} about the dot product that 
+is symmetric, it follows from Lemma~\ref{lem:dotproduct-lemma} about the dot product that 
 \begin{equation*}
 \lambda \vect{x}\dotprod \vect{y}=A\vect{x}\dotprod \vect{y}=\vect{x}\dotprod A\vect{y}=\vect{x}\dotprod \mu \vect{y}=\mu \vect{x}\dotprod \vect{y}
 \end{equation*}
@@ -98,7 +98,7 @@ Let $A=\begin{mymatrix}{rr}
 \end{example}
 
 \begin{solution}
-First notice that $A$ is skew symmetric. By Theorem \ref{thm:skew-symmetric-eigen}, the eigenvalues will either equal $0$ or be pure imaginary.  The eigenvalues of $A$ are obtained by solving the usual equation 
+First notice that $A$ is skew symmetric. By Theorem~\ref{thm:skew-symmetric-eigen}, the eigenvalues will either equal $0$ or be pure imaginary.  The eigenvalues of $A$ are obtained by solving the usual equation 
 \[
 \det (\eigenVar I - A ) = 
 \det \begin{mymatrix}{rr}
@@ -121,7 +121,7 @@ Let $A=\begin{mymatrix}{rr}
 \end{example}
 
 \begin{solution}
-First, notice that $A$ is symmetric. By Theorem \ref{thm:symmetric-orthogonal-eigenvectors}, the eigenvalues will all be real. The eigenvalues of $A$ are obtained by solving the usual equation 
+First, notice that $A$ is symmetric. By Theorem~\ref{thm:symmetric-orthogonal-eigenvectors}, the eigenvalues will all be real. The eigenvalues of $A$ are obtained by solving the usual equation 
 \[
 \det (\eigenVar I - A) = 
 \det \begin{mymatrix}{rr}
@@ -156,7 +156,7 @@ _{n}}$.
 \end{corollary}
 
 \begin{proof}
-Since $A$ is symmetric, then by Theorem \ref{thm:orth-diag},
+Since $A$ is symmetric, then by Theorem~\ref{thm:orth-diag},
 there exists an orthogonal matrix $U$ such that $U^{T}AU=D$, a diagonal
 matrix whose diagonal entries are the eigenvalues of $A$. Therefore, since $
 A $ is symmetric and all the matrices are real, 
@@ -220,7 +220,7 @@ A = \begin{mymatrix}{rrr}
 \end{example}
 
 \begin{solution}
-Recall Procedure \ref{proc:find-eigenvalues-vectors} for finding the eigenvalues and eigenvectors of a matrix. You can verify that the eigenvalues are $18,9,2$. First find the eigenvector for $18$ by solving the equation $(18I-A)X = 0$. 
+Recall Procedure~\ref{proc:find-eigenvalues-vectors} for finding the eigenvalues and eigenvectors of a matrix. You can verify that the eigenvalues are $18,9,2$. First find the eigenvector for $18$ by solving the equation $(18I-A)X = 0$. 
 The appropriate augmented matrix is given by  
 \begin{equation*}
 \begin{mymatrix}{ccc|c}
@@ -456,7 +456,7 @@ An $n\times n$-matrix $A$ is said to be \textbf{non defective}
 P^{-1}AP=D$ where $D$ is a diagonal matrix.
 \end{definition}
 
-As indicated in Theorem \ref{thm:orth-diag} if $A$ is a real symmetric matrix, there exists an
+As indicated in Theorem~\ref{thm:orth-diag} if $A$ is a real symmetric matrix, there exists an
 orthogonal matrix $U$ such that $U^{T}AU=D$ where $D$ is a diagonal matrix. Therefore,
 every symmetric matrix is diagonalizable because if $U$ is an orthogonal
 matrix, it is invertible and its inverse is $U^{T}$. In this case, we say that $A$ is \textbf{orthogonally diagonalizable}\index{orthogonally diagonalizable}. Therefore every symmetric matrix is in fact orthogonally diagonalizable. The next theorem provides another way to determine if a matrix is orthogonally diagonalizable. 
@@ -465,7 +465,7 @@ matrix, it is invertible and its inverse is $U^{T}$. In this case, we say that $
 Let $A$ be an $n \times n$-matrix. Then $A$ is orthogonally diagonalizable if and only if $A$ has an orthonormal set of eigenvectors. 
 \end{theorem}
 
-Recall from Corollary \ref{cor:orthonormal-eigenvectors} that every symmetric matrix has an orthonormal set of eigenvectors. In fact these three conditions are equivalent. 
+Recall from Corollary~\ref{cor:orthonormal-eigenvectors} that every symmetric matrix has an orthonormal set of eigenvectors. In fact these three conditions are equivalent. 
 
 In the following example, the orthogonal
 matrix $U$ will be found to orthogonally diagonalize a matrix. 
@@ -595,7 +595,7 @@ Let $A$ be an $n \times n$-matrix with eigenvalues $\lambda_1, \cdots, \lambda_n
 \end{corollary}
 
 \begin{proof}
-By Theorem \ref{thm:triangulation}, there exists an orthogonal matrix $U$ such
+By Theorem~\ref{thm:triangulation}, there exists an orthogonal matrix $U$ such
 that $U^TAU=P$, where $P$ is an upper triangular matrix.
 Since $P$ is similar to $A$, the eigenvalues
 of $P$ are $\lambda_1, \lambda_2, \ldots, \lambda_n$.

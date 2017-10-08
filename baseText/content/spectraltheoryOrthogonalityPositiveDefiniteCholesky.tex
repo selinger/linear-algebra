@@ -38,14 +38,14 @@ is positive definite, and find the Cholesky factorization of $A$.
 \end{example}
 
 \begin{solution}
-First we show that $A$ is positive definite. By Theorem \ref{thm:positive-matrix-determinant-Ak} it suffices to show that the determinant of each submatrix is positive. 
+First we show that $A$ is positive definite. By Theorem~\ref{thm:positive-matrix-determinant-Ak} it suffices to show that the determinant of each submatrix is positive. 
 \[ A_{1}=\begin{mymatrix}{c} 9 \end{mymatrix}
 \mbox{ and }
 A_{2}=\begin{mymatrix}{rr} 9 & -6 \\ -6 & 5 \end{mymatrix},\]
 so $\det(A_{1})=9$ and $\det(A_{2})=9$.
 Since $\det(A)=36$, it follows that $A$ is positive definite.
 
-Now we use Procedure \ref{proc:finding-cholesky} to find the Cholesky Factorization. Row reduce (using only type $3$ row operations) until an upper triangular matrix is obtained. 
+Now we use Procedure~\ref{proc:finding-cholesky} to find the Cholesky Factorization. Row reduce (using only type $3$ row operations) until an upper triangular matrix is obtained. 
 \[ \begin{mymatrix}{rrr}
 9 & -6 & 3 \\ -6 & 5 & -3 \\ 3 & -3 & 6
 \end{mymatrix}

@@ -185,7 +185,7 @@ x&+&3y&+&6z&=&25 \\
 \end{example}
 
 \begin{solution}
-  By Theorem \ref{thm:elementary-operations-and-solns}, we can do
+  By Theorem~\ref{thm:elementary-operations-and-solns}, we can do
   elementary operations on this system without changing the solution
   set. We will therefore use elementary operations to try to simplify
   the system of equations.  First, we add $\tup{-2}$ times the
@@ -200,13 +200,12 @@ x&+&3y&+&6z&=&25 \\
   \end{equation*}
   Next, we add $\tup{-2}$ times the second equation to the
   third equation. This yields the system
-  \begin{equation}
+  \begin{equation}\label{solving-a-system3}
     \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
       x&+&3y&+&6z&=&25 \\
       &&y&+&2z&=&8 \\
       &&&&z&=&3.
     \end{array}
-    \label{solving-a-system3}
   \end{equation}
   At this point, it is easy to find the solution. The last equation
   tells us that $z=3$. We can substitute this value of $z$ back into
@@ -259,7 +258,7 @@ variables line up on columns: one column for $x$, one column for $y$,
 and one column for $z$. This makes it easier to perform elementary
 operations. It is often useful to simplify the notation further,
 writing systems of equations in \textbf{augmented matrix}\index{augmented matrix|seealso{matrix}}\index{augmented matrix}\index{matrix!augmented matrix} notation. Recall the
-system of equations from Example \ref{exa:solving-a-system-with-elementary-ops}:
+system of equations from Example~\ref{exa:solving-a-system-with-elementary-ops}:
 \begin{equation*}
 \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
 x&+&3y&+&6z&=&25 \\
@@ -326,12 +325,12 @@ We can consider elementary operations in the context of the augmented
 matrix. The elementary operations can be used on the rows of an
 augmented matrix just as we used them on equations previously. For
 example, instead of adding a multiple of one equation to another, we
-will now be adding a multiple of one row to another. Note that Theorem
-\ref{thm:elementary-operations-and-solns} implies that any elementary row
-operation used on an augmented matrix will not change the solutions
-to the corresponding system of equations. For reference, here are the
-three kinds of elementary row operations, along with a shorthand
-notation we are going to use for them.
+will now be adding a multiple of one row to another. Note that
+Theorem~\ref{thm:elementary-operations-and-solns} implies that any
+elementary row operation used on an augmented matrix will not change
+the solutions to the corresponding system of equations. For reference,
+here are the three kinds of elementary row operations, along with a
+shorthand notation we are going to use for them.
 
 \begin{definition}{Elementary row operations}{row-operations}
   The \textbf{elementary row operations}%
@@ -352,9 +351,9 @@ equivalent, i.e., that the corresponding systems of equations have the
 same set of solutions.
 
 \begin{example}{Elementary row operations}{}
-  Repeat the calculations of Example
-  \ref{exa:solving-a-system-with-elementary-ops}, using the notations we
-  just introduced.
+  Repeat the calculations of
+  Example~\ref{exa:solving-a-system-with-elementary-ops}, using the
+  notations we just introduced.
 \end{example}
 
 \begin{solution}
@@ -386,7 +385,7 @@ same set of solutions.
       &&&&z&=&3,
     \end{array}
   \end{equation*}
-  which is the same as \ref{solving-a-system3}. We can solve it by back
+  which is the same as {\eqref{solving-a-system3}}. We can solve it by back
   substitution to obtain the solution $x=1,y=2$, and $z=3$.
 
   Alternatively, we can continue with additional row operations:

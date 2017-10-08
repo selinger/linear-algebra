@@ -114,7 +114,7 @@ The {\rref} of $A$ is
 \end{equation*}
 Therefore, the rank is $2$.
 
-Notice that the first two columns of $R$ are pivot columns. By the discussion following Lemma \ref{lem:echelon-form-row-space}, we find the corresponding columns of $A$, in this case the first two columns. Therefore a basis for $\func{col}(A)$ is given by
+Notice that the first two columns of $R$ are pivot columns. By the discussion following Lemma~\ref{lem:echelon-form-row-space}, we find the corresponding columns of $A$, in this case the first two columns. Therefore a basis for $\func{col}(A)$ is given by
 \[
 \set{\begin{mymatrix}{r}
 1 \\ 
@@ -146,7 +146,7 @@ example, consider the third column of the original matrix. It can be written as 
 \end{mymatrix} 
 \end{equation*}
 
-What about an efficient description of the row space? By Lemma \ref{lem:echelon-form-row-space} we know that the non-zero rows of $R$ create a basis of $\func{row}(A)$.  For the above matrix, the row space equals 
+What about an efficient description of the row space? By Lemma~\ref{lem:echelon-form-row-space} we know that the non-zero rows of $R$ create a basis of $\func{row}(A)$.  For the above matrix, the row space equals 
 \[
 \func{row}(A) = 
 \func{span} \set{
@@ -222,8 +222,7 @@ Notice that the first three columns of the {\rref} are pivot columns. The column
 
 \end{solution}
 
-Consider the solution given above for Example
-\ref{exa:rank-column-row-space2}, where the rank of $A$ equals
+Consider the solution given above for Example~\ref{exa:rank-column-row-space2}, where the rank of $A$ equals
 $3$. Notice that the row space and the column space each had dimension
 equal to $3$. It turns out that this is not a coincidence, and this
 essential result is referred to as the Rank Theorem and is given
@@ -568,7 +567,7 @@ From our observation above we can now state an important theorem.
 Let $A$ be an $m\times n$-matrix. Then $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) =n$. 
 \end{theorem}
 
-Consider the following example, which we first explored above in Example \ref{exa:null-space}
+Consider the following example, which we first explored above in Example~\ref{exa:null-space}
 
 \begin{example}{Rank and nullity}{rank-nullity}
 Let
@@ -585,7 +584,7 @@ Find $\func{rank}\tup{A}$ and $\dim( \func{null}\tup{A})$.
 
 \medskip
 \begin{solution}
-In the above Example \ref{exa:null-space} we determined that the {\rref} of $A$ is given by 
+In the above Example~\ref{exa:null-space} we determined that the {\rref} of $A$ is given by 
 \[
 \begin{mymatrix}{rrr}
 1 & 0 & 3 \\ 
@@ -604,7 +603,7 @@ Therefore the rank of $A$ is $2$. We also determined that the null space of $A$ 
 }
 \]
 
-Therefore the nullity of $A$ is $1$. It follows from Theorem \ref{thm:rank-nullity} that $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) = 2 + 1 = 3$, which is the number of columns of $A$.
+Therefore the nullity of $A$ is $1$. It follows from Theorem~\ref{thm:rank-nullity} that $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) = 2 + 1 = 3$, which is the number of columns of $A$.
 \end{solution} 
 
 We conclude this section with two similar, and important, theorems.

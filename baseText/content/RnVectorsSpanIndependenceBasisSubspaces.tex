@@ -95,7 +95,7 @@ If $V=\func{span}\set{\vect{u}_{1},\vect{u}_{2}}$, we are
 done. Otherwise, pick $\vect{u}_{3}$ not in $\func{span}\set{\vect{u}_{1},\vect{u}_{2}}$. Continue this way.
 Note that since $V $ is a subspace, these spans are each contained in
 $V$.  The process must stop with $\vect{u}_{k}$ for some $k\leq n$
-by Corollary \ref{cor:linear-dependence-Rn}, and thus $V=\func{span}\set{\vect{u}_{1},\cdots ,
+by Corollary~\ref{cor:linear-dependence-Rn}, and thus $V=\func{span}\set{\vect{u}_{1},\cdots ,
 \vect{u}_{k}}$.
 
 Now suppose $V=\func{span}\set{\vect{u}_{1},\cdots ,
@@ -174,7 +174,7 @@ $, there exist scalars $a_{ij}$ such that
 \end{equation*}
 Suppose for a contradiction that $s<r$. Then the matrix $A = \mat{
 a_{ij} }$ has fewer rows, $s$ than columns, $r$. Then the system
-$AX=0$ has %Theorem \ref{thm:rank-homogeneous-solutions} 
+$AX=0$ has %Theorem~\ref{thm:rank-homogeneous-solutions} 
 a non trivial solution $\vect{d}$, that is there is a  $\vect{d}\neq \vect{0}$ such that  $A\vect{d}=\vect{0}$. In other
 words, 
 \begin{equation*}
@@ -198,7 +198,7 @@ Let $V$ be a subspace of $\R^{n}$ with two bases $B_1$ and $B_2$. Suppose $B_1$ 
 \end{theorem}
 
 \begin{proof}
-This follows right away from Theorem \ref{thm:exchange-theorem}. Indeed
+This follows right away from Theorem~\ref{thm:exchange-theorem}. Indeed
 observe that $B_1 = \set{
 \vect{u}_{1},\cdots ,\vect{u}_{s}} $ is a spanning set for $V$ while $
 B_2 = \set{\vect{v}_{1},\cdots ,\vect{v}_{r}} $ is linearly
@@ -340,7 +340,7 @@ matrix
 \end{equation*}
 it follows $k\leq m<n$ and these $k$ pivot columns would be a basis
 for $\R^{n}$ having fewer than $n$ vectors, contrary to
-Corollary \ref{cor:dimension-Rn}.
+Corollary~\ref{cor:dimension-Rn}.
 
 Finally consider the third claim. If $\set{\vect{u}_{1},\cdots
 ,\vect{u}_{n}} $ is not linearly independent, then replace this
@@ -353,7 +353,7 @@ are the pivot columns of the matrix
 \end{equation*}
 Then $\set{\vect{u}_{i_{1}},\cdots ,\vect{u}_{i_{k}}} $ spans
 $\R^{n}$ and is linearly independent, so it is a basis having
-less than $n$ vectors again contrary to Corollary \ref{cor:dimension-Rn}.
+less than $n$ vectors again contrary to Corollary~\ref{cor:dimension-Rn}.
 \end{proof}
 
 The next theorem follows from the above claim.
@@ -363,7 +363,7 @@ Let $V$ be a subspace of $\R^n$. Then there exists a basis of $V$ with
  $\dim(V)\leq n$.
 \end{theorem}
 
-Consider Corollary \ref{cor:independent-spanning-Rn} together with Theorem \ref{thm:existence-basis}. Let $\dim(V) = r$. Suppose there exists an independent set of vectors in $V$. If this set contains $r$ vectors, then it is a basis for $V$. If it contains less than $r$ vectors, then vectors can be added to the set to create a basis of $V$. Similarly, any spanning set of $V$ which contains more than $r$ vectors can have vectors removed to create a basis of $V$.
+Consider Corollary~\ref{cor:independent-spanning-Rn} together with Theorem~\ref{thm:existence-basis}. Let $\dim(V) = r$. Suppose there exists an independent set of vectors in $V$. If this set contains $r$ vectors, then it is a basis for $V$. If it contains less than $r$ vectors, then vectors can be added to the set to create a basis of $V$. Similarly, any spanning set of $V$ which contains more than $r$ vectors can have vectors removed to create a basis of $V$.
 
 We illustrate this concept in the next example.
 
@@ -619,7 +619,7 @@ Therefore the pivot columns are
 and now this is an extension of the given basis for $W$ to a basis for $
 \R^{4}$.
 
-Why does this work? The columns of \ref{basis-eq1} obviously span $\R^{4}$. In fact the span of the first four is the same as the span of all
+Why does this work? The columns of {\eqref{basis-eq1}} obviously span $\R^{4}$. In fact the span of the first four is the same as the span of all
 six. 
 \end{solution}
 

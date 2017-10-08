@@ -14,7 +14,7 @@ We begin with a lemma.
 
 Recall that we can form the image of an $m \times n$-matrix $A$ by
 $\func{im}\tup{A} = \set{A\vect{x} : \vect{x} \in
-\R^n }$. Rephrasing Theorem \ref{thm:orth-proj} using
+\R^n }$. Rephrasing Theorem~\ref{thm:orth-proj} using
 the subspace $W=\func{im}\tup{A}$  gives the
 equivalence of an orthogonality condition with a minimization
 condition\index{orthogonality and minimization}. The following picture
@@ -70,8 +70,7 @@ This follows from the definitions:
 The next corollary gives the technique of least squares.
 
 \begin{corollary}{Least squares and normal equation}{normal-equation}
-A specific value of $\vect{x}$ which solves the problem of Theorem 
-\ref{thm:existenceminimizerhs} is obtained by solving the equation
+A specific value of $\vect{x}$ which solves the problem of Theorem~\ref{thm:existenceminimizerhs} is obtained by solving the equation
 \begin{equation*}
 A^TA\vect{x}=A^T\vect{y}
 \end{equation*}
@@ -79,9 +78,9 @@ Furthermore, there always exists a solution to this system of equations.
 \end{corollary}
 
 \begin{proof} 
-For $\vect{x}$ the minimizer of Theorem \ref{thm:existenceminimizerhs}, $\tup{
+For $\vect{x}$ the minimizer of Theorem~\ref{thm:existenceminimizerhs}, $\tup{
 \vect{y}-A\vect{x}} \dotprod A \vect{u} =0$ for all $\vect{u} \in \R^{n}$ and from
-Lemma \ref{lem:transpose-and-dot-prod}, this is the same as saying
+Lemma~\ref{lem:transpose-and-dot-prod}, this is the same as saying
 \begin{equation*}
 A^T\tup{\vect{y}-A\vect{x}} \dotprod \vect{u}=0
 \end{equation*}
@@ -90,7 +89,7 @@ for all $\vect{u} \in \R^{n}$. This implies
 A^T\vect{y}-A^TA\vect{x}=\vect{0}.
 \end{equation*}
 Therefore, there is a solution to the equation of this corollary, and it
-solves the minimization problem of Theorem \ref{thm:existenceminimizerhs}.
+solves the minimization problem of Theorem~\ref{thm:existenceminimizerhs}.
 \end{proof}
 
 Note that $\vect{x}$ might not be unique but $A\vect{x}$, the closest
@@ -269,7 +268,7 @@ y
 which is the same as the solution found above. 
 \end{solution}
 
-An important application of Corollary \ref{cor:normal-equation} is the
+An important application of Corollary~\ref{cor:normal-equation} is the
 problem of finding the least squares regression
 line\index{regression line} in statistics.  Suppose you are given points in the $xy$ plane
 \begin{equation*}
@@ -305,8 +304,8 @@ y_{1} \\
 y_{n}
 \end{mymatrix} \right} ^{2}
 \end{equation*}
-as small as possible. According to Theorem \ref{thm:existenceminimizerhs} and
-Corollary \ref{cor:normal-equation}, the best values for $m$ and $b$ occur as the
+as small as possible. According to Theorem~\ref{thm:existenceminimizerhs} and
+Corollary~\ref{cor:normal-equation}, the best values for $m$ and $b$ occur as the
 solution to 
 \begin{equation*}
 A^{T}A\begin{mymatrix}{c}
