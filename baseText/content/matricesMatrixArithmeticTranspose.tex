@@ -1,161 +1,147 @@
 \section{The transpose}
 
 Another important operation on matrices is that of taking the
-\textbf{transpose}. For a matrix $A$, we denote the \textbf{transpose}
-of $A$ by $A^T$. Before formally defining the transpose, we explore
-this operation on the following matrix.
-\begin{equation*}
-  \begin{mymatrix}{cc}
-    1 & 4 \\
-    3 & 1 \\
-    2 & 6
-  \end{mymatrix} ^{T}=\allowbreak \begin{mymatrix}{ccc}
-    1 & 3 & 2 \\
-    4 & 1 & 6
-  \end{mymatrix}
-\end{equation*}
-
-What happened? The first column became the first row and the second
-column became the second row. Thus the $3\times 2$-matrix became a
-$2\times 3$-matrix. The number $4$ was in the first row and the second
-column and it ended up in the second row and first column.
-
-The definition of the transpose is as follows.
+\textbf{transpose}. The transpose of a matrix is obtained by turning
+the rows into columns and vice versa.
 
 \begin{definition}{The transpose of a matrix}{matrix-transpose}
-  Let $A$ be an $m\times n$-matrix. Then $A^{T}$, the
-  \textbf{transpose}\index{matrix!transpose}\index{transpose} of $A$,
-  denotes the $n\times m$-matrix given by
+  Let $A$ be an $m\times n$-matrix.  Then the \textbf{transpose}%
+  \index{matrix!transpose}\index{transpose of a matrix} of $A$,
+  denoted $A^T$, is the $n\times m$-matrix whose $(i,j)$-entry is the
+  $(j,i)$-entry of $A$.
   \begin{equation*}
-    A^{T} = \mat{a _{ij}} ^{T}= \mat{a_{ji} }
+    A = \begin{mymatrix}{ccc}
+      a_{11} & \cdots & a_{1n} \\
+      a_{21} & \cdots & a_{2n} \\
+      \vdots & \ddots & \vdots \\
+      a_{m1} & \cdots & a_{mn} \\
+    \end{mymatrix},
+    \quad
+    A^T = \begin{mymatrix}{cccc}
+      a_{11} & a_{21} & \cdots & a_{m1} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      a_{1n} & a_{2n} & \cdots & a_{mn} \\
+    \end{mymatrix}.
   \end{equation*}
 \end{definition}
 
-The $\tup{i, j }$-entry of $A$ becomes the $\tup{j,i }$-entry of
-$A^T$.
-
-Consider the following example.
-
 \begin{example}{The transpose of a matrix}{transpose-matrix}
-  Calculate $A^T$ for the following matrix
+  Find the transpose of the following matrix:
   \begin{equation*}
     A = \begin{mymatrix}{rrr}
-      1 & 2 & -6 \\
+      1 & 2 & 6 \\
       3 & 5 & 4
-    \end{mymatrix}
+    \end{mymatrix}.
   \end{equation*}
 \end{example}
 
 \begin{solution}
-  By Definition~\ref{def:matrix-transpose}, we know that for
-  $A = \mat{a_{ij} }$, $A^T = \mat{a_{ji} }$. In other words, we
-  switch the row and column location of each entry. The
-  $\tup{1, 2 }$-entry becomes the $\tup{2,1 }$-entry.
-
-  Thus, 
+  The transpose is
   \begin{equation*}
-    A^T = 
+    A^T =
     \begin{mymatrix}{rr}
       1 & 3 \\
       2 & 5 \\
-      -6 & 4
-    \end{mymatrix} 
+      6 & 4
+    \end{mymatrix}.
   \end{equation*}
-
-  Notice that $A$ is a $2 \times 3$-matrix, while $A^T$ is a
-  $3 \times 2$-matrix.
+  Notice that $A$ is a $2\times 3$-matrix, while $A^T$ is a
+  $3\times 2$-matrix.
 \end{solution}
 
-The transpose of a matrix has the following important
-properties\index{matrix!properties of transpose}.
+We have already used a special case of the transpose since
+Chapter~\ref{cha:vectors-rn}, when we wrote
+$\begin{mymatrix}{rrr}1&2&3\end{mymatrix}^T$ as a space-saving
+notation for the column vector
+\begin{equation*}
+  \begin{mymatrix}{c}
+    1\\
+    2\\
+    3\\
+  \end{mymatrix}.
+\end{equation*}
 
-\begin{lemma}{Properties of the transpose of a matrix}{transpose-properties}
-  Let $A$ be an $m\times n$-matrix, $B$ an $n\times p$-matrix, and $r$
-  and $s$ scalars. Then
+The transpose of a matrix satisfies the following
+properties%
+\index{transpose of a matrix!properties}%
+\index{matrix!transpose!properties}%
+\index{matrix!properties of transpose}:
+
+\begin{lemma}{Properties of the transpose}{transpose-properties}
+  Let $A$ and $B$ be matrices of appropriate sizes, and $r$ a
+  scalar. Then the following hold.
   \begin{enumerate}
-  \item
-    $\tup{A^{T}}^{T} = A$
-  \item
-    $\tup{AB} ^{T}=B^{T}A^{T} $ \label{matrix-transpose1}
-  \item
-    $\tup{rA+ sB} ^{T}=rA^{T}+ sB^{T}$  \label{matrix-transpose2}
+  \item $(A^{T})^{T} = A$.
+  \item $(A+B)^{T}=A^{T}+B^{T}$.\label{matrix-transpose2}
+  \item $(rA)^{T}=rA^{T}$.\label{matrix-transpose2}
+  \item $(AB)^{T}=B^{T}A^{T}$.\label{matrix-transpose1}
+  \item $0^{T} = 0$.
+  \item $I^{T} = I$.
+  \item $(A^{-1})^{T} = (A^{T})^{-1}$, if $A$ is invertible.
   \end{enumerate}
 \end{lemma}
 
-\begin{proof}
-  First we prove \eqref{matrix-transpose1}. From Definition~\ref{def:matrix-transpose},
-  \begin{equation*}
-    \tup{AB}^{T} = \mat{(AB) _{ij} } ^{T}=\mat{(AB)_{ji} }=\sum_{k}a_{jk}b_{ki}= \sum_{k}b_{ki}a_{jk} 
-  \end{equation*}
-  \begin{equation*}
-    = \sum_{k}\mat{b_{ik}}^{T}\mat{
-      a_{kj}}^{T}=\mat{b_{ij}} ^{T} \mat{a_{ij}}^{T} = B^{T}A^{T} 
-  \end{equation*}
-  The proof of \eqref{matrix-transpose2} is left as an exercise.
-\end{proof}
+Recall that a column vector is the same thing as a $n\times
+1$-matrix. Using the transpose, we can make precise the connection
+between the dot product and the matrix product%
+\index{dot product!from matrix product}%
+\index{vector!dot product!from matrix product}. Namely, let
+\begin{equation*}
+  \vect{v}=\begin{mymatrix}{c}v_1\\\vdots\\v_n\end{mymatrix}
+  \quad\mbox{and}\quad
+  \vect{w}=\begin{mymatrix}{c}w_1\\\vdots\\w_n\end{mymatrix}
+\end{equation*}
+by column vectors. Then
+\begin{equation*}
+  \vect{v}\dotprod\vect{w}
+  ~=~
+  v_1w_1 + \ldots + v_nw_n
+  ~=~
+  \begin{mymatrix}{ccc}v_1&\cdots&v_n\end{mymatrix}
+  \begin{mymatrix}{c}w_1\\\vdots\\w_n\end{mymatrix}
+  ~=~
+  \vect{v}^{T}\vect{w}.
+\end{equation*}
+In other words, the dot product of column vectors $\vect{v}$ and
+$\vect{w}$ is the same thing as the matrix product
+$\vect{v}^{T}\vect{w}$.
 
-The transpose of a matrix is related to other important
-topics. Consider the following definition.
+We can also use the notion of transpose to define what it means for a
+matrix to be \textbf{symmetric} and \textbf{antisymmetric}.
 
-\begin{definition}{Symmetric and skew symmetric
-    matrices}{symmetric-and-skew-symmetric}
-  An $n\times n$-matrix $A$ is said to be
-  \textbf{symmetric}\index{matrix!symmetric} if $A=A^{T}$. It is said
-  to be \textbf{skew symmetric}\index{matrix!skew symmetric} if
-  $A=-A^{T}$.
+\begin{definition}{Symmetric and antisymmetric matrices}{symmetric-and-antisymmetric}
+  An $n\times n$-matrix $A$ is said to be \textbf{symmetric}%
+  \index{matrix!symmetric}\index{symmetric matrix} if $A^{T}=A$. It is
+  said to be \textbf{antisymmetric}%
+  \index{matrix!antisymmetric}\index{antisymmetric matrix} (sometimes
+  also called \textbf{skew symmetric}%
+  \index{matrix!skew symmetric}\index{skew symmetric matrix}) if
+  $A^{T}=-A$.
 \end{definition}
 
-We will explore these definitions in the following examples.
-
-\begin{example}{Symmetric matrices}{symmetric-matrix}
+\begin{example}{Symmetric and antisymmetric matrices}{symmetric-matrix}
   Let
   \begin{equation*}
     A=\begin{mymatrix}{rrr}
       2 & 1 & 3 \\
       1 & 5 & -3 \\
       3 & -3 & 7
-    \end{mymatrix} 
-  \end{equation*}
-  Use Definition~\ref{def:symmetric-and-skew-symmetric} to show that
-  $A$ is symmetric.
-\end{example}
-
-\begin{solution}
-  By Definition~\ref{def:symmetric-and-skew-symmetric}, we need to
-  show that $A = A^T$.  Now, using Definition~\ref{def:matrix-transpose},
-  \begin{equation*}
-    A^{T} = \begin{mymatrix}{rrr}
-      2 & 1 & 3 \\
-      1 & 5 & -3 \\
-      3 & -3 & 7
-    \end{mymatrix}
-  \end{equation*}
-  Hence, $A = A^{T}$, so $A$ is symmetric.
-\end{solution}
-
-\begin{example}{A skew symmetric matrix}{skew-symmetric-matrix}
-  Let
-  \begin{equation*}
-    A=\begin{mymatrix}{rrr}
+    \end{mymatrix},
+    \quad
+    B=\begin{mymatrix}{rrr}
       0 & 1 & 3 \\
       -1 & 0 & 2 \\
       -3 & -2 & 0
-    \end{mymatrix} 
+    \end{mymatrix},
+    \quad\mbox{and}\quad
+    C=\begin{mymatrix}{rrr}
+      0 & 1 &  3 \\
+      1 & 5 & -3 \\
+      1 & 3 &  0
+    \end{mymatrix}.
   \end{equation*}
-  Show that $A$ is skew symmetric.
+  Then $A$ is symmetric because $A^{T}=A$, $B$ is antisymmetric
+  because $B^{T}=-B$, and $C$ is neither symmetric nor antisymmetric
+  because $C^{T}$ is equal to neither $C$ nor $-C$.
 \end{example}
 
-\begin{solution} By Definition~\ref{def:symmetric-and-skew-symmetric}, 
-  \begin{equation*}
-    A^{T} = \begin{mymatrix}{rrr}
-      0 & -1 & -3\\
-      1 &  0 & -2\\
-      3 &  2 &  0
-    \end{mymatrix} 
-  \end{equation*}
-
-  You can see that each entry of $A^T$ is equal to $-1$ times the same
-  entry of $A$.  Hence, $A^{T} = - A$ and so by
-  Definition~\ref{def:symmetric-and-skew-symmetric}, $A$ is skew
-  symmetric.
-\end{solution}
