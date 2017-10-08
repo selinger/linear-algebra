@@ -6,9 +6,9 @@ An orthogonal matrix $U$, from Definition~\ref{def:Ortho-Matrix}, is one in whic
 
 We now recall another important definition. 
 
-\begin{definition}{Symmetric and skew symmetric matrices}{symmetric-skew-matrices}
+\begin{definition}{Symmetric and antisymmetric matrices}{symmetric-antisymmetric-matrices}
 A real $n\times n$-matrix $A$, is \textbf{symmetric }if $A^{T}=A$. If $%
-A=-A^{T}$, then $A$ is called \textbf{skew symmetric. }
+A=-A^{T}$, then $A$ is called \textbf{antisymmetric. }
 \index{symmetric matrix}
 \end{definition}
 
@@ -68,14 +68,14 @@ since $\lambda -\mu \neq 0$, it must be that $\vect{x}\dotprod \vect{y}=0$. Ther
 
 The following theorem is proved in a similar manner.
 
-\begin{theorem}{Eigenvalues of skew symmetric matrix}{skew-symmetric-eigen}
-The eigenvalues of a real skew symmetric matrix are either equal to $0$ or are pure imaginary numbers.
+\begin{theorem}{Eigenvalues of antisymmetric matrix}{antisymmetric-eigen}
+The eigenvalues of a real antisymmetric matrix are either equal to $0$ or are pure imaginary numbers.
 \end{theorem}
 
 \begin{proof}
-First, note that if $A=0$ is the zero matrix, then $A$ is skew symmetric and has eigenvalues equal to $0$. 
+First, note that if $A=0$ is the zero matrix, then $A$ is antisymmetric and has eigenvalues equal to $0$. 
 
-Suppose $A=-A^{T}$ so $A$ is skew symmetric and $A\vect{x}=\lambda 
+Suppose $A=-A^{T}$ so $A$ is antisymmetric and $A\vect{x}=\lambda 
 \vect{x}$. Then 
 \begin{equation*}
 \overline{\lambda \vect{x}}^{T}\vect{x}=\tup{\overline{A
@@ -90,7 +90,7 @@ a-ib=-a-ib$ and so $a=0$. Thus $\lambda $ is pure imaginary.
 
 Consider the following example. 
 
-\begin{example}{Eigenvalues of a skew symmetric matrix}{skew-symm-eigenvalues}
+\begin{example}{Eigenvalues of an antisymmetric matrix}{antisymmetric-eigenvalues}
 Let $A=\begin{mymatrix}{rr}
 0 & -1 \\
 1 & 0
@@ -98,7 +98,7 @@ Let $A=\begin{mymatrix}{rr}
 \end{example}
 
 \begin{solution}
-First notice that $A$ is skew symmetric. By Theorem~\ref{thm:skew-symmetric-eigen}, the eigenvalues will either equal $0$ or be pure imaginary.  The eigenvalues of $A$ are obtained by solving the usual equation 
+First notice that $A$ is antisymmetric. By Theorem~\ref{thm:antisymmetric-eigen}, the eigenvalues will either equal $0$ or be pure imaginary.  The eigenvalues of $A$ are obtained by solving the usual equation 
 \[
 \det (\eigenVar I - A ) = 
 \det \begin{mymatrix}{rr}
