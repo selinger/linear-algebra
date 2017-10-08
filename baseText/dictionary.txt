@@ -65,7 +65,6 @@ eigen
 eigenspace
 eigenvector
 eigenvectors
-elem
 endpoints
 enuitem
 eq
