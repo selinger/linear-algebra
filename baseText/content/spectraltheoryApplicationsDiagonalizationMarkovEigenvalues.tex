@@ -4,7 +4,7 @@ The following is an important proposition.
 
 \begin{proposition}{Eigenvalues of a migration matrix}{eigenvalue-migration-matrix}
 Let $A=\mat{a_{ij}} $ be a migration matrix. Then $1$ is always an
-eigenvalue for $A.$
+eigenvalue for $A$.
 \end{proposition}
 
 \begin{proof} Remember that the determinant of a matrix always equals that of its transpose. 
@@ -13,13 +13,13 @@ Therefore,
 \det \tup{\eigenVar I - A} =\det \tup{\tup{\eigenVar I - A}
 ^{T}} =\det \tup{\eigenVar I - A^T}
 \end{equation*}
-because $I^{T}=I.$ Thus the characteristic equation for $A$ is the same as
+because $I^{T}=I$. Thus the characteristic equation for $A$ is the same as
 the characteristic equation for $A^{T}$. Consequently, $A$ and $A^{T}$ have the same
 eigenvalues. We will show that $1$ is an eigenvalue for $A^{T}$ and then it
 will follow that $1$ is an eigenvalue for $A$.
 
-Remember that for a migration matrix, $\sum_{i}a_{ij}=1.$ Therefore, if 
-$A^{T}=\mat{b_{ij}} $ with $b_{ij}=a_{ji},$ it follows that
+Remember that for a migration matrix, $\sum_{i}a_{ij}=1$. Therefore, if 
+$A^{T}=\mat{b_{ij}} $ with $b_{ij}=a_{ji}$, it follows that
 \begin{equation*}
 \sum_{j}b_{ij}=\sum_{j}a_{ji}=1
 \end{equation*}
@@ -45,7 +45,7 @@ Notice that this shows that $\begin{mymatrix}{r}
 1 \\
 \vdots \\
 1
-\end{mymatrix} $ is an eigenvector for $A^{T}$ corresponding to the eigenvalue, $\lambda =1.$
+\end{mymatrix} $ is an eigenvector for $A^{T}$ corresponding to the eigenvalue, $\lambda =1$.
  As explained above, this shows that $\lambda =1$ is an
 eigenvalue for $A$ because $A$ and $A^{T}$ have the same eigenvalues. 
 \end{proof}

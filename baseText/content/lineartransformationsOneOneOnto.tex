@@ -13,7 +13,7 @@ $\func{Im}\tup{T} $ to denote these vectors.
 
 \begin{lemma}{Range of a matrix transformation}{Ax}
 
-Let $A$ be an $m\times n$ matrix where $A_{1},\cdots , A_{n}$ denote the columns of
+Let $A$ be an $m\times n$-matrix where $A_{1},\cdots , A_{n}$ denote the columns of
 $A$\index{range of matrix transformation}. Then, for a vector $\vect{x}=\begin{mymatrix}{c}
 x_{1} \\
 \vdots \\
@@ -41,7 +41,7 @@ Suppose $\vect{x}_1$ and $\vect{x}_2$ are vectors in $\R^n$. A linear transforma
 T\tup{\vect{x}_1 } \neq T \tup{\vect{x}_2}
 \end{equation*}
 
-Equivalently, if $T\tup{\vect{x}_1 } =T\tup{\vect{x}_2} ,$
+Equivalently, if $T\tup{\vect{x}_1 } =T\tup{\vect{x}_2}$,
 then $\vect{x}_1 = \vect{x}_2$. Thus,  $T$ is one to one if it never takes two different
 vectors to the same vector.
 \end{definition}
@@ -67,7 +67,7 @@ We need to prove two things here. First, we will prove that if $T$ is one to one
 $T(\vect{x}) = \vect{0}$ implies that $\vect{x}=\vect{0}$. Second, we will show that if $T(\vect{x})=\vect{0}$ implies that $\vect{x}=\vect{0}$, then 
 it follows that $T$ is one to one. Recall that a linear transformation has the property that $T(\vect{0}) = \vect{0}$. 
 
-%%Note that since $T$ is linear, it is induced by an $m \times n$ matrix $A$. Therefore we can rewrite the statement ``$T_A(\vect{x}) = \vect{0}$ implies $\vect{x}=\vect{0}$'' in terms of the matrix $A$ as ``$A\vect{x}=\vect{0}$ implies $\vect{x}=\vect{0}$''. Therefore we can prove this theorem using $A$. 
+%%Note that since $T$ is linear, it is induced by an $m \times n$-matrix $A$. Therefore we can rewrite the statement ``$T_A(\vect{x}) = \vect{0}$ implies $\vect{x}=\vect{0}$'' in terms of the matrix $A$ as ``$A\vect{x}=\vect{0}$ implies $\vect{x}=\vect{0}$''. Therefore we can prove this theorem using $A$. 
 %%
 %%Observe that $A\vect{0}=A\tup{\vect{0}+\vect{0} } =A\vect{0} +A\vect{0}$ and so $A\vect{0}=\vect{0}$.
 %% 
@@ -87,7 +87,7 @@ and so, adding the additive inverse of $T(\vect{0})$ to both sides, one sees
 that $T(\vect{0})=\vect{0}$. If $T(\vect{x})=\vect{0}$ it must be the
 case that $\vect{x}=\vect{0}$ because it was just shown that $T(\vect{0})=\vect{0}$ and $T$ is assumed to be one to one. 
 
-Now assume that if $T(\vect{x})=\vect{0},$ then it follows that $\vect{x}=\vect{0}.$ If $T(\vect{v})=T(\vect{u}),$ then 
+Now assume that if $T(\vect{x})=\vect{0}$, then it follows that $\vect{x}=\vect{0}$. If $T(\vect{v})=T(\vect{u})$, then 
 \[
 T(\vect{v})-T(\vect{u})=T\tup{\vect{v}-\vect{u}} =\vect{0}
 \]
@@ -127,7 +127,7 @@ multiplication, we know that $T$ is a linear transformation.  We will
 start by looking at onto.  So suppose $\begin{mymatrix}{c}
 a \\
 b
-\end{mymatrix} \in \R^{2}.$ Does there exist $\begin{mymatrix}{c}
+\end{mymatrix} \in \R^{2}$. Does there exist $\begin{mymatrix}{c}
 x \\
 y
 \end{mymatrix}  \in \R^2 $ such that $T\begin{mymatrix}{c}
@@ -136,10 +136,10 @@ y
 \end{mymatrix} =\begin{mymatrix}{c}
 a \\
 b
-\end{mymatrix} ?$ If so, then since $\begin{mymatrix}{c}
+\end{mymatrix}$? If so, then since $\begin{mymatrix}{c}
 a \\
 b
-\end{mymatrix} $ is an arbitrary vector in $\R^{2},$ it will follow that $T$
+\end{mymatrix} $ is an arbitrary vector in $\R^{2}$, it will follow that $T$
 is onto. 
 
 This question is familiar to you. It is asking whether
@@ -276,7 +276,7 @@ y
 \end{mymatrix} =\begin{mymatrix}{c}
 a \\
 b
-\end{mymatrix} $. Hence by Definition \ref{def:one-to-one}, $T$ is one to one.
+\end{mymatrix}$. Hence by Definition \ref{def:one-to-one}, $T$ is one to one.
 \end{solution}
 
 \begin{example}{An onto transformation}{onto-transformation}
@@ -355,7 +355,7 @@ There exists a non-zero vector $\vect{x}$ in $\R^4$ such that $T(\vect{x}) = \ve
 The above examples demonstrate a method to determine if a linear transformation $T$ is one to one or onto. It turns out that the matrix $A$ of $T$ can provide this information.
 
 \begin{theorem}{Matrix of a one to one or onto transformation}{matrix-one-to-one-onto}
-Let $T: \R^n \mapsto \R^m$ be a linear transformation induced by the $m \times n$ matrix $A$. Then $T$ is one to one if and only if the rank of $A$ is $n$. $T$ is onto if and only if the rank of $A$ is $m$. 
+Let $T: \R^n \mapsto \R^m$ be a linear transformation induced by the $m \times n$-matrix $A$. Then $T$ is one to one if and only if the rank of $A$ is $n$. $T$ is onto if and only if the rank of $A$ is $m$. 
 \end{theorem}
 
 Consider Example \ref{exa:onto-transformation}. Above we showed that $T$ was onto but not one to one. We can now use this theorem to determine this fact about $T$. 
@@ -384,7 +384,7 @@ Prove that $T$ is onto but not one to one.
 \end{example}
 
 \begin{solution}
-Using Theorem \ref{thm:matrix-one-to-one-onto} we can show that $T$ is onto but not one to one from the matrix of $T$. Recall that to find the matrix $A$ of $T$, we apply $T$ to each of the standard basis vectors $\vect{e}_i$ of $\R^4$. The result is the $2 \times 4$ matrix A given by 
+Using Theorem \ref{thm:matrix-one-to-one-onto} we can show that $T$ is onto but not one to one from the matrix of $T$. Recall that to find the matrix $A$ of $T$, we apply $T$ to each of the standard basis vectors $\vect{e}_i$ of $\R^4$. The result is the $2 \times 4$-matrix A given by 
 \[
 A = \begin{mymatrix}{rrrr}
 1 & 0 & 0 & 1 \\

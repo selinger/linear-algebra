@@ -22,7 +22,6 @@ chem
 cholesky
 circuitikz
 cm
-coeff
 cof
 cofactor
 cofactors
@@ -66,7 +65,6 @@ eigen
 eigenspace
 eigenvector
 eigenvectors
-elem
 endpoints
 enuitem
 eq

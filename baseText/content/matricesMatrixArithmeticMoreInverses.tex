@@ -2,9 +2,9 @@
 
 In this section, we will prove three theorems which will clarify the concept of matrix inverses. In order to do this, first recall some important properties of elementary matrices. 
 
-Recall that an elementary matrix is a square matrix obtained by performing an elementary operation on an identity matrix. Each elementary matrix is invertible, and its inverse is also an elementary matrix. If $E$ is an $m \times m$ elementary matrix and $A$ is an $m \times n$ matrix, then the product $EA$ is the result of applying to $A$ the same elementary row operation that was applied to the $m \times m$ identity matrix in order to obtain $E$.
+Recall that an elementary matrix is a square matrix obtained by performing an elementary operation on an identity matrix. Each elementary matrix is invertible, and its inverse is also an elementary matrix. If $E$ is an $m \times m$ elementary matrix and $A$ is an $m \times n$-matrix, then the product $EA$ is the result of applying to $A$ the same elementary row operation that was applied to the $m \times m$ identity matrix in order to obtain $E$.
 
-Let $R$ be the {\rref} of an $m \times n$ matrix $A$. $R$ is obtained by iteratively applying a sequence of elementary row operations to $A$. Denote by $E_1, E_2, \cdots, E_k$ the elementary matrices associated with the elementary row operations which were applied, in order, to the matrix $A$ to obtain the resulting $R$. We then have that $R = \tup{E_k \cdots \tup{E_2 \tup{E_1A } }} = E_k \cdots E_2E_1A$. Let $E$ denote the product matrix $E_k \cdots E_2E_1$ so that we can write $R=EA$ where $E$ is an invertible matrix whose inverse is the product $(E_1)^{-1}(E_2)^{-1} \cdots (E_k)^{-1}$.
+Let $R$ be the {\rref} of an $m \times n$-matrix $A$. $R$ is obtained by iteratively applying a sequence of elementary row operations to $A$. Denote by $E_1, E_2, \cdots, E_k$ the elementary matrices associated with the elementary row operations which were applied, in order, to the matrix $A$ to obtain the resulting $R$. We then have that $R = \tup{E_k \cdots \tup{E_2 \tup{E_1A } }} = E_k \cdots E_2E_1A$. Let $E$ denote the product matrix $E_k \cdots E_2E_1$ so that we can write $R=EA$ where $E$ is an invertible matrix whose inverse is the product $(E_1)^{-1}(E_2)^{-1} \cdots (E_k)^{-1}$.
 
 Now, we will consider some preliminary lemmas. 
 
@@ -47,7 +47,7 @@ Only square matrices can be invertible.
 \end{theorem}
 
 \begin{proof}
-Suppose that $A$ and $B$ are matrices such that both products $AB$ and $BA$ are identity matrices. We will show that $A$ and $B$ must be square matrices of the same size. Let the matrix $A$ have $m$ rows and $n$ columns, so that $A$ is an $m \times n$ matrix. Since the product $AB$ exists, $B$ must have $n$ rows, and since the product $BA$ exists, $B$ must have $m$ columns so that $B$ is an $n \times m$ matrix. To finish the proof, we need only verify that $m=n$. 
+Suppose that $A$ and $B$ are matrices such that both products $AB$ and $BA$ are identity matrices. We will show that $A$ and $B$ must be square matrices of the same size. Let the matrix $A$ have $m$ rows and $n$ columns, so that $A$ is an $m \times n$-matrix. Since the product $AB$ exists, $B$ must have $n$ rows, and since the product $BA$ exists, $B$ must have $m$ columns so that $B$ is an $n \times m$-matrix. To finish the proof, we need only verify that $m=n$. 
 
 We first apply Lemma \ref{lem:size-invertible} with $A$ and $B$, to obtain the inequality $m \leq n$. We then apply Lemma \ref{lem:size-invertible} again (switching the order of the matrices), to obtain the inequality $n \leq m$. It follows that $m=n$, as we wanted.
 \end{proof}
@@ -158,6 +158,6 @@ If $A$ is invertible, there is some matrix $B$ such that $AB = I$. By Lemma \ref
 Now suppose the {\rref} of $A$ is an identity matrix $I$. Then $I=EA$ for some product $E$ of elementary matrices. By Theorem \ref{thm:unique-inverse-of-matrix}, we can conclude that $A$ is invertible.
 \end{proof}
 
-Theorem \ref{thm:invertible-rref} corresponds to Algorithm \ref{algo:matrix-inversion-algorithm}, which claims that $A^{-1}$ is found by row reducing the augmented matrix $\mat{A|I}$ to the form $\mat{I|A^{-1}}$. This will be a matrix product $E\mat{A|I}$ where $E$ is a product of elementary matrices. By the rules of matrix multiplication, we have that $E\mat{A|I} = \mat{EA|EI} = \mat{EA|E}$.
+Theorem \ref{thm:invertible-rref} corresponds to Algorithm \ref{algo:matrix-inversion-algorithm}, which claims that $A^{-1}$ is found by row reducing the augmented matrix $\mat{A\mid I}$ to the form $\mat{I\mid A^{-1}}$. This will be a matrix product $E\mat{A\mid I}$ where $E$ is a product of elementary matrices. By the rules of matrix multiplication, we have that $E\mat{A\mid I} = \mat{EA\mid EI} = \mat{EA\mid E}$.
 
-It follows that the {\rref} of $\mat{A|I}$ is $\mat{EA|E}$, where $EA$ gives the {\rref} of $A$. By Theorem \ref{thm:invertible-rref}, if $EA \neq I$, then $A$ is not invertible, and if $EA=I$, $A$ is invertible. If $EA=I$, then by Theorem \ref{thm:unique-inverse-of-matrix}, $E=A^{-1}$. This proves that Algorithm \ref{algo:matrix-inversion-algorithm} does in fact find $A^{-1}$.
+It follows that the {\rref} of $\mat{A\mid I}$ is $\mat{EA\mid E}$, where $EA$ gives the {\rref} of $A$. By Theorem \ref{thm:invertible-rref}, if $EA \neq I$, then $A$ is not invertible, and if $EA=I$, $A$ is invertible. If $EA=I$, then by Theorem \ref{thm:unique-inverse-of-matrix}, $E=A^{-1}$. This proves that Algorithm \ref{algo:matrix-inversion-algorithm} does in fact find $A^{-1}$.

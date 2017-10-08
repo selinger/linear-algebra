@@ -22,9 +22,9 @@ greatly assist in finding determinants. This section will use the theorems as mo
 The first theorem explains the affect on the determinant of a matrix when two rows are switched. 
 
 \begin{theorem}{Switching rows}{switching-rows}
-Let $A$ be an $n\times n$ matrix and let $B$ be a matrix
-which results from switching two rows of $A.$ Then $\det \tup{B}
-= - \det \tup{A} .$ 
+Let $A$ be an $n\times n$-matrix and let $B$ be a matrix
+which results from switching two rows of $A$. Then $\det \tup{B}
+= - \det \tup{A}$. 
 \end{theorem}
 
 When we switch two rows of a matrix, the determinant is multiplied by $-1$. Consider the following example.
@@ -36,8 +36,8 @@ Let $A=\begin{mymatrix}{rr}
 \end{mymatrix} $ and let $B=\begin{mymatrix}{rr}
 3 & 4 \\
 1 & 2
-\end{mymatrix} $. 
-Knowing that $\det \tup{A } =-2$, find $\det \tup{B } $.
+\end{mymatrix}$. 
+Knowing that $\det \tup{A } =-2$, find $\det \tup{B}$.
 \end{example}
 
 \begin{solution}
@@ -53,9 +53,9 @@ The next theorem demonstrates the effect on the determinant of a matrix when we 
 a row by a scalar.
 
 \begin{theorem}{Multiplying a row by a scalar}{multiplying-row-by-scalar}
-Let $A$ be an $n\times n$ matrix and let $B$ be a matrix
+Let $A$ be an $n\times n$-matrix and let $B$ be a matrix
 which results from multiplying some row of $A$ by a scalar $k$. Then $\det
-\tup{B} = k \det \tup{A} $.
+\tup{B} = k \det \tup{A}$.
 \end{theorem}
 
 Notice that this theorem is true when we multiply {\em one\em} row of the matrix by $k$.
@@ -65,7 +65,7 @@ Suppose we were to multiply all $n$ rows of $A$ by $k$ to obtain the matrix $B$,
 $B = kA$. Then, $\det \tup{B} = k^n \det \tup{A}$. This gives the next theorem.
 
 \begin{theorem}{Scalar multiplication}{scalar-mult-det}
-Let $A$ and $B$ be $n \times n$ matrices and $k$ a scalar, such that $B = kA$. Then $\det(B) = k^n \det(A)$.
+Let $A$ and $B$ be $n \times n$-matrices and $k$ a scalar, such that $B = kA$. Then $\det(B) = k^n \det(A)$.
 \end{theorem}
 
 Consider the following example.
@@ -77,19 +77,19 @@ Let $A=\begin{mymatrix}{rr}
 \end{mymatrix} ,\ B=\begin{mymatrix}{rr}
 5 & 10 \\
 3 & 4
-\end{mymatrix} .$ 
-Knowing that $\det \tup{A } =-2$, find  $\det \tup{B } $.
+\end{mymatrix}$. 
+Knowing that $\det \tup{A } =-2$, find  $\det \tup{B}$.
 \end{example}
 
 \begin{solution} 
-By Definition \ref{def:two-by-two-determinant}, $\det \tup{A} =-2.$ We can also compute
+By Definition \ref{def:two-by-two-determinant}, $\det \tup{A} =-2$. We can also compute
 $\det \tup{B}$ using Definition \ref{def:two-by-two-determinant}, and we see that $\det \tup{B} = -10$. 
 
 Now, let's compute  $\det \tup{B}$ using Theorem \ref{thm:multiplying-row-by-scalar} and see if we
 obtain the same answer. Notice that the first row of $B$ is $5$ times the first row of $A$, while the
 second row of $B$ is equal to the second row of $A$. 
 By Theorem \ref{thm:multiplying-row-by-scalar}, 
-$\det  \tup{B } = 5 \times \det \tup{A } = 5 \times -2 = -10.$
+$\det  \tup{B} = 5 \times \det \tup{A } = 5 \times -2 = -10$.
 
 You can see that this matches our answer above.
 \end{solution}
@@ -98,10 +98,10 @@ Finally, consider the next theorem for the last row operation, that of adding a 
 to another row. 
 
 \begin{theorem}{Adding a multiple of a row to another row}{adding-multiple-of-row}
-Let $A$ be an $n\times n$ matrix and let $B$ be a matrix
+Let $A$ be an $n\times n$-matrix and let $B$ be a matrix
 which results from adding a multiple of a row to another row.
  Then $\det \tup{A} =\det
-\tup{B } $.
+\tup{B}$.
 \end{theorem}
 
 Therefore, when we add a multiple of a row to another row, the determinant of the matrix is unchanged. 
@@ -119,7 +119,7 @@ Let $A=\begin{mymatrix}{rr}
 \end{mymatrix} $ and let $B=\begin{mymatrix}{rr}
 1 & 2 \\
 5 & 8
-\end{mymatrix} .$ 
+\end{mymatrix}$. 
 Find $\det \tup{B}$.
 \end{example}
 
@@ -159,7 +159,7 @@ There are several other major properties of determinants which do not involve
 row (or column) operations. The first is the determinant of a product of matrices. 
 
 \begin{theorem}{Determinant of a product}{determinant-of-product}
-Let $A$ and $B$ be two $n\times n$ matrices. Then\index{determinant!product}
+Let $A$ and $B$ be two $n\times n$-matrices. Then\index{determinant!product}
 \begin{equation*}
 \det \tup{AB} =\det \tup{A} \det \tup{B}
 \end{equation*}
@@ -268,7 +268,7 @@ Hence, $\det \tup{A} = \det \tup{A^T}$.
 The following provides an essential property of the determinant, as well as a useful way to determine if a matrix is invertible.
 
 \begin{theorem}{Determinant of the inverse}{det-inverse}
-Let $A$ be an $n \times n$ matrix. Then $A$ is invertible if and only if $\det(A) \neq 0$. If this is true, it follows that 
+Let $A$ be an $n \times n$-matrix. Then $A$ is invertible if and only if $\det(A) \neq 0$. If this is true, it follows that 
 \[
 \det(A^{-1}) = \frac{1}{\det(A)}
 \]
@@ -295,7 +295,7 @@ By Theorem \ref{thm:det-inverse} $A$ is not invertible.
 
 Now consider the matrix $B$. Again by Definition \ref{def:two-by-two-determinant} we have 
 \[
-\det \tup{B } = 2 \times 1 - 5 \times 3 = 2 - 15 = -13
+\det \tup{B} = 2 \times 1 - 5 \times 3 = 2 - 15 = -13
 \]
 By Theorem \ref{thm:det-inverse} $B$ is invertible and the determinant of the inverse is given by 
 \begin{eqnarray*}

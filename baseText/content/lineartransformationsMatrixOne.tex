@@ -12,7 +12,7 @@
 In the above examples, the action of the linear transformations was to multiply by a matrix. 
 It turns out that this is always the case for linear transformations.
 If $T$ is \textbf{any} linear transformation which maps $\R^{n}$ to 
-$\R^{m},$ there is \textbf{always} an $m\times n$ matrix $A$ with the
+$\R^{m}$, there is \textbf{always} an $m\times n$-matrix $A$ with the
 property that
 \begin{equation}
 T\tup{\vect{x}} = A\vect{x} \label{matrix-of-transf}
@@ -74,7 +74,7 @@ x_{n}
 \end{mymatrix}
 \end{eqnarray*}
 The desired matrix is obtained from constructing the $i^{th}$
-column as $T\tup{\vect{e}_{i}} .$ Recall that the set $\set{\vect{e}_1, \vect{e}_2, \cdots, \vect{e}_n }$ is called the standard basis of $\R^n$. Therefore the matrix of $T$ is found by applying $T$ to the standard basis. We state this formally as the
+column as $T\tup{\vect{e}_{i}}$. Recall that the set $\set{\vect{e}_1, \vect{e}_2, \cdots, \vect{e}_n }$ is called the standard basis of $\R^n$. Therefore the matrix of $T$ is found by applying $T$ to the standard basis. We state this formally as the
 following theorem.
 
 \begin{theorem}{Matrix of a linear transformation}{matrix-of-linear-transformation}
@@ -88,7 +88,7 @@ T\tup{\vect{e}_{1}} & \cdots & T\tup{\vect{e}_{n}} \\
 \end{mymatrix}
 \end{equation*}
 where $\vect{e}_{i}$ is the $i^{th}$ column of $I_n$, and then $T\tup{\vect{e}_{i}
-}$ is the $i^{th}$ column of $A.$
+}$ is the $i^{th}$ column of $A$.
 \end{theorem}
 
 The following Corollary is an essential result.
@@ -138,8 +138,8 @@ T\tup{\vect{e}_{1}} & \cdots & T\tup{\vect{e}_{n}} \\
 \end{mymatrix}
 \end{equation*}
 
-In this case, $A$ will be a $2 \times 3$ matrix, so we need to find $T
-\tup{\vect{e}_1 }, T \tup{\vect{e}_2 },$ and $T \tup{\vect{e}_3
+In this case, $A$ will be a $2 \times 3$-matrix, so we need to find $T
+\tup{\vect{e}_1 }, T \tup{\vect{e}_2 }$, and $T \tup{\vect{e}_3
 }$. Luckily, we have been given these values so we can fill in
 $A$ as needed, using these vectors as the columns of $A$.  Hence,
 \begin{equation*}
@@ -151,7 +151,7 @@ A=\begin{mymatrix}{rrr}
 \end{solution}
 
 In this example, we were given the resulting vectors of $T \tup{\vect{e}_1 }, 
-T \tup{\vect{e}_2 },$ and $T \tup{\vect{e}_3 }$. Constructing the matrix $A$ was simple, as we
+T \tup{\vect{e}_2 }$, and $T \tup{\vect{e}_3 }$. Constructing the matrix $A$ was simple, as we
 could simply use these vectors as the columns of $A$. The next example shows how to find $A$ when we are not given the $T \tup{\vect{e}_i }$ so clearly. 
 
 \begin{example}{The matrix of linear transformation: inconveniently \\ defined}{2x2-inconvenient-matrix-of-lin-transf}

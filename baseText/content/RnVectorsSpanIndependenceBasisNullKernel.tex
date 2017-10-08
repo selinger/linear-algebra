@@ -3,7 +3,7 @@
 We begin this section with a new definition.
 
 \begin{definition}{Row and column space}{row-column-space}
-Let $A$ be an $m\times n$ matrix. The \textbf{column space}\index{column space}\index{matrix!column space} of $A$, written $\func{col}(A)$, is the
+Let $A$ be an $m\times n$-matrix. The \textbf{column space}\index{column space}\index{matrix!column space} of $A$, written $\func{col}(A)$, is the
 span of the columns. The \textbf{row space}\index{row space}\index{matrix!row space} of $A$, written $\func{row}(A)$, is the span of the rows.
 \end{definition}
 
@@ -11,7 +11,7 @@ Using the {\rref}, we can obtain an efficient description of the row and column 
 a matrix. Consider the following lemma.
 
 \begin{lemma}{Effect of row operations on row space}{row-operations-row-space}
-Let $A$ and $B$ be $m\times n$ matrices such that $A$ can be carried to $B$ by elementary row $\mat{\mbox{column}}$ operations. Then $\func{row}(A)=\func{row}(B)$ $\mat{\func{col}(A)=\func{col}(B)}$.
+Let $A$ and $B$ be $m\times n$-matrices such that $A$ can be carried to $B$ by elementary row $\mat{\mbox{column}}$ operations. Then $\func{row}(A)=\func{row}(B)$ $\mat{\func{col}(A)=\func{col}(B)}$.
 \end{lemma}
 
 \begin{proof}
@@ -73,7 +73,7 @@ Therefore, $\func{row}(B)=\func{row}(A)$.
 Consider the following lemma. 
 
 \begin{lemma}{Row space of a {\ef} matrix}{echelon-form-row-space}
-Let $A$ be an $m \times n$ matrix and let $R$ be its {\ef}. Then the non-zero rows of $R$ form a basis of $\func{row}(R)$, and consequently of $\func{row}(A)$. 
+Let $A$ be an $m \times n$-matrix and let $R$ be its {\ef}. Then the non-zero rows of $R$ form a basis of $\func{row}(R)$, and consequently of $\func{row}(A)$. 
 \end{lemma}
 
 This lemma suggests that we can examine the {\ef} of a matrix in order to obtain the row space. Consider now the column space. The column space can be obtained by simply saying that
@@ -230,7 +230,7 @@ essential result is referred to as the Rank Theorem and is given
 now. Recall that we defined $\func{rank}(A) = \func{dim}(\func{row}(A))$. 
 
 \begin{theorem}{Rank theorem}{rank-theorem}
-Let $A$ be an $m \times n$ matrix. Then $\func{dim}(\func{col} (A))$, the dimension of the column space, is equal to the dimension of the row space, $\func{dim}(\func{row}(A))$.
+Let $A$ be an $m \times n$-matrix. Then $\func{dim}(\func{col} (A))$, the dimension of the column space, is equal to the dimension of the row space, $\func{dim}(\func{row}(A))$.
 \end{theorem}
 
 The following statements all follow from the Rank Theorem.
@@ -301,7 +301,7 @@ Again we row reduce to find the {\rref}.
 You can see that $\func{rank}(A^T) = 2$, the same as $\func{rank}(A)$. 
 \end{solution}
 
-We now define what is meant by the null space of a general $m\times n$ matrix.
+We now define what is meant by the null space of a general $m\times n$-matrix.
 
 \begin{definition}{Null space, or kernel, of $A$}{null-space}
 The null space of a matrix $A$, also referred to as the kernel of $A$, 
@@ -313,7 +313,7 @@ is defined as follows.\index{kernel}\index{matrix!kernel}%
 \end{definition}
 
 It can also be referred to using the notation $\ker \tup{
-A} $. 
+A}$. 
 Similarly, we can discuss the image of $A$, denoted by
 $\func{im}\tup{A}$. The image of $A$ consists of the vectors
 of $\R^{m}$ which ``get hit'' by $A$.  The formal definition
@@ -339,7 +339,7 @@ while $\func{null} \tup{A} $ is a subset of $\R^{n}$.
 It turns out that the null space and image of $A$ are both subspaces. Consider the following example.
 
 \begin{example}{Null space}{null-subspace}
-Let $A$ be an $m\times n$ matrix. Then the null space of $A$, $\func{null}(A)$ is 
+Let $A$ be an $m\times n$-matrix. Then the null space of $A$, $\func{null}(A)$ is 
 a subspace of $\R^n$.
 \end{example}
 
@@ -370,7 +370,7 @@ terminology being used, as $\func{null} \tup{A} $ is simply the solution
 to the system $A\vect{x}=\vect{0}$.
 
 \begin{theorem}{Basis of $\func{null}(A)$}{null-space-basis}
-Let $A$ be an $m \times n$ matrix such that $\func{rank}(A) = r$. Then the system $A\vect{x}=\vect{0}_m$ has $n-r$ basic solutions, providing a basis of $\func{null}(A)$ with $\dim(\func{null}(A))=n-r$.
+Let $A$ be an $m \times n$-matrix such that $\func{rank}(A) = r$. Then the system $A\vect{x}=\vect{0}_m$ has $n-r$ basic solutions, providing a basis of $\func{null}(A)$ with $\dim(\func{null}(A))=n-r$.
 \end{theorem}
 
 Consider the following example. 
@@ -388,7 +388,7 @@ Find $\func{null} \tup{A} $ and $\func{im}\tup{A}$.
 \end{example}
 
 \begin{solution}
-In order to find $\func{null} \tup{A} $, we simply need to solve the
+In order to find $\func{null} \tup{A}$, we simply need to solve the
 equation $A\vect{x}=\vect{0}$. This is the usual procedure of writing
 the augmented matrix, finding the {\rref} and then the solution. The
 augmented matrix and corresponding {\rref} are
@@ -565,7 +565,7 @@ The dimension of the null space of a matrix is called the \textbf{nullity}\index
 From our observation above we can now state an important theorem.
 
 \begin{theorem}{Rank and nullity}{rank-nullity}
-Let $A$ be an $m\times n$ matrix. Then $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) =n$. 
+Let $A$ be an $m\times n$-matrix. Then $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) =n$. 
 \end{theorem}
 
 Consider the following example, which we first explored above in Example \ref{exa:null-space}
@@ -610,28 +610,28 @@ Therefore the nullity of $A$ is $1$. It follows from Theorem \ref{thm:rank-nulli
 We conclude this section with two similar, and important, theorems.
 
 \begin{theorem}{}{}
-Let $A$ be an $m\times n$ matrix.
+Let $A$ be an $m\times n$-matrix.
 The following are equivalent.
 \begin{enumerate}
 \item $\func{rank}(A)=n$.
 \item $\func{row}(A)=\R^n$, i.e., the rows of $A$ span $\R^n$.
 \item The columns of $A$ are independent in $\R^m$.
-\item The $n\times n$ matrix $A^TA$ is invertible.
-\item There exists an $n\times m$ matrix $C$ so that $CA=I_n$.
+\item The $n\times n$-matrix $A^TA$ is invertible.
+\item There exists an $n\times m$-matrix $C$ so that $CA=I_n$.
 \item If $A\vect{x}=\vect{0}_m$ for some $\vect{x}\in\R^n$,
 then $\vect{x}=\vect{0}_n$.
 \end{enumerate}
 \end{theorem}
 
 \begin{theorem}{}{}
-Let $A$ be an $m\times n$ matrix.
+Let $A$ be an $m\times n$-matrix.
 The following are equivalent.
 \begin{enumerate}
 \item $\func{rank}(A)=m$.
 \item $\func{col}(A)=\R^m$, i.e., the columns of $A$ span $\R^m$.
 \item The rows of $A$ are independent in $\R^n$.
-\item The $m\times m$ matrix $AA^T$ is invertible.
-\item There exists an $n\times m$ matrix $C$ so that $AC=I_m$.
+\item The $m\times m$-matrix $AA^T$ is invertible.
+\item There exists an $n\times m$-matrix $C$ so that $AC=I_m$.
 \item The system $A\vect{x}=\vect{b}$ is consistent for
 every $\vect{b}\in\R^m$.
 \end{enumerate}

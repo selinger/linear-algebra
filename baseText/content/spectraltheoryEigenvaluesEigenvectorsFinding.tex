@@ -6,7 +6,7 @@ Now that eigenvalues and eigenvectors have been defined, we will study how to fi
 First, consider the following definition.
 
 \begin{definition}{Multiplicity of an eigenvalue}{multiplicity}
-Let $A$ be an $n \times n$ matrix with characteristic polynomial given by 
+Let $A$ be an $n \times n$-matrix with characteristic polynomial given by 
 $\det \tup{\eigenVar I -  A}$. Then, the multiplicity\index{multiplicity} of an eigenvalue $\lambda$ of $A$
 is the number of times $\lambda$ occurs as a root of that characteristic polynomial.
 \end{definition}
@@ -24,7 +24,7 @@ procedure.
 
 \begin{procedure}{Finding eigenvalues and eigenvectors}{find-eigenvalues-vectors}
 \index{eigenvalues!calculating}\index{eigenvectors!calculating}%
-Let $A$ be an $n \times n$ matrix. 
+Let $A$ be an $n \times n$-matrix. 
 \begin{enumerate}
 \item First, find the eigenvalues $\lambda$ of $A$ by solving the equation $\det \tup{\eigenVar I -A } = 0$. 
 
@@ -266,7 +266,7 @@ To check, we verify that $AX = -3X$ for this basic eigenvector.
 This is what we wanted, so we know this basic eigenvector is correct. 
 \end{solution}
 
-The following is an example using Procedure \ref{proc:find-eigenvalues-vectors} for a $3 \times 3$ matrix. 
+The following is an example using Procedure \ref{proc:find-eigenvalues-vectors} for a $3 \times 3$-matrix. 
 
 \begin{example}{Find the eigenvalues and eigenvectors}{find-eigenvectors}
 Find the eigenvalues and eigenvectors for the matrix
@@ -328,7 +328,7 @@ Therefore, $\lambda_2 = 10$ is an eigenvalue of multiplicity two.
 
 Now that we have found the eigenvalues for $A$, we can compute the eigenvectors.
 
-First we will find the basic eigenvectors for $\lambda_1 =5.$ In other
+First we will find the basic eigenvectors for $\lambda_1 =5$. In other
 words, we want to find all non-zero vectors $X$ so that $AX =
 5X$. This requires that we solve the equation $\tup{5 I - A 
 } X = 0$ for $X$ as follows.
@@ -448,7 +448,7 @@ to see if we get $5X_1$.
 \end{equation*}
 This is what we wanted, so we know that our calculations were correct.
 
-Next we will find the basic eigenvectors for $\lambda_2, \lambda_3=10.$ These vectors are the basic 
+Next we will find the basic eigenvectors for $\lambda_2, \lambda_3=10$. These vectors are the basic 
 solutions to the equation,
 \begin{equation*}
 \tup{10\begin{mymatrix}{rrr}
@@ -540,7 +540,7 @@ X_3
 \end{equation*}
 
 Taking any (non-zero) linear combination of $X_2$ and $X_3$ will also result in an eigenvector for
-the eigenvalue $\lambda =10.$ As in the case for $\lambda =5$, always check your work! 
+the eigenvalue $\lambda =10$. As in the case for $\lambda =5$, always check your work! 
 For the first basic eigenvector,  we can check $AX_2 = 10 X_2$ as follows. 
 \begin{equation*}
 \begin{mymatrix}{rrr}

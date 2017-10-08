@@ -7,15 +7,15 @@ An orthogonal matrix $U$, from Definition \ref{def:Ortho-Matrix}, is one in whic
 We now recall another important definition. 
 
 \begin{definition}{Symmetric and skew symmetric matrices}{symmetric-skew-matrices}
-A real $n\times n$ matrix $A,$ is \textbf{symmetric }if $A^{T}=A.$ If $%
-A=-A^{T},$ then $A$ is called \textbf{skew symmetric. }
+A real $n\times n$-matrix $A$, is \textbf{symmetric }if $A^{T}=A$. If $%
+A=-A^{T}$, then $A$ is called \textbf{skew symmetric. }
 \index{symmetric matrix}
 \end{definition}
 
 Before proving an essential theorem, we first examine the following lemma which will be used below.
 
 \begin{lemma}{The dot product}{dotproduct-lemma}
-Let $A=\mat{a_{ij} }$ be a real symmetric $n \times n$ matrix, and let $\vect{x}, \vect{y} \in \R^n$. Then
+Let $A=\mat{a_{ij} }$ be a real symmetric $n \times n$-matrix, and let $\vect{x}, \vect{y} \in \R^n$. Then
 \[
 A\vect{x} \dotprod \vect{y} = \vect{x} \dotprod A \vect{y}
 \]
@@ -40,8 +40,8 @@ Let $A$ be a real symmetric matrix. Then the eigenvalues of $A$ are real numbers
 \end{theorem}
 
 \begin{proof}
-Recall that for a complex number $a+ib,$ the complex conjugate, denoted by $
-\overline{a+ib}$ is given by $\overline{a+ib}=a-ib.$ The
+Recall that for a complex number $a+ib$, the complex conjugate, denoted by $
+\overline{a+ib}$ is given by $\overline{a+ib}=a-ib$. The
 notation, $\overline{\vect{x}}$ will denote the vector which has every
 entry replaced by its complex conjugate.
 
@@ -62,8 +62,8 @@ is symmetric, it follows from Lemma \ref{lem:dotproduct-lemma} about the dot pro
 \begin{equation*}
 \lambda \vect{x}\dotprod \vect{y}=A\vect{x}\dotprod \vect{y}=\vect{x}\dotprod A\vect{y}=\vect{x}\dotprod \mu \vect{y}=\mu \vect{x}\dotprod \vect{y}
 \end{equation*}
-Hence $\tup{\lambda -\mu } \vect{x}\dotprod \vect{y}=0.$ It follows that,
-since $\lambda -\mu \neq 0,$ it must be that $\vect{x}\dotprod \vect{y}=0$. Therefore the eigenvectors form an orthogonal set. 
+Hence $\tup{\lambda -\mu } \vect{x}\dotprod \vect{y}=0$. It follows that,
+since $\lambda -\mu \neq 0$, it must be that $\vect{x}\dotprod \vect{y}=0$. Therefore the eigenvectors form an orthogonal set. 
 \end{proof}
 
 The following theorem is proved in a similar manner.
@@ -84,8 +84,8 @@ Suppose $A=-A^{T}$ so $A$ is skew symmetric and $A\vect{x}=\lambda
 \vect{x}
 \end{equation*}
 and so, dividing by $\overline{\vect{x}}^{T}\vect{x}$ as before, $
-\overline{\lambda }=-\lambda .$ Letting $\lambda =a+ib,$ this means $
-a-ib=-a-ib$ and so $a=0.$ Thus $\lambda $ is pure imaginary. 
+\overline{\lambda }=-\lambda$. Letting $\lambda =a+ib$, this means $
+a-ib=-a-ib$ and so $a=0$. Thus $\lambda $ is pure imaginary. 
 \end{proof}
 
 Consider the following example. 
@@ -94,7 +94,7 @@ Consider the following example.
 Let $A=\begin{mymatrix}{rr}
 0 & -1 \\
 1 & 0
-\end{mymatrix} .$  Find its eigenvalues.
+\end{mymatrix}$.  Find its eigenvalues.
 \end{example}
 
 \begin{solution}
@@ -107,7 +107,7 @@ First notice that $A$ is skew symmetric. By Theorem \ref{thm:skew-symmetric-eige
 \end{mymatrix} =\eigenVar ^{2}+1=0
 \]
 
-Hence the eigenvalues are $\pm i,$ pure
+Hence the eigenvalues are $\pm i$, pure
 imaginary.
 \end{solution}
 
@@ -117,7 +117,7 @@ Consider the following example.
 Let $A=\begin{mymatrix}{rr}
 1 & 2 \\
 2 & 3
-\end{mymatrix} .$ Find its eigenvalues.
+\end{mymatrix}$. Find its eigenvalues.
 \end{example}
 
 \begin{solution}
@@ -152,13 +152,13 @@ We can use this theorem to diagonalize a symmetric matrix, using orthogonal matr
 \begin{corollary}{Orthonormal set of eigenvectors}{orthonormal-eigenvectors}
 If $A$ is a real $n\times n$ symmetric matrix, then there exists an
 orthonormal set of eigenvectors, $\set{\vect{u}_{1},\cdots ,\vect{u}
-_{n}} .$
+_{n}}$.
 \end{corollary}
 
 \begin{proof}
 Since $A$ is symmetric, then by Theorem \ref{thm:orth-diag},
-there exists an orthogonal matrix $U$ such that $U^{T}AU=D,$ a diagonal
-matrix whose diagonal entries are the eigenvalues of $A.$ Therefore, since $
+there exists an orthogonal matrix $U$ such that $U^{T}AU=D$, a diagonal
+matrix whose diagonal entries are the eigenvalues of $A$. Therefore, since $
 A $ is symmetric and all the matrices are real, 
 \begin{equation*}
 \overline{D}=\overline{D^{T}}=\overline{U^{T}A^{T}U}=U^{T}A^{T}U=U^{T}AU=D
@@ -202,7 +202,7 @@ _{i}} $ form an orthonormal set.
 \end{proof}
 
 \begin{definition}{Principal axes}{principal-axes}
-Let $A$ be an $n \times n$ matrix. Then the principal axes of $A$ is a set of orthonormal eigenvectors of $A$.
+Let $A$ be an $n \times n$-matrix. Then the principal axes of $A$ is a set of orthonormal eigenvectors of $A$.
 \index{principal axes}
 \end{definition}
 
@@ -220,7 +220,7 @@ A = \begin{mymatrix}{rrr}
 \end{example}
 
 \begin{solution}
-Recall Procedure \ref{proc:find-eigenvalues-vectors} for finding the eigenvalues and eigenvectors of a matrix. You can verify that the eigenvalues are $18,9,2.$ First find the eigenvector for $18$ by solving the equation $(18I-A)X = 0$. 
+Recall Procedure \ref{proc:find-eigenvalues-vectors} for finding the eigenvalues and eigenvectors of a matrix. You can verify that the eigenvalues are $18,9,2$. First find the eigenvector for $18$ by solving the equation $(18I-A)X = 0$. 
 The appropriate augmented matrix is given by  
 \begin{equation*}
 \begin{mymatrix}{ccc|c}
@@ -245,7 +245,7 @@ Therefore an eigenvector is
 1
 \end{mymatrix}
 \end{equation*}
-Next find the eigenvector for $\lambda =9.$ The augmented matrix and resulting {\rref} are 
+Next find the eigenvector for $\lambda =9$. The augmented matrix and resulting {\rref} are 
 \begin{equation*}
 \begin{mymatrix}{ccc|c}
 9-17 & 2 & 2 & 0 \\ 
@@ -267,7 +267,7 @@ Thus an eigenvector for $\lambda =9$ is
 2
 \end{mymatrix}
 \end{equation*}
-Finally find an eigenvector for $\lambda =2.$ The appropriate augmented
+Finally find an eigenvector for $\lambda =2$. The appropriate augmented
 matrix and {\rref} are 
 \begin{equation*}
 \begin{mymatrix}{ccc|c}
@@ -399,7 +399,7 @@ corresponding to $\lambda=9$ as
 5
 \end{mymatrix}
 \end{equation*}
-Next find the eigenvector for $\lambda =18.$ The augmented matrix and the resulting {\rref} are given by  
+Next find the eigenvector for $\lambda =18$. The augmented matrix and the resulting {\rref} are given by  
 \begin{equation*}
 \begin{mymatrix}{ccc|c}
 18-10 & -2 & -2 & 0 \\ 
@@ -444,13 +444,13 @@ Dividing each eigenvector by its length, the orthonormal set is
 In the above solution, the repeated eigenvalue implies that there would have been many other
 orthonormal bases which could have been obtained. While we chose to
 take $z=0, y=1$, we could just as easily have taken $y=0$
-or even $y=z=1.$ Any such change would have resulted in a different
+or even $y=z=1$. Any such change would have resulted in a different
 orthonormal set. 
 
 Recall the following definition.
 
 \begin{definition}{Diagonalizable}{non-defective}
-An $n\times n$ matrix $A$ is said to be \textbf{non defective}
+An $n\times n$-matrix $A$ is said to be \textbf{non defective}
 \index{non defective}or \textbf{diagonalizable}
 \index{diagonalizable} if there exists an invertible matrix $P$ such that $
 P^{-1}AP=D$ where $D$ is a diagonal matrix.
@@ -462,7 +462,7 @@ every symmetric matrix is diagonalizable because if $U$ is an orthogonal
 matrix, it is invertible and its inverse is $U^{T}$. In this case, we say that $A$ is \textbf{orthogonally diagonalizable}\index{orthogonally diagonalizable}. Therefore every symmetric matrix is in fact orthogonally diagonalizable. The next theorem provides another way to determine if a matrix is orthogonally diagonalizable. 
 
 \begin{theorem}{Orthogonally diagonalizable}{orth-diagonalizable}
-Let $A$ be an $n \times n$ matrix. Then $A$ is orthogonally diagonalizable if and only if $A$ has an orthonormal set of eigenvectors. 
+Let $A$ be an $n \times n$-matrix. Then $A$ is orthogonally diagonalizable if and only if $A$ has an orthonormal set of eigenvectors. 
 \end{theorem}
 
 Recall from Corollary \ref{cor:orthonormal-eigenvectors} that every symmetric matrix has an orthonormal set of eigenvectors. In fact these three conditions are equivalent. 
@@ -476,7 +476,7 @@ Let $A=\begin{mymatrix}{rrr}
 0 &
 \vspace{0.05in}\frac{3}{2} & \vspace{0.05in}\frac{1}{2} \\
 0 & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2}
-\end{mymatrix} .$ Find an orthogonal matrix $U$ such that $U^{T}AU$ is a diagonal
+\end{mymatrix}$. Find an orthogonal matrix $U$ such that $U^{T}AU$ is a diagonal
 matrix.
 \end{example}
 
@@ -585,13 +585,13 @@ the desired diagonal matrix. Notice that the eigenvectors, which construct the c
 We conclude this section with a Theorem that generalizes earlier results.
 
 \begin{theorem}{Triangulation of a matrix}{triangulation}
-Let $A$ be an $n \times n$ matrix. If $A$ has $n$ real eigenvalues, then an orthogonal matrix $U$ can be found to result in the upper triangular matrix $U^T A U$. 
+Let $A$ be an $n \times n$-matrix. If $A$ has $n$ real eigenvalues, then an orthogonal matrix $U$ can be found to result in the upper triangular matrix $U^T A U$. 
 \end{theorem}
 
 This Theorem provides a useful Corollary.
 
 \begin{corollary}{Determinant and trace}{det-trace}
-Let $A$ be an $n \times n$ matrix with eigenvalues $\lambda_1, \cdots, \lambda_n$. Then it follows that $\det(A)$ is equal to the product of the $\lambda_1$, while $\func{trace}(A)$ is equal to the sum of the $\lambda_i$. 
+Let $A$ be an $n \times n$-matrix with eigenvalues $\lambda_1, \cdots, \lambda_n$. Then it follows that $\det(A)$ is equal to the product of the $\lambda_1$, while $\func{trace}(A)$ is equal to the sum of the $\lambda_i$. 
 \end{corollary}
 
 \begin{proof}

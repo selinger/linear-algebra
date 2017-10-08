@@ -12,8 +12,8 @@ exactly that.
 
 We begin with a lemma. 
 
-Recall that we can form the image of an $m \times n$ matrix $A$ by
-$\func{im}\tup{A} = = \set{A\vect{x} : \vect{x} \in
+Recall that we can form the image of an $m \times n$-matrix $A$ by
+$\func{im}\tup{A} = \set{A\vect{x} : \vect{x} \in
 \R^n }$. Rephrasing Theorem \ref{thm:orth-proj} using
 the subspace $W=\func{im}\tup{A}$  gives the
 equivalence of an orthogonality condition with a minimization
@@ -40,7 +40,7 @@ theorem.
 \end{center}
 
 \begin{theorem}{Existence of minimizers}{existence-minimizer-hs}\label{existence-minimizer-hs}
-Let $\vect{y}\in \R^{m}$ and let $A$ be an $m\times n$ matrix.
+Let $\vect{y}\in \R^{m}$ and let $A$ be an $m\times n$-matrix.
 
 Choose $\vect{z}\in W= \func{im}\tup{A}$ given by $\vect{z} =
 \func{proj}_{W}\tup{\vect{y}}$, and let $\vect{x} \in \R^{n}$ such that $\vect{z}=A\vect{x}$.
@@ -55,7 +55,7 @@ Then
 We note a simple but useful observation.
 
 \begin{lemma}{Transpose and dot product}{transpose-and-dot-prod}
-Let $A$ be an $m\times n$ matrix. Then 
+Let $A$ be an $m\times n$-matrix. Then 
 \begin{equation*}
 A\vect{x} \dotprod \vect{y} = \vect{x}\dotprod A^T\vect{y} 
 \end{equation*}
@@ -85,7 +85,7 @@ Lemma \ref{lem:transpose-and-dot-prod}, this is the same as saying
 \begin{equation*}
 A^T\tup{\vect{y}-A\vect{x}} \dotprod \vect{u}=0
 \end{equation*}
-for all $\vect{u} \in \R^{n}.$ This implies 
+for all $\vect{u} \in \R^{n}$. This implies 
 \begin{equation*}
 A^T\vect{y}-A^TA\vect{x}=\vect{0}.
 \end{equation*}
@@ -322,7 +322,7 @@ x_{1} & 1 \\
 x_{n} & 1
 \end{mymatrix} 
 \end{equation*}
-Thus, computing $A^{T}A,$ 
+Thus, computing $A^{T}A$, 
 \begin{equation*}
 \begin{mymatrix}{cc}
 \sum_{i=1}^{n}x_{i}^{2} & \sum_{i=1}^{n}x_{i} \\ 
@@ -373,10 +373,10 @@ b &=& \frac{- 10 * 38 + 14*30}{5*30-10^2} = 0.80 \\
 \end{eqnarray*}
 
 The  least squares regression line for the set of data points is:
-\[ \vect{y} = \vect{x}+.8 \] 
+\[ \vect{y} = \vect{x}+0.8 \] 
 
 One could use this line to approximate other values for the data. For
-example for $x=6$ one could use $y(6)=6+.8=6.8$ as an approximate
+example for $x=6$ one could use $y(6)=6+0.8=6.8$ as an approximate
 value for the data.
 
 The following diagram shows the data points and the corresponding regression line.
@@ -414,7 +414,7 @@ The following diagram shows the data points and the corresponding regression lin
 
 One could clearly do a least squares fit for curves of the form $
 y=ax^{2}+bx+c$ in the same way. In this case you want to solve as well as
-possible for $a,b,$ and $c$ the system 
+possible for $a,b$, and $c$ the system 
 \begin{equation*}
 \begin{mymatrix}{ccc}
 x_{1}^{2} & x_{1} & 1 \\ 

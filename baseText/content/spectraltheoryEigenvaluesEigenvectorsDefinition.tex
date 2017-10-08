@@ -137,23 +137,23 @@ non-zero.
 There is also a geometric significance to eigenvectors.  When you have a \textbf{non-zero} vector which, when multiplied by a matrix results in another vector
 which is parallel to the first or equal to \textbf{0}, this vector is called
 an eigenvector of the matrix. This is the meaning when the vectors are in 
-$\R^{n}.$ 
+$\R^{n}$. 
 
 The formal definition of eigenvalues and eigenvectors is as follows.
 
 \begin{definition}{Eigenvalues and eigenvectors}{eigenvalues-and-eigenvectors}
-Let $A$ be an $n\times n$ matrix and let $X \in \C^{n}$ be a
+Let $A$ be an $n\times n$-matrix and let $X \in \C^{n}$ be a
 \textbf{non-zero vector} for which
 
 \begin{equation}
 AX=\lambda X  \label{eigen1}
 \end{equation}
-for some scalar $\lambda .$ Then $\lambda $ is called an
+for some scalar $\lambda$. Then $\lambda $ is called an
 \textbf{eigenvalue}\index{eigenvalue}
 of the matrix $A$ and $X$ is called an \textbf{eigenvector}\index{eigenvector} of $A$ associated with $\lambda$, or a $\lambda$-eigenvector of $A$. 
  
-The set of all eigenvalues of an $n\times n$ matrix $A$ is denoted by 
-$\sigma \tup{A} $ and is referred to as the \textbf{spectrum}\index{spectrum} of $A.$
+The set of all eigenvalues of an $n\times n$-matrix $A$ is denoted by 
+$\sigma \tup{A} $ and is referred to as the \textbf{spectrum}\index{spectrum} of $A$.
 \end{definition}
 
 The eigenvectors of a matrix $A$ are those vectors $X$ for which
@@ -170,7 +170,7 @@ AX - \lambda X = 0 \\
 \tup{A-\lambda I} X = 0
 \end{array}
 \end{equation*}
-for some $X \neq 0.$ Equivalently you could write $\tup{\lambda
+for some $X \neq 0$. Equivalently you could write $\tup{\lambda
 I-A}X = 0$, which is more commonly used.  Hence, when we are looking for eigenvectors, we are
 looking for nontrivial solutions to this homogeneous system of equations!
 
@@ -217,16 +217,16 @@ polynomial are the eigenvalues of $A$.  Thus when \ref{eigen2}
 holds, $A$ has a non-zero eigenvector.
 
 \begin{theorem}{The existence of an eigenvector}{existence-of-eigenvector}
-Let $A$ be an $n\times n$ matrix and suppose $\det \tup{\lambda I -
+Let $A$ be an $n\times n$-matrix and suppose $\det \tup{\lambda I -
 A} =0$ for some $ \lambda \in \C$.  \\
 Then $\lambda$ is an eigenvalue of $A$ and thus there exists a non-zero
 vector $X \in \C^{n}$ such that $AX=\lambda X$. 
 \end{theorem}
 
 \begin{proof}
-For $A$ an $n\times n$ matrix, the method of Laplace
+For $A$ an $n\times n$-matrix, the method of Laplace
 Expansion demonstrates that $\det \tup{\lambda I - A } $ is a
-polynomial of degree $n.$ As such, the equation
+polynomial of degree $n$. As such, the equation
 \ref{eigen2} has a solution $\lambda \in \C$ by the Fundamental
 Theorem of Algebra. The fact that $\lambda$ is an eigenvalue is left as an exercise. 
 \end{proof}

@@ -1,7 +1,7 @@
 \subsection{Similarity and diagonalization}
 
 We begin this section by recalling the definition  of similar matrices. 
-Recall that if $A,B$ are two $n\times n$ matrices, then they are \textbf{similar}\index{similar matrices}
+Recall that if $A,B$ are two $n\times n$-matrices, then they are \textbf{similar}\index{similar matrices}
 if and only if there exists an invertible matrix $P$
 such that
 \begin{equation*}
@@ -11,7 +11,7 @@ A=P^{-1}BP
 In this case we write $A \sim B$. The concept of similarity is an example of an \textbf{equivalence relation}\index{equivalence relation}.
 
 \begin{lemma}{Similarity is an equivalence relation}{similarity-equivalence}
-Similarity is an equivalence relation, i.e. for $n \times n$ matrices $A,B,$ and $C$, 
+Similarity is an equivalence relation, i.e. for $n \times n$-matrices $A,B$, and $C$, 
 \begin{enumerate}
 \item $A \sim A$ (reflexive)
 \item If $A \sim B$, then $B \sim A$ (symmetric)
@@ -22,7 +22,7 @@ Similarity is an equivalence relation, i.e. for $n \times n$ matrices $A,B,$ and
 \begin{proof}
 It is clear that $A\sim A$, taking $P=I$. 
 
-Now, if $A\sim B,$ then for some $P$ invertible,
+Now, if $A\sim B$, then for some $P$ invertible,
 \begin{equation*}
 A=P^{-1}BP
 \end{equation*}
@@ -52,7 +52,7 @@ Another important concept necessary to this section is the trace of a matrix. Co
 
 \begin{definition}{Trace of a matrix}{matrix-trace}
 \index{trace of a matrix}%
-If $A=[a_{ij}]$ is an $n\times n$ matrix, then the
+If $A=[a_{ij}]$ is an $n\times n$-matrix, then the
 trace of $A$ is
 \[ \func{trace}(A) = \sum_{i=1}^n a_{ii}.\]
 \end{definition}
@@ -60,7 +60,7 @@ trace of $A$ is
 In words, the trace of a matrix is the sum of the entries on the main diagonal. 
 
 \begin{lemma}{Properties of trace}{trace-properties}
-For $n\times n$ matrices $A$ and $B$, and any $k\in\R$,
+For $n\times n$-matrices $A$ and $B$, and any $k\in\R$,
 \begin{enumerate}
 \item $\func{trace}(A+B)=\func{trace}(A) + \func{trace}(B)$
 \item $\func{trace}(kA)=k\cdot\func{trace}(A)$
@@ -68,10 +68,10 @@ For $n\times n$ matrices $A$ and $B$, and any $k\in\R$,
 \end{enumerate}
 \end{lemma}
 
-The following theorem includes a reference to the characteristic polynomial of a matrix. Recall that for any $n \times n$ matrix $A$, the characteristic polynomial of $A$ is $c_A(x)=\det(xI-A)$.
+The following theorem includes a reference to the characteristic polynomial of a matrix. Recall that for any $n \times n$-matrix $A$, the characteristic polynomial of $A$ is $c_A(x)=\det(xI-A)$.
 
 \begin{theorem}{Properties of similar matrices}{properties-similar}
-If $A$ and $B$ are $n\times n$ matrices and $A\sim B$, then
+If $A$ and $B$ are $n\times n$-matrices and $A\sim B$, then
 \begin{enumerate}
 \item $\det(A) = \det(B)$
 \item $\func{rank}(A) = \func{rank}(B)$
@@ -100,7 +100,7 @@ where $\ast $ is a number which might not be zero.
 The following is the formal definition of a diagonalizable matrix. 
 
 \begin{definition}{Diagonalizable}{diagonalizable}
-Let $A$ be an $n\times n$ matrix. Then $A$ is said to be \textbf{diagonalizable}\index{diagonalizable} if there exists an invertible matrix $P$ such that
+Let $A$ be an $n\times n$-matrix. Then $A$ is said to be \textbf{diagonalizable}\index{diagonalizable} if there exists an invertible matrix $P$ such that
 \begin{equation*}
 P^{-1}AP=D
 \end{equation*}

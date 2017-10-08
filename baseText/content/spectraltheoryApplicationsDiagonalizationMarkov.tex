@@ -5,7 +5,7 @@ called \textbf{Markov matrices}\index{Markov matrices}. An important application
 in population migration, as illustrated in the following definition. 
 
 \begin{definition}{Migration matrices}{migration-matrix}
-Let $m$ locations be denoted by the numbers $1,2,\cdots ,m.$ Suppose
+Let $m$ locations be denoted by the numbers $1,2,\cdots ,m$. Suppose
 it is the case that each year the proportion of residents in location
 $j$ which move to location $i$ is $a_{ij}$. Also suppose no one
 escapes or emigrates from without these $m$ locations. This last
@@ -21,8 +21,8 @@ Let $A$ be a Markov matrix given by
 \begin{equation*}
 A = 
 \begin{mymatrix}{rr}
-.4 & .2 \\
-.6 & .8
+0.4 & 0.2 \\
+0.6 & 0.8
 \end{mymatrix}
 \end{equation*}
 Verify that $A$ is a Markov matrix and describe the entries of $A$ in terms of population migration.
@@ -32,30 +32,30 @@ Verify that $A$ is a Markov matrix and describe the entries of $A$ in terms of p
 The columns of $A$ are comprised of non-negative numbers which sum to $1$. Hence, $A$ is a Markov matrix. 
 
 Now, consider the entries $a_{ij}$ of $A$ in terms of population. The
-entry $a_{11} = .4$ is the proportion of residents in location one
+entry $a_{11} = 0.4$ is the proportion of residents in location one
 which stay in location one in a given time period.  Entry $a_{21} =
-.6$ is the proportion of residents in location 1 which move to
-location 2 in the same time period. Entry $a_{12} = .2$ is the
+0.6$ is the proportion of residents in location 1 which move to
+location 2 in the same time period. Entry $a_{12} = 0.2$ is the
 proportion of residents in location 2 which move to location
-1. Finally, entry $a_{22} = .8$ is the proportion of residents in
+1. Finally, entry $a_{22} = 0.8$ is the proportion of residents in
 location 2 which stay in location 2 in this time period.  
 
 Considered as a Markov matrix, these numbers are usually identified
 with probabilities. Hence, we can say that the probability that a
 resident of location one will stay in location one in the time period
-is $.4$.
+is $0.4$.
 \end{solution}
 
 Observe that in Example \ref{exa:migration-matrix} if there was initially say 15
 thousand people in location 1 and 10 thousands in location 2, then
-after one year there would be $.4 \times 15 + .2 \times 10 = 8$
+after one year there would be $0.4 \times 15 + 0.2 \times 10 = 8$
 thousands people in location 1 the following year, and similarly 
-there would be $.6 \times 15 + .8 \times 10 = 17$
+there would be $0.6 \times 15 + 0.8 \times 10 = 17$
 thousands people in location 2 the following year.
 
 More generally let $X_n=\mat{x_{1n} \cdots x_{mn}} ^{T}$ where $x_{in}$ is the
 population of location $i$ at time period $n$. We call $X_n$ the \textbf{state vector at period $n$}\index{state vector}. In particular, we call $X_0$ the initial state vector. Letting $A$ be the migration matrix, we compute the population in each location $i$ one time period later by $AX_n$. In order to find the population of location $i$ after $k$
-years, we compute the $i^{th}$ component of $A^{k}X.$ This discussion is summarized in the following theorem. 
+years, we compute the $i^{th}$ component of $A^{k}X$. This discussion is summarized in the following theorem. 
 
 \begin{theorem}{State vector}{state-vector}
 Let $A$ be the migration matrix of a population and let $X_n$ be the vector whose entries give the population of each location at time period $n$. Then $X_n$ is the state vector at period $n$ and it follows that 
@@ -79,14 +79,14 @@ Consider the migration matrix
 \begin{equation*}
 A = 
 \begin{mymatrix}{rrr}
-.6 & 0 & .1 \\
-.2 & .8 & 0 \\
-.2 & .2 & .9
+0.6 & 0 & 0.1 \\
+0.2 & 0.8 & 0 \\
+0.2 & 0.2 & 0.9
 \end{mymatrix} 
 \end{equation*}
- for locations $1,2,$ and $3.$ Suppose initially there are $100$
+ for locations $1,2$, and $3$. Suppose initially there are $100$
 residents in location $1$, $200$ in location $2$ and $400$ in location $3$. Find the
-population in the three locations after $1,2,$ and $10$ units of time.
+population in the three locations after $1,2$, and $10$ units of time.
 \end{example}
 
 \begin{solution}
@@ -100,9 +100,9 @@ x_{31}
 \end{mymatrix} 
 &=& 
 \begin{mymatrix}{rrr}
-.6 & 0 & .1 \\
-.2 & .8 & 0 \\
-.2 & .2 & .9
+0.6 & 0 & 0.1 \\
+0.2 & 0.8 & 0 \\
+0.2 & 0.2 & 0.9
 \end{mymatrix} 
 \begin{mymatrix}{r}
 100 \\
@@ -127,9 +127,9 @@ x_{32}
 \end{mymatrix} 
 &=& 
 \begin{mymatrix}{rrr}
-.6 & 0 & .1 \\
-.2 & .8 & 0 \\
-.2 & .2 & .9
+0.6 & 0 & 0.1 \\
+0.2 & 0.8 & 0 \\
+0.2 & 0.2 & 0.9
 \end{mymatrix} 
 \begin{mymatrix}{r}
 100 \\
@@ -155,9 +155,9 @@ x_{3 10}
 \end{mymatrix} 
 &=& 
 \begin{mymatrix}{rrr}
-.6 & 0 & .1 \\
-.2 & .8 & 0 \\
-.2 & .2 & .9
+0.6 & 0 & 0.1 \\
+0.2 & 0.8 & 0 \\
+0.2 & 0.2 & 0.9
 \end{mymatrix} ^{10}\begin{mymatrix}{r}
 100 \\
 200 \\
@@ -270,12 +270,12 @@ Consider the migration matrix
 A
 =
 \begin{mymatrix}{rrr}
-.6 & 0 & .1 \\
-.2 & .8 & 0 \\
-.2 & .2 & .9
+0.6 & 0 & 0.1 \\
+0.2 & 0.8 & 0 \\
+0.2 & 0.2 & 0.9
 \end{mymatrix} 
 \end{equation*}
- for locations $1,2,$ and $3.$ Suppose initially there are 100
+ for locations $1,2$, and $3$. Suppose initially there are 100
 residents in location 1, 200 in location 2 and 400 in location 4. Find the
 population in the three locations after a long time.
 \end{example}
@@ -290,9 +290,9 @@ Thus we need to find a solution to
 0 & 1 & 0 \\
 0 & 0 & 1
 \end{mymatrix} -\begin{mymatrix}{rrr}
-.6 & 0 & .1 \\
-.2 & .8 & 0 \\
-.2 & .2 & .9
+0.6 & 0 & 0.1 \\
+0.2 & 0.8 & 0 \\
+0.2 & 0.2 & 0.9
 \end{mymatrix} } \begin{mymatrix}{c}
 x_{1s} \\
 x_{2s}\\

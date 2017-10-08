@@ -6,7 +6,7 @@ Throughout this section, we will discuss similar matrices, elementary matrices, 
 We begin with a definition.
 
 \begin{definition}{Similar matrices}{similar-matrices}
-Let $A$ and $B$ be $n \times n$ matrices. Suppose there exists an invertible matrix $P$ such that 
+Let $A$ and $B$ be $n \times n$-matrices. Suppose there exists an invertible matrix $P$ such that 
 \begin{equation*}
 A = P^{-1}BP
 \end{equation*}
@@ -17,7 +17,7 @@ It turns out that we can use the concept of similar matrices to help us find the
 of matrices. Consider the following lemma.
 
 \begin{lemma}{Similar matrices and eigenvalues}{similar-matrices}
-Let $A$ and $B$ be similar matrices, so that $A=P^{-1}BP$ where $A,B$ are $n\times n$ matrices and $P$ is invertible. Then $A,B$ have the
+Let $A$ and $B$ be similar matrices, so that $A=P^{-1}BP$ where $A,B$ are $n\times n$-matrices and $P$ is invertible. Then $A,B$ have the
 same eigenvalues.
 \end{lemma}
 
@@ -28,7 +28,7 @@ we show that if $A$ and $B$ have the same eigenvalues, then
 $A=P^{-1}BP$.
 
 Here is the proof of the first statement. 
-Suppose $A = P^{-1}BP$ and $\lambda$ is an eigenvalue of $A$, that is $AX=\lambda X$ for some $X\neq 0.$ Then
+Suppose $A = P^{-1}BP$ and $\lambda$ is an eigenvalue of $A$, that is $AX=\lambda X$ for some $X\neq 0$. Then
 \begin{equation*}
 P^{-1}BPX=\lambda X
 \end{equation*}
@@ -116,7 +116,7 @@ times the second row to the first row.
 3  & 0  & 15 \\
 10 & -2 & 30 \\
 0  & 0  & -2
-\end{mymatrix}  \label{elem-eigenvalue}
+\end{mymatrix}  \label{elementary-eigenvalue}
 \end{equation}
 Again by Lemma \ref{lem:similar-matrices}, this resulting matrix has the same eigenvalues as $A$. 
 At this point, we can easily find the eigenvalues.
@@ -147,10 +147,10 @@ you could go back to the original matrix $A$ and solve $\tup{
 
 Notice that when you multiply on the right by an elementary matrix,
 you are doing the column operation defined by the elementary
-matrix. In \ref{elem-eigenvalue} multiplication by the elementary matrix on
+matrix. In \ref{elementary-eigenvalue} multiplication by the elementary matrix on
 the right merely involves taking three times the first column and
 adding to the second. Thus, without referring to the elementary
-matrices, the transition to the new matrix in \ref{elem-eigenvalue} can be
+matrices, the transition to the new matrix in \ref{elementary-eigenvalue} can be
 illustrated by
 \begin{equation*}
 \begin{mymatrix}{rrr}
@@ -184,7 +184,7 @@ Let $A=\begin{mymatrix}{rrr}
 1 & 2 & 4 \\
 0 & 4 & 7 \\
 0 & 0 & 6
-\end{mymatrix} .$ Find the eigenvalues of $A$.
+\end{mymatrix}$. Find the eigenvalues of $A$.
 \end{example}
 
 \begin{solution}

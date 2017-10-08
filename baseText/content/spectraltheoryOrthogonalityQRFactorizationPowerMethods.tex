@@ -8,34 +8,34 @@ start with something which is fairly close to an eigenvalue.
 Power methods are based the consideration of powers of a given matrix. Let $
 \set{
 \vect{x}_{1},\cdots ,\vect{x}_{n}} $ be a basis of eigenvectors for $
-\C^{n}$ such that $A\vect{x}_{n}=\lambda _{n}\vect{x}_{n}.$ Now let $
+\C^{n}$ such that $A\vect{x}_{n}=\lambda _{n}\vect{x}_{n}$. Now let $
 \vect{u}_{1}$ be some non-zero vector. Since $\set{\vect{x}_{1},\cdots ,\vect{x}_{n}} $ is a basis, there exists unique scalars, $c_{i}$ such that 
 \begin{equation*}
 \vect{u}_{1}=\sum_{k=1}^{n}c_{k}\vect{x}_{k}
 \end{equation*}
 Assume you have not been so unlucky as to pick $\vect{u}_{1}$ in such a way
-that $c_{n}=0.$ Then let $A\vect{u}_{k}=\vect{u}_{k+1}$ so that 
+that $c_{n}=0$. Then let $A\vect{u}_{k}=\vect{u}_{k+1}$ so that 
 \begin{equation}
 \vect{u}_{m}=A^{m}\vect{u}_{1}=\sum_{k=1}^{n-1}c_{k}\lambda _{k}^{m}\vect{x}
 _{k}+\lambda _{n}^{m}c_{n}\vect{x}_{n}.  \label{20-may-e1}
 \end{equation}
-For large $m$ the last term, $\lambda _{n}^{m}c_{n}\vect{x}_{n},$ determines
+For large $m$ the last term, $\lambda _{n}^{m}c_{n}\vect{x}_{n}$, determines
 quite well the direction of the vector on the right. This is because $
 \abs{\lambda _{n}}$ is larger than $\abs{\lambda
-_{k}}$ for $k<n$ and so for a large $m,$ the sum, $\sum_{k=1}^{n-1}c_{k}\lambda _{k}^{m}\vect{x}_{k},$ on the right is fairly
-insignificant. Therefore, for large $m,$ $\vect{u}_{m}$ is essentially a
-multiple of the eigenvector $\vect{x}_{n},$ the one which goes with $\lambda
-_{n}.$ The only problem is that there is no control of the size of the
-vectors $\vect{u}_{m}.$ You can fix this by scaling. Let $S_{2}$ denote the
+_{k}}$ for $k<n$ and so for a large $m$, the sum, $\sum_{k=1}^{n-1}c_{k}\lambda _{k}^{m}\vect{x}_{k}$, on the right is fairly
+insignificant. Therefore, for large $m$, $\vect{u}_{m}$ is essentially a
+multiple of the eigenvector $\vect{x}_{n}$, the one which goes with $\lambda
+_{n}$. The only problem is that there is no control of the size of the
+vectors $\vect{u}_{m}$. You can fix this by scaling. Let $S_{2}$ denote the
 entry of $A\vect{u}_{1}$ which is largest in absolute value. We call this a 
-\index{scaling factor} \textbf{scaling factor}. Then $\vect{u}_{2}$ will not be just $A\vect{u}_{1}$ but $A\vect{u}_{1}/S_{2}.$ Next
+\index{scaling factor} \textbf{scaling factor}. Then $\vect{u}_{2}$ will not be just $A\vect{u}_{1}$ but $A\vect{u}_{1}/S_{2}$. Next
 let $S_{3}$ denote the entry of $A\vect{u}_{2}$ which has largest absolute
-value and define $\vect{u}_{3}\equiv A\vect{u}_{2}/S_{3}.$ Continue this way.
+value and define $\vect{u}_{3}\equiv A\vect{u}_{2}/S_{3}$. Continue this way.
 The scaling just described does not destroy the relative insignificance of
 the term involving a sum in \ref{20-may-e1}. Indeed it amounts to nothing more
 than changing the units of length. Also note that from this scaling
 procedure, the absolute value of the largest element of $\vect{u}_{k}$ is
-always equal to 1. Therefore, for large $m,$
+always equal to 1. Therefore, for large $m$,
 \begin{equation*}
 \vect{u}_{m}=\vspace{0.05in}\frac{\lambda _{n}^{m}c_{n}\vect{x}_{n}}{S_{2}S_{3}\cdots S_{m}}+\tup{\text{relatively insignificant term}} .
 \end{equation*}
@@ -45,13 +45,13 @@ is essentially equal to the entry having largest absolute value of
 A\tup{\vspace{0.05in}\frac{\lambda _{n}^{m}c_{n}\vect{x}_{n}}{S_{2}S_{3}\cdots S_{m}}} =\vspace{0.05in}\frac{\lambda _{n}^{m+1}c_{n}
 \vect{x}_{n}}{S_{2}S_{3}\cdots S_{m}}\approx \lambda _{n}\vect{u}_{m}
 \end{equation*}%
-and so for large $m,$ it must be the case that $\lambda _{n}\approx S_{m+1}.$
+and so for large $m$, it must be the case that $\lambda _{n}\approx S_{m+1}$.
 This suggests the following procedure.
 
 \begin{procedure}{Finding the largest eigenvalue with its eigenvector}{}
 \begin{enumerate}
 \item Start with a vector $\vect{u}_{1}$ which you hope has a component in
-the direction of $\vect{x}_{n}.$ The vector $\tup{1,\cdots ,1} ^{T}$
+the direction of $\vect{x}_{n}$. The vector $\tup{1,\cdots ,1} ^{T}$
 is usually a pretty good choice.
 
 \item If $\vect{u}_{k}$ is known, 
@@ -71,7 +71,7 @@ eigenvector.
 
 The shifted inverse power method involves finding the eigenvalue closest to
 a given complex number along with the associated eigenvalue. If $\mu $ is a
-complex number and you want to find $\lambda $ which is closest to $\mu ,$
+complex number and you want to find $\lambda $ which is closest to $\mu$,
 you could consider the eigenvalues and eigenvectors of $\tup{A-\mu
 I} ^{-1}$. Then $A\vect{x}=\lambda \vect{x}$ if and only if 
 \begin{equation*}
@@ -82,7 +82,7 @@ If and only if
 \frac{1}{\lambda -\mu }\vect{x}=\tup{A-\mu I} ^{-1}\vect{x}
 \end{equation*}
 Thus, if $\lambda $ is the closest eigenvalue of $A$ to $\mu $ then out of
-all eigenvalues of $\tup{A-\mu I} ^{-1},$ you would have $\frac{1}{
+all eigenvalues of $\tup{A-\mu I} ^{-1}$, you would have $\frac{1}{
 \lambda -\mu }$ would be the largest. Thus all you have to do is apply the
 power method to $\tup{A-\mu I} ^{-1}$ and the eigenvector you get
 will be the eigenvector which corresponds to $\lambda $ where $\lambda $ is
@@ -98,7 +98,7 @@ Find the eigenvalue and eigenvector for
 -2 & -2 & 0
 \end{mymatrix}
 \end{equation*}
-which is closest to $.9+.9i$.
+which is closest to $0.9+0.9i$.
 \end{example}
 
 \begin{solution}
@@ -108,7 +108,7 @@ Form
 3 & 2 & 1 \\ 
 -2 & 0 & -1 \\ 
 -2 & -2 & 0
-\end{mymatrix} -\tup{.9+.9i} \begin{mymatrix}{rrr}
+\end{mymatrix} -\tup{0.9+0.9i} \begin{mymatrix}{rrr}
 1 & 0 & 0 \\ 
 0 & 1 & 0 \\ 
 0 & 0 & 1

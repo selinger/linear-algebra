@@ -2,14 +2,14 @@
 
 Recall that the process to find the inverse of a matrix was often cumbersome. 
 In contrast, it was very easy to take the transpose of a matrix. Luckily for some special
-matrices, the transpose equals the inverse. When an $n \times n$ matrix has all real
+matrices, the transpose equals the inverse. When an $n \times n$-matrix has all real
 entries and its transpose equals its inverse, the matrix is called an \textbf{orthogonal matrix}. 
 
 The precise definition is as follows. 
 
 \begin{definition}{Orthogonal matrices}{Ortho-Matrix}
-A real $n\times n$ matrix $U$ is called an
-\index{matrix!orthogonal} \textbf{orthogonal} matrix if $UU^{T}=U^{T}U=I.$
+A real $n\times n$-matrix $U$ is called an
+\index{matrix!orthogonal} \textbf{orthogonal} matrix if $UU^{T}=U^{T}U=I$.
 \end{definition}
 
 Note since $U$ is assumed to be a square matrix, it suffices to verify
@@ -55,7 +55,7 @@ Let $U=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 0 & -1 \\
 0 & -1 & 0
-\end{mymatrix} .$ Is $U$ orthogonal?
+\end{mymatrix}$. Is $U$ orthogonal?
 \end{example}
 
 \begin{solution}
@@ -106,7 +106,7 @@ defined
 \end{equation*}
 
 In words, the product of the $i^{th}$ row of $U$ with the $k^{th}$ row
-gives $1$ if $i=k$ and $0$ if $i\neq k.$ The same is true of the columns because 
+gives $1$ if $i=k$ and $0$ if $i\neq k$. The same is true of the columns because 
 $U^{T}U=I$ also. Therefore, 
 \begin{equation*}
 \sum_{j}u_{ij}^{T}u_{jk}=\sum_{j}u_{ji}u_{jk}=\delta _{ik}
@@ -115,7 +115,7 @@ which says that the product of one column with another column gives $1$ if the t
 columns are the same and $0$ if the two columns are different.
 
 More succinctly, this states that if $\vect{u}_{1},\cdots ,\vect{u}_{n}$
-are the columns of $U,$ an orthogonal matrix, then 
+are the columns of $U$, an orthogonal matrix, then 
 \[
 \vect{u}_{i}\dotprod \vect{u}_{j}=\delta _{ij} = \set{
 \begin{array}{c}
@@ -145,7 +145,7 @@ vectors form an orthonormal basis for $\R^n$.
 
 Suppose now that we have an orthonormal basis for $\R^n$. Since the
 basis will contain $n$ vectors, these can be used to construct an $n
-\times n$ matrix, with each vector becoming a row. Therefore the
+\times n$-matrix, with each vector becoming a row. Therefore the
 matrix is composed of orthonormal rows, which by our above discussion,
 means that the matrix is orthogonal. Note we could also have construct
 a matrix with each vector becoming a column instead, and this would
@@ -156,7 +156,7 @@ the previous matrix.
 Consider the following proposition.
 
 \begin{proposition}{Determinant of orthogonal matrices}{ortho-det}
-Suppose $U$ is an orthogonal matrix. Then $\det \tup{U} = \pm 1.$ 
+Suppose $U$ is an orthogonal matrix. Then $\det \tup{U} = \pm 1$. 
 \end{proposition}
 
 \begin{proof}
