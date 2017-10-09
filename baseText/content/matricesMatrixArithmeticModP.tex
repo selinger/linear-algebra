@@ -1,0 +1,164 @@
+\section{Matrix arithmetic modulo $p$}
+
+In Section~\ref{sec:fields}, you learned that most of linear algebra
+can be done over scalars from any field $F$, and not just the real
+numbers. You also learned that $\Z_p$, the set of integers modulo $p$,
+is a field whenever $p$ is a prime number.
+
+Indeed, all of the operations on matrices that we covered in this
+chapter make sense over any field: addition, scalar multiplication,
+matrix multiplication, inverses, elementary matrices, and the
+transpose.
+
+\begin{example}{A matrix product over $\Z_5$}{matrix-product-z5}
+  Compute the matrix product $AB$ over the field $\Z_5$, where
+  \begin{equation*}
+    A = \begin{mymatrix}{ccc}
+      1 & 0 & 4 \\
+      2 & 3 & 1 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    B = \begin{mymatrix}{cc}
+      3 & 1 \\
+      4 & 0 \\
+      2 & 2 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  For example, the $(1,1)$-entry of $AB$ is calculated by multiplying
+  the first row of $A$ by the first column of $B$, i.e.,
+  \begin{equation*}
+    c_{11} ~=~ 1\cdot 3+0\cdot 4 + 4\cdot 2 ~=~ 3 + 0 + 3 ~=~ 1,
+  \end{equation*}
+  keeping in mind that all arithmetic operations are done in $\Z_5$.
+  We repeat the same for the other entries and obtain
+  \begin{equation*}
+    AB ~=~
+    \begin{mymatrix}{ccc}
+      1 & 0 & 4 \\
+      2 & 3 & 1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{cc}
+      3 & 1 \\
+      4 & 0 \\
+      2 & 2 \\
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{cc}
+      1 & 4 \\
+      0 & 4 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{An inverse over $\Z_7$}{matrix-inverse-z7}
+  Compute the inverse of the matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{ccc}
+      1 & 4 & 2 \\
+      0 & 6 & 2 \\
+      5 & 0 & 3 \\
+    \end{mymatrix}
+  \end{equation*}
+  with scalars in the field $\Z_7$.
+\end{example}
+
+\begin{solution}
+  We use exactly the method of
+  Algorithm~\ref{algo:matrix-inversion-algorithm}, i.e., we set up the
+  augmented matrix $\mat{A\mid I}$ and reduce it to {\rref}. The only
+  thing we have to keep in mind is that all operations are done modulo
+  $7$. Also, as usual, instead of dividing by a scalar, we must
+  multiply by its inverse.
+  \begin{eqnarray*}
+    \mat{A\mid I}
+    &=&
+        \begin{mymatrix}{ccc|ccc}
+          1 & 4 & 2  &  1 & 0 & 0 \\
+          0 & 6 & 2  &  0 & 1 & 0 \\
+          5 & 0 & 3  &  0 & 0 & 1 \\
+        \end{mymatrix}
+    \\
+    &\stackrel{R_3\rowop R_3+2R_1}{\sim}
+      &
+        \begin{mymatrix}{ccc|ccc}
+          1 & 4 & 2  &  1 & 0 & 0 \\
+          0 & 6 & 2  &  0 & 1 & 0 \\
+          0 & 1 & 0  &  2 & 0 & 1 \\
+        \end{mymatrix}
+    \\
+    &\stackrel{R_2\rowswap R_3}{\sim}
+      &
+        \begin{mymatrix}{ccc|ccc}
+          1 & 4 & 2  &  1 & 0 & 0 \\
+          0 & 1 & 0  &  2 & 0 & 1 \\
+          0 & 6 & 2  &  0 & 1 & 0 \\
+        \end{mymatrix}
+    \\
+    &\stackrel{R_3\rowop R_3+R_2}{\sim}
+      &
+        \begin{mymatrix}{ccc|ccc}
+          1 & 4 & 2  &  1 & 0 & 0 \\
+          0 & 1 & 0  &  2 & 0 & 1 \\
+          0 & 0 & 2  &  2 & 1 & 1 \\
+        \end{mymatrix}
+    \\
+    &\stackrel{R_3\rowop 2^{-1}R_3 ~=~ 4R_3}{\sim}
+      &
+        \begin{mymatrix}{ccc|ccc}
+          1 & 4 & 2  &  1 & 0 & 0 \\
+          0 & 1 & 0  &  2 & 0 & 1 \\
+          0 & 0 & 1  &  1 & 4 & 4 \\
+        \end{mymatrix}
+    \\
+    &\stackrel{R_1\rowop R_1-4R_2}{\sim}
+      &
+        \begin{mymatrix}{ccc|ccc}
+          1 & 0 & 2  &  0 & 0 & 3 \\
+          0 & 1 & 0  &  2 & 0 & 1 \\
+          0 & 0 & 1  &  1 & 4 & 4 \\
+        \end{mymatrix}
+    \\
+    &\stackrel{R_1\rowop R_1-2R_3}{\sim}
+      &
+        \begin{mymatrix}{ccc|ccc}
+          1 & 0 & 0  &  5 & 6 & 2 \\
+          0 & 1 & 0  &  2 & 0 & 1 \\
+          0 & 0 & 1  &  1 & 4 & 4 \\
+        \end{mymatrix}.
+  \end{eqnarray*}
+  Therefore, the inverse is
+  \begin{equation*}
+    A^{-1} =
+    \begin{mymatrix}{ccc}
+      5 & 6 & 2 \\
+      2 & 0 & 1 \\
+      1 & 4 & 4 \\
+    \end{mymatrix}.
+  \end{equation*}
+  As usual, we can double-check that we didn't make any mistakes by
+  calculating
+  \begin{equation*}
+    AA^{-1} ~=~
+    \begin{mymatrix}{ccc}
+      1 & 4 & 2 \\
+      0 & 6 & 2 \\
+      5 & 0 & 3 \\
+    \end{mymatrix}
+    \begin{mymatrix}{ccc}
+      5 & 6 & 2 \\
+      2 & 0 & 1 \\
+      1 & 4 & 4 \\
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{ccc}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1 \\
+    \end{mymatrix}
+    ~=~ I.
+  \end{equation*}
+  So indeed, we have calculated the inverse correctly.
+\end{solution}
