@@ -2,6 +2,8 @@ abs
 adj
 adjoint
 adjugate
+AHI
+AHIFNEPL
 Ak
 american
 Andrée
@@ -65,6 +67,7 @@ distributivity
 Dolittle's
 dotproduct
 DU
+EFNOR
 Ehsun
 eigen
 eigenspace
@@ -165,6 +168,7 @@ parallelepiped
 parametric
 pdf
 perp
+PJQZGBOQKW
 plaintext
 poly
 Poohbah
@@ -179,8 +183,10 @@ remix
 Reynold's
 rk
 rn
+RNOLFPHHCIGH
 rref
 rrrr
+RSKT
 rua
 Sava
 saylor
@@ -209,6 +215,7 @@ titlemainbgcolour
 titlemainboxcolour
 toc
 transf
+TSZS
 tuple
 tuples
 UDU
@@ -219,6 +226,7 @@ val
 vars
 vect
 versa
+VKIXIQA
 Volterra
 wp
 www
@@ -234,3 +242,4 @@ ymin
 yscale
 yshift
 Zahedi
+ZBBRFVUPFVZLFHNTV
