@@ -39,7 +39,8 @@ following scheme.
 \end{center}
 In practical applications, one would probably use a larger set of
 symbols and a standard encoding such as ASCII or UTF-8. But the above
-29 symbols will be sufficient for our purposes.
+29 symbols will be sufficient for our purposes. It will also come in
+handy that 29 is prime.
 
 \begin{example}{Representing strings as sequences of numbers}{string-encoding}
   Convert the string ``Attack at dawn'' to a sequence of
@@ -85,12 +86,12 @@ following is an example of a block cipher.
   The \textbf{Hill cipher}%
   \index{Hill cipher}\index{cipher!Hill cipher} of block size $n$ has
   as its key an invertible $n\times n$-matrix $A$ with scalars from
-  $\Z_{29}$. Each ciphertext block $b_1,\ldots,b_n$  is computed from
-  the corresponding plaintext block $a_1,\ldots,a_n$ by matrix
+  $\Z_{29}$. Each ciphertext block $c_1,\ldots,c_n$  is computed from
+  the corresponding plaintext block $p_1,\ldots,p_n$ by matrix
   multiplication modulo $\Z_{29}$:
   \begin{equation*}
-    \begin{mymatrix}{c}b_1\\\vdots\\b_n\end{mymatrix}
-    ~=~ A\begin{mymatrix}{c}a_1\\\vdots\\a_n\end{mymatrix}.
+    \begin{mymatrix}{c}c_1\\\vdots\\c_n\end{mymatrix}
+    ~=~ A\begin{mymatrix}{c}p_1\\\vdots\\p_n\end{mymatrix}.
   \end{equation*}
   The matrix $A$ is called the \textbf{encryption matrix}%
   \index{encryption matrix}\index{matrix!encryption} of the cipher. It
