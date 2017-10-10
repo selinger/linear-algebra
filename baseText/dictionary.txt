@@ -5,7 +5,9 @@ adjugate
 Ak
 american
 Andrée
+antisymmetric
 Argand
+ASCII
 associativity
 atholic
 Ax
@@ -19,6 +21,7 @@ cc
 centimeters
 chem
 cholesky
+ciphertext
 circuitikz
 cm
 cof
@@ -37,6 +40,7 @@ cos
 Cramer's
 cramers
 creativecommons
+cryptanalysis
 curvilinear
 cyan
 DA
@@ -44,6 +48,8 @@ Dal
 Dalhousie
 de
 decomp
+decrypt
+decryption
 def
 defn
 deg
@@ -159,6 +165,7 @@ parallelepiped
 parametric
 pdf
 perp
+plaintext
 poly
 Poohbah
 pos
@@ -206,6 +213,7 @@ tuple
 tuples
 UDU
 uploads
+UTF
 UU
 val
 vars
