@@ -99,7 +99,7 @@ following is an example of a block cipher.
 \end{definition}
 
 \begin{example}{Hill cipher: encryption}{hill-cipher-encryption}
-  Encrypt the message ``Meet me at noon'' using the Hill cipher with
+  Encrypt the message ``Meet me tomorrow'' using the Hill cipher with
   block size $3$ and encryption matrix
   \begin{equation*}
     A ~=~ \begin{mymatrix}{ccc}
@@ -207,8 +207,8 @@ following is an example of a block cipher.
     ~=~
     \mat{I\mid A^{-1}}.
   \end{equation*}
-  Next, we convert the ciphertext ``RNOLFPHHCIGH DE'' to a sequence
-  of scalars and divide it into blocks of length 3:
+  Next, we convert the 15 ciphertext symbols ``RNOLFPHHCIGH DE'' to
+  scalars and divide them into blocks of length 3:
   \begin{equation*}
     \mbox{Ciphertext blocks:}\quad
     (18,14,15),\
@@ -251,9 +251,10 @@ following is an example of a block cipher.
 It is important to note that, despite its good diffusion properties,
 the Hill cipher is not secure. The cipher has many weaknesses. For
 one, because $A\vect{0}=\vect{0}$, a block of blanks in the plaintext
-will always be encrypted as a block of blanks in the ciphertext. More
-importantly, the cipher is subject to a so-called \textbf{known
-  plaintext attack}\index{known plaintext attack}%
+will always be encrypted as a block of blanks in the ciphertext,
+regardless of the encryption matrix $A$. More importantly, the cipher
+is subject to a so-called \textbf{known plaintext attack}\index{known
+  plaintext attack}%
 \index{cipher!known plaintext attack}.  If an eavesdropper intercepts
 some ciphertext for which a small amount of the corresponding
 plaintext happens to be known, it is immediately possible to recover
@@ -266,9 +267,10 @@ following example illustrates how this is done.
   \begin{center}
     ``EFNOR.AHIFNEPL.TSZS,RSKT.ZBBRFVUPFVZLFHNTV''.
   \end{center}
-  Eve knows that Alice uses a Hill cipher, but she does not know the
-  secret encryption matrix. Eve also knows that Alice begins all of
-  her correspondence with ``My dear love''. Decrypt the message.
+  Eve knows that Alice uses a Hill cipher with block length 3, but she
+  does not know the secret encryption matrix. Eve also knows that
+  Alice begins all of her correspondence with ``My dear
+  love''. Decrypt the message.
 \end{example}
 
 \begin{solution}
@@ -287,7 +289,7 @@ following example illustrates how this is done.
     (4,5,1),\
     (18,0,12).
   \end{equation*}
-  From these facts, Eve deduces the following information about the
+  These facts allow Eve to deduce the following information about the
   unknown decryption matrix $A^{-1}$:
   \begin{equation*}
     A^{-1} \begin{mymatrix}{c} 5 \\ 6 \\ 14 \end{mymatrix}
@@ -330,9 +332,9 @@ following example illustrates how this is done.
       19 & 8 & 23 \\
       0 & 5 & 2 \\
       22 & 1 & 0 \\
-    \end{mymatrix}
+    \end{mymatrix}.
   \end{equation*}
-  and then
+  This allows Eve to compute the decryption matrix:
   \begin{equation*}
     A^{-1}
     =
