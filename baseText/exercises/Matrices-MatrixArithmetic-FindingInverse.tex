@@ -1,391 +1,307 @@
 \begin{enumialphparenastyle}
 
-\begin{ex} Let
-\begin{equation*}
-A=\begin{mymatrix}{rr}
-2 & 1 \\
--1 & 3
-\end{mymatrix} 
-\end{equation*}
-Find $A^{-1}$ if possible. If $A^{-1}$ does not exist, explain why. 
-\begin{sol}
-$\def\arraystretch{1.2}
-\begin{mymatrix}{rr}
-2 & 1 \\
--1 & 3
-\end{mymatrix}^{-1}= \begin{mymatrix}{rr}
-\frac{3}{7} & -\frac{1}{7} \\
-\frac{1}{7} & \frac{2}{7}
-\end{mymatrix}$
-\end{sol}
+\begin{ex}
+  For each of the following matrices, find the inverse if possible. If
+  the inverse does not exist, explain why.
+  \begin{equation*}
+    A=\begin{mymatrix}{rr}
+      2 & 1 \\
+      -1 & 3
+    \end{mymatrix},
+    \quad
+    B=\begin{mymatrix}{rr}
+      0 & 1 \\
+      5 & 3
+    \end{mymatrix},
+    \quad
+    C=\begin{mymatrix}{rr}
+      2 & 1 \\
+      3 & 0
+    \end{mymatrix},
+    \quad
+    D=\begin{mymatrix}{rr}
+      2 & 1 \\
+      4 & 2
+    \end{mymatrix},
+    \quad
+    E=\begin{mymatrix}{rrr}
+      0 & 1 & 2 \\
+      1 & 2 & 5 \\
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    \def\arraystretch{1.2}
+    $A^{-1} =
+    \begin{mymatrix}{rr}
+      \frac{3}{7} & -\frac{1}{7} \\
+      \frac{1}{7} & \frac{2}{7}
+    \end{mymatrix}$,
+    $B^{-1} = 
+    \begin{mymatrix}{cc}
+      -\frac{3}{5} & \frac{1}{5} \\
+      1 & 0
+    \end{mymatrix}$,
+    $C^{-1} = 
+    \begin{mymatrix}{cc}
+      0 & \frac{1}{3} \\
+      1 & -\frac{2}{3}
+    \end{mymatrix}$.
+    $D^{-1}$ does not exist because the {\rref} of $D$ is 
+    $\begin{mymatrix}{cc}
+      1 & \frac{1}{2} \\
+      0 & 0
+    \end{mymatrix}$, which has a row of zeros. $E^{-1}$ does not exist
+    because $E$ is not a square matrix.
+  \end{sol}
 \end{ex}
 
-\begin{ex}Let
-\begin{equation*}
-A=\begin{mymatrix}{rr}
-0 & 1 \\
-5 & 3
-\end{mymatrix} 
-\end{equation*}
-Find $A^{-1}$ if possible. If $A^{-1}$ does not exist, explain why. 
-\begin{sol}
-$\def\arraystretch{1.2}
-\begin{mymatrix}{cc}
-0 & 1 \\
-5 & 3
-\end{mymatrix}^{-1}= \begin{mymatrix}{cc}
--\frac{3}{5} & \frac{1}{5} \\
-1 & 0
-\end{mymatrix}$
-\end{sol}
+\begin{ex}
+  For each of the following matrices, find the inverse if possible. If
+  the inverse does not exist, explain why.
+  \begin{equation*}
+    A=\begin{mymatrix}{rrr}
+      1 & 2 & 3 \\
+      2 & 1 & 4 \\
+      1 & 0 & 2
+    \end{mymatrix},
+    \quad
+    B=\begin{mymatrix}{rrr}
+      1 & 0 & 3 \\
+      2 & 3 & 4 \\
+      1 & 0 & 2
+    \end{mymatrix},
+    \quad
+    C=\begin{mymatrix}{rrr}
+      1 & 2 & 3 \\
+      2 & 1 & 4 \\
+      4 & 5 & 10
+    \end{mymatrix},
+    \quad
+    D=\begin{mymatrix}{rrrr}
+      1 & 2 & 0 & 2 \\
+      1 & 1 & 2 & 0 \\
+      2 & 1 & -3 & 2 \\
+      1 & 2 & 1 & 2
+    \end{mymatrix}.
+  \end{equation*}
+
+  \begin{sol}
+    \def\arraystretch{1.2}
+    $A^{-1} =
+    \begin{mymatrix}{rrr}
+      -2 & 4 & -5 \\
+      0 & 1 & -2 \\
+      1 & -2 & 3
+    \end{mymatrix}$,
+    $B^{-1} = 
+    \begin{mymatrix}{rrr}
+      -2 & 0 & 3 \\
+      0 & \frac{1}{3} & -\frac{2}{3} \\
+      1 & 0 & -1
+    \end{mymatrix}$.
+    $C^{-1}$ does not exist because the {\rref} of $C$ is 
+    $\begin{mymatrix}{ccc}
+      1 & 0 & \frac{5}{3} \\
+      0 & 1 & \frac{2}{3} \\
+      0 & 0 & 0
+    \end{mymatrix}$, which has a row of zeros. 
+    $D^{-1} =
+    \begin{mymatrix}{rrrr}
+      -1 & \frac{1}{2} &  \frac{1}{2} &  \frac{1}{2} \\
+      3 &  \frac{1}{2} & - \frac{1}{2} & - \frac{5}{2} \\
+      -1 & 0 & 0 & 1 \\
+      -2 & - \frac{3}{4} &  \frac{1}{4} &  \frac{9}{4}
+    \end{mymatrix}$.
+  \end{sol}
 \end{ex}
 
-\begin{ex}Let
-\begin{equation*}
-A=\begin{mymatrix}{rr}
-2 & 1 \\
-3 & 0
-\end{mymatrix} 
-\end{equation*}
-Find $A^{-1}$ if possible. If $A^{-1}$ does not exist, explain why.
-\begin{sol}
-$\def\arraystretch{1.2}
-\begin{mymatrix}{cc}
-2 & 1 \\
-3 & 0
-\end{mymatrix}^{-1}= \begin{mymatrix}{rr}
-0 & \frac{1}{3} \\
-1 & -\frac{2}{3}
-\end{mymatrix}$
-\end{sol}
+\begin{ex}
+  Let $A$ be a $2\times 2$ invertible matrix, with
+  $A=\begin{mymatrix}{cc}
+    a & b \\
+    c & d
+  \end{mymatrix}$. Find a formula for $A^{-1}$ in terms of $a,b,c,d$.
+  \begin{sol}
+    $\def\arraystretch{1.3}
+    \begin{mymatrix}{cc}
+      a & b \\
+      c & d
+    \end{mymatrix}^{-1}= \begin{mymatrix}{cc}
+      \frac{d}{ad-bc} & -\frac{b}{ad-bc} \\
+      -\frac{c}{ad-bc} & \frac{a}{ad-bc}
+    \end{mymatrix}$.
+  \end{sol}
 \end{ex}
 
-\begin{ex}Let
-\begin{equation*}
-A=\begin{mymatrix}{rr}
-2 & 1 \\
-4 & 2
-\end{mymatrix} 
-\end{equation*}
-Find $A^{-1}$ if possible. If $A^{-1}$ does not exist, explain why. 
-\begin{sol}
-$\begin{mymatrix}{cc}
-2 & 1 \\
-4 & 2
-\end{mymatrix}^{-1}$ does not exist. The {\rref} of this matrix
-is
-$\def\arraystretch{1.2}
-\begin{mymatrix}{cc}
-1 & \frac{1}{2} \\
-0 & 0
-\end{mymatrix}$
-\end{sol}
+\begin{ex}
+  Using the inverse of the matrix, find the solution to the systems:
+  \begin{enumerate}
+  \item
+    \begin{equation*}
+      \begin{mymatrix}{rr}
+        2 & 4  \\
+        1 & 1 
+      \end{mymatrix} 
+      \begin{mymatrix}{c}
+        x \\
+        y
+      \end{mymatrix} =\begin{mymatrix}{r}
+        1 \\
+        2 
+      \end{mymatrix},
+    \end{equation*}
+  \item
+    \begin{equation*}
+      \begin{mymatrix}{rr}
+        2 & 4 \\
+        1 & 1 
+      \end{mymatrix} \begin{mymatrix}{c}
+        x \\
+        y 
+      \end{mymatrix} =\begin{mymatrix}{r}
+        2 \\
+        0 
+      \end{mymatrix}.
+    \end{equation*}
+  \end{enumerate}
+  Now give the solution in terms of $a$ and $b$ to
+  \begin{equation*}
+    \begin{mymatrix}{rr}
+      2 & 4 \\
+      1 & 1 
+    \end{mymatrix}
+    \begin{mymatrix}{c}
+      x \\
+      y
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{c}
+      a \\
+      b
+    \end{mymatrix}.
+  \end{equation*}
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex}Let $A$ be a $2\times 2$ invertible matrix, with $A=\begin{mymatrix}{cc}
-a & b \\
-c & d
-\end{mymatrix}$. Find a formula for $A^{-1}$ in terms of $a,b,c,d$.
-\begin{sol}
-$\def\arraystretch{1.3}
-\begin{mymatrix}{cc}
-a & b \\
-c & d
-\end{mymatrix}^{-1}= \begin{mymatrix}{cc}
-\frac{d}{ad-bc} & -\frac{b}{ad-bc} \\
--\frac{c}{ad-bc} & \frac{a}{ad-bc}
-\end{mymatrix}$
-\end{sol}
+\begin{ex}
+  Using the inverse of the matrix, find the solution to the systems:
+  \begin{enumerate}
+  \item
+    \begin{equation*}
+      \begin{mymatrix}{rrr}
+        1 & 0 & 3 \\
+        2 & 3 & 4 \\
+        1 & 0 & 2
+      \end{mymatrix} \begin{mymatrix}{c}
+        x \\
+        y \\
+        z
+      \end{mymatrix} =\begin{mymatrix}{r}
+        1 \\
+        0 \\
+        1
+      \end{mymatrix},
+    \end{equation*}
+  \item
+    \begin{equation*}
+      \begin{mymatrix}{rrr}
+        1 & 0 & 3 \\
+        2 & 3 & 4 \\
+        1 & 0 & 2
+      \end{mymatrix} \begin{mymatrix}{c}
+        x \\
+        y \\
+        z
+      \end{mymatrix} =\begin{mymatrix}{r}
+        3 \\
+        -1 \\
+        -2
+      \end{mymatrix}.
+    \end{equation*}
+  \end{enumerate}
+  Now give the solution in terms of $a,b$, and $c$ to the following:
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 0 & 3 \\
+      2 & 3 & 4 \\
+      1 & 0 & 2
+    \end{mymatrix} \begin{mymatrix}{c}
+      x \\
+      y \\
+      z
+    \end{mymatrix} =\begin{mymatrix}{c}
+      a \\
+      b \\
+      c
+    \end{mymatrix}.
+  \end{equation*}
+
+  \begin{sol}
+    \begin{enumerate}
+    \item $\def\arraystretch{1.2}
+      \begin{mymatrix}{c}
+        x \\
+        y \\
+        z
+      \end{mymatrix} =\begin{mymatrix}{r}
+        1 \\
+        -\frac{2}{3} \\
+        0
+      \end{mymatrix}$.
+    \item $\begin{mymatrix}{c}
+        x \\
+        y \\
+        z
+      \end{mymatrix} = \begin{mymatrix}{r}
+        -12 \\
+        1 \\
+        5
+      \end{mymatrix}$.
+    \end{enumerate}
+    $\def\arraystretch{1.2}
+    \begin{mymatrix}{c}
+      x \\
+      y \\
+      z
+    \end{mymatrix} = 
+    \begin{mymatrix}{c}
+      3c-2a \\
+      \frac{1}{3}b-\frac{2}{3}c \\
+      a-c
+    \end{mymatrix}$.
+  \end{sol}
 \end{ex}
 
-\begin{ex}Let
-\begin{equation*}
-A=\begin{mymatrix}{rrr}
-1 & 2 & 3 \\
-2 & 1 & 4 \\
-1 & 0 & 2
-\end{mymatrix} 
-\end{equation*}
-Find $A^{-1}$ if possible. If $A^{-1}$ does not exist, explain why.
-\begin{sol}
-$\begin{mymatrix}{ccc}
-1 & 2 & 3 \\
-2 & 1 & 4 \\
-1 & 0 & 2
-\end{mymatrix}^{-1}= \begin{mymatrix}{rrr}
--2 & 4 & -5 \\
-0 & 1 & -2 \\
-1 & -2 & 3
-\end{mymatrix}$
-\end{sol}
-\end{ex} 
-
-\begin{ex}Let
-\begin{equation*}
-A=\begin{mymatrix}{rrr}
-1 & 0 & 3 \\
-2 & 3 & 4 \\
-1 & 0 & 2
-\end{mymatrix} 
-\end{equation*}
-Find $A^{-1}$ if possible. If $A^{-1}$ does not exist, explain why. 
-\begin{sol}
-$\def\arraystretch{1.2}
-\begin{mymatrix}{ccc}
-1 & 0 & 3 \\
-2 & 3 & 4 \\
-1 & 0 & 2
-\end{mymatrix}^{-1}= \begin{mymatrix}{rrr}
--2 & 0 & 3 \\
-0 & \frac{1}{3} & -\frac{2}{3} \\
-1 & 0 & -1
-\end{mymatrix}$
-\end{sol}
+\begin{ex}
+  Show that if $A$ is an $n\times n$ invertible matrix and $X$ and $B$
+  are $n\times 1$-matrices such that $AX=B$, then $X=A^{-1}B$.
+  \begin{sol}
+    Multiply both sides of $AX=B$ on the left by $A^{-1}$.
+  \end{sol}
 \end{ex}
 
-\begin{ex}Let
-\begin{equation*}
-A=\begin{mymatrix}{rrr}
-1 & 2 & 3 \\
-2 & 1 & 4 \\
-4 & 5 & 10
-\end{mymatrix} 
-\end{equation*}
-Find $A^{-1}$ if possible. If $A^{-1}$ does not exist, explain why. 
-\begin{sol}
-The {\rref} is 
-$\def\arraystretch{1.2}
-\begin{mymatrix}{ccc}
-1 & 0 & \frac{5}{3} \\
-0 & 1 & \frac{2}{3} \\
-0 & 0 & 0
-\end{mymatrix}$. There is no inverse.
-\end{sol}
+\begin{ex}
+  Prove that if $A^{-1}$ exists and $AX=0$ then $X=0$.
+  \begin{sol}
+    Multiply on both sides on the left by $A^{-1}$. Thus
+    $0=A^{-1}0=A^{-1}\tup{AX} =\tup{ A^{-1}A} X=IX = X$.
+  \end{sol}
 \end{ex}
 
-\begin{ex}Let
-\begin{equation*}
-A=\begin{mymatrix}{rrrr}
-1 & 2 & 0 & 2 \\
-1 & 1 & 2 & 0 \\
-2 & 1 & -3 & 2 \\
-1 & 2 & 1 & 2
-\end{mymatrix}
-\end{equation*}
-Find $A^{-1}$ if possible. If $A^{-1}$ does not exist, explain why.
-\begin{sol}
-$\def\arraystretch{1.2}
-\begin{mymatrix}{rrrr}
-1 & 2 & 0 & 2 \\
-1 & 1 & 2 & 0 \\
-2 & 1 & -3 & 2 \\
-1 & 2 & 1 & 2
-\end{mymatrix}^{-1}= \begin{mymatrix}{rrrr}
--1 & \frac{1}{2} &  \frac{1}{2} &  \frac{1}{2} \\
-3 &  \frac{1}{2} & - \frac{1}{2} & - \frac{5}{2} \\
--1 & 0 & 0 & 1 \\
--2 & - \frac{3}{4} &  \frac{1}{4} &  \frac{9}{4}
-\end{mymatrix}$
-\end{sol}
-\end{ex}
-
-\begin{ex}Using the inverse of the matrix, find the solution to the systems:
-\begin{enumerate}
-\item
-\begin{equation*}
-\begin{mymatrix}{rr}
-2 & 4  \\
-1 & 1 
-\end{mymatrix} 
-\begin{mymatrix}{c}
-x \\
-y
-\end{mymatrix} =\begin{mymatrix}{r}
-1 \\
-2 
-\end{mymatrix}
-\end{equation*}
-
-\item
-\begin{equation*}
-\begin{mymatrix}{rr}
-2 & 4 \\
-1 & 1 
-\end{mymatrix} \begin{mymatrix}{c}
-x \\
-y 
-\end{mymatrix} =\begin{mymatrix}{r}
-2 \\
-0 
-\end{mymatrix} 
-\end{equation*}
-\end{enumerate}
-
-Now give the solution in terms of $a$ and $b$ to
-\[
-\begin{mymatrix}{rr}
-2 & 4 \\
-1 & 1 
-\end{mymatrix}
-\begin{mymatrix}{c}
-x \\
-y
-\end{mymatrix}
-=
-\begin{mymatrix}{c}
-a \\
-b
-\end{mymatrix}
-\]
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex}Using the inverse of the matrix, find the solution to the systems: 
-
-\begin{enumerate}
-\item
-\begin{equation*}
-\begin{mymatrix}{rrr}
-1 & 0 & 3 \\
-2 & 3 & 4 \\
-1 & 0 & 2
-\end{mymatrix} \begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix} =\begin{mymatrix}{r}
-1 \\
-0 \\
-1
-\end{mymatrix} 
-\end{equation*}
-
-\item
-\begin{equation*}
-\begin{mymatrix}{rrr}
-1 & 0 & 3 \\
-2 & 3 & 4 \\
-1 & 0 & 2
-\end{mymatrix} \begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix} =\begin{mymatrix}{r}
-3 \\
--1 \\
--2
-\end{mymatrix} 
-\end{equation*}
-\end{enumerate}
-
-Now give the solution in terms of $a,b$, and $c$ to the following:
-\begin{equation*}
-\begin{mymatrix}{rrr}
-1 & 0 & 3 \\
-2 & 3 & 4 \\
-1 & 0 & 2
-\end{mymatrix} \begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix} =\begin{mymatrix}{c}
-a \\
-b \\
-c
-\end{mymatrix} 
-\end{equation*}
-
-\begin{sol}
-\begin{enumerate}
-\item $\def\arraystretch{1.2}
-\begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix} =\begin{mymatrix}{r}
-1 \\
--\frac{2}{3} \\
-0
-\end{mymatrix}$
-\item $\begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix} = \begin{mymatrix}{r}
--12 \\
-1 \\
-5
-\end{mymatrix}$
-\end{enumerate}
-
-$\def\arraystretch{1.2}
-\begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix} = 
-\begin{mymatrix}{c}
-3c-2a \\
-\frac{1}{3}b-\frac{2}{3}c \\
-a-c
-\end{mymatrix}$
-\end{sol}
-\end{ex}
-
-\begin{ex}Show that if $A$ is an $n\times n$ invertible matrix and $X$
-is a $n\times 1$-matrix such that $AX=B$ for $B$ an 
-$n\times 1$-matrix, then $X=A^{-1}B$. 
-\begin{sol}
-Multiply both sides of $AX=B$ on the left by $A^{-1}$.
-\end{sol}
-\end{ex}
-
-\begin{ex}Prove that if $A^{-1}$ exists and $AX=0$ then $X=0$. 
-\begin{sol}
-Multiply on both sides on the left by $A^{-1}$. Thus
-\[
-0=A^{-1}0=A^{-1}\tup{AX} =\tup{
-A^{-1}A} X=IX = X
-\]
-\end{sol}
-\end{ex}
-
-\begin{ex}\label{exer-inverse-prod}Show that if $A^{-1}$ exists for an $n\times n$-matrix, then it is unique. That is, if $BA=I$ and $AB=I$, then $B=A^{-1}$. 
-\begin{sol}
- $A^{-1}=A^{-1}I=A^{-1}\tup{AB} =\tup{A^{-1}A} B=IB=B$.
-\end{sol}
-\end{ex}
-
-\begin{ex}Show that if $A$ is an invertible $n\times n$-matrix, then so is 
-$A^{T} $ and $\tup{A^{T}} ^{-1}=\tup{A^{-1}} ^{T}$. 
-\begin{sol}
- You need to show that $\tup{A^{-1}} ^{T}$ acts like the inverse of $A^{T}
-$ because from uniqueness in the above problem, this will imply it is the
-inverse. From properties of the transpose,
-\begin{eqnarray*}
-A^{T}\tup{A^{-1}} ^{T} &=&\tup{A^{-1}A} ^{T}=I^{T}=I \\
-\tup{A^{-1}} ^{T}A^{T} &=&\tup{AA^{-1}} ^{T}=I^{T}=I
-\end{eqnarray*}
-Hence $\tup{A^{-1}} ^{T}=\tup{A^{T}} ^{-1}$ and this last
-matrix exists.
-\end{sol}
-\end{ex}
-
-\begin{ex}Show $\tup{AB} ^{-1}=B^{-1}A^{-1}$ by verifying that 
-\begin{equation*}
-AB\tup{
-B^{-1}A^{-1}} =I
-\end{equation*} and 
-\begin{equation*}
-B^{-1}A^{-1}\tup{AB} =I
-\end{equation*}
-\textbf{Hint:\ }Use Problem~\ref{exer-inverse-prod}.
-\begin{sol}
-$\tup{AB}
-B^{-1}A^{-1}=A\tup{BB^{-1}} A^{-1}=AA^{-1}=I$ $B^{-1}A^{-1}\tup{
-AB} =B^{-1}\tup{A^{-1}A} B=B^{-1}IB=B^{-1}B=I$
-\end{sol}
+\begin{ex}\label{exer-inverse-prod}
+  Show $(AB)^{-1}=B^{-1}A^{-1}$ by verifying that
+  \begin{equation*}
+    AB(B^{-1}A^{-1}) = I
+    \quad\mbox{and}\quad
+    B^{-1}A^{-1}(AB) = I.
+  \end{equation*}
+  \vspace{-4ex}
+  \begin{sol}
+    $\tup{AB}
+    B^{-1}A^{-1}=A\tup{BB^{-1}} A^{-1}=AA^{-1}=I$ and  $B^{-1}A^{-1}\tup{
+      AB} =B^{-1}\tup{A^{-1}A} B=B^{-1}IB=B^{-1}B=I$.
+  \end{sol}
 \end{ex}
 
 \begin{ex}
@@ -398,34 +314,30 @@ AB} =B^{-1}\tup{A^{-1}A} B=B^{-1}IB=B^{-1}B=I$
   \end{sol}
 \end{ex}
 
-\begin{ex}Show that $\tup{ABC} ^{-1}=C^{-1}B^{-1}A^{-1}$ by verifying
-that 
-\[
-\tup{ABC} \tup{C^{-1}B^{-1}A^{-1}} =I
-\]
-and 
-\[\tup{C^{-1}B^{-1}A^{-1}}\tup{ABC} =I
-\] 
-\textbf{Hint:\ }Use Problem~\ref{exer-inverse-prod}. 
-\begin{sol}
-The proof of this exercise follows from the previous one.
-\end{sol}
+\begin{ex}
+  Show that $\tup{ABC} ^{-1}=C^{-1}B^{-1}A^{-1}$ by verifying that
+  \begin{equation*}
+    \tup{ABC} \tup{C^{-1}B^{-1}A^{-1}} = I
+    \quad\mbox{and}\quad
+    \tup{C^{-1}B^{-1}A^{-1}}\tup{ABC} = I.
+  \end{equation*} 
 \end{ex}
 
-\begin{ex}If $A$ is invertible, show $\tup{A^{2}} ^{-1}=\tup{
-A^{-1}} ^{2}$. \textbf{Hint:\ }Use Problem~\ref{exer-inverse-prod}. 
-\begin{sol}
-$A^{2}\tup{A^{-1}} ^{2}=AAA^{-1}A^{-1}=AIA^{-1}=AA^{-1}=I$ $\tup{
-A^{-1}} ^{2}A^{2}=A^{-1}A^{-1}AA=A^{-1}IA=A^{-1}A=I$
-\end{sol}
+\begin{ex}
+  If $A$ is invertible, show that $A^2$ is invertible and
+  $(A^{2})^{-1}=(A^{-1})^{2}$.
+  \begin{sol}
+    This follows from Problem~\ref{exer-inverse-prod} by taking $A=B$.
+  \end{sol}
 \end{ex}
 
-\begin{ex}If $A$ is invertible, show $\tup{A^{-1}} ^{-1}=A$. 
-\textbf{Hint:\ }Use Problem~\ref{exer-inverse-prod}. 
-\begin{sol}
- $A^{-1}A=AA^{-1}=I$ and so by
-uniqueness, $\tup{A^{-1}} ^{-1}=A$.
-\end{sol}
+\begin{ex}If $A$ is invertible, show $(A^{-1})^{-1}=A$.
+  Hint: Use the uniqueness of inverses. 
+  \begin{sol}
+    $A^{-1}A=AA^{-1}=I$ and so $A$ is an inverse of $A^{-1}$. Since
+    $(A^{-1})^{-1}$, by definition, is also an inverse of $A^{-1}$, we
+    have $(A^{-1})^{-1}=A$ by uniqueness.
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}

@@ -141,5 +141,21 @@ this is true for all $\vect{y}$ and so $B^{T}A^{T}-\tup{
 AB} ^{T}=0$.
 \end{sol}
 \end{ex}
- 
+
+\begin{ex}
+  Show that if $A$ is an invertible $n\times n$-matrix, then so is
+  $A^{T} $ and $\tup{A^{T}} ^{-1}=\tup{A^{-1}} ^{T}$.
+  \begin{sol}
+    You need to show that $\tup{A^{-1}} ^{T}$ acts like the inverse of $A^{T}
+    $ because from uniqueness in the above problem, this will imply it is the
+    inverse. From properties of the transpose,
+    \begin{eqnarray*}
+      A^{T}\tup{A^{-1}} ^{T} &=&\tup{A^{-1}A} ^{T}=I^{T}=I \\
+      \tup{A^{-1}} ^{T}A^{T} &=&\tup{AA^{-1}} ^{T}=I^{T}=I
+    \end{eqnarray*}
+    Hence $\tup{A^{-1}} ^{T}=\tup{A^{T}} ^{-1}$ and this last
+    matrix exists.
+  \end{sol}
+\end{ex}
+
 \end{enumialphparenastyle}
