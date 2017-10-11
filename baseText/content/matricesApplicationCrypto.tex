@@ -388,7 +388,7 @@ The inputs of the S-box are shown in the top row, and the
 corresponding outputs in the bottom row.  For example, this S-box maps
 the input $7$ to the output $26$. We write $S(7)=26$.
 
-\begin{definition}{A better block cipher}{better-block-cipher}
+\begin{definition}{A toy block cipher}{toy-block-cipher}
   Consider the following block cipher on the alphabet $\Z_{29}$ with
   block size $3$. The key consists of $12$ elements $k_1,\ldots,k_{12}$
   of $\Z_{29}$. To encrypt a plaintext block, regard the block as a
@@ -463,9 +463,10 @@ the Hill cipher, the matrix $A$ is fixed once and for all and is not
 part of the key. Instead, the key consists of scalars that are added
 to the current block at the beginning of each round.
 
-\begin{example}{Encryption}{better-block-cipher-encryption}
+\begin{example}{Toy block cipher: encryption}{toy-block-cipher-encryption}
   Encrypt the message ``I like math'' using the block cipher of
-  Definition~\ref{def:better-block-cipher} and the key $1,1,3,3,5,5,7,7,9,9,11,11$.
+  Definition~\ref{def:toy-block-cipher} and the key
+  $1,1,3,3,5,5,7,7,9,9,11,11$.
 \end{example}
 
 \begin{solution}
@@ -597,11 +598,34 @@ to the current block at the beginning of each round.
   The corresponding ciphertext is ``OZUGXABPWGTV''.
 \end{solution}
 
-\void{ Realistic modern ciphers (such as DES and AES) are essentially
-  of this form.  The most relevant parameters are: alphabet size
-  (typically 256 instead of 29; note that although $\Z_{256}$ is not a
-  field, there does exist a field of size 256). Block size (typically
-  16-32 bytes). Number of rounds. Design of the S-boxes.
-}
+Do ciphers like this actually get used in the real world? The answer
+is yes. While the cipher of Definition~\ref{def:toy-block-cipher} is
+greatly simplified, it has the same basic structure as modern
+real-world block ciphers (such as AES, the Advanced Encryption
+Standard). Naturally, these real-world ciphers differ in some details,
+such as the alphabet size, the block size, the number of rounds, the
+design of the S-boxes, the way the key is computed, and the precise
+order in which the operations are applied. However, their basic
+structure is very similar to our toy cipher, and indeed, all such
+ciphers rely on key mixture, diffusion, and non-linear S-boxes as
+their key components.
+  
+For example, AES uses an alphabet size of $256$ instead of $29$ (i.e.,
+it operates on bytes, rather than elements of $\Z_{29}$). Although
+$\Z_{256}$ is not a field (because $256$ is not prime), it
+nevertheless turns out that there exists a field with $256$ elements,
+and AES uses it for its algebraic operations. Our toy cipher's block
+size of $3$ is much too small to achieve effective diffusion; modern
+real-world ciphers use block sizes between $16$ and $32$ bytes ($128$
+to $256$ bits). The design of the S-boxes is a bit of a black art; at
+minimum, they must be designed to withstand two common types of
+cryptanalysis known as \textbf{linear cryptanalysis} and
+\textbf{differential cryptanalysis}.  Among other things, this means
+that the S-box should be ``as far from linear'' as possible.
+
+Details on the design and cryptanalysis of modern block ciphers are
+far beyond the scope of this book, but we hope that you have gotten a
+taste of this fascinating subject, and the role that linear algebra
+over finite fields plays in it.
 
 \endgroup
