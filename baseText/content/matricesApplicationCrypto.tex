@@ -381,11 +381,11 @@ $\Z_{29}$ to $\Z_{29}$:
   \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
     \hline
     $x$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 \\\hline
-    ~$S(x)$~ & 8 & 17 & 9 & 27 & 2 & 20 & 12 & 21 & 26 & 16 & 18 & 4 & 24 & 23 & 7 & 19 & 14 & 28 & 29 & 1 & 15 & 10 & 22 & 6 & 5 & 25 & 11 & 13 & 3 \\\hline
+    ~$S(x)$~ & 17 & 9 & 27 & 2 & 20 & 12 & 21 & 26 & 16 & 18 & 4 & 24 & 23 & 7 & 19 & 14 & 28 & 29 & 1 & 15 & 10 & 22 & 6 & 5 & 25 & 11 & 13 & 3 & 8 \\\hline
   \end{tabular}
 \end{center}
-For example, this S-box maps the input $7$ to the output $21$. We
-write $S(7)=21$.
+For example, this S-box maps the input $7$ to the output $26$. We
+write $S(7)=26$.
 
 \begin{definition}{A better block cipher}{better-block-cipher}
   Consider the following block cipher on the alphabet $\Z_{29}$ with
@@ -446,14 +446,14 @@ write $S(7)=21$.
 
 Note that the three basic steps (key mixture, diffusion, and S-box
 application) are repeated several times; each such repetition is
-called a \textbf{round}\index{cipher!round}\index{round} of the block
-cipher.  The more rounds a block cipher has, the better its diffusion
-and non-linearity properties. The final round is abbreviated: it
-consists of a single key mixture step, with no final diffusion or
-S-box application. The reason is that performing a final diffusion and
-S-box application would add nothing to the security of the cipher; an
-attacker could simply undo these last two steps, since they do not
-depend on the key.
+called a \textbf{round}\index{cipher!round}%
+\index{rounds of a cipher} of the block cipher.  The more rounds
+a block cipher has, the better its diffusion and non-linearity
+properties. The final round is abbreviated: it consists of a single
+key mixture step, with no final diffusion or S-box application. The
+reason is that performing a final diffusion and S-box application
+would add nothing to the security of the cipher; an attacker could
+simply undo these last two steps, since they do not depend on the key.
 
 The matrix $A$ is called the \textbf{diffusion matrix}%
 \index{diffusion matrix}\index{matrix!diffusion}%
@@ -513,7 +513,7 @@ to the current block at the beginning of each round.
       ~\mapsto~
       \begin{mymatrix}{c} S(28) \\ S(3) \\ S(9) \end{mymatrix}
       ~=~
-      \begin{mymatrix}{c} 3 \\ 27 \\ 16 \end{mymatrix}.
+      \begin{mymatrix}{c} 8 \\ 2 \\ 18 \end{mymatrix}.
     \end{equation*}
   \end{itemize}
 
@@ -522,34 +522,34 @@ to the current block at the beginning of each round.
   \item Key mixture: the next three components of the key are
     $3,5,5$.
     \begin{equation*}
-      \begin{mymatrix}{c} 3 \\ 27 \\ 16 \end{mymatrix}
+      \begin{mymatrix}{c} 8 \\ 2 \\ 18 \end{mymatrix}
       ~\mapsto~
-      \begin{mymatrix}{c} 3 \\ 27 \\ 16 \end{mymatrix}
+      \begin{mymatrix}{c} 8 \\ 2 \\ 18 \end{mymatrix}
       +
       \begin{mymatrix}{c} 3 \\ 5 \\ 5 \end{mymatrix}
       ~=~
-      \begin{mymatrix}{c} 6 \\ 3 \\ 21 \end{mymatrix}.
+      \begin{mymatrix}{c} 11 \\ 7 \\ 23 \end{mymatrix}.
     \end{equation*}
   \item Diffusion:
     \begin{equation*}
-      \begin{mymatrix}{c} 6 \\ 3 \\ 21 \end{mymatrix}
+      \begin{mymatrix}{c} 11 \\ 7 \\ 23 \end{mymatrix}
       ~\mapsto~
       \begin{mymatrix}{ccc}
         1 & 2 & 3 \\
         3 & 1 & 2 \\
         2 & 3 & 1 \\
       \end{mymatrix}
-      \begin{mymatrix}{c} 6 \\ 3 \\ 21 \end{mymatrix}
+      \begin{mymatrix}{c} 11 \\ 7 \\ 23 \end{mymatrix}
       ~=~
-      \begin{mymatrix}{c} 17 \\ 5 \\ 13 \end{mymatrix}.
+      \begin{mymatrix}{c} 7 \\ 28 \\ 8 \end{mymatrix}.
     \end{equation*}
   \item S-box application:
     \begin{equation*}
-      \begin{mymatrix}{c} 17 \\ 5 \\ 13 \end{mymatrix}
+      \begin{mymatrix}{c} 7 \\ 28 \\ 8 \end{mymatrix}
       ~\mapsto~
-      \begin{mymatrix}{c} S(17) \\ S(5) \\ S(13) \end{mymatrix}
+      \begin{mymatrix}{c} S(7) \\ S(28) \\ S(8) \end{mymatrix}
       ~=~
-      \begin{mymatrix}{c} 28 \\ 20 \\ 23 \end{mymatrix}.
+      \begin{mymatrix}{c} 26 \\ 8 \\ 16 \end{mymatrix}.
     \end{equation*}
   \end{itemize}
 
@@ -558,34 +558,34 @@ to the current block at the beginning of each round.
   \item Key mixture: the next three components of the key are
     $7,7,9$.
     \begin{equation*}
-      \begin{mymatrix}{c} 28 \\ 20 \\ 23 \end{mymatrix}
+      \begin{mymatrix}{c} 26 \\ 8 \\ 16 \end{mymatrix}
       ~\mapsto~
-      \begin{mymatrix}{c} 28 \\ 20 \\ 23 \end{mymatrix}
+      \begin{mymatrix}{c} 26 \\ 8 \\ 16 \end{mymatrix}
       +
       \begin{mymatrix}{c} 7 \\ 7 \\ 9 \end{mymatrix}
       ~=~
-      \begin{mymatrix}{c} 6 \\ 27 \\ 3 \end{mymatrix}.
+      \begin{mymatrix}{c} 4 \\ 15 \\ 25 \end{mymatrix}.
     \end{equation*}
   \item Diffusion:
     \begin{equation*}
-      \begin{mymatrix}{c} 6 \\ 27 \\ 3 \end{mymatrix}
+      \begin{mymatrix}{c} 4 \\ 15 \\ 25 \end{mymatrix}
       ~\mapsto~
       \begin{mymatrix}{ccc}
         1 & 2 & 3 \\
         3 & 1 & 2 \\
         2 & 3 & 1 \\
       \end{mymatrix}
-      \begin{mymatrix}{c} 6 \\ 27 \\ 3 \end{mymatrix}
+      \begin{mymatrix}{c} 4 \\ 15 \\ 25 \end{mymatrix}
       ~=~
-      \begin{mymatrix}{c} 11 \\ 22 \\ 9 \end{mymatrix}.
+      \begin{mymatrix}{c} 22 \\ 19 \\ 20 \end{mymatrix}.
     \end{equation*}
   \item S-box application:
     \begin{equation*}
-      \begin{mymatrix}{c} 11 \\ 22 \\ 9 \end{mymatrix}
+      \begin{mymatrix}{c} 22 \\ 19 \\ 20 \end{mymatrix}
       ~\mapsto~
-      \begin{mymatrix}{c} S(11) \\ S(22) \\ S(9) \end{mymatrix}
+      \begin{mymatrix}{c} S(22) \\ S(19) \\ S(20) \end{mymatrix}
       ~=~
-      \begin{mymatrix}{c} 4 \\ 22 \\ 16 \end{mymatrix}.
+      \begin{mymatrix}{c} 6 \\ 15 \\ 10 \end{mymatrix}.
     \end{equation*}
   \end{itemize}
 
@@ -594,26 +594,26 @@ to the current block at the beginning of each round.
   \item Key mixture: the next three components of the key are
     $9,11,11$.
     \begin{equation*}
-      \begin{mymatrix}{c} 4 \\ 22 \\ 16 \end{mymatrix}
+      \begin{mymatrix}{c} 6 \\ 15 \\ 10 \end{mymatrix}
       ~\mapsto~
-      \begin{mymatrix}{c} 4 \\ 22 \\ 16 \end{mymatrix}
+      \begin{mymatrix}{c} 6 \\ 15 \\ 10 \end{mymatrix}
       +
       \begin{mymatrix}{c} 9 \\ 11 \\ 11 \end{mymatrix}
       ~=~
-      \begin{mymatrix}{c} 13 \\ 4 \\ 27 \end{mymatrix}.
+      \begin{mymatrix}{c} 15 \\ 26 \\ 21 \end{mymatrix}.
     \end{equation*}
   \end{itemize}
-  Therefore, the first ciphertext block is $(13,4,27)$. We repeat the
+  Therefore, the first ciphertext block is $(15,26,21)$. We repeat the
   same procedure with the remaining plaintext blocks, and obtain the
   following ciphertext blocks:
   \begin{equation*}
     \mbox{Ciphertext blocks:}\quad
-    (13,4,27),\
-    (0,0,0),\
-    (0,0,0),\
-    (0,0,0).
+    (15,26,21),\
+    (7,24,1),\
+    (2,16,23),\
+    (7,20,22).
   \end{equation*}
-  
+  The corresponding ciphertext is ``OZUGXABPWGTV''.
 \end{solution}
 
 \void{ Realistic modern ciphers (such as DES and AES) are essentially
