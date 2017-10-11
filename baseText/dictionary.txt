@@ -2,6 +2,8 @@ abs
 adj
 adjoint
 adjugate
+AES
+AFJE
 AHI
 AHIFNEPL
 Ak
@@ -67,6 +69,7 @@ distributivity
 Dolittle's
 dotproduct
 DU
+DXYBJUWW
 EFNOR
 Ehsun
 eigen
@@ -78,6 +81,7 @@ enuitem
 eq
 eqn
 equalities
+ERM
 etc
 échelle
 factorizations
@@ -91,7 +95,9 @@ gaussian
 geo
 geomet
 gj
+GLFN
 Hermitian
+HL
 homo
 hs
 https
@@ -111,12 +117,16 @@ ir
 isomorphism
 isomorphisms
 iteratively
+JHYJSCDSBQIRPEV
 jordan
+JU
+JWQLD
 Keyowski
 kg
 ki
 kirchhoff
 Kirchhoff's
+kiwifruit
 km
 kth
 Kuttler
@@ -154,6 +164,7 @@ NDsupp
 nilpotent
 nofield
 notational
+NRQEUAPOM
 NW
 okay
 ops
@@ -164,6 +175,7 @@ orthogonalize
 orthogonally
 orthonormal
 OTC
+OZUGXABPWGTV
 parallelepiped
 parametric
 pdf
@@ -209,6 +221,7 @@ SW
 symm
 Tamsyn
 TAV
+TGVXKHGSW
 th
 tikz
 titlemainbgcolour
@@ -228,6 +241,7 @@ vect
 versa
 VKIXIQA
 Volterra
+VXUAJYY
 wp
 www
 xlabel
@@ -243,3 +257,4 @@ yscale
 yshift
 Zahedi
 ZBBRFVUPFVZLFHNTV
+ZRUJPZVAEJTWOXGJZV
