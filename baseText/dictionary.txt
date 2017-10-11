@@ -102,6 +102,7 @@ homo
 hs
 https
 hyperplane
+hyperplanes
 Ichabod
 idempotent
 II
