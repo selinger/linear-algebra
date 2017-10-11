@@ -611,17 +611,17 @@ ciphers rely on key mixture, diffusion, and non-linear S-boxes as
 their key components.
   
 For example, AES uses an alphabet size of $256$ instead of $29$ (i.e.,
-it operates on bytes, rather than elements of $\Z_{29}$). Although
-$\Z_{256}$ is not a field (because $256$ is not prime), it
-nevertheless turns out that there exists a field with $256$ elements,
-and AES uses it for its algebraic operations. Our toy cipher's block
-size of $3$ is much too small to achieve effective diffusion; modern
-real-world ciphers use block sizes between $16$ and $32$ bytes ($128$
-to $256$ bits). The design of the S-boxes is a bit of a black art; at
-minimum, they must be designed to withstand two common types of
-cryptanalysis known as \textbf{linear cryptanalysis} and
-\textbf{differential cryptanalysis}.  Among other things, this means
-that the S-box should be ``as far from linear'' as possible.
+it operates on bytes\index{byte}, rather than elements of
+$\Z_{29}$). Although $\Z_{256}$ is not a field (because $256$ is not
+prime), it nevertheless turns out that there exists a field with $256$
+elements, and AES uses it for its algebraic operations. Our toy
+cipher's block size of $3$ is much too small to achieve effective
+diffusion; modern real-world ciphers use block sizes between $16$ and
+$32$ bytes ($128$ to $256$ bits). The design of the S-boxes is a bit
+of a black art; at minimum, they must be designed to withstand two
+common types of cryptanalysis known as \textbf{linear cryptanalysis}
+and \textbf{differential cryptanalysis}.  Among other things, this
+means that the S-box should be ``as far from linear'' as possible.
 
 Details on the design and cryptanalysis of modern block ciphers are
 far beyond the scope of this book, but we hope that you have gotten a
