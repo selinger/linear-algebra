@@ -264,7 +264,7 @@ this attack only requires some basic knowledge of linear algebra. The
 following example illustrates how this is done.
 
 \begin{example}{Cryptanalysis of the Hill cipher: known plaintext attack}{hill-cipher-cryptanalysis}
-  Eve intercepts the following encrypted message sent by Alice:
+  Eve intercepts the following encrypted message sent by Alice:\index{cryptanalysis}
   \begin{center}
     ``EFNOR.AHIFNEPL.TSZS,RSKT.ZBBRFVUPFVZLFHNTV''.
   \end{center}
@@ -619,9 +619,12 @@ cipher's block size of $3$ is much too small to achieve effective
 diffusion; modern real-world ciphers use block sizes between $16$ and
 $32$ bytes ($128$ to $256$ bits). The design of the S-boxes is a bit
 of a black art; at minimum, they must be designed to withstand two
-common types of cryptanalysis known as \textbf{linear cryptanalysis}
-and \textbf{differential cryptanalysis}.  Among other things, this
-means that the S-box should be ``as far from linear'' as possible.
+common types of cryptanalysis known as \textbf{linear cryptanalysis}%
+\index{cryptanalysis!linear}\index{linear cryptanalysis} and
+\textbf{differential cryptanalysis}%
+\index{cryptanalysis!differential}\index{differential cryptanalysis}.
+Among other things, this means that the S-box should be ``as far from
+linear'' as possible.
 
 Details on the design and cryptanalysis of modern block ciphers are
 far beyond the scope of this book, but we hope that you have gotten a
