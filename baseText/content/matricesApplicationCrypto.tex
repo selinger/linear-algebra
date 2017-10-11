@@ -365,9 +365,9 @@ following example illustrates how this is done.
 \end{solution}
 
 As the example shows, the Hill cipher is not secure at all. The main
-problem is that the cipher is {\em linear}, i.e., each element of a
-ciphertext block is a simple linear combination of elements of the
-plaintext block. This linearity property enables Eve to break the
+problem is that the cipher is {\em linear}, i.e., each component of a
+ciphertext block is a simple linear combination of the components of
+the plaintext block. This linearity property enables Eve to break the
 cipher by solving a system of linear equations.
 
 For this reason, all modern block ciphers have a non-linear
@@ -384,18 +384,19 @@ $\Z_{29}$ to $\Z_{29}$:
     ~$S(x)$~ & 17 & 9 & 27 & 2 & 20 & 12 & 21 & 26 & 16 & 18 & 4 & 24 & 23 & 7 & 19 & 14 & 28 & 29 & 1 & 15 & 10 & 22 & 6 & 5 & 25 & 11 & 13 & 3 & 8 \\\hline
   \end{tabular}
 \end{center}
-For example, this S-box maps the input $7$ to the output $26$. We
-write $S(7)=26$.
+The inputs of the S-box are shown in the top row, and the
+corresponding outputs in the bottom row.  For example, this S-box maps
+the input $7$ to the output $26$. We write $S(7)=26$.
 
 \begin{definition}{A better block cipher}{better-block-cipher}
   Consider the following block cipher on the alphabet $\Z_{29}$ with
-  block size 3. The key consists of $12$ elements $k_1,\ldots,k_{12}$
+  block size $3$. The key consists of $12$ elements $k_1,\ldots,k_{12}$
   of $\Z_{29}$. To encrypt a plaintext block, regard the block as a
-  3-dimensional column vector. Then repeat the following three steps
-  $3$ times:
+  $3$-dimensional column vector. Then repeat the following steps $3$
+  times. All operations are carried out modulo $29$.
   \begin{itemize}
   \item Key mixture: add the next three components of the key to the
-    components of the vector, with addition being carried out in $\Z_{29}$;
+    components of the vector.
   \item Diffusion: multiply the vector by the fixed $3\times 3$-matrix
     $A = \begin{mymatrix}{ccc}
       1 & 2 & 3 \\
@@ -447,13 +448,13 @@ write $S(7)=26$.
 Note that the three basic steps (key mixture, diffusion, and S-box
 application) are repeated several times; each such repetition is
 called a \textbf{round}\index{cipher!round}%
-\index{rounds of a cipher} of the block cipher.  The more rounds
-a block cipher has, the better its diffusion and non-linearity
-properties. The final round is abbreviated: it consists of a single
-key mixture step, with no final diffusion or S-box application. The
-reason is that performing a final diffusion and S-box application
-would add nothing to the security of the cipher; an attacker could
-simply undo these last two steps, since they do not depend on the key.
+\index{rounds of a cipher} of the block cipher.  The more rounds a
+block cipher has, the better its diffusion and non-linearity
+properties. The final round is short: it only consists of a key
+mixture step, with no final diffusion or S-box application. The reason
+is that performing a final diffusion and S-box application would not
+add anything to the security of the cipher. An attacker could simply
+undo these last two steps, since they do not depend on the key.
 
 The matrix $A$ is called the \textbf{diffusion matrix}%
 \index{diffusion matrix}\index{matrix!diffusion}%
@@ -486,8 +487,6 @@ to the current block at the beginning of each round.
     $1,1,3$. We add them to the plaintext.
     \begin{equation*}
       \begin{mymatrix}{c} 9 \\ 0 \\ 12 \end{mymatrix}
-      ~\mapsto~
-      \begin{mymatrix}{c} 9 \\ 0 \\ 12 \end{mymatrix}
       +
       \begin{mymatrix}{c} 1 \\ 1 \\ 3 \end{mymatrix}
       ~=~
@@ -495,8 +494,6 @@ to the current block at the beginning of each round.
     \end{equation*}
   \item Diffusion: multiply by the matrix $A$.
     \begin{equation*}
-      \begin{mymatrix}{c} 10 \\ 1 \\ 15 \end{mymatrix}
-      ~\mapsto~
       \begin{mymatrix}{ccc}
         1 & 2 & 3 \\
         3 & 1 & 2 \\
@@ -509,8 +506,6 @@ to the current block at the beginning of each round.
   \item S-box application: apply the S-box to each component of the
     vector.
     \begin{equation*}
-      \begin{mymatrix}{c} 28 \\ 3 \\ 9 \end{mymatrix}
-      ~\mapsto~
       \begin{mymatrix}{c} S(28) \\ S(3) \\ S(9) \end{mymatrix}
       ~=~
       \begin{mymatrix}{c} 8 \\ 2 \\ 18 \end{mymatrix}.
@@ -523,8 +518,6 @@ to the current block at the beginning of each round.
     $3,5,5$.
     \begin{equation*}
       \begin{mymatrix}{c} 8 \\ 2 \\ 18 \end{mymatrix}
-      ~\mapsto~
-      \begin{mymatrix}{c} 8 \\ 2 \\ 18 \end{mymatrix}
       +
       \begin{mymatrix}{c} 3 \\ 5 \\ 5 \end{mymatrix}
       ~=~
@@ -532,8 +525,6 @@ to the current block at the beginning of each round.
     \end{equation*}
   \item Diffusion:
     \begin{equation*}
-      \begin{mymatrix}{c} 11 \\ 7 \\ 23 \end{mymatrix}
-      ~\mapsto~
       \begin{mymatrix}{ccc}
         1 & 2 & 3 \\
         3 & 1 & 2 \\
@@ -545,8 +536,6 @@ to the current block at the beginning of each round.
     \end{equation*}
   \item S-box application:
     \begin{equation*}
-      \begin{mymatrix}{c} 7 \\ 28 \\ 8 \end{mymatrix}
-      ~\mapsto~
       \begin{mymatrix}{c} S(7) \\ S(28) \\ S(8) \end{mymatrix}
       ~=~
       \begin{mymatrix}{c} 26 \\ 8 \\ 16 \end{mymatrix}.
@@ -559,8 +548,6 @@ to the current block at the beginning of each round.
     $7,7,9$.
     \begin{equation*}
       \begin{mymatrix}{c} 26 \\ 8 \\ 16 \end{mymatrix}
-      ~\mapsto~
-      \begin{mymatrix}{c} 26 \\ 8 \\ 16 \end{mymatrix}
       +
       \begin{mymatrix}{c} 7 \\ 7 \\ 9 \end{mymatrix}
       ~=~
@@ -568,8 +555,6 @@ to the current block at the beginning of each round.
     \end{equation*}
   \item Diffusion:
     \begin{equation*}
-      \begin{mymatrix}{c} 4 \\ 15 \\ 25 \end{mymatrix}
-      ~\mapsto~
       \begin{mymatrix}{ccc}
         1 & 2 & 3 \\
         3 & 1 & 2 \\
@@ -581,8 +566,6 @@ to the current block at the beginning of each round.
     \end{equation*}
   \item S-box application:
     \begin{equation*}
-      \begin{mymatrix}{c} 22 \\ 19 \\ 20 \end{mymatrix}
-      ~\mapsto~
       \begin{mymatrix}{c} S(22) \\ S(19) \\ S(20) \end{mymatrix}
       ~=~
       \begin{mymatrix}{c} 6 \\ 15 \\ 10 \end{mymatrix}.
@@ -594,8 +577,6 @@ to the current block at the beginning of each round.
   \item Key mixture: the next three components of the key are
     $9,11,11$.
     \begin{equation*}
-      \begin{mymatrix}{c} 6 \\ 15 \\ 10 \end{mymatrix}
-      ~\mapsto~
       \begin{mymatrix}{c} 6 \\ 15 \\ 10 \end{mymatrix}
       +
       \begin{mymatrix}{c} 9 \\ 11 \\ 11 \end{mymatrix}
