@@ -1,4 +1,154 @@
-\section{Linearly independent set of vectors}
+\section{Linear independence}
+
+In Example~\ref{exa:redundant-span}, we encountered three vectors
+$\vect{u}$, $\vect{v}$, and $\vect{w}$ such that
+$\sspan\set{\vect{u},\vect{v},\vect{w}} =
+\sspan\set{\vect{u},\vect{v}}$.  If this happens, then the vector
+$\vect{w}$ does not contribute anything to the span of
+$\set{\vect{u},\vect{v},\vect{w}}$, and we say that $\vect{w}$ is
+\textbf{redundant}%
+\index{redundant vector}\index{vector!redundant}. The following
+definition generalizes this notion.
+
+\begin{definition}{Redundant vectors, linear dependence, and linear independence}{redundant-vectors}
+  Consider a sequence of vectors $\vect{u}_1,\ldots,\vect{u}_k$.  We
+  say that the vector $\vect{u}_j$ is a \textbf{redundant}%
+  \index{redundant vector}\index{vector!redundant} member of this
+  sequence if $\vect{u}_j$ can be written as a linear combination of
+  earlier vectors in the sequence, i.e., if
+  \begin{equation*}
+    \vect{u}_j = a_1\,\vect{u}_1 + a_2\,\vect{u}_2 + \ldots + a_{j-1}\,\vect{u}_{j-1}
+  \end{equation*}
+  for some scalars $a_1,\ldots,a_{j-1}$. We say that the sequence of
+  vectors $\vect{u}_1,\ldots,\vect{u}_k$ is \textbf{linearly
+    dependent}%
+  \index{linear dependence}\index{vector!linearly dependent} if it
+  contains one or more redundant vectors. Otherwise, we say that the
+  vectors are \textbf{linearly independent}%
+  \index{linear independence}\index{vector!linearly independent}.  
+\end{definition}
+
+\begin{example}{Redundant vectors}{redundant-vectors}
+  Find the redundant vectors in the following sequence of vectors. Are
+  the vectors linearly independent?
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ 0\end{mymatrix},
+    \quad
+    \vect{u}_2 = \begin{mymatrix}{c} 1 \\ 2 \\ 2 \\ 3\end{mymatrix},
+    \quad
+    \vect{u}_3 = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1\end{mymatrix},
+    \quad
+    \vect{u}_4 = \begin{mymatrix}{c} 2 \\ 3 \\ 3 \\ 4\end{mymatrix},
+    \quad
+    \vect{u}_5 = \begin{mymatrix}{c} 0 \\ 1 \\ 2 \\ 3\end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  \begin{itemize}
+  \item The vector $\vect{u}_1$ is redundant, because it is a linear
+    combination of earlier vectors. (Although there are no earlier
+    vectors, recall from Example~\ref{span-empty-set} that the empty
+    sum of vectors is equal to the zero vector $\vect{0}$. Therefore,
+    $\vect{u}_1$ is indeed an (empty) linear combination of earlier
+    vectors.)
+  \item The vector $\vect{u}_2$ is not redundant, because it cannot be
+    written as a linear combination of $\vect{u}_1$. This is because
+    the system of equations
+    \begin{equation*}
+      \begin{mymatrix}{l|l}
+        0 & 1 \\
+        0 & 2 \\
+        0 & 2 \\
+        0 & 3 \\
+      \end{mymatrix}
+    \end{equation*}
+    has no solution.
+  \item The vector $\vect{u}_3$ is not redundant, because it cannot be
+    written as a linear combination of $\vect{u}_1$ an $\vect{u}_2$.
+    This is because the system of equations
+    \begin{equation*}
+      \begin{mymatrix}{ll|l}
+        0 & 1 & 1 \\
+        0 & 2 & 1\\
+        0 & 2 & 1\\
+        0 & 3 & 1\\
+      \end{mymatrix}
+    \end{equation*}
+    has no solution.
+  \item The vector $\vect{u}_4$ is redundant, because $\vect{u}_4 =
+    \vect{u}_2 + \vect{u}_3$.
+  \item The vector $\vect{u}_5$ is not redundant, because 
+    This is because the system of equations
+    \begin{equation*}
+      \begin{mymatrix}{llll|l}
+        0 & 1 & 1 & 2 & 0 \\
+        0 & 2 & 1 & 3 & 1 \\
+        0 & 2 & 1 & 3 & 2 \\
+        0 & 3 & 1 & 4 & 3 \\
+      \end{mymatrix}
+    \end{equation*}
+    has no solution.
+  \end{itemize}
+  In summary, the vectors $\vect{u}_1$ and $\vect{u}_4$ are redundant,
+  and the vectors $\vect{u}_2$, $\vect{u}_3$, and $\vect{u}_5$ are
+  not. It follows that the sequence of all five vectors
+  $\vect{u}_1,\vect{u}_2,\vect{u}_3,\vect{u}_4,\vect{u}_5$ is linearly
+  dependent.
+\end{solution}
+
+The example shows that it can be a lot of work to find the redundant
+vectors in a sequence of $k$ vectors. Doing so in the naive way
+require us to solve up to $k$ systems of linear equations!
+Fortunately, there is a much faster and easier method, the so-called
+casting-out algorithm.
+
+\begin{algorithm}{Casting-out algorithm}{casting-out}
+  \textbf{Input:} a sequence of $k$ vectors
+  $\vect{u}_1,\ldots,\vect{u}_k\in\R^n$.
+  \smallskip
+
+  \textbf{Output:} the set of indices $j$ such that $\vect{u}_j$ is
+  redundant.
+  \smallskip
+  
+  \textbf{Algorithm:} Write the vectors $\vect{u}_1,\ldots,\vect{u}_k$
+  as the columns of an $n\times k$-matrix, and reduce to {\ef}. Every
+  {\em non-pivot} column, if any, corresponds to a redundant vector.
+\end{algorithm}
+
+\begin{example}{Casting-out algorithm}{casting-out}
+  Use the casting-out algorithm to find the redundant vectors among
+  the vectors from Example~\ref{exa:redundant-vectors}.
+\end{example}
+
+\begin{solution}
+  Following the casting-out algorithm, we write the vectors
+  $\vect{u}_1,\ldots,\vect{u}_5$ as the columns of a matrix and reduce
+  to {\ef}.
+  \begin{equation*}
+    \begin{mymatrix}{rrrrr}
+      0 & 1 & 1 & 2 & 0 \\
+      0 & 2 & 1 & 3 & 1 \\
+      0 & 2 & 1 & 3 & 2 \\
+      0 & 3 & 1 & 4 & 3 \\
+    \end{mymatrix}
+    \sim \ldots \sim
+    \begin{mymatrix}{rrrrr}
+      0 & \circled{1} & 1 & 2 & 0 \\
+      0 & 0 & \circled{1} & 1 & -1 \\
+      0 & 0 & 0 & 0 & \circled{1} \\
+      0 & 0 & 0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The pivot columns are columns $2$, $3$, and $5$. The non-pivot
+  columns are columns $1$ and $4$. Therefore, the vectors $\vect{u}_1$
+  and $\vect{u}_4$ are redundant. Note that this is the same answer we
+  got in Example~\ref{exa:redundant-vectors}.
+\end{solution}
+
+% ======================================================================
+\subsection{CONTINUE HERE} %###
 
 We now turn our attention to the following question: what linear
 combinations of a given set of vectors $\set{\vect{u}_1, \cdots
