@@ -47,12 +47,12 @@ even a line). This motivates the following definition.
 
 \begin{definition}{Span of a set of vectors}{span}
   The set of all linear combinations of the vectors
-  $\vect{u}_1, \cdots ,\vect{u}_k$ in $\R^{n}$ is known as the
+  $\vect{u}_1, \ldots ,\vect{u}_k$ in $\R^{n}$ is known as the
   \textbf{span}\index{span}\index{vector!span} of these vectors and is written
-  as $\sspan\set{\vect{u}_1,\cdots,\vect{u}_k}$. Using set notation,
+  as $\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$. Using set notation,
   we can write
   \begin{equation*}
-    \sspan\set{\vect{u}_1,\cdots,\vect{u}_k}
+    \sspan\set{\vect{u}_1,\ldots,\vect{u}_k}
     ~=~ \set{a_1\vect{u}_1+\ldots+a_k\vect{u}_k \mid a_1,\ldots,a_k\in\R}.
   \end{equation*}
 \end{definition}
@@ -223,3 +223,38 @@ vectors $\vect{u}$, $\vect{v}$, and $\vect{w}$ lie in a plane. Since
 the two vectors $\vect{u}$ and $\vect{v}$ are sufficient to span this
 plane, the third vector $\vect{w}$ is not really needed. We will study
 this situation more systematically in the next section. 
+
+\begin{example}{Span of the empty set}{span-empty-set}
+  We talked about the span of $k$ vectors
+  $\vect{u}_1,\ldots,\vect{u}_k$.  What if $k=0$? What is
+  the span of an empty list of vectors? 
+\end{example}
+
+\begin{solution}
+  Consider what happens when we compute the sum of three numbers. We
+  usually write this as $b_1+b_2+b_3$. We can also compute the sum of
+  three numbers by starting from $0$ and then adding each of the three
+  numbers to it. I.e., the sum can be computed as
+  $0+b_1+b_2+b_3$. Similarly, we can write the sum of two numbers as
+  $0+b_1+b_2$, and the sum of just one number as $0+b_1$. Continuing
+  the pattern, it follows that the sum of zero numbers should be $0$:
+  \begin{center}
+    \begin{tabular}{ll}
+      Sum of 3 numbers: & $0+b_1+b_2+b_3$. \\
+      Sum of 2 numbers: & $0+b_1+b_2$. \\
+      Sum of 1 numbers: & $0+b_1$. \\
+      Sum of 0 numbers: & $0$. \\
+    \end{tabular}
+  \end{center}
+  The sum of zero numbers is also called the \textbf{empty sum}%
+  \index{empty sum}. It is equal to the unit of addition, i.e., $0$.
+  By an analogous argument, the empty sum of vectors is equal to the
+  unit of vector addition, i.e., the zero vector $\vect{0}$%
+  \index{zero vector}\index{vector!zero vector}.  In general, if we
+  have $k$ vectors $\vect{u}_1,\ldots,\vect{u}_k$, the span consists
+  of all vectors of the form $a_1\vect{u}_1+\ldots+a_k\vect{u}_k$,
+  which is a sum of $k$ vectors.  In case $k=0$, the span consists of
+  all vectors of the form $\vect{0}$, i.e., just the zero vectors and
+  nothing else. Therefore, the span of the empty list of vectors is
+  $\set{\vect{0}}$.
+\end{solution}
