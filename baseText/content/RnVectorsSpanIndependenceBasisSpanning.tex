@@ -109,8 +109,8 @@ even a line). This motivates the following definition.
     \end{mymatrix}
     \sim\ldots\sim
     \begin{mymatrix}{rr|r}
-      1 & 1 & 2 \\
-      0 & 1 & -1 \\
+      1 & 3 & 1 \\
+      0 & -1 & 0 \\
       0 & 0 & 1 \\
     \end{mymatrix},
   \end{equation*}
@@ -119,49 +119,56 @@ even a line). This motivates the following definition.
   $\sspan\set{\vect{u},\vect{v}}$.
 \end{solution}
 
-% ----------------------------------------------------------------------
-\subsection{CONTINUE HERE} % ###
-
-Consider the following example.
-
-\begin{example}{Span of vectors}{span-vectors}
-  Describe the span of the vectors $\vect{u}=\begin{mymatrix}{rrr}
-    1  & 1 & 0
-  \end{mymatrix}^T$ and
-  $\vect{v}=\begin{mymatrix}{rrr}
-    3  & 2 & 0
-  \end{mymatrix}^T \in \R^{3}$.
+\begin{example}{Describing the span}{describe-span}
+  Describe the span of the vectors
+  $\vect{u}=\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}$ and
+  $\vect{v}=\begin{mymatrix}{r} 3 \\ 2 \\ 1 \end{mymatrix}$ in
+  $\R^{3}$.
 \end{example}
 
 \begin{solution}
-  You can see that any linear combination of the vectors $\vect{u}$
-  and $\vect{v}$ yields a vector of the form
-  $\begin{mymatrix}{rrr} x & y & 0
-  \end{mymatrix}^T$ in the $XY$-plane. 
-
-  Moreover every vector in the $XY$-plane is in fact such a linear
-  combination of the vectors $\vect{u}$ and $\vect{v}$. That's because
-  \begin{equation*} \begin{mymatrix}{r}
-      x \\
-      y \\
-      0
-    \end{mymatrix} 
-    =
-    (-2x+3y) \begin{mymatrix}{r}
-      1  \\
-      1 \\
-      0
-    \end{mymatrix}
-    +
-    (x-y)\begin{mymatrix}{r}
-      3 \\
-      2 \\
-      0
-    \end{mymatrix} 
+  Let $\vect{w} = \mat{x, y, z}^T$ be any vector. Proceeding as in the
+  previous example, we know that $\vect{w}$ is an element of
+  $\sspan\set{\vect{u},\vect{v}}$ if and only if the equation
+  \begin{equation*}
+    a \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}
+    + b \begin{mymatrix}{r} 3 \\ 2 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}
   \end{equation*}
-
-  Thus  $\sspan\set{\vect{u},\vect{v}}$ is precisely the $XY$-plane.
+  is consistent. Note that the variables of this equation are $a,b$;
+  we regard $x,y,z$ as constants for the moment. We write the augmented
+  matrix of this system and reduce to {\ef}:
+  \begin{equation*}
+    \begin{mymatrix}{rr|c}
+      1 & 3 & x \\
+      1 & 2 & y \\
+      1 & 1 & z \\
+    \end{mymatrix}
+    \stackrel{R_2\leftarrow R_2-R_1}{\stackrel{R_2\leftarrow R_3-R_1}{\sim}}
+    \begin{mymatrix}{rr|c}
+      1 & 3 & x \\
+      0 & -1 & y-x \\
+      0 & -2 & z-x \\
+    \end{mymatrix}
+    \stackrel{R_3\leftarrow R_3-2R_2}{\sim}
+    \begin{mymatrix}{rr|c}
+      1 & 3 & x \\
+      0 & -1 & y-x \\
+      0 & 0 & (z-x)-2(y-x) \\
+    \end{mymatrix},
+  \end{equation*}
+  From the {\ef}, we see that the system is consistent if and only if
+  $(z-x)-2(y-x)=0$, or equivalently $x - 2y + z = 0$. Therefore, the
+  vector $\vect{w}$ is in $\sspan\set{\vect{u},\vect{v}}$ if and only
+  if $x - 2y + z = 0$. In other words, the span of $\vect{u}$ and
+  $\vect{v}$ is the plane $x - 2y + z = 0$.
 \end{solution}
+
+% ----------------------------------------------------------------------
+\subsection{CONTINUE HERE} % ###
+
+Examples with 1 or 3 vectors. Examples where 3 vectors span a plane. 
+Ask if two spans are equal?
 
 You can convince yourself that no single vector can span the
 $XY$-plane. In fact, take a moment to consider what is meant by the
