@@ -49,8 +49,78 @@ even a line). This motivates the following definition.
   The set of all linear combinations of the vectors
   $\vect{u}_1, \cdots ,\vect{u}_k$ in $\R^{n}$ is known as the
   \textbf{span}\index{span}\index{vector!span} of these vectors and is written
-  as $\sspan \{\vect{u}_1, \cdots , \vect{u}_k\}$.
+  as $\sspan\set{\vect{u}_1,\cdots,\vect{u}_k}$. In set notation,
+  \begin{equation*}
+    \sspan\set{\vect{u}_1,\cdots,\vect{u}_k}
+    ~=~ \set{a_1\vect{u}_1+\ldots+a_k\vect{u}_k \mid a_1,\ldots,a_k\in\R}.
+  \end{equation*}
 \end{definition}
+
+\begin{example}{Vectors in a span}{vector-in-span}
+  Let $\vect{u}=\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}$ and
+  $\vect{v}=\begin{mymatrix}{r} 3 \\ 2 \\ 1 \end{mymatrix}^T$. Which
+  of the following vectors are elements of
+  $\sspan\set{\vect{u},\vect{v}}$?
+  \begin{equation*}
+    (a)\quad\vect{w} = \begin{mymatrix}{r} 2 \\ 3 \\ 4 \end{mymatrix},
+    \qquad
+    (b)\quad\vect{z} = \begin{mymatrix}{r} 1 \\ 1 \\ 2 \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  (a) For a vector to be in $\sspan\set{\vect{u},\vect{v}}$, it must
+  be a linear combination of $\vect{u}$ and $\vect{v}$. Therefore,
+  $\vect{w}\in\sspan\set{\vect{u},\vect{v}}$ if and only if we can
+  find find scalars $a,b$ such that
+  $a\,\vect{u} + b\,\vect{v} = \vect{w}$. We must therefore solve the
+  equation
+  \begin{equation*}
+    a \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}
+    + b \begin{mymatrix}{r} 3 \\ 2 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{r} 2 \\ 3 \\ 4 \end{mymatrix}.
+  \end{equation*}
+  We write this as an augmented matrix and solve. 
+  \begin{equation*}
+    \begin{mymatrix}{rr|r}
+      1 & 3 & 2 \\
+      1 & 2 & 3 \\
+      1 & 1 & 4 \\
+    \end{mymatrix}
+    \sim\ldots\sim
+    \begin{mymatrix}{rr|r}
+      1 & 0 & 5 \\
+      0 & 1 & -1 \\
+      0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The solution is $a=5$ and $b=-1$. This means that
+  $\vect{w} = 5\vect{u} + (-1)\vect{v}$. Therefore, $\vect{w}$ is an
+  element of $\sspan\set{\vect{u},\vect{v}}$.
+
+  (b) We repeat the same method with the vector $\vect{z}$. This time,
+  we have to find $a,b$ such that
+  $a\,\vect{u} + b\,\vect{v} = \vect{z}$. The system of equations is
+  \begin{equation*}
+    \begin{mymatrix}{rr|r}
+      1 & 3 & 1 \\
+      1 & 2 & 1 \\
+      1 & 1 & 2 \\
+    \end{mymatrix}
+    \sim\ldots\sim
+    \begin{mymatrix}{rr|r}
+      1 & 1 & 2 \\
+      0 & 1 & -1 \\
+      0 & 0 & 1 \\
+    \end{mymatrix},
+  \end{equation*}
+  which is inconsistent. Therefore, there is no solution. We conclude
+  that $\vect{z}$ is not an element of
+  $\sspan\set{\vect{u},\vect{v}}$.
+\end{solution}
+
+% ----------------------------------------------------------------------
+\subsection{CONTINUE HERE} % ###
 
 Consider the following example.
 
@@ -64,14 +134,14 @@ Consider the following example.
 \end{example}
 
 \begin{solution}
-  You can see that any linear combination of the vectors $\vect{u}$ and $\vect{v}$ yields a vector of the form 
-  $\begin{mymatrix}{rrr}
-    x  & y & 0
+  You can see that any linear combination of the vectors $\vect{u}$
+  and $\vect{v}$ yields a vector of the form
+  $\begin{mymatrix}{rrr} x & y & 0
   \end{mymatrix}^T$ in the $XY$-plane. 
 
   Moreover every vector in the $XY$-plane is in fact such a linear
   combination of the vectors $\vect{u}$ and $\vect{v}$. That's because
-  \[ \begin{mymatrix}{r}
+  \begin{equation*} \begin{mymatrix}{r}
       x \\
       y \\
       0
@@ -88,13 +158,14 @@ Consider the following example.
       2 \\
       0
     \end{mymatrix} 
-  \]
+  \end{equation*}
 
   Thus  $\sspan\{\vect{u},\vect{v}\}$ is precisely the $XY$-plane.
 \end{solution}
 
 You can convince yourself that no single vector can span the
-$XY$-plane. In fact, take a moment to consider what is meant by the span of a single vector.
+$XY$-plane. In fact, take a moment to consider what is meant by the
+span of a single vector.
 
 However you can make the set larger if you wish. For example consider
 the larger set of vectors $\{\vect{u}, \vect{v},
@@ -107,72 +178,14 @@ once again precisely the $XY$-plane and nothing has been gained. Of
 course if you add a new vector such as
 $ \vect{w}=\begin{mymatrix}{rrr}
   0 & 0 & 1
-\end{mymatrix}^T$ then it does span a different space. What is the span of $\vect{u}, \vect{v}, \vect{w}$ in this case?   
+\end{mymatrix}^T$ then it does span a different space. What is the
+span of $\vect{u}, \vect{v}, \vect{w}$ in this case?
 
-The distinction between the sets $\{\vect{u}, \vect{v}\}$ and $\{
-\vect{u}, \vect{v}, \vect{w}\}$ will be made using the concept of linear independence. 
+The distinction between the sets $\{\vect{u}, \vect{v}\}$ and
+$\{ \vect{u}, \vect{v}, \vect{w}\}$ will be made using the concept of
+linear independence.
 
-Consider the vectors $\vect{u}, \vect{v}$, and $\vect{w}$ discussed above. In the next example, we will show how to formally demonstrate that $\vect{w}$ is in the span of $\vect{u}$ and $\vect{v}$. 
+Consider the vectors $\vect{u}, \vect{v}$, and $\vect{w}$ discussed
+above. In the next example, we will show how to formally demonstrate
+that $\vect{w}$ is in the span of $\vect{u}$ and $\vect{v}$.
 
-\begin{example}{Vector in a span}{vector-in-span}
-  Let $\vect{u}=\begin{mymatrix}{rrr}
-    1  & 1 & 0
-  \end{mymatrix}^T$ and
-  $\vect{v}=\begin{mymatrix}{rrr}
-    3  & 2 & 0
-  \end{mymatrix}^T \in \R^{3}$. Show that $\vect{w} = \begin{mymatrix}{rrr}
-    4 & 5 & 0 
-  \end{mymatrix}^{T}$ is in $\sspan \set{\vect{u}, \vect{v} }$.
-\end{example}
-
-\begin{solution}
-  For a vector to be in $\sspan \set{\vect{u}, \vect{v} }$, it must be a linear combination of these vectors. If $\vect{w} \in \sspan \set{\vect{u}, \vect{v} }$, we must be able to find scalars $a,b$ such that\[
-    \vect{w} = a \vect{u} +b \vect{v}
-  \]
-
-  We proceed as follows.
-  \[
-    \begin{mymatrix}{r}
-      4 \\
-      5 \\
-      0
-    \end{mymatrix}
-    =
-    a 
-    \begin{mymatrix}{r}
-      1 \\
-      1 \\
-      0
-    \end{mymatrix}
-    +
-    b
-    \begin{mymatrix}{r}
-      3 \\
-      2 \\
-      0
-    \end{mymatrix}
-  \]
-  This is equivalent to the following system of equations
-  \begin{eqnarray*}
-    a + 3b &=& 4 \\
-    a + 2b &=& 5
-  \end{eqnarray*}
-
-  We solving this system the usual way, constructing the augmented matrix and row reducing to find the {\rref}.
-  \[
-    \begin{mymatrix}{rr|r}
-      1 & 3 & 4 \\
-      1 & 2 & 5 
-    \end{mymatrix}
-    \rightarrow \cdots \rightarrow
-    \begin{mymatrix}{rr|r}
-      1 & 0 & 7 \\
-      0 & 1 & -1
-    \end{mymatrix}
-  \]
-  The solution is $a=7, b=-1$. This means that 
-  \[
-    \vect{w} = 7 \vect{u} - \vect{v}
-  \] 
-  Therefore we can say that $\vect{w}$ is in $\sspan \set{\vect{u}, \vect{v} }$. 
-\end{solution}
