@@ -40,7 +40,9 @@ definition generalizes this notion.
     \quad
     \vect{u}_4 = \begin{mymatrix}{c} 2 \\ 3 \\ 3 \\ 4\end{mymatrix},
     \quad
-    \vect{u}_5 = \begin{mymatrix}{c} 0 \\ 1 \\ 2 \\ 3\end{mymatrix}.
+    \vect{u}_5 = \begin{mymatrix}{c} 0 \\ 1 \\ 2 \\ 3\end{mymatrix},
+    \quad
+    \vect{u}_6 = \begin{mymatrix}{c} 3 \\ 3 \\ 2 \\ 2\end{mymatrix}.
   \end{equation*}
 \end{example}
 
@@ -89,12 +91,14 @@ definition generalizes this notion.
       \end{mymatrix}
     \end{equation*}
     has no solution.
+  \item The vector $\vect{u}_6$ is redundant, because $\vect{u}_6 =
+    \vect{u}_2 + 2\vect{u}_3-\vect{u}_5$.
   \end{itemize}
-  In summary, the vectors $\vect{u}_1$ and $\vect{u}_4$ are redundant,
-  and the vectors $\vect{u}_2$, $\vect{u}_3$, and $\vect{u}_5$ are
-  not. It follows that the sequence of all five vectors
-  $\vect{u}_1,\vect{u}_2,\vect{u}_3,\vect{u}_4,\vect{u}_5$ is linearly
-  dependent.
+  In summary, the vectors $\vect{u}_1$, $\vect{u}_4$, and $\vect{u}_6$
+  are redundant, and the vectors $\vect{u}_2$, $\vect{u}_3$, and
+  $\vect{u}_5$ are not. It follows that the sequence of all five
+  vectors $\vect{u}_1,\vect{u}_2,\vect{u}_3,\vect{u}_4,\vect{u}_5$ is
+  linearly dependent.
 \end{solution}
 
 The example shows that it can be a lot of work to find the redundant
@@ -124,27 +128,28 @@ casting-out algorithm.
 
 \begin{solution}
   Following the casting-out algorithm, we write the vectors
-  $\vect{u}_1,\ldots,\vect{u}_5$ as the columns of a matrix and reduce
+  $\vect{u}_1,\ldots,\vect{u}_6$ as the columns of a matrix and reduce
   to {\ef}.
   \begin{equation*}
-    \begin{mymatrix}{rrrrr}
-      0 & 1 & 1 & 2 & 0 \\
-      0 & 2 & 1 & 3 & 1 \\
-      0 & 2 & 1 & 3 & 2 \\
-      0 & 3 & 1 & 4 & 3 \\
+    \begin{mymatrix}{rrrrrr}
+      0 & 1 & 1 & 2 & 0 & 3 \\
+      0 & 2 & 1 & 3 & 1 & 3 \\
+      0 & 2 & 1 & 3 & 2 & 2 \\
+      0 & 3 & 1 & 4 & 3 & 2 \\
     \end{mymatrix}
     \sim \ldots \sim
-    \begin{mymatrix}{rrrrr}
-      0 & \circled{1} & 1 & 2 & 0 \\
-      0 & 0 & \circled{1} & 1 & -1 \\
-      0 & 0 & 0 & 0 & \circled{1} \\
-      0 & 0 & 0 & 0 & 0 \\
+    \begin{mymatrix}{rrrrrr}
+      0 & \circled{1} & 1 & 2 & 0 & 3 \\
+      0 & 0 & \circled{1} & 1 & -1 & 3 \\
+      0 & 0 & 0 & 0 & \circled{1} & -1 \\
+      0 & 0 & 0 & 0 & 0 & 0 \\
     \end{mymatrix}.
   \end{equation*}
   The pivot columns are columns $2$, $3$, and $5$. The non-pivot
-  columns are columns $1$ and $4$. Therefore, the vectors $\vect{u}_1$
-  and $\vect{u}_4$ are redundant. Note that this is the same answer we
-  got in Example~\ref{exa:redundant-vectors}.
+  columns are columns $1$, $4$, and $6$. Therefore, the vectors
+  $\vect{u}_1$, $\vect{u}_4$, and $\vect{u}_6$ are redundant. Note
+  that this is the same answer we got in
+  Example~\ref{exa:redundant-vectors}.
 \end{solution}
 
 % ======================================================================
