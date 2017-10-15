@@ -11,10 +11,10 @@ set of vectors with the same span, since from there an orthonormal set
 can be obtained by simply dividing each vector by its length.
 
 \begin{algorithm}{Gram-Schmidt process}{gram-schmidt-algorithm}
-Let $\{\vect{u}_1,\cdots ,\vect{u}_n\} $ be a set of
+Let $\set{\vect{u}_1,\cdots ,\vect{u}_n} $ be a set of
 linearly independent vectors in $\R^{n}$.
 
-\textbf{I:} Construct a new set of vectors $\{\vect{v}_1,\cdots ,\vect{v}_n\} $ as follows:
+\textbf{I:} Construct a new set of vectors $\set{\vect{v}_1,\cdots ,\vect{v}_n} $ as follows:
 \[ \begin{array}{ll}
 \vect{v}_1 & = \vect{u}_1 \\
 \vect{v}_{2} & = \vect{u}_{2} - \tup{\dfrac{ \vect{u}_2 \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2} }  \vect{v}_1\\
@@ -50,8 +50,8 @@ then:
  & = ( \vect{v}_1 \dotprod \vect{u}_2 ) - ( \vect{u}_2 \dotprod \vect{v}_1 ) =0\\
 \end{array}
 \]
-Now that you have shown that $\{\vect{v}_1, \vect{v}_2\}$ is orthogonal,  use the same method as above to show that 
-$\{\vect{v}_1, \vect{v}_2, \vect{v}_3\}$ is also orthogonal,  and so on. 
+Now that you have shown that $\set{\vect{v}_1, \vect{v}_2}$ is orthogonal,  use the same method as above to show that 
+$\set{\vect{v}_1, \vect{v}_2, \vect{v}_3}$ is also orthogonal,  and so on. 
 
 Then in a similar fashion you show that $\sspan\set{
 \vect{u}_1,\cdots ,\vect{u}_n } = \sspan\set{
@@ -67,7 +67,7 @@ the span either and the proof would be complete.
 Consider the following example.
 
 \begin{example}{Find orthonormal set with same span}{ortho-same-span}
-Consider the set of vectors $\{\vect{u}_1, \vect{u}_2\}$ given as in Example~\ref{exa:span-vectors}. That is  
+Consider the set of vectors $\set{\vect{u}_1, \vect{u}_2}$ given as in Example~\ref{exa:span-vectors}. That is  
 \[
 \vect{u}_1=\begin{mymatrix}{r}
 1 \\
@@ -80,12 +80,12 @@ Consider the set of vectors $\{\vect{u}_1, \vect{u}_2\}$ given as in Example~\re
 \end{mymatrix} \in \R^{3} 
 \]
 
-Use the Gram-Schmidt algorithm to find an orthonormal set of vectors $\{\vect{w}_1, \vect{w}_2\}$ having the same span.
+Use the Gram-Schmidt algorithm to find an orthonormal set of vectors $\set{\vect{w}_1, \vect{w}_2}$ having the same span.
 \end{example}
 
 \begin{solution}
-We already remarked that the set of vectors in $\{\vect{u}_1,
-\vect{u}_2\}$ is linearly independent, so we can proceed with the
+We already remarked that the set of vectors in $\set{\vect{u}_1,
+\vect{u}_2}$ is linearly independent, so we can proceed with the
 Gram-Schmidt algorithm:
 \begin{eqnarray*}
 \vect{v}_1 &=& \vect{u}_1 =  \begin{mymatrix}{r}
@@ -130,8 +130,8 @@ Now to normalize simply let
 \end{mymatrix}
 \end{eqnarray*}
 
-You can verify that $\{\vect{w}_1, \vect{w}_2\}$ is an orthonormal set of vectors  having the same span as
-$\{\vect{u}_1, \vect{u}_2\}$,  namely the $XY$-plane.
+You can verify that $\set{\vect{w}_1, \vect{w}_2}$ is an orthonormal set of vectors  having the same span as
+$\set{\vect{u}_1, \vect{u}_2}$,  namely the $XY$-plane.
 \end{solution}
 
 In this example, we began with a linearly independent set and found an orthonormal set of vectors which had the same span. It turns out that if we start with a basis of a subspace and apply the Gram-Schmidt algorithm, the result will be an orthogonal basis of the same subspace. We examine this in the following example. 
@@ -142,7 +142,7 @@ Let
 \vect{x}_2=\begin{mymatrix}{c} 1\\ 0\\ 1\\ 1 \end{mymatrix},
 \mbox{ and }
 \vect{x}_3=\begin{mymatrix}{c} 1\\ 1\\ 0\\ 0 \end{mymatrix},\]
-and let $U=\sspan\{\vect{x}_1, \vect{x}_2,\vect{x}_3\}$. Use the Gram-Schmidt Process
+and let $U=\sspan\set{\vect{x}_1, \vect{x}_2,\vect{x}_3}$. Use the Gram-Schmidt Process
 to construct an orthogonal basis $B$ of $U$. 
 \end{example}
 

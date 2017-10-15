@@ -52,7 +52,7 @@ $\R^n$. Then the orthogonal projection of $Y$ onto $W$ is given by
 +
 \tup{\frac{\vect{y} \dotprod \vect{w}_m}{ \norm{\vect{w}_m}^2}} \vect{w}_m
 \]
-where $\{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m\}$ is any orthogonal basis of $W$.
+where $\set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m}$ is any orthogonal basis of $W$.
 \end{definition}
 
 Therefore, in order to find the orthogonal projection, we must first
@@ -262,8 +262,8 @@ complement of $W$, written $W^{\perp}$, is the set of all vectors
 $\vect{x}$ such that $\vect{x} \dotprod \vect{z} = 0$ for all vectors
 $\vect{z}$ in $W$.
 \[
-W^{\perp} = \{\vect{x} \in \R^n \; \mbox{such that} \;
-\vect{x} \dotprod \vect{z} = 0 \; \mbox{for all} \; \vect{z} \in W\}
+W^{\perp} = \set{\vect{x} \in \R^n \; \mbox{such that} \;
+\vect{x} \dotprod \vect{z} = 0 \; \mbox{for all} \; \vect{z} \in W}
 \]
 \end{definition}
 
@@ -295,17 +295,17 @@ Similarly,
 \begin{proof}
 Here, $\vect{0}$ is the zero vector of $\R^n$.
 Since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\R^n$, 
-$\R^n\subseteq\{\vect{0}\}^{\perp}$.
-Since $\{\vect{0}\}^{\perp}\subseteq\R^n$, the equality follows,
-i.e., $\{\vect{0}\}^{\perp}=\R^n$.
+$\R^n\subseteq\set{\vect{0}}^{\perp}$.
+Since $\set{\vect{0}}^{\perp}\subseteq\R^n$, the equality follows,
+i.e., $\set{\vect{0}}^{\perp}=\R^n$.
 
 Again, since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\R^n$,
-$\vect{0}\in (\R^n)^{\perp}$, so $\{\vect{0}\}\subseteq(\R^n)^{\perp}$.
+$\vect{0}\in (\R^n)^{\perp}$, so $\set{\vect{0}}\subseteq(\R^n)^{\perp}$.
 Suppose $\vect{x}\in\R^n$, $\vect{x}\neq\vect{0}$.  
 Since $\vect{x}\dotprod\vect{x}=||\vect{x}||^2$ and $\vect{x}\neq\vect{0}$,
 $\vect{x}\dotprod\vect{x}\neq 0$, so $\vect{x}\not\in(\R^n)^{\perp}$.
-Therefore $(\R^n)^{\perp}\subseteq \{\vect{0}\}$, and thus
-$(\R^n)^{\perp}=\{\vect{0}\}$.
+Therefore $(\R^n)^{\perp}\subseteq \set{\vect{0}}$, and thus
+$(\R^n)^{\perp}=\set{\vect{0}}$.
 \end{proof}
 
 In the next example, we will look at how to find
@@ -408,7 +408,7 @@ Let
 \mbox{ and }
 \vect{v}=\begin{mymatrix}{c} 4\\ 3\\ -2\\ 5 \end{mymatrix}. \]
 We want to find the vector in
-$W =\sspan\{\vect{x}_1, \vect{x}_2,\vect{x}_3\}$
+$W =\sspan\set{\vect{x}_1, \vect{x}_2,\vect{x}_3}$
 closest to $\vect{y}$.
 \end{example}
 

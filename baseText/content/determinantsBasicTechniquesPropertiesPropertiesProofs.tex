@@ -59,7 +59,7 @@ has determinant equal to zero.
 Let $i$ be such that the $i$th row of $A$ consists of zeros. 
 Then we have $a_{ij}=0$ for $1\leq j\leq n$. 
 
-Fix $j\in \{1,2, \dots ,n\}$ such that $j\neq i$. Then  matrix $A(j)$ used in computation of
+Fix $j\in \set{1,2, \dots ,n}$ such that $j\neq i$. Then  matrix $A(j)$ used in computation of
  $\func{cof}(A)_{1,j}$ has a row consisting of zeros, and by our inductive 
  assumption $\func{cof}(A)_{1,j}=0$. 
 
@@ -127,7 +127,7 @@ We assume $n\geq 3$ and  (1)--(4) are true for all matrices of size $(n-1)\times
 (1) 
 We prove the case when $j=i+1$, i.e., we are interchanging two consecutive rows. 
 
-Let $l\in \{1, \dots, n\}\setminus \{i,j\}$. 
+Let $l\in \set{1, \dots, n}\setminus \set{i,j}$. 
 Then $A(l)$ is obtained from $B(l)$ by interchanging two of its rows (draw a picture) and 
 by our assumption 
 \begin{equation} 

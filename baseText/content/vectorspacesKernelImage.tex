@@ -63,9 +63,9 @@ Find the kernel and image of $T$.
 \begin{solution}
 We will first find the kernel of $T$. It consists of all polynomials in $\Poly_1$ that have $1$ for a root. 
 \begin{eqnarray*}
-\func{ker}(T) & = & \{p(x)\in \Poly_1 ~|~ p(1)=0\} \\
-& = & \{ax+b ~|~ a,b\in\R \mbox{ and }a+b=0\} \\
-& = & \{ax-a ~|~ a\in\R\}
+\func{ker}(T) & = & \set{p(x)\in \Poly_1 ~|~ p(1)=0} \\
+& = & \set{ax+b ~|~ a,b\in\R \mbox{ and }a+b=0} \\
+& = & \set{ax-a ~|~ a\in\R}
 \end{eqnarray*}
 Therefore a basis for $\func{ker}(T)$ is 
 \[
@@ -75,9 +75,9 @@ Notice that this is a subspace of $\Poly_1$.
 
 Now consider the image. It consists of all numbers which can be obtained by evaluating all polynomials in $\Poly_1$ at $1$. 
 \begin{eqnarray*}
-\func{im}(T) & = & \{p(1) ~|~ p(x)\in \Poly_1\} \\
- & = & \{a+b ~|~ ax+b\in \Poly_1\} \\
- & = & \{a+b ~|~ a,b\in\R\}\\
+\func{im}(T) & = & \set{p(1) ~|~ p(x)\in \Poly_1} \\
+ & = & \set{a+b ~|~ ax+b\in \Poly_1} \\
+ & = & \set{a+b ~|~ a,b\in\R}\\
  & = & \R
 \end{eqnarray*}
 Therefore a basis for $\func{im}(T)$ is 
@@ -317,8 +317,8 @@ Prove that $S$ is one to one but not onto.
 You may recall this example from earlier in Example~\ref{exa:one-to-one-general}. Here we will determine that $S$ is one to one, but not onto, using the method provided in Corollary~\ref{cor:one-one-onto-char}.
 
 By definition, 
-\[ \ker(S)=\{ax^2+bx+c\in \Poly_2 ~|~ a+b=0,
-a+c=0, b-c=0, b+c=0\}.\]
+\[ \ker(S)=\set{ax^2+bx+c\in \Poly_2 ~|~ a+b=0,
+a+c=0, b-c=0, b+c=0}.\]
 
 Suppose $p(x)=ax^2+bx+c\in\ker(S)$.
 This leads to a homogeneous system of four equations in three 
@@ -337,7 +337,7 @@ Putting the augmented matrix in {\rref}:
 0 & 0 & 1 & 0  \\
 0 & 0 & 0 & 0  \end{mymatrix}. \]
 
-Since the unique solution is $a=b=c=0$, $\ker(S)=\{\vect{0}\}$, and thus
+Since the unique solution is $a=b=c=0$, $\ker(S)=\set{\vect{0}}$, and thus
 $S$ is one-to-one by Corollary~\ref{cor:one-one-onto-char}.
 
 Similarly, by Corollary~\ref{cor:one-one-onto-char}, if $S$ is onto it will have $\func{rank}(S) = \func{dim}(\Mat_{22}) = 4$. The image of $S$ is given by 

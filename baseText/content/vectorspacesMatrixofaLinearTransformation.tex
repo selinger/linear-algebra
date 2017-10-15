@@ -15,8 +15,8 @@ Consider now an important definition.
 
 \index{coordinate isomorphism}
 \begin{definition}{Coordinate isomorphism}{coordinate-isomorphism}
-Let $V$ be a vector space with $\func{dim}(V)=n$, let $B=\{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n\}$ be a fixed basis of $V$,
-and let $\{\vect{e}_1, \vect{e}_2, \ldots, \vect{e}_n\}$
+Let $V$ be a vector space with $\func{dim}(V)=n$, let $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ be a fixed basis of $V$,
+and let $\set{\vect{e}_1, \vect{e}_2, \ldots, \vect{e}_n}$
 denote the standard basis of $\R^n$.
 We define a transformation $C_B:V\to\R^n$ by
 \[
@@ -39,7 +39,7 @@ We continue with another related definition.
 \index{coordinate vector}
 \begin{definition}{Coordinate vector}{coordinate-vector}
 Let $V$ be a finite dimensional vector space with $\func{dim}(V)=n$, and
-let $B=\{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n\}$ be an ordered basis of $V$ (meaning that the order that the
+let $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ be an ordered basis of $V$ (meaning that the order that the
 vectors are listed is taken into account).
 The coordinate vector of $\vect{v}$ with respect to $B$ is defined
 as $C_B(\vect{v})$.
@@ -132,7 +132,7 @@ Given that the coordinate transformation $C_B:V\to\R^n$ is an isomorphism, its i
 
 \begin{theorem}{Inverse of the coordinate isomorphism}{coordinate-inverse}
 Let $V$ be a finite dimensional vector space with dimension $n$
-and ordered basis $B=\{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n\}$.
+and ordered basis $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$.
 Then $C_B:V\to\R^n$ is an isomorphism whose inverse,
 \[ C_B^{-1}:\R^n\to V\]
 is given by
@@ -150,7 +150,7 @@ bases.
 
 Let $V$ and $W$ be finite dimensional vector spaces, and suppose
 \begin{itemize}
-\item $\dim(V)=n$ and $B_1=\{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n\}$
+\item $\dim(V)=n$ and $B_1=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$
 is an ordered basis of $V$;
 \item $\dim(W)=m$ and $B_2$ is an ordered basis of $W$.
 \end{itemize}
@@ -187,7 +187,7 @@ This result is given in the following theorem.
 
 \begin{theorem}{}{}
 Let $V$ and $W$ be vectors spaces of dimension
-$n$ and $m$ respectively, with $B_1=\{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n\}$ an
+$n$ and $m$ respectively, with $B_1=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ an
 ordered basis of $V$ and $B_2$ an ordered basis of $W$. Suppose $T:V\to W$ is a linear transformation. Then the unique matrix $M_{B_2B_1}(T)$ of $T$ corresponding to $B_1$ and $B_2$ is given by 
 \[ M_{B_2B_1}(T)=
 \begin{mymatrix}{cccc}
@@ -494,7 +494,7 @@ defined by
 \[ T(ax^3+bx^2+cx+d)=
 \begin{mymatrix}{cc} a+d & b-c \\ b+c & a-d \end{mymatrix}\]
 for all $ax^3+bx^2+cx+d\in\Poly_3$. Let
-$B_1=\{x^3, x^2, x, 1\}$ and
+$B_1=\set{x^3, x^2, x, 1}$ and
 \[ B_2=\set{
 \begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
 \begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix},

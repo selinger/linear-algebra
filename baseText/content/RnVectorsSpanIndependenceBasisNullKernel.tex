@@ -28,17 +28,17 @@ Suppose $p\neq 0$, and suppose that for some $j$, $1\leq j\leq m$,
 $B$ is obtained from $A$ by multiplying row $j$ by $p$.
 Then 
 
-\[ \func{row}(B)=\sspan\{\vect{r}_1, \ldots, 
-p\vect{r}_{j}, \ldots, \vect{r}_m\}.  \]
+\[ \func{row}(B)=\sspan\set{\vect{r}_1, \ldots, 
+p\vect{r}_{j}, \ldots, \vect{r}_m}.  \]
 
 Since
-\[ \{\vect{r}_1, \ldots, 
-p\vect{r}_{j}, \ldots, \vect{r}_m\} \subseteq\func{row}(A),\]
+\[ \set{\vect{r}_1, \ldots, 
+p\vect{r}_{j}, \ldots, \vect{r}_m} \subseteq\func{row}(A),\]
 
 it follows that $\func{row}(B)\subseteq\func{row}(A)$.
 Conversely, since
 
-\[ \{\vect{r}_1, \ldots, \vect{r}_m\}\subseteq\func{row}(B),\]
+\[ \set{\vect{r}_1, \ldots, \vect{r}_m}\subseteq\func{row}(B),\]
 
 it follows that $\func{row}(A)\subseteq\func{row}(B)$.
 Therefore, $\func{row}(B)=\func{row}(A)$.
@@ -51,19 +51,19 @@ Without loss of generality, we may assume $i<j$.
 
 Then 
 
-\[ \func{row}(B)=\sspan\{\vect{r}_1, \ldots, \vect{r}_{i-1},
-\vect{r}_i+p\vect{r}_j, \ldots,\vect{r}_j,\ldots, \vect{r}_m\}.  \]
+\[ \func{row}(B)=\sspan\set{\vect{r}_1, \ldots, \vect{r}_{i-1},
+\vect{r}_i+p\vect{r}_j, \ldots,\vect{r}_j,\ldots, \vect{r}_m}.  \]
 
 Since
 
-\[ \{\vect{r}_1, \ldots, \vect{r}_{i-1}, 
-\vect{r}_i+p\vect{r}_{j}, \ldots, \vect{r}_m\} \subseteq\func{row}(A),\]
+\[ \set{\vect{r}_1, \ldots, \vect{r}_{i-1}, 
+\vect{r}_i+p\vect{r}_{j}, \ldots, \vect{r}_m} \subseteq\func{row}(A),\]
 
 it follows that $\func{row}(B)\subseteq\func{row}(A)$.
 
 Conversely, since
 
-\[ \{\vect{r}_1, \ldots, \vect{r}_m\}\subseteq\func{row}(B),\]
+\[ \set{\vect{r}_1, \ldots, \vect{r}_m}\subseteq\func{row}(B),\]
 
 it follows that $\func{row}(A)\subseteq\func{row}(B)$.
 Therefore, $\func{row}(B)=\func{row}(A)$.

@@ -49,8 +49,8 @@ Prove that $S$ is one to one but not onto.
 
 \begin{solution}
 By definition, 
-\[ \ker(S)=\{ax^2+bx+c\in \Poly_2 ~|~ a+b=0,
-a+c=0, b-c=0, b+c=0\}.\]
+\[ \ker(S)=\set{ax^2+bx+c\in \Poly_2 ~|~ a+b=0,
+a+c=0, b-c=0, b+c=0}.\]
 
 Suppose $p(x)=ax^2+bx+c\in\ker(S)$.
 This leads to a homogeneous system of four equations in three 
@@ -143,9 +143,9 @@ The following example demonstrates that a one to one transformation preserves li
 Let $V$ and $W$ be vector spaces and $T: V \mapsto W$ a linear
 transformation.
 Prove that if $T$ is one to one and
-$\{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k\}$ is an independent
+$\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$ is an independent
 subset of $V$, then
-$\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}$ is an independent
+$\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}$ is an independent
 subset of $W$.
 \end{example}
 
@@ -162,12 +162,12 @@ and scalar multiplication),
 
 \[ T(a_1\vect{v}_1 + a_2\vect{v}_2 +\cdots +a_k\vect{v}_k) =\vect{0}_W. \]
 
-Now, since $T$ is one to one, $\ker(T)=\{\vect{0}_V\}$, and thus
+Now, since $T$ is one to one, $\ker(T)=\set{\vect{0}_V}$, and thus
 
 \[ a_1\vect{v}_1 + a_2\vect{v}_2 +\cdots +a_k\vect{v}_k =\vect{0}_V. \]
 
-\noindent However, $\{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k\}$ is independent so $a_1=a_2=\cdots=a_k=0$.
-Therefore, $\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}$
+\noindent However, $\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$ is independent so $a_1=a_2=\cdots=a_k=0$.
+Therefore, $\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}$
 is independent.
 \end{solution}
 
@@ -177,15 +177,15 @@ A similar claim can be made regarding onto transformations. In this case, an ont
 Let $V$ and $W$ be vector spaces and $T:V\to W$ a linear
 transformation.
 Prove that if $T$ is onto and
-$V=\sspan\{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k\}$,
+$V=\sspan\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$,
 then
-\[ W=\sspan\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}.\]
+\[ W=\sspan\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}.\]
 \end{example}
 
 \begin{solution}
 Suppose that $T$ is onto and let $\vect{w}\in W$.  
 Then there exists $\vect{v}\in V$ such that $T(\vect{v})=\vect{w}$.
-Since $V=\sspan\{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k\}$, there
+Since $V=\sspan\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$, there
 exist $a_1, a_2, \ldots a_k\in\R$ such that 
 $\vect{v} = a_1\vect{v}_1 + a_2\vect{v}_2 + \cdots + a_k\vect{v}_k$.
 Using the fact that $T$ is a linear transformation,
@@ -196,15 +196,15 @@ Using the fact that $T$ is a linear transformation,
 & = & a_1T(\vect{v}_1) + a_2T(\vect{v}_2) + \cdots + a_kT(\vect{v}_k),
 \end{eqnarray*}
 
-i.e., $\vect{w}\in\sspan\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}$,
+i.e., $\vect{w}\in\sspan\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}$,
 and thus 
 
-\[ W\subseteq \sspan\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}.\]
+\[ W\subseteq \sspan\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}.\]
 
 Since $T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\in W$, 
 it follows from
 that
-$\sspan\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}\subseteq W$,
+$\sspan\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}\subseteq W$,
 and therefore
-$W=\sspan\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}$.
+$W=\sspan\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}$.
 \end{solution}

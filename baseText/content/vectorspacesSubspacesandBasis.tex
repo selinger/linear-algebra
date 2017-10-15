@@ -180,12 +180,12 @@ It follows that $W$ is a subspace of $\Poly_2$.
 Recall the definition of basis, considered now in the context of vector spaces.
 
 \begin{definition}{Basis}{basis-vector-space}
-Let $V$ be a vector space. Then $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is called a basis\index{basis} for $V$ if the following conditions hold.
+Let $V$ be a vector space. Then $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}}$ is called a basis\index{basis} for $V$ if the following conditions hold.
 \begin{enumerate}
 \item
 $\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} = V$
 \item
-$\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is linearly independent
+$\set{\vect{v}_{1},\cdots ,\vect{v}_{n}}$ is linearly independent
 \end{enumerate}
 \end{definition}
 
@@ -333,7 +333,7 @@ if and only if
 \sum_{i=1}^{m}\tup{\sum_{j=1}^{n}c_{ij}d_{j}} \vect{u}_{i}=\vect{
 0}
 \end{equation*}
-Now since $\{\vect{u}_{1},\cdots ,\vect{u}_{n}\}$ is independent, this
+Now since $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}}$ is independent, this
 happens if and only if 
 \begin{equation*}
 \sum_{j=1}^{n}c_{ij}d_{j}=0,\;i=1,2,\cdots ,m.
@@ -445,11 +445,11 @@ vectors, a basis of $V$.
 Consider the following example.
 
 \begin{example}{Basis of a subspace}{basis-subspace}
-Let $U=\set{A\in\Mat_{22} ~\abs{~
+Let $U=\set{A\in\Mat_{22} \left\vert
 A\begin{mymatrix}{rr}
-1 & 0 \\ 1 & -1 \end{mymatrix}\right. 
+1 & 0 \\ 1 & -1 \end{mymatrix}
 = \begin{mymatrix}{rr}
-1 & 1 \\ 0 & -1 \end{mymatrix} A }$. 
+1 & 1 \\ 0 & -1 \end{mymatrix} A \right.}$. 
 Then $U$ is a subspace of $\Mat_{22}$ 
 Find a basis of $U$, and hence $\dim(U)$.
 \end{example}
@@ -506,29 +506,29 @@ The following theorem claims that a spanning set of a vector space $V$ can be sh
 
 \begin{theorem}{Basis of $V$}{basis-from-spanning-lin-ind}
  If $V=\sspan\set{\vect{u}_{1},\cdots ,\vect{u}
-_{n}} $ is a vector space, then some subset of $\{\vect{u}_{1},\cdots ,\vect{u}_{n}\}$
-is a basis for $V$. Also, if $\{\vect{u}_{1},\cdots ,\vect{u}
-_{k}\}\subseteq V$ is linearly independent and the vector space is finite
+_{n}} $ is a vector space, then some subset of $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}}$
+is a basis for $V$. Also, if $\set{\vect{u}_{1},\cdots ,\vect{u}
+_{k}}\subseteq V$ is linearly independent and the vector space is finite
 dimensional,
-then the set $\{
-\vect{u}_{1},\cdots ,\vect{u}_{k}\}$, can be enlarged to obtain a basis
+then the set $\set{
+\vect{u}_{1},\cdots ,\vect{u}_{k}}$, can be enlarged to obtain a basis
 of $V$\index{linear independence!enlarging to form a basis}.
 \end{theorem}
 
 \begin{proof}Let 
 \begin{equation*}
-S=\{E\subseteq \{\vect{u}_{1},\cdots ,\vect{u}_{n}\}\text{ such that }%
-\sspan\set{E} =V\}.
+S=\set{E\subseteq \set{\vect{u}_{1},\cdots ,\vect{u}_{n}}\text{ such that }%
+\sspan\set{E} =V}.
 \end{equation*}
 For $E\in S$, let $\abs{E}$ denote the number of elements
 of $E$. Let 
 \begin{equation*}
-m= \min \{\abs{E}\text{ such that }E\in S\}.
+m= \min \set{\abs{E}\text{ such that }E\in S}.
 \end{equation*}
 Thus there exist vectors 
 \begin{equation*}
-\{\vect{v}_{1},\cdots ,\vect{v}_{m}\}\subseteq \{\vect{u}_{1},\cdots ,%
-\vect{u}_{n}\}
+\set{\vect{v}_{1},\cdots ,\vect{v}_{m}}\subseteq \set{\vect{u}_{1},\cdots ,%
+\vect{u}_{n}}
 \end{equation*}
 such that 
 \begin{equation*}
@@ -551,8 +551,8 @@ _{k+1},\cdots ,\vect{v}_{m}}
 contradicting the definition of $m$. This proves the first part of the
 theorem.
 
-To obtain the second part, begin with $\{\vect{u}_{1},\cdots ,\vect{u}
-_{k}\}$ and suppose a basis for $V$ is 
+To obtain the second part, begin with $\set{\vect{u}_{1},\cdots ,\vect{u}
+_{k}}$ and suppose a basis for $V$ is 
 \begin{equation*}
 \set{\vect{v}_{1},\cdots ,\vect{v}_{n}} 
 \end{equation*}
@@ -565,8 +565,8 @@ then $k=n$. If not, there exists a vector
 \vect{u}_{k+1}\notin \sspan\set{\vect{u}_{1},\cdots ,\vect{u}
 _{k}}
 \end{equation*}
-Then from Lemma~\ref{lem:adding-linearly-independent}, $\{\vect{u}_{1},\cdots ,\vect{u}_{k},
-\vect{u}_{k+1}\}$ is also linearly independent. Continue adding vectors in
+Then from Lemma~\ref{lem:adding-linearly-independent}, $\set{\vect{u}_{1},\cdots ,\vect{u}_{k},
+\vect{u}_{k+1}}$ is also linearly independent. Continue adding vectors in
 this way until $n$ linearly independent vectors have been obtained. Then 
 \begin{equation*}
 \sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} =V
