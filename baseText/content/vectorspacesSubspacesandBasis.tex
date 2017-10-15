@@ -48,13 +48,13 @@ respect to linear combinations. Hence it is a subspace.
 Consider the following useful Corollary.
 
 \begin{corollary}{Span is a subspace}{span-subspace}
-Let $V$ be a vector space with $W \subseteq V$. If $W = \func{span} \set{\vect{v}_1, \cdots,  \vect{v}_n }$ then $W$ is a subspace of $V$.
+Let $V$ be a vector space with $W \subseteq V$. If $W = \sspan \set{\vect{v}_1, \cdots,  \vect{v}_n }$ then $W$ is a subspace of $V$.
 \end{corollary}
 
 When determining spanning sets the following theorem proves useful.
 
 \begin{theorem}{Spanning set}{spanning-set}
-Let $W \subseteq V$ for a vector space $V$ and suppose $W = \func{span} \set{\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n }$. 
+Let $W \subseteq V$ for a vector space $V$ and suppose $W = \sspan \set{\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n }$. 
 
 Let $U \subseteq V$ be a subspace such that $\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n \in U$. Then it follows that $W \subseteq U$. 
 \end{theorem}
@@ -64,7 +64,7 @@ In other words, this theorem claims that any subspace that contains a set of vec
 The following example will show that two spans, described differently, can in fact be equal. 
 
 \begin{example}{Equal span}{equal-span}
-Let $p(x), q(x)$ be polynomials and suppose $U = \func{span}\set{2p(x) - q(x), p(x) + 3q(x)} $ and $W =  \func{span}\set{p(x), q(x) }$. Show that $U = W$. 
+Let $p(x), q(x)$ be polynomials and suppose $U = \sspan\set{2p(x) - q(x), p(x) + 3q(x)} $ and $W =  \sspan\set{p(x), q(x) }$. Show that $U = W$. 
 \end{example}
 
 \begin{solution}
@@ -72,7 +72,7 @@ We will use Theorem~\ref{thm:spanning-set} to show that $U \subseteq W$ and $W \
 \begin{enumerate}
 \item $U \subseteq W$
 
-Notice that $2p(x) - q(x)$ and $p(x) + 3q(x)$  are both in $W = \func{span} \set{p(x), q(x) }$. Then by Theorem~\ref{thm:spanning-set} $W$ must contain the span of these polynomials and so $U \subseteq W$. 
+Notice that $2p(x) - q(x)$ and $p(x) + 3q(x)$  are both in $W = \sspan \set{p(x), q(x) }$. Then by Theorem~\ref{thm:spanning-set} $W$ must contain the span of these polynomials and so $U \subseteq W$. 
 
 \item $W \subseteq U$
 
@@ -81,7 +81,7 @@ Notice that
 p(x) &=& \frac{3}{7} \tup{2p(x) - q(x) }  + \frac{2}{7} \tup{p(x) + 3q(x)} \\
 q(x) &=& -\frac{1}{7} \tup{2p(x) - q(x) }  + \frac{2}{7} \tup{p(x) + 3q(x)}
 \end{eqnarray*}
-Hence $p(x), q(x)$ are in $\func{span} \set{2p(x) - q(x), p(x) + 3q(x) }$. By Theorem~\ref{thm:spanning-set} $U$ must contain the span of these polynomials and so $W \subseteq U$. 
+Hence $p(x), q(x)$ are in $\sspan \set{2p(x) - q(x), p(x) + 3q(x) }$. By Theorem~\ref{thm:spanning-set} $U$ must contain the span of these polynomials and so $W \subseteq U$. 
 \end{enumerate}
 \end{solution}
 
@@ -183,7 +183,7 @@ Recall the definition of basis, considered now in the context of vector spaces.
 Let $V$ be a vector space. Then $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is called a basis\index{basis} for $V$ if the following conditions hold.
 \begin{enumerate}
 \item
-$\func{span}\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} = V$
+$\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} = V$
 \item
 $\{\vect{v}_{1},\cdots ,\vect{v}_{n}\}$ is linearly independent
 \end{enumerate}
@@ -193,14 +193,14 @@ Consider the following example.
 
 \begin{example}{Polynomials of degree two}{poly-degree-two}
 Let $\Poly_2$ be the set polynomials of degree no more than 2. We can write
-$\Poly_2=\func{span}\set{x^{2}, x, 1}$. Is $\set{x^{2}, x, 1} $ a
+$\Poly_2=\sspan\set{x^{2}, x, 1}$. Is $\set{x^{2}, x, 1} $ a
 basis for $\Poly_2$?
 \end{example}
 
 \begin{solution}
 It can be verified that $\Poly_2$ is a vector space defined under the usual addition and scalar multiplication of polynomials. 
 
-Now, since $\Poly_2=\func{span}\set{x^{2},x, 1}$, the set  $\set{x^{2}, x, 1} $ is a basis if it is linearly independent. Suppose then that 
+Now, since $\Poly_2=\sspan\set{x^{2},x, 1}$, the set  $\set{x^{2}, x, 1} $ is a basis if it is linearly independent. Suppose then that 
 \begin{equation*}
 ax^{2}+bx+c=0x^2 + 0x + 0 
 \end{equation*}
@@ -233,7 +233,7 @@ nontrivial linear combination of the vectors $\set{\vect{x}_{1},\cdots ,
 
 Say $c_{k}\neq 0$. Then solve {\eqref{lin-comb}} for $\vect{y}_{k}$ and obtain 
 \begin{equation*}
-\vect{y}_{k}\in \func{span}\set{\vect{x}_{1},\overset{\text{s-1
+\vect{y}_{k}\in \sspan\set{\vect{x}_{1},\overset{\text{s-1
 vectors here}}{\overbrace{\vect{y}_{1},\cdots ,\vect{y}_{k-1},\vect{y}
 _{k+1},\cdots ,\vect{y}_{s}}}} .
 \end{equation*}
@@ -245,9 +245,9 @@ _{s}}
 \end{equation*}
 Now we can write 
 \begin{equation*}
-\vect{y}_{k}\in \func{span}\set{\vect{x}_{1}, \vect{z}_{1},\cdots, \vect{z}_{s-1}} 
+\vect{y}_{k}\in \sspan\set{\vect{x}_{1}, \vect{z}_{1},\cdots, \vect{z}_{s-1}} 
 \end{equation*}
-Therefore, $\func{span}\set{\vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z
+Therefore, $\sspan\set{\vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z
 }_{s-1}}=V$. To see this, suppose $\vect{v}\in V$. Then there exist constants $
 c_{1},\cdots ,c_{s}$ such that 
 \begin{equation*}
@@ -255,7 +255,7 @@ c_{1},\cdots ,c_{s}$ such that
 \end{equation*}
 Replace this $\vect{y}_{k}$ with a linear combination of the
 vectors $\set{\vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z}_{s-1}}$
-to obtain $\vect{v}\in \func{span}\set{\vect{x}_{1},\vect{z}
+to obtain $\vect{v}\in \sspan\set{\vect{x}_{1},\vect{z}
 _{1},\cdots ,\vect{z}_{s-1}}$. The vector $\vect{y}_{k}$, in the
 list $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}}$, has now been
 replaced with the vector $\vect{x}_{1}$ and the resulting modified list of
@@ -264,7 +264,7 @@ vectors has the same span as the original list of vectors, $\set{\vect{y
 
 We are now ready to move on to the proof. Suppose that $r>s$ and that 
 \[
-\func{span}\set{\vect{x}_{1},\cdots ,
+\sspan\set{\vect{x}_{1},\cdots ,
 \vect{x}_{l},\vect{z}_{1},\cdots ,\vect{z}_{p}} =V
 \]
  where the process established above has continued. In other words, the vectors $\vect{z}_{1},\cdots ,\vect{z}_{p}$ are each taken from the
@@ -274,7 +274,7 @@ l\leq s<r$ and so $l+1\leq r$. Therefore, $\vect{x}_{l+1}$ is a vector not
 in the list, $\set{\vect{x}_{1},\cdots ,\vect{x}_{l}} $ and
 since 
 \[
-\func{span}\set{\vect{x}_{1},\cdots ,\vect{x}_{l},\vect{z}
+\sspan\set{\vect{x}_{1},\cdots ,\vect{x}_{l},\vect{z}
 _{1},\cdots ,\vect{z}_{p}} =V
 \]
  there exist scalars, $c_{i}$ and $
@@ -291,15 +291,15 @@ $\vect{z}_{i}$, say $\vect{z}_{k}$, in terms of $\vect{x}_{l+1}$ and
 the other $\vect{z}_{i}$ and just as in the above argument, replace that $
 \vect{z}_{i}$ with $\vect{x}_{l+1}$ to obtain 
 \begin{equation*}
-\func{span}\set{\vect{x}_{1},\cdots \vect{x}_{l},\vect{x}_{l+1},
+\sspan\set{\vect{x}_{1},\cdots \vect{x}_{l},\vect{x}_{l+1},
 \overset{\text{p-1 vectors here}}{\overbrace{\vect{z}_{1},\cdots \vect{z}
 _{k-1},\vect{z}_{k+1},\cdots ,\vect{z}_{p}}}} =V
 \end{equation*}
 Continue this way, eventually obtaining 
 \begin{equation*}
-\func{span}\set{\vect{x}_{1},\cdots ,\vect{x}_{s}} =V.
+\sspan\set{\vect{x}_{1},\cdots ,\vect{x}_{s}} =V.
 \end{equation*}
-But then $\vect{x}_{r}\in $ $\func{span}\set{\vect{x}_{1},\cdots ,
+But then $\vect{x}_{r}\in $ $\sspan\set{\vect{x}_{1},\cdots ,
 \vect{x}_{s}} $ contrary to the assumption that $\set{\vect{x}
 _{1},\cdots ,\vect{x}_{r}} $ is linearly independent. Therefore, $
 r\leq s$ as claimed.
@@ -410,12 +410,12 @@ with no more than $n$ vectors.
 
 \begin{proof}
 Let $\vect{v}_{1}\in V$ where $\vect{v}_{1}\neq 0$. If $
-\func{span}\set{\vect{v}_{1}} =V$, then it follows that $\set{\vect{v}
+\sspan\set{\vect{v}_{1}} =V$, then it follows that $\set{\vect{v}
 _{1}} $ is a basis for $V$. Otherwise, there exists $\vect{v}
-_{2}\in V$ which is not in $\func{span}\set{\vect{v}_{1}}$. By
+_{2}\in V$ which is not in $\sspan\set{\vect{v}_{1}}$. By
 Lemma~\ref{lem:adding-linearly-independent} $\set{\vect{v}_{1},\vect{v}_{2}} $ is a
 linearly independent set of vectors. Then $\set{\vect{v}_{1},\vect{v}
-_{2}} $ is a basis for $V$ and we are done. If $\func{span}\set{\vect{v}_{1},
+_{2}} $ is a basis for $V$ and we are done. If $\sspan\set{\vect{v}_{1},
 \vect{v}_{2}} \neq V$, then there exists $\vect{v}_{3}\notin \func{
 span}\set{\vect{v}_{1},\vect{v}_{2}} $ and $\set{\vect{v}
 _{1},\vect{v}_{2},\vect{v}_{3}} $ is a larger linearly
@@ -436,7 +436,7 @@ subspace. Then $W=V$ if and only if the dimension of $W$ is also $n$.
 Now suppose that the dimension of $W$ is $n$. Let a basis for $W$ be $
 \set{\vect{w}_{1},\cdots ,\vect{w}_{n}}$. If $W$ is not equal to $V$
 , then let $\vect{v}$ be a vector of $V$ which is not contained in $W$. Thus $
-\vect{v}$ is not in $\func{span}\set{\vect{w}_{1},\cdots ,\vect{w}
+\vect{v}$ is not in $\sspan\set{\vect{w}_{1},\cdots ,\vect{w}
 _{n}} $ and by Lemma~\ref{lem:bases-isomorphism}, $\set{\vect{w}_{1},\cdots ,\vect{w}_{n},\vect{v}} $ is linearly independent which contradicts
 Theorem~\ref{thm:exchange-theorem} because it would be an independent set of $n+1$
 vectors even though each of these vectors is in a spanning set of $n$
@@ -498,7 +498,7 @@ Let
 \begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
 \begin{mymatrix}{rr} 0  & -\frac{1}{2} \\
 -\frac{1}{2} & 1 \end{mymatrix}}.\]
-Then $\func{span}(B)=U$, and it is routine to verify that $B$ is
+Then $\sspan(B)=U$, and it is routine to verify that $B$ is
 an independent subset of $\Mat_{22}$.  
 Therefore $B$ is a basis of $U$, and $\dim(U)=2$.
 \end{solution}
@@ -506,7 +506,7 @@ Therefore $B$ is a basis of $U$, and $\dim(U)=2$.
 The following theorem claims that a spanning set of a vector space $V$ can be shrunk down to a basis of $V$. Similarly, a linearly independent set within $V$ can be enlarged to create a basis of $V$.
 
 \begin{theorem}{Basis of $V$}{basis-from-spanning-lin-ind}
- If $V=\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}
+ If $V=\sspan\set{\vect{u}_{1},\cdots ,\vect{u}
 _{n}} $ is a vector space, then some subset of $\{\vect{u}_{1},\cdots ,\vect{u}_{n}\}$
 is a basis for $V$. Also, if $\{\vect{u}_{1},\cdots ,\vect{u}
 _{k}\}\subseteq V$ is linearly independent and the vector space is finite
@@ -519,7 +519,7 @@ of $V$\index{linear independence!enlarging to form a basis}.
 \begin{proof}Let 
 \begin{equation*}
 S=\{E\subseteq \{\vect{u}_{1},\cdots ,\vect{u}_{n}\}\text{ such that }%
-\func{span}\set{E} =V\}.
+\sspan\set{E} =V\}.
 \end{equation*}
 For $E\in S$, let $\abs{E}$ denote the number of elements
 of $E$. Let 
@@ -533,7 +533,7 @@ Thus there exist vectors
 \end{equation*}
 such that 
 \begin{equation*}
-\func{span}\set{\vect{v}_{1},\cdots ,\vect{v}_{m}} =V
+\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{m}} =V
 \end{equation*}
 and $m$ is as small as possible for this to happen. If this set is linearly
 independent, it follows it is a basis for $V$ and the theorem is proved. On
@@ -546,7 +546,7 @@ and not all the $c_{i}$ are equal to zero. Suppose $c_{k}\neq 0$. Then solve for
 vector $\vect{v}_{k}$ in terms of the other vectors.
 Consequently, 
 \begin{equation*}
-V=\func{span}\set{\vect{v}_{1},\cdots ,\vect{v}_{k-1},\vect{v}
+V=\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{k-1},\vect{v}
 _{k+1},\cdots ,\vect{v}_{m}}
 \end{equation*}
 contradicting the definition of $m$. This proves the first part of the
@@ -559,18 +559,18 @@ _{k}\}$ and suppose a basis for $V$ is
 \end{equation*}
 If 
 \begin{equation*}
-\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V,
+\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V,
 \end{equation*}
 then $k=n$. If not, there exists a vector 
 \begin{equation*}
-\vect{u}_{k+1}\notin \func{span}\set{\vect{u}_{1},\cdots ,\vect{u}
+\vect{u}_{k+1}\notin \sspan\set{\vect{u}_{1},\cdots ,\vect{u}
 _{k}}
 \end{equation*}
 Then from Lemma~\ref{lem:adding-linearly-independent}, $\{\vect{u}_{1},\cdots ,\vect{u}_{k},
 \vect{u}_{k+1}\}$ is also linearly independent. Continue adding vectors in
 this way until $n$ linearly independent vectors have been obtained. Then 
 \begin{equation*}
-\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} =V
+\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} =V
 \end{equation*}
 because if it did not do so, there would exist $\vect{u}_{n+1}$ as just
 described and $\set{\vect{u}_{1},\cdots ,\vect{u}_{n+1}} $
@@ -613,7 +613,7 @@ is also linearly independent.
 However this set is still not a basis for $M_{22}$ as it is not a spanning set. In particular, $\begin{mymatrix}{rr}
 0 & 0 \\
 0 & 1 
-\end{mymatrix}$ is not in $\func{span} R$. Therefore, this matrix can be added to the set by Lemma~\ref{lem:adding-linearly-independent} to obtain a new linearly independent set given by 
+\end{mymatrix}$ is not in $\sspan R$. Therefore, this matrix can be added to the set by Lemma~\ref{lem:adding-linearly-independent} to obtain a new linearly independent set given by 
 \[
 T = \set{\begin{mymatrix}{rr}
 1 & 0 \\
@@ -638,7 +638,7 @@ spanning set and you want a subset which is a basis. The above discussion involv
 
 \begin{theorem}{Basis from a spanning set}{}
 Let $V$ be a vector space and let $W$ be a subspace. Also
-suppose that $W=\func{span}\set{\vect{w}_{1},\cdots ,\vect{w}
+suppose that $W=\sspan\set{\vect{w}_{1},\cdots ,\vect{w}
 _{m}}$. Then there exists a subset of $\set{\vect{w}_{1},\cdots ,
 \vect{w}_{m}} $ which is a basis for $W$.
 \end{theorem}
@@ -649,7 +649,7 @@ k\in S$, there exists a subset of $\set{\vect{w}_{1},\cdots ,\vect{w}
 _{m}} $ consisting of exactly $k$ vectors which is a spanning set for 
 $W$. Thus $m\in S$. Pick the smallest positive integer in $S$. Call it $k$.
 Then there exists $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} \subseteq
-\set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $ such that $\limfunc{span}
+\set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $ such that $\sspan
 \set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =W$. If 
 \begin{equation*}
 \sum_{i=1}^{k}c_{i}\vect{w}_{i}=\vect{0}
@@ -803,7 +803,7 @@ a non-zero subspace. Then $W$ has a basis. That is, there exists a linearly
 independent set of vectors $\set{\vect{w}_{1},\cdots ,\vect{w}_{r}} $
 such that 
 \begin{equation*}
-\limfunc{span}\set{\vect{w}_{1},\cdots ,\vect{w}_{r}} =W
+\sspan\set{\vect{w}_{1},\cdots ,\vect{w}_{r}} =W
 \end{equation*}
 Also if $\set{\vect{w}_{1},\cdots ,\vect{w}_{s}} $ is a linearly
 independent set of vectors, then $W$ has a basis of the form $\set{\vect{w}
@@ -814,9 +814,9 @@ _{1},\cdots ,\vect{w}_{s},\cdots ,\vect{w}_{r}} $ for $r\geq s$.
 Let the dimension of $V$ be $n$. Pick $\vect{w}_{1}\in W$
 where $\vect{w}_{1}\neq \vect{0}$. If $\vect{w}_{1},\cdots ,\vect{w}_{s}$ have
 been chosen such that $\set{\vect{w}_{1},\cdots ,\vect{w}_{s}} $ is
-linearly independent, if $\limfunc{span}\set{\vect{w}_{1},\cdots ,\vect{w}
+linearly independent, if $\sspan\set{\vect{w}_{1},\cdots ,\vect{w}
 _{r}} =W$, stop. You have the desired basis. Otherwise, there exists $
-\vect{w}_{s+1}\notin \limfunc{span}\set{\vect{w}_{1},\cdots ,\vect{w}
+\vect{w}_{s+1}\notin \sspan\set{\vect{w}_{1},\cdots ,\vect{w}
 _{s}} $ and $\set{\vect{w}_{1},\cdots ,
 \vect{w}_{s},\vect{w}_{s+1}} $ is linearly independent. Continue this
 way until the process stops. It must stop since otherwise, you could obtain a
@@ -841,7 +841,7 @@ Consider the following example.
 \begin{example}{Basis extension}{}
 Let $V=\R^{4}$ and let 
 \begin{equation*}
-W=\func{span}\set{\begin{mymatrix}{c}
+W=\sspan\set{\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 

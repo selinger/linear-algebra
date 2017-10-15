@@ -9,9 +9,9 @@ include the definitions and examples here for convenience.
 \begin{definition}{Span of a set of vectors and subspace}{span}
 The collection of all linear combinations of a set of vectors $\{\vec{u}_1,
 \cdots ,\vec{u}_k\}$ in $\R^{n}$ is known as the span\index{span}\index{vectors!span} of these
-vectors and is written as $\func{span} \{\vec{u}_1, \cdots ,
+vectors and is written as $\sspan \{\vec{u}_1, \cdots ,
 \vec{u}_k\}$. \\ 
-We call a collection of the form $\func{span} \{\vec{u}_1, \cdots , \vec{u}_k\}$ 
+We call a collection of the form $\sspan \{\vec{u}_1, \cdots , \vec{u}_k\}$ 
 a subspace of $\R^{n}$.
 \end{definition}
 
@@ -83,7 +83,7 @@ Verify whether the set $\{\vect{u}, \vect{v}, \vect{w}\}$ is linearly independen
 
 \begin{solution}
 We already verified in Example~\ref{exa:span-vectors} that
-$\func{span} \{\vect{u}, \vect{v}\}$ is the $XY$-plane. Since $\vect{w}$
+$\sspan \{\vect{u}, \vect{v}\}$ is the $XY$-plane. Since $\vect{w}$
 is clearly also in the $XY$-plane, then the set $\{\vect{u}, \vect{v},
 \vect{w}\}$ is \textbf{not} linearly independent.
 \end{solution}
@@ -111,7 +111,7 @@ $V$ if the following two conditions
 hold.
 
 \begin{enumerate}
-\item $\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V$
+\item $\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V$
 \item $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is linearly
 independent
 \end{enumerate}
@@ -127,7 +127,7 @@ that two vectors $\vect{u}$ and $\vect{v}$ are orthogonal if $\vect{u}
 
 \begin{example}{Orthogonal vector to a spanning set}{}
 Let $\{\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k\}\in\R^n$ and
-suppose $\R^n=\func{span}\{\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k\}$.
+suppose $\R^n=\sspan\{\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k\}$.
 Furthermore, suppose that there exists a vector $\vect{u}\in\R^n$ for which $\vect{u}\dotprod \vect{x}_j=0$ for all $j$, $1\leq j\leq k$.
 What type of vector is $\vect{u}$?
 \end{example}
@@ -292,7 +292,7 @@ would have a basis of $W$. We will show this in the next theorem.
 Let $ \{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k\}$ be an
 orthonormal set of vectors in $\R^n$. Then this set is
 linearly independent and forms a basis for the subspace $W =
-\func{span} \{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k\}$.
+\sspan \{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k\}$.
 \end{theorem}
 
 \begin{proof}

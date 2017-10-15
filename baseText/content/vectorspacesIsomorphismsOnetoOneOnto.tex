@@ -177,15 +177,15 @@ A similar claim can be made regarding onto transformations. In this case, an ont
 Let $V$ and $W$ be vector spaces and $T:V\to W$ a linear
 transformation.
 Prove that if $T$ is onto and
-$V=\func{span}\{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k\}$,
+$V=\sspan\{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k\}$,
 then
-\[ W=\func{span}\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}.\]
+\[ W=\sspan\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}.\]
 \end{example}
 
 \begin{solution}
 Suppose that $T$ is onto and let $\vect{w}\in W$.  
 Then there exists $\vect{v}\in V$ such that $T(\vect{v})=\vect{w}$.
-Since $V=\func{span}\{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k\}$, there
+Since $V=\sspan\{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k\}$, there
 exist $a_1, a_2, \ldots a_k\in\R$ such that 
 $\vect{v} = a_1\vect{v}_1 + a_2\vect{v}_2 + \cdots + a_k\vect{v}_k$.
 Using the fact that $T$ is a linear transformation,
@@ -196,15 +196,15 @@ Using the fact that $T$ is a linear transformation,
 & = & a_1T(\vect{v}_1) + a_2T(\vect{v}_2) + \cdots + a_kT(\vect{v}_k),
 \end{eqnarray*}
 
-i.e., $\vect{w}\in\func{span}\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}$,
+i.e., $\vect{w}\in\sspan\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}$,
 and thus 
 
-\[ W\subseteq \func{span}\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}.\]
+\[ W\subseteq \sspan\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}.\]
 
 Since $T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\in W$, 
 it follows from
 that
-$\func{span}\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}\subseteq W$,
+$\sspan\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}\subseteq W$,
 and therefore
-$W=\func{span}\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}$.
+$W=\sspan\{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\}$.
 \end{solution}

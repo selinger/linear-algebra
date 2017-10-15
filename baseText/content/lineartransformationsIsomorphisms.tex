@@ -436,11 +436,11 @@ claimed equivalences.
 First consider the claim that $1.)\Rightarrow 2.)$. If $T$ is one to one and if $\set{\vect{v}_{1},\cdots ,\vect{v}
 _{n}} $ is a basis for $V$, then $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v
 }_{n})} $ is linearly independent. If it is not a basis, then it must
-fail to span $W$. But then there would exist $\vect{w}\notin \func{span}
+fail to span $W$. But then there would exist $\vect{w}\notin \sspan
 \set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} $ and it follows that $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n}),\vect{w}
 } $ would be linearly independent which is impossible because there exists a basis for $W$ of $n$ vectors.
 
-Hence $\func{span}\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} =W$ and
+Hence $\sspan\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} =W$ and
 so $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} $ is a basis. If $\vect{w}\in W$, there exist scalars $c_{i}$ such that 
 \begin{equation*}
 \vect{w}=\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\tup{\sum_{i=1}^{n}c_{i}\vect{v}
@@ -483,7 +483,7 @@ part of the argument by describing what it does to a basis and then
 \begin{example}{Isomorphic subspaces}{}
 Let $V=\R^{3}$ and let $W$ denote 
 \begin{equation*}
-\func{span}\set{\begin{mymatrix}{r}
+\sspan\set{\begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 1 \\ 
@@ -547,7 +547,7 @@ Consider the following example.
 \begin{example}{Finding the matrix of an isomorphism}{matrix-of-isomorphism}
 Let $V=\R^{3}$ and let $W$ denote 
 \begin{equation*}
-\func{span}\set{\begin{mymatrix}{c}
+\sspan\set{\begin{mymatrix}{c}
 1 \\ 
 2 \\ 
 1 \\ 
@@ -661,7 +661,7 @@ works for linear maps which are not necessarily isomorphisms.
 \begin{example}{Finding the matrix of an isomorphism}{}
 Let $V=\R^{3}$ and let $W$ denote 
 \begin{equation*}
-\func{span}\set{\begin{mymatrix}{c}
+\sspan\set{\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 

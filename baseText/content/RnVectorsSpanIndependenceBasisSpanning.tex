@@ -5,7 +5,7 @@ We begin this section with a definition.
 \begin{definition}{Span of a set of vectors}{span}
 The collection of all linear combinations of a set of vectors $\{\vect{u}_1,
 \cdots ,\vect{u}_k\}$ in $\R^{n}$ is known as the span\index{span}\index{vectors!span} of these
-vectors and is written as $\func{span} \{\vect{u}_1, \cdots , \vect{u}_k\}$.
+vectors and is written as $\sspan \{\vect{u}_1, \cdots , \vect{u}_k\}$.
 \end{definition}
 
 Consider the following example.
@@ -46,7 +46,7 @@ y \\
 \end{mymatrix} 
 \]
 
-Thus  $\func{span}\{\vect{u},\vect{v}\}$ is precisely the $XY$-plane.
+Thus  $\sspan\{\vect{u},\vect{v}\}$ is precisely the $XY$-plane.
 \end{solution}
 
 You can convince yourself that no single vector can span the
@@ -78,11 +78,11 @@ $\vect{v}=\begin{mymatrix}{rrr}
 3  & 2 & 0
 \end{mymatrix}^T \in \R^{3}$. Show that $\vect{w} = \begin{mymatrix}{rrr}
 4 & 5 & 0 
-\end{mymatrix}^{T}$ is in $\func{span} \set{\vect{u}, \vect{v} }$.
+\end{mymatrix}^{T}$ is in $\sspan \set{\vect{u}, \vect{v} }$.
 \end{example}
 
 \begin{solution}
-For a vector to be in $\func{span} \set{\vect{u}, \vect{v} }$, it must be a linear combination of these vectors. If $\vect{w} \in \func{span} \set{\vect{u}, \vect{v} }$, we must be able to find scalars $a,b$ such that\[
+For a vector to be in $\sspan \set{\vect{u}, \vect{v} }$, it must be a linear combination of these vectors. If $\vect{w} \in \sspan \set{\vect{u}, \vect{v} }$, we must be able to find scalars $a,b$ such that\[
 \vect{w} = a \vect{u} +b \vect{v}
 \]
 
@@ -130,5 +130,5 @@ The solution is $a=7, b=-1$. This means that
 \[
 \vect{w} = 7 \vect{u} - \vect{v}
 \] 
-Therefore we can say that $\vect{w}$ is in $\func{span} \set{\vect{u}, \vect{v} }$. 
+Therefore we can say that $\vect{w}$ is in $\sspan \set{\vect{u}, \vect{v} }$. 
 \end{solution}

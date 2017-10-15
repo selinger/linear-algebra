@@ -152,13 +152,13 @@ Hence the solution is $a=b=c=0$ and the set is linearly independent.
 The following theorem was discussed in terms in $\R^n$. We consider it here in the general case.
 
 \begin{theorem}{Unique representation}{unique-representation}
-Let $V$ be a vector space and let $U = \set{\vect{v}_1, \cdots, \vect{v}_k } \subseteq V$ be an independent set. If $\vect{v} \in \func{span} \;U$, then $\vect{v}$ can be written uniquely as a linear combination of the vectors in $U$. 
+Let $V$ be a vector space and let $U = \set{\vect{v}_1, \cdots, \vect{v}_k } \subseteq V$ be an independent set. If $\vect{v} \in \sspan \;U$, then $\vect{v}$ can be written uniquely as a linear combination of the vectors in $U$. 
 \end{theorem}
 
 Consider the span of a linearly independent set of vectors. Suppose we take a vector which is not in this span and add it to the set. The following lemma claims that the resulting set is still linearly independent. 
 
 \begin{lemma}{Adding to a linearly independent set}{adding-linearly-independent}
-Suppose $\vect{v}\notin \func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ and $\set{\vect{u}_{1},\cdots ,
+Suppose $\vect{v}\notin \sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ and $\set{\vect{u}_{1},\cdots ,
 \vect{u}_{k}} $ is linearly independent. Then the set
 \begin{equation*}
 \set{\vect{u}_{1},\cdots ,\vect{u}_{k},\vect{v} }
@@ -221,7 +221,7 @@ To do so, we show that
 1 & 0 
 \end{mymatrix}
 \notin
-\func{span}\set{\begin{mymatrix}{rr}
+\sspan\set{\begin{mymatrix}{rr}
 1 & 0 \\
 0 & 0 
 \end{mymatrix}, \begin{mymatrix}{rr}

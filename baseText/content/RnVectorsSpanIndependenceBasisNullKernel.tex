@@ -28,7 +28,7 @@ Suppose $p\neq 0$, and suppose that for some $j$, $1\leq j\leq m$,
 $B$ is obtained from $A$ by multiplying row $j$ by $p$.
 Then 
 
-\[ \func{row}(B)=\func{span}\{\vect{r}_1, \ldots, 
+\[ \func{row}(B)=\sspan\{\vect{r}_1, \ldots, 
 p\vect{r}_{j}, \ldots, \vect{r}_m\}.  \]
 
 Since
@@ -51,7 +51,7 @@ Without loss of generality, we may assume $i<j$.
 
 Then 
 
-\[ \func{row}(B)=\func{span}\{\vect{r}_1, \ldots, \vect{r}_{i-1},
+\[ \func{row}(B)=\sspan\{\vect{r}_1, \ldots, \vect{r}_{i-1},
 \vect{r}_i+p\vect{r}_j, \ldots,\vect{r}_j,\ldots, \vect{r}_m\}.  \]
 
 Since
@@ -149,7 +149,7 @@ example, consider the third column of the original matrix. It can be written as 
 What about an efficient description of the row space? By Lemma~\ref{lem:echelon-form-row-space} we know that the non-zero rows of $R$ create a basis of $\func{row}(A)$.  For the above matrix, the row space equals 
 \[
 \func{row}(A) = 
-\func{span} \set{
+\sspan \set{
 \begin{mymatrix}{rrrrr}
 1 & 0 & -9 & 9 & 2
 \end{mymatrix}, \begin{mymatrix}{rrrrr}
@@ -188,7 +188,7 @@ The {\rref} is
 \end{equation*}
 and so the rank is $3$. The row space is given by 
 \begin{equation*}
-\func{row}(A) = \func{span} \set{
+\func{row}(A) = \sspan \set{
 \begin{mymatrix}{ccccc}
 1 & 0 & 0 & 0 & \frac{13}{2}
 \end{mymatrix},
@@ -202,7 +202,7 @@ and so the rank is $3$. The row space is given by
 \end{equation*}
 Notice that the first three columns of the {\rref} are pivot columns. The column space is the span of the first three columns in the \textbf{original matrix}, 
 \begin{equation*}
-\func{col}(A) = \func{span} \set{\begin{mymatrix}{r}
+\func{col}(A) = \sspan \set{\begin{mymatrix}{r}
 1 \\ 
 1 \\ 
 1 \\ 
@@ -426,7 +426,7 @@ t
 
 Therefore, the null space of $A$ is all multiples of this vector, which we can write as
 \begin{equation*}
-\func{null} (A) = \func{span} \set{\begin{mymatrix}{r}
+\func{null} (A) = \sspan \set{\begin{mymatrix}{r}
 -3 \\ 
 1 \\ 
 1
@@ -443,7 +443,7 @@ columns. Thus the  column space is the span of the first two  columns in
 the \textbf{original matrix}, and we get 
 \begin{equation*}
 \func{im}\tup{A} = \func{col}(A) =
-\func{span} \set{\begin{mymatrix}{r}
+\sspan \set{\begin{mymatrix}{r}
 1 \\ 
 0 \\ 
 2 
@@ -525,7 +525,7 @@ s \begin{mymatrix}{r}
 In other words, the null space of this matrix equals the span of the three
 vectors above. Thus 
 \begin{equation*}
-\func{null} \tup{A} =\func{span}\set{\begin{mymatrix}{r}
+\func{null} \tup{A} =\sspan\set{\begin{mymatrix}{r}
 -\vspace{0.05in}\frac{3}{5} \\ 
 -\vspace{0.05in}\frac{1}{5} \\ 
 1 \\ 
@@ -595,7 +595,7 @@ In the above Example~\ref{exa:null-space} we determined that the {\rref} of $A$ 
 
 Therefore the rank of $A$ is $2$. We also determined that the null space of $A$ is given by 
 \[
-\func{null} (A) = \func{span} \set{\begin{mymatrix}{r}
+\func{null} (A) = \sspan \set{\begin{mymatrix}{r}
 -3 \\ 
 1 \\ 
 1

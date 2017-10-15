@@ -270,7 +270,7 @@ W^{\perp} = \{\vect{x} \in \R^n \; \mbox{such that} \;
 The orthogonal complement is defined as the set of all vectors which are orthogonal to all vectors in the original subspace. It turns out that it is sufficient that the vectors in the orthogonal complement be orthogonal to a spanning set of the original space.
 
 \begin{proposition}{Orthogonal to spanning set}{orthogonal-spanning-set}
-Let $W$ be a subspace of $\R^n$ such that $W = \func{span} \set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m }$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set. 
+Let $W$ be a subspace of $\R^n$ such that $W = \sspan \set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m }$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set. 
 \end{proposition}
 
 The following proposition demonstrates that the orthogonal complement of a subspace is itself a subspace. 
@@ -408,7 +408,7 @@ Let
 \mbox{ and }
 \vect{v}=\begin{mymatrix}{c} 4\\ 3\\ -2\\ 5 \end{mymatrix}. \]
 We want to find the vector in
-$W =\func{span}\{\vect{x}_1, \vect{x}_2,\vect{x}_3\}$
+$W =\sspan\{\vect{x}_1, \vect{x}_2,\vect{x}_3\}$
 closest to $\vect{y}$.
 \end{example}
 
@@ -571,7 +571,7 @@ gives general solution $x=\frac{1}{3}s+\frac{2}{3}t$, $y=s$, $z=t$
 for any $s,t\in\R$.
 Then  
 \[
-W=\func{span} \set{
+W=\sspan \set{
 \begin{mymatrix}{r} -\frac{1}{3} \\ 1 \\ 0 \end{mymatrix},
 \begin{mymatrix}{r} \frac{2}{3} \\ 0 \\ 1 \end{mymatrix}}
 \]
@@ -579,7 +579,7 @@ Let
 $X=\set{
 \begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix},
 \begin{mymatrix}{r} 2 \\ 0 \\ 3 \end{mymatrix}}$.
-Then $X$ is linearly independent and $\func{span}(X)=W$, so $X$ is a basis of $W$.
+Then $X$ is linearly independent and $\sspan(X)=W$, so $X$ is a basis of $W$.
 
 \item Use the Gram-Schmidt Process to get an
 orthogonal basis of $W$: 
