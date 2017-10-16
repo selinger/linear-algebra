@@ -229,13 +229,140 @@ algorithm the {\em extended casting-out algorithm}.
   \end{equation*}
 \end{solution}
 
+When we remove all the redundant vectors from a list of vectors, the
+remaining vectors are linearly independent. Moreover, the span remains
+unchanged when the redundant vectors are removed. This is the subject
+of the following theorem.
+
+\begin{theorem}{Removing redundant vectors}{linearly-independent-subset}
+  Let $\vect{u}_1,\ldots,\vect{u}_k$ be a list of vectors, and suppose
+  that after removing all the redundant vectors, the remaining vectors
+  are $\vect{u}_{j_1},\ldots,\vect{u}_{j_\ell}$. Then
+  $\vect{u}_{j_1},\ldots,\vect{u}_{j_\ell}$ are linearly independent
+  and
+  \begin{equation*}
+    \sspan\set{\vect{u}_{j_1},\ldots,\vect{u}_{j_\ell}}
+    =
+    \sspan\set{\vect{u}_1,\ldots,\vect{u}_k}.    
+  \end{equation*}
+\end{theorem}
+
+\begin{proof}
+  Remove the redundant vectors one by one, from right to left. Each
+  time a redundant vector is removed, the span does not change; the
+  proof of this is similar to Example~\ref{exa:redundant-span}.
+  Moreover, the resulting list of vectors
+  $\sspan\set{\vect{u}_{j_1},\ldots,\vect{u}_{j_\ell}}$ is linearly
+  independent, because if any of these vectors were a linear
+  combination of earlier ones, then it would have been redundant in
+  the original list of vectors, and would have therefore been removed.
+\end{proof}
+
+\begin{example}{Finding a linearly independent set of spanning vectors}{linearly-independent-subset}
+  Find a linearly independent subset of
+  $\set{\vect{u}_1,\ldots,\vect{u}_4}$ having the same span as
+  $\set{\vect{u}_1,\ldots,\vect{u}_4}$.
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 0 \\ -2 \\ 3 \end{mymatrix},
+    \quad
+    \vect{u}_2 = \begin{mymatrix}{r} -2 \\ 0 \\ 4 \\ -6 \end{mymatrix},
+    \quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 2 \\ 2 \\ 1 \end{mymatrix},
+    \quad
+    \vect{u}_4 = \begin{mymatrix}{r} 3 \\ 4 \\ 2 \\ 5 \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We use the casting-out algorithm to find the redundant vectors:
+  \begin{equation*}
+    \begin{mymatrix}{rrrr}
+      1  & -2 & 1 & 3 \\
+      0  &  0 & 2 & 4 \\
+      -2 &  4 & 2 & 2 \\
+      3  & -6 & 1 & 5 \\
+    \end{mymatrix}
+    \sim\ldots\sim
+    \begin{mymatrix}{rrrr}
+      \circled{1}  & -2 & 1 & 3 \\
+      0  &  0 & \circled{2} & 4 \\
+      0  &  0 & 0 & 0 \\
+      0  &  0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore, the redundant vectors are $\vect{u}_2$ and
+  $\vect{u}_4$. We remove them (``cast them out'') and are left with
+  $\vect{u}_1$ and $\vect{u}_3$. Therefore, by
+  Theorem~\ref{thm:linearly-independent-subset},
+  $\set{\vect{u}_1,\vect{u}_3}$ is linearly independent and
+  $\sspan\set{\vect{u}_1,\vect{u}_3} =
+  \sspan\set{\vect{u}_1,\ldots,\vect{u}_4}$.
+\end{solution}
+
+Our definition of redundant vectors depends on the order in which the
+vectors are written. This is because each redundant vector must be a
+linear combination of {\em earlier} vectors in the list. For example,
+in the list of vectors
+\begin{equation*}
+  \vect{u}=\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix},\quad
+  \vect{v}=\begin{mymatrix}{r} 3 \\ 2 \\ 1 \end{mymatrix},\quad
+  \vect{w}=\begin{mymatrix}{r} 11 \\ 8 \\ 5 \end{mymatrix},
+\end{equation*}
+the vector $\vect{w}$ is redundant, because it is a linear combination
+of earlier vectors $\vect{w} = 2\,\vect{u}+3\,\vect{v}$. Neither
+$\vect{u}$ nor $\vect{v}$ are redundant. On the other hand, in the list
+of vectors
+\begin{equation*}
+  \vect{u}=\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix},\quad
+  \vect{w}=\begin{mymatrix}{r} 11 \\ 8 \\ 5 \end{mymatrix},\quad
+  \vect{v}=\begin{mymatrix}{r} 3 \\ 2 \\ 1 \end{mymatrix},
+\end{equation*}
+$\vect{v}$ is redundant because
+$\vect{v} = \frac{1}{3}\vect{w} - \frac{2}{3}\vect{u}$, but neither
+$\vect{u}$ nor $\vect{w}$ are redundant. Note that none of the vectors
+have changed; only the order in which they are written is
+different. Yet $\vect{w}$ is the redundant vector in the first list,
+and $\vect{v}$ is the redundant vector in the second list.
+
+Because linear independence was defined as the absence of redundant
+vectors, you may suspect that the concept of linear independence also
+depends on the order in which the vectors are written. However, this
+is not the case. The following theorem gives an alternative
+characterization of linear independence that is more symmetric (it
+does not depend on the order of the vectors).
+
+\begin{theorem}{Characterization of linear independence}{characterization-linear-independence}
+  Let $\vect{u}_1,\ldots,\vect{u}_k$ be vectors. Then
+  $\vect{u}_1,\ldots,\vect{u}_k$ are linearly independent%
+  \index{linear independence}\index{vector!linearly independent} if
+  and only if the homogeneous equation
+  \begin{equation*}
+    a_1\,\vect{u}_1 + \ldots + a_k\,\vect{u}_k = \vect{0}
+  \end{equation*}
+  has only the trivial solution%
+  \index{trivial solution}\index{solution!trivial}%
+  \index{system of linear equations!trivial solution}.
+\end{theorem}
+
+\begin{proof}
+  Recall that the trivial solution is $a_1=0$, \ldots, $a_k=0$. First
+  suppose that the equation
+  $a_1\,\vect{u}_1 + \ldots + a_k\,\vect{u}_k = \vect{0}$ has a
+  non-trivial solution. We will show that
+  $\vect{u}_1,\ldots,\vect{u}_k$ are linearly dependent. Let
+  $(a_1,\ldots,a_k)$ be a non-trivial solution. This means that not
+  all $a_j$ are zero. Let $j$ be the largest index with $a_j\neq 0$.
+  ...............  
+\end{proof}
+
+
+
 % ======================================================================
 \subsection{CONTINUE HERE} %###
 
-* removing the redundant vectors from a list of vectors yields a
-  linearly independent set
-
 * standard characterization of linear independence
+
+* properties of linear independence: size; subset; reordering
 
 % ----------------------------------------------------------------------
 
