@@ -1,5 +1,8 @@
 \section{Linear independence}
 
+% ----------------------------------------------------------------------
+\subsection{Redundant vectors and linear independence}
+
 In Example~\ref{exa:redundant-span}, we encountered three vectors
 $\vect{u}$, $\vect{v}$, and $\vect{w}$ such that
 $\sspan\set{\vect{u},\vect{v},\vect{w}} =
@@ -100,8 +103,11 @@ definition generalizes this notion.
   $\vect{u}_1,\ldots,\vect{u}_6$ is linearly dependent.
 \end{solution}
 
-The example shows that it can be a lot of work to find the redundant
-vectors in a list of $k$ vectors. Doing so in the naive way
+% ----------------------------------------------------------------------
+\subsection{The casting-out algorithm}
+
+The last example shows that it can be a lot of work to find the
+redundant vectors in a list of $k$ vectors. Doing so in the naive way
 require us to solve up to $k$ systems of linear equations!
 Fortunately, there is a much faster and easier method, the so-called
 {\em casting-out algorithm}.
@@ -229,6 +235,9 @@ algorithm the {\em extended casting-out algorithm}.
   \end{equation*}
 \end{solution}
 
+% ----------------------------------------------------------------------
+\subsection{Removing redundant vectors}
+
 When we remove all the redundant vectors from a list of vectors, the
 remaining vectors are linearly independent. Moreover, the span remains
 unchanged when the redundant vectors are removed. This is the subject
@@ -323,6 +332,9 @@ $\vect{u}$ nor $\vect{w}$ are redundant. Note that none of the vectors
 have changed; only the order in which they are written is
 different. Yet $\vect{w}$ is the redundant vector in the first list,
 and $\vect{v}$ is the redundant vector in the second list.
+
+% ----------------------------------------------------------------------
+\subsection{Alternative characterization of linear independence}
 
 Because linear independence was defined as the absence of redundant
 vectors, you may suspect that the concept of linear independence also
@@ -455,369 +467,64 @@ does not depend on the order of the vectors).
   $\vect{u}_4 = -\vect{u}_1 + 2\vect{u}_2 + \vect{u}_3$.
 \end{solution}
 
+The characterization of linear independence in
+Theorem~\ref{thm:characterization-linear-independence} is mostly
+useful for theoretical reasons. However, it can also help in solving
+problems such as the following.
+
+\begin{example}{Related sets of vectors}{related-linear-independence}
+  Let $\vect{u},\vect{v},\vect{w}$ be linearly independent
+  vectors in $\R^n$. Are the vectors
+  $\vect{u}+\vect{v}$, $2\vect{u}+\vect{w}$, and $\vect{v}-5\vect{w}$
+  linearly independent?
+\end{example}
+
+\begin{solution}
+  By Theorem~\ref{thm:characterization-linear-independence}, to check
+  whether the vectors are linearly independent, we must check whether
+  the equation
+  \begin{equation}\label{eqn:related-linear-independence1}
+    a(\vect{u}+\vect{v}) + b(2\vect{u}+\vect{w}) +
+    c(\vect{v}-5\vect{w})=\vect{0}
+  \end{equation}
+  has non-trivial solutions.  If it does, the vectors are linearly
+  dependent, if it does not, they are linearly independent. We can
+  simplify the equation as follows:
+  \begin{equation}\label{eqn:related-linear-independence2}
+    (a+2b)\vect{u} + (a+c)\vect{v} + (b-5c)\vect{w}=\vect{0}.
+  \end{equation}
+  Since $\vect{u}$, $\vect{v}$, and $\vect{w}$ are linearly
+  independent, we know, again by
+  Theorem~\ref{thm:characterization-linear-independence}, that
+  equation {\eqref{eqn:related-linear-independence2}} only has the
+  trivial solution. Therefore,
+  \begin{eqnarray*}
+    a + 2b & = & 0, \\
+    a + c & = & 0, \\
+    b - 5c & = & 0. 
+  \end{eqnarray*}
+  We can solve this system of three equations in three variables, and
+  we find that it has the unique solution $a=b=c=0$. Therefore,
+  $a=b=c=0$ is the only solution to equation
+  {\eqref{eqn:related-linear-independence1}}, which means that the
+  vectors $\vect{u}+\vect{v}$, $2\vect{u}+\vect{w}$, and
+  $\vect{v}-5\vect{w}$ are linearly independent.
+\end{solution}
+
+% ----------------------------------------------------------------------
+\subsection{Properties of linear independence}
+
+
+* properties of linear independence: size; subset; reordering
+
+\newpage
+
+
 
 % ======================================================================
 \subsection{CONTINUE HERE} %###
 
-* properties of linear independence: size; subset; reordering
-
-% ----------------------------------------------------------------------
-
-We now turn our attention to the following question: what linear
-combinations of a given set of vectors $\set{\vect{u}_1, \cdots
-,\vect{u}_k}$ in $\R^{n}$ yields the zero vector? Clearly
-$0\vect{u}_1 + 0\vect{u}_2+ \cdots + 0 \vect{u}_k = \vect{0}$, but is
-it possible to have $\sum_{i=1}^{k}a_{i}\vect{u}_{i}=\vect{0}$ without
-all coefficients being zero?
-
-You can create examples where this easily happens. For example if $\vect{u}_1=\vect{u}_2$, then 
-$1\vect{u}_1 - \vect{u}_2+ 0 \vect{u}_3 + \cdots  + 0 \vect{u}_k = \vect{0}$, no matter the vectors 
- $\set{\vect{u}_3, \cdots ,\vect{u}_k}$. 0But sometimes it can be more subtle. 
-
-\begin{example}{Linearly dependent set of vectors}{linearly-dependent-vectors}
-Consider the vectors 
-\begin{equation*}
-\vect{u}_1=\begin{mymatrix}{rrr}
-0  & 1 & -2
-\end{mymatrix}^T, 
-\vect{u}_2=\begin{mymatrix}{rrr}
-1  & 1 & 0
-\end{mymatrix}^T, 
-\vect{u}_3=\begin{mymatrix}{rrr}
--2  & 3 & 2
-\end{mymatrix}^T, \mbox{ and } 
-\vect{u}_4=\begin{mymatrix}{rrr}
-1  & -2 & 0
-\end{mymatrix}^T
-\end{equation*}
-in $\R^{3}$.
-
-Then verify that 
-\begin{equation*}
-1\vect{u}_1 +0 \vect{u}_2+ - \vect{u}_3 -2 \vect{u}_4 = \vect{0}
-\end{equation*}
-\end{example}
-
-You can see that the linear combination does yield the zero vector but
-has some non-zero coefficients. Thus we define a set of vectors to be
-{\em linearly dependent} if this happens.
-
-\begin{definition}{Linearly dependent set of vectors}{linear-dependent}
-A set of non-zero vectors $\set{\vect{u}_1, \cdots ,\vect{u}_k}$ in $\R^{n}$ is said to be 
-\textbf{linearly dependent} if a linear combination of these vectors without all  coefficients being zero does yield the zero vector.
-\index{linear dependence}\index{vector!linear dependent}
-\end{definition}
-
-Note that if $\sum_{i=1}^{k}a_{i}\vect{u}_{i}=\vect{0}$ and some
-coefficient is non-zero, say $a_1 \neq 0$, then 
-\begin{equation*}
-\vect{u}_1 = \frac{-1}{a_1} \sum_{i=2}^{k}a_{i}\vect{u}_{i} 
-\end{equation*}
-and thus $\vect{u}_1$ is in the span of the other vectors. And the converse clearly works as well,
-so we get that a set of vectors is linearly dependent precisely when
-one of its vector is in the span of the other vectors of that set.
-
-In particular, you can show that the vector $\vect{u}_1$ in the above
-example is in the span of the vectors  $\set{\vect{u}_2, \vect{u}_3, \vect{u}_4}$. 
-
-If a set of vectors is NOT linearly dependent, then it must be that
-any linear combination of these vectors which yields the zero vector
-must use all zero coefficients. This is a very important notion, and we give it its own name of {\em
-linear independence}. 
-
-\begin{definition}{Linearly independent set of vectors}{linear-independent}
-A set of non-zero vectors $\set{\vect{u}_1, \cdots ,\vect{u}_k}$ in $\R^{n}$ is said to be 
-\textbf{linearly independent} if whenever 
-\begin{equation*}
-\sum_{i=1}^{k}a_{i}\vect{u}_{i}=\vect{0}
-\end{equation*}
-it follows that each $a_{i}=0$.
-\end{definition}
-
-\index{linear independence}\index{vector!linear independent}
-
-Note also that we require all vectors to be non-zero to form a
-linearly independent set.
-
-To view this in a more familiar setting, form the $n \times k$-matrix
-$A$ having these vectors as columns. Then all we are saying is that
-the set $\set{\vect{u}_1, \cdots ,\vect{u}_k}$ is linearly independent
-precisely when $AX=0$ has only the trivial solution.
-
-Here is an example.  
-
-\begin{example}{Linearly independent vectors}{linearly-independent-vectors}
-Consider the vectors $\vect{u}=\begin{mymatrix}{rrr}
-1  & 1 & 0
-\end{mymatrix}^T$, 
-$\vect{v}=\begin{mymatrix}{rrr}
-1  & 0 & 1
-\end{mymatrix}^T$, and
-$\vect{w}=\begin{mymatrix}{rrr}
-0  & 1 & 1
-\end{mymatrix}^T$ in $\R^{3}$.
-Verify whether the set $\set{\vect{u}, \vect{v}, \vect{w}}$ is linearly independent. 
-\end{example}
-
-\begin{solution}
-So suppose that we have a linear combinations $a\vect{u} + b \vect{v}
-+ c\vect{w} = \vect{0}$. Then you can see that this can only happen
-with $a=b=c=0$.
-
-As mentioned above, you can equivalently form the $3 \times 3$-matrix $A = 
-\begin{mymatrix}{ccc}
-1  & 1 & 0 \\
-1  & 0 & 1 \\
-0  & 1 & 1 \\
-\end{mymatrix}$, and show that $AX=0$ has only the trivial solution.
-
-Thus this  means the set $\set{\vect{u}, \vect{v}, \vect{w} }$ is linearly independent. 
-\end{solution}
-
-In terms of spanning, a set of vectors is linearly independent if it
-does not contain unnecessary vectors, that is not vector is in the span of the others.
-
-Thus we put all this together in the following important theorem.
-
-\begin{theorem}{Linear independence as a linear combination}{linear-independence-combination}
-Let $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ be a collection of vectors  in
-$\R^{n}$. Then the following are equivalent:
-
-\begin{enumerate}
-\item It is linearly independent, that is whenever
-\begin{equation*}
-\sum_{i=1}^{k}a_{i}\vect{u}_{i}=\vect{0}
-\end{equation*}
-it follows that each coefficient $a_{i}=0$.
-\item No vector is in the span of the others.
-\item The system of
-linear equations $AX=0$ has only the trivial solution, where $A$ is
-the $n \times k$-matrix having these vectors as columns. 
-\end{enumerate}
-\end{theorem}
-
-The last sentence of this theorem is useful as it allows us to use the
-{\rref} of a matrix to determine if a set of vectors is linearly
-independent. Let the vectors be columns of a matrix $A$. Find the
-{\rref} of $A$. If each column has a leading one, then it follows
-that the vectors are linearly independent.
-
-Sometimes we refer to the condition regarding sums as follows: The set
-of vectors, $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is
-linearly independent if and only if there is no non-trivial linear
-combination which equals the zero vector. A non-trivial linear
-combination is one in which not all the scalars equal zero. Similarly,
-a trivial linear combination is one in which all scalars equal zero.
-
-Here is a detailed  example in  $\R^{4}$. 
-
-\begin{example}{Linear independence}{linear-independence2}
-Determine whether the set of vectors given by  
-\[ \set{\begin{mymatrix}{r}
-1 \\
-2 \\
-3 \\
-0
-\end{mymatrix}, \; \begin{mymatrix}{r}
-2 \\
-1 \\
-0 \\
-1
-\end{mymatrix} , \; \begin{mymatrix}{r}
-0 \\
-1 \\
-1 \\
-2
-\end{mymatrix}  , \; \begin{mymatrix}{r}
-3 \\
-2 \\
-2 \\
-0
-\end{mymatrix} } \]
-is linearly independent. If it is linearly dependent,
-express one of the vectors as a linear combination of the others.
-\end{example}
-
-\begin{solution}
-In this case the matrix of the corresponding homogeneous system of linear equations  is 
-\begin{equation*}
-\begin{mymatrix}{rrrr|r}
-1 & 2 & 0 & 3 & 0\\ 
-2 & 1 & 1 & 2 & 0 \\ 
-3 & 0 & 1 & 2 & 0 \\ 
-0 & 1 & 2 & 0 & 0 
-\end{mymatrix}
-\end{equation*}
-The {\rref} is 
-\begin{equation*}
-\begin{mymatrix}{rrrr|r}
-1 & 0 & 0 & 0 & 0 \\ 
-0 & 1 & 0 & 0 & 0 \\ 
-0 & 0 & 1 & 0 & 0 \\ 
-0 & 0 & 0 & 1 & 0 
-\end{mymatrix}
-\end{equation*}
-and so every column is a pivot column and the corresponding system
-$AX=0$ only has the trivial solution.  Therefore, these vectors are
-linearly independent and there is no way to obtain one of the vectors
-as a linear combination of the others.
-\end{solution}
-
-Consider another example.
-
-\begin{example}{Linear independence}{linear-independence}
-Determine whether the set of vectors given by  
-\[\set{
-\begin{mymatrix}{r}
-1 \\
-2 \\
-3 \\
-0
-\end{mymatrix}, \; \begin{mymatrix}{r}
-2 \\
-1 \\
-0 \\
-1
-\end{mymatrix}, \; \begin{mymatrix}{r}
-0 \\
-1 \\
-1 \\
-2
-\end{mymatrix}, \; \begin{mymatrix}{r}
-3 \\
-2 \\
-2 \\
--1
-\end{mymatrix} } \]
-is linearly independent. If it is linearly dependent,
-express one of the vectors as a linear combination of the others.
-\end{example}
-
-\begin{solution}
-Form the $4 \times 4$-matrix $A$ having these vectors as columns:
-\begin{equation*}
-A= \begin{mymatrix}{rrrr}
-1 & 2 & 0 & 3 \\ 
-2 & 1 & 1 & 2 \\ 
-3 & 0 & 1 & 2 \\ 
-0 & 1 & 2 & -1
-\end{mymatrix}
-\end{equation*}
-Then by Theorem~\ref{thm:linear-independence-combination}, the given set of vectors is linearly independent
-exactly if the system $AX=0$ has only the trivial solution.
-
-The augmented matrix for this system and corresponding {\rref} are given by  
-\begin{equation*}
- \begin{mymatrix}{rrrr|r}
-1 & 2 & 0 & 3 & 0 \\ 
-2 & 1 & 1 & 2 & 0 \\ 
-3 & 0 & 1 & 2 & 0 \\ 
-0 & 1 & 2 & -1 & 0 
-\end{mymatrix}
-\rightarrow \cdots \rightarrow
-\begin{mymatrix}{rrrr|r}
-1 & 0 & 0 & 1 & 0 \\ 
-0 & 1 & 0 & 1 & 0 \\ 
-0 & 0 & 1 & -1 & 0 \\ 
-0 & 0 & 0 & 0 & 0 
-\end{mymatrix} 
-\end{equation*}
-Not all the columns of the coefficient matrix are pivot columns and so the vectors are not linearly independent. In this case, we say the vectors are linearly dependent. 
-
-It follows that there are infinitely many solutions to $AX=0$, one of which is
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-1 \\ 
--1 \\ 
--1
-\end{mymatrix}
-\end{equation*}
-Therefore we can write 
-\begin{equation*}
-1\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
-3 \\ 
-0
-\end{mymatrix} +1\begin{mymatrix}{r}
-2 \\ 
-1 \\ 
-0 \\ 
-1
-\end{mymatrix}  -1 \begin{mymatrix}{r}
-0 \\ 
-1 \\ 
-1 \\ 
-2
-\end{mymatrix} -1 \begin{mymatrix}{r}
-3 \\ 
-2 \\ 
-2 \\ 
--1
-\end{mymatrix} =
-\begin{mymatrix}{r}
-0 \\ 
-0 \\ 
-0 \\ 
-0
-\end{mymatrix}
-\end{equation*}
-
-This can be rearranged as follows
-\begin{equation*}
-1\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
-3 \\ 
-0
-\end{mymatrix} +1\begin{mymatrix}{r}
-2 \\ 
-1 \\ 
-0 \\ 
-1
-\end{mymatrix}  -1 \begin{mymatrix}{r}
-0 \\ 
-1 \\ 
-1 \\ 
-2
-\end{mymatrix} =\begin{mymatrix}{r}
-3 \\ 
-2 \\ 
-2 \\ 
--1
-\end{mymatrix} 
-\end{equation*}
-This gives the last vector as a linear combination of the first three vectors.
-
-Notice that we could rearrange this equation to write any of the four vectors as a linear combination of the other three. 
-\end{solution}
-
 When given a linearly independent set of vectors, we can determine if related sets are linearly independent. 
-
-\begin{example}{Related sets of vectors}{related-linear-independence}
-Let $\set{\vect{u},\vect{v},\vect{w}}$ be an independent set of $\R^n$.
-Is $\set{\vect{u}+\vect{v}, 2\vect{u}+\vect{w}, \vect{v}-5\vect{w}}$ linearly
-independent?
-\end{example}
-
-\begin{solution}
-Suppose $a(\vect{u}+\vect{v}) + b(2\vect{u}+\vect{w}) + c(\vect{v}-5\vect{w})=\vect{0}_n$
-for some $a,b,c\in\R$.
-Then 
-\[ (a+2b)\vect{u} + (a+c)\vect{v} + (b-5c)\vect{w}=\vect{0}_n.\]
-
-Since $\set{\vect{u},\vect{v},\vect{w}}$ is independent, 
-\begin{eqnarray*}
-a + 2b & = & 0 \\
-a + c & = & 0 \\
-b - 5c & = & 0 
-\end{eqnarray*}
-
-This system of three equations in three variables has 
-the unique solution $a=b=c=0$.
-Therefore, $\set{\vect{u}+\vect{v}, 2\vect{u}+\vect{w}, \vect{v}-5\vect{w}}$ is independent.
-\end{solution}
 
 The following corollary follows from the fact that if the augmented matrix of a homogeneous
 system of linear equations has more columns than rows, the system has infinitely many
