@@ -173,9 +173,9 @@ C_{B_2} T = M_{B_{2} B_{1}} C_{B_1}   \label{matrix-equation}
 \end{equation}
 where $M_{B_{2} B_{1}}$  is a unique $m \times n$-matrix.
 
-If the basis $B_1$ is given by $B_1=\set{\vect{v}_1, \cdots, \vec{v}_n}$ in this order, then 
+If the basis $B_1$ is given by $B_1=\set{\vect{v}_1, \cdots, \vect{v}_n}$ in this order, then 
 
-\[  M_{B_{2} B_{1}} = \mat{C_{B_2}(T(\vec{v}_1)) \; C_{B_2}(T(\vec{v}_2)) \; \cdots C_{B_2}(T(\vec{v}_n)) } \]
+\[  M_{B_{2} B_{1}} = \mat{C_{B_2}(T(\vect{v}_1)) \; C_{B_2}(T(\vect{v}_2)) \; \cdots C_{B_2}(T(\vect{v}_n)) } \]
 \end{theorem}
 
 \begin{proof}
@@ -194,12 +194,12 @@ Since $C_{B_1}$ is an isomorphism, then the matrix we are looking for is the mat
 \[   C_{B_2} T C^{-1}_{B_1} : \R^n \mapsto \R^m. \]
 By Theorem~\ref{thm:matrix-of-linear-transformation}, the columns are
 given by the image of the standard basis $\set{\vect{e}_1,
-\vect{e}_2, \cdots, \vect{e}_n }$. But since $C^{-1}_{B_1}( \vec{e}_i) = \vec{v}_i$, we readily obtain that 
+\vect{e}_2, \cdots, \vect{e}_n }$. But since $C^{-1}_{B_1}( \vect{e}_i) = \vect{v}_i$, we readily obtain that 
 
 \[ \begin{array}{ll} 
 M_{B_{2} B_{1}} 
-& = \mat{C_{B_2}T C^{-1}_{B_1} (\vec{e}_1) \;\; C_{B_2}T C^{-1}_{B_1} (\vec{2}_2) \;\; \cdots \;\; C_{B_2}T C^{-1}_{B_1} (\vec{e}_n) } \\
-& = \mat{C_{B_2}(T(\vec{v}_1)) \;\; C_{B_2}(T(\vec{v}_2)) \;\; \cdots \;\; C_{B_2}(T(\vec{v}_n)) } 
+& = \mat{C_{B_2}T C^{-1}_{B_1} (\vect{e}_1) \;\; C_{B_2}T C^{-1}_{B_1} (\vect{2}_2) \;\; \cdots \;\; C_{B_2}T C^{-1}_{B_1} (\vect{e}_n) } \\
+& = \mat{C_{B_2}(T(\vect{v}_1)) \;\; C_{B_2}(T(\vect{v}_2)) \;\; \cdots \;\; C_{B_2}(T(\vect{v}_n)) } 
 \end{array}\]
 and this completes the proof. 
 \end{proof}
@@ -443,8 +443,8 @@ T\begin{mymatrix}{r}
 Equation  {\eqref{matrix-equation}}  gives $ C_BT=M_{B}C_B$, and thus 
 $M_{B} = C_BTC^{-1}_B$. 
 
-Now $C_B(\vec{v}_i) = \vec{e}_i$, so the matrix of $C_B^{-1}$ (with respect to the standard basis) is given by
-\[ \mat{C_B^{-1}(\vec{e}_1) \;\; C_B^{-1}(\vec{e}_2) \;\; C_B^{-1}(\vec{e}_2) } =  
+Now $C_B(\vect{v}_i) = \vect{e}_i$, so the matrix of $C_B^{-1}$ (with respect to the standard basis) is given by
+\[ \mat{C_B^{-1}(\vect{e}_1) \;\; C_B^{-1}(\vect{e}_2) \;\; C_B^{-1}(\vect{e}_2) } =  
 \begin{mymatrix}{rrr}
 1 & 1 & -1 \\ 
 0 & 1 & 1 \\ 
@@ -452,7 +452,7 @@ Now $C_B(\vec{v}_i) = \vec{e}_i$, so the matrix of $C_B^{-1}$ (with respect to t
 \end{mymatrix}
 \]
 Moreover the matrix of  $T C_B^{-1}$ is given by 
-\[ \mat{TC_B^{-1}(\vec{e}_1) \;\; TC_B^{-1}(\vec{e}_2) \;\; TC_B^{-1}(\vec{e}_2) } =  
+\[ \mat{TC_B^{-1}(\vect{e}_1) \;\; TC_B^{-1}(\vect{e}_2) \;\; TC_B^{-1}(\vect{e}_2) } =  
 \begin{mymatrix}{rrr}
 1 & 1 & 0 \\ 
 -1 & 2 & 1 \\ 
