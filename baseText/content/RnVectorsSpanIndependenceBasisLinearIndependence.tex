@@ -517,135 +517,114 @@ problems such as the following.
 
 * properties of linear independence: size; subset; reordering
 
-\newpage
-
-
 
 % ======================================================================
 \subsection{CONTINUE HERE} %###
 
-When given a linearly independent set of vectors, we can determine if related sets are linearly independent. 
-
-The following corollary follows from the fact that if the augmented matrix of a homogeneous
-system of linear equations has more columns than rows, the system has infinitely many
-solutions.
+The following corollary follows from the fact that if the augmented
+matrix of a homogeneous system of linear equations has more columns
+than rows, the system has infinitely many solutions.
 
 \begin{corollary}{Linear dependence in $\R^{n}$}{linear-dependence-Rn}
-Let $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $
-be a set of vectors in $\R^{n}$. 
-If $k>n$, then the set is linearly dependent (i.e. NOT linearly independent).
+  Let $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ be a set of vectors
+  in $\R^{n}$.  If $k>n$, then the set is linearly dependent (i.e. NOT
+  linearly independent).
 \end{corollary}
 
 \begin{proof}
-Form the $n \times k$-matrix $A$ having the vectors $\set{
-\vect{u}_{1},\cdots ,\vect{u}_{k}} $ as its columns and suppose $k > n$. Then $A$ has rank $r \leq n <k$, so 
-the system $AX=0$ has a non-trivial solution % by Theorem~\ref{thm:rank-homogeneous-solutions}
- and thus not linearly independent by Theorem~\ref{thm:linear-independence-combination}.
+  Form the $n \times k$-matrix $A$ having the vectors
+  $\set{ \vect{u}_{1},\cdots ,\vect{u}_{k}} $ as its columns and
+  suppose $k > n$. Then $A$ has rank $r \leq n <k$, so the system
+  $AX=0$ has a non-trivial
+  solution % by Theorem~\ref{thm:rank-homogeneous-solutions}
+  and thus not linearly independent by
+  Theorem~\ref{thm:linear-independence-combination}.
 \end{proof}
 
 \begin{example}{Linear dependence}{linear-dependence}
-Consider the vectors 
-\[
-\set{\begin{mymatrix}{r}
-1 \\
-4 
-\end{mymatrix}, 
-\begin{mymatrix}{r}
-2 \\
-3
-\end{mymatrix}, 
-\begin{mymatrix}{r}
-3 \\
-2
-\end{mymatrix} }
-\]
-Are these vectors linearly independent?
+  Consider the vectors 
+  \[
+    \set{\begin{mymatrix}{r}
+        1 \\
+        4 
+      \end{mymatrix}, 
+      \begin{mymatrix}{r}
+        2 \\
+        3
+      \end{mymatrix}, 
+      \begin{mymatrix}{r}
+        3 \\
+        2
+      \end{mymatrix} }
+  \]
+  Are these vectors linearly independent?
 \end{example}
 
 \begin{solution}
-This set contains three vectors in $\R^2$. By Corollary~\ref{cor:linear-dependence-Rn} these vectors are linearly dependent.
-In fact, we can write
-\[
-(-1) \begin{mymatrix}{r}
-1 \\
-4 
-\end{mymatrix} + (2) 
-\begin{mymatrix}{r}
-2 \\
-3
-\end{mymatrix} = 
-\begin{mymatrix}{r}
-3 \\
-2
-\end{mymatrix}
-\]
-showing that this set is linearly dependent. 
+  This set contains three vectors in $\R^2$. By
+  Corollary~\ref{cor:linear-dependence-Rn} these vectors are linearly
+  dependent.  In fact, we can write
+  \[
+    (-1) \begin{mymatrix}{r}
+      1 \\
+      4 
+    \end{mymatrix} + (2) 
+    \begin{mymatrix}{r}
+      2 \\
+      3
+    \end{mymatrix} = 
+    \begin{mymatrix}{r}
+      3 \\
+      2
+    \end{mymatrix}
+  \]
+  showing that this set is linearly dependent. 
 \end{solution}
 
-The third vector in the previous example is in the span of the first two vectors. We could find a way to write this vector as a linear combination of the other two vectors. It turns out that the linear combination which we found is the \textbf{only} one, provided that the set is linearly independent. 
+The third vector in the previous example is in the span of the first
+two vectors. We could find a way to write this vector as a linear
+combination of the other two vectors. It turns out that the linear
+combination which we found is the \textbf{only} one, provided that the
+set is linearly independent.
 
 \begin{theorem}{Unique linear combination}{unique-linear-combination}
-Let $U \subseteq\R^n$ be an independent set.
-Then any vector $\vect{x}\in\sspan(U)$ can be written uniquely as a linear combination of vectors of $U$.
+  Let $U \subseteq\R^n$ be an independent set.  Then any vector
+  $\vect{x}\in\sspan(U)$ can be written uniquely as a linear
+  combination of vectors of $U$.
 \end{theorem}
 
 \begin{proof}
-To prove this theorem, we will show that two linear combinations of vectors in $U$ that equal $\vect{x}$ must be the same. Let $U =\set{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_k}$.
-Suppose that there is a vector $\vect{x}\in \sspan(U)$ such that
-\begin{eqnarray*}
-\vect{x} & = & s_1\vect{u}_1 + s_2\vect{u}_2 + \cdots + s_k\vect{u}_k,
-\mbox{ for some } s_1, s_2, \ldots, s_k\in\R, \mbox{ and} \\
-\vect{x} & = & t_1\vect{u}_1 + t_2\vect{u}_2 + \cdots + t_k\vect{u}_k,
-\mbox{ for some } t_1, t_2, \ldots, t_k\in\R.
-\end{eqnarray*}
-Then 
-$\vect{0}_n=\vect{x}-\vect{x} = (s_1-t_1)\vect{u}_1 + (s_2-t_2)\vect{u}_2 + \cdots +
-(s_k-t_k)\vect{u}_k$.
+  To prove this theorem, we will show that two linear combinations of vectors in $U$ that equal $\vect{x}$ must be the same. Let $U =\set{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_k}$.
+  Suppose that there is a vector $\vect{x}\in \sspan(U)$ such that
+  \begin{eqnarray*}
+    \vect{x}
+    &=& s_1\vect{u}_1 + s_2\vect{u}_2 + \cdots + s_k\vect{u}_k,
+        \mbox{ for some } s_1, s_2, \ldots, s_k\in\R, \mbox{ and} \\
+    \vect{x}
+    &=& t_1\vect{u}_1 + t_2\vect{u}_2 + \cdots + t_k\vect{u}_k,
+        \mbox{ for some } t_1, t_2, \ldots, t_k\in\R.
+  \end{eqnarray*}
+  Then
+  $\vect{0}_n=\vect{x}-\vect{x} = (s_1-t_1)\vect{u}_1 +
+  (s_2-t_2)\vect{u}_2 + \cdots + (s_k-t_k)\vect{u}_k$.
 
-Since $U$ is independent, the only linear combination that vanishes
-is the trivial one, so $s_i-t_i=0$ for all $i$, $1\leq i\leq k$.
+  Since $U$ is independent, the only linear combination that vanishes is
+  the trivial one, so $s_i-t_i=0$ for all $i$, $1\leq i\leq k$.
 
-Therefore, $s_i=t_i$ for all $i$, $1\leq i\leq k$, and the
-representation is unique.Let $U \subseteq\R^n$ be an independent set.
-Then any vector $\vect{x}\in\sspan(U)$ can be written uniquely as a linear combination of vectors of $U$.
+  Therefore, $s_i=t_i$ for all $i$, $1\leq i\leq k$, and the
+  representation is unique.Let $U \subseteq\R^n$ be an independent set.
+  Then any vector $\vect{x}\in\sspan(U)$ can be written uniquely as a
+  linear combination of vectors of $U$.
 \end{proof}
 
-Suppose that $\vect{u},\vect{v}$ and $\vect{w}$ are non-zero vectors in $\R^3$,
-and that $\set{\vect{v},\vect{w}}$ is independent. Consider the set $\set{\vect{u},\vect{v},\vect{w}}$. When can we know that this set is independent? It turns out that this follows exactly when $\vect{u}\not\in\sspan\set{\vect{v},\vect{w}}$.
-
-\begin{example}{}{}
-Suppose that $\vect{u},\vect{v}$ and $\vect{w}$ are non-zero vectors in $\R^3$,
-and that $\set{\vect{v},\vect{w}}$ is independent.
-Prove that $\set{\vect{u},\vect{v},\vect{w}}$ is independent if and only if 
-$\vect{u}\not\in\sspan\set{\vect{v},\vect{w}}$.
-\end{example}
-
-\begin{solution}
-If $\vect{u}\in\sspan\set{\vect{v},\vect{w}}$, then there exist $a,b\in\R$ so
-that $\vect{u}=a\vect{v} + b\vect{w}$.
-This implies that $\vect{u}-a\vect{v} - b\vect{w}=\vect{0}_3$,
-so  $\vect{u}-a\vect{v} - b\vect{w}$
-is a non-trivial linear combination of $\set{\vect{u},\vect{v},\vect{w}}$ that
-vanishes, 
-and thus $\set{\vect{u},\vect{v},\vect{w}}$ is dependent.
-
-Now suppose that $\vect{u}\not\in\sspan\set{\vect{v},\vect{w}}$, and suppose
-that there exist $a,b,c\in\R$ such that
-$a\vect{u}+b\vect{v}+c\vect{w}=\vect{0}_3$.
-If $a\neq 0$, then $\vect{u}=-\frac{b}{a}\vect{v}-\frac{c}{a}\vect{w}$,
-and $\vect{u}\in\sspan\set{\vect{v},\vect{w}}$, a contradiction.
-Therefore, $a=0$, implying that $b\vect{v}+c\vect{w}=\vect{0}_3$.
-Since $\set{\vect{v},\vect{w}}$ is independent, $b=c=0$, and thus
-$a=b=c=0$, i.e., the only linear combination of 
-$\vect{u},\vect{v}$ and $\vect{w}$ that vanishes is the trivial one.
-
-Therefore, $\set{\vect{u},\vect{v},\vect{w}}$ is independent.
-\end{solution}
-
-Consider the following useful theorem.
-
 \begin{theorem}{Invertible matrices}{invertible-matrices}
-Let $A$ be an invertible $n \times n$-matrix. Then the columns of $A$ are independent and span $\R^n$. Similarly, the rows of $A$ are independent and span the set of all $1 \times n$ vectors. 
+  Let $A$ be an invertible $n \times n$-matrix. Then the columns of
+  $A$ are independent and span $\R^n$. Similarly, the rows of $A$ are
+  independent and span the set of all $1 \times n$ vectors.
 \end{theorem}
 
-This theorem also allows us to determine if a matrix is invertible. If an $n \times n$-matrix $A$ has columns which are independent, or span $\R^n$, then it follows that $A$ is invertible. If it has rows that are independent, or span the set of all $1 \times n$ vectors, then $A$ is invertible.
+This theorem also allows us to determine if a matrix is invertible. If
+an $n \times n$-matrix $A$ has columns which are independent, or span
+$\R^n$, then it follows that $A$ is invertible. If it has rows that
+are independent, or span the set of all $1 \times n$ vectors, then $A$
+is invertible.
