@@ -8,13 +8,15 @@
   vectors, write each of them as a linear combination of previous
   vectors.
   \begin{equation*}
-    \begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 2 \\ 0 \\ 2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 6 \\ 1 \end{mymatrix}.
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 2 \\ 0 \\ 2 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} 1 \\ 6 \\ 1 \end{mymatrix}.
   \end{equation*}
-  % \begin{sol}
-  % \end{sol}
+  \begin{sol}
+    $\vect{u}_2$ and $\vect{u}_4$ are redundant. We have
+    $\vect{u}_2=2\vect{u}_1$ and $\vect{u}_4=3\vect{u}_3-2\vect{u}_1$.
+  \end{sol}
 \end{ex}
 
 \begin{ex}
@@ -22,10 +24,10 @@
   vectors, write each of them as a linear combination of previous
   vectors.
   \begin{equation*}
-    \begin{mymatrix}{r} -1 \\ -2 \\ 2 \\ 3 \end{mymatrix},\quad
-    \begin{mymatrix}{r} -3 \\ -4 \\ 3 \\ 3 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 0 \\ -1 \\ 4 \\ 3 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 0 \\  2 \\ -3 \\ -6 \end{mymatrix}.
+    \vect{u}_1 = \begin{mymatrix}{r} -1 \\ -2 \\ 2 \\ 3 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} -3 \\ -4 \\ 3 \\ 3 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 0 \\ -1 \\ 4 \\ 3 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} 0 \\  2 \\ -3 \\ -6 \end{mymatrix}.
   \end{equation*}
   % \begin{sol}
   % \end{sol}
@@ -38,13 +40,15 @@
   linearly dependent, find a non-trivial linear combination of the
   vectors that is equal to $\vect{0}$.
   \begin{equation*}
-    \begin{mymatrix}{r} 2 \\ 3 \\ 2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} -1 \\ 0 \\ 2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} -3 \\ -4 \\ -2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 5 \\ 6 \\ 2 \end{mymatrix}.
+    \vect{u}_1 = \begin{mymatrix}{r} 2 \\ 3 \\ 2 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} -1 \\ 0 \\ 2 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} -3 \\ -4 \\ -2 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} 5 \\ 6 \\ 2 \end{mymatrix}.
   \end{equation*}
-  % \begin{sol}
-  % \end{sol}
+  \begin{sol}
+    The vectors are linearly dependent. We have
+    $\vect{u}_2+3\vect{u}_3+2\vect{u}_4=\vect{0}$.
+  \end{sol}
 \end{ex}
 
 \begin{ex}
@@ -54,10 +58,10 @@
   linearly dependent, find a non-trivial linear combination of the
   vectors that is equal to $\vect{0}$.
   \begin{equation*}
-    \begin{mymatrix}{r} 1 \\ -1 \\ 0 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 6 \\ 7 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 3 \\ 5 \\ 8 \\ 3 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 0 \\ 1 \\ 1 \end{mymatrix}.
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ -1 \\ 0 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 6 \\ 7 \\ 1 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 3 \\ 5 \\ 8 \\ 3 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} 1 \\ 0 \\ 1 \\ 1 \end{mymatrix}.
   \end{equation*}
   % \begin{sol}
   % \end{sol}
@@ -67,35 +71,51 @@
   Are the following vectors linearly independent? If not, write one of
   them as a linear combination of the others.
   \begin{equation*}
-    \begin{mymatrix}{r} 1 \\ 3 \\  1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 4 \\  2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 1 \\ -1 \end{mymatrix}.
+    \vect{u} = \begin{mymatrix}{r} 1 \\ 3 \\  1 \end{mymatrix},\quad
+    \vect{v} = \begin{mymatrix}{r} 1 \\ 4 \\  2 \end{mymatrix},\quad
+    \vect{w} = \begin{mymatrix}{r} 1 \\ 1 \\ -1 \end{mymatrix}.
   \end{equation*}
-  % \begin{sol}
-  % \end{sol}
+  \begin{sol}
+    The vectors are linearly dependent. We have
+    $\vect{w} = 3\vect{u}-2\vect{v}$.
+  \end{sol}
 \end{ex}
 
 \begin{ex}
   Find a linearly independent set of vectors that has the same span as
   the given vectors.
   \begin{equation*}
-    \begin{mymatrix}{r} 2 \\  0 \\  3 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\  3 \\  5 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 3 \\  3 \\  8 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 3 \\ -3 \\  1 \end{mymatrix}.
+    \vect{u}_1 = \begin{mymatrix}{r} 2 \\  0 \\  3 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\  3 \\  5 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 3 \\  3 \\  8 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} 3 \\ -3 \\  1 \end{mymatrix}.
   \end{equation*}
-  % \begin{sol}
-  % \end{sol}
+  \begin{sol}
+    $
+    \begin{mymatrix}{rrrr}
+      2 & 1 & 3 & 3 \\
+      0 & 3 & 3 & -3 \\
+      3 & 5 & 8 & 1 \\
+    \end{mymatrix}
+    \sim
+    \begin{mymatrix}{rrrr}
+      1 & 4 & 5 & -2 \\
+      0 & 1 & 1 & -1 \\
+      0 & 0 & 0 &  0 \\
+    \end{mymatrix}
+    $.
+    Linearly independent subset: $\set{\vect{u}_1,\vect{u}_2}$.
+  \end{sol}
 \end{ex}
 
 \begin{ex}
   Find a linearly independent set of vectors that has the same span as
   the given vectors.
   \begin{equation*}
-    \begin{mymatrix}{r} 1 \\ 3 \\  3 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 2 \\ 6 \\  6 \\ 2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 0 \\ -3 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 2 \\  1 \\ 1 \end{mymatrix}.
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 3 \\  3 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 2 \\ 6 \\  6 \\ 2 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 0 \\ -3 \\ 1 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} 1 \\ 2 \\  1 \\ 1 \end{mymatrix}.
   \end{equation*}
   % \begin{sol}
   % \end{sol}
@@ -104,11 +124,11 @@
 \begin{ex}
   Here are some vectors in $\R^{4}$.
   \begin{equation*}
-    \begin{mymatrix}{r} 1 \\ 1 \\ -1 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 2 \\ -1 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ -2 \\ -1 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 2 \\ 0 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ -1 \\ -1 \\ 1 \end{mymatrix}.
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ -1 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 2 \\ -1 \\ 1 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ -2 \\ -1 \\ 1 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} 1 \\ 2 \\ 0 \\ 1 \end{mymatrix},\quad
+    \vect{u}_5 = \begin{mymatrix}{r} 1 \\ -1 \\ -1 \\ 1 \end{mymatrix}.
   \end{equation*}
   Explain why these vectors can't possibly be linearly
   independent. Then obtain a linearly independent subset of these
@@ -120,11 +140,11 @@
 \begin{ex}
   Here are some vectors in $\R^{4}$.
   \begin{equation*}
-    \begin{mymatrix}{r} 1 \\ -1 \\ -1 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} -3 \\ 3 \\ 3 \\ -3 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 0 \\ -1 \\ 1 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 2 \\ -9 \\ -2 \\ 2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 0 \\ 0 \\ 1 \end{mymatrix}.
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ -1 \\ -1 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} -3 \\ 3 \\ 3 \\ -3 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 0 \\ -1 \\ 1 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} 2 \\ -9 \\ -2 \\ 2 \end{mymatrix},\quad
+    \vect{u}_5 = \begin{mymatrix}{r} 1 \\ 0 \\ 0 \\ 1 \end{mymatrix}.
   \end{equation*}
   Explain why these vectors can't possibly be linearly
   independent. Then find a non-trivial linear combination of these
@@ -136,26 +156,41 @@
 \begin{ex}
   Here are some vectors.
   \begin{equation*}
-    \begin{mymatrix}{r} 1 \\ 1 \\ -2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 2 \\ -2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 2 \\ 7 \\ -4 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 5 \\ 7 \\ -10 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 12 \\ 17 \\ -24 \end{mymatrix}.
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ -2 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 2 \\ 2 \\ -4 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 2 \\ 7 \\ -4 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} 5 \\ 7 \\ -10 \end{mymatrix},\quad
+    \vect{u}_5 = \begin{mymatrix}{r} 12 \\ 17 \\ -24 \end{mymatrix}.
   \end{equation*}
   Describe the span of these vectors as the span of as few vectors as
   possible.
-  % \begin{sol}
-  % \end{sol}
+  \begin{sol}
+    \begin{equation*}
+      \begin{mymatrix}{rrrrr}
+        1 & 2 & 2 & 5 & 12 \\
+        1 & 2 & 7 & 7 & 17 \\
+        -2 & -4 & -4 & -10 & -24 \\
+      \end{mymatrix}
+      \sim
+      \begin{mymatrix}{rrrrr}
+        1 & 1 & 2 & 5 & 12 \\
+        0 & 0 & 5 & 2 & 5 \\
+        0 & 0 & 0 & 0 & 0 \\
+      \end{mymatrix}.
+    \end{equation*}
+    Linearly independent subset: $\set{\vect{u}_1,\vect{u}_3}$. Since
+    the rank is $2$, this is the smallest possible.
+  \end{sol}
 \end{ex}
 
 \begin{ex}
   Here are some vectors.
   \begin{equation*}
-    \begin{mymatrix}{r} 1 \\ 2 \\ -2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 3 \\ -2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ -2 \\ -2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} -1 \\ 0 \\ 2 \end{mymatrix},\quad
-    \begin{mymatrix}{r} 1 \\ 3 \\ -1 \end{mymatrix}.
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 2 \\ -2 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 3 \\ -2 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ -2 \\ -2 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} -1 \\ 0 \\ 2 \end{mymatrix},\quad
+    \vect{u}_5 = \begin{mymatrix}{r} 1 \\ 3 \\ -1 \end{mymatrix}.
   \end{equation*}
   Describe the span of these vectors as the span of as few vectors as
   possible.
@@ -167,12 +202,36 @@
   Let $\vect{u},\vect{v},\vect{w}$ be linearly independent vectors in
   $\R^n$. Are the vectors $\vect{u}+\vect{v}$, $2\vect{u}+\vect{w}$,
   and $\vect{w}-2\vect{v}$ linearly independent?
+  \begin{sol}
+    From
+    $a(\vect{u}+\vect{v}) + b(2\vect{u}+\vect{w}) +
+    c(\vect{w}-2\vect{v})=\vect{0}$ we get
+    $(a+2b)\vect{u} + (a-2c)\vect{v} + (b+c)\vect{w}=\vect{0}$.  Since
+    $\vect{u},\vect{v},\vect{w}$ are linearly independent, this last
+    system has only the trivial solution, so $a+2b=0$, $a-2c=0$, and
+    $b+c=0$. However, these three equations have non-trivial
+    solutions, for example $(a,b,c)=(2,-1,1)$. So the vectors
+    $\vect{u}+\vect{v}$, $2\vect{u}+\vect{w}$, and
+    $\vect{w}-2\vect{v}$ are linearly dependent.
+  \end{sol}
 \end{ex}
 
 \begin{ex}
   Let $\vect{u},\vect{v},\vect{w}$ be linearly independent vectors in
   $\R^n$. Are the vectors $\vect{u}+\vect{v}$, $\vect{u}+\vect{w}$,
   and $\vect{w}+\vect{v}$ linearly independent?
+  \begin{sol}
+    From
+    $a(\vect{u}+\vect{v}) + b(\vect{u}+\vect{w}) +
+    c(\vect{w}+\vect{v})=\vect{0}$ we get
+    $(a+b)\vect{u} + (a+c)\vect{v} + (b+c)\vect{w}=\vect{0}$.  Since
+    $\vect{u},\vect{v},\vect{w}$ are linearly independent, this last
+    system has only the trivial solution, so $a+b=0$, $a+c=0$, and
+    $b+c=0$. Solving, we find the unique solution
+    $(a,b,c)=(0,0,0)$. So the vectors $\vect{u}+\vect{v}$,
+    $\vect{u}+\vect{w}$, and $\vect{w}+\vect{v}$ are linearly
+    independent.
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}
