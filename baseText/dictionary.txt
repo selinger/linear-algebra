@@ -214,6 +214,7 @@ sqrt
 st
 submatrices
 submatrix
+subsequence
 subspaces
 summands
 surjection
