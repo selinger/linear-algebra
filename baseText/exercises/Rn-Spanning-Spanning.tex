@@ -1,309 +1,77 @@
+\Opensolutionfile{solutions}[ex]
+\section*{Exercises}
+
 \begin{enumialphparenastyle}
 
-\begin{ex} Here are some vectors. 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-1 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-2 \\ 
-7 \\ 
--4
-\end{mymatrix} ,\begin{mymatrix}{r}
-5 \\ 
-7 \\ 
--10
-\end{mymatrix} ,\begin{mymatrix}{r}
-12 \\ 
-17 \\ 
--24
-\end{mymatrix}
-\end{equation*}
-Describe the span of these vectors as the span of as few vectors as possible.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Consider the vectors
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ -2 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 2 \\ -2 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ -3 \\ -2 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} -1 \\ 1 \\ 2 \end{mymatrix}.
+  \end{equation*}
+  Which of the following vectors are in
+  $\sspan\set{\vect{u}_1,\ldots,\vect{u}_4}$? For each vector that is
+  in the span, exhibit a linear combination of
+  $\vect{u}_1,\ldots,\vect{u}_4$ that equals this vector.
+  \begin{equation*}
+    (a)\quad
+    \vect{x} = \begin{mymatrix}{r} 1 \\ 2 \\ -1 \end{mymatrix},
+    \qquad
+    (b)\quad
+    \vect{y} = \begin{mymatrix}{r} 2 \\ -3 \\ -4 \end{mymatrix},
+    \qquad
+    (c)\quad
+    \vect{z} = \begin{mymatrix}{r} 1 \\ 5 \\ -2 \end{mymatrix}.
+  \end{equation*}
+  \vspace{-2ex}
+  \begin{sol}
+    (a) $\vect{x}$ is not in the span.
+    (b) $\vect{y} = 7\vect{u}_1-5\vect{u}_2$.
+    (c) $\vect{z} = -3\vect{u}_1+4\vect{u}_2$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Here are some vectors. 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-12 \\ 
-29 \\ 
--24
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-3 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-2 \\ 
-9 \\ 
--4
-\end{mymatrix} ,\begin{mymatrix}{r}
-5 \\ 
-12 \\ 
--10
-\end{mymatrix} ,
-\end{equation*}
-Describe the span of these vectors as the span of as few vectors as possible.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Describe the span of the vectors
+  $\vect{u}=\begin{mymatrix}{r} 1 \\ 0 \\ 2 \end{mymatrix}$ and
+  $\vect{v}=\begin{mymatrix}{r} 2 \\ -1 \\ 1 \end{mymatrix}$ in
+  $\R^{3}$.
+  \begin{sol}
+    It is the plane $2x + 3y - z = 0$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Here are some vectors.
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-3 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
--2 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
-0 \\ 
-2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-3 \\ 
--1
-\end{mymatrix}
-\end{equation*}
-Describe the span of these vectors as the span of as few vectors as possible.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Describe the span of the following vectors in $\R^4$:
+  \begin{equation*}
+    \vect{u}_1=\begin{mymatrix}{r} 1 \\  1 \\ -1 \\ -1 \end{mymatrix},\quad
+    \vect{u}_2=\begin{mymatrix}{r} 5 \\  1 \\  1 \\  0 \end{mymatrix},\quad
+    \vect{u}_3=\begin{mymatrix}{r} 0 \\ -2 \\  2 \\  1 \end{mymatrix},\quad
+    \vect{u}_4=\begin{mymatrix}{r} 3 \\  1 \\  1 \\  1 \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    It is the hyperplane given by the equation $x - 2y - 3z + 2w = 0$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Here are some vectors. 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-1 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
--3 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
-1 \\ 
-2
-\end{mymatrix}
-\end{equation*}
-Now here is another vector:\ 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
--1
-\end{mymatrix} 
-\end{equation*}
-Is this vector in the span of the first four vectors? If it is, exhibit a
-linear combination of the first four vectors which equals this vector, using
-as few vectors as possible in the linear combination.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $\vect{u}=\begin{mymatrix}{r} 2 \\ 1 \\ 0 \end{mymatrix}$,
+  $\vect{v}=\begin{mymatrix}{r} 1 \\ 3 \\ 5 \end{mymatrix}$, and
+  $\vect{w}=\begin{mymatrix}{r} 1 \\ 0 \\ -1 \end{mymatrix}$.
+  Show that
+  $\sspan\set{\vect{u},\vect{v},\vect{w}} =
+  \sspan\set{\vect{u},\vect{v}}$.
 \end{ex}
 
-\begin{ex} Here are some vectors. 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-1 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
--3 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
-1 \\ 
-2
-\end{mymatrix}
-\end{equation*}
-Now here is another vector:\ 
-\begin{equation*}
-\begin{mymatrix}{r}
-2 \\ 
--3 \\ 
--4
-\end{mymatrix} 
-\end{equation*}
-Is this vector in the span of the first four vectors? If it is, exhibit a
-linear combination of the first four vectors which equals this vector, using
-as few vectors as possible in the linear combination. 
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Here are some vectors. 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-1 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
--3 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
--1
-\end{mymatrix}
-\end{equation*}
-Now here is another vector:\ 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-9 \\ 
-1
-\end{mymatrix} 
-\end{equation*}
-Is this vector in the span of the first four vectors? If it is, exhibit a
-linear combination of the first four vectors which equals this vector, using
-as few vectors as possible in the linear combination. 
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Here are some vectors. 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
--1 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-0 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
--5 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
-5 \\ 
-2
-\end{mymatrix}
-\end{equation*}
-Now here is another vector:\ 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-1 \\ 
--1
-\end{mymatrix} 
-\end{equation*}
-Is this vector in the span of the first four vectors? If it is, exhibit a
-linear combination of the first four vectors which equals this vector, using
-as few vectors as possible in the linear combination. 
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Here are some vectors. 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
--1 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-0 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
--5 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
-5 \\ 
-2
-\end{mymatrix}
-\end{equation*}
-Now here is another vector:\ 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-1 \\ 
--1
-\end{mymatrix} 
-\end{equation*}
-Is this vector in the span of the first four vectors? If it is, exhibit a
-linear combination of the first four vectors which equals this vector, using
-as few vectors as possible in the linear combination. 
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Here are some vectors. 
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-0 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-1 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
-2 \\ 
--2 \\ 
--3
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
-4 \\ 
-2
-\end{mymatrix}
-\end{equation*}
-Now here is another vector:\ 
-\begin{equation*}
-\begin{mymatrix}{r}
--1 \\ 
--4 \\ 
-2
-\end{mymatrix} 
-\end{equation*}
-Is this vector in the span of the first four vectors? If it is, exhibit a
-linear combination of the first four vectors which equals this vector, using
-as few vectors as possible in the linear combination.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-
-\begin{ex} Suppose $\set{\vect{x}_{1},\cdots ,\vect{x}_{k}} $ is a
-set of vectors from $\R^{n}$. Show that $\vect{0}$ is in $\func{
-span}\set{\vect{x}_{1},\cdots ,\vect{x}_{k}}$.
-\begin{sol}
-$\sum_{i=1}^{k}0\vect{x}_{k}=\vect{0}$
-\end{sol}
+\begin{ex}
+  Suppose $\set{\vect{u}_{1},\cdots,\vect{u}_{k}} $ is a set of
+  vectors from $\R^{n}$. Show that
+  $\vect{0}\in\sspan\set{\vect{u}_{1},\cdots,\vect{u}_{k}}$.
+  \begin{sol}
+    $0\vect{u}_1+\ldots+0\vect{u}_k = \vect{0}$.
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}

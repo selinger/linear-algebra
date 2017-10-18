@@ -24,23 +24,38 @@ learn about in this section. A system of scalars that one can do
 linear algebra with is called a {\em field}.
 
 \begin{definition}{Field}{field}
+  \index{properties of addition!field}%
+  \index{properties of multiplication!field}%
   A \textbf{field}\index{field} is a set $F$, together with two
   operations called \textbf{addition}%
-  \index{field!addition}\index{addition!in a field} and
+  \index{addition!in a field} and
   \textbf{multiplication}%
-  \index{field!multiplication}\index{multiplication!in a field}, and
+  \index{multiplication!in a field}, and
   together with two distinct elements $0$ and $1$, such that addition
   and multiplication satisfy the following properties:
   \begin{itemize}
   \item[(A1)] {Commutative law of addition:} $a+b=b+a$;
+    \index{commutative law!of addition}%
   \item[(A2)] {Associative law of addition:} $(a+b)+c = a+(b+c)$;
+    \index{associative law!of addition}%
   \item[(A3)] {Unit law of addition:} $0+a = a$;
+    \index{additive unit}%
   \item[(A4)] {Additive inverse:} for each $a\in F$, there exists an element $(-a)\in F$ such that $a+(-a)=0$;
+    \index{additive inverse}%
+    \index{inverse!additive}%
   \item[(M1)] {Commutative law of multiplication:} $ab=ba$;
+    \index{commutative law!of multiplication}%
   \item[(M2)] {Associative law of multiplication:} $(ab)c=a(bc)$;
+    \index{associative law!of multiplication}%
   \item[(M3)] {Unit law of multiplication:} $1a=a$;
+    \index{multiplicative unit}\index{unit!of multiplication|see{multiplicative unit}}%
   \item[(M4)] {Multiplicative inverse:} for each non-zero $a\in F$, there exists an element $a^{-1}\in F$ such that $aa^{-1}=1$;
+    \index{multiplicative inverse}%
+    \index{inverse!multiplicative}%
+    \index{inverse!in a field}%
+    \index{inverse!modulo p@modulo $p$}%
   \item[(D)] {Distributive law:} $a(b+c)=ab+ac$.
+    \index{distributive law!of fields}%
   \end{itemize}
 \end{definition}
 
@@ -66,6 +81,7 @@ A field doesn't have to be infinite. The following is an example of a
 field with only two elements.
 
 \begin{example}{The integers modulo 2}{z-mod-2}
+  \index{modulo}%
   Consider the set of {\em bits}\index{bit} (binary digits) $\set{0,1}$.
   We can multiply them as usual, and add them almost as usual, subject
   to the alternative rule $1+1=0$ (instead of $1+1=2$). Here is a

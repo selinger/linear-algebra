@@ -251,8 +251,8 @@ following is an example of a block cipher.
 
 It is important to note that, despite its good diffusion properties,
 the Hill cipher is not secure. The cipher has many weaknesses. For
-one, because $A\vect{0}=\vect{0}$, a block of blanks in the plaintext
-will always be encrypted as a block of blanks in the ciphertext,
+one, because $A\vect{0}=\vect{0}$, a block of spaces in the plaintext
+will always be encrypted as a block of spaces in the ciphertext,
 regardless of the encryption matrix $A$. More importantly, the cipher
 is subject to a so-called \textbf{known plaintext attack}\index{known
   plaintext attack}%
@@ -598,7 +598,7 @@ to the current block at the beginning of each round.
   The corresponding ciphertext is ``OZUGXABPWGTV''.
 \end{solution}
 
-Do ciphers like this actually get used in the real world? The answer
+Are ciphers like this actually used in the real world? The answer
 is yes. While the cipher of Definition~\ref{def:toy-block-cipher} is
 greatly simplified, it has the same basic structure as modern
 real-world block ciphers (such as AES, the Advanced Encryption
@@ -626,9 +626,9 @@ common types of cryptanalysis known as \textbf{linear cryptanalysis}%
 Among other things, this means that the S-box should be ``as far from
 linear'' as possible.
 
-Details on the design and cryptanalysis of modern block ciphers are
-far beyond the scope of this book, but we hope that you have gotten a
-taste of this fascinating subject, and the role that linear algebra
-over finite fields plays in it.
+A detailed discussion of the design and cryptanalysis of modern block
+ciphers is far beyond the scope of this book, but we hope that you
+have gotten a taste of this fascinating subject, and the role that
+linear algebra over finite fields plays in it.
 
 \endgroup

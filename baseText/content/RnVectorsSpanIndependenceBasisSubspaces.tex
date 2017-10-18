@@ -1,4 +1,4 @@
-\subsection{Subspaces and basis}
+\section{Subspaces and basis}
 
 The goal of this section is to develop an understanding of a subspace of $\R^n$. Before a precise definition is considered, we first examine the subspace test given below.
 
@@ -76,7 +76,7 @@ its vectors.
 Let $V$ be a nonempty collection of vectors in $\R^{n}$. Then $V$ is a subspace of $\R^{n}$ if and only if there
 exist vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ in $V$ such that 
 \[
-V= \func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}. 
+V= \sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}. 
 \]
 \index{subspace!span} 
 Furthermore, let $W$ be another subspace of $\R^n$ and suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} \in W$. Then it follows that $V$ is a subset of $W$. 
@@ -85,20 +85,20 @@ Furthermore, let $W$ be another subspace of $\R^n$ and suppose $\set{\vect{u}_{1
 Note that since $W$ is arbitrary, the statement that $V \subseteq W$ means that any other subspace of $\R^n$ that contains these vectors will also contain $V$. 
 
 \begin{proof}
-We first show that if $V$ is a subspace, then it can be written as $V= \func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$. Pick a vector $\vect{u}_{1}$ in $V$. If $V=
-\func{span}\set{\vect{u}_{1}}$, then you have found your
-list of vectors and are done. If $V\neq \func{span}\set{\vect{u}_{1}}$, then
+We first show that if $V$ is a subspace, then it can be written as $V= \sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$. Pick a vector $\vect{u}_{1}$ in $V$. If $V=
+\sspan\set{\vect{u}_{1}}$, then you have found your
+list of vectors and are done. If $V\neq \sspan\set{\vect{u}_{1}}$, then
 there exists $\vect{u}_{2}$ a vector of $V$ which is not in $
-\func{span}\set{\vect{u}_{1}}$. Consider $\func{span}\set{
+\sspan\set{\vect{u}_{1}}$. Consider $\sspan\set{
 \vect{u}_{1},\vect{u}_{2}}$. 
-If $V=\func{span}\set{\vect{u}_{1},\vect{u}_{2}}$, we are
-done. Otherwise, pick $\vect{u}_{3}$ not in $\func{span}\set{\vect{u}_{1},\vect{u}_{2}}$. Continue this way.
+If $V=\sspan\set{\vect{u}_{1},\vect{u}_{2}}$, we are
+done. Otherwise, pick $\vect{u}_{3}$ not in $\sspan\set{\vect{u}_{1},\vect{u}_{2}}$. Continue this way.
 Note that since $V $ is a subspace, these spans are each contained in
 $V$.  The process must stop with $\vect{u}_{k}$ for some $k\leq n$
-by Corollary~\ref{cor:linear-dependence-Rn}, and thus $V=\func{span}\set{\vect{u}_{1},\cdots ,
+by Corollary~\ref{cor:linear-dependence-Rn}, and thus $V=\sspan\set{\vect{u}_{1},\cdots ,
 \vect{u}_{k}}$.
 
-Now suppose $V=\func{span}\set{\vect{u}_{1},\cdots ,
+Now suppose $V=\sspan\set{\vect{u}_{1},\cdots ,
 \vect{u}_{k}}$, we must show this is a subspace. So let $\sum_{i=1}^{k}c_{i}\vect{u}_{i}$ and $
 \sum_{i=1}^{k}d_{i}\vect{u}_{i}$ be two vectors in $V$, and let $a$
 and $b$ be two scalars. Then 
@@ -106,8 +106,8 @@ and $b$ be two scalars. Then
 a \sum_{i=1}^{k}c_{i}\vect{u}_{i}+ b \sum_{i=1}^{k}d_{i}\vect{u}_{i}=
  \sum_{i=1}^{k}\tup{a c_{i}+b  d_{i}} \vect{u}_{i}
 \end{equation*}
-which is one of the vectors in $\func{span}\set{\vect{u}_{1},\cdots ,
-\vect{u}_{k}}$ and is therefore contained in $V$. This shows that $\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ has the properties of a subspace. 
+which is one of the vectors in $\sspan\set{\vect{u}_{1},\cdots ,
+\vect{u}_{k}}$ and is therefore contained in $V$. This shows that $\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ has the properties of a subspace. 
 
 To prove that $V \subseteq W$, we prove that if
 $\vect{u}_i\in V$, then $\vect{u}_i \in W$.
@@ -125,7 +125,7 @@ obtain the following corollary.
 \begin{corollary}{Subspaces are spans of independent vectors}{subspaces-are-spans-independent-vectors}
 If $V$ is a subspace of $\R^{n}$, then there exist linearly independent 
 vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ in $V$ such
-that $V=\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$.
+that $V=\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$.
 \end{corollary}
 
 In summary, subspaces of $\R^{n}$ consist of spans of finite,
@@ -134,10 +134,10 @@ a collection of vectors is called a basis.\index{basis}
 
 \begin{definition}{Basis of a subspace}{subspace-basis}
 Let $V$ be a subspace of $\R^{n}$. Then $\set{
-\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is a \textbf{basis} for $V$ if the following two conditions hold.\index{basis}\index{vectors!basis}
+\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is a \textbf{basis} for $V$ if the following two conditions hold.\index{basis}\index{vector!basis}
 
 \begin{enumerate}
-\item $\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V$
+\item $\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V$
 \item $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is linearly
 independent
 \end{enumerate}
@@ -160,14 +160,14 @@ fundamental result, called the Exchange Theorem.
 \begin{theorem}{Exchange theorem}{exchange-theorem}
 Suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{r}} $ is a
 linearly independent set of vectors in $\R^n$, and each
-$\vect{u}_{k}$ is contained in $\func{span}\set{\vect{v}_{1},\cdots
+$\vect{u}_{k}$ is contained in $\sspan\set{\vect{v}_{1},\cdots
 ,\vect{v}_{s}}$ Then $s\geq r$. \\
 In words, spanning\index{exchange theorem} sets have at least as many vectors as linearly
 independent sets.
 \end{theorem}
 
 \begin{proof}
-Since each $\vect{u}_j$ is in $\func{span}\set{\vect{v}_{1},\cdots ,\vect{v}_{s}} 
+Since each $\vect{u}_j$ is in $\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{s}} 
 $, there exist scalars $a_{ij}$ such that 
 \begin{equation*}
 \vect{u}_{j}=\sum_{i=1}^{s}a_{ij}\vect{v}_{i}
@@ -175,7 +175,7 @@ $, there exist scalars $a_{ij}$ such that
 Suppose for a contradiction that $s<r$. Then the matrix $A = \mat{
 a_{ij} }$ has fewer rows, $s$ than columns, $r$. Then the system
 $AX=0$ has %Theorem~\ref{thm:rank-homogeneous-solutions} 
-a non trivial solution $\vect{d}$, that is there is a  $\vect{d}\neq \vect{0}$ such that  $A\vect{d}=\vect{0}$. In other
+a non-trivial solution $\vect{d}$, that is there is a  $\vect{d}\neq \vect{0}$ such that  $A\vect{d}=\vect{0}$. In other
 words, 
 \begin{equation*}
 \sum_{j=1}^{r}a_{ij}d_{j}=0,\;i=1,2,\cdots ,s
@@ -251,7 +251,7 @@ b\begin{mymatrix}{c} 1\\ 1\\ 0\\ 0\end{mymatrix}
 \]
 
 This shows that $V$ is a subspace of $\R^4$,
-since $V=\func{span}\{\vect{u}_1, \vect{u}_2, \vect{u}_3\}$ where
+since $V=\sspan\set{\vect{u}_1, \vect{u}_2, \vect{u}_3}$ where
 
 \begin{equation*}
 \vect{u}_1  =  \begin{mymatrix}{r} 
@@ -295,7 +295,7 @@ $\vect{u}_1, \vect{u}_2$ and $\vect{u}_3$.
 Since every column of the {\rref} matrix has a leading one,
 the columns are linearly independent.
 
-Therefore $\{\vect{u}_1, \vect{u}_2, \vect{u}_3\}$ is linearly
+Therefore $\set{\vect{u}_1, \vect{u}_2, \vect{u}_3}$ is linearly
 independent and spans $V$, so is a basis of $V$. Hence 
 $V$ has dimension three.
 \end{solution}
@@ -383,7 +383,7 @@ Therefore $S$ can be extended to a basis of $U$.
 
 \begin{solution}
 To extend $S$ to a basis of $U$, find a vector in $U$ that is {\bf not} in
-$\func{span}(S)$.
+$\sspan(S)$.
 \[
 \begin{mymatrix}{rrr}
 1 & 2 & ? \\
@@ -420,7 +420,7 @@ Therefore, $S$ can be extended to the following basis of $U$:
 Next we consider the case of removing vectors from a spanning set to result in a basis. 
 
 \begin{theorem}{Finding a basis from a span}{}
-Let $W$ be a subspace. Also suppose that $W=\limfunc{span}\set{\vect{w}
+Let $W$ be a subspace. Also suppose that $W=\sspan\set{\vect{w}
 _{1},\cdots ,\vect{w}_{m}}$. Then there exists a subset of $\set{
 \vect{w}_{1},\cdots ,\vect{w}_{m}} $ which is a basis for $W$.\index{spanning set!basis}
 \end{theorem}
@@ -431,7 +431,7 @@ k\in S$, there exists a subset of $\set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $ con
 which is a spanning set for $W$. Thus $m\in S$. Pick the smallest positive
 integer in $S$. Call it $k$. Then there exists $\set{\vect{u}_{1},\cdots ,
 \vect{u}_{k}} \subseteq \set{\vect{w}_{1},\cdots ,\vect{w}
-_{m}} $ such that $\limfunc{span}\set{\vect{u}_{1},\cdots ,\vect{u}
+_{m}} $ such that $\sspan\set{\vect{u}_{1},\cdots ,\vect{u}
 _{k}} =W$. If 
 \begin{equation*}
 \sum_{i=1}^{k}c_{i}\vect{w}_{i}=\vect{0}
@@ -455,7 +455,7 @@ of vectors which is linearly independent.
 \begin{example}{Subset of a span}{subset-basis}
 Let $W$ be the subspace 
 \begin{equation*}
-\limfunc{span}\set{\begin{mymatrix}{r}
+\sspan\set{\begin{mymatrix}{r}
 1 \\ 
 2 \\ 
 -1 \\ 
@@ -555,7 +555,7 @@ Consider the following example.
 \begin{example}{Extending a basis}{extending-basis}
 Let $V=\R^{4}$ and let 
 \begin{equation*}
-W=\func{span}\set{\begin{mymatrix}{c}
+W=\sspan\set{\begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1 \\ 
@@ -707,3 +707,18 @@ last.
 \end{equation*}
 Thus $V$ is of dimension 3 and it has a basis which extends the basis for $W$.
 \end{solution}
+
+% ----------------------------------------------------------------------
+\subsection{CONTINUE HERE}
+
+\begin{theorem}{Invertible matrices}{invertible-matrices}
+  Let $A$ be an invertible $n \times n$-matrix. Then the columns of
+  $A$ are independent and span $\R^n$. Similarly, the rows of $A$ are
+  independent and span the set of all $1 \times n$ vectors.
+\end{theorem}
+
+This theorem also allows us to determine if a matrix is invertible. If
+an $n \times n$-matrix $A$ has columns which are independent, or span
+$\R^n$, then it follows that $A$ is invertible. If it has rows that
+are independent, or span the set of all $1 \times n$ vectors, then $A$
+is invertible.

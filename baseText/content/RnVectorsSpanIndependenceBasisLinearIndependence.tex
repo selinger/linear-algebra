@@ -1,481 +1,667 @@
-\subsection{Linearly independent set of vectors}
+\section{Linear independence}
 
-We now turn our attention to the following question: what linear
-combinations of a given set of vectors $\{\vect{u}_1, \cdots
-,\vect{u}_k\}$ in $\R^{n}$ yields the zero vector? Clearly
-$0\vect{u}_1 + 0\vect{u}_2+ \cdots + 0 \vect{u}_k = \vect{0}$, but is
-it possible to have $\sum_{i=1}^{k}a_{i}\vect{u}_{i}=\vect{0}$ without
-all coefficients being zero?
+\begin{outcome}
+  \begin{enumerate}
+  \item Find the redundant vectors in a set of vectors.
+  \item Determine whether a set of vectors is linearly independent.
+  \item Find a linearly independent subset of a set of spanning vectors.
+  \item Write a vector as a unique linear combination of a set of
+    linearly independent vectors.
+  \end{enumerate}
+\end{outcome}
 
-You can create examples where this easily happens. For example if $\vec{u}_1=\vect{u}_2$, then 
-$1\vect{u}_1 - \vect{u}_2+ 0 \vect{u}_3 + \cdots  + 0 \vect{u}_k = \vect{0}$, no matter the vectors 
- $\{\vect{u}_3, \cdots ,\vect{u}_k\}$. 0But sometimes it can be more subtle. 
+% ----------------------------------------------------------------------
+\subsection{Redundant vectors and linear independence}
 
-\begin{example}{Linearly dependent set of vectors}{linearly-dependent-vectors}
-Consider the vectors 
-\begin{equation*}
-\vect{u}_1=\begin{mymatrix}{rrr}
-0  & 1 & -2
-\end{mymatrix}^T, 
-\vect{u}_2=\begin{mymatrix}{rrr}
-1  & 1 & 0
-\end{mymatrix}^T, 
-\vect{u}_3=\begin{mymatrix}{rrr}
--2  & 3 & 2
-\end{mymatrix}^T, \mbox{ and } 
-\vect{u}_4=\begin{mymatrix}{rrr}
-1  & -2 & 0
-\end{mymatrix}^T
-\end{equation*}
-in $\R^{3}$.
+In Example~\ref{exa:redundant-span}, we encountered three vectors
+$\vect{u}$, $\vect{v}$, and $\vect{w}$ such that
+$\sspan\set{\vect{u},\vect{v},\vect{w}} =
+\sspan\set{\vect{u},\vect{v}}$.  If this happens, then the vector
+$\vect{w}$ does not contribute anything to the span of
+$\set{\vect{u},\vect{v},\vect{w}}$, and we say that $\vect{w}$ is
+\textbf{redundant}%
+\index{redundant vector}\index{vector!redundant}. The following
+definition generalizes this notion.
 
-Then verify that 
-\begin{equation*}
-1\vect{u}_1 +0 \vect{u}_2+ - \vect{u}_3 -2 \vect{u}_4 = \vect{0}
-\end{equation*}
-\end{example}
-
-You can see that the linear combination does yield the zero vector but
-has some non-zero coefficients. Thus we define a set of vectors to be
-{\em linearly dependent} if this happens.
-
-\begin{definition}{Linearly dependent set of vectors}{linear-dependent}
-A set of non-zero vectors $\{\vect{u}_1, \cdots ,\vect{u}_k\}$ in $\R^{n}$ is said to be 
-\textbf{linearly dependent} if a linear combination of these vectors without all  coefficients being zero does yield the zero vector.
-\index{linear dependence}\index{vectors!linear dependent}
+\begin{definition}{Redundant vectors, linear dependence, and linear independence}{redundant-vectors}
+  Consider a sequence of $k$ vectors $\vect{u}_1,\ldots,\vect{u}_k$.  We
+  say that the vector $\vect{u}_j$ is \textbf{redundant}%
+  \index{redundant vector}\index{vector!redundant} if it can be
+  written as a linear combination of earlier vectors in the sequence,
+  i.e., if
+  \begin{equation*}
+    \vect{u}_j = a_1\,\vect{u}_1 + a_2\,\vect{u}_2 + \ldots + a_{j-1}\,\vect{u}_{j-1}
+  \end{equation*}
+  for some scalars $a_1,\ldots,a_{j-1}$. We say that the sequence of
+  vectors $\vect{u}_1,\ldots,\vect{u}_k$ is \textbf{linearly
+    dependent}%
+  \index{linear dependence}\index{vector!linearly dependent} if it
+  contains one or more redundant vectors. Otherwise, we say that the
+  vectors are \textbf{linearly independent}%
+  \index{linear independence}\index{vector!linearly independent}.  
 \end{definition}
 
-Note that if $\sum_{i=1}^{k}a_{i}\vect{u}_{i}=\vect{0}$ and some
-coefficient is non-zero, say $a_1 \neq 0$, then 
-\begin{equation*}
-\vec{u}_1 = \frac{-1}{a_1} \sum_{i=2}^{k}a_{i}\vect{u}_{i} 
-\end{equation*}
-and thus $\vec{u}_1$ is in the span of the other vectors. And the converse clearly works as well,
-so we get that a set of vectors is linearly dependent precisely when
-one of its vector is in the span of the other vectors of that set.
-
-In particular, you can show that the vector $\vec{u}_1$ in the above
-example is in the span of the vectors  $\{\vect{u}_2, \vect{u}_3, \vect{u}_4\}$. 
-
-If a set of vectors is NOT linearly dependent, then it must be that
-any linear combination of these vectors which yields the zero vector
-must use all zero coefficients. This is a very important notion, and we give it its own name of {\em
-linear independence}. 
-
-\begin{definition}{Linearly independent set of vectors}{linear-independent}
-A set of non-zero vectors $\{\vect{u}_1, \cdots ,\vect{u}_k\}$ in $\R^{n}$ is said to be 
-\textbf{linearly independent} if whenever 
-\begin{equation*}
-\sum_{i=1}^{k}a_{i}\vect{u}_{i}=\vect{0}
-\end{equation*}
-it follows that each $a_{i}=0$.
-\end{definition}
-
-\index{linear independence}\index{vectors!linear independent}
-
-Note also that we require all vectors to be non-zero to form a
-linearly independent set.
-
-To view this in a more familiar setting, form the $n \times k$-matrix
-$A$ having these vectors as columns. Then all we are saying is that
-the set $\{\vect{u}_1, \cdots ,\vect{u}_k\}$ is linearly independent
-precisely when $AX=0$ has only the trivial solution.
-
-Here is an example.  
-
-\begin{example}{Linearly independent vectors}{linearly-independent-vectors}
-Consider the vectors $\vect{u}=\begin{mymatrix}{rrr}
-1  & 1 & 0
-\end{mymatrix}^T$, 
-$\vect{v}=\begin{mymatrix}{rrr}
-1  & 0 & 1
-\end{mymatrix}^T$, and
-$\vect{w}=\begin{mymatrix}{rrr}
-0  & 1 & 1
-\end{mymatrix}^T$ in $\R^{3}$.
-Verify whether the set $\{\vect{u}, \vect{v}, \vect{w}\}$ is linearly independent. 
+\begin{example}{Redundant vectors}{redundant-vectors}
+  Find the redundant vectors in the following sequence of vectors. Are
+  the vectors linearly independent?
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ 0\end{mymatrix},
+    \quad
+    \vect{u}_2 = \begin{mymatrix}{c} 1 \\ 2 \\ 2 \\ 3\end{mymatrix},
+    \quad
+    \vect{u}_3 = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1\end{mymatrix},
+    \quad
+    \vect{u}_4 = \begin{mymatrix}{c} 2 \\ 3 \\ 3 \\ 4\end{mymatrix},
+    \quad
+    \vect{u}_5 = \begin{mymatrix}{c} 0 \\ 1 \\ 2 \\ 3\end{mymatrix},
+    \quad
+    \vect{u}_6 = \begin{mymatrix}{c} 3 \\ 3 \\ 2 \\ 2\end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-So suppose that we have a linear combinations $a\vect{u} + b \vect{v}
-+ c\vect{w} = \vect{0}$. Then you can see that this can only happen
-with $a=b=c=0$.
-
-As mentioned above, you can equivalently form the $3 \times 3$-matrix $A = 
-\begin{mymatrix}{ccc}
-1  & 1 & 0 \\
-1  & 0 & 1 \\
-0  & 1 & 1 \\
-\end{mymatrix}$, and show that $AX=0$ has only the trivial solution.
-
-Thus this  means the set $\set{\vect{u}, \vect{v}, \vect{w} }$ is linearly independent. 
+  \begin{itemize}
+  \item The vector $\vect{u}_1$ is redundant, because it is a linear
+    combination of earlier vectors. (Although there are no earlier
+    vectors, recall from Example~\ref{exa:span-empty-set} that the empty
+    sum of vectors is equal to the zero vector $\vect{0}$. Therefore,
+    $\vect{u}_1$ is indeed an (empty) linear combination of earlier
+    vectors.)
+  \item The vector $\vect{u}_2$ is not redundant, because it cannot be
+    written as a linear combination of $\vect{u}_1$. This is because
+    the system of equations
+    \begin{equation*}
+      \begin{mymatrix}{l|l}
+        0 & 1 \\
+        0 & 2 \\
+        0 & 2 \\
+        0 & 3 \\
+      \end{mymatrix}
+    \end{equation*}
+    has no solution.
+  \item The vector $\vect{u}_3$ is not redundant, because it cannot be
+    written as a linear combination of $\vect{u}_1$ an $\vect{u}_2$.
+    This is because the system of equations
+    \begin{equation*}
+      \begin{mymatrix}{ll|l}
+        0 & 1 & 1 \\
+        0 & 2 & 1\\
+        0 & 2 & 1\\
+        0 & 3 & 1\\
+      \end{mymatrix}
+    \end{equation*}
+    has no solution.
+  \item The vector $\vect{u}_4$ is redundant, because $\vect{u}_4 =
+    \vect{u}_2 + \vect{u}_3$.
+  \item The vector $\vect{u}_5$ is not redundant, because 
+    This is because the system of equations
+    \begin{equation*}
+      \begin{mymatrix}{llll|l}
+        0 & 1 & 1 & 2 & 0 \\
+        0 & 2 & 1 & 3 & 1 \\
+        0 & 2 & 1 & 3 & 2 \\
+        0 & 3 & 1 & 4 & 3 \\
+      \end{mymatrix}
+    \end{equation*}
+    has no solution.
+  \item The vector $\vect{u}_6$ is redundant, because $\vect{u}_6 =
+    \vect{u}_2 + 2\vect{u}_3-\vect{u}_5$.
+  \end{itemize}
+  In summary, the vectors $\vect{u}_1$, $\vect{u}_4$, and $\vect{u}_6$
+  are redundant, and the vectors $\vect{u}_2$, $\vect{u}_3$, and
+  $\vect{u}_5$ are not. It follows that the vectors
+  $\vect{u}_1,\ldots,\vect{u}_6$ are linearly dependent.
 \end{solution}
 
-In terms of spanning, a set of vectors is linearly independent if it
-does not contain unnecessary vectors, that is not vector is in the span of the others.
+% ----------------------------------------------------------------------
+\subsection{The casting-out algorithm}
 
-Thus we put all this together in the following important theorem.
+The last example shows that it can be a lot of work to find the
+redundant vectors in a sequence of $k$ vectors. Doing so in the naive way
+require us to solve up to $k$ systems of linear equations!
+Fortunately, there is a much faster and easier method, the so-called
+{\em casting-out algorithm}.
 
-\begin{theorem}{Linear independence as a linear combination}{linear-independence-combination}
-Let $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ be a collection of vectors  in
-$\R^{n}$. Then the following are equivalent:
+\begin{algorithm}{Casting-out algorithm}{casting-out}
+  \index{casting-out algorithm}%
+  \index{linear independence!casting-out algorithm}%
+  \index{vector!casting-out algorithm}%
+  \textbf{Input:} a list of $k$ vectors
+  $\vect{u}_1,\ldots,\vect{u}_k\in\R^n$.  \smallskip
 
-\begin{enumerate}
-\item It is linearly independent, that is whenever
+  \textbf{Output:} the set of indices $j$ such that $\vect{u}_j$ is
+  redundant.
+  \smallskip
+  
+  \textbf{Algorithm:} Write the vectors $\vect{u}_1,\ldots,\vect{u}_k$
+  as the columns of an $n\times k$-matrix, and reduce to {\ef}. Every
+  {\em non-pivot} column, if any, corresponds to a redundant vector.
+\end{algorithm}
+
+\begin{example}{Casting-out algorithm}{casting-out}
+  Use the casting-out algorithm to find the redundant vectors among
+  the vectors from Example~\ref{exa:redundant-vectors}.
+\end{example}
+
+\begin{solution}
+  Following the casting-out algorithm, we write the vectors
+  $\vect{u}_1,\ldots,\vect{u}_6$ as the columns of a matrix and reduce
+  to {\ef}.
+  \begin{equation*}
+    \begin{mymatrix}{rrrrrr}
+      0 & 1 & 1 & 2 & 0 & 3 \\
+      0 & 2 & 1 & 3 & 1 & 3 \\
+      0 & 2 & 1 & 3 & 2 & 2 \\
+      0 & 3 & 1 & 4 & 3 & 2 \\
+    \end{mymatrix}
+    \sim \ldots \sim
+    \begin{mymatrix}{rrrrrr}
+      0 & \circled{1} & 1 & 2 & 0 & 3 \\
+      0 & 0 & \circled{1} & 1 & -1 & 3 \\
+      0 & 0 & 0 & 0 & \circled{1} & -1 \\
+      0 & 0 & 0 & 0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The pivot columns are columns $2$, $3$, and $5$. The non-pivot
+  columns are columns $1$, $4$, and $6$. Therefore, the vectors
+  $\vect{u}_1$, $\vect{u}_4$, and $\vect{u}_6$ are redundant. Note
+  that this is the same answer we got in
+  Example~\ref{exa:redundant-vectors}.
+\end{solution}
+
+The above version of the casting-out algorithm only tells us which of
+the vectors (if any) are redundant, but it does not give us a specific
+way to write the redundant vectors as linear combinations of previous
+vectors. However, we can easily get this additional information if we
+reduce the matrix all the way to {\rref}. We call this version of the
+algorithm the {\em extended casting-out algorithm}.
+
+\begin{algorithm}{Extended casting-out algorithm}{extended-casting-out}
+  \index{extended casting-out algorithm}%
+  \index{casting-out algorithm!extended}%
+  \index{linear independence!casting-out algorithm!extended}%
+  \index{vector!casting-out algorithm!extended}%
+  \textbf{Input:} a list of $k$ vectors
+  $\vect{u}_1,\ldots,\vect{u}_k\in\R^n$.
+  \smallskip
+
+  \textbf{Output:} the set of indices $j$ such that $\vect{u}_j$ is
+  redundant, and a set of coefficients for writing each redundant
+  vector as a linear combination of previous vectors.
+  \smallskip
+  
+  \textbf{Algorithm:} Write the vectors $\vect{u}_1,\ldots,\vect{u}_k$
+  as the columns of an $n\times k$-matrix, and reduce to
+  {\rref}. Every {\em non-pivot} column, if any, corresponds to a
+  redundant vector. If $\vect{u}_j$ is a redundant vector, then the
+  entries in the $j\th$ column of the {\rref} are coefficients for
+  writing $\vect{u}_j$ as a linear combination of previous
+  non-redundant vectors.
+\end{algorithm}
+
+\begin{example}{Extended casting-out algorithm}{extended-casting-out}
+  Use the casting-out algorithm to find the redundant vectors among
+  the vectors from Example~\ref{exa:redundant-vectors}, and write each
+  redundant vector as a linear combination of previous non-redundant
+  vectors.
+\end{example}
+
+\begin{solution}
+  Once again, we write the vectors $\vect{u}_1,\ldots,\vect{u}_6$ as
+  the columns of a matrix. This time we use the extended casting-out
+  algorithm, which means we reduce the matrix to {\rref} instead of
+  {\ef}.
+  \begin{equation*}
+    \begin{mymatrix}{rrrrrr}
+      0 & 1 & 1 & 2 & 0 & 3 \\
+      0 & 2 & 1 & 3 & 1 & 3 \\
+      0 & 2 & 1 & 3 & 2 & 2 \\
+      0 & 3 & 1 & 4 & 3 & 2 \\
+    \end{mymatrix}
+    \sim \ldots \sim
+    \begin{mymatrix}{rrrrrr}
+      0 & \circled{1} & 0 & 1 & 0 & 1 \\
+      0 & 0 & \circled{1} & 1 & 0 & 2 \\
+      0 & 0 & 0 & 0 & \circled{1} & -1 \\
+      0 & 0 & 0 & 0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  As before, the non-pivot columns are columns $1$, $4$, and $6$, and
+  therefore, the vectors $\vect{u}_1$, $\vect{u}_4$, and $\vect{u}_6$
+  are redundant. The non-redundant vectors are $\vect{u}_2$,
+  $\vect{u}_3$, and $\vect{u}_5$. Moreover, the entries in the sixth
+  column are $1$, $2$, and $-1$.  Note that this means that the sixth
+  column can be written as $1$ times the second column plus $2$ times
+  the third column plus $(-1)$ times the fourth column. The same
+  coefficients can be used to write $\vect{u}_6$ as a linear
+  combination of previous {\em non-redundant} columns, namely:
+  \begin{equation*}
+    \vect{u}_6 = 1\,\vect{u}_2 + 2\,\vect{u}_3 - 1\,\vect{u}_5.
+  \end{equation*}
+  Also, the entries in the fourth column are $1$ and $1$, which are
+  the coefficients for writing $\vect{u}_4$ as a linear combination of
+  previous non-redundant columns, namely:
+  \begin{equation*}
+    \vect{u}_4 = 1\,\vect{u}_2 + 1\,\vect{u}_3.
+  \end{equation*}
+  Finally, there are no non-zero entries in the first column. This
+  means that $\vect{u}_1$ is the empty linear combination
+  \begin{equation*}
+    \vect{u}_1 = \vect{0}.
+  \end{equation*}
+\end{solution}
+
+% ----------------------------------------------------------------------
+\subsection{Alternative characterization of linear independence}
+
+Our definition of redundant vectors depends on the order in which the
+vectors are written. This is because each redundant vector must be a
+linear combination of {\em earlier} vectors in the sequence. For example,
+in the sequence of vectors
 \begin{equation*}
-\sum_{i=1}^{k}a_{i}\vect{u}_{i}=\vect{0}
+  \vect{u}=\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix},\quad
+  \vect{v}=\begin{mymatrix}{r} 3 \\ 2 \\ 1 \end{mymatrix},\quad
+  \vect{w}=\begin{mymatrix}{r} 11 \\ 8 \\ 5 \end{mymatrix},
 \end{equation*}
-it follows that each coefficient $a_{i}=0$.
-\item No vector is in the span of the others.
-\item The system of
-linear equations $AX=0$ has only the trivial solution, where $A$ is
-the $n \times k$-matrix having these vectors as columns. 
-\end{enumerate}
+the vector $\vect{w}$ is redundant, because it is a linear combination
+of earlier vectors $\vect{w} = 2\,\vect{u}+3\,\vect{v}$. Neither
+$\vect{u}$ nor $\vect{v}$ are redundant. On the other hand, in the sequence
+of vectors
+\begin{equation*}
+  \vect{u}=\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix},\quad
+  \vect{w}=\begin{mymatrix}{r} 11 \\ 8 \\ 5 \end{mymatrix},\quad
+  \vect{v}=\begin{mymatrix}{r} 3 \\ 2 \\ 1 \end{mymatrix},
+\end{equation*}
+$\vect{v}$ is redundant because
+$\vect{v} = \frac{1}{3}\vect{w} - \frac{2}{3}\vect{u}$, but neither
+$\vect{u}$ nor $\vect{w}$ are redundant. Note that none of the vectors
+have changed; only the order in which they are written is
+different. Yet $\vect{w}$ is the redundant vector in the first sequence,
+and $\vect{v}$ is the redundant vector in the second sequence.
+
+Because we defined linear independence in terms of the absence of
+redundant vectors, you may suspect that the concept of linear
+independence also depends on the order in which the vectors are
+written. However, this is not the case. The following theorem gives an
+alternative characterization of linear independence that is more
+symmetric (it does not depend on the order of the vectors).
+
+\begin{theorem}{Characterization of linear independence}{characterization-linear-independence}
+  Let $\vect{u}_1,\ldots,\vect{u}_k$ be vectors. Then
+  $\vect{u}_1,\ldots,\vect{u}_k$ are linearly independent%
+  \index{linear independence!alternative characterization}%
+  \index{vector!linearly independent!alternative characterization}%
+  if and only if the homogeneous equation
+  \begin{equation*}
+    a_1\,\vect{u}_1 + \ldots + a_k\,\vect{u}_k = \vect{0}
+  \end{equation*}
+  has only the trivial solution%
+  \index{trivial solution}\index{solution!trivial}%
+  \index{system of linear equations!trivial solution}.
 \end{theorem}
 
-The last sentence of this theorem is useful as it allows us to use the
-{\rref} of a matrix to determine if a set of vectors is linearly
-independent. Let the vectors be columns of a matrix $A$. Find the
-{\rref} of $A$. If each column has a leading one, then it follows
-that the vectors are linearly independent.
+\begin{proof}
+  Let $A$ be the $n\times k$-matrix whose columns are
+  $\vect{u}_1,\ldots,\vect{u}_k$. We know from the theory of
+  homogeneous systems that the system
+  $a_1\,\vect{u}_1 + \ldots + a_k\,\vect{u}_k = \vect{0}$ has no
+  non-trivial solution if and only if every column of the {\ef} of $A$
+  is a pivot column. By the casting-out algorithm, this is the case if
+  and only if none of the vectors $\vect{u}_1,\ldots,\vect{u}_k$ are
+  redundant, i.e., if and only if the vectors are linearly independent.
+\end{proof}
 
-Sometimes we refer to the condition regarding sums as follows: The set
-of vectors, $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is
-linearly independent if and only if there is no nontrivial linear
-combination which equals the zero vector. A nontrivial linear
-combination is one in which not all the scalars equal zero. Similarly,
-a trivial linear combination is one in which all scalars equal zero.
-
-Here is a detailed  example in  $\R^{4}$. 
-
-\begin{example}{Linear independence}{linear-independence2}
-Determine whether the set of vectors given by  
-\[ \set{\begin{mymatrix}{r}
-1 \\
-2 \\
-3 \\
-0
-\end{mymatrix}, \; \begin{mymatrix}{r}
-2 \\
-1 \\
-0 \\
-1
-\end{mymatrix} , \; \begin{mymatrix}{r}
-0 \\
-1 \\
-1 \\
-2
-\end{mymatrix}  , \; \begin{mymatrix}{r}
-3 \\
-2 \\
-2 \\
-0
-\end{mymatrix} } \]
-is linearly independent. If it is linearly dependent,
-express one of the vectors as a linear combination of the others.
+\begin{example}{Characterization of linear independence}{characterization-linear-independence}
+  Use the method of
+  Theorem~\ref{thm:characterization-linear-independence} to determine
+  whether the following vectors are linearly independent in $\R^4$.
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ 2 \\ 0 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ 1 \\ 1 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 2 \\ 3 \\ 2 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} 2 \\ 3 \\ 3 \\ 1 \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-In this case the matrix of the corresponding homogeneous system of linear equations  is 
-\begin{equation*}
-\begin{mymatrix}{rrrr|r}
-1 & 2 & 0 & 3 & 0\\ 
-2 & 1 & 1 & 2 & 0 \\ 
-3 & 0 & 1 & 2 & 0 \\ 
-0 & 1 & 2 & 0 & 0 
-\end{mymatrix}
-\end{equation*}
-The {\rref} is 
-\begin{equation*}
-\begin{mymatrix}{rrrr|r}
-1 & 0 & 0 & 0 & 0 \\ 
-0 & 1 & 0 & 0 & 0 \\ 
-0 & 0 & 1 & 0 & 0 \\ 
-0 & 0 & 0 & 1 & 0 
-\end{mymatrix}
-\end{equation*}
-and so every column is a pivot column and the corresponding system
-$AX=0$ only has the trivial solution.  Therefore, these vectors are
-linearly independent and there is no way to obtain one of the vectors
-as a linear combination of the others.
+  We must check whether the equation
+  \begin{equation*}
+    a_1 \begin{mymatrix}{r} 1 \\ 1 \\ 2 \\ 0 \end{mymatrix}
+    + a_2 \begin{mymatrix}{r} 0 \\ 1 \\ 1 \\ 1 \end{mymatrix}
+    + a_3 \begin{mymatrix}{r} 1 \\ 2 \\ 3 \\ 2 \end{mymatrix}
+    + a_4 \begin{mymatrix}{r} 2 \\ 3 \\ 3 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{r} 0 \\ 0 \\ 0 \\ 0 \end{mymatrix}
+  \end{equation*}
+  has a non-trivial solution. If it does, the vectors are linearly
+  dependent. On the other hand, if there is only the trivial solution,
+  the vectors are linearly independent. We write the augmented matrix
+  and solve:
+  \begin{equation*}
+    \begin{mymatrix}{rrrr|r}
+      1 & 0 & 1 & 2 & 0 \\
+      1 & 1 & 2 & 3 & 0 \\
+      2 & 1 & 3 & 7 & 0 \\
+      0 & 1 & 2 & 1 & 0 \\
+    \end{mymatrix}
+    \sim
+    \ldots
+    \sim
+    \begin{mymatrix}{rrrr|r}
+      \circled{1} & 0 & 1 & 2 & 0 \\
+      0 & \circled{1} & 1 & 1 & 0 \\
+      0 & 0 & \circled{1} & 0 & 0 \\
+      0 & 0 & 0 & \circled{2} & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Since every column is a pivot column, there are no free variables;
+  the system of equations has a unique solution, which is
+  $a_1=a_2=a_3=a_4=0$, i.e., the trivial solution. Therefore, the
+  vectors $\vect{u}_1,\ldots,\vect{u}_4$ are linearly independent.
 \end{solution}
 
-Consider another example.
-
-\begin{example}{Linear independence}{linear-independence}
-Determine whether the set of vectors given by  
-\[\set{
-\begin{mymatrix}{r}
-1 \\
-2 \\
-3 \\
-0
-\end{mymatrix}, \; \begin{mymatrix}{r}
-2 \\
-1 \\
-0 \\
-1
-\end{mymatrix}, \; \begin{mymatrix}{r}
-0 \\
-1 \\
-1 \\
-2
-\end{mymatrix}, \; \begin{mymatrix}{r}
-3 \\
-2 \\
-2 \\
--1
-\end{mymatrix} } \]
-is linearly independent. If it is linearly dependent,
-express one of the vectors as a linear combination of the others.
+\begin{example}{Characterization of linear independence}{characterization-linear-independence2}
+  Use the method of
+  Theorem~\ref{thm:characterization-linear-independence} to determine
+  whether the following vectors are linearly independent in $\R^3$.
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 3 \\ 1 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 0 \\ 4 \\ 2 \end{mymatrix},\quad
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-Form the $4 \times 4$-matrix $A$ having these vectors as columns:
-\begin{equation*}
-A= \begin{mymatrix}{rrrr}
-1 & 2 & 0 & 3 \\ 
-2 & 1 & 1 & 2 \\ 
-3 & 0 & 1 & 2 \\ 
-0 & 1 & 2 & -1
-\end{mymatrix}
-\end{equation*}
-Then by Theorem~\ref{thm:linear-independence-combination}, the given set of vectors is linearly independent
-exactly if the system $AX=0$ has only the trivial solution.
+  As in the previous example, we must check whether the equation
+  $a_1\,\vect{u}_1 + a_2\,\vect{u}_2 + a_3\,\vect{u}_3 = \vect{0}$ has
+  a non-trivial solution. Once again, we write the augmented matrix
+  and solve:
+  \begin{equation*}
+    \begin{mymatrix}{rrr|r}
+      1 & 1 & 0 & 0 \\
+      1 & 3 & 4 & 0 \\
+      0 & 1 & 2 & 0 \\
+    \end{mymatrix}
+    \sim
+    \ldots
+    \sim
+    \begin{mymatrix}{rrr|r}
+      \circled{1} & 1 & 0 & 0 \\
+      0 & \circled{2} & 4 & 0 \\
+      0 & 0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Since column $3$ is not a pivot column, $a_3$ is a free
+  variable. Therefore, the system has a non-trivial solution, and the
+  vectors are linearly dependent.
 
-The augmented matrix for this system and corresponding {\rref} are given by  
-\begin{equation*}
- \begin{mymatrix}{rrrr|r}
-1 & 2 & 0 & 3 & 0 \\ 
-2 & 1 & 1 & 2 & 0 \\ 
-3 & 0 & 1 & 2 & 0 \\ 
-0 & 1 & 2 & -1 & 0 
-\end{mymatrix}
-\rightarrow \cdots \rightarrow
-\begin{mymatrix}{rrrr|r}
-1 & 0 & 0 & 1 & 0 \\ 
-0 & 1 & 0 & 1 & 0 \\ 
-0 & 0 & 1 & -1 & 0 \\ 
-0 & 0 & 0 & 0 & 0 
-\end{mymatrix} 
-\end{equation*}
-Not all the columns of the coefficient matrix are pivot columns and so the vectors are not linearly independent. In this case, we say the vectors are linearly dependent. 
-
-It follows that there are infinitely many solutions to $AX=0$, one of which is
-\begin{equation*}
-\begin{mymatrix}{r}
-1 \\ 
-1 \\ 
--1 \\ 
--1
-\end{mymatrix}
-\end{equation*}
-Therefore we can write 
-\begin{equation*}
-1\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
-3 \\ 
-0
-\end{mymatrix} +1\begin{mymatrix}{r}
-2 \\ 
-1 \\ 
-0 \\ 
-1
-\end{mymatrix}  -1 \begin{mymatrix}{r}
-0 \\ 
-1 \\ 
-1 \\ 
-2
-\end{mymatrix} -1 \begin{mymatrix}{r}
-3 \\ 
-2 \\ 
-2 \\ 
--1
-\end{mymatrix} =
-\begin{mymatrix}{r}
-0 \\ 
-0 \\ 
-0 \\ 
-0
-\end{mymatrix}
-\end{equation*}
-
-This can be rearranged as follows
-\begin{equation*}
-1\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
-3 \\ 
-0
-\end{mymatrix} +1\begin{mymatrix}{r}
-2 \\ 
-1 \\ 
-0 \\ 
-1
-\end{mymatrix}  -1 \begin{mymatrix}{r}
-0 \\ 
-1 \\ 
-1 \\ 
-2
-\end{mymatrix} =\begin{mymatrix}{r}
-3 \\ 
-2 \\ 
-2 \\ 
--1
-\end{mymatrix} 
-\end{equation*}
-This gives the last vector as a linear combination of the first three vectors.
-
-Notice that we could rearrange this equation to write any of the four vectors as a linear combination of the other three. 
+  With a small amount of extra work, we can find an actual non-trivial
+  solution of
+  $a_1\,\vect{u}_1 + a_2\,\vect{u}_2 + a_3\,\vect{u}_3 =
+  \vect{0}$. All we have to do is set $a_3=1$ and do a back
+  substitution. We find that $(a_1,a_2,a_3)=(2,-2,1)$ is a
+  solution. In other words,
+  \begin{equation*}
+    2\vect{u}_1 - 2\vect{u}_2 + \vect{u}_3 = \vect{0}.
+  \end{equation*}
+  We can also use this information to write $\vect{u}_3$ as a linear
+  combination of previous vectors, namely,
+  $\vect{u}_3 = -2\vect{u}_1 + 2\vect{u}_2$.
 \end{solution}
 
-When given a linearly independent set of vectors, we can determine if related sets are linearly independent. 
+The characterization of linear independence in
+Theorem~\ref{thm:characterization-linear-independence} is mostly
+useful for theoretical reasons. However, it can also help in solving
+problems such as the following.
 
 \begin{example}{Related sets of vectors}{related-linear-independence}
-Let $\{\vect{u},\vect{v},\vect{w}\}$ be an independent set of $\R^n$.
-Is $\{\vect{u}+\vect{v}, 2\vect{u}+\vect{w}, \vect{v}-5\vect{w}\}$ linearly
-independent?
+  Let $\vect{u},\vect{v},\vect{w}$ be linearly independent vectors in
+  $\R^n$. Are the vectors $\vect{u}+\vect{v}$, $2\vect{u}+\vect{w}$,
+  and $\vect{v}-5\vect{w}$ linearly independent?
 \end{example}
 
 \begin{solution}
-Suppose $a(\vect{u}+\vect{v}) + b(2\vect{u}+\vect{w}) + c(\vect{v}-5\vect{w})=\vect{0}_n$
-for some $a,b,c\in\R$.
-Then 
-\[ (a+2b)\vect{u} + (a+c)\vect{v} + (b-5c)\vect{w}=\vect{0}_n.\]
-
-Since $\{\vect{u},\vect{v},\vect{w}\}$ is independent, 
-\begin{eqnarray*}
-a + 2b & = & 0 \\
-a + c & = & 0 \\
-b - 5c & = & 0 
-\end{eqnarray*}
-
-This system of three equations in three variables has 
-the unique solution $a=b=c=0$.
-Therefore, $\{\vect{u}+\vect{v}, 2\vect{u}+\vect{w}, \vect{v}-5\vect{w}\}$ is independent.
+  By Theorem~\ref{thm:characterization-linear-independence}, to check
+  whether the vectors are linearly independent, we must check whether
+  the equation
+  \begin{equation}\label{eqn:related-linear-independence1}
+    a(\vect{u}+\vect{v}) + b(2\vect{u}+\vect{w}) +
+    c(\vect{v}-5\vect{w})=\vect{0}
+  \end{equation}
+  has non-trivial solutions.  If it does, the vectors are linearly
+  dependent, if it does not, they are linearly independent. We can
+  simplify the equation as follows:
+  \begin{equation}\label{eqn:related-linear-independence2}
+    (a+2b)\vect{u} + (a+c)\vect{v} + (b-5c)\vect{w}=\vect{0}.
+  \end{equation}
+  Since $\vect{u}$, $\vect{v}$, and $\vect{w}$ are linearly
+  independent, we know, again by
+  Theorem~\ref{thm:characterization-linear-independence}, that
+  equation {\eqref{eqn:related-linear-independence2}} only has the
+  trivial solution. Therefore,
+  \begin{eqnarray*}
+    a + 2b & = & 0, \\
+    a + c & = & 0, \\
+    b - 5c & = & 0. 
+  \end{eqnarray*}
+  We can solve this system of three equations in three variables, and
+  we find that it has the unique solution $a=b=c=0$. Therefore,
+  $a=b=c=0$ is the only solution to equation
+  {\eqref{eqn:related-linear-independence1}}, which means that the
+  vectors $\vect{u}+\vect{v}$, $2\vect{u}+\vect{w}$, and
+  $\vect{v}-5\vect{w}$ are linearly independent.
 \end{solution}
 
-The following corollary follows from the fact that if the augmented matrix of a homogeneous
-system of linear equations has more columns than rows, the system has infinitely many
-solutions.
+% ----------------------------------------------------------------------
+\subsection{Properties of linear independence}
 
-\begin{corollary}{Linear dependence in $\R^{n}$}{linear-dependence-Rn}
-Let $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $
-be a set of vectors in $\R^{n}$. 
-If $k>n$, then the set is linearly dependent (i.e. NOT linearly independent).
-\end{corollary}
+The following are some properties of linearly independent sets.
+
+\begin{theorem}{Properties of linear independence}{properties-linear-independence}
+  \index{linear independence!properties}%
+  \index{vector!linearly independent!properties}%
+  \index{properties of linear independence}%
+  \begin{enumerate}
+  \item \textbf{Linear independence and reordering.} If a sequence
+    $\vect{u}_1,\ldots,\vect{u}_k$ of $k$ vectors is linearly
+    independent, then so is any reordering of the sequence (i.e.,
+    whether or not the vectors are linearly independent does not
+    depend on the order in which the vectors are written down).
+  \item \textbf{Linear independence of a subset.} If
+    $\vect{u}_1,\ldots,\vect{u}_k$ are linearly independent, then so
+    are $\vect{u}_1,\ldots,\vect{u}_j$ for any $j<k$.
+  \item \textbf{Linear independence and dimension.} Let
+    $\vect{u}_1,\ldots,\vect{u}_k$ be a sequence of $k$ vectors in
+    $\R^n$. If $k>n$, then the vectors are linearly dependent (i.e.,
+    not linearly independent).
+  \end{enumerate}
+\end{theorem}
 
 \begin{proof}
-Form the $n \times k$-matrix $A$ having the vectors $\set{
-\vect{u}_{1},\cdots ,\vect{u}_{k}} $ as its columns and suppose $k > n$. Then $A$ has rank $r \leq n <k$, so 
-the system $AX=0$ has a nontrivial solution % by Theorem~\ref{thm:rank-homogeneous-solutions}
- and thus not linearly independent by Theorem~\ref{thm:linear-independence-combination}.
+  \begin{enumerate}
+  \item This follows from
+    Theorem~\ref{thm:characterization-linear-independence}, because
+    whether or not the equation
+    $a_1\vect{u}_1 + \ldots + a_k\vect{u}_k = \vect{0}$ has a
+    non-trivial solution does not depend on the order in which the
+    vectors are written.
+  \item If one of the vectors in the sequence
+    $\vect{u}_1,\ldots,\vect{u}_j$ were redundant, then it would be
+    redundant in the longer sequence $\vect{u}_1,\ldots,\vect{u}_k$ as
+    well.
+  \item Let $A$ be the $n\times k$-matrix that has the vectors
+    $\vect{u}_{1},\cdots,\vect{u}_{k}$ as its columns and suppose that
+    $k>n$. Then the rank of $A$ is at most $n$, so the {\ef} of $A$
+    has some non-pivot columns. Therefore, the system
+    $a_1\vect{u}_1 + \ldots + a_k\vect{u}_k = \vect{0}$ has
+    non-trivial solutions, and the vectors are linearly dependent by
+    Theorem~\ref{thm:characterization-linear-independence}.
+  \end{enumerate}
 \end{proof}
 
 \begin{example}{Linear dependence}{linear-dependence}
-Consider the vectors 
-\[
-\set{\begin{mymatrix}{r}
-1 \\
-4 
-\end{mymatrix}, 
-\begin{mymatrix}{r}
-2 \\
-3
-\end{mymatrix}, 
-\begin{mymatrix}{r}
-3 \\
-2
-\end{mymatrix} }
-\]
-Are these vectors linearly independent?
+  Are the following vectors linearly independent?
+  \begin{equation*}
+    \begin{mymatrix}{r}
+        1 \\
+        4 
+      \end{mymatrix},\quad 
+      \begin{mymatrix}{r}
+        2 \\
+        3
+      \end{mymatrix},\quad
+      \begin{mymatrix}{r}
+        3 \\
+        2
+      \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-This set contains three vectors in $\R^2$. By Corollary~\ref{cor:linear-dependence-Rn} these vectors are linearly dependent.
-In fact, we can write
-\[
-(-1) \begin{mymatrix}{r}
-1 \\
-4 
-\end{mymatrix} + (2) 
-\begin{mymatrix}{r}
-2 \\
-3
-\end{mymatrix} = 
-\begin{mymatrix}{r}
-3 \\
-2
-\end{mymatrix}
-\]
-showing that this set is linearly dependent. 
+  Since these are $3$ vectors in $\R^2$, they are linearly dependent
+  by Theorem~\ref{thm:properties-linear-independence}. No calculation
+  is necessary.
 \end{solution}
 
-The third vector in the previous example is in the span of the first two vectors. We could find a way to write this vector as a linear combination of the other two vectors. It turns out that the linear combination which we found is the \textbf{only} one, provided that the set is linearly independent. 
+% ----------------------------------------------------------------------
+\subsection{Linear independence and linear combinations}
+
+In general, there is more than one way of writing a given vector as a
+linear combination of some spanning vectors. For example, consider
+\begin{equation*}
+  \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix},\quad 
+  \vect{u}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ 1 \end{mymatrix},\quad 
+  \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix},\quad 
+  \vect{v} = \begin{mymatrix}{r} 1 \\ 3 \\ 2 \end{mymatrix}.
+\end{equation*}
+We can write $\vect{v}$ in many different ways as a linear
+combination of $\vect{u}_1,\ldots,\vect{u}_3$, for example
+\begin{equation*}
+  \begin{array}{r@{~}c@{~}c}
+    \vect{v} &=& -\vect{u}_1 + 2\vect{u}_3, \\    
+    \vect{v} &=& \vect{u}_2 + \vect{u}_3, \\
+    \vect{v} &=& \vect{u}_1 + 2\vect{u}_2, \\
+    \vect{v} &=& 2\vect{u}_1 + 3\vect{u}_2 - \vect{u}_3. \\
+  \end{array}
+\end{equation*}
+However, when the vectors $\vect{u}_1,\ldots,\vect{u}_k$ are linearly
+independent, this does not happen. In this case, the linear
+combination is always unique, as the following theorem shows.
 
 \begin{theorem}{Unique linear combination}{unique-linear-combination}
-Let $U \subseteq\R^n$ be an independent set.
-Then any vector $\vect{x}\in\func{span}(U)$ can be written uniquely as a linear combination of vectors of $U$.
+  Assume $\vect{u}_1,\ldots,\vect{u}_k$ are linearly independent. Then
+  every vector $\vect{v}\in\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$
+  can be written as a linear combination of
+  $\vect{u}_1,\ldots,\vect{u}_k$ in a unique way.
 \end{theorem}
 
 \begin{proof}
-To prove this theorem, we will show that two linear combinations of vectors in $U$ that equal $\vect{x}$ must be the same. Let $U =\{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_k\}$.
-Suppose that there is a vector $\vect{x}\in \func{span}(U)$ such that
-\begin{eqnarray*}
-\vect{x} & = & s_1\vect{u}_1 + s_2\vect{u}_2 + \cdots + s_k\vect{u}_k,
-\mbox{ for some } s_1, s_2, \ldots, s_k\in\R, \mbox{ and} \\
-\vect{x} & = & t_1\vect{u}_1 + t_2\vect{u}_2 + \cdots + t_k\vect{u}_k,
-\mbox{ for some } t_1, t_2, \ldots, t_k\in\R.
-\end{eqnarray*}
-Then 
-$\vect{0}_n=\vect{x}-\vect{x} = (s_1-t_1)\vect{u}_1 + (s_2-t_2)\vect{u}_2 + \cdots +
-(s_k-t_k)\vect{u}_k$.
-
-Since $U$ is independent, the only linear combination that vanishes
-is the trivial one, so $s_i-t_i=0$ for all $i$, $1\leq i\leq k$.
-
-Therefore, $s_i=t_i$ for all $i$, $1\leq i\leq k$, and the
-representation is unique.Let $U \subseteq\R^n$ be an independent set.
-Then any vector $\vect{x}\in\func{span}(U)$ can be written uniquely as a linear combination of vectors of $U$.
+  We already know that every vector
+  $\vect{v}\in\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$ can be written
+  as a linear combination of $\vect{u}_1,\ldots,\vect{u}_k$, because
+  that is the definition of span. So what must be proved is the
+  uniqueness. Suppose, therefore, that there are two ways of writing
+  $\vect{v}$ as such a linear combination, i.e., that
+  \begin{equation*}
+    \begin{array}{l}
+    \vect{v} = a_1\,\vect{u}_1 + a_2\,\vect{u}_2 + \ldots + a_k\,\vect{u}_k\quad\mbox{and}\\
+    \vect{v} = b_1\,\vect{u}_1 + b_2\,\vect{u}_2 + \ldots + b_k\,\vect{u}_k.\\
+    \end{array}
+  \end{equation*}
+  Subtracting one equation from the other, we get
+  \begin{equation*}
+    \vect{0} = (a_1-b_1)\vect{u}_1 + (a_2-b_2)\vect{u}_2 + \ldots + (a_k-b_k)\vect{u}_k.
+  \end{equation*}
+  Since $\vect{u}_1,\ldots,\vect{u}_k$ are linearly independent, we
+  know by Theorem~\ref{thm:characterization-linear-independence} that
+  the last equation only has the trivial solution, i.e., $a_1-b_1=0$,
+  $a_2-b_2=0$, \ldots, $a_k-b_k=0$. It follows that $a_1=b_1$,
+  $a_2=b_2$, \ldots, $a_k=b_k$. We have shown that any two ways of
+  writing $\vect{v}$ as a linear combination of
+  $\vect{u}_1,\ldots,\vect{u}_k$ are equal. Therefore, there is only
+  one way of doing so.
 \end{proof}
 
-Suppose that $\vect{u},\vect{v}$ and $\vect{w}$ are non-zero vectors in $\R^3$,
-and that $\{\vect{v},\vect{w}\}$ is independent. Consider the set $\{\vect{u},\vect{v},\vect{w}\}$. When can we know that this set is independent? It turns out that this follows exactly when $\vect{u}\not\in\func{span}\{\vect{v},\vect{w}\}$.
+% ----------------------------------------------------------------------
+\subsection{Removing redundant vectors}
 
-\begin{example}{}{}
-Suppose that $\vect{u},\vect{v}$ and $\vect{w}$ are non-zero vectors in $\R^3$,
-and that $\{\vect{v},\vect{w}\}$ is independent.
-Prove that $\{\vect{u},\vect{v},\vect{w}\}$ is independent if and only if 
-$\vect{u}\not\in\func{span}\{\vect{v},\vect{w}\}$.
+Consider the span of some vectors $\vect{u}_1,\ldots,\vect{u}_k$. As
+we just saw in the previous subsection, the span is especially nice
+when the vectors $\vect{u}_1,\ldots,\vect{u}_k$ are linearly
+independent, because in that case, every element $\vect{v}$ of the
+span can be {\em uniquely} written in the form
+$\vect{v} = a_1\,\vect{u}_1 + \ldots + a_k\,\vect{u}_k$.
+
+But what if we have a span of some vectors
+$\vect{u}_1,\ldots,\vect{u}_k$ that are not linearly independent? It
+turns out that we can always find some linearly independent vectors
+that span the same set.  In fact, this can be done by simply removing
+the redundant vectors from $\vect{u}_1,\ldots,\vect{u}_k$. This is the
+subject of the following theorem.
+
+\begin{theorem}{Removing redundant vectors}{linearly-independent-subset}
+  \index{redundant vector!removing}%
+  \index{vector!redundant!removing}%
+  Let $\vect{u}_1,\ldots,\vect{u}_k$ be a sequence of vectors, and
+  suppose that $\vect{u}_{j_1},\ldots,\vect{u}_{j_\ell}$ is the
+  subsequence of vectors that is obtained by removing all of the
+  redundant vectors. Then $\vect{u}_{j_1},\ldots,\vect{u}_{j_\ell}$
+  are linearly independent and
+  \begin{equation*}
+    \sspan\set{\vect{u}_{j_1},\ldots,\vect{u}_{j_\ell}}
+    =
+    \sspan\set{\vect{u}_1,\ldots,\vect{u}_k}.    
+  \end{equation*}
+\end{theorem}
+
+\begin{proof}
+  Remove the redundant vectors one by one, from right to left. Each
+  time a redundant vector is removed, the span does not change; the
+  proof of this is similar to Example~\ref{exa:redundant-span}.
+  Moreover, the resulting sequence of vectors
+  $\sspan\set{\vect{u}_{j_1},\ldots,\vect{u}_{j_\ell}}$ is linearly
+  independent, because if any of these vectors were a linear
+  combination of earlier ones, then it would have been redundant in
+  the original sequence of vectors, and would have therefore been removed.
+\end{proof}
+
+\begin{example}{Finding a linearly independent set of spanning vectors}{linearly-independent-subset}
+  Find a subset of $\set{\vect{u}_1,\ldots,\vect{u}_4}$ that is
+  linearly independent and has the same span as
+  $\set{\vect{u}_1,\ldots,\vect{u}_4}$.
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 0 \\ -2 \\ 3 \end{mymatrix},
+    \quad
+    \vect{u}_2 = \begin{mymatrix}{r} -2 \\ 0 \\ 4 \\ -6 \end{mymatrix},
+    \quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 2 \\ 2 \\ 1 \end{mymatrix},
+    \quad
+    \vect{u}_4 = \begin{mymatrix}{r} 3 \\ 4 \\ 2 \\ 5 \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-If $\vect{u}\in\func{span}\{\vect{v},\vect{w}\}$, then there exist $a,b\in\R$ so
-that $\vect{u}=a\vect{v} + b\vect{w}$.
-This implies that $\vect{u}-a\vect{v} - b\vect{w}=\vect{0}_3$,
-so  $\vect{u}-a\vect{v} - b\vect{w}$
-is a nontrivial linear combination of $\{\vect{u},\vect{v},\vect{w}\}$ that
-vanishes, 
-and thus $\{\vect{u},\vect{v},\vect{w}\}$ is dependent.
-
-Now suppose that $\vect{u}\not\in\func{span}\{\vect{v},\vect{w}\}$, and suppose
-that there exist $a,b,c\in\R$ such that
-$a\vect{u}+b\vect{v}+c\vect{w}=\vect{0}_3$.
-If $a\neq 0$, then $\vect{u}=-\frac{b}{a}\vect{v}-\frac{c}{a}\vect{w}$,
-and $\vect{u}\in\func{span}\{\vect{v},\vect{w}\}$, a contradiction.
-Therefore, $a=0$, implying that $b\vect{v}+c\vect{w}=\vect{0}_3$.
-Since $\{\vect{v},\vect{w}\}$ is independent, $b=c=0$, and thus
-$a=b=c=0$, i.e., the only linear combination of 
-$\vect{u},\vect{v}$ and $\vect{w}$ that vanishes is the trivial one.
-
-Therefore, $\{\vect{u},\vect{v},\vect{w}\}$ is independent.
+  We use the casting-out algorithm to find the redundant vectors:
+  \begin{equation*}
+    \begin{mymatrix}{rrrr}
+      1  & -2 & 1 & 3 \\
+      0  &  0 & 2 & 4 \\
+      -2 &  4 & 2 & 2 \\
+      3  & -6 & 1 & 5 \\
+    \end{mymatrix}
+    \sim\ldots\sim
+    \begin{mymatrix}{rrrr}
+      \circled{1}  & -2 & 1 & 3 \\
+      0  &  0 & \circled{2} & 4 \\
+      0  &  0 & 0 & 0 \\
+      0  &  0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore, the redundant vectors are $\vect{u}_2$ and
+  $\vect{u}_4$. We remove them (``cast them out'') and are left with
+  $\vect{u}_1$ and $\vect{u}_3$. Therefore, by
+  Theorem~\ref{thm:linearly-independent-subset},
+  $\set{\vect{u}_1,\vect{u}_3}$ is linearly independent and
+  $\sspan\set{\vect{u}_1,\vect{u}_3} =
+  \sspan\set{\vect{u}_1,\ldots,\vect{u}_4}$.
 \end{solution}
 
-Consider the following useful theorem.
-
-\begin{theorem}{Invertible matrices}{invertible-matrices}
-Let $A$ be an invertible $n \times n$-matrix. Then the columns of $A$ are independent and span $\R^n$. Similarly, the rows of $A$ are independent and span the set of all $1 \times n$ vectors. 
-\end{theorem}
-
-This theorem also allows us to determine if a matrix is invertible. If an $n \times n$-matrix $A$ has columns which are independent, or span $\R^n$, then it follows that $A$ is invertible. If it has rows that are independent, or span the set of all $1 \times n$ vectors, then $A$ is invertible.

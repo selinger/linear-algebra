@@ -7,21 +7,21 @@ span of a set of vectors and a linear independent set of vectors. We
 include the definitions and examples here for convenience.
 
 \begin{definition}{Span of a set of vectors and subspace}{span}
-The collection of all linear combinations of a set of vectors $\{\vec{u}_1,
-\cdots ,\vec{u}_k\}$ in $\R^{n}$ is known as the span\index{span}\index{vectors!span} of these
-vectors and is written as $\func{span} \{\vec{u}_1, \cdots ,
-\vec{u}_k\}$. \\ 
-We call a collection of the form $\func{span} \{\vec{u}_1, \cdots , \vec{u}_k\}$ 
+The collection of all linear combinations of a set of vectors $\set{\vect{u}_1,
+\cdots ,\vect{u}_k}$ in $\R^{n}$ is known as the span\index{span}\index{vector!span} of these
+vectors and is written as $\sspan \set{\vect{u}_1, \cdots ,
+\vect{u}_k}$. \\ 
+We call a collection of the form $\sspan \set{\vect{u}_1, \cdots , \vect{u}_k}$ 
 a subspace of $\R^{n}$.
 \end{definition}
 
 Consider the following example. 
 
 \begin{example}{Span of vectors}{span-vectors}
-Describe the span of the vectors $\vec{u}=\begin{mymatrix}{rrr}
+Describe the span of the vectors $\vect{u}=\begin{mymatrix}{rrr}
 1  & 1 & 0
 \end{mymatrix}^T$ and
-$\vec{v}=\begin{mymatrix}{rrr}
+$\vect{v}=\begin{mymatrix}{rrr}
 3  & 2 & 0
 \end{mymatrix}^T \in \R^{3}$.
 \end{example}
@@ -53,7 +53,7 @@ y \\
 \end{mymatrix} 
 \]
 
-Thus  span$\{\vect{u},\vect{v}\}$ is precisely the $XY$-plane.
+Thus  span$\set{\vect{u},\vect{v}}$ is precisely the $XY$-plane.
 \end{solution}
 
 The span of a set of a vectors in $\R^n$ is what we call a \textbf{subspace of $\R^n$}. A subspace $W$ is characterized by the feature that any linear combination of vectors of $W$ is again a vector contained in $W$. 
@@ -61,8 +61,8 @@ The span of a set of a vectors in $\R^n$ is what we call a \textbf{subspace of $
 Another important property of sets of vectors is called linear independence. 
 
 \begin{definition}{Linearly independent set of vectors}{linear-independent-ortho}
-A set of non-zero vectors $\{\vect{u}_1, \cdots ,\vect{u}_k\}$ in $\R^{n}$ is said to be 
-\textbf{linearly independent}\index{linear independence}\index{vectors!linear independence}
+A set of non-zero vectors $\set{\vect{u}_1, \cdots ,\vect{u}_k}$ in $\R^{n}$ is said to be 
+\textbf{linearly independent}\index{linear independence}\index{vector!linear independence}
  if no vector in that set is in the span of the other vectors of that set.
 \end{definition}
 
@@ -78,21 +78,21 @@ $\vect{v}=\begin{mymatrix}{rrr}
 $\vect{w}=\begin{mymatrix}{rrr}
 4  & 5 & 0
 \end{mymatrix}^T  \in \R^{3}$.
-Verify whether the set $\{\vect{u}, \vect{v}, \vect{w}\}$ is linearly independent. 
+Verify whether the set $\set{\vect{u}, \vect{v}, \vect{w}}$ is linearly independent. 
 \end{example}
 
 \begin{solution}
 We already verified in Example~\ref{exa:span-vectors} that
-$\func{span} \{\vect{u}, \vect{v}\}$ is the $XY$-plane. Since $\vect{w}$
-is clearly also in the $XY$-plane, then the set $\{\vect{u}, \vect{v},
-\vect{w}\}$ is \textbf{not} linearly independent.
+$\sspan \set{\vect{u}, \vect{v}}$ is the $XY$-plane. Since $\vect{w}$
+is clearly also in the $XY$-plane, then the set $\set{\vect{u}, \vect{v},
+\vect{w}}$ is \textbf{not} linearly independent.
 \end{solution}
 
 In terms of spanning, a set of vectors is linearly independent if it
 does not contain unnecessary vectors. In the previous example you
 can see that the vector $\vect{w}$ does not help to span any new vector
 not already in the span of the other two vectors. However you can
-verify that the set $\{\vect{u}, \vect{v}\}$ is linearly independent,
+verify that the set $\set{\vect{u}, \vect{v}}$ is linearly independent,
 since you will not get the $XY$-plane as the span of a single vector.
 
 We can also determine if a set of vectors is linearly independent by examining linear combinations. A set of vectors is linearly independent if and only if
@@ -106,18 +106,18 @@ then we say that it is a basis for the subspace.
 
 \begin{definition}{Basis of a subspace}{subspace-basis}
 Let $V$ be a subspace of $\R^{n}$. Then $\set{
-\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is a \textbf{basis}\index{basis}\index{vectors!basis}\index{subspace!basis} for
+\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is a \textbf{basis}\index{basis}\index{vector!basis}\index{subspace!basis} for
 $V$ if the following two conditions
 hold.
 
 \begin{enumerate}
-\item $\func{span}\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V$
+\item $\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V$
 \item $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is linearly
 independent
 \end{enumerate}
 \end{definition}
 
-Thus the set of vectors $\{\vect{u}, \vect{v}\}$ from Example~\ref{exa:linearly-independent-vectors} is a basis for $XY$-plane in
+Thus the set of vectors $\set{\vect{u}, \vect{v}}$ from Example~\ref{exa:linearly-independent-vectors} is a basis for $XY$-plane in
 $\R^{3}$ since it is both linearly independent and spans
 the $XY$-plane.
 
@@ -126,8 +126,8 @@ that two vectors $\vect{u}$ and $\vect{v}$ are orthogonal if $\vect{u}
 \dotprod \vect{v} = 0$. Suppose a vector is orthogonal to a spanning set of $\R^n$. What can be said about such a vector? This is the discussion in the following example.
 
 \begin{example}{Orthogonal vector to a spanning set}{}
-Let $\{\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k\}\in\R^n$ and
-suppose $\R^n=\func{span}\{\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k\}$.
+Let $\set{\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k}\in\R^n$ and
+suppose $\R^n=\sspan\set{\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k}$.
 Furthermore, suppose that there exists a vector $\vect{u}\in\R^n$ for which $\vect{u}\dotprod \vect{x}_j=0$ for all $j$, $1\leq j\leq k$.
 What type of vector is $\vect{u}$?
 \end{example}
@@ -159,9 +159,9 @@ a spanning set of $\R^n$ is the zero vector.
 We can now discuss what is meant by an orthogonal\index{orthogonal} set of vectors. 
 
 \begin{definition}{Orthogonal set of vectors}{orth-set}
-Let $\{\vect{u}_1, \vect{u}_2, \cdots, \vect{u}_m\}$ be a set of
+Let $\set{\vect{u}_1, \vect{u}_2, \cdots, \vect{u}_m}$ be a set of
 vectors in $\R^n$. Then this set is called an
-\textbf{orthogonal set}\index{orthogonal}\index{vectors!orthogonal}
+\textbf{orthogonal set}\index{orthogonal}\index{vector!orthogonal}
 if the following conditions hold:
 \begin{enumerate}
 \item 
@@ -178,10 +178,10 @@ set} of vectors. They can be described as follows.
 \begin{definition}{Orthonormal set of vectors}{ortho-set-vectors}
 A set of vectors, $\set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $
 is said to be an
-\textbf{orthonormal}\index{orthonormal}\index{vectors!orthonormal}
+\textbf{orthonormal}\index{orthonormal}\index{vector!orthonormal}
 set if 
 \[
-\vect{w}_i \dotprod \vect{w}_j = \delta _{ij} = \set{
+\vect{w}_i \dotprod \vect{w}_j = \delta _{ij} = \left\{
 \begin{array}{c}
 1\text{ if }i=j \\ 
 0\text{ if }i\neq j
@@ -198,7 +198,7 @@ normalize the vectors, we simply need divide each one by its length.
 Normalizing an orthogonal set is the process of 
 turning an orthogonal (but not orthonormal) set into
 an orthonormal set.
-If $\{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_k\}$
+If $\set{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_k}$
 is an orthogonal subset of $\R^n$, 
 then 
 \[ \set{
@@ -235,7 +235,7 @@ vectors. On the other hand one can compute that $\norm{\vect{u}_1}= \norm{\vect{
 \sqrt{2} \neq 1$ and thus it is not an orthonormal set.
 
 Thus to find a corresponding orthonormal set, we simply need to
-normalize each vector. We will write $\{\vect{w}_1, \vect{w}_2\}$
+normalize each vector. We will write $\set{\vect{w}_1, \vect{w}_2}$
 for the corresponding orthonormal set. Then,
 \begin{eqnarray*}
 \vect{w}_1 &=& \frac{1}{\norm{\vect{u}_1}} \vect{u}_1\\
@@ -282,17 +282,17 @@ Therefore the corresponding orthonormal set is
 You can verify that this set is orthogonal.
 \end{solution}
 
-Consider an orthogonal set of vectors in $\R^n$, written $\{
-\vect{w}_1, \cdots, \vect{w}_k\}$ with $k \leq n$. The span of these
+Consider an orthogonal set of vectors in $\R^n$, written $\set{
+\vect{w}_1, \cdots, \vect{w}_k}$ with $k \leq n$. The span of these
 vectors is a subspace $W$ of $\R^n$. If we
 could show that this orthogonal set is also linearly independent, we
 would have a basis of $W$. We will show this in the next theorem.
 
 \begin{theorem}{Orthogonal basis of a subspace}{orth-basis}
-Let $ \{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k\}$ be an
+Let $ \set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k}$ be an
 orthonormal set of vectors in $\R^n$. Then this set is
 linearly independent and forms a basis for the subspace $W =
-\func{span} \{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k\}$.
+\sspan \set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k}$.
 \end{theorem}
 
 \begin{proof}
@@ -316,10 +316,10 @@ a_1 (0) + \cdots + a_i(\vect{w}_i \dotprod \vect{w}_i) + \cdots + a_k (0) = 0
 a_i \norm{\vect{w}_i}^2 = 0
 \]
 
-Since the set is orthogonal, we know that $\norm{\vect{w}_i}^2  \neq 0$. It follows that $a_i =0$. Since the $a_i$ was chosen arbitrarily, the set $\{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k\}$ is linearly independent. 
+Since the set is orthogonal, we know that $\norm{\vect{w}_i}^2  \neq 0$. It follows that $a_i =0$. Since the $a_i$ was chosen arbitrarily, the set $\set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k}$ is linearly independent. 
 
-Finally since $W = \mbox{span} \{\vect{w}_1, \vect{w}_2, \cdots,
-\vect{w}_k\}$, the set of vectors also spans $W$ and therefore forms a basis of $W$. 
+Finally since $W = \mbox{span} \set{\vect{w}_1, \vect{w}_2, \cdots,
+\vect{w}_k}$, the set of vectors also spans $W$ and therefore forms a basis of $W$. 
 
 \end{proof}
 
@@ -330,7 +330,7 @@ this an orthonormal basis.
 We conclude this section with a discussion of Fourier expansions. Given any orthogonal basis $B$ of $\R^n$ and an arbitrary vector $\vect{x} \in \R^n$, how do we express $\vect{x}$ as a linear combination of vectors in $B$? The solution is Fourier expansion. 
 
 \begin{theorem}{Fourier expansion}{fourier-expansion}
-Let $V$ be a subspace of $\R^n$ and suppose $\{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_m\}$
+Let $V$ be a subspace of $\R^n$ and suppose $\set{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_m}$
 is an orthogonal basis of $V$. 
 Then for any $\vect{x}\in V$,
 \[ \vect{x} = 
@@ -357,7 +357,7 @@ $\vect{u}_3 =\begin{mymatrix}{r} 5 \\ 1 \\ -2 \end{mymatrix}$,
 and let 
 $\vect{x} =\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}$.
 
-Then $B=\{\vect{u}_1, \vect{u}_2, \vect{u}_3\}$
+Then $B=\set{\vect{u}_1, \vect{u}_2, \vect{u}_3}$
 is an orthogonal basis of $\R^3$. 
 
 Compute the Fourier expansion of $\vect{x}$, thus writing $\vect{x}$ as  a linear combination of the vectors of $B$. 

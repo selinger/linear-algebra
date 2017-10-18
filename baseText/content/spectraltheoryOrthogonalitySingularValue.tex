@@ -197,8 +197,8 @@ the number of singular values.
 %%\begin{proof}
 %%Since $V$ and $U$ are unitary, it follows that 
 %%\begin{eqnarray*}
-%%\limfunc{rank}\tup{A} &=&\limfunc{rank}\tup{U^TAV} =
-%%\limfunc{rank}\mat{
+%%\func{rank}\tup{A} &=&\func{rank}\tup{U^TAV} =
+%%\func{rank}\mat{
 %%\begin{array}{cc}
 %%\sigma & 0 \\ 
 %%0 & 0
@@ -261,7 +261,7 @@ The eigenvalues of $A^TA$ are $\lambda_1=16$, $\lambda_2=6$, and
 $\lambda_3=0$, and the singular values of $A$ are $\sigma_1=\sqrt{16}=4$ and
 $\sigma_2=\sqrt{6}$.
 By convention, we list the eigenvalues (and corresponding singular values)
-in non increasing order (i.e., from largest to smallest).
+in non-increasing order (i.e., from largest to smallest).
 
 {\bf To find the matrix $V$}:
 
@@ -438,11 +438,11 @@ Gram-Schmidt process on the resulting set of
 two basic eigenvectors, the following approach may be used.
 
 
-Find vectors $U_2$ and $U_3$ by first extending $\{U_1\}$ to a basis of
+Find vectors $U_2$ and $U_3$ by first extending $\set{U_1}$ to a basis of
 $\R^3$, then using the Gram-Schmidt algorithm to orthogonalize the basis,
 and finally normalizing the vectors.
 
-Starting with $\{3U_1\}$ instead of $\{U_1\}$ makes the
+Starting with $\set{3U_1}$ instead of $\set{U_1}$ makes the
 arithmetic a bit easier.
 It is easy to verify that
 
@@ -456,7 +456,7 @@ X_2 = \begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},
 X_3 =\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix},\]
 
 and apply the Gram-Schmidt algorithm to
-$\{E_1, X_2, X_3\}$.
+$\set{E_1, X_2, X_3}$.
 
 This gives us
 
