@@ -1,88 +1,204 @@
+% ----------------------------------------------------------------------
 \section{Subspaces and basis}
 
-The goal of this section is to develop an understanding of a subspace
-of $\R^n$. Before a precise definition is considered, we first examine
-the subspace test given below.
+% ----------------------------------------------------------------------
+\subsection{Definition of subspace}
 
-\begin{theorem}{Subspace test}{subspace-test}
-  A subset $V$ of $\R^n$ is a subspace of $\R^n$ if 
+As we saw earlier, the span of 0 vectors in $\R^n$ is a point, namely
+the set $\set{\vect{0}}$. The span of one non-zero vector is a line
+through the origin, and the span of two linearly independent vectors
+is a plane through the origin.
+\begin{center}
+  \begin{tikzpicture}
+    \begin{scope}[xshift=-6cm]
+      \draw[fill](0,0) circle [radius=1.8pt];
+      \path(0,-2) node {Span of 0 vectors: a point};
+    \end{scope}
+    \begin{scope}[xshift=-0.5cm]
+      \begin{scope}[x={(1cm,-0.2cm)},y={(0.5cm,0.5cm)}]
+        \draw[red!80](-2.5,0) -- (2.5,0);
+        \draw[->, thick, blue](0,0) -- +(1.5,0);
+        \draw[fill](0,0) circle [radius=1.8pt];
+      \end{scope}
+      \path(0,-2) node {Span of one vector: a line};
+    \end{scope}
+    \begin{scope}[xshift=6cm]
+      \begin{scope}[x={(1cm,-0.2cm)},y={(0.5cm,0.5cm)},z={(0cm,1cm)}]
+        \filldraw[draw=red!80,fill=red!10](-2,-2,0) -- (2,-2,0) -- (2,2,0) -- (-2,2,0) -- cycle;
+        \draw[->, thick, blue](0,0) -- +(0,1,0);
+        \draw[->, thick, blue](0,0,0) -- +(1,0,0);
+        \draw[fill](0,0) circle [radius=1.8pt];
+      \end{scope}
+      \path(0,-2) node {Span of two vectors: a plane};
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+We also call these sets, respectively, a {\em $0$-dimensional
+  subspace}, a {\em $1$-dimensional subspace}, and a {\em
+  $2$-dimensional subspace} of $\R^n$. The purpose of this section is
+to generalize this concept of subspace to arbitrary dimensions.
+
+\begin{definition}{Subspace}{subspace}
+  A subset $V$ of $\R^n$ is called a \textbf{subspace}%
+  \index{subspace!of Rn@of $\R^n$} of $\R^n$ if
   \begin{enumerate}
-  \item the zero vector of $\R^n$, $\vect{0}_n$, is in $V$;
-  \item $V$ is closed under addition, i.e., for all
-    $\vect{u},\vect{w}\in V$, $\vect{u}+\vect{w}\in V$;
-  \item $V$ is closed under scalar multiplication, i.e., for all
-    $\vect{u}\in V$ and $k\in\R$, $k\vect{u}\in V$.
+  \item $V$ contains the zero vector of $\R^n$, i.e., $\vect{0}\in V$;
+  \item $V$ is closed under addition, i.e., for all\/
+    $\vect{u},\vect{w}\in V$, we have $\vect{u}+\vect{w}\in V$;
+  \item $V$ is closed under scalar multiplication, i.e., for all\/
+    $\vect{u}\in V$ and scalars $k$, we have\/ $k\,\vect{u}\in V$.
   \end{enumerate}
-\end{theorem}
+\end{definition}
 
-This test allows us to determine if a given set is a subspace of
-$\R^n$. Notice that the subset $V = \set{\vect{0} }$ is a subspace of
-$\R^n$ (called the zero subspace\index{zero subspace}), as is $\R^n$
-itself. A subspace which is not the zero subspace of $\R^n$ is
-referred to as a proper subspace\index{proper subspace}.
+Notice that the subset $V = \set{\vect{0}}$ is a subspace of $\R^n$
+(called the \textbf{zero subspace}\index{zero subspace}%
+\index{subspace!zero subspace}). Every line or plane through the
+origin is a subspace. Moreover, the entire space $\R^n$ is a subspace
+of itself. A subspace that is not the zero subspace or the entire
+space $\R^n$ is referred to as a \textbf{proper subspace}%
+\index{proper subspace}\index{subspace!proper} of $\R^n$.
 
-A subspace is simply a set of vectors with the property that linear
-combinations of these vectors remain in the set. Geometrically in
-$\R^{3}$, it turns out that a subspace can be represented by
-either the origin as a single point, lines and planes which contain
-the origin, or the entire space $\R^{3}$. 
+% ----------------------------------------------------------------------
+\subsection{Examples of subspaces}
 
-Consider the following example of a line in $\R^3$. 
-
-\begin{example}{Subspace of $\R^3$}{line-subspace}
-  In $\R^3$, the line $L$ through the origin that is
+\begin{example}{A line in $\R^3$}{line-subspace}
+  In $\R^3$, let $L$ be the line through the origin that is
   parallel to the vector
-  ${\vect{d}}= \begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix}$ 
-  has (vector) equation
-  $\begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}
-  =t\begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix}, t\in\R$,
-  % If ${\bm u}=\begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}$, 
-  so 
   \begin{equation*}
-    L=\set{t{\vect{d}} ~|~ t\in\R}.
+    {\vect{d}}= \begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix}.
   \end{equation*}
-  Then $L$ is a subspace of $\R^3$.
+  Show that $L$ is a subspace of $\R^3$.
 \end{example}
 
 \begin{solution}
-  Using the subspace test given above we can verify that $L$ is a
+  The line $L$ has vector equation
+  \begin{equation*}
+    \begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}
+    =t\begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix},
+  \end{equation*}
+  with parameter $t\in\R$. Using set notation, we can write
+  \begin{equation*}
+    L=\set{t{\vect{d}} \mid t\in\R}.
+  \end{equation*}
+  Using the definition of subspaces, we will verify that $L$ is a
   subspace of $\R^3$.
   \begin{itemize}
-  \item First: $\vect{0}_3\in L$ since $0\vect{d}=\vect{0}_3$.
-  \item Suppose $\vect{u},\vect{v}\in L$.
-    Then by definition, $\vect{u}=s\vect{d}$ and $\vect{v}=t\vect{d}$, 
-    for some $s,t\in\R$.
+  \item First, $\vect{0}\in L$ since $0\vect{d}=\vect{0}$.
+  \item Suppose $\vect{u},\vect{w}\in L$.
+    Then by definition, $\vect{u}=r\,\vect{d}$ and $\vect{w}=s\,\vect{d}$, 
+    for some $r,s\in\R$.
     Thus
     \begin{equation*}
-      \vect{u}+\vect{v} = s\vect{d}+t\vect{d} = (s+t)\vect{d}.
+      \vect{u}+\vect{w} = r\vect{d}+s\vect{d} = (r+s)\vect{d}.
     \end{equation*}
-    Since $s+t\in\R$, $\vect{u}+\vect{v}\in L$;
-    i.e., $L$ is closed under addition.
-  \item Suppose $\vect{u}\in L$ and $k\in\R$ ($k$ is a scalar).
-    Then $\vect{u}=t\vect{d}$, for some $t\in\R$, so
+    Therefore, $\vect{u}+\vect{w}\in L$. It follows that $L$ is closed
+    under addition.
+  \item Suppose $\vect{u}\in L$ and $k$ is a scalar. Then by
+    definition, $\vect{u}=t\,\vect{d}$ for some $t\in\R$. Thus
     \begin{equation*}
-      k\vect{u}=k(t\vect{d})=(kt)\vect{d}.
+      k\,\vect{u}=k(t\vect{d})=(kt)\vect{d}.
     \end{equation*}
-    Since $kt\in\R$, $k\vect{u}\in L$;
-    i.e., $L$ is closed under scalar multiplication.
+    Therefore, $k\,\vect{u}\in L$. It follows that $L$ is closed under
+    scalar multiplication.
   \end{itemize}
-  Since $L$ satisfies all conditions of the subspace test, it follows
-  that $L$ is a subspace.
+  Since $L$ satisfies all conditions of Definition~\ref{def:subspace},
+  $L$ is a subspace of $\R^3$.
 \end{solution}
 
-Note that there is nothing special about the vector $\vect{d}$ used in
-this example; the same proof works for any non-zero vector
-$\vect{d}\in\R^3$, so any line through the origin is a subspace of
-$\R^3$.
+\begin{proposition}{Spans are subspaces}{span-subspace}
+  Let $\vect{u}_1,\ldots,\vect{u}_k$ be vectors in $\R^{n}$. Then
+  $\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$ is a subspace of
+  $\R^{n}$.%
+  \index{subspace!span}%
+  \index{span!as a subspace}%
+  \index{vector!span!as a subspace}%
+\end{proposition}
+
+\begin{proof}
+  Let $S=\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$. To verify that $S$
+  is a subspace of $\R^{n}$, we must check that the three conditions
+  of Definition~\ref{def:subspace} hold.
+  \begin{itemize}
+  \item We have $\vect{0}\in S$ because
+    $\vect{0}=0\vect{u}_1+\ldots+0\vect{u}_k$. 
+  \item Suppose $\vect{u},\vect{w}\in S$.
+    By definition of span, there exist scalars $a_1,\ldots,a_k$ and
+    $b_1,\ldots,b_k$ such that
+    $\vect{u}=a_1\,\vect{u}_1+\ldots+a_k\,\vect{u}_k$ and
+    $\vect{w}=b_1\,\vect{u}_1+\ldots+b_k\,\vect{u}_k$.
+    Therefore,
+    \begin{equation*}
+      \vect{u}+\vect{w} = \vect{u}=(a_1+b_1)\vect{u}_1+\ldots+(a_k+b_k)\vect{u}_k.
+    \end{equation*}
+    It follows that
+    $\vect{u}+\vect{w}\in S=\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$,
+    so that $S$ is closed under addition.
+  \item Suppose $\vect{u}\in S$ and $t$ is a scalar. Then by
+    definition of span, there exists scalars $a_1,\ldots,a_k$ such
+    that $\vect{u}=a_1\,\vect{u}_1+\ldots+a_k\,\vect{u}_k$. Then
+    \begin{equation*}
+      t\,\vect{u}=(ta_1)\vect{u}_1+\ldots+(ta_k)\vect{u}_k,
+    \end{equation*}
+    and thus $t\,\vect{u}\in S$. It follows that $S$ is closed under
+    scalar multiplication.
+  \end{itemize}
+  Since $S=\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$ satisfies all
+  three conditions, it follows that it is a subspace of $\R^n$.
+\end{proof}
+
+\begin{proposition}{Solution space of a homogeneous system of equations}{solution-subspace}
+  Consider a homogeneous system of equations $A\vect{x} = \vect{0}$,
+  where $A$ is an $m\times n$-matrix. Then the set of solutions,
+  \begin{equation*}
+    V=\set{\vect{x}\in\R^n \mid A\vect{x} = \vect{0}},
+  \end{equation*}
+  is a subspace of $\R^n$. It is called the \textbf{solution space} of
+  the system.%
+  \index{subspace!solution space of a homogeneous system}%
+  \index{homogeneous system!solution space}%
+  \index{solution space}%
+  \index{system of linear equations!homogeneous!solution space}%
+  \index{system of linear equations!solution space}
+\end{proposition}
+
+\begin{proof}
+  To show that $V$ is a subspace of $\R^{n}$, we check the three
+  conditions of Definition~\ref{def:subspace}.
+  \begin{itemize}
+  \item We have $\vect{0}\in V$ because $A\vect{0}=\vect{0}$.
+  \item To show that $V$ is closed under addition, suppose
+    $\vect{u},\vect{w}\in V$.  Then by definition of $V$,
+    $A\vect{u}=\vect{0}$ and $A\vect{w}=\vect{0}$.  Therefore,
+    \begin{equation*}
+      A(\vect{u}+\vect{w}) = A\vect{u} + A\vect{w} = \vect{0}+\vect{0}
+      = \vect{0}.
+    \end{equation*}
+    It follows that $\vect{u}+\vect{w}\in V$.
+  \item To show that $V$ is closed under scalar multiplication,
+    suppose $\vect{u}\in V$ and $t$ is a scalar. Then by definition of
+    $V$, we have $A\vect{u}=\vect{0}$. It follows that 
+    \begin{equation*}
+      A(t\,\vect{u}) = t(A\vect{u}) = t\,\vect{0} = \vect{0}.
+    \end{equation*}
+    Therefore, $t\,\vect{u}\in V$.
+  \end{itemize}
+  Since the solution space
+  $V=\set{\vect{x}\in\R^n \mid A\vect{x} = \vect{0}}$ satisfies all
+  three conditions, it is a subspace of $\R^n$.
+\end{proof}
+
+% ======================================================================
+\newpage
+\subsection{CONTINUE HERE}
 
 We are now prepared to examine the precise definition of a subspace as
 follows.
 
-\begin{definition}{Subspace}{subspace}
+\begin{definition}{Subspace}{subspace-alt}
   Let $V$ be a nonempty collection of vectors in $\R^{n}$. Then $V$ is
-  called a subspace\index{subspace} if whenever $a$ and $b$ are
-  scalars and $\vect{u}$ and $\vect{v}$ are vectors in $V$, the linear
-  combination $a \vect{u}+ b \vect{v}$ is also in $V$.
+  called a subspace\index{subspace!of Rn@of $\R^n$} if whenever $a$
+  and $b$ are scalars and $\vect{u}$ and $\vect{v}$ are vectors in
+  $V$, the linear combination $a \vect{u}+ b \vect{v}$ is also in $V$.
 \end{definition}
 
 More generally this means that a subspace contains the span of any
@@ -290,10 +406,10 @@ Consider the following example.
 
   \begin{equation*}
     V =\set{
-      \begin{mymatrix}{c} b-c+d\\ b\\ c\\ d\end{mymatrix} ~:~b,c,d
+      \begin{mymatrix}{c} b-c+d\\ b\\ c\\ d\end{mymatrix} \mid b,c,d
       \in\R } = \set{ b\begin{mymatrix}{c} 1\\ 1\\ 0\\ 0\end{mymatrix}
       +c\begin{mymatrix}{c} -1\\ 0\\ 1\\ 0\end{mymatrix}
-      +d\begin{mymatrix}{c} 1\\ 0\\ 0\\ 1\end{mymatrix} ~:~ b,c,d\in\R
+      +d\begin{mymatrix}{c} 1\\ 0\\ 0\\ 1\end{mymatrix} \mid b,c,d\in\R
     }
   \end{equation*}
 
