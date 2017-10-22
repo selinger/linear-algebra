@@ -61,50 +61,6 @@ space $\R^n$ is referred to as a \textbf{proper subspace}%
 % ----------------------------------------------------------------------
 \subsection{Examples of subspaces}
 
-\begin{example}{A line in $\R^3$}{line-subspace}
-  In $\R^3$, let $L$ be the line through the origin that is
-  parallel to the vector
-  \begin{equation*}
-    {\vect{d}}= \begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix}.
-  \end{equation*}
-  Show that $L$ is a subspace of $\R^3$.
-\end{example}
-
-\begin{solution}
-  The line $L$ has vector equation
-  \begin{equation*}
-    \begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}
-    =t\begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix},
-  \end{equation*}
-  with parameter $t\in\R$. Using set notation, we can write
-  \begin{equation*}
-    L=\set{t{\vect{d}} \mid t\in\R}.
-  \end{equation*}
-  Using the definition of subspaces, we will verify that $L$ is a
-  subspace of $\R^3$.
-  \begin{itemize}
-  \item First, $\vect{0}\in L$ since $0\vect{d}=\vect{0}$.
-  \item Suppose $\vect{u},\vect{w}\in L$.
-    Then by definition, $\vect{u}=r\,\vect{d}$ and $\vect{w}=s\,\vect{d}$, 
-    for some $r,s\in\R$.
-    Thus
-    \begin{equation*}
-      \vect{u}+\vect{w} = r\vect{d}+s\vect{d} = (r+s)\vect{d}.
-    \end{equation*}
-    Therefore, $\vect{u}+\vect{w}\in L$. It follows that $L$ is closed
-    under addition.
-  \item Suppose $\vect{u}\in L$ and $k$ is a scalar. Then by
-    definition, $\vect{u}=t\,\vect{d}$ for some $t\in\R$. Thus
-    \begin{equation*}
-      k\,\vect{u}=k(t\vect{d})=(kt)\vect{d}.
-    \end{equation*}
-    Therefore, $k\,\vect{u}\in L$. It follows that $L$ is closed under
-    scalar multiplication.
-  \end{itemize}
-  Since $L$ satisfies all conditions of Definition~\ref{def:subspace},
-  $L$ is a subspace of $\R^3$.
-\end{solution}
-
 \begin{proposition}{Spans are subspaces}{span-subspace}
   Let $\vect{u}_1,\ldots,\vect{u}_k$ be vectors in $\R^{n}$. Then
   $\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$ is a subspace of
@@ -146,7 +102,22 @@ space $\R^n$ is referred to as a \textbf{proper subspace}%
   three conditions, it follows that it is a subspace of $\R^n$.
 \end{proof}
 
-\begin{proposition}{Solution space of a homogeneous system of equations}{solution-subspace}
+\begin{example}{A line in $\R^3$}{line-subspace}
+  In $\R^3$, let $L$ be the line through the origin that is
+  parallel to the vector
+  \begin{equation*}
+    {\vect{d}}= \begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix}.
+  \end{equation*}
+  Show that $L$ is a subspace of $\R^3$.
+\end{example}
+
+\begin{solution}
+  The line $L$ is simply the span of the vector $\vect{d}$, i.e.,
+  $L=\sspan\set{\vect{d}}$. Therefore, it is a subspace by
+  Proposition~\ref{prop:span-subspace}.
+\end{solution}
+
+\begin{proposition}{Solution space of a homogeneous system of equations}{solution-space}
   Consider a homogeneous system of equations $A\vect{x} = \vect{0}$,
   where $A$ is an $m\times n$-matrix. Then the set of solutions,
   \begin{equation*}
@@ -186,6 +157,49 @@ space $\R^n$ is referred to as a \textbf{proper subspace}%
   $V=\set{\vect{x}\in\R^n \mid A\vect{x} = \vect{0}}$ satisfies all
   three conditions, it is a subspace of $\R^n$.
 \end{proof}
+
+\begin{example}{A plane in $\R^3$}{plane-subspace}
+  Show that the plane $2x+3y-z=0$ is a subspace of $\R^3$.
+\end{example}
+
+\begin{solution}
+  Since $2x+3y-z=0$ is a homogeneous equation, its solution space
+  \begin{equation*}
+    \set{\left.\begin{mymatrix}{c}x\\y\\z\end{mymatrix}~\right\vert~ 2x+3y-z=0}
+  \end{equation*}
+  is a subspace of $\R^3$ by Proposition~\ref{prop:solution-space}.
+\end{solution}
+
+\begin{example}{Non-examples}{subspace-non-examples}
+  Which of the following are subspaces of $\R^3$?
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item The line
+      \begin{equation*}
+        \begin{mymatrix}{c}x\\y\\z\end{mymatrix}
+        = \begin{mymatrix}{c}1\\2\\3\end{mymatrix}
+        + t\begin{mymatrix}{c}1\\0\\1\end{mymatrix}.
+      \end{equation*}
+    \item The plane $2x+3y-z=5$.
+    \item The set of vectors
+      \begin{equation*}
+        W=\set{\left.\begin{mymatrix}{c}x\\y\\z\end{mymatrix}
+            ~\right\vert~ x,y,z\geq 0}.
+      \end{equation*}
+      ~
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{example}
+
+\begin{solution}
+  None of them are subspaces. Neither the line (a) nor the plane (b)
+  contains the origin $\vect{0}$, so they fail to satisfy the first
+  condition of subspaces. The set of vectors in (c) contains
+  $\vect{0}$. It is also closed under addition. However, it fails to
+  be closed under scalar multiplication. For example, let
+  $\vect{u}=\mat{1,1,1}^T$. Then $\vect{u}\in W$, but
+  $(-1)\vect{u}\not\in W$.
+\end{solution}
 
 % ======================================================================
 \newpage
