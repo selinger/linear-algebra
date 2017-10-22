@@ -307,7 +307,7 @@ The null space of a matrix $A$, also referred to as the kernel of $A$,
 is defined as follows.\index{kernel}\index{matrix!kernel}%
 \index{null space}\index{matrix!null space}
 \begin{equation*}
-\func{null} \tup{A} =\set{\vect{x} :A \vect{x} =\vect{0}}
+\func{null} \tup{A} =\set{\vect{x} \mid A \vect{x} =\vect{0}}
 \end{equation*}
 \end{definition}
 
@@ -321,7 +321,7 @@ is as follows.
 \begin{definition}{Image of $A$}{image}
 The image of $A$, written $\func{im}\tup{A}$ is given by
 \[
-\func{im}\tup{A } = \set{A\vect{x} : \vect{x} \in \R^n }
+\func{im}\tup{A } = \set{A\vect{x} \mid \vect{x} \in \R^n }
 \]
 \end{definition}
 
@@ -434,7 +434,7 @@ Therefore, the null space of $A$ is all multiples of this vector, which we can w
 }
 \end{equation*}
 
-Finally $\func{im}\tup{A} $ is just $\set{A\vect{x} :
+Finally $\func{im}\tup{A} $ is just $\set{A\vect{x} \mid
 \vect{x} \in \R^n }$ and hence consists of the span of
 all columns of $A$, that is $\func{im}\tup{A} = \func{col} (A)$. 
 
