@@ -12,17 +12,17 @@
 We begin this section with an important lemma. 
 
 \begin{lemma}{Mapping of a basis}{mapping-basis}
-Let $T: \R^n \mapsto \R^n$ be an isomorphism.  Then $T$ maps any basis of
+Let $T: \R^n \to \R^n$ be an isomorphism.  Then $T$ maps any basis of
 $\R^n$ to another basis for $\R^n$. 
 
 Conversely, if $T:
-\R^n \mapsto \R^n$ is a linear transformation which
+\R^n \to \R^n$ is a linear transformation which
 maps a basis of $\R^n$ to another basis of $\R^n$,
 then it is an isomorphism.
 \end{lemma}
 
 \begin{proof}
-First, suppose $T:\R^n \mapsto \R^n$ is a linear
+First, suppose $T:\R^n \to \R^n$ is a linear
 transformation which is one to one and onto. Let $\set{
 \vect{v}_{1},\cdots ,\vect{v}_{n}} $ be a basis for
 $\R^n$. We wish to show that $\set{T(\vect{v}_{1}),\cdots ,
@@ -49,7 +49,7 @@ which is in the $\sspan\set{T(\vect{v}_{1}),\cdots ,
 T(\vect{v}_{n})}$. Therefore, $\set{T(\vect{v}_{1}),\cdots
 ,T(\vect{v}_{n}) } $ is a basis as claimed.
 
-Suppose now that $T: \R^n \mapsto \R^n$ is a linear
+Suppose now that $T: \R^n \to \R^n$ is a linear
 transformation such that $T(\vect{v}_{i})=\vect{w}_{i}$ where
 $\set{\vect{v} _{1},\cdots ,\vect{v}_{n}} $ and $\set{
 \vect{w}_{1},\cdots , \vect{w}_{n}} $ are two bases for
@@ -163,7 +163,7 @@ to represent a linear transformation with respect to different
 bases.
 
 \begin{theorem}{The matrix of a linear transformation}{matrix-lin-transf-bases}
-Let $T: \R^n \mapsto \R^m$ be a linear transformation,
+Let $T: \R^n \to \R^m$ be a linear transformation,
 and let $B_1$ and $B_2$ be bases of $\R^{n}$ and
 $\R^{m}$ respectively.
 
@@ -191,7 +191,7 @@ The above equation {\eqref{matrix-equation}} can be represented by the following
 \end{equation*}
 
 Since $C_{B_1}$ is an isomorphism, then the matrix we are looking for is the matrix of the linear transformation 
-\[   C_{B_2} T C^{-1}_{B_1} : \R^n \mapsto \R^m. \]
+\[   C_{B_2} T C^{-1}_{B_1} : \R^n \to \R^m. \]
 By Theorem~\ref{thm:matrix-of-linear-transformation}, the columns are
 given by the image of the standard basis $\set{\vect{e}_1,
 \vect{e}_2, \cdots, \vect{e}_n }$. But since $C^{-1}_{B_1}( \vect{e}_i) = \vect{v}_i$, we readily obtain that 
@@ -207,7 +207,7 @@ and this completes the proof.
 Consider the following example.
 
 \begin{example}{Matrix of a linear transformation}{matrix-lin-transf}
-Let $T: \R^2 \mapsto \R^2$ be a linear transformation defined by $T \tup{\begin{mymatrix}{r}
+Let $T: \R^2 \to \R^2$ be a linear transformation defined by $T \tup{\begin{mymatrix}{r}
 a \\
 b
 \end{mymatrix} } = \begin{mymatrix}{r}
@@ -401,7 +401,7 @@ B = \set{\vect{v}_1 , \vect{v}_2,  \vect{v}_3} =
 \end{mymatrix} }
 \]
 
-And let $T :\R^{3}\mapsto \R^{3}$ be the linear transformation 
+And let $T :\R^{3}\to \R^{3}$ be the linear transformation 
 defined on $B$ as:
 \begin{equation*}
 T\begin{mymatrix}{r}

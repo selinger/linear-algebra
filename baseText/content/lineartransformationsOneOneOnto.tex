@@ -6,7 +6,7 @@
   \end{enumerate}
 \end{outcome}
 
-Let $T: \R^n \mapsto \R^m$ be a linear transformation. We define the \textbf{range}\index{linear transformation!range} or \textbf{image}\index{linear transformation!image} of $T$ as the set of vectors of $\R^{m}$ which are of the form
+Let $T: \R^n \to \R^m$ be a linear transformation. We define the \textbf{range}\index{linear transformation!range} or \textbf{image}\index{linear transformation!image} of $T$ as the set of vectors of $\R^{m}$ which are of the form
 $T \tup{\vect{x}}$ (equivalently, $A\vect{x}$) for some $\vect{x}\in \R^{n}$. It is common
 to write $T\R^{n}$, $T\tup{\R^{n}}$, or
 $\func{Im}\tup{T} $ to denote these vectors.  
@@ -35,7 +35,7 @@ This follows from the definition of matrix multiplication.
 This section is devoted to studying two important characterizations of linear transformations, called one to one and onto. We define them now. 
 
 \begin{definition}{One to one}{one-to-one}
-Suppose $\vect{x}_1$ and $\vect{x}_2$ are vectors in $\R^n$. A linear transformation $T: \R^n \mapsto \R^m$ is called \textbf{one to one}\index{one to one} (often written as $1-1)$ if whenever
+Suppose $\vect{x}_1$ and $\vect{x}_2$ are vectors in $\R^n$. A linear transformation $T: \R^n \to \R^m$ is called \textbf{one to one}\index{one to one} (often written as $1-1)$ if whenever
  $\vect{x}_1 \neq \vect{x}_2$ it follows that :
 \begin{equation*}
 T\tup{\vect{x}_1 } \neq T \tup{\vect{x}_2}
@@ -49,7 +49,7 @@ vectors to the same vector.
 The second important characterization is called onto.
 
 \begin{definition}{Onto}{onto}
-Let $T: \R^n \mapsto \R^m$ be a linear transformation. Then $T$ is called \textbf{onto}\index{onto} if whenever $\vect{x}_2 \in \R^{m}$ there exists 
+Let $T: \R^n \to \R^m$ be a linear transformation. Then $T$ is called \textbf{onto}\index{onto} if whenever $\vect{x}_2 \in \R^{m}$ there exists 
 $\vect{x}_1 \in \R^{n}$ such that $T\tup{\vect{x}_1} = \vect{x}_2. $
 \end{definition}
 
@@ -58,7 +58,7 @@ We often call a linear transformation which is one-to-one an \textbf{injection}\
 The following proposition is an important result. 
 
 \begin{proposition}{One to one}{one-to-one-matrices}
-Let $T:\R^n \mapsto \R^m$ be a linear transformation. Then $T$ is one to one if
+Let $T:\R^n \to \R^m$ be a linear transformation. Then $T$ is one to one if
 and only if $T(\vect{x}) = \vect{0}$ implies $\vect{x}=\vect{0}$.
 \end{proposition}
 
@@ -280,7 +280,7 @@ b
 \end{solution}
 
 \begin{example}{An onto transformation}{onto-transformation}
-Let $T: \R^4 \mapsto \R^2$ be a linear transformation defined by
+Let $T: \R^4 \to \R^2$ be a linear transformation defined by
 \[
 T \begin{mymatrix}{c}
 a \\
@@ -355,13 +355,13 @@ There exists a non-zero vector $\vect{x}$ in $\R^4$ such that $T(\vect{x}) = \ve
 The above examples demonstrate a method to determine if a linear transformation $T$ is one to one or onto. It turns out that the matrix $A$ of $T$ can provide this information.
 
 \begin{theorem}{Matrix of a one to one or onto transformation}{matrix-one-to-one-onto}
-Let $T: \R^n \mapsto \R^m$ be a linear transformation induced by the $m \times n$-matrix $A$. Then $T$ is one to one if and only if the rank of $A$ is $n$. $T$ is onto if and only if the rank of $A$ is $m$. 
+Let $T: \R^n \to \R^m$ be a linear transformation induced by the $m \times n$-matrix $A$. Then $T$ is one to one if and only if the rank of $A$ is $n$. $T$ is onto if and only if the rank of $A$ is $m$. 
 \end{theorem}
 
 Consider Example~\ref{exa:onto-transformation}. Above we showed that $T$ was onto but not one to one. We can now use this theorem to determine this fact about $T$. 
 
 \begin{example}{An onto transformation}{onto-transformation-matrix}
-Let $T: \R^4 \mapsto \R^2$ be a linear transformation defined by
+Let $T: \R^4 \to \R^2$ be a linear transformation defined by
 \[
 T \begin{mymatrix}{c}
 a \\
@@ -397,7 +397,7 @@ Fortunately, this matrix is already in {\rref}. The rank of $A$ is $2$. Therefor
 Recall that if $S$ and $T$ are linear transformations, we can discuss their composite denoted $S \circ T$. The following examines what happens if both $S$ and $T$ are onto. 
 
 \begin{example}{Composite of onto transformations}{composite-onto}
-Let $T: \R^k \mapsto \R^n$ and $S: \R^n \mapsto \R^m$ be linear transformations. 
+Let $T: \R^k \to \R^n$ and $S: \R^n \to \R^m$ be linear transformations. 
 If $T$ and $S$ are onto, then $S \circ T$ is onto.
 \end{example}
 
@@ -417,7 +417,7 @@ Therefore, $S \circ T$ is onto.
 The next example shows the same concept with regards to one-to-one transformations. 
 
 \begin{example}{Composite of one to one transformations}{composite-one-to-one}
-Let $T: \R^k \mapsto \R^n$ and $S: \R^n \mapsto \R^m$ be linear transformations. 
+Let $T: \R^k \to \R^n$ and $S: \R^n \to \R^m$ be linear transformations. 
 Prove that if $T$ and $S$ are one to one, then $S \circ T$ 
 is one-to-one.
 \end{example}

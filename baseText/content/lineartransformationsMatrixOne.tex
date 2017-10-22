@@ -20,12 +20,12 @@ T\tup{\vect{x}} = A\vect{x} \label{matrix-of-transf}
 for all $\vect{x} \in \R^{n}$.
 
 \begin{theorem}{Matrix of a linear transformation}{matrix-lin-transf}
-Let $T:\R^{n}\mapsto \R^{m}$ be a linear transformation. Then we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
+Let $T:\R^{n}\to \R^{m}$ be a linear transformation. Then we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
  In this case, we say that $T$ is {\em determined\em} or {\em induced\em}
 by the matrix $A$.
 \end{theorem}
 
-Here is why. Suppose $T:\R^{n}\mapsto \R^{m}$ is a linear transformation and you want to find
+Here is why. Suppose $T:\R^{n}\to \R^{m}$ is a linear transformation and you want to find
 the matrix defined by this linear transformation as described in {\eqref{matrix-of-transf}}.
  Note that
 \begin{equation*}
@@ -78,7 +78,7 @@ column as $T\tup{\vect{e}_{i}}$. Recall that the set $\set{\vect{e}_1, \vect{e}_
 following theorem.
 
 \begin{theorem}{Matrix of a linear transformation}{matrix-of-linear-transformation}
-Let $T: \R^{n} \mapsto \R^{m}$ be a linear transformation. Then the matrix $A$ satisfying $T\tup{\vect{x}}=A\vect{x}$\index{linear transformation!matrix} is given by
+Let $T: \R^{n} \to \R^{m}$ be a linear transformation. Then the matrix $A$ satisfying $T\tup{\vect{x}}=A\vect{x}$\index{linear transformation!matrix} is given by
 \begin{equation*}
 A=
 \begin{mymatrix}{ccc}
@@ -431,7 +431,7 @@ Let $\vect{u} = \begin{mymatrix}{r}
 1 \\
 2 \\
 3
-\end{mymatrix}$ and let $T$ be the projection map $T: \R^3 \mapsto \R^3$ defined by 
+\end{mymatrix}$ and let $T$ be the projection map $T: \R^3 \to \R^3$ defined by 
 \[
 T(\vect{v}) = \func{proj}_{\vect{u}}\tup{\vect{v}}
 \]

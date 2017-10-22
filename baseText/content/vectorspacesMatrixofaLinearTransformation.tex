@@ -9,7 +9,7 @@
 
 You may recall from $\R^n$ that the matrix of a linear transformation depends on the bases chosen. This concept is explored in this section, where the linear transformation now maps from one arbitrary vector space to another. 
 
-Let $T: V \mapsto W$ be an isomorphism where $V$ and $W$ are vector spaces. Recall from Lemma~\ref{lem:bases-isomorphism} that $T$ maps a basis in $V$ to a basis in $W$. When discussing this Lemma, we were not specific on what this basis looked like. In this section we will make such a distinction. 
+Let $T: V \to W$ be an isomorphism where $V$ and $W$ are vector spaces. Recall from Lemma~\ref{lem:bases-isomorphism} that $T$ maps a basis in $V$ to a basis in $W$. When discussing this Lemma, we were not specific on what this basis looked like. In this section we will make such a distinction. 
 
 Consider now an important definition.
 
@@ -200,7 +200,7 @@ This matrix satisfies  $C_{B_2}[T(\vect{v})]=M_{B_2B_1}(T)C_{B_1}(\vect{v})$ for
 We demonstrate this content in the following examples. 
 
 \begin{example}{Matrix of a linear transformation}{matrix-of-linear-transformation}
-Let $T: \Poly_3 \mapsto \R^4$ be an isomorphism defined by
+Let $T: \Poly_3 \to \R^4$ be an isomorphism defined by
 \[
 T( ax^3 + bx^2 + cx + d) = \begin{mymatrix}{c}
 a + b \\
@@ -361,7 +361,7 @@ M_{B_2B_1}(T) = \begin{mymatrix}{rrrr}
 The next example demonstrates that this method can be used to solve different types of problems. We will examine the above example and see if we can work backwards to determine the action of $T$ from the matrix $M_{B_2B_1}(T)$.
 
 \begin{example}{Finding the action of a linear transformation}{action-linear}
-Let $T: \Poly_3 \mapsto \R^4$ be an isomorphism with
+Let $T: \Poly_3 \to \R^4$ be an isomorphism with
 \[
 M_{B_2B_1}(T) = \begin{mymatrix}{rrrr}
 1 & 1 & 0 & 0 \\
@@ -471,7 +471,7 @@ You can verify that this was the definition of $T(p(x))$ given in the previous e
 We can also find the matrix of the composite of multiple transformations.
 
 \begin{theorem}{Matrix of composition}{matrix-composition}
-Let $V,W$ and $U$ be finite dimensional vector spaces, and suppose $T : V \mapsto W$, $S: W \mapsto U$ are linear transformations. 
+Let $V,W$ and $U$ be finite dimensional vector spaces, and suppose $T : V \to W$, $S: W \to U$ are linear transformations. 
 Suppose $V, W$ and $U$ have ordered bases of $B_1$, $B_2$ and $B_3$ respectively.  Then the matrix of the composite transformation $S \circ T$ (or $ST$) is given by 
 \[ M_{B_3B_1}(ST)=M_{B_3B_2}(S) M_{B_2B_1}(T).\]
 \end{theorem}
@@ -479,7 +479,7 @@ Suppose $V, W$ and $U$ have ordered bases of $B_1$, $B_2$ and $B_3$ respectively
 The next important theorem gives a condition on when $T$ is an isomorphism.
 
 \begin{theorem}{Isomorphism}{isomorphism}
-Let $V$ and $W$ be vector spaces such that both have dimension $n$ and let $T: V \mapsto W$ be a linear transformation. Suppose $B_1$ is an ordered basis of $V$ and $B_2$ is an ordered basis of $W$. 
+Let $V$ and $W$ be vector spaces such that both have dimension $n$ and let $T: V \to W$ be a linear transformation. Suppose $B_1$ is an ordered basis of $V$ and $B_2$ is an ordered basis of $W$. 
 
  Then the conditions that $M_{B_2B_1}(T)$ is invertible for \textbf{all} $B_1$ and $B_2$, and that $M_{B_2B_1}(T)$ is invertible for \textbf{some} $B_1$ and $B_2$ are equivalent. In fact, these occur if and only if $T$ is an isomorphism. 
 

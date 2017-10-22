@@ -110,7 +110,7 @@ The idea is to define a function which takes vectors in
 $\R^{3}$ and delivers new vectors in $\R^{2}$. In this
 case, that function is multiplication by the matrix $A$.
 
-Let $T$ denote such a function. The notation $T:\R^{n}\mapsto \R^{m}$ means that the function $T$
+Let $T$ denote such a function. The notation $T:\R^{n}\to \R^{m}$ means that the function $T$
 transforms vectors in $\R^{n}$ into vectors in $\R^{m}$. The notation $T(\vect{x})$ means the transformation $T$ applied to the vector $\vect{x}$. The above example demonstrated a transformation achieved by matrix multiplication. In this case,  we often write
 \begin{equation*}
 T_{A}\tup{\vect{x}} =A \vect{x}
@@ -129,7 +129,7 @@ In other words, this means that matrix multiplication gives an
 example of a linear transformation, which we will now define. 
 
 \begin{definition}{Linear transformation}{linear-transformation}
- Let $T:\R^{n}\mapsto \R^{m}$ be a function, where for each
+ Let $T:\R^{n}\to \R^{m}$ be a function, where for each
  $\vect{x} \in \R^{n},T\tup{\vect{x}}\in \R^{m}$. Then $T$ is a
 \textbf{linear transformation}\index{linear transformation} if whenever $k ,p $ are scalars and 
 $\vect{x}_1$ and $\vect{x}_2$ are vectors in $\R^{n}$ $(
@@ -180,7 +180,7 @@ Two important examples of linear transformations are the zero transformation\ind
 We began this section by discussing matrix transformations, where multiplication by a matrix transforms vectors. These matrix transformations are in fact linear transformations. 
 
 \begin{theorem}{Matrix transformations are linear transformations}{matrix-are-linear}
-Let $T:\R^{n}\mapsto \R^{m}$ be a transformation defined by $T(\vect{x}) = A\vect{x}$. Then $T$ is a linear transformation. 
+Let $T:\R^{n}\to \R^{m}$ be a transformation defined by $T(\vect{x}) = A\vect{x}$. Then $T$ is a linear transformation. 
 \end{theorem}
 
 It turns out that every linear transformation can be expressed as a matrix transformation, and thus linear transformations are exactly the same as matrix transformations. 
