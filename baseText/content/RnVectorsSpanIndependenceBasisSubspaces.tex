@@ -38,7 +38,10 @@ Consider the following example of a line in $\R^3$.
   =t\begin{mymatrix}{r} -5 \\ 1 \\ -4 \end{mymatrix}, t\in\R$,
   % If ${\bm u}=\begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}$, 
   so 
-  \[ L=\set{t{\vect{d}} ~|~ t\in\R}.\] Then $L$ is a subspace of $\R^3$.  
+  \begin{equation*}
+    L=\set{t{\vect{d}} ~|~ t\in\R}.
+  \end{equation*}
+  Then $L$ is a subspace of $\R^3$.
 \end{example}
 
 \begin{solution}
@@ -50,12 +53,16 @@ Consider the following example of a line in $\R^3$.
     Then by definition, $\vect{u}=s\vect{d}$ and $\vect{v}=t\vect{d}$, 
     for some $s,t\in\R$.
     Thus
-    \[ \vect{u}+\vect{v} = s\vect{d}+t\vect{d} = (s+t)\vect{d}.\]
+    \begin{equation*}
+      \vect{u}+\vect{v} = s\vect{d}+t\vect{d} = (s+t)\vect{d}.
+    \end{equation*}
     Since $s+t\in\R$, $\vect{u}+\vect{v}\in L$;
     i.e., $L$ is closed under addition.
   \item Suppose $\vect{u}\in L$ and $k\in\R$ ($k$ is a scalar).
     Then $\vect{u}=t\vect{d}$, for some $t\in\R$, so
-    \[ k\vect{u}=k(t\vect{d})=(kt)\vect{d}.\]
+    \begin{equation*}
+      k\vect{u}=k(t\vect{d})=(kt)\vect{d}.
+    \end{equation*}
     Since $kt\in\R$, $k\vect{u}\in L$;
     i.e., $L$ is closed under scalar multiplication.
   \end{itemize}
@@ -87,9 +94,9 @@ vectors.
   Let $V$ be a nonempty collection of vectors in $\R^{n}$. Then $V$ is
   a subspace of $\R^{n}$ if and only if there exist vectors
   $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ in $V$ such that
-  \[
+  \begin{equation*}
     V= \sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}. 
-  \]
+  \end{equation*}
   \index{subspace!span} Furthermore, let $W$ be another subspace of
   $\R^n$ and suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} \in
   W$. Then it follows that $V$ is a subset of $W$.
@@ -267,23 +274,28 @@ Consider the following example.
 
 \begin{example}{Basis of subspace}{basis-subspace}
   Let 
-  \[ V=\set{
-      \begin{mymatrix}{c} a\\ b\\ c\\ d\end{mymatrix}\in\R^4 ~:~
-      a-b=d-c }.\] Show that $V$ is a subspace of $\R^4$, find a basis
-  of $V$, and find $\dim(V)$.
+  \begin{equation*}
+    V=\set{
+      \begin{mymatrix}{c} a\\ b\\ c\\ d\end{mymatrix}\in\R^4 \mid
+      a-b=d-c
+    }.
+  \end{equation*}
+  Show that $V$ is a subspace of $\R^4$, find a basis of $V$, and find
+  $\dim(V)$.
 \end{example}
 
 \begin{solution}
   The condition $a-b=d-c$ is equivalent to the condition $a=b-c+d$, so
   we may write
 
-  \[ V =\set{
+  \begin{equation*}
+    V =\set{
       \begin{mymatrix}{c} b-c+d\\ b\\ c\\ d\end{mymatrix} ~:~b,c,d
       \in\R } = \set{ b\begin{mymatrix}{c} 1\\ 1\\ 0\\ 0\end{mymatrix}
       +c\begin{mymatrix}{c} -1\\ 0\\ 1\\ 0\end{mymatrix}
       +d\begin{mymatrix}{c} 1\\ 0\\ 0\\ 1\end{mymatrix} ~:~ b,c,d\in\R
     }
-  \]
+  \end{equation*}
 
   This shows that $V$ is a subspace of $\R^4$, since
   $V=\sspan\set{\vect{u}_1, \vect{u}_2, \vect{u}_3}$ where
@@ -296,15 +308,19 @@ Consider the following example.
 
   Furthermore,
 
-  \[\set{
+  \begin{equation*}
+    \set{
       \begin{mymatrix}{c} 1\\ 1\\ 0\\ 0\end{mymatrix},
       \begin{mymatrix}{c} -1\\ 0\\ 1\\ 0\end{mymatrix},
-      \begin{mymatrix}{c} 1\\ 0\\ 0\\ 1\end{mymatrix} }\]
+      \begin{mymatrix}{c} 1\\ 0\\ 0\\ 1\end{mymatrix}
+    }
+  \end{equation*}
   is linearly independent, as can be seen by taking the
   {\rref} of the matrix whose columns are
   $\vect{u}_1, \vect{u}_2$ and $\vect{u}_3$.
 
-  \[ \begin{mymatrix}{rrr}
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
       1 & -1 & 1 \\
       1 & 0 & 0 \\
       0 & 1 & 0 \\
@@ -315,8 +331,8 @@ Consider the following example.
       0 & 1 & 0 \\
       0 & 0 & 1 \\
       0 & 0 & 0 \end{mymatrix}
-  \]
-
+  \end{equation*}
+  
   Since every column of the {\rref} matrix has a leading one,
   the columns are linearly independent.
 
@@ -398,14 +414,20 @@ We illustrate this concept in the next example.
 
 \begin{example}{Extending an independent set}{extend-independent}
   Consider the set $U$ given by 
-  \[ U=\set{\left.\begin{mymatrix}{c} a\\ b\\ c\\ d\end{mymatrix}
-        \in\R^4 \right\vert a-b=d-c }\]
+  \begin{equation*}
+    U=\set{\left.\begin{mymatrix}{c} a\\ b\\ c\\ d\end{mymatrix}
+        \in\R^4 \right\vert a-b=d-c
+    }
+  \end{equation*}
   Then $U$ is a subspace of $\R^4$ and $\dim(U)=3$.
 
   Then
-  \[S=\set{
+  \begin{equation*}
+    S=\set{
       \begin{mymatrix}{c} 1\\ 1\\ 1\\ 1\end{mymatrix},
-      \begin{mymatrix}{c} 2\\ 3\\ 3\\ 2\end{mymatrix} },\]
+      \begin{mymatrix}{c} 2\\ 3\\ 3\\ 2\end{mymatrix}
+    },
+  \end{equation*}
   is an independent subset of $U$.
   Therefore $S$ can be extended to a basis of $U$.
 \end{example}
@@ -413,16 +435,16 @@ We illustrate this concept in the next example.
 \begin{solution}
   To extend $S$ to a basis of $U$, find a vector in $U$ that is {\bf not} in
   $\sspan(S)$.
-  \[
+  \begin{equation*}
     \begin{mymatrix}{rrr}
       1 & 2 & ? \\
       1 & 3 & ? \\
       1 & 3 & ? \\
       1 & 2 & ? 
     \end{mymatrix}
-  \]
+  \end{equation*}
 
-  \[
+  \begin{equation*}
     \begin{mymatrix}{rrr}
       1 & 2 & 1 \\
       1 & 3 & 0 \\
@@ -436,14 +458,16 @@ We illustrate this concept in the next example.
       0 & 0 & 1 \\
       0 & 0 & 0 
     \end{mymatrix}
-  \]
+  \end{equation*}
 
   Therefore, $S$ can be extended to the following basis of $U$:
-  \[\set{
+  \begin{equation*}
+    \set{
       \begin{mymatrix}{r} 1\\ 1\\ 1\\ 1\end{mymatrix},
       \begin{mymatrix}{r} 2\\ 3\\ 3\\ 2\end{mymatrix},
       \begin{mymatrix}{r} 1\\ 0\\ -1\\ 0\end{mymatrix}
-    },\]
+    },
+  \end{equation*}
 \end{solution}
 
 Next we consider the case of removing vectors from a spanning set to
