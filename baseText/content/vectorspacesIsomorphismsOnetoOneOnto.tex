@@ -61,7 +61,7 @@ Putting the augmented matrix in {\rref}:
 1 & 0 & 1 & 0  \\
 0 & 1 & -1 & 0  \\
 0 & 1 & 1 & 0  \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\sim\ldots\sim
 \begin{mymatrix}{ccc|c}
 1 & 0 & 0 & 0  \\
 0 & 1 & 0 & 0  \\
@@ -153,19 +153,19 @@ Let $\vect{0}_V$ and $\vect{0}_W$ denote the zero vectors of $V$ and $W$,
 respectively.
 Suppose that 
 
-\[ a_1T(\vect{v}_1) + a_2T(\vect{v}_2) +\cdots +a_kT(\vect{v}_k) =\vect{0}_W \]
+\[ a_1T(\vect{v}_1) + a_2T(\vect{v}_2) +\ldots +a_kT(\vect{v}_k) =\vect{0}_W \]
 
 for some $a_1, a_2, \ldots, a_k\in\R$.
 Since linear transformations preserve linear combinations (addition
 and scalar multiplication),
 
-\[ T(a_1\vect{v}_1 + a_2\vect{v}_2 +\cdots +a_k\vect{v}_k) =\vect{0}_W. \]
+\[ T(a_1\vect{v}_1 + a_2\vect{v}_2 +\ldots +a_k\vect{v}_k) =\vect{0}_W. \]
 
 Now, since $T$ is one to one, $\ker(T)=\set{\vect{0}_V}$, and thus
 
-\[ a_1\vect{v}_1 + a_2\vect{v}_2 +\cdots +a_k\vect{v}_k =\vect{0}_V. \]
+\[ a_1\vect{v}_1 + a_2\vect{v}_2 +\ldots +a_k\vect{v}_k =\vect{0}_V. \]
 
-\noindent However, $\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$ is independent so $a_1=a_2=\cdots=a_k=0$.
+\noindent However, $\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$ is independent so $a_1=a_2=\ldots=a_k=0$.
 Therefore, $\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}$
 is independent.
 \end{solution}
@@ -186,13 +186,13 @@ Suppose that $T$ is onto and let $\vect{w}\in W$.
 Then there exists $\vect{v}\in V$ such that $T(\vect{v})=\vect{w}$.
 Since $V=\sspan\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$, there
 exist $a_1, a_2, \ldots a_k\in\R$ such that 
-$\vect{v} = a_1\vect{v}_1 + a_2\vect{v}_2 + \cdots + a_k\vect{v}_k$.
+$\vect{v} = a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_k\vect{v}_k$.
 Using the fact that $T$ is a linear transformation,
 
 \begin{eqnarray*}
 \vect{w}=T(\vect{v})
-& = & T(a_1\vect{v}_1 + a_2\vect{v}_2 + \cdots + a_k\vect{v}_k) \\
-& = & a_1T(\vect{v}_1) + a_2T(\vect{v}_2) + \cdots + a_kT(\vect{v}_k),
+& = & T(a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_k\vect{v}_k) \\
+& = & a_1T(\vect{v}_1) + a_2T(\vect{v}_2) + \ldots + a_kT(\vect{v}_k),
 \end{eqnarray*}
 
 i.e., $\vect{w}\in\sspan\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}$,

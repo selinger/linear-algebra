@@ -24,42 +24,42 @@ then it is an isomorphism.
 \begin{proof}
 First, suppose $T:\R^n \to \R^n$ is a linear
 transformation which is one to one and onto. Let $\set{
-\vect{v}_{1},\cdots ,\vect{v}_{n}} $ be a basis for
-$\R^n$. We wish to show that $\set{T(\vect{v}_{1}),\cdots ,
+\vect{v}_{1},\ldots,\vect{v}_{n}} $ be a basis for
+$\R^n$. We wish to show that $\set{T(\vect{v}_{1}),\ldots,
 T(\vect{v}_{n})} $ is also a basis for $\R^n$. 
 
 First consider why it is linearly independent. Suppose
 $\sum_{k=1}^{n}a_{k}T(\vect{v}_{k})=\vect{0}$. Then by linearity we have $T\tup{
 \sum_{k=1}^{n}a_{k}\vect{v}_{k}} =\vect{0}$ and since $T$ is one
 to one, it follows that $\sum_{k=1}^{n}a_{k}\vect{v}_{k}=\vect{0}$.
-This requires that  each $a_{k}=0$ because $\set{\vect{v}_{1},\cdots,
+This requires that  each $a_{k}=0$ because $\set{\vect{v}_{1},\ldots,
 \vect{v}_{n}} $ is independent, and it follows that $\set{
-T(\vect{v}_{1}),\cdots , T(\vect{v}_{n})} $ is linearly
+T(\vect{v}_{1}),\ldots, T(\vect{v}_{n})} $ is linearly
 independent. 
 
 
-Next take $\vect{w}\in \R^n$. Since $T$ is onto,
-there exists $\vect{v}\in \R^n$ such that
-$T(\vect{v})=\vect{w}$. Since $ \set{\vect{v}_{1},\cdots
-,\vect{v}_{n}} $ is a basis, in particular it is a spanning set
-and there are scalars $b_{k}$ such that $T\tup{
-\sum_{k=1}^{n}b_{k}\vect{v} _{k}} =T\tup{\vect{v}}
+Next take $\vect{w}\in \R^n$. Since $T$ is onto, there exists
+$\vect{v}\in \R^n$ such that $T(\vect{v})=\vect{w}$. Since
+$ \set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ is a basis, in particular it
+is a spanning set and there are scalars $b_{k}$ such that
+$T\tup{ \sum_{k=1}^{n}b_{k}\vect{v} _{k}} =T\tup{\vect{v}}
 =\vect{w}$. Therefore $\vect{w} =\sum_{k=1}^{n}b_{k}T(\vect{v}_{k})$
-which is in the $\sspan\set{T(\vect{v}_{1}),\cdots ,
-T(\vect{v}_{n})}$. Therefore, $\set{T(\vect{v}_{1}),\cdots
-,T(\vect{v}_{n}) } $ is a basis as claimed.
+which is in the
+$\sspan\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})}$. Therefore,
+$\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})}$ is a basis as
+claimed.
 
 Suppose now that $T: \R^n \to \R^n$ is a linear
 transformation such that $T(\vect{v}_{i})=\vect{w}_{i}$ where
-$\set{\vect{v} _{1},\cdots ,\vect{v}_{n}} $ and $\set{
-\vect{w}_{1},\cdots , \vect{w}_{n}} $ are two bases for
+$\set{\vect{v} _{1},\ldots,\vect{v}_{n}} $ and $\set{
+\vect{w}_{1},\ldots, \vect{w}_{n}} $ are two bases for
 $\R^n$. 
 
 To show that $T$ is one to one, let $T\tup{
 \sum_{k=1}^{n}c_{k}\vect{v}_{k}} =\vect{0}$. Then
 $\sum_{k=1}^{n}c_{k}T(\vect{v}_{k})=\sum_{k=1}^{n}c_{k}\vect{w}_{k}=\vect{
 0}$. It follows that each $c_{k} = 0$ because it is given that
-$\set{\vect{w} _{1},\cdots ,\vect{w}_{n}} $ is linearly
+$\set{\vect{w} _{1},\ldots,\vect{w}_{n}} $ is linearly
 independent. Hence $T\tup{\sum_{k=1}^{n}c_{k}\vect{v}_{k}}
 =\vect{0}$ implies that $\sum_{k=1}^{n}c_{k}\vect{v}_{k}=\vect{0}$ and
 so $T$ is one to one.  
@@ -74,17 +74,17 @@ $\R^n$. This vector can be written as $\vect{w} =
 Consider now an important definition.
 
 \begin{definition}{Coordinate vector}{coordinate-vector}
-Let $B = \set{\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n }$
+Let $B = \set{\vect{v}_1, \vect{v}_2,\ldots, \vect{v}_n }$
 be a basis for $\R^n$ and let $\vect{x}$ be an arbitrary
 vector in $\R^n$. Then $\vect{x}$ is uniquely represented as
 $\vect{x} = a_1\vect{v}_1 +
-a_2\vect{v}_2 + \cdots + a_n\vect{v}_n$ for scalars $a_1, \cdots,
+a_2\vect{v}_2 + \ldots + a_n\vect{v}_n$ for scalars $a_1,\ldots,
 a_n$. 
 
 The  \textbf{coordinate vector}\index{vector!coordinate vector}\index{coordinate vector} of $\vect{x}$ with respect to the
 basis $B$, written $C_B(\vect{x})$ or  $[\vect{x}]_B$,  is given by
 \[
-C_B(\vect{x}) =  C_B \tup{a_1\vect{v}_1 + a_2\vect{v}_2 + \cdots + a_n\vect{v}_n } = \begin{mymatrix}{c}
+C_B(\vect{x}) =  C_B \tup{a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_n\vect{v}_n } = \begin{mymatrix}{c}
 a_1 \\
 a_2 \\
 \vdots \\
@@ -173,9 +173,9 @@ C_{B_2} T = M_{B_{2} B_{1}} C_{B_1}   \label{matrix-equation}
 \end{equation}
 where $M_{B_{2} B_{1}}$  is a unique $m \times n$-matrix.
 
-If the basis $B_1$ is given by $B_1=\set{\vect{v}_1, \cdots, \vect{v}_n}$ in this order, then 
+If the basis $B_1$ is given by $B_1=\set{\vect{v}_1,\ldots, \vect{v}_n}$ in this order, then 
 
-\[  M_{B_{2} B_{1}} = \mat{C_{B_2}(T(\vect{v}_1)) \; C_{B_2}(T(\vect{v}_2)) \; \cdots C_{B_2}(T(\vect{v}_n)) } \]
+\[  M_{B_{2} B_{1}} = \mat{C_{B_2}(T(\vect{v}_1)), C_{B_2}(T(\vect{v}_2)), \ldots, C_{B_2}(T(\vect{v}_n)) } \]
 \end{theorem}
 
 \begin{proof}
@@ -194,12 +194,12 @@ Since $C_{B_1}$ is an isomorphism, then the matrix we are looking for is the mat
 \[   C_{B_2} T C^{-1}_{B_1} : \R^n \to \R^m. \]
 By Theorem~\ref{thm:matrix-of-linear-transformation}, the columns are
 given by the image of the standard basis $\set{\vect{e}_1,
-\vect{e}_2, \cdots, \vect{e}_n }$. But since $C^{-1}_{B_1}( \vect{e}_i) = \vect{v}_i$, we readily obtain that 
+\vect{e}_2,\ldots, \vect{e}_n }$. But since $C^{-1}_{B_1}( \vect{e}_i) = \vect{v}_i$, we readily obtain that 
 
 \[ \begin{array}{ll} 
 M_{B_{2} B_{1}} 
-& = \mat{C_{B_2}T C^{-1}_{B_1} (\vect{e}_1) \;\; C_{B_2}T C^{-1}_{B_1} (\vect{2}_2) \;\; \cdots \;\; C_{B_2}T C^{-1}_{B_1} (\vect{e}_n) } \\
-& = \mat{C_{B_2}(T(\vect{v}_1)) \;\; C_{B_2}(T(\vect{v}_2)) \;\; \cdots \;\; C_{B_2}(T(\vect{v}_n)) } 
+& = \mat{C_{B_2}T C^{-1}_{B_1} (\vect{e}_1), C_{B_2}T C^{-1}_{B_1} (\vect{2}_2), \ldots, C_{B_2}T C^{-1}_{B_1} (\vect{e}_n) } \\
+& = \mat{C_{B_2}(T(\vect{v}_1)), C_{B_2}(T(\vect{v}_2)), \ldots, C_{B_2}(T(\vect{v}_n)) } 
 \end{array}\]
 and this completes the proof. 
 \end{proof}

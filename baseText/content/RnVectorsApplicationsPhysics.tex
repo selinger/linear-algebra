@@ -15,7 +15,7 @@ ingredients, its magnitude and its direction.
 Recall the special vectors which point along the coordinate axes.
 These are given by 
 \begin{equation*}
-\vect{e}_{i} = \mat{0 \cdots 0 \; 1 \; 0 \cdots 0 }^T
+\vect{e}_{i} = \mat{0,\ldots,0,1,0,\ldots,0}^T
 \end{equation*}
 where the $1$ is in the $i^{th}$ slot and there are zeros in all the other
 spaces. The direction of $\vect{e}_{i}$ is referred to as the $i^{th}$ direction.
@@ -40,10 +40,10 @@ Recall that in $\R^3$, we may refer to these vectors as $\vect{i}, \vect{j}$, an
 \end{tikzpicture}
 \end{center}
 
-Given a vector $\vect{u}=\mat{u_{1} \cdots u_{n}}^T$, it follows
+Given a vector $\vect{u}=\mat{u_{1},\ldots,u_{n}}^T$, it follows
 that
 \begin{equation*}
-\vect{u}=u_{1}\vect{e}_{1}+\cdots +u_{n}\vect{e}_{n}=
+\vect{u}=u_{1}\vect{e}_{1}+\ldots +u_{n}\vect{e}_{n}=
 \sum_{k=1}^{n}u_{i}\vect{e}_{i}
 \end{equation*}
 
@@ -58,7 +58,7 @@ direction equal to $\tup{u_{i}+v_{i}} \vect{e}_{i}$. This is
 exactly what is obtained when the vectors, $\vect{u}$ and $\vect{v}$ are
 added.
 \begin{eqnarray*}
-\vect{u}+\vect{v}& =&\mat{u_{1}+v_{1} \cdots u_{n}+v_{n}}^T  \\
+\vect{u}+\vect{v}& =&\mat{u_{1}+v_{1},\ldots,u_{n}+v_{n}}^T  \\
 & =&\sum_{i=1}^{n}\tup{u_{i}+v_{i}} \vect{e}_{i}
 \end{eqnarray*}
 

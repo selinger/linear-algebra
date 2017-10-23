@@ -5,7 +5,7 @@ called \textbf{Markov matrices}\index{Markov matrices}. An important application
 in population migration, as illustrated in the following definition. 
 
 \begin{definition}{Migration matrices}{migration-matrix}
-Let $m$ locations be denoted by the numbers $1,2,\cdots ,m$. Suppose
+Let $m$ locations be denoted by the numbers $1,2,\ldots,m$. Suppose
 it is the case that each year the proportion of residents in location
 $j$ which move to location $i$ is $a_{ij}$. Also suppose no one
 escapes or emigrates from without these $m$ locations. This last
@@ -53,7 +53,7 @@ thousands people in location 1 the following year, and similarly
 there would be $0.6 \times 15 + 0.8 \times 10 = 17$
 thousands people in location 2 the following year.
 
-More generally let $X_n=\mat{x_{1n} \cdots x_{mn}} ^{T}$ where $x_{in}$ is the
+More generally let $X_n=\mat{x_{1n}, \ldots, x_{mn}} ^{T}$ where $x_{in}$ is the
 population of location $i$ at time period $n$. We call $X_n$ the \textbf{state vector at period $n$}\index{state vector}. In particular, we call $X_0$ the initial state vector. Letting $A$ be the migration matrix, we compute the population in each location $i$ one time period later by $AX_n$. In order to find the population of location $i$ after $k$
 years, we compute the $i^{th}$ component of $A^{k}X$. This discussion is summarized in the following theorem. 
 
@@ -174,11 +174,11 @@ answer. Therefore, we can say that after $10$ units of time, there will be $115$
 and $465$ in location three.
 \end{solution}
 
-A second important application of Markov matrices is the concept of random walks\index{random walk}. Suppose a walker has $m$ locations to choose from, denoted $1, 2, \cdots, m$. Let $a_{ij}$ refer to the probability that the person will travel \textbf{to}  location $i$ \textbf{from} location $j$. Again, this requires that
+A second important application of Markov matrices is the concept of random walks\index{random walk}. Suppose a walker has $m$ locations to choose from, denoted $1, 2,\ldots, m$. Let $a_{ij}$ refer to the probability that the person will travel \textbf{to}  location $i$ \textbf{from} location $j$. Again, this requires that
 \[
 \sum_{i=1}^{k}a_{ij}=1
 \]
-In this context, the vector $X_n=\mat{x_{1n} \cdots x_{mn}} ^{T}$ contains the probabilities $x_{in}$ the walker ends up in location $i, 1\leq i \leq m$ at time $n$. 
+In this context, the vector $X_n=\mat{x_{1n}, \ldots, x_{mn}} ^{T}$ contains the probabilities $x_{in}$ the walker ends up in location $i, 1\leq i \leq m$ at time $n$. 
 
 \begin{example}{Random walks}{random-walks}
 Suppose three locations exist, referred to as locations $1, 2$ and $3$. The Markov matrix of probabilities $A = [a_{ij}]$ is given by
@@ -310,7 +310,7 @@ The augmented matrix and the resulting {\rref} are given by
 -0.2 & 0.2 & 0 & 0 \\
 -0.2 & -0.2 & 0.1 & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\sim\ldots\sim
 \begin{mymatrix}{rrr|r}
 1 & 0 & -0.25 & 0 \\
 0 & 1 & -0.25 & 0 \\
@@ -419,7 +419,7 @@ The augmented matrix and the resulting {\rref} are given by
 -\vspace{.05in} \frac{11}{20} & -\vspace{.05in} \frac{1}{4} & \vspace{.05in}
 \frac{7}{10} &  0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\sim\ldots\sim
 \begin{mymatrix}{rrr|r}
 1 & 0 & -\vspace{.05in} \frac{16}{19} & 0 \\
 0 & 1 & -\vspace{.05in} \frac{18}{19} & 0 \\

@@ -48,15 +48,15 @@ respect to linear combinations. Hence it is a subspace.
 Consider the following useful Corollary.
 
 \begin{corollary}{Span is a subspace}{span-subspace}
-Let $V$ be a vector space with $W \subseteq V$. If $W = \sspan \set{\vect{v}_1, \cdots,  \vect{v}_n }$ then $W$ is a subspace of $V$.
+Let $V$ be a vector space with $W \subseteq V$. If $W = \sspan \set{\vect{v}_1,\ldots,  \vect{v}_n }$ then $W$ is a subspace of $V$.
 \end{corollary}
 
 When determining spanning sets the following theorem proves useful.
 
 \begin{theorem}{Spanning set}{spanning-set}
-Let $W \subseteq V$ for a vector space $V$ and suppose $W = \sspan \set{\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n }$. 
+Let $W \subseteq V$ for a vector space $V$ and suppose $W = \sspan \set{\vect{v}_1, \vect{v}_2,\ldots, \vect{v}_n }$. 
 
-Let $U \subseteq V$ be a subspace such that $\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n \in U$. Then it follows that $W \subseteq U$. 
+Let $U \subseteq V$ be a subspace such that $\vect{v}_1, \vect{v}_2,\ldots, \vect{v}_n \in U$. Then it follows that $W \subseteq U$. 
 \end{theorem}
 
 In other words, this theorem claims that any subspace that contains a set of vectors must also contain the span of these vectors. 
@@ -180,12 +180,12 @@ It follows that $W$ is a subspace of $\Poly_2$.
 Recall the definition of basis, considered now in the context of vector spaces.
 
 \begin{definition}{Basis}{basis-vector-space}
-Let $V$ be a vector space. Then $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}}$ is called a basis\index{basis} for $V$ if the following conditions hold.
+Let $V$ be a vector space. Then $\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ is called a basis\index{basis} for $V$ if the following conditions hold.
 \begin{enumerate}
 \item
-$\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} = V$
+$\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{n}} = V$
 \item
-$\set{\vect{v}_{1},\cdots ,\vect{v}_{n}}$ is linearly independent
+$\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ is linearly independent
 \end{enumerate}
 \end{definition}
 
@@ -210,72 +210,72 @@ where $a,b,c$ are real numbers. It is clear that this can only occur if $a=b=c=0
 The next theorem is an essential result in linear algebra and is called the exchange theorem\index{exchange theorem}.
 
 \begin{theorem}{Exchange theorem}{exchange-theorem}
-Let $\set{\vect{x}_{1},\cdots ,\vect{x}_{r}} $
+Let $\set{\vect{x}_{1},\ldots,\vect{x}_{r}} $
 be a linearly independent set of vectors such that each $\vect{x}_{i}$ is
-contained in span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}}$. Then $
+contained in span$\set{\vect{y}_{1},\ldots,\vect{y}_{s}}$. Then $
 r\leq s$.
 \end{theorem}
 
 \begin{proof} The proof will proceed as follows. First, we set up the necessary steps for the proof. Next, we will assume that $r > s$ and show that this leads to a contradiction, thus requiring that $r \leq s$. 
 
-Define span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} = V$. Since each $\vect{x}_i$ is in  span$\set{\vect{y}_{1},\cdots ,\vect{y}_{s}}$, it follows there exist scalars $c_{1},\cdots ,c_{s}$
+Define span$\set{\vect{y}_{1},\ldots,\vect{y}_{s}} = V$. Since each $\vect{x}_i$ is in  span$\set{\vect{y}_{1},\ldots,\vect{y}_{s}}$, it follows there exist scalars $c_{1},\ldots,c_{s}$
 such that 
 \begin{equation}
 \vect{x}_{1}=\sum_{i=1}^{s}c_{i}\vect{y}_{i}  \label{lin-comb}
 \end{equation}
 Note that not all of these scalars $c_i$ can equal zero. Suppose that all the $c_i=0$. Then it
 would follow that $\vect{x}_{1}=\vect{0}$ and so $\set{\vect{x}
-_{1},\cdots ,\vect{x}_{r}} $ would not be linearly independent.
+_{1},\ldots,\vect{x}_{r}} $ would not be linearly independent.
 Indeed, if $\vect{x}_{1}=\vect{0}$, $1\vect{x}_{1}+\sum_{i=2}^{r}0
 \vect{x}_{i}=\vect{x}_{1}=\vect{0}$ and so there would exist a
-non-trivial linear combination of the vectors $\set{\vect{x}_{1},\cdots ,
+non-trivial linear combination of the vectors $\set{\vect{x}_{1},\ldots,
 \vect{x}_{r}} $ which equals zero. Therefore at least one $c_i$ is non-zero. 
 
 Say $c_{k}\neq 0$. Then solve {\eqref{lin-comb}} for $\vect{y}_{k}$ and obtain 
 \begin{equation*}
 \vect{y}_{k}\in \sspan\set{\vect{x}_{1},\overset{\text{s-1
-vectors here}}{\overbrace{\vect{y}_{1},\cdots ,\vect{y}_{k-1},\vect{y}
-_{k+1},\cdots ,\vect{y}_{s}}}} .
+vectors here}}{\overbrace{\vect{y}_{1},\ldots,\vect{y}_{k-1},\vect{y}
+_{k+1},\ldots,\vect{y}_{s}}}} .
 \end{equation*}
-Define $\set{\vect{z}_{1},\cdots ,\vect{z}_{s-1}} $ to be
+Define $\set{\vect{z}_{1},\ldots,\vect{z}_{s-1}} $ to be
 \begin{equation*}
-\set{\vect{z}_{1},\cdots ,\vect{z}_{s-1}} = \set{
-\vect{y}_{1},\cdots ,\vect{y}_{k-1},\vect{y}_{k+1},\cdots ,\vect{y}
+\set{\vect{z}_{1},\ldots,\vect{z}_{s-1}} = \set{
+\vect{y}_{1},\ldots,\vect{y}_{k-1},\vect{y}_{k+1},\ldots,\vect{y}
 _{s}}
 \end{equation*}
 Now we can write 
 \begin{equation*}
-\vect{y}_{k}\in \sspan\set{\vect{x}_{1}, \vect{z}_{1},\cdots, \vect{z}_{s-1}} 
+\vect{y}_{k}\in \sspan\set{\vect{x}_{1}, \vect{z}_{1},\ldots, \vect{z}_{s-1}} 
 \end{equation*}
-Therefore, $\sspan\set{\vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z
+Therefore, $\sspan\set{\vect{x}_{1},\vect{z}_{1},\ldots,\vect{z
 }_{s-1}}=V$. To see this, suppose $\vect{v}\in V$. Then there exist constants $
-c_{1},\cdots ,c_{s}$ such that 
+c_{1},\ldots,c_{s}$ such that 
 \begin{equation*}
 \vect{v}=\sum_{i=1}^{s-1}c_{i}\vect{z}_{i}+c_{s}\vect{y}_{k}.
 \end{equation*}
 Replace this $\vect{y}_{k}$ with a linear combination of the
-vectors $\set{\vect{x}_{1},\vect{z}_{1},\cdots ,\vect{z}_{s-1}}$
+vectors $\set{\vect{x}_{1},\vect{z}_{1},\ldots,\vect{z}_{s-1}}$
 to obtain $\vect{v}\in \sspan\set{\vect{x}_{1},\vect{z}
-_{1},\cdots ,\vect{z}_{s-1}}$. The vector $\vect{y}_{k}$, in the
-list $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}}$, has now been
+_{1},\ldots,\vect{z}_{s-1}}$. The vector $\vect{y}_{k}$, in the
+list $\set{\vect{y}_{1},\ldots,\vect{y}_{s}}$, has now been
 replaced with the vector $\vect{x}_{1}$ and the resulting modified list of
 vectors has the same span as the original list of vectors, $\set{\vect{y
-}_{1},\cdots ,\vect{y}_{s}}$.
+}_{1},\ldots,\vect{y}_{s}}$.
 
 We are now ready to move on to the proof. Suppose that $r>s$ and that 
 \[
-\sspan\set{\vect{x}_{1},\cdots ,
-\vect{x}_{l},\vect{z}_{1},\cdots ,\vect{z}_{p}} =V
+\sspan\set{\vect{x}_{1},\ldots,
+\vect{x}_{l},\vect{z}_{1},\ldots,\vect{z}_{p}} =V
 \]
- where the process established above has continued. In other words, the vectors $\vect{z}_{1},\cdots ,\vect{z}_{p}$ are each taken from the
-set $\set{\vect{y}_{1},\cdots ,\vect{y}_{s}} $ and $l+p=s$.
+ where the process established above has continued. In other words, the vectors $\vect{z}_{1},\ldots,\vect{z}_{p}$ are each taken from the
+set $\set{\vect{y}_{1},\ldots,\vect{y}_{s}} $ and $l+p=s$.
 This was done for $l=1$ above. Then since $r>s$, it follows that $
 l\leq s<r$ and so $l+1\leq r$. Therefore, $\vect{x}_{l+1}$ is a vector not
-in the list, $\set{\vect{x}_{1},\cdots ,\vect{x}_{l}} $ and
+in the list, $\set{\vect{x}_{1},\ldots,\vect{x}_{l}} $ and
 since 
 \[
-\sspan\set{\vect{x}_{1},\cdots ,\vect{x}_{l},\vect{z}
-_{1},\cdots ,\vect{z}_{p}} =V
+\sspan\set{\vect{x}_{1},\ldots,\vect{x}_{l},\vect{z}
+_{1},\ldots,\vect{z}_{p}} =V
 \]
  there exist scalars, $c_{i}$ and $
 d_{j}$ such that 
@@ -284,24 +284,24 @@ d_{j}$ such that
 \vect{z}_{j}.  \label{lin-comb2}
 \end{equation}
 Not all the $d_{j}$ can equal zero because if this were so, it would follow
-that $\set{\vect{x}_{1},\cdots ,\vect{x}_{r}} $ would be a
+that $\set{\vect{x}_{1},\ldots,\vect{x}_{r}} $ would be a
 linearly dependent set because one of the vectors would equal a linear
 combination of the others. Therefore, {\eqref{lin-comb2}} can be solved for one of the 
 $\vect{z}_{i}$, say $\vect{z}_{k}$, in terms of $\vect{x}_{l+1}$ and
 the other $\vect{z}_{i}$ and just as in the above argument, replace that $
 \vect{z}_{i}$ with $\vect{x}_{l+1}$ to obtain 
 \begin{equation*}
-\sspan\set{\vect{x}_{1},\cdots \vect{x}_{l},\vect{x}_{l+1},
-\overset{\text{p-1 vectors here}}{\overbrace{\vect{z}_{1},\cdots \vect{z}
-_{k-1},\vect{z}_{k+1},\cdots ,\vect{z}_{p}}}} =V
+\sspan\set{\vect{x}_{1},\ldots,\vect{x}_{l},\vect{x}_{l+1},
+\overset{\text{p-1 vectors here}}{\overbrace{\vect{z}_{1},\ldots,\vect{z}
+_{k-1},\vect{z}_{k+1},\ldots,\vect{z}_{p}}}} =V
 \end{equation*}
 Continue this way, eventually obtaining 
 \begin{equation*}
-\sspan\set{\vect{x}_{1},\cdots ,\vect{x}_{s}} =V.
+\sspan\set{\vect{x}_{1},\ldots,\vect{x}_{s}} =V.
 \end{equation*}
-But then $\vect{x}_{r}\in $ $\sspan\set{\vect{x}_{1},\cdots ,
+But then $\vect{x}_{r}\in $ $\sspan\set{\vect{x}_{1},\ldots,
 \vect{x}_{s}} $ contrary to the assumption that $\set{\vect{x}
-_{1},\cdots ,\vect{x}_{r}} $ is linearly independent. Therefore, $
+_{1},\ldots,\vect{x}_{r}} $ is linearly independent. Therefore, $
 r\leq s$ as claimed.
 \end{proof}
 
@@ -317,7 +317,7 @@ Let $B_1$, $B_2$ be two bases of a vector space $V$. Suppose $B_1$ contains $m$ 
 This corollary is very important so we provide another proof independent of the exchange theorem above.
 
 \begin{proof}Suppose $n > m$. Then since the vectors $\set{\vect{u}
-_{1},\cdots ,\vect{u}_{m}} $ span $V$, there exist scalars $c_{ij}$
+_{1},\ldots,\vect{u}_{m}} $ span $V$, there exist scalars $c_{ij}$
 such that 
 \begin{equation*}
 \sum_{i=1}^{m}c_{ij}\vect{u}_{i}=\vect{v}_{j}.
@@ -333,21 +333,20 @@ if and only if
 \sum_{i=1}^{m}\tup{\sum_{j=1}^{n}c_{ij}d_{j}} \vect{u}_{i}=\vect{
 0}
 \end{equation*}
-Now since $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}}$ is independent, this
+Now since $\set{\vect{u}_{1},\ldots,\vect{u}_{n}}$ is independent, this
 happens if and only if 
 \begin{equation*}
-\sum_{j=1}^{n}c_{ij}d_{j}=0,\;i=1,2,\cdots ,m.
+\sum_{j=1}^{n}c_{ij}d_{j}=0,\;i=1,2,\ldots,m.
 \end{equation*}
-However, this is a system of $m$ equations in $n$ variables, $d_{1},\cdots
-,d_{n}$ and $m<n$. Therefore, there exists a solution to this system of
-equations in which not all the $d_{j}$ are equal to zero. Recall why this is
-so. The augmented matrix for the system is of the form 
-$\begin{mymatrix}{c|c}
-C & \vect{0}
+However, this is a system of $m$ equations in $n$ variables,
+$d_{1},\ldots,d_{n}$ and $m<n$. Therefore, there exists a solution to
+this system of equations in which not all the $d_{j}$ are equal to
+zero. Recall why this is so. The augmented matrix for the system is of
+the form $\begin{mymatrix}{c|c} C & \vect{0}
 \end{mymatrix} $ where $C$ is a matrix which has more columns than rows. Therefore,
 there are free variables and hence non-zero solutions to the system of
 equations. However, this contradicts the linear independence of $\set{
-\vect{u}_{1},\cdots ,\vect{u}_{m}}$. Similarly it cannot happen
+\vect{u}_{1},\ldots,\vect{u}_{m}}$. Similarly it cannot happen
 that $m > n$.
 \end{proof}
 
@@ -433,10 +432,10 @@ subspace. Then $W=V$ if and only if the dimension of $W$ is also $n$.
 \begin{proof}First suppose $W=V$. Then obviously the dimension of $W=n$.
 
 Now suppose that the dimension of $W$ is $n$. Let a basis for $W$ be $
-\set{\vect{w}_{1},\cdots ,\vect{w}_{n}}$. If $W$ is not equal to $V$
+\set{\vect{w}_{1},\ldots,\vect{w}_{n}}$. If $W$ is not equal to $V$
 , then let $\vect{v}$ be a vector of $V$ which is not contained in $W$. Thus $
-\vect{v}$ is not in $\sspan\set{\vect{w}_{1},\cdots ,\vect{w}
-_{n}} $ and by Lemma~\ref{lem:bases-isomorphism}, $\set{\vect{w}_{1},\cdots ,\vect{w}_{n},\vect{v}} $ is linearly independent which contradicts
+\vect{v}$ is not in $\sspan\set{\vect{w}_{1},\ldots,\vect{w}
+_{n}} $ and by Lemma~\ref{lem:bases-isomorphism}, $\set{\vect{w}_{1},\ldots,\vect{w}_{n},\vect{v}} $ is linearly independent which contradicts
 Theorem~\ref{thm:exchange-theorem} because it would be an independent set of $n+1$
 vectors even though each of these vectors is in a spanning set of $n$
 vectors, a basis of $V$. 
@@ -505,19 +504,19 @@ Therefore $B$ is a basis of $U$, and $\dim(U)=2$.
 The following theorem claims that a spanning set of a vector space $V$ can be shrunk down to a basis of $V$. Similarly, a linearly independent set within $V$ can be enlarged to create a basis of $V$.
 
 \begin{theorem}{Basis of $V$}{basis-from-spanning-lin-ind}
- If $V=\sspan\set{\vect{u}_{1},\cdots ,\vect{u}
-_{n}} $ is a vector space, then some subset of $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}}$
-is a basis for $V$. Also, if $\set{\vect{u}_{1},\cdots ,\vect{u}
+ If $V=\sspan\set{\vect{u}_{1},\ldots,\vect{u}
+_{n}} $ is a vector space, then some subset of $\set{\vect{u}_{1},\ldots,\vect{u}_{n}}$
+is a basis for $V$. Also, if $\set{\vect{u}_{1},\ldots,\vect{u}
 _{k}}\subseteq V$ is linearly independent and the vector space is finite
 dimensional,
 then the set $\set{
-\vect{u}_{1},\cdots ,\vect{u}_{k}}$, can be enlarged to obtain a basis
+\vect{u}_{1},\ldots,\vect{u}_{k}}$, can be enlarged to obtain a basis
 of $V$\index{linear independence!enlarging to form a basis}.
 \end{theorem}
 
 \begin{proof}Let 
 \begin{equation*}
-S=\set{E\subseteq \set{\vect{u}_{1},\cdots ,\vect{u}_{n}}\text{ such that }%
+S=\set{E\subseteq \set{\vect{u}_{1},\ldots,\vect{u}_{n}}\text{ such that }%
 \sspan\set{E} =V}.
 \end{equation*}
 For $E\in S$, let $\abs{E}$ denote the number of elements
@@ -527,17 +526,17 @@ m= \min \set{\abs{E}\text{ such that }E\in S}.
 \end{equation*}
 Thus there exist vectors 
 \begin{equation*}
-\set{\vect{v}_{1},\cdots ,\vect{v}_{m}}\subseteq \set{\vect{u}_{1},\cdots ,%
+\set{\vect{v}_{1},\ldots,\vect{v}_{m}}\subseteq \set{\vect{u}_{1},\ldots,%
 \vect{u}_{n}}
 \end{equation*}
 such that 
 \begin{equation*}
-\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{m}} =V
+\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{m}} =V
 \end{equation*}
 and $m$ is as small as possible for this to happen. If this set is linearly
 independent, it follows it is a basis for $V$ and the theorem is proved. On
 the other hand, if the set is not linearly independent, then there exist
-scalars, $c_{1},\cdots ,c_{m}$ such that 
+scalars, $c_{1},\ldots,c_{m}$ such that 
 \begin{equation*}
 \vect{0}=\sum_{i=1}^{m}c_{i}\vect{v}_{i}
 \end{equation*}
@@ -545,35 +544,35 @@ and not all the $c_{i}$ are equal to zero. Suppose $c_{k}\neq 0$. Then solve for
 vector $\vect{v}_{k}$ in terms of the other vectors.
 Consequently, 
 \begin{equation*}
-V=\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{k-1},\vect{v}
-_{k+1},\cdots ,\vect{v}_{m}}
+V=\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{k-1},\vect{v}
+_{k+1},\ldots,\vect{v}_{m}}
 \end{equation*}
 contradicting the definition of $m$. This proves the first part of the
 theorem.
 
-To obtain the second part, begin with $\set{\vect{u}_{1},\cdots ,\vect{u}
+To obtain the second part, begin with $\set{\vect{u}_{1},\ldots,\vect{u}
 _{k}}$ and suppose a basis for $V$ is 
 \begin{equation*}
-\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} 
+\set{\vect{v}_{1},\ldots,\vect{v}_{n}} 
 \end{equation*}
 If 
 \begin{equation*}
-\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V,
+\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}} =V,
 \end{equation*}
 then $k=n$. If not, there exists a vector 
 \begin{equation*}
-\vect{u}_{k+1}\notin \sspan\set{\vect{u}_{1},\cdots ,\vect{u}
+\vect{u}_{k+1}\notin \sspan\set{\vect{u}_{1},\ldots,\vect{u}
 _{k}}
 \end{equation*}
-Then from Lemma~\ref{lem:adding-linearly-independent}, $\set{\vect{u}_{1},\cdots ,\vect{u}_{k},
+Then from Lemma~\ref{lem:adding-linearly-independent}, $\set{\vect{u}_{1},\ldots,\vect{u}_{k},
 \vect{u}_{k+1}}$ is also linearly independent. Continue adding vectors in
 this way until $n$ linearly independent vectors have been obtained. Then 
 \begin{equation*}
-\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} =V
+\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{n}} =V
 \end{equation*}
 because if it did not do so, there would exist $\vect{u}_{n+1}$ as just
-described and $\set{\vect{u}_{1},\cdots ,\vect{u}_{n+1}} $
-would be a linearly independent set of vectors having $n+1$ elements. This contradicts the fact that $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} $ is a basis.
+described and $\set{\vect{u}_{1},\ldots,\vect{u}_{n+1}} $
+would be a linearly independent set of vectors having $n+1$ elements. This contradicts the fact that $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} $ is a basis.
  In turn this would contradict Theorem~\ref{thm:exchange-theorem}. Therefore, this list is a
 basis. 
 \end{proof}
@@ -637,19 +636,19 @@ spanning set and you want a subset which is a basis. The above discussion involv
 
 \begin{theorem}{Basis from a spanning set}{}
 Let $V$ be a vector space and let $W$ be a subspace. Also
-suppose that $W=\sspan\set{\vect{w}_{1},\cdots ,\vect{w}
-_{m}}$. Then there exists a subset of $\set{\vect{w}_{1},\cdots ,
+suppose that $W=\sspan\set{\vect{w}_{1},\ldots,\vect{w}
+_{m}}$. Then there exists a subset of $\set{\vect{w}_{1},\ldots,
 \vect{w}_{m}} $ which is a basis for $W$.
 \end{theorem}
 
 \begin{proof}
 Let $S$ denote the set of positive integers such that for $
-k\in S$, there exists a subset of $\set{\vect{w}_{1},\cdots ,\vect{w}
+k\in S$, there exists a subset of $\set{\vect{w}_{1},\ldots,\vect{w}
 _{m}} $ consisting of exactly $k$ vectors which is a spanning set for 
 $W$. Thus $m\in S$. Pick the smallest positive integer in $S$. Call it $k$.
-Then there exists $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} \subseteq
-\set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $ such that $\sspan
-\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =W$. If 
+Then there exists $\set{\vect{u}_{1},\ldots,\vect{u}_{k}} \subseteq
+\set{\vect{w}_{1},\ldots,\vect{w}_{m}} $ such that $\sspan
+\set{\vect{u}_{1},\ldots,\vect{u}_{k}} =W$. If 
 \begin{equation*}
 \sum_{i=1}^{k}c_{i}\vect{w}_{i}=\vect{0}
 \end{equation*}
@@ -663,9 +662,9 @@ In any linear combination involving $\vect{w}_{j}$, the linear
 combination would equal one in which $\vect{w}_{j}$ is replaced with the
 above sum, showing that it could have been obtained as a linear combination
 of $\vect{w}_{i}$ for $i\neq j$. Thus $k-1\in S$ contrary to the choice of $k$
-. Hence each $c_{i}=0$ and so $\set{\vect{u}_{1},\cdots ,\vect{u}
+. Hence each $c_{i}=0$ and so $\set{\vect{u}_{1},\ldots,\vect{u}
 _{k}} $ is a basis for $W$ consisting of vectors of $\set{\vect{w}
-_{1},\cdots ,\vect{w}_{m}}$. 
+_{1},\ldots,\vect{w}_{m}}$. 
 \end{proof}
 
 Consider the following example of this concept. 
@@ -799,31 +798,31 @@ Now the following is a fundamental result about subspaces.
 \begin{theorem}{Basis of a vector space}{basis-vector-space}
 Let $V$ be a finite dimensional vector space and let $W$ be
 a non-zero subspace. Then $W$ has a basis. That is, there exists a linearly
-independent set of vectors $\set{\vect{w}_{1},\cdots ,\vect{w}_{r}} $
+independent set of vectors $\set{\vect{w}_{1},\ldots,\vect{w}_{r}} $
 such that 
 \begin{equation*}
-\sspan\set{\vect{w}_{1},\cdots ,\vect{w}_{r}} =W
+\sspan\set{\vect{w}_{1},\ldots,\vect{w}_{r}} =W
 \end{equation*}
-Also if $\set{\vect{w}_{1},\cdots ,\vect{w}_{s}} $ is a linearly
+Also if $\set{\vect{w}_{1},\ldots,\vect{w}_{s}} $ is a linearly
 independent set of vectors, then $W$ has a basis of the form $\set{\vect{w}
-_{1},\cdots ,\vect{w}_{s},\cdots ,\vect{w}_{r}} $ for $r\geq s$.
+_{1},\ldots,\vect{w}_{s},\ldots,\vect{w}_{r}} $ for $r\geq s$.
 \end{theorem}
 
 \begin{proof}
 Let the dimension of $V$ be $n$. Pick $\vect{w}_{1}\in W$
-where $\vect{w}_{1}\neq \vect{0}$. If $\vect{w}_{1},\cdots ,\vect{w}_{s}$ have
-been chosen such that $\set{\vect{w}_{1},\cdots ,\vect{w}_{s}} $ is
-linearly independent, if $\sspan\set{\vect{w}_{1},\cdots ,\vect{w}
+where $\vect{w}_{1}\neq \vect{0}$. If $\vect{w}_{1},\ldots,\vect{w}_{s}$ have
+been chosen such that $\set{\vect{w}_{1},\ldots,\vect{w}_{s}} $ is
+linearly independent, if $\sspan\set{\vect{w}_{1},\ldots,\vect{w}
 _{r}} =W$, stop. You have the desired basis. Otherwise, there exists $
-\vect{w}_{s+1}\notin \sspan\set{\vect{w}_{1},\cdots ,\vect{w}
-_{s}} $ and $\set{\vect{w}_{1},\cdots ,
+\vect{w}_{s+1}\notin \sspan\set{\vect{w}_{1},\ldots,\vect{w}
+_{s}} $ and $\set{\vect{w}_{1},\ldots,
 \vect{w}_{s},\vect{w}_{s+1}} $ is linearly independent. Continue this
 way until the process stops. It must stop since otherwise, you could obtain a
 linearly independent set of vectors having more than $n$ vectors which is
 impossible.
 
 The last claim is proved by following the above procedure starting with $
-\set{\vect{w}_{1},\cdots ,\vect{w}_{s}} $ as above. 
+\set{\vect{w}_{1},\ldots,\vect{w}_{s}} $ as above. 
 \end{proof}
 
 This also proves the following corollary. Let $V$ play the role of $

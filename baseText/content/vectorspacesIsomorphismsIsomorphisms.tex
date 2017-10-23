@@ -169,18 +169,18 @@ isomorphisms.
 Let $T:V\rightarrow W$ be a
 \index{isomorphism!invertible matrices}
 \index{invertible matrices!isomorphism} linear map where $V,W$ are vector spaces.  Then a linear transformation $T$ which is one to one has the property that
-if $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is linearly
-independent, then so is $\set{T(\vect{u}_{1}),\cdots ,T(\vect{u}_{k})}$.
+if $\set{\vect{u}_{1},\ldots,\vect{u}_{k}} $ is linearly
+independent, then so is $\set{T(\vect{u}_{1}),\ldots,T(\vect{u}_{k})}$.
  More generally, $T$ is an
 isomorphism if and only if whenever $\set{
-\vect{v}_{1},\cdots ,\vect{v}_{n}} $ is a basis for $V$, it follows
-that $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} $ is a basis for $W$.
+\vect{v}_{1},\ldots,\vect{v}_{n}} $ is a basis for $V$, it follows
+that $\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})} $ is a basis for $W$.
 \end{lemma}
 
 \begin{proof}
 First suppose that $T$ is a linear map and is one to one
-and $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is linearly
-independent. It is required to show that $\set{T(\vect{u}_{1}),\cdots ,T(\vect{u}_{k})} $ is also linearly independent. Suppose then that 
+and $\set{\vect{u}_{1},\ldots,\vect{u}_{k}} $ is linearly
+independent. It is required to show that $\set{T(\vect{u}_{1}),\ldots,T(\vect{u}_{k})} $ is also linearly independent. Suppose then that 
 \begin{equation*}
 \sum_{i=1}^{k}c_{i}T(\vect{u}_{i})=\vect{0}
 \end{equation*}
@@ -192,17 +192,17 @@ Since $T$ is one to one, it follows that
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}\vect{u}_{i}=0
 \end{equation*}
-Now the fact that $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is
+Now the fact that $\set{\vect{u}_{1},\ldots,\vect{u}_{n}} $ is
 linearly independent implies that each $c_{i}=0$. Hence $\set{T(\vect{u}
-_{1}),\cdots ,T(\vect{u}_{n})} $ is linearly independent.
+_{1}),\ldots,T(\vect{u}_{n})} $ is linearly independent.
 
-Now suppose that $T$ is an isomorphism and $\set{\vect{v}_{1},\cdots ,\vect{
+Now suppose that $T$ is an isomorphism and $\set{\vect{v}_{1},\ldots,\vect{
 v}_{n}} $ is a basis for $V$. It was just shown that $\set{T(\vect{v}
-_{1}),\cdots ,T(\vect{v}_{n})} $ is linearly independent. It remains to
-verify that the span of $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} $
+_{1}),\ldots,T(\vect{v}_{n})} $ is linearly independent. It remains to
+verify that the span of $\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})} $
 is all of $W$. This is where $T$ is onto is used. If $\vect{w}\in W$, there
 exists $\vect{v}\in V$ such that $T(\vect{v})=\vect{w}$. Since $\set{\vect{v}
-_{1},\cdots ,\vect{v}_{n}} $ is a basis, it follows that there exists
+_{1},\ldots,\vect{v}_{n}} $ is a basis, it follows that there exists
 scalars $\set{c_{i}} _{i=1}^{n}$ such that 
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}\vect{v}_{i}=\vect{v}.
@@ -212,18 +212,18 @@ Hence,
 \vect{w}=T(\vect{v})=T\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}}
 =\sum_{i=1}^{n}c_{i}T\vect{v}_{i}
 \end{equation*}
-which shows that the span of these vectors $\set{T(\vect{v}_{1}),\cdots ,T
+which shows that the span of these vectors $\set{T(\vect{v}_{1}),\ldots,T
 (\vect{v}_{n})} $ is all of $W$ showing that this set of vectors is a
 basis for $W$.
 
 Next suppose that $T$ is a linear map which takes a basis to a basis. Then
-for $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} $ a basis for $V$, it
-follows $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} $ is a basis for $
+for $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} $ a basis for $V$, it
+follows $\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})} $ is a basis for $
 W$. Then if $w\in W$, there exist scalars $c_{i}$ such that $
 w=\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} $
 showing that $T$ is onto. If $T\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} =0$
 then $\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=\vect{0}$ and since the vectors $\set{T(\vect{v}
-_{1}),\cdots ,T(\vect{v}_{n})} $ are linearly independent, it follows
+_{1}),\ldots,T(\vect{v}_{n})} $ are linearly independent, it follows
 that each $c_{i}=0$. Since $\sum_{i=1}^{n}c_{i}\vect{v}_{i}$ is a typical vector in 
 $V$, this has shown that if $T(\vect{v})=0$ then $\vect{v}=\vect{0}$ and so $T$ is also one to one.
 Thus $T$ is an isomorphism.
@@ -251,8 +251,8 @@ following are equivalent.
 
 \begin{proof}Suppose first these two vector spaces have the same
 dimension. Let a basis for $V$ be $\set{
-\vect{v}_{1},\cdots ,\vect{v}_{n}} $ and let a basis for $W$ be $
-\set{\vect{w}_{1},\cdots ,\vect{w}_{n}}$. Now define $T$ as
+\vect{v}_{1},\ldots,\vect{v}_{n}} $ and let a basis for $W$ be $
+\set{\vect{w}_{1},\ldots,\vect{w}_{n}}$. Now define $T$ as
 follows. 
 \begin{equation*}
 T(\vect{v}_{i})=\vect{w}_{i}
@@ -270,7 +270,7 @@ Then
 \begin{equation*}
 \sum_{i=1}^{n}\tup{c_{i}-\hat{c}_{i}} \vect{v}_{i}=0
 \end{equation*}
-and since $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} $ is a basis, $
+and since $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} $ is a basis, $
 c_{i}=\hat{c}_{i}$ for each $i$. Hence 
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}\vect{w}_{i}=\sum_{i=1}^{n}\hat{c}_{i}\vect{w}_{i}
@@ -291,7 +291,7 @@ Now if
 T\tup{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} =\sum_{i=1}^{n}c_{i}\vect{w}
 _{i}=\vect{0},
 \end{equation*}
-then since the $\set{\vect{w}_{1},\cdots ,\vect{w}_{n}} $ are
+then since the $\set{\vect{w}_{1},\ldots,\vect{w}_{n}} $ are
 independent, each $c_{i}=0$ and so $\sum_{i=1}^{n}c_{i}\vect{v}_{i}=\vect{0}$
 also. Hence $T$ is one to one. If $\sum_{i=1}^{n}c_{i}\vect{w}_{i}$ is a
 vector in $W$, then it equals 
@@ -302,27 +302,27 @@ showing that $T$ is also onto. Hence $T$ is an isomorphism and so $V$ and $W$
 are isomorphic.
 
 Next suppose these two vector spaces are isomorphic. Let $T$ be the name of
-the isomorphism. Then for $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} $
+the isomorphism. Then for $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} $
 a basis for $V$, it follows that a basis for $W$
-is $\set{T\vect{v}_{1},\cdots ,T\vect{v}_{n}} $ showing that the two
+is $\set{T\vect{v}_{1},\ldots,T\vect{v}_{n}} $ showing that the two
 vector spaces have the same dimension.
 
 Now suppose the two vector spaces have the same dimension.
 
 First consider the claim that $1.)\Rightarrow 2.)$. If $T$ is one to one,
-then if $\set{\vect{v}_{1},\cdots ,\vect{v}
-_{n}} $ is a basis for $V$, then $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v
+then if $\set{\vect{v}_{1},\ldots,\vect{v}
+_{n}} $ is a basis for $V$, then $\set{T(\vect{v}_{1}),\ldots,T(\vect{v
 }_{n})} $ is linearly independent. If it is not a basis, then it must
 fail to span $W$. But then there would exist $\vect{w}\notin \sspan
-\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} $ and it follows that $
-\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n}),\vect{w}} $ would be
+\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})} $ and it follows that $
+\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n}),\vect{w}} $ would be
 linearly independent which is impossible because there exists a basis for $W$
 of $n$ vectors. Hence 
 \[
-\sspan\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}
+\sspan\set{T(\vect{v}_{1}),\ldots,T(\vect{v}
 _{n})} =W
 \]
-and so $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{n})} $
+and so $\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})} $
 is a basis. Hence, if $\vect{w}\in W$, there exist scalars $c_{i}$ such that 
 \begin{equation*}
 \vect{w}=\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\tup{\sum_{i=1}^{n}c_{i}\vect{v}
@@ -332,14 +332,14 @@ showing that $T$ is onto. This shows that $1.)\Rightarrow 2.)$.
 
 Next consider the claim that $2.)\Rightarrow 3.)$. Since $2.)$ holds, it
 follows that $T$ is onto. It remains to verify that $T$ is one to one. Since 
-$T$ is onto, there exists a basis of the form $\set{T(\vect{v}_{i}),\cdots ,T
-(\vect{v}_{n})}$. If $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} $
+$T$ is onto, there exists a basis of the form $\set{T(\vect{v}_{i}),\ldots,T
+(\vect{v}_{n})}$. If $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} $
 is linearly independent, then this set of vectors must also be a basis for $
 V $ because if not, there would exist $\vect{u}\notin \sspan\set{\vect{
-v}_{1},\cdots ,\vect{v}_{n}} $ so $\set{\vect{v}_{1},\cdots ,\vect{v}
+v}_{1},\ldots,\vect{v}_{n}} $ so $\set{\vect{v}_{1},\ldots,\vect{v}
 _{n},\vect{u}} $ would be a linearly independent set which is
 impossible because by assumption, there exists a basis which has $n$
-vectors. So why is$\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} $
+vectors. So why is$\set{\vect{v}_{1},\ldots,\vect{v}_{n}} $
 linearly independent? Suppose 
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}\vect{v}_{i}=\vect{0}
@@ -348,14 +348,14 @@ Then
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}T\vect{v}_{i}=\vect{0}
 \end{equation*}
-Hence each $c_{i}=0$ and so, as just discussed, $\set{\vect{v}_{1},\cdots ,
+Hence each $c_{i}=0$ and so, as just discussed, $\set{\vect{v}_{1},\ldots,
 \vect{v}_{n}} $ is a basis for $V$. Now it follows that a typical
 vector in $V$ is of the form $\sum_{i=1}^{n}c_{i}\vect{v}_{i}$. If $T\tup{
 \sum_{i=1}^{n}c_{i}\vect{v}_{i}} =\vect{0}$, it follows that 
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=\vect{0}
 \end{equation*}
-and so, since $\set{T(\vect{v}_{i}),\cdots ,T(\vect{v}_{n})} $ is
+and so, since $\set{T(\vect{v}_{i}),\ldots,T(\vect{v}_{n})} $ is
 independent, it follows each $c_{i}=0$ and hence $\sum_{i=1}^{n}c_{i}\vect{v}
 _{i}=\vect{0}$. Thus $T$ is one to one as well as onto and so it is an
 isomorphism.

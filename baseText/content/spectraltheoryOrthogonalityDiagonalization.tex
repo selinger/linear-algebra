@@ -151,7 +151,7 @@ We can use this theorem to diagonalize a symmetric matrix, using orthogonal matr
 
 \begin{corollary}{Orthonormal set of eigenvectors}{orthonormal-eigenvectors}
 If $A$ is a real $n\times n$ symmetric matrix, then there exists an
-orthonormal set of eigenvectors, $\set{\vect{u}_{1},\cdots ,\vect{u}
+orthonormal set of eigenvectors, $\set{\vect{u}_{1},\ldots,\vect{u}
 _{n}}$.
 \end{corollary}
 
@@ -252,7 +252,7 @@ Next find the eigenvector for $\lambda =9$. The augmented matrix and resulting {
 2 & 9-6 & -4 & 0 \\ 
 2 & -4 & 9-6 & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\sim\ldots\sim
 \begin{mymatrix}{rrr|r}
 1 & 0 & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & 1 & -1 & 0 \\ 
@@ -275,7 +275,7 @@ matrix and {\rref} are
 2 & 2-6 & -4 & 0 \\ 
 2 & -4 & 2-6 & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\sim\ldots\sim
 \begin{mymatrix}{rrr|r}
 1 & 0 & 0 & 0 \\ 
 0 & 1 & 1 & 0 \\ 
@@ -352,7 +352,7 @@ and {\rref} are given by
 -2 & 9-13 & -4 & 0 \\ 
 -2 & -4 & 9-13 & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow 
+\sim\ldots\sim 
 \begin{mymatrix}{rrr|r}
 1 & 2 & 2 & 0 \\ 
 0 & 0 & 0 & 0 \\ 
@@ -406,7 +406,7 @@ Next find the eigenvector for $\lambda =18$. The augmented matrix and the result
 -2 & 18-13 & -4 & 0 \\ 
 -2 & -4 & 18-13 & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\sim\ldots\sim
 \begin{mymatrix}{rrr|r}
 1 & 0 & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & 1 & -1 & 0 \\ 
@@ -489,7 +489,7 @@ we will find an eigenvector for the eigenvalue $2$. The appropriate augmented ma
 0 & 2-\vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & -\vspace{0.05in}\frac{1}{2} & 2-\vspace{0.05in}\frac{3}{2} &  0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\sim\ldots\sim
 \begin{mymatrix}{rrr|r}
 1 & 0 & 0 & 0 \\ 
 0 & 1 & -1 & 0 \\ 
@@ -520,7 +520,7 @@ Next find the eigenvectors corresponding to the eigenvalue equal to $1$. The app
 0 & 1-\vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & -\vspace{0.05in}\frac{1}{2} & 1-\vspace{0.05in}\frac{3}{2} & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\sim\ldots\sim
 \begin{mymatrix}{rrr|r}
 0 & 1 & 1 & 0 \\ 
 0 & 0 & 0 & 0 \\ 
@@ -591,7 +591,7 @@ Let $A$ be an $n \times n$-matrix. If $A$ has $n$ real eigenvalues, then an orth
 This Theorem provides a useful Corollary.
 
 \begin{corollary}{Determinant and trace}{det-trace}
-Let $A$ be an $n \times n$-matrix with eigenvalues $\lambda_1, \cdots, \lambda_n$. Then it follows that $\det(A)$ is equal to the product of the $\lambda_1$, while $\func{trace}(A)$ is equal to the sum of the $\lambda_i$. 
+Let $A$ be an $n \times n$-matrix with eigenvalues $\lambda_1,\ldots, \lambda_n$. Then it follows that $\det(A)$ is equal to the product of the $\lambda_1$, while $\func{trace}(A)$ is equal to the sum of the $\lambda_i$. 
 \end{corollary}
 
 \begin{proof}
@@ -602,7 +602,7 @@ of $P$ are $\lambda_1, \lambda_2, \ldots, \lambda_n$.
 Furthermore, since $P$ is (upper) triangular, the entries on the
 main diagonal of $P$ are its eigenvalues, so
 $\det(P)=\lambda_1 \lambda_2 \cdots \lambda_n$ and
-$\func{trace}(P)=\lambda_1 + \lambda_2 + \cdots + \lambda_n$.
+$\func{trace}(P)=\lambda_1 + \lambda_2 + \ldots + \lambda_n$.
 Since $P$ and $A$ are similar, $\det(A)=\det(P)$ and $\func{trace}(A)=\func{trace}(P)$,
 and therefore the results follow.
 \end{proof}

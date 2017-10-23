@@ -4,7 +4,7 @@
 
 We begin this section with some important notation. Summation notation\index{summation notation}, written $\sum_{i=1}^{j} i$, represents a sum. Here, $i$ is called the index of the sum, and we add iterations until $i=j$. For example, 
 \[
-\sum_{i=1}^{j} i = 1 + 2 + \cdots + j 
+\sum_{i=1}^{j} i = 1 + 2 + \ldots + j 
 \]
 Another example: 
 \[
@@ -44,7 +44,7 @@ smallest element $z$ having the property that $z\leq x$ for all $x\in S$.
 
 In particular, the set of natural numbers defined as
 \begin{equation*}
-\N = \set{1,2,\cdots }
+\N = \set{1,2,\ldots}
 \end{equation*}
 is well ordered\index{well ordered}\index{mathematical induction}.
 
@@ -85,7 +85,7 @@ Mathematical induction is a very useful device for proving theorems about
 the integers. The procedure is as follows.
 
 \begin{procedure}{Proof by mathematical induction}{math-induction}
-Suppose $S_{n}$ is a statement which is a function of the number $n$, for $n=1,2,\cdots$, and
+Suppose $S_{n}$ is a statement which is a function of the number $n$, for $n=1,2,\ldots$, and
 we wish to show that $S_{n}$ is true for all $n \geq 1$. To do so using mathematical induction\index{mathematical induction}, use the 
 following steps.
 \begin{enumerate}
@@ -95,7 +95,7 @@ following steps.
 show that $S_{n+1}$ is true. 
 \end{enumerate}
 
-Proving these two steps shows that $S_{n}$ is true for all $n = 1,2,\cdots$.
+Proving these two steps shows that $S_{n}$ is true for all $n = 1,2,\ldots$.
 \end{procedure}
 
 We can use this procedure to solve the following examples.
@@ -152,14 +152,14 @@ Therefore,
 n+1} +1} \tup{2\tup{n+1} +1} }{6}
 \end{equation*}
 showing the formula holds for $n+1$ whenever it holds for $n$. This proves
-the formula by mathematical induction. In other words, this formula is true for all $n = 1, 2, \cdots$.
+the formula by mathematical induction. In other words, this formula is true for all $n = 1, 2, \ldots$.
 \end{solution}
 
 Consider another example.
 
 \begin{example}{Proving an inequality by induction}{inequality-proof-by-induction}
 Show that for all $n\in \N$, $\displaystyle \frac{1}{2}\cdot 
-\displaystyle \frac{3}{4}\cdots \displaystyle \frac{2n-1}{2n}<\displaystyle
+\displaystyle \frac{3}{4}\cdot\ldots\cdot\displaystyle \frac{2n-1}{2n}<\displaystyle
 \frac{1}{\sqrt{2n+1}}$.
 \end{example}
 
@@ -174,14 +174,14 @@ Suppose $n=1$. Then the statement says
 Suppose then that
 the inequality holds for $n$. In other words, 
 \begin{equation*}
- \frac{1}{2}\cdot \frac{3}{4}\cdots \frac{2n-1}{2n} < \frac{1}{\sqrt{2n+1}}
+ \frac{1}{2}\cdot \frac{3}{4}\cdot\ldots\cdot \frac{2n-1}{2n} < \frac{1}{\sqrt{2n+1}}
 \end{equation*}
 is true.
 
 Now multiply both sides of this inequality by $\frac{2n+1}{2n+2}$.
 This yields
 \begin{equation*}
-\frac{1}{2}\cdot \frac{3}{4}\cdots \frac{2n-1}{2n}\cdot \frac{2n+1}{2n+2}<
+\frac{1}{2}\cdot \frac{3}{4}\cdot\ldots\cdot \frac{2n-1}{2n}\cdot \frac{2n+1}{2n+2}<
 \frac{1}{\sqrt{2n+1}}\frac{2n+1}{2n+2}=\frac{\sqrt{2n+1}}{2n+2}
 \end{equation*}
 The theorem will be proved if this last expression is less than $

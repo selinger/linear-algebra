@@ -469,8 +469,9 @@ The following are some properties of linearly independent sets.
   \item \textbf{Linear independence of a subset.} If
     $\vect{u}_1,\ldots,\vect{u}_k$ are linearly independent, then so
     are $\vect{u}_1,\ldots,\vect{u}_j$ for any $j<k$.
-  \item \textbf{Linear independence and dimension.} Let
-    $\vect{u}_1,\ldots,\vect{u}_k$ be a sequence of $k$ vectors in
+  \item \textbf{Linear independence and dimension.}
+    \label{properties-linear-independence-c}
+    Let $\vect{u}_1,\ldots,\vect{u}_k$ be a sequence of $k$ vectors in
     $\R^n$. If $k>n$, then the vectors are linearly dependent (i.e.,
     not linearly independent).
   \end{enumerate}
@@ -489,7 +490,7 @@ The following are some properties of linearly independent sets.
     redundant in the longer sequence $\vect{u}_1,\ldots,\vect{u}_k$ as
     well.
   \item Let $A$ be the $n\times k$-matrix that has the vectors
-    $\vect{u}_{1},\cdots,\vect{u}_{k}$ as its columns and suppose that
+    $\vect{u}_{1},\ldots,\vect{u}_{k}$ as its columns and suppose that
     $k>n$. Then the rank of $A$ is at most $n$, so the {\ef} of $A$
     has some non-pivot columns. Therefore, the system
     $a_1\vect{u}_1 + \ldots + a_k\vect{u}_k = \vect{0}$ has

@@ -124,12 +124,12 @@ for the $\sigma _{i}$ the singular values of $A$.
 \begin{proof}
 There exists an orthonormal basis, $\set{\vect{v}_{i}} _{i=1}^{n}$ such that $
 A^TA\vect{v}_{i}=\sigma _{i}^{2}\vect{v}_{i}$ where $\sigma
-_{i}^{2}>0$ for $i=1,\cdots ,k,\tup{\sigma _{i}>0} $ and equals zero
+_{i}^{2}>0$ for $i=1,\ldots,k,\tup{\sigma _{i}>0} $ and equals zero
 if $i>k$. Thus for $i>k$, $A\vect{v}_{i}=\vect{0}$ because 
 \begin{equation*}
  A\vect{v}_{i}\dotprod A\vect{v}_{i} = A^TA\vect{v}_{i} \dotprod \vect{v}_{i}  = \vect{0} \dotprod \vect{v}_{i} =0.
 \end{equation*}
-For $i=1,\cdots ,k$, define $\vect{u}_{i}\in \R^{m}$ by 
+For $i=1,\ldots,k$, define $\vect{u}_{i}\in \R^{m}$ by 
 \begin{equation*}
 \vect{u}_{i}= \sigma _{i}^{-1}A\vect{v}_{i}.
 \end{equation*}
@@ -150,14 +150,14 @@ _{i}^{-1}AA^TA\vect{v}_{i}=\sigma _{i}^{-1}A\sigma _{i}^{2}\vect{v}
 _{i}=\sigma _{i}^{2}\vect{u}_{i}.
 \end{equation*}
 Now extend $\set{\vect{u}_{i}} _{i=1}^{k}$ to an orthonormal
-basis for all of $\R^{m},\set{\vect{u}_{i}} _{i=1}^{m}$
+basis for all of $\R^{m}$, $\set{\vect{u}_{i}} _{i=1}^{m}$
 and let 
 \begin{equation*}
 U= \begin{mymatrix}{ccc}
 \vect{u}_{1} & \cdots & \vect{u}_{m}
 \end{mymatrix}
 \end{equation*}
-while $V= \tup{\vect{v}_{1}\cdots \vect{v}_{n}}$. Thus $U$
+while $V= \mat{\vect{v}_{1},\ldots,\vect{v}_{n}}$. Thus $U$
 is the matrix which has the $\vect{u}_{i}$ as columns and $V$ is defined
 as the matrix which has the $\vect{v}_{i}$ as columns. Then 
 \begin{equation*}
@@ -167,7 +167,7 @@ U^TAV=\begin{mymatrix}{c}
 \vect{u}_{k}^T \\ 
 \vdots \\ 
 \vect{u}_{m}^T
-\end{mymatrix} A\mat{\vect{v}_{1}\cdots \vect{v}_{n}}
+\end{mymatrix} A\mat{\vect{v}_{1},\ldots,\vect{v}_{n}}
 \end{equation*}
 \begin{equation*}
 =\begin{mymatrix}{c}

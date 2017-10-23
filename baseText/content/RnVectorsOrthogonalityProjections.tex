@@ -5,8 +5,7 @@ An important use of the Gram-Schmidt Process is in orthogonal projections, the f
 You may recall that a subspace of $\R^n$ is a set of vectors
 which contains the zero vector, and is closed under addition and
 scalar multiplication. Let's call such a subspace $W$. In particular,
-a plane in $\R^n$ which contains the origin, $ \tup{0,0,
-\cdots, 0 }$, is a subspace of $\R^n$.
+a plane in $\R^n$ which contains the origin, $ \tup{0,0,\ldots,0}$, is a subspace of $\R^n$.
 
 Suppose a point $Y$ in $\R^n$ is not contained in $W$, then what
 point $Z$ in $W$ is closest to $Y$? Using the Gram-Schmidt Process, we
@@ -48,11 +47,11 @@ $\R^n$. Then the orthogonal projection of $Y$ onto $W$ is given by
 +
 \tup{\frac{\vect{y} \dotprod \vect{w}_2}{ \norm{\vect{w}_2}^2}} \vect{w}_2
 +
-\cdots
+\ldots
 +
 \tup{\frac{\vect{y} \dotprod \vect{w}_m}{ \norm{\vect{w}_m}^2}} \vect{w}_m
 \]
-where $\set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m}$ is any orthogonal basis of $W$.
+where $\set{\vect{w}_1, \vect{w}_2,\ldots, \vect{w}_m}$ is any orthogonal basis of $W$.
 \end{definition}
 
 Therefore, in order to find the orthogonal projection, we must first
@@ -270,7 +269,7 @@ W^{\perp} = \set{\vect{x} \in \R^n \; \mbox{such that} \;
 The orthogonal complement is defined as the set of all vectors which are orthogonal to all vectors in the original subspace. It turns out that it is sufficient that the vectors in the orthogonal complement be orthogonal to a spanning set of the original space.
 
 \begin{proposition}{Orthogonal to spanning set}{orthogonal-spanning-set}
-Let $W$ be a subspace of $\R^n$ such that $W = \sspan \set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_m }$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set. 
+Let $W$ be a subspace of $\R^n$ such that $W = \sspan \set{\vect{w}_1, \vect{w}_2,\ldots, \vect{w}_m }$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set. 
 \end{proposition}
 
 The following proposition demonstrates that the orthogonal complement of a subspace is itself a subspace. 

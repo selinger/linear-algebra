@@ -120,7 +120,7 @@ y_1 & y_2 & \cdots & y_n\end{mymatrix}$,
 \begin{mymatrix}{cccc} y_1 & y_2 & \cdots & y_n\end{mymatrix}
 \func{diag}(\lambda_1,\lambda_2,\ldots,\lambda_n)
 \begin{mymatrix}{c} y_1 \\ y_2 \\ \vdots \\ y_n\end{mymatrix}\\
-& = & \lambda_1 y_1^2 + \lambda_2 y_2^2 + \cdots \lambda_n y_n^2.
+& = & \lambda_1 y_1^2 + \lambda_2 y_2^2 + \ldots + \lambda_n y_n^2.
 \end{eqnarray*}
 
 $(\Rightarrow)$ First we will assume that $A$ is positive definite and prove that $\vect{x}^T A \vect{x} $ is positive. 
@@ -144,7 +144,7 @@ Since $U$ is invertible, $\vect{x}\neq\vect{0}$,
 and thus
 \[ \vect{y}=U^T\vect{x}=U^T(U\vect{e}_j) =\vect{e}_j.\]
 Thus $y_j=1$ and $y_i=0$ when $i\neq j$, so
-\[ \lambda_1 y_1^2 + \lambda_2 y_2^2 + \cdots \lambda_n y_n^2
+\[ \lambda_1 y_1^2 + \lambda_2 y_2^2 + \ldots + \lambda_n y_n^2
 =\lambda_j,\]
 i.e., $\lambda_j=\vect{x}^TA\vect{x}>0$.
 Therefore, $A$ is positive definite.
@@ -156,7 +156,7 @@ being positive definite is transferred to each of the principal submatrices whic
 
 \begin{definition}{The submatrix $A_k$}{submatrix-Ak}
 Let $A$ be an $n\times n$-matrix. Denote by $A_{k}$ the $k\times k$-matrix
-obtained by deleting the $k+1,\cdots ,n$ columns and the $k+1,\cdots ,n$
+obtained by deleting the $k+1,\ldots,n$ columns and the $k+1,\ldots,n$
 rows from $A$. Thus $A_{n}=A$ and $A_{k}$ is the $k\times k$ submatrix of $A$
 which occupies the upper left corner of $A$.
 \index{principal submatrices}
@@ -185,7 +185,7 @@ of which can be found in more advanced texts.
 
 \begin{theorem}{Positive matrix and determinant of $A_k$}{positive-matrix-determinant-Ak}   
 Let $A$ be a symmetric matrix. Then $A$ is positive definite if
-and only if $\det \tup{A_{k}}$ is greater than $0$ for every submatrix $A_{k}$,  $k=1,\cdots ,n$. 
+and only if $\det \tup{A_{k}}$ is greater than $0$ for every submatrix $A_{k}$,  $k=1,\ldots,n$. 
 \index{principal submatrices!positive definite}
 \index{positive definite!principal submatrices}
 \end{theorem}
@@ -239,12 +239,12 @@ if
 \begin{equation*}
 \tup{-1} ^{k} \det \tup{A_{k}} >0
 \end{equation*}
-for every $k=1,\cdots ,n$.
+for every $k=1,\ldots,n$.
 \end{corollary}
 
 \begin{proof}This is immediate from the above theorem when we notice,
 that $A$ is negative definite if and only if $-A$ is positive definite.
-Therefore, if $\det \tup{-A_{k}} >0$ for all $k=1,\cdots ,n$, it
+Therefore, if $\det \tup{-A_{k}} >0$ for all $k=1,\ldots,n$, it
 follows that $A$ is negative definite. However, $\det \tup{-A_{k}}
 =\tup{-1} ^{k}\det \tup{A_{k}}$. 
 \end{proof}
