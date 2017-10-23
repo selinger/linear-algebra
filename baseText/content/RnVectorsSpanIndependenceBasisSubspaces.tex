@@ -35,14 +35,14 @@ is a plane through the origin.
 \end{center}
 We also call these sets, respectively, a {\em $0$-dimensional
   subspace}, a {\em $1$-dimensional subspace}, and a {\em
-  $2$-dimensional subspace} of $\R^n$. The purpose of this section is
+  $2$-dimensional subspace} of\/ $\R^n$. The purpose of this section is
 to generalize this concept of subspace to arbitrary dimensions.
 
 \begin{definition}{Subspace}{subspace}
-  A subset $V$ of $\R^n$ is called a \textbf{subspace}%
+  A subset $V$ of\/ $\R^n$ is called a \textbf{subspace}%
   \index{subspace!of Rn@of $\R^n$} of $\R^n$ if
   \begin{enumerate}
-  \item $V$ contains the zero vector of $\R^n$, i.e., $\vect{0}\in V$;
+  \item $V$ contains the zero vector of\/ $\R^n$, i.e., $\vect{0}\in V$;
   \item $V$ is closed under addition, i.e., for all\/
     $\vect{u},\vect{w}\in V$, we have $\vect{u}+\vect{w}\in V$;
   \item $V$ is closed under scalar multiplication, i.e., for all\/
@@ -65,7 +65,7 @@ space $\R^n$ is referred to as a \textbf{proper subspace}%
   Let $\vect{u}_1,\ldots,\vect{u}_k$ be vectors in $\R^{n}$. Then
   $\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$ is a subspace of
   $\R^{n}$.%
-  \index{subspace!span}%
+  \index{subspace!span is a subspace}%
   \index{span!as a subspace}%
   \index{vector!span!as a subspace}%
 \end{proposition}
@@ -201,121 +201,126 @@ space $\R^n$ is referred to as a \textbf{proper subspace}%
   $(-1)\vect{u}\not\in W$.
 \end{solution}
 
-% ======================================================================
-\newpage
-\subsection{CONTINUE HERE}
+% ----------------------------------------------------------------------
+\subsection{Definition of basis}
 
-We are now prepared to examine the precise definition of a subspace as
-follows.
-
-\begin{definition}{Subspace}{subspace-alt}
-  Let $V$ be a nonempty collection of vectors in $\R^{n}$. Then $V$ is
-  called a subspace\index{subspace!of Rn@of $\R^n$} if whenever $a$
-  and $b$ are scalars and $\vect{u}$ and $\vect{v}$ are vectors in
-  $V$, the linear combination $a \vect{u}+ b \vect{v}$ is also in $V$.
-\end{definition}
-
-More generally this means that a subspace contains the span of any
-finite collection vectors in that subspace. It turns out that in
-$\R^{n}$, a subspace is exactly the span of finitely many of its
-vectors.
+We saw in Proposition~\ref{prop:span-subspace} that spans are
+subspaces of $\R^n$. Interestingly, the converse is also true: every
+subspace of $\R^n$ is the span of some finite set of vectors.
 
 \begin{theorem}{Subspaces are spans}{subspaces-are-spans}
-  Let $V$ be a nonempty collection of vectors in $\R^{n}$. Then $V$ is
-  a subspace of $\R^{n}$ if and only if there exist vectors
-  $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ in $V$ such that
+  Let $V$ be a subspace of\/ $\R^n$. Then there exist linearly
+  independent vectors $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ in $V$
+  such that
   \begin{equation*}
-    V= \sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}. 
-  \end{equation*}
-  \index{subspace!span} Furthermore, let $W$ be another subspace of
-  $\R^n$ and suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} \in
-  W$. Then it follows that $V$ is a subset of $W$.
+    V= \sspan\set{\vect{u}_{1},\ldots ,\vect{u}_{k}}. 
+  \end{equation*}%
+  \index{subspace!subspace is a span}
+  \vspace{-3ex}
 \end{theorem}
 
-Note that since $W$ is arbitrary, the statement that $V \subseteq W$
-means that any other subspace of $\R^n$ that contains these vectors
-will also contain $V$.
-
 \begin{proof}
-  We first show that if $V$ is a subspace, then it can be written as
-  $V= \sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$. Pick a vector
-  $\vect{u}_{1}$ in $V$. If $V= \sspan\set{\vect{u}_{1}}$, then you
-  have found your list of vectors and are done. If
-  $V\neq \sspan\set{\vect{u}_{1}}$, then there exists $\vect{u}_{2}$ a
-  vector of $V$ which is not in $ \sspan\set{\vect{u}_{1}}$. Consider
-  $\sspan\set{ \vect{u}_{1},\vect{u}_{2}}$.  If
-  $V=\sspan\set{\vect{u}_{1},\vect{u}_{2}}$, we are done. Otherwise,
-  pick $\vect{u}_{3}$ not in
-  $\sspan\set{\vect{u}_{1},\vect{u}_{2}}$. Continue this way.  Note
-  that since $V $ is a subspace, these spans are each contained in
-  $V$.  The process must stop with $\vect{u}_{k}$ for some $k\leq n$
-  by Corollary~\ref{cor:linear-dependence-Rn}, and thus
-  $V=\sspan\set{\vect{u}_{1},\cdots , \vect{u}_{k}}$.
-
-  Now suppose $V=\sspan\set{\vect{u}_{1},\cdots , \vect{u}_{k}}$, we
-  must show this is a subspace. So let
-  $\sum_{i=1}^{k}c_{i}\vect{u}_{i}$ and
-  $ \sum_{i=1}^{k}d_{i}\vect{u}_{i}$ be two vectors in $V$, and let
-  $a$ and $b$ be two scalars. Then
-  \begin{equation*}
-    a \sum_{i=1}^{k}c_{i}\vect{u}_{i}+ b \sum_{i=1}^{k}d_{i}\vect{u}_{i}=
-    \sum_{i=1}^{k}\tup{a c_{i}+b  d_{i}} \vect{u}_{i}
-  \end{equation*}
-  which is one of the vectors in
-  $\sspan\set{\vect{u}_{1},\cdots , \vect{u}_{k}}$ and is therefore
-  contained in $V$. This shows that
-  $\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ has the properties
-  of a subspace.
-
-  To prove that $V \subseteq W$, we prove that if $\vect{u}_i\in V$,
-  then $\vect{u}_i \in W$.
-
-  Suppose $\vect{u}\in V$.  Then
-  $\vect{u}=a_1\vect{u}_1 + a_2\vect{u}_2 + \cdots + a_k\vect{u}_k$
-  for some $a_i\in\R$, $1\leq i\leq k$.  Since $W$ contain each
-  $\vect{u}_i$ and $W$ is a vector space, it follows that
-  $ a_1\vect{u}_1 + a_2\vect{u}_2 + \cdots + a_k\vect{u}_k \in W$.
+  We proceed as follows.
+  \begin{enumerate}
+  \item[0.] If $V=\set{\vect{0}}$, then $V$ is the empty span, and we
+    are done.
+  \item[1.] Otherwise, $V$ contains some non-zero vector.  Pick a
+    non-zero vector $\vect{u}_{1}$ in $V$. If
+    $V=\sspan\set{\vect{u}_{1}}$, we are done.
+  \item[2.] Otherwise, pick a vector $\vect{u}_{2}$ in $V$ that is not
+    in $\sspan\set{\vect{u}_{1}}$. If
+    $V=\sspan\set{\vect{u}_{1},\vect{u}_{2}}$, we are done.
+  \item[3.] Otherwise, pick a vector $\vect{u}_{3}$ in $V$ that is not
+    in $\sspan\set{\vect{u}_{1},\vect{u}_{2}}$. If
+    $V=\sspan\set{\vect{u}_{1},\vect{u}_{2},\vect{u}_{3}}$, we are done.
+  \item[4.] Otherwise, pick a vector $\vect{u}_{4}$ in $V$ that is not
+    in $\sspan\set{\vect{u}_{1},\vect{u}_{2},\vect{u}_{4}}$, and so on.
+  \end{enumerate}
+  Continue in this way. Note that after the $j\th$ step of this
+  process, the vectors $\vect{u}_1,\ldots,\vect{u}_j$ are linearly
+  independent. This is because, by construction, no vector is in the
+  span of the previous vectors, and therefore no vector is redundant.
+  By
+  Theorem~\ref{thm:properties-linear-independence}(\ref{properties-linear-independence-c}),
+  there can be at most $n$ linearly independent vectors in $\R^n$.
+  Therefore the process must stop after $k$ steps for some $k\leq
+  n$. But then $V=\sspan\set{\vect{u}_{1},\ldots ,\vect{u}_{k}}$, as
+  desired.
 \end{proof}
 
-Since the vectors $\vect{u}_i$ we constructed in the proof above are
-not in the span of the previous vectors (by definition), they must be
-linearly independent and thus we obtain the following corollary.
-
-\begin{corollary}{Subspaces are spans of independent vectors}{subspaces-are-spans-independent-vectors}
-  If $V$ is a subspace of $\R^{n}$, then there exist linearly
-  independent vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$ in $V$
-  such that $V=\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}}$.
-\end{corollary}
-
-In summary, subspaces of $\R^{n}$ consist of spans of finite, linearly
-independent collections of vectors of $\R^{n}$.  Such a collection of
-vectors is called a basis.\index{basis}
+In summary, every subspace of $\R^{n}$ is spanned by a finite,
+linearly independent collection of vectors.  Such a collection of
+vectors is called a \textbf{basis} of the subspace.
 
 \begin{definition}{Basis of a subspace}{subspace-basis}
   Let $V$ be a subspace of $\R^{n}$. Then
-  $\set{ \vect{u}_{1},\cdots ,\vect{u}_{k}} $ is a \textbf{basis} for
-  $V$ if the following two conditions
-  hold.\index{basis}\index{vector!basis}
-
+  $\set{\vect{u}_{1},\ldots ,\vect{u}_{k}}$ is a \textbf{basis} for
+  $V$ if the following two conditions hold:%
+  \index{basis}%
+  \index{subspace!basis|see{basis}}%
+  \index{vector!basis|see{basis}}%
   \begin{enumerate}
-  \item $\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V$
-  \item $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is linearly
-    independent
+  \item $\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}}=V$, and
+  \item $\vect{u}_{1},\ldots,\vect{u}_{k}$ are linearly independent.
   \end{enumerate}
-
-  Note the plural of basis is \textbf{bases}.\index{subspace!basis} 
 \end{definition}
+
+Note that the plural of basis is \textbf{bases}.
+
+% ----------------------------------------------------------------------
+\subsection{Examples of bases}
+
+\begin{proposition}{Standard basis of $\R^n$}{standard-basis}
+  Let $\vect{e}_i$ be the vector in $\R^n$ whose $i\th$ entry is $1$
+  and all of whose other entries are $0$. In other words, $\vect{e}_i$
+  is the $i\th$ column of the identity matrix.
+  \begin{equation*}
+    \vect{e}_1 = \begin{mymatrix}{c}1\\0\\0\\\vdots\\0\end{mymatrix},\quad
+    \vect{e}_2 = \begin{mymatrix}{c}0\\1\\0\\\vdots\\0\end{mymatrix},\quad
+    \vect{e}_3 = \begin{mymatrix}{c}0\\0\\1\\\vdots\\0\end{mymatrix},\quad
+    \ldots~,\quad
+    \vect{e}_n = \begin{mymatrix}{c}0\\0\\0\\\vdots\\1\end{mymatrix}.
+  \end{equation*}
+  Then $\set{\vect{e}_1,\vect{e}_2,\ldots,\vect{e}_n}$ is a basis for
+  $\R^n$. It is called the \textbf{standard basis}%
+  \index{standard basis}%
+  \index{basis!standard}
+  of $\R^n$.
+\end{proposition}
+
+\begin{proof}
+  To see that it is a basis of $\R^n$, first notice that the vectors
+  $\vect{e}_1,\vect{e}_2,\ldots,\vect{e}_n$ span $\R^n$. Indeed, every
+  vector $\vect{v} = \mat{x_1,\ldots,x_n}^T\in\R^n$ can be written as
+  $\vect{v} = x_1\vect{e}_1+\ldots+x_n\vect{e}_n$. Second, the vectors
+  $\vect{e}_1,\vect{e}_2,\ldots,\vect{e}_n$ are evidently linearly
+  independent, because none of these vectors can be written as a
+  linear combination of previous vectors. Since the vectors span
+  $\R^n$ and are linearly independent, they form a basis of $\R^n$.
+\end{proof}
+
+\begin{example}
+  Check that the vectors
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{r}1\\2\\1\end{mymatrix},\quad
+    \vect{v}_2 = \begin{mymatrix}{r}0\\1\\0\end{mymatrix},\quad
+    \mbox{and}\quad
+    \vect{v}_3 = \begin{mymatrix}{r}1\\0\\-1\end{mymatrix}
+  \end{equation*}
+  form a basis of $\R^3$.
+\end{example}
+
+\begin{solution}
+  ...........
+\end{solution}
+
+% ======================================================================
+\subsection{CONTINUE HERE}
 
 The following is a simple but very useful example of a basis, called
 the standard basis.
 
 \begin{definition}{Standard basis of $\R^n$}{standard-basis}
-  Let $\vect{e}_i$ be the vector in $\R^n$ which has a $1$ in the
-  $i^{th}$ entry and zeros elsewhere, that is the $i^{th}$ column of
-  the identity matrix. Then the collection
-  $\set{\vect{e}_1, \vect{e}_2, \cdots, \vect{e}_n }$ is a basis for
-  $\R^n$ and is called the standard basis\index{standard basis} of
-  $\R^n$.
 \end{definition}
 
 The main theorem about bases is not only they exist, but that they
@@ -323,9 +328,9 @@ must be of the same size. To show this, we will need the the following
 fundamental result, called the Exchange Theorem.
 
 \begin{theorem}{Exchange theorem}{exchange-theorem}
-  Suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{r}} $ is a linearly
+  Suppose $\set{\vect{u}_{1},\ldots ,\vect{u}_{r}} $ is a linearly
   independent set of vectors in $\R^n$, and each $\vect{u}_{k}$ is
-  contained in $\sspan\set{\vect{v}_{1},\cdots
+  contained in $\sspan\set{\vect{v}_{1},\ldots
     ,\vect{v}_{s}}$ Then $s\geq r$. \\
   In words, spanning\index{exchange theorem} sets have at least as
   many vectors as linearly independent sets.
@@ -333,7 +338,7 @@ fundamental result, called the Exchange Theorem.
 
 \begin{proof}
   Since each $\vect{u}_j$ is in
-  $\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{s}} $, there exist
+  $\sspan\set{\vect{v}_{1},\ldots ,\vect{v}_{s}} $, there exist
   scalars $a_{ij}$ such that
   \begin{equation*}
     \vect{u}_{j}=\sum_{i=1}^{s}a_{ij}\vect{v}_{i}
@@ -345,7 +350,7 @@ fundamental result, called the Exchange Theorem.
   $\vect{d}\neq \vect{0}$ such that $A\vect{d}=\vect{0}$. In other
   words,
   \begin{equation*}
-    \sum_{j=1}^{r}a_{ij}d_{j}=0,\;i=1,2,\cdots ,s
+    \sum_{j=1}^{r}a_{ij}d_{j}=0,\;i=1,2,\ldots ,s
   \end{equation*}
   Therefore, 
   \begin{eqnarray*}
@@ -356,7 +361,7 @@ fundamental result, called the Exchange Theorem.
         _{i}=\sum_{i=1}^{s}0\vect{v}_{i}=0
   \end{eqnarray*}
   which contradicts the assumption that
-  $\set{\vect{u}_{1},\cdots ,\vect{u}_{r}} $ is linearly independent,
+  $\set{\vect{u}_{1},\ldots ,\vect{u}_{r}} $ is linearly independent,
   because not all the $d_{j}$ are zero. Thus this contradiction
   indicates that $s\geq r$.
 \end{proof}
@@ -372,11 +377,11 @@ We are now ready to show that any two bases are of the same size.
 \begin{proof}
   This follows right away from
   Theorem~\ref{thm:exchange-theorem}. Indeed observe that
-  $B_1 = \set{ \vect{u}_{1},\cdots ,\vect{u}_{s}} $ is a spanning set
-  for $V$ while $ B_2 = \set{\vect{v}_{1},\cdots ,\vect{v}_{r}} $ is
+  $B_1 = \set{ \vect{u}_{1},\ldots ,\vect{u}_{s}} $ is a spanning set
+  for $V$ while $ B_2 = \set{\vect{v}_{1},\ldots ,\vect{v}_{r}} $ is
   linearly independent, so $s \geq r$. Similarly
-  $B_2 = \set{\vect{v}_{1},\cdots ,\vect{v} _{r}} $ is a spanning set
-  for $V$ while $B_1 = \set{\vect{u}_{1},\cdots , \vect{u}_{s}} $ is
+  $B_2 = \set{\vect{v}_{1},\ldots ,\vect{v} _{r}} $ is a spanning set
+  for $V$ while $B_1 = \set{\vect{u}_{1},\ldots , \vect{u}_{s}} $ is
   linearly independent, so $r\geq s$.
 \end{proof}
 
@@ -397,7 +402,7 @@ The next result follows.
 \begin{proof}
   You only need to exhibit a basis for $\R^{n}$ which has $n$
   vectors. Such a basis is the standard basis
-  $\set{\vect{e}_{1},\cdots , \vect{e}_{n}}$.
+  $\set{\vect{e}_{1},\ldots , \vect{e}_{n}}$.
 \end{proof}
 
 Consider the following example.
@@ -477,19 +482,19 @@ $\R^{n}$.
 \begin{corollary}{Linearly independent and spanning sets in  $\R^{n}$}{independent-spanning-Rn}
   The following properties hold in $\R^{n}$:
   \begin{itemize}
-  \item Suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is linearly
-    independent. Then $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is a
+  \item Suppose $\set{\vect{u}_{1},\ldots ,\vect{u}_{n}} $ is linearly
+    independent. Then $\set{\vect{u}_{1},\ldots ,\vect{u}_{n}} $ is a
     basis for $\R^{n}$.
-  \item Suppose $\set{\vect{u}_{1},\cdots ,\vect{u}_{m}} $ spans
+  \item Suppose $\set{\vect{u}_{1},\ldots ,\vect{u}_{m}} $ spans
     $\R^{n}$. Then $m\geq n$.
-  \item If $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ spans $\R^{n}$,
-    then $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is linearly
+  \item If $\set{\vect{u}_{1},\ldots ,\vect{u}_{n}} $ spans $\R^{n}$,
+    then $\set{\vect{u}_{1},\ldots ,\vect{u}_{n}} $ is linearly
     independent.
   \end{itemize}
 \end{corollary}
 
 \begin{proof}
-  Assume first that $\set{\vect{u}_{1},\cdots ,\vect{u}_{n}} $ is
+  Assume first that $\set{\vect{u}_{1},\ldots ,\vect{u}_{n}} $ is
   linearly independent, and we need to show that this set spans
   $\R^{n}$. To do so, let $\vect{v}$ be a vector of $\R^{n}$, and we
   need to write $\vect{v}$ as a linear combination of $\vect{u}_i$'s.
@@ -497,7 +502,7 @@ $\R^{n}$.
   \begin{equation*}
     A = 
     \begin{mymatrix}{rrr}
-      \vect{u}_{1} & \cdots & \vect{u}_{n} 
+      \vect{u}_{1} & \ldots & \vect{u}_{n} 
     \end{mymatrix}
   \end{equation*}
   By linear independence of the $\vect{u}_i$'s, the {\rref} of $A$ is
@@ -506,27 +511,27 @@ $\R^{n}$.
   $\vect{u}_i$'s.
 
   To establish the second claim, suppose that $m<n$. Then letting
-  $\vect{u}_{i_{1}},\cdots ,\vect{u}_{i_{k}}$ be the pivot columns of
+  $\vect{u}_{i_{1}},\ldots ,\vect{u}_{i_{k}}$ be the pivot columns of
   the matrix
   \begin{equation*}
     \begin{mymatrix}{ccc}
-      \vect{u}_{1} & \cdots & \vect{u}_{m}
+      \vect{u}_{1} & \ldots & \vect{u}_{m}
     \end{mymatrix}
   \end{equation*}
   it follows $k\leq m<n$ and these $k$ pivot columns would be a basis
   for $\R^{n}$ having fewer than $n$ vectors, contrary to
   Corollary~\ref{cor:dimension-Rn}.
 
-  Finally consider the third claim. If $\set{\vect{u}_{1},\cdots
+  Finally consider the third claim. If $\set{\vect{u}_{1},\ldots
     ,\vect{u}_{n}} $ is not linearly independent, then replace this
-  list with $\set{\vect{u}_{i_{1}},\cdots ,\vect{u}_{i_{k}}} $ where these
+  list with $\set{\vect{u}_{i_{1}},\ldots ,\vect{u}_{i_{k}}} $ where these
   are the pivot columns of the matrix 
   \begin{equation*}
     \begin{mymatrix}{ccc}
-      \vect{u}_{1} & \cdots & \vect{u}_{n}
+      \vect{u}_{1} & \ldots & \vect{u}_{n}
     \end{mymatrix}
   \end{equation*}
-  Then $\set{\vect{u}_{i_{1}},\cdots ,\vect{u}_{i_{k}}} $ spans
+  Then $\set{\vect{u}_{i_{1}},\ldots ,\vect{u}_{i_{k}}} $ spans
   $\R^{n}$ and is linearly independent, so it is a basis having
   less than $n$ vectors again contrary to Corollary~\ref{cor:dimension-Rn}.
 \end{proof}
@@ -605,20 +610,20 @@ result in a basis.
 
 \begin{theorem}{Finding a basis from a span}{}
   Let $W$ be a subspace. Also suppose that
-  $W=\sspan\set{\vect{w} _{1},\cdots ,\vect{w}_{m}}$. Then there
-  exists a subset of $\set{ \vect{w}_{1},\cdots ,\vect{w}_{m}} $ which
+  $W=\sspan\set{\vect{w} _{1},\ldots ,\vect{w}_{m}}$. Then there
+  exists a subset of $\set{ \vect{w}_{1},\ldots ,\vect{w}_{m}} $ which
   is a basis for $W$.\index{spanning set!basis}
 \end{theorem}
 
 \begin{proof}
   Let $S$ denote the set of positive integers such that for $ k\in S$,
-  there exists a subset of $\set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $
+  there exists a subset of $\set{\vect{w}_{1},\ldots ,\vect{w}_{m}} $
   consisting of exactly $k$ vectors which is a spanning set for
   $W$. Thus $m\in S$. Pick the smallest positive integer in $S$. Call
   it $k$. Then there exists
-  $\set{\vect{u}_{1},\cdots , \vect{u}_{k}} \subseteq
-  \set{\vect{w}_{1},\cdots ,\vect{w} _{m}} $ such that
-  $\sspan\set{\vect{u}_{1},\cdots ,\vect{u} _{k}} =W$. If
+  $\set{\vect{u}_{1},\ldots , \vect{u}_{k}} \subseteq
+  \set{\vect{w}_{1},\ldots ,\vect{w} _{m}} $ such that
+  $\sspan\set{\vect{u}_{1},\ldots ,\vect{u} _{k}} =W$. If
   \begin{equation*}
     \sum_{i=1}^{k}c_{i}\vect{w}_{i}=\vect{0}
   \end{equation*}
@@ -633,8 +638,8 @@ result in a basis.
   that it could have been obtained as a linear combination of
   $\vect{w}_{i}$ for $i\neq j$. Thus $k-1\in S$ contrary to the choice
   of $k$ . Hence each $c_{i}=0$ and so
-  $\set{\vect{u}_{1},\cdots ,\vect{u} _{k}} $ is a basis for $W$
-  consisting of vectors of $\set{\vect{w} _{1},\cdots ,\vect{w}_{m}}$.
+  $\set{\vect{u}_{1},\ldots ,\vect{u} _{k}} $ is a basis for $W$
+  consisting of vectors of $\set{\vect{w} _{1},\ldots ,\vect{w}_{m}}$.
 \end{proof}
 
 The following example illustrates how to carry out this shrinking
@@ -716,7 +721,7 @@ another subspace.
 \end{theorem}
 
 The proof is left as an exercise but proceeds as follows. Begin with a
-basis for $W,\set{\vect{w}_{1},\cdots ,\vect{w}_{s}} $ and add in
+basis for $W,\set{\vect{w}_{1},\ldots ,\vect{w}_{s}} $ and add in
 vectors from $V$ until you obtain a basis for $V$.  Not that the
 process will stop because the dimension of $V$ is no more than $n$.
 
@@ -836,3 +841,21 @@ an $n \times n$-matrix $A$ has columns which are independent, or span
 $\R^n$, then it follows that $A$ is invertible. If it has rows that
 are independent, or span the set of all $1 \times n$ vectors, then $A$
 is invertible.
+
+% ----------------------------------------------------------------------
+We are now prepared to examine the precise definition of a subspace as
+follows.
+
+\begin{definition}{Subspace}{subspace-alt}
+  Let $V$ be a nonempty collection of vectors in $\R^{n}$. Then $V$ is
+  called a subspace\index{subspace!of Rn@of $\R^n$} if whenever $a$
+  and $b$ are scalars and $\vect{u}$ and $\vect{v}$ are vectors in
+  $V$, the linear combination $a \vect{u}+ b \vect{v}$ is also in $V$.
+\end{definition}
+
+More generally this means that a subspace contains the span of any
+finite collection vectors in that subspace. It turns out that in
+$\R^{n}$, a subspace is exactly the span of finitely many of its
+vectors.
+
+
