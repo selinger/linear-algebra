@@ -434,77 +434,92 @@ basis.
   \end{equation*}
 \end{solution}
 
-% ======================================================================
-\subsection{CONTINUE HERE}
+% ----------------------------------------------------------------------
+\subsection{Dimension}
 
-The main theorem about bases is not only they exist, but that they
-must be of the same size. To show this, we will need the the following
-fundamental result, called the Exchange Theorem.
+One of the most important properties of bases is that any two bases
+for the same space must be of the same size. To show this, we will
+need the the following fundamental result, called the Exchange
+Theorem. This theorem states that spanning sets have at least as many
+vectors as linearly independent sets.
 
-\begin{theorem}{Exchange theorem}{exchange-theorem}
-  Suppose $\set{\vect{u}_{1},\ldots ,\vect{u}_{r}} $ is a linearly
-  independent set of vectors in $\R^n$, and each $\vect{u}_{k}$ is
-  contained in $\sspan\set{\vect{v}_{1},\ldots
-    ,\vect{v}_{s}}$ Then $s\geq r$. \\
-  In words, spanning\index{exchange theorem} sets have at least as
-  many vectors as linearly independent sets.
+\begin{theorem}{Exchange Theorem}{exchange-theorem}
+  \index{exchange theorem}%
+  Suppose $\vect{u}_{1},\ldots,\vect{u}_{r}$ are linearly independent
+  elements of $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{s}}$. Then
+  $r\leq s$.
 \end{theorem}
 
 \begin{proof}
-  Since each $\vect{u}_j$ is in
-  $\sspan\set{\vect{v}_{1},\ldots ,\vect{v}_{s}} $, there exist
+  Since each $\vect{u}_j$ is an element of
+  $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{s}}$, there exist
   scalars $a_{ij}$ such that
   \begin{equation*}
-    \vect{u}_{j}=\sum_{i=1}^{s}a_{ij}\vect{v}_{i}
+    \vect{u}_{j} = a_{1j}\,\vect{v}_1 + \ldots + a_{sj}\,\vect{v}_s.
   \end{equation*}
-  Suppose for a contradiction that $s<r$. Then the matrix
-  $A = \mat{ a_{ij} }$ has fewer rows, $s$ than columns, $r$. Then the
-  system $AX=0$ has %Theorem~\ref{thm:rank-homogeneous-solutions}
-  a non-trivial solution $\vect{d}$, that is there is a
-  $\vect{d}\neq \vect{0}$ such that $A\vect{d}=\vect{0}$. In other
-  words,
+  Let $A = \mat{a_{ij}}$. Note that this matrix has $s$ rows and $r$
+  columns, i.e., it is an $s\times r$-matrix. Now suppose, for the
+  sake of obtaining a contradiction, that $r>s$. Then by
+  Theorem~\ref{thm:rank-homogeneous-solutions}, the system
+  $A\vect{x}=\vect{0}$ has a non-trivial solution $\vect{x}$, i.e.,
+  there exists $\vect{x}\neq\vect{0}$ such that $A\vect{x}=\vect{0}$.
+  In other words, for all $i=1,\ldots,s$, 
   \begin{equation*}
-    \sum_{j=1}^{r}a_{ij}d_{j}=0,\;i=1,2,\ldots ,s
+    a_{i1}x_1 + \ldots + a_{ir}x_r = 0.
   \end{equation*}
-  Therefore, 
+  Therefore,
   \begin{eqnarray*}
-    \sum_{j=1}^{r}d_{j}\vect{u}_{j}
-    &=&\sum_{j=1}^{r}d_{j}\sum_{i=1}^{s}a_{ij}
-        \vect{v}_{i} \\
-    &=&\sum_{i=1}^{s}\tup{\sum_{j=1}^{r}a_{ij}d_{j}} \vect{v}
-        _{i}=\sum_{i=1}^{s}0\vect{v}_{i}=0
+    x_1\,\vect{u}_1 + \ldots + x_r\,\vect{u}_r
+    &=&
+        x_1(a_{11}\,\vect{v}_1 + \ldots + a_{s1}\,\vect{v}_s)
+        + \ldots
+        + x_r(a_{1r}\,\vect{v}_1 + \ldots + a_{sr}\,\vect{v}_s)
+    \\
+    &=&
+        (a_{11}x_1 + \ldots + a_{1r}x_r)\vect{v}_1
+        + \ldots
+        + (a_{s1}x_1 + \ldots + a_{sr}x_r)\vect{v}_s
+    \\
+    &=& 0\,\vect{v}_1 + \ldots + 0\,\vect{v}_s
+    \\
+    &=& 0.
   \end{eqnarray*}
-  which contradicts the assumption that
-  $\set{\vect{u}_{1},\ldots ,\vect{u}_{r}} $ is linearly independent,
-  because not all the $d_{j}$ are zero. Thus this contradiction
-  indicates that $s\geq r$.
+  This contradicts the assumption that
+  $\vect{u}_{1},\ldots,\vect{u}_{r}$ are linearly independent. Since
+  we assumed $r>s$ and obtained a contradiction, it follows that
+  $r\leq s$, as desired.
 \end{proof}
 
-We are now ready to show that any two bases are of the same size.
+Armed with the Exchange Theorem, we are now ready to show that any two
+bases are of the same size.
 
-\begin{theorem}{Bases of\/ $\R^{n}$ are of the same size}{bases-same-size}
-  Let $V$ be a subspace of\/ $\R^{n}$ with two bases $B_1$ and
-  $B_2$. Suppose $B_1$ contains $s$ vectors and $B_2$ contains $r$
-  vectors. Then $s=r$.
+\begin{theorem}{Bases are of the same size}{bases-same-size}
+  \index{basis!size of}%
+  Let $V$ be a subspace of\/ $\R^{n}$, and let $B_1$ and $B_2$ be
+  bases of $V$. Suppose $B_1$ contains $s$ vectors and $B_2$ contains
+  $r$ vectors. Then $s=r$.
 \end{theorem}
 
 \begin{proof}
-  This follows right away from
-  Theorem~\ref{thm:exchange-theorem}. Indeed observe that
-  $B_1 = \set{ \vect{u}_{1},\ldots ,\vect{u}_{s}} $ is a spanning set
-  for $V$ while $ B_2 = \set{\vect{v}_{1},\ldots ,\vect{v}_{r}} $ is
-  linearly independent, so $s \geq r$. Similarly
+  This follows right away from the Exchange Theorem. Indeed, observe
+  that $B_1 = \set{ \vect{u}_{1},\ldots ,\vect{u}_{s}} $ is a spanning
+  set for $V$ while $ B_2 = \set{\vect{v}_{1},\ldots ,\vect{v}_{r}} $
+  is linearly independent, so $s \geq r$. Similarly
   $B_2 = \set{\vect{v}_{1},\ldots ,\vect{v} _{r}} $ is a spanning set
   for $V$ while $B_1 = \set{\vect{u}_{1},\ldots , \vect{u}_{s}} $ is
   linearly independent, so $r\geq s$.
 \end{proof}
 
+% ======================================================================
+\subsection{CONTINUE HERE}
+
 The following definition can now be stated.
 
 \begin{definition}{Dimension of a subspace}{dimension}
-  Let $V$ be a subspace of\/ $\R^{n}$. Then the \textbf{dimension }of
-  $V$, written $\func{dim}(V)$ is defined to be the number of vectors
-  in a basis.\index{dimension}\index{subspace!dimension}
+  Let $V$ be a subspace of\/ $\R^{n}$. Then the \textbf{dimension}%
+  \index{dimension}%
+  \index{subspace!dimension} of $V$, written $\func{dim}(V)$, is
+  defined to be the number of vectors in a basis.
 \end{definition}
 
 The next result follows.
