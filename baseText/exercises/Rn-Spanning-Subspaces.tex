@@ -3,620 +3,131 @@
 
 \begin{enumialphparenastyle}
 
-\begin{ex} Let $H = \sspan\set{\begin{mymatrix}{r}
-2 \\ 
-1 \\ 
-1 \\ 
-1
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
-0 \\ 
--1 \\ 
--1
-\end{mymatrix} ,\begin{mymatrix}{r}
-5 \\ 
-2 \\ 
-3 \\ 
-3
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
-1 \\ 
--2 \\ 
--2
-\end{mymatrix} }$. Find the dimension of $H$ and determine a basis.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Which of the following sets are subspaces of $\R^3$? Explain.
+  \begin{enumerate}
+  \item $V_1=\set{\left.\vect{u}=\begin{mymatrix}{c}
+          u_{1} \\ u_{2} \\ u_{3}
+        \end{mymatrix}~\right\vert~ \abs{u_{1}} \leq 4}$.
+  \item $V_2=\set{\left.\vect{u}=\begin{mymatrix}{c}
+          u_{1} \\ u_{2} \\ u_{3}
+        \end{mymatrix}~\right\vert~ u_{i}\geq 0\text{ for each }i=1,2,3}$.
+  \item $V_3=\set{\left.\vect{u}=\begin{mymatrix}{c}
+          u_{1} \\ u_{2} \\ u_{3}
+        \end{mymatrix}~\right\vert~ u_{3}+u_{1}=2u_{2}}$.
+  \item $V_4=\set{\left.\vect{u}=\begin{mymatrix}{c}
+          u_{1} \\ u_{2} \\ u_{3}
+        \end{mymatrix}~\right\vert~ u_{3}\geq u_{1}}$.
+  \item $V_5=\set{\left.\vect{u}=\begin{mymatrix}{c}
+          u_{1} \\ u_{2} \\ u_{3}
+        \end{mymatrix}~\right\vert~ u_{3}=u_{1}=0}$.
+  \end{enumerate}
+
+  \begin{sol}
+    \begin{enumerate}
+    \item
+      No. We have $\begin{mymatrix}{r}
+        1 \\ 0 \\ 0 \\ 0
+      \end{mymatrix} \in V_1$ but $10\begin{mymatrix}{r}
+        1 \\ 0 \\ 0 \\ 0
+      \end{mymatrix} \notin V_1$.
+    \item
+      This is not a subspace. The vector $\begin{mymatrix}{r}
+        1 \\ 1 \\ 1 \\ 1
+      \end{mymatrix} $
+      is in $V_2$. However, $\tup{-1} \begin{mymatrix}{r}
+        1 \\ 1 \\ 1 \\ 1
+      \end{mymatrix} $ is not.
+    \item This is a subspace. It contains the zero vector and is
+      closed with respect to vector addition and scalar
+      multiplication.
+    \item
+      This
+      is not a subspace. The vector $\begin{mymatrix}{r}
+        0 \\ 0 \\ 1 \\ 0
+      \end{mymatrix} $ is in $V_4$. However $(-1) \begin{mymatrix}{r}
+        0 \\ 0 \\ 1 \\ 0
+      \end{mymatrix}  = \begin{mymatrix}{r}
+        0 \\ 0 \\ -1 \\ 0
+      \end{mymatrix} $ is not.
+    \item This is a subspace. It contains the zero vector and is
+      closed with respect to vector addition and scalar
+      multiplication.
+    \end{enumerate}
+  \end{sol}
 \end{ex}
 
-
-\begin{ex} Let $H$ denote $\sspan\set{\begin{mymatrix}{r}
-0 \\ 
-1 \\ 
-1 \\ 
--1
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
--1 \\ 
--2 \\ 
-2
-\end{mymatrix} ,\begin{mymatrix}{r}
-2 \\ 
-3 \\ 
-5 \\ 
--5
-\end{mymatrix} ,\begin{mymatrix}{r}
-0 \\ 
-1 \\ 
-2 \\ 
--2
-\end{mymatrix} }$. Find the dimension of $H$ and determine a basis.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $\vect{w}\in \R^{4}$ be a given fixed vector. Let
+  \begin{equation*}
+    M=\set{\left.\vect{u}
+        =\begin{mymatrix}{c}
+          u_{1} \\ u_{2} \\ u_{3} \\ u_{4}
+        \end{mymatrix} \in \R^{4}~\right\vert~ \vect{w}\dotprod \vect{u}
+      =0}.
+  \end{equation*}
+  Is $M$ a subspace of $\R^4$? Explain.
+  \begin{sol}
+    Yes, this is a subspace because it contains the zero vector and is
+    closed with respect to vector addition and scalar
+    multiplication. For example, if $\vect{u},\vect{v}\in M$, then
+    $\vect{w}\dotprod\vect{u}=0$ and $\vect{w}\dotprod\vect{v}=0$,
+    therefore $\vect{w}\dotprod(\vect{u}+\vect{v})=0$, therefore
+    $\vect{u}+\vect{v}\in M$.
+  \end{sol}
 \end{ex}
 
-
-\begin{ex} Let $H$ denote $\sspan\set{\begin{mymatrix}{r}
--2 \\ 
-1 \\ 
-1 \\ 
--3
-\end{mymatrix} ,\begin{mymatrix}{r}
--9 \\ 
-4 \\ 
-3 \\ 
--9
-\end{mymatrix} ,\begin{mymatrix}{r}
--33 \\ 
-15 \\ 
-12 \\ 
--36
-\end{mymatrix} ,\begin{mymatrix}{r}
--22 \\ 
-10 \\ 
-8 \\ 
--24
-\end{mymatrix} }$. Find the dimension of $H$ and determine a basis.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $\vect{w},\vect{v}$ be given vectors in $\R^{4}$ and define 
+  \begin{equation*}
+    M=\set{\left.\vect{u}=\begin{mymatrix}{c}
+        u_{1} \\ u_{2} \\ u_{3} \\ u_{4}
+      \end{mymatrix} \in \R
+      ^{4}~\right\vert~ \vect{w}\dotprod \vect{u}=0\text{ and }\vect{v}\dotprod \vect{u}=0}
+    .
+  \end{equation*}
+  Is $M$ a subspace of $\R^4$? Explain.
+  \begin{sol}
+    Yes, this is a subspace.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Let $H$ denote $\sspan\set{\begin{mymatrix}{r}
--1 \\ 
-1 \\ 
--1 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
--4 \\ 
-3 \\ 
--2 \\ 
--4
-\end{mymatrix} ,\begin{mymatrix}{r}
--3 \\ 
-2 \\ 
--1 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
-1 \\ 
--2 \\ 
--4
-\end{mymatrix} ,\begin{mymatrix}{r}
--7 \\ 
-5 \\ 
--3 \\ 
--6
-\end{mymatrix} }$. Find the dimension of $H$ and determine a basis. \vspace{%
-1mm}
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Suppose $V, W$ are subspaces of $\R^{n}$. Let $V\cap W$ be the set
+  of all vectors that are in both $V$ and $W$. Show that $V\cap W$
+  is also a subspace.
+  \begin{sol}
+    Because $\vect{0}\in V$ and $\vect{0}\in W$, we have
+    $\vect{0}\in V\cap W$. To show that $V\cap W$ is closed under
+    addition, assume $\vect{u},\vect{v}\in V\cap W$. Then
+    $\vect{u},\vect{v}\in V$, and since $V$ is a subspace we have
+    $\vect{u}+\vect{v}\in V$. Similarly $\vect{u},\vect{v}\in W$, and
+    since $W$ is a subspace we have $\vect{u}+\vect{v}\in W$. It
+    follows that $\vect{u}+\vect{v}$ is in both $V$ and $W$, and
+    therefore in $V\cap W$. To show that $V\cap W$ is closed under
+    scalar multiplication, assume $\vect{u}\in V\cap W$ and
+    $k\in\R$. Then $\vect{u}\in V$, and therefore $k\vect{u}\in
+    V$. Similarly $k\vect{u}\in W$, and therefore also
+    $k\vect{u}\in V\cap W$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Let $H$ denote $\sspan\set{\begin{mymatrix}{r}
-2 \\ 
-3 \\ 
-2 \\ 
-1
-\end{mymatrix} ,\begin{mymatrix}{r}
-8 \\ 
-15 \\ 
-6 \\ 
-3
-\end{mymatrix} ,\begin{mymatrix}{r}
-3 \\ 
-6 \\ 
-2 \\ 
-1
-\end{mymatrix} ,\begin{mymatrix}{r}
-4 \\ 
-6 \\ 
-6 \\ 
-3
-\end{mymatrix} ,\begin{mymatrix}{r}
-8 \\ 
-15 \\ 
-6 \\ 
-3
-\end{mymatrix} }$. Find the dimension of $H$ and determine a basis.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $V$ be a subset of $\R^n$. Show that $V$ is a subspace if and
+  only if it is non-empty and the following condition holds: for all
+  $\vect{u},\vect{v}\in V$ and all scalars $a,b\in\R$,
+  \begin{equation*}
+    a\vect{u} + b\vect{v} \in V.
+  \end{equation*}
 \end{ex}
 
-\begin{ex} Let $H$ denote $\sspan\set{\begin{mymatrix}{r}
-0 \\ 
-2 \\ 
-0 \\ 
--1
-\end{mymatrix} ,\begin{mymatrix}{r}
--1 \\ 
-6 \\ 
-0 \\ 
--2
-\end{mymatrix} ,\begin{mymatrix}{r}
--2 \\ 
-16 \\ 
-0 \\ 
--6
-\end{mymatrix} ,\begin{mymatrix}{r}
--3 \\ 
-22 \\ 
-0 \\ 
--8
-\end{mymatrix} }$. Find the dimension of $H$ and determine a basis.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $H$ denote $\sspan\set{\begin{mymatrix}{r}
-5 \\ 
-1 \\ 
-1 \\ 
-4
-\end{mymatrix} ,\begin{mymatrix}{r}
-14 \\ 
-3 \\ 
-2 \\ 
-8
-\end{mymatrix} ,\begin{mymatrix}{r}
-38 \\ 
-8 \\ 
-6 \\ 
-24
-\end{mymatrix} ,\begin{mymatrix}{r}
-47 \\ 
-10 \\ 
-7 \\ 
-28
-\end{mymatrix} ,\begin{mymatrix}{r}
-10 \\ 
-2 \\ 
-3 \\ 
-12
-\end{mymatrix} }$. Find the dimension of $H$ and determine a basis.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $H$ denote $\sspan\set{\begin{mymatrix}{r}
-6 \\ 
-1 \\ 
-1 \\ 
-5
-\end{mymatrix} ,\begin{mymatrix}{r}
-17 \\ 
-3 \\ 
-2 \\ 
-10
-\end{mymatrix} ,\begin{mymatrix}{r}
-52 \\ 
-9 \\ 
-7 \\ 
-35
-\end{mymatrix} ,\begin{mymatrix}{r}
-18 \\ 
-3 \\ 
-4 \\ 
-20
-\end{mymatrix} }$. Find the dimension of $H$ and determine a basis.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $M=\set{\vect{u}=\begin{mymatrix}{c}
-u_{1} \\
-u_{2} \\
-u_{3} \\
-u_{4}
-\end{mymatrix} \in 
-\R^{4}:\sin \tup{u_{1}} =1}$. Is $M$ a subspace?
-Explain.
-\begin{sol}
-No. Let $\vect{u}=\begin{mymatrix}{r}
-\frac{\pi }{2} \\
-0 \\
-0 \\
-0
-\end{mymatrix}$. Then $2\vect{u}\notin M$ although $\vect{u}\in M$.
-\end{sol}
-\end{ex}
-
-\begin{ex} Let $M=\set{\vect{u}=\begin{mymatrix}{c}
-u_{1} \\
-u_{2} \\
-u_{3} \\
-u_{4}
-\end{mymatrix} \in 
-\R^{4}:\norm{u_{1}} \leq 4}$. Is $M$ a
-subspace? Explain.
-\begin{sol}
-No. $\begin{mymatrix}{r}
-1 \\
-0 \\
-0 \\
-0
-\end{mymatrix} \in M$ but $10\begin{mymatrix}{r}
-1 \\
-0 \\
-0 \\
-0
-\end{mymatrix} \notin M$.
-\end{sol}
-\end{ex}
-
-\begin{ex} Let $M=\set{\vect{u}=\begin{mymatrix}{c}
-u_{1} \\
-u_{2} \\
-u_{3} \\
-u_{4}
-\end{mymatrix} \in 
-\R^{4}:u_{i}\geq 0\text{ for each }i=1,2,3,4}$. Is $M$ a
-subspace? Explain.
-\begin{sol}
-This is not a subspace. $\begin{mymatrix}{r}
-1 \\
-1 \\
-1 \\
-1
-\end{mymatrix} $
-is in it. However, $\tup{-1} \begin{mymatrix}{r}
-1 \\
-1 \\
-1 \\
-1
-\end{mymatrix} $ is not.
-\end{sol}
-\end{ex}
-
-\begin{ex} Let $\vect{w},\vect{w}_{1}$ be given vectors in $\R^{4}$ and define 
-\begin{equation*}
-M=\set{\vect{u}=\begin{mymatrix}{c}
-u_{1} \\
-u_{2} \\
-u_{3} \\
-u_{4}
-\end{mymatrix} \in \R
-^{4}:\vect{w}\dotprod \vect{u}=0\text{ and }\vect{w}_{1}\dotprod \vect{u}=0}
-.
-\end{equation*}
-Is $M$ a subspace? Explain.
-\begin{sol}
-This is a subspace because it is closed
-with respect to vector addition and scalar multiplication.
-\end{sol}
-\end{ex}
-
-
-\begin{ex} Let $\vect{w}\in \R^{4}$ and let $M=\set{\vect{u}
-=\begin{mymatrix}{c}
-u_{1} \\
-u_{2} \\
-u_{3} \\
-u_{4}
-\end{mymatrix} \in \R^{4}:\vect{w}\dotprod \vect{u}
-=0}$. Is $M$ a subspace? Explain.
-\begin{sol}
-Yes, this is a subspace because it is closed with respect to vector addition and scalar multiplication.
-\end{sol}
-\end{ex}
-
-\begin{ex} Let $M=\set{\vect{u}=\begin{mymatrix}{c}
-u_{1} \\
-u_{2} \\
-u_{3} \\
-u_{4}
-\end{mymatrix} \in 
-\R^{4}:u_{3}\geq u_{1}}$. Is $M$ a subspace? Explain.
-\begin{sol}
-This
-is not a subspace. $\begin{mymatrix}{r}
-0 \\
-0 \\
-1 \\
-0
-\end{mymatrix} $ is in it. However $(-1) \begin{mymatrix}{r}
-0 \\
-0 \\
-1 \\
-0
-\end{mymatrix}  = \begin{mymatrix}{r}
-0 \\
-0 \\
--1 \\
-0
-\end{mymatrix} $ is not.
-\end{sol}
-\end{ex}
-
-\begin{ex} Let $M=\set{\vect{u}=\begin{mymatrix}{c}
-u_{1} \\
-u_{2} \\
-u_{3} \\
-u_{4}
-\end{mymatrix} \in 
-\R^{4}:u_{3}=u_{1}=0}$. Is $M$ a subspace? Explain.
-\begin{sol}
-This is a subspace. It is closed with respect to vector addition and scalar
-multiplication.
-\end{sol}
-\end{ex}
-
-\begin{ex} Consider the set of vectors $S$ given by  
-\begin{equation*}
-S = 
-\set{\begin{mymatrix}{c}
-4u+v-5w \\ 
-12u+6v-6w \\ 
-4u+4v+4w
-\end{mymatrix} :u,v,w\in \R} .
-\end{equation*}
-Is $S$ a subspace of $\R^{3}$? If so, explain why,
-give a basis for the subspace and find its dimension.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Consider the set of vectors $S$ given by 
-\begin{equation*}
-S = 
-\set{\begin{mymatrix}{c}
-2u+6v+7w \\ 
--3u-9v-12w \\ 
-2u+6v+6w \\ 
-u+3v+3w
-\end{mymatrix} :u,v,w\in \R} .
-\end{equation*}
-Is $S$ a subspace of $\R^{4}$? If so, explain why,
-give a basis for the subspace and find its dimension.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Consider the set of vectors $S$ given by 
-\begin{equation*}
-S = 
-\set{\begin{mymatrix}{c}
-2u+v \\ 
-6v-3u+3w \\ 
-3v-6u+3w
-\end{mymatrix} :u,v,w\in \R} .
-\end{equation*}
-Is this set of vectors a subspace of $\R^{3}$? If so, explain why,
-give a basis for the subspace and find its dimension.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Consider the vectors of the form 
-\begin{equation*}
-\set{\begin{mymatrix}{c}
-2u+v+7w \\ 
-u-2v+w \\ 
--6v-6w
-\end{mymatrix} :u,v,w\in \R} .
-\end{equation*}
-Is this set of vectors a subspace of $\R^{3}$? If so, explain why,
-give a basis for the subspace and find its dimension.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Consider the vectors of the form 
-\begin{equation*}
-\set{\begin{mymatrix}{c}
-3u+v+11w \\ 
-18u+6v+66w \\ 
-28u+8v+100w
-\end{mymatrix} :u,v,w\in \R} .
-\end{equation*}
-Is this set of vectors a subspace of $\R^{3}$? If so, explain why,
-give a basis for the subspace and find its dimension.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Consider the vectors of the form 
-\begin{equation*}
-\set{\begin{mymatrix}{c}
-3u+v \\ 
-2w-4u \\ 
-2w-2v-8u
-\end{mymatrix} :u,v,w\in \R} .
-\end{equation*}
-Is this set of vectors a subspace of $\R^{3}$? If so, explain why,
-give a basis for the subspace and find its dimension.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Consider the set of vectors $S$ given by  
-\begin{equation*}
-\set{\begin{mymatrix}{c}
-u+v+w \\ 
-2u+2v+4w \\ 
-u+v+w \\ 
-0
-\end{mymatrix} :u,v,w\in \R} .
-\end{equation*}
-Is $S$ a subspace of $\R^{4}$? If so, explain why,
-give a basis for the subspace and find its dimension.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Consider the set of vectors $S$ given by  
-\begin{equation*}
-\set{\begin{mymatrix}{c}
-v \\ 
--3u-3w \\ 
-8u-4v+4w
-\end{mymatrix} :u,v,w\in \R} .
-\end{equation*}
-Is $S$ a subspace of $\R^{3}$? If so, explain why,
-give a basis for the subspace and find its dimension.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} If you have $5$ vectors in $\R^{5}$ and the vectors are
-linearly independent, can it always be concluded they span $\R^{5}$?
-Explain. 
-\begin{sol}
- Yes. If not, there would exist a vector not in the span. But then
-you could add in this vector and obtain a linearly independent set of
-vectors with more vectors than a basis.
-\end{sol}
-\end{ex}
-
-\begin{ex} If you have $6$ vectors in $\R^{5}$, is it possible they are
-linearly independent? Explain.
-\begin{sol}
-They can't be.
-\end{sol}
-\end{ex}
-
-
-\begin{ex} Suppose $A$ is an $m\times n$-matrix and $\set{\vect{w}
-_{1},\ldots,\vect{w}_{k}} $ is a linearly independent set of
-vectors in $A\tup{\R^{n}} \subseteq \R^{m}$. Now
-suppose $A\vect{z}_{i}=\vect{w}_{i}$. Show $\set{
-\vect{z}_{1},\ldots,\vect{z}_{k}} $ is also independent. 
-\begin{sol}
- Say $
-\sum_{i=1}^{k}c_{i}\vect{z}_{i}=\vect{0}$. Then apply $A$ to it as follows.
-\[
-\sum_{i=1}^{k}c_{i}A\vect{z}_{i}=\sum_{i=1}^{k}c_{i}\vect{w}_{i}=\vect{0}
-\]
-and so, by linear independence of the $\vect{w}_{i}$, it follows that each
-$c_{i}=0$.
-\end{sol}
-\end{ex}
-
-\begin{ex} Suppose $V, W$ are subspaces of $\R^{n}$. Let $V\cap W$
-be all vectors which are in both $V$ and $W$. Show that $V \cap W$ is a subspace also. 
-\begin{sol}
-If $\vect{x}, \vect{y}\in V\cap W$, then for scalars $\alpha
-,\beta$, the linear combination $\alpha \vect{x}+\beta \vect{y}$ must
-be in both $V$ and $W$ since they are both subspaces.
-\end{sol}
-\end{ex}
-
-\begin{ex} Suppose $V$ and $W$ both have dimension equal to $7$ and they are
-subspaces of $\R^{10}$. What are the possibilities for the dimension
-of $V\cap W$? \textbf{Hint: }Remember that a linear independent set can be
-extended to form a basis. \vspace{1mm}
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Suppose $V$ has dimension $p$ and $W$ has dimension $q$ and they
-are each contained in a subspace, $U$ which has dimension equal to $n$ where 
-$n>\max \tup{p,q}$. What are the possibilities for the dimension of 
-$V\cap W$? \textbf{Hint: }Remember that a linearly independent set can be
-extended to form a basis. \vspace{1mm}
-\begin{sol}
-Let $\set{x_{1},\ldots,x_{k}} $ be a
-basis for $V\cap W$. Then there is a basis for $V$ and $W$ which are
-respectively
-\[
-\set{x_{1},\ldots,x_{k},y_{k+1},\ldots,y_{p}} ,\ \set{
-x_{1},\ldots,x_{k},z_{k+1},\ldots,z_{q}}
-\]
-It follows that you must have $k+p-k+q-k\leq n$ and so you must have
-\[
-p+q-n\leq k
-\]
-\end{sol}
-\end{ex}
-
-\begin{ex} Suppose $A$ is an $m\times n$-matrix and $B$ is an $n\times p$-matrix.
-Show that 
-\begin{equation*}
-\dim \tup{\ker \tup{AB} } \leq \dim \tup{\ker \tup{
-A} } +\dim \tup{\ker \tup{B} } .
-\end{equation*}
-\textbf{Hint:\ }Consider the subspace, $B\tup{\R^{p}} \cap
-\ker \tup{A} $ and suppose a basis for this subspace is $\set{
-\vect{w}_{1},\ldots,\vect{w}_{k}}$. Now suppose $\set{
-\vect{u}_{1},\ldots,\vect{u}_{r}} $ is a basis for $\ker \tup{
-B}$. Let $\set{\vect{z}_{1},\ldots,\vect{z}_{k}} $ be
-such that $B\vect{z}_{i}=\vect{w}_{i}$ and argue that 
-\begin{equation*}
-\ker \tup{AB} \subseteq \sspan\set{\vect{u}_{1},\ldots,
-\vect{u}_{r},\vect{z}_{1},\ldots,\vect{z}_{k}} .
-\end{equation*}
-\vspace{1mm}
-\begin{sol}
-Here is how you do this. Suppose $AB\vect{x}=\vect{0}$. Then $B\vect{x}\in \ker
-\tup{A} \cap B\tup{\R^{p}} $ and so $B\vect{x}
-=\sum_{i=1}^{k}B\vect{z}_{i}$ showing that
-\[
-\vect{x}-\sum_{i=1}^{k}\vect{z}_{i}\in \ker \tup{B} 
-\]
-Consider $B\tup{\R^{p}} \cap \ker \tup{A} $ and let
-a basis be $\set{\vect{w}_{1},\ldots,\vect{w}_{k}}$. Then
-each $\vect{w}_{i}$ is of the form $B\vect{z}_{i}=\vect{w}_{i}$.
-Therefore, $\set{\vect{z}_{1},\ldots,\vect{z}_{k}} $ is
-linearly independent and $AB\vect{z}_{i}=0$. Now let $\set{\vect{u}
-_{1},\ldots,\vect{u}_{r}} $ be a basis for $\ker \tup{B}$.
-If $AB\vect{x}=\vect{0}$, then $B\vect{x} \in \ker \tup{A} \cap B\tup{
-\R^{p}} $ and so $B\vect{x}=\sum_{i=1}^{k}c_{i}B\vect{z}
-_{i}$ which implies
-\[
-\vect{x}-\sum_{i=1}^{k}c_{i}\vect{z}_{i}\in \ker \tup{B}
-\]
-and so it is of the form
-\[
-\vect{x}-\sum_{i=1}^{k}c_{i}\vect{z}_{i}=\sum_{j=1}^{r}d_{j}\vect{u}
-_{j}
-\]
-It follows that if $AB\vect{x}=\vect{0}$ so that $\vect{x}\in \ker \tup{
-AB}$, then
-\[
-\vect{x}\in \sspan\tup{\vect{z}_{1},\ldots,\vect{z}_{k},
-\vect{u}_{1},\ldots,\vect{u}_{r}} .
-\]
-Therefore,
-\begin{eqnarray*}
-\dim \tup{\ker \tup{AB} }  &\leq &k+r=\dim \tup{B\tup{
-\R^{p}} \cap \ker \tup{A} } +\dim \tup{\ker
-\tup{B} }  \\
-&\leq &\dim \tup{\ker \tup{A} } +\dim \tup{\ker \tup{
-B} }
-\end{eqnarray*}
-\end{sol}
-\end{ex}
-
-
-\begin{ex} Show that if $A$ is an $m\times n$-matrix, then $\ker \tup{A} $
-is a subspace of $\R^n$.
-\begin{sol}
-If $\vect{x},\vect{y}\in \ker \tup{A} $ then
-\[
-A\tup{a\vect{x}+b\vect{y}} =aA\vect{x}+bA\vect{y}=a\vect{0}
-+b\vect{0}=\vect{0}
-\]
-and so $\ker \tup{A} $ is closed under linear combinations. Hence it
-is a subspace.
-\end{sol}
+\begin{ex}
+  Let $\vect{u}_1,\ldots,\vect{u}_k$ be vectors in $\R^n$, and let
+  $S=\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$. Show that $S$ is the
+  {\em smallest} subspace of $\R^n$ that contains
+  $\vect{u}_1,\ldots,\vect{u}_k$.  Specifically, this means you have
+  to show: if $V$ is any other subspace of $\R^n$ such that
+  $\vect{u}_1,\ldots,\vect{u}_k\in V$, then $S\subseteq V$.
 \end{ex}
 
 \end{enumialphparenastyle}
