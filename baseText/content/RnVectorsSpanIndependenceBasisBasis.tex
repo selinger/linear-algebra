@@ -9,13 +9,13 @@ subspaces of\/ $\R^n$. Interestingly, the converse is also true: every
 subspace of\/ $\R^n$ is the span of some finite set of vectors.
 
 \begin{theorem}{Subspaces are spans}{subspaces-are-spans}
+  \index{subspace!is a span}%
   Let $V$ be a subspace of\/ $\R^n$. Then there exist linearly
   independent vectors $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ in $V$
   such that
   \begin{equation*}
     V= \sspan\set{\vect{u}_{1},\ldots ,\vect{u}_{k}}. 
-  \end{equation*}%
-  \index{subspace!subspace is a span}
+  \end{equation*}
   \vspace{-3ex}
 \end{theorem}
 
@@ -100,6 +100,7 @@ Note that the plural of basis is \textbf{bases}.
 \end{proof}
 
 \begin{example}{A non-standard basis of\/ $\R^3$}{non-standard-basis}
+  \index{basis!of Rn@of\/ $\R^n$}%
   Check that the vectors
   \begin{equation*}
     \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix},\quad
@@ -163,9 +164,10 @@ its columns is invertible. This is the content of the following
 proposition.
 
 \begin{proposition}{Invertible matrices and bases of\/ $\R^n$}{invertible-matrices}
+  \index{basis!of Rn@of\/ $\R^n$}%
+  \index{basis!and invertible matrix}%
   Let $A$ be an $n\times n$-matrix. Then the columns of $A$ form a
-  basis of\/ $\R^n$ if and only if $A$ is invertible%
-  \index{basis!of Rn@of\/ $\R^n$}.
+  basis of\/ $\R^n$ if and only if $A$ is invertible.
 \end{proposition}
 
 We turn to the question of finding bases for subspaces of\/ $\R^n$.
@@ -440,15 +442,15 @@ basis.
 One of the most important properties of bases is that any two bases
 for the same space must be of the same size. To show this, we will
 need the the following fundamental result, called the Exchange
-Theorem. This theorem states that spanning sets have at least as many
+Lemma. This theorem states that spanning sets have at least as many
 vectors as linearly independent sets.
 
-\begin{theorem}{Exchange Theorem}{exchange-theorem}
-  \index{exchange theorem}%
+\begin{lemma}{Exchange Lemma}{exchange-lemma}
+  \index{exchange lemma}%
   Suppose $\vect{u}_{1},\ldots,\vect{u}_{r}$ are linearly independent
   elements of $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{s}}$. Then
   $r\leq s$.
-\end{theorem}
+\end{lemma}
 
 \begin{proof}
   Since each $\vect{u}_j$ is an element of
@@ -490,7 +492,7 @@ vectors as linearly independent sets.
   $r\leq s$, as desired.
 \end{proof}
 
-Armed with the Exchange Theorem, we are now ready to show that any two
+Armed with the Exchange Lemma, we are now ready to show that any two
 bases of a space are of the same size.
 
 \begin{theorem}{Bases are of the same size}{bases-same-size}
@@ -501,7 +503,7 @@ bases of a space are of the same size.
 \end{theorem}
 
 \begin{proof}
-  This follows right away from the Exchange Theorem. Indeed, observe
+  This follows right away from the Exchange Lemma. Indeed, observe
   that $B_1 = \set{ \vect{u}_{1},\ldots ,\vect{u}_{s}} $ is a spanning
   set for $V$ while $ B_2 = \set{\vect{v}_{1},\ldots ,\vect{v}_{r}} $
   is linearly independent, so $s \geq r$. Similarly
@@ -532,6 +534,9 @@ $V$.
 \end{solution}
 
 \begin{example}{Dimension of a subspace}{dimension-subspace}
+  \index{dimension!of solution space}%
+  \index{homogeneous system!dimension of solution space}%
+  \index{system of linear equations!homogeneous!dimension of solution space}%
   Let 
   \begin{equation*}
     V=\set{\left.
@@ -573,6 +578,8 @@ is also sometimes called the number of \textbf{degrees of freedom}%
 \index{freedom!degree of}.
 
 \begin{example}{Dimension of a span}{dimension-basis}
+  \index{dimension!of a span}%
+  \index{span!dimension of}%
   Let 
   \begin{equation*}
     W = \sspan\set{
@@ -621,318 +628,222 @@ is also sometimes called the number of \textbf{degrees of freedom}%
   basis of $W$. It follows that $\dim(W)=3$. 
 \end{solution}
 
-% ======================================================================
-\subsection{CONTINUE HERE}
+% ----------------------------------------------------------------------
+\subsection{More properties of bases}
 
-We continue by stating further properties of a set of vectors in
-$\R^{n}$.
+We begin by noting that every subspace $V$ of $\R^n$ has a basis.
 
-\begin{corollary}{Linearly independent and spanning sets in  $\R^{n}$}{independent-spanning-Rn}
-  The following properties hold in $\R^{n}$:
-  \begin{itemize}
-  \item Suppose $\set{\vect{u}_{1},\ldots ,\vect{u}_{n}} $ is linearly
-    independent. Then $\set{\vect{u}_{1},\ldots ,\vect{u}_{n}} $ is a
-    basis for $\R^{n}$.
-  \item Suppose $\set{\vect{u}_{1},\ldots ,\vect{u}_{m}} $ spans
-    $\R^{n}$. Then $m\geq n$.
-  \item If $\set{\vect{u}_{1},\ldots ,\vect{u}_{n}} $ spans $\R^{n}$,
-    then $\set{\vect{u}_{1},\ldots ,\vect{u}_{n}} $ is linearly
-    independent.
-  \end{itemize}
-\end{corollary}
-
-\begin{proof}
-  Assume first that $\set{\vect{u}_{1},\ldots ,\vect{u}_{n}} $ is
-  linearly independent, and we need to show that this set spans
-  $\R^{n}$. To do so, let $\vect{v}$ be a vector of\/ $\R^{n}$, and we
-  need to write $\vect{v}$ as a linear combination of $\vect{u}_i$'s.
-  Consider the matrix $A$ having the vectors $\vect{u}_i$ as columns:
-  \begin{equation*}
-    A = 
-    \begin{mymatrix}{rrr}
-      \vect{u}_{1} & \ldots & \vect{u}_{n} 
-    \end{mymatrix}
-  \end{equation*}
-  By linear independence of the $\vect{u}_i$'s, the {\rref} of $A$ is
-  the identity matrix.  Therefore the system $A\vect{x}= \vect{v}$ has
-  a (unique) solution, so $\vect{v}$ is a linear combination of the
-  $\vect{u}_i$'s.
-
-  To establish the second claim, suppose that $m<n$. Then letting
-  $\vect{u}_{i_{1}},\ldots ,\vect{u}_{i_{k}}$ be the pivot columns of
-  the matrix
-  \begin{equation*}
-    \begin{mymatrix}{ccc}
-      \vect{u}_{1} & \ldots & \vect{u}_{m}
-    \end{mymatrix}
-  \end{equation*}
-  it follows $k\leq m<n$ and these $k$ pivot columns would be a basis
-  for $\R^{n}$ having fewer than $n$ vectors, contrary to
-  Corollary~\ref{cor:dimension-Rn}.
-
-  Finally consider the third claim. If $\set{\vect{u}_{1},\ldots
-    ,\vect{u}_{n}} $ is not linearly independent, then replace this
-  list with $\set{\vect{u}_{i_{1}},\ldots ,\vect{u}_{i_{k}}} $ where these
-  are the pivot columns of the matrix 
-  \begin{equation*}
-    \begin{mymatrix}{ccc}
-      \vect{u}_{1} & \ldots & \vect{u}_{n}
-    \end{mymatrix}
-  \end{equation*}
-  Then $\set{\vect{u}_{i_{1}},\ldots ,\vect{u}_{i_{k}}} $ spans
-  $\R^{n}$ and is linearly independent, so it is a basis having
-  less than $n$ vectors again contrary to Corollary~\ref{cor:dimension-Rn}.
-\end{proof}
-
-The next theorem follows from the above claim.
-
-\begin{theorem}{Existence of basis}{existence-basis}
-  Let $V$ be a subspace of\/ $\R^n$. Then there exists a basis of $V$ with 
-  $\dim(V)\leq n$.
-\end{theorem}
-
-Consider Corollary~\ref{cor:independent-spanning-Rn} together with Theorem~\ref{thm:existence-basis}. Let $\dim(V) = r$. Suppose there exists an independent set of vectors in $V$. If this set contains $r$ vectors, then it is a basis for $V$. If it contains less than $r$ vectors, then vectors can be added to the set to create a basis of $V$. Similarly, any spanning set of $V$ which contains more than $r$ vectors can have vectors removed to create a basis of $V$.
-
-We illustrate this concept in the next example.
-
-\begin{example}{Extending an independent set}{extend-independent}
-  Consider the set $U$ given by 
-  \begin{equation*}
-    U=\set{\left.\begin{mymatrix}{c} a\\ b\\ c\\ d\end{mymatrix}
-        \in\R^4 \right\vert a-b=d-c
-    }
-  \end{equation*}
-  Then $U$ is a subspace of\/ $\R^4$ and $\dim(U)=3$.
-
-  Then
-  \begin{equation*}
-    S=\set{
-      \begin{mymatrix}{c} 1\\ 1\\ 1\\ 1\end{mymatrix},
-      \begin{mymatrix}{c} 2\\ 3\\ 3\\ 2\end{mymatrix}
-    },
-  \end{equation*}
-  is an independent subset of $U$.
-  Therefore $S$ can be extended to a basis of $U$.
-\end{example}
-
-\begin{solution}
-  To extend $S$ to a basis of $U$, find a vector in $U$ that is {\bf not} in
-  $\sspan(S)$.
-  \begin{equation*}
-    \begin{mymatrix}{rrr}
-      1 & 2 & ? \\
-      1 & 3 & ? \\
-      1 & 3 & ? \\
-      1 & 2 & ? 
-    \end{mymatrix}
-  \end{equation*}
-
-  \begin{equation*}
-    \begin{mymatrix}{rrr}
-      1 & 2 & 1 \\
-      1 & 3 & 0 \\
-      1 & 3 & -1 \\
-      1 & 2 & 0 
-    \end{mymatrix}
-    \rightarrow
-    \begin{mymatrix}{rrr}
-      1 & 0 & 0 \\
-      0 & 1 & 0 \\
-      0 & 0 & 1 \\
-      0 & 0 & 0 
-    \end{mymatrix}
-  \end{equation*}
-
-  Therefore, $S$ can be extended to the following basis of $U$:
-  \begin{equation*}
-    \set{
-      \begin{mymatrix}{r} 1\\ 1\\ 1\\ 1\end{mymatrix},
-      \begin{mymatrix}{r} 2\\ 3\\ 3\\ 2\end{mymatrix},
-      \begin{mymatrix}{r} 1\\ 0\\ -1\\ 0\end{mymatrix}
-    },
-  \end{equation*}
-\end{solution}
-
-Next we consider the case of removing vectors from a spanning set to
-result in a basis.
-
-\begin{theorem}{Finding a basis from a span}{}
-  Let $W$ be a subspace. Also suppose that
-  $W=\sspan\set{\vect{w} _{1},\ldots ,\vect{w}_{m}}$. Then there
-  exists a subset of $\set{ \vect{w}_{1},\ldots ,\vect{w}_{m}} $ which
-  is a basis for $W$.\index{spanning set!basis}
+\begin{theorem}{Existence of bases}{subspaces-have-bases}
+  \index{basis!existence}%
+  Every subspace of $\R^n$ has a basis. 
 \end{theorem}
 
 \begin{proof}
-  Let $S$ denote the set of positive integers such that for $ k\in S$,
-  there exists a subset of $\set{\vect{w}_{1},\ldots ,\vect{w}_{m}} $
-  consisting of exactly $k$ vectors which is a spanning set for
-  $W$. Thus $m\in S$. Pick the smallest positive integer in $S$. Call
-  it $k$. Then there exists
-  $\set{\vect{u}_{1},\ldots , \vect{u}_{k}} \subseteq
-  \set{\vect{w}_{1},\ldots ,\vect{w} _{m}} $ such that
-  $\sspan\set{\vect{u}_{1},\ldots ,\vect{u} _{k}} =W$. If
-  \begin{equation*}
-    \sum_{i=1}^{k}c_{i}\vect{w}_{i}=\vect{0}
-  \end{equation*}
-  and not all of the $c_{i}=0$, then you could pick $c_{j}\neq 0$,
-  divide by it and solve for $\vect{u}_{j}$ in terms of the others,
-  \begin{equation*}
-    \vect{w}_{j}=\sum_{i\neq j}\tup{-\frac{c_{i}}{c_{j}}} \vect{w}_{i}
-  \end{equation*}
-  Then you could delete $\vect{w}_{j}$ from the list and have the same
-  span. Any linear combination involving $\vect{w}_{j}$ would equal
-  one in which $\vect{w}_{j}$ is replaced with the above sum, showing
-  that it could have been obtained as a linear combination of
-  $\vect{w}_{i}$ for $i\neq j$. Thus $k-1\in S$ contrary to the choice
-  of $k$ . Hence each $c_{i}=0$ and so
-  $\set{\vect{u}_{1},\ldots ,\vect{u} _{k}} $ is a basis for $W$
-  consisting of vectors of $\set{\vect{w} _{1},\ldots ,\vect{w}_{m}}$.
+  This is just a restatement of Theorem~\ref{thm:subspaces-are-spans}.
 \end{proof}
 
-The following example illustrates how to carry out this shrinking
-process which will obtain a subset of a span of vectors which is
-linearly independent.
+Of course, the theorem does not mean that the basis is
+unique. Usually, a subspace of $\R^n$ will have many different
+bases. The theorem just states that there exists at least one.
 
-Consider the following theorems regarding a subspace contained in
-another subspace.
+Sometimes, when we are looking for a basis of a space, we may already
+have a number of linearly independent vectors. We would like to obtain
+a basis by adding some {\em additional} linearly independent vectors
+to the ones we already have. The following lemma guarantees that this
+can always be done.
 
-\begin{theorem}{Subset of a subspace}{subset-dimension}
-  Let $V$ and $W$ be subspaces of\/ $\R^n$, and suppose that
-  $W\subseteq V$.  Then $\dim(W) \leq \dim(V)$ with equality when
-  $W=V$.
-\end{theorem}
-
-\begin{theorem}{Extending a basis}{extending-basis}
-  Let $W$ be any non-zero subspace $\R^{n}$ and let $W\subseteq V$
-  where $V$ is also a subspace of\/ $\R^{n}$. Then every basis of $W$
-  can be extended to a basis for $V$.\index{extending a basis}
-\end{theorem}
-
-The proof is left as an exercise but proceeds as follows. Begin with a
-basis for $W,\set{\vect{w}_{1},\ldots ,\vect{w}_{s}} $ and add in
-vectors from $V$ until you obtain a basis for $V$.  Not that the
-process will stop because the dimension of $V$ is no more than $n$.
-
-Consider the following example.
-
-\begin{example}{Extending a basis}{extending-basis}
-  Let $V=\R^{4}$ and let 
+\begin{lemma}{Linearly independent set can be extended to a basis}{extend-to-basis}
+  \index{linear independence!extending to basis}%
+  \index{basis!by extending linearly independent set}%
+  Let $V$ be a subspace of $\R^n$, and let
+  $\vect{u}_1,\ldots,\vect{u}_{\ell}$ be linearly independent elements
+  of $V$. Then it is possible to extend
+  $\set{\vect{u}_1,\ldots,\vect{u}_{\ell}}$ to a basis of $V$. In other
+  words, there exist zero or more vectors
+  $\vect{w}_1,\ldots,\vect{w}_s$ such that
   \begin{equation*}
-    W=\sspan\set{
-      \begin{mymatrix}{c} 1 \\ 0 \\ 1 \\ 1 \end{mymatrix},
-      \begin{mymatrix}{c} 0 \\ 1 \\ 0 \\ 1 \end{mymatrix}
-    }
+    \set{\vect{u}_1,\ldots,\vect{u}_{\ell},\vect{w}_1,\ldots,\vect{w}_s}
   \end{equation*}
-  Extend this basis of $W$ to a basis of\/ $\R^{n}$.
+  is a basis of $V$.
+\end{lemma}
+
+\begin{proof}
+  By Theorem~\ref{thm:subspaces-have-bases}, we know that $V$ has some
+  basis, say $\set{\vect{v}_1,\ldots,\vect{v}_k}$. However, this may
+  not be the basis we are looking for, because maybe it does not
+  contain the vectors $\vect{u}_1,\ldots,\vect{u}_{\ell}$. Consider
+  the sequence of $\ell+k$ vectors
+  \begin{equation*}
+    \vect{u}_1,\ldots,\vect{u}_{\ell},\vect{v}_1,\ldots,\vect{v}_k.
+  \end{equation*}
+  Since $V$ is spanned by the vectors $\vect{v}_1,\ldots,\vect{v}_k$,
+  it is certainly also spanned by the larger set of vectors
+  $\vect{u}_1,\ldots,\vect{u}_{\ell},\vect{v}_1,\ldots,\vect{v}_k$.
+  From Theorem~\ref{thm:linearly-independent-subset}, we know that we
+  can obtain a basis of $V$ by removing the redundant vectors from
+  $\vect{u}_1,\ldots,\vect{u}_{\ell},\vect{v}_1,\ldots,\vect{v}_k$. On
+  the other hand, $\vect{u}_1,\ldots,\vect{u}_{\ell}$ are linearly
+  independent, so none of them can be redundant. It follows that the
+  resulting basis of $V$ contains all of the vectors
+  $\vect{u}_1,\ldots,\vect{u}_{\ell}$. In other words, we have found a
+  basis of $V$ that is an extension of
+  $\vect{u}_1,\ldots,\vect{u}_{\ell}$, which is what had to be shown.
+\end{proof}
+
+\begin{example}{Extending a linearly independent set to a basis}{extend-to-basis}
+  Extend $\set{\vect{u}_1,\vect{u}_2}$ to a basis of $\R^4$, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ -1 \\ 2 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 2 \\ -2 \\ 4 \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-  An easy way to do this is to take the {\rref} of the matrix
-  \begin{equation}
-    \begin{mymatrix}{cccccc}
-      1 & 0 & 1 & 0 & 0 & 0 \\ 
-      0 & 1 & 0 & 1 & 0 & 0 \\ 
-      1 & 0 & 0 & 0 & 1 & 0 \\ 
-      1 & 1 & 0 & 0 & 0 & 1
-    \end{mymatrix}  \label{basis-eq1}
-  \end{equation}
-  Note how the given vectors were placed as the first two columns and
-  then the matrix was extended in such a way that it is clear that the
-  span of the columns of this matrix yield all of\/ $\R^{4}$. Now
-  determine the pivot columns.  The {\rref} is
-  \begin{equation}
+  Let $\set{\vect{e}_1,\ldots,\vect{e}_4}$ be the standard basis of
+  $\R^4$. We obtain the desired basis by applying the casting-out
+  algorithm to $\vect{u}_1,\vect{u}_2,\vect{e}_1,\vect{e}_2,\vect{e}_3,\vect{e}_4$:
+  \begin{equation*}
     \begin{mymatrix}{rrrrrr}
-      1 & 0 & 0 & 0 & 1 & 0 \\ 
-      0 & 1 & 0 & 0 & -1 & 1 \\ 
-      0 & 0 & 1 & 0 & -1 & 0 \\ 
-      0 & 0 & 0 & 1 & 1 & -1
-    \end{mymatrix}  \label{basis-eq2}
-  \end{equation}
-  Therefore the pivot columns are 
-  \begin{equation*}
-    \begin{mymatrix}{c} 1 \\ 0 \\ 1 \\ 1 \end{mymatrix},
-    \begin{mymatrix}{c} 0 \\ 1 \\ 0 \\ 1 \end{mymatrix},
-    \begin{mymatrix}{c} 1 \\ 0 \\ 0 \\ 0 \end{mymatrix},
-    \begin{mymatrix}{c} 0 \\ 1 \\ 0 \\ 0 \end{mymatrix}
+      1  & 1  & 1 & 0 & 0 & 0 \\
+      1  & 2  & 0 & 1 & 0 & 0 \\
+      -1 & -2 & 0 & 0 & 1 & 0 \\
+      2  & 4  & 0 & 0 & 0 & 1 \\
+    \end{mymatrix}
+    \quad\sim\quad
+    \begin{mymatrix}{rrrrrr}
+      \circled{1} &  1 &  1 & 0  & 0 & 0 \\
+      0 &  \circled{1} & -1 & 1  & 0 & 0 \\
+      0 &  0 &  0 & \circled{1}  & 1 & 0 \\
+      0 &  0 &  0 & 0  & \circled{2} & 1 \\
+    \end{mymatrix}.
   \end{equation*}
-  and now this is an extension of the given basis for $W$ to a basis
-  for $ \R^{4}$.
-
-  Why does this work? The columns of {\eqref{basis-eq1}} obviously
-  span $\R^{4}$. In fact the span of the first four is the same as the
-  span of all six.
+  Therefore, we cast out the vectors $\vect{e}_1$ and $\vect{e}_4$ and
+  keep the rest. The resulting basis is
+  \begin{equation*}
+    \set{\vect{u}_1,\vect{u}_2,\vect{e}_2,\vect{e}_3}
+    = \set{
+      \begin{mymatrix}{r} 1 \\ 1 \\ -1 \\ 2 \end{mymatrix},~
+      \begin{mymatrix}{r} 1 \\ 2 \\ -2 \\ 4 \end{mymatrix},~
+      \begin{mymatrix}{r} 0 \\ 1 \\  0 \\ 0 \end{mymatrix},~
+      \begin{mymatrix}{r} 0 \\ 0 \\  1 \\ 0 \end{mymatrix}
+    }.
+  \end{equation*}
 \end{solution}
 
-Consider another example.
+The next proposition often comes in handy when we need to check that
+some set of vectors is a basis for a subspace $V$, where the dimension
+of $V$ is already known. If $\dim(V)=k$, we know that any basis has to
+have size $k$. Interestingly, to check that a set of $k$ vectors is a
+basis of $V$, it is sufficient to check {\em either} that it is
+linearly independent {\em or} that it is spanning. This can save half
+the work in checking that some set of vectors is a basis (but it only
+works if the number of vectors is exactly $k$, the dimension of $V$).
 
-\begin{example}{Extending a basis}{}
-  Let $W$ be the span of
-  $\begin{mymatrix}{c} 1 \\ 0 \\ 1 \\ 0 \end{mymatrix}$ in
-  $\R^{4}$. Let $V$ consist of the span of the vectors
+\begin{proposition}{Basis test for $k$ vectors in $k$-dimensional space}{basis-test-k-vectors}
+  \index{basis test}%
+  Let $V$ be a $k$-dimensional subspace of $\R^n$, and consider $k$
+  vectors $\vect{u}_{1},\ldots,\vect{u}_{k}$ in $V$.
+  \begin{itemize}
+  \item If $\vect{u}_{1},\ldots,\vect{u}_{k}$ are linearly
+    independent, then they form a basis for $V$.
+  \item If $\vect{u}_{1},\ldots,\vect{u}_{k}$ span $V$, then they
+    form a basis for $V$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  The first claim is an easy consequence of
+  Lemma~\ref{lem:extend-to-basis}. Assume that
+  $\vect{u}_{1},\ldots,\vect{u}_{k}$ are linearly independent. By
+  Lemma~\ref{lem:extend-to-basis}, we can add zero or more vectors to
+  $\vect{u}_{1},\ldots,\vect{u}_{k}$ to obtain a basis of $V$. On the
+  other hand, since $V$ is $k$-dimensional, every basis must have
+  exactly $k$ elements, so that the only possibility is that we have
+  added zero vectors. Therefore,
+  $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ is already a basis of $V$,
+  as claimed.
+
+  To prove the second claim, assume that
+  $V=\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$. By
+  Theorem~\ref{thm:subspaces-are-spans}, there exists a linearly
+  independent subset of $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ that
+  spans $V$, i.e., that is a basis for $V$. But since $\dim(V)=k$,
+  every basis must have exactly $k$ elements, so that the only
+  possible such subset is $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$
+  itself. Therefore, $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ is a
+  basis of $V$, as claimed.
+\end{proof}
+
+It is important to note that
+Proposition~\ref{prop:basis-test-k-vectors} does {\em not} say that
+every linearly independent set of vectors in $V$ is a basis. For
+example, a set of $k-1$ or fewer linearly independent vectors will not
+be spanning. Also, the proposition does {\em not} say that every
+spanning set of vectors in $V$ is a basis. For example, a set of $k+1$
+or more spanning vectors will not be linearly independent. Rather,
+what the proposition is saying is that if we have exactly $k$ vectors
+in a $k$-dimensional space, then linear independence implies spanning
+and vice versa. 
+
+\begin{example}{Basis test for $3$ vectors in $3$-dimensional space}{check-basis}
+  Do the vectors
   \begin{equation*}
-    \begin{mymatrix}{c} 1 \\ 0 \\ 1 \\ 0 \end{mymatrix},
-    \begin{mymatrix}{c} 0 \\ 1 \\ 1 \\ 1 \end{mymatrix},
-    \begin{mymatrix}{r} 7 \\ -6 \\ 1 \\ -6 \end{mymatrix},
-    \begin{mymatrix}{r} -5 \\ 7 \\ 2 \\ 7 \end{mymatrix},
-    \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ 1 \end{mymatrix}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 2 \\ 3 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix},\quad
+    \mbox{and}\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 1 \\ 2 \end{mymatrix}
   \end{equation*}
-  Find a basis for $V$ which extends the basis for $W$.
+  form a basis of\/ $\R^3$?
 \end{example}
 
 \begin{solution}
-  Note that the above vectors are not linearly independent, but their
-  span, denoted as $V$ is a subspace which does include the subspace
-  $W$.
-
-  Using the process outlined in the previous example, form the
-  following matrix
+  This is similar to Example~\ref{exa:non-standard-basis}. But because
+  we know that $\R^3$ is a $3$-dimensional space, and because we have
+  exactly $3$ vectors, by Proposition~\ref{prop:basis-test-k-vectors},
+  we only need to check {\em either} whether
+  $\vect{u}_1,\vect{u}_2,\vect{u}_3$ are linearly independent {\em or}
+  whether they are spanning. We check whether they are linearly
+  independent by using the casting-out algorithm.
   \begin{equation*}
-    \begin{mymatrix}{rrrrr}
-      1 & 0 & 7 & -5 & 0 \\ 
-      0 & 1 & -6 & 7 & 0 \\ 
-      1 & 1 & 1 & 2 & 0 \\ 
-      0 & 1 & -6 & 7 & 1
+    \begin{mymatrix}{rrr}
+      1 & 1 & 1 \\
+      2 & 1 & 1 \\
+      3 & 1 & 2 \\
     \end{mymatrix}
+    \quad\sim\quad
+    \begin{mymatrix}{rrr}
+      1 & 1 & 1 \\
+      0 & -1 & -1 \\
+      0 & 0 & -1 \\
+    \end{mymatrix}.
   \end{equation*}
-  Next find its {\rref}
-  \begin{equation*}
-    \begin{mymatrix}{rrrrr}
-      1 & 0 & 7 & -5 & 0 \\ 
-      0 & 1 & -6 & 7 & 0 \\ 
-      0 & 0 & 0 & 0 & 1 \\ 
-      0 & 0 & 0 & 0 & 0
-    \end{mymatrix}
-  \end{equation*}
-  It follows that a basis for $V$ consists of the first two vectors
-  and the last.
-  \begin{equation*}
-    \set{\begin{mymatrix}{c} 1 \\ 0 \\ 1 \\ 0 \end{mymatrix},
-      \begin{mymatrix}{c} 0 \\ 1 \\ 1 \\ 1 \end{mymatrix},
-      \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ 1 \end{mymatrix}
-    }
-  \end{equation*}
-  Thus $V$ is of dimension 3 and it has a basis which extends the
-  basis for $W$.
+  Since the matrix has rank 3, the vectors
+  $\vect{u}_1,\vect{u}_2,\vect{u}_3$ are linearly
+  independent. Therefore, by
+  Proposition~\ref{prop:basis-test-k-vectors}, they form a basis of
+  $\R^3$.
 \end{solution}
 
-% ----------------------------------------------------------------------
-\subsection{CONTINUE HERE}
+The following proposition is also a consequence of
+Lemma~\ref{lem:extend-to-basis}. It says that smaller subspaces have
+smaller dimension.
 
-% ----------------------------------------------------------------------
-We are now prepared to examine the precise definition of a subspace as
-follows.
+\begin{proposition}{Subspace of a subspace}{subset-dimension}
+  Let $V$ and $W$ be subspaces of\/ $\R^n$, and suppose that
+  $V\subseteq W$.  Then $\dim(V)\leq\dim(W)$, with equality only when
+  $V=W$.
+\end{proposition}
 
-\begin{definition}{Subspace}{subspace-alt}
-  Let $V$ be a nonempty collection of vectors in $\R^{n}$. Then $V$ is
-  called a subspace\index{subspace!of Rn@of\/ $\R^n$} if whenever $a$
-  and $b$ are scalars and $\vect{u}$ and $\vect{v}$ are vectors in
-  $V$, the linear combination $a \vect{u}+ b \vect{v}$ is also in $V$.
-\end{definition}
-
-More generally this means that a subspace contains the span of any
-finite collection vectors in that subspace. It turns out that in
-$\R^{n}$, a subspace is exactly the span of finitely many of its
-vectors.
-
-
+\begin{proof}
+  Consider any basis $\vect{u}_1,\ldots,\vect{u}_k$ of $V$. Because
+  $V\subseteq W$, the vectors $\vect{u}_1,\ldots,\vect{u}_k$ are
+  linearly independent elements of $W$, and therefore can be extended
+  to a basis of $W$ by Lemma~\ref{lem:extend-to-basis}. The resulting
+  basis of $W$ has at least $k$ elements, i.e., $\dim(V)\leq\dim(W)$.
+  To prove the last claim, assume moreover that $\dim(V)=\dim(W)$. In
+  that case, $\dim(W)=k$, so that the $k$ linearly independent vectors
+  $\vect{u}_1,\ldots,\vect{u}_k$ form a basis of $W$ by
+  Proposition~\ref{prop:basis-test-k-vectors}. Since both $V$ and $W$
+  are spanned by $\vect{u}_1,\ldots,\vect{u}_k$, we must have $V=W$,
+  as claimed.
+\end{proof}
