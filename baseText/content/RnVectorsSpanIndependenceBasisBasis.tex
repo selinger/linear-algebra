@@ -491,7 +491,7 @@ vectors as linearly independent sets.
 \end{proof}
 
 Armed with the Exchange Theorem, we are now ready to show that any two
-bases are of the same size.
+bases of a space are of the same size.
 
 \begin{theorem}{Bases are of the same size}{bases-same-size}
   \index{basis!size of}%
@@ -510,100 +510,119 @@ bases are of the same size.
   linearly independent, so $r\geq s$.
 \end{proof}
 
-% ======================================================================
-\subsection{CONTINUE HERE}
-
-The following definition can now be stated.
+Because every basis of $V$ has the same number of vectors, we give
+this number a special name. It is called the \textbf{dimension} of
+$V$.
 
 \begin{definition}{Dimension of a subspace}{dimension}
   Let $V$ be a subspace of\/ $\R^{n}$. Then the \textbf{dimension}%
   \index{dimension}%
-  \index{subspace!dimension} of $V$, written $\func{dim}(V)$, is
+  \index{subspace!dimension} of $V$, written $\dim(V)$, is
   defined to be the number of vectors in a basis.
 \end{definition}
 
-The next result follows.
-
-\begin{corollary}{Dimension of\/ $\R^n$}{dimension-Rn}
-  The dimension of\/ $\R^{n}$ is $n$.
-\end{corollary}
-
-\begin{proof}
-  You only need to exhibit a basis for $\R^{n}$ which has $n$
-  vectors. Such a basis is the standard basis
-  $\set{\vect{e}_{1},\ldots , \vect{e}_{n}}$.
-\end{proof}
-
-Consider the following example.
-
-\begin{example}{Basis of subspace}{basis-subspace}
-  Let 
-  \begin{equation*}
-    V=\set{
-      \begin{mymatrix}{c} a\\ b\\ c\\ d\end{mymatrix}\in\R^4 \mid
-      a-b=d-c
-    }.
-  \end{equation*}
-  Show that $V$ is a subspace of\/ $\R^4$, find a basis of $V$, and find
-  $\dim(V)$.
+\begin{example}{Dimension of\/ $\R^n$}{dimension-Rn}
+  What is the dimension of $\R^{n}$?
 \end{example}
 
 \begin{solution}
-  The condition $a-b=d-c$ is equivalent to the condition $a=b-c+d$, so
-  we may write
-
-  \begin{equation*}
-    V =\set{
-      \begin{mymatrix}{c} b-c+d\\ b\\ c\\ d\end{mymatrix} \mid b,c,d
-      \in\R } = \set{ b\begin{mymatrix}{c} 1\\ 1\\ 0\\ 0\end{mymatrix}
-      +c\begin{mymatrix}{c} -1\\ 0\\ 1\\ 0\end{mymatrix}
-      +d\begin{mymatrix}{c} 1\\ 0\\ 0\\ 1\end{mymatrix} \mid b,c,d\in\R
-    }
-  \end{equation*}
-
-  This shows that $V$ is a subspace of\/ $\R^4$, since
-  $V=\sspan\set{\vect{u}_1, \vect{u}_2, \vect{u}_3}$ where
-
-  \begin{equation*}
-    \vect{u}_1  =  \begin{mymatrix}{r} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix},
-    \vect{u}_2  =  \begin{mymatrix}{r} -1 \\ 0 \\ 1 \\ 0 \end{mymatrix}, 
-    \vect{u}_3  =  \begin{mymatrix}{r} 1 \\ 0 \\ 0 \\ 1 \end{mymatrix}
-  \end{equation*}
-
-  Furthermore,
-
-  \begin{equation*}
-    \set{
-      \begin{mymatrix}{c} 1\\ 1\\ 0\\ 0\end{mymatrix},
-      \begin{mymatrix}{c} -1\\ 0\\ 1\\ 0\end{mymatrix},
-      \begin{mymatrix}{c} 1\\ 0\\ 0\\ 1\end{mymatrix}
-    }
-  \end{equation*}
-  is linearly independent, as can be seen by taking the
-  {\rref} of the matrix whose columns are
-  $\vect{u}_1, \vect{u}_2$ and $\vect{u}_3$.
-
-  \begin{equation*}
-    \begin{mymatrix}{rrr}
-      1 & -1 & 1 \\
-      1 & 0 & 0 \\
-      0 & 1 & 0 \\
-      0 & 0 & 1 \end{mymatrix}
-    \rightarrow
-    \begin{mymatrix}{rrr}
-      1 & 0 & 0 \\
-      0 & 1 & 0 \\
-      0 & 0 & 1 \\
-      0 & 0 & 0 \end{mymatrix}
-  \end{equation*}
-  
-  Since every column of the {\rref} matrix has a leading one,
-  the columns are linearly independent.
-
-  Therefore $\set{\vect{u}_1, \vect{u}_2, \vect{u}_3}$ is linearly
-  independent and spans $V$, so is a basis of $V$. Hence $V$ has
-  dimension three.
+  The standard basis of $\R^{n}$ is
+  $\set{\vect{e}_{1},\ldots,\vect{e}_{n}}$. Since it has $n$ vectors,
+  so $\dim(\R^n) = n$.
 \end{solution}
+
+\begin{example}{Dimension of a subspace}{dimension-subspace}
+  Let 
+  \begin{equation*}
+    V=\set{\left.
+      \begin{mymatrix}{c} x\\ y\\ z\end{mymatrix}\in\R^3 ~\right\vert~
+      x-y+2z = 0
+    }.
+  \end{equation*}
+  What is the dimension of\/ $V$?
+\end{example}
+
+\begin{solution}
+  We know that $V$ is a subspace of $\R^3$, because it is the solution
+  space of a system of a homogeneous system of equations (in this
+  case, one equation in three variables). We can take $y=t$ and $z=s$
+  as the free variables and solve for $x=y-2z=t-2s$. Therefore, a
+  general element of $V$ is of the form
+  \begin{equation*}
+    \begin{mymatrix}{c} x\\ y\\ z\end{mymatrix}
+    = \begin{mymatrix}{c} t-2s \\ t \\ s \end{mymatrix}
+    = t \begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}
+    + s \begin{mymatrix}{c} -2 \\ 0 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Thus,
+  \begin{equation*}
+    V = \sspan\set{
+      \begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix},~
+      \begin{mymatrix}{c} -2 \\ 0 \\ 1 \end{mymatrix}
+    }.
+  \end{equation*}
+  Since the two spanning vectors are linearly independent, they form a
+  basis of $V$, and thus $\dim(V)=2$. 
+\end{solution}
+
+Note that the dimension of the solution space of a system of equations
+is equal to the number of parameters in the general solution, which is
+equal to the number of free variables. For this reason, the dimension
+is also sometimes called the number of \textbf{degrees of freedom}%
+\index{degree of freedom}%
+\index{freedom!degree of}.
+
+\begin{example}{Dimension of a span}{dimension-basis}
+  Let 
+  \begin{equation*}
+    W = \sspan\set{
+      \begin{mymatrix}{r} 1 \\ 2 \\ -1 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ 3 \\ -1 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 8 \\ 19 \\ -8 \\ 8 \end{mymatrix},
+      \begin{mymatrix}{r} -6 \\ -15 \\ 6 \\ -6 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ 3 \\ 0 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ 5 \\ 0 \\ 1 \end{mymatrix}
+    }.
+  \end{equation*}
+  What is the dimension of $W$?
+\end{example}
+
+\begin{solution}
+  Let
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 2 \\ -1 \\ 1 \end{mymatrix},~~
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 3 \\ -1 \\ 1 \end{mymatrix},~~
+    \vect{u}_3 = \begin{mymatrix}{r} 8 \\ 19 \\ -8 \\ 8 \end{mymatrix},~~
+    \vect{u}_4 = \begin{mymatrix}{r} -6 \\ -15 \\ 6 \\ -6 \end{mymatrix},~~
+    \vect{u}_5 = \begin{mymatrix}{r} 1 \\ 3 \\ 0 \\ 1 \end{mymatrix},~~
+    \vect{u}_6 = \begin{mymatrix}{r} 1 \\ 5 \\ 0 \\ 1 \end{mymatrix},
+  \end{equation*}
+  so that $W=\sspan\set{\vect{u}_1,\ldots,\vect{u}_6}$.  We use the
+  casting-out algorithm to remove any redundant vectors from
+  $\vect{u}_1,\ldots,\vect{u}_6$. The remaining vectors will be
+  linearly independent, and therefore a basis of the span.
+  \begin{equation*}
+    \begin{mymatrix}{rrrrrr}
+      1 & 1 & 8 & -6 & 1 & 1 \\ 
+      2 & 3 & 19 & -15 & 3 & 5 \\ 
+      -1 & -1 & -8 & 6 & 0 & 0 \\ 
+      1 & 1 & 8 & -6 & 1 & 1
+    \end{mymatrix}
+    \quad\sim\quad
+    \begin{mymatrix}{rrrrrr}
+      \circled{1} & 0 & 5 & -3 & 0 & -2 \\ 
+      0 & \circled{1} & 3 & -3 & 0 & 2 \\ 
+      0 & 0 & 0 & 0 & \circled{1} & 1 \\ 
+      0 & 0 & 0 & 0 & 0 & 0
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore, the vectors $\vect{u}_3$, $\vect{u}_4$, and $\vect{u}_6$
+  are redundant, and $\set{\vect{u}_1,\vect{u}_2,\vect{u}_5}$ is a
+  basis of $W$. It follows that $\dim(W)=3$. 
+\end{solution}
+
+% ======================================================================
+\subsection{CONTINUE HERE}
 
 We continue by stating further properties of a set of vectors in
 $\R^{n}$.
@@ -774,65 +793,6 @@ result in a basis.
 The following example illustrates how to carry out this shrinking
 process which will obtain a subset of a span of vectors which is
 linearly independent.
-
-\begin{example}{Subset of a span}{subset-basis}
-  Let $W$ be the subspace 
-  \begin{equation*}
-    \sspan\set{\begin{mymatrix}{r} 1 \\ 2 \\ -1 \\ 1 \end{mymatrix},
-      \begin{mymatrix}{r} 1 \\ 3 \\ -1 \\ 1 \end{mymatrix},
-      \begin{mymatrix}{r} 8 \\ 19 \\ -8 \\ 8 \end{mymatrix},
-      \begin{mymatrix}{r} -6 \\ -15 \\ 6 \\ -6 \end{mymatrix},
-      \begin{mymatrix}{r} 1 \\ 3 \\ 0 \\ 1 \end{mymatrix},
-      \begin{mymatrix}{r} 1 \\ 5 \\ 0 \\ 1 \end{mymatrix}
-    }
-  \end{equation*}
-  Find a basis for $W$ which consists of a subset of the given
-  vectors.
-\end{example}
-
-\begin{solution}
-  You can use the {\rref} to accomplish this reduction. Form
-  the matrix which has the given vectors as columns. 
-  \begin{equation*}
-    \begin{mymatrix}{rrrrrr}
-      1 & 1 & 8 & -6 & 1 & 1 \\ 
-      2 & 3 & 19 & -15 & 3 & 5 \\ 
-      -1 & -1 & -8 & 6 & 0 & 0 \\ 
-      1 & 1 & 8 & -6 & 1 & 1
-    \end{mymatrix}
-  \end{equation*}
-  Then take the {\rref}
-  \begin{equation*}
-    \begin{mymatrix}{rrrrrr}
-      1 & 0 & 5 & -3 & 0 & -2 \\ 
-      0 & 1 & 3 & -3 & 0 & 2 \\ 
-      0 & 0 & 0 & 0 & 1 & 1 \\ 
-      0 & 0 & 0 & 0 & 0 & 0
-    \end{mymatrix}
-  \end{equation*}
-  It follows that a basis for $W$ is 
-  \begin{equation*}
-    \set{\begin{mymatrix}{r}
-        1 \\ 
-        2 \\ 
-        -1 \\ 
-        1
-      \end{mymatrix} ,\begin{mymatrix}{r}
-        1 \\ 
-        3 \\ 
-        -1 \\ 
-        1
-      \end{mymatrix} ,\begin{mymatrix}{c}
-        1 \\ 
-        3 \\ 
-        0 \\ 
-        1
-      \end{mymatrix} }
-  \end{equation*}
-  Since the first, second, and fifth columns are obviously a basis for
-  the column space of the {\rref}, the same is true for the matrix
-  having the given vectors as columns.
-\end{solution}
 
 Consider the following theorems regarding a subspace contained in
 another subspace.
