@@ -127,4 +127,76 @@ $ A = \begin{mymatrix}{rrrr}
 %\end{sol}
 \end{ex}
 
+\begin{ex} Suppose $A$ is an $m\times n$-matrix and $B$ is an $n\times p$-matrix.
+Show that 
+\begin{equation*}
+\dim \tup{\ker \tup{AB} } \leq \dim \tup{\ker \tup{
+A} } +\dim \tup{\ker \tup{B} } .
+\end{equation*}
+\textbf{Hint:\ }Consider the subspace, $B\tup{\R^{p}} \cap
+\ker \tup{A} $ and suppose a basis for this subspace is $\set{
+\vect{w}_{1},\ldots,\vect{w}_{k}}$. Now suppose $\set{
+\vect{u}_{1},\ldots,\vect{u}_{r}} $ is a basis for $\ker \tup{
+B}$. Let $\set{\vect{z}_{1},\ldots,\vect{z}_{k}} $ be
+such that $B\vect{z}_{i}=\vect{w}_{i}$ and argue that 
+\begin{equation*}
+\ker \tup{AB} \subseteq \sspan\set{\vect{u}_{1},\ldots,
+\vect{u}_{r},\vect{z}_{1},\ldots,\vect{z}_{k}} .
+\end{equation*}
+\vspace{1mm}
+\begin{sol}
+Here is how you do this. Suppose $AB\vect{x}=\vect{0}$. Then $B\vect{x}\in \ker
+\tup{A} \cap B\tup{\R^{p}} $ and so $B\vect{x}
+=\sum_{i=1}^{k}B\vect{z}_{i}$ showing that
+\[
+\vect{x}-\sum_{i=1}^{k}\vect{z}_{i}\in \ker \tup{B} 
+\]
+Consider $B\tup{\R^{p}} \cap \ker \tup{A} $ and let
+a basis be $\set{\vect{w}_{1},\ldots,\vect{w}_{k}}$. Then
+each $\vect{w}_{i}$ is of the form $B\vect{z}_{i}=\vect{w}_{i}$.
+Therefore, $\set{\vect{z}_{1},\ldots,\vect{z}_{k}} $ is
+linearly independent and $AB\vect{z}_{i}=0$. Now let $\set{\vect{u}
+_{1},\ldots,\vect{u}_{r}} $ be a basis for $\ker \tup{B}$.
+If $AB\vect{x}=\vect{0}$, then $B\vect{x} \in \ker \tup{A} \cap B\tup{
+\R^{p}} $ and so $B\vect{x}=\sum_{i=1}^{k}c_{i}B\vect{z}
+_{i}$ which implies
+\[
+\vect{x}-\sum_{i=1}^{k}c_{i}\vect{z}_{i}\in \ker \tup{B}
+\]
+and so it is of the form
+\[
+\vect{x}-\sum_{i=1}^{k}c_{i}\vect{z}_{i}=\sum_{j=1}^{r}d_{j}\vect{u}
+_{j}
+\]
+It follows that if $AB\vect{x}=\vect{0}$ so that $\vect{x}\in \ker \tup{
+AB}$, then
+\[
+\vect{x}\in \sspan\tup{\vect{z}_{1},\ldots,\vect{z}_{k},
+\vect{u}_{1},\ldots,\vect{u}_{r}} .
+\]
+Therefore,
+\begin{eqnarray*}
+\dim \tup{\ker \tup{AB} }  &\leq &k+r=\dim \tup{B\tup{
+\R^{p}} \cap \ker \tup{A} } +\dim \tup{\ker
+\tup{B} }  \\
+&\leq &\dim \tup{\ker \tup{A} } +\dim \tup{\ker \tup{
+B} }
+\end{eqnarray*}
+\end{sol}
+\end{ex}
+
+
+\begin{ex} Show that if $A$ is an $m\times n$-matrix, then $\ker \tup{A} $
+is a subspace of $\R^n$.
+\begin{sol}
+If $\vect{x},\vect{y}\in \ker \tup{A} $ then
+\[
+A\tup{a\vect{x}+b\vect{y}} =aA\vect{x}+bA\vect{y}=a\vect{0}
++b\vect{0}=\vect{0}
+\]
+and so $\ker \tup{A} $ is closed under linear combinations. Hence it
+is a subspace.
+\end{sol}
+\end{ex}
+
 \end{enumialphparenastyle}
