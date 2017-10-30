@@ -248,18 +248,30 @@ also called the \textbf{rank-nullity theorem}%
   and so $\rank(A)=3$ and $\nullity(A) = 5-3 = 2$.
 \end{solution}
 
-We conclude this section with a useful fact about matrices.
+We conclude this section with two useful theorems about matrices.
 
 \begin{theorem}{}{}
-  Let $A$ be an $m\times n$-matrix.
-  The following are equivalent.
+  The following are equivalent for an $m\times n$-matrix $A$.
+  \begin{enumerate}
+  \item $\rank(A)=n$.
+  \item $\row(A)=\R^n$, i.e., the rows of $A$ span $\R^n$.
+  \item The columns of $A$ are linearly independent in $\R^m$.
+  \item The $n\times n$-matrix $A^TA$ is invertible.
+  \item $A$ is left invertible, i.e., there exists an
+    $n\times m$-matrix $B$ such that $BA=I$.
+  \item The system $A\vect{x}=\vect{0}$ has only the trivial solution.
+  \end{enumerate}
+\end{theorem}
+
+\begin{theorem}{}{}
+  The following are equivalent for an $m\times n$-matrix $A$.
   \begin{enumerate}
   \item $\rank(A)=m$.
   \item $\col(A)=\R^m$, i.e., the columns of $A$ span $\R^m$.
   \item The rows of $A$ are linearly independent in $\R^n$.
   \item The $m\times m$-matrix $AA^T$ is invertible.
   \item $A$ is right invertible, i.e., there exists an
-    $n\times m$-matrix $B$ so that $AB=I$.
+    $n\times m$-matrix $B$ such that $AB=I$.
   \item The system $A\vect{x}=\vect{b}$ is consistent for
     every $\vect{b}\in\R^m$.
   \end{enumerate}
