@@ -197,8 +197,8 @@ the number of singular values.
 %%\begin{proof}
 %%Since $V$ and $U$ are unitary, it follows that 
 %%\begin{eqnarray*}
-%%\func{rank}\tup{A} &=&\func{rank}\tup{U^TAV} =
-%%\func{rank}\mat{
+%%\rank(A) &=&\rank(U^TAV) =
+%%\rank\mat{
 %%\begin{array}{cc}
 %%\sigma & 0 \\ 
 %%0 & 0
@@ -208,16 +208,16 @@ the number of singular values.
 %%\end{eqnarray*}
 %%Also since $U,V$ are unitary, 
 %%\begin{equation*}
-%%\func{rank}\tup{A^T} =\func{rank}\tup{V^TA^{\ast
-%%}U} =\func{rank}\tup{\tup{U^TAV} ^T}
+%%\rank(A^T) =\rank(V^TA^{\ast
+%%}U) =\rank\tup((U^TAV)^T)
 %%\end{equation*}
 %%\begin{equation*}
-%%=\func{rank}\tup{\mat{
+%%=\rank\tup(\mat{
 %%\begin{array}{cc}
 %%\sigma & 0 \\ 
 %%0 & 0
 %%\end{array}
-%%} ^T} =\text{number of singular values.}
+%%} ^T) =\text{number of singular values.}
 %%\end{equation*}
 %%\end{proof}
 %%

@@ -101,7 +101,7 @@ Before proceeding to an example of this concept, we revisit the
 definition of rank.
 
 \begin{definition}{Rank of a matrix}{rank-row-space}
-  Previously, we defined $\func{rank}(A)$ to be the number of leading
+  Previously, we defined $\rank(A)$ to be the number of leading
   entries in the {\ef} of $A$. Using an understanding of dimension and
   row space, we can now define rank as follows:
   \begin{equation*}
@@ -258,10 +258,10 @@ Example~\ref{exa:rank-column-row-space2}, where the rank of $A$ equals
 $3$. Notice that the row space and the column space each had dimension
 equal to $3$. It turns out that this is not a coincidence, and this
 essential result is referred to as the Rank Theorem and is given
-now. Recall that we defined $\func{rank}(A) = \dim(\row(A))$.
+now. Recall that we defined $\rank(A) = \dim(\row(A))$.
 
 \begin{theorem}{Rank theorem}{rank-theorem}
-  Let $A$ be an $m \times n$-matrix. Then $\dim(\col (A))$, the
+  Let $A$ be an $m \times n$-matrix. Then $\dim(\col(A))$, the
   dimension of the column space, is equal to the dimension of the row
   space, $\dim(\row(A))$.
 \end{theorem}
@@ -271,13 +271,13 @@ The following statements all follow from the Rank Theorem.
 \begin{corollary}{Results of the rank theorem}{rank-theorem}
   Let $A$ be a matrix. Then the following are true:
   \begin{enumerate}
-  \item $\func{rank}(A) = \func{rank}(A^T)$.
-  \item For $A$ of size $m \times n$, $\func{rank}(A) \leq m$ and
-    $\func{rank}(A) \leq n$.
+  \item $\rank(A) = \rank(A^T)$.
+  \item For $A$ of size $m \times n$, $\rank(A) \leq m$ and
+    $\rank(A) \leq n$.
   \item For $A$ of size $n \times n$, $A$ is invertible if and only if
-    $\func{rank}(A) = n$.
+    $\rank(A) = n$.
   \item For invertible matrices $B$ and $C$ of appropriate size,
-    $\func{rank}(A) = \func{rank}(BA) = \func{rank}(AC)$.
+    $\rank(A) = \rank(BA) = \rank(AC)$.
   \end{enumerate}
 \end{corollary}
 
@@ -291,11 +291,11 @@ Consider the following example.
       -1 & 1
     \end{mymatrix}
   \end{equation*}
-  Find $\func{rank}(A)$ and $\func{rank}(A^T)$.
+  Find $\rank(A)$ and $\rank(A^T)$.
 \end{example}
 
 \begin{solution}
-  To find $\func{rank}(A)$ we first row reduce to find the {\rref}.
+  To find $\rank(A)$ we first row reduce to find the {\rref}.
   \begin{equation*}
     A =
     \begin{mymatrix}{rr}
@@ -329,7 +329,7 @@ Consider the following example.
     \end{mymatrix}
   \end{equation*}
 
-  You can see that $\func{rank}(A^T) = 2$, the same as $\func{rank}(A)$.
+  You can see that $\rank(A^T) = 2$, the same as $\rank(A)$.
 \end{solution}
 
 We now define what is meant by the null space of a general
@@ -403,7 +403,7 @@ some new terminology being used, as $\nullspace(A) $ is simply
 the solution to the system $A\vect{x}=\vect{0}$.
 
 \begin{theorem}{Basis of $\nullspace(A)$}{null-space-basis}
-  Let $A$ be an $m \times n$-matrix such that $\func{rank}(A) =
+  Let $A$ be an $m \times n$-matrix such that $\rank(A) =
   r$. Then the system $A\vect{x}=\vect{0}_m$ has $n-r$ basic
   solutions, providing a basis of $\nullspace(A)$ with
   $\dim(\nullspace(A))=n-r$.
@@ -473,7 +473,7 @@ Consider the following example.
   Finally $\func{im}\tup{A} $ is just
   $\set{A\vect{x} \mid \vect{x} \in \R^n }$ and hence consists of the
   span of all columns of $A$, that is
-  $\func{im}\tup{A} = \col (A)$.
+  $\func{im}\tup{A} = \col(A)$.
 
   Notice from the above calculation that that the first two columns of
   the {\rref} are pivot columns. Thus the column space is the span of
@@ -607,7 +607,7 @@ From our observation above we can now state an important theorem.
 
 \begin{theorem}{Rank and nullity}{rank-nullity}
   Let $A$ be an $m\times n$-matrix. Then
-  $\func{rank}\tup{A} + \dim( \nullspace(A)) =n$.
+  $\rank(A) + \dim( \nullspace(A)) =n$.
 \end{theorem}
 
 Consider the following example, which we first explored above in
@@ -623,7 +623,7 @@ Example~\ref{exa:null-space}
     \end{mymatrix}
   \end{equation*}
 
-  Find $\func{rank}\tup{A}$ and $\dim( \nullspace(A))$.
+  Find $\rank(A)$ and $\dim( \nullspace(A))$.
 \end{example}
 
 \begin{solution}
@@ -648,7 +648,7 @@ Example~\ref{exa:null-space}
   \end{equation*}
   Therefore the nullity of $A$ is $1$. It follows from
   Theorem~\ref{thm:rank-nullity} that
-  $\func{rank}\tup{A} + \dim( \nullspace(A)) = 2 + 1 = 3$, which
+  $\rank(A) + \dim( \nullspace(A)) = 2 + 1 = 3$, which
   is the number of columns of $A$.
 \end{solution}
 
@@ -658,7 +658,7 @@ We conclude this section with two similar, and important, theorems.
   Let $A$ be an $m\times n$-matrix.
   The following are equivalent.
   \begin{enumerate}
-  \item $\func{rank}(A)=n$.
+  \item $\rank(A)=n$.
   \item $\row(A)=\R^n$, i.e., the rows of $A$ span $\R^n$.
   \item The columns of $A$ are independent in $\R^m$.
   \item The $n\times n$-matrix $A^TA$ is invertible.
@@ -672,7 +672,7 @@ We conclude this section with two similar, and important, theorems.
   Let $A$ be an $m\times n$-matrix.
   The following are equivalent.
   \begin{enumerate}
-  \item $\func{rank}(A)=m$.
+  \item $\rank(A)=m$.
   \item $\col(A)=\R^m$, i.e., the columns of $A$ span $\R^m$.
   \item The rows of $A$ are independent in $\R^n$.
   \item The $m\times m$-matrix $AA^T$ is invertible.
