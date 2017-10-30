@@ -16,7 +16,7 @@ and column space of a matrix. Consider the following lemma.
 \begin{lemma}{Effect of row operations on row space}{row-operations-row-space}
   Let $A$ and $B$ be $m\times n$-matrices such that $A$ can be carried
   to $B$ by elementary row $\mat{\mbox{column}}$ operations. Then
-  $\func{row}(A)=\func{row}(B)$ $\mat{\func{col}(A)=\func{col}(B)}$.
+  $\row(A)=\row(B)$ $\mat{\col(A)=\col(B)}$.
 \end{lemma}
 
 \begin{proof}
@@ -29,33 +29,33 @@ and column space of a matrix. Consider the following lemma.
   \begin{itemize}
   \item If $B$ is obtained from $A$ by a interchanging two rows of
     $A$, then $A$ and $B$ have exactly the same rows, so
-    $\func{row}(B)=\func{row}(A)$.
+    $\row(B)=\row(A)$.
 
   \item Suppose $p\neq 0$, and suppose that for some $j$,
     $1\leq j\leq m$, $B$ is obtained from $A$ by multiplying row $j$
     by $p$.  Then
     \begin{equation*}
-      \func{row}(B)=\sspan\set{\vect{r}_1, \ldots, p\vect{r}_{j}, \ldots, \vect{r}_m}.
+      \row(B)=\sspan\set{\vect{r}_1, \ldots, p\vect{r}_{j}, \ldots, \vect{r}_m}.
     \end{equation*}
     Since
     \begin{equation*}
       \set{\vect{r}_1, \ldots,
-        p\vect{r}_{j}, \ldots, \vect{r}_m} \subseteq\func{row}(A),
+        p\vect{r}_{j}, \ldots, \vect{r}_m} \subseteq\row(A),
     \end{equation*}
-    it follows that $\func{row}(B)\subseteq\func{row}(A)$.
+    it follows that $\row(B)\subseteq\row(A)$.
     Conversely, since
     \begin{equation*}
       \set{\vect{r}_1, \ldots,
-        \vect{r}_m}\subseteq\func{row}(B),
+        \vect{r}_m}\subseteq\row(B),
     \end{equation*}
-    it follows that $\func{row}(A)\subseteq\func{row}(B)$.
-    Therefore, $\func{row}(B)=\func{row}(A)$.
+    it follows that $\row(A)\subseteq\row(B)$.
+    Therefore, $\row(B)=\row(A)$.
   \item Suppose $p\neq 0$, and suppose that for some $i$ and $j$,
     $1\leq i,j\leq m$, $B$ is obtained from $A$ by adding $p$ time row
     $j$ to row $i$.  Without loss of generality, we may assume $i<j$.
     Then
     \begin{equation*}
-      \func{row}(B)=\sspan\set{\vect{r}_1, \ldots, \vect{r}_{i-1},
+      \row(B)=\sspan\set{\vect{r}_1, \ldots, \vect{r}_{i-1},
         \vect{r}_i+p\vect{r}_j, \ldots,\vect{r}_j,\ldots, \vect{r}_m}.
     \end{equation*}
 
@@ -63,19 +63,19 @@ and column space of a matrix. Consider the following lemma.
     \begin{equation*}
       \set{\vect{r}_1, \ldots, \vect{r}_{i-1},
         \vect{r}_i+p\vect{r}_{j}, \ldots, \vect{r}_m}
-      \subseteq\func{row}(A),
+      \subseteq\row(A),
     \end{equation*}
 
-    it follows that $\func{row}(B)\subseteq\func{row}(A)$.
+    it follows that $\row(B)\subseteq\row(A)$.
 
     Conversely, since
 
     \begin{equation*}
-      \set{\vect{r}_1, \ldots, \vect{r}_m}\subseteq\func{row}(B),
+      \set{\vect{r}_1, \ldots, \vect{r}_m}\subseteq\row(B),
     \end{equation*}
 
-    it follows that $\func{row}(A)\subseteq\func{row}(B)$.
-    Therefore, $\func{row}(B)=\func{row}(A)$.
+    it follows that $\row(A)\subseteq\row(B)$.
+    Therefore, $\row(B)=\row(A)$.
   \end{itemize}
 \end{proof}
 
@@ -83,8 +83,8 @@ Consider the following lemma.
 
 \begin{lemma}{Row space of a {\ef} matrix}{echelon-form-row-space}
   Let $A$ be an $m \times n$-matrix and let $R$ be its {\ef}. Then the
-  non-zero rows of $R$ form a basis of $\func{row}(R)$, and
-  consequently of $\func{row}(A)$.
+  non-zero rows of $R$ form a basis of $\row(R)$, and
+  consequently of $\row(A)$.
 \end{lemma}
 
 This lemma suggests that we can examine the {\ef} of a matrix in order
@@ -95,7 +95,7 @@ of fewer columns than this. A variation of the previous lemma provides
 a solution. Suppose $A$ is row reduced to its {\ef} $R$. Identify the
 pivot columns of $R$ (columns which have leading ones), and take the
 corresponding columns of $A$. It turns out that this forms a basis of
-$\func{col}(A)$.
+$\col(A)$.
 
 Before proceeding to an example of this concept, we revisit the
 definition of rank.
@@ -105,7 +105,7 @@ definition of rank.
   entries in the {\ef} of $A$. Using an understanding of dimension and
   row space, we can now define rank as follows:
   \begin{equation*}
-    \mbox{rank}(A) = \dim(\func{row}(A))
+    \mbox{rank}(A) = \dim(\row(A))
   \end{equation*}
 \end{definition}
 
@@ -138,7 +138,7 @@ Consider the following example.
   Notice that the first two columns of $R$ are pivot columns. By the
   discussion following Lemma~\ref{lem:echelon-form-row-space}, we find
   the corresponding columns of $A$, in this case the first two
-  columns. Therefore a basis for $\func{col}(A)$ is given by
+  columns. Therefore a basis for $\col(A)$ is given by
   \begin{equation*}
     \set{\begin{mymatrix}{r}
         1 \\
@@ -173,10 +173,10 @@ Consider the following example.
 
   What about an efficient description of the row space? By
   Lemma~\ref{lem:echelon-form-row-space} we know that the non-zero
-  rows of $R$ create a basis of $\func{row}(A)$.  For the above
+  rows of $R$ create a basis of $\row(A)$.  For the above
   matrix, the row space equals
   \begin{equation*}
-    \func{row}(A) =
+    \row(A) =
     \sspan \set{
       \begin{mymatrix}{rrrrr}
         1 & 0 & -9 & 9 & 2
@@ -218,7 +218,7 @@ Consider another example.
   \end{equation*}
   and so the rank is $3$. The row space is given by
   \begin{equation*}
-    \func{row}(A) = \sspan \set{
+    \row(A) = \sspan \set{
       \begin{mymatrix}{ccccc}
         1 & 0 & 0 & 0 & \frac{13}{2}
       \end{mymatrix},
@@ -234,7 +234,7 @@ Consider another example.
   columns. The column space is the span of the first three columns in
   the \textbf{original matrix},
   \begin{equation*}
-    \func{col}(A) = \sspan \set{\begin{mymatrix}{r}
+    \col(A) = \sspan \set{\begin{mymatrix}{r}
         1 \\
         1 \\
         1 \\
@@ -258,12 +258,12 @@ Example~\ref{exa:rank-column-row-space2}, where the rank of $A$ equals
 $3$. Notice that the row space and the column space each had dimension
 equal to $3$. It turns out that this is not a coincidence, and this
 essential result is referred to as the Rank Theorem and is given
-now. Recall that we defined $\func{rank}(A) = \dim(\func{row}(A))$.
+now. Recall that we defined $\func{rank}(A) = \dim(\row(A))$.
 
 \begin{theorem}{Rank theorem}{rank-theorem}
-  Let $A$ be an $m \times n$-matrix. Then $\dim(\func{col} (A))$, the
+  Let $A$ be an $m \times n$-matrix. Then $\dim(\col (A))$, the
   dimension of the column space, is equal to the dimension of the row
-  space, $\dim(\func{row}(A))$.
+  space, $\dim(\row(A))$.
 \end{theorem}
 
 The following statements all follow from the Rank Theorem.
@@ -473,13 +473,13 @@ Consider the following example.
   Finally $\func{im}\tup{A} $ is just
   $\set{A\vect{x} \mid \vect{x} \in \R^n }$ and hence consists of the
   span of all columns of $A$, that is
-  $\func{im}\tup{A} = \func{col} (A)$.
+  $\func{im}\tup{A} = \col (A)$.
 
   Notice from the above calculation that that the first two columns of
   the {\rref} are pivot columns. Thus the column space is the span of
   the first two columns in the \textbf{original matrix}, and we get
   \begin{equation*}
-    \func{im}\tup{A} = \func{col}(A) =
+    \func{im}\tup{A} = \col(A) =
     \sspan \set{\begin{mymatrix}{r}
         1 \\
         0 \\
@@ -659,7 +659,7 @@ We conclude this section with two similar, and important, theorems.
   The following are equivalent.
   \begin{enumerate}
   \item $\func{rank}(A)=n$.
-  \item $\func{row}(A)=\R^n$, i.e., the rows of $A$ span $\R^n$.
+  \item $\row(A)=\R^n$, i.e., the rows of $A$ span $\R^n$.
   \item The columns of $A$ are independent in $\R^m$.
   \item The $n\times n$-matrix $A^TA$ is invertible.
   \item There exists an $n\times m$-matrix $C$ so that $CA=I_n$.
@@ -673,7 +673,7 @@ We conclude this section with two similar, and important, theorems.
   The following are equivalent.
   \begin{enumerate}
   \item $\func{rank}(A)=m$.
-  \item $\func{col}(A)=\R^m$, i.e., the columns of $A$ span $\R^m$.
+  \item $\col(A)=\R^m$, i.e., the columns of $A$ span $\R^m$.
   \item The rows of $A$ are independent in $\R^n$.
   \item The $m\times m$-matrix $AA^T$ is invertible.
   \item There exists an $n\times m$-matrix $C$ so that $AC=I_m$.
