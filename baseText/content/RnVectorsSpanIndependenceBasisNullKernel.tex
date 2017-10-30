@@ -340,7 +340,7 @@ $m\times n$-matrix.
   $A$, is defined as follows.\index{kernel}\index{matrix!kernel}%
   \index{null space}\index{matrix!null space}
   \begin{equation*}
-    \func{null} \tup{A} =\set{\vect{x} \mid A \vect{x} =\vect{0}}
+    \nullspace(A) =\set{\vect{x} \mid A \vect{x} =\vect{0}}
   \end{equation*}
 \end{definition}
 
@@ -360,53 +360,53 @@ follows.
 Consider $A$ as a mapping from $\R^{n}$ to $\R^{m}$ whose action is
 given by multiplication. The following diagram displays this scenario.
 \begin{equation*}
-  \overset{\func{null} \tup{A} }{\R^{n}}\ \overset{A}{\rightarrow }\
+  \overset{\nullspace(A) }{\R^{n}}\ \overset{A}{\rightarrow }\
   \overset{
     \func{im}\tup{A} }{\R^{m}}
 \end{equation*}
 As indicated, $\func{im}\tup{A} $ is a subset of $\R^{m}$ while
-$\func{null} \tup{A} $ is a subset of $\R^{n}$.
+$\nullspace(A) $ is a subset of $\R^{n}$.
 
 It turns out that the null space and image of $A$ are both
 subspaces. Consider the following example.
 
 \begin{example}{Null space}{null-subspace}
   Let $A$ be an $m\times n$-matrix. Then the null space of $A$,
-  $\func{null}(A)$ is a subspace of $\R^n$.
+  $\nullspace(A)$ is a subspace of $\R^n$.
 \end{example}
 
 \begin{solution}
   \begin{itemize}
-  \item Since $A\vect{0}_n=\vect{0}_m$, $\vect{0}_n\in\func{null}(A)$.
-  \item Let $\vect{x},\vect{y}\in\func{null}(A)$.  Then
+  \item Since $A\vect{0}_n=\vect{0}_m$, $\vect{0}_n\in\nullspace(A)$.
+  \item Let $\vect{x},\vect{y}\in\nullspace(A)$.  Then
     $A\vect{x}=\vect{0}_m$ and $A\vect{y}=\vect{0}_m$, so
     \begin{equation*}
       A(\vect{x}+\vect{y})=A\vect{x}+A\vect{y} = \vect{0}_m+\vect{0}_m=\vect{0}_m,
     \end{equation*}
-    and thus $\vect{x}+\vect{y}\in\func{null}(A)$.
-  \item Let $\vect{x}\in\func{null}(A)$ and $k\in\R$.  Then
+    and thus $\vect{x}+\vect{y}\in\nullspace(A)$.
+  \item Let $\vect{x}\in\nullspace(A)$ and $k\in\R$.  Then
     $A\vect{x}=\vect{0}_m$, so
     \begin{equation*}
       A(k\vect{x}) = k(A\vect{x})=k\vect{0}_m=\vect{0}_m,
     \end{equation*}
-    and thus $k\vect{x}\in\func{null}(A)$.
+    and thus $k\vect{x}\in\nullspace(A)$.
   \end{itemize}
-  Therefore by the subspace test, $\func{null}(A)$ is a subspace of $\R^n$.
+  Therefore by the subspace test, $\nullspace(A)$ is a subspace of $\R^n$.
 \end{solution}
 
 The proof that $\func{im}(A)$ is a subspace of $\R^m$ is similar and
 is left as an exercise to the reader.
 
-We now wish to find a way to describe $\func{null}(A)$ for a matrix
-$A$. However, finding $\func{null} \tup{A}$ is not new! There is just
-some new terminology being used, as $\func{null} \tup{A} $ is simply
+We now wish to find a way to describe $\nullspace(A)$ for a matrix
+$A$. However, finding $\nullspace(A)$ is not new! There is just
+some new terminology being used, as $\nullspace(A) $ is simply
 the solution to the system $A\vect{x}=\vect{0}$.
 
-\begin{theorem}{Basis of $\func{null}(A)$}{null-space-basis}
+\begin{theorem}{Basis of $\nullspace(A)$}{null-space-basis}
   Let $A$ be an $m \times n$-matrix such that $\func{rank}(A) =
   r$. Then the system $A\vect{x}=\vect{0}_m$ has $n-r$ basic
-  solutions, providing a basis of $\func{null}(A)$ with
-  $\dim(\func{null}(A))=n-r$.
+  solutions, providing a basis of $\nullspace(A)$ with
+  $\dim(\nullspace(A))=n-r$.
 \end{theorem}
 
 Consider the following example.
@@ -420,11 +420,11 @@ Consider the following example.
       2 & 3 & 3
     \end{mymatrix}
   \end{equation*}
-  Find $\func{null} \tup{A} $ and $\func{im}\tup{A}$.
+  Find $\nullspace(A) $ and $\func{im}\tup{A}$.
 \end{example}
 
 \begin{solution}
-  In order to find $\func{null} \tup{A}$, we simply need to solve the
+  In order to find $\nullspace(A)$, we simply need to solve the
   equation $A\vect{x}=\vect{0}$. This is the usual procedure of
   writing the augmented matrix, finding the {\rref} and then the
   solution. The augmented matrix and corresponding {\rref} are
@@ -463,7 +463,7 @@ Consider the following example.
   Therefore, the null space of $A$ is all multiples of this vector,
   which we can write as
   \begin{equation*}
-    \func{null} (A) = \sspan \set{\begin{mymatrix}{r}
+    \nullspace(A) = \sspan \set{\begin{mymatrix}{r}
         -3 \\
         1 \\
         1
@@ -527,7 +527,7 @@ Here is a larger example, but the method is entirely similar.
   \end{equation*}
   It follows that the first two columns are pivot columns, and the
   next three correspond to parameters. Therefore,
-  $\func{null} \tup{A} $ is given by
+  $\nullspace(A) $ is given by
   \begin{equation*}
     \begin{mymatrix}{c}
       \tup{-\vspace{0.05in}\frac{3}{5}} s +\tup{-\vspace{0.05in}\frac{6}{5}} t+\tup{
@@ -564,7 +564,7 @@ Here is a larger example, but the method is entirely similar.
   In other words, the null space of this matrix equals the span of the
   three vectors above. Thus
   \begin{equation*}
-    \func{null} \tup{A} =\sspan\set{\begin{mymatrix}{r}
+    \nullspace(A) =\sspan\set{\begin{mymatrix}{r}
         -\vspace{0.05in}\frac{3}{5} \\
         -\vspace{0.05in}\frac{1}{5} \\
         1 \\
@@ -587,7 +587,7 @@ Here is a larger example, but the method is entirely similar.
 \end{solution}
 
 Notice also that the three vectors above are linearly independent and
-so the dimension of $\func{null} \tup{A} $ is 3. The following is true
+so the dimension of $\nullspace(A) $ is 3. The following is true
 in general, the number of parameters in the solution of $AX=0$ equals
 the dimension of the null space. Recall also that the number of
 leading ones in the {\rref} equals the number of pivot columns, which
@@ -600,14 +600,14 @@ meant by the nullity of a matrix.
 \begin{definition}{Nullity}{nullity}
   The dimension of the null space of a matrix is called the
   \textbf{nullity}\index{nullity}, denoted
-  $\dim( \func{null}\tup{A})$.
+  $\dim( \nullspace(A))$.
 \end{definition}
 
 From our observation above we can now state an important theorem.
 
 \begin{theorem}{Rank and nullity}{rank-nullity}
   Let $A$ be an $m\times n$-matrix. Then
-  $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) =n$.
+  $\func{rank}\tup{A} + \dim( \nullspace(A)) =n$.
 \end{theorem}
 
 Consider the following example, which we first explored above in
@@ -623,7 +623,7 @@ Example~\ref{exa:null-space}
     \end{mymatrix}
   \end{equation*}
 
-  Find $\func{rank}\tup{A}$ and $\dim( \func{null}\tup{A})$.
+  Find $\func{rank}\tup{A}$ and $\dim( \nullspace(A))$.
 \end{example}
 
 \begin{solution}
@@ -639,7 +639,7 @@ Example~\ref{exa:null-space}
   Therefore the rank of $A$ is $2$. We also determined that the null
   space of $A$ is given by
   \begin{equation*}
-    \func{null} (A) = \sspan \set{\begin{mymatrix}{r}
+    \nullspace(A) = \sspan \set{\begin{mymatrix}{r}
         -3 \\
         1 \\
         1
@@ -648,7 +648,7 @@ Example~\ref{exa:null-space}
   \end{equation*}
   Therefore the nullity of $A$ is $1$. It follows from
   Theorem~\ref{thm:rank-nullity} that
-  $\func{rank}\tup{A} + \dim( \func{null}\tup{A}) = 2 + 1 = 3$, which
+  $\func{rank}\tup{A} + \dim( \nullspace(A)) = 2 + 1 = 3$, which
   is the number of columns of $A$.
 \end{solution}
 
