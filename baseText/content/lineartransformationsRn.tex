@@ -2,11 +2,332 @@
 
 \begin{outcome}
   \begin{enumerate}
-  \item Understand the definition of a linear transformation, and that
-    all linear transformations are determined by matrix
-    multiplication.
+  \item Determine whether a function $T:\R^n\to\R^m$ is linear.
+  \item Find the matrix corresponding to a linear transformation
+    $T:\R^n\to\R^m$. 
   \end{enumerate}
 \end{outcome}
+
+In calculus, a \textbf{function}%
+\index{function} $f:\R\to\R$ is a rule that maps a real number
+$x\in\R$ to a real number $f(x)\in\R$. In linear algebra, we can
+generalize this concept to vectors. A \textbf{vector function}%
+\index{vector function} $T:\R^n\to\R^m$ is a rule that inputs an
+$n$-dimensional vector $\vect{v}\in\R^n$ and outputs an
+$m$-dimensional vector $T(\vect{v})\in\R^m$. The following are some
+examples of vector functions:
+\begin{equation}\label{eq:vector-functions}
+  T_1\tup{\begin{mymatrix}{c} x \\ y \end{mymatrix}}
+  = \begin{mymatrix}{c} x^2 \\ x+y \\ y^2 \end{mymatrix},\quad
+  T_2\tup{\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}}
+  = \begin{mymatrix}{c} x+y \\ x+y+z \\ 0 \end{mymatrix},\quad
+  T_3\tup{\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}}
+  = \begin{mymatrix}{c} e^{x+z} \\ \sqrt{y} \end{mymatrix}.
+\end{equation}
+Of these, the first is a function $T_1:\R^2\to\R^3$, the second is a
+function $T_2:\R^3\to\R^3$, and the third is a function
+$T_3:\R^3\to\R^2$.  We can evaluate a vector function by applying it
+to a vector, for example,
+\begin{equation*}
+  T_1\tup{\begin{mymatrix}{c} 1 \\ 2 \end{mymatrix}}
+  = \begin{mymatrix}{c} 1^2 \\ 1+2 \\ 2^2 \end{mymatrix}
+  = \begin{mymatrix}{c} 1 \\ 3 \\ 4 \end{mymatrix},\quad
+  T_1\tup{\begin{mymatrix}{c} 0 \\ 1 \end{mymatrix}}
+  = \begin{mymatrix}{c} 0^2 \\ 1+1 \\ 1^2 \end{mymatrix}
+  = \begin{mymatrix}{c} 0 \\ 1 \\ 1 \end{mymatrix},
+\end{equation*}
+and so on. The study of arbitrary vector functions and their
+derivatives and integrals is the subject of {\em multi-variable
+  calculus}%
+\index{calculus!multi-variable}%
+\index{multi-variable calculus}. In linear algebra, we will only be
+concerned with \textbf{linear vector functions}%
+\index{vector function!linear|see{linear transformation}}, which are
+also called \textbf{linear transformations}%
+\index{linear transformation}. They are defined as follows.
+
+\begin{definition}{Linear transformation}{linear-transformation}
+  A vector function $T:\R^{n}\to \R^{m}$ is called a \textbf{linear
+    transformations}%
+  \index{linear transformation} if it satisfies the following two
+  conditions:
+  \begin{enumerate}
+  \item $T$ respects addition, i.e., for all\/
+    $\vect{v},\vect{w}\in\R^n$, we have
+    $T(\vect{v}+\vect{w}) = T(\vect{v}) + T(\vect{w})$;
+  \item $T$ respects scalar multiplication, i.e, for all\/
+    $\vect{v}\in\R^n$ and scalars $k$, we have
+    $T(k\vect{v}) = kT(\vect{v})$.
+  \end{enumerate}
+\end{definition}
+
+\begin{example}{Linear and non-linear transformations}{linear-transformation}
+  Which of the vector functions in {\eqref{eq:vector-functions}} are
+  linear transformations?
+\end{example}
+
+\begin{solution}
+  \begin{enumerate}
+  \item[(a)] The function $T_1$ is not a linear transformation. For
+    example, let $\vect{v}=\begin{mymatrix}{r} 1 \\
+      0 \end{mymatrix}$. Then
+    \begin{equation*}
+      T_1(\vect{v})
+      ~=~ T_1\tup{\begin{mymatrix}{c} 1 \\ 0 \end{mymatrix}}
+      ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}
+      \quad\mbox{and}\quad
+      T_1(2\vect{v})
+      ~=~ \tup{\begin{mymatrix}{c} 2 \\ 0 \end{mymatrix}}
+      ~=~ \begin{mymatrix}{c} 4 \\ 2 \\ 0 \end{mymatrix}
+      ~\neq~ 2\begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}.
+    \end{equation*}
+    Since $T_1(2\vect{v}) \neq 2T_1(\vect{v})$, the vector function
+    $T_1$ does not respect scalar multiplication, and therefore it is
+    not a linear transformation.
+  \item[(b)] The function $T_2$ is a linear transformation. For
+    example, to prove that $T_2$ respects addition, consider two
+    arbitrary vectors
+    \begin{equation*}
+      \vect{v} =
+      \begin{mymatrix}{c}
+        x_1 \\
+        y_1 \\
+        z_1 \\
+      \end{mymatrix}
+      \quad\mbox{and}\quad
+      \vect{w} =
+      \begin{mymatrix}{c}
+        x_2 \\
+        y_2 \\
+        z_2 \\
+      \end{mymatrix}.
+    \end{equation*}
+    We have
+    \begin{equation*}
+      T_2(\vect{v}+\vect{w})
+      ~=~ T_2\tup{
+        \begin{mymatrix}{c}
+          x_1+x_2 \\
+          y_1+y_2 \\
+          z_1+z_2 \\
+        \end{mymatrix}}
+      ~=~ \begin{mymatrix}{c}
+        (x_1+x_2)+(y_1+y_2) \\
+        (x_1+x_2)+(y_1+y_2)+(z_1+z_2) \\
+        0
+      \end{mymatrix}
+    \end{equation*}
+    and
+    \begin{equation*}
+      T_2(\vect{v})+T_2(\vect{w})
+      ~=~
+      \begin{mymatrix}{c}
+        x_1+y_1 \\
+        x_1+y_1+z_1 \\
+        0 \\
+      \end{mymatrix}
+      + \begin{mymatrix}{c}
+        x_2+y_2 \\
+        x_2+y_2+z_2 \\
+        0 \\
+      \end{mymatrix}
+      ~=~ \begin{mymatrix}{c}
+        (x_1+y_1)+(x_2+y_2) \\
+        (x_1+y_1+z_1)+(x_2+y_2+z_2) \\
+        0 \\
+      \end{mymatrix}.
+    \end{equation*}
+    Since the two sides are evidently equal, $T_2$ respects
+    addition. The fact that it respects scalar multiplication can be
+    shown by a similar calculation.
+  \item[(c)] The function $T_3$ is not a linear transformation. For
+    example, consider
+    $\vect{v}=\begin{mymatrix}{c}0\\1\\0\end{mymatrix}$ and
+    $\vect{w}=\begin{mymatrix}{c}1\\1\\0\end{mymatrix}$.
+    Then 
+    \begin{equation*}
+      T_3(\vect{v}+\vect{w})
+      ~=~ T_3\tup{\begin{mymatrix}{c} 1 \\ 2 \\ 0\end{mymatrix}}
+      ~=~ \begin{mymatrix}{c} e \\ \sqrt{2} \end{mymatrix},
+    \end{equation*}
+    and
+    \begin{equation*}
+      T_3(\vect{v})+T_3(\vect{w}) 
+      ~=~ \begin{mymatrix}{c} 1 \\ 1 \end{mymatrix}
+      + \begin{mymatrix}{c} e \\ 1 \end{mymatrix}
+      ~=~ \begin{mymatrix}{c} e+1 \\ 2 \end{mymatrix}.
+    \end{equation*}
+    Since $T_3(\vect{v}+\vect{w})\neq T_3(\vect{v})+T_3(\vect{w})$,
+    the vector function $T_3$ does not respect addition, and therefore
+    it is not linear.
+  \end{enumerate}
+\end{solution}
+
+An easy fact about linear transformation is that they preserve the
+origin, i.e., they satisfy $T(\vect{0}) = \vect{0}$. This can be seen,
+for example, by considering
+$T(\vect{0}) = T(\vect{0}+\vect{0}) = T(\vect{0}) + T(\vect{0})$ and
+then subtracting $T(\vect{0})$ from both sides of the equation.  This
+gives an easier way to see that $T_3$ in the above example is not a
+linear transformation, since $T_3(\vect{0}) \neq \vect{0}$. On the
+other hand, of course not every function that preserves the origin is
+linear. For example, $T_1$ is not linear although it satisfies
+$T_1(\vect{0})=\vect{0}$.
+
+An important example of linear transformations are the so-called
+\textbf{matrix transformations}%
+\index{matrix transformation}%
+\index{linear transformation!matrix transformation}.
+
+\begin{proposition}{Matrix transformations are linear transformations}{matrix-are-linear}
+  Let $A$ be an $m\times n$-matrix, and consider the vector function
+  $T:\R^{n}\to \R^{m}$ defined by $T(\vect{v}) = A\vect{v}$. Then $T$
+  is a linear transformation.
+\end{proposition}
+
+\begin{proof}
+  This follows from the laws of matrix multiplication. Namely, by the
+  distributive law, we have
+  $A(\vect{v}+\vect{w}) = A\vect{v} + A\vect{w}$, showing that $T$
+  respects addition. And by the compatibility of matrix multiplication
+  and scalar multiplication, we ahve $A(k\vect{v}) = k(A\vect{v})$,
+  showing that $T$ respects scalar multiplication.
+\end{proof}
+
+In fact, matrix transformations are not just an example of linear
+transformations, but they are essentially the {\em only} example. One
+of the central theorems in linear algebra is that all linear
+transformations $T:\R^n\to\R^m$ are in fact matrix transformations.
+Therefore, a matrix can be regarded as a notation for a linear
+transformation, and vice versa. This is the subject of the following
+theorem.
+
+\begin{theorem}{Linear transformations are matrix transformations}{linear-are-matrix}
+  Let $T:\R^n\to\R^m$ be any linear transformation. Then there exists
+  a unique $m\times n$-matrix $A$ such that for all $\vect{v}\in\R^n$,
+  \begin{equation*}
+    T(\vect{v}) = A\vect{v}.
+  \end{equation*}
+  In other words, $T$ is a matrix transformation.
+\end{theorem}
+
+\begin{proof}
+  Suppose $T:\R^{n}\to \R^{m}$ is a linear transformation and consider
+  the standard basis $\set{\vect{e}_1,\ldots,\vect{e}_n}$ of $\R^n$.
+  For all $i$, define $\vect{u}_i = T(\vect{e}_i)$, and let $A$ be the
+  matrix that has $\vect{u}_1,\ldots,\vect{u}_n$ as its columns. We
+  claim that $A$ is the desired matrix, i.e., that
+  $T(\vect{v}) = A\vect{v}$ holds for all $\vect{v}\in\R^n$.
+
+  To see this, let
+  \begin{equation*}
+    \vect{v} =
+    \begin{mymatrix}{c} x_1 \\ x_2 \\ \vdots \\ x_n \end{mymatrix}
+  \end{equation*}
+  be some arbitrary element of $\R^n$. Then $\vect{v} = x_1\vect{e}_1
+  + x_2\vect{e}_2 + \ldots + x_n\vect{e}_n$, and we have:
+  \begin{equation*}
+    \begin{array}{rcl@{\quad}l}
+      T(\vect{v})
+      &=& T(x_1\vect{e}_1 + x_2\vect{e}_2 + \ldots + x_n\vect{e}_n)
+      \\
+      &=& T(x_1\vect{e}_1) + T(x_2\vect{e}_2) + \ldots + T(x_n\vect{e}_n)
+      & \mbox{by linearity}\\
+      &=& x_1T(\vect{e}_1) + x_2T(\vect{e}_2) + \ldots + x_nT(\vect{e}_n)
+      & \mbox{by linearity}\\
+      &=& x_1\vect{u}_1 + x_2\vect{u}_2 + \ldots + x_n\vect{u}_n
+      & \mbox{by definition of $\vect{u}_i$}\\
+      &=& A\vect{v}
+      & \mbox{by the column method of matrix multiplication.}
+    \end{array}
+  \end{equation*}
+\end{proof}
+
+% ======================================================================
+\subsection{CONTINUE HERE...}
+
+The desired matrix is obtained from constructing the $i^{th}$ column
+as $T(\vect{e}_{i})$. Recall that the set
+$\set{\vect{e}_1, \vect{e}_2,\ldots, \vect{e}_n }$ is called the
+standard basis of $\R^n$. Therefore the matrix of $T$ is found by
+applying $T$ to the standard basis. We state this formally as the
+following theorem.
+
+
+\begin{theorem}{Matrix of a linear transformation}{matrix-of-linear-transformation}
+  Let $T: \R^{n} \to \R^{m}$ be a linear transformation. Then the
+  matrix $A$ satisfying $T\tup{\vect{x}}=A\vect{x}$\index{linear
+    transformation!matrix} is given by
+  \begin{equation*}
+    A=
+    \begin{mymatrix}{ccc}
+      | &  & | \\
+      T\tup{\vect{e}_{1}} & \cdots & T\tup{\vect{e}_{n}} \\
+      | &  & |
+    \end{mymatrix}
+  \end{equation*}
+  where $\vect{e}_{i}$ is the $i^{th}$ column of $I_n$, and then $T\tup{\vect{e}_{i}
+  }$ is the $i^{th}$ column of $A$.
+\end{theorem}
+
+The following Corollary is an essential result.
+
+\begin{corollary}{Matrix and linear transformation}{matrix-lin-transf-equivalence}
+  A transformation $T:\R^n\rightarrow \R^m$ is a linear transformation if and only if it is a matrix transformation. 
+\end{corollary}
+
+Consider the following example.
+
+\begin{example}{The matrix of a linear transformation}{matrix-of-linear-transformation}
+  Suppose $T$ is a linear transformation, $T:\R^{3}\rightarrow \R^{2}$ where 
+  \begin{equation*}
+    T\begin{mymatrix}{r}
+      1 \\
+      0 \\
+      0
+    \end{mymatrix} =\begin{mymatrix}{r}
+      1 \\
+      2
+    \end{mymatrix} ,\ T\begin{mymatrix}{r}
+      0 \\
+      1 \\
+      0
+    \end{mymatrix} =\begin{mymatrix}{r}
+      9 \\
+      -3
+    \end{mymatrix} ,\ T\begin{mymatrix}{r}
+      0 \\
+      0 \\
+      1
+    \end{mymatrix} =\begin{mymatrix}{r}
+      1 \\
+      1
+    \end{mymatrix}
+  \end{equation*}
+  Find the matrix $A$ of $T$ such that $T \tup{\vect{x} }=A\vect{x}$  for all $\vect{x}$.
+\end{example}
+
+\begin{solution} By Theorem~\ref{thm:matrix-of-linear-transformation} we construct $A$ as follows:
+  \begin{equation*}
+    A = 
+    \begin{mymatrix}{ccc}
+      | &  & | \\
+      T\tup{\vect{e}_{1}} & \cdots & T\tup{\vect{e}_{n}} \\
+      | &  & |
+    \end{mymatrix}
+  \end{equation*}
+
+  In this case, $A$ will be a $2 \times 3$-matrix, so we need to find $T
+  \tup{\vect{e}_1 }, T \tup{\vect{e}_2 }$, and $T \tup{\vect{e}_3
+  }$. Luckily, we have been given these values so we can fill in
+  $A$ as needed, using these vectors as the columns of $A$.  Hence,
+  \begin{equation*}
+    A=\begin{mymatrix}{rrr}
+      1 & 9 & 1 \\
+      2 & -3 & 1
+    \end{mymatrix}
+  \end{equation*}
+\end{solution}
 
 Recall that when we multiply an $m\times n$-matrix by an $n\times 1 $
 column vector, the result is an $m\times 1$ column vector. In this
@@ -16,94 +337,94 @@ an $m \times 1$ column vector.
 
 Recall that the $n \times 1$ vector given by
 \begin{equation*}
-\vect{x} = 
-\begin{mymatrix}{r}
-x_1 \\
-x_2\\ 
-\vdots \\
-x_n
-\end{mymatrix}
+  \vect{x} = 
+  \begin{mymatrix}{r}
+    x_1 \\
+    x_2\\ 
+    \vdots \\
+    x_n
+  \end{mymatrix}
 \end{equation*}
 is said to belong to $\R^n$, which is the set of all $n \times 1$ vectors. In this section, we will discuss transformations of vectors in $\R^n$. 
 
 Consider the following example. 
 
 \begin{example}{A function which transforms vectors}{function-transformation}
-Consider the matrix $A = \begin{mymatrix}{ccc}
-1 & 2 & 0 \\
-2 & 1 & 0
-\end{mymatrix}$. 
-Show that by matrix multiplication $A$ transforms vectors in $\R^3$ into vectors in $\R^2$.
+  Consider the matrix $A = \begin{mymatrix}{ccc}
+    1 & 2 & 0 \\
+    2 & 1 & 0
+  \end{mymatrix}$. 
+  Show that by matrix multiplication $A$ transforms vectors in $\R^3$ into vectors in $\R^2$.
 \end{example}
 
 \begin{solution}
-First, recall that vectors in $\R^3$ are vectors of size $ 3 \times 1$, while vectors in $
-\R^{2}$ are of size $2 \times 1$. If we multiply $A$, which is a $2 \times 3$-matrix, by a $3 \times 1$ vector,
-the result will be a $2 \times 1$ vector. This what we mean when we say that $A$ {\em transforms \em} vectors.
+  First, recall that vectors in $\R^3$ are vectors of size $ 3 \times 1$, while vectors in $
+  \R^{2}$ are of size $2 \times 1$. If we multiply $A$, which is a $2 \times 3$-matrix, by a $3 \times 1$ vector,
+  the result will be a $2 \times 1$ vector. This what we mean when we say that $A$ {\em transforms \em} vectors.
 
-Now, for $\begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix} $ in $\R^3$ , multiply on the left by the given matrix to obtain the new
-vector. This product looks like 
-\begin{equation*}
-\begin{mymatrix}{rrr}
-1 & 2 & 0 \\
-2 & 1 & 0
-\end{mymatrix} 
-\begin{mymatrix}{r}
-x \\
-y \\
-z
-\end{mymatrix} = 
-\begin{mymatrix}{c}
-x+2y \\
-2x+y
-\end{mymatrix}
-\end{equation*}
-The resulting product is a $2 \times 1$ vector which is determined by the choice of $x$ and $y$. 
- Here are some numerical examples.
-\begin{equation*}
-\begin{mymatrix}{ccc}
-1 & 2 & 0 \\
-2 & 1 & 0
-\end{mymatrix} \begin{mymatrix}{c}
-1 \\
-2 \\
-3
-\end{mymatrix} =\allowbreak \begin{mymatrix}{c}
-5 \\
-4
-\end{mymatrix}
-\end{equation*}
-Here, the vector
-$\begin{mymatrix}{c}
-1 \\
-2 \\
-3
-\end{mymatrix}$
-in $\R^3$ was transformed by the matrix into the vector
-$\begin{mymatrix}{c} 
-5 \\
-4
-\end{mymatrix}$
-in $\R^2$. 
- 
-Here is another example:
-\begin{equation*}
-\begin{mymatrix}{rrr}
-1 & 2 & 0 \\
-2 & 1 & 0
-\end{mymatrix} \begin{mymatrix}{r}
-10 \\
-5 \\
--3
-\end{mymatrix} =\allowbreak \begin{mymatrix}{r}
-20 \\
-25
-\end{mymatrix}
-\end{equation*}
+  Now, for $\begin{mymatrix}{c}
+    x \\
+    y \\
+    z
+  \end{mymatrix} $ in $\R^3$ , multiply on the left by the given matrix to obtain the new
+  vector. This product looks like 
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 2 & 0 \\
+      2 & 1 & 0
+    \end{mymatrix} 
+    \begin{mymatrix}{r}
+      x \\
+      y \\
+      z
+    \end{mymatrix} = 
+    \begin{mymatrix}{c}
+      x+2y \\
+      2x+y
+    \end{mymatrix}
+  \end{equation*}
+  The resulting product is a $2 \times 1$ vector which is determined by the choice of $x$ and $y$. 
+  Here are some numerical examples.
+  \begin{equation*}
+    \begin{mymatrix}{ccc}
+      1 & 2 & 0 \\
+      2 & 1 & 0
+    \end{mymatrix} \begin{mymatrix}{c}
+      1 \\
+      2 \\
+      3
+    \end{mymatrix} =\allowbreak \begin{mymatrix}{c}
+      5 \\
+      4
+    \end{mymatrix}
+  \end{equation*}
+  Here, the vector
+  $\begin{mymatrix}{c}
+    1 \\
+    2 \\
+    3
+  \end{mymatrix}$
+  in $\R^3$ was transformed by the matrix into the vector
+  $\begin{mymatrix}{c} 
+    5 \\
+    4
+  \end{mymatrix}$
+  in $\R^2$. 
+  
+  Here is another example:
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 2 & 0 \\
+      2 & 1 & 0
+    \end{mymatrix} \begin{mymatrix}{r}
+      10 \\
+      5 \\
+      -3
+    \end{mymatrix} =\allowbreak \begin{mymatrix}{r}
+      20 \\
+      25
+    \end{mymatrix}
+  \end{equation*}
 \end{solution}
 
 The idea is to define a function which takes vectors in
@@ -113,14 +434,14 @@ case, that function is multiplication by the matrix $A$.
 Let $T$ denote such a function. The notation $T:\R^{n}\to \R^{m}$ means that the function $T$
 transforms vectors in $\R^{n}$ into vectors in $\R^{m}$. The notation $T(\vect{x})$ means the transformation $T$ applied to the vector $\vect{x}$. The above example demonstrated a transformation achieved by matrix multiplication. In this case,  we often write
 \begin{equation*}
-T_{A}\tup{\vect{x}} =A \vect{x}
+  T_{A}\tup{\vect{x}} =A \vect{x}
 \end{equation*}
 Therefore, $T_{A}$ is the transformation determined by the matrix $A$. In this case we say that $T$ is a matrix transformation. 
 
 Recall the property of matrix multiplication that states that for 
 $k $ and $p$ scalars,
 \begin{equation*}
-A\tup{kB+pC} =kAB+pAC
+  A\tup{kB+pC} =kAB+pAC
 \end{equation*}
 In particular, for $A$ an $m\times n$-matrix and $B$ and $C$, $n\times 1$
 vectors in $\R^{n}$,  this formula holds.
@@ -128,59 +449,44 @@ vectors in $\R^{n}$,  this formula holds.
 In other words, this means that matrix multiplication gives an
 example of a linear transformation, which we will now define. 
 
-\begin{definition}{Linear transformation}{linear-transformation}
- Let $T:\R^{n}\to \R^{m}$ be a function, where for each
- $\vect{x} \in \R^{n},T\tup{\vect{x}}\in \R^{m}$. Then $T$ is a
-\textbf{linear transformation}\index{linear transformation} if whenever $k ,p $ are scalars and 
-$\vect{x}_1$ and $\vect{x}_2$ are vectors in $\R^{n}$ $(
-n\times 1$ vectors$)$,
-\begin{equation*}
-T\tup{k \vect{x}_1 + p \vect{x}_2 } = kT\tup{\vect{x}_1}+ pT\tup{\vect{x}_{2} }
-\end{equation*}
-\end{definition}
-
 Consider the following example.
 
 \begin{example}{Linear transformation}{linear-transformation}
-Let $T$ be a transformation defined by
-$T:\R^3\to\R^2$ is defined by
-\[
-T\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
-= 
-\begin{mymatrix}{c} x+y \\ x-z \end{mymatrix}
-\mbox{ for all }
-\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix} \in\R^3
-\]
-Show that $T$ is a linear transformation.
+  Let $T$ be a transformation defined by
+  $T:\R^3\to\R^2$ is defined by
+  \[
+    T\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    = 
+    \begin{mymatrix}{c} x+y \\ x-z \end{mymatrix}
+    \mbox{ for all }
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix} \in\R^3
+  \]
+  Show that $T$ is a linear transformation.
 \end{example}
 
 \begin{solution}
-By Definition~\ref{def:linear-transformation} we need to show that $T\tup{k \vect{x}_1 + p \vect{x}_2 } = kT\tup{\vect{x}_1}+ pT\tup{\vect{x}_{2} }$ for all scalars $k,p$ and vectors $\vect{x}_1, \vect{x}_2$.
-Let
-\[
-\vect{x}_1 = \begin{mymatrix}{c} x_1 \\ y_1 \\ z_1 \end{mymatrix}, 
-\vect{x}_2 = \begin{mymatrix}{c} x_2 \\ y_2 \\ z_2 \end{mymatrix}
-\]
-Then
-\begin{eqnarray*}
-T\tup{k \vect{x}_1 + p \vect{x}_2 } &=& T \tup{k \begin{mymatrix}{c} x_1 \\ y_1 \\ z_1 \end{mymatrix} + p \begin{mymatrix}{c} x_2 \\ y_2 \\ z_2 \end{mymatrix} } \\
-&=& T \tup{\begin{mymatrix}{c} kx_1 \\ ky_1 \\ kz_1 \end{mymatrix} +  \begin{mymatrix}{c} px_2 \\ py_2 \\ pz_2 \end{mymatrix} } \\
-&=& T \tup{\begin{mymatrix}{c} kx_1 + px_2 \\ ky_1 + py_2 \\ kz_1 + pz_2 \end{mymatrix}  } \\
-&=& \begin{mymatrix}{c} (kx_1 + px_2) + (ky_1 + py_2) \\ (kx_1 + px_2)- (kz_1 + pz_2) \end{mymatrix} \\
-&=& \begin{mymatrix}{c} (kx_1 + ky_1) + (px_2 + py_2) \\ (kx_1 - kz_1) + (px_2 - pz_2) \end{mymatrix} \\
-&=& \begin{mymatrix}{c} kx_1 + ky_1 \\ kx_1 - kz_1 \end{mymatrix} + \begin{mymatrix}{c} px_2 + py_2 \\  px_2 - pz_2 \end{mymatrix} \\
-&=& k \begin{mymatrix}{c} x_1 + y_1 \\ x_1 - z_1 \end{mymatrix} + p \begin{mymatrix}{c} x_2 + y_2 \\  x_2 - z_2 \end{mymatrix} \\
-&=& k T(\vect{x}_1) + p T(\vect{x}_2) 
-\end{eqnarray*}
-Therefore $T$ is a linear transformation. 
+  By Definition~\ref{def:linear-transformation} we need to show that $T\tup{k \vect{x}_1 + p \vect{x}_2 } = kT\tup{\vect{x}_1}+ pT\tup{\vect{x}_{2} }$ for all scalars $k,p$ and vectors $\vect{x}_1, \vect{x}_2$.
+  Let
+  \[
+    \vect{x}_1 = \begin{mymatrix}{c} x_1 \\ y_1 \\ z_1 \end{mymatrix}, 
+    \vect{x}_2 = \begin{mymatrix}{c} x_2 \\ y_2 \\ z_2 \end{mymatrix}
+  \]
+  Then
+  \begin{eqnarray*}
+    T\tup{k \vect{x}_1 + p \vect{x}_2 } &=& T \tup{k \begin{mymatrix}{c} x_1 \\ y_1 \\ z_1 \end{mymatrix} + p \begin{mymatrix}{c} x_2 \\ y_2 \\ z_2 \end{mymatrix} } \\
+                                        &=& T \tup{\begin{mymatrix}{c} kx_1 \\ ky_1 \\ kz_1 \end{mymatrix} +  \begin{mymatrix}{c} px_2 \\ py_2 \\ pz_2 \end{mymatrix} } \\
+                                        &=& T \tup{\begin{mymatrix}{c} kx_1 + px_2 \\ ky_1 + py_2 \\ kz_1 + pz_2 \end{mymatrix}  } \\
+                                        &=& \begin{mymatrix}{c} (kx_1 + px_2) + (ky_1 + py_2) \\ (kx_1 + px_2)- (kz_1 + pz_2) \end{mymatrix} \\
+                                        &=& \begin{mymatrix}{c} (kx_1 + ky_1) + (px_2 + py_2) \\ (kx_1 - kz_1) + (px_2 - pz_2) \end{mymatrix} \\
+                                        &=& \begin{mymatrix}{c} kx_1 + ky_1 \\ kx_1 - kz_1 \end{mymatrix} + \begin{mymatrix}{c} px_2 + py_2 \\  px_2 - pz_2 \end{mymatrix} \\
+                                        &=& k \begin{mymatrix}{c} x_1 + y_1 \\ x_1 - z_1 \end{mymatrix} + p \begin{mymatrix}{c} x_2 + y_2 \\  x_2 - z_2 \end{mymatrix} \\
+                                        &=& k T(\vect{x}_1) + p T(\vect{x}_2) 
+  \end{eqnarray*}
+  Therefore $T$ is a linear transformation. 
 \end{solution}
 
 Two important examples of linear transformations are the zero transformation\index{zero transformation} and identity transformation\index{identity transformation}. The zero transformation defined by $T\tup{\vect{x} } = \vect(0)$ for all $\vect{x}$ is an example of a linear transformation. Similarly the identity transformation defined by $T\tup{\vect{x} } = \vect(x)$ is also linear. Take the time to prove these using the method demonstrated in Example~\ref{exa:linear-transformation}.
 
 We began this section by discussing matrix transformations, where multiplication by a matrix transforms vectors. These matrix transformations are in fact linear transformations. 
-
-\begin{theorem}{Matrix transformations are linear transformations}{matrix-are-linear}
-Let $T:\R^{n}\to \R^{m}$ be a transformation defined by $T(\vect{x}) = A\vect{x}$. Then $T$ is a linear transformation. 
-\end{theorem}
 
 It turns out that every linear transformation can be expressed as a matrix transformation, and thus linear transformations are exactly the same as matrix transformations. 
