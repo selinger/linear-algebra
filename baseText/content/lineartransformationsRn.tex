@@ -50,10 +50,10 @@ also called \textbf{linear transformations}%
   \index{linear transformation} if it satisfies the following two
   conditions:
   \begin{enumerate}
-  \item $T$ respects addition, i.e., for all\/
+  \item $T$ preserves addition, i.e., for all\/
     $\vect{v},\vect{w}\in\R^n$, we have
     $T(\vect{v}+\vect{w}) = T(\vect{v}) + T(\vect{w})$;
-  \item $T$ respects scalar multiplication, i.e, for all\/
+  \item $T$ preserves scalar multiplication, i.e, for all\/
     $\vect{v}\in\R^n$ and scalars $k$, we have
     $T(k\vect{v}) = kT(\vect{v})$.
   \end{enumerate}
@@ -80,10 +80,10 @@ also called \textbf{linear transformations}%
       ~\neq~ 2\begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}.
     \end{equation*}
     Since $T_1(2\vect{v}) \neq 2T_1(\vect{v})$, the vector function
-    $T_1$ does not respect scalar multiplication, and therefore it is
+    $T_1$ does not preserve scalar multiplication, and therefore it is
     not a linear transformation.
   \item[(b)] The function $T_2$ is a linear transformation. For
-    example, to prove that $T_2$ respects addition, consider two
+    example, to prove that $T_2$ preserves addition, consider two
     arbitrary vectors
     \begin{equation*}
       \vect{v} =
@@ -135,8 +135,8 @@ also called \textbf{linear transformations}%
         0 \\
       \end{mymatrix}.
     \end{equation*}
-    Since the two sides are evidently equal, $T_2$ respects
-    addition. The fact that it respects scalar multiplication can be
+    Since the two sides are evidently equal, $T_2$ preserves
+    addition. The fact that it preserves scalar multiplication can be
     shown by a similar calculation.
   \item[(c)] The function $T_3$ is not a linear transformation. For
     example, consider
@@ -156,7 +156,7 @@ also called \textbf{linear transformations}%
       ~=~ \begin{mymatrix}{c} e+1 \\ 2 \end{mymatrix}.
     \end{equation*}
     Since $T_3(\vect{v}+\vect{w})\neq T_3(\vect{v})+T_3(\vect{w})$,
-    the vector function $T_3$ does not respect addition, and therefore
+    the vector function $T_3$ does not preserve addition, and therefore
     it is not linear.
   \end{enumerate}
 \end{solution}

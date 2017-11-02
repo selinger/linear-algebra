@@ -22,9 +22,9 @@ An important example of linear transformations are the so-called
   This follows from the laws of matrix multiplication. Namely, by the
   distributive law, we have
   $A(\vect{v}+\vect{w}) = A\vect{v} + A\vect{w}$, showing that $T$
-  respects addition. And by the compatibility of matrix multiplication
+  preserves addition. And by the compatibility of matrix multiplication
   and scalar multiplication, we ahve $A(k\vect{v}) = k(A\vect{v})$,
-  showing that $T$ respects scalar multiplication.
+  showing that $T$ preserves scalar multiplication.
 \end{proof}
 
 In fact, matrix transformations are not just an example of linear
@@ -184,7 +184,7 @@ matrix as follows:
       + \func{proj}_{\vect{u}}\tup{\vect{w}}.
     \end{equation*}
     Therefore, the function
-    $T(\vect{v}) = \func{proj}_{\vect{u}}\tup{\vect{v}}$ respects
+    $T(\vect{v}) = \func{proj}_{\vect{u}}\tup{\vect{v}}$ preserves
     addition. Also, given any scalar $k$, we have
     \begin{equation*}
       \func{proj}_{\vect{u}}\tup{k\vect{v}}
@@ -193,7 +193,7 @@ matrix as follows:
       = k\tup{\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}}
       = k\,\func{proj}_{\vect{u}}\tup{\vect{v}}.
     \end{equation*}
-    Therefore, the function $T$ respects scalar multiplication. It
+    Therefore, the function $T$ preserves scalar multiplication. It
     follows that $T$ is a linear function.
 
   \item[(b)] To find the matrix of $T$, we must compute the images of
