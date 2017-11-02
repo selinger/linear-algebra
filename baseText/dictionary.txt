@@ -203,11 +203,13 @@ RSKT
 rua
 Sava
 saylor
+scalings
 schmidt
 schwarz
 seealso
 Selinger
 sextuple
+shearings
 soln
 solns
 sqrt
