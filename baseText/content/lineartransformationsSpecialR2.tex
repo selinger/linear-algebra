@@ -15,8 +15,10 @@ reflections.
 \begin{example}{Rotation by $90^{\circ}$ in $\R^2$}{rotation-90-R2}
   Consider the linear transformation $T:\R^2\to\R^2$ that is given by
   a counterclockwise rotation by 90 degrees. Find the matrix%
-  \index{matrix!of a rotation} $A$ corresponding to this linear
-  transformation. Find a formula for $T$.
+  \index{matrix!of a rotation}%
+  \index{rotation!matrix of}%
+  \index{linear transformation!rotation} $A$ corresponding to this
+  linear transformation. Find a formula for $T$.
 \end{example}
 
 \begin{solution}
@@ -109,8 +111,10 @@ reflections.
 \begin{example}{Reflection about the $y$-axis in $\R^2$}{reflection-y-R2}
   Let $T:\R^2\to\R^2$ be a reflection about the $y$-axis. Find the
   matrix%
-  \index{matrix!of a reflection} $A$ corresponding to this linear
-  transformation, and a formula for $T$.
+  \index{matrix!of a reflection}%
+  \index{reflection!matrix of}%
+  \index{linear transformation!reflection} $A$ corresponding to this
+  linear transformation, and a formula for $T$.
 \end{example}
 
 \begin{solution}
@@ -180,7 +184,9 @@ reflections.
 
 \begin{example}{Rotation by an arbitrary angle in $\R^2$}{rotation-theta-R2}
   Find the matrix%
-  \index{matrix!of a rotation} $A$ for a counterclockwise rotation by
+  \index{matrix!of a rotation}%
+  \index{rotation!matrix of}%
+  \index{linear transformation!rotation} $A$ for a counterclockwise rotation by
   angle $\theta$ in $\R^2$.
 \end{example}
 
@@ -233,7 +239,10 @@ reflections.
 \end{solution}
 
 \begin{example}{Two rotations}{two-rotations}
-  Find the matrix for a counterclockwise rotation by angle
+  Find the matrix for a counterclockwise rotation%
+  \index{matrix!of a rotation}%
+  \index{rotation!matrix of}%
+  \index{linear transformation!rotation} by angle
   $\theta+\phi$ in two different ways, and compare.
 \end{example}
 
@@ -281,9 +290,204 @@ reflections.
   \end{eqnarray*}
 \end{solution}
 
+\begin{example}{More linear transformations of the plane}{more-linear-transformations}
+  Describe the linear transformation that is given by each of the
+  following matrices. Draw a before-and-after picture for each.
+  \begin{equation*}
+    (a)\quad
+    A = \begin{mymatrix}{rr}
+      0 & 1 \\
+      1 & 0 \\
+    \end{mymatrix},\quad
+    (b)\quad
+    B = \begin{mymatrix}{rr}
+      2 & 0 \\
+      0 & 2 \\
+    \end{mymatrix},\quad
+    (c)\quad
+    C = \begin{mymatrix}{rr}
+      \frac{1}{2} & 0 \\
+      0 & 2 \\
+    \end{mymatrix},\quad
+    (d)\quad
+    D = \begin{mymatrix}{rr}
+      1 & 1 \\
+      0 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  To draw each before-and-after picture, we can start by drawing the
+  images of the two standard basis vectors $\vect{e}_1$ and
+  $\vect{e}_2$, which are the columns of the transformation matrix. We
+  have also drawn the image of the letter ``F'', to better illustrate
+  the effect of each transformation.
+  \begin{center}
+    \begin{tikzpicture}[scale=0.96]
+      \begin{scope}
+        \path (-2.25,1.5) node {(a)};
+        \begin{scope}[scale=0.25]
+          \draw[red,thick,fill=red!10]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[step=1cm, gray!50, very thin] (-5.8,-5.8) grid (5.8,5.8);
+          \draw[red,thick]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[thick,->] (-6.5,0) -- (6.5,0);
+          \draw[thick,->] (0,-6.5) -- (0,6.5);
+          \draw[blue,thick,->] (0,0) -- node[below] {$\vect{e}_1$} (5,0);
+          \draw[blue,thick,->] (0,0) -- node[left] {$\vect{e}_2$} (0,5);
+        \end{scope}
+        \begin{scope}[xshift=2.25cm]
+          \path (0,0) node {$\stackrel{A}{\longmapsto}$};
+        \end{scope}
+        \begin{scope}[xshift=4.5cm,scale=0.25]
+          \draw[red,thick,fill=red!15,cm={0,1,1,0,(0,0)}]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[step=1cm, gray!50, very thin] (-5.8,-5.8) grid (5.8,5.8);
+          \draw[red,thick,cm={0,1,1,0,(0,0)}]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[thick,->] (-6.5,0) -- (6.5,0);
+          \draw[thick,->] (0,-6.5) -- (0,6.5);
+          \draw[blue,thick,->,cm={0,1,1,0,(0,0)}] (0,0) -- 
+          node[left] {$T(\vect{e}_1)$} (5,0);
+          \draw[blue,thick,->,cm={0,1,1,0,(0,0)}] (0,0) -- 
+          node[below] {$T(\vect{e}_2)$} (0,5);
+        \end{scope}
+      \end{scope}
+      \begin{scope}[xshift=9cm]
+        \path (-2.25,1.5) node {(b)};
+        \begin{scope}[scale=0.25]
+          \draw[red,thick,fill=red!10]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[step=1cm, gray!50, very thin] (-5.8,-5.8) grid (5.8,5.8);
+          \draw[red,thick]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[thick,->] (-6.5,0) -- (6.5,0);
+          \draw[thick,->] (0,-6.5) -- (0,6.5);
+          \draw[blue,thick,->] (0,0) -- node[below] {$\vect{e}_1$} (5,0);
+          \draw[blue,thick,->] (0,0) -- node[left] {$\vect{e}_2$} (0,5);
+        \end{scope}
+        \begin{scope}[xshift=2.25cm]
+          \path (0,0) node {$\stackrel{B}{\longmapsto}$};
+        \end{scope}
+        \begin{scope}[xshift=4.5cm,scale=0.25]
+          \draw[red,thick,fill=red!15,cm={2,0,0,2,(0,0)}]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[step=1cm, gray!50, very thin] (-5.8,-5.8) grid (5.8,5.8);
+          \draw[red,thick,cm={2,0,0,2,(0,0)}]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[thick] (-6.5,0) -- (6.5,0);
+          \draw[thick] (0,-6.5) -- (0,6.5);
+          \draw[blue,thick,->,cm={2,0,0,2,(0,0)}] (0,0) -- 
+          node[below] {$T(\vect{e}_1)$} (5,0);
+          \draw[blue,thick,->,cm={2,0,0,2,(0,0)}] (0,0) -- 
+          node[left] {$T(\vect{e}_2)$} (0,5);
+        \end{scope}
+      \end{scope}
+      \begin{scope}[yshift=-3.75cm]
+        \path (-2.25,1.5) node {(c)};
+        \begin{scope}[scale=0.25]
+          \draw[red,thick,fill=red!10]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[step=1cm, gray!50, very thin] (-5.8,-5.8) grid (5.8,5.8);
+          \draw[red,thick]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[thick,->] (-6.5,0) -- (6.5,0);
+          \draw[thick,->] (0,-6.5) -- (0,6.5);
+          \draw[blue,thick,->] (0,0) -- node[below] {$\vect{e}_1$} (5,0);
+          \draw[blue,thick,->] (0,0) -- node[left] {$\vect{e}_2$} (0,5);
+        \end{scope}
+        \begin{scope}[xshift=2.25cm]
+          \path (0,0) node {$\stackrel{C}{\longmapsto}$};
+        \end{scope}
+        \begin{scope}[xshift=4.5cm,scale=0.25]
+          \draw[red,thick,fill=red!15,cm={0.5,0,0,2,(0,0)}]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[step=1cm, gray!50, very thin] (-5.8,-5.8) grid (5.8,5.8);
+          \draw[red,thick,cm={0.5,0,0,2,(0,0)}]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[thick,->] (-6.5,0) -- (6.5,0);
+          \draw[thick] (0,-6.5) -- (0,6.5);
+          \draw[blue,thick,->,cm={0.5,0,0,2,(0,0)}] (0,0) -- 
+          node[below,xshift=0.5cm] {$T(\vect{e}_1)$} (5,0);
+          \draw[blue,thick,->,cm={0.5,0,0,2,(0,0)}] (0,0) -- 
+          node[left] {$T(\vect{e}_2)$} (0,5);
+        \end{scope}
+      \end{scope}
+      \begin{scope}[xshift=9cm,yshift=-3.75cm]
+        \path (-2.25,1.5) node {(d)};
+        \begin{scope}[scale=0.25]
+          \draw[red,thick,fill=red!10]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[step=1cm, gray!50, very thin] (-5.8,-5.8) grid (5.8,5.8);
+          \draw[red,thick]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[thick,->] (-6.5,0) -- (6.5,0);
+          \draw[thick,->] (0,-6.5) -- (0,6.5);
+          \draw[blue,thick,->] (0,0) -- node[below] {$\vect{e}_1$} (5,0);
+          \draw[blue,thick,->] (0,0) -- node[left] {$\vect{e}_2$} (0,5);
+        \end{scope}
+        \begin{scope}[xshift=2.25cm]
+          \path (0,0) node {$\stackrel{D}{\longmapsto}$};
+        \end{scope}
+        \begin{scope}[xshift=4.5cm,scale=0.25]
+          \draw[red,thick,fill=red!15,cm={1,0,1,1,(0,0)}]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[step=1cm, gray!50, very thin] (-5.8,-5.8) grid (5.8,5.8);
+          \draw[red,thick,cm={1,0,1,1,(0,0)}]
+          (0,0) -- (0,5) -- (3,5) -- (3,4) -- (1,4) --
+          (1,3) -- (2,3) -- (2,2) -- (1,2) -- (1,0) -- cycle;
+          \draw[thick,->] (-6.5,0) -- (6.5,0);
+          \draw[thick,->] (0,-6.5) -- (0,6.5);
+          \draw[blue,thick,->,cm={1,0,1,1,(0,0)}] (0,0) -- 
+          node[below] {$T(\vect{e}_1)$} (5,0);
+          \draw[blue,thick,->,cm={1,0,1,1,(0,0)}] (0,0) -- 
+          node[above,yshift=0.5cm] {$T(\vect{e}_2)$} (0,5);
+        \end{scope}
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+  The transformation $A$ is a reflection%
+  \index{matrix!of a reflection}%
+  \index{reflection!matrix of}%
+  \index{linear transformation!reflection} about the line $x=y$. The
+  transformation $B$ is a scaling%
+  \index{matrix!of a scaling}%
+  \index{scaling!matrix of}%
+  \index{linear transformation!scaling} by a factor of $2$. The
+  transformation $C$ is also a scaling, but by a different factor in
+  the $x$- and $y$-directions. It scales the $x$-direction by a factor
+  of $\frac{1}{2}$ (or equivalently, shrinks it by a factor of $2$),
+  and scales the $y$-direction by a factor of $2$. The transformation
+  $D$ is called a \textbf{shearing}%
+  \index{matrix!of a shearing}%
+  \index{shearing!matrix of}%
+  \index{linear transformation!shearing}.
+\end{solution}
+
 \begin{example}{Rotation in $\R^3$}{rotation-R3}
-  Find the matrix of a rotation by angle $\theta$ about the $z$-axis
-  in $3$-dimensional space, counterclockwise when viewed from above.
+  Find the matrix of a rotation%
+  \index{matrix!of a rotation}%
+  \index{rotation!matrix of}%
+  \index{linear transformation!rotation} by angle $\theta$ about the
+  $z$-axis in $3$-dimensional space, counterclockwise when viewed from
+  above.
 \end{example}
 
 \begin{solution}
