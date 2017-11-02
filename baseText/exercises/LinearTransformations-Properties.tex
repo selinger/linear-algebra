@@ -3,6 +3,99 @@
 
 \begin{enumialphparenastyle}
 
+\begin{ex}
+  Find the matrix for the linear transformation that reflects every
+  vector in $\R^2$ about the $x$-axis and then reflects about the
+  $y$-axis.
+\end{ex}
+
+\begin{ex}
+  Find the matrix for the linear transformation that rotates every
+  vector in $\R^{2}$ by an angle of $2\pi/3$ and then reflects
+  about the $x$-axis.
+  \begin{sol}
+    \[
+      \begin{mymatrix}{rr}
+        1 & 0 \\
+        0 & -1
+      \end{mymatrix} \begin{mymatrix}{cc}
+        \cos \tup{\frac{2\pi }{3}}  & -\sin \tup{\frac{2\pi }{3}}
+        \\
+        \sin \tup{\frac{2\pi }{3}}  & \cos \tup{\frac{2\pi }{3}}
+      \end{mymatrix} = \begin{mymatrix}{cc}
+        -\frac{1}{2} & -\frac{1}{2}\sqrt{3} \\
+        -\frac{1}{2}\sqrt{3} & \frac{1}{2}
+      \end{mymatrix}
+    \]
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Find the matrix for the linear transformation that rotates every
+  vector in $\R^{2}$ by an angle of $\pi /6$ and then reflects
+  about the $x$-axis followed by a reflection about the $y$-axis.
+  \begin{sol}
+    \[
+      \begin{mymatrix}{rr}
+        -1 & 0 \\
+        0 & 1
+      \end{mymatrix} \begin{mymatrix}{cc}
+        \cos \tup{\frac{\pi }{6}}  & -\sin \tup{\frac{\pi }{6}}  \\
+        \sin \tup{\frac{\pi }{6}}  & \cos \tup{\frac{\pi }{6}}
+      \end{mymatrix} = \begin{mymatrix}{cc}
+        -\frac{1}{2}\sqrt{3} & \frac{1}{2} \\
+        \frac{1}{2} & \frac{1}{2}\sqrt{3}
+      \end{mymatrix}
+    \]
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Find the matrix for the linear transformation that reflects every
+  vector in $\R^{2}$ about the $x$-axis and then rotates by an angle
+  of $\pi/4$.
+  \begin{sol}
+    \[
+      \begin{mymatrix}{cc}
+        \cos \tup{\frac{\pi }{4}}  & -\sin \tup{\frac{\pi }{4}}  \\
+        \sin \tup{\frac{\pi }{4}}  & \cos \tup{\frac{\pi }{4}}
+      \end{mymatrix} \begin{mymatrix}{rr}
+        1 & 0 \\
+        0 & -1
+      \end{mymatrix} = \begin{mymatrix}{cc}
+        \frac{1}{2}\sqrt{2} & \frac{1}{2}\sqrt{2} \\
+        \frac{1}{2}\sqrt{2} & -\frac{1}{2}\sqrt{2}
+      \end{mymatrix}
+    \]
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Find the matrix of the linear transformation that rotates every
+  vector in $\R^{3}$ counter clockwise about the $z$-axis when viewed
+  from the positive $z$-axis by an angle of 30 degrees and then
+  reflects about the $xy$-plane.
+  \begin{sol}
+    \[
+      \begin{mymatrix}{rrr}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & -1
+      \end{mymatrix} \begin{mymatrix}{ccc}
+        \cos \tup{\frac{\pi }{6}}  & -\sin \tup{\frac{\pi }{6}}  & 0
+        \\
+        \sin \tup{\frac{\pi }{6}}  & \cos \tup{\frac{\pi }{6}}  & 0
+        \\
+        0 & 0 & 1
+      \end{mymatrix} = \begin{mymatrix}{ccc}
+        \frac{1}{2}\sqrt{3} & -\frac{1}{2} & 0 \\
+        \frac{1}{2} & \frac{1}{2}\sqrt{3} & 0 \\
+        0 & 0 & -1
+      \end{mymatrix}
+    \]
+  \end{sol}
+\end{ex}
+
 \begin{ex} Show that if a function $T:\R^{n}\rightarrow \R^{m}$
 is linear, then it is \textbf{always }the case that $T\tup{\vect{0}} = \vect{0}$.
 %\begin{sol}
