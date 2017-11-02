@@ -8,396 +8,314 @@
   \end{enumerate}
 \end{outcome}
 
-Let $T: \R^n \to \R^m$ be a linear transformation. Then there are some important properties of $T$ which will be examined in this section. 
-Consider the following theorem.
+We begin by noting that linear transformations preserve the zero
+vector, negation, and linear combinations.
 
-\begin{theorem}{Properties of linear transformations}{properties}
-Let $T: \R^n \to \R^m$ be a linear transformation and let $\vect{x} \in \R^n$. 
-
-\begin{itemize}
-\item $T$ preserves the zero vector. 
-\[
-T(0\vect{x}) = 0 T(\vect{x}). \mbox{ Hence }T(\vect{0}) = \vect{0}
-\]
-\item $T$ preserves the negative of a vector:
-\[
-T( (-1)\vect{x})=(-1)T(\vect{x}). \mbox{ Hence }T(-\vect{x}) = -T(\vect{x}).
-\]
-\item $T$ preserves linear combinations:
-\[
-\mbox{Let }\vect{x}_1, ..., \vect{x}_k \in \R^n \mbox{ and }a_1, ..., a_k \in \R.
-\]
-\[
-\mbox{Then if }\vect{y} = a_1\vect{x}_1 + a_2\vect{x}_2 + ...+a_k \vect{x}_k, \mbox{it follows that }
-\]
-\[
-T(\vect{y}) = T(a_1\vect{x}_1 + a_2\vect{x}_2 + ...+a_k \vect{x}_k) = a_1T(\vect{x}_1) + a_2T(\vect{x}_2) + ...+a_k T(\vect{x}_k).
-\] 
-\end{itemize}
-\end{theorem}
-
-These properties are useful in determining the action of a transformation on a given vector. Consider the following example.
+\begin{proposition}{Properties of linear transformations}{properties-linear-transformation}
+  Let $T: \R^n \to \R^m$ be a linear transformation. Then
+  \begin{itemize}
+  \item $T$ preserves the zero vector: $T(\vect{0}) = \vect{0}$.
+  \item $T$ preserves negation: $T(-\vect{v}) = -T(\vect{v})$.
+  \item $T$ preserves linear combinations:
+    \begin{equation*}
+      T(a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_k \vect{v}_k)
+      \quad=\quad
+      a_1T(\vect{v}_1) + a_2T(\vect{v}_2) + \ldots + a_k T(\vect{v}_k).
+    \end{equation*}
+  \end{itemize}
+\end{proposition}
 
 \begin{example}{Linear combination}{lin-transf-combination}
-Let $T:\R^3 \to \R^4$ be a linear transformation such that 
-\[
-T \begin{mymatrix}{r}
-1 \\
-3 \\
-1
-\end{mymatrix}
-=
-\begin{mymatrix}{r}
-4 \\
-4 \\
-0 \\
--2
-\end{mymatrix},
-T \begin{mymatrix}{r}
-4 \\
-0 \\
-5
-\end{mymatrix}
-=
-\begin{mymatrix}{r}
-4 \\
-5 \\
--1 \\
-5
-\end{mymatrix}
-\]
-Find $T \begin{mymatrix}{r}
--7 \\
-3 \\
--9
-\end{mymatrix}$.
+  Let $T:\R^3 \to \R^4$ be a linear transformation such that
+  \begin{equation*}
+    T \tup{\begin{mymatrix}{r} 1 \\ 3 \\ 1 \end{mymatrix}}
+    = \begin{mymatrix}{r} 4 \\ 4 \\ 0 \\ -2 \end{mymatrix}
+    \quad\mbox{and}\quad
+    T \tup{\begin{mymatrix}{r} 4 \\ 0 \\ 5 \end{mymatrix}}
+    = \begin{mymatrix}{r} 4 \\ 5 \\ -1 \\ 5 \end{mymatrix}.
+  \end{equation*}
+  Find $T\tup{\begin{mymatrix}{r} -7 \\ 3 \\ -9 \end{mymatrix}}$.
 \end{example}
 
 \begin{solution}
-Using the third property in Theorem~\ref{thm:properties}, we can find $T \begin{mymatrix}{r}
--7 \\
-3 \\
--9
-\end{mymatrix}$ by writing $\begin{mymatrix}{r}
--7 \\
-3 \\
--9
-\end{mymatrix}$ as a linear combination of $\begin{mymatrix}{r}
-1 \\
-3 \\
-1
-\end{mymatrix}$ and $\begin{mymatrix}{r}
-4 \\
-0 \\
-5
-\end{mymatrix}$. 
-
-Therefore we want to find $a,b \in \R$ such that 
-\[
-\begin{mymatrix}{r}
--7 \\
-3 \\
--9
-\end{mymatrix}
-=
-a
-\begin{mymatrix}{r}
-1 \\
-3 \\
-1
-\end{mymatrix}
-+
-b
-\begin{mymatrix}{r}
-4 \\
-0 \\
-5
-\end{mymatrix}
-\]
-
-The necessary augmented matrix and resulting {\rref} are given by:
-\[
-\begin{mymatrix}{rr|r}
-1 & 4 & -7 \\
-3 & 0 & 3 \\
-1 & 5 & -9 
-\end{mymatrix}
-\sim\ldots\sim
-\begin{mymatrix}{rr|r}
-1 & 0 & 1 \\
-0 & 1 & -2 \\
-0 & 0 & 0 
-\end{mymatrix}
-\]
-
-Hence $a = 1, b = -2$ and \[
-\begin{mymatrix}{r}
--7 \\
-3 \\
--9
-\end{mymatrix}
-=
-1
-\begin{mymatrix}{r}
-1 \\
-3 \\
-1
-\end{mymatrix}
-+
-(-2)
-\begin{mymatrix}{r}
-4 \\
-0 \\
-5
-\end{mymatrix}
-\]
-
-Now, using the third property above, we have 
-\begin{eqnarray*}
-T \begin{mymatrix}{r}
--7 \\
-3 \\
--9
-\end{mymatrix}
-&=&
-T \tup{
-1
-\begin{mymatrix}{r}
-1 \\
-3 \\
-1
-\end{mymatrix}
-+
-(-2)
-\begin{mymatrix}{r}
-4 \\
-0 \\
-5
-\end{mymatrix}
-} \\
-&=& 
-1T 
-\begin{mymatrix}{r}
-1 \\
-3 \\
-1
-\end{mymatrix}
--2T
-\begin{mymatrix}{r}
-4 \\
-0 \\
-5
-\end{mymatrix}
-\\
-&=&
-\begin{mymatrix}{r}
-4 \\
-4 \\
-0 \\
--2
-\end{mymatrix}
--2
-\begin{mymatrix}{r}
-4 \\
-5 \\
--1 \\
-5
-\end{mymatrix}
-\\
-&=& 
-\begin{mymatrix}{r}
--4 \\
--6 \\
-2 \\
--12
-\end{mymatrix}
-\end{eqnarray*}
-
-Therefore, $T \begin{mymatrix}{r}
--7 \\
-3 \\
--9
-\end{mymatrix}
-=
-\begin{mymatrix}{r}
--4 \\
--6 \\
-2 \\
--12
-\end{mymatrix}
-$.
+  Using the third property in
+  Proposition~\ref{prop:properties-linear-transformation}, we can find
+  $T\tup{\begin{mymatrix}{r} -7 \\ 3 \\ -9 \end{mymatrix}}$ by writing
+  $\begin{mymatrix}{r} -7 \\ 3 \\ -9 \end{mymatrix}$ as a linear
+  combination of $\begin{mymatrix}{r} 1 \\ 3 \\ 1 \end{mymatrix}$ and
+  $\begin{mymatrix}{r} 4 \\ 0 \\ 5 \end{mymatrix}$.  By solving the
+  appropriate system of equations, we find that
+  \begin{equation*}
+    \begin{mymatrix}{r} -7 \\ 3 \\ -9 \end{mymatrix}
+    = \begin{mymatrix}{r} 1 \\ 3 \\ 1 \end{mymatrix}
+    - 2 \begin{mymatrix}{r} 4 \\ 0 \\ 5 \end{mymatrix}.
+  \end{equation*}
+  Therefore,
+  \begin{eqnarray*}
+    T \tup{\begin{mymatrix}{r} -7 \\ 3 \\ -9 \end{mymatrix}}
+    &=&
+        T \tup{
+        \begin{mymatrix}{r} 1 \\ 3 \\ 1 \end{mymatrix}
+    -2 \begin{mymatrix}{r} 4 \\ 0 \\ 5 \end{mymatrix}
+    }
+    \\ &=&
+           T \begin{mymatrix}{r} 1 \\ 3 \\ 1 \end{mymatrix}
+    -2T \begin{mymatrix}{r} 4 \\ 0 \\ 5 \end{mymatrix}
+    ~=~
+        \begin{mymatrix}{r} 4 \\ 4 \\ 0 \\ -2 \end{mymatrix}
+    -2 \begin{mymatrix}{r} 4 \\ 5 \\ -1 \\ 5 \end{mymatrix}
+    ~=~
+        \begin{mymatrix}{r} -4 \\ -6 \\ 2 \\ -12 \end{mymatrix}.
+  \end{eqnarray*}
 \end{solution}
 
-Suppose two linear transformations act in the same way on $\vect{x}$ for all vectors. Then we say that these transformations are equal.
-
-\begin{definition}{Equal transformations}{equal-transformations}
-Let $S$ and $T$ be linear transformations from $\R^n$ to $\R^m$. Then $S = T$ if and only if for every $\vect{x} \in \R^n$, 
-\[
-S \tup{\vect{x} } = T \tup{\vect{x} }
-\]
-\end{definition}
-
-Suppose two linear transformations act on the same vector $\vect{x}$, first the transformation $T$ and then a second transformation given by $S$. We can find the \textbf{composite} transformation that results from applying both transformations.
+Suppose that we first apply a linear transformation $T$ to a vector,
+and then the linear transformation $S$ to the result. The resulting
+two-step transformation is also a linear transformation, called the
+\textbf{composition} of $T$ and $S$.
 
 \begin{definition}{Composition of linear transformations}{composite-transformations}
-Let $T: \R^k \to \R^n$ and $S: \R^n \to \R^m$ be linear transformations. Then the \textbf{composite}\index{linear transformation!composite}\index{composite} of $S$ and $T$ is 
-\[
-S \circ T: \R^k \to \R^m
-\]
-The action of $S \circ T$ is given by 
-\[
-(S \circ T) (\vect{x}) = S(T(\vect{x})) \; \mbox{for all} \; \vect{x} \in \R^k
-\]
+  Let $T: \R^k \to \R^n$ and $S: \R^n \to \R^m$ be linear
+  transformations. Then the \textbf{composition}%
+  \index{linear transformation!composition}%
+  \index{composition of linear transformations} of $T$ and $S$ (also
+  called the \textbf{composite transformation}%
+  \index{composite transformation} of $T$ and $S$) is the linear
+  transformation
+  \begin{equation*}
+    S \circ T: \R^k \to \R^m
+  \end{equation*}
+  which is defined by
+  \begin{equation*}
+    (S \circ T) (\vect{v}) = S(T(\vect{v})),
+  \end{equation*}
+  for all $\vect{v}\in\R^k$.
 \end{definition}
 
-Notice that the resulting vector will be in $\R^m$. Be careful to observe the order of transformations. We write $S \circ T$ but apply the transformation $T$ first, followed by $S$. 
+Notice that the resulting vector will be in $\R^m$. Be careful to
+observe the order of transformations. The composite transformation
+$S \circ T$ means that we are {\em first} applying $T$, and {\em then}
+$S$. Composition of linear transformations is written from right to
+left.
 
-\begin{theorem}{Composition of transformations}{composite-transformation}
-Let $T: \R^k \to \R^n$ and $S: \R^n \to \R^m$ be linear transformations such that $T$ is induced by the matrix $A$ and $S$ is induced by the matrix $B$. Then $S \circ T$ is a linear transformation which is induced by the matrix $BA$.
+\begin{theorem}{Matrix of a composite transformation}{composite-transformation}
+  Let $T: \R^k \to \R^n$ and $S: \R^n \to \R^m$ be linear
+  transformations. Let $A$ be the matrix corresponding to $T$, and let
+  $B$ be the matrix corresponding to $S$. Then the matrix
+  corresponding to the composite linear transformation $S \circ T$ is
+  $BA$.
 \end{theorem}
 
-Consider the following example. 
+\begin{proof}
+  For all $\vect{v}\in\R^k$, we have
+  \begin{equation*}
+    (S\circ T)(\vect{v}) = S(T(\vect{v})) = B(A \vect{v}) = (BA) \vect{v}.
+  \end{equation*}
+  Therefore, $BA$ is the matrix corresponding to $S\circ T$.
+\end{proof}
 
-\begin{example}{Composition of transformations}{composite-transformation}
-Let $T$ be a linear transformation induced by the matrix 
-\[
-A = 
-\begin{mymatrix}{rr}
-1 & 2 \\
-2 & 0 
-\end{mymatrix}
-\]
-and $S$ a linear transformation induced by the matrix
-\[
-B = 
-\begin{mymatrix}{rr}
-2 & 3 \\
-0 & 1
-\end{mymatrix}
-\]
-Find the matrix of the composite transformation $S \circ T$. Then, find $(S \circ T)(\vect{x})$ for $\vect{x} = \begin{mymatrix}{r}
-1 \\
-4 
-\end{mymatrix}$.
+\begin{example}{Two rotations}{two-rotations}
+  Find the matrix for a counterclockwise rotation%
+  \index{matrix!of a rotation}%
+  \index{rotation!matrix of}%
+  \index{linear transformation!rotation} by angle
+  $\theta+\phi$ in two different ways, and compare.
 \end{example}
 
 \begin{solution}
-By Theorem~\ref{thm:composite-transformation}, the matrix of $S \circ T$ is given by $BA$. 
-\[
-BA 
-=
-\begin{mymatrix}{rr}
-2 & 3 \\
-0 & 1
-\end{mymatrix}
-\begin{mymatrix}{rr}
-1 & 2 \\
-2 & 0 
-\end{mymatrix}
- =
-\begin{mymatrix}{rr}
-8 & 4 \\
-2 & 0
-\end{mymatrix}
-\]
-
-To find $(S \circ T)(\vect{x})$, multiply $\vect{x}$ by $BA$ as follows
-\[
-\begin{mymatrix}{rr}
-8 & 4 \\
-2 & 0
-\end{mymatrix}
-\begin{mymatrix}{rr}
-1 \\
-4
-\end{mymatrix}
-=
-\begin{mymatrix}{r}
-24 \\
-2
-\end{mymatrix}
-\]
-
-To check, first determine $T(\vect{x})$:
-\[
-\begin{mymatrix}{rr}
-1 & 2 \\
-2 & 0 
-\end{mymatrix}
-\begin{mymatrix}{r}
-1 \\
-4
-\end{mymatrix}
-=
-\begin{mymatrix}{r}
-9 \\
-2
-\end{mymatrix}
-\]
-
-Then, compute $S(T(\vect{x}))$ as follows:
-\[
-\begin{mymatrix}{rr}
-2 & 3 \\
-0 & 1 
-\end{mymatrix}
-\begin{mymatrix}{r}
-9 \\
-2
-\end{mymatrix}
-=
-\begin{mymatrix}{r}
-24 \\
-2
-\end{mymatrix}
-\]
+  Let $A_{\theta}$ be the matrix of a rotation by $\theta$, and let
+  $A_{\phi}$ be the matrix of a rotation by angle $\phi$.  We
+  calculated these matrices in Example~\ref{exa:rotation-theta-R2}.
+  Then a rotation by the angle $\theta+\phi$ is given by the product
+  of these two matrices:
+  \begin{eqnarray*}
+    A_{\theta}A_{\phi}
+    &=& \begin{mymatrix}{cc}
+      \cos\theta & -\sin\theta \\
+      \sin\theta & \cos\theta \\
+    \end{mymatrix}
+    \begin{mymatrix}{cc}
+      \cos\phi & -\sin\phi \\
+      \sin\phi & \cos\phi \\
+    \end{mymatrix}
+    \\
+    &=& \begin{mymatrix}{cc}
+      \cos\theta \cos\phi - \sin\theta \sin\phi &
+      -\cos\theta \sin\phi - \sin\theta \cos\phi \\
+      \sin\theta \cos\phi + \cos\theta \sin\phi &
+      \cos\theta \cos\phi - \sin\theta \sin\phi
+    \end{mymatrix}.
+  \end{eqnarray*}
+  On the other hand, we can compute the matrix for a rotation by angle
+  $\theta+\phi$ directly:
+  \begin{eqnarray*}
+    A_{\theta+\phi}
+    &=& \begin{mymatrix}{cc}
+      \cos(\theta+\phi) & -\sin(\theta+\phi) \\
+      \sin(\theta+\phi) & \cos(\theta+\phi) \\
+    \end{mymatrix}.
+  \end{eqnarray*}
+  The fact that these matrices are equal amounts to the well-known
+  trigonometric identities for the sum of two angles%
+  \index{trigonometry!sum of two angles}%
+  \index{sum!of two angles}, which we have here derived using linear
+  algebra concepts:
+  \begin{eqnarray*}
+    \sin(\theta+\phi) &=& \sin\theta \cos\phi + \cos\theta \sin\phi, \\
+    \cos(\theta+\phi) &=& \cos\theta \cos\phi - \sin\theta \sin\phi.
+  \end{eqnarray*}
 \end{solution}
 
-Consider a composite transformation $S \circ T$, and suppose that this transformation acted such that $(S \circ T) (\vect{x}) = \vect{x}$. That is, the transformation $S$ took the vector $T(\vect{x})$ and returned it to $\vect{x}$. In this case, $S$ and $T$ are inverses of each other. Consider the following definition.  
-
-\begin{definition}{Inverse of a transformation}{inverse-transformation}
-Let $T: \R^n \to \R^n$ and $S:\R^n \to \R^n$ be linear transformations. Suppose that for each $\vect{x} \in \R^n$, 
-\[
-(S \circ T)(\vect{x}) = \vect{x}
-\]
-and 
-\[
-(T \circ S)(\vect{x}) = \vect{x}
-\]
-Then, $S$ is called an inverse of $T$  and $T$ is called an inverse of $S$. Geometrically, they reverse the action of each other. 
-\end{definition}
-
-The following theorem is crucial, as it claims that the above inverse transformations are unique. 
-
-\begin{theorem}{Inverse of a transformation}{inverse-transformation}
-Let $T:\R^n \to \R^n$ be a linear transformation induced by the matrix $A$. Then $T$ has an inverse transformation if and only if the matrix $A$ is invertible. In this case, the inverse transformation is unique and denoted $T^{-1}: \R^n \to \R^n$. $T^{-1}$ is induced by the matrix $A^{-1}$. 
-\end{theorem}
-
-Consider the following example. 
-
-\begin{example}{Inverse of a transformation}{inverse-transformation}
-Let $T: \R^2 \to \R^2$ be a linear transformation induced by the matrix 
-\[
-A = 
-\begin{mymatrix}{rr}
-2 & 3 \\
-3 & 4
-\end{mymatrix}
-\]
-Show that $T^{-1}$ exists and find the matrix $B$ which it is induced by. 
+\begin{example}{Multiple rotations in $\R^3$}{multiple-rotations}
+  Find the matrix of the linear transformation $T:\R^3\to\R^3$ that is
+  given as follows: a rotation by $30$ degrees about the $z$-axis,
+  followed by a rotation by $45$ degrees about the $x$-axis.
 \end{example}
 
 \begin{solution}
-Since the matrix $A$ is invertible, it follows that the transformation $T$ is invertible. Therefore, $T^{-1}$ exists. 
+  It would be quite difficult to picture the transformation $T$ in one
+  step. Fortunately, we don't have to do this. All we have to do is
+  find the matrix for each rotation separately, then multiply the two
+  matrices. We have the be careful to multiply the matrices in the
+  correct order.
 
-You can verify that $A^{-1}$ is given by:
-\[
-A^{-1}
-=
-\begin{mymatrix}{rr}
--4 & 3 \\
-3 & -2
-\end{mymatrix}
-\]
-Therefore the linear transformation $T^{-1}$ is induced by the matrix $A^{-1}$. 
+  Let $B$ be the matrix for a $30$-degree rotation about the
+  $z$-axis. It is given exactly as in
+  Example~\ref{exa:rotation-R3}:
+  \begin{equation*}
+    \def\arraystretch{1.4}
+    B = \begin{mymatrix}{ccc}
+      \cos 30^{\circ} & -\sin 30^{\circ} & 0 \\
+      \sin 30^{\circ} & \cos 30^{\circ} & 0 \\
+      0 & 0 & 1 \\
+    \end{mymatrix}
+    = \begin{mymatrix}{ccc}
+      \frac{\sqrt3}{2} & -\frac{1}{2} & 0 \\
+      \frac{1}{2} & \frac{\sqrt3}{2} & 0 \\
+      0 & 0 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Let $C$ be the matrix for a $45$-degree rotation about the $x$-axis.
+  It is analogous to Example~\ref{exa:rotation-R3}, except that the
+  rotation takes place in the $yz$-plane instead of the $xy$-plane.
+  \begin{equation*}
+    \def\arraystretch{1.4}
+    C = \begin{mymatrix}{ccc}
+      1 & 0 & 0 \\
+      0 & \cos 45^{\circ} & -\sin 45^{\circ} \\
+      0 & \sin 45^{\circ} & \cos 45^{\circ} \\
+    \end{mymatrix}
+    = \begin{mymatrix}{ccc}
+      1 & 0 & 0 \\
+      0 & \frac{1}{\sqrt2} & -\frac{1}{\sqrt2} \\
+      0 & \frac{1}{\sqrt2} & \frac{1}{\sqrt2} \\
+    \end{mymatrix}.
+  \end{equation*}
+  Finally, to apply the linear transformation $T$ to a vector
+  $\vect{v}$, we must first apply $B$ and then $C$. This means that
+  $T(\vect{v}) = C(B\vect{v})$. Therefore, the matrix corresponding to
+  $T$ is $CB$. Note that it is important that we multiply the matrices
+  corresponding to each subsequent rotation {\em from right to left}.
+  \begin{equation*}
+    \def\arraystretch{1.4}
+    A ~=~ CB
+    ~=~ \begin{mymatrix}{ccc}
+      1 & 0 & 0 \\
+      0 & \frac{1}{\sqrt2} & -\frac{1}{\sqrt2} \\
+      0 & \frac{1}{\sqrt2} & \frac{1}{\sqrt2} \\
+    \end{mymatrix}
+    \begin{mymatrix}{ccc}
+      \frac{\sqrt3}{2} & -\frac{1}{2} & 0 \\
+      \frac{1}{2} & \frac{\sqrt3}{2} & 0 \\
+      0 & 0 & 1 \\
+    \end{mymatrix}
+    ~=~ \begin{mymatrix}{ccc}
+      \frac{\sqrt3}{2} & -\frac{1}{2} & 0 \\
+      \frac{1}{2\sqrt2} & \frac{\sqrt3}{2\sqrt2} & -\frac{1}{\sqrt2} \\
+      \frac{1}{2\sqrt2} & \frac{\sqrt3}{2\sqrt2} & \frac{1}{\sqrt2} \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+We can also consider the inverse of a linear transformation. The
+inverse of $T$, if it exists, is a linear transformation that undoes
+the effect of $T$.
+
+\begin{definition}{Inverse of a transformation}{inverse-transformation}
+  Let $T,S: \R^n \to \R^n$ be linear transformations. Suppose that for
+  each $\vect{v} \in \R^n$,
+  \begin{equation*}
+    (S \circ T)(\vect{v}) = \vect{v}
+  \end{equation*}
+  and
+  \begin{equation*}
+    (T \circ S)(\vect{v}) = \vect{v}.
+  \end{equation*}
+  Then $S$ is called the \textbf{inverse}%
+  \index{linear transformation!inverse}%
+  \index{inverse!of a linear transformation} of $T$, and we write
+  $S=T^{-1}$.
+\end{definition}
+
+\begin{example}{Inverse of a transformation}{inverse-transformation}
+  What is the inverse of a counterclockwise rotation by the angle
+  $\theta$ in $\R^2$?
+\end{example}
+
+\begin{solution}
+  The inverse is a clockwise rotation by the same angle.
+\end{solution}
+
+It is perhaps not entirely unexpected that the matrix of $T^{-1}$ is
+exactly the inverse of the matrix of $T$, if it exists.
+
+\begin{theorem}{Matrix of the inverse transformation}{inverse-transformation}
+  Let $T:\R^n \to \R^n$ be a linear transformation and let $A$ be the
+  corresponding $n\times n$-matrix. Then $T$ has an inverse if and
+  only if the matrix $A$ is invertible. In this case, the matrix of
+  $T^{-1}$ is $A^{-1}$.
+\end{theorem}
+
+\begin{example}{Matrix of the inverse transformation}{inverse-transformation}
+  Find the inverse of the linear transformation $T:\R^2\to\R^2$ given
+  by
+  \begin{equation*}
+    T\tup{\begin{mymatrix}{c} x \\ y \end{mymatrix}}
+    = \begin{mymatrix}{c} 2x+y \\ 7x+4y \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  The easiest way to do this is to find the matrix of $T$. We have
+  \begin{equation*}
+    T\tup{\begin{mymatrix}{c} 1 \\ 0 \end{mymatrix}}
+    = \begin{mymatrix}{c} 2 \\ 7 \end{mymatrix}
+    \quad\mbox{and}\quad
+    T\tup{\begin{mymatrix}{c} 0 \\ 1 \end{mymatrix}}
+    = \begin{mymatrix}{c} 1 \\ 4 \end{mymatrix}.
+  \end{equation*}
+  Therefore, the matrix of $T$ is
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      2 & 1 \\
+      7 & 4 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The inverse of $A$ is
+  \begin{equation*}
+    A^{-1} = \begin{mymatrix}{rr}
+      4 & -1 \\
+      -7 & 2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore, $T^{-1}$ is the linear transformation defined by
+  \begin{equation*}
+    T^{-1}\tup{\begin{mymatrix}{c} x \\ y \end{mymatrix}}
+    = \begin{mymatrix}{rr}
+      4 & -1 \\
+      -7 & 2 \\
+    \end{mymatrix}
+    \begin{mymatrix}{c} x \\ y \end{mymatrix}
+    = \begin{mymatrix}{c} 4x-y \\ -7x+2y \end{mymatrix}.
+  \end{equation*}
 \end{solution}
