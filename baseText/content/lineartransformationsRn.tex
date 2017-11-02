@@ -2,7 +2,8 @@
 
 \begin{outcome}
   \begin{enumerate}
-  \item Determine whether a function $T:\R^n\to\R^m$ is linear.
+  \item Determine whether a vector function $T:\R^n\to\R^m$ is a
+    linear transformation.
   \end{enumerate}
 \end{outcome}
 
@@ -47,8 +48,8 @@ also called \textbf{linear transformations}%
 \begin{definition}{Linear transformation}{linear-transformation}
   A vector function $T:\R^{n}\to \R^{m}$ is called a \textbf{linear
     transformations}%
-  \index{linear transformation} if it satisfies the following two
-  conditions:
+  \index{linear transformation}, or simply \textbf{linear}, if it
+  satisfies the following two conditions:
   \begin{enumerate}
   \item $T$ preserves addition, i.e., for all\/
     $\vect{v},\vect{w}\in\R^n$, we have
@@ -172,3 +173,25 @@ other hand, of course not every function that preserves the origin is
 linear. For example, $T_1$ is not linear although it satisfies
 $T_1(\vect{0})=\vect{0}$.
 
+The following characterization of linearity is often useful, as it
+permits us to check just one property instead of two.
+
+\begin{proposition}{Alternative characterization of linear transformations}{linear-transformation-alternative}
+  A vector function $T:\R^{n}\to \R^{m}$ is linear if and only if it
+  satisfies the following condition, for all
+  $\vect{v},\vect{w}\in\R^n$ and scalars $a,b$:
+  \begin{equation*}
+    T(a\vect{v}+b\vect{w}) = aT(\vect{v}) + bT(\vect{w}).
+  \end{equation*}
+\end{proposition}
+
+\begin{proof}
+  First, assume that $T$ is linear. Then from preservation of addition
+  and scalar multiplication, we have
+  $T(a\vect{v}+b\vect{w}) = T(a\vect{v})+T(b\vect{w}) = aT(\vect{v}) +
+  bT(\vect{w})$. Conversely, assume that $T$ satisfies
+  $T(a\vect{v}+b\vect{w}) = aT(\vect{v}) + bT(\vect{w})$ for all
+  vectors $\vect{v},\vect{w}$ and scalars $a,b$. Then we get
+  preservation of addition by setting $a=b=1$, and preservation of
+  scalar multiplication by setting $b=0$.
+\end{proof}
