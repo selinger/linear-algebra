@@ -75,43 +75,44 @@ two-step transformation is also a linear transformation, called the
 \textbf{composition} of $T$ and $S$.
 
 \begin{definition}{Composition of linear transformations}{composite-transformations}
-  Let $T: \R^k \to \R^n$ and $S: \R^n \to \R^m$ be linear
+  Let $S: \R^k \to \R^n$ and $T: \R^n \to \R^m$ be linear
   transformations. Then the \textbf{composition}%
   \index{linear transformation!composition}%
-  \index{composition of linear transformations} of $T$ and $S$ (also
+  \index{composition of linear transformations} of $S$ and $T$ (also
   called the \textbf{composite transformation}%
-  \index{composite transformation} of $T$ and $S$) is the linear
+  \index{composite transformation} of $S$ and $T$) is the linear
   transformation
   \begin{equation*}
-    S \circ T: \R^k \to \R^m
+    T\circ S: \R^k \to \R^m
   \end{equation*}
-  which is defined by
+  that is defined by
   \begin{equation*}
-    (S \circ T) (\vect{v}) = S(T(\vect{v})),
+    (T\circ S) (\vect{v}) = T(S(\vect{v})),
   \end{equation*}
   for all $\vect{v}\in\R^k$.
 \end{definition}
 
 Notice that the resulting vector will be in $\R^m$. Be careful to
 observe the order of transformations. The composite transformation
-$S \circ T$ means that we are {\em first} applying $T$, and {\em then}
-$S$. Composition of linear transformations is written from right to
-left.
+$T\circ S$ means that we are {\em first} applying $S$, and {\em then}
+$T$. Composition of linear transformations is written from right to
+left. The composition $T\circ S$ is sometimes pronounced ``{\em $T$
+  after $S$}''.
 
 \begin{theorem}{Matrix of a composite transformation}{composite-transformation}
-  Let $T: \R^k \to \R^n$ and $S: \R^n \to \R^m$ be linear
-  transformations. Let $A$ be the matrix corresponding to $T$, and let
-  $B$ be the matrix corresponding to $S$. Then the matrix
-  corresponding to the composite linear transformation $S \circ T$ is
+  Let $S: \R^k \to \R^n$ and $T: \R^n \to \R^m$ be linear
+  transformations. Let $A$ be the matrix corresponding to $S$, and let
+  $B$ be the matrix corresponding to $T$. Then the matrix
+  corresponding to the composite linear transformation $T\circ S$ is
   $BA$.
 \end{theorem}
 
 \begin{proof}
   For all $\vect{v}\in\R^k$, we have
   \begin{equation*}
-    (S\circ T)(\vect{v}) = S(T(\vect{v})) = B(A \vect{v}) = (BA) \vect{v}.
+    (T\circ S)(\vect{v}) = T(S(\vect{v})) = B(A \vect{v}) = (BA) \vect{v}.
   \end{equation*}
-  Therefore, $BA$ is the matrix corresponding to $S\circ T$.
+  Therefore, $BA$ is the matrix corresponding to $T\circ S$.
 \end{proof}
 
 \begin{example}{Two rotations}{two-rotations}
@@ -245,11 +246,11 @@ the effect of $T$.
   Let $T,S: \R^n \to \R^n$ be linear transformations. Suppose that for
   each $\vect{v} \in \R^n$,
   \begin{equation*}
-    (S \circ T)(\vect{v}) = \vect{v}
+    (S\circ T)(\vect{v}) = \vect{v}
   \end{equation*}
   and
   \begin{equation*}
-    (T \circ S)(\vect{v}) = \vect{v}.
+    (T\circ S)(\vect{v}) = \vect{v}.
   \end{equation*}
   Then $S$ is called the \textbf{inverse}%
   \index{linear transformation!inverse}%
