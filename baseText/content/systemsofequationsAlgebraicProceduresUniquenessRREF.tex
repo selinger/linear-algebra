@@ -24,37 +24,37 @@ two different types: $x_i$ is a
 column, and a {\em free variable}\index{variable!free} otherwise.
 
 \begin{example}{Pivot and free variables}{pivot-free}
-Find the pivot and free variables in the following system, and find
-the general solution.
-\[
-\begin{array}{c}
-x+2y-z+w=0 \\
-x+y-z+w=0 \\
-x+3y-z+w=0
-\end{array}
-\]
+  Find the pivot and free variables in the following system, and find
+  the general solution.
+  \begin{equation*}
+    \begin{array}{c}
+      x+2y-z+w=0 \\
+      x+y-z+w=0 \\
+      x+3y-z+w=0
+    \end{array}
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-The {\rref} of the augmented matrix is
-\[
-\begin{mymatrix}{rrrr|r}
-\circled{1} & 0 & -1 & 1 & 0 \\
-0 & \circled{1} & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0
-\end{mymatrix}.
-\]
-From this, we see that columns $1$ and $2$ are pivot
-columns. Therefore, $x$ and $y$ are pivot variables and $z$ and $w$
-are free variables. We can write the solution to this system as
-\[
-\begin{array}{r@{~}c@{~}l}
-x &=& s-t \\
-y &=& 0 \\
-z &=& s \\
-w &=& t.
-\end{array}
-\]
+  The {\rref} of the augmented matrix is
+  \begin{equation*}
+    \begin{mymatrix}{rrrr|r}
+      \circled{1} & 0 & -1 & 1 & 0 \\
+      0 & \circled{1} & 0 & 0 & 0 \\
+      0 & 0 & 0 & 0 & 0
+    \end{mymatrix}.
+  \end{equation*}
+  From this, we see that columns $1$ and $2$ are pivot
+  columns. Therefore, $x$ and $y$ are pivot variables and $z$ and $w$
+  are free variables. We can write the solution to this system as
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      x &=& s-t \\
+      y &=& 0 \\
+      z &=& s \\
+      w &=& t.
+    \end{array}
+  \end{equation*}
 \end{solution}
 
 In general, all solutions can be written in terms of the free
@@ -81,14 +81,37 @@ proof of the main result of this section.
 \end{lemma}
 
 \begin{proof}
-With respect to the linear systems associated with the matrices $A$ and $B$, there are two cases to consider:
-\begin{itemize}
-\item Case $1$: the two systems have the same pivot variables
-\item Case $2$: the two systems do not have the same pivot variables
-\end{itemize}
-In case $1$, the two matrices will have exactly the same pivot positions. However, since $A$ and $B$ are not identical, there is some row of $A$ which is different from the corresponding row of $B$ and yet the rows each have a pivot in the same column position. Let $i$ be the index of this column position. Since the matrices are in {\rref}, the two rows must differ at some entry in a column $j>i$. Let these entries be $a$ in $A$ and $b$ in $B$, where $a \neq b$. Since $A$ is in {\rref}, if $x_j$ were a pivot variable for its linear system, we would have $a=0$. Similarly, if $x_j$ were a pivot variable for the linear system of the matrix $B$, we would have $b=0$. Since $a$ and $b$ are unequal, they cannot both be equal to $0$, and hence $x_j$ cannot be a pivot variable for both linear systems. However, since the systems have the same pivot variables, $x_j$ must then be a free variable for each system. We now look at the solutions of the systems in which $x_j$ is set equal to $1$ and all other free variables are set equal to $0$. For this choice of parameters, the solution of the system for matrix $A$ has $x_j=-a$, while the solution of the system for matrix $B$ has $x_j=-b$, so that the two systems have different solutions.
+  With respect to the linear systems associated with the matrices $A$ and $B$, there are two cases to consider:
+  \begin{itemize}
+  \item Case $1$: the two systems have the same pivot variables
+  \item Case $2$: the two systems do not have the same pivot variables
+  \end{itemize}
+  In case $1$, the two matrices will have exactly the same pivot
+  positions. However, since $A$ and $B$ are not identical, there is
+  some row of $A$ which is different from the corresponding row of $B$
+  and yet the rows each have a pivot in the same column position. Let
+  $i$ be the index of this column position. Since the matrices are in
+  {\rref}, the two rows must differ at some entry in a column
+  $j>i$. Let these entries be $a$ in $A$ and $b$ in $B$, where
+  $a \neq b$. Since $A$ is in {\rref}, if $x_j$ were a pivot variable
+  for its linear system, we would have $a=0$. Similarly, if $x_j$ were
+  a pivot variable for the linear system of the matrix $B$, we would
+  have $b=0$. Since $a$ and $b$ are unequal, they cannot both be equal
+  to $0$, and hence $x_j$ cannot be a pivot variable for both linear
+  systems. However, since the systems have the same pivot variables,
+  $x_j$ must then be a free variable for each system. We now look at
+  the solutions of the systems in which $x_j$ is set equal to $1$ and
+  all other free variables are set equal to $0$. For this choice of
+  parameters, the solution of the system for matrix $A$ has $x_j=-a$,
+  while the solution of the system for matrix $B$ has $x_j=-b$, so
+  that the two systems have different solutions.
 
-In case $2$, there is a variable $x_i$ which is a pivot variable for one matrix, let's say $A$, and a free variable for the other matrix $B$. The system for matrix $B$ has a solution in which $x_i=1$ and $x_j=0$ for all other free variables $x_j$. However, by Proposition~\ref{prop:pivot-free} this cannot be a solution of the system for the matrix $A$. This completes the proof of case $2$.
+  In case $2$, there is a variable $x_i$ which is a pivot variable for
+  one matrix, let's say $A$, and a free variable for the other matrix
+  $B$. The system for matrix $B$ has a solution in which $x_i=1$ and
+  $x_j=0$ for all other free variables $x_j$. However, by
+  Proposition~\ref{prop:pivot-free} this cannot be a solution of the
+  system for the matrix $A$. This completes the proof of case $2$.
 \end{proof}
 
 Now, we say that the matrix $B$ is \textbf{row equivalent}%
@@ -131,7 +154,8 @@ section, which is that each matrix $A$ has a unique {\rref}.
 \end{proof}
 
 \begin{example}{Row equivalent systems}{det-row-eq}
-  Determine whether the following two systems of equations row equivalent.
+  Determine whether the following two systems of equations row
+  equivalent.
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
       2x + 3y + z &=& 12 \\

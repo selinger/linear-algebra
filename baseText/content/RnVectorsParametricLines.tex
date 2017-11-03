@@ -482,12 +482,12 @@ distance from a point to a line.
   In order to determine the shortest distance from $Q$ to $L$, we will
   first find the vector $\longvect{PQ}$ and then find the projection
   of this vector onto $L$.  The vector $\longvect{PQ}$ is given by
-  \[
+  \begin{equation*}
     \longvect{PQ}=
     \begin{mymatrix}{r} 1 \\ 3 \\ 5 \end{mymatrix}
     - \begin{mymatrix}{r} 0 \\ 4 \\ -2 \end{mymatrix}
     = \begin{mymatrix}{r} 1 \\ -1 \\ 7 \end{mymatrix}.
-  \]
+  \end{equation*}
   Then, if $R$ is the point on $L$ closest to $Q$, it follows that 
   \begin{equation*}
     \longvect{PR}
@@ -497,10 +497,10 @@ distance from a point to a line.
     ~=~ \frac{5}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix}.
   \end{equation*}
   Now, the distance from $Q$ to $L$ is given by 
-  \[
+  \begin{equation*}
     \norm{\longvect{RQ}} = \norm{\longvect{PQ} - \longvect{PR}}
     = \sqrt{26}.
-  \]
+  \end{equation*}
   The point $R$ is found by adding the vector $\longvect{PR}$ to the
   position vector $\longvect{0P}$ for $P$ as follows
   \begin{equation*}

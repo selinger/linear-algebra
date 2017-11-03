@@ -324,7 +324,7 @@ theorem uses this fact.
   To find the {\rref} $R$, we row reduce $A$. For each step, we will
   record the appropriate elementary matrix. First, switch rows $1$
   and $2$.
-  \[
+  \begin{equation*}
     \begin{mymatrix}{rr}
       0 & 1 \\
       1 & 0 \\
@@ -336,7 +336,7 @@ theorem uses this fact.
       0 & 1 \\
       2 & 0
     \end{mymatrix}.
-  \]
+  \end{equation*}
   The corresponding elementary matrix is
   $E_1 = \begin{mymatrix}{rrr}
     0 & 1 & 0 \\
@@ -361,7 +361,7 @@ theorem uses this fact.
     \end{mymatrix}.
   \end{equation*}
   Next, subtract $2$ times the first row from the third row.
-  \[
+  \begin{equation*}
     \begin{mymatrix}{rr}
       1 & 0 \\
       0 & 1 \\
@@ -373,7 +373,7 @@ theorem uses this fact.
       0 & 1 \\
       0 & 0
     \end{mymatrix}.
-  \]
+  \end{equation*}
   The corresponding elementary matrix is
   $E_2 = \begin{mymatrix}{rrr}
     1  & 0 & 0 \\
@@ -469,13 +469,13 @@ Theorem~\ref{thm:finding-u}.
 
 \begin{solution}
   First, we set up the augmented matrix $\mat{A\mid I}$:
-  \[
+  \begin{equation*}
     \begin{mymatrix}{rr|rrr}
       0 & 1 & 1 & 0 & 0 \\
       1 & 0 & 0 & 1 & 0 \\
       2 & 0 & 0 & 0 & 1
     \end{mymatrix}.
-  \]
+  \end{equation*}
   Now, we row reduce until the left-hand side is in {\rref}:
   \begin{eqnarray*}
     \begin{mymatrix}{rr|rrr}

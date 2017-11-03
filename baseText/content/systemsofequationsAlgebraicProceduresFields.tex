@@ -450,26 +450,27 @@ we can set $1^{-1}=1$, $2^{-1}=3$, $3^{-1}=2$, and $4^{-1}=4$.
 \begin{solution}
   The integers modulo 6 are the set $\Z_6=\set{0,1,2,3,4,5}$, with the
   addition and multiplication modulo 6:
-    \[ \begin{array}{l|llllll}
-    +&0&1&2&3&4&5 \\\hline
-    0&0&1&2&3&4&5 \\
-    1&1&2&3&4&5&0 \\
-    2&2&3&4&5&0&1 \\
-    3&3&4&5&0&1&2 \\
-    4&4&5&0&1&2&3 \\
-    5&5&0&1&2&3&4 \\
-  \end{array}
-  \quad
-  \begin{array}{l|llllll}
-    +&0&1&2&3&4&5 \\\hline
-    0&0&0&0&0&0&0 \\
-    1&0&1&2&3&4&5 \\
-    2&0&2&4&0&2&4 \\
-    3&0&3&0&3&0&3 \\
-    4&0&4&2&0&4&2 \\
-    5&0&5&4&3&2&1 \\
-  \end{array}
-  \]
+  \begin{equation*}
+    \begin{array}{l|llllll}
+      +&0&1&2&3&4&5 \\\hline
+      0&0&1&2&3&4&5 \\
+      1&1&2&3&4&5&0 \\
+      2&2&3&4&5&0&1 \\
+      3&3&4&5&0&1&2 \\
+      4&4&5&0&1&2&3 \\
+      5&5&0&1&2&3&4 \\
+    \end{array}
+    \quad
+    \begin{array}{l|llllll}
+      +&0&1&2&3&4&5 \\\hline
+      0&0&0&0&0&0&0 \\
+      1&0&1&2&3&4&5 \\
+      2&0&2&4&0&2&4 \\
+      3&0&3&0&3&0&3 \\
+      4&0&4&2&0&4&2 \\
+      5&0&5&4&3&2&1 \\
+    \end{array}
+  \end{equation*}
   Then $\Z_6$ satisfies all of the field axioms except
   (M3). To see why (M3) fails, let $a=2$, and note, by looking at the
   multiplication table, that there is no $b\in\Z_6$ such that
