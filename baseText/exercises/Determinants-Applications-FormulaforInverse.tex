@@ -111,21 +111,21 @@ Determine whether the matrix $A$ has an inverse by finding whether the
 determinant is non-zero. If the determinant is non-zero, find the inverse
 using the formula for the inverse.
 \begin{sol}
-\[
+\begin{equation*}
 \det \begin{mymatrix}{ccc}
 1 & 3 & 3 \\
 2 & 4 & 1 \\
 0 & 1 & 1
 \end{mymatrix} = 3
-\]
+\end{equation*}
 so it has an inverse which is
-\[
+\begin{equation*}
 \begin{mymatrix}{rrr}
 1 & 0 & -3 \\
 -\vspace{0.05in}\frac{2}{3} & \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{5}{3} \\
 \vspace{0.05in}\frac{2}{3} & -\vspace{0.05in}\frac{1}{3} & -\vspace{0.05in}\frac{2}{3}
 \end{mymatrix}
-\]
+\end{equation*}
 \end{sol}
 \end{ex}
 
@@ -159,21 +159,21 @@ Determine whether the matrix $A$ has an inverse by finding whether the
 determinant is non-zero. If the determinant is non-zero, find the inverse
 using the formula for the inverse.
 \begin{sol}
-\[
+\begin{equation*}
 \det \begin{mymatrix}{rrr}
 1 & 0 & 3 \\
 1 & 0 & 1 \\
 3 & 1 & 0
 \end{mymatrix} = 2
-\]
+\end{equation*}
 and so it has an inverse. The inverse turns out to equal
-\[
+\begin{equation*}
 \begin{mymatrix}{rrr}
 -\vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{3}{2} & 0 \\
 \vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{9}{2} & 1 \\
 \vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2} & 0
 \end{mymatrix}
-\]
+\end{equation*}
 \end{sol}
 \end{ex}
 
@@ -247,13 +247,13 @@ t & 0 & 2
 Does there exist a value of $t$ for which this matrix fails to have an
 inverse? Explain.
 \begin{sol}
-\[
+\begin{equation*}
 \det \begin{mymatrix}{ccc}
 1 & t & t^{2} \\
 0 & 1 & 2t \\
 t & 0 & 2
 \end{mymatrix} = t^{3}+2
-\]
+\end{equation*}
 and so it has no inverse when $t=-\sqrt[3]{2}$
 \end{sol}
 \end{ex}
@@ -270,13 +270,13 @@ e^{t} & \cosh t & \sinh t
 Does there exist a value of $t$ for which this matrix fails to have an
 inverse? Explain.
 \begin{sol}
-\[
+\begin{equation*}
 \det \begin{mymatrix}{ccc}
 e^{t} & \cosh t & \sinh t \\
 e^{t} & \sinh t & \cosh t \\
 e^{t} & \cosh t & \sinh t
 \end{mymatrix} = 0
-\]
+\end{equation*}
 and so this matrix fails to have a non-zero determinant at any value of $t$.
 \end{sol}
 \end{ex}
@@ -293,13 +293,13 @@ e^{t} & 2e^{-t}\sin t & -2e^{-t}\cos t
 Does there exist a value of $t$ for which this matrix fails to have an
 inverse? Explain.
 \begin{sol}
-\[
+\begin{equation*}
 \det \begin{mymatrix}{ccc}
 e^{t} & e^{-t}\cos t & e^{-t}\sin t \\
 e^{t} & -e^{-t}\cos t-e^{-t}\sin t & -e^{-t}\sin t+e^{-t}\cos t \\
 e^{t} & 2e^{-t}\sin t & -2e^{-t}\cos t%
 \end{mymatrix} = 5e^{-t} \neq 0
-\]
+\end{equation*}
 and so this matrix is always invertible.
 \end{sol}
 \end{ex}
@@ -320,9 +320,9 @@ is given to conclude $A\tup{BA-I} =0$. Then use Problem~\ref{ex:determinant3}.
 \begin{sol}
 You have $1=\det \tup{A} \det \tup{B}$.
 Hence both $A$ and $B$ have inverses. Letting $X$ be given,
-\[
+\begin{equation*}
 A\tup{BA-I} X=\tup{AB} AX-AX=AX-AX = 0
-\]
+\end{equation*}
 and so it follows from the above problem that $\tup{BA-I}X=0$. Since $X$ is arbitrary, it follows that $BA=I$.
 \end{sol}
 \end{ex}
@@ -337,13 +337,13 @@ e^{t} & 0 & 0 \\
 \end{mymatrix} 
 \end{equation*}
 \begin{sol}
-\[
+\begin{equation*}
 \det \begin{mymatrix}{ccc}
 e^{t} & 0 & 0 \\
 0 & e^{t}\cos t & e^{t}\sin t \\
 0 & e^{t}\cos t-e^{t}\sin t & e^{t}\cos t+e^{t}\sin t
 \end{mymatrix} = e^{3t}.
-\]
+\end{equation*}
 Hence the inverse is
 \begin{eqnarray*}
 &&e^{-3t}\begin{mymatrix}{ccc}
