@@ -1,7 +1,7 @@
 \begin{enumialphparenastyle}
 
 \begin{ex}
-  Find $\func{proj}_{\vect{v}}\tup{\vect{w}} $ where
+  Find $\proj_{\vect{v}}\tup{\vect{w}} $ where
   $\vect{w}=\begin{mymatrix}{r}
     1 \\
     0 \\
@@ -27,7 +27,7 @@
   \end{sol}
 \end{ex}
 
-\begin{ex} Find $\func{proj}_{\vect{v}}\tup{\vect{w}} $ where 
+\begin{ex} Find $\proj_{\vect{v}}\tup{\vect{w}} $ where 
   $\vect{w}=\begin{mymatrix}{r}
     1 \\
     2 \\
@@ -53,7 +53,7 @@
   \end{sol}
 \end{ex}
 
-\begin{ex} Find $\func{proj}_{\vect{v}}\tup{\vect{w}} $ where 
+\begin{ex} Find $\proj_{\vect{v}}\tup{\vect{w}} $ where 
   $\vect{w}=\begin{mymatrix}{r}
     1 \\
     2 \\
@@ -88,7 +88,7 @@
 \end{ex}
 
 \begin{ex}
-  Find $\func{comp}_{\vect{v}}\tup{\vect{w}} $ where
+  Find $\comp_{\vect{v}}\tup{\vect{w}} $ where
   $\vect{w}=\begin{mymatrix}{r}
     1 \\
     1 \\
@@ -100,7 +100,7 @@
   \end{mymatrix}$.
 \end{ex}
 
-\begin{ex} Find $\func{comp}_{\vect{v}}\tup{\vect{w}} $ where 
+\begin{ex} Find $\comp_{\vect{v}}\tup{\vect{w}} $ where 
   $\vect{w}=\begin{mymatrix}{r}
     1 \\
     -1 \\
@@ -114,10 +114,10 @@
 
 
 \begin{ex}
-  Does it make sense to speak of $\func{proj}_{\vect{0}}\tup{\vect{w}}$?
+  Does it make sense to speak of $\proj_{\vect{0}}\tup{\vect{w}}$?
   \begin{sol}
     No, it does not. The $0$ vector has no direction. The formula for
-    $\func{proj}_{\vect{0}}\tup{\vect{w}}$ doesn't make sense either.
+    $\proj_{\vect{0}}\tup{\vect{w}}$ doesn't make sense either.
   \end{sol}
 \end{ex}
 
@@ -126,14 +126,14 @@
   $\vect{u},\vect{v}$ vectors, consider
   \begin{equation*}
     \tup{\vect{w}-
-      \func{proj}_{\vect{v}}(\vect{w})} \dotprod \tup{\vect{w}-
-      \func{proj}_{\vect{v}}(\vect{w})} \geq 0
+      \proj_{\vect{v}}(\vect{w})} \dotprod \tup{\vect{w}-
+      \proj_{\vect{v}}(\vect{w})} \geq 0
   \end{equation*}
   Simplify using the axioms of the dot product and then put in the
   formula for the projection. Notice that this expression equals $0$
   and you get equality in the Cauchy Schwarz inequality if and only if
-  $\vect{w}=\func{proj}_{\vect{v}}(\vect{w})$. What is the geometric
-  meaning of $\vect{w}=\func{proj}_{\vect{v}}(\vect{w})$?
+  $\vect{w}=\proj_{\vect{v}}(\vect{w})$. What is the geometric
+  meaning of $\vect{w}=\proj_{\vect{v}}(\vect{w})$?
   \begin{sol}
     \begin{equation*}
       \tup{\vect{u}-\frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{v}}
@@ -149,7 +149,7 @@
       ^{2}\geq \tup{\vect{u}\dotprod \vect{v}} ^{2}.
     \end{equation*}
     We get equality exactly when
-    $\vect{u}=\func{proj}_{\vect{v}}(\vect{u}) =
+    $\vect{u}=\proj_{\vect{v}}(\vect{u}) =
     \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{v}} ^{2}}\,\vect{v}$,
     or in other words, when $\vect{u}$ is a multiple of $\vect{v}$.
   \end{sol}
@@ -160,42 +160,42 @@
   Let $\vect{v},\vect{w}$ $\vect{u}$ be vectors. Show that
   $\tup{\vect{w}+\vect{u}} _{\perp }=\vect{w}_{\perp }+\vect{u}_{\perp
   }$ where
-  $\vect{w}_{\perp }=\vect{w}-\func{proj}_{\vect{v}}\tup{\vect{w}}$.
+  $\vect{w}_{\perp }=\vect{w}-\proj_{\vect{v}}\tup{\vect{w}}$.
   \begin{sol}
     \begin{eqnarray*}
-      \vect{w}-\func{proj}_{\vect{v}}\tup{\vect{w}} +\vect{u}- \func{proj}_{\vect{v}}\tup{\vect{u}} 
-      &=& \vect{w}+\vect{u}-\tup{\func{proj}_{\vect{v}}\tup{\vect{w}} +\func{proj}_{\vect{v}}\tup{\vect{u}} } \\
-      &=&\vect{w}+\vect{u}-\func{proj}_{\vect{v}}\tup{\vect{w}+\vect{u}}.
+      \vect{w}-\proj_{\vect{v}}\tup{\vect{w}} +\vect{u}- \proj_{\vect{v}}\tup{\vect{u}} 
+      &=& \vect{w}+\vect{u}-\tup{\proj_{\vect{v}}\tup{\vect{w}} +\proj_{\vect{v}}\tup{\vect{u}} } \\
+      &=&\vect{w}+\vect{u}-\proj_{\vect{v}}\tup{\vect{w}+\vect{u}}.
     \end{eqnarray*}
     This follows because 
     \begin{eqnarray*}
-      \func{proj}_{\vect{v}}\tup{\vect{w}} +\func{proj}_{\vect{v}}\tup{
+      \proj_{\vect{v}}\tup{\vect{w}} +\proj_{\vect{v}}\tup{
       \vect{u}}
       &=& \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{v}} ^{2}}\vect{v}+
           \frac{\vect{w}\dotprod \vect{v}}{\norm{\vect{v}} ^{2}}\vect{v} \\
       &=& \frac{\tup{\vect{u}+\vect{w}} \dotprod \vect{v}}{\norm{\vect{v}
           } ^{2}}\vect{v} \\
-      &=& \func{proj}_{\vect{v}}\tup{\vect{w}+\vect{u}}.
+      &=& \proj_{\vect{v}}\tup{\vect{w}+\vect{u}}.
     \end{eqnarray*}
   \end{sol}
 \end{ex}
 
 \begin{ex} Show that
   \begin{equation*}
-    \tup{\vect{v}-\func{proj}_{\vect{u}
+    \tup{\vect{v}-\proj_{\vect{u}
       }\tup{\vect{v}} } \dotprod \vect{u}=0
   \end{equation*}
   and conclude every vector in $\R^{n}$ can be written as the sum of
   two vectors, one which is orthogonal and one which is parallel to
   the given vector.
   \begin{sol}
-    $\tup{\vect{v}-\func{proj}_{\vect{u}}\tup{\vect{v}} } \dotprod
+    $\tup{\vect{v}-\proj_{\vect{u}}\tup{\vect{v}} } \dotprod
     \vect{u} = \vect{v} \dotprod \vect{u}
     -\tup{\frac{\tup{\vect{v}\cdot\vect{u}} }{\norm{\vect{u}}
         ^{2}}\vect{u} } \dotprod \vect{u} = \vect{v} \dotprod \vect{u}
     - \vect{v} \dotprod \vect{u} =0$. Therefore,
-    $\vect{v} = \vect{v} - \func{proj}_{\vect{u}}\tup{\vect{v}} +
-    \func{proj}_{\vect{u}}\tup{\vect{v}}$. The first is orthogonal to
+    $\vect{v} = \vect{v} - \proj_{\vect{u}}\tup{\vect{v}} +
+    \proj_{\vect{u}}\tup{\vect{v}}$. The first is orthogonal to
     $\vect{u}$ and the second is a multiple of $\vect{u}$ so it is
     parallel to $\vect{u}$.
   \end{sol}

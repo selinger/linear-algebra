@@ -41,7 +41,7 @@ $\vect{y}$ on $W$. The definition is given as follows.
 Let $W$ be a subspace of $\R^n$, and $Y$ be any point in
 $\R^n$. Then the orthogonal projection of $Y$ onto $W$ is given by
 \[
-\vect{z} = \func{proj}_{W}\tup{\vect{y}}
+\vect{z} = \proj_{W}\tup{\vect{y}}
 =
 \tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \norm{\vect{w}_1}^2}} \vect{w}_1
 +
@@ -218,7 +218,7 @@ point $Y=(1,0,3)$ on the subspace $W$. We will write the position
 vector $\vect{y}$ of $Y$ as $\vect{y} = \begin{mymatrix}{c} 1 \\ 0 \\ 3
 \end{mymatrix}$. Using Definition~\ref{def:orth-proj}, we compute the projection as follows:
 \begin{eqnarray*}
-\vect{z} &=& \func{proj}_{W}\tup{\vect{y}}\\
+\vect{z} &=& \proj_{W}\tup{\vect{y}}\\
 &=&
 \tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \norm{\vect{w}_1}^2}} \vect{w}_1
 +
@@ -388,7 +388,7 @@ The following results summarize the important properties of the orthogonal proje
 Let $W$ be a subspace of $\R^n$, $Y$ be any point in $\R^n$, and let $Z$ be the point in $W$ closest to $Y$. Then, 
 \begin{enumerate}
 \item 
-The position vector $\vect{z}$ of the point $Z$ is given by $\vect{z} = \func{proj}_{W}\tup{\vect{y}}$
+The position vector $\vect{z}$ of the point $Z$ is given by $\vect{z} = \proj_{W}\tup{\vect{y}}$
 \item
 $\vect{z} \in W$ and $\vect{y} - \vect{z} \in W^{\perp}$
 \item
@@ -420,7 +420,7 @@ We will first use the Gram-Schmidt Process to construct the orthogonal basis, $B
 }.\]
 
 By Theorem~\ref{thm:orth-proj},
-\[ \func{proj}_U(\vect{v}) = 
+\[ \proj_U(\vect{v}) = 
 \frac{2}{2} \begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix} +
 \frac{5}{1}\begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix} +
 \frac{12}{6}\begin{mymatrix}{r} 1\\ 2\\ -1\\ 0 \end{mymatrix}
@@ -451,12 +451,12 @@ Find the point $Z$ in $W$ closest to $Y$, and moreover write $\vect{y}$ as the s
 
 \begin{solution}
 From Theorem~\ref{thm:approximation}, the point $Z$ in $W$ closest to
-$Y$ is given by $\vect{z} = \func{proj}_{W}\tup{\vect{y}}$.
+$Y$ is given by $\vect{z} = \proj_{W}\tup{\vect{y}}$.
 
 Notice that since the above vectors already give an orthogonal basis for $W$, we have:
 
 \begin{eqnarray*}
-\vect{z} &=& \func{proj}_{W}\tup{\vect{y}}\\
+\vect{z} &=& \proj_{W}\tup{\vect{y}}\\
 &=&
 \tup{\frac{\vect{y} \dotprod \vect{w}_1}{ \norm{\vect{w}_1}^2}} \vect{w}_1
 +
@@ -597,7 +597,7 @@ an orthogonal basis of $W$.
 \item To find 
 the point $Z$ on $W$ closest to $Y=(1,1,1)$, compute
 \begin{eqnarray*}
-\func{proj}_{W}\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}
+\proj_{W}\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}
 & = &
 \frac{2}{10} \begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix}
 + \frac{9}{35}\begin{mymatrix}{r} 3 \\ 1 \\ 5 \end{mymatrix}\\

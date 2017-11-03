@@ -152,7 +152,7 @@ matrix as follows:
   let $T: \R^3 \to \R^3$ be the projection%
   \index{projection!as a linear transformation} map defined by
   \begin{equation*}
-    T(\vect{v}) = \func{proj}_{\vect{u}}\tup{\vect{v}}
+    T(\vect{v}) = \proj_{\vect{u}}\tup{\vect{v}}
   \end{equation*}
   for all $\vect{v} \in \R^3$.
   \begin{enumerate}
@@ -166,7 +166,7 @@ matrix as follows:
   \item[(a)] Recall the formula for the projection of $\vect{v}$ onto
     $\vect{u}$:
     \begin{equation*}
-      \func{proj}_{\vect{u}}\tup{\vect{v}}
+      \proj_{\vect{u}}\tup{\vect{v}}
       = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}.
     \end{equation*}
     In the situation we are interested in, $\vect{u}$ is a fixed vector,
@@ -174,24 +174,24 @@ matrix as follows:
     vectors $\vect{v},\vect{w}$, and using the distributive laws of the dot
     product and scalar multiplication, we have:
     \begin{equation*}
-      \func{proj}_{\vect{u}}\tup{\vect{v}+\vect{w}}
+      \proj_{\vect{u}}\tup{\vect{v}+\vect{w}}
       = \frac{(\vect{v}+\vect{w})\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}
       = \tup{\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}
         + \frac{\vect{w}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\,\vect{u}
       = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}
       + \frac{\vect{w}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}
-      = \func{proj}_{\vect{u}}\tup{\vect{v}}
-      + \func{proj}_{\vect{u}}\tup{\vect{w}}.
+      = \proj_{\vect{u}}\tup{\vect{v}}
+      + \proj_{\vect{u}}\tup{\vect{w}}.
     \end{equation*}
     Therefore, the function
-    $T(\vect{v}) = \func{proj}_{\vect{u}}\tup{\vect{v}}$ preserves
+    $T(\vect{v}) = \proj_{\vect{u}}\tup{\vect{v}}$ preserves
     addition. Also, given any scalar $k$, we have
     \begin{equation*}
-      \func{proj}_{\vect{u}}\tup{k\vect{v}}
+      \proj_{\vect{u}}\tup{k\vect{v}}
       = \frac{(k\vect{v})\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}
       = \tup{k\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\,\vect{u}
       = k\tup{\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}}
-      = k\,\func{proj}_{\vect{u}}\tup{\vect{v}}.
+      = k\,\proj_{\vect{u}}\tup{\vect{v}}.
     \end{equation*}
     Therefore, the function $T$ preserves scalar multiplication. It
     follows that $T$ is a linear transformation.
@@ -200,15 +200,15 @@ matrix as follows:
     the standard basis vectors $T(\vect{e}_1),\ldots,T(\vect{e}_3)$. We compute
     \begin{eqnarray*}
       T(\vect{e}_1)
-      &=& \func{proj}_{\vect{u}}\tup{\vect{e}_1}
+      &=& \proj_{\vect{u}}\tup{\vect{e}_1}
       ~=~ \tup{\frac{\vect{e}_1\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\vect{u}
       ~=~ \frac{1}{14}\begin{mymatrix}{r} 1 \\ 2 \\ 3 \end{mymatrix},\\
       T(\vect{e}_2)
-      &=& \func{proj}_{\vect{u}}\tup{\vect{e}_2}
+      &=& \proj_{\vect{u}}\tup{\vect{e}_2}
       ~=~ \tup{\frac{\vect{e}_2\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\vect{u}
       ~=~ \frac{1}{14}\begin{mymatrix}{r} 1 \\ 2 \\ 3 \end{mymatrix},\\
       T(\vect{e}_3)
-      &=& \func{proj}_{\vect{u}}\tup{\vect{e}_3}
+      &=& \proj_{\vect{u}}\tup{\vect{e}_3}
       ~=~ \tup{\frac{\vect{e}_3\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\vect{u}
       ~=~ \frac{1}{14}\begin{mymatrix}{r} 1 \\ 2 \\ 3 \end{mymatrix}.
     \end{eqnarray*}

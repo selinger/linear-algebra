@@ -547,7 +547,7 @@ between points and planes.
   Section~\ref{ssec:projections}.  Pick an arbitrary point $R$ on
   the plane. Then, it follows that
   \begin{equation*}
-    \longvect{QP} = \func{proj}_{\vect{n}}\,\longvect{RP}
+    \longvect{QP} = \proj_{\vect{n}}\,\longvect{RP}
   \end{equation*}
   and $\norm{\longvect{QP}}$ is the shortest distance from $P$ to the
   plane. Further, the position vector of the point $Q$ can be computed
@@ -574,9 +574,9 @@ between points and planes.
     - \begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix} =
     \begin{mymatrix}{c} 2 \\ 2 \\ 3 \end{mymatrix}.
   \end{equation*}
-  Next, compute $\longvect{QP} = \func{proj}_{\vect{n}}\longvect{RP}$.
+  Next, compute $\longvect{QP} = \proj_{\vect{n}}\longvect{RP}$.
   \begin{equation*}
-    \longvect{QP} ~=~ \func{proj}_{\vect{n}}\longvect{RP} 
+    \longvect{QP} ~=~ \proj_{\vect{n}}\longvect{RP} 
     ~=~ \tup{\frac{ \longvect{RP} \dotprod \vect{n}}{\norm{\vect{n}} ^2}}\vect{n} 
     ~=~ \frac{12}{9} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix} 
     ~=~ \frac{4}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix}.
