@@ -425,7 +425,9 @@ reflections.
   $D$ is called a \textbf{shearing}%
   \index{matrix!of a shearing}%
   \index{shearing!matrix of}%
-  \index{linear transformation!shearing}.
+  \index{linear transformation!shearing}. It keeps one line (the
+  $x$-axis) fixed, while shifting all other points by varying
+  distances along lines that are parallel to the $x$-axis.
 \end{solution}
 
 \begin{example}{Rotation in $\R^3$}{rotation-R3}
@@ -443,7 +445,7 @@ reflections.
   fortunately, the rotation is about the $z$-axis, so all the
   ``action'' is taking place in the $xy$-plane.
   \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.9]
       \begin{scope}[scale=0.5]
         \begin{scope}[cm={-0.4,-0.5,1,0,(0,0)}]
           \draw[red,thick,fill=red!10]
@@ -487,6 +489,7 @@ reflections.
       \end{scope}
     \end{tikzpicture}
   \end{center}
+  \vspace{-1ex} %%%
   Therefore, the matrix of the rotation is
   \begin{equation*}
     A = \begin{mymatrix}{ccc}
