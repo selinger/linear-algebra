@@ -33,10 +33,10 @@ equals
 \begin{equation*}
   d(P,Q)
   =\sqrt{\abs{p_{1}-q_{1}}^{2}+\abs{p_{2}-q_{2}}^{2}}
-  =\sqrt{\tup{p_{1}-q_{1}}^{2}+\tup{p_{2}-q_{2}}^{2}}.
+  =\sqrt{(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}}.
 \end{equation*}
-Now consider two points $P=\tup{p_{1},p_{2},p_{3}}$ and
-$Q = \tup{q_{1},q_{2},q_{3}}$ in 3-dimensional space.
+Now consider two points $P=(p_{1},p_{2},p_{3})$ and
+$Q = (q_{1},q_{2},q_{3})$ in 3-dimensional space.
 \begin{equation*}
   \begin{tikzpicture}[scale=1]
     \draw[dashed] (3,0,-2) -- (0,0,-2) -- (0,0,0);
@@ -58,19 +58,19 @@ solid line connecting $P$ and $Q$. First, by the Pythagorean Theorem
 applied to the right triangle $QSR$, the length of the line joining
 $R$ and $Q$ equals
 \begin{equation*}
-d(R,Q) = \sqrt{ \tup{p_{1}-q_{1}} ^{2}+\tup{p_{2}-q_{2}} ^{2}}.
+d(R,Q) = \sqrt{ (p_{1}-q_{1}) ^{2}+(p_{2}-q_{2}) ^{2}}.
 \end{equation*}
 Second, by the Pythagorean Theorem applied to the triangle $QRP$, the
 length of the line joining $P$ and $Q$ equals
 \begin{equation*}
-d(P,Q)=\sqrt{d(R,Q)^{2}+\tup{p_{3}-q_{3}}^{2}}
- =\sqrt{ \tup{p_{1}-q_{1}}^{2}+\tup{p_{2}-q_{2}}^{2}+\tup{p_{3}-q_{3}}^{2}}
+d(P,Q)=\sqrt{d(R,Q)^{2}+(p_{3}-q_{3})^{2}}
+ =\sqrt{ (p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+(p_{3}-q_{3})^{2}}
 \end{equation*}
 This discussion motivates the following definition for the distance
 between points in $\R^n$.
 
 \begin{definition}{Distance between points}{distance-between-points}
-  Let $P=\tup{p_{1},\ldots,p_{n}}$ and $Q=\tup{q_{1},\ldots,q_{n}}$ be
+  Let $P=(p_{1},\ldots,p_{n})$ and $Q=(q_{1},\ldots,q_{n})$ be
   two points in $\R^{n}$. Then the
   \textbf{distance}\index{distance!point to point}
   between these points is defined as
@@ -87,36 +87,36 @@ Definition~\ref{def:distance-between-points} to find the distance
 between two points in $\R^4$.
 
 \begin{example}{Distance between points}{distance-between-points}
-  Find the distance between the points $P=\tup{1,2,-4,6}$ and
-  $Q=\tup{2,3,-1,0}$ in $\R^{4}$.
+  Find the distance between the points $P=(1,2,-4,6)$ and
+  $Q=(2,3,-1,0)$ in $\R^{4}$.
 \end{example}
 
 \begin{solution}
   Using the distance formula, we have
   \begin{equation*}
-    d(P,Q)= \sqrt{ \tup{1-2} ^{2}+\tup{2-3}
-      ^{2}+\tup{-4-\tup{-1} } ^{2}+\tup{6-0}^{2}} =
+    d(P,Q)= \sqrt{ (1-2) ^{2}+(2-3)
+      ^{2}+(-4-(-1)) ^{2}+(6-0)^{2}} =
     \sqrt{1^2+1^2+3^2+6^2} = \sqrt{47}.
   \end{equation*}
 \end{solution}
 
 \begin{example}{The plane between two points}{plane-between-two-points}
   Describe the points in $\R^3$ that are equally distant from the two
-  points $Q=\tup{1,2,3} $ and $R=\tup{0,1,2}$.
+  points $Q=(1,2,3) $ and $R=(0,1,2)$.
 \end{example}
 
 \begin{solution}
-  Let $P = \tup{p_1,p_2,p_3}$ be such a point. Then $P$ is the same
+  Let $P = (p_1,p_2,p_3)$ be such a point. Then $P$ is the same
   distance from $Q$ and $R$, thus $d(P,Q)=d(P,R)$. By the distance
   formula, we have
   \begin{equation*}
-    \sqrt{\tup{p_1-1}^{2}+\tup{p_2-2}^{2}+\tup{p_3-3}^{2}}=
-    \sqrt{\tup{p_1-0}^{2}+\tup{p_2-1}^{2}+\tup{p_3-2}^{2}}.
+    \sqrt{(p_1-1)^{2}+(p_2-2)^{2}+(p_3-3)^{2}}=
+    \sqrt{(p_1-0)^{2}+(p_2-1)^{2}+(p_3-2)^{2}}.
   \end{equation*}
   Squaring both sides, we obtain 
   \begin{equation*}
-    \tup{p_1 -1} ^{2}+\tup{p_2 -2} ^{2}+\tup{p_3 -3}
-    ^{2}=p_1^{2}+\tup{p_2-1} ^{2}+\tup{p_3 -2} ^{2},
+    (p_1 -1) ^{2}+(p_2 -2) ^{2}+(p_3 -3)
+    ^{2}=p_1^{2}+(p_2-1) ^{2}+(p_3 -2) ^{2},
   \end{equation*}
   and so
   \begin{equation*}
@@ -130,7 +130,7 @@ between two points in $\R^4$.
   \begin{equation}\label{distance-plane}
     2p_1+2p_2+2p_3=9.
   \end{equation}
-  Therefore, the points $P = \tup{p_1,p_2,p_3}$ that are the same
+  Therefore, the points $P = (p_1,p_2,p_3)$ that are the same
   distance from $Q$ and $R$ form a plane whose equation is given by
   \eqref{distance-plane}.
 \end{solution}
@@ -156,8 +156,8 @@ define what is meant by the length of a vector.
 This definition corresponds to
 Definition~\ref{def:distance-between-points}, if we consider the
 vector $\vect{u}$ to have its tail at the point
-$0 = \tup{0,\ldots,0 }$ and its tip at the point
-$U = \tup{u_1,\ldots, u_n }$.  Then the length of $\vect{u}$ is equal
+$0 = (0,\ldots,0)$ and its tip at the point
+$U = (u_1,\ldots, u_n)$.  Then the length of $\vect{u}$ is equal
 to the distance between $0$ and $U$. In general,
 $\norm{\longvect{PQ}} = d(P,Q)$.
 

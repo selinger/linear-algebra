@@ -68,7 +68,7 @@ The sum of the entries of $X_n$ will equal the sum of the entries of the initial
 vector $X_{0}$. Since the columns of $A$ sum to $1$, this sum is preserved for every
 multiplication by $A$ as demonstrated below. 
 \begin{equation*}
-\sum_{i}\sum_{j}a_{ij}x_{j}=\sum_{j}x_{j}\tup{\sum_{i}a_{ij}}
+\sum_{i}\sum_{j}a_{ij}x_{j}=\sum_{j}x_{j}\paren{\sum_{i}a_{ij}}
 =\sum_{j}x_{j}
 \end{equation*}
 
@@ -144,7 +144,7 @@ x_{32}
 \end{mymatrix}
 \end{eqnarray*}
 
-We could progress in this manner to find the populations after $10$ time periods. However from our above discussion, we can simply calculate $\tup{A^{n}X_0} _{i}$, 
+We could progress in this manner to find the populations after $10$ time periods. However from our above discussion, we can simply calculate $(A^{n}X_0) _{i}$, 
 where $n$ denotes the number of time periods which have passed. Therefore, we compute the populations in each location after $10$ units of time as follows. 
 \begin{eqnarray*}
 X_{10} &=& A^{10}X_0 \\
@@ -285,7 +285,7 @@ By Theorem~\ref{thm:steady-state} the steady state vector $X_s$ can be found by 
 
 Thus we need to find a solution to
 \begin{equation*}
-\tup{\begin{mymatrix}{rrr}
+\paren{\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
@@ -293,7 +293,7 @@ Thus we need to find a solution to
 0.6 & 0 & 0.1 \\
 0.2 & 0.8 & 0 \\
 0.2 & 0.2 & 0.9
-\end{mymatrix} } \begin{mymatrix}{c}
+\end{mymatrix}} \begin{mymatrix}{c}
 x_{1s} \\
 x_{2s}\\
 x_{3s}
@@ -388,7 +388,7 @@ locations after a long time.
 In order to compare the populations in the long term, we want to find the steady state vector $X_s$. 
 Solve
 \begin{equation*}
-\tup{\begin{mymatrix}{rrr}
+\paren{\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
@@ -399,7 +399,7 @@ Solve
 \frac{1}{2} \\
 \vspace{.05in} \frac{11}{20} & \vspace{.05in} \frac{1}{4} & \vspace{.05in}
 \frac{3}{10}
-\end{mymatrix} } \begin{mymatrix}{c}
+\end{mymatrix}} \begin{mymatrix}{c}
 x_{1s} \\
 x_{2s} \\
 x_{3s}

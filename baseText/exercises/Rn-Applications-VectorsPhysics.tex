@@ -18,7 +18,7 @@ after two hours. \vspace{1mm}
 
 \begin{ex} The wind blows from the North at $10\textrm{km}/\textrm{h}$. An
 airplane which flies at $300\textrm{km}/\textrm{h}$ in still air is supposed
-to go to the point whose coordinates are at $\tup{100, 100 }. $ In what direction should the airplane fly? \vspace{1mm}
+to go to the point whose coordinates are at $(100, 100). $ In what direction should the airplane fly? \vspace{1mm}
 %\begin{sol}
 %\end{sol}
 \end{ex}
@@ -69,12 +69,12 @@ North West. What is the velocity of the airplane relative to the ground?
 What is the component of this velocity in the direction North? \vspace{1mm}
 \begin{sol}
 The velocity is the sum of two vectors. $50\vect{i}+\frac{
-300}{\sqrt{2}} \tup{\vect{i}+\vect{j}} =\tup{50+\frac{300}{\sqrt{2}}
+300}{\sqrt{2}} (\vect{i}+\vect{j}) =\paren{50+\frac{300}{\sqrt{2}}
 } \vect{i}+ \frac{300}{\sqrt{2}}\vect{j}$. The component in the
 direction of North is then $\frac{300}{\sqrt{2}}= 150\sqrt{2}$
 and the velocity relative to the ground is
 \[
-\tup{50+\frac{300}{\sqrt{2}}} \vect{i}+\frac{300}{\sqrt{2}}\vect{j}
+\paren{50+\frac{300}{\sqrt{2}}} \vect{i}+\frac{300}{\sqrt{2}}\vect{j}
 \]
 \end{sol}
 \end{ex}
@@ -100,8 +100,8 @@ North, how much gas will it use in flying to its destination? \vspace{1mm}
 \begin{ex} An airplane is flying due north at $150.0\textrm{km}/\textrm{h}$ but it is
 not actually going due North because there is a wind which is pushing the
 airplane due east at $40.0\textrm{km}/\textrm{h}$. After one hour, the plane starts
-flying $30^{\circ }$ East of North. Assuming the plane starts at $\tup{
-0,0}$, where is it after $2$ hours? Let North be the direction of the
+flying $30^{\circ }$ East of North. Assuming the plane starts at $(
+0,0)$, where is it after $2$ hours? Let North be the direction of the
 positive $y$ axis and let East be the direction of the positive $x$ axis.
 \vspace{1mm}
 \begin{sol}
@@ -111,14 +111,14 @@ positive $y$ axis and let East be the direction of the positive $x$ axis.
 40 & 0
 \end{mymatrix} =\begin{mymatrix}{cc}
 40 & 150
-\end{mymatrix}$. After one hour it is at $\tup{40,150}$. Next the
+\end{mymatrix}$. After one hour it is at $(40,150)$. Next the
 velocity of the plane is $150\begin{mymatrix}{cc}
  \frac{1}{2} & \frac{\sqrt{3}}{2}
 \end{mymatrix}
 +\begin{mymatrix}{cc}
  40 & 0
 \end{mymatrix} $ in kilometers per hour. After two hours it is then at 
-$\tup{40,150} + 150\begin{mymatrix}{cc}
+$(40,150) + 150\begin{mymatrix}{cc}
  \frac{1}{2} & \frac{\sqrt{3}}{2}
 \end{mymatrix}
 +\begin{mymatrix}{cc}
@@ -132,7 +132,7 @@ $\tup{40,150} + 150\begin{mymatrix}{cc}
 \end{ex}
 
 \begin{ex} 
-City A is located at the origin $\tup{0,0 }$ while city B is located at $\tup{300,500 } $ where distances are in kilometers. An airplane flies at $250\textrm{km}/\textrm{h}$ in still air. This airplane wants to fly from city A to city
+City A is located at the origin $(0,0)$ while city B is located at $(300,500) $ where distances are in kilometers. An airplane flies at $250\textrm{km}/\textrm{h}$ in still air. This airplane wants to fly from city A to city
 B but the wind is blowing in the direction of the positive $y$ axis at a
 speed of $50\textrm{km}/\textrm{h}$. Find a unit vector such that if the plane heads
 in this direction, it will end up at city B having flown the shortest
@@ -140,7 +140,7 @@ possible distance. How long will it take to get there? \vspace{1mm}
 \begin{sol}
 Wind: $\begin{mymatrix}{cc}
 0 & 50
-\end{mymatrix}$. Direction it needs to travel: $\tup{3,5 } \frac{1}{\sqrt{34}}$. Then you need $250 \begin{mymatrix}{cc}
+\end{mymatrix}$. Direction it needs to travel: $(3,5) \frac{1}{\sqrt{34}}$. Then you need $250 \begin{mymatrix}{cc}
  a & b
 \end{mymatrix} + \begin{mymatrix}{cc}
 0 & 50
@@ -159,10 +159,10 @@ to the ground is $\begin{mymatrix}{cc}
 150 & 250
 \end{mymatrix}$. The speed of the plane relative to the ground is given by 
 \[
-\sqrt{\tup{150} ^{2}+\tup{250} ^{2}}=
+\sqrt{(150) ^{2}+(250) ^{2}}=
 291.55 \textrm{km}/\textrm{h}
 \]
-It has to go a distance of $\sqrt{\tup{300} ^{2}+\tup{500}
+It has to go a distance of $\sqrt{(300) ^{2}+(500)
 ^{2}}=\allowbreak 583.\,\allowbreak 10$ kilometers. Therefore, it takes
 \[
 \frac{\allowbreak 583.\,\allowbreak 1}{\allowbreak 291.\,\allowbreak 55}=2
@@ -242,19 +242,19 @@ displacement vector from the nest to the telephone pole. \vspace{1mm}
 
 
 \begin{ex} If $\vect{F}$ is a force and $\vect{D}$ is a vector, show 
-$\proj_{\vect{D}}\tup{\vect{F}} =\tup{\norm{\vect{F}
-} \cos \theta } \vect{u}$ where $\vect{u}$ is the unit
+$\proj_{\vect{D}}(\vect{F}) =(\norm{\vect{F}
+} \cos \theta) \vect{u}$ where $\vect{u}$ is the unit
 vector in the direction of $\vect{D}$, where $\vect{u}=\vect{D}/\norm{\vect{D}
 } $ and $\theta $ is the included angle between the two vectors, 
 $\vect{F}$ and $\vect{D}$. $\norm{\vect{F}} \cos \theta $
 is sometimes called the component
 \index{component of a force} of the force, $\vect{F}$ in the direction, $\vect{D}$.
 \begin{sol}
-$\proj_{\vect{D}}\tup{\vect{F}} = \frac{\vect{F}\dotprod
+$\proj_{\vect{D}}(\vect{F}) = \frac{\vect{F}\dotprod
 \vect{D}}{\norm{\vect{D}} }\frac{\vect{D}}{\norm{\vect{D}
-} }=\tup{\norm{\vect{F}} \cos \theta }
-\frac{\vect{D}}{\norm{\vect{D}} }=\tup{\norm{
-\vect{F}} \cos \theta } \vect{u}$
+} }=(\norm{\vect{F}} \cos \theta)
+\frac{\vect{D}}{\norm{\vect{D}} }=(\norm{
+\vect{F}} \cos \theta) \vect{u}$
 \end{sol}
 \end{ex}
 

@@ -16,11 +16,11 @@ $n$-dimensional vector $\vect{v}\in\R^n$ and outputs an
 $m$-dimensional vector $T(\vect{v})\in\R^m$. The following are some
 examples of vector functions:
 \begin{equation}\label{eq:vector-functions}
-  T_1\tup{\begin{mymatrix}{c} x \\ y \end{mymatrix}}
+  T_1\paren{\begin{mymatrix}{c} x \\ y \end{mymatrix}}
   = \begin{mymatrix}{c} x^2 \\ x+y \\ y^2 \end{mymatrix},\quad
-  T_2\tup{\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}}
+  T_2\paren{\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}}
   = \begin{mymatrix}{c} x+y \\ x+y+z \\ 0 \end{mymatrix},\quad
-  T_3\tup{\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}}
+  T_3\paren{\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}}
   = \begin{mymatrix}{c} e^{x+z} \\ \sqrt{y} \end{mymatrix}.
 \end{equation}
 Of these, the first is a function $T_1:\R^2\to\R^3$, the second is a
@@ -28,10 +28,10 @@ function $T_2:\R^3\to\R^3$, and the third is a function
 $T_3:\R^3\to\R^2$.  We can evaluate a vector function by applying it
 to a vector, for example,
 \begin{equation*}
-  T_1\tup{\begin{mymatrix}{c} 1 \\ 2 \end{mymatrix}}
+  T_1\paren{\begin{mymatrix}{c} 1 \\ 2 \end{mymatrix}}
   = \begin{mymatrix}{c} 1^2 \\ 1+2 \\ 2^2 \end{mymatrix}
   = \begin{mymatrix}{c} 1 \\ 3 \\ 4 \end{mymatrix},\quad
-  T_1\tup{\begin{mymatrix}{c} 0 \\ 1 \end{mymatrix}}
+  T_1\paren{\begin{mymatrix}{c} 0 \\ 1 \end{mymatrix}}
   = \begin{mymatrix}{c} 0^2 \\ 1+1 \\ 1^2 \end{mymatrix}
   = \begin{mymatrix}{c} 0 \\ 1 \\ 1 \end{mymatrix},
 \end{equation*}
@@ -72,11 +72,11 @@ also called \textbf{linear transformations}%
       0 \end{mymatrix}$. Then
     \begin{equation*}
       T_1(\vect{v})
-      ~=~ T_1\tup{\begin{mymatrix}{c} 1 \\ 0 \end{mymatrix}}
+      ~=~ T_1\paren{\begin{mymatrix}{c} 1 \\ 0 \end{mymatrix}}
       ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}
       \quad\mbox{and}\quad
       T_1(2\vect{v})
-      ~=~ \tup{\begin{mymatrix}{c} 2 \\ 0 \end{mymatrix}}
+      ~=~ \paren{\begin{mymatrix}{c} 2 \\ 0 \end{mymatrix}}
       ~=~ \begin{mymatrix}{c} 4 \\ 2 \\ 0 \end{mymatrix}
       ~\neq~ 2\begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}.
     \end{equation*}
@@ -104,7 +104,7 @@ also called \textbf{linear transformations}%
     We have
     \begin{equation*}
       T_2(\vect{v}+\vect{w})
-      ~=~ T_2\tup{
+      ~=~ T_2\paren{
         \begin{mymatrix}{c}
           x_1+x_2 \\
           y_1+y_2 \\
@@ -146,7 +146,7 @@ also called \textbf{linear transformations}%
     Then
     \begin{equation*}
       T_3(\vect{v}+\vect{w})
-      ~=~ T_3\tup{\begin{mymatrix}{c} 1 \\ 2 \\ 0\end{mymatrix}}
+      ~=~ T_3\paren{\begin{mymatrix}{c} 1 \\ 2 \\ 0\end{mymatrix}}
       ~=~ \begin{mymatrix}{c} e \\ \sqrt{2} \end{mymatrix},
     \end{equation*}
     and

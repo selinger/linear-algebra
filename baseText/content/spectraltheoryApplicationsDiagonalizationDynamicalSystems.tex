@@ -10,19 +10,19 @@ predator prey model. Consider the following model where $x$ is the
 number of prey and $y$ the number of predators in a certain area at a
 certain time. These are functions of $n\in \N$ where $n=1,2,\ldots$
 are the ends of intervals of time which may be of interest in the
-problem. In other words, $x \tup{n }$ is the number of prey at the end
+problem. In other words, $x (n)$ is the number of prey at the end
 of the $n^{th}$ interval of time.  An example of this situation may be
 modelled by the following equation
 \begin{equation*}
 \begin{mymatrix}{c}
-x\tup{n+1} \\
-y\tup{n+1}
+x(n+1) \\
+y(n+1)
 \end{mymatrix} =\begin{mymatrix}{rr}
 2 & -3 \\
 1 & 4
 \end{mymatrix} \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix}
 \end{equation*}
 This says that from time period $n$ to $n+1$, $x$ increases if there are more $x$ and decreases as there
@@ -87,14 +87,14 @@ First, we express the system as a matrix recurrence.
 \begin{eqnarray*}
 V_{n+1} &=& AV_{n}\\
 \begin{mymatrix}{c}
-x\tup{n+1} \\
-y\tup{n+1}
+x(n+1) \\
+y(n+1)
 \end{mymatrix} &=&\begin{mymatrix}{rr}
 1.5 & -0.5 \\
 1.0 & 0
 \end{mymatrix} \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix}
 \end{eqnarray*}
 
@@ -133,8 +133,8 @@ the solution to the dynamical system is given by
 \begin{eqnarray*}
 V_n &=& P D^n P^{-1} V_0\\
 \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix} &=&\begin{mymatrix}{rr}
 1 & 1 \\
 1 & 2
@@ -153,7 +153,7 @@ y_{0}
 1 & 2
 \end{mymatrix} \begin{mymatrix}{rr}
 1 & 0 \\
-0 & \tup{0.5} ^{n}
+0 & (0.5) ^{n}
 \end{mymatrix} \begin{mymatrix}{rr}
 2 & -1 \\
 -1 & 1
@@ -162,10 +162,10 @@ x_{0} \\
 y_{0}
 \end{mymatrix} \\
 &=&\begin{mymatrix}{c}
-y_{0}\tup{\tup{0.5} ^{n}-1} -x_{0}\tup{\tup{0.5}
-^{n}-2} \\
-y_{0}\tup{2\tup{0.5} ^{n}-1} -x_{0}\tup{2\tup{0.5}
-^{n}-2}
+y_{0}((0.5) ^{n}-1) -x_{0}((0.5)
+^{n}-2) \\
+y_{0}(2(0.5) ^{n}-1) -x_{0}(2(0.5)
+^{n}-2)
 \end{mymatrix} 
 \end{eqnarray*}
 
@@ -180,8 +180,8 @@ If we let $n$ become arbitrarily large, this vector approaches
 Thus for large $n$,
 \begin{equation*}
 \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix} \approx \begin{mymatrix}{c}
 2x_{0}-y_{0} \\
 2x_{0}-y_{0}
@@ -237,8 +237,8 @@ Notice that as $n$ increases, we approach the vector given by
 \end{mymatrix}
 =
 \begin{mymatrix}{r}
-2\tup{20}- 10\\
-2\tup{20 }-10
+2(20)- 10\\
+2(20)-10
 \end{mymatrix}
 =
 \begin{mymatrix}{r}
@@ -282,14 +282,14 @@ possible for the ordered pairs to spiral around the origin.
 Suppose a dynamical system is of the form
 \begin{equation*}
 \begin{mymatrix}{c}
-x\tup{n+1} \\
-y\tup{n+1}
+x(n+1) \\
+y(n+1)
 \end{mymatrix} =\begin{mymatrix}{rr}
 0.7 & 0.7 \\
 -0.7 & 0.7
 \end{mymatrix} \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix}
 \end{equation*}
 Find solutions to the dynamical system for given initial conditions.
@@ -337,14 +337,14 @@ and so,
 \begin{eqnarray*}
 V_n &=& PD^nP^{-1}V_0 \\
 \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix} &=&\begin{mymatrix}{rr}
 1 & 1 \\
 i & -i
 \end{mymatrix} \begin{mymatrix}{cc}
-\tup{0.7+0.7i} ^{n} & 0 \\
-0 & \tup{0.7-0.7i} ^{n}
+(0.7+0.7i) ^{n} & 0 \\
+0 & (0.7-0.7i) ^{n}
 \end{mymatrix} \begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}i \\
 \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2}i
@@ -357,14 +357,14 @@ y_{0}
 The explicit solution is given by
 \begin{equation*}
 \begin{mymatrix}{c}
-x_{0}\tup{\vspace{0.05in}\frac{1}{2}\tup{0.7-0.7i } ^{n}+\vspace{0.05in}\frac{1}{2}
-\tup{0.7+0.7i} ^{n}} + \allowbreak y_{0}\tup{\vspace{0.05in}\frac{1}{2}
-i\tup{0.7-0.7i} ^{n}-\frac{1}{2}i \tup{
-0.7+0.7i}  ^{n}} \\
-y_{0}\tup{\vspace{0.05in}\frac{1}{2} \tup{0.7-0.7i } ^{n}+\vspace{0.05in}\frac{1}{2}
-\tup{0.7+0.7i} ^{n}} -  x_{0}\tup{\vspace{0.05in}\frac{1}{2}
-i\tup{0.7-0.7i} ^{n}-\vspace{0.05in}\frac{1}{2}i\tup{
-0.7+0.7i} ^{n}}
+x_{0}(\vspace{0.05in}\frac{1}{2}(0.7-0.7i) ^{n}+\vspace{0.05in}\frac{1}{2}
+(0.7+0.7i) ^{n}) + \allowbreak y_{0}(\vspace{0.05in}\frac{1}{2}
+i(0.7-0.7i) ^{n}-\frac{1}{2}i (
+0.7+0.7i)  ^{n}) \\
+y_{0}(\vspace{0.05in}\frac{1}{2} (0.7-0.7i) ^{n}+\vspace{0.05in}\frac{1}{2}
+(0.7+0.7i) ^{n}) -  x_{0}(\vspace{0.05in}\frac{1}{2}
+i(0.7-0.7i) ^{n}-\vspace{0.05in}\frac{1}{2}i(
+0.7+0.7i) ^{n})
 \end{mymatrix}
 \end{equation*}
 
@@ -391,8 +391,8 @@ picture what is happening.
 These points are getting gradually closer to the origin, but they are
 circling the origin in the clockwise direction as they do so. As $n$ increases,
 the vector  $\begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix}$ approaches $ \begin{mymatrix}{r}
 0 \\
 0
@@ -404,15 +404,15 @@ deviations from an equilibrium point in the Lotka Volterra system of
 differential equations which is a famous model for predator-prey
 interactions. These differential equations are given by
 \begin{eqnarray*}
-x^{\prime } &=&x\tup{a-by} \\
-y^{\prime } &=&-y\tup{c-dx}
+x^{\prime } &=&x(a-by) \\
+y^{\prime } &=&-y(c-dx)
 \end{eqnarray*}
 where $a,b,c,d$ are positive constants. For example, you might have $X$ be
 the population of moose and $Y$ the population of wolves on an island.
 
 Note that these equations make logical sense. The top says that the rate at which
 the moose population increases would be $aX$ if there were no predators $Y$.
-However, this is modified by multiplying instead by $\tup{a-bY} $
+However, this is modified by multiplying instead by $(a-bY) $
 because if there are predators, these will militate against the population
 of moose.  The more predators there
 are, the more pronounced is this effect. As to the predator equation, you
@@ -434,10 +434,10 @@ x+\frac{c}{d}=x,\ y=y+\frac{a}{b}
 \end{equation*}
 In terms of these new variables, the differential equations become
 \begin{eqnarray*}
-x^{\prime } &=&\tup{x+\frac{c}{d}} \tup{a-b\tup{y+\frac{a}{b}
-} } \\
-y^{\prime } &=&-\tup{y+\frac{a}{b}} \tup{c-d\tup{x+\frac{c}{d}
-} }
+x^{\prime } &=&\paren{x+\frac{c}{d}} \paren{a-b\paren{y+\frac{a}{b}
+}} \\
+y^{\prime } &=&-\paren{y+\frac{a}{b}} \paren{c-d\paren{x+\frac{c}{d}
+}}
 \end{eqnarray*}
 Multiplying out the right sides yields
 \begin{eqnarray*}
@@ -450,28 +450,28 @@ to
 x^{\prime }=-b\frac{c}{d}y,\ y^{\prime }=\frac{a}{b}dx
 \end{equation*}
 
-Replace $x^{\prime }$ with the difference quotient $\frac{x\tup{t+h}
--x\tup{t} }{h}$ where $h$ is a small positive number and $y^{\prime
+Replace $x^{\prime }$ with the difference quotient $\frac{x(t+h)
+-x(t) }{h}$ where $h$ is a small positive number and $y^{\prime
 } $ with a similar difference quotient. For example one could have $h$
 correspond to one day or even one hour. Thus, for $h$ small enough, the
 following would seem to be a good approximation to the differential
 equations.
 \begin{eqnarray*}
-x\tup{t+h} &=&x\tup{t} -hb\frac{c}{d}y \\
-y\tup{t+h} &=&y\tup{t} +h\frac{a}{b}dx
+x(t+h) &=&x(t) -hb\frac{c}{d}y \\
+y(t+h) &=&y(t) +h\frac{a}{b}dx
 \end{eqnarray*}
 Let $1,2,3,\ldots$ denote the ends of discrete intervals of time having
 length $h$ chosen above. Then the above equations take the form
 \begin{equation*}
 \begin{mymatrix}{c}
-x\tup{n+1} \\
-y\tup{n+1}
+x(n+1) \\
+y(n+1)
 \end{mymatrix} =\begin{mymatrix}{cc}
 1 & -\vspace{0.05in}\frac{hbc}{d} \\
 \vspace{0.05in}\frac{had}{b} & 1
 \end{mymatrix} \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix}
 \end{equation*}
 Note that the eigenvalues of this matrix are always complex.
@@ -481,27 +481,27 @@ Instead, we are interested in much longer lengths of time. Thus, replacing
 the time interval with $mh$,
 \begin{equation*}
 \begin{mymatrix}{c}
-x\tup{n+m} \\
-y\tup{n+m}
+x(n+m) \\
+y(n+m)
 \end{mymatrix} =\begin{mymatrix}{cc}
 1 & -\vspace{0.05in}\frac{hbc}{d} \\
 \vspace{0.05in}\frac{had}{b} & 1
 \end{mymatrix} ^{m}\begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix}
 \end{equation*}
 For example, if $m=2$, you would have
 \begin{equation*}
 \begin{mymatrix}{c}
-x\tup{n+2} \\
-y\tup{n+2}
+x(n+2) \\
+y(n+2)
 \end{mymatrix} =\begin{mymatrix}{cc}
 1-ach^{2} & -2b\vspace{0.05in}\frac{c}{d}h \\
 2\vspace{0.05in}\frac{a}{b}dh & 1-ach^{2}
 \end{mymatrix} \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix}
 \end{equation*}
 Note that most of the time, the eigenvalues of the new matrix will be complex.
@@ -512,14 +512,14 @@ the ends of discrete intervals of time, the desired discrete dynamical
 system is of the form
 \begin{equation*}
 \begin{mymatrix}{c}
-x\tup{n+1} \\
-y\tup{n+1}
+x(n+1) \\
+y(n+1)
 \end{mymatrix} =\begin{mymatrix}{rr}
 a & -b \\
 c & d
 \end{mymatrix} \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix}
 \end{equation*}
 where $a,b,c,d$ are positive constants and the matrix will likely have
@@ -545,29 +545,29 @@ The Fibonacci sequence is the sequence given by
 which is defined recursively in the
 form
 \begin{equation*}
-x\tup{0} =1=x\tup{1} ,\ x\tup{n+2} =x\tup{
-n+1} +x\tup{n}
+x(0) =1=x(1) ,\ x(n+2) =x(
+n+1) +x(n)
 \end{equation*}
 Show how the Fibonacci Sequence can be considered a dynamical system.
 \end{example}
 
 \begin{solution}
 This sequence is extremely important in the study of reproducing rabbits. It
-can be considered as a dynamical system as follows. Let $y\tup{n}
-=x\tup{n+1}$. Then the above recurrence relation can be written as
+can be considered as a dynamical system as follows. Let $y(n)
+=x(n+1)$. Then the above recurrence relation can be written as
 \begin{equation*}
 \begin{mymatrix}{c}
-x\tup{n+1} \\
-y\tup{n+1}
+x(n+1) \\
+y(n+1)
 \end{mymatrix} =\begin{mymatrix}{rr}
 0 & 1 \\
 1 & 1
 \end{mymatrix} \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix} ,\ \begin{mymatrix}{c}
-x\tup{0} \\
-y\tup{0}
+x(0) \\
+y(0)
 \end{mymatrix} =\begin{mymatrix}{r}
 1 \\
 1
@@ -624,18 +624,18 @@ Then it follows that for a given initial condition, the solution to this
 dynamical system is of the form
 \begin{eqnarray*}
 \begin{mymatrix}{c}
-x\tup{n} \\
-y\tup{n}
+x(n) \\
+y(n)
 \end{mymatrix} &=&\begin{mymatrix}{cc}
 \vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
 1 & 1
 \end{mymatrix} \begin{mymatrix}{cc}
-\tup{\vspace{0.05in}\frac{1}{2}\sqrt{5}+\vspace{0.05in}\frac{1}{2}} ^{n} & 0 \\
-0 & \tup{\vspace{0.05in}\frac{1}{2}-\vspace{0.05in}\frac{1}{2}\sqrt{5}} ^{n}
+\paren{\vspace{0.05in}\frac{1}{2}\sqrt{5}+\vspace{0.05in}\frac{1}{2}} ^{n} & 0 \\
+0 & \paren{\vspace{0.05in}\frac{1}{2}-\vspace{0.05in}\frac{1}{2}\sqrt{5}} ^{n}
 \end{mymatrix} \cdot \\
 &&\begin{mymatrix}{cc}
 \vspace{0.05in}\frac{1}{5}\sqrt{5} & \vspace{0.05in}\frac{1}{10}\sqrt{5}+\vspace{0.05in}\frac{1}{2} \\
--\vspace{0.05in}\frac{1}{5}\sqrt{5} & \vspace{0.05in}\frac{1}{5}\sqrt{5}\tup{\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1
+-\vspace{0.05in}\frac{1}{5}\sqrt{5} & \vspace{0.05in}\frac{1}{5}\sqrt{5}\paren{\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1
 }{2}}
 \end{mymatrix} \begin{mymatrix}{r}
 1 \\
@@ -644,14 +644,14 @@ y\tup{n}
 \end{eqnarray*}
 It follows that
 \begin{equation*}
-x\tup{n} =\tup{\frac{1}{2}\sqrt{5}+\frac{1}{2}} ^{n}\tup{
-\frac{1}{10}\sqrt{5}+\frac{1}{2}} +\tup{\frac{1}{2}-\frac{1}{2}\sqrt{%
-5}} ^{n}\tup{\frac{1}{2}-\frac{1}{10}\sqrt{5}}
+x(n) =\paren{\frac{1}{2}\sqrt{5}+\frac{1}{2}} ^{n}\paren{
+\frac{1}{10}\sqrt{5}+\frac{1}{2}} +\paren{\frac{1}{2}-\frac{1}{2}\sqrt{%
+5}} ^{n}\paren{\frac{1}{2}-\frac{1}{10}\sqrt{5}}
 \end{equation*}
 \end{solution}
 
 Here is a picture of
-the ordered pairs $\tup{x\tup{n} ,y\tup{n} } $ for $
+the ordered pairs $(x(n) ,y(n)) $ for $
 n=0,1,\ldots,n$.
 
 \begin{center}

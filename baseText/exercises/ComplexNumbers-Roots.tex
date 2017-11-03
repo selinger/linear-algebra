@@ -7,8 +7,8 @@
 \begin{sol}
  Solution is:
 \[
-\tup{1-i} \sqrt{2},-\tup{1+i} \sqrt{2},-\tup{1-i}
-\sqrt{2},\tup{1+i} \sqrt{2}
+(1-i) \sqrt{2},-(1+i) \sqrt{2},-(1-i)
+\sqrt{2},(1+i) \sqrt{2}
 \]
 \end{sol}
 \end{ex}
@@ -25,14 +25,14 @@ z^{3}+8=0$, Solution is: $i\sqrt{3} +1,1-i\sqrt{3},-2$
 The fourth roots are
 the solutions to $z^{4}+16=0$, Solution is:
 \[
-\tup{1-i} \sqrt{2},-\tup{1+i} \sqrt{2},-\tup{1-i}
-\sqrt{2},\tup{1+i}\sqrt{2}
+(1-i) \sqrt{2},-(1+i) \sqrt{2},-(1-i)
+\sqrt{2},(1+i)\sqrt{2}
 \]
 \end{sol}
 \end{ex}
 
-\begin{ex} \label{exer-complex1}De Moivre's theorem says $\mat{r\tup{\cos
-t+i\sin t}} ^{n}=r^{n}\tup{\cos nt+i\sin nt} $ for $n$
+\begin{ex} \label{exer-complex1}De Moivre's theorem says $\mat{r(\cos
+t+i\sin t)} ^{n}=r^{n}(\cos nt+i\sin nt) $ for $n$
 a positive integer. Does this formula continue to hold for all integers $n$,
 even negative integers$$? Explain.  
 \begin{sol}
@@ -40,19 +40,19 @@ Yes, it holds for all integers. First of
 all, it clearly holds if $n=0$. Suppose now that $n$ is a negative integer.
 Then $-n>0$ and so
 \[
-\mat{r\tup{\cos t+i\sin t}} ^{n}=\frac{1}{\mat{r\tup{
-\cos t+i\sin t}} ^{-n}}=\frac{1}{r^{-n}\tup{\cos \tup{
--nt} +i\sin \tup{-nt} } }
+\mat{r(\cos t+i\sin t)} ^{n}=\frac{1}{\mat{r(
+\cos t+i\sin t)} ^{-n}}=\frac{1}{r^{-n}(\cos (
+-nt) +i\sin (-nt)) }
 \]
 \begin{eqnarray*}
-&=&\frac{r^{n}}{\tup{\cos \tup{nt} -i\sin \tup{nt} }
-}=\frac{r^{n}\tup{\cos \tup{nt} +i\sin \tup{nt} } }{
-\tup{\cos \tup{nt} -i\sin \tup{nt} } \tup{\cos
-\tup{nt} +i\sin \tup{nt} } } \\
-&=&r^{n}\tup{\cos \tup{nt} +i\sin \tup{nt} }
+&=&\frac{r^{n}}{(\cos (nt) -i\sin (nt))
+}=\frac{r^{n}(\cos (nt) +i\sin (nt)) }{
+(\cos (nt) -i\sin (nt)) (\cos
+(nt) +i\sin (nt)) } \\
+&=&r^{n}(\cos (nt) +i\sin (nt))
 \end{eqnarray*}
-because $\tup{\cos \tup{nt} -i\sin \tup{nt} } \tup{
-\cos \tup{nt} +i\sin \tup{nt} } =1$.
+because $(\cos (nt) -i\sin (nt)) (
+\cos (nt) +i\sin (nt)) =1$.
 \end{sol}
 \end{ex}
 
@@ -61,18 +61,18 @@ because $\tup{\cos \tup{nt} -i\sin \tup{nt} } \tup{
 Solution
 is: $i\sqrt{3}+1,1-i\sqrt{3},-2$ and so this polynomial equals
 \[
-\tup{x+2} \tup{x-\tup{i\sqrt{3}+1} } \tup{x-\tup{
-1-i\sqrt{3}} }
+(x+2) (x-(i\sqrt{3}+1)) (x-(
+1-i\sqrt{3}))
 \]
 \end{sol}
 \end{ex}
 
-\begin{ex} Write $x^{3}+27$ in the form $\tup{x+3} \tup{
-x^{2}+ax+b} $ where $x^{2}+ax+b$ cannot be factored any more using
+\begin{ex} Write $x^{3}+27$ in the form $(x+3) (
+x^{2}+ax+b) $ where $x^{2}+ax+b$ cannot be factored any more using
 only real numbers. 
 \begin{sol}
-$x^{3}+27= \tup{x+3} \tup{
-x^{2}-3x+9} $
+$x^{3}+27= (x+3) (
+x^{2}-3x+9) $
 \end{sol}
 \end{ex}
 
@@ -80,15 +80,15 @@ x^{2}-3x+9} $
 \begin{sol}
 Solution is:
 \[
-\tup{1-i} \sqrt{2},-\tup{1+i} \sqrt{2},-\tup{1-i}
-\sqrt{2},\tup{1+i} \sqrt{2}.
+(1-i) \sqrt{2},-(1+i) \sqrt{2},-(1-i)
+\sqrt{2},(1+i) \sqrt{2}.
 \]
 These are just the fourth roots of $-16$. Then to factor, you get
 \begin{eqnarray*}
-&&\tup{x-\tup{\tup{1-i} \sqrt{2}} } \tup{x-\tup{
--\tup{1+i} \sqrt{2}} } \cdot \\
-&&\tup{x-\tup{-\tup{1-i} \sqrt{2}} } \tup{x-\tup{
-\tup{1+i} \allowbreak \sqrt{2}} }
+&&(x-((1-i) \sqrt{2})) (x-(
+-(1+i) \sqrt{2})) \cdot \\
+&&(x-(-(1-i) \sqrt{2})) (x-(
+(1+i) \allowbreak \sqrt{2}))
 \end{eqnarray*}
 \end{sol}
 \end{ex}
@@ -97,43 +97,43 @@ These are just the fourth roots of $-16$. Then to factor, you get
 \begin{ex} Factor $x^{4}+16$ as the product of two quadratic polynomials each of
 which cannot be factored further without using complex numbers. 
 \begin{sol}
-$x^{4}+16=\tup{x^{2}-2\sqrt{2}x+4} \tup{x^{2}+2\sqrt{2}x+4} .
-$ You can use the information in the preceding problem. Note that $\tup{
-x-z} \tup{x-\overline{z}} $ has real coefficients.
+$x^{4}+16=(x^{2}-2\sqrt{2}x+4) (x^{2}+2\sqrt{2}x+4) .
+$ You can use the information in the preceding problem. Note that $(
+x-z) (x-\overline{z}) $ has real coefficients.
 \end{sol}
 \end{ex}
 
-\begin{ex} If $n$ is an integer, is it always true that $\tup{\cos \theta
--i\sin \theta } ^{n}=\cos \tup{n\theta } -i\sin \tup{n\theta
-}$? Explain.
+\begin{ex} If $n$ is an integer, is it always true that $(\cos \theta
+-i\sin \theta) ^{n}=\cos (n\theta) -i\sin (n\theta
+)$? Explain.
 \begin{sol}
 Yes, this is true.
 \begin{eqnarray*}
-\tup{\cos \theta -i\sin \theta } ^{n} &=&\tup{\cos \tup{-\theta
-} +i\sin \tup{-\theta } } ^{n} \\
-&=&\cos \tup{-n\theta } +i\sin \tup{-n\theta } \\
-&=&\cos \tup{n\theta } -i\sin \tup{n\theta }
+(\cos \theta -i\sin \theta) ^{n} &=&(\cos (-\theta
+) +i\sin (-\theta)) ^{n} \\
+&=&\cos (-n\theta) +i\sin (-n\theta) \\
+&=&\cos (n\theta) -i\sin (n\theta)
 \end{eqnarray*}
 \end{sol}
 \end{ex}
 
 
-\begin{ex} Suppose $p\tup{x} =a_{n}x^{n}+a_{n-1}x^{n-1}+\ldots+a_{1}x+a_{0}$ \ is a polynomial and it has $n$ zeros,
+\begin{ex} Suppose $p(x) =a_{n}x^{n}+a_{n-1}x^{n-1}+\ldots+a_{1}x+a_{0}$ \ is a polynomial and it has $n$ zeros,
 \begin{equation*}
 z_{1},z_{2},\ldots,z_{n}
 \end{equation*}
 listed according to multiplicity. ($z$ is a root of multiplicity $m$ if the
-polynomial $f\tup{x} =\tup{x-z} ^{m}$ divides $p\tup{
-x} $ but $\tup{x-z} f\tup{x} $ does not.) Show that
+polynomial $f(x) =(x-z) ^{m}$ divides $p(
+x) $ but $(x-z) f(x) $ does not.) Show that
 \begin{equation*}
-p\tup{x} =a_{n}\tup{x-z_{1}} \tup{x-z_{2}} \cdots
-\tup{x-z_{n}} 
+p(x) =a_{n}(x-z_{1}) (x-z_{2}) \cdots
+(x-z_{n}) 
 \end{equation*} 
 \begin{sol}
-$p\tup{x} =\tup{x-z_{1}} q\tup{x} +r\tup{x} $
-where $r\tup{x} $ is a non-zero constant or equal to $0$. However, $r\tup{z_{1}} =0$ and so $r\tup{x} =0$. Now do to $q\tup{
-x} $ what was done to $p\tup{x} $ and continue until the
-degree of the resulting $q\tup{x} $ equals $0$. Then you have the
+$p(x) =(x-z_{1}) q(x) +r(x) $
+where $r(x) $ is a non-zero constant or equal to $0$. However, $r(z_{1}) =0$ and so $r(x) =0$. Now do to $q(
+x) $ what was done to $p(x) $ and continue until the
+degree of the resulting $q(x) $ equals $0$. Then you have the
 above factorization.
 \end{sol}
 \end{ex}

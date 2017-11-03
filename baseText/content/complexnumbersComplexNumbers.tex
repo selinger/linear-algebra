@@ -27,11 +27,11 @@ of this theorem in 1797 but many others worked on it and the first
 completely correct proof was due to Argand in 1806.
 
 Just as a real number can be considered as a point on the line, a
-complex number $z = a + bi$ can be considered as a point $\tup{
-a,b} $ in the plane whose $x$ coordinate is $ a$ and whose $y$
+complex number $z = a + bi$ can be considered as a point $(
+a,b) $ in the plane whose $x$ coordinate is $ a$ and whose $y$
 coordinate is $b$. For example, in the following picture, the point $z
 = 3+2i$ can be represented as the point in the plane with
-coordinates $\tup{3,2}$.
+coordinates $(3,2)$.
 
 \begin{center}
 \begin{tikzpicture}
@@ -49,7 +49,7 @@ coordinates $\tup{3,2}$.
 
 Addition\index{complex numbers!addition} of complex numbers is defined as follows.
 \begin{equation*}
-\tup{a+bi} +\tup{c+di} =\tup{a+c} +\tup{b+d}i
+(a+bi) +(c+di) =(a+c) +(b+d)i
 \end{equation*}
 
 This addition obeys all the usual properties\index{field axioms} as the following theorem indicates.
@@ -71,14 +71,14 @@ z+0=z
 \begin{equation*}
 \begin{array}{l}
 \mbox{For each} \; z\in \C, \mbox{there exists}\; -z\in \C \mbox{ such that}\; 
-z+\tup{-z} =0 \\
+z+(-z) =0 \\
 \mbox{In fact if } z=a+bi, \mbox{ then } -z=-a-bi.
 \end{array}
 \end{equation*}
 
 \item Associative Law for Addition
 \begin{equation*}
-\tup{z+w} +v= z +\tup{w+v}
+(z+w) +v= z +(w+v)
 \end{equation*}
 \end{itemize}
 \end{theorem}
@@ -87,8 +87,8 @@ The proof of this theorem is left as an exercise for the reader.
 
 Now, multiplication\index{complex numbers!multiplication} of complex numbers is defined the way you would expect, recalling that $i^{2} = -1$.
 \begin{eqnarray*}
-\tup{a+bi} \tup{c+di} &=&ac+adi+bci+i^{2}bd \\
-&=&\tup{ac-bd} +\tup{ad + bc }i 
+(a+bi) (c+di) &=&ac+adi+bci+i^{2}bd \\
+&=&(ac-bd) +(ad + bc)i 
 \end{eqnarray*}
 
 Consider the following examples.
@@ -115,7 +115,7 @@ zw=wz
 
 \item Associative Law for Multiplication
 \begin{equation*}
-\tup{zw} v=z\tup{wv} 
+(zw) v=z(wv) 
 \end{equation*}
 
 \item Multiplicative Identity
@@ -130,7 +130,7 @@ zw=wz
 
 \item Distributive Law
 \begin{equation*}
-z\tup{w+v} =zw+zv
+z(w+v) =zw+zv
 \end{equation*}
 \end{itemize}
 \end{theorem}
@@ -176,9 +176,9 @@ i.e., $\overline{3+4i}=3-4i$.
 
 Consider the following computation. 
 \begin{eqnarray*}
-\tup{\overline{a+bi}} \tup{a+bi} &=&\tup{a-bi}
-\tup{a+bi} \\
-&=&a^{2}+b^{2}-\tup{ab-ab}i =a^{2}+b^{2}
+(\overline{a+bi}) (a+bi) &=&(a-bi)
+(a+bi) \\
+&=&a^{2}+b^{2}-(ab-ab)i =a^{2}+b^{2}
 \end{eqnarray*}
 Notice that there is no imaginary part in the product, thus
 multiplying a complex number by its conjugate results in  a real number.
@@ -194,7 +194,7 @@ $\overline{(zw)} = \overline{z}~ \overline{w}$.
 \item
 $\overline{(\overline{z})}=z$.
 \item
-$\overline{\tup{\frac{z}{w}}} =
+$\overline{\paren{\frac{z}{w}}} =
 \frac{\overline{z}}{\overline{w}}$.
 \item
 $z$ is real if and only if $\overline{z}=z$.
@@ -276,7 +276,7 @@ value, or modulus, of a complex number, denoted $\abs{z}$ is defined as follows.
 
 Thus, if $z$ is the complex number $z=a+bi$, it follows that
 \begin{equation*}
-\abs{z} =\tup{z\overline{z}} ^{1/2}
+\abs{z} =(z\overline{z}) ^{1/2}
 \end{equation*}
 
 Also from the definition, if $z=a+bi$ and $w=c+di$ are two complex numbers,
@@ -303,22 +303,22 @@ The first one is called the \em{Triangle Inequality}.
 Let $z=a+bi$ and $w=c+di$. First note that
 \begin{equation*}
 z
-\overline{w}=\tup{a+bi} \tup{c-di} =ac+bd+\tup{
-bc-ad}i
+\overline{w}=(a+bi) (c-di) =ac+bd+(
+bc-ad)i
 \end{equation*}
 and so $\abs{ac+bd}\leq \abs{z\overline{w}}=\abs{z}\abs{w}$.
 
 Then,
 \begin{equation*}
-\abs{z+w}^{2}=\tup{a+c+i\tup{b+d} } \tup{
-a+c-i\tup{b+d} }
+\abs{z+w}^{2}=(a+c+i(b+d)) (
+a+c-i(b+d))
 \end{equation*}
 \begin{equation*}
-=\tup{a+c} ^{2}+\tup{b+d}
+=(a+c) ^{2}+(b+d)
 ^{2}=a^{2}+c^{2}+2ac+2bd+b^{2}+d^{2}
 \end{equation*}
 \begin{equation*}
-\leq \abs{z}^{2}+\abs{w}^{2}+2\abs{z}\abs{w}=\tup{\abs{z}+\abs{w}} ^{2}
+\leq \abs{z}^{2}+\abs{w}^{2}+2\abs{z}\abs{w}=(\abs{z}+\abs{w}) ^{2}
 \end{equation*}
 
 Taking the square root, we have that 
@@ -345,15 +345,15 @@ one of $\abs{z}-\abs{w}$ or $\abs{w}-\abs{z}$.
 With this definition, it is important to note the following. You may wish to take
 the time to verify this remark.
 
-Let $z=a+bi$ and $w=c+di$. Then $\abs{z-w} =\sqrt{\tup{
-a-c} ^{2}+\tup{b-d} ^{2}}$. Thus the distance between the
-point in the plane determined by the ordered pair $\tup{a,b} $ and
-the ordered pair $\tup{c,d} $ equals $\abs{z-w} $ where $z$
+Let $z=a+bi$ and $w=c+di$. Then $\abs{z-w} =\sqrt{(
+a-c) ^{2}+(b-d) ^{2}}$. Thus the distance between the
+point in the plane determined by the ordered pair $(a,b) $ and
+the ordered pair $(c,d) $ equals $\abs{z-w} $ where $z$
 and $w$ are as just described.
 
-For example, consider the distance between $\tup{2,5} $ and $\tup{
-1,8}$. Letting $z=2+5i$ and $w=1+8i$, $z-w=1-3i$, $\tup{z-w}
-\tup{\overline{z-w}} =\tup{1-3i} \tup{1+3i}
+For example, consider the distance between $(2,5) $ and $(
+1,8)$. Letting $z=2+5i$ and $w=1+8i$, $z-w=1-3i$, $(z-w)
+(\overline{z-w}) =(1-3i) (1+3i)
 = 10$ so $\abs{z-w}=\sqrt{10}$.
 
 Recall that we refer to $z=a+bi$ as the standard form of the complex number. In the next section, 

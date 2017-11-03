@@ -17,7 +17,7 @@
     3
   \end{mymatrix}$.
   \begin{sol}
-    $\tup{\begin{mymatrix}{r}1\\1\\3\end{mymatrix}
+    $\paren{\begin{mymatrix}{r}1\\1\\3\end{mymatrix}
       \times \begin{mymatrix}{r}-7\\-2\\2\end{mymatrix}}
     \dotprod \begin{mymatrix}{r}-5\\-6\\3\end{mymatrix} =
     \begin{mymatrix}{r}8\\-23\\5\end{mymatrix}
@@ -49,9 +49,9 @@
 \begin{ex}
   Show that
   \begin{equation*}
-    \tup{\vect{u}\times \vect{v}} \dotprod \vect{w}=
-    \tup{\vect{v}\times \vect{w}} \dotprod \vect{u}=
-    \tup{\vect{w}\times \vect{u}} \dotprod \vect{v}.
+    (\vect{u}\times \vect{v}) \dotprod \vect{w}=
+    (\vect{v}\times \vect{w}) \dotprod \vect{u}=
+    (\vect{w}\times \vect{u}) \dotprod \vect{v}.
   \end{equation*}
   % \begin{sol}
   % \end{sol}
@@ -59,14 +59,14 @@
 
 \begin{ex}
   Simplify
-  $\tup{\vect{u}\times \vect{v}} \dotprod \tup{\tup{ \vect{v}\times
-      \vect{w}} \times \tup{\vect{w}\times \vect{z}}}$.
+  $(\vect{u}\times \vect{v}) \dotprod ((\vect{v}\times
+      \vect{w}) \times (\vect{w}\times \vect{z}))$.
 \end{ex}
 
 \begin{ex}
   Simplify
-  $\norm{\vect{u}\times \vect{v}} ^{2}+\tup{ \vect{u}\dotprod
-    \vect{v}} ^{2}-\norm{\vect{u}} ^{2}\norm{ \vect{v}} ^{2}$.
+  $\norm{\vect{u}\times \vect{v}} ^{2}+(\vect{u}\dotprod
+    \vect{v}) ^{2}-\norm{\vect{u}} ^{2}\norm{ \vect{v}} ^{2}$.
   \begin{sol}
     We have
     \begin{eqnarray*}
@@ -74,12 +74,12 @@
       &=&\norm{\vect{u}
           } ^{2}\norm{\vect{v}} ^{2}\sin ^{2}\theta \\
       &=&\norm{\vect{u}} ^{2}\norm{\vect{v}}
-          ^{2}\tup{1-\cos ^{2}\theta } \\
+          ^{2}(1-\cos ^{2}\theta) \\
       &=&\norm{\vect{u}} ^{2}\norm{\vect{v}}
           ^{2}-\norm{\vect{u}} ^{2}\norm{\vect{v}}
           ^{2}\cos ^{2}\theta \\
       &=&\norm{\vect{u}} ^{2}\norm{\vect{v}}
-          ^{2}-\tup{\vect{u}\dotprod \vect{v}} ^{2},
+          ^{2}-(\vect{u}\dotprod \vect{v}) ^{2},
     \end{eqnarray*}
     which implies the expression equals $0$.
   \end{sol}
@@ -90,10 +90,10 @@
   functions of $t$, prove that the derivative satisfies the following
   product rules:
   \begin{eqnarray*}
-    \tup{\vect{u}\times \vect{v}} ^{\prime }
+    (\vect{u}\times \vect{v}) ^{\prime }
     &=&\vect{u}^{\prime }\times
         \vect{v}+\vect{u}\times \vect{v}^{\prime } \\
-    \tup{\vect{u}\dotprod \vect{v}} ^{\prime }
+    (\vect{u}\dotprod \vect{v}) ^{\prime }
     &=&\vect{u}^{\prime }\dotprod
         \vect{v}+\vect{u}\dotprod \vect{v}^{\prime }
   \end{eqnarray*}

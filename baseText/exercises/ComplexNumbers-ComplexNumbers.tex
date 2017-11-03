@@ -68,9 +68,9 @@ In words this says the conjugate of a product equals the product of the
 conjugates and the conjugate of a sum equals the sum of the conjugates. 
 \begin{sol}
 \[
-\overline{\tup{a+bi} \tup{c+di} }=\overline{ac-bd+\tup{
-ad+bc}i }=\tup{ac-bd} -\tup{ad+bc}i \tup{
-a-bi} \tup{c-di} =ac-bd-\tup{ad+bc}i 
+\overline{(a+bi) (c+di) }=\overline{ac-bd+(
+ad+bc)i }=(ac-bd) -(ad+bc)i (
+a-bi) (c-di) =ac-bd-(ad+bc)i 
 \]
  which is the
 same thing. Thus it holds for a product of two complex numbers. Now suppose
@@ -85,23 +85,23 @@ and now, by induction this equals
 \]
 As to sums, this is even easier.
 \[
-\overline{\sum_{j=1}^{n}\tup{x_{j}+iy_{j}} }=\overline{%
+\overline{\sum_{j=1}^{n}(x_{j}+iy_{j}) }=\overline{%
 \sum_{j=1}^{n}x_{j}+i\sum_{j=1}^{n}y_{j}}
 \]
 \[
 =\sum_{j=1}^{n}x_{j}-i\sum_{j=1}^{n}y_{j}=\sum_{j=1}^{n}x_{j}-iy_{j}=
-\sum_{j=1}^{n}\overline{\tup{x_{j}+iy_{j}} }.
+\sum_{j=1}^{n}\overline{(x_{j}+iy_{j}) }.
 \]
 \end{sol}
 \end{ex}
 
-\begin{ex} \label{15-july-prob2}Suppose $p\tup{x}
+\begin{ex} \label{15-july-prob2}Suppose $p(x)
 =a_{n}x^{n}+a_{n-1}x^{n-1}+\ldots +a_{1}x+a_{0}$ where all the $a_{k}$ are
-real numbers. Suppose also that $p\tup{z} =0$ for some $z\in \C$. Show it follows that $p\tup{\overline{z}} =0$ also. 
+real numbers. Suppose also that $p(z) =0$ for some $z\in \C$. Show it follows that $p(\overline{z}) =0$ also. 
 \begin{sol}
-If $p\tup{z} =0$, then you have
+If $p(z) =0$, then you have
 \[
-\overline{p\tup{z} }=0=\overline{a_{n}z^{n}+a_{n-1}z^{n-1}+\ldots+a_{1}z+a_{0}}
+\overline{p(z) }=0=\overline{a_{n}z^{n}+a_{n-1}z^{n-1}+\ldots+a_{1}z+a_{0}}
 \]
 \[
 =\overline{a_{n}z^{n}}+\overline{a_{n-1}z^{n-1}}+\ldots +\overline{a_{1}z}+
@@ -116,14 +116,14 @@ If $p\tup{z} =0$, then you have
 +a_{0}
 \]
 \[
-=p\tup{\overline{z}}
+=p(\overline{z})
 \]
 \end{sol}
 \end{ex}
 
 \begin{ex} I claim that $1=-1$. Here is why.
 \begin{equation*}
--1=i^{2}=\sqrt{-1}\sqrt{-1}=\sqrt{\tup{-1} ^{2}}=\sqrt{1}=1
+-1=i^{2}=\sqrt{-1}\sqrt{-1}=\sqrt{(-1) ^{2}}=\sqrt{1}=1
 \end{equation*}
 This is clearly a remarkable result but is there something wrong with it? If
 so, what is wrong? 

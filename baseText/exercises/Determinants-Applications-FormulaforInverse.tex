@@ -304,26 +304,26 @@ and so this matrix is always invertible.
 \end{sol}
 \end{ex}
 
-\begin{ex} \label{ex:determinant3}Show that if $\det \tup{A} \neq 0$ for $A$
+\begin{ex} \label{ex:determinant3}Show that if $\det (A) \neq 0$ for $A$
 an $n\times n$-matrix, it follows that if $AX=0$, then $X=0$. 
 \begin{sol}
-If $\det \tup{A} \neq 0$, then $A^{-1}$ exists and so you could
+If $\det (A) \neq 0$, then $A^{-1}$ exists and so you could
 multiply on both sides on the left by $A^{-1}$ and obtain that $X=0$.
 \end{sol}
 \end{ex}
 
 \begin{ex} Suppose $A,B$ are $n\times n$-matrices and that $AB=I$. Show that then
 $BA=I$. \textbf{Hint:\ } First explain why
-$\det \tup{A} ,\det \tup{B} $ are both non-zero. Then $\tup{
-AB} A=A$ and then show $BA\tup{BA-I} =0$. From this use what
-is given to conclude $A\tup{BA-I} =0$. Then use Problem~\ref{ex:determinant3}. 
+$\det (A) ,\det (B) $ are both non-zero. Then $(
+AB) A=A$ and then show $BA(BA-I) =0$. From this use what
+is given to conclude $A(BA-I) =0$. Then use Problem~\ref{ex:determinant3}. 
 \begin{sol}
-You have $1=\det \tup{A} \det \tup{B}$.
+You have $1=\det (A) \det (B)$.
 Hence both $A$ and $B$ have inverses. Letting $X$ be given,
 \begin{equation*}
-A\tup{BA-I} X=\tup{AB} AX-AX=AX-AX = 0
+A(BA-I) X=(AB) AX-AX=AX-AX = 0
 \end{equation*}
-and so it follows from the above problem that $\tup{BA-I}X=0$. Since $X$ is arbitrary, it follows that $BA=I$.
+and so it follows from the above problem that $(BA-I)X=0$. Since $X$ is arbitrary, it follows that $BA=I$.
 \end{sol}
 \end{ex}
 
@@ -348,13 +348,13 @@ Hence the inverse is
 \begin{eqnarray*}
 &&e^{-3t}\begin{mymatrix}{ccc}
 e^{2t} & 0 & 0 \\
-0 & e^{2t}\cos t+e^{2t}\sin t & -\tup{e^{2t}\cos t-e^{2t}\sin } t \\
-0 & -e^{2t}\sin t & e^{2t}\cos \tup{t}
+0 & e^{2t}\cos t+e^{2t}\sin t & -(e^{2t}\cos t-e^{2t}\sin) t \\
+0 & -e^{2t}\sin t & e^{2t}\cos (t)
 \end{mymatrix} ^{T} \\
 &=& \begin{mymatrix}{ccc}
 e^{-t} & 0 & 0 \\
-0 & e^{-t}\tup{\cos t+\sin t}  & -\tup{\sin t} e^{-t} \\
-0 & -e^{-t}\tup{\cos t-\sin t}  & \tup{\cos t} e^{-t}
+0 & e^{-t}(\cos t+\sin t)  & -(\sin t) e^{-t} \\
+0 & -e^{-t}(\cos t-\sin t)  & (\cos t) e^{-t}
 \end{mymatrix}
 \end{eqnarray*}
 \end{sol}
@@ -401,8 +401,8 @@ triangular matrix is just the product of the entries on the main diagonal.
 invertible, show why each of $A,B$, and $C$ are invertible.
 \begin{sol}
 This follows
-because $\det \tup{ABC} =\det \tup{A} \det \tup{B}
-\det \tup{C} $ and if this product is non-zero, then each determinant
+because $\det (ABC) =\det (A) \det (B)
+\det (C) $ and if this product is non-zero, then each determinant
 in the product is non-zero and so each of these matrices is invertible.
 \end{sol}
 \end{ex}

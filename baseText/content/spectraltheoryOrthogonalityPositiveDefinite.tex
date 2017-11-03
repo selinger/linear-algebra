@@ -24,7 +24,7 @@ positive definite.
 %%Then multiply both sides by $-1$ to find that $-A$ is positive definite.
 %%Next suppose for all $\vect{x}$,
 %%\begin{equation*}
-%%\vect{x}^{T}\tup{-A} \vect{x}\geq \delta \norm{\vect{x}}
+%%\vect{x}^{T}(-A) \vect{x}\geq \delta \norm{\vect{x}}
 %%^{2}.
 %%\end{equation*}
 %%Then multiply by $-1$ to see that $A$ is negative definite.
@@ -60,12 +60,12 @@ positive definite.
 %%U^{T}AU=D$, a diagonal matrix having the eigenvalues of $A$ on the main
 %%diagonal, 
 %%\begin{equation*}
-%%\vect{x}^{T}A\vect{x}=\vect{x}^{T}UDU^{T}\vect{x}=\tup{U^{T}\vect{x}}
-%%^{T}DU^{T}\vect{x}=\sum_{i=1}^{n}\tup{U^{T}\vect{x}} _{i}^{2}\lambda
-%%_{i}\geq \delta \sum_{i=1}^{n}\tup{U^{T}\vect{x}} _{i}^{2}=\delta
+%%\vect{x}^{T}A\vect{x}=\vect{x}^{T}UDU^{T}\vect{x}=(U^{T}\vect{x})
+%%^{T}DU^{T}\vect{x}=\sum_{i=1}^{n}(U^{T}\vect{x}) _{i}^{2}\lambda
+%%_{i}\geq \delta \sum_{i=1}^{n}(U^{T}\vect{x}) _{i}^{2}=\delta
 %%\norm{U^{T}\vect{x}} ^{2}
 %%\end{equation*}
-%%Now $\norm{U^{T}\vect{x}} ^{2}=\tup{U^{T}\vect{x}}
+%%Now $\norm{U^{T}\vect{x}} ^{2}=(U^{T}\vect{x})
 %%^{T}U^{T}\vect{x}=\vect{x}^{T}UU^{T}\vect{x}=\vect{x}^{T}\vect{x}=\norm{\vect{x}} ^{2}$ and so 
 %%\begin{equation*}
 %%\vect{x}^{T}A\vect{x}\geq \delta \norm{\vect{x}} ^{2}
@@ -185,7 +185,7 @@ of which can be found in more advanced texts.
 
 \begin{theorem}{Positive matrix and determinant of $A_k$}{positive-matrix-determinant-Ak}   
 Let $A$ be a symmetric matrix. Then $A$ is positive definite if
-and only if $\det \tup{A_{k}}$ is greater than $0$ for every submatrix $A_{k}$,  $k=1,\ldots,n$. 
+and only if $\det (A_{k})$ is greater than $0$ for every submatrix $A_{k}$,  $k=1,\ldots,n$. 
 \index{principal submatrices!positive definite}
 \index{positive definite!principal submatrices}
 \end{theorem}
@@ -193,19 +193,19 @@ and only if $\det \tup{A_{k}}$ is greater than $0$ for every submatrix $A_{k}$, 
 \begin{proof}
 We prove this theorem by induction on $n$. It is clearly
 true if $n=1$. Suppose then that it is true for $n-1$ where $n\geq 2$. Since 
-$\det \tup{A} =\det \tup{A_{n}} >0$, it follows that all the
+$\det (A) =\det (A_{n}) >0$, it follows that all the
 eigenvalues are non-zero. We need to show that they are all positive. Suppose
 not. Then there is some even number of them which are negative, even because
 the product of all the eigenvalues is known to be positive, equalling $\det
-\tup{A}$. Pick two, $\lambda _{1}$ and $\lambda _{2}$ and let $A
+(A)$. Pick two, $\lambda _{1}$ and $\lambda _{2}$ and let $A
 \vect{u}_{i}=\lambda _{i}\vect{u}_{i}$ where $\vect{u}_{i}\neq \vect{0}$ for $
 i=1,2$ and $\vect{u}_{1}\dotprod \vect{u}_{2}=0$. Now if $\vect{y}\equiv \alpha
 _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}$ is an element of $\sspan\set{
 \vect{u}_{1},\vect{u}_{2}}$, then since these are eigenvalues and $\ 
 \vect{u}_{1}\dotprod \vect{u}_{2}=0$, a short computation shows 
 \begin{equation*}
-\tup{\alpha _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}} ^{T}A\tup{
-\alpha _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}}
+(\alpha _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}) ^{T}A(
+\alpha _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2})
 \end{equation*}
 \begin{equation*}
 =\abs{\alpha _{1}}^{2}\lambda _{1}\norm{\vect{u}
@@ -237,14 +237,14 @@ direction which was just shown which is of most interest.
 Let $A$ be symmetric. Then $A$ is negative definite if and only
 if 
 \begin{equation*}
-\tup{-1} ^{k} \det \tup{A_{k}} >0
+(-1) ^{k} \det (A_{k}) >0
 \end{equation*}
 for every $k=1,\ldots,n$.
 \end{corollary}
 
 \begin{proof}This is immediate from the above theorem when we notice,
 that $A$ is negative definite if and only if $-A$ is positive definite.
-Therefore, if $\det \tup{-A_{k}} >0$ for all $k=1,\ldots,n$, it
-follows that $A$ is negative definite. However, $\det \tup{-A_{k}}
-=\tup{-1} ^{k}\det \tup{A_{k}}$. 
+Therefore, if $\det (-A_{k}) >0$ for all $k=1,\ldots,n$, it
+follows that $A$ is negative definite. However, $\det (-A_{k})
+=(-1) ^{k}\det (A_{k})$. 
 \end{proof}

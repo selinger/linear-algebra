@@ -350,7 +350,7 @@ $\def\arraystretch{1.3}
 1 & 0 & \frac{1}{2} & \frac{1}{2} \\
 0 & 1 & -\frac{1}{4} & \frac{3}{4} \\
 0 & 0 & 0 & 0
-\end{mymatrix}$. Therefore, the solution is of the form $z=t,y=\frac{3}{4}+t\tup{
+\end{mymatrix}$. Therefore, the solution is of the form $z=t,y=\frac{3}{4}+t\paren{
 \frac{1}{4}} ,x=\frac{1}{2}-\frac{1}{2}t$ where $t\in \R$.
 
 (c) The {\ef} is $\begin{mymatrix}{rrr|r}
@@ -454,7 +454,7 @@ at each node to equal the average of the temperature at the four adjacent
 nodes. In the following picture, the numbers represent the observed
 temperature at the indicated nodes. Find the temperature at
 the interior nodes, indicated by $x,y,z$, and $w$. One of the equations is 
-$z=\frac{1}{4}\tup{10+0+w+x}$. 
+$z=\frac{1}{4}(10+0+w+x)$. 
 
 \begin{picture}(1,60)
  \put(100,0){\begin{picture}(1,1)
@@ -494,10 +494,10 @@ $z=\frac{1}{4}\tup{10+0+w+x}$.
 \begin{sol}
 You need $\def\arraystretch{1.2}
 \begin{array}{r}
-\frac{1}{4}\tup{20+30+w+x} -y=0 \\
-\frac{1}{4}\tup{y+30+0+z} -w=0 \\
-\frac{1}{4}\tup{20+y+z+10} -x=0 \\
-\frac{1}{4}\tup{x+w+0+10} -z=0
+\frac{1}{4}(20+30+w+x) -y=0 \\
+\frac{1}{4}(y+30+0+z) -w=0 \\
+\frac{1}{4}(20+y+z+10) -x=0 \\
+\frac{1}{4}(x+w+0+10) -z=0
 \end{array}
 $, Solution is: $\mat{w=15,x=15,y=20,z=10}$.
 \end{sol}
@@ -645,12 +645,12 @@ $, Solution is: $\mat{w=15,x=15,y=20,z=10}$.
 
 \begin{ex}
   Suppose $A$ is an $m\times n$-matrix. Explain why the rank of $A$ is
-  always no larger than $\min \tup{m,n}$.
+  always no larger than $\min (m,n)$.
   \begin{sol}
     The rank is the number of pivot entries in the {\ef}. There is at
     most one pivot entry in each row and column. Therefore, the rank
     cannot be larger than the number of rows or the number of columns;
-    in other words, the rank is at most $\min\tup{m,n}$.
+    in other words, the rank is at most $\min(m,n)$.
   \end{sol}
 \end{ex}
 

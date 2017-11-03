@@ -47,7 +47,7 @@ Proving the second statement is similar and is left as an exercise.
 \end{proof}
 
 Note that this proof also demonstrates that the eigenvectors of $A$ and $B$ will (generally) be {\em different\em}.
-We see in the proof that $AX = \lambda X$, while $B \tup{PX}=\lambda \tup{PX}$. Therefore,
+We see in the proof that $AX = \lambda X$, while $B (PX)=\lambda (PX)$. Therefore,
 for an eigenvalue $\lambda$, $A$ will have the eigenvector $X$ while $B$ will have the eigenvector $PX$. 
 
 
@@ -74,8 +74,8 @@ A = \begin{mymatrix}{rrr}
 to simplify as much as possible before computing the eigenvalues.
 
 We will do so using row operations. First, add $2$ times the second row
-to the third row. To do so, left multiply $A$ by $E \tup{2,2}$. 
-Then right multiply $A$ by the inverse of $E \tup{2,2}$ as illustrated.
+to the third row. To do so, left multiply $A$ by $E (2,2)$. 
+Then right multiply $A$ by the inverse of $E (2,2)$ as illustrated.
 \begin{equation*}
 \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
@@ -95,7 +95,7 @@ Then right multiply $A$ by the inverse of $E \tup{2,2}$ as illustrated.
 0 & 0 & -2
 \end{mymatrix}
 \end{equation*}
-By Lemma~\ref{lem:similar-matrices}, the resulting matrix has the same eigenvalues as $A$ where here, the matrix $E \tup{2,2}$ plays the role of $P$.
+By Lemma~\ref{lem:similar-matrices}, the resulting matrix has the same eigenvalues as $A$ where here, the matrix $E (2,2)$ plays the role of $P$.
 
 We do this step again, as follows. In this step, we use the elementary matrix obtained by adding $-3$
 times the second row to the first row. 
@@ -129,10 +129,10 @@ B = \begin{mymatrix}{rrr}
 \end{mymatrix} 
 \end{equation*}
 Then, we find the eigenvalues of $B$ (and therefore of $A$) by solving the equation 
-$\det \tup{\eigenVar I - B  } = 0$.
+$\det (\eigenVar I - B) = 0$.
 You should verify that this equation becomes
 \begin{equation*}
-\tup{\eigenVar  +2 } \tup{\eigenVar  +2 } \tup{\eigenVar  - 3 }
+(\eigenVar  +2) (\eigenVar  +2) (\eigenVar  - 3)
 =0
 \end{equation*}
 Solving this equation results in eigenvalues of $\lambda_1 = -2, \lambda_2 = -2$, and $\lambda_3 = 3$.
@@ -142,8 +142,8 @@ Therefore, these are also the eigenvalues of $A$.
 
 Through using elementary matrices, we were able to create a matrix for
 which finding the eigenvalues was easier than for $A$. At this point,
-you could go back to the original matrix $A$ and solve $\tup{
-\lambda I - A } X = 0$ to obtain the eigenvectors of $A$.
+you could go back to the original matrix $A$ and solve $(
+\lambda I - A) X = 0$ to obtain the eigenvectors of $A$.
 
 Notice that when you multiply on the right by an elementary matrix,
 you are doing the column operation defined by the elementary
@@ -188,18 +188,18 @@ Let $A=\begin{mymatrix}{rrr}
 \end{example}
 
 \begin{solution}
-We need to solve the equation $\det \tup{\eigenVar I - A } = 0$ as follows
+We need to solve the equation $\det (\eigenVar I - A) = 0$ as follows
 \begin{eqnarray*}
-\det \tup{\eigenVar I - A } =
+\det (\eigenVar I - A) =
 \det \begin{mymatrix}{ccc}
 \eigenVar -1 & -2 & -4 \\
 0 & \eigenVar-4 & -7 \\
 0 & 0 & \eigenVar-6
-\end{mymatrix} =\tup{\eigenVar-1 } \tup{\eigenVar-4 } \tup{\eigenVar-6 } =0
+\end{mymatrix} =(\eigenVar-1) (\eigenVar-4) (\eigenVar-6) =0
 \end{eqnarray*}
 
-Solving the equation $\tup{\eigenVar-1 } \tup{\eigenVar-4
-} \tup{\eigenVar-6 } = 0$ for $\eigenVar$ results in the eigenvalues 
+Solving the equation $(\eigenVar-1) (\eigenVar-4
+) (\eigenVar-6) = 0$ for $\eigenVar$ results in the eigenvalues 
 $\lambda_1 = 1, \lambda_2 = 4$ and $\lambda_3 = 6$.  Thus the
 eigenvalues are the entries on the main diagonal of the original
 matrix.

@@ -11,16 +11,16 @@ The formal definition is as follows.
 \begin{definition}{The cofactor matrix}{cofactor-matrix}
 Let $A=\mat{a_{ij}}$ be an $n\times n$-matrix. Then the
 \textbf{cofactor matrix of $A$}\index{cofactor matrix}, denoted 
-$\func{cof}\tup{A}$, is defined by $\func{cof}\tup{A} =\mat{
-\func{cof}\tup{A}_{ij}} $ where  $\func{cof}\tup{A}_{ij}$ is the $ij^{th}$ cofactor of $A$.
+$\func{cof}(A)$, is defined by $\func{cof}(A) =\mat{
+\func{cof}(A)_{ij}} $ where  $\func{cof}(A)_{ij}$ is the $ij^{th}$ cofactor of $A$.
 \end{definition}
 
-Note that $\func{cof}\tup{A}_{ij}$ denotes the $ij^{th}$ entry of the cofactor matrix.
+Note that $\func{cof}(A)_{ij}$ denotes the $ij^{th}$ entry of the cofactor matrix.
 
 We will use the cofactor matrix to create a formula for the inverse of $A$. First,
 we define the \textbf{adjugate}\index{adjugate} of $A$ to be the transpose of 
 the cofactor matrix. We can also call this matrix the \textbf{classical adjoint}\index{classical adjoint} of $A$,
-and we denote it by $\func{adj} \tup{A}$. 
+and we denote it by $\func{adj} (A)$. 
 
 In the specific case where $A$ is a $2 \times 2$-matrix given by
 \begin{equation*}
@@ -29,26 +29,26 @@ a & b \\
 c & d
 \end{mymatrix}
 \end{equation*}
-then $\func{adj}\tup{A}$ is given by
+then $\func{adj}(A)$ is given by
 \begin{equation*}
-\func{adj}\tup{A} = 
+\func{adj}(A) = 
 \begin{mymatrix}{rr}
 d & -b \\
 -c & a
 \end{mymatrix}
 \end{equation*}
 
-In general, $\func{adj}\tup{A}$ can always be found by taking the transpose of the cofactor matrix of $A$. The following theorem provides a formula for $A^{-1}$ using the determinant and adjugate of $A$.
+In general, $\func{adj}(A)$ can always be found by taking the transpose of the cofactor matrix of $A$. The following theorem provides a formula for $A^{-1}$ using the determinant and adjugate of $A$.
 
 \begin{theorem}{The inverse and the determinant}{inverse-and-determinant}
 Let $A$ be an  $n\times n$-matrix. Then  
 \begin{equation*}
-A \; \func{adj}\tup{A} = \func{adj}\tup{A}A = {\det \tup{A}} I
+A \; \func{adj}(A) = \func{adj}(A)A = {\det (A)} I
 \end{equation*}
 
-Moreover $A$ is invertible if and only if  $\det \tup{A} \neq 0$. In this case\index{determinant!matrix inverse formula} we have: 
+Moreover $A$ is invertible if and only if  $\det (A) \neq 0$. In this case\index{determinant!matrix inverse formula} we have: 
 \begin{equation*}
-A^{-1} = \frac{1}{\det \tup{A}}  \func{adj}\tup{A}
+A^{-1} = \frac{1}{\det (A)}  \func{adj}(A)
 \end{equation*}
 \end{theorem}
 
@@ -73,7 +73,7 @@ using the formula in Theorem~\ref{thm:inverse-and-determinant}.
 \begin{solution} 
 According to Theorem~\ref{thm:inverse-and-determinant}, 
 \begin{equation*}
-A^{-1} = \frac{1}{\det \tup{A}} \func{adj}\tup{A}
+A^{-1} = \frac{1}{\det (A)} \func{adj}(A)
 \end{equation*}
 
 First we will find the determinant of this matrix. Using Theorems~\ref{thm:switching-rows}, {\ref{thm:multiplying-row-by-scalar}},
@@ -86,13 +86,13 @@ B = \begin{mymatrix}{rrr}
 0 & 0 & -2
 \end{mymatrix}
 \end{equation*}
-By Theorem~\ref{thm:adding-multiple-of-row}, $\det \tup{A} = \det \tup{B}$. By Theorem~\ref{thm:determinant-of-triangular-matrix}, 
-$\det \tup{B} = 1 \times -6 \times -2 = 12$. Hence, $\det \tup{A} = 12$. 
+By Theorem~\ref{thm:adding-multiple-of-row}, $\det (A) = \det (B)$. By Theorem~\ref{thm:determinant-of-triangular-matrix}, 
+$\det (B) = 1 \times -6 \times -2 = 12$. Hence, $\det (A) = 12$. 
 
-Now, we need to find $\func{adj} \tup{A}$. To do so, first we will find the cofactor matrix of $A$. 
+Now, we need to find $\func{adj} (A)$. To do so, first we will find the cofactor matrix of $A$. 
 This is given by
 \begin{equation*}
-\func{cof}\tup{A} 
+\func{cof}(A) 
 =
 \begin{mymatrix}{rrr}
 -2 & -2 & 6 \\
@@ -161,17 +161,17 @@ A=\begin{mymatrix}{rrr}
 using the formula given in Theorem~\ref{thm:inverse-and-determinant}.
 \end{example}
 
-\begin{solution} First we need to find $\det \tup{A}$. 
-This step is left as an exercise and you should verify that $\det \tup{A} = \vspace{0.05in}\frac{1}{6}$.
+\begin{solution} First we need to find $\det (A)$. 
+This step is left as an exercise and you should verify that $\det (A) = \vspace{0.05in}\frac{1}{6}$.
 The inverse is therefore equal to
 \begin{equation*}
 A^{-1}
 =
 \frac{1}{(1/6)}\;
-\func{adj} \tup{A}
+\func{adj} (A)
 =
 6\;
-\func{adj} \tup{A}
+\func{adj} (A)
 \end{equation*}
 
 We continue to calculate as follows. Here we show the $2 \times 2$ determinants needed to find the cofactors. 
@@ -268,21 +268,21 @@ If $i=j$ then this matrix is $A$ itself and therefore $B_{ii}=\det
 A$. If on the other hand $i\neq j$, then this matrix has its $i$th row
 equal to its $j$th row, and therefore $B_{ij}=0$ in his case. Thus we obtain: 
 \begin{equation*}
-A \; \func{adj}\tup{A} = {\det \tup{A}} I
+A \; \func{adj}(A) = {\det (A)} I
 \end{equation*}
 Similarly we can verify that:
 \begin{equation*}
-\func{adj}\tup{A}A = {\det \tup{A}} I
+\func{adj}(A)A = {\det (A)} I
 \end{equation*}
 And this proves the first part of the theorem. 
 
 Further if $A$ is  invertible, then by Theorem~\ref{thm:determinant-of-product} we have:
-\[ 1 = \det \tup{I } = \det \tup{A A^{-1} } = \det \tup{A } \det \tup{A^{-1} } \]
-and thus $\det \tup{A } \neq 0$. Equivalently, if  $\det \tup{A } = 0$, then $A$ is not invertible. 
+\[ 1 = \det (I) = \det (A A^{-1}) = \det (A) \det (A^{-1}) \]
+and thus $\det (A) \neq 0$. Equivalently, if  $\det (A) = 0$, then $A$ is not invertible. 
 
-Finally if $\det \tup{A } \neq 0$, then the above formula shows that $A$ is invertible and that:
+Finally if $\det (A) \neq 0$, then the above formula shows that $A$ is invertible and that:
 \begin{equation*}
-A^{-1} = \frac{1}{\det \tup{A}} \func{adj}\tup{A}
+A^{-1} = \frac{1}{\det (A)} \func{adj}(A)
 \end{equation*}
 
 This completes the proof.
@@ -292,20 +292,20 @@ This completes the proof.
 %%the following is Kuttler's proof
 %\begin{proof}
 %First if $A$ is  invertible, then by Theorem~\ref{thm:determinant-of-product} we have:
-%\[ 1 = \det \tup{I } = \det \tup{A A^{-1} } = \det \tup{A } \det \tup{A^{-1} } \]
-%and thus $\det \tup{A } \neq 0$. Equivalently, if  $\det \tup{A } = 0$, then $A$ is not invertible. 
+%\[ 1 = \det (I) = \det (A A^{-1}) = \det (A) \det (A^{-1}) \]
+%and thus $\det (A) \neq 0$. Equivalently, if  $\det (A) = 0$, then $A$ is not invertible. 
 %
 %
-%Now assume $\det \tup{A } \neq 0$ and let $A = \mat{a_{ij}}$. From the definition of the determinant
+%Now assume $\det (A) \neq 0$ and let $A = \mat{a_{ij}}$. From the definition of the determinant
 %in terms of expansion along column $r$ and multiplying by $\det (A)^{-1}$\index{inverses and determinants}, we get:
 %
 %\begin{equation*}
 %\sum_{i=1}^{n}a_{ir}
-%\func{cof}\tup{A} _{ir}\det (A)^{-1}=\det (A)\det (A)^{-1}=1
+%\func{cof}(A) _{ir}\det (A)^{-1}=\det (A)\det (A)^{-1}=1
 %\end{equation*}
 %Consider the following similar expression for $k\neq r$. 
 %\begin{equation*}
-%\sum_{i=1}^{n}a_{ir}\func{cof}\tup{A} _{ik}\det (A)^{-1}
+%\sum_{i=1}^{n}a_{ir}\func{cof}(A) _{ik}\det (A)^{-1}
 %\end{equation*}
 %
 %\noindent By replacing the $k^{th}$ column of $A$ with its $r^{th}$ column, we
@@ -313,12 +313,12 @@ This completes the proof.
 %\ref{thm:switching-rows}.  However, now expanding this matrix $B_{k}$ along
 %the $k^{th}$ column yields
 %\begin{equation*}
-%0=\det \tup{B_{k}} \det \tup{A} ^{-1}=\sum_{i=1}^{n}a_{ir}
-%\func{cof}\tup{A} _{ik}\det \tup{A} ^{-1}
+%0=\det (B_{k}) \det (A) ^{-1}=\sum_{i=1}^{n}a_{ir}
+%\func{cof}(A) _{ik}\det (A) ^{-1}
 %\end{equation*}
 %Summarizing,
 %\begin{equation*}
-%\sum_{i=1}^{n}a_{ir}\func{cof}\tup{A} _{ik}\det \tup{A}
+%\sum_{i=1}^{n}a_{ir}\func{cof}(A) _{ik}\det (A)
 %^{-1}=\delta _{rk} = \left\{
 %\begin{array}{c}
 %1\text{ if }r=k \\
@@ -328,28 +328,28 @@ This completes the proof.
 %\end{equation*}
 %Now notice that 
 %\begin{equation*}
-%\sum_{i=1}^{n}a_{ir}\func{cof}\tup{A} _{ik}=\sum_{i=1}^{n}a_{ir}
-%\func{cof}\tup{A} _{ki}^{T}
+%\sum_{i=1}^{n}a_{ir}\func{cof}(A) _{ik}=\sum_{i=1}^{n}a_{ir}
+%\func{cof}(A) _{ki}^{T}
 %\end{equation*}
-%which is the $kr^{th}$ entry of $\func{cof}\tup{A} ^{T}A$. Therefore rewriting the above we obtain:
+%which is the $kr^{th}$ entry of $\func{cof}(A) ^{T}A$. Therefore rewriting the above we obtain:
 %\begin{equation}
-%\vspace{0.05in}\frac{\func{cof}\tup{A} ^{T}}{\det \tup{A} }
+%\vspace{0.05in}\frac{\func{cof}(A) ^{T}}{\det (A) }
 %A=I  \label{inverse-proof-eq1}
 %\end{equation}
 %and hence 
 %\begin{equation}
-%\vspace{0.05in}\frac{\func{adj}\tup{A}}{\det \tup{A} } A=I
+%\vspace{0.05in}\frac{\func{adj}(A)}{\det (A) } A=I
 %\end{equation}
 %Using the other formula in Definition~\ref{def:n-by-n-determinant}, and similar reasoning we obtain 
 %
 %\begin{equation}
-%\vspace{0.05in}A \frac{\func{adj}\tup{A}}{\det \tup{A} } =I
+%\vspace{0.05in}A \frac{\func{adj}(A)}{\det (A) } =I
 %\end{equation}
 %
-%Thus $A$ is invertible when $\det \tup{A } \neq 0$ and 
+%Thus $A$ is invertible when $\det (A) \neq 0$ and 
 %
 %\begin{equation*}
-%A^{-1} = \frac{1}{\det \tup{A}} \func{adj}\tup{A}
+%A^{-1} = \frac{1}{\det (A)} \func{adj}(A)
 %\end{equation*}
 %and the proof is complete. 
 %\end{proof}
@@ -362,22 +362,22 @@ Consider the following example.
 \begin{example}{Inverse for non-constant matrix}{inverse-non-constant-matrix}
 Suppose
 \begin{equation*}
-A\tup{t} =\begin{mymatrix}{ccc}
+A(t) =\begin{mymatrix}{ccc}
 e^{t} & 0 & 0 \\
 0 & \cos t & \sin t \\
 0 & -\sin t & \cos t
 \end{mymatrix}
 \end{equation*}
-Show that $A\tup{t} ^{-1}$ exists and then find it.
+Show that $A(t) ^{-1}$ exists and then find it.
 \end{example}
 
-\begin{solution} First note $\det \tup{A\tup{t} } =
-e^{t}(\cos^2 t + \sin^2 t) = e^{t}\neq 0$ so $A\tup{t} ^{-1}$
+\begin{solution} First note $\det (A(t)) =
+e^{t}(\cos^2 t + \sin^2 t) = e^{t}\neq 0$ so $A(t) ^{-1}$
 exists.
 
 The cofactor matrix is
 \begin{equation*}
-C\tup{t} =\begin{mymatrix}{ccc}
+C(t) =\begin{mymatrix}{ccc}
 1 & 0 & 0 \\
 0 & e^{t}\cos t & e^{t}\sin t \\
 0 & -e^{t}\sin t & e^{t}\cos t

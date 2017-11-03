@@ -130,10 +130,10 @@ A=\begin{mymatrix}{rrr}
 By Theorem~\ref{thm:eigenvectors-and-diagonalizable} we use the eigenvectors of $A$ as the columns of $P$, and
 the corresponding eigenvalues of $A$ as the diagonal entries of $D$. 
 
-First, we will find the eigenvalues of $A$. To do so, we solve $\det \tup{\eigenVar I -A } =0$ as follows.
+First, we will find the eigenvalues of $A$. To do so, we solve $\det (\eigenVar I -A) =0$ as follows.
 \begin{equation*}
 \det
-\tup{
+\paren{
 \eigenVar
 \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
@@ -155,7 +155,7 @@ This computation is left as an exercise, and you should verify that the eigenval
 \lambda_2 = 2$, and $\lambda_3 = 6$.
 
 Next, we need to find the eigenvectors. We first find the eigenvectors for $\lambda_1, \lambda_2 = 2$. 
-Solving $\tup{2I - A }X = 0$ to find the eigenvectors, we find that the
+Solving $(2I - A)X = 0$ to find the eigenvectors, we find that the
 eigenvectors are
 \begin{equation*}
 t\begin{mymatrix}{r}
@@ -274,8 +274,8 @@ If possible, find an invertible matrix $P$ and diagonal matrix $D$ so that $P^{-
 
 \begin{solution}
 Through the usual procedure, we find that the eigenvalues of $A$ are $\lambda_1 =1, \lambda_2=1$. 
-To find the eigenvectors, we solve the equation $\tup{\lambda I - A } X = 0$.
-The matrix $\tup{\lambda I -A }$ is given by 
+To find the eigenvectors, we solve the equation $(\lambda I - A) X = 0$.
+The matrix $(\lambda I -A)$ is given by 
 \begin{equation*}
 \begin{mymatrix}{cc}
 \lambda - 1 & -1 \\
@@ -296,7 +296,7 @@ Substituting in $\lambda = 1$, we have the matrix
 \end{mymatrix}
 \end{equation*}
 
-Then, solving the equation $\tup{\lambda I - A} X = 0$ 
+Then, solving the equation $(\lambda I - A) X = 0$ 
 involves carrying the following augmented matrix to its {\rref}. 
 \begin{equation*}
 \begin{mymatrix}{rr|r}

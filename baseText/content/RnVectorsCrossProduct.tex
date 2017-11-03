@@ -141,12 +141,12 @@ satisfies the following properties.
   \index{vector!properties of cross product}%
   \begin{enumerate}
   \item
-    $\vect{u}\times \vect{v}= -\tup{\vect{v}\times \vect{u}}$,
+    $\vect{u}\times \vect{v}= -(\vect{v}\times \vect{u})$,
     and $\vect{u}\times \vect{u}=\vect{0}$.
-  \item $\tup{k \vect{u}}\times \vect{v}= k \tup{\vect{u}\times \vect{v}} 
-    =\vect{u}\times \tup{k \vect{v}}$.
-  \item $\vect{u}\times \tup{\vect{v}+\vect{w}} =\vect{u}\times \vect{v}+\vect{u}\times \vect{w}$.
-  \item $\tup{\vect{v}+\vect{w}} \times \vect{u}=\vect{v} \times \vect{u}+\vect{w}\times \vect{u}$.
+  \item $(k \vect{u})\times \vect{v}= k (\vect{u}\times \vect{v}) 
+    =\vect{u}\times (k \vect{v})$.
+  \item $\vect{u}\times (\vect{v}+\vect{w}) =\vect{u}\times \vect{v}+\vect{u}\times \vect{w}$.
+  \item $(\vect{v}+\vect{w}) \times \vect{u}=\vect{v} \times \vect{u}+\vect{w}\times \vect{u}$.
   \end{enumerate}
 \end{proposition}
 
@@ -158,13 +158,13 @@ satisfies the following properties.
   direction.
 
   Formula $2$. is proven as follows. If $k $ is a non-negative scalar,
-  the direction of $\tup{k \vect{u}} \times \vect{v}$ is the same as
+  the direction of $(k \vect{u}) \times \vect{v}$ is the same as
   the direction of
-  $\vect{u}\times \vect{v}, k \tup{\vect{u}\times \vect{v}} $ and
-  $\vect{u}\times \tup{ k \vect{v}}$. The magnitude is $k$ times the
+  $\vect{u}\times \vect{v}, k (\vect{u}\times \vect{v}) $ and
+  $\vect{u}\times (k \vect{v})$. The magnitude is $k$ times the
   magnitude of $\vect{u}\times \vect{v}$ which is the same as the
-  magnitude of $k \tup{\vect{u}\times \vect{v}} $ and
-  $\vect{u}\times \tup{ k \vect{v}}$. Using this yields equality in
+  magnitude of $k (\vect{u}\times \vect{v}) $ and
+  $\vect{u}\times (k \vect{v})$. Using this yields equality in
   $2$. In the case where $k <0$, everything works the same way except
   the vectors are all pointing in the opposite direction and you must
   multiply by $\abs{k }$ when comparing their magnitudes.
@@ -174,10 +174,10 @@ satisfies the following properties.
   $3$. is true, $4$. follows. Namely, assuming $3$., and using $1$.,
   we have
   \begin{align*}
-    \tup{\vect{v}+\vect{w}} \times \vect{u}
-    & =-\vect{u}\times \tup{
-      \vect{v}+\vect{w}} \\
-    & =-\tup{\vect{u}\times \vect{v}+\vect{u}\times \vect{w}} \\
+    (\vect{v}+\vect{w}) \times \vect{u}
+    & =-\vect{u}\times (
+      \vect{v}+\vect{w}) \\
+    & =-(\vect{u}\times \vect{v}+\vect{u}\times \vect{w}) \\
     & =\vect{v}\times \vect{u}+\vect{w}\times \vect{u}.
   \end{align*}
 \end{proof}
@@ -271,13 +271,13 @@ v_{1} & v_{2} & v_{3}
 \end{equation}
 Expanding the determinant along the top row yields
 \begin{equation*}
-\vect{i}\tup{-1} ^{1+1}\begin{absmatrix}{cc}
+\vect{i}(-1) ^{1+1}\begin{absmatrix}{cc}
 u_{2} & u_{3} \\
 v_{2} & v_{3}
-\end{absmatrix}+\vect{j}\tup{-1} ^{2+1}\begin{absmatrix}{cc}
+\end{absmatrix}+\vect{j}(-1) ^{2+1}\begin{absmatrix}{cc}
 u_{1} & u_{3} \\
 v_{1} & v_{3}
-\end{absmatrix}+\vect{k}\tup{-1} ^{3+1}\begin{absmatrix}{cc}
+\end{absmatrix}+\vect{k}(-1) ^{3+1}\begin{absmatrix}{cc}
 u_{1} & u_{2} \\
 v_{1} & v_{2}
 \end{absmatrix}\end{equation*}
@@ -294,8 +294,8 @@ v_{1} & v_{2}
 \end{absmatrix}\end{equation*}
 Expanding these determinants leads to 
 \begin{equation*}
-\tup{u_{2}v_{3}-u_{3}v_{2}} \vect{i}-\tup{
-u_{1}v_{3}-u_{3}v_{1}} \vect{j}+\tup{u_{1}v_{2}-u_{2}v_{1}}
+(u_{2}v_{3}-u_{3}v_{2}) \vect{i}-(
+u_{1}v_{3}-u_{3}v_{1}) \vect{j}+(u_{1}v_{2}-u_{2}v_{1})
 \vect{k}  
 %\label{cross-prod4}
 \end{equation*}
@@ -390,11 +390,11 @@ following example.
   \index{area!of triangle}%
   \index{triangle!area of}%
   Find the area of the triangle determined by the points
-  $\tup{1,2,3}$, $\tup{0,2,5}$, and $\tup{5,1,2}$.
+  $(1,2,3)$, $(0,2,5)$, and $(5,1,2)$.
 \end{example}
 
 \begin{solution}
-  Let $P=\tup{1,2,3}$, $Q=\tup{0,2,5}$, and $R=\tup{5,1,2}$. The area
+  Let $P=(1,2,3)$, $Q=(0,2,5)$, and $R=(5,1,2)$. The area
   of the triangle is exactly half of the area of the parallelogram
   determined by the vectors $\longvect{PQ}$ and $\longvect{PR}$.
   \begin{center}

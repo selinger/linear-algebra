@@ -37,8 +37,8 @@ Let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they s
 \]
 \item The Associative Law of Addition
 \[
-\tup{\vect{v}+\vect{w}} +\vect{z}=\vect{v}+\tup{\vect{w}+
-\vect{z}} 
+(\vect{v}+\vect{w}) +\vect{z}=\vect{v}+(\vect{w}+
+\vect{z}) 
 \]
 \item The Existence of an Additive Identity
 \[
@@ -46,7 +46,7 @@ Let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they s
 \]
 \item The Existence of an Additive Inverse
 \[
-\vect{v}+\tup{-\vect{v}} =\vect{0}
+\vect{v}+(-\vect{v}) =\vect{0}
 \]
 \end{itemize}
 \end{definition}
@@ -60,16 +60,16 @@ Let $a, b \in \R$ and let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector 
 \]
 \item
 \[
-a \tup{\vect{v}+\vect{w}} = a \vect{v}+ a \vect{w}  \label{e.01}
+a (\vect{v}+\vect{w}) = a \vect{v}+ a \vect{w}  \label{e.01}
 \]
 \item
 \[
-\tup{a + b } \vect{v}= a \vect{v}+ b \vect{v}
+(a + b) \vect{v}= a \vect{v}+ b \vect{v}
 \label{e.02}
 \]
 \item
 \[
-a \tup{b \vect{v}} = (a b) \vect{v}
+a (b \vect{v}) = (a b) \vect{v}
 \label{e.03}
 \]
 \item
@@ -158,7 +158,7 @@ Hence addition of vectors in $\R^n$ is commutative.
 We will show that addition of vectors in $\R^n$ is associative in a similar way. 
 \begin{eqnarray*} 
 (\vect{x} + \vect{y}) + \vect{z} &=& 
-\tup{\begin{mymatrix}{c}
+\paren{\begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
@@ -168,7 +168,7 @@ y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{mymatrix} }
+\end{mymatrix}}
 +
  \begin{mymatrix}{c}
 z_1 \\
@@ -220,7 +220,7 @@ x_1 \\
 x_2  \\
 \vdots \\
 x_n 
-\end{mymatrix} + \tup{
+\end{mymatrix} + \paren{
 \begin{mymatrix}{c}
  y_1  \\
  y_2 \\
@@ -231,8 +231,8 @@ y_n
  z_2 \\
 \vdots \\
 z_n 
-\end{mymatrix} } \\
-&=& \vect{x} + \tup{\vect{y} + \vect{z} }
+\end{mymatrix}} \\
+&=& \vect{x} + (\vect{y} + \vect{z})
 \end{eqnarray*}
 
 Hence addition of vectors is associative. 
@@ -285,7 +285,7 @@ Let $-\vect{x} = \begin{mymatrix}{c}
 \end{mymatrix}$. 
 
 \begin{eqnarray*}
-\vect{x} + \tup{-\vect{x} } &=& 
+\vect{x} + (-\vect{x}) &=& 
  \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
@@ -343,7 +343,7 @@ We wish to show that $a (\vect{x} + \vect{y}) = a\vect{x} + a\vect{y}$.
 
 \begin{eqnarray*}
 a (\vect{x} + \vect{y}) &=& 
-a \tup{
+a \paren{
 \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
@@ -354,7 +354,7 @@ x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{mymatrix} } \\
+\end{mymatrix}} \\
 &=& 
 a \begin{mymatrix}{c}
 x_1 + y_1 \\
@@ -437,19 +437,19 @@ bx_n
 We wish to show that $a(b\vect{x}) = (ab) \vect{x}$. 
 \begin{eqnarray*}
 a(b\vect{x}) &=& 
-a\tup{b \begin{mymatrix}{c}
+a\paren{b \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{mymatrix} } \\
-&=& a\tup{
+\end{mymatrix}} \\
+&=& a\paren{
 \begin{mymatrix}{c}
 bx_1 \\
 bx_2 \\
 \vdots \\
 bx_n
-\end{mymatrix} } \\
+\end{mymatrix}} \\
 &=&
 \begin{mymatrix}{c}
 a(bx_1) \\
@@ -539,12 +539,12 @@ p(x) + q(x) &=&  p_2x^2 + p_1x + p_0 + q_2x^2 + q_1x + q_0\\
 \item
 Next, we need to show that addition is associative. That is, that $(p(x) + q(x)) + r(x) = p(x) + (q(x)+r(x))$. 
 \begin{eqnarray*}
-(p(x) + q(x)) + r(x) &=& \tup{p_2x^2 +p_1x + p_0 + q_2x^2 + q_1x + q_0 } + r_2x^2 +r_1x + r_0 \\
+(p(x) + q(x)) + r(x) &=& (p_2x^2 +p_1x + p_0 + q_2x^2 + q_1x + q_0) + r_2x^2 +r_1x + r_0 \\
 &=&  (p_2+q_2)x^2 + (p_1+q_1)x + (p_0 +q_0) + r_2x^2 + r_1x + r_0\\
 &=&  (p_2+q_2+r_2)x^2 + (p_1+q_1+r_1)x + (p_0+q_0+r_0)  \\
 &=&  p_2x^2 + p_1x + p_0 +  (q_2+r_2)x^2 + (q_1+r_1)x + (q_0+r_0)  \\
-&=&  p_2x^2 + p_1x + p_0 + \tup{q_2x^2 +q_1x + q_0 + r_2x^2 + r_1x + r_0 }\\
-&=& p(x) + \tup{q(x) + r(x) }
+&=&  p_2x^2 + p_1x + p_0 + (q_2x^2 +q_1x + q_0 + r_2x^2 + r_1x + r_0)\\
+&=& p(x) + (q(x) + r(x))
 \end{eqnarray*}
 
 \item
@@ -560,7 +560,7 @@ Hence an additive identity exists, specifically the zero polynomial.
 \item 
 Next we must prove that there exists an additive inverse. Let $-p(x) = -p_2x^2 - p_1x - p_0$ and consider the following:
 \begin{eqnarray*}
-p(x) + (-p(x)) &=&   p_2x^2 + p_1x + p_0 + \tup{- p_2x^2  - p_1x - p_0} \\
+p(x) + (-p(x)) &=&   p_2x^2 + p_1x + p_0 + (- p_2x^2  - p_1x - p_0) \\
 &=& (p_2 - p_2)x^2  + (p_1 - p_1)x + (p_0 - p_0) \\
 &=& 0x^2 + 0x + 0 \\
 &=& 0(x)
@@ -574,15 +574,15 @@ We now need to verify the axioms related to scalar multiplication.
 \item
 First we prove that $\Poly_2$ is closed under scalar multiplication. That is, we show that $ap(x)$ is also a polynomial of degree at most $2$. 
 \[
-ap(x) = a\tup{p_2x^2 + p_1x + p_0 } = ap_2x^2 +ap_1x+ ap_0
+ap(x) = a(p_2x^2 + p_1x + p_0) = ap_2x^2 +ap_1x+ ap_0
 \]
 Therefore $\Poly_2$ is closed under scalar multiplication. 
 
 \item
 We need to show that $a(p(x) + q(x)) = ap(x) + aq(x)$. 
 \begin{eqnarray*}
-a(p(x) + q(x)) &=& a \tup{p_2x^2 + p_1x + p_0 + q_2x^2 + q_1x + q_0 }\\
-&=& a \tup{(p_2+q_2)x^2 + (p_1+q_1)x + (p_0+q_0)  }\\
+a(p(x) + q(x)) &=& a (p_2x^2 + p_1x + p_0 + q_2x^2 + q_1x + q_0)\\
+&=& a ((p_2+q_2)x^2 + (p_1+q_1)x + (p_0+q_0))\\
 &=&  a(p_2+q_2)x^2  + a(p_1+q_1)x +  a(p_0 + q_0) \\
 &=& (ap_2 + aq_2)x^2 + (ap_1+aq_1)x + (ap_0 + aq_0)  \\
 &=&  ap_2x^2 + ap_1x + ap_0 + aq_2x^2 +aq_1x + aq_0\\
@@ -603,10 +603,10 @@ Next we show that $(a+b) p(x) = ap(x) + bp(x)$.
 The next axiom which needs to be verified is $a(bp(x)) = (ab)p(x)$. 
 
 \begin{eqnarray*}
-a(bp(x)) &=& a \tup{b \tup{p_2x^2 + p_1x +p_0}} \\
-&=& a \tup{bp_2x^2 +bp_1x + bp_0 }\\
+a(bp(x)) &=& a (b (p_2x^2 + p_1x +p_0)) \\
+&=& a (bp_2x^2 +bp_1x + bp_0)\\
 &=&  abp_2x^2 + abp_1x + abp_0 \\
-&=& (ab) \tup{p_2x^2 +p_1x + p_0 }\\
+&=& (ab) (p_2x^2 +p_1x + p_0)\\
 &=& (ab) p(x) 
 \end{eqnarray*}
 
@@ -614,7 +614,7 @@ a(bp(x)) &=& a \tup{b \tup{p_2x^2 + p_1x +p_0}} \\
 Finally, we show that $1p(x) = p(x)$. 
 
 \begin{eqnarray*}
-1p(x) &=& 1 \tup{p_2x^2  + p_1x +  p_0}\\
+1p(x) &=& 1 (p_2x^2  + p_1x +  p_0)\\
 &=&  1p_2x^2 + 1p_1x + 1p_0\\
 &=&  p_2x^2 + p_1x + p_0\\
 &=& p(x)
@@ -732,9 +732,9 @@ Let $S$ be a nonempty set and define $\Func_S$ to be the set of \textit{real} fu
 defined on $S$. In other words, we write $\Func_S: S \to \R$. Letting $a,b,c$ be scalars and $f,g,h$ functions, the
 vector operations are defined as
 \begin{eqnarray*}
-\tup{f+g} \tup{x}  &=&f\tup{x} +g\tup{
-x}  \\
-\tup{af} \tup{x}  &=&a\tup{f\tup{x} }
+(f+g) (x)  &=&f(x) +g(
+x)  \\
+(af) (x)  &=&a(f(x))
 \end{eqnarray*}
 Show that $\Func_S$ is a vector space. 
 \end{example}
@@ -753,44 +753,44 @@ is again a function defined on $S$. Hence this sum is in $\Func_S$ and $\Func_S$
 \item
 Secondly, we check the commutative law of addition:
 \begin{equation*}
-\tup{f+g} \tup{x} =f\tup{x} +g\tup{x}
-=g\tup{x} +f\tup{x} =\tup{g+f} \tup{x}
+(f+g) (x) =f(x) +g(x)
+=g(x) +f(x) =(g+f) (x)
 \end{equation*}
 Since $x$ is arbitrary, $f+g=g+f$.
 
 \item
 Next we check the associative law of addition:
 \begin{equation*}
-\tup{\tup{f+g} +h} \tup{x} = \tup{f+g}
-\tup{x} +h\tup{x} =\tup{f\tup{x} +g\tup{x}
-} +h\tup{x}
+((f+g) +h) (x) = (f+g)
+(x) +h(x) =(f(x) +g(x)
+) +h(x)
 \end{equation*}
 \begin{equation*}
-=f\tup{x} +\tup{g\tup{x} +h\tup{x} } =\tup{
-f\tup{x} +\tup{g+h} \tup{x} } =\tup{f+\tup{
-g+h} } \tup{x}
+=f(x) +(g(x) +h(x)) =(
+f(x) +(g+h) (x)) =(f+(
+g+h)) (x)
 \end{equation*}
-and so $\tup{f+g} +h=f+\tup{g+h}$.
+and so $(f+g) +h=f+(g+h)$.
 
 \item
 Next we check for an additive identity.  Let $0$ denote the
-function which is given by $0\tup{x} =0$. Then this is an additive
+function which is given by $0(x) =0$. Then this is an additive
 identity because 
 \begin{equation*}
-\tup{f+0} \tup{x} =f\tup{x} +0\tup{x}
-=f\tup{x}
+(f+0) (x) =f(x) +0(x)
+=f(x)
 \end{equation*}
 and so $f+0=f$. 
 
 \item
-Finally, check for an additive inverse. Let $-f$ be the function which satisfies $\tup{-f}
-\tup{x} = -f\tup{x}$. Then 
+Finally, check for an additive inverse. Let $-f$ be the function which satisfies $(-f)
+(x) = -f(x)$. Then 
 \begin{equation*}
-\tup{f+\tup{-f} } \tup{x} = f\tup{x}
-+\tup{-f} \tup{x} = f\tup{x} +-f\tup{x}
+(f+(-f)) (x) = f(x)
++(-f) (x) = f(x) +-f(x)
 =0
 \end{equation*}
-Hence $f+\tup{-f} =0$. 
+Hence $f+(-f) =0$. 
 \end{itemize}
 
 Now, check the axioms for scalar multiplication.
@@ -801,34 +801,34 @@ For a function $f(x)$ in $\Func_S$ and real number $a$, the function $(af)(x) = 
 
 \item
 \begin{equation*}
-\tup{\tup{a+b} f} \tup{x} = \tup{a+b}
-f\tup{x} =af\tup{x} +bf\tup{x} = \tup{
-af+bf} \tup{x}
+((a+b) f) (x) = (a+b)
+f(x) =af(x) +bf(x) = (
+af+bf) (x)
 \end{equation*}
-and so $\tup{a+b} f=af+bf$. 
+and so $(a+b) f=af+bf$. 
 
 \item
 \begin{equation*}
-\tup{a\tup{f+g} } \tup{x} = a\tup{f+g}
-\tup{x} = a\tup{f\tup{x} +g\tup{x} }
+(a(f+g)) (x) = a(f+g)
+(x) = a(f(x) +g(x))
 \end{equation*}
 \begin{equation*}
-=af\tup{x} +bg\tup{x} = \tup{af+bg} \tup{
-x}
+=af(x) +bg(x) = (af+bg) (
+x)
 \end{equation*}
-and so $a\tup{f+g} =af+bg$. 
+and so $a(f+g) =af+bg$. 
 
 \item
 \begin{equation*}
-\tup{\tup{ab} f} \tup{x} = \tup{ab}
-f\tup{x} =a\tup{bf\tup{x} } = \tup{a\tup{
-bf} } \tup{x}
+((ab) f) (x) = (ab)
+f(x) =a(bf(x)) = (a(
+bf)) (x)
 \end{equation*}
-so $\tup{abf} =a\tup{bf}$. 
+so $(abf) =a(bf)$. 
 
 \item
-Finally $\tup{1f} \tup{
-x} = 1f\tup{x} =f\tup{x} $ so $1f=f$.
+Finally $(1f) (
+x) = 1f(x) =f(x) $ so $1f=f$.
 \end{itemize}
 
 It follows that $V$ satisfies all the required axioms and is a vector space.
@@ -846,7 +846,7 @@ $-\vect{x}$, the additive inverse, is unique
 \item
 $0\vect{x}=\vect{0}$ for all vectors $\vect{x}$
 \item
-$\tup{-1} \vect{x}=-\vect{x}$ for all vectors $\vect{x}$ 
+$(-1) \vect{x}=-\vect{x}$ for all vectors $\vect{x}$ 
 \end{enumerate}
 \end{theorem}
 
@@ -886,7 +886,7 @@ inverse $-\vect{x}$. This proves the uniqueness of $-\vect{x}$.
 \item
 This statement claims that for all vectors $\vect{x}$, scalar multiplication by $0$ equals the zero vector $\vect{0}$. Consider the following, using the fact that we can write $0=0+0$:
 \begin{equation*}
-0\vect{x}=\tup{0+0} \vect{x}=0\vect{x}+0\vect{x}
+0\vect{x}=(0+0) \vect{x}=0\vect{x}+0\vect{x}
 \end{equation*}
 We use a small trick here: add $-0\vect{x}$ to both sides. This gives 
 \begin{eqnarray*}
@@ -900,12 +900,12 @@ This proves that scalar multiplication of any vector by $0$ results in the zero 
 Finally, we wish to show that scalar multiplication of $-1$ and any vector $\vect{x}$ results in the additive inverse of that vector, $-\vect{x}$. Recall from $2$. above that the additive inverse is unique. 
 Consider the following: 
 \begin{eqnarray*}
-\tup{-1} \vect{x}+\vect{x} & =&\tup{-1} \vect{x}+1\vect{x}\\
-&=&\tup{-1+1} \vect{x} \\
+(-1) \vect{x}+\vect{x} & =&(-1) \vect{x}+1\vect{x}\\
+&=&(-1+1) \vect{x} \\
 &=&0\vect{x} \\
 &=&\vect{0}
 \end{eqnarray*}
-By the uniqueness of the additive inverse shown earlier, any vector which acts like the additive inverse must be equal to the additive inverse. It follows that $\tup{-1} 
+By the uniqueness of the additive inverse shown earlier, any vector which acts like the additive inverse must be equal to the additive inverse. It follows that $(-1) 
 \vect{x}=-\vect{x}$.
 \end{enumerate}
 \end{proof}

@@ -29,7 +29,7 @@ $\R^n$. We wish to show that $\set{T(\vect{v}_{1}),\ldots,
 T(\vect{v}_{n})} $ is also a basis for $\R^n$. 
 
 First consider why it is linearly independent. Suppose
-$\sum_{k=1}^{n}a_{k}T(\vect{v}_{k})=\vect{0}$. Then by linearity we have $T\tup{
+$\sum_{k=1}^{n}a_{k}T(\vect{v}_{k})=\vect{0}$. Then by linearity we have $T\paren{
 \sum_{k=1}^{n}a_{k}\vect{v}_{k}} =\vect{0}$ and since $T$ is one
 to one, it follows that $\sum_{k=1}^{n}a_{k}\vect{v}_{k}=\vect{0}$.
 This requires that  each $a_{k}=0$ because $\set{\vect{v}_{1},\ldots,
@@ -42,7 +42,7 @@ Next take $\vect{w}\in \R^n$. Since $T$ is onto, there exists
 $\vect{v}\in \R^n$ such that $T(\vect{v})=\vect{w}$. Since
 $ \set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ is a basis, in particular it
 is a spanning set and there are scalars $b_{k}$ such that
-$T\tup{ \sum_{k=1}^{n}b_{k}\vect{v} _{k}} =T\tup{\vect{v}}
+$T\paren{\sum_{k=1}^{n}b_{k}\vect{v} _{k}} =T(\vect{v})
 =\vect{w}$. Therefore $\vect{w} =\sum_{k=1}^{n}b_{k}T(\vect{v}_{k})$
 which is in the
 $\sspan\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})}$. Therefore,
@@ -55,19 +55,19 @@ $\set{\vect{v} _{1},\ldots,\vect{v}_{n}} $ and $\set{
 \vect{w}_{1},\ldots, \vect{w}_{n}} $ are two bases for
 $\R^n$. 
 
-To show that $T$ is one to one, let $T\tup{
+To show that $T$ is one to one, let $T\paren{
 \sum_{k=1}^{n}c_{k}\vect{v}_{k}} =\vect{0}$. Then
 $\sum_{k=1}^{n}c_{k}T(\vect{v}_{k})=\sum_{k=1}^{n}c_{k}\vect{w}_{k}=\vect{
 0}$. It follows that each $c_{k} = 0$ because it is given that
 $\set{\vect{w} _{1},\ldots,\vect{w}_{n}} $ is linearly
-independent. Hence $T\tup{\sum_{k=1}^{n}c_{k}\vect{v}_{k}}
+independent. Hence $T\paren{\sum_{k=1}^{n}c_{k}\vect{v}_{k}}
 =\vect{0}$ implies that $\sum_{k=1}^{n}c_{k}\vect{v}_{k}=\vect{0}$ and
 so $T$ is one to one.  
 
 To show that $T$ is onto, let $\vect{w}$ be an arbitrary vector in
 $\R^n$. This vector can be written as $\vect{w} =
 \sum_{k=1}^{n}d_k\vect{w}_k =
-\sum_{k=1}^{n}d_{k}T(\vect{v}_{k})=T\tup{\sum_{k=1}^{n}d_{k}
+\sum_{k=1}^{n}d_{k}T(\vect{v}_{k})=T\paren{\sum_{k=1}^{n}d_{k}
 \vect{v}_{k}}$.  Therefore, $T$ is also onto. 
 \end{proof}
 
@@ -84,7 +84,7 @@ a_n$.
 The  \textbf{coordinate vector}\index{vector!coordinate vector}\index{coordinate vector} of $\vect{x}$ with respect to the
 basis $B$, written $C_B(\vect{x})$ or  $[\vect{x}]_B$,  is given by
 \[
-C_B(\vect{x}) =  C_B \tup{a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_n\vect{v}_n } = \begin{mymatrix}{c}
+C_B(\vect{x}) =  C_B (a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_n\vect{v}_n) = \begin{mymatrix}{c}
 a_1 \\
 a_2 \\
 \vdots \\
@@ -207,10 +207,10 @@ and this completes the proof.
 Consider the following example.
 
 \begin{example}{Matrix of a linear transformation}{matrix-lin-transf}
-Let $T: \R^2 \to \R^2$ be a linear transformation defined by $T \tup{\begin{mymatrix}{r}
+Let $T: \R^2 \to \R^2$ be a linear transformation defined by $T \paren{\begin{mymatrix}{r}
 a \\
 b
-\end{mymatrix} } = \begin{mymatrix}{r}
+\end{mymatrix}} = \begin{mymatrix}{r}
 b \\
 a 
 \end{mymatrix}$. 
@@ -247,11 +247,11 @@ coordinate vectors of $T(\vect{v}_{1}), T(\vect{v}_{2})$ with respect
 to $B_2$.
 
 Since \[
-T \tup{
+T \paren{
 \begin{mymatrix}{r}
 1 \\
 0
-\end{mymatrix} }
+\end{mymatrix}}
 = \begin{mymatrix}{r}
 0 \\
 1
@@ -263,12 +263,12 @@ a standard calculation yields
 1
 \end{mymatrix} 
  =  
-\tup{\frac{1}{2} }\begin{mymatrix}{r}
+\paren{\frac{1}{2}}\begin{mymatrix}{r}
 1 \\
 1
 \end{mymatrix}
 +
-\tup{-\frac{1}{2} }
+\paren{-\frac{1}{2}}
 \begin{mymatrix}{r}
 1 \\
 -1
@@ -281,11 +281,11 @@ the first column of $M_{B_{2} B_{1}}$ is $\begin{mymatrix}{r}
 
 The second column is found in a similar way. We have 
 \[
-T \tup{
+T \paren{
 \begin{mymatrix}{r}
 -1 \\
 1
-\end{mymatrix} }
+\end{mymatrix}}
 = \begin{mymatrix}{r}
 1 \\
 -1
@@ -327,33 +327,33 @@ We can verify that this is the correct matrix $M_{B_{2} B_{1}}$ on the specific 
 First applying $T$ gives
 \[
 T( \vect{v} ) =
-T \tup{
+T \paren{
 \begin{mymatrix}{r}
 3 \\
 -1 
-\end{mymatrix} } = \begin{mymatrix}{r}
+\end{mymatrix}} = \begin{mymatrix}{r}
 -1\\
 3
 \end{mymatrix}
 \]
 and one can compute that  
 \[ C_{B_2} 
- \tup{
+ \paren{
 \begin{mymatrix}{r}
 -1 \\
 3 
-\end{mymatrix} } = \begin{mymatrix}{r}
+\end{mymatrix}} = \begin{mymatrix}{r}
 1\\
 -2
 \end{mymatrix} .\]
 
 On the other hand, one compute $C_{B_1}( \vect{v})$ as 
 \[ C_{B_1} 
- \tup{
+ \paren{
 \begin{mymatrix}{r}
 3 \\
 -1 
-\end{mymatrix} } = \begin{mymatrix}{r}
+\end{mymatrix}} = \begin{mymatrix}{r}
 2\\
 -1
 \end{mymatrix} ,\]
@@ -541,15 +541,15 @@ b_3
 \end{equation*}
 Is this the coordinate vector of the above relative to the given basis? We check as follows. 
 \begin{equation*}
-\tup{2b_1-5b_2+b_3} \begin{mymatrix}{c}
+(2b_1-5b_2+b_3) \begin{mymatrix}{c}
 1 \\ 
 0 \\ 
 1
-\end{mymatrix} +\tup{-b_1 + 4b_2} \begin{mymatrix}{c}
+\end{mymatrix} +(-b_1 + 4b_2) \begin{mymatrix}{c}
 1 \\ 
 1 \\ 
 1
-\end{mymatrix} +\tup{-2b_2+b_3} \begin{mymatrix}{c}
+\end{mymatrix} +(-2b_2+b_3) \begin{mymatrix}{c}
 -1 \\ 
 1 \\ 
 0

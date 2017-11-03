@@ -153,7 +153,7 @@ for some scalar $\lambda$. Then $\lambda $ is called an
 of the matrix $A$ and $X$ is called an \textbf{eigenvector}\index{eigenvector} of $A$ associated with $\lambda$, or a $\lambda$-eigenvector of $A$. 
  
 The set of all eigenvalues of an $n\times n$-matrix $A$ is denoted by 
-$\sigma \tup{A} $ and is referred to as the \textbf{spectrum}\index{spectrum} of $A$.
+$\sigma (A) $ and is referred to as the \textbf{spectrum}\index{spectrum} of $A$.
 \end{definition}
 
 The eigenvectors of a matrix $A$ are those vectors $X$ for which
@@ -167,47 +167,47 @@ Let's look at eigenvectors in more detail. Suppose $X$ satisfies {\eqref{eigen1}
 \begin{array}{c}
 AX - \lambda X = 0 \\
 \mbox{or} \\
-\tup{A-\lambda I} X = 0
+(A-\lambda I) X = 0
 \end{array}
 \end{equation*}
-for some $X \neq 0$. Equivalently you could write $\tup{\lambda
-I-A}X = 0$, which is more commonly used.  Hence, when we are looking for eigenvectors, we are
+for some $X \neq 0$. Equivalently you could write $(\lambda
+I-A)X = 0$, which is more commonly used.  Hence, when we are looking for eigenvectors, we are
 looking for non-trivial solutions to this homogeneous system of equations!
 
 Recall that the solutions to a homogeneous system of equations consist
 of basic solutions, and the linear combinations of those basic
 solutions. In this context, we call the basic solutions of the
-equation $\tup{\lambda I - A} X = 0$ \textbf{basic
+equation $(\lambda I - A) X = 0$ \textbf{basic
 eigenvectors}. It follows that any (non-zero) linear combination of basic
 eigenvectors is again an eigenvector.
 
-Suppose the matrix $\tup{\lambda I - A}$ is invertible, so that
-$\tup{\lambda I - A}^{-1}$ exists.
+Suppose the matrix $(\lambda I - A)$ is invertible, so that
+$(\lambda I - A)^{-1}$ exists.
 Then the following equation would be true.
 \begin{eqnarray*}
 X &=& IX \\
-&=& \tup{\tup{\lambda I - A} ^{-1}\tup{\lambda I - A }
-} X \\
-&=&\tup{\lambda I - A} ^{-1}\tup{\tup{\lambda
-I - A} X} \\
-&=& \tup{\lambda I - A} ^{-1}0 \\
+&=& ((\lambda I - A) ^{-1}(\lambda I - A)
+) X \\
+&=&(\lambda I - A) ^{-1}((\lambda
+I - A) X) \\
+&=& (\lambda I - A) ^{-1}0 \\
 &=& 0
 \end{eqnarray*}
-This claims that $X=0$. However, we have required that $ X \neq 0$. Therefore  $\tup{\lambda I - A}$
+This claims that $X=0$. However, we have required that $ X \neq 0$. Therefore  $(\lambda I - A)$
 cannot have an inverse! 
 
 Recall that if a matrix
 is not invertible, then its determinant is equal to $0$.  Therefore we
 can conclude that
 \begin{equation}
-\det \tup{\lambda I - A} =0  \label{eigen2}
+\det (\lambda I - A) =0  \label{eigen2}
 \end{equation}
-Note that this is equivalent to $\det \tup{A- \lambda I } =0$. 
+Note that this is equivalent to $\det (A- \lambda I) =0$. 
 
-The expression $\det \tup{\eigenVar I-A} $ is a polynomial (in
+The expression $\det (\eigenVar I-A) $ is a polynomial (in
 the variable $x$) called the
 \textbf{characteristic polynomial of $A$}, and 
-$\det \tup{\eigenVar I-A} =0$ is called the \textbf{characteristic
+$\det (\eigenVar I-A) =0$ is called the \textbf{characteristic
 equation}\index{characteristic equation}. For this reason we may also refer to
 the eigenvalues of $A$ as \textbf{characteristic values}, but the
 former is often used for historical reasons.
@@ -217,15 +217,15 @@ polynomial are the eigenvalues of $A$.  Thus when {\eqref{eigen2}}
 holds, $A$ has a non-zero eigenvector.
 
 \begin{theorem}{The existence of an eigenvector}{existence-of-eigenvector}
-Let $A$ be an $n\times n$-matrix and suppose $\det \tup{\lambda I -
-A} =0$ for some $ \lambda \in \C$.  \\
+Let $A$ be an $n\times n$-matrix and suppose $\det (\lambda I -
+A) =0$ for some $ \lambda \in \C$.  \\
 Then $\lambda$ is an eigenvalue of $A$ and thus there exists a non-zero
 vector $X \in \C^{n}$ such that $AX=\lambda X$. 
 \end{theorem}
 
 \begin{proof}
 For $A$ an $n\times n$-matrix, the method of Laplace
-Expansion demonstrates that $\det \tup{\lambda I - A } $ is a
+Expansion demonstrates that $\det (\lambda I - A) $ is a
 polynomial of degree $n$. As such, the equation
 {\eqref{eigen2}} has a solution $\lambda \in \C$ by the Fundamental
 Theorem of Algebra. The fact that $\lambda$ is an eigenvalue is left as an exercise. 

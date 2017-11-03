@@ -92,11 +92,11 @@ matrix as follows:
 \begin{example}{The matrix of a linear transformation}{matrix-of-linear-transformation}
   Suppose $T:\R^{3}\rightarrow \R^{2}$ is a linear transformation where
   \begin{equation*}
-    T\tup{\begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix}}
+    T\paren{\begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix}}
     = \begin{mymatrix}{r} 1 \\ 2 \end{mymatrix},\quad
-    T\tup{\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}}
+    T\paren{\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}}
     = \begin{mymatrix}{r} 9 \\ -3 \end{mymatrix},\quad\mbox{and}\quad
-    T\tup{\begin{mymatrix}{r} 0 \\ 0 \\ 1 \end{mymatrix}}
+    T\paren{\begin{mymatrix}{r} 0 \\ 0 \\ 1 \end{mymatrix}}
     = \begin{mymatrix}{r} 1 \\ 1 \end{mymatrix}.
   \end{equation*}
   Find the matrix $A$ such that $T(\vect{v})=A\vect{v}$ for all
@@ -117,7 +117,7 @@ matrix as follows:
 \begin{example}{The matrix of a linear transformation}{matrix-of-linear-transformation2}
   Let $T:\R^3\to\R^2$ be the linear transformation defined by
   \begin{equation*}
-    T\tup{\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}}
+    T\paren{\begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}}
     =
     \begin{mymatrix}{c} x+y \\ x+2y-z \end{mymatrix},
   \end{equation*}
@@ -128,13 +128,13 @@ matrix as follows:
   We compute the images of the standard basis vectors:
   \begin{eqnarray*}
     T(\vect{e}_1)
-    &=& T\tup{\begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix}}
+    &=& T\paren{\begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix}}
     ~=~ \begin{mymatrix}{c} 1 \\ 1 \end{mymatrix},\\
     T(\vect{e}_2)
-    &=& T\tup{\begin{mymatrix}{c} 0 \\ 1 \\ 0 \end{mymatrix}}
+    &=& T\paren{\begin{mymatrix}{c} 0 \\ 1 \\ 0 \end{mymatrix}}
     ~=~ \begin{mymatrix}{c} 1 \\ 2 \end{mymatrix},\\
     T(\vect{e}_3)
-    &=& T\tup{\begin{mymatrix}{c} 0 \\ 0 \\ 1 \end{mymatrix}}
+    &=& T\paren{\begin{mymatrix}{c} 0 \\ 0 \\ 1 \end{mymatrix}}
     ~=~ \begin{mymatrix}{c} 0 \\ -1 \end{mymatrix}.
   \end{eqnarray*}
   The matrix $A$ has $T(\vect{e}_1)$, $T(\vect{e}_2)$, and
@@ -152,7 +152,7 @@ matrix as follows:
   let $T: \R^3 \to \R^3$ be the projection%
   \index{projection!as a linear transformation} map defined by
   \begin{equation*}
-    T(\vect{v}) = \proj_{\vect{u}}\tup{\vect{v}}
+    T(\vect{v}) = \proj_{\vect{u}}(\vect{v})
   \end{equation*}
   for all $\vect{v} \in \R^3$.
   \begin{enumerate}
@@ -166,7 +166,7 @@ matrix as follows:
   \item[(a)] Recall the formula for the projection of $\vect{v}$ onto
     $\vect{u}$:
     \begin{equation*}
-      \proj_{\vect{u}}\tup{\vect{v}}
+      \proj_{\vect{u}}(\vect{v})
       = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}.
     \end{equation*}
     In the situation we are interested in, $\vect{u}$ is a fixed vector,
@@ -174,24 +174,24 @@ matrix as follows:
     vectors $\vect{v},\vect{w}$, and using the distributive laws of the dot
     product and scalar multiplication, we have:
     \begin{equation*}
-      \proj_{\vect{u}}\tup{\vect{v}+\vect{w}}
+      \proj_{\vect{u}}(\vect{v}+\vect{w})
       = \frac{(\vect{v}+\vect{w})\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}
-      = \tup{\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}
+      = \paren{\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}
         + \frac{\vect{w}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\,\vect{u}
       = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}
       + \frac{\vect{w}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}
-      = \proj_{\vect{u}}\tup{\vect{v}}
-      + \proj_{\vect{u}}\tup{\vect{w}}.
+      = \proj_{\vect{u}}(\vect{v})
+      + \proj_{\vect{u}}(\vect{w}).
     \end{equation*}
     Therefore, the function
-    $T(\vect{v}) = \proj_{\vect{u}}\tup{\vect{v}}$ preserves
+    $T(\vect{v}) = \proj_{\vect{u}}(\vect{v})$ preserves
     addition. Also, given any scalar $k$, we have
     \begin{equation*}
-      \proj_{\vect{u}}\tup{k\vect{v}}
+      \proj_{\vect{u}}(k\vect{v})
       = \frac{(k\vect{v})\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}
-      = \tup{k\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\,\vect{u}
-      = k\tup{\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}}
-      = k\,\proj_{\vect{u}}\tup{\vect{v}}.
+      = \paren{k\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\,\vect{u}
+      = k\paren{\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\,\vect{u}}
+      = k\,\proj_{\vect{u}}(\vect{v}).
     \end{equation*}
     Therefore, the function $T$ preserves scalar multiplication. It
     follows that $T$ is a linear transformation.
@@ -200,16 +200,16 @@ matrix as follows:
     the standard basis vectors $T(\vect{e}_1),\ldots,T(\vect{e}_3)$. We compute
     \begin{eqnarray*}
       T(\vect{e}_1)
-      &=& \proj_{\vect{u}}\tup{\vect{e}_1}
-      ~=~ \tup{\frac{\vect{e}_1\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\vect{u}
+      &=& \proj_{\vect{u}}(\vect{e}_1)
+      ~=~ \paren{\frac{\vect{e}_1\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\vect{u}
       ~=~ \frac{1}{14}\begin{mymatrix}{r} 1 \\ 2 \\ 3 \end{mymatrix},\\
       T(\vect{e}_2)
-      &=& \proj_{\vect{u}}\tup{\vect{e}_2}
-      ~=~ \tup{\frac{\vect{e}_2\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\vect{u}
+      &=& \proj_{\vect{u}}(\vect{e}_2)
+      ~=~ \paren{\frac{\vect{e}_2\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\vect{u}
       ~=~ \frac{1}{14}\begin{mymatrix}{r} 1 \\ 2 \\ 3 \end{mymatrix},\\
       T(\vect{e}_3)
-      &=& \proj_{\vect{u}}\tup{\vect{e}_3}
-      ~=~ \tup{\frac{\vect{e}_3\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\vect{u}
+      &=& \proj_{\vect{u}}(\vect{e}_3)
+      ~=~ \paren{\frac{\vect{e}_3\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}\vect{u}
       ~=~ \frac{1}{14}\begin{mymatrix}{r} 1 \\ 2 \\ 3 \end{mymatrix}.
     \end{eqnarray*}
     Hence the matrix of $T$ is

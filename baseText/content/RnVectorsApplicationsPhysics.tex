@@ -54,12 +54,12 @@ the object which would also be a force vector known as the
 resultant\index{resultant}. Suppose the two vectors are $\vect{u}=\sum_{k=1}^{n}u_{i}\vect{e}_{i}$ and $\vect{v}=\sum_{k=1}^{n}v_{i}\vect{e}_{i}$. Then the vector $\vect{u}$ involves a component in the $
 i^{th}$ direction given by $u_{i}\vect{e}_{i}$, while the component in the $i^{th}$
 direction of $\vect{v}$ is $v_{i}\vect{e}_{i}$. Then the vector $\vect{u} + \vect{v}$ should have a component in the $i^{th}$
-direction equal to $\tup{u_{i}+v_{i}} \vect{e}_{i}$. This is
+direction equal to $(u_{i}+v_{i}) \vect{e}_{i}$. This is
 exactly what is obtained when the vectors, $\vect{u}$ and $\vect{v}$ are
 added.
 \begin{eqnarray*}
 \vect{u}+\vect{v}& =&\mat{u_{1}+v_{1},\ldots,u_{n}+v_{n}}^T  \\
-& =&\sum_{i=1}^{n}\tup{u_{i}+v_{i}} \vect{e}_{i}
+& =&\sum_{i=1}^{n}(u_{i}+v_{i}) \vect{e}_{i}
 \end{eqnarray*}
 
 Thus the addition of vectors according to the rules of addition in $\R^{n}$ which were presented earlier, yields the appropriate vector which
@@ -141,7 +141,7 @@ Consider the following example.
 \begin{example}{Position from velocity and time}{position-velocity-time}
 The velocity of an airplane is $100\vect{i}+\vect{j}+\vect{k}$
 measured in kilometers per hour and at a certain instant of time its
-position is $\tup{1,2,1}$. 
+position is $(1,2,1)$. 
 
 Find the position of this airplane one minute later.
 \end{example}
@@ -208,7 +208,7 @@ takes $1/6$ hour or $10$ minutes.
 
 Now, we can compute how far downstream he will end up. Since the river runs at a rate of 
 $4$ kilometers per hour, and the trip takes $1/6$ hour, the distance travelled downstream 
-is given by $4 \tup{\frac{1}{6}} = \frac{2}{3}$ kilometers. 
+is given by $4 \paren{\frac{1}{6}} = \frac{2}{3}$ kilometers. 
 
 The distance travelled by the swimmer is given by the hypotenuse of a right triangle. 
 The two arms of the triangle are given by the distance across the river, $\frac{1}{2}$km, and 
@@ -217,7 +217,7 @@ the total distance $d$ travelled.
 \begin{equation*}
 d
 =
-\sqrt{ \tup{\frac{2}{3} }^2 + \tup{\frac{1}{2} } ^2 }
+\sqrt{ \paren{\frac{2}{3}}^2 + \paren{\frac{1}{2}} ^2 }
 =
 \frac{5}{6} \mbox{km}
 \end{equation*}

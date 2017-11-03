@@ -83,7 +83,7 @@ The following definition summarizes what we have just found.
   The \textbf{projection of $\vect{v}$ onto
     $\vect{u}$}\index{vector!projection of} is defined to be the vector
   \begin{equation*}
-    \proj_{\vect{u}}\tup{\vect{v}} = 
+    \proj_{\vect{u}}(\vect{v}) = 
       \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u}
     =
     \frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\,\vect{u}.
@@ -94,7 +94,7 @@ The following definition summarizes what we have just found.
 \end{definition}
 
 \begin{example}{Find the projection of one vector onto another}{vector-projection}
-  Find $\proj_{\vect{u}}\tup{\vect{v}}$ if
+  Find $\proj_{\vect{u}}(\vect{v})$ if
   \begin{equation*}
     \vect{u}=
     \begin{mymatrix}{r}
@@ -114,7 +114,7 @@ The following definition summarizes what we have just found.
 
 \begin{solution}
   We can use the formula provided in Definition~\ref{def:projection}
-  to find $\proj_{\vect{u}}\tup{\vect{v}}$.  First, compute
+  to find $\proj_{\vect{u}}(\vect{v})$.  First, compute
   $\vect{v} \dotprod \vect{u}$.  This is given by
   \begin{equation*}
     \begin{mymatrix}{r}
@@ -149,7 +149,7 @@ The following definition summarizes what we have just found.
   \end{equation*}
   Therefore, the projection is equal to  
   \begin{equation*}
-    \proj_{\vect{u}}\tup{\vect{v}}
+    \proj_{\vect{u}}(\vect{v})
     =-\frac{8}{29} 
         \begin{mymatrix}{r}
           2 \\
@@ -184,7 +184,7 @@ $\vect{u}$, and the other of which is orthogonal to $\vect{u}$.
 \begin{proof}
   To show that such a decomposition exists, let
   \begin{equation*}
-    \vect{v}_{\coll} = \proj_{\vect{u}}\tup{\vect{v}} = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u},
+    \vect{v}_{\coll} = \proj_{\vect{u}}(\vect{v}) = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u},
   \end{equation*}
   and define $\vect{v}_{\bot} = \vect{v}-\vect{v}_{\coll}$. By
   definition, {\eqref{projection}} is satisfied, and
