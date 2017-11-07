@@ -5,7 +5,7 @@ This section includes some important proofs on determinants and cofactors.
 First we recall the definition of a determinant. If $A=\mat{a_{ij} }$ is an $n\times n$-matrix, then $\det A$ is defined by computing the expansion along the first row:
 \begin{equation}
 \label{E1} 
-\det A=\sum_{i=1}^n a_{1,i} \func{cof}(A)_{1,i}. 
+\det A=\sum_{i=1}^n a_{1,i} \cof{A}{1,i}. 
 \end{equation}
 If $n=1$ then $\det A=a_{1,1}$. 
 
@@ -39,7 +39,7 @@ statement is true for all $n\times n$-matrices for every $n\geq 2$.
 If $A$ is an $n\times n$-matrix and $1\leq j \leq n$,
 then the matrix obtained by removing $1$st column and $j$th row from $A$ 
 is an $(n-1)\times (n-1)$-matrix (we shall denote this matrix by $A(j)$ below). Since these matrices 
-are used in computation of cofactors $\func{cof}(A)_{1,i}$, for $1\leq i\neq n$, 
+are used in computation of cofactors $\cof{A}{1,i}$, for $1\leq i\neq n$, 
 the inductive assumption applies to these matrices. 
 
 Consider the following lemma.
@@ -60,13 +60,13 @@ Let $i$ be such that the $i$th row of $A$ consists of zeros.
 Then we have $a_{ij}=0$ for $1\leq j\leq n$. 
 
 Fix $j\in \set{1,2, \dots ,n}$ such that $j\neq i$. Then  matrix $A(j)$ used in computation of
- $\func{cof}(A)_{1,j}$ has a row consisting of zeros, and by our inductive 
- assumption $\func{cof}(A)_{1,j}=0$. 
+ $\cof{A}{1,j}$ has a row consisting of zeros, and by our inductive 
+ assumption $\cof{A}{1,j}=0$. 
 
 On the other hand, if $j=i$ then $a_{1,j}=0$.  
-Therefore $a_{1,j}\func{cof}(A)_{1,j}=0$ for all $j$ and by \eqref{E1} we have 
+Therefore $a_{1,j}\cof{A}{1,j}=0$ for all $j$ and by \eqref{E1} we have 
 \[
-\det A=\sum_{j=1}^n a_{1,j} \func{cof}(A)_{1,j}=0
+\det A=\sum_{j=1}^n a_{1,j} \cof{A}{1,j}=0
 \]
 as each of the summands is equal to 0. 
 \end{proof} 
@@ -94,14 +94,14 @@ we have  $a_{l,j}=b_{l,j}=c_{l,j}$ for $j\neq i$ and for $1\leq l\leq n$
 and $a_{l,i}=b_{l,i}+c_{l,i}$ for all $1\leq l\leq n$. 
 Therefore $A(i)=B(i)=C(i)$, and $A(j)$ has the property that 
 its $i$th row is the sum of $i$th rows of $B(j)$ and $C(j)$ for $j\neq i$ while the  other rows of all three matrices are identical.  
-Therefore by our inductive assumption we have $\func{cof}(A)_{1j}=\func{cof}(B)_{1j}+\func{cof}(C)_{1j}$
+Therefore by our inductive assumption we have $\cof{A}{1j}=\cof{B}{1j}+\cof{C}{1j}$
 for $j\neq i$. 
 
 By \eqref{E1} we have (using all equalities established above) 
 \begin{align*}
-\det A&=\sum_{l=1}^n a_{1,l} \func{cof}(A)_{1,l}\\
- &=\sum_{l\neq i} a_{1,l}(\func{cof}(B)_{1,l}+\func{cof}(C)_{1,l})+ 
-(b_{1,i}+c_{1,i})\func{cof}(A)_{1,i}\\
+\det A&=\sum_{l=1}^n a_{1,l} \cof{A}{1,l}\\
+ &=\sum_{l\neq i} a_{1,l}(\cof{B}{1,l}+\cof{C}{1,l})+ 
+(b_{1,i}+c_{1,i})\cof{A}{1,i}\\
 &=
 \det B+\det C
 \end{align*}
@@ -132,19 +132,19 @@ Then $A(l)$ is obtained from $B(l)$ by interchanging two of its rows (draw a pic
 by our assumption 
 \begin{equation} 
 \label{E2} 
-\func{cof}(A)_{1,l}=-\func{cof}(B)_{1,l}. 
+\cof{A}{1,l}=-\cof{B}{1,l}. 
 \end{equation} 
 
-Now consider $a_{1,i} \func{cof}(A)_{1,l}$. We have that $a_{1,i}=b_{1,j}$ 
+Now consider $a_{1,i} \cof{A}{1,l}$. We have that $a_{1,i}=b_{1,j}$ 
 and also that $A(i)=B(j)$. Since $j=i+1$, we have 
 \[
 (-1)^{1+j}=(-1)^{1+i+1}=-(-1)^{1+i} 
 \]
-and therefore $a_{1i}\func{cof}(A)_{1i}=-b_{1j} \func{cof}(B)_{1j}$ and $a_{1j}\func{cof}(A)_{1j}=-b_{1i} \func{cof}(B)_{1i}$. 
+and therefore $a_{1i}\cof{A}{1i}=-b_{1j} \cof{B}{1j}$ and $a_{1j}\cof{A}{1j}=-b_{1i} \cof{B}{1i}$. 
 Putting this together with \eqref{E2} into \eqref{E1} we see that if in the formula
 for $\det A$ we change the sign of each of the summands we obtain the formula for $\det B$. 
 \[
-\det A=\sum_{l=1}^n a_{1l}\func{cof}(A)_{1l}
+\det A=\sum_{l=1}^n a_{1l}\cof{A}{1l}
 =-\sum_{l=1}^n b_{1l} B_{1l}
 =\det B. 
 \]
@@ -166,8 +166,8 @@ Assume that (2) is true for all $(n-1)\times (n-1)$-matrices.
 We have that $a_{ji}=k b_{ji}$ for $1\leq j\leq n$. 
 In particular $a_{1i}=kb_{1i}$, and for $l\neq i$-matrix 
 $A(l)$ is obtained from $B(l)$ by multiplying one of its rows by $k$. 
-Therefore $\func{cof}(A)_{1l}=k\func{cof}(B)_{1l}$ for $l\neq i$, 
-and for all $l$ we have $a_{1l} \func{cof}(A)_{1l}=k b_{1l}\func{cof}(B)_{1l}$. 
+Therefore $\cof{A}{1l}=k\cof{B}{1l}$ for $l\neq i$, 
+and for all $l$ we have $a_{1l} \cof{A}{1l}=k b_{1l}\cof{B}{1l}$. 
 By \eqref{E1}, we have $\det A=k\det B$. 
 
 (3) This is a consequence of (1). If two rows of $A$ are identical, then 
@@ -273,7 +273,7 @@ Expanding an $n\times n$-matrix along any row or column always gives the same re
 
 Let $A$be an $n\times n$-matrix and fix $j>1$. We need to prove that
 \[
-	\det A=\sum_{i=1}^n a_{j,i} \func{cof}(A)_{j,i}. 
+	\det A=\sum_{i=1}^n a_{j,i} \cof{A}{j,i}. 
 \]
 Let us prove the case when $j=2$. 
 
@@ -284,7 +284,7 @@ Then by  Theorem~\ref{thm:T1} we have
 \]
 Now we have 
 \[
-\det B=\sum_{i=1}^n b_{1,i} \func{cof}(B)_{1,i}. 
+\det B=\sum_{i=1}^n b_{1,i} \cof{B}{1,i}. 
 \]
 Since $B$ is obtained by interchanging the $1$st and $2$nd rows of $A$
 we have that $b_{1,i}=a_{2,i}$ for all $i$
@@ -292,15 +292,15 @@ and one can see that $minor(B)_{1,i}=minor(A)_{2,i}$.
 
 Further, 
 \[
-\func{cof}(B)_{1,i}=(-1)^{1+i} minor B_{1,i}=- (-1)^{2+i} minor (A)_{2,i} = - \func{cof}(A)_{2,i}
+\cof{B}{1,i}=(-1)^{1+i} minor B_{1,i}=- (-1)^{2+i} minor (A)_{2,i} = - \cof{A}{2,i}
 \]
-hence $\det B=-\sum_{i=1}^n a_{2,i} \func{cof}(A)_{2,i}$, and therefore 
+hence $\det B=-\sum_{i=1}^n a_{2,i} \cof{A}{2,i}$, and therefore 
 $\det A=-\det B=
-\sum_{i=1}^n a_{2,i} \func{cof}(A)_{2,i}$ as desired. 
+\sum_{i=1}^n a_{2,i} \cof{A}{2,i}$ as desired. 
 
 The case when $j>2$ is very similar; we still have
 $minor(B)_{1,i}=minor (A)_{j,i}$ but checking that $\det
-B=-\sum_{i=1}^n a_{j,i} \func{cof}(A)_{j,i}$ is slightly more
+B=-\sum_{i=1}^n a_{j,i} \cof{A}{j,i}$ is slightly more
 involved.
 
 Now the cofactor expansion along column $j$ of $A$ is equal to the
