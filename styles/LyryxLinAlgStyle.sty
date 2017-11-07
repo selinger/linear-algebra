@@ -250,9 +250,19 @@
 % Superscript "th", as in $i\th$ and $j\th$.
 \renewcommand{\th}{^{\,\rm th}}
 
+% Special case: $\ijth$ instead of $ij\th$, for better spacing.
+\newcommand{\ijth}{i\!j\th}
+
 % For row operations
 \newcommand{\rowop}{~\leftarrow~}
 \newcommand{\rowswap}{~\leftrightarrow~}
 
 % For coordinates of vector w.r.t. basis
 \newcommand{\coord}[1]{\left[#1\right]}
+
+% For minors, write $\minor{A}{ij}$.
+\newcommand{\minor}[2]{M_{#2}}
+
+% For striking out rows and columns of a matrix.
+\newcommand{\strikeh}[2]{\makebox[0in][l]{\hspace{-0.2em}\raisebox{.6ex}[0pt]{\color{blue}\rule{#1}{0.5mm}}}\makebox[0in]{$#2$}}
+\newcommand{\strikev}[2]{\makebox[0in]{\raisebox{1.6ex}{\raisebox{-#1}[0pt][0pt]{\color{blue}\rule{0.5mm}{#1}}}}\makebox[0in]{$#2$}}

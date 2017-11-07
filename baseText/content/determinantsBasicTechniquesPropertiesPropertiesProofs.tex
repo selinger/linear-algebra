@@ -288,18 +288,18 @@ Now we have
 \]
 Since $B$ is obtained by interchanging the $1$st and $2$nd rows of $A$
 we have that $b_{1,i}=a_{2,i}$ for all $i$
-and one can see that $minor(B)_{1,i}=minor(A)_{2,i}$. 
+and one can see that $\minor{B}{1,i}=\minor{A}{2,i}$. 
 
 Further, 
 \[
-\cof{B}{1,i}=(-1)^{1+i} minor B_{1,i}=- (-1)^{2+i} minor (A)_{2,i} = - \cof{A}{2,i}
+\cof{B}{1,i}=(-1)^{1+i} minor B_{1,i}=- (-1)^{2+i} \minor{A}{2,i} = - \cof{A}{2,i}
 \]
 hence $\det B=-\sum_{i=1}^n a_{2,i} \cof{A}{2,i}$, and therefore 
 $\det A=-\det B=
 \sum_{i=1}^n a_{2,i} \cof{A}{2,i}$ as desired. 
 
 The case when $j>2$ is very similar; we still have
-$minor(B)_{1,i}=minor (A)_{j,i}$ but checking that $\det
+$\minor{B}{1,i}=\minor{A}{j,i}$ but checking that $\det
 B=-\sum_{i=1}^n a_{j,i} \cof{A}{j,i}$ is slightly more
 involved.
 
