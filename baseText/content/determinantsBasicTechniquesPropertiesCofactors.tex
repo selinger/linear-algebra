@@ -1,377 +1,412 @@
 \section{Cofactors and \texorpdfstring{$2\times 2$}{2x2} determinants}
 
-Let $A$ be an $n\times n$-matrix. That is, let $A$ be a square matrix. The \textbf{determinant}\index{determinant} of $A$, denoted
-by $\det (A) $ is a very important number which we will explore throughout this section. 
+Let $A$ be an $n\times n$-matrix. That is, let $A$ be a square
+matrix. The \textbf{determinant}\index{determinant} of $A$, denoted by
+$\det(A)$ is a very important number which we will explore
+throughout this section.
 
-If $A$ is a $2\times 2$-matrix, the determinant is given by the following formula.
+If $A$ is a $2\times 2$-matrix, the determinant is given by the
+following formula.
 
 \begin{definition}{Determinant of a two by two matrix}{two-by-two-determinant}
-Let $A=\begin{mymatrix}{rr}
-a & b \\
-c & d
-\end{mymatrix}$. Then
-\begin{equation*}
-\det (A)  = ad-cb
-\end{equation*}
+  Let $A=\begin{mymatrix}{rr}
+    a & b \\
+    c & d
+  \end{mymatrix}$. Then
+  \begin{equation*}
+    \det(A) = ad-cb
+  \end{equation*}
 \end{definition}
 
 The determinant is also often denoted by enclosing the matrix with two
 vertical lines. Thus
 \begin{equation*}
-\det \begin{mymatrix}{rr}
-a & b \\
-c & d
-\end{mymatrix} =\begin{absmatrix}{rr}
-a & b \\
-c & d
-\end{absmatrix} 
-=ad - bc
+  \det \begin{mymatrix}{rr}
+    a & b \\
+    c & d
+  \end{mymatrix} =\begin{absmatrix}{rr}
+    a & b \\
+    c & d
+  \end{absmatrix} 
+  =ad - bc
 \end{equation*}
 
-The following is an example of finding the determinant of a $2 \times 2$-matrix.
+The following is an example of finding the determinant of a
+$2 \times 2$-matrix.
 
 \begin{example}{A two by two determinant}{two-by-two-determinant}
-Find $\det(A) $ for the matrix
-$A =  \begin{mymatrix}{rr}
-2 & 4 \\
--1 & 6
-\end{mymatrix}$.
+  Find $\det(A)$ for the matrix
+  $A =  \begin{mymatrix}{rr}
+    2 & 4 \\
+    -1 & 6
+  \end{mymatrix}$.
 \end{example}
 
-\begin{solution} From Definition~\ref{def:two-by-two-determinant},
-\begin{equation*}
-\det (A) = (2) (6) -(
--1) (4) = 12 + 4 = 16
-\end{equation*}
+\begin{solution}
+  From Definition~\ref{def:two-by-two-determinant},
+  \begin{equation*}
+    \det(A) = (2) (6) - (-1) (4) = 12 + 4 = 16
+  \end{equation*}
 \end{solution} 
 
-The $2 \times 2$ determinant can be used to find the determinant of larger matrices.
-We will now explore how to find the determinant of a $3 \times 3$-matrix, using several tools
-including the $2 \times 2$ determinant.
+The $2\times 2$ determinant can be used to find the determinant of
+larger matrices.  We will now explore how to find the determinant of a
+$3\times 3$-matrix, using several tools including the $2\times 2$
+determinant.
 
 We begin with the following definition. 
 
 \begin{definition}{The $ij^{th}$ minor of a matrix}{ijth-minor}
-Let $A$ be a $3\times 3$-matrix. The $ij^{th}$ \textbf{minor}\index{determinant!minor} of $A$, denoted as $minor(A) _{ij}$, is the determinant
-of the $2\times 2$-matrix which results from deleting the $i^{th}$ row and
-the $j^{th}$ column of $A$.
+  Let $A$ be a $3\times 3$-matrix. The $ij^{th}$
+  \textbf{minor}\index{determinant!minor} of $A$, denoted as
+  $minor(A) _{ij}$, is the determinant of the $2\times 2$-matrix which
+  results from deleting the $i^{th}$ row and the $j^{th}$ column of
+  $A$.
 
-In general, if $A$ is an $n\times n$-matrix, then the $ij^{th}$ minor of $A$ is the determinant of the $n-1 \times n-1$-matrix which results from deleting the $i^{th}$ row and the $j^{th}$ column of $A$. 
+  In general, if $A$ is an $n\times n$-matrix, then the $ij^{th}$
+  minor of $A$ is the determinant of the $n-1\times n-1$-matrix which
+  results from deleting the $i^{th}$ row and the $j^{th}$ column of
+  $A$.
 \end{definition}
 
-Hence, there is a minor associated with each entry of $A$. Consider the following example which demonstrates this definition. 
+Hence, there is a minor associated with each entry of $A$. Consider
+the following example which demonstrates this definition.
 
 \begin{example}{Finding minors of a matrix}{finding-minors}
-Let 
-\begin{equation*}
-A = \begin{mymatrix}{rrr}
-1 & 2 & 3 \\
-4 & 3 & 2 \\
-3 & 2 & 1
-\end{mymatrix} 
-\end{equation*}
-Find $minor(A) _{12}$ and $minor(A) _{23}$.
+  Let 
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      1 & 2 & 3 \\
+      4 & 3 & 2 \\
+      3 & 2 & 1
+    \end{mymatrix} 
+  \end{equation*}
+  Find $minor(A) _{12}$ and $minor(A) _{23}$.
 \end{example}
 
-\begin{solution} First we will find $minor(A) _{12}$. By Definition~\ref{def:ijth-minor}, this is the determinant of the $2\times 2$-matrix
-which results when you delete the first row and the second column. This
-minor is given by
-\begin{equation*}
-minor (A)_{12}
-=
-\det \begin{mymatrix}{rr}
-4 & 2 \\
-3 & 1
-\end{mymatrix}
-\end{equation*}
-Using Definition~\ref{def:two-by-two-determinant}, we see that 
-\begin{equation*}
-\det \begin{mymatrix}{rr}
-4 & 2 \\
-3 & 1
-\end{mymatrix} = (4)(1) - (3)(2) = 4 - 6 = -2
-\end{equation*}
+\begin{solution}
+  First we will find $minor(A) _{12}$. By
+  Definition~\ref{def:ijth-minor}, this is the determinant of the
+  $2\times 2$-matrix which results when you delete the first row and
+  the second column. This minor is given by
+  \begin{equation*}
+    minor (A)_{12}
+    =
+    \det \begin{mymatrix}{rr}
+      4 & 2 \\
+      3 & 1
+    \end{mymatrix}
+  \end{equation*}
+  Using Definition~\ref{def:two-by-two-determinant}, we see that
+  \begin{equation*}
+    \det \begin{mymatrix}{rr}
+      4 & 2 \\
+      3 & 1
+    \end{mymatrix} = (4)(1) - (3)(2) = 4 - 6 = -2
+  \end{equation*}
 
-Therefore $minor (A)_{12} = -2$. 
+  Therefore $minor (A)_{12} = -2$. 
 
-Similarly, $minor(A)_{23}$ is the determinant of the $2\times 2$-matrix
-which results when you delete the second row and the third column. This
-minor is therefore
-\begin{equation*}
-minor (A)_{23} 
-=
-\det \begin{mymatrix}{rr}
-1 & 2 \\
-3 & 2
-\end{mymatrix} = -4
-\end{equation*}
-Finding the other minors of $A$ is left as an exercise. 
+  Similarly, $minor(A)_{23}$ is the determinant of the
+  $2\times 2$-matrix which results when you delete the second row and
+  the third column. This minor is therefore
+  \begin{equation*}
+    minor (A)_{23} 
+    =
+    \det \begin{mymatrix}{rr}
+      1 & 2 \\
+      3 & 2
+    \end{mymatrix} = -4
+  \end{equation*}
+  Finding the other minors of $A$ is left as an exercise.
 \end{solution}
 
-The $ij^{th}$ minor of a matrix $A$ is used in another important definition, given next.
+The $ij^{th}$ minor of a matrix $A$ is used in another important
+definition, given next.
 
 \begin{definition}{The $ij^{th}$ cofactor of a matrix}{ijth-cofactor}
-Suppose $A$ is an $n\times n$-matrix. The $ij^{th}$ \textbf{cofactor}\index{determinant!cofactor}, denoted by $\func{cof}(A) _{ij}$ is
-defined to be 
-\begin{equation*}
-\func{cof}(A) _{ij} = (-1) ^{i+j} minor(A)_{ij} 
-\end{equation*}
+  Suppose $A$ is an $n\times n$-matrix. The $ij^{th}$
+  \textbf{cofactor}\index{determinant!cofactor}, denoted by
+  $\func{cof}(A) _{ij}$ is defined to be
+  \begin{equation*}
+    \func{cof}(A) _{ij} = (-1) ^{i+j} minor(A)_{ij} 
+  \end{equation*}
 \end{definition}
 
-It is also convenient to refer to the
-cofactor of an entry of a matrix as follows. If $a_{ij}$ is the $ij^{th}$ entry of the
-matrix, then its cofactor is just $\func{cof}(A) _{ij}$.
+It is also convenient to refer to the cofactor of an entry of a matrix
+as follows. If $a_{ij}$ is the $ij^{th}$ entry of the matrix, then its
+cofactor is just $\func{cof}(A) _{ij}$.
 
 \begin{example}{Finding cofactors of a matrix}{finding-cofactors}
-Consider the matrix
-\begin{equation*}
-A=\begin{mymatrix}{rrr}
-1 & 2 & 3 \\
-4 & 3 & 2 \\
-3 & 2 & 1
-\end{mymatrix} 
-\end{equation*}
-Find $\func{cof}(A) _{12}$ and $\func{cof}(A) _{23}$.
+  Consider the matrix
+  \begin{equation*}
+    A=\begin{mymatrix}{rrr}
+      1 & 2 & 3 \\
+      4 & 3 & 2 \\
+      3 & 2 & 1
+    \end{mymatrix} 
+  \end{equation*}
+  Find $\func{cof}(A) _{12}$ and $\func{cof}(A) _{23}$.
 \end{example}
 
-\begin{solution} We will use Definition~\ref{def:ijth-cofactor} to compute these cofactors. 
+\begin{solution}
+  We will use Definition~\ref{def:ijth-cofactor} to compute these
+  cofactors.
 
-First, we will compute $\func{cof}(A) _{12}$. 
-Therefore, we need to find $minor(A)_{12}$. This is the determinant of the $2\times 2$-matrix
-which results when you delete the first row and the second column. Thus $minor(A)_{12}$ is given by 
-\begin{equation*}
-\det \begin{mymatrix}{rr}
-4 & 2 \\
-3 & 1
-\end{mymatrix} = -2
-\end{equation*}
-Then,
-\begin{equation*}
-\func{cof}(A) _{12}=(-1) ^{1+2} minor(A)_{12} =(-1) ^{1+2}(-2) =2
-\end{equation*}
-Hence, $\func{cof}(A) _{12}=2$.
+  First, we will compute $\func{cof}(A) _{12}$.  Therefore, we need to
+  find $minor(A)_{12}$. This is the determinant of the
+  $2\times 2$-matrix which results when you delete the first row and
+  the second column. Thus $minor(A)_{12}$ is given by
+  \begin{equation*}
+    \det \begin{mymatrix}{rr}
+      4 & 2 \\
+      3 & 1
+    \end{mymatrix} = -2
+  \end{equation*}
+  Then,
+  \begin{equation*}
+    \func{cof}(A) _{12}=(-1) ^{1+2} minor(A)_{12} =(-1) ^{1+2}(-2) =2
+  \end{equation*}
+  Hence, $\func{cof}(A) _{12}=2$.
 
-Similarly, we can find $\func{cof}(A) _{23}$. First, find $minor(A)_{23}$, which is the determinant of the $2\times 2$-matrix
-which results when you delete the second row and the third column. This
-minor is therefore
-\begin{equation*}
-\det \begin{mymatrix}{rr}
-1 & 2 \\
-3 & 2
-\end{mymatrix} = -4
-\end{equation*}
-Hence,
-\begin{equation*}
-\func{cof}(A) _{23}=(-1) ^{2+3} minor(A)_{23} =(-1) ^{2+3}(-4) =4
-\end{equation*}
+  Similarly, we can find $\func{cof}(A) _{23}$. First, find
+  $minor(A)_{23}$, which is the determinant of the $2\times 2$-matrix
+  which results when you delete the second row and the third
+  column. This minor is therefore
+  \begin{equation*}
+    \det \begin{mymatrix}{rr}
+      1 & 2 \\
+      3 & 2
+    \end{mymatrix} = -4
+  \end{equation*}
+  Hence,
+  \begin{equation*}
+    \func{cof}(A) _{23}=(-1) ^{2+3} minor(A)_{23} =(-1) ^{2+3}(-4) =4
+  \end{equation*}
 \end{solution}
 
-You may wish to find the remaining cofactors for the above matrix. Remember that there is a cofactor 
-for every entry in the matrix.  
+You may wish to find the remaining cofactors for the above
+matrix. Remember that there is a cofactor for every entry in the
+matrix.
 
-We have now established the tools we need to find the determinant of a $3 \times3 $-matrix.
+We have now established the tools we need to find the determinant of a
+$3\times3$-matrix.
 
 \begin{definition}{The determinant of a three by three matrix}{three-by-three-determinant}
-Let $A$ be a $3\times 3$-matrix. Then, $\det (A)$ is calculated by picking a row
-(or column) and taking the product of each entry in that row (column) with its
-cofactor and adding these products together. 
+  Let $A$ be a $3\times 3$-matrix. Then, $\det(A)$ is calculated by
+  picking a row (or column) and taking the product of each entry in
+  that row (column) with its cofactor and adding these products
+  together.
 
-This process when applied to the $i^{th}$
-row (column) is known as \textbf{expanding along the $i^{th}$ row
-(column)}\index{determinant!expanding along row or column} as is given by 
-\[
-\det (A) = a_{i1}\func{cof}(A)_{i1} + a_{i2}\func{cof}(A)_{i2} + a_{i3}\func{cof}(A)_{i3}
-\]
-
+  This process when applied to the $i^{th}$ row (column) is known as
+  \textbf{expanding along the $i^{th}$ row (column)}%
+  \index{determinant!expanding along row or column} as is given by
+  \[
+    \det(A) =
+    a_{i1}\func{cof}(A)_{i1} + a_{i2}\func{cof}(A)_{i2} + a_{i3}\func{cof}(A)_{i3}
+  \]
 \end{definition}
 
-When calculating the determinant, you can choose to expand any row or any column. Regardless 
-of your choice, you will always get the same number which is the determinant of the matrix $A$. 
-This method of evaluating a determinant by expanding along a row or a column is called \textbf{Laplace
-Expansion}\index{Laplace expansion} or \textbf{Cofactor Expansion}\index{Cofactor Expansion}.
+When calculating the determinant, you can choose to expand any row or
+any column. Regardless of your choice, you will always get the same
+number which is the determinant of the matrix $A$.  This method of
+evaluating a determinant by expanding along a row or a column is
+called \textbf{Laplace Expansion}\index{Laplace expansion} or
+\textbf{Cofactor Expansion}\index{Cofactor Expansion}.
 
-
-Consider the following example. 
+Consider the following example.
 
 \begin{example}{Finding the determinant of a three by three matrix}{determinant-three-by-three}
-Let 
-\begin{equation*}
-A=\begin{mymatrix}{rrr}
-1 & 2 & 3 \\
-4 & 3 & 2 \\
-3 & 2 & 1
-\end{mymatrix} 
-\end{equation*}
-Find $\det(A)$ using the method of Laplace Expansion.
+  Let
+  \begin{equation*}
+    A=\begin{mymatrix}{rrr}
+      1 & 2 & 3 \\
+      4 & 3 & 2 \\
+      3 & 2 & 1
+    \end{mymatrix} 
+  \end{equation*}
+  Find $\det(A)$ using the method of Laplace Expansion.
 \end{example}
 
-\begin{solution} First, we will calculate $\det (A)$ by expanding along the first column.
-Using Definition~\ref{def:three-by-three-determinant}, we take the $1$ in the first column and multiply it 
-by its cofactor,
-\begin{equation*}
-1  (-1) ^{1+1}\begin{absmatrix}{rr}
-3 & 2 \\
-2 & 1
-\end{absmatrix} 
-=
-(1)(1)(-1) = -1 
-\end{equation*}
-Similarly, we take the $4$ in the first column and multiply it by its cofactor, 
-as well as with the $3$ in the first column. Finally, we add these numbers together, as given in the following
-equation.
-\begin{equation*}
-\det (A) = 
-1 \overset{
-\func{cof}(A) _{11}}{\overbrace{(-1) ^{1+1}\begin{absmatrix}{rr}
-3 & 2 \\
-2 & 1
-\end{absmatrix} }}+4 \overset{\func{cof}(A) _{21}}{\overbrace{(
--1) ^{2+1}\begin{absmatrix}{rr}
-2 & 3 \\
-2 & 1
-\end{absmatrix} }}+3 \overset{\func{cof}(A) _{31}}{\overbrace{(
--1) ^{3+1}\begin{absmatrix}{rr}
-2 & 3 \\
-3 & 2
-\end{absmatrix} }}
-\end{equation*}
-Calculating each of these, we obtain
-\begin{equation*}
-\det (A)
-=
-1 (1)(-1)
-+
-4 (-1)(-4)
-+
-3 (1)(-5)
-=
--1 + 16 + -15
-= 
-0
-\end{equation*}
-Hence, $\det(A) = 0$. 
+\begin{solution}
+  First, we will calculate $\det(A)$ by expanding along the first
+  column.  Using Definition~\ref{def:three-by-three-determinant}, we
+  take the $1$ in the first column and multiply it by its cofactor,
+  \begin{equation*}
+    1  (-1) ^{1+1}\begin{absmatrix}{rr}
+      3 & 2 \\
+      2 & 1
+    \end{absmatrix} 
+    =
+    (1)(1)(-1) = -1 
+  \end{equation*}
+  Similarly, we take the $4$ in the first column and multiply it by
+  its cofactor, as well as with the $3$ in the first column. Finally,
+  we add these numbers together, as given in the following equation.
+  \begin{equation*}
+    \det(A) = 
+    1 \overset{
+      \func{cof}(A) _{11}}{\overbrace{(-1) ^{1+1}\begin{absmatrix}{rr}
+          3 & 2 \\
+          2 & 1
+        \end{absmatrix} }}+4 \overset{\func{cof}(A) _{21}}{\overbrace{(
+        -1) ^{2+1}\begin{absmatrix}{rr}
+          2 & 3 \\
+          2 & 1
+        \end{absmatrix} }}+3 \overset{\func{cof}(A) _{31}}{\overbrace{(
+        -1) ^{3+1}\begin{absmatrix}{rr}
+          2 & 3 \\
+          3 & 2
+        \end{absmatrix} }}
+  \end{equation*}
+  Calculating each of these, we obtain
+  \begin{equation*}
+    \det(A)
+    = 1 (1)(-1)
+    + 4 (-1)(-4)
+    + 3 (1)(-5)
+    = -1 + 16 + -15
+    = 0
+  \end{equation*}
+  Hence, $\det(A) = 0$. 
 
-As mentioned in Definition~\ref{def:three-by-three-determinant}, we can choose to 
-expand along any row or column. Let's try now by expanding along the second row.
-Here, we take the $4$ in the second row and multiply it to its cofactor, then 
-add this to the $3$ in the second row multiplied by its cofactor, and the $2$ in the 
-second row multiplied by its cofactor. The calculation is as follows. 
-\begin{equation*}
-\det (A)
-=
-4 \overset{\func{cof}(A) _{21}}{\overbrace{(-1)
-^{2+1}\begin{absmatrix}{rr}
-2 & 3 \\
-2 & 1
-\end{absmatrix} }}+3 \overset{\func{cof}(A) _{22}}{\overbrace{(
--1) ^{2+2}\begin{absmatrix}{rr}
-1 & 3 \\
-3 & 1
-\end{absmatrix} }}+2 \overset{\func{cof}(A) _{23}}{\overbrace{(
--1) ^{2+3}\begin{absmatrix}{rr}
-1 & 2 \\
-3 & 2
-\end{absmatrix} }}
-\end{equation*}
-
-Calculating each of these products, we obtain
-\begin{equation*}
-\det (A)
-=
-4(-1)(-2) 
-+
-3(1)(-8) 
-+
-2 (-1)(-4)
-=
-0
-\end{equation*}
-
-You can see that for both methods, we obtained $\det (A) = 0$. 
+  As mentioned in Definition~\ref{def:three-by-three-determinant}, we
+  can choose to expand along any row or column. Let's try now by
+  expanding along the second row.  Here, we take the $4$ in the second
+  row and multiply it to its cofactor, then add this to the $3$ in the
+  second row multiplied by its cofactor, and the $2$ in the second row
+  multiplied by its cofactor. The calculation is as follows.
+  \begin{equation*}
+    \det(A)
+    = 4 \overset{\func{cof}(A)_{21}}{\overbrace{(-1)^{2+1}
+        \begin{absmatrix}{rr}
+          2 & 3 \\
+          2 & 1
+        \end{absmatrix}
+      }}
+    +3 \overset{\func{cof}(A) _{22}}{\overbrace{(-1)^{2+2}
+        \begin{absmatrix}{rr}
+          1 & 3 \\
+          3 & 1
+        \end{absmatrix}
+      }}
+    +2 \overset{\func{cof}(A)_{23}}{\overbrace{(-1)^{2+3}
+        \begin{absmatrix}{rr}
+          1 & 2 \\
+          3 & 2
+        \end{absmatrix}
+      }}
+  \end{equation*}
+  Calculating each of these products, we obtain
+  \begin{equation*}
+    \det(A)
+    =
+    4(-1)(-2) 
+    +
+    3(1)(-8) 
+    +
+    2 (-1)(-4)
+    =
+    0
+  \end{equation*}
+  You can see that for both methods, we obtained $\det(A) = 0$. 
 \end{solution}
 
-As mentioned above, we will always come up with the same value for $\det (A)$ regardless of the row or column 
-we choose to expand along. You should try to compute the above determinant by expanding along other
-rows and columns. This is a good way to check your work, because you should come up 
-with the same number each time!  
+As mentioned above, we will always come up with the same value for
+$\det(A)$ regardless of the row or column we choose to expand
+along. You should try to compute the above determinant by expanding
+along other rows and columns. This is a good way to check your work,
+because you should come up with the same number each time!
 
 We present this idea formally in the following theorem.
 
 \begin{theorem}{The determinant is well defined}{well-defined-determinant}
-Expanding the $n\times n$-matrix along any row or column always gives the
-same answer, which is the determinant.
+  Expanding the $n\times n$-matrix along any row or column always
+  gives the same answer, which is the determinant.
 \end{theorem}
 
-We have now looked at the determinant of $2 \times 2$ and $3 \times 3$-matrices. It turns
-out that the method used to calculate the determinant of a $3 \times 3$-matrix 
-can be used to calculate the determinant of any sized matrix. Notice that
-Definitions~\ref{def:ijth-minor}, {\ref{def:ijth-cofactor}}, and {\ref{def:three-by-three-determinant}}
-can all be applied to a matrix of any size. 
+We have now looked at the determinant of $2\times 2$ and
+$3\times 3$-matrices. It turns out that the method used to calculate
+the determinant of a $3\times 3$-matrix can be used to calculate the
+determinant of any sized matrix. Notice that
+Definitions~\ref{def:ijth-minor}, {\ref{def:ijth-cofactor}}, and
+{\ref{def:three-by-three-determinant}} can all be applied to a matrix
+of any size.
 
-For example, the $ij^{th}$ minor of a $4 \times 4$-matrix is the determinant
-of the $3 \times 3$-matrix you obtain when you delete the $i^{th}$ row and the $j^{th}$ column. 
-Just as with the $3 \times 3$ determinant, we can compute the determinant of a $4 \times 4$-matrix by Laplace Expansion, 
-along any row or column
+For example, the $ij^{th}$ minor of a $4\times 4$-matrix is the
+determinant of the $3\times 3$-matrix you obtain when you delete the
+$i^{th}$ row and the $j^{th}$ column.  Just as with the $3\times 3$
+determinant, we can compute the determinant of a $4\times 4$-matrix
+by Laplace Expansion, along any row or column
 
 Consider the following example. 
 
 \begin{example}{Determinant of a four by four matrix}{four-by-four-determinant}
-Find $\det (A) $ where
-\begin{equation*}
-A=\begin{mymatrix}{rrrr}
-1 & 2 & 3 & 4 \\
-5 & 4 & 2 & 3 \\
-1 & 3 & 4 & 5 \\
-3 & 4 & 3 & 2
-\end{mymatrix}
-\end{equation*}
+  Find $\det(A)$ where
+  \begin{equation*}
+    A=\begin{mymatrix}{rrrr}
+      1 & 2 & 3 & 4 \\
+      5 & 4 & 2 & 3 \\
+      1 & 3 & 4 & 5 \\
+      3 & 4 & 3 & 2
+    \end{mymatrix}
+  \end{equation*}
 \end{example}
 
-\begin{solution} As in the case of a $3\times 3$-matrix, you can expand this along any row or
-column. Lets pick the third column. Then, using Laplace Expansion, 
-\begin{equation*}
-\det (A) 
-=
-3(-1) ^{1+3}\begin{absmatrix}{rrr}
-5 & 4 & 3 \\
-1 & 3 & 5 \\
-3 & 4 & 2
-\end{absmatrix}+2(-1) ^{2+3}\begin{absmatrix}{rrr}
-1 & 2 & 4 \\
-1 & 3 & 5 \\
-3 & 4 & 2
-\end{absmatrix}+
-\end{equation*}
-\begin{equation*}
-4(-1) ^{3+3}\begin{absmatrix}{rrr}
-1 & 2 & 4 \\
-5 & 4 & 3 \\
-3 & 4 & 2
-\end{absmatrix}+3(-1) ^{4+3}\begin{absmatrix}{rrr}
-1 & 2 & 4 \\
-5 & 4 & 3 \\
-1 & 3 & 5
-\end{absmatrix}
-\end{equation*}
-
-Now, you can calculate each $3 \times 3$ determinant using Laplace Expansion, as we did above. 
-You should complete these as an exercise and verify that $\det (A)= -12$. 
+\begin{solution}
+  As in the case of a $3\times 3$-matrix, you can expand this along
+  any row or column. Lets pick the third column. Then, using Laplace
+  Expansion,
+  \begin{equation*}
+    \det(A) 
+    = 3(-1)^{1+3}
+    \begin{absmatrix}{rrr}
+      5 & 4 & 3 \\
+      1 & 3 & 5 \\
+      3 & 4 & 2
+    \end{absmatrix}
+    `+2(-1)^{2+3}
+    \begin{absmatrix}{rrr}
+      1 & 2 & 4 \\
+      1 & 3 & 5 \\
+      3 & 4 & 2
+    \end{absmatrix}+
+  \end{equation*}
+  \begin{equation*}
+    4(-1)^{3+3}
+    \begin{absmatrix}{rrr}
+      1 & 2 & 4 \\
+      5 & 4 & 3 \\
+      3 & 4 & 2
+    \end{absmatrix}
+    +3(-1)^{4+3}
+    \begin{absmatrix}{rrr}
+      1 & 2 & 4 \\
+      5 & 4 & 3 \\
+      1 & 3 & 5
+    \end{absmatrix}
+  \end{equation*}
+  Now, you can calculate each $3\times 3$ determinant using Laplace
+  Expansion, as we did above.  You should complete these as an
+  exercise and verify that $\det(A)= -12$.
 \end{solution}
 
-The following provides a formal definition for the determinant of an $n \times n$-matrix. You may
-wish to take a moment and consider the above definitions for $2 \times 2$ and $3 \times 3$ determinants 
-in context of this definition.
+The following provides a formal definition for the determinant of an
+$n\times n$-matrix. You may wish to take a moment and consider the
+above definitions for $2\times 2$ and $3\times 3$ determinants in
+context of this definition.
 
 \begin{definition}{The determinant of an $n\times n$-matrix}{n-by-n-determinant}
-Let $A$ be an $n\times n$-matrix where $n\geq 2$ and suppose the
-determinant of an $(n-1) \times (n-1) $ has been
-defined. Then
-\begin{equation*}
-\det (A) =\sum_{j=1}^{n}a_{ij}\func{cof}(A)
-_{ij}=\sum_{i=1}^{n}a_{ij}\func{cof}(A) _{ij}
-\end{equation*}
-The first formula consists of expanding the determinant along the $i^{th}$
-row and the second expands the determinant along the $j^{th}$ column.
+  Let $A$ be an $n\times n$-matrix where $n\geq 2$ and suppose the
+  determinant of an $(n-1)\times (n-1) $ has been defined. Then
+  \begin{equation*}
+    \det(A) =\sum_{j=1}^{n}a_{ij}\func{cof}(A)
+    _{ij}=\sum_{i=1}^{n}a_{ij}\func{cof}(A) _{ij}
+  \end{equation*}
+  The first formula consists of expanding the determinant along the
+  $i^{th}$ row and the second expands the determinant along the
+  $j^{th}$ column.
 \end{definition}
 
-In the following sections, we will explore some important properties and characteristics of the determinant.
+In the following sections, we will explore some important properties
+and characteristics of the determinant.
