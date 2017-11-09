@@ -1,170 +1,285 @@
-\section{Finding determinants using row operations}
+\section{Determinants and row operations}
 
-Theorems~\ref{thm:switching-rows}, {\ref{thm:multiplying-row-by-scalar}} and {\ref{thm:adding-multiple-of-row}} illustrate 
-how row operations affect the determinant of a matrix. In this section, we look at two examples where row operations are 
-used to find the determinant of a large matrix. Recall that when working with large matrices, Laplace Expansion
-is effective but timely, as there are many steps involved. This section provides useful tools for
-an alternative method. By first applying row operations, we can obtain a simpler matrix to which we apply Laplace Expansion. 
+Recall that there are three kinds of elementary row operations%
+\index{matrix!row operation}%
+\index{matrix!elementary row operation}%
+\index{row operation}%
+\index{elementary row operation} on matrices:
+\begin{enumerate}
+\item Switch two rows.
+\item Multiply a row by a non-zero number.
+\item Add a multiple of one row to another row.
+\end{enumerate}
+The following theorem examines the effect of these row operations on
+the determinant of a matrix.
 
-While working through questions such as these, it is useful to record your row operations as you go along. Keep this in mind
-as you read through the next example. 
+\begin{theorem}{Effect of row operations on the determinant}{determinant-row-operations}
+  Let $A$ be an $n\times n$-matrix.
+  \begin{enumerate}
+  \item If $B$ is obtained from $A$ by switching two rows, then
+    \begin{equation*}
+      \det(B) = -\det(A).
+    \end{equation*}
+  \item If $B$ is obtained from $A$ by multiplying one row by a
+    non-zero scalar $k$, then
+    \begin{equation*}
+      \det(B) = k\det(A).
+    \end{equation*}
+  \item If $B$ is obtained from $A$ by adding a multiple of one row to
+    another row, then
+    \begin{equation*}
+      \det(B) = \det(A).
+    \end{equation*}
+  \end{enumerate}
+\end{theorem}
 
-\begin{example}{Finding a determinant}{finding-determinant}
-Find the determinant of the matrix
-\begin{equation*}
-A=\begin{mymatrix}{rrrr}
-1 & 2 & 3 & 4 \\
-5 & 1 & 2 & 3 \\
-4 & 5 & 4 & 3 \\
-2 & 2 & -4 & 5
-\end{mymatrix}
-\end{equation*}
+Notice that the second part of this theorem is true when we multiply
+{\em one} row of the matrix by $k$.  If we were to multiply {\em two}
+rows of $A$ by $k$ to obtain $B$, we would have
+$\det(B) = k^2 \det(A)$.
+
+\begin{example}{Using row operations to calculate a determinant}{determinant-row-operations1}
+  Use row operations to calculate the following determinant:
+  \begin{equation*}
+    \begin{absmatrix}{rrr}
+      1 & 5 & 5 \\
+      0 & 0 & -3 \\
+      0 & 2 & 7 \\
+    \end{absmatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-We will use the properties of determinants outlined above to find $\det (A)$. First, add $-5$ times the first row to the second row. Then add $-4$ times the first row to the third row, and $-2$ times
-the first row to the fourth row. This yields the matrix
-\begin{equation*}
-B=\begin{mymatrix}{rrrr}
-1 & 2 & 3 & 4 \\
-0 & -9 & -13 & -17 \\
-0 & -3 & -8 & -13 \\
-0 & -2 & -10 & -3
-\end{mymatrix}
-\end{equation*}
-Notice that the only row operation we have done so far is adding a multiple 
-of a row to another row. Therefore, by Theorem~\ref{thm:adding-multiple-of-row}, $\det (B) = \det (A)$. 
+  If we switch the second and third rows, we obtain a triangular
+  matrix, of which the determinant is easy to compute. By
+  Theorem~\ref{thm:determinant-row-operations}, switching two rows
+  negates the determinant. We therefore have:
+  \begin{equation*}
+    \begin{absmatrix}{rrr}
+      1 & 5 & 5 \\
+      0 & 0 & -3 \\
+      0 & 2 & 7 \\
+    \end{absmatrix}
+    ~=~
+    -\begin{absmatrix}{rrr}
+      1 & 5 & 5 \\
+      0 & 2 & 7 \\
+      0 & 0 & -3 \\
+    \end{absmatrix}
+    ~=~ -(1\cdot 2\cdot(-3)) ~=~ 6.
+  \end{equation*}
+\end{solution}
 
-At this stage, you could use Laplace Expansion to find $\det (B)$. However, we will continue with row operations 
-to find an even simpler matrix to work with.
-
-Add $-3$ times the third row to the second row. By Theorem~\ref{thm:adding-multiple-of-row} this does not change the value of
-the determinant. Then, multiply the fourth row by $-3$. This results in the matrix
-\begin{equation*}
-C=\begin{mymatrix}{rrrr}
-1 & 2 & 3 & 4 \\
-0 & 0 & 11 & 22 \\
-0 & -3 & -8 & -13 \\
-0 & 6 & 30 & 9
-\end{mymatrix} 
-\end{equation*}
-Here, $\det (C) = -3 \det (B)$, which means that 
-$\det (B) =\paren{-\frac{1}{3}} \det (C) $
-
-Since $\det (A) = \det (B)$, we now have that 
-$\det (A) = \paren{-\frac{1}{3}} \det (C)$. Again, you could use Laplace Expansion here to find $\det (C)$. However,
-we will continue with row operations.
-
-Now replace the add $2$ times the third row to the fourth row. This does not change the
-value of the determinant by Theorem~\ref{thm:adding-multiple-of-row}. Finally switch the third
-and second rows. This causes the determinant to be multiplied by $-1$. Thus $\det (C) = -\det (D) $ where
-\begin{equation*}
-D=\begin{mymatrix}{rrrr}
-1 & 2 & 3 & 4 \\
-0 & -3 & -8 & -13 \\
-0 & 0 & 11 & 22 \\
-0 & 0 & 14 & -17
-\end{mymatrix}
-\end{equation*}
-
-Hence, $\det (A) = \paren{-\frac{1}{3}} \det (C) = \paren{\frac{1}{3}} \det (D)$ 
-
-You could do more row operations or you could note that this can be easily
-expanded along the first column. Then, expand the resulting $3 \times 3$-matrix
-also along the first column. This results in 
-\begin{equation*}
-\det (D) =1(-3) \begin{absmatrix}{cc}
-11 & 22 \\
-14 & -17
-\end{absmatrix}= 1485
-\end{equation*}
-and so  $\det (A) =\paren{\frac{1}{3}} (1485)
-=495$.
-\end{solution} 
-
-You can see that by using row operations, we can simplify a matrix
-to the point where Laplace Expansion involves only a few steps. In Example~\ref{exa:finding-determinant}, we also could have continued until the matrix was in 
-upper triangular form, and taken the product of the entries on the main diagonal. Whenever 
-computing the determinant, it is useful to consider all the possible methods and tools.
-
-Consider the next example.
-
-\begin{example}{Find the determinant}{find-determinant}
-Find the determinant of the matrix
-\begin{equation*}
-A = \begin{mymatrix}{rrrr}
-1 & 2 & 3 & 2 \\
-1 & -3 & 2 & 1 \\
-2 & 1 & 2 & 5 \\
-3 & -4 & 1 & 2
-\end{mymatrix}
-\end{equation*}
+\begin{example}{Using row operations to calculate a determinant}{determinant-row-operations2}
+  Use row operations to calculate the following determinant:
+  \begin{equation*}
+    \begin{absmatrix}{rrr}
+      1 & 4 & -2 \\
+      1 & 8 & 1 \\
+      2 & 4 & -9 \\
+    \end{absmatrix}.
+  \end{equation*}
 \end{example}
 
-\begin{solution} 
-Once again, we will simplify the matrix through row operations. 
-Add $-1$ times the first row to
-the second row. Next add $-2$ times the first row to the third and finally take
-$-3$ times the first row and add to the fourth row. This yields
-\begin{equation*}
-B = \begin{mymatrix}{rrrr}
-1 & 2 & 3 & 2 \\
-0 & -5 & -1 & -1 \\
-0 & -3 & -4 & 1 \\
-0 & -10 & -8 & -4
-\end{mymatrix} 
-\end{equation*}
-By Theorem~\ref{thm:adding-multiple-of-row}, $\det (A) = \det (B)$. 
+\begin{solution}
+  We can use elementary row operations to reduce this matrix to
+  triangular form:
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 4 & -2 \\
+      1 & 8 & 1 \\
+      2 & 4 & -9 \\
+    \end{mymatrix}
+    \stackrel{R_2\rowop R_2-R_1}{\sim}
+    \begin{mymatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      2 & 4 & -9 \\
+    \end{mymatrix}
+    \stackrel{R_3\rowop R_3-2R_1}{\sim}
+    \begin{mymatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      0 & -4 & -5 \\
+    \end{mymatrix}
+    \stackrel{R_3\rowop R_3+R_2}{\sim}
+    \begin{mymatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      0 & 0 & -2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Each of the row operations is of the form ``add a multiple of one
+  row to another row'', and therefore does not change the
+  determinant. We therefore have:
+  \begin{equation*}
+    \begin{absmatrix}{rrr}
+      1 & 4 & -2 \\
+      1 & 8 & 1 \\
+      2 & 4 & -9 \\
+    \end{absmatrix}
+    ~=~
+    \begin{absmatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      2 & 4 & -9 \\
+    \end{absmatrix}
+    ~=~
+    \begin{absmatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      0 & -4 & -5 \\
+    \end{absmatrix}
+    ~=~
+    \begin{absmatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      0 & 0 & -2 \\
+    \end{absmatrix}
+    ~=~ 1\cdot 4\cdot(-2) = -8.
+  \end{equation*}
+\end{solution}
 
-Remember you can work with the columns also. Take $-5$
-times the fourth column and add to the second column. This yields
-\begin{equation*}
-C = \begin{mymatrix}{rrrr}
-1 & -8 & 3 & 2 \\
-0 & 0 & -1 & -1 \\
-0 & -8 & -4 & 1 \\
-0 & 10 & -8 & -4
-\end{mymatrix}
-\end{equation*}
-By Theorem~\ref{thm:adding-multiple-of-row} $\det (A) = \det (C)$. 
+In general, we can convert any square matrix to triangular form using
+elementary row operations. In fact, it is always possible to do so
+using only elementary operations of the first and third kind (swap two
+rows or add a multiple of one row to another). This gives us a very
+efficient way to compute determinants. If the matrices are large, this
+method is much more efficient than the cofactor method.
 
-Now take $-1$ times the third row and add to
-the top row. This gives.
-\begin{equation*}
-D = \begin{mymatrix}{rrrr}
-1 & 0 & 7 & 1 \\
-0 & 0 & -1 & -1 \\
-0 & -8 & -4 & 1 \\
-0 & 10 & -8 & -4
-\end{mymatrix}
-\end{equation*}
-which by Theorem~\ref{thm:adding-multiple-of-row} has the same determinant as $A$.
+\begin{example}{Using row operations to calculate a determinant}{determinant-row-operations3}
+  Use elementary row operations of the first and third kind to calculate the
+  following determinant:
+  \begin{equation*}
+    \begin{absmatrix}{rrrr}
+      0 & 2 & 1 & 4 \\
+      2 & 2 & -4 & -1 \\
+      1 & 1 & -2 & -1 \\
+      1 & 3 & 2 & 5 \\
+    \end{absmatrix}.
+  \end{equation*}
+\end{example}
 
-Now, we can find $\det (D)$ by expanding along the first column as follows. You can see that there will be only one non-zero term.
-\begin{equation*}
-\det (D) = 1 \det \begin{mymatrix}{rrr}
-0 & -1 & -1 \\
--8 & -4 & 1 \\
-10 & -8 & -4
-\end{mymatrix}
-+ 0 + 0 + 0 
-\end{equation*}
-Expanding again along the first column, we have
-\begin{equation*}
-\det (D) 
-=
-1 \paren{0 +  8\det \begin{mymatrix}{rr}
--1 & -1 \\
--8 & -4
-\end{mymatrix} +10\det \begin{mymatrix}{rr}
--1 & -1 \\
--4 & 1
-\end{mymatrix}} = -82
-\end{equation*}
+\begin{solution}
+  We use elementary row operations to reduce the matrix to triangular
+  form:
+  \begin{equation*}
+    \begin{array}{ccccc}
+      \begin{mymatrix}{rrrr}
+        0 & 2 & 1 & 4 \\
+        2 & 2 & -4 & -1 \\
+        1 & 1 & -2 & -1 \\
+        1 & 3 & 2 & 5 \\
+      \end{mymatrix}
+      &\stackrel{R_1\rowswap R_3}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        2 & 2 & -4 & -1 \\
+        0 & 2 & 1 & 4 \\
+        1 & 3 & 2 & 5 \\
+      \end{mymatrix}
+      &\stackrel{R_2\rowop R_2-2R_1}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        1 & 3 & 2 & 5 \\
+      \end{mymatrix}
+      \\\\[-1ex]
+      &\stackrel{R_4\rowop R_4-R_1}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 2 & 4 & 6 \\
+      \end{mymatrix}
+      &\stackrel{R_4\rowop R_4-R_3}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 3 & 2 \\
+      \end{mymatrix}
+      \\\\[-1ex]
+      &\stackrel{R_2\rowswap R_3}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 0 & 1 \\
+        0 & 0 & 3 & 2 \\
+      \end{mymatrix}
+      &\stackrel{R_3\rowswap R_4}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 3 & 2 \\
+        0 & 0 & 0 & 1 \\
+      \end{mymatrix}
+    \end{array}
+  \end{equation*}
+  By Theorem~\ref{thm:determinant-row-operations}, the determinant
+  changes signs each time we swap two rows. The determinant is
+  unchanged when we add a multiple of one row to another. Therefore,
+  we have
+  \begin{equation*}
+    \begin{array}{ccccccc}
+      \begin{absmatrix}{rrrr}
+        0 & 2 & 1 & 4 \\
+        2 & 2 & -4 & -1 \\
+        1 & 1 & -2 & -1 \\
+        1 & 3 & 2 & 5 \\
+      \end{absmatrix}
+      &=&
+      -\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        2 & 2 & -4 & -1 \\
+        0 & 2 & 1 & 4 \\
+        1 & 3 & 2 & 5 \\
+      \end{absmatrix}
+      &=&
+      -\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        1 & 3 & 2 & 5 \\
+      \end{absmatrix}
+      \\\\[-1ex]
+      &=&
+      -\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 2 & 4 & 6 \\
+      \end{absmatrix}
+      &=&
+      -\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 3 & 2 \\
+      \end{absmatrix}
+      \\\\[-1ex]
+      &=&
+      +\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 0 & 1 \\
+        0 & 0 & 3 & 2 \\
+      \end{absmatrix}
+      &=&
+      -\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 3 & 2 \\
+        0 & 0 & 0 & 1 \\
+      \end{absmatrix}
+      &=& -6.
+    \end{array}
+  \end{equation*}
+  In practice, the last calculation could have been done in a single
+  step. All we had to do is count the number of swap operations we
+  performed during the row operations. If there is an odd number of
+  swap operations, the sign of the determinant changes; otherwise, it
+  stays the same.
+\end{solution}
 
-Now since $\det (A) = \det (D)$, it follows that $\det (A) = -82$. 
-\end{solution} 
-
-Remember that you can verify these answers by using Laplace Expansion on $A$. 
-Similarly, if you first compute the determinant using Laplace Expansion, you can use the row operation
-method to verify.
