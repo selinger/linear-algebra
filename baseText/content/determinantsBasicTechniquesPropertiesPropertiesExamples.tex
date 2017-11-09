@@ -1,75 +1,294 @@
-\section{Properties of determinants I: Examples}
+\section{Determinants and row operations}
 
-There are many important properties of determinants. Since many of
-these properties involve the row operations\index{determinant!row
-  operations} discussed in Chapter 1, we recall that definition now.
+Recall that there are three kinds of elementary row operations%
+\index{matrix!row operation}%
+\index{matrix!elementary row operation}%
+\index{row operation}%
+\index{elementary row operation} on matrices:
+\begin{enumerate}
+\item Switch two rows.
+\item Multiply a row by a non-zero number.
+\item Add a multiple of one row to another row.
+\end{enumerate}
+The following theorem examines the effect of these row operations on
+the determinant of a matrix.
 
-\begin{definition}{Row operations}{operations}
-  The row operations%
-  \index{row operations} consist of the following
-                                           
-  \begin{enumerate}                        
-  \item Switch two rows.
-                                           
-  \item Multiply a row by a non-zero number.
-
-  \item Replace a row by a multiple of another row added to itself.
+\begin{theorem}{Effect of row operations on the determinant}{determinant-row-operations}
+  Let $A$ be an $n\times n$-matrix.
+  \begin{enumerate}
+  \item If $B$ is obtained from $A$ by switching two rows, then
+    \begin{equation*}
+      \det(B) = -\det(A).
+    \end{equation*}
+  \item If $B$ is obtained from $A$ by multiplying one row by a
+    non-zero scalar $k$, then
+    \begin{equation*}
+      \det(B) = k\det(A).
+    \end{equation*}
+  \item If $B$ is obtained from $A$ by adding a multiple of one row to
+    another row, then
+    \begin{equation*}
+      \det(B) = \det(A).
+    \end{equation*}
   \end{enumerate}
-\end{definition}
-
-We will now consider the effect of row operations on the determinant
-of a matrix. In future sections, we will see that using the following
-properties can greatly assist in finding determinants. This section
-will use the theorems as motivation to provide various examples of the
-usefulness of the properties.
-
-The first theorem explains the affect on the determinant of a matrix
-when two rows are switched.
-
-\begin{theorem}{Switching rows}{switching-rows}
-  Let $A$ be an $n\times n$-matrix and let $B$ be a matrix which
-  results from switching two rows of $A$. Then
-  $\det (B) = - \det (A)$.
 \end{theorem}
 
-When we switch two rows of a matrix, the determinant is multiplied by
-$-1$. Consider the following example.
+Notice that the second part of this theorem is true when we multiply
+{\em one} row of the matrix by $k$.  If we were to multiply {\em two}
+rows of $A$ by $k$ to obtain $B$, we would have
+$\det(B) = k^2 \det(A)$.
 
-\begin{example}{Switching two rows}{switching-rows}
-  Let $A=\begin{mymatrix}{rr}
-    1 & 2 \\
-    3 & 4
-  \end{mymatrix} $ and let $B=\begin{mymatrix}{rr}
-    3 & 4 \\
-    1 & 2
-  \end{mymatrix}$. 
-  Knowing that $\det (A) =-2$, find $\det (B)$.
+\begin{example}{Using row operations to calculate a determinant}{determinant-row-operations1}
+  Use row operations to calculate the following determinant:
+  \begin{equation*}
+    \begin{absmatrix}{rrr}
+      1 & 5 & 5 \\
+      0 & 0 & -3 \\
+      0 & 2 & 7 \\
+    \end{absmatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-  By Definition~\ref{def:two-by-two-determinant},
-  $\det (A) = 1 \times 4 - 3 \times 2 = -2$.  Notice that the rows of
-  $B$ are the rows of $A$ but switched.  By
-  Theorem~\ref{thm:switching-rows} since two rows of $A$ have been
-  switched, $\det (B) = - \det (A) = - (-2) = 2$.  You can verify this
-  using Definition~\ref{def:two-by-two-determinant}.
+  If we switch the second and third rows, we obtain a triangular
+  matrix, of which the determinant is easy to compute. By
+  Theorem~\ref{thm:determinant-row-operations}, switching two rows
+  negates the determinant. We therefore have:
+  \begin{equation*}
+    \begin{absmatrix}{rrr}
+      1 & 5 & 5 \\
+      0 & 0 & -3 \\
+      0 & 2 & 7 \\
+    \end{absmatrix}
+    ~=~
+    -\begin{absmatrix}{rrr}
+      1 & 5 & 5 \\
+      0 & 2 & 7 \\
+      0 & 0 & -3 \\
+    \end{absmatrix}
+    ~=~ -(1\cdot 2\cdot(-3)) ~=~ 6.
+  \end{equation*}
 \end{solution}
 
-The next theorem demonstrates the effect on the determinant of a
-matrix when we multiply a row by a scalar.
+\begin{example}{Using row operations to calculate a determinant}{determinant-row-operations2}
+  Use row operations to calculate the following determinant:
+  \begin{equation*}
+    \begin{absmatrix}{rrr}
+      1 & 4 & -2 \\
+      1 & 8 & 1 \\
+      2 & 4 & -9 \\
+    \end{absmatrix}.
+  \end{equation*}
+\end{example}
 
-\begin{theorem}{Multiplying a row by a scalar}{multiplying-row-by-scalar}
-  Let $A$ be an $n\times n$-matrix and let $B$ be a matrix which
-  results from multiplying some row of $A$ by a scalar $k$. Then
-  $\det (B) = k \det (A)$.
-\end{theorem}
+\begin{solution}
+  We can use elementary row operations to reduce this matrix to
+  triangular form:
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 4 & -2 \\
+      1 & 8 & 1 \\
+      2 & 4 & -9 \\
+    \end{mymatrix}
+    \stackrel{R_2\rowop R_2-R_1}{\sim}
+    \begin{mymatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      2 & 4 & -9 \\
+    \end{mymatrix}
+    \stackrel{R_3\rowop R_3-2R_1}{\sim}
+    \begin{mymatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      0 & -4 & -5 \\
+    \end{mymatrix}
+    \stackrel{R_3\rowop R_3+R_2}{\sim}
+    \begin{mymatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      0 & 0 & -2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Each of the row operations is of the form ``add a multiple of one
+  row to another row'', and therefore does not change the
+  determinant. We therefore have:
+  \begin{equation*}
+    \begin{absmatrix}{rrr}
+      1 & 4 & -2 \\
+      1 & 8 & 1 \\
+      2 & 4 & -9 \\
+    \end{absmatrix}
+    ~=~
+    \begin{absmatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      2 & 4 & -9 \\
+    \end{absmatrix}
+    ~=~
+    \begin{absmatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      0 & -4 & -5 \\
+    \end{absmatrix}
+    ~=~
+    \begin{absmatrix}{rrr}
+      1 & 4 & -2 \\
+      0 & 4 & 3 \\
+      0 & 0 & -2 \\
+    \end{absmatrix}
+    ~=~ 1\cdot 4\cdot(-2) = -8.
+  \end{equation*}
+\end{solution}
 
-Notice that this theorem is true when we multiply {\em one} row of
-the matrix by $k$.  If we were to multiply {\em two} rows of $A$ by
-$k$ to obtain $B$, we would have $\det (B) = k^2 \det (A)$.  Suppose
-we were to multiply all $n$ rows of $A$ by $k$ to obtain the matrix
-$B$, so that $B = kA$. Then, $\det (B) = k^n \det (A)$. This gives the
-next theorem.
+In general, we can convert any square matrix to triangular form using
+elementary row operations. In fact, it is always possible to do so
+using only elementary operations of the first and third kind (swap two
+rows or add a multiple of one row to another). This gives us a very
+efficient way to compute determinants. If the matrices are large, this
+method is much more efficient than the cofactor method.
+
+\begin{example}{Using row operations to calculate a determinant}{determinant-row-operations3}
+  Use elementary row operations of the first and third kind to calculate the
+  following determinant:
+  \begin{equation*}
+    \begin{absmatrix}{rrrr}
+      0 & 2 & 1 & 4 \\
+      2 & 2 & -4 & -1 \\
+      1 & 1 & -2 & -1 \\
+      1 & 3 & 2 & 5 \\
+    \end{absmatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We use elementary row operations to reduce the matrix to triangular
+  form:
+  \begin{equation*}
+    \begin{array}{ccccc}
+      \begin{mymatrix}{rrrr}
+        0 & 2 & 1 & 4 \\
+        2 & 2 & -4 & -1 \\
+        1 & 1 & -2 & -1 \\
+        1 & 3 & 2 & 5 \\
+      \end{mymatrix}
+      &\stackrel{R_1\rowswap R_3}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        2 & 2 & -4 & -1 \\
+        0 & 2 & 1 & 4 \\
+        1 & 3 & 2 & 5 \\
+      \end{mymatrix}
+      &\stackrel{R_2\rowop R_2-2R_1}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        1 & 3 & 2 & 5 \\
+      \end{mymatrix}
+      \\\\[-1ex]
+      &\stackrel{R_4\rowop R_4-R_1}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 2 & 4 & 6 \\
+      \end{mymatrix}
+      &\stackrel{R_4\rowop R_4-R_3}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 3 & 2 \\
+      \end{mymatrix}
+      \\\\[-1ex]
+      &\stackrel{R_2\rowswap R_3}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 0 & 1 \\
+        0 & 0 & 3 & 2 \\
+      \end{mymatrix}
+      &\stackrel{R_3\rowswap R_4}{\sim}&
+      \begin{mymatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 3 & 2 \\
+        0 & 0 & 0 & 1 \\
+      \end{mymatrix}
+    \end{array}
+  \end{equation*}
+  By Theorem~\ref{thm:determinant-row-operations}, the determinant
+  changes signs each time we swap two rows. The determinant is
+  unchanged when we add a multiple of one row to another. Therefore,
+  we have
+  \begin{equation*}
+    \begin{array}{ccccccc}
+      \begin{absmatrix}{rrrr}
+        0 & 2 & 1 & 4 \\
+        2 & 2 & -4 & -1 \\
+        1 & 1 & -2 & -1 \\
+        1 & 3 & 2 & 5 \\
+      \end{absmatrix}
+      &=&
+      -\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        2 & 2 & -4 & -1 \\
+        0 & 2 & 1 & 4 \\
+        1 & 3 & 2 & 5 \\
+      \end{absmatrix}
+      &=&
+      -\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        1 & 3 & 2 & 5 \\
+      \end{absmatrix}
+      \\\\[-1ex]
+      &=&
+      -\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 2 & 4 & 6 \\
+      \end{absmatrix}
+      &=&
+      -\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 0 & 0 & 1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 3 & 2 \\
+      \end{absmatrix}
+      \\\\[-1ex]
+      &=&
+      +\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 0 & 1 \\
+        0 & 0 & 3 & 2 \\
+      \end{absmatrix}
+      &=&
+      -\begin{absmatrix}{rrrr}
+        1 & 1 & -2 & -1 \\
+        0 & 2 & 1 & 4 \\
+        0 & 0 & 3 & 2 \\
+        0 & 0 & 0 & 1 \\
+      \end{absmatrix}
+      &=& -6.
+    \end{array}
+  \end{equation*}
+  In practice, the last calculation could have been done in a single
+  step. All we had to do is count the number of swap operations we
+  performed during the row operations. If there is an odd number of
+  swap operations, the sign of the determinant changes; otherwise, it
+  stays the same.
+\end{solution}
+
+% ======================================================================
+\subsection{CONTINUE HERE...}
+
+Suppose we were to multiply all $n$ rows of
+$A$ by $k$ to obtain the matrix $B$, so that $B = kA$. Then,
+$\det(B) = k^n \det(A)$. This gives the next theorem.
 
 \begin{theorem}{Scalar multiplication}{scalar-mult-det}
   Let $A$ and $B$ be $n \times n$-matrices and $k$ a scalar, such that
@@ -85,22 +304,22 @@ Consider the following example.
   \end{mymatrix} ,\ B=\begin{mymatrix}{rr}
     5 & 10 \\
     3 & 4
-  \end{mymatrix}$. 
-  Knowing that $\det (A) =-2$, find  $\det (B)$.
+  \end{mymatrix}$.
+  Knowing that $\det(A) =-2$, find  $\det(B)$.
 \end{example}
 
-\begin{solution} 
-  By Definition~\ref{def:two-by-two-determinant}, $\det (A) =-2$. We
-  can also compute $\det (B)$ using
+\begin{solution}
+  By Definition~\ref{def:two-by-two-determinant}, $\det(A) =-2$. We
+  can also compute $\det(B)$ using
   Definition~\ref{def:two-by-two-determinant}, and we see that
-  $\det (B) = -10$.
+  $\det(B) = -10$.
 
-  Now, let's compute $\det (B)$ using
+  Now, let's compute $\det(B)$ using
   Theorem~\ref{thm:multiplying-row-by-scalar} and see if we obtain the
   same answer. Notice that the first row of $B$ is $5$ times the first
   row of $A$, while the second row of $B$ is equal to the second row
   of $A$.  By Theorem~\ref{thm:multiplying-row-by-scalar},
-  $\det (B) = 5 \times \det (A) = 5 \times -2 = -10$.
+  $\det(B) = 5 \times \det(A) = 5 \times -2 = -10$.
 
   You can see that this matches our answer above.
 \end{solution}
@@ -111,12 +330,12 @@ adding a multiple of a row to another row.
 \begin{theorem}{Adding a multiple of a row to another row}{adding-multiple-of-row}
   Let $A$ be an $n\times n$-matrix and let $B$ be a matrix which
   results from adding a multiple of a row to another row.  Then
-  $\det (A) =\det (B)$.
+  $\det(A) =\det(B)$.
 \end{theorem}
 
 Therefore, when we add a multiple of a row to another row, the
 determinant of the matrix is unchanged.  Note that if a matrix $A$
-contains a row which is a multiple of another row, $\det (A)$ will
+contains a row which is a multiple of another row, $\det(A)$ will
 equal $0$. To see this, suppose the first row of $A$ is equal to $-1$
 times the second row. By Theorem~\ref{thm:adding-multiple-of-row}, we
 can add the first row to the second row, and the determinant will be
@@ -133,30 +352,30 @@ Consider the following example.
   \end{mymatrix} $ and let $B=\begin{mymatrix}{rr}
     1 & 2 \\
     5 & 8
-  \end{mymatrix}$. 
-  Find $\det (B)$.
+  \end{mymatrix}$.
+  Find $\det(B)$.
 \end{example}
 
 \begin{solution}
-  By Definition~\ref{def:two-by-two-determinant}, $\det (A) = -2$.
+  By Definition~\ref{def:two-by-two-determinant}, $\det(A) = -2$.
   Notice that the second row of $B$ is two times the first row of $A$
   added to the second row.  By Theorem~\ref{thm:switching-rows},
-  $\det (B) = \det (A) =-2$.  As usual, you can verify this answer
+  $\det(B) = \det(A) =-2$.  As usual, you can verify this answer
   using Definition~\ref{def:two-by-two-determinant}.
 \end{solution}
 
 \begin{example}{Multiple of a row}{multiple-rows}
   Let $A = \begin{mymatrix}{rr}
     1 & 2 \\
-    2 & 4 
-  \end{mymatrix}$. Show that $\det (A) = 0$. 
+    2 & 4
+  \end{mymatrix}$. Show that $\det(A) = 0$.
 \end{example}
 
 \begin{solution}
   Using Definition~\ref{def:two-by-two-determinant}, the determinant
   is given by
   \begin{equation*}
-    \det (A) = 1 \times 4 - 2 \times 2 = 0
+    \det(A) = 1 \times 4 - 2 \times 2 = 0
   \end{equation*}
 
   However notice that the second row is equal to $2$ times the first
@@ -181,7 +400,7 @@ product of matrices.
 \begin{theorem}{Determinant of a product}{determinant-of-product}
   Let $A$ and $B$ be two $n\times n$-matrices. Then\index{determinant!product}
   \begin{equation*}
-    \det (AB) =\det (A) \det (B)
+    \det(AB) =\det(A) \det(B)
   \end{equation*}
 \end{theorem}
 
@@ -191,7 +410,7 @@ simply take the product of the determinants.
 Consider the following example.
 
 \begin{example}{The determinant of a product}{determinant-of-product}
-  Compare $\det (AB) $ and $\det (A) \det (
+  Compare $\det(AB) $ and $\det(A) \det(
   B) $ for
   \begin{equation*}
     A=\begin{mymatrix}{rr}
@@ -200,11 +419,11 @@ Consider the following example.
     \end{mymatrix} ,B=\begin{mymatrix}{rr}
       3 & 2 \\
       4 & 1
-    \end{mymatrix} 
+    \end{mymatrix}
   \end{equation*}
 \end{example}
 
-\begin{solution} First compute $AB$, which is given by 
+\begin{solution} First compute $AB$, which is given by
   \begin{equation*}
     AB=\begin{mymatrix}{rr}
       1 & 2 \\
@@ -219,36 +438,36 @@ Consider the following example.
   \end{equation*}
   and so by Definition~\ref{def:two-by-two-determinant}
   \begin{equation*}
-    \det (AB) =\det \begin{mymatrix}{rr}
+    \det(AB) =\det\begin{mymatrix}{rr}
       11 & 4 \\
       -1 & -4
     \end{mymatrix} = -40
   \end{equation*}
   Now
   \begin{equation*}
-    \det (A) =\det \begin{mymatrix}{rr}
+    \det(A) =\det\begin{mymatrix}{rr}
       1 & 2 \\
       -3 & 2
     \end{mymatrix} = 8
   \end{equation*}
   and
   \begin{equation*}
-    \det (B) =\det \begin{mymatrix}{rr}
+    \det(B) =\det\begin{mymatrix}{rr}
       3 & 2 \\
       4 & 1
     \end{mymatrix} = -5
   \end{equation*}
-  Computing $\det (A) \times \det (B)$ we have $8 \times -5 =
+  Computing $\det(A) \times \det(B)$ we have $8 \times -5 =
   -40$. This is the same answer as above and you can see that
-  $\det (A) \det (B) =8\times (-5) =-40 = \det (AB)$.
+  $\det(A) \det(B) =8\times (-5) =-40 = \det(AB)$.
 \end{solution}
 
-Consider the next important property. 
+Consider the next important property.
 
 \begin{theorem}{Determinant of the transpose}{transpose-determinant}
   Let $A$ be a matrix where $A^T$ is the transpose of $A$. Then,
   \begin{equation*}
-    \det(A^T) = \det (A)
+    \det(A^T) = \det(A)
   \end{equation*}
 \end{theorem}
 
@@ -264,11 +483,11 @@ This theorem is illustrated in the following example.
       4 & 3
     \end{mymatrix}
   \end{equation*}
-  Find $\det (A^T)$.
+  Find $\det(A^T)$.
 \end{example}
 
 \begin{solution}
-  First, note that 
+  First, note that
   \begin{equation*}
     A^{T}
     =
@@ -279,10 +498,10 @@ This theorem is illustrated in the following example.
   \end{equation*}
 
   Using Definition~\ref{def:two-by-two-determinant}, we can compute
-  $\det (A)$ and $\det (A^T)$. It follows that
-  $\det (A) = 2 \times 3 - 4 \times 5 = -14$ and
-  $\det (A^T) = 2 \times 3 - 5 \times 4 = -14$.  Hence,
-  $\det (A) = \det (A^T)$.
+  $\det(A)$ and $\det(A^T)$. It follows that
+  $\det(A) = 2 \times 3 - 4 \times 5 = -14$ and
+  $\det(A^T) = 2 \times 3 - 5 \times 4 = -14$.  Hence,
+  $\det(A) = \det(A^T)$.
 \end{solution}
 
 The following provides an essential property of the determinant, as
@@ -301,7 +520,7 @@ Consider the following example.
 \begin{example}{Determinant of an invertible matrix}{det-invertible-matrix}
   Let $A = \begin{mymatrix}{rr}
     3 & 6 \\
-    2 & 4 
+    2 & 4
   \end{mymatrix}, B = \begin{mymatrix}{rr}
     2 & 3 \\
     5 & 1
@@ -314,19 +533,19 @@ Consider the following example.
   Definition~\ref{def:two-by-two-determinant} we can find the
   determinant as follows:
   \begin{equation*}
-    \det (A) = 3 \times 4 - 2 \times 6 = 12 - 12 = 0
+    \det(A) = 3 \times 4 - 2 \times 6 = 12 - 12 = 0
   \end{equation*}
   By Theorem~\ref{thm:det-inverse} $A$ is not invertible.
 
   Now consider the matrix $B$. Again by
   Definition~\ref{def:two-by-two-determinant} we have
   \begin{equation*}
-    \det (B) = 2 \times 1 - 5 \times 3 = 2 - 15 = -13
+    \det(B) = 2 \times 1 - 5 \times 3 = 2 - 15 = -13
   \end{equation*}
   By Theorem~\ref{thm:det-inverse} $B$ is invertible and the
   determinant of the inverse is given by
   \begin{eqnarray*}
-    \det (A^{-1}) &=& \frac{1}{\det(A)} \\
+    \det(A^{-1}) &=& \frac{1}{\det(A)} \\
                   &=& \frac{1}{-13} \\
                   &=& -\frac{1}{13}
   \end{eqnarray*}
