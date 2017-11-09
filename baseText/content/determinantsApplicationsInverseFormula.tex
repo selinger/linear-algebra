@@ -14,11 +14,11 @@ $\ijth$ cofactor of $A$.  The formal definition is as follows.
   Let $A=\mat{a_{ij}}$ be an $n\times n$-matrix. Then the
   \textbf{cofactor matrix of $A$}%
   \index{cofactor matrix}, denoted $\func{cof}(A)$, is defined by
-  $\func{cof}(A) =\mat{ \cof{A}{ij}} $ where $\cof{A}{ij}$ is the
+  $\func{cof}(A) =\mat{ \cofactor{A}{ij}} $ where $\cofactor{A}{ij}$ is the
   $\ijth$ cofactor of $A$.
 \end{definition}
 
-Note that $\cof{A}{ij}$ denotes the $\ijth$ entry of the cofactor
+Note that $\cofactor{A}{ij}$ denotes the $\ijth$ entry of the cofactor
 matrix.
 
 We will use the cofactor matrix to create a formula for the inverse of
@@ -298,10 +298,10 @@ We will now prove Theorem~\ref{thm:inverse-and-determinant}.
 
 % Ilijas' proof
 \begin{proof} (of Theorem~\ref{thm:inverse-and-determinant}) Recall
-  that the $(i,j)$-entry of $\adj(A)$ is equal to $\cof{A}{ji}$.
+  that the $(i,j)$-entry of $\adj(A)$ is equal to $\cofactor{A}{ji}$.
   Thus the $(i,j)$-entry of $B=A\cdot \adj(A)$ is :
   \begin{equation*}
-    B_{ij}=\sum_{k=1}^n a_{ik} \adj (A)_{kj}= \sum_{k=1}^n a_{ik} \cof{A}{jk}
+    B_{ij}=\sum_{k=1}^n a_{ik} \adj (A)_{kj}= \sum_{k=1}^n a_{ik} \cofactor{A}{jk}
   \end{equation*}
   By the cofactor expansion theorem, we see that this expression for
   $B_{ij}$ is equal to the determinant of the matrix obtained from $A$
@@ -353,11 +353,11 @@ We will now prove Theorem~\ref{thm:inverse-and-determinant}.
 %   
 %   \begin{equation*}
 %     \sum_{i=1}^{n}a_{ir}
-%     \cof{A}{ir}\det(A)^{-1}=\det(A)\det(A)^{-1}=1
+%     \cofactor{A}{ir}\det(A)^{-1}=\det(A)\det(A)^{-1}=1
 %   \end{equation*}
 %   Consider the following similar expression for $k\neq r$. 
 %   \begin{equation*}
-%     \sum_{i=1}^{n}a_{ir}\cof{A}{ik}\det(A)^{-1}
+%     \sum_{i=1}^{n}a_{ir}\cofactor{A}{ik}\det(A)^{-1}
 %   \end{equation*}
 %   
 %   \noindent By replacing the $k\th$ column of $A$ with its $r\th$ column, we
@@ -366,11 +366,11 @@ We will now prove Theorem~\ref{thm:inverse-and-determinant}.
 %   the $k\th$ column yields
 %   \begin{equation*}
 %     0=\det(B_{k}) \det(A) ^{-1}=\sum_{i=1}^{n}a_{ir}
-%     \cof{A}{ik}\det(A) ^{-1}
+%     \cofactor{A}{ik}\det(A) ^{-1}
 %   \end{equation*}
 %   Summarizing,
 %   \begin{equation*}
-%     \sum_{i=1}^{n}a_{ir}\cof{A}{ik}\det(A)
+%     \sum_{i=1}^{n}a_{ir}\cofactor{A}{ik}\det(A)
 %     ^{-1}=\delta _{rk} = \left\{
 %       \begin{array}{c}
           %           1\text{ if }r=k \\
@@ -380,8 +380,8 @@ We will now prove Theorem~\ref{thm:inverse-and-determinant}.
           %           \end{equation*}
           %           Now notice that 
           %           \begin{equation*}
-          %           \sum_{i=1}^{n}a_{ir}\cof{A}{ik}=\sum_{i=1}^{n}a_{ir}
-          %           \cof{A}{ki}^{T}
+          %           \sum_{i=1}^{n}a_{ir}\cofactor{A}{ik}=\sum_{i=1}^{n}a_{ir}
+          %           \cofactor{A}{ki}^{T}
           %           \end{equation*}
           %           which is the $kr\th$ entry of $\func{cof}(A) ^{T}A$. Therefore rewriting the above we obtain:
           %           \begin{equation}
