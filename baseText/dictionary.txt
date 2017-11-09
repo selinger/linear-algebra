@@ -57,7 +57,6 @@ decryption
 def
 defn
 deg
-det
 diag
 diagonalizability
 diagonalizable
