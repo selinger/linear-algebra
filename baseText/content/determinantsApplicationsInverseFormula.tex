@@ -26,7 +26,7 @@ $A$. First, we define the \textbf{adjugate}%
 \index{adjugate} of $A$ to be the transpose of the cofactor matrix. We
 can also call this matrix the \textbf{classical adjoint}%
 \index{classical adjoint} of $A$, and we denote it by
-$\func{adj} (A)$.
+$\adj (A)$.
 
 In the specific case where $A$ is a $2 \times 2$-matrix given by
 \begin{equation*}
@@ -35,15 +35,15 @@ In the specific case where $A$ is a $2 \times 2$-matrix given by
     c & d
   \end{mymatrix}
 \end{equation*}
-then $\func{adj}(A)$ is given by
+then $\adj(A)$ is given by
 \begin{equation*}
-  \func{adj}(A) = 
+  \adj(A) = 
   \begin{mymatrix}{rr}
     d & -b \\
     -c & a
   \end{mymatrix}
 \end{equation*}
-In general, $\func{adj}(A)$ can always be found by taking the
+In general, $\adj(A)$ can always be found by taking the
 transpose of the cofactor matrix of $A$. The following theorem
 provides a formula for $A^{-1}$ using the determinant and adjugate of
 $A$.
@@ -51,13 +51,13 @@ $A$.
 \begin{theorem}{The inverse and the determinant}{inverse-and-determinant}
   Let $A$ be an $n\times n$-matrix. Then
   \begin{equation*}
-    A \; \func{adj}(A) = \func{adj}(A)A = {\det(A)} I
+    A \; \adj(A) = \adj(A)A = {\det(A)} I
   \end{equation*}
   Moreover $A$ is invertible if and only if $\det(A) \neq 0$. In this
   case%
   \index{determinant!matrix inverse formula} we have:
   \begin{equation*}
-    A^{-1} = \frac{1}{\det(A)} \func{adj}(A)
+    A^{-1} = \frac{1}{\det(A)} \adj(A)
   \end{equation*}
 \end{theorem}
 
@@ -84,7 +84,7 @@ Consider the following example.
 \begin{solution} 
   According to Theorem~\ref{thm:inverse-and-determinant}, 
   \begin{equation*}
-    A^{-1} = \frac{1}{\det(A)} \func{adj}(A)
+    A^{-1} = \frac{1}{\det(A)} \adj(A)
   \end{equation*}
   First we will find the determinant of this matrix. Using
   Theorems~\ref{thm:switching-rows},
@@ -104,7 +104,7 @@ Consider the following example.
   (B)$. By Theorem~\ref{thm:determinant-of-triangular-matrix},
   $\det(B) = 1 \times -6 \times -2 = 12$. Hence, $\det(A) = 12$.
 
-  Now, we need to find $\func{adj} (A)$. To do so, first we will find
+  Now, we need to find $\adj (A)$. To do so, first we will find
   the cofactor matrix of $A$.  This is given by
   \begin{equation*}
     \func{cof}(A) 
@@ -190,10 +190,10 @@ $A^{-1}$.
     A^{-1}
     =
     \frac{1}{(1/6)}\;
-    \func{adj} (A)
+    \adj (A)
     =
     6\;
-    \func{adj} (A)
+    \adj (A)
   \end{equation*}
   We continue to calculate as follows. Here we show the $2 \times 2$
   determinants needed to find the cofactors.
@@ -298,10 +298,10 @@ We will now prove Theorem~\ref{thm:inverse-and-determinant}.
 
 % Ilijas' proof
 \begin{proof} (of Theorem~\ref{thm:inverse-and-determinant}) Recall
-  that the $(i,j)$-entry of $\func{adj}(A)$ is equal to $\cof{A}{ji}$.
-  Thus the $(i,j)$-entry of $B=A\cdot \func{adj}(A)$ is :
+  that the $(i,j)$-entry of $\adj(A)$ is equal to $\cof{A}{ji}$.
+  Thus the $(i,j)$-entry of $B=A\cdot \adj(A)$ is :
   \begin{equation*}
-    B_{ij}=\sum_{k=1}^n a_{ik} \func{adj} (A)_{kj}= \sum_{k=1}^n a_{ik} \cof{A}{jk}
+    B_{ij}=\sum_{k=1}^n a_{ik} \adj (A)_{kj}= \sum_{k=1}^n a_{ik} \cof{A}{jk}
   \end{equation*}
   By the cofactor expansion theorem, we see that this expression for
   $B_{ij}$ is equal to the determinant of the matrix obtained from $A$
@@ -313,11 +313,11 @@ We will now prove Theorem~\ref{thm:inverse-and-determinant}.
   has its $i$th row equal to its $j$th row, and therefore $B_{ij}=0$
   in his case. Thus we obtain:
   \begin{equation*}
-    A \; \func{adj}(A) = {\det(A)} I
+    A \; \adj(A) = {\det(A)} I
   \end{equation*}
   Similarly we can verify that:
   \begin{equation*}
-    \func{adj}(A)A = {\det(A)} I
+    \adj(A)A = {\det(A)} I
   \end{equation*}
   And this proves the first part of the theorem. 
 
@@ -332,7 +332,7 @@ We will now prove Theorem~\ref{thm:inverse-and-determinant}.
   Finally if $\det(A) \neq 0$, then the above formula shows that $A$
   is invertible and that:
   \begin{equation*}
-    A^{-1} = \frac{1}{\det(A)} \func{adj}(A)
+    A^{-1} = \frac{1}{\det(A)} \adj(A)
   \end{equation*}
   This completes the proof.
 \end{proof}
@@ -390,18 +390,18 @@ We will now prove Theorem~\ref{thm:inverse-and-determinant}.
           %           \end{equation}
           %           and hence 
           %           \begin{equation}
-          %           \frac{\func{adj}(A)}{\det(A) } A=I
+          %           \frac{\adj(A)}{\det(A) } A=I
           %           \end{equation}
           %           Using the other formula in Definition~\ref{def:n-by-n-determinant}, and similar reasoning we obtain 
           %           
           %           \begin{equation}
-          %           A \frac{\func{adj}(A)}{\det(A) } =I
+          %           A \frac{\adj(A)}{\det(A) } =I
           %           \end{equation}
           %           
           %           Thus $A$ is invertible when $\det(A) \neq 0$ and 
           %           
           %           \begin{equation*}
-          %           A^{-1} = \frac{1}{\det(A)} \func{adj}(A)
+          %           A^{-1} = \frac{1}{\det(A)} \adj(A)
           %           \end{equation*}
           %           and the proof is complete. 
           %           \end{proof}
