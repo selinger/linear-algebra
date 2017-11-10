@@ -36,7 +36,7 @@ of the cofactor matrix:
 \begin{equation*}
   \adj(A) = \cof(A)^T.
 \end{equation*}
-The adjugate is also sometimes called the 
+The adjugate is also sometimes called the
 \textbf{classical adjoint}%
 \index{classical adjoint}%
 \index{matrix!classical adjoint} of $A$.
@@ -110,23 +110,23 @@ The adjugate is also sometimes called the
   \end{eqnarray*}
   and so on. Continuing in this way, we find the cofactor matrix
   \begin{equation*}
-    \cof(A) 
+    \cof(A)
     =
     \begin{mymatrix}{rrr}
       -2 & -2 & 6 \\
       4 & -2 & 0 \\
-      2 & 8 & -6
+      2 & 8 & -6 \\
     \end{mymatrix}.
   \end{equation*}
   Finally, the adjugate is the transpose of the cofactor matrix:
   \begin{equation*}
-    \adj(A) = \cof(A)^T = 
+    \adj(A) = \cof(A)^T =
     \begin{mymatrix}{rrr}
       -2 & 4 & 2 \\
       -2 & -2 & 8 \\
-      6 & 0 & -6
+      6 & 0 & -6 \\
     \end{mymatrix}.
-  \end{equation*}  
+  \end{equation*}
 \end{solution}
 
 The following theorem provides a formula for $A^{-1}$ using the
@@ -158,7 +158,7 @@ determinant and the adjugate of $A$.
   \end{eqnarray*}
   By the cofactor expansion theorem, we see that this expression for
   $B_{ij}$ is equal to the determinant of the matrix obtained from $A$
-  by replacing its $j$th row by $\mat{a_{i1}, a_{i2}, \dots a_{in}}$, 
+  by replacing its $j$th row by $\mat{a_{i1}, a_{i2}, \dots a_{in}}$,
   i.e., by its $i$th row.
 
   If $i=j$ then this matrix is $A$ itself and therefore
@@ -179,251 +179,240 @@ determinant and the adjugate of $A$.
   \begin{equation*}
     A\paren{\frac{1}{\det(A)}\adj(A)} ~=~ \paren{\frac{1}{\det(A)}\adj(A)}A ~=~ I,
   \end{equation*}
-  and therefore 
+  and therefore
   \begin{equation*}
     A^{-1} = \frac{1}{\det(A)} \adj(A).
   \end{equation*}
   This completes the proof.
 \end{proof}
 
-
-% ======================================================================
-\subsection{CONTINUE HERE...}
-
-In the specific case where $A$ is a $2 \times 2$-matrix given by
-\begin{equation*}
-  A = \begin{mymatrix}{rr}
-    a & b \\
-    c & d
-  \end{mymatrix}
-\end{equation*}
-then $\adj(A)$ is given by
-\begin{equation*}
-  \adj(A) = 
-  \begin{mymatrix}{rr}
-    d & -b \\
-    -c & a
-  \end{mymatrix}
-\end{equation*}
-In general, $\adj(A)$ can always be found by taking the
-transpose of the cofactor matrix of $A$. 
-
-% The proof of this Theorem is below, after two examples demonstrating this concept. 
-
-Notice that the first formula holds for any $n \times n$-matrix $A$,
-and in the case $A$ is invertible we actually have a formula for
-$A^{-1}$.
-
-Consider the following example.
-
-\begin{example}{Find inverse using the determinant}{inverse-and-determinant}
+\begin{example}{Finding the inverse using a formula}{inverse-and-determinant}
   Find the inverse of the matrix
   \begin{equation*}
     A=\begin{mymatrix}{rrr}
       1 & 2 & 3 \\
       3 & 0 & 1 \\
-      1 & 2 & 1
+      1 & 2 & 1 \\
     \end{mymatrix}
   \end{equation*}
   using the formula in Theorem~\ref{thm:inverse-and-determinant}.
 \end{example}
 
-\begin{solution} 
-  According to Theorem~\ref{thm:inverse-and-determinant}, 
+\begin{solution}
+  We must compute
   \begin{equation*}
-    A^{-1} = \frac{1}{\det(A)} \adj(A)
+    A^{-1} ~=~ \frac{1}{\det(A)} \adj(A).
   \end{equation*}
-  First we will find the determinant of this matrix. Using
-  Theorems~\ref{thm:switching-rows},
-  {\ref{thm:multiplying-row-by-scalar}}, and
-  {\ref{thm:adding-multiple-of-row}}, we can first simplify the matrix
-  through row operations. First, add $-3$ times the first row to the
-  second row. Then add $-1$ times the first row to the third row to
-  obtain
+  We will start by computing the determinant. We expand along the
+  second row:
   \begin{equation*}
-    B = \begin{mymatrix}{rrr}
+    \det(A)
+    ~=~ \begin{absmatrix}{rrr}
       1 & 2 & 3 \\
-      0 & -6 & -8 \\
-      0 & 0 & -2
-    \end{mymatrix}
+      3 & 0 & 1 \\
+      1 & 2 & 1 \\
+    \end{absmatrix}
+    ~=~ -3 \begin{absmatrix}{rr}
+      2 & 3 \\
+      2 & 1 \\
+    \end{absmatrix}
+    - 1 \begin{absmatrix}{rr}
+      1 & 2 \\
+      1 & 2 \\
+    \end{absmatrix}
+    ~=~ -3(-4) -1(0) ~=~ 12.
   \end{equation*}
-  By Theorem~\ref{thm:adding-multiple-of-row}, $\det(A) = \det
-  (B)$. By Theorem~\ref{thm:determinant-of-triangular-matrix},
-  $\det(B) = 1 \times -6 \times -2 = 12$. Hence, $\det(A) = 12$.
-
-  ...
-
-  Therefore, from
-  Theorem~\ref{thm:inverse-and-determinant}, the inverse of $A$ is
-  given by
+  We have already calculated the adjugate $\adj(A)$ in
+  Example~\ref{exa:cofactor-matrix-and-adjugate}:
+  \begin{equation*}
+    \adj(A) ~=~
+    \begin{mymatrix}{rrr}
+      -2 & 4 & 2 \\
+      -2 & -2 & 8 \\
+      6 & 0 & -6 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore, the inverse of $A$ is given by
   \begin{equation*}
     \def\arraystretch{1.4}
     A^{-1}
-    =
-    \frac{1}{12}\begin{mymatrix}{rrr}
-      -2 & -2 & 6 \\
-      4 & -2 & 0 \\
-      2 & 8 & -6
-    \end{mymatrix} ^{T}=\allowbreak \begin{mymatrix}{rrr}
-      -\frac{1}{6} & \frac{1}{3} & 
-      \frac{1}{6} \\
-      -\frac{1}{6} & -\frac{1}{6} & 
-      \frac{2}{3} \\
-      \frac{1}{2} & 0 & -\frac{1}{2}
-    \end{mymatrix} 
+    ~=~ \frac{1}{\det(A)}\adj(A)
+    ~=~ \frac{1}{12}\begin{mymatrix}{rrr}
+      -2 & 4 & 2 \\
+      -2 & -2 & 8 \\
+      6 & 0 & -6 \\
+    \end{mymatrix}
+    ~=~ \begin{mymatrix}{rrr}
+      -\frac{1}{6} & \frac{1}{3} & \frac{1}{6} \\
+      -\frac{1}{6} & -\frac{1}{6} & \frac{2}{3} \\
+      \frac{1}{2} & 0 & -\frac{1}{2} \\
+    \end{mymatrix}.
   \end{equation*}
-  Remember that we can always verify our answer for $A^{-1}$. Compute
-  the product $AA^{-1}$ and $A^{-1}A$ and make sure each product is
-  equal to $I$.
-
-  Compute $A^{-1}A$ as follows
+  Since it is very easy to make a mistake in this calculation, we
+  double-check our answer by computing $A^{-1}A$:
   \begin{equation*}
     \def\arraystretch{1.4}
-    A^{-1}A = 
+    A^{-1}A ~=~
     \allowbreak \begin{mymatrix}{rrr}
-      -\frac{1}{6} & \frac{1}{3} & 
+      -\frac{1}{6} & \frac{1}{3} &
       \frac{1}{6} \\
-      -\frac{1}{6} & -\frac{1}{6} & 
+      -\frac{1}{6} & -\frac{1}{6} &
       \frac{2}{3} \\
       \frac{1}{2} & 0 & -\frac{1}{2}
     \end{mymatrix} \begin{mymatrix}{rrr}
       1 & 2 & 3 \\
       3 & 0 & 1 \\
       1 & 2 & 1
-    \end{mymatrix} = \begin{mymatrix}{rrr}
+    \end{mymatrix} ~=~ \begin{mymatrix}{rrr}
       1 & 0 & 0 \\
       0 & 1 & 0 \\
       0 & 0 & 1
     \end{mymatrix}
-    =
-    I
+    ~=~
+    I.
   \end{equation*}
-  You can verify that $AA^{-1} = I$ and hence our answer is correct. 
-\end{solution} 
+\end{solution}
 
-We will look at another example of how to use this formula to find
-$A^{-1}$.
-
-\begin{example}{Find the inverse from a formula}{inverse-formula}
+\begin{example}{Finding the inverse using a formula}{inverse-formula}
   Find the inverse of the matrix
   \begin{equation*}
-    \def\arraystretch{1.4}
     A=\begin{mymatrix}{rrr}
-      \frac{1}{2} & 0 & \frac{1}{2} \\
-      -\frac{1}{6} & \frac{1}{3} & -
-      \frac{1}{2} \\
-      -\frac{5}{6} & \frac{2}{3} & -
-      \frac{1}{2}
+      0  &  2 &  1 \\
+      -1 &  2 &  2 \\
+      2  & -2 & -2 \\
     \end{mymatrix}
   \end{equation*}
   using the formula given in Theorem~\ref{thm:inverse-and-determinant}.
 \end{example}
 
-\begin{solution} First we need to find $\det(A)$.  This step is left
-  as an exercise and you should verify that
-  $\det(A) = \frac{1}{6}$.  The inverse is therefore
-  equal to
+\begin{solution}
+  We start by calculating the determinant:
   \begin{equation*}
-    A^{-1}
-    =
-    \frac{1}{(1/6)}\;
-    \adj(A)
-    =
-    6\;
-    \adj(A)
+    \det(A)
+    ~=~ \begin{absmatrix}{rrr}
+      0  &  2 &  1 \\
+      -1 &  2 &  2 \\
+      2  & -2 & -2 \\
+    \end{absmatrix}
+    ~=~ -2 \begin{absmatrix}{rr}
+      -1 &  2 \\
+      2  & -2 \\
+    \end{absmatrix}
+    +1 \begin{absmatrix}{rrr}
+      -1 &  2 \\
+      2  & -2 \\
+    \end{absmatrix}
+    ~=~ -2\cdot (-2) + 1\cdot(-2) ~=~ 2.
   \end{equation*}
-  We continue to calculate as follows. Here we show the $2 \times 2$
-  determinants needed to find the cofactors.
+  Next, we compute the cofactor matrix:
   \begin{equation*}
-    \def\arraystretch{1.4}
-    A^{-1}
-    =
-    6\begin{mymatrix}{rrr}
-      \begin{absmatrix}{rr}
-        \frac{1}{3} & -\frac{1}{2} \\
-        \frac{2}{3} & -\frac{1}{2}
+    \cof(A)
+    ~=~
+    \begin{mymatrix}{ccc}
+      ~~~\begin{absmatrix}{rr}
+       2 &  2 \\
+       -2 & -2 \\
       \end{absmatrix}
       &
       -\begin{absmatrix}{rr}
-        -\frac{1}{6} & -\frac{1}{2} \\
-        -\frac{5}{6} & -\frac{1}{2}
+      -1 &  2 \\
+      2  & -2 \\
       \end{absmatrix}
       &
-      \begin{absmatrix}{rr}
-        -\frac{1}{6} & \frac{1}{3} \\
-        -\frac{5}{6} & \frac{2}{3}
+      ~~~\begin{absmatrix}{rr}
+      -1 &  2 \\
+      2  & -2 \\
       \end{absmatrix}
-      \\\\[-2ex]
+      \\\\[-1ex]
       -\begin{absmatrix}{rr}
-        0 & \frac{1}{2} \\
-        \frac{2}{3} & -\frac{1}{2}
+      2 &  1 \\
+      -2 & -2 \\
       \end{absmatrix}
       &
-      \begin{absmatrix}{rr}
-        \frac{1}{2} & \frac{1}{2} \\
-        -\frac{5}{6} & -\frac{1}{2}
-      \end{absmatrix}
-      &
-      -\begin{absmatrix}{rr}
-        \frac{1}{2} & 0 \\
-        -\frac{5}{6} & \frac{2}{3}
-      \end{absmatrix}
-      \\\\[-2ex]
-      \begin{absmatrix}{rr}
-        0 & \frac{1}{2} \\
-        \frac{1}{3} & -\frac{1}{2}
+      ~~~\begin{absmatrix}{rr}
+      0 &  1 \\
+      2 & -2 \\
       \end{absmatrix}
       &
       -\begin{absmatrix}{rr}
-        \frac{1}{2} & \frac{1}{2} \\
-        -\frac{1}{6} & -\frac{1}{2}
+      0  &  2 \\
+      2  & -2 \\
+      \end{absmatrix}
+      \\\\[-1ex]
+      ~~~\begin{absmatrix}{rr}
+      2 &  1 \\
+      2 &  2 \\
       \end{absmatrix}
       &
-      \begin{absmatrix}{rr}
-        \frac{1}{2} & 0 \\
-        -\frac{1}{6} & \frac{1}{3}
+      -\begin{absmatrix}{rr}
+      0  &  1 \\
+      -1 &  2 \\
       \end{absmatrix}
-    \end{mymatrix} ^{T}
-  \end{equation*}
-  Expanding all the $2\times 2$ determinants, this yields
-  \begin{equation*}
-    \def\arraystretch{1.4}
-    A^{-1}
-    =
-    6\begin{mymatrix}{rrr}
-      \frac{1}{6} & \frac{1}{3} & \frac{1}{6} \\
-      \frac{1}{3} & \frac{1}{6} & -\frac{1}{3} \\
-      -\frac{1}{6} & \frac{1}{6} & \frac{1}{6}
-    \end{mymatrix} ^{T}= \begin{mymatrix}{rrr}
-      1 & 2 & -1 \\
-      2 & 1 & 1 \\
-      1 & -2 & 1
+      &
+      ~~~\begin{absmatrix}{rr}
+      0  &  2 \\
+      -1 &  2 \\
+      \end{absmatrix}
     \end{mymatrix}
+    ~=~ \begin{mymatrix}{rrr}
+      0 &  2 & -2 \\
+      2 & -2 &  4 \\
+      2 & -1 &  2 \\
+    \end{mymatrix}.
   \end{equation*}
-  Again, you can always check your work by multiplying $A^{-1}A$ and
-  $AA^{-1}$ and ensuring these products equal $I$.
+  The adjugate is the transpose of the cofactor matrix:
   \begin{equation*}
-    \def\arraystretch{1.4}
-    A^{-1}A = 
+    \adj(A) ~=~ \cof(A)^T
+    ~=~ \begin{mymatrix}{rrr}
+      0  &  2 &  2 \\
+      2  & -2 & -1 \\
+      -2 &  4 &  2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  We therefore have
+  \begin{equation*}
+    \def\arraystretch{1.2}
+    A^{-1}
+    ~=~
+    \frac{1}{\det(A)}\adj(A)
+    ~=~
+    \frac{1}{2}
     \begin{mymatrix}{rrr}
-      1 & 2 & -1 \\
-      2 & 1 & 1 \\
-      1 & -2 & 1
-    \end{mymatrix} \begin{mymatrix}{rrr}
-      \frac{1}{2} & 0 & \frac{1}{2} \\
-      -\frac{1}{6} & \frac{1}{3} & -
-      \frac{1}{2} \\
-      -\frac{5}{6} & \frac{2}{3} & -
-      \frac{1}{2}
-    \end{mymatrix} = \begin{mymatrix}{rrr}
+      0  &  2 &  2 \\
+      2  & -2 & -1 \\
+      -2 &  4 &  2 \\
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{rrr}
+      0  &  1 &  1 \\
+      1  & -1 & -\frac{1}{2} \\
+      -1 &  2 &  1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Once again, we double-check our work by computing $A^{-1}A$:
+  \begin{equation*}
+    \def\arraystretch{1.2}
+    A^{-1}A ~=~
+    \begin{mymatrix}{rrr}
+      0  &  1 &  1 \\
+      1  & -1 & -\frac{1}{2} \\
+      -1 &  2 &  1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{rrr}
+      0  &  2 &  1 \\
+      -1 &  2 &  2 \\
+      2  & -2 & -2 \\
+    \end{mymatrix}
+    ~=~ \begin{mymatrix}{rrr}
       1 & 0 & 0 \\
       0 & 1 & 0 \\
       0 & 0 & 1
-    \end{mymatrix}
+    \end{mymatrix}.
   \end{equation*}
-  This tells us that our calculation for $A^{-1}$ is correct. It is
-  left to the reader to verify that $AA^{-1} = I$.
 \end{solution}
+
+% ======================================================================
+\subsection{CONTINUE HERE...}
 
 The verification step is very important, as it is a simple way to
 check your work! If you multiply $A^{-1}A$ and $AA^{-1}$ and these
@@ -471,6 +460,27 @@ Consider the following example.
       e^{-t} & 0 & 0 \\
       0 & \cos t & -\sin t \\
       0 & \sin t & \cos t
-    \end{mymatrix} 
+    \end{mymatrix}
   \end{equation*}
 \end{solution}
+
+% ======================================================================
+In the specific case where $A$ is a $2\times 2$-matrix given by
+\begin{equation*}
+  A = \begin{mymatrix}{rr}
+    a & b \\
+    c & d
+  \end{mymatrix}
+\end{equation*}
+then $\adj(A)$ is given by
+\begin{equation*}
+  \adj(A) =
+  \begin{mymatrix}{rr}
+    d & -b \\
+    -c & a
+  \end{mymatrix}
+\end{equation*}
+In general, $\adj(A)$ can always be found by taking the
+transpose of the cofactor matrix of $A$.
+
+% The proof of this Theorem is below, after two examples demonstrating this concept.
