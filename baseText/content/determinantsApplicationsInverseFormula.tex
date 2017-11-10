@@ -53,7 +53,7 @@ The adjugate is also sometimes called the
 \end{example}
 
 \begin{solution}
-  We first find $\adj(A)$. To do so, we need to compute the cofactors
+  We first find $\cof(A)$. To do so, we need to compute the cofactors
   of $A$. We have:
   \begin{eqnarray*}
     \cofactor{A}{11} ~=~ +\minor{A}{11}
@@ -411,76 +411,121 @@ determinant and the adjugate of $A$.
   \end{equation*}
 \end{solution}
 
-% ======================================================================
-\subsection{CONTINUE HERE...}
+It is always a good idea to double-check your work.  At the end of the
+calculation, it is very easy to compute $A^{-1}A$ and check whether it
+is equal to $I$. If they are not equal, be sure to go back and
+double check each step. One common mistake is to forget to take the
+transpose of the cofactor matrix, so be sure not to forget this step.
 
-The verification step is very important, as it is a simple way to
-check your work! If you multiply $A^{-1}A$ and $AA^{-1}$ and these
-products are not both equal to $I$, be sure to go back and double
-check each step.  One common error is to forget to take the transpose
-of the cofactor matrix, so be sure to complete this step.
-
-This method for finding the inverse of $A$ is useful in many
-contexts. In particular, it is useful with complicated matrices where
-the entries are functions, rather than numbers.
-
-Consider the following example.
+In practice, it is usually much faster to compute the inverse by the
+method of Section~\ref{ssec:computing-inverses}, because this only
+requires solving a single system of equations, rather than computing a
+large number of cofactors. However, there are some situations where
+the cofactor method of inverting a matrix is useful. One such
+situation is when the matrix has complicated entries that are
+functions rather than numbers. The following example illustrates
+this.
 
 \begin{example}{Inverse for non-constant matrix}{inverse-non-constant-matrix}
-  Suppose
+  Let
   \begin{equation*}
     A(t) =\begin{mymatrix}{ccc}
       e^{t} & 0 & 0 \\
       0 & \cos t & \sin t \\
       0 & -\sin t & \cos t
-    \end{mymatrix}
+    \end{mymatrix}.
   \end{equation*}
-  Show that $A(t) ^{-1}$ exists and then find it.
+  Show that $A(t)^{-1}$ exists and find it.
 \end{example}
 
 \begin{solution}
-  First note $\det(A(t)) = e^{t}(\cos^2 t + \sin^2 t) = e^{t}\neq 0$
-  so $A(t) ^{-1}$ exists.
-
-  The cofactor matrix is
+  First note that
   \begin{equation*}
-    C(t) =\begin{mymatrix}{ccc}
+    \det(A(t)) ~=~ e^{t}(\cos^2 t + \sin^2 t) ~=~ e^{t}\neq 0.
+  \end{equation*}
+  Therefore $A(t)^{-1}$ exists for all values of the variable $t$. The
+  cofactor matrix is
+  \begin{equation*}
+    \cof(A(t))
+    ~=~ \begin{mymatrix}{ccc}
       1 & 0 & 0 \\
       0 & e^{t}\cos t & e^{t}\sin t \\
       0 & -e^{t}\sin t & e^{t}\cos t
-    \end{mymatrix}
+    \end{mymatrix}.
   \end{equation*}
-  and so the inverse is
+  The adjugate is the transpose of the cofactor matrix, and therefore
+  the inverse is
   \begin{equation*}
+    A(t)^{-1}
+    ~=~ \frac{1}{\det(A(t))}\adj(A(t))
+    ~=~
     \frac{1}{e^{t}}\begin{mymatrix}{ccc}
       1 & 0 & 0 \\
-      0 & e^{t}\cos t & e^{t}\sin t \\
-      0 & -e^{t}\sin t & e^{t}\cos t
-    \end{mymatrix} ^{T}= \begin{mymatrix}{ccc}
+      0 & e^{t}\cos t & -e^{t}\sin t \\
+      0 & e^{t}\sin t & e^{t}\cos t
+    \end{mymatrix}
+    ~=~ \begin{mymatrix}{ccc}
       e^{-t} & 0 & 0 \\
       0 & \cos t & -\sin t \\
       0 & \sin t & \cos t
-    \end{mymatrix}
+    \end{mymatrix}.
   \end{equation*}
 \end{solution}
 
-% ======================================================================
-In the specific case where $A$ is a $2\times 2$-matrix given by
+Another situation where the cofactor method is useful is the case of a
+$2\times 2$-matrix. In this case both the determinant and the adjugate
+are especially easy to compute. For a $2\times 2$-matrix
 \begin{equation*}
-  A = \begin{mymatrix}{rr}
+  A ~=~ \begin{mymatrix}{rr}
     a & b \\
     c & d
-  \end{mymatrix}
+  \end{mymatrix},
 \end{equation*}
-then $\adj(A)$ is given by
-\begin{equation*}
-  \adj(A) =
+we have
+\begin{eqnarray*}
+  \det(A) &=& ad-bc
+  \\
+  \adj(A) &=&
   \begin{mymatrix}{rr}
     d & -b \\
     -c & a
-  \end{mymatrix}
-\end{equation*}
-In general, $\adj(A)$ can always be found by taking the
-transpose of the cofactor matrix of $A$.
+  \end{mymatrix}.
+\end{eqnarray*}
+Therefore, $A$ is invertible if and only if $ad-bc\neq 0$, and in
+that case, the inverse is given by
+\begin{equation}\label{eqn:inverse-2-by-2}
+  A^{-1} ~=~
+  \frac{1}{ad-bc}
+  \begin{mymatrix}{rr}
+    d & -b \\
+    -c & a
+  \end{mymatrix}.
+\end{equation}
 
-% The proof of this Theorem is below, after two examples demonstrating this concept.
+\begin{example}{Inverse of a $2\times 2$-matrix}{inverse-2-by-2}
+  Find the inverse of
+  \begin{equation*}
+    A ~=~ \begin{mymatrix}{rr}
+      7 & 5 \\
+      2 & 2 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We use formula {\eqref{eqn:inverse-2-by-2}} to compute the inverse:
+  \begin{equation*}
+    \def\arraystretch{1.4}
+    A^{-1} ~=~
+    \frac{1}{7\cdot 2-2\cdot 5}
+    \begin{mymatrix}{rr}
+      2 & -5 \\
+      -2 & 7
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{rr}
+      \frac{1}{2} & -\frac{5}{4} \\
+      -\frac{1}{2} & \frac{7}{4}
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
