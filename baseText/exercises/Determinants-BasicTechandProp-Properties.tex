@@ -176,6 +176,47 @@
 \end{ex}
 
 \begin{ex}
+  Find the determinant of
+  \begin{equation*}
+    A = \begin{mymatrix}{ccc}
+      1 & 1 & 1 \\
+      1 & a & a^2 \\
+      1 & b & b^2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  For which values of $a$ and $b$ is this matrix invertible? Hint:
+  after you compute the determinant, you can factor out $(a-1)$ and
+  $(b-1)$ from it.
+  \begin{sol}
+    The determinant is
+    \begin{equation*}
+      \begin{absmatrix}{ccc}
+        1 & 1 & 1 \\
+        1 & a & a^2 \\
+        1 & b & b^2 \\
+      \end{absmatrix}
+      =
+      \begin{absmatrix}{cc}
+        a & a^2 \\
+        b & b^2 \\
+      \end{absmatrix}
+      -\begin{absmatrix}{cc}
+        1 & 1 \\
+        b & b^2 \\
+      \end{absmatrix}
+      +\begin{absmatrix}{cc}
+        1 & 1 \\
+        a & a^2 \\
+      \end{absmatrix}
+      = ab^2 - ba^2 - b^2 + b + a^2 - a
+      = (a-1)(b-1)(b-a).
+    \end{equation*}
+    Therefore the determinant is $0$ if $a=1$, $b=1$, or $a=b$. In all
+    other cases, the determinant is non-zero and the matrix is invertible.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
   Assume $A$, $B$, and $C$ are $n\times n$-matrices and $ABC$ is
   invertible. Use determinants to show that each of $A,B$, and $C$ is
   invertible.
