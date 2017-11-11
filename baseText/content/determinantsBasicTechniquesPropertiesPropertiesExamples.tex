@@ -32,17 +32,17 @@ it permits us to tell whether a square matrix is invertible.
 \end{theorem}
 
 \begin{proof}
-  We know that every matrix $A$ can be converted to echelon form by
+  We know that every matrix $A$ can be converted to {\ef} by
   elementary row operations. We also know from
   Theorem~\ref{thm:determinant-row-operations} that no elementary row
   operation changes whether the determinant is zero or not.  Let $R$
-  be an echelon form of $A$. Because $R$ is an echelon form, it is
-  also an upper triangular matrix. Case 1: $A$ is invertible. In that
-  case, the rank of $R$ is $n$, and every diagonal entry of $R$ is a
-  pivot entry (therefore non-zero). It follows that $\det(R)\neq 0$,
-  which implies $\det(A)\neq 0$. Case 2: $A$ is not invertible. In
-  that case, the triangular matrix $R$ contains a row of zeros. It
-  follows that $\det(R)=0$, and therefore $\det(A)=0$.
+  be an {\ef} of $A$. Because $R$ is an {\ef}, it is also an upper
+  triangular matrix. Case 1: $A$ is invertible. In that case, the rank
+  of $R$ is $n$, and every diagonal entry of $R$ is a pivot entry
+  (therefore non-zero). It follows that $\det(R)\neq 0$, which implies
+  $\det(A)\neq 0$. Case 2: $A$ is not invertible. In that case, the
+  triangular matrix $R$ contains a row of zeros. It follows that
+  $\det(R)=0$, and therefore $\det(A)=0$.
 \end{proof}
 
 \begin{example}{Determinants and invertible matrices}{determinant-invertible}
