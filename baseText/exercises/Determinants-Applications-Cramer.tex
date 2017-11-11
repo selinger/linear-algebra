@@ -3,47 +3,112 @@
 
 \begin{enumialphparenastyle}
 
-\begin{ex}Decide if this statement is true or false: \textit{Cramer's rule is useful for finding solutions to systems of linear
-equations in which there is an infinite set of solutions.} 
-\begin{sol}
-False.
-\end{sol}
+\begin{ex}
+  True or false? ``Cramer's rule is useful for finding solutions
+    to systems of linear equations in which there is an infinite set
+    of solutions.''
+  \begin{sol}
+    False. Cramer's rule only works when the coefficient matrix is
+    invertible. In these cases, the solution is always unique.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Use Cramer's rule to find the solution to 
-\begin{equation*}
-\begin{array}{c}
-x+2y=1 \\
-2x-y=2
-\end{array}
-\end{equation*}
-\begin{sol}
-Solution is: $\mat{x=1,y=0} $
-\end{sol}
+\begin{ex}
+  Use Cramer's rule to find the solution to
+  \begin{equation*}
+    \begin{array}{c}
+      x+2y=1 \\
+      2x-y=2
+    \end{array}
+  \end{equation*}
+  \begin{sol}
+    Solution is: $(x,y) = (1,0)$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Use Cramer's rule to find the solution to 
-\begin{equation*}
-\begin{array}{c}
-x+2y+z=1 \\
-2x-y-z=2 \\
-x+z=1
-\end{array}
-\end{equation*}
-\begin{sol}
-Solution is: $\mat{x=1,y=0,z=0}$. For example,
-\begin{equation*}
-y=\frac{\begin{absmatrix}{rrr}
-1 & 1 & 1 \\
-2 & 2 & -1 \\
-1 & 1 & 1
-\end{absmatrix}}{\begin{absmatrix}{rrr}
-1 & 2 & 1 \\
-2 & -1 & -1 \\
-1 & 0 & 1
-\end{absmatrix}}=0
-\end{equation*}
-\end{sol}
+\begin{ex}
+  Use Cramer's rule to find the solution to
+  \begin{equation*}
+    \begin{array}{c}
+      x+2y+z=3 \\
+      2x-y-z=1 \\
+      x+z=1
+    \end{array}
+  \end{equation*}
+  \begin{sol}
+    Solution is: $(x,y,z) = (1,1,0)$. For example,
+    \begin{equation*}
+      y=\frac{\begin{absmatrix}{rrr}
+          1 & 3 & 1 \\
+          2 & 1 & -1 \\
+          1 & 1 & 1
+        \end{absmatrix}}{\begin{absmatrix}{rrr}
+          1 & 2 & 1 \\
+          2 & -1 & -1 \\
+          1 & 0 & 1
+        \end{absmatrix}}=1
+    \end{equation*}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Use Cramer's rule to solve the system of equations
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      2 & 1 &  1 \\
+      2 & 2 & -1 \\
+      2 & 1 &  2 \\
+    \end{mymatrix} \begin{mymatrix}{c}
+      x \\
+      y \\
+      z \\
+    \end{mymatrix} =\begin{mymatrix}{r}
+      3 \\
+      -2 \\
+      5 \\
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    The solution is $(x,y,z) = (1,-1,2)$.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Find the value of $y$ in the following system of equations:
+  \begin{equation*}
+    \begin{mymatrix}{ccc}
+      1 & 1 &  1   \\
+      1 & t &  t^2 \\
+      1 & s &  s^2 \\
+    \end{mymatrix} \begin{mymatrix}{c}
+      x \\
+      y \\
+      z \\
+    \end{mymatrix} =\begin{mymatrix}{c}
+      t \\
+      s \\
+      1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    By Cramer's rule, we have
+    \begin{equation*}
+      y = \frac{
+        \begin{absmatrix}{ccc}
+          1 & t &  1   \\
+          1 & s &  t^2 \\
+          1 & 1 &  s^2 \\
+        \end{absmatrix}
+      }{
+        \begin{absmatrix}{ccc}
+          1 & 1 &  1   \\
+          1 & t &  t^2 \\
+          1 & s &  s^2 \\
+        \end{absmatrix}
+      }
+      = \frac{s^3+t^3+1-2-ts^2-t^2}{ts^2+t^2+s-t-st^2-s^2}.    
+    \end{equation*}
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}

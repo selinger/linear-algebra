@@ -3,241 +3,257 @@
 
 \begin{enumialphparenastyle}
 
-\begin{ex} An operation is done to get from the first matrix to the second.
-Identify what was done and tell how it will affect the value of the
-determinant. 
-\begin{equation*}
-\begin{mymatrix}{cc}
-a & b \\
-c & d
-\end{mymatrix}  \sim \ldots \sim \begin{mymatrix}{cc}
-a & c \\
-b & d
-\end{mymatrix}
-\end{equation*}
-\begin{sol}
-It does not change the determinant. This was just taking the transpose.
-\end{sol}
+\begin{ex}
+  Let 
+  \begin{equation*}
+    A = \begin{mymatrix}{cc}
+      a & b \\
+      c & d \\
+    \end{mymatrix}.
+  \end{equation*}
+  An operation is done to get from $A$ to a matrix $B$. In each case,
+  identify which operation was done and explain how it will affect the
+  value of the determinant.
+  \begin{enumerate}
+  \item
+    \begin{equation*}
+      B = \begin{mymatrix}{cc}
+        a & c \\
+        b & d \\
+      \end{mymatrix}
+    \end{equation*}
+  \item
+    \begin{equation*}
+      B = \begin{mymatrix}{cc}
+        c & d \\
+        a & b \\
+      \end{mymatrix}
+    \end{equation*}
+  \item
+    \begin{equation*}
+      B = \begin{mymatrix}{cc}
+        a   & b   \\
+        a+c & b+d \\
+      \end{mymatrix}
+    \end{equation*}
+  \item
+    \begin{equation*}
+      B = \begin{mymatrix}{cc}
+        a  & b  \\
+        2c & 2d \\
+      \end{mymatrix}
+    \end{equation*}
+  \item
+    \begin{equation*}
+      B = \begin{mymatrix}{cc}
+        b & a \\
+        d & c \\
+      \end{mymatrix}
+    \end{equation*}
+  \end{enumerate}
+  \begin{sol}
+    \begin{enumerate}
+    \item The transpose was taken and $\det(B) = \det(A)$.
+    \item Two rows were switched and $\det(B) = -\det(A)$.
+    \item The first row was added to the second row and $\det(B) = \det(A)$. 
+    \item The second row was multiplied by 2 and $\det(B) = 2\det(A)$.
+    \item Two columns were switched and $\det(B) = -\det(A)$. 
+    \end{enumerate}
+  \end{sol}
 \end{ex}
 
-\begin{ex} An operation is done to get from the first matrix to the second.
-Identify what was done and tell how it will affect the value of the
-determinant. 
-\begin{equation*}
-\begin{mymatrix}{cc}
-a & b \\
-c & d
-\end{mymatrix} \sim \ldots \sim \begin{mymatrix}{cc}
-c & d \\
-a & b
-\end{mymatrix}
-\end{equation*}
-\begin{sol}
-In this case two rows were switched and so the resulting determinant is $-1$
-times the first.
-\end{sol}
+\begin{ex}
+  Let $A$ be an $n\times n$-matrix and suppose there are $n-1$ rows
+  such that the remaining row is a linear combinations of these $n-1$
+  rows. Show $\det(A) = 0$.
+  \begin{sol}
+    By assumption, we can obtain a row of zeros by doing row
+    operations. Row operations do not change whether the determinant
+    is zero, so the determinant must have been zero all along.
+  \end{sol}
 \end{ex}
 
-
-\begin{ex} An operation is done to get from the first matrix to the second.
-Identify what was done and tell how it will affect the value of the
-determinant. 
-\begin{equation*}
-\begin{mymatrix}{cc}
-a & b \\
-c & d
-\end{mymatrix} \sim \ldots \sim \begin{mymatrix}{cc}
-a & b \\
-a+c & b+d
-\end{mymatrix}
-\end{equation*}
-\begin{sol}
-The determinant is unchanged. It was just the first row added to the second.
-\end{sol}
+\begin{ex}
+  \label{ex:determinant3}
+  Let $A$ be an $n\times n$-matrix. Show that if $\det(A) \neq 0$ and
+  $A\vect{x}=\vect{0}$, then $\vect{x}=\vect{0}$.
+  \begin{sol}
+    If $\det(A) \neq 0$, then $A^{-1}$ exists. Therefore
+    $\vect{x} = A^{-1}A\vect{x} = A^{-1}\vect{0} = \vect{0}$.
+  \end{sol}
 \end{ex}
 
-
-\begin{ex} An operation is done to get from the first matrix to the second.
-Identify what was done and tell how it will affect the value of the
-determinant. 
-\begin{equation*}
-\begin{mymatrix}{cc}
-a & b \\
-c & d
-\end{mymatrix} \sim \ldots \sim \begin{mymatrix}{cc}
-a & b \\
-2c & 2d
-\end{mymatrix}
-\end{equation*}
-\begin{sol}
-The second row was multiplied by 2 so the determinant of the result is 2
-times the original determinant.
-\end{sol}
+\begin{ex}
+  Using only Theorems~\ref{thm:determinant-of-triangular-matrix} and
+  {\ref{thm:determinant-of-product}}, show that
+  $\det(kA) = k^{n}\det(A)$ for an $n\times n$-matrix $A$ and scalar
+  $k$.
+  \begin{sol}
+    The matrix $kI$ has $k$ down the main diagonal and has determinant
+    equal to $k^{n}$ by
+    Theorem~\ref{thm:determinant-of-triangular-matrix}. Using
+    Theorem~\ref{thm:determinant-of-product}, it follows that
+    $\det(kA) = \det(kIA) = \det(kI) \det(A) = k^{n}\det(A)$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} An operation is done to get from the first matrix to the second.
-Identify what was done and tell how it will affect the value of the
-determinant. 
-\begin{equation*}
-\begin{mymatrix}{cc}
-a & b \\
-c & d
-\end{mymatrix} \sim \ldots \sim \begin{mymatrix}{cc}
-b & a \\
-d & c
-\end{mymatrix}
-\end{equation*}
-\begin{sol}
-In this case the two columns were switched so the determinant of the second
-is $-1$ times the determinant of the first.
-\end{sol}
+\begin{ex}
+  Construct two random $2\times 2$-matrices $A$ and $B$ and verify
+  that $\det(A)\det(B) = \det(AB)$.
+  \begin{sol}
+    \begin{equation*}
+      \det
+      \paren{\begin{mymatrix}{cc}
+          1 & 2 \\
+          3 & 4
+        \end{mymatrix} \begin{mymatrix}{rr}
+          -1 & 2 \\
+          -5 & 6
+        \end{mymatrix}} = -8,
+    \end{equation*}
+    \begin{equation*}
+      \det\paren{\begin{mymatrix}{cc}
+        1 & 2 \\
+        3 & 4
+      \end{mymatrix}}\det\paren{\begin{mymatrix}{rr}
+        -1 & 2 \\
+        -5 & 6
+      \end{mymatrix}} = -2\times 4 = -8.
+    \end{equation*}
+  \end{sol}
 \end{ex}
 
-
-\begin{ex} Let $A$ be an $r\times r$-matrix and suppose there are $r-1$ rows
-(columns) such that all rows (columns) are linear combinations of these $r-1$
-rows (columns). Show $\det (A) =0$. 
-\begin{sol}
-If the determinant is non-zero, then it will remain non-zero with row operations applied to the matrix.
-However, by assumption, you can obtain a row of zeros by doing row
-operations. Thus the determinant must have been zero after all.
-\end{sol}
+\begin{ex}
+  Is it true that $\det(A+B) = \det(A) +\det(B)$? If this is so,
+  explain why. If it is not so, give a counterexample.
+  \begin{sol}
+    This is not true at all. Consider $A = \begin{mymatrix}{cc}
+      1 & 0 \\
+      0 & 1
+    \end{mymatrix}$ and $B = \begin{mymatrix}{rr}
+      -1 & 0 \\
+      0 & -1
+    \end{mymatrix}$. Then $\det(A)=1$, $\det(B)=1$, and $\det(A+B)=0$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Show $\det (aA) =a^{n}\det (A) $ for an $n \times n $-matrix $A
-$ and scalar $a$. 
-\begin{sol}
-$\det (aA) =\det
-(aIA) =\det (aI) \det (A) =a^{n}\det
-(A)$. The matrix which has $a$ down the main diagonal has
-determinant equal to $a^{n}$.
-\end{sol}
+\begin{ex}
+  An $n\times n$-matrix is called \textbf{nilpotent}%
+  \index{nilpotent matrix}%
+  \index{matrix!nilpotent} if there exists some positive integer $k$
+  such that $A^{k} = 0$. If $A$ is a nilpotent matrix, what are the
+  possible values of $\det(A)$?
+  \begin{sol}
+    Since $A^k=0$, we have $\det(A)^k=\det(A^k)=\det(0)=0$. Therefore,
+    it must be the case that $\det(A)=0$.
+  \end{sol}
 \end{ex}
 
-
-\begin{ex} Construct $2\times 2$-matrices $A$ and $B$ to show that the
-$\det A \det B = \det (AB)$. 
-\begin{sol}
-\begin{equation*}
-\det
-\paren{\begin{mymatrix}{cc}
-1 & 2 \\
-3 & 4
-\end{mymatrix} \begin{mymatrix}{rr}
--1 & 2 \\
--5 & 6
-\end{mymatrix}} = -8
-\end{equation*}
-\begin{equation*}
-\det \begin{mymatrix}{cc}
-1 & 2 \\
-3 & 4
-\end{mymatrix} \det \begin{mymatrix}{rr}
--1 & 2 \\
--5 & 6
-\end{mymatrix} = -2 \times 4 = -8
-\end{equation*}
-\end{sol}
+\begin{ex}
+  A square matrix is said to be \textbf{orthogonal}%
+  \index{matrix!orthogonal}%
+  \index{orthogonal matrix} if $A^{T}A = I$. Thus the inverse of an
+  orthogonal matrix is its transpose. What are the possible values of
+  $\det(A)$ if $A$ is an orthogonal matrix?
+  \begin{sol}
+    If $A$ is orthogonal, we have $\det(A)^2 = \det(A^T)\det(A) =
+    \det(A^TA) = \det(I) = 1$. Therefore the only possible values for
+    $\det(A)$ are $\pm 1$. 
+  \end{sol}
 \end{ex}
 
-\begin{ex} Is it true that $\det (A+B) =\det (A) +\det
-(B)$? If this is so, explain why. If it is not so,
-give a counter example.  
-\begin{sol}
-This is not true at all. Consider $A=\begin{mymatrix}{cc}
-1 & 0 \\
-0 & 1
-\end{mymatrix} ,B=\begin{mymatrix}{rr}
--1 & 0 \\
-0 & -1
-\end{mymatrix}$.
-\end{sol}
+\begin{ex}
+  Let $A$ and $B$ be two $n\times n$-matrices. We say that $A$ is
+  \textbf{similar}%
+  \index{matrix!similar}%
+  \index{similar matrices} to $B$, in symbols $A\sim B$, if there
+  exists an invertible matrix $P$ such that $A = P^{-1}BP$. Show that
+  if $A\sim B$, then $\det(A) = \det(B)$.
+  \begin{sol}
+    $\det(A) = \det(P^{-1}BP) = \det(P^{-1}) \det(B) \det(P) =
+    \frac{1}{\det(P)} \det(B) \det(P) = \det(B)$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} An $n\times n$-matrix is called \textbf{nilpotent}
-\index{nilpotent} if for some positive integer, $k$ it follows $A^{k}=0$. If
-$A$ is a nilpotent matrix and $k$ is the smallest possible integer such that
-$A^{k}=0$, what are the possible values of $\det (A)$? 
-\begin{sol}
-It must
-be 0 because $0=\det (0) =\det (A^{k}) =(\det
-(A)) ^{k}$.
-\end{sol}
+\begin{ex}
+  Assume $A$, $B$, and $C$ are $n\times n$-matrices and $ABC$ is
+  invertible. Use determinants to show that each of $A,B$, and $C$ is
+  invertible.
+  \begin{sol}
+    This follows because $\det(ABC) = \det(A)\det(B)\det(C)$ and if
+    this product is non-zero, then each determinant in the product is
+    non-zero. Therefore, each of these matrices is invertible.
+  \end{sol}
 \end{ex}
 
-\begin{ex} \label{exer-orthogonal}A matrix is said to be \textbf{orthogonal} \index{matrix!orthogonal} if 
-$A^{T}A=I$. Thus the inverse of an orthogonal matrix is just its transpose.
-What are the possible values of $\det (A) $ if $A$ is an
-orthogonal matrix? 
-\begin{sol}
-You would need $\det (AA^{T}) =\det
-(A) \det (A^{T}) =\det (A) ^{2}=1$ and
-so $\det (A) =1$, or $-1$.
-\end{sol}
+\begin{ex}
+  Suppose $A$ is an upper triangular matrix. Show that $A^{-1}$ exists
+  if and only if all elements of the main diagonal are non-zero. Is it
+  true that $A^{-1}$ will also be upper triangular? Explain. Could the
+  same be concluded for lower triangular matrices?
+  \begin{sol}
+    The given condition is what it takes for the determinant to be
+    non-zero. Recall that the determinant of an upper triangular
+    matrix is just the product of the entries on the main diagonal.
+    The inverse will also be upper triangular; this can be seen by
+    noting that every invertible upper triangular can be written as a
+    product of upper triangular elementary matrices; the inverse of
+    each such elementary matrix is upper triangular, and therefore so
+    is their product. The analogous statement about lower triangular
+    matrices is also true.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Let $A$ and $B$ be two $n\times n$-matrices. $A\sim B$
-($A$ is \textbf{similar} to $B$) means there exists an invertible matrix $P$
-such that $A=P^{-1}BP$. Show that if $A\sim B$, then 
-$\det (A) =\det (B)$. 
-\begin{sol}
-$\det (A) =\det
-(S^{-1}BS) =\det (S^{-1}) \det (B) \det
-(S) =\det (B) \det (S^{-1}S) =\det
-(B)$.
-\end{sol}
-\end{ex}
+\begin{ex}
+  Specify whether each statement is true or false. If true, provide a
+  proof. If false, provide a counterexample.
+  \begin{enumerate}
+  \item If $A$ is a $3\times 3$-matrix with determinant zero, then one
+    column must be a multiple of some other column.
 
-\begin{ex} Tell whether each statement is true or false. If true, provide a proof. If false, provide a counter example. 
-\begin{enumerate}
-\item If $A$ is a $3\times 3$-matrix with a zero determinant, then one
-column must be a multiple of some other column.
+  \item If any two columns of a square matrix are equal, then the
+    determinant of the matrix equals zero.
 
-\item If any two columns of a square matrix are equal, then the determinant
-of the matrix equals zero.
+  \item For two $n\times n$-matrices $A$ and $B$,
+    $\det(A+B) = \det(A) + \det(B)$.
 
-\item For two $n\times n$-matrices $A$ and $B$, $\det (A+B)
-=\det (A) +\det (B)$.
+  \item For an $n\times n$-matrix $A$, $\det(3A) = 3\det(A)$.
 
-\item For an $n\times n$-matrix $A$, $\det (3A) =3\det (
-A) $
+  \item If $A^{-1}$ exists, then $\det(A^{-1}) = \det(A)^{-1}$.
 
-\item If $A^{-1}$ exists then $\det (A^{-1}) =\det (
-A) ^{-1}$.
+  \item If $B$ is obtained by multiplying a single row of $A$ by $4$,
+    then $\det(B) = 4\det(A)$.
 
-\item If $B$ is obtained by multiplying a single row of $A$ by $4$ then $%
-\det (B) =4\det (A)$.
+  \item For an $n\times n$-matrix $A$, we have
+    $\det(-A) = (-1)^{n}\det(A)$.
 
-\item For $A$ an $n\times n$-matrix, $\det (-A) =(
--1) ^{n}\det (A)$.
+  \item If $A$ is a real $n\times n$-matrix, then
+    $\det(A^{T}A) \geq 0$.
 
-\item If $A$ is a real $n\times n$-matrix, then $\det (A^{T}A)
-\geq 0$.
+  \item If $A^{k} = 0$ for some positive integer $k$, then
+    $\det(A) = 0$.
 
-\item If $A^{k}=0$ for some positive integer $k$, then $\det (
-A) =0$.
-
-\item If $AX=0$ for some $X \neq 0$, then $\det (
-A) =0$.
-\end{enumerate}
-\begin{sol}
-\begin{enumerate}
-\item False. Consider $\begin{mymatrix}{rrr}
-1 & 1 & 2 \\
--1 & 5 & 4 \\
-0 & 3 & 3
-\end{mymatrix} $
-\item True.
-\item False.
-\item False.
-\item True.
-\item True.
-\item True.
-\item True.
-\item True.
-\item True.
-\end{enumerate}
-\end{sol}
+  \item If $A\vect{x} = 0$ for some $\vect{x} \neq 0$, then
+    $\det(A) = 0$.
+  \end{enumerate}
+  \begin{sol}
+    \begin{enumerate}
+    \item False. Consider $\begin{mymatrix}{rrr}
+        1 & 1 & 0 \\
+        1 & 2 & 1 \\
+        0 & 1 & 1 \\
+      \end{mymatrix}$.
+    \item True.
+    \item False.
+    \item False.
+    \item True.
+    \item True.
+    \item True.
+    \item True.
+    \item True.
+    \item True.
+    \end{enumerate}
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}

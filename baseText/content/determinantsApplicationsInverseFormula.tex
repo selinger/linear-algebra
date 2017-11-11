@@ -1,5 +1,12 @@
 \section{Application: A formula for the inverse of a matrix}
 
+\begin{outcome}
+  \begin{enumerate}
+  \item Find the cofactor matrix and the adjugate of a matrix.
+  \item Find the inverse of a matrix using the adjugate formula.
+  \end{enumerate}
+\end{outcome}
+
 The determinant of a matrix also provides a way to find the inverse of
 a matrix.  Recall the definition of the inverse of a matrix from
 Definition~\ref{def:invertible-matrix}. If $A$ is an
@@ -137,15 +144,16 @@ determinant and the adjugate of $A$.
   \begin{equation*}
     A \, \adj(A) = \adj(A)\,A = \det(A)\,I.
   \end{equation*}
-  Moreover, if $A$ is invertible if and only if $\det(A) \neq 0$. In this
-  case%
-  \index{determinant!matrix inverse formula}%
-  \index{inverse!of a matrix!formula for}%
-  \index{matrix!inverse!formula for},
-  we have:
+  Moreover, if $A$ is invertible if and only if $\det(A) \neq 0$. In
+  this case, we have:
   \begin{equation*}
     A^{-1} = \frac{1}{\det(A)} \adj(A).
   \end{equation*}
+  We call this the \textbf{adjugate formula}%
+  \index{determinant!formula for matrix inverse}%
+  \index{adjugate formula}%
+  \index{inverse!of a matrix!adjugate formula}%
+  \index{matrix!inverse!adjugate formula} for the matrix inverse.
 \end{theorem}
 
 \begin{proof}
@@ -187,15 +195,14 @@ determinant and the adjugate of $A$.
 \end{proof}
 
 \begin{example}{Finding the inverse using a formula}{inverse-and-determinant}
-  Find the inverse of the matrix
+  Use the adjugate formula to find the inverse of the matrix
   \begin{equation*}
     A=\begin{mymatrix}{rrr}
       1 & 2 & 3 \\
       3 & 0 & 1 \\
       1 & 2 & 1 \\
-    \end{mymatrix}
+    \end{mymatrix}.
   \end{equation*}
-  using the formula in Theorem~\ref{thm:inverse-and-determinant}.
 \end{example}
 
 \begin{solution}
@@ -274,15 +281,14 @@ determinant and the adjugate of $A$.
 \end{solution}
 
 \begin{example}{Finding the inverse using a formula}{inverse-formula}
-  Find the inverse of the matrix
+  Use the adjugate formula to find the inverse of the matrix
   \begin{equation*}
     A=\begin{mymatrix}{rrr}
       0  &  2 &  1 \\
       -1 &  2 &  2 \\
       2  & -2 & -2 \\
-    \end{mymatrix}
+    \end{mymatrix}.
   \end{equation*}
-  using the formula given in Theorem~\ref{thm:inverse-and-determinant}.
 \end{example}
 
 \begin{solution}
@@ -421,10 +427,9 @@ In practice, it is usually much faster to compute the inverse by the
 method of Section~\ref{ssec:computing-inverses}, because this only
 requires solving a single system of equations, rather than computing a
 large number of cofactors. However, there are some situations where
-the cofactor method of inverting a matrix is useful. One such
-situation is when the matrix has complicated entries that are
-functions rather than numbers. The following example illustrates
-this.
+the adjugate formula is useful. One such situation is when the matrix
+has complicated entries that are functions rather than numbers. The
+following example illustrates this.
 
 \begin{example}{Inverse for non-constant matrix}{inverse-non-constant-matrix}
   Let
@@ -472,7 +477,7 @@ this.
   \end{equation*}
 \end{solution}
 
-Another situation where the cofactor method is useful is the case of a
+Another situation where the adjugate formula is useful is the case of a
 $2\times 2$-matrix. In this case both the determinant and the adjugate
 are especially easy to compute. For a $2\times 2$-matrix
 \begin{equation*}
