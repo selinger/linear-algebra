@@ -98,19 +98,19 @@ $\det(B) = k^2 \det(A)$.
       1 & 8 & 1 \\
       2 & 4 & -9 \\
     \end{mymatrix}
-    \stackrel{R_2\rowop R_2-R_1}{\sim}
+    \stackrel{R_2\rowop R_2-R_1}{\roweq}
     \begin{mymatrix}{rrr}
       1 & 4 & -2 \\
       0 & 4 & 3 \\
       2 & 4 & -9 \\
     \end{mymatrix}
-    \stackrel{R_3\rowop R_3-2R_1}{\sim}
+    \stackrel{R_3\rowop R_3-2R_1}{\roweq}
     \begin{mymatrix}{rrr}
       1 & 4 & -2 \\
       0 & 4 & 3 \\
       0 & -4 & -5 \\
     \end{mymatrix}
-    \stackrel{R_3\rowop R_3+R_2}{\sim}
+    \stackrel{R_3\rowop R_3+R_2}{\roweq}
     \begin{mymatrix}{rrr}
       1 & 4 & -2 \\
       0 & 4 & 3 \\
@@ -179,14 +179,14 @@ method is much more efficient than the cofactor method.
         1 & 1 & -2 & -1 \\
         1 & 3 & 2 & 5 \\
       \end{mymatrix}
-      &\stackrel{R_1\rowswap R_3}{\sim}&
+      &\stackrel{R_1\rowswap R_3}{\roweq}&
       \begin{mymatrix}{rrrr}
         1 & 1 & -2 & -1 \\
         2 & 2 & -4 & -1 \\
         0 & 2 & 1 & 4 \\
         1 & 3 & 2 & 5 \\
       \end{mymatrix}
-      &\stackrel{R_2\rowop R_2-2R_1}{\sim}&
+      &\stackrel{R_2\rowop R_2-2R_1}{\roweq}&
       \begin{mymatrix}{rrrr}
         1 & 1 & -2 & -1 \\
         0 & 0 & 0 & 1 \\
@@ -194,14 +194,14 @@ method is much more efficient than the cofactor method.
         1 & 3 & 2 & 5 \\
       \end{mymatrix}
       \\\\[-1ex]
-      &\stackrel{R_4\rowop R_4-R_1}{\sim}&
+      &\stackrel{R_4\rowop R_4-R_1}{\roweq}&
       \begin{mymatrix}{rrrr}
         1 & 1 & -2 & -1 \\
         0 & 0 & 0 & 1 \\
         0 & 2 & 1 & 4 \\
         0 & 2 & 4 & 6 \\
       \end{mymatrix}
-      &\stackrel{R_4\rowop R_4-R_3}{\sim}&
+      &\stackrel{R_4\rowop R_4-R_3}{\roweq}&
       \begin{mymatrix}{rrrr}
         1 & 1 & -2 & -1 \\
         0 & 0 & 0 & 1 \\
@@ -209,14 +209,14 @@ method is much more efficient than the cofactor method.
         0 & 0 & 3 & 2 \\
       \end{mymatrix}
       \\\\[-1ex]
-      &\stackrel{R_2\rowswap R_3}{\sim}&
+      &\stackrel{R_2\rowswap R_3}{\roweq}&
       \begin{mymatrix}{rrrr}
         1 & 1 & -2 & -1 \\
         0 & 2 & 1 & 4 \\
         0 & 0 & 0 & 1 \\
         0 & 0 & 3 & 2 \\
       \end{mymatrix}
-      &\stackrel{R_3\rowswap R_4}{\sim}&
+      &\stackrel{R_3\rowswap R_4}{\roweq}&
       \begin{mymatrix}{rrrr}
         1 & 1 & -2 & -1 \\
         0 & 2 & 1 & 4 \\

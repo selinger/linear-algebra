@@ -8,21 +8,21 @@ such that
 A=P^{-1}BP
 \end{equation*}
 
-In this case we write $A \sim B$. The concept of similarity is an example of an \textbf{equivalence relation}\index{equivalence relation}.
+In this case we write $A\similar B$. The concept of similarity is an example of an \textbf{equivalence relation}\index{equivalence relation}.
 
 \begin{lemma}{Similarity is an equivalence relation}{similarity-equivalence}
 Similarity is an equivalence relation, i.e. for $n \times n$-matrices $A,B$, and $C$, 
 \begin{enumerate}
-\item $A \sim A$ (reflexive)
-\item If $A \sim B$, then $B \sim A$ (symmetric)
-\item If $A \sim B$ and $B \sim C$, then $A \sim C$ (transitive)
+\item $A \similar A$ (reflexive)
+\item If $A \similar B$, then $B \similar A$ (symmetric)
+\item If $A \similar B$ and $B \similar C$, then $A \similar C$ (transitive)
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-It is clear that $A\sim A$, taking $P=I$. 
+It is clear that $A\similar A$, taking $P=I$. 
 
-Now, if $A\sim B$, then for some $P$ invertible,
+Now, if $A\similar B$, then for some $P$ invertible,
 \begin{equation*}
 A=P^{-1}BP
 \end{equation*}
@@ -34,9 +34,9 @@ But then
 \begin{equation*}
 (P^{-1}) ^{-1}AP^{-1}=B
 \end{equation*}
-which shows that $B\sim A$.
+which shows that $B\similar A$.
 
-Now suppose $A\sim B$ and $B\sim C$. Then there exist invertible matrices 
+Now suppose $A\similar B$ and $B\similar C$. Then there exist invertible matrices 
 $P,Q$ such that
 \begin{equation*}
 A=P^{-1}BP,\ B=Q^{-1}CQ
@@ -71,7 +71,7 @@ For $n\times n$-matrices $A$ and $B$, and any $k\in\R$,
 The following theorem includes a reference to the characteristic polynomial of a matrix. Recall that for any $n \times n$-matrix $A$, the characteristic polynomial of $A$ is $c_A(x)=\det(xI-A)$.
 
 \begin{theorem}{Properties of similar matrices}{properties-similar}
-If $A$ and $B$ are $n\times n$-matrices and $A\sim B$, then
+If $A$ and $B$ are $n\times n$-matrices and $A\similar B$, then
 \begin{enumerate}
 \item $\det(A) = \det(B)$
 \item $\rank(A) = \rank(B)$

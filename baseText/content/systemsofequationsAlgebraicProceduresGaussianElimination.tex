@@ -161,13 +161,13 @@ examples show how to do this.
       2 & 10 & 7 & 27 \\
       1 & 1 & 2 & 5
     \end{mymatrix}
-    \stackrel{R_2\rowop R_2-2R_1}{\sim}
+    \stackrel{R_2\rowop R_2-2R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 4 & 3 & 11 \\
       0 & 2 & 1 & 5 \\
       1 & 1 & 2 & 5
     \end{mymatrix}
-    \stackrel{R_3\rowop R_3-R_1}{\sim}
+    \stackrel{R_3\rowop R_3-R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 4 & 3 & 11 \\
       0 & 2 & 1 & 5 \\
@@ -188,13 +188,13 @@ examples show how to do this.
       0 & \circled{2} & 1 & 5 \\
       0 & -3 & -1 & -6
     \end{mymatrix}
-    \stackrel{R_3\rowop 2R_3}{\sim}
+    \stackrel{R_3\rowop 2R_3}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 4 & 3 & 11 \\
       0 & \circled{2} & 1 & 5 \\
       0 & -6 & -2 & -12
     \end{mymatrix}
-    \stackrel{R_3\rowop R_3+3R_2}{\sim}
+    \stackrel{R_3\rowop R_3+3R_2}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 4 & 3 & 11 \\
       0 & \circled{2} & 1 & 5 \\
@@ -263,7 +263,7 @@ examples show how to do this.
   first pivot column. We switch the first two rows to move a non-zero
   number into the pivot position:
   \begin{equation*}
-  \stackrel{R_2\rowswap R_1}{\sim}
+  \stackrel{R_2\rowswap R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  1 &   2 & 2\\
@@ -273,7 +273,7 @@ examples show how to do this.
   To create zeros below the pivot entry, we subtract $2$ times the
   first row from the third row:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3-2R_1}{\sim}
+  \stackrel{R_3\rowop R_3-2R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  1 &   2 & 2\\
@@ -285,7 +285,7 @@ examples show how to do this.
   entry. We add $3$ times the second row to the third row to create a
   zero below the pivot:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3+3R_2}{\sim}
+  \stackrel{R_3\rowop R_3+3R_2}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  \circled{1} &   2 & 2\\
@@ -327,7 +327,7 @@ examples show how to do this.
   pivot entry. We use row operating to create zeros beneath the pivot
   entry. We subtract $2$ times the first row from the third row and get:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3-2R_1}{\sim}
+  \stackrel{R_3\rowop R_3-2R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{3} &  -1  &  5 & 8 \\
       0 &   1 & -10 & 1 \\
@@ -339,7 +339,7 @@ examples show how to do this.
   second column) and repeat the procedure. Subtracting the second row
   from the third row, we get:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3-R_2}{\sim}
+  \stackrel{R_3\rowop R_3-R_2}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{3} &  -1  &  5 & 8 \\
       0 &   \circled{1} & -10 & 1 \\
@@ -420,13 +420,13 @@ than one parameter, as shown in the following example.
       1 & 2 & -1 & 3 & 5 \\
       1 & 2 & -3 & 1 & 1
     \end{mymatrix}
-    \stackrel{R_2\rowop R_2-R_1}{\stackrel{R_3\rowop R_3-R_1}{\sim}}
+    \stackrel{R_2\rowop R_2-R_1}{\stackrel{R_3\rowop R_3-R_1}{\roweq}}
     \begin{mymatrix}{rrrr|r}
       \circled{1} & 2 & -2 & 2 & 3 \\
       0 & 0 & 1 & 1 & 2 \\
       0 & 0 & -1 & -1 & -2
     \end{mymatrix}
-    \stackrel{R_3\rowop R_3+R_2}{\sim}
+    \stackrel{R_3\rowop R_3+R_2}{\roweq}
     \begin{mymatrix}{rrrr|r}
       \circled{1} & 2 & -2 & 2 & 3 \\
       0 & 0 & \circled{1} & 1 & 2 \\
