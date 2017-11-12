@@ -66,15 +66,15 @@ vertical lines. Thus
   \end{equation*}
 \end{definition}
 
-The following picture helps in memorizing the formula:
+The following picture may help in memorizing the formula:
 \begin{equation*}
   \begin{tikzpicture}[yscale=0.6,xscale=0.9]
     \draw[ultra thick,red!30] (1,-3) -- (3,-1);
     \draw[ultra thick,red!30] (2,-3) -- (4,-1);
     \draw[ultra thick,red!30] (3,-3) -- (5,-1);
-    \draw[ultra thick,blue!50] (1,-1) -- (3,-3);
-    \draw[ultra thick,blue!50] (2,-1) -- (4,-3);
-    \draw[ultra thick,blue!50] (3,-1) -- (5,-3);
+    \draw[ultra thick,blue!60] (1,-1) -- (3,-3);
+    \draw[ultra thick,blue!60] (2,-1) -- (4,-3);
+    \draw[ultra thick,blue!60] (3,-1) -- (5,-3);
     \foreach\i in {1,2,3} {
       \foreach\j in {1,2,3} {
         \path (\j,-\i) node {$a_{\i\j}$};
@@ -89,6 +89,13 @@ The following picture helps in memorizing the formula:
     \draw(3.5,-2) node {$\left.\rule{0mm}{1.0cm}\right]$};
   \end{tikzpicture}
 \end{equation*}
+Here, we have written down the matrix $A$, then repeated the first two
+columns next to it. The blue lines correspond to the positive terms of
+the determinant: $\color{blue}a_{11}a_{22}a_{33}$,
+$\color{blue}a_{11}a_{22}a_{33}$, and
+$\color{blue}a_{13}a_{21}a_{32}$. The pink lines correspond to the
+negative terms: $\color{red}a_{31}a_{22}a_{13}$,
+$\color{red}a_{32}a_{23}a_{11}$, and $\color{red}a_{33}a_{21}a_{12}$.
 
 \begin{example}{A $3\times 3$ determinant}{3-by-3-determinant}
   Find $\det(A)$, where
