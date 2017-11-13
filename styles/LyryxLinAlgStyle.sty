@@ -68,7 +68,7 @@
 		colback=chaptertitlecolour!5,colframe=chaptertitlecolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafterbox},top=1mm,bottom=1mm},
 	examstyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
 		colback=examplecolour!5,colframe=examplecolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafterbox},top=1mm,bottom=1mm},
-	solutiontyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
+	solutionstyle/.style={fonttitle=\bfseries\upshape, fontupper=\slshape,
 		colback=solutioncolour!5,colframe=solutioncolour,before={\par\bigskip\pagebreak[0]\parindent=0pt},after={\par\bigskip\noindentafterbox},top=1mm,bottom=1mm},
 }
 \tcbmaketheorem{definition}{Definition}{defstyle}{mytheorem}{def}
@@ -78,14 +78,14 @@
 
 % following to fixexerci
 \tcbmaketheorem{proposition}{Proposition}{theostyle}{mytheorem}{prop}
-\tcbmaketheorem{procedure}{Procedure}{solutiontyle}{mytheorem}{proc}
-\tcbmaketheorem{exercise}{Exercise}{solutiontyle}{mytheorem}{exe}
+\tcbmaketheorem{procedure}{Procedure}{solutionstyle}{mytheorem}{proc}
+\tcbmaketheorem{exercise}{Exercise}{solutionstyle}{mytheorem}{exe}
 \tcbmaketheorem{lemma}{Lemma}{theostyle}{mytheorem}{lem}
 \tcbmaketheorem{observation}{Observation}{examstyle}{mytheorem}{obs}
 \tcbmaketheorem{discussion}{Discussion}{examstyle}{mytheorem}{disc}
 \tcbmaketheorem{algorithm}{Algorithm}{defstyle}{mytheorem}{algo}
 \tcbmaketheorem{notation}{Notation}{defstyle}{mytheorem}{not}
-\tcbmaketheorem{solution}{Solution}{solutiontyle}{mytheorem}{sol}
+\tcbmaketheorem{solution}{Solution}{solutionstyle}{mytheorem}{sol}
 
 % Outcomes
 \newtcolorbox{outcome}{fonttitle=\bfseries\upshape,fontupper=\slshape,
