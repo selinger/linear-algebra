@@ -85,6 +85,22 @@ it permits us to tell whether a square matrix is invertible.
   Therefore, $C$ is not invertible.
 \end{solution}
 
+As an application of Theorem~\ref{thm:determinant-invertible}, we note
+that the determinant of an $n\times n$-matrix can be used to predict
+whether a homogeneous system of equations has non-trivial solutions.
+
+\begin{corollary}{Determinants and homogeneous systems}{determinant-homogeneous}
+  Let $A$ be an $n\times n$-matrix. Then the homogeneous system
+  $A\vect{v}=0$ has non-trivial solutions if and only if $\det(A)=0$.
+\end{corollary}
+
+\begin{proof}
+  We know from Theorem~\ref{thm:rank-homogeneous-solutions} that the
+  homogeneous system has a non-trivial solution if and only if
+  $\rank(A)<n$. This is the case if and only if $A$ is not invertible,
+  i.e., if and only if $\det(A)=0$.
+\end{proof}
+
 Another reason the determinant is important is that it compatible with
 matrix product.
 
