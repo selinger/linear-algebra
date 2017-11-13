@@ -1,8 +1,431 @@
-\section{Properties of determinants II: Some important proofs}
-\label{sec:determinant-proofs}
+\section{Some proofs}
 
-This section includes some important proofs on determinants and
-cofactors.
+In this section, we prove Theorems~\ref{thm:well-defined-determinant}
+and {\ref{thm:determinant-row-operations}}. This section can be
+skipped by readers who are not interested in the proofs.
+
+% ----------------------------------------------------------------------
+\subsection{Proof of Theorem~\ref{thm:well-defined-determinant}}
+
+\begin{lemma}{Expanding along any column}{well-defined-column-cofactor}
+  Let $A$ be an $n\times n$-matrix. Expanding along any two columns
+  gives the same answer. 
+\end{lemma}
+
+\begin{proof}
+  The result is proved by induction on $n$. This means, when we prove
+  the result for $n\times n$-matrices, we already assume it is true
+  for $(n-1)\times(n-1)$-matrices. We only sketch the proof in the
+  case where $n=4$. We also only show that expanding along the first
+  and second columns gives the same result. The proof for general $n$
+  and for two arbitrary columns $i$ and $j$ is very similar.
+
+  Expanding $A$ along the first column, we get
+  \begin{equation}\label{eqn:well-defined-column-cofactor1}
+    a_{11}\begin{absmatrix}{ccc}
+      a_{22} & a_{23} & a_{24} \\
+      a_{32} & a_{33} & a_{34} \\
+      a_{42} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    - a_{21}\begin{absmatrix}{ccc}
+      a_{12} & a_{13} & a_{14} \\
+      a_{32} & a_{33} & a_{34} \\
+      a_{42} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    + a_{31}\begin{absmatrix}{ccc}
+      a_{12} & a_{13} & a_{14} \\
+      a_{22} & a_{23} & a_{24} \\
+      a_{42} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    - a_{41}\begin{absmatrix}{ccc}
+      a_{12} & a_{13} & a_{14} \\
+      a_{22} & a_{23} & a_{24} \\
+      a_{32} & a_{33} & a_{34} \\
+    \end{absmatrix}.
+  \end{equation}
+  Expanding $A$ along the second column, we get
+  \begin{equation}\label{eqn:well-defined-column-cofactor2}
+    - a_{12}\begin{absmatrix}{ccc}
+      a_{21} & a_{23} & a_{24} \\
+      a_{31} & a_{33} & a_{34} \\
+      a_{41} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    + a_{22}\begin{absmatrix}{ccc}
+      a_{11} & a_{13} & a_{14} \\
+      a_{31} & a_{33} & a_{34} \\
+      a_{41} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    - a_{32}\begin{absmatrix}{ccc}
+      a_{11} & a_{13} & a_{14} \\
+      a_{21} & a_{23} & a_{24} \\
+      a_{41} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    + a_{42}\begin{absmatrix}{ccc}
+      a_{11} & a_{13} & a_{14} \\
+      a_{21} & a_{23} & a_{24} \\
+      a_{31} & a_{33} & a_{34} \\
+    \end{absmatrix}.
+  \end{equation}
+  To show these two expressions are equal, we expand each of the
+  $3\times 3$-matrices along the first column. Expanding the matrices
+  in {\eqref{eqn:well-defined-column-cofactor1}}, we get
+  \begin{eqnarray*}
+    &&
+       a_{11}\paren{
+       a_{22} \begin{absmatrix}{cc}
+         a_{33} & a_{34} \\
+         a_{43} & a_{44} \\
+       \end{absmatrix}
+    -a_{32} \begin{absmatrix}{cc}
+      a_{23} & a_{24} \\
+      a_{43} & a_{44} \\
+    \end{absmatrix}
+    +a_{42} \begin{absmatrix}{cc}
+      a_{23} & a_{24} \\
+      a_{33} & a_{34} \\
+    \end{absmatrix}}
+    \\
+    && 
+       -a_{21}\paren{
+       a_{12} \begin{absmatrix}{cc}
+         a_{33} & a_{34} \\
+         a_{43} & a_{44} \\
+       \end{absmatrix}
+    -a_{32} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{43} & a_{44} \\
+    \end{absmatrix}
+    +a_{42} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{33} & a_{34} \\
+    \end{absmatrix}}
+    \\
+    && 
+       +a_{31}\paren{
+       a_{12} \begin{absmatrix}{cc}
+         a_{23} & a_{24} \\
+         a_{43} & a_{44} \\
+       \end{absmatrix}
+    -a_{22} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{43} & a_{44} \\
+    \end{absmatrix}
+    +a_{42} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{23} & a_{24} \\
+    \end{absmatrix}}
+    \\
+    && 
+       -a_{41}\paren{
+       a_{12} \begin{absmatrix}{cc}
+         a_{23} & a_{24} \\
+         a_{33} & a_{34} \\
+       \end{absmatrix}
+    -a_{22} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{33} & a_{34} \\
+    \end{absmatrix}
+    +a_{32} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{23} & a_{24} \\
+    \end{absmatrix}}.
+  \end{eqnarray*}
+  Expanding the matrices in
+  {\eqref{eqn:well-defined-column-cofactor2}}, we get 
+  \begin{eqnarray*}
+    && 
+     -a_{12}\paren{
+       a_{21} \begin{absmatrix}{cc}
+         a_{33} & a_{34} \\
+         a_{43} & a_{44} \\
+       \end{absmatrix}
+    -a_{31} \begin{absmatrix}{cc}
+      a_{23} & a_{24} \\
+      a_{43} & a_{44} \\
+    \end{absmatrix}
+    +a_{41} \begin{absmatrix}{cc}
+      a_{23} & a_{24} \\
+      a_{33} & a_{34} \\
+    \end{absmatrix}}
+    \\
+    && 
+       +a_{22}\paren{
+       a_{11} \begin{absmatrix}{cc}
+         a_{33} & a_{34} \\
+         a_{43} & a_{44} \\
+       \end{absmatrix}
+    -a_{31} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{43} & a_{44} \\
+    \end{absmatrix}
+    +a_{41} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{33} & a_{34} \\
+    \end{absmatrix}}
+    \\
+    && 
+       -a_{32}\paren{
+       a_{11} \begin{absmatrix}{cc}
+         a_{23} & a_{24} \\
+         a_{43} & a_{44} \\
+       \end{absmatrix}
+    -a_{21} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{43} & a_{44} \\
+    \end{absmatrix}
+    +a_{41} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{23} & a_{24} \\
+    \end{absmatrix}}
+    \\
+    && 
+       +a_{42}\paren{
+       a_{11} \begin{absmatrix}{cc}
+         a_{23} & a_{24} \\
+         a_{33} & a_{34} \\
+       \end{absmatrix}
+    -a_{21} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{33} & a_{34} \\
+    \end{absmatrix}
+    +a_{31} \begin{absmatrix}{cc}
+      a_{13} & a_{14} \\
+      a_{23} & a_{24} \\
+    \end{absmatrix}}.
+  \end{eqnarray*}  
+  Comparing the two expressions term by term, we see that they are
+  equal. 
+\end{proof}
+
+\begin{lemma}{Expanding along any row}{well-defined-row-cofactor}
+  Let $A$ be an $n\times n$-matrix. Expanding along any two rows gives
+  the same answer.
+\end{lemma}
+
+\begin{proof}
+  The proof is analogous to that of
+  Lemma~\ref{lem:well-defined-column-cofactor}, expanding along rows instead
+  of columns.
+\end{proof}
+
+\begin{lemma}{Expanding along a column and row}{well-defined-column-row-cofactor}
+  Let $A$ be an $n\times n$-matrix. Expanding along the first column
+  gives the same answer as expanding along the first row.
+\end{lemma}
+
+\begin{proof}
+  Again, we only illustrate the proof in case of a $4\times 4$-matrix,
+  but the general proof is very similar. Expanding $\det(A)$ along the
+  first column, we get:
+  Expanding $A$ along the first column, we get
+  \begin{equation}\label{eqn:well-defined-row-column-cofactor1}
+    a_{11}\begin{absmatrix}{ccc}
+      a_{22} & a_{23} & a_{24} \\
+      a_{32} & a_{33} & a_{34} \\
+      a_{42} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    - a_{21}\begin{absmatrix}{ccc}
+      a_{12} & a_{13} & a_{14} \\
+      a_{32} & a_{33} & a_{34} \\
+      a_{42} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    + a_{31}\begin{absmatrix}{ccc}
+      a_{12} & a_{13} & a_{14} \\
+      a_{22} & a_{23} & a_{24} \\
+      a_{42} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    - a_{41}\begin{absmatrix}{ccc}
+      a_{12} & a_{13} & a_{14} \\
+      a_{22} & a_{23} & a_{24} \\
+      a_{32} & a_{33} & a_{34} \\
+    \end{absmatrix}.
+  \end{equation}
+  Expanding $A$ along the first row, we get:
+  \begin{equation}\label{eqn:well-defined-row-column-cofactor2}
+    a_{11}\begin{absmatrix}{ccc}
+      a_{22} & a_{23} & a_{24} \\
+      a_{32} & a_{33} & a_{34} \\
+      a_{42} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    - a_{12}\begin{absmatrix}{ccc}
+      a_{21} & a_{23} & a_{24} \\
+      a_{31} & a_{33} & a_{34} \\
+      a_{41} & a_{43} & a_{44} \\
+    \end{absmatrix}
+    + a_{13}\begin{absmatrix}{ccc}
+      a_{21} & a_{22} & a_{24} \\
+      a_{31} & a_{32} & a_{34} \\
+      a_{41} & a_{42} & a_{44} \\
+    \end{absmatrix}
+    - a_{14}\begin{absmatrix}{ccc}
+      a_{21} & a_{22} & a_{23} \\
+      a_{31} & a_{32} & a_{33} \\
+      a_{41} & a_{42} & a_{43} \\
+    \end{absmatrix}.
+  \end{equation}
+  To show these two expressions are equal, let us expand each of the
+  $3\times 3$-matrices in
+  {\eqref{eqn:well-defined-row-column-cofactor1}} along the first row,
+  except for the first matrix. This yields:
+  \begin{eqnarray*}
+    && 
+       a_{11}\begin{absmatrix}{ccc}
+         a_{22} & a_{23} & a_{24} \\
+         a_{32} & a_{33} & a_{34} \\
+         a_{42} & a_{43} & a_{44} \\
+       \end{absmatrix}
+    \\
+    && 
+    - a_{21}\paren{
+    a_{12}\begin{absmatrix}{ccc}
+      a_{33} & a_{34} \\
+      a_{43} & a_{44} \\
+    \end{absmatrix}
+    -a_{13}\begin{absmatrix}{ccc}
+      a_{32} & a_{34} \\
+      a_{42} & a_{44} \\
+    \end{absmatrix}
+    +a_{14}\begin{absmatrix}{ccc}
+      a_{32} & a_{33} \\
+      a_{42} & a_{43} \\
+    \end{absmatrix}
+    }
+    \\
+    && 
+    + a_{31}\paren{
+    a_{12}\begin{absmatrix}{ccc}
+      a_{23} & a_{24} \\
+      a_{43} & a_{44} \\
+    \end{absmatrix}
+    -a_{13}\begin{absmatrix}{ccc}
+      a_{22} & a_{24} \\
+      a_{42} & a_{44} \\
+    \end{absmatrix}
+    +a_{14}\begin{absmatrix}{ccc}
+      a_{22} & a_{23} \\
+      a_{42} & a_{43} \\
+    \end{absmatrix}
+    }
+    \\
+    && 
+    - a_{41}\paren{
+    a_{12}\begin{absmatrix}{ccc}
+      a_{23} & a_{24} \\
+      a_{33} & a_{34} \\
+    \end{absmatrix}
+    -a_{13}\begin{absmatrix}{ccc}
+      a_{22} & a_{24} \\
+      a_{32} & a_{34} \\
+    \end{absmatrix}
+    +a_{14}\begin{absmatrix}{ccc}
+      a_{22} & a_{23} \\
+      a_{32} & a_{33} \\
+    \end{absmatrix}
+    }.
+  \end{eqnarray*}
+  On the other hand, let us expand each of the
+  $3\times 3$-matrices in
+  {\eqref{eqn:well-defined-row-column-cofactor2}} along the first
+  column, except for the first matrix. This yields:
+  \begin{eqnarray*}
+    && 
+       a_{11}\begin{absmatrix}{ccc}
+         a_{22} & a_{23} & a_{24} \\
+         a_{32} & a_{33} & a_{34} \\
+         a_{42} & a_{43} & a_{44} \\
+       \end{absmatrix}
+    \\
+    && 
+    - a_{12}\paren{
+    a_{21}\begin{absmatrix}{ccc}
+      a_{33} & a_{34} \\
+      a_{43} & a_{44} \\
+    \end{absmatrix}
+    -a_{31}\begin{absmatrix}{ccc}
+      a_{23} & a_{24} \\
+      a_{43} & a_{44} \\
+    \end{absmatrix}
+    +a_{41}\begin{absmatrix}{ccc}
+      a_{23} & a_{24} \\
+      a_{33} & a_{34} \\
+    \end{absmatrix}
+    }
+    \\
+    && 
+    + a_{13}\paren{
+    a_{21}\begin{absmatrix}{ccc}
+      a_{32} & a_{34} \\
+      a_{42} & a_{44} \\
+    \end{absmatrix}
+    -a_{31}\begin{absmatrix}{ccc}
+      a_{22} & a_{24} \\
+      a_{42} & a_{44} \\
+    \end{absmatrix}
+    +a_{41}\begin{absmatrix}{ccc}
+      a_{22} & a_{24} \\
+      a_{32} & a_{34} \\
+    \end{absmatrix}
+    }
+    \\
+    && 
+    - a_{14}\paren{
+    a_{21}\begin{absmatrix}{ccc}
+      a_{32} & a_{33} \\
+      a_{42} & a_{43} \\
+    \end{absmatrix}
+    -a_{31}\begin{absmatrix}{ccc}
+      a_{22} & a_{23} \\
+      a_{42} & a_{43} \\
+    \end{absmatrix}
+    +a_{41}\begin{absmatrix}{ccc}
+      a_{22} & a_{23} \\
+      a_{32} & a_{33} \\
+    \end{absmatrix}
+    }.
+  \end{eqnarray*}  
+  The two expressions can be seen to be equal by comparing them term
+  by term.
+\end{proof}
+
+Together, Lemmas~\ref{lem:well-defined-column-cofactor},
+{\ref{lem:well-defined-row-cofactor}}, and
+{\ref{lem:well-defined-column-row-cofactor}} imply
+Theorem~\ref{thm:well-defined-determinant}.
+
+% ----------------------------------------------------------------------
+\subsection{Proof of Theorem~\ref{thm:determinant-row-operations}}
+
+\begin{lemma}{}{L2}
+  Assume $A$, $B$ and $C$ are $n\times n$-matrices and
+  $i\in\set{1,\ldots,n}$ is an index such that the following holds. 
+  \begin{enumerate}
+  \item The $k$th rows of all three matrices are identical, for $k\neq i$.
+
+  \item Each entry in the $i$th row of $A$ is the sum of the
+    corresponding entries in $i$th rows of $B$ and $C$, i.e.,
+    $a_{ij}=b_{ij}+c_{ij}$, for all $j=1,\ldots,n$.
+  \end{enumerate}
+  Then $\det A=\det B+\det C$.
+\end{lemma}
+
+\begin{proof}
+  Notice that all three matrices have the same cofactors
+  $\cofactor{A}{i1},\ldots,\cofactor{A}{in}$, since these cofactors
+  involve deleting the $i\th$ row (and the matrices $A$, $B$, and $C$
+  only differ in the $i\th$ row). Expanding all determinants along the
+  $i\th$ row, we have
+  \begin{eqnarray*}
+    \det(A)
+    &=& a_{i1}\cofactor{A}{i1} + \ldots + a_{in}\cofactor{A}{in} \\
+    &=& (b_{i1}+c_{i1})\cofactor{A}{i1} + \ldots + (b_{in}+c_{in})\cofactor{A}{in} \\
+    &=& (b_{i1}\cofactor{B}{i1} + \ldots + b_{in}\cofactor{B}{in})
+        + (c_{i1}\cofactor{C}{i1} + \ldots + c_{in}\cofactor{C}{in}) \\
+    &=& \det(B) + \det(C).
+  \end{eqnarray*}
+\end{proof}
+
+% ======================================================================
+\subsection{CONTINUE HERE...}
 
 First we recall the definition of a determinant. If $A=\mat{a_{ij} }$
 is an $n\times n$-matrix, then $\det A$ is defined by computing the
@@ -79,44 +502,6 @@ Consider the following lemma.
     \det A=\sum_{j=1}^n a_{1,j} \cofactor{A}{1,j}=0
   \end{equation*}
   as each of the summands is equal to 0.
-\end{proof}
-
-\begin{lemma}{}{L2}
-  Assume $A$, $B$ and $C$ are $n\times n$-matrices that for some
-  $1\leq i\leq n$ satisfy the following.
-  \begin{enumerate}
-  \item $j$th rows of all three matrices are identical, for $j\neq i$.
-
-  \item Each entry in the $j$th row of $A$ is the sum of the
-    corresponding entries in $j$th rows of $B$ and $C$.
-  \end{enumerate}
-  Then $\det A=\det B+\det C$.
-\end{lemma}
-
-\begin{proof}
-  This is not difficult to check for $n=2$ (do check it!).
-
-  Now assume that the statement of Lemma is true for
-  $(n-1)\times (n-1)$-matrices and fix $A,B$ and $C$ as in the
-  statement.  The assumptions state that we have
-  $a_{l,j}=b_{l,j}=c_{l,j}$ for $j\neq i$ and for $1\leq l\leq n$ and
-  $a_{l,i}=b_{l,i}+c_{l,i}$ for all $1\leq l\leq n$.  Therefore
-  $A(i)=B(i)=C(i)$, and $A(j)$ has the property that its $i$th row is
-  the sum of $i$th rows of $B(j)$ and $C(j)$ for $j\neq i$ while the
-  other rows of all three matrices are identical.  Therefore by our
-  inductive assumption we have $\cofactor{A}{1j}=\cofactor{B}{1j}+\cofactor{C}{1j}$
-  for $j\neq i$.
-
-  By \eqref{E1} we have (using all equalities established above)
-  \begin{align*}
-    \det A&=\sum_{l=1}^n a_{1,l} \cofactor{A}{1,l}\\
-          &=\sum_{l\neq i} a_{1,l}(\cofactor{B}{1,l}+\cofactor{C}{1,l})+
-            (b_{1,i}+c_{1,i})\cofactor{A}{1,i}\\
-          &=
-            \det B+\det C
-  \end{align*}
-  This proves that the assertion is true for all $n$ and completes the
-  proof.
 \end{proof}
 
 \begin{theorem}{} {T1}
