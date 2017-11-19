@@ -221,7 +221,7 @@ r\leq s$.
 Define span$\set{\vect{y}_{1},\ldots,\vect{y}_{s}} = V$. Since each $\vect{x}_i$ is in  span$\set{\vect{y}_{1},\ldots,\vect{y}_{s}}$, it follows there exist scalars $c_{1},\ldots,c_{s}$
 such that 
 \begin{equation}
-\vect{x}_{1}=\sum_{i=1}^{s}c_{i}\vect{y}_{i}  \label{lin-comb}
+\vect{x}_{1}=\sum_{i=1}^{s}c_{i}\vect{y}_{i}  \label{linear-comb}
 \end{equation}
 Note that not all of these scalars $c_i$ can equal zero. Suppose that all the $c_i=0$. Then it
 would follow that $\vect{x}_{1}=\vect{0}$ and so $\set{\vect{x}
@@ -231,7 +231,7 @@ Indeed, if $\vect{x}_{1}=\vect{0}$, $1\vect{x}_{1}+\sum_{i=2}^{r}0
 non-trivial linear combination of the vectors $\set{\vect{x}_{1},\ldots,
 \vect{x}_{r}} $ which equals zero. Therefore at least one $c_i$ is non-zero. 
 
-Say $c_{k}\neq 0$. Then solve {\eqref{lin-comb}} for $\vect{y}_{k}$ and obtain 
+Say $c_{k}\neq 0$. Then solve {\eqref{linear-comb}} for $\vect{y}_{k}$ and obtain 
 \begin{equation*}
 \vect{y}_{k}\in \sspan\set{\vect{x}_{1},\overset{\text{s-1
 vectors here}}{\overbrace{\vect{y}_{1},\ldots,\vect{y}_{k-1},\vect{y}
@@ -281,12 +281,12 @@ _{1},\ldots,\vect{z}_{p}} =V
 d_{j}$ such that 
 \begin{equation}
 \vect{x}_{l+1}=\sum_{i=1}^{l}c_{i}\vect{x}_{i}+\sum_{j=1}^{p}d_{j}
-\vect{z}_{j}.  \label{lin-comb2}
+\vect{z}_{j}.  \label{linear-comb2}
 \end{equation}
 Not all the $d_{j}$ can equal zero because if this were so, it would follow
 that $\set{\vect{x}_{1},\ldots,\vect{x}_{r}} $ would be a
 linearly dependent set because one of the vectors would equal a linear
-combination of the others. Therefore, {\eqref{lin-comb2}} can be solved for one of the 
+combination of the others. Therefore, {\eqref{linear-comb2}} can be solved for one of the 
 $\vect{z}_{i}$, say $\vect{z}_{k}$, in terms of $\vect{x}_{l+1}$ and
 the other $\vect{z}_{i}$ and just as in the above argument, replace that $
 \vect{z}_{i}$ with $\vect{x}_{l+1}$ to obtain 
@@ -503,7 +503,7 @@ Therefore $B$ is a basis of $U$, and $\dim(U)=2$.
 
 The following theorem claims that a spanning set of a vector space $V$ can be shrunk down to a basis of $V$. Similarly, a linearly independent set within $V$ can be enlarged to create a basis of $V$.
 
-\begin{theorem}{Basis of $V$}{basis-from-spanning-lin-ind}
+\begin{theorem}{Basis of $V$}{basis-from-spanning-linear-independent}
  If $V=\sspan\set{\vect{u}_{1},\ldots,\vect{u}
 _{n}} $ is a vector space, then some subset of $\set{\vect{u}_{1},\ldots,\vect{u}_{n}}$
 is a basis for $V$. Also, if $\set{\vect{u}_{1},\ldots,\vect{u}
@@ -577,9 +577,9 @@ would be a linearly independent set of vectors having $n+1$ elements. This contr
 basis. 
 \end{proof}
 
-Recall Example~\ref{exa:adding-lin-ind} in which we added a matrix to a linearly independent set to create a larger linearly independent set. By Theorem~\ref{thm:basis-from-spanning-lin-ind} we can extend a linearly independent set to a basis.  
+Recall Example~\ref{exa:adding-linear-independent} in which we added a matrix to a linearly independent set to create a larger linearly independent set. By Theorem~\ref{thm:basis-from-spanning-linear-independent} we can extend a linearly independent set to a basis.  
 
-\begin{example}{Adding to a linearly independent set}{adding-linear-ind-basis}
+\begin{example}{Adding to a linearly independent set}{adding-linear-independent-basis}
 Let $S \subseteq M_{22}$ be a linearly independent set given by 
 \[
 S  = \set{\begin{mymatrix}{rr}
@@ -594,7 +594,7 @@ Enlarge $S$ to a basis of $M_{22}$.
 \end{example}
 
 \begin{solution}
-Recall from the solution of Example~\ref{exa:adding-lin-ind} that the set  $R \subseteq M_{22}$ given by 
+Recall from the solution of Example~\ref{exa:adding-linear-independent} that the set  $R \subseteq M_{22}$ given by 
 \[
 R = \set{\begin{mymatrix}{rr}
 1 & 0 \\
@@ -785,7 +785,7 @@ b &=& s \\
 c &=& r + u 
 \end{eqnarray*}
 
-Clearly a solution exists for all $a,b,c$ and so $S$ is a spanning set for $\Poly_2$. By Theorem~\ref{thm:basis-from-spanning-lin-ind}, some subset of $S$ is a basis for $\Poly_2$. 
+Clearly a solution exists for all $a,b,c$ and so $S$ is a spanning set for $\Poly_2$. By Theorem~\ref{thm:basis-from-spanning-linear-independent}, some subset of $S$ is a basis for $\Poly_2$. 
 
 Recall that a basis must be both a spanning set and a linearly independent set.
 Therefore we must remove a vector from $S$ keeping this in mind. Suppose we remove $x$ from $S$. The resulting set would be $\set{1, x^2, x^2 + 1 }$. This set is clearly linearly dependent (and also does not span $\Poly_2$) and so is not a basis. 

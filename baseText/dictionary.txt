@@ -109,8 +109,6 @@ ij
 ijth
 ik
 Ilijas
-ind
-indep
 invertibility
 invertible
 ir
@@ -137,7 +135,6 @@ Laplace's
 Larissa
 leftmargin
 lightgray
-lin
 linearity
 Lotka
 lu
