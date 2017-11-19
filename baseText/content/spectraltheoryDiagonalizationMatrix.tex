@@ -1,4 +1,32 @@
-\section{Diagonalizing a matrix}
+\section{Diagonalization}
+
+We now proceed to the main concept of this section. When a matrix is similar to a diagonal matrix, the matrix is said to
+be
+diagonalizable\index{diagonalizable}. 
+We define a diagonal matrix $D$ as a matrix containing a zero in every entry 
+except those on the main diagonal\index{matrix!diagonal matrix}\index{matrix!main diagonal}. More precisely, if $d_{ij}$ is the $\ijth$ entry of a diagonal matrix $D$, then
+$d_{ij}=0$ unless $i=j$. Such
+matrices look like the following.
+\begin{equation*}
+D = \begin{mymatrix}{ccc}
+\ast &  & 0 \\
+& \ddots &  \\
+0 &  & \ast
+\end{mymatrix}
+\end{equation*}
+where $\ast $ is a number which might not be zero.
+
+The following is the formal definition of a diagonalizable matrix. 
+
+\begin{definition}{Diagonalizable}{diagonalizable}
+Let $A$ be an $n\times n$-matrix. Then $A$ is said to be \textbf{diagonalizable}\index{diagonalizable} if there exists an invertible matrix $P$ such that
+\begin{equation*}
+P^{-1}AP=D
+\end{equation*}
+where $D$ is a diagonal matrix.
+\end{definition}
+
+Notice that the above equation can be rearranged as $A=PDP^{-1}$. Suppose we wanted to compute $A^{100}$. By diagonalizing $A$ first it suffices to then compute $(PDP^{-1})^{100}$, which reduces to $PD^{100}P^{-1}$. This last computation is much simpler than $A^{100}$. While this process is described in detail later, it provides motivation for diagonalization. 
 
 The most important theorem about diagonalizability is the following major result.
 
