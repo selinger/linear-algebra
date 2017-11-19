@@ -1,228 +1,41 @@
-\section{Eigenvalues and eigenvectors for special types of matrices}
+\section{Eigenvalues of triangular matrices}
 
-There are three special kinds of matrices which we can use to simplify
-the process of finding eigenvalues and eigenvectors.  Throughout this
-section, we will discuss similar matrices, elementary matrices, as
-well as triangular matrices.
+Recall from Definition~\ref{def:triangular-matrices} that a matrix is
+\textbf{upper triangular} if all entries below the main diagonal zero
+zero, and \textbf{lower triangular} if all entries above the main
+diagonal are zero. 
 
-We begin with a definition.
-
-\begin{definition}{Similar matrices}{similar-matrices}
-  Let $A$ and $B$ be $n \times n$-matrices. Suppose there exists an
-  invertible matrix $P$ such that
+\begin{example}{Eigenvalues of a triangular matrix}{eigenvalues-triangular-matrix}
+  Find the eigenvalues of
   \begin{equation*}
-    A = P^{-1}BP
-  \end{equation*}
-  Then $A$ and $B$ are called \textbf{similar matrices}\index{similar matrix}.
-\end{definition}
-
-It turns out that we can use the concept of similar matrices to help
-us find the eigenvalues of matrices. Consider the following lemma.
-
-\begin{lemma}{Similar matrices and eigenvalues}{similar-matrices}
-  Let $A$ and $B$ be similar matrices, so that $A=P^{-1}BP$ where
-  $A,B$ are $n\times n$-matrices and $P$ is invertible. Then $A,B$
-  have the same eigenvalues.
-\end{lemma}
-
-\begin{proof}
-  We need to show two things. First, we need to show that if
-  $A=P^{-1}BP$, then $A$ and $B$ have the same eigenvalues.  Secondly,
-  we show that if $A$ and $B$ have the same eigenvalues, then
-  $A=P^{-1}BP$.
-
-  Here is the proof of the first statement.  Suppose $A = P^{-1}BP$
-  and $\lambda$ is an eigenvalue of $A$, that is $AX=\lambda X$ for
-  some $X\neq 0$. Then
-  \begin{equation*}
-    P^{-1}BPX=\lambda X
-  \end{equation*}
-  and so
-  \begin{equation*}
-    BPX=\lambda PX
-  \end{equation*}
-  Since $P$ is one to one and $X \neq 0$, it follows that $PX \neq
-  0$. Here, $PX$ plays the role of the eigenvector in this equation.
-  Thus $\lambda$ is also an eigenvalue of $B$. One can similarly
-  verify that any eigenvalue of $B$ is also an eigenvalue of $A$, and
-  thus both matrices have the same eigenvalues as desired.
-
-  Proving the second statement is similar and is left as an exercise. 
-\end{proof}
-
-Note that this proof also demonstrates that the eigenvectors of $A$
-and $B$ will (generally) be {\em different}.  We see in the proof that
-$AX = \lambda X$, while $B (PX)=\lambda (PX)$. Therefore, for an
-eigenvalue $\lambda$, $A$ will have the eigenvector $X$ while $B$ will
-have the eigenvector $PX$.
-
-
-The second special type of matrices we discuss in this section is
-elementary matrices.  Recall from
-Definition~\ref{def:elementary-matrices-and-row-ops} that an
-elementary matrix $E$ is obtained by applying one row operation to the
-identity matrix.
-
-It is possible to use elementary matrices to simplify a matrix before
-searching for its eigenvalues and eigenvectors. This is illustrated in
-the following example.
-
-\begin{example}{Simplify using elementary matrices}{simplify-using-elementary-matrices}
-  Find the eigenvalues for the matrix
-  \begin{equation*}
-    A = \begin{mymatrix}{rrr}
-      33 & 105 & 105 \\
-      10 &  28 & 30 \\
-      -20 & -60 & -62
-    \end{mymatrix}
+    A=\begin{mymatrix}{rrr}
+      1 & 2 & 4 \\
+      0 & 4 & 7 \\
+      0 & 0 & 6 \\
+    \end{mymatrix}.
   \end{equation*}
 \end{example}
 
 \begin{solution}
-  This matrix has big numbers and therefore we would like to simplify
-  as much as possible before computing the eigenvalues.
-
-  We will do so using row operations. First, add $2$ times the second
-  row to the third row. To do so, left multiply $A$ by $E (2,2)$.
-  Then right multiply $A$ by the inverse of $E (2,2)$ as illustrated.
-  \begin{equation*}
-    \begin{mymatrix}{rrr}
-      1 & 0 & 0 \\
-      0 & 1 & 0 \\
-      0 & 2 & 1
-    \end{mymatrix} \begin{mymatrix}{rrr}
-      33 & 105 & 105 \\
-      10 & 28 & 30 \\
-      -20 & -60 & -62
-    \end{mymatrix} \begin{mymatrix}{rrr}
-      1 & 0 & 0 \\
-      0 & 1 & 0 \\
-      0 & -2 & 1
-    \end{mymatrix} =\begin{mymatrix}{rrr}
-      33 & -105 & 105 \\
-      10 & -32 & 30 \\
-      0 & 0 & -2
-    \end{mymatrix}
-  \end{equation*}
-  By Lemma~\ref{lem:similar-matrices}, the resulting matrix has the
-  same eigenvalues as $A$ where here, the matrix $E (2,2)$ plays the
-  role of $P$.
-
-  We do this step again, as follows. In this step, we use the
-  elementary matrix obtained by adding $-3$ times the second row to
-  the first row.
-  \begin{equation}
-    \begin{mymatrix}{rrr}
-      1 & -3 & 0 \\
-      0 &  1 & 0 \\
-      0 &  0 & 1
-    \end{mymatrix} \begin{mymatrix}{rrr}
-      33 & -105 & 105 \\
-      10 & -32  & 30 \\
-      0  &   0  & -2
-    \end{mymatrix} \begin{mymatrix}{rrr}
-      1 & 3 & 0 \\
-      0 & 1 & 0 \\
-      0 & 0 & 1
-    \end{mymatrix} =\begin{mymatrix}{rrr}
-      3  & 0  & 15 \\
-      10 & -2 & 30 \\
-      0  & 0  & -2
-    \end{mymatrix}  \label{elementary-eigenvalue}
-  \end{equation}
-  Again by Lemma~\ref{lem:similar-matrices}, this resulting matrix has
-  the same eigenvalues as $A$.  At this point, we can easily find the
-  eigenvalues.  Let
-  \begin{equation*}
-    B = \begin{mymatrix}{rrr}
-      3  & 0  & 15 \\
-      10 & -2 & 30 \\
-      0  & 0  & -2
-    \end{mymatrix} 
-  \end{equation*}
-  Then, we find the eigenvalues of $B$ (and therefore of $A$) by
-  solving the equation $\det (\eigenVar I - B) = 0$.  You should
-  verify that this equation becomes
-  \begin{equation*}
-    (\eigenVar  +2) (\eigenVar  +2) (\eigenVar  - 3)
-    =0
-  \end{equation*}
-  Solving this equation results in eigenvalues of
-  $\lambda_1 = -2, \lambda_2 = -2$, and $\lambda_3 = 3$.  Therefore,
-  these are also the eigenvalues of $A$.
-
-\end{solution}
-
-Through using elementary matrices, we were able to create a matrix for
-which finding the eigenvalues was easier than for $A$. At this point,
-you could go back to the original matrix $A$ and solve
-$( \lambda I - A) X = 0$ to obtain the eigenvectors of $A$.
-
-Notice that when you multiply on the right by an elementary matrix,
-you are doing the column operation defined by the elementary
-matrix. In {\eqref{elementary-eigenvalue}} multiplication by the
-elementary matrix on the right merely involves taking three times the
-first column and adding to the second. Thus, without referring to the
-elementary matrices, the transition to the new matrix in
-{\eqref{elementary-eigenvalue}} can be illustrated by
-\begin{equation*}
-  \begin{mymatrix}{rrr}
-    33 & -105 & 105 \\
-    10 & -32 & 30 \\
-    0 & 0 & -2
-  \end{mymatrix} \rightarrow \begin{mymatrix}{rrr}
-    3 & -9 & 15 \\
-    10 & -32 & 30 \\
-    0 & 0 & -2
-  \end{mymatrix} \rightarrow \begin{mymatrix}{rrr}
-    3 & 0 & 15 \\
-    10 & -2 & 30 \\
-    0 & 0 & -2
-  \end{mymatrix}
-\end{equation*}
-
-The third special type of matrix we will consider in this section is
-the triangular matrix.  Recall
-Definition~\ref{def:triangular-matrices} which states that an upper
-(lower) triangular matrix contains all zeros below (above) the main
-diagonal. Remember that finding the determinant of a triangular matrix
-is a simple procedure of taking the product of the entries on the main
-diagonal.. It turns out that there is also a simple way to find the
-eigenvalues of a triangular matrix.
-
-In the next example we will demonstrate that the eigenvalues of a
-triangular matrix are the entries on the main diagonal.
-
-\begin{example}{Eigenvalues for a triangular matrix}{eigenvalues-triangular-matrix}
-  Let $A=\begin{mymatrix}{rrr}
-    1 & 2 & 4 \\
-    0 & 4 & 7 \\
-    0 & 0 & 6
-  \end{mymatrix}$. Find the eigenvalues of $A$.
-\end{example}
-
-\begin{solution}
-  We need to solve the equation $\det (\eigenVar I - A) = 0$ as
-  follows
+  We calculate $\det(A - \eigenVar I) = 0$ as follows:
   \begin{eqnarray*}
     \det (\eigenVar I - A) =
     \det \begin{mymatrix}{ccc}
-      \eigenVar -1 & -2 & -4 \\
-      0 & \eigenVar-4 & -7 \\
-      0 & 0 & \eigenVar-6
-    \end{mymatrix} =(\eigenVar-1) (\eigenVar-4) (\eigenVar-6) =0
+      1-\eigenVar & 2 & 4 \\
+      0 & 4-\eigenVar & 7 \\
+      0 & 0 & 6-\eigenVar \\
+    \end{mymatrix} = (1-\eigenVar)(4-\eigenVar)(6-\eigenVar).
   \end{eqnarray*}
-  Solving the equation
-  $(\eigenVar-1) (\eigenVar-4 ) (\eigenVar-6) = 0$ for $\eigenVar$
-  results in the eigenvalues $\lambda_1 = 1, \lambda_2 = 4$ and
-  $\lambda_3 = 6$.  Thus the eigenvalues are the entries on the main
-  diagonal of the original matrix.
+  Solving the equation $(1-\eigenVar)(4-\eigenVar)(6-\eigenVar) = 0$
+  results in the eigenvalues $\eigenVar_1 = 1$, $\eigenVar_2 = 4$, and
+  $\eigenVar_3 = 6$.  Thus the eigenvalues are the entries on the main
+  diagonal of $A$.
 \end{solution}
 
-The same result is true for lower triangular matrices. For any
-triangular matrix, the eigenvalues are equal to the entries on the
-main diagonal. To find the eigenvectors of a triangular matrix, we use
-the usual procedure.
+Clearly, the same is true for any (upper or lower) triangular
+matrix. We therefore have the following proposition:
 
-In the next section, we explore an important process involving the
-eigenvalues and eigenvectors of a matrix.
+\begin{proposition}{Eigenvalues of a triangular matrix}{eigenvalues-triangular-matrix}
+  Let $A$ be an upper or lower triangular matrix. Then the eigenvalues
+  of $A$ are the entries on the main diagonal.
+\end{proposition}
