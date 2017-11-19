@@ -356,148 +356,38 @@ eigenvalues is the following theorem.
   $D$.
 \end{solution}
 
+The following example shows that not all matrices are diagonalizable.
 
-% ======================================================================
-\subsection{CONTINUE HERE...}
-
-Consider the next important theorem.
-
-\begin{theorem}{Linearly independent eigenvectors}{linear-independent-eigenvectors}
-  Let $A$ be an $n\times n$-matrix, and suppose that $A$ has distinct
-  eigenvalues $\eigenvar_1, \eigenvar_2, \ldots, \eigenvar_m$.  For each
-  $i$, let $X_i$ be a $\eigenvar_i$-eigenvector of $A$.  Then
-  $\set{X_1, X_2, \ldots, X_m}$ is linearly independent.
-\end{theorem}
-
-The corollary that follows from this theorem gives a useful tool in
-determining if $A$ is diagonalizable.
-
-\begin{corollary}{Distinct eigenvalues}{distinct-eigenvalues}
-  Let $A$ be an $n \times n$-matrix and suppose it has $n$ distinct
-  eigenvalues. Then it follows that $A$ is diagonalizable.
-\end{corollary}
-
-It is possible that a matrix $A$ cannot be diagonalized. In other
-words, we cannot find an invertible matrix $P$ so that $P^{-1}AP=D$.
-
-Consider the following example.
-
-\begin{example}{A matrix which cannot be diagonalized}{impossible-diagonalize}
-  Let
-  \begin{equation*}
-    A =
+\begin{example}{A matrix that cannot be diagonalized}{impossible-diagonalize}
+  Show that the matrix $A =
     \begin{mymatrix}{rr}
       1 & 1 \\
       0 & 1
-    \end{mymatrix}
-  \end{equation*}
-  If possible, find an invertible matrix $P$ and diagonal matrix $D$
-  so that $P^{-1}AP=D$.
+    \end{mymatrix}$ cannot be diagonalized.
 \end{example}
 
 \begin{solution}
-  Through the usual procedure, we find that the eigenvalues of $A$ are
-  $\eigenvar_1 =1, \eigenvar_2=1$.  To find the eigenvectors, we solve the
-  equation $(\eigenvar I - A) X = 0$.  The matrix $(\eigenvar I -A)$ is
-  given by
-  \begin{equation*}
-    \begin{mymatrix}{cc}
-      \eigenvar - 1 & -1 \\
-      0 & \eigenvar - 1
-    \end{mymatrix}
-  \end{equation*}
-  Substituting in $\eigenvar = 1$, we have the matrix
-  \begin{equation*}
-    \begin{mymatrix}{cc}
-      1 - 1 & -1 \\
-      0 & 1 - 1
-    \end{mymatrix}
-    =
-    \begin{mymatrix}{rr}
-      0 & -1 \\
-      0 & 0
-    \end{mymatrix}
-  \end{equation*}
-  Then, solving the equation $(\eigenvar I - A) X = 0$
-  involves carrying the following augmented matrix to its {\rref}.
+  Through the usual procedure, we find that the characteristic
+  polynomial is $(1-\lambda)^2$, and therefore the only eigenvalue is
+  $\eigenvar=1$. To find the eigenvectors, we solve the equation
+  $(A-I)\vect{v} = 0$:
   \begin{equation*}
     \begin{mymatrix}{rr|r}
-      0 & -1 & 0 \\
-      0 & 0 & 0
-    \end{mymatrix}
-    \roweq\ldots\roweq
-    \begin{mymatrix}{rr|r}
-      0 & -1 & 0 \\
-      0 & 0 & 0
-    \end{mymatrix}
+      0 & 1 & 0 \\
+      0 & 0 & 0 \\
+    \end{mymatrix}.
   \end{equation*}
-  Then the eigenvectors are of the form
+  The general solution is 
   \begin{equation*}
-    t\begin{mymatrix}{r}
-      1 \\
-      0
-    \end{mymatrix}
+    \vect{v} = t\begin{mymatrix}{r} 1 \\ 0 \end{mymatrix}.
   \end{equation*}
-  and the basic eigenvector is
+  Because the solution space is 1-dimensional, there is only one basic
+  eigenvector:
   \begin{equation*}
-    X_1
-    =
-    \begin{mymatrix}{r}
-      1 \\
-      0
-    \end{mymatrix}
+    \vect{v}_1 = \begin{mymatrix}{r} 1 \\ 0 \end{mymatrix}.
   \end{equation*}
-  In this case, the matrix $A$ has one eigenvalue of multiplicity two,
-  but only one basic eigenvector. In order to diagonalize $A$, we need
-  to construct an invertible $2\times 2$-matrix $P$. However, because
-  $A$ only has one basic eigenvector, we cannot construct this
-  $P$. Notice that if we were to use $X_1$ as both columns of $P$, $P$
-  would not be invertible. For this reason, we cannot repeat
-  eigenvectors in $P$.
-
-  Hence this matrix cannot be diagonalized.
+  Since the matrix $A$ has only one basic eigenvector, we cannot find
+  two linearly independent eigenvectors. Therefore, by
+  Theorem~\ref{thm:eigenvectors-and-diagonalizable}, $A$ cannot be
+  diagonalized. 
 \end{solution}
-
-The idea that a matrix may not be diagonalizable suggests that
-conditions exist to determine when it is possible to diagonalize a
-matrix. We saw earlier in Corollary~\ref{cor:distinct-eigenvalues}
-that an $n \times n$-matrix with $n$ distinct eigenvalues is
-diagonalizable. It turns out that there are other useful
-diagonalizability tests.
-
-First we need the following definition.
-
-\begin{definition}{Eigenspace}{eigenspace}
-  Let $A$ be an $n\times n$-matrix and $\eigenvar\in\R$.  The eigenspace
-  of $A$ corresponding to $\eigenvar$, written $E_{\eigenvar}(A)$ is the
-  set of all eigenvectors corresponding to $\eigenvar$.
-\end{definition}
-
-In other words, the eigenspace $E_{\eigenvar}(A)$ is all $X$ such that
-$AX = \eigenvar X$. Notice that this set can be written
-$E_{\eigenvar}(A) = \nullspace(\eigenvar I - A)$, showing that
-$E_{\eigenvar}(A)$ is a subspace of $\R^n$.
-
-Recall that the multiplicity of an eigenvalue $\eigenvar$ is the number
-of times that it occurs as a root of the characteristic polynomial.
-
-Consider now the following lemma.
-
-\begin{lemma}{Dimension of the eigenspace}{dimension-eigenspace}
-  If $A$ is an $n\times n$-matrix, then
-  \begin{equation*}
-    \dim(E_{\eigenvar}(A))\leq m,
-  \end{equation*}
-  where $\eigenvar$ is an eigenvalue of $A$ of multiplicity $m$.
-\end{lemma}
-
-This result tells us that if $\eigenvar$ is an eigenvalue of $A$, then
-the number of linearly independent $\eigenvar$-eigenvectors is never
-more than the multiplicity of $\eigenvar$. We now use this fact to
-provide a useful diagonalizability condition.
-
-\begin{theorem}{Diagonalizability condition}{diagonalizability}
-  Let $A$ be an $n \times n$-matrix $A$. Then $A$ is diagonalizable if
-  and only if for each eigenvalue $\eigenvar$ of $A$,
-  $\dim(E_{\eigenvar}(A))$ is equal to the multiplicity of $\eigenvar$.
-\end{theorem}

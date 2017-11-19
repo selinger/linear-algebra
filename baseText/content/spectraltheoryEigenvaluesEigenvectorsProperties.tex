@@ -1,0 +1,47 @@
+\section{Properties of eigenvectors and eigenvalues}
+
+\begin{theorem}{Linearly independent eigenvectors}{linearly-independent-eigenvectors}
+  Let $A$ be an $n\times n$-matrix, and suppose that $A$ has distinct
+  eigenvalues $\eigenvar_1, \eigenvar_2, \ldots, \eigenvar_m$.  For each
+  $i$, let $X_i$ be a $\eigenvar_i$-eigenvector of $A$.  Then
+  $\set{X_1, X_2, \ldots, X_m}$ is linearly independent.
+\end{theorem}
+
+The corollary that follows from this theorem gives a useful tool in
+determining if $A$ is diagonalizable.
+
+\begin{corollary}{Distinct eigenvalues}{distinct-eigenvalues}
+  Let $A$ be an $n \times n$-matrix and suppose it has $n$ distinct
+  eigenvalues. Then it follows that $A$ is diagonalizable.
+\end{corollary}
+
+The idea that a matrix may not be diagonalizable suggests that
+conditions exist to determine when it is possible to diagonalize a
+matrix. We saw earlier in Corollary~\ref{cor:distinct-eigenvalues}
+that an $n \times n$-matrix with $n$ distinct eigenvalues is
+diagonalizable. It turns out that there are other useful
+diagonalizability tests.
+
+Recall that the multiplicity of an eigenvalue $\eigenvar$ is the number
+of times that it occurs as a root of the characteristic polynomial.
+
+Consider now the following lemma.
+
+\begin{lemma}{Dimension of the eigenspace}{dimension-eigenspace}
+  If $A$ is an $n\times n$-matrix, then
+  \begin{equation*}
+    \dim(E_{\eigenvar}(A))\leq m,
+  \end{equation*}
+  where $\eigenvar$ is an eigenvalue of $A$ of multiplicity $m$.
+\end{lemma}
+
+This result tells us that if $\eigenvar$ is an eigenvalue of $A$, then
+the number of linearly independent $\eigenvar$-eigenvectors is never
+more than the multiplicity of $\eigenvar$. We now use this fact to
+provide a useful diagonalizability condition.
+
+\begin{theorem}{Diagonalizability condition}{diagonalizability}
+  Let $A$ be an $n \times n$-matrix $A$. Then $A$ is diagonalizable if
+  and only if for each eigenvalue $\eigenvar$ of $A$,
+  $\dim(E_{\eigenvar}(A))$ is equal to the multiplicity of $\eigenvar$.
+\end{theorem}
