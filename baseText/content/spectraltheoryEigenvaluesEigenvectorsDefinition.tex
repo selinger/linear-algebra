@@ -13,14 +13,14 @@ considering its eigenvectors.
   Let $A$ be an $n\times n$-matrix. Suppose that $\vect{v}\in\R^n$ is
   a non-zero vector such that $A\vect{v}$ is a scalar multiple of
   $\vect{v}$. In other words, suppose that there exists a scalar
-  $\eigenVar$ such that
+  $\eigenvar$ such that
   \begin{equation}\label{eigen1}
-    A\vect{v}=\eigenVar\vect{v}.
+    A\vect{v}=\eigenvar\vect{v}.
   \end{equation}
   Then $\vect{v}$ is called an \textbf{eigenvector}%
   \index{eigenvector}%
   \index{vector!eigenvector}%
-  \index{matrix!eigenvector} of $A$, and $\eigenVar$ is called the
+  \index{matrix!eigenvector} of $A$, and $\eigenvar$ is called the
   corresponding \textbf{eigenvalue}%
   \index{eigenvalue}%
   \index{matrix!eigenvalue}.
@@ -57,9 +57,9 @@ considering its eigenvectors.
   \item We see that $A\vect{v}_1$ is a scalar multiple of
     $\vect{v}_1$, namely $A\vect{v}_1=2\vect{v}_1$. Therefore,
     $\vect{v}_1$ is an eigenvector of $A$ with corresponding
-    eigenvalue $\eigenVar=2$.
+    eigenvalue $\eigenvar=2$.
   \item Similarly, $A\vect{v}_2=3\vect{v}_2$, so $\vect{v}_2$ is an
-    eigenvector of $A$ with corresponding eigenvalue $\eigenVar=3$.
+    eigenvector of $A$ with corresponding eigenvalue $\eigenvar=3$.
   \item On the other hand, $A\vect{v}_3$ is not a scalar multiple of
     $\vect{v}_3$. Hence, $\vect{v}_3$ is not an eigenvector of $A$.
   \item Finally, although $A\vect{v}_4$ is a scalar multiple of
@@ -76,7 +76,7 @@ considering its eigenvectors.
       2  & -2 & 0 \\
     \end{mymatrix}.
   \end{equation*}
-  Find the eigenvectors corresponding to the eigenvalue $\eigenVar=2$.
+  Find the eigenvectors corresponding to the eigenvalue $\eigenvar=2$.
 \end{example}
 
 \begin{solution}
@@ -101,21 +101,21 @@ considering its eigenvectors.
     + t \begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix},
   \end{equation*}
   where $s$ and $t$ are parameters. These (except the zero vector) are
-  exactly the eigenvectors corresponding to the eigenvalue $\eigenVar = 2$.
+  exactly the eigenvectors corresponding to the eigenvalue $\eigenvar = 2$.
 \end{solution}
 
 As the last example shows, the eigenvectors for a given eigenvalue
-$\eigenVar$, plus the zero vector, form a subspace of $\R^n$. This is
-called the \textbf{eigenspace} of $\eigenVar$.
+$\eigenvar$, plus the zero vector, form a subspace of $\R^n$. This is
+called the \textbf{eigenspace} of $\eigenvar$.
 
 \begin{definition}{Eigenspace}{eigenspace}
-  Let $A$ be an $n\times n$-matrix, and let $\eigenVar$ be an eigenvalue
+  Let $A$ be an $n\times n$-matrix, and let $\eigenvar$ be an eigenvalue
   of $A$. The \textbf{eigenspace}%
   \index{eigenspace}%
   \index{matrix!eigenspace}%
-  \index{subspace!eigenspace} of $\eigenVar$ is the set
+  \index{subspace!eigenspace} of $\eigenvar$ is the set
   \begin{equation*}
-    E_{\eigenVar} = \set{\vect{v} \mid A\vect{v}=\eigenVar\vect{v}}.
+    E_{\eigenvar} = \set{\vect{v} \mid A\vect{v}=\eigenvar\vect{v}}.
   \end{equation*}
   It is a subspace of $\R^n$.
 \end{definition}
@@ -137,7 +137,7 @@ sometimes call the basis vectors of the eigenspace \textbf{basic
       2  & -2 & 0 \\
     \end{mymatrix}.
   \end{equation*}
-  The matrix $A$ has eigenvalues $\eigenVar=1$ and $\eigenVar=2$. Find a
+  The matrix $A$ has eigenvalues $\eigenvar=1$ and $\eigenvar=2$. Find a
   basis for each eigenspace.
 \end{example}
 

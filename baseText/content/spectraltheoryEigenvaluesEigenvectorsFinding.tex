@@ -1,31 +1,31 @@
 \section{Finding eigenvalues}
 
 In the previous section, we saw how to find the eigenvectors
-corresponding to a given eigenvalue $\eigenVar$, if $\eigenVar$ is already
+corresponding to a given eigenvalue $\eigenvar$, if $\eigenvar$ is already
 known. But we have not yet seen how to find the eigenvalues of a
 matrix. However, the calculations in
 Examples~\ref{exa:find-eigenvectors-given-eigenvalue} and
 {\ref{exa:basis-eigenspace}} suggest a way forward. We can see that
 the following are equivalent:
 \begin{enumerate}
-\item $\eigenVar$ is an eigenvalue of $A$.
+\item $\eigenvar$ is an eigenvalue of $A$.
 \item There exists a non-zero vector $\vect{v}$ such that
-  $A\vect{v}=\eigenVar\vect{v}$.
+  $A\vect{v}=\eigenvar\vect{v}$.
 \item The homogeneous system of equations
-  $(A-\eigenVar I)\vect{v}=\vect{0}$ has a non-trivial solution.
+  $(A-\eigenvar I)\vect{v}=\vect{0}$ has a non-trivial solution.
 \end{enumerate}
 Indeed, the equivalence between 1 and 2 is just the definition of an
 eigenvalue, and the equivalence between 2 and 3 is just algebra.
 By Corollary~\ref{cor:determinant-homogeneous}, we know that the
-system $(A-\eigenVar I)\vect{v}=\vect{0}$ has a non-trivial solution if
-and only if $\det(A-\eigenVar I)=0$. Therefore, we have proved the
+system $(A-\eigenvar I)\vect{v}=\vect{0}$ has a non-trivial solution if
+and only if $\det(A-\eigenvar I)=0$. Therefore, we have proved the
 following theorem:
 
 \begin{theorem}{Eigenvalues}{eigenvalues}
-  Let $A$ be a square matrix, and let $\eigenVar$ be a scalar. Then
-  $\eigenVar$ is an eigenvalue of $A$ if and only if
+  Let $A$ be a square matrix, and let $\eigenvar$ be a scalar. Then
+  $\eigenvar$ is an eigenvalue of $A$ if and only if
   \begin{equation*}
-    \det(A-\eigenVar I)=0.
+    \det(A-\eigenvar I)=0.
   \end{equation*}
 \end{theorem}
 
@@ -40,29 +40,29 @@ following theorem:
 \end{example}
 
 \begin{solution}
-  By Theorem~\ref{thm:eigenvalues}, a scalar $\eigenVar$ is an
-  eigenvalue of $A$ if and only if $\det(A-\eigenVar I)=0$. We calculate
+  By Theorem~\ref{thm:eigenvalues}, a scalar $\eigenvar$ is an
+  eigenvalue of $A$ if and only if $\det(A-\eigenvar I)=0$. We calculate
   the determinant:
   \begin{eqnarray*}
-    \det(A-\eigenVar I)
+    \det(A-\eigenvar I)
     &=&
     \begin{absmatrix}{cc}
-      -5-\eigenVar & 2 \\
-      -7 & 4-\eigenVar \\
+      -5-\eigenvar & 2 \\
+      -7 & 4-\eigenvar \\
     \end{absmatrix} \\
-    &=& (-5-\eigenVar)(4-\eigenVar) + 14 \\
-    &=& \eigenVar^2 + \eigenVar - 6.
+    &=& (-5-\eigenvar)(4-\eigenvar) + 14 \\
+    &=& \eigenvar^2 + \eigenvar - 6.
   \end{eqnarray*}
-  Therefore, $\eigenVar$ is an eigenvalue if and only if
-  $\eigenVar^2 + \eigenVar - 6 = 0$. We can find the roots of this
+  Therefore, $\eigenvar$ is an eigenvalue if and only if
+  $\eigenvar^2 + \eigenvar - 6 = 0$. We can find the roots of this
   equation using the quadratic formula, or equivalently, by factoring
   the left-hand side:
   \begin{equation*}
-    \eigenVar^2 + \eigenVar - 6 = 0
+    \eigenvar^2 + \eigenvar - 6 = 0
     \iff
-    (\eigenVar+3)(\eigenVar-2) = 0.
+    (\eigenvar+3)(\eigenvar-2) = 0.
   \end{equation*}
-  Therefore, the eigenvalues are $\eigenVar=-3$ and $\eigenVar=2$.
+  Therefore, the eigenvalues are $\eigenvar=-3$ and $\eigenvar=2$.
 \end{solution}
 
 \begin{example}{Finding the eigenvalues}{finding-eigenvalues2}
@@ -77,24 +77,24 @@ following theorem:
 \end{example}
 
 \begin{solution}
-  Once again, we calculate $\det(A-\eigenVar I)$:
+  Once again, we calculate $\det(A-\eigenvar I)$:
   \begin{eqnarray*}
-    \det(A-\eigenVar I)
+    \det(A-\eigenvar I)
     &=&
         \begin{absmatrix}{ccc}
-          5-\eigenVar & -4 & 4 \\
-          2 & -1-\eigenVar & 2 \\
-          0 &  0 & 2-\eigenVar \\
+          5-\eigenvar & -4 & 4 \\
+          2 & -1-\eigenvar & 2 \\
+          0 &  0 & 2-\eigenvar \\
         \end{absmatrix} \\
     &=&
-        (5-\eigenVar)(-1-\eigenVar)(2-\eigenVar) - 2(-4)(2-\eigenVar) \\
-    &=& -\eigenVar^3 + 6\eigenVar^2 - 11\eigenVar + 6 \\
-    &=& (3-\eigenVar)(1-\eigenVar)(2-\eigenVar).
+        (5-\eigenvar)(-1-\eigenvar)(2-\eigenvar) - 2(-4)(2-\eigenvar) \\
+    &=& -\eigenvar^3 + 6\eigenvar^2 - 11\eigenvar + 6 \\
+    &=& (3-\eigenvar)(1-\eigenvar)(2-\eigenvar).
   \end{eqnarray*}
   The eigenvalues are the roots of this polynomial, i.e., the
   solutions of the equation
-  $(\eigenVar-3)(\eigenVar-1)(2-\eigenVar)=0$. Therefore, the eigenvalues of
-  $A$ are $\eigenVar=1$, $\eigenVar=2$, and $\eigenVar=3$.
+  $(\eigenvar-3)(\eigenvar-1)(2-\eigenvar)=0$. Therefore, the eigenvalues of
+  $A$ are $\eigenvar=1$, $\eigenvar=2$, and $\eigenvar=3$.
 \end{solution}
 
 \begin{example}{No real eigenvalue}{no-real-eigenvalue}
@@ -110,35 +110,35 @@ following theorem:
 \begin{solution}
   We have
   \begin{equation*}
-    \det(A-\eigenVar I)
+    \det(A-\eigenvar I)
     ~=~
         \begin{absmatrix}{cc}
-          -\eigenVar & -1 \\
-          1 & -\eigenVar \\
+          -\eigenvar & -1 \\
+          1 & -\eigenvar \\
         \end{absmatrix} \\
     ~=~
-        \eigenVar^2 + 1.
+        \eigenvar^2 + 1.
   \end{equation*}
-  Since $\eigenVar^2+1 = 0$ does not have any solutions in the real
+  Since $\eigenvar^2+1 = 0$ does not have any solutions in the real
   numbers, the matrix $A$ has no real eigenvalues. (However, if we
   were working over the field of complex numbers rather than real
-  numbers, this matrix would have eigenvalues $\eigenVar=\pm i$).
+  numbers, this matrix would have eigenvalues $\eigenvar=\pm i$).
 \end{solution}
 
-As the examples show, the quantity $\det(A-\eigenVar I)$ is always a
-polynomial in the variable $\eigenVar$. A \textbf{polynomial}%
+As the examples show, the quantity $\det(A-\eigenvar I)$ is always a
+polynomial in the variable $\eigenvar$. A \textbf{polynomial}%
 \index{polynomial} is an expression of the form
 \begin{equation*}
-  p(\eigenVar) = a_n\eigenVar^n + a_{n-1}\eigenVar^{n-1} + \ldots + a_1\eigenVar + a_0,
+  p(\eigenvar) = a_n\eigenvar^n + a_{n-1}\eigenvar^{n-1} + \ldots + a_1\eigenvar + a_0,
 \end{equation*}
 where $a_0,\ldots,a_n$ are constants called the \textbf{coefficients}
-of the polynomial. The polynomial $\det(A-\eigenVar I)$ has a special
+of the polynomial. The polynomial $\det(A-\eigenvar I)$ has a special
 name:
 
 \begin{definition}{Characteristic polynomial}{characteristic-polynomial}
   Let $A$ be a square matrix. The expression
   \begin{equation*}
-    p(\eigenVar) = \det(A-\eigenVar I)
+    p(\eigenvar) = \det(A-\eigenvar I)
   \end{equation*}
   is called the \textbf{characteristic polynomial}%
   \index{characteristic polynomial}%
@@ -160,24 +160,24 @@ name:
 \begin{solution}
   The characteristic polynomial is
   \begin{eqnarray*}
-    \det(A-\eigenVar I) \\
+    \det(A-\eigenvar I) \\
     &=&
         \begin{absmatrix}{ccc}
-          2-\eigenVar & 0 & 3 \\
-          2  & 1-\eigenVar & 2 \\
-          -6 & 0 & -7-\eigenVar \\
+          2-\eigenvar & 0 & 3 \\
+          2  & 1-\eigenvar & 2 \\
+          -6 & 0 & -7-\eigenvar \\
         \end{absmatrix} \\
     &=&
-        (2-\eigenVar)\begin{absmatrix}{ccc}
-          1-\eigenVar & 2 \\
-          0 & -7-\eigenVar \\
+        (2-\eigenvar)\begin{absmatrix}{ccc}
+          1-\eigenvar & 2 \\
+          0 & -7-\eigenvar \\
         \end{absmatrix}
     + 3 \begin{absmatrix}{ccc}
-          2  & 1-\eigenVar \\
+          2  & 1-\eigenvar \\
           -6 & 0 \\
         \end{absmatrix} \\
-    &=& (2-\eigenVar)(1-\eigenVar)(-7-\eigenVar) + 18(1-\eigenVar) \\
-    &=& -\eigenVar^3 -4\eigenVar^2 +\eigenVar + 4.
+    &=& (2-\eigenvar)(1-\eigenvar)(-7-\eigenvar) + 18(1-\eigenvar) \\
+    &=& -\eigenvar^3 -4\eigenvar^2 +\eigenvar + 4.
   \end{eqnarray*}
 \end{solution}
 
@@ -192,16 +192,16 @@ eigenvectors of a matrix.
   Let $A$ be an $n\times n$-matrix. To find the eigenvalues and
   eigenvectors of $A$:
   \begin{enumerate}
-  \item Calculate the characteristic polynomial $\det(A-\eigenVar I)$.
+  \item Calculate the characteristic polynomial $\det(A-\eigenvar I)$.
   \item The eigenvalues are the roots of the characteristic polynomial.
-  \item For each eigenvalue $\eigenVar$, find a basis for the
+  \item For each eigenvalue $\eigenvar$, find a basis for the
     eigenvectors by solving the homogeneous system
     \begin{equation*}
-      (A-\eigenVar I)\vect{v} = \vect{0}.
+      (A-\eigenvar I)\vect{v} = \vect{0}.
     \end{equation*}
   \end{enumerate}
-  To double-check your work, make sure that $A\vect{v}=\eigenVar\vect{v}$
-  for each eigenvalue $\eigenVar$ and associated eigenvector $\vect{v}$.
+  To double-check your work, make sure that $A\vect{v}=\eigenvar\vect{v}$
+  for each eigenvalue $\eigenvar$ and associated eigenvector $\vect{v}$.
 \end{procedure}
 
 \begin{example}{Finding eigenvalues and eigenvectors}{finding-eigenvalues-eigenvectors}
@@ -219,28 +219,28 @@ eigenvectors of a matrix.
   We already found the characteristic polynomial in
   Example~\ref{exa:characteristic-polynomial}. It is
   \begin{equation*}
-    p(\eigenVar) = \det(A-\eigenVar I) = -\eigenVar^3 -4\eigenVar^2 +\eigenVar + 4.
+    p(\eigenvar) = \det(A-\eigenvar I) = -\eigenvar^3 -4\eigenvar^2 +\eigenvar + 4.
   \end{equation*}
   Finding the roots of a cubic polynomial can be a bit tricky, but
-  with some trial and error, we can find that $\eigenVar=1$ is a
-  root. We can therefore factor out $(\eigenVar-1)$:
+  with some trial and error, we can find that $\eigenvar=1$ is a
+  root. We can therefore factor out $(\eigenvar-1)$:
   \begin{equation*}
-    p(\eigenVar) = (\eigenVar-1)(-\eigenVar^2-5\eigenVar-4).
+    p(\eigenvar) = (\eigenvar-1)(-\eigenvar^2-5\eigenvar-4).
   \end{equation*}
   Then we can use the quadratic formula to find the remaining two
   roots:
   \begin{equation*}
-    \eigenVar = \frac{5\pm\sqrt{25-16}}{-2},
+    \eigenvar = \frac{5\pm\sqrt{25-16}}{-2},
   \end{equation*}
-  which yields the two roots $\eigenVar=-4$ and $\eigenVar=-1$. Therefore,
+  which yields the two roots $\eigenvar=-4$ and $\eigenvar=-1$. Therefore,
   we have
   \begin{equation*}
-    p(\eigenVar) = -(\eigenVar-1)(\eigenVar+4)(\eigenVar+1),
+    p(\eigenvar) = -(\eigenvar-1)(\eigenvar+4)(\eigenvar+1),
   \end{equation*}
-  and the eigenvalues of $A$ are $\eigenVar=1$, $\eigenVar=-1$, and
-  $\eigenVar=-4$. We now find the eigenvectors for each eigenvalue.
+  and the eigenvalues of $A$ are $\eigenvar=1$, $\eigenvar=-1$, and
+  $\eigenvar=-4$. We now find the eigenvectors for each eigenvalue.
   \begin{itemize}
-  \item {\bf{\underline{For $\eigenVar=1$:}}} We must solve
+  \item {\bf{\underline{For $\eigenvar=1$:}}} We must solve
     $(A-I)\vect{v}=\vect{0}$, i.e.,
     \begin{equation*}
       \begin{mymatrix}{rrr}
@@ -253,7 +253,7 @@ eigenvectors of a matrix.
     \begin{equation*}
       \vect{v}_1 = \begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}.
     \end{equation*}
-  \item {\bf{\underline{For $\eigenVar=-1$:}}} We must solve
+  \item {\bf{\underline{For $\eigenvar=-1$:}}} We must solve
     $(A+I)\vect{v}=\vect{0}$, i.e.,
     \begin{equation*}
       \begin{mymatrix}{rrr}
@@ -266,7 +266,7 @@ eigenvectors of a matrix.
     \begin{equation*}
       \vect{v}_2 = \begin{mymatrix}{r} 1 \\ 0 \\ -1 \end{mymatrix}.
     \end{equation*}
-  \item {\bf{\underline{For $\eigenVar=-4$:}}} We must solve
+  \item {\bf{\underline{For $\eigenvar=-4$:}}} We must solve
     $(A+4I)\vect{v}=\vect{0}$, i.e.,
     \begin{equation*}
       \begin{mymatrix}{rrr}
@@ -298,21 +298,21 @@ eigenvectors of a matrix.
   To find the eigenvalues of $A$, we first compute the characteristic
   polynomial.
   \begin{equation*}
-    \det(A-\eigenVar I) =
+    \det(A-\eigenvar I) =
     \begin{absmatrix}{ccc}
-      2-\eigenVar & 2 & -2 \\
-      1 & 3-\eigenVar & -1 \\
-      -1 & 1 & 1-\eigenVar \\
+      2-\eigenvar & 2 & -2 \\
+      1 & 3-\eigenvar & -1 \\
+      -1 & 1 & 1-\eigenvar \\
     \end{absmatrix}
-    = -\eigenVar^{3}+6 \eigenVar^{2}-8\eigenVar.
+    = -\eigenvar^{3}+6 \eigenvar^{2}-8\eigenvar.
   \end{equation*}
   You can verify that the roots of this polynomial are
-  $\eigenVar_1 = 0$, $\eigenVar_2 = 2$, $\eigenVar_3 = 4$.  Notice that
+  $\eigenvar_1 = 0$, $\eigenvar_2 = 2$, $\eigenvar_3 = 4$.  Notice that
   while eigenvectors can never equal $0$, it is possible to have an
   eigenvalue equal to $0$.  Now we will find the basic
   eigenvectors.
   \begin{itemize}
-  \item {\bf{\underline{For $\eigenVar_1 =0$:}}} We must solve the
+  \item {\bf{\underline{For $\eigenvar_1 =0$:}}} We must solve the
     equation $(A-0I)\vect{v} = \vect{0}$. This equation becomes
     $A\vect{v}=\vect{0}$. We write the augmented matrix for this
     system and reduce to echelon form:
@@ -335,7 +335,7 @@ eigenvectors of a matrix.
       =
       \begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix}.
     \end{equation*}
-  \item {\bf{\underline{For $\eigenVar_2=2$:}}} We solve the
+  \item {\bf{\underline{For $\eigenvar_2=2$:}}} We solve the
     equation $(A-2I)\vect{v} = \vect{0}$:
     \begin{equation*}
       \begin{mymatrix}{rrr|r}
@@ -356,7 +356,7 @@ eigenvectors of a matrix.
       =
       \begin{mymatrix}{r} 0 \\ 1 \\ 1 \end{mymatrix}.
     \end{equation*}
-  \item {\bf{\underline{For $\eigenVar_3=4$:}}} We solve the
+  \item {\bf{\underline{For $\eigenvar_3=4$:}}} We solve the
     equation $(A-4I)\vect{v} = \vect{0}$:
     \begin{equation*}
       \begin{mymatrix}{rrr|r}
@@ -378,10 +378,10 @@ eigenvectors of a matrix.
       \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix}.
     \end{equation*}
   \end{itemize}
-  Thus we have found the eigenvectors $\vect{v}_1$ for $\eigenVar_1$,
-  $\vect{v}_2$ for $\eigenVar_2$, and $\vect{v}_3$ for $\eigenVar_3$.
+  Thus we have found the eigenvectors $\vect{v}_1$ for $\eigenvar_1$,
+  $\vect{v}_2$ for $\eigenvar_2$, and $\vect{v}_3$ for $\eigenvar_3$.
   We can double-check our answers by checking the equation
-  $A\vect{v}=\eigenVar\vect{v}$ in each case:
+  $A\vect{v}=\eigenvar\vect{v}$ in each case:
   \begin{eqnarray*}
     A\vect{v}_1
     &=&
@@ -450,18 +450,18 @@ diagonal are zero.
 \end{example}
 
 \begin{solution}
-  We calculate $\det(A - \eigenVar I) = 0$ as follows:
+  We calculate $\det(A - \eigenvar I) = 0$ as follows:
   \begin{eqnarray*}
-    \det (\eigenVar I - A) =
+    \det (\eigenvar I - A) =
     \det \begin{mymatrix}{ccc}
-      1-\eigenVar & 2 & 4 \\
-      0 & 4-\eigenVar & 7 \\
-      0 & 0 & 6-\eigenVar \\
-    \end{mymatrix} = (1-\eigenVar)(4-\eigenVar)(6-\eigenVar).
+      1-\eigenvar & 2 & 4 \\
+      0 & 4-\eigenvar & 7 \\
+      0 & 0 & 6-\eigenvar \\
+    \end{mymatrix} = (1-\eigenvar)(4-\eigenvar)(6-\eigenvar).
   \end{eqnarray*}
-  Solving the equation $(1-\eigenVar)(4-\eigenVar)(6-\eigenVar) = 0$
-  results in the eigenvalues $\eigenVar_1 = 1$, $\eigenVar_2 = 4$, and
-  $\eigenVar_3 = 6$.  Thus the eigenvalues are the entries on the main
+  Solving the equation $(1-\eigenvar)(4-\eigenvar)(6-\eigenvar) = 0$
+  results in the eigenvalues $\eigenvar_1 = 1$, $\eigenvar_2 = 4$, and
+  $\eigenvar_3 = 6$.  Thus the eigenvalues are the entries on the main
   diagonal of $A$.
 \end{solution}
 
