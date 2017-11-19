@@ -97,6 +97,34 @@ following theorem:
   $A$ are $\lambda=1$, $\lambda=2$, and $\lambda=3$.
 \end{solution}
 
+\begin{example}{No real eigenvalue}{no-real-eigenvalue}
+  Find the eigenvalues of the matrix
+  \begin{equation*}
+    A=\begin{mymatrix}{rr}
+      0 & -1 \\
+      1 &  0 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We have
+  \begin{equation*}
+    \det(A-\lambda I)
+    ~=~
+        \begin{absmatrix}{cc}
+          -\lambda & -1 \\
+          1 & -\lambda \\
+        \end{absmatrix} \\
+    ~=~
+        \lambda^2 + 1.
+  \end{equation*}
+  Since $\lambda^2+1 = 0$ does not have any solutions in the real
+  numbers, the matrix $A$ has no real eigenvalues. (However, if we
+  were working over the field of complex numbers rather than real
+  numbers, this matrix would have eigenvalues $\lambda=\pm i$).
+\end{solution}
+
 As the examples show, the quantity $\det(A-\lambda I)$ is always a
 polynomial in the variable $\lambda$. A \textbf{polynomial}%
 \index{polynomial} is an expression of the form
