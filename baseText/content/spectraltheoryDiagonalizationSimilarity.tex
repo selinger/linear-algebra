@@ -54,7 +54,7 @@ Another important concept necessary to this section is the trace of a matrix. Co
 \index{trace of a matrix}%
 If $A=[a_{ij}]$ is an $n\times n$-matrix, then the
 trace of $A$ is
-\[ \func{trace}(A) = \sum_{i=1}^n a_{ii}.\]
+\[ \tr(A) = \sum_{i=1}^n a_{ii}.\]
 \end{definition}
 
 In words, the trace of a matrix is the sum of the entries on the main diagonal. 
@@ -62,9 +62,9 @@ In words, the trace of a matrix is the sum of the entries on the main diagonal.
 \begin{lemma}{Properties of trace}{trace-properties}
 For $n\times n$-matrices $A$ and $B$, and any $k\in\R$,
 \begin{enumerate}
-\item $\func{trace}(A+B)=\func{trace}(A) + \func{trace}(B)$
-\item $\func{trace}(kA)=k\cdot\func{trace}(A)$
-\item $\func{trace}(AB)=\func{trace}(BA)$
+\item $\tr(A+B)=\tr(A) + \tr(B)$
+\item $\tr(kA)=k\cdot\tr(A)$
+\item $\tr(AB)=\tr(BA)$
 \end{enumerate}
 \end{lemma}
 
@@ -75,7 +75,7 @@ If $A$ and $B$ are $n\times n$-matrices and $A\similar B$, then
 \begin{enumerate}
 \item $\det(A) = \det(B)$
 \item $\rank(A) = \rank(B)$
-\item $\func{trace}(A)= \func{trace}(B)$
+\item $\tr(A)= \tr(B)$
 \item $c_A(x)=c_B(x)$
 \item $A$ and $B$ have the same eigenvalues
 \end{enumerate}
