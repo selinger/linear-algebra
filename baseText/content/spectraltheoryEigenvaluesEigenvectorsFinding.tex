@@ -163,22 +163,24 @@ name:
     \det(A-\eigenvar I) \\
     &=&
         \begin{absmatrix}{ccc}
-          2-\eigenvar & 0 & 3 \\
-          2  & 1-\eigenvar & 2 \\
-          -6 & 0 & -7-\eigenvar \\
+          3-\eigenvar  & 0 &  2 \\
+          6  & 4-\eigenvar &  3 \\
+          -4 & 0 & -3-\eigenvar \\
         \end{absmatrix} \\
     &=&
-        (2-\eigenvar)\begin{absmatrix}{ccc}
-          1-\eigenvar & 2 \\
-          0 & -7-\eigenvar \\
+        (3-\eigenvar)\begin{absmatrix}{ccc}
+          4-\eigenvar & 3 \\
+          0 & -3-\eigenvar \\
         \end{absmatrix}
-    + 3 \begin{absmatrix}{ccc}
-          2  & 1-\eigenvar \\
-          -6 & 0 \\
+    + 2 \begin{absmatrix}{ccc}
+          6  & 4-\eigenvar \\
+          -4 & 0 \\
         \end{absmatrix} \\
-    &=& (2-\eigenvar)(1-\eigenvar)(-7-\eigenvar) + 18(1-\eigenvar) \\
-    &=& -\eigenvar^3 -4\eigenvar^2 +\eigenvar + 4.
+    &=& (3-\eigenvar)(4-\eigenvar)(-3-\eigenvar) +8(4-\eigenvar) \\
+    &=& -\eigenvar^3 +4\eigenvar^2 +\eigenvar - 4.
   \end{eqnarray*}
+  \vspace{-8ex}
+
 \end{solution}
 
 It is time to summarize the method for finding the eigenvalues and
@@ -206,78 +208,78 @@ eigenvectors of a matrix.
 
 \begin{example}{Finding eigenvalues and eigenvectors}{finding-eigenvalues-eigenvectors}
   Find the eigenvalues and eigenvectors of the matrix
-  \begin{equation}
+  \begin{equation*}
     A = \begin{mymatrix}{rrr}
-      2  & 0 & 3 \\
-      2  & 1 & 2 \\
-      -6 & 0 & -7 \\
+      3  & 0 &  2 \\
+      6  & 4 &  3 \\
+      -4 & 0 & -3 \\
     \end{mymatrix}.
-  \end{equation}
+  \end{equation*}
 \end{example}
 
 \begin{solution}
   We already found the characteristic polynomial in
   Example~\ref{exa:characteristic-polynomial}. It is
   \begin{equation*}
-    p(\eigenvar) = \det(A-\eigenvar I) = -\eigenvar^3 -4\eigenvar^2 +\eigenvar + 4.
+    p(\eigenvar) = \det(A-\eigenvar I) = -\eigenvar^3 +4\eigenvar^2 +\eigenvar - 4.
   \end{equation*}
   Finding the roots of a cubic polynomial can be a bit tricky, but
   with some trial and error, we can find that $\eigenvar=1$ is a
   root. We can therefore factor out $(\eigenvar-1)$:
   \begin{equation*}
-    p(\eigenvar) = (\eigenvar-1)(-\eigenvar^2-5\eigenvar-4).
+    p(\eigenvar) = (\eigenvar-1)(-\eigenvar^2+3\eigenvar+4).
   \end{equation*}
   Then we can use the quadratic formula to find the remaining two
   roots:
   \begin{equation*}
-    \eigenvar = \frac{5\pm\sqrt{25-16}}{-2},
+    \eigenvar = \frac{-3\pm\sqrt{9+16}}{-2},
   \end{equation*}
-  which yields the two roots $\eigenvar=-4$ and $\eigenvar=-1$. Therefore,
+  which yields the two roots $\eigenvar=-1$ and $\eigenvar=4$. Therefore,
   we have
   \begin{equation*}
-    p(\eigenvar) = -(\eigenvar-1)(\eigenvar+4)(\eigenvar+1),
+    p(\eigenvar) = -(\eigenvar-1)(\eigenvar+1)(\eigenvar-4),
   \end{equation*}
   and the eigenvalues of $A$ are $\eigenvar=1$, $\eigenvar=-1$, and
-  $\eigenvar=-4$. We now find the eigenvectors for each eigenvalue.
+  $\eigenvar=4$. We now find the eigenvectors for each eigenvalue.
   \begin{itemize}
   \item {\bf{\underline{For $\eigenvar=1$:}}} We must solve
-    $(A-I)\vect{v}=\vect{0}$, i.e.,
+    $(A-I)\/\vect{v}=\vect{0}$, i.e.,
     \begin{equation*}
       \begin{mymatrix}{rrr}
-        1  & 0 & 3 \\
-        2  & 0 & 2 \\
-        -6 & 0 & -8 \\
+        2  & 0 &  2 \\
+        6  & 3 &  3 \\
+        -4 & 0 & -4 \\
       \end{mymatrix}\vect{v}=\vect{0}.
     \end{equation*}
     The basic solution is
     \begin{equation*}
-      \vect{v}_1 = \begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}.
+      \vect{v}_1 = \begin{mymatrix}{r} -1 \\ 1 \\ 1 \end{mymatrix}.
     \end{equation*}
   \item {\bf{\underline{For $\eigenvar=-1$:}}} We must solve
-    $(A+I)\vect{v}=\vect{0}$, i.e.,
+    $(A+I)\/\vect{v}=\vect{0}$, i.e.,
     \begin{equation*}
       \begin{mymatrix}{rrr}
-        3  & 0 & 3 \\
-        2  & 2 & 2 \\
-        -6 & 0 & -6 \\
+        4  & 0 &  2 \\
+        6  & 5 &  3 \\
+        -4 & 0 & -2 \\
       \end{mymatrix}\vect{v}=\vect{0}.
     \end{equation*}
     The basic solution is
     \begin{equation*}
-      \vect{v}_2 = \begin{mymatrix}{r} 1 \\ 0 \\ -1 \end{mymatrix}.
+      \vect{v}_2 = \begin{mymatrix}{r} -1 \\ 0 \\ 2 \end{mymatrix}.
     \end{equation*}
-  \item {\bf{\underline{For $\eigenvar=-4$:}}} We must solve
-    $(A+4I)\vect{v}=\vect{0}$, i.e.,
+  \item {\bf{\underline{For $\eigenvar=4$:}}} We must solve
+    $(A-4I)\vect{v}=\vect{0}$, i.e.,
     \begin{equation*}
       \begin{mymatrix}{rrr}
-        6  & 0 & 3 \\
-        2  & 5 & 2 \\
-        -6 & 0 & -3 \\
+        -1  & 0 &  2 \\
+        6  & 0 &  3 \\
+        -4 & 0 & -7 \\
       \end{mymatrix}\vect{v}=\vect{0}.
     \end{equation*}
     The basic solution is
     \begin{equation*}
-      \vect{v}_3 = \begin{mymatrix}{r} 5 \\ 2 \\ -10 \end{mymatrix}.
+      \vect{v}_3 = \begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}.
     \end{equation*}
   \end{itemize}
 \end{solution}
