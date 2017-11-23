@@ -1,5 +1,279 @@
-\section{Application: Dynamical systems}
-% Requires Matrix Diagonalization and Markov Matrices
+\section{Application: Solving linear recurrences}
+
+Consider the following sequence of integers, called the
+\textbf{Fibonacci sequence}%
+\index{Fibonacci sequence}%
+\index{sequence!Fibonacci}:
+\begin{equation*}
+  0,\ 1,\ 1,\ 2,\ 3,\ 5,\ 8,\ 13,\ 21,\ \ldots
+\end{equation*}
+The first two Fibonacci numbers are 0 and 1. Every subsequent
+Fibonacci number is the sum of the previous two numbers. For example,
+$0+1=1$, $1+1=2$, $1+2=3$, $2+3=5$, and so on. Thus, if we write $F_n$ for the
+$n\th$ Fibonacci number, then the Fibonacci sequence is given by the
+following conditions:
+\begin{equation*}
+  \begin{array}{l@{~}c@{~}l}
+    F_0 &=& 0, \\
+    F_1 &=& 1, \\
+    F_{n+2} &=& F_{n} + F_{n+1}, \quad\mbox{for all $n\geq 0$.}\\
+  \end{array}
+\end{equation*}
+The condition $F_{n+2} = F_{n} + F_{n+1}$ is known as a
+\textbf{recurrence relation}, or simply as a \textbf{recurrence}%
+\index{recurrence}, because we compute each member of the sequence
+from previous members (the word ``recurrence'' comes from Latin
+``recurrere'', which means ``to go back''). The conditions $F_0=0$ and
+$F_1=1$ are known as the \textbf{base cases}%
+\index{recurrence!base case}%
+\index{base case!of a recurrence} of the recurrence. Note that we
+start counting from zero, i.e., we call $F_0=0$ the ``zeroth Fibonacci
+number'', $F_1=1$ the ``first Fibonacci number'', and so on. Counting
+from zero will help simplify our calculations later.
+
+\begin{example}{Computing a Fibonacci number}{fibonacci-10}
+  Compute the $10\th$ Fibonacci number $F_{10}$.
+\end{example}
+
+\begin{solution}
+  To compute the $10\th$ Fibonacci number using the recurrence, we
+  have to compute all the previous Fibonacci numbers as well.
+  \begin{eqnarray*}
+    F_0 &=& 0, \\
+    F_1 &=& 1, \\
+    F_2 &=& F_0 + F_1 ~=~ 0 + 1 ~=~ 1, \\
+    F_3 &=& F_1 + F_2 ~=~ 1 + 1 ~=~ 2, \\
+    F_4 &=& F_2 + F_3 ~=~ 1 + 2 ~=~ 3, \\
+    F_5 &=& F_3 + F_4 ~=~ 2 + 3 ~=~ 5, \\
+    F_6 &=& F_4 + F_5 ~=~ 3 + 5 ~=~ 8, \\
+    F_7 &=& F_5 + F_6 ~=~ 5 + 8 ~=~ 13, \\
+    F_8 &=& F_6 + F_7 ~=~ 8 + 13 ~=~ 21, \\
+    F_9 &=& F_7 + F_8 ~=~ 13 + 21 ~=~ 34, \\
+    F_{10} &=& F_8 + F_9 ~=~ 21 + 34 ~=~ 55. \\
+  \end{eqnarray*}
+  Thus, the $10\th$ Fibonacci number is $55$.
+\end{solution}
+
+Suppose we want to compute the $100\th$ Fibonacci number. As the
+previous example shows, computing this by using the recurrence
+relation would be lot of work. We will therefore explore how
+to use linear algebra, and in particular diagonalization, to find a
+closed formula for the $n\th$ Fibonacci number. By a ``closed''
+formula, we mean a formula to calculate $F_n$ directly in one step,
+i.e., without using a recurrence.
+
+\begin{example}{A sequence of vectors}{fibonacci-sequence-vectors}
+  For all $n\geq 0$, define the vector
+  \begin{equation*}
+    \vect{v}_n = \begin{mymatrix}{c} F_n \\ F_{n+1} \end{mymatrix}.
+  \end{equation*}
+  Find a matrix $A$ such that $\vect{v}_{n+1} = A\vect{v}_n$ holds for
+  all $n$.
+\end{example}
+
+\begin{solution}
+  Using the recurrence relation, we have, for all $n\geq 0$,
+  \begin{equation*}
+    \vect{v}_{n+1}
+    = \begin{mymatrix}{c} F_{n+1} \\ F_{n+2} \end{mymatrix}
+    = \begin{mymatrix}{c} F_{n+1} \\ F_n + F_{n+1} \end{mymatrix}
+    = \begin{mymatrix}{rr}
+      0 & 1 \\
+      1 & 1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{c} F_n \\ F_{n+1} \end{mymatrix}
+    = \begin{mymatrix}{rr}
+      0 & 1 \\
+      1 & 1 \\
+    \end{mymatrix}
+    \vect{v}_n.
+  \end{equation*}
+  Thus, the desired matrix is
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      0 & 1 \\
+      1 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+We therefore find that the sequence of vectors $\vect{v}_0$,
+$\vect{v}_1$, $\vect{v}_2$, \ldots satisfies the recurrence
+\begin{equation*}
+  \begin{array}{l}
+    \vect{v}_0 = \begin{mymatrix}{r} 0 \\ 1 \end{mymatrix},
+    \\\\[-2ex]
+    \vect{v}_{n+1} = A \vect{v}_n, \quad\mbox{for all $n\geq 0$.}\\
+  \end{array}
+\end{equation*}
+
+\begin{example}{A formula for $\vect{v}_n$}{fibonacci-formula-v}
+  Find a closed formula for $\vect{v}_n$, using a matrix power.
+\end{example}
+
+\begin{solution}
+  To see what is going on, let us calculate the first few
+  $\vect{v}_n$ using the recurrence. We have
+  \begin{eqnarray*}
+    \vect{v}_0 &=& \begin{mymatrix}{r} 0 \\ 1 \end{mymatrix}, \\
+    \vect{v}_1 &=& A\vect{v}_0, \\
+    \vect{v}_2 &=& A\vect{v}_1 ~=~ A^2\vect{v}_0, \\
+    \vect{v}_3 &=& A\vect{v}_2 ~=~ A^3\vect{v}_0, \\
+  \end{eqnarray*}
+  and so on. Continuing like this, we get, for all $n$,
+  \begin{equation*}
+    \vect{v}_n
+    ~=~ A^n\vect{v}_0
+    ~=~ \begin{mymatrix}{rr}
+      0 & 1 \\
+      1 & 1 \\
+    \end{mymatrix}^n
+    \begin{mymatrix}{r} 0 \\ 1 \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{Diagonalizing $A$}{fibonacci-diagonalize}
+  Diagonalize the matrix
+  $A=\begin{mymatrix}{rr} 0 & 1 \\ 1 & 1 \end{mymatrix}$.
+\end{example}
+
+\begin{solution}
+  The characteristic polynomial is
+  \begin{equation*}
+    p(\eigenvar) =
+    \begin{absmatrix}{cc}
+      -\eigenvar & 1 \\
+      1 & 1-\eigenvar \\
+    \end{absmatrix}
+    = (-\eigenvar)(1-\eigenvar) - 1
+    = \eigenvar^2 - \eigenvar - 1.
+  \end{equation*}
+  The eigenvalues are the roots of the characteristic polynomial. We
+  find them by using the quadratic formula. The eigenvalues are
+  \begin{equation*}
+    \eigenvar_1 = \frac{1+\sqrt{5}}{2}
+    \quad\mbox{and}\quad
+    \eigenvar_2 = \frac{1-\sqrt{5}}{2}.
+  \end{equation*}
+  To simplify later calculations, we note that
+  $\eigenvar_1+\eigenvar_2 = 1$, or equivalently,
+  \begin{equation}\label{eqn:fibonacci-1}
+    1-\eigenvar_1 = \eigenvar_2.
+  \end{equation}
+  We also note that
+  $\eigenvar_1\eigenvar_2 = -1$, or equivalently,
+  \begin{equation}\label{eqn:fibonacci-2}
+    \eigenvar_2 = -\frac{1}{\eigenvar_1}.
+  \end{equation}
+  To find the eigenvector corresponding to the eigenvalue $\eigenvar_1$,
+  we solve the equation
+  \begin{equation*}
+    \begin{mymatrix}{cc}
+      -\eigenvar_1 & 1 \\
+      1 & 1-\eigenvar_1 \\
+    \end{mymatrix}
+    \vect{v} = \vect{0}.
+  \end{equation*}
+  By {\eqref{eqn:fibonacci-1}} and {\eqref{eqn:fibonacci-2}}, this is
+  equivalent to
+  \begin{equation*}
+    \begin{mymatrix}{cc}
+      -\eigenvar_1 & 1 \\
+      0 & -\frac{1}{\eigenvar_1} \\
+    \end{mymatrix}
+    \vect{v} = \vect{0},
+  \end{equation*}
+  and we find the basic solution
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{c} 1 \\ \eigenvar_1 \end{mymatrix}.
+  \end{equation*}
+  By a similar method, we find that the basic eigenvector
+  corresponding to the eigenvalue $\eigenvar_2$ is
+  \begin{equation*}
+    \vect{v}_2 = \begin{mymatrix}{c} 1 \\ \eigenvar_2 \end{mymatrix}.
+  \end{equation*}
+  Therefore, by Theorem~\ref{eigenvectors-and-diagonalizable}, $A$ is
+  diagonalizable, and we have $P^{-1}AP=D$, where
+  \begin{equation*}
+    P = \begin{mymatrix}{cc}
+      1 & 1 \\
+      \eigenvar_1 & \eigenvar_2 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    D = \begin{mymatrix}{cc}
+      \eigenvar_1 & 0 \\
+      0 & \eigenvar_2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  For later reference, we note that the inverse of $P$ is given by
+  \begin{equation*}
+    P^{-1} = 
+    \frac{1}{\sqrt{5}} \begin{mymatrix}{cc}
+      -\eigenvar_2 & 1 \\
+      \eigenvar_1 & -1 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{A formula for the $n\th$ Fibonacci number}{fibonacci-formula}
+  Find a formula for the $n\th$ Fibonacci number.
+\end{example}
+
+\begin{solution}
+  Since
+  \begin{equation*}
+    \vect{v}_n = \begin{mymatrix}{c} F_n \\ F_{n+1} \end{mymatrix},
+  \end{equation*}
+  we know that the $n\th$ Fibonacci number is the first component of
+  $\vect{v}_n$, i.e., 
+  \begin{equation*}
+    F_n = \begin{mymatrix}{cc}1 & 0\end{mymatrix}\vect{v}_n.
+  \end{equation*}
+  Putting together all of the above calculations, we then have:
+  \begin{eqnarray*}
+    F_n
+    &=& \begin{mymatrix}{cc}1 & 0\end{mymatrix}\vect{v}_n \\
+    &=& \begin{mymatrix}{cc}1 & 0\end{mymatrix}A^n\vect{v}_0 \\
+    &=& \begin{mymatrix}{cc}1 & 0\end{mymatrix}PD^nP^{-1}\vect{v}_0 \\
+    &=& \begin{mymatrix}{cc}1 & 0\end{mymatrix}
+        \begin{mymatrix}{cc} 1 & 1 \\ \eigenvar_1 & \eigenvar_2 \end{mymatrix} 
+        \begin{mymatrix}{cc} \eigenvar_1^n & 0 \\ 0 & \eigenvar_2^n \end{mymatrix}
+        \frac{1}{\sqrt{5}} 
+        \begin{mymatrix}{cc} -\eigenvar_2 & 1 \\ \eigenvar_1 & -1 \end{mymatrix}
+        \begin{mymatrix}{c} 0 \\ 1 \end{mymatrix} \\
+    &=& \frac{1}{\sqrt{5}}
+        \begin{mymatrix}{cc}1 & 1\end{mymatrix}
+        \begin{mymatrix}{cc} \eigenvar_1^n & 0 \\ 0 & \eigenvar_2^n \end{mymatrix}
+        \begin{mymatrix}{c} 1 \\ -1 \end{mymatrix} \\
+    &=& \frac{1}{\sqrt{5}} (\eigenvar_1^n - \eigenvar_2^n).
+  \end{eqnarray*}
+  So the $n\th$ Fibonacci number is
+  \begin{equation*}
+    F_n
+    ~=~ \frac{1}{\sqrt{5}} (\eigenvar_1^n - \eigenvar_2^n)
+    ~=~ \frac{1}{\sqrt{5}}
+    \paren{\paren{\frac{1+\sqrt{5}}{2}}^n - \paren{\frac{1-\sqrt{5}}{2}}^n}.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{Computing the $100\th$ Fibonacci number}{fibonacci-100}
+  Calculate the $100\th$ Fibonacci number without using the recurrence.
+\end{example}
+
+\begin{solution}
+  Note that this calculation requires about 25 digits of precision to
+  give the correct result. We
+  have
+  \begin{eqnarray*}
+    F_{100}
+    &=& \frac{1}{\sqrt{5}} (\eigenvar_1^{100} - \eigenvar_2^{100}) \\
+    &=& \frac{1}{\sqrt{5}} (1.6180339887498948482045868^{100} - (-0.6180339887498948482045868)^{100}) \\
+    &=& 354224848179261915075.
+  \end{eqnarray*}
+\end{solution}
+
+% ======================================================================
+\subsection{CONTINUE HERE...}
 
 The migration matrices discussed above give an example of a discrete
 dynamical system. We call them discrete because they involve discrete
@@ -303,15 +577,15 @@ the ordered pairs to spiral around the origin.
   \end{equation*}
   To find solutions, we must diagonalize $A$. You can verify that the
   eigenvalues of $A$ are complex and are given by
-  $\lambda_1 = 0.7+0.7i$ and $\lambda_2 = 0.7-0.7i$. The eigenvector
-  for $\lambda_1 = 0.7+0.7i$ is
+  $\eigenvar_1 = 0.7+0.7i$ and $\eigenvar_2 = 0.7-0.7i$. The eigenvector
+  for $\eigenvar_1 = 0.7+0.7i$ is
   \begin{equation*}
     \begin{mymatrix}{r}
       1 \\
       i
     \end{mymatrix}
   \end{equation*}
-  and that the eigenvector for $\lambda_2 = 0.7-0.7i$ is
+  and that the eigenvector for $\eigenvar_2 = 0.7-0.7i$ is
   \begin{equation*}
     \begin{mymatrix}{r}
       1 \\
@@ -327,8 +601,8 @@ the ordered pairs to spiral around the origin.
       0.7+0.7i & 0 \\
       0 & 0.7-0.7i
     \end{mymatrix} \begin{mymatrix}{rr}
-      \vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}i \\
-      \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2}i
+      \frac{1}{2} & -\frac{1}{2}i \\
+      \frac{1}{2} & \frac{1}{2}i
     \end{mymatrix},
   \end{equation*}
   and so
@@ -344,8 +618,8 @@ the ordered pairs to spiral around the origin.
       (0.7+0.7i) ^{n} & 0 \\
       0 & (0.7-0.7i) ^{n}
     \end{mymatrix} \begin{mymatrix}{rr}
-      \vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}i \\
-      \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{2}i
+      \frac{1}{2} & -\frac{1}{2}i \\
+      \frac{1}{2} & \frac{1}{2}i
     \end{mymatrix} \begin{mymatrix}{c}
       x_{0} \\
       y_{0}
@@ -354,13 +628,13 @@ the ordered pairs to spiral around the origin.
   The explicit solution is given by
   \begin{equation*}
     \begin{mymatrix}{c}
-      x_{0}(\vspace{0.05in}\frac{1}{2}(0.7-0.7i) ^{n}+\vspace{0.05in}\frac{1}{2}
-      (0.7+0.7i) ^{n}) + \allowbreak y_{0}(\vspace{0.05in}\frac{1}{2}
+      x_{0}(\frac{1}{2}(0.7-0.7i) ^{n}+\frac{1}{2}
+      (0.7+0.7i) ^{n}) + \allowbreak y_{0}(\frac{1}{2}
       i(0.7-0.7i) ^{n}-\frac{1}{2}i (
       0.7+0.7i)  ^{n}) \\
-      y_{0}(\vspace{0.05in}\frac{1}{2} (0.7-0.7i) ^{n}+\vspace{0.05in}\frac{1}{2}
-      (0.7+0.7i) ^{n}) -  x_{0}(\vspace{0.05in}\frac{1}{2}
-      i(0.7-0.7i) ^{n}-\vspace{0.05in}\frac{1}{2}i(
+      y_{0}(\frac{1}{2} (0.7-0.7i) ^{n}+\frac{1}{2}
+      (0.7+0.7i) ^{n}) -  x_{0}(\frac{1}{2}
+      i(0.7-0.7i) ^{n}-\frac{1}{2}i(
       0.7+0.7i) ^{n})
     \end{mymatrix}.
   \end{equation*}
@@ -463,8 +737,8 @@ having length $h$ chosen above. Then the above equations take the form
     x(n+1) \\
     y(n+1)
   \end{mymatrix} =\begin{mymatrix}{cc}
-    1 & -\vspace{0.05in}\frac{hbc}{d} \\
-    \vspace{0.05in}\frac{had}{b} & 1
+    1 & -\frac{hbc}{d} \\
+    \frac{had}{b} & 1
   \end{mymatrix} \begin{mymatrix}{c}
     x(n) \\
     y(n).
@@ -480,8 +754,8 @@ time. Thus, replacing the time interval with $mh$,
     x(n+m) \\
     y(n+m)
   \end{mymatrix} =\begin{mymatrix}{cc}
-    1 & -\vspace{0.05in}\frac{hbc}{d} \\
-    \vspace{0.05in}\frac{had}{b} & 1
+    1 & -\frac{hbc}{d} \\
+    \frac{had}{b} & 1
   \end{mymatrix} ^{m}\begin{mymatrix}{c}
     x(n) \\
     y(n)
@@ -493,8 +767,8 @@ For example, if $m=2$, you would have
     x(n+2) \\
     y(n+2)
   \end{mymatrix} =\begin{mymatrix}{cc}
-    1-ach^{2} & -2b\vspace{0.05in}\frac{c}{d}h \\
-    2\vspace{0.05in}\frac{a}{b}dh & 1-ach^{2}
+    1-ach^{2} & -2b\frac{c}{d}h \\
+    2\frac{a}{b}dh & 1-ach^{2}
   \end{mymatrix} \begin{mymatrix}{c}
     x(n) \\
     y(n)
@@ -533,124 +807,3 @@ condition is chosen very carefully. The next example exhibits the case
 where one eigenvalue is larger than 1 and the other is smaller than 1.
 
 The following example demonstrates a familiar concept as a dynamical system.
-
-\begin{example}{The Fibonacci sequence}{fibonacci}
-  The Fibonacci sequence is the sequence given by
-  \begin{equation*}
-    1, 1, 2, 3, 5, \ldots
-  \end{equation*}
-  which is defined recursively in the
-  form
-  \begin{equation*}
-    x(0) =1=x(1),\quad
-    x(n+2) =x(n+1)+x(n).
-  \end{equation*}
-  Show how the Fibonacci Sequence can be considered a dynamical
-  system.
-\end{example}
-
-\begin{solution}
-  This sequence is extremely important in the study of reproducing
-  rabbits. It can be considered as a dynamical system as follows. Let
-  $y(n) =x(n+1)$. Then the above recurrence relation can be written as
-  \begin{equation*}
-    \begin{mymatrix}{c}
-      x(n+1) \\
-      y(n+1)
-    \end{mymatrix} =\begin{mymatrix}{rr}
-      0 & 1 \\
-      1 & 1
-    \end{mymatrix} \begin{mymatrix}{c}
-      x(n) \\
-      y(n)
-    \end{mymatrix} ,\ \begin{mymatrix}{c}
-      x(0) \\
-      y(0)
-    \end{mymatrix} =\begin{mymatrix}{r}
-      1 \\
-      1
-    \end{mymatrix}.
-  \end{equation*}
-  Let
-  \begin{equation*}
-    A
-    =
-    \begin{mymatrix}{rr}
-      0 & 1 \\
-      1 & 1
-    \end{mymatrix}
-  \end{equation*}
-  The eigenvalues of the matrix $A$ are
-  $\lambda_1 = \frac{1}{2}-\frac{1}{2}\sqrt{5}$ and
-  $\lambda_2 = \frac{1}{2}\sqrt{5}+\frac{1}{2}$. The corresponding
-  eigenvectors are, respectively,
-  \begin{equation*}
-    X_1 =
-    \begin{mymatrix}{c}
-      -\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
-      1
-    \end{mymatrix} ,
-    X_2 = \begin{mymatrix}{c}
-      \vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
-      1
-    \end{mymatrix}.
-  \end{equation*}
-  You can see from a short computation that one of the eigenvalues is
-  smaller than 1 in absolute value while the other is larger than 1 in
-  absolute value.  Now, diagonalizing $A$ gives us
-  \begin{equation*}
-    \begin{mymatrix}{cc}
-      \vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
-      1 & 1
-    \end{mymatrix} ^{-1}\begin{mymatrix}{rr}
-      0 & 1 \\
-      1 & 1
-    \end{mymatrix} \begin{mymatrix}{cc}
-      \vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
-      1 & 1
-    \end{mymatrix}
-  \end{equation*}
-  \begin{equation*}
-    =\begin{mymatrix}{cc}
-      \vspace{0.05in}\frac{1}{2}\sqrt{5}+\vspace{0.05in}\frac{1}{2} & 0 \\
-      0 & \vspace{0.05in}\frac{1}{2}-\vspace{0.05in}\frac{1}{2}\sqrt{5}
-    \end{mymatrix}.
-  \end{equation*}
-  Then it follows that for a given initial condition, the solution to
-  this dynamical system is of the form
-  \begin{eqnarray*}
-    \begin{mymatrix}{c}
-      x(n) \\
-      y(n)
-    \end{mymatrix} &=&\begin{mymatrix}{cc}
-      \vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} & -\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1}{2} \\
-      1 & 1
-    \end{mymatrix} \begin{mymatrix}{cc}
-      \paren{\vspace{0.05in}\frac{1}{2}\sqrt{5}+\vspace{0.05in}\frac{1}{2}} ^{n} & 0 \\
-      0 & \paren{\vspace{0.05in}\frac{1}{2}-\vspace{0.05in}\frac{1}{2}\sqrt{5}} ^{n}
-    \end{mymatrix} \cdot \\
-                   &&\begin{mymatrix}{cc}
-                     \vspace{0.05in}\frac{1}{5}\sqrt{5} & \vspace{0.05in}\frac{1}{10}\sqrt{5}+\vspace{0.05in}\frac{1}{2} \\
-                     -\vspace{0.05in}\frac{1}{5}\sqrt{5} & \vspace{0.05in}\frac{1}{5}\sqrt{5}\paren{\vspace{0.05in}\frac{1}{2}\sqrt{5}-\vspace{0.05in}\frac{1
-                       }{2}}
-                   \end{mymatrix} \begin{mymatrix}{r}
-                     1 \\
-                     1
-                   \end{mymatrix}.
-  \end{eqnarray*}
-  It follows that
-  \begin{equation*}
-    x(n) =\paren{\frac{1}{2}\sqrt{5}+\frac{1}{2}} ^{n}\paren{
-      \frac{1}{10}\sqrt{5}+\frac{1}{2}} +\paren{\frac{1}{2}-\frac{1}{2}\sqrt{%
-        5}} ^{n}\paren{\frac{1}{2}-\frac{1}{10}\sqrt{5}}
-  \end{equation*}
-\end{solution}
-
-Here is a picture of the ordered pairs $(x(n),y(n)) $ for
-$n=0,1,\ldots,n$.
-\begin{center}
-  \includegraphics[bb=0 0 800 800,scale=.2]{figures/fibonacci.eps}
-\end{center}
-There is so much more that can be said about dynamical systems. It is
-a major topic of study in differential equations and what is given
-above is just an introduction.
