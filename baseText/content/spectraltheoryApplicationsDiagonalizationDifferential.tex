@@ -1,0 +1,140 @@
+\section{Application: Systems of linear differential equations}
+
+This type of behavior along with complex eigenvalues is typical of the
+deviations from an equilibrium point in the Lotka Volterra system of
+differential equations which is a famous model for predator-prey
+interactions. These differential equations are given by
+\begin{eqnarray*}
+  x^{\prime } &=&x(a-by) \\
+  y^{\prime } &=&-y(c-dx)
+\end{eqnarray*}
+where $a,b,c,d$ are positive constants. For example, you might have
+$X$ be the population of moose and $Y$ the population of wolves on an
+island.
+
+Note that these equations make logical sense. The top says that the
+rate at which the moose population increases would be $aX$ if there
+were no predators $Y$.  However, this is modified by multiplying
+instead by $(a-bY) $ because if there are predators, these will
+militate against the population of moose.  The more predators there
+are, the more pronounced is this effect. As to the predator equation,
+you can see that the equations predict that if there are many prey
+around, then the rate of growth of the predators would seem to be
+high. However, this is modified by the term $-cY$ because if there are
+many predators, there would be competition for the available food
+supply and this would tend to decrease $Y^{\prime }$.
+
+The behavior near an equilibrium point, which is a point where the
+right side of the differential equations equals zero, is of great
+interest. In this case, the equilibrium point is
+\begin{equation*}
+  x=\frac{c}{d}, y=\frac{a}{b}.
+\end{equation*}
+Then one defines new variables according to the formula
+\begin{equation*}
+  x+\frac{c}{d}=x,\ y=y+\frac{a}{b}.
+\end{equation*}
+In terms of these new variables, the differential equations become
+\begin{eqnarray*}
+  x^{\prime } &=&\paren{x+\frac{c}{d}} \paren{a-b\paren{y+\frac{a}{b}
+                  }} \\
+  y^{\prime } &=&-\paren{y+\frac{a}{b}} \paren{c-d\paren{x+\frac{c}{d}
+                  }}.
+\end{eqnarray*}
+Multiplying out the right sides yields
+\begin{eqnarray*}
+  x^{\prime } &=&-bxy-b\frac{c}{d}y, \\
+  y^{\prime } &=&dxy+\frac{a}{b}dx.
+\end{eqnarray*}
+The interest is for $x,y$ small and so these equations are essentially
+equal to
+\begin{equation*}
+  x^{\prime }=-b\frac{c}{d}y,\ y^{\prime }=\frac{a}{b}dx.
+\end{equation*}
+Replace $x^{\prime }$ with the difference quotient
+$\frac{x(t+h) -x(t) }{h}$ where $h$ is a small positive number and
+$y^{\prime } $ with a similar difference quotient. For example one
+could have $h$ correspond to one day or even one hour. Thus, for $h$
+small enough, the following would seem to be a good approximation to
+the differential equations.
+\begin{eqnarray*}
+  x(t+h) &=&x(t) -hb\frac{c}{d}y, \\
+  y(t+h) &=&y(t) +h\frac{a}{b}dx.
+\end{eqnarray*}
+Let $1,2,3,\ldots$ denote the ends of discrete intervals of time
+having length $h$ chosen above. Then the above equations take the form
+\begin{equation*}
+  \begin{mymatrix}{c}
+    x(n+1) \\
+    y(n+1)
+  \end{mymatrix} =\begin{mymatrix}{cc}
+    1 & -\frac{hbc}{d} \\
+    \frac{had}{b} & 1
+  \end{mymatrix} \begin{mymatrix}{c}
+    x(n) \\
+    y(n).
+  \end{mymatrix}
+\end{equation*}
+Note that the eigenvalues of this matrix are always complex.
+
+We are not interested in time intervals of length $h$ for $h$ very
+small.  Instead, we are interested in much longer lengths of
+time. Thus, replacing the time interval with $mh$,
+\begin{equation*}
+  \begin{mymatrix}{c}
+    x(n+m) \\
+    y(n+m)
+  \end{mymatrix} =\begin{mymatrix}{cc}
+    1 & -\frac{hbc}{d} \\
+    \frac{had}{b} & 1
+  \end{mymatrix} ^{m}\begin{mymatrix}{c}
+    x(n) \\
+    y(n)
+  \end{mymatrix}.
+\end{equation*}
+For example, if $m=2$, you would have
+\begin{equation*}
+  \begin{mymatrix}{c}
+    x(n+2) \\
+    y(n+2)
+  \end{mymatrix} =\begin{mymatrix}{cc}
+    1-ach^{2} & -2b\frac{c}{d}h \\
+    2\frac{a}{b}dh & 1-ach^{2}
+  \end{mymatrix} \begin{mymatrix}{c}
+    x(n) \\
+    y(n)
+  \end{mymatrix}.
+\end{equation*}
+Note that most of the time, the eigenvalues of the new matrix will be
+complex.
+
+You can also notice that the upper right corner will be negative by
+considering higher powers of the matrix. Thus letting $1,2,3,\ldots$
+denote the ends of discrete intervals of time, the desired discrete
+dynamical system is of the form
+\begin{equation*}
+  \begin{mymatrix}{c}
+    x(n+1) \\
+    y(n+1)
+  \end{mymatrix} =\begin{mymatrix}{rr}
+    a & -b \\
+    c & d
+  \end{mymatrix} \begin{mymatrix}{c}
+    x(n) \\
+    y(n)
+  \end{mymatrix},
+\end{equation*}
+where $a,b,c,d$ are positive constants and the matrix will likely have
+complex eigenvalues because it is a power of a matrix which has
+complex eigenvalues.
+
+You can see from the above discussion that if the eigenvalues of the
+matrix used to define the dynamical system are less than 1 in absolute
+value, then the origin is stable in the sense that as
+$n\rightarrow \infty$, the solution converges to the origin. If either
+eigenvalue is larger than 1 in absolute value, then the solutions to
+the dynamical system will usually be unbounded, unless the initial
+condition is chosen very carefully. The next example exhibits the case
+where one eigenvalue is larger than 1 and the other is smaller than 1.
+
+The following example demonstrates a familiar concept as a dynamical system.

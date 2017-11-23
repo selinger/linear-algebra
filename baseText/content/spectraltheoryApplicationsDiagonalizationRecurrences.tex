@@ -1,0 +1,364 @@
+\section{Application: Solving recurrences}
+
+Consider the following sequence of integers, called the
+\textbf{Fibonacci sequence}%
+\index{Fibonacci sequence}%
+\index{sequence!Fibonacci}%
+\index{number!Fibonacci}:
+\begin{equation*}
+  0,\ 1,\ 1,\ 2,\ 3,\ 5,\ 8,\ 13,\ 21,\ \ldots
+\end{equation*}
+The first two Fibonacci numbers are 0 and 1. Every subsequent
+Fibonacci number is the sum of the previous two numbers. For example,
+$0+1=1$, $1+1=2$, $1+2=3$, $2+3=5$, and so on. Thus, if we write $F_n$ for the
+$n\th$ Fibonacci number, then the Fibonacci sequence is given by the
+following conditions:
+\begin{equation*}
+  \begin{array}{l@{~}c@{~}l}
+    F_0 &=& 0, \\
+    F_1 &=& 1, \\
+    F_{n+2} &=& F_{n} + F_{n+1}, \quad\mbox{for all $n\geq 0$.}\\
+  \end{array}
+\end{equation*}
+The condition $F_{n+2} = F_{n} + F_{n+1}$ is known as a
+\textbf{recurrence relation}, or simply as a \textbf{recurrence}%
+\index{recurrence}, because we compute each member of the sequence
+from previous members (the word ``recurrence'' comes from Latin
+``recurrere'', which means ``to go back''). The conditions $F_0=0$ and
+$F_1=1$ are known as the \textbf{base cases}%
+\index{recurrence!base case}%
+\index{base case!of a recurrence} of the recurrence. Note that we
+start counting from zero, i.e., we call $F_0=0$ the ``zeroth Fibonacci
+number'', $F_1=1$ the ``first Fibonacci number'', and so on. Counting
+from zero will help simplify our calculations later.
+
+\begin{example}{Computing a Fibonacci number}{fibonacci-10}
+  Compute the $10\th$ Fibonacci number $F_{10}$.
+\end{example}
+
+\begin{solution}
+  To compute the $10\th$ Fibonacci number using the recurrence, we
+  have to compute all the previous Fibonacci numbers as well.
+  \begin{eqnarray*}
+    F_0 &=& 0, \\
+    F_1 &=& 1, \\
+    F_2 &=& F_0 + F_1 ~=~ 0 + 1 ~=~ 1, \\
+    F_3 &=& F_1 + F_2 ~=~ 1 + 1 ~=~ 2, \\
+    F_4 &=& F_2 + F_3 ~=~ 1 + 2 ~=~ 3, \\
+    F_5 &=& F_3 + F_4 ~=~ 2 + 3 ~=~ 5, \\
+    F_6 &=& F_4 + F_5 ~=~ 3 + 5 ~=~ 8, \\
+    F_7 &=& F_5 + F_6 ~=~ 5 + 8 ~=~ 13, \\
+    F_8 &=& F_6 + F_7 ~=~ 8 + 13 ~=~ 21, \\
+    F_9 &=& F_7 + F_8 ~=~ 13 + 21 ~=~ 34, \\
+    F_{10} &=& F_8 + F_9 ~=~ 21 + 34 ~=~ 55. \\
+  \end{eqnarray*}
+  Thus, the $10\th$ Fibonacci number is $55$.
+\end{solution}
+
+Suppose we want to compute the $100\th$ Fibonacci number. As the
+previous example shows, computing this by using the recurrence
+relation would be lot of work. We will therefore explore how to use
+linear algebra, and in particular diagonalization, to find a closed
+formula for the $n\th$ Fibonacci number. By a \textbf{closed formula}%
+\index{closed formula}%
+\index{formula!closed}, we mean a formula to calculate $F_n$ directly
+in one step, i.e., without using a recurrence. The process of finding
+a closed formula is called \textbf{solving the recurrence}%
+\index{recurrence!solving}.
+
+The first step in solving the recurrence is to replace the recurrence
+relation $F_{n+2} = F_{n} + F_{n+1}$, which requires {\em two}
+previous terms of the sequence, by another recurrence relation
+requiring only {\em one} previous term. To that end, we define
+$\vect{v}_n$ to be the vector consisting of the $n\th$ and $n+1\st$
+Fibonacci numbers, for all $n\geq 0$:
+\begin{equation*}
+  \vect{v}_n = \begin{mymatrix}{c} F_n \\ F_{n+1} \end{mymatrix}.
+\end{equation*}
+Using the recurrence relation for $F_{n+2}$, we have
+\begin{equation*}
+  \vect{v}_{n+1}
+  = \begin{mymatrix}{c} F_{n+1} \\ F_{n+2} \end{mymatrix}
+  = \begin{mymatrix}{c} F_{n+1} \\ F_n + F_{n+1} \end{mymatrix}
+  = \begin{mymatrix}{rr}
+    0 & 1 \\
+    1 & 1 \\
+  \end{mymatrix}
+  \begin{mymatrix}{c} F_n \\ F_{n+1} \end{mymatrix}
+  = \begin{mymatrix}{rr}
+    0 & 1 \\
+    1 & 1 \\
+  \end{mymatrix}
+  \vect{v}_n.
+\end{equation*}
+Therefore, to compute $\vect{v}_{n+1}$, we only need to know
+$\vect{v}_n$ (and not $\vect{v}_{n-1}$). Let
+\begin{equation*}
+  A = \begin{mymatrix}{rr}
+    0 & 1 \\
+    1 & 1 \\
+  \end{mymatrix}.
+\end{equation*}
+Since $\vect{v}_n$ is obtained from $\vect{v}_0$ by applying the
+matrix $A$ $n$ times, we have $\vect{v}_n = A^n\,\vect{v}_0$ for all
+$n\geq 0$. We can therefore get a formula for $\vect{v}_n$, and thus
+for $F_n$, by diagonalizing the matrix $A$.
+
+\begin{problem}{Diagonalizing $A$}{fibonacci-diagonalize}
+  Diagonalize the matrix
+  $A=\begin{mymatrix}{rr} 0 & 1 \\ 1 & 1 \end{mymatrix}$.
+\end{problem}
+
+\begin{solution}
+  The characteristic polynomial is
+  \begin{equation*}
+    p(\eigenvar) =
+    \begin{absmatrix}{cc}
+      -\eigenvar & 1 \\
+      1 & 1-\eigenvar \\
+    \end{absmatrix}
+    = (-\eigenvar)(1-\eigenvar) - 1
+    = \eigenvar^2 - \eigenvar - 1.
+  \end{equation*}
+  The eigenvalues are the roots of the characteristic polynomial. We
+  find them by using the quadratic formula. The eigenvalues are
+  \begin{equation*}
+    \eigenvar_1 = \frac{1+\sqrt{5}}{2}
+    \quad\mbox{and}\quad
+    \eigenvar_2 = \frac{1-\sqrt{5}}{2}.
+  \end{equation*}
+  To simplify later calculations, we note that
+  $\eigenvar_1+\eigenvar_2 = 1$, or equivalently,
+  \begin{equation}\label{eqn:fibonacci-1}
+    1-\eigenvar_1 = \eigenvar_2.
+  \end{equation}
+  We also note that
+  $\eigenvar_1\eigenvar_2 = -1$, or equivalently,
+  \begin{equation}\label{eqn:fibonacci-2}
+    \eigenvar_2 = -\frac{1}{\eigenvar_1}.
+  \end{equation}
+  To find the eigenvector corresponding to the eigenvalue $\eigenvar_1$,
+  we solve the equation
+  \begin{equation*}
+    \begin{mymatrix}{cc}
+      -\eigenvar_1 & 1 \\
+      1 & 1-\eigenvar_1 \\
+    \end{mymatrix}
+    \vect{v} = \vect{0}.
+  \end{equation*}
+  By {\eqref{eqn:fibonacci-1}} and {\eqref{eqn:fibonacci-2}}, this is
+  equivalent to
+  \begin{equation*}
+    \begin{mymatrix}{cc}
+      -\eigenvar_1 & 1 \\
+      0 & -\frac{1}{\eigenvar_1} \\
+    \end{mymatrix}
+    \vect{v} = \vect{0},
+  \end{equation*}
+  and we find the basic solution
+  \begin{equation*}
+    \vect{u} = \begin{mymatrix}{c} 1 \\ \eigenvar_1 \end{mymatrix}.
+  \end{equation*}
+  By a similar method, we find that the basic eigenvector
+  corresponding to the eigenvalue $\eigenvar_2$ is
+  \begin{equation*}
+    \vect{w} = \begin{mymatrix}{c} 1 \\ \eigenvar_2 \end{mymatrix}.
+  \end{equation*}
+  Therefore, by Theorem~\ref{eigenvectors-and-diagonalizable}, $A$ is
+  diagonalizable, and we have $P^{-1}AP=D$, where
+  \begin{equation*}
+    P = \begin{mymatrix}{cc}
+      1 & 1 \\
+      \eigenvar_1 & \eigenvar_2 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    D = \begin{mymatrix}{cc}
+      \eigenvar_1 & 0 \\
+      0 & \eigenvar_2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  For later reference, we note that the inverse of $P$ is given by
+  \begin{equation*}
+    P^{-1} =
+    \frac{1}{\sqrt{5}} \begin{mymatrix}{cc}
+      -\eigenvar_2 & 1 \\
+      \eigenvar_1 & -1 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+We are now ready to find our formula for the $n\th$ Fibonacci number.
+
+\begin{problem}{Solving the recurrence}{fibonacci-formula}
+  Find a formula for the $n\th$ Fibonacci number.
+\end{problem}
+
+\begin{solution}
+  Since
+  \begin{equation*}
+    \vect{v}_n = \begin{mymatrix}{c} F_n \\ F_{n+1} \end{mymatrix},
+  \end{equation*}
+  we know that the $n\th$ Fibonacci number is the first component of
+  $\vect{v}_n$, i.e.,
+  \begin{equation*}
+    F_n = \begin{mymatrix}{cc}1 & 0\end{mymatrix}\vect{v}_n.
+  \end{equation*}
+  Putting together all of the above calculations, we then have:
+  \begin{eqnarray*}
+    F_n
+    &=& \begin{mymatrix}{cc}1 & 0\end{mymatrix}\vect{v}_n \\
+    &=& \begin{mymatrix}{cc}1 & 0\end{mymatrix}A^n\,\vect{v}_0 \\
+    &=& \begin{mymatrix}{cc}1 & 0\end{mymatrix}PD^nP^{-1}\,\vect{v}_0 \\
+    &=& \begin{mymatrix}{cc}1 & 0\end{mymatrix}
+        \begin{mymatrix}{cc} 1 & 1 \\ \eigenvar_1 & \eigenvar_2 \end{mymatrix}
+        \begin{mymatrix}{cc} \eigenvar_1^n & 0 \\ 0 & \eigenvar_2^n \end{mymatrix}
+        \frac{1}{\sqrt{5}}
+        \begin{mymatrix}{cc} -\eigenvar_2 & 1 \\ \eigenvar_1 & -1 \end{mymatrix}
+        \begin{mymatrix}{c} 0 \\ 1 \end{mymatrix} \\
+    &=& \frac{1}{\sqrt{5}}
+        \begin{mymatrix}{cc}1 & 1\end{mymatrix}
+        \begin{mymatrix}{cc} \eigenvar_1^n & 0 \\ 0 & \eigenvar_2^n \end{mymatrix}
+        \begin{mymatrix}{c} 1 \\ -1 \end{mymatrix} \\
+    &=& \frac{1}{\sqrt{5}} (\eigenvar_1^n - \eigenvar_2^n).
+  \end{eqnarray*}
+  So the $n\th$ Fibonacci number is
+  \begin{equation*}
+    F_n
+    ~=~ \frac{1}{\sqrt{5}} (\eigenvar_1^n - \eigenvar_2^n)
+    ~=~ \frac{1}{\sqrt{5}}
+    \paren{\paren{\frac{1+\sqrt{5}}{2}}^n - \paren{\frac{1-\sqrt{5}}{2}}^n}.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{Computing the $100\th$ Fibonacci number}{fibonacci-100}
+  Calculate the $100\th$ Fibonacci number without using the recurrence.
+\end{example}
+
+\begin{solution}
+  Note that this calculation requires about 25 digits of precision to
+  give the correct result. We
+  have
+  \begin{eqnarray*}
+    F_{100}
+    &=& \frac{1}{\sqrt{5}} (\eigenvar_1^{100} - \eigenvar_2^{100}) \\
+    &=& \frac{1}{\sqrt{5}} (1.6180339887498948482045868^{100} - (-0.6180339887498948482045868)^{100}) \\
+    &=& 354224848179261915075.
+  \end{eqnarray*}
+\end{solution}
+
+We can use the same method to solve other linear recurrences. Here is
+another example:
+
+\begin{example}{Solving a recurrence}{recurrence}
+  Consider the sequence of number defined by the recurrence
+  \begin{equation*}
+    \begin{array}{l@{~}c@{~}l}
+      b_0 &=& 1, \\
+      b_1 &=& 2, \\
+      b_{n+2} &=& 6b_{n} + b_{n+1}, \quad\mbox{for all $n\geq 0$.}\\
+    \end{array}
+  \end{equation*}
+  Find the first 5 members of this sequence. Then solve the recurrence
+  and find $b_{20}$.
+\end{example}
+
+\begin{solution}
+  The first 5 members of the sequence are:
+  \begin{equation*}
+    \begin{array}{l@{~}c@{~}l}
+      b_0 &=& 1, \\
+      b_1 &=& 2, \\
+      b_2 &=& 6b_0 + b_1 ~=~ 6 + 2 ~=~ 8, \\
+      b_3 &=& 6b_1 + b_2 ~=~ 12 + 8 ~=~ 20, \\
+      b_4 &=& 6b_2 + b_3 ~=~ 48 + 20 ~=~ 68. \\
+    \end{array}
+  \end{equation*}
+  To solve the recurrence, let
+  \begin{equation*}
+    \vect{w}_n = \begin{mymatrix}{c} b_n \\ b_{n+1} \end{mymatrix}, 
+  \end{equation*}
+  so that for all $n\geq 0$,
+  \begin{equation*}
+    \vect{w}_{n+1}
+    = \begin{mymatrix}{c} b_{n+1} \\ b_{n+2} \end{mymatrix}
+    = \begin{mymatrix}{c} b_{n+1} \\ 6b_n + b_{n+1} \end{mymatrix}
+    = \begin{mymatrix}{rr}
+      0 & 1 \\
+      6 & 1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{c} b_n \\ b_{n+1} \end{mymatrix}
+    = \begin{mymatrix}{rr}
+      0 & 1 \\
+      6 & 1 \\
+    \end{mymatrix}
+    \vect{w}_n.
+  \end{equation*}
+  We then diagonalize the matrix
+  \begin{equation*}
+    B = \begin{mymatrix}{rr}
+      0 & 1 \\
+      6 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The characteristic polynomial is
+  \begin{equation*}
+    p(\eigenvar) = \lambda^2 - \lambda - 6,
+  \end{equation*}
+  with roots $\lambda=-2$ and $\lambda=3$. The respective eigenvectors
+  are 
+  \begin{equation*}
+    \begin{array}{ll}
+      \vect{v} = \begin{mymatrix}{c} 1 \\ -2 \end{mymatrix}
+        &\quad\mbox{for the eigenvalue $\lambda=-2$,}\\\\[-2ex]
+      \vect{u} = \begin{mymatrix}{c} 1 \\ 3 \end{mymatrix}
+        &\quad\mbox{for the eigenvalue $\lambda=3$.}
+    \end{array}
+  \end{equation*}
+  Therefore, $B = PDP^{-1}$, where
+  \begin{equation*}
+    P = \begin{mymatrix}{cc}
+      1 & 1 \\
+      -2 & 3 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    D = \begin{mymatrix}{cc}
+      -2 & 0 \\
+      0 & 3 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The inverse of $P$ is
+  \begin{equation*}
+    P^{-1} =
+    \frac{1}{5}
+    \begin{mymatrix}{cc}
+      3 & -1 \\
+      2 &  1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Finally, we use this information to solve the recurrence:
+  \begin{eqnarray*}
+    b_n
+    &=& \begin{mymatrix}{cc} 1 & 0 \end{mymatrix}\vect{w}_n \\
+    &=& \begin{mymatrix}{cc} 1 & 0 \end{mymatrix}B^n\,\vect{w}_0 \\
+    &=& \begin{mymatrix}{cc} 1 & 0 \end{mymatrix}PD^nP^{-1}\,\vect{w}_0 \\
+    &=& \begin{mymatrix}{cc} 1 & 0 \end{mymatrix}
+        \begin{mymatrix}{cc} 1 & 1 \\ -2 & 3 \end{mymatrix}
+        \begin{mymatrix}{cc} (-2)^n & 0 \\ 0 & 3^n \end{mymatrix}
+        \frac{1}{5}
+        \begin{mymatrix}{cc} 3 & -1 \\ 2 &  1 \end{mymatrix}
+        \begin{mymatrix}{c} 1 \\ 2 \end{mymatrix} \\
+    &=& \frac{1}{5}
+        \begin{mymatrix}{cc}1 & 1\end{mymatrix}
+        \begin{mymatrix}{cc} (-2)^n & 0 \\ 0 & 3^n \end{mymatrix}
+        \begin{mymatrix}{c} 1 \\ 4 \end{mymatrix} \\
+    &=& \frac{(-2)^n + 4\cdot 3^n}{5}
+  \end{eqnarray*}
+  Finally, we calculate
+  \begin{equation*}
+    b_{20}
+    = \frac{(-2)^{20} + 4\cdot 3^{20}}{5}
+    = \frac{1048576 + 4\cdot 3486784401}{5}
+    = 2789637236.
+  \end{equation*}
+  
+\end{solution}
