@@ -1,5 +1,153 @@
 \section{Application: Systems of linear differential equations}
 
+In this section, we use some concepts from calculus. Recall that if
+$y=f(x)$ is a function, then $y' = f'(x)$ is its derivative%
+\index{derivative} and $y'' = f''(x)$ is its second derivative.  For
+example,
+\begin{equation*}
+  \begin{array}{c@{~}c@{~}c}
+    y &=& \sin(x),\\
+    y' &=& \cos(x),\\
+    y''&=& -\sin(x).\\
+  \end{array}
+\end{equation*}
+Note that if $y=\sin(x)$, the function $y''$ is exactly the negative
+of $y$, i.e.,
+\begin{equation}
+  y'' = -y.
+\end{equation}
+This last equation is called a \textbf{differential equation}%
+\index{equation!differential|see{differential equation}}%
+\index{differential equation}. Unlike an ordinary equation, which is
+about an unknown {\em number}, a differential equation is about an
+unknown {\em function}. Typically, a differential equation mentions
+the function and one or more of its derivatives. A differential
+equation that only mentions the first derivative $y'$ is called a
+\textbf{first-order}%
+\index{differential equation!first order} differential equation. A
+differential equation that also mentions the second derivative $y''$
+is called a \textbf{second-order}%
+\index{differential equation!second order} differential equation.
+
+We say that the function $y=\sin(x)$ is a \textbf{solution}%
+\index{differential equation!solution} of the differential equation
+$y'' = -y$. It is not the only solution. Another solution is
+$y=\cos(x)$, because in that case, $y''=-\cos(x)$, and therefore
+$y''=-y$. From calculus, we know the the \textbf{general solution} to
+the differential equation $y'' = -y$ is given by
+\begin{equation*}
+  y = a\sin(x) + b\cos(x),
+\end{equation*}
+where $a$ and $b$ are any real numbers, i.e., parameters. Using the
+terminology of linear algebra, we can say that the general solution to
+the equation $y'' = -y$ is a {\em linear combination} of the basic
+solutions $y=\sin(x)$ and $y=\cos(x)$. More generally, we have the
+following theorem from calculus:
+
+\begin{theorem}{Solutions of $y''=-ky$}{differential-equation}
+  Let $k$ be a positive real number.  The general solution of the
+  differential equation $y'' = -ky$ is
+  \begin{equation*}
+    y = a\sin(\sqrt{k}x) + b\cos(\sqrt{k}x).
+  \end{equation*}
+\end{theorem}
+
+\begin{proof}
+  We can check that it is a solution. By the chain rule, we have:
+  \begin{equation*}
+    \begin{array}{c@{~~}c@{~~}l}
+      y &=& a\sin(\sqrt{k}x) + b\cos(\sqrt{k}x), \\
+      y' &=& a\sqrt{k}\cos(\sqrt{k}x) - b\sqrt{k}\sin(\sqrt{k}x), \\
+      y'' &=& -ak\sin(\sqrt{k}x) - bk\cos(\sqrt{k}x). \\
+    \end{array}
+  \end{equation*}
+  Therefore $y''=-ky$. The fact that it is the most general solution
+  is proved in a calculus course.
+\end{proof}
+
+One of the reasons that differential equations are important is that
+the \textbf{laws of nature}%
+\index{laws of nature} often take the form of differential equations.
+For example, \textbf{Newton's second law of motion} asserts that the
+vector sum of the forces $F$ on an object is equal to the mass $m$ of
+the object multiplied by the acceleration $y''$ of the object, or in
+formulas:
+\begin{equation*}
+  F = my''.
+\end{equation*}
+This is a differential equation. In physics, forces are caused by many
+phenomena, but in the following examples, we will focus on forces
+caused by \textbf{springs}%
+\index{spring (mechanics)}. A spring is an object (often in the shape
+of a coil) made from an elastic material, which returns to its
+original shape after being stretched or compressed. The force exerted
+by a spring follows \textbf{Hooke's law}%
+\index{spring (mechanics)!Hooke's law}%
+\index{Hooke's law}, which states that
+\begin{equation*}
+  F = -k x.
+\end{equation*}
+Here $x$ is the \textbf{extension}%
+\index{spring (mechanics)!extension} of the spring, i.e., the change
+in length of the spring, relative to its relaxed (natural)
+length. Also, $k$ is a constant called the \textbf{spring constant}%
+\index{spring (mechanics)!spring constant}.
+
+\begin{example}{A mass and a spring}{mass-spring}
+  Consider a train car of mass $1\kg$ on a track, connected to a
+  stationary object by a spring with spring constant
+  $k=1\frac{\SI{N}}{\m}$. Write down the equation of motion and then
+  solve it.
+  \begin{center}
+    \begin{tikzpicture}
+      \draw[fill=white] (-0.5,0) -- (-0.5,2) -- (0,2) -- (0,0);
+      \draw[thick] (-2,0) -- (5,0);
+      \draw[fill=white] (2,0.5) rectangle node {$1\kg$} (4,1.5);
+      \draw[fill=white] (2.5,0.25) circle (0.25);
+      \draw[fill=white] (3.5,0.25) circle (0.25);
+      \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
+      -- ++(0.2,-0.6) -- ++(0.2,0.6)
+      -- ++(0.2,-0.6) -- ++(0.2,0.6)
+      -- ++(0.2,-0.6) -- ++(0.2,0.6)
+      -- ++(0.2,-0.6) -- ++(0.1,0.3)
+      -- (2,1);
+      \draw (1,1.3) node[above] {$k$};
+    \end{tikzpicture}
+  \end{center}
+\end{example}
+
+\begin{solution}
+  Let us use the variables $t$ for time and $x$ for the horizontal
+  displacement of the car, counted positively in the right direction.
+  Let us further choose the coordinate system so that $x=0$
+  corresponds to the position of the car when the spring is in its
+  relaxed state.
+\end{solution}
+
+Consider the following mechanical system: three train cars of mass
+$1\kg$, $2\kg$, and $1\kg$ are aligned on a track and connected by
+springs. Each spring has the same spring constant
+$k=1\frac{\SI{N}}{\m}$.
+\begin{equation*}
+  \begin{tikzpicture}
+    \draw[fill=blue!10] (0,0) rectangle (2,1);
+  \end{tikzpicture}
+\end{equation*}
+
+
+
+% ======================================================================
+\subsection{CONTINUE HERE...}
+
+  A
+differential equation of the form $ay''+by'+cy = 0$ is called a
+(homogeneous second order) \textbf{linear differential equation}%
+\index{differential equation!linear}. Note
+that the equation {\eqref{eqn:differential1}} is of this form, with
+$a=1$, $b=0$, and $c=1$. In this section, we will use linear algebra,
+and in particular diagonalization, to solve systems of homogeneous
+linear differential equations.
+
 This type of behavior along with complex eigenvalues is typical of the
 deviations from an equilibrium point in the Lotka Volterra system of
 differential equations which is a famous model for predator-prey
