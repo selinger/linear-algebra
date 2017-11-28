@@ -14,11 +14,11 @@ example,
     y''&=& -\sin(x).\\
   \end{array}
 \end{equation*}
-Note that if $y=\sin(x)$, the function $y''$ is exactly the negative
-of $y$, i.e.,
-\begin{equation}
+Note that if $y=\sin(x)$, the second derivative $y''$ is exactly the
+negative of $y$, i.e.,
+\begin{equation*}
   y'' = -y.
-\end{equation}
+\end{equation*}
 This last equation is called a \textbf{differential equation}%
 \index{equation!differential|see{differential equation}}%
 \index{differential equation}. Unlike an ordinary equation, which is
@@ -31,7 +31,7 @@ equation that only mentions the first derivative $y'$ is called a
 differential equation that also mentions the second derivative $y''$
 is called a \textbf{second-order}%
 \index{differential equation!second order} differential equation.
-If the equation is a linear equation of $y$ and its derivatives, it is
+If the equation is a linear function of $y$ and its derivatives, it is
 called a \textbf{linear differential equation}%
 \index{linear differential equation}%
 \index{differential equation!linear}.
@@ -40,84 +40,208 @@ We say that the function $y=\sin(x)$ is a \textbf{solution}%
 \index{differential equation!solution} of the differential equation
 $y'' = -y$. It is not the only solution. Another solution is
 $y=\cos(x)$, because in that case, $y''=-\cos(x)$, and therefore
-$y''=-y$. From calculus, we know the the \textbf{general solution} to
+$y''=-y$. From calculus, we know that the \textbf{general solution} to
 the differential equation $y'' = -y$ is given by
 \begin{equation*}
   y = a\sin(x) + b\cos(x),
 \end{equation*}
 where $a$ and $b$ are any real numbers, i.e., parameters. Using the
-terminology of linear algebra, we can say that the general solution to
-the equation $y'' = -y$ is a {\em linear combination} of the basic
-solutions $y=\sin(x)$ and $y=\cos(x)$. More generally, we have the
-following theorem from calculus:
+terminology of linear algebra, we can say that the general solution of
+the equation $y'' = -y$ is a \textbf{linear combination}%
+\index{linear combination!of basic solutions!of differential equation}
+of the \textbf{basic solutions}%
+\index{basic solution!of differential equation}%
+\index{differential equation!basic solution} $y=\sin(x)$ and
+$y=\cos(x)$. More generally, we have the following theorem from
+calculus:
 
 \begin{theorem}{Solutions of $y''=-qy$}{differential-equation}
   Let $q$ be a positive real number.  The differential equation
   \begin{equation*}
-    \begin{array}{l@{~~}l@{~}clll}
-    y'' &=& -qy &\quad\mbox{has general solution}\quad\quad &
-    y = a\sin(\sqrt{q}\,x) + b\cos(\sqrt{q}\,x),\\
-    y'' &=& 0 &\quad\mbox{has general solution}\quad &
-    y = a + bx, \\
-    y'' &=& qy &\quad\mbox{has general solution}\quad &
-    y = ae^{\sqrt{q}\,x} + be^{-\sqrt{q}\,x}, \\
+    \begin{array}{l@{~~}l@{~}clllll}
+    y'' &=& -qy &\quad\mbox{has basic solutions}\quad\quad &
+    y = \sin(\sqrt{q}\,x) & \mbox{and} & y = \cos(\sqrt{q}\,x),\\
+    y'' &=& 0 &\quad\mbox{has basic solutions}\quad\quad &
+    y = 1 & \mbox{and} & y = x, \\
+    y'' &=& qy &\quad\mbox{has basic solutions}\quad\quad &
+    y = e^{\sqrt{q}\,x} & \mbox{and} & y = e^{-\sqrt{q}\,x}. \\
     \end{array}
   \end{equation*}
-  where $a$ and $b$ are parameters.
 \end{theorem}
 
 \begin{proof}
-  We can check that each function is a solution of the corresponding
-  linear equation. For $y = a\sin(\sqrt{q}\,x) + b\cos(\sqrt{q}\,x)$,
-  we have
+  By taking derivatives, it is easy to check that each of the six
+  functions is a solution of the corresponding differential
+  equation. For example, for $y=\sin(\sqrt{q}\,x)$, we have
+  $y'=\sqrt{q}\cos(\sqrt{q}\,x)$ and
+  $y''=-q\sin(\sqrt{q}\,x)$. Therefore, $y''=-qy$.
+
+  Note that we can obtain the general solution of each of the
+  differential equations as a linear combination of the basic
+  solutions. Thus, the general solution of $y''=-qy$ is
   \begin{equation*}
-    \begin{array}{c@{~~}c@{~~}l}
-      y &=& a\sin(\sqrt{q}x) + b\cos(\sqrt{q}x), \\
-      y' &=& a\sqrt{q}\cos(\sqrt{q}x) - b\sqrt{q}\sin(\sqrt{q}x), \\
-      y'' &=& -aq\sin(\sqrt{q}x) - bq\cos(\sqrt{q}x), \\
-    \end{array}
+      y = a\sin(\sqrt{q}x) + b\cos(\sqrt{q}x),
   \end{equation*}
-  and therefore $y''=-qy$. For $y=a+bx$, we have
+  the general solution of $y''=0$ is
   \begin{equation*}
-    \begin{array}{c@{~~}c@{~~}l}
-      y &=& a + bx \\
-      y' &=& b \\
-      y'' &=& 0.
-    \end{array}
+      y = a + bx,
   \end{equation*}
-  And for $y = ae^{\sqrt{q}\,x} + be^{-\sqrt{q}\,x}$, we have
+  and the general solution of $y''=qy$ is
   \begin{equation*}
-    \begin{array}{c@{~~}c@{~~}l}
-      y &=& ae^{\sqrt{q}\,x} + be^{-\sqrt{q}\,x}, \\
-      y' &=& a\sqrt{q}e^{\sqrt{q}\,x} - b\sqrt{q}e^{-\sqrt{q}\,x}, \\
-      y'' &=& aqe^{\sqrt{q}\,x} + bqe^{-\sqrt{q}\,x}, \\
-    \end{array}
+      y = ae^{\sqrt{q}\,x} + be^{-\sqrt{q}\,x},
   \end{equation*}
-  and therefore $y''=qy$. The fact that each of these solutions is the
-  most general one is proved in a calculus course.
+  where $a$ and $b$ are parameters. The fact that each of these
+  solutions is indeed the most general one is proved in a calculus
+  course.
 \end{proof}
 
 % ----------------------------------------------------------------------
 \subsection{Systems of linear differential equations}
 
-Just like a system of linear equations consists of several equations
-about several variables, a system of differential equations consists
-of several equations about several unknown functions and their
-derivatives. The following example shows how we can solve a system of
-linear differential equations using diagonalization.
+In the same way that a system of linear equations consists of several
+linear equations about several variables, a \textbf{system of
+  differential equations}%
+\index{system of differential equations}%
+\index{differential equation!system of} consists of several
+differential equations about several unknown functions and their
+derivatives. For example, the following is a system of second order
+linear differential equations:
+\begin{equation*}
+  \begin{array}{c@{~}c@{~}r@{~}r@{~}r}
+    y'' &=& 4y &-& 3z, \\
+    z'' &=& 6y &-& 5z. \\
+  \end{array}
+\end{equation*}
+In reading these equations, it is important to understand that we are
+looking for two unknown {\em functions} $y=f(x)$ and $z=g(x)$ such
+that their second derivatives satisfy both of the equations
+$y''=2y+z$ and $z''=-4y-3z$. The reason that this is in principle a
+difficult problem is that the equation for $y''$ mentions not only
+$y$, but also $z$, and the equation for $z''$ mentions not only $z$,
+but also $y$. Therefore, it is not possible to solve this system one
+function at a time. We say that the variables $y$ and $z$ are
+\textbf{coupled}%
+\index{coupled variables}%
+\index{differential equation!coupled variables}.
+
+The following example shows how we can use diagonalization to decouple
+the variables in a system of differential equations. This makes it
+possible to solve the equations.
 
 \begin{example}{A system of linear differential equations}{system-differential2}
-  Solve the system of linear differential equations
+  Solve the following system of second order linear differential equations:
   \begin{equation*}
     \begin{array}{c@{~}c@{~}r@{~}r@{~}r}
-      y'' &=& 2y &+& z, \\
-      z'' &=& -4y &-& 3z. \\
+      y'' &=& 4y &-& 3z, \\
+      z'' &=& 6y &-& 5z. \\
     \end{array}
   \end{equation*}
-  
 \end{example}
 
-
+\begin{solution}
+  We start by writing the system in matrix form:
+  \begin{equation*}
+    \begin{mymatrix}{c} y'' \\ z'' \end{mymatrix}
+    =
+    \begin{mymatrix}{rr} 4 & -3 \\ 6 & -5 \end{mymatrix}
+    \begin{mymatrix}{c} y \\ z \end{mymatrix}.
+  \end{equation*}
+  Let us write
+  \begin{equation*}
+    \vect{v} = \begin{mymatrix}{c} y \\ z \end{mymatrix}
+    \quad\mbox{and}\quad
+    A = \begin{mymatrix}{rr} 4 & -3 \\ 6 & -5 \end{mymatrix}.
+  \end{equation*}
+  With these notations, the system of differential equations take the
+  form
+  \begin{equation}\label{eqn:system-differential2-1}
+    \vect{v}'' = A\vect{v}.
+  \end{equation}
+  Our next step is to diagonalize the matrix $A$. Following the usual
+  diagonalization procedure, we find that $A=PDP^{-1}$, where
+  \begin{equation*}
+    P = \begin{mymatrix}{rr} 1 & 1 \\ 1 & 2 \end{mymatrix}
+    \quad\mbox{and}\quad
+    D = \begin{mymatrix}{rr} 1 & 0 \\ 0 & -2 \end{mymatrix}.
+  \end{equation*}
+  With this, our equation takes the form
+  $\vect{v}'' = PDP^{-1}\vect{v}$, which we can also write as
+  $P^{-1}\vect{v}'' = DP^{-1}\vect{v}$. We now introduce a
+  \textbf{change of variables}%
+  \index{change of variables}%
+  \index{differential equation!change of variables}. Let
+  $\vect{w} = P^{-1}\vect{v}$. Then our system of differential
+  equations can be written as
+  \begin{equation}\label{eqn:system-differential2-2}
+    \vect{w}'' = D\vect{w}.
+  \end{equation}
+  Note that the equation {\eqref{eqn:system-differential2-2}} is of
+  exactly the same form as the equation
+  {\eqref{eqn:system-differential2-1}}, but with the crucial
+  difference that the matrix in {\eqref{eqn:system-differential2-2}}
+  is diagonal. Let us give a name to the components of $\vect{w}$:
+  \begin{equation*}
+    \vect{w} = \begin{mymatrix}{c} u \\ v \end{mymatrix}.
+  \end{equation*}
+  Then the equation {\eqref{eqn:system-differential2-2}} can be
+  written as
+  \begin{equation*}
+    \begin{mymatrix}{c} u'' \\ v'' \end{mymatrix}
+    =
+    \begin{mymatrix}{rr} 1 & 0 \\ 0 & -2 \end{mymatrix}
+    \begin{mymatrix}{c} u \\ v \end{mymatrix},
+  \end{equation*}
+  or equivalently,
+  \begin{equation*}
+    \begin{array}{c@{~}c@{~}c}
+      u'' &=& u, \\
+      v'' &=& -2v. \\
+    \end{array}
+  \end{equation*}
+  Note that the variables $u$ and $v$ are not coupled! This happened
+  because the matrix $D$ is diagonal. We can therefore use
+  Theorem~\ref{thm:differential-equation} to solve the equations for
+  $u$ and for $v$ separately. By
+  Theorem~\ref{thm:differential-equation}, the general solution for
+  the equation $u'' = u$ is
+  \begin{equation*}
+    u = a e^{x} + b e^{-x},
+  \end{equation*}
+  and the general solution for the equation $v''=-2v$ is
+  \begin{equation*}
+    v = c\sin(\sqrt{2}\,x) + d\cos(\sqrt{2}\,x).
+  \end{equation*}
+  Here, $a$, $b$, $c$, and $d$ are parameters. Therefore, the general
+  solution for {\eqref{eqn:system-differential2-2}} is
+  \begin{equation*}
+    \vect{w} = \begin{mymatrix}{c} u \\ v \end{mymatrix}
+    = \begin{mymatrix}{c}
+      a e^{x} + b e^{-x} \\
+      c\sin(\sqrt{2}\,x) + d\cos(\sqrt{2}\,x) \\
+    \end{mymatrix}
+    = a\,\begin{mymatrix}{c} e^{x} \\ 0 \end{mymatrix}
+    + b\,\begin{mymatrix}{c} e^{-x} \\ 0 \end{mymatrix}
+    + c\,\begin{mymatrix}{c} 0 \\ \sin(\sqrt{2}\,x) \end{mymatrix}
+    + d\,\begin{mymatrix}{c} 0 \\ \cos(\sqrt{2}\,x) \end{mymatrix}.
+  \end{equation*}
+  We have therefore found the four basic solution of
+  {\eqref{eqn:system-differential2-2}}.  But what about our original
+  equation {\eqref{eqn:system-differential2-1}}? We can undo our
+  change of variables. Since $\vect{w} = P^{-1}\vect{v}$, we have
+  $\vect{v}=P\vect{w}$. Therefore, the general solution to our
+  original system of differential equations is
+  \begin{eqnarray*}
+    \vect{v} ~=~ P\vect{w}
+    &=& a\,P\begin{mymatrix}{c} e^{x} \\ 0 \end{mymatrix}
+    + b\,P\begin{mymatrix}{c} e^{-x} \\ 0 \end{mymatrix}
+    + c\,P\begin{mymatrix}{c} 0 \\ \sin(\sqrt{2}\,x) \end{mymatrix}
+    + d\,P\begin{mymatrix}{c} 0 \\ \cos(\sqrt{2}\,x) \end{mymatrix}\\
+    &=& a\,\begin{mymatrix}{c} e^{x} \\ e^{x} \end{mymatrix}
+    + b\,\begin{mymatrix}{c} e^{-x} \\ e^{-x} \end{mymatrix}
+    + c\,\begin{mymatrix}{c} \sin(\sqrt{2}\,x) \\ 2\sin(\sqrt{2}\,x) \end{mymatrix}
+    + d\,\begin{mymatrix}{c} \cos(\sqrt{2}\,x) \\ 2\cos(\sqrt{2}\,x) \end{mymatrix}.
+  \end{eqnarray*}
+\end{solution}
 
 % ----------------------------------------------------------------------
 \subsection{Some physics}
