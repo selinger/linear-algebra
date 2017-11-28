@@ -1,10 +1,10 @@
 \section{Application: Systems of linear differential equations}
 
 % ----------------------------------------------------------------------
-\subsection{Differential equations}
+\subsection{Linear differential equations}
 
-In this section, we use some concepts from calculus. Recall that if
-$y=f(x)$ is a function, then $y' = f'(x)$ is its derivative%
+Recall from calculus that if $y=f(x)$ is a function, then $y' = f'(x)$
+is its derivative%
 \index{derivative} and $y'' = f''(x)$ is its second derivative.  For
 example,
 \begin{equation*}
@@ -31,6 +31,10 @@ equation that only mentions the first derivative $y'$ is called a
 differential equation that also mentions the second derivative $y''$
 is called a \textbf{second-order}%
 \index{differential equation!second order} differential equation.
+If the equation is a linear equation of $y$ and its derivatives, it is
+called a \textbf{linear differential equation}%
+\index{linear differential equation}%
+\index{differential equation!linear}.
 
 We say that the function $y=\sin(x)$ is a \textbf{solution}%
 \index{differential equation!solution} of the differential equation
@@ -48,25 +52,72 @@ solutions $y=\sin(x)$ and $y=\cos(x)$. More generally, we have the
 following theorem from calculus:
 
 \begin{theorem}{Solutions of $y''=-qy$}{differential-equation}
-  Let $c$ be a positive real number.  The general solution of the
-  differential equation $y'' = -qy$ is
+  Let $q$ be a positive real number.  The differential equation
   \begin{equation*}
-    y = a\sin(\sqrt{q}\,x) + b\cos(\sqrt{q}\,x).
+    \begin{array}{l@{~~}l@{~}clll}
+    y'' &=& -qy &\quad\mbox{has general solution}\quad\quad &
+    y = a\sin(\sqrt{q}\,x) + b\cos(\sqrt{q}\,x),\\
+    y'' &=& 0 &\quad\mbox{has general solution}\quad &
+    y = a + bx, \\
+    y'' &=& qy &\quad\mbox{has general solution}\quad &
+    y = ae^{\sqrt{q}\,x} + be^{-\sqrt{q}\,x}, \\
+    \end{array}
   \end{equation*}
+  where $a$ and $b$ are parameters.
 \end{theorem}
 
 \begin{proof}
-  We can check that it is a solution. By the chain rule, we have:
+  We can check that each function is a solution of the corresponding
+  linear equation. For $y = a\sin(\sqrt{q}\,x) + b\cos(\sqrt{q}\,x)$,
+  we have
   \begin{equation*}
     \begin{array}{c@{~~}c@{~~}l}
       y &=& a\sin(\sqrt{q}x) + b\cos(\sqrt{q}x), \\
       y' &=& a\sqrt{q}\cos(\sqrt{q}x) - b\sqrt{q}\sin(\sqrt{q}x), \\
-      y'' &=& -aq\sin(\sqrt{q}x) - bq\cos(\sqrt{q}x). \\
+      y'' &=& -aq\sin(\sqrt{q}x) - bq\cos(\sqrt{q}x), \\
     \end{array}
   \end{equation*}
-  Therefore $y''=-qy$. The fact that it is the most general solution
-  is proved in a calculus course.
+  and therefore $y''=-qy$. For $y=a+bx$, we have
+  \begin{equation*}
+    \begin{array}{c@{~~}c@{~~}l}
+      y &=& a + bx \\
+      y' &=& b \\
+      y'' &=& 0.
+    \end{array}
+  \end{equation*}
+  And for $y = ae^{\sqrt{q}\,x} + be^{-\sqrt{q}\,x}$, we have
+  \begin{equation*}
+    \begin{array}{c@{~~}c@{~~}l}
+      y &=& ae^{\sqrt{q}\,x} + be^{-\sqrt{q}\,x}, \\
+      y' &=& a\sqrt{q}e^{\sqrt{q}\,x} - b\sqrt{q}e^{-\sqrt{q}\,x}, \\
+      y'' &=& aqe^{\sqrt{q}\,x} + bqe^{-\sqrt{q}\,x}, \\
+    \end{array}
+  \end{equation*}
+  and therefore $y''=qy$. The fact that each of these solutions is the
+  most general one is proved in a calculus course.
 \end{proof}
+
+% ----------------------------------------------------------------------
+\subsection{Systems of linear differential equations}
+
+Just like a system of linear equations consists of several equations
+about several variables, a system of differential equations consists
+of several equations about several unknown functions and their
+derivatives. The following example shows how we can solve a system of
+linear differential equations using diagonalization.
+
+\begin{example}{A system of linear differential equations}{system-differential2}
+  Solve the system of linear differential equations
+  \begin{equation*}
+    \begin{array}{c@{~}c@{~}r@{~}r@{~}r}
+      y'' &=& 2y &+& z, \\
+      z'' &=& -4y &-& 3z. \\
+    \end{array}
+  \end{equation*}
+  
+\end{example}
+
+
 
 % ----------------------------------------------------------------------
 \subsection{Some physics}
