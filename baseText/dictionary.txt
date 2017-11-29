@@ -20,7 +20,7 @@ bipoles
 Bogdan
 cardioid
 cauchy
-Cayley
+cayley
 cc
 centimeters
 chem
@@ -52,6 +52,8 @@ Dal
 Dalhousie
 de
 decomp
+decouple
+decoupled
 decrypt
 decryption
 def
@@ -72,6 +74,7 @@ DXYBJUWW
 EFNOR
 Ehsun
 eigen
+eigenfrequency
 eigenspace
 eigenvector
 eigenvectors
@@ -82,6 +85,7 @@ eqn
 equalities
 ERM
 etc
+exponentials
 échelle
 factorizations
 Farah
@@ -95,9 +99,11 @@ geo
 geomet
 gj
 GLFN
+hamilton
 Hermitian
 HL
 homo
+Hooke's
 hs
 https
 hyperplane
@@ -189,6 +195,7 @@ pt
 qr
 radian
 radians
+recurrere
 remix
 Reynold's
 rk
@@ -259,4 +266,5 @@ yscale
 yshift
 Zahedi
 ZBBRFVUPFVZLFHNTV
+zeroth
 ZRUJPZVAEJTWOXGJZV
