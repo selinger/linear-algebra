@@ -519,69 +519,13 @@ vary with time, i.e., they can both be functions of $t$.
     \end{equation*}
     This corresponds to a periodic oscillation of the train where the
     middle car is stationary, and the left car moves left when the
-    right car moves right. Each oscillation takes $2\pi/\sqrt{2}\approx
-    4.4$ seconds.
-    \begin{equation*}
-      \begin{tikzpicture}[scale=0.8, color=blue!50!black]
-        \draw[thick] (0,0) -- (14.4,0);
-        \begin{scope}[xshift=4cm]
-          \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
-          -- ++(0.2,-0.6) -- ++(0.2,0.6)
-          -- ++(0.2,-0.6) -- ++(0.2,0.6)
-          -- ++(0.2,-0.6) -- ++(0.2,0.6)
-          -- ++(0.2,-0.6) -- ++(0.1,0.3)
-          -- (2,1);
-        \end{scope}
-        \begin{scope}[xshift=8.4cm]
-          \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
-          -- ++(0.2,-0.6) -- ++(0.2,0.6)
-          -- ++(0.2,-0.6) -- ++(0.2,0.6)
-          -- ++(0.2,-0.6) -- ++(0.2,0.6)
-          -- ++(0.2,-0.6) -- ++(0.1,0.3)
-          -- (2,1);
-        \end{scope}
-        \begin{scope}[xshift=12.4cm,yshift=1cm]
-          \draw[color=red!50!black,fill=red!50]
-          (0,0.33) -- (0.5,0.33) -- (0.5,0.5) -- (1,0)
-          -- (0.5,-0.5) -- (0.5,-0.33) -- (0,-0.33);
-        \end{scope}
-        \begin{scope}[xshift=10.4cm,yshift=1cm]
-          \draw[color=green!30!black,fill=green!50]
-          (0,0.33) -- (-0.5,0.33) -- (-0.5,0.5) -- (-1,0)
-          -- (-0.5,-0.5) -- (-0.5,-0.33) -- (0,-0.33);
-        \end{scope}
-        \begin{scope}[xshift=4cm,yshift=1cm]
-          \draw[color=green!30!black,fill=green!50]
-          (0,0.33) -- (0.5,0.33) -- (0.5,0.5) -- (1,0)
-          -- (0.5,-0.5) -- (0.5,-0.33) -- (0,-0.33);
-        \end{scope}
-        \begin{scope}[xshift=2cm,yshift=1cm]
-          \draw[color=red!50!black,fill=red!50]
-          (0,0.33) -- (-0.5,0.33) -- (-0.5,0.5) -- (-1,0)
-          -- (-0.5,-0.5) -- (-0.5,-0.33) -- (0,-0.33);
-        \end{scope}
-        \begin{scope}
-          \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-          \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-          \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-        \end{scope}
-        \begin{scope}[xshift=4.2cm]
-          \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
-          \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-          \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-        \end{scope}
-        \begin{scope}[xshift=8.4cm]
-          \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-          \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-          \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-        \end{scope}
-      \end{tikzpicture}
-    \end{equation*}
-    Here is a ``movie'' showing the first oscillation:
+    right car moves right. Each oscillation takes
+    $2\pi/\sqrt{2}\approx 4.4$ seconds.  Here is a ``movie'' showing
+    one oscillation:
     \begin{equation*}
       \begin{tikzpicture}[scale=0.8, color=blue!50!black]
         \begin{scope}[yshift=0cm]
-          \draw (-1,1) node[left] {$t=0\s$};
+          \draw (-3,1) node[right] {$t=0\s$};
           \draw[thick] (0,0) -- (14.4,0);
           \begin{scope}[xshift=0cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
@@ -616,7 +560,7 @@ vary with time, i.e., they can both be functions of $t$.
           \end{scope}
         \end{scope}
         \begin{scope}[yshift=-2cm]
-          \draw (-1,1) node[left] {$t=1.1\s$};
+          \draw (-3,1) node[right] {$t=1.1\s$};
           \draw[thick] (0,0) -- (14.4,0);
           \begin{scope}[xshift=-1cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
@@ -651,7 +595,7 @@ vary with time, i.e., they can both be functions of $t$.
           \end{scope}
         \end{scope}
         \begin{scope}[yshift=-4cm]
-          \draw (-1,1) node[left] {$t=2.2\s$};
+          \draw (-3,1) node[right] {$t=2.2\s$};
           \draw[thick] (0,0) -- (14.4,0);
           \begin{scope}[xshift=0cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
@@ -686,7 +630,7 @@ vary with time, i.e., they can both be functions of $t$.
           \end{scope}
         \end{scope}
         \begin{scope}[yshift=-6cm]
-          \draw (-1,1) node[left] {$t=3.3\s$};
+          \draw (-3,1) node[right] {$t=3.3\s$};
           \draw[thick] (0,0) -- (14.4,0);
           \begin{scope}[xshift=1cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
@@ -721,7 +665,7 @@ vary with time, i.e., they can both be functions of $t$.
           \end{scope}
         \end{scope}
         \begin{scope}[yshift=-8cm]
-          \draw (-1,1) node[left] {$t=4.4\s$};
+          \draw (-3,1) node[right] {$t=4.4\s$};
           \draw[thick] (0,0) -- (14.4,0);
           \begin{scope}[xshift=0cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
@@ -755,8 +699,244 @@ vary with time, i.e., they can both be functions of $t$.
             -- ++(0.2,0);
           \end{scope}
         \end{scope}
+        \begin{scope}[xshift=3cm,yshift=1cm,rotate=-90]
+          \draw[ultra thick,red] (0,0) sin (2,-1) cos (4,0) sin (6,1) cos (8,0);
+        \end{scope}
+        \begin{scope}[xshift=7.2cm,yshift=1cm,rotate=-90]
+          \draw[ultra thick,red] (0,0) sin (2,0) cos (4,0) sin (6,0) cos (8,0);
+        \end{scope}
+        \begin{scope}[xshift=11.4cm,yshift=1cm,rotate=-90]
+          \draw[ultra thick,red] (0,0) sin (2,1) cos (4,0) sin (6,-1) cos (8,0);
+        \end{scope}
       \end{tikzpicture}
     \end{equation*}
+    The other basic solution, with $\cos$ instead of $\sin$, is the
+    same motion, just starting at a different offset in time. Note how
+    the eigenvector of $A$,
+    \begin{equation*}
+      \begin{mymatrix}{r} -1 \\ 0 \\ 1 \end{mymatrix},
+    \end{equation*}
+    describes the relative motion of the three cars, whereas the
+    corresponding eigenvalue, $\lambda=-2$, determines the frequency.
+  \item \textbf{Solutions for $u$:}
+    By Theorem~\ref{thm:differential-equation}, the basic solutions
+    for $v'' = -4v$ are
+    \begin{equation*}
+      v=\sin(2t)
+      \quad\mbox{and}\quad
+      v=\cos(2t).
+    \end{equation*}
+    This translates into the following basic solutions for $\vect{w}$:
+    \begin{equation*}
+      \vect{w}
+      = \sin(2t)\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}
+      \quad\mbox{and}\quad
+      \vect{w}
+      = \cos(2t)\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}.
+    \end{equation*}
+    We change this to the original variables using $\vect{v} =
+    P\vect{w}$, and get the basic solutions
+    \begin{equation*}
+      \vect{v} 
+      = \sin(2t)\begin{mymatrix}{r} 1 \\ -1 \\ 1 \end{mymatrix}
+      \quad\mbox{and}\quad
+      \vect{v}
+      = \cos(2t)\begin{mymatrix}{r} 1 \\ -1 \\ 1 \end{mymatrix}.
+    \end{equation*}
+    Writing the first of these basic solutions in the coordinates $x$,
+    $y$, and $z$, we get
+    \begin{equation*}
+      \begin{array}{c@{~~}c@{~}l}
+        x &=& ~~~\sin(2t), \\
+        y &=& -\sin(2t), \\
+        z &=& ~~~\sin(2t). \\
+      \end{array}
+    \end{equation*}
+    This corresponds to a periodic oscillation of the train where the
+    outer cars move right at the same time that the middle car moves
+    left. Each oscillation takes
+    $2\pi/2\approx 3.14$ seconds. Here is a ``movie'' of the motion:
+    \begin{equation*}
+      \begin{tikzpicture}[scale=0.8, color=blue!50!black]
+        \begin{scope}[yshift=0cm]
+          \draw (-3,1) node[right] {$t=0\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=0cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-2cm]
+          \draw (-3,1) node[right] {$t=0.79\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=-1cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=5.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=7.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=3cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.225,0.3)
+            -- ++(0.45,-0.6) -- ++(0.45,0.6)
+            -- ++(0.45,-0.6) -- ++(0.45,0.6)
+            -- ++(0.45,-0.6) -- ++(0.45,0.6)
+            -- ++(0.45,-0.6) -- ++(0.225,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-4cm]
+          \draw (-3,1) node[right] {$t=1.57\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=0cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-6cm]
+          \draw (-3,1) node[right] {$t=2.36\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=1cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=3.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=9.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=7.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.225,0.3)
+            -- ++(0.45,-0.6) -- ++(0.45,0.6)
+            -- ++(0.45,-0.6) -- ++(0.45,0.6)
+            -- ++(0.45,-0.6) -- ++(0.45,0.6)
+            -- ++(0.45,-0.6) -- ++(0.225,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-8cm]
+          \draw (-3,1) node[right] {$t=3.14\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=0cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[xshift=3cm,yshift=1cm,rotate=-90]
+          \draw[ultra thick,red] (0,0) sin (2,-1) cos (4,0) sin (6,1) cos (8,0);
+        \end{scope}
+        \begin{scope}[xshift=7.2cm,yshift=1cm,rotate=-90]
+          \draw[ultra thick,red] (0,0) sin (2,1) cos (4,0) sin (6,-1) cos (8,0);
+        \end{scope}
+        \begin{scope}[xshift=11.4cm,yshift=1cm,rotate=-90]
+          \draw[ultra thick,red] (0,0) sin (2,-1) cos (4,0) sin (6,1) cos (8,0);
+        \end{scope}
+      \end{tikzpicture}
+    \end{equation*}
+    The other basic solution, with $\cos$ instead of $\sin$, is the
+    same motion, just starting at a different offset in time. Note how
+    the eigenvector of $A$,
+    \begin{equation*}
+      \begin{mymatrix}{r} -1 \\ 0 \\ 1 \end{mymatrix},
+    \end{equation*}
+    describes the relative motion of the three cars, whereas the
+    corresponding eigenvalue, $\lambda=-2$, determines the frequency.
+    
   \end{itemize}
 \end{solution}
 
