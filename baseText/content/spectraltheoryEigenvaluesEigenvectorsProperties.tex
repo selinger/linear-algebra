@@ -1,47 +1,268 @@
 \section{Properties of eigenvectors and eigenvalues}
 
-\begin{theorem}{Linearly independent eigenvectors}{linearly-independent-eigenvectors}
-  Let $A$ be an $n\times n$-matrix, and suppose that $A$ has distinct
-  eigenvalues $\eigenvar_1, \eigenvar_2, \ldots, \eigenvar_m$.  For each
-  $i$, let $X_i$ be a $\eigenvar_i$-eigenvector of $A$.  Then
-  $\set{X_1, X_2, \ldots, X_m}$ is linearly independent.
+In this section, we state various useful properties of eigenvectors
+and eigenvalues. The first question we consider is whether
+eigenvectors for different eigenvalues are linearly independent. This
+is indeed the case, as the following theorem shows:
+
+\begin{theorem}{Eigenvectors for different eigenvalues are linearly independent}{linearly-independent-eigenvectors}
+  Let $A$ be a square matrix, and suppose that $A$ has distinct
+  eigenvalues $\eigenvar_1,\ldots,\eigenvar_k$ with
+  corresponding eigenvectors $\vect{v}_1,\ldots,\vect{v}_k$.
+  Then $\vect{v}_1,\ldots,\vect{v}_k$ are linearly independent.
 \end{theorem}
 
-The corollary that follows from this theorem gives a useful tool in
-determining if $A$ is diagonalizable.
+\begin{proof}
+  Suppose, for the sake of obtaining a contradiction, that
+  $\vect{v}_1,\ldots,\vect{v}_k$ are linearly dependent. Let $m$ the
+  the smallest index such that $\vect{v}_m$ is redundant, i.e., such
+  that $\vect{v}_m$ is a linear combination of previous vectors.
+  Say
+  \begin{equation}\label{eqn:linearly-independent-eigenvectors-1}
+    \vect{v}_m = a_1\vect{v}_1 + \ldots + a_{m-1}\vect{v}_{m-1}.
+  \end{equation}
+  Multiplying the equation by $A$, we get
+  \begin{equation*}
+    A\vect{v}_m = a_1A\vect{v}_1 + \ldots + a_{m-1}A\vect{v}_{m-1},
+  \end{equation*}
+  and therefore, since $\vect{v}_1,\ldots,\vect{v}_{m}$ are
+  eigenvectors,
+  \begin{equation}\label{eqn:linearly-independent-eigenvectors-2}
+    \eigenvar_m\vect{v}_m = a_1\eigenvar_1\vect{v}_1 + \ldots + a_{m-1}\eigenvar_{m-1}\vect{v}_{m-1}.
+  \end{equation}
+  Subtracting $\eigenvar_m$ times equation
+  {\eqref{eqn:linearly-independent-eigenvectors-1}}  from
+  {\eqref{eqn:linearly-independent-eigenvectors-2}}, we get
+  \begin{equation*}
+    \vect{0} = a_1(\eigenvar_1-\eigenvar_m)\vect{v}_1 + \ldots + a_{m-1}(\eigenvar_{m-1}-\eigenvar_{m-1})\vect{v}_{m-1}.
+  \end{equation*}
+  Since $\vect{v}_1,\ldots,\vect{v}_{m-1}$ are, by assumption,
+  linearly independent (because $\vect{v}_m$ was the leftmost redundant
+  vector), it follows that $a_1(\eigenvar_1-\eigenvar_m)=0$, \ldots,
+  $a_{m-1}(\eigenvar_{m-1}-\eigenvar_{m-1})=0$. Since the eigenvalues
+  $\eigenvar_1,\ldots,\eigenvar_m$ are, by assumption, distinct, it
+  follows that $a_1,\ldots,a_{m-1}=0$. But then
+  {\eqref{eqn:linearly-independent-eigenvectors-1}} implies that
+  $\vect{v}_m=\vect{0}$, contradicting the assumption that $\vect{v}_m$ is an
+  eigenvector (and therefore non-zero).
+\end{proof}
+
+An immediate consequence of this theorem is that an $n\times n$-matrix
+with $n$ distinct eigenvalues is diagonalizable.
 
 \begin{corollary}{Distinct eigenvalues}{distinct-eigenvalues}
-  Let $A$ be an $n \times n$-matrix and suppose it has $n$ distinct
-  eigenvalues. Then it follows that $A$ is diagonalizable.
+  Let $A$ be an $n\times n$-matrix and suppose it has $n$ distinct
+  eigenvalues. Then $A$ is diagonalizable.
 \end{corollary}
 
-The idea that a matrix may not be diagonalizable suggests that
-conditions exist to determine when it is possible to diagonalize a
-matrix. We saw earlier in Corollary~\ref{cor:distinct-eigenvalues}
-that an $n \times n$-matrix with $n$ distinct eigenvalues is
-diagonalizable. It turns out that there are other useful
-diagonalizability tests.
+\begin{proof}
+  Each of the $n$ eigenvalues has an eigenvector, and by
+  Theorem~\ref{thm:linearly-independent-eigenvectors}, they are
+  linearly independent. Then $A$ is diagonalizable by
+  Theorem~\ref{thm:eigenvectors-and-diagonalizable}.
+\end{proof}
 
-Recall that the multiplicity of an eigenvalue $\eigenvar$ is the number
-of times that it occurs as a root of the characteristic polynomial.
+The next issue we consider is that of ``repeated'' eigenvalues. There
+are two senses in which an eigenvalue can occur ``more than
+once''. The first is if the eigenvalue appears as a repeated root of
+the characteristic polynomial. For example, if the characteristic
+polynomial is
+$p(\eigenvar) = (1-\eigenvar)(1-\eigenvar)(3-\eigenvar)$, then we say
+that the root $\eigenvar=1$ appears with multiplicity%
+\index{multiplicity!of root of a polynomial} two, and the root
+$\eigenvar=3$ appears with multiplicity one. We call this the
+\textbf{algebraic multiplicity}%
+\index{algebraic multiplicity!of an eigenvalue}%
+\index{eigenvalue!algebraic multiplicity}%
+\index{multiplicity!of eigenvalue!algebraic} of the eigenvalue.
 
-Consider now the following lemma.
+The second sense in which an eigenvalue can occur ``more than once''
+is when an eigenvalue has more than one linearly independent
+eigenvector. In other words, when the eigenspace has dimension greater
+than 1. We call this the \textbf{geometric multiplicity}%
+\index{geometric multiplicity!of an eigenvalue}%
+\index{eigenvalue!geometric multiplicity}%
+\index{multiplicity!of eigenvalue!geometric} of the eigenvalue.
 
-\begin{lemma}{Dimension of the eigenspace}{dimension-eigenspace}
-  If $A$ is an $n\times n$-matrix, then
+The following definition summarizes these concepts.
+
+\begin{definition}{Algebraic and geometric multiplicity}{multiplicity}
+  Let $\hat\eigenvar$ be an eigenvalue of a square matrix $A$. Then
+  the \textbf{algebraic multiplicity} of $\hat\eigenvar$ is the
+  largest power $k$ such that $(\hat\eigenvar-\eigenvar)^k$ is a
+  factor of the characteristic polynomial. The \textbf{geometric
+    multiplicity} of $\hat\eigenvar$ is the dimension of its
+  eigenspace $E_{\hat\eigenvar}$.
+\end{definition}
+
+One would hope that the algebraic and geometric multiplicities are
+always equal. Unfortunately, this is not the case, as the following
+example shows.
+
+\begin{example}{Algebraic and geometric multiplicity}{multiplicity}
+  Let
   \begin{equation*}
-    \dim(E_{\eigenvar}(A))\leq m,
+    A = \begin{mymatrix}{rrrrr}
+      3 & 1 & 0 & 0 & 0 \\
+      0 & 3 & 0 & 0 & 0 \\
+      0 & 0 & 4 & 0 & 0 \\
+      0 & 0 & 0 & 4 & 0 \\
+      0 & 0 & 0 & 0 & 5 \\
+    \end{mymatrix}.
   \end{equation*}
-  where $\eigenvar$ is an eigenvalue of $A$ of multiplicity $m$.
-\end{lemma}
+  Find the algebraic and geometric multiplicity of each eigenvalue
+  of $A$.
+\end{example}
 
-This result tells us that if $\eigenvar$ is an eigenvalue of $A$, then
-the number of linearly independent $\eigenvar$-eigenvectors is never
-more than the multiplicity of $\eigenvar$. We now use this fact to
-provide a useful diagonalizability condition.
+\begin{solution}
+  The characteristic polynomial is
+  $(3-\eigenvar)^2(4-\eigenvar)^2(5-\eigenvar)$. Therefore, the
+  eigenvalues are $3$, $4$, and $5$, with algebraic multiplicity $2$,
+  $2$, and $1$, respectively. To compute the geometric multiplicity,
+  we need to find each eigenspace. For $\eigenvar=3$, we must solve
+  $(A-3I)\vect{v} = \vect{0}$, or equivalently,
+  \begin{equation*}
+    \begin{mymatrix}{rrrrr|r}
+      0 & 1 & 0 & 0 & 0 & 0 \\
+      0 & 0 & 0 & 0 & 0 & 0 \\
+      0 & 0 & 1 & 0 & 0 & 0 \\
+      0 & 0 & 0 & 1 & 0 & 0 \\
+      0 & 0 & 0 & 0 & 2 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  This system has rank 4, and the only basic solution is
+  $\mat{1,0,0,0,0}^T$. Thus, the eigenspace $E_3$ is 1-dimensional,
+  and the geometric multiplicity of $\eigenvar=3$ is 1. A similar
+  calculation show that $\eigenvar=4$ has geometric multiplicity $2$
+  and $\eigenvar=5$ has geometric multiplicity $1$.
+  The information is summarized in the following table:
+  \begin{center}
+    \begin{tabular}{|l|c|c|c|}
+      \hline
+      Eigenvalue & $\eigenvar=3$ & $\eigenvar=4$ & $\eigenvar=5$ \\\hline
+      Algebraic multiplicity & 2 & 2 & 1 \\\hline
+      Geometric multiplicity & 1 & 2 & 1 \\\hline
+    \end{tabular}
+  \end{center}
+\end{solution}
 
-\begin{theorem}{Diagonalizability condition}{diagonalizability}
-  Let $A$ be an $n \times n$-matrix $A$. Then $A$ is diagonalizable if
-  and only if for each eigenvalue $\eigenvar$ of $A$,
-  $\dim(E_{\eigenvar}(A))$ is equal to the multiplicity of $\eigenvar$.
+In the example, the geometric multiplicity is either smaller than or
+equal to the algebraic multiplicity. The following proposition states
+that this is always the case.
+
+\begin{proposition}{Algebraic and geometric multiplicity}{dimension-eigenspace}
+  Let $\hat\eigenvar$ be an eigenvalue of a matrix $A$, with algebraic
+  multiplicity $k$ and geometric multiplicity $m$. Then
+  \begin{equation*}
+    1 \leq m \leq k.
+  \end{equation*}
+\end{proposition}
+
+\begin{proof}
+  It is clear that $m\geq 1$, because each eigenvalue, by definition,
+  must have at least one associated eigenvector. Therefore, the
+  eigenspace is at least 1-dimensional. We must show $m\leq k$. Assume
+  that $A$ is an $n\times n$-matrix. By assumption, the geometric
+  multiplicity of $\hat\eigenvar$ is $m$, so the eigenspace
+  $E_{\hat\eigenvar}$ has dimension $m$. So there exist $m$ linearly
+  independent eigenvectors $\vect{v}_1,\ldots,\vect{v}_m$ for the
+  eigenvalue $\hat\eigenvar$. Extend $\vect{v}_1,\ldots,\vect{v}_m$ to a
+  basis $\vect{v}_1,\ldots,\vect{v}_n$ of $\R^n$, and let $P$ be the
+  invertible matrix that has $\vect{v}_1,\ldots,\vect{v}_n$ as its
+  columns. Let $B=P^{-1}AP$. Since the first $m$ columns of $P$ are
+  eigenvectors of $A$ for the eigenvalue $\hat\eigenvar$, it follows that
+  $B$ is of the form
+  \begin{equation*}
+    \begin{mymatrix}{ccccccc}
+      \hat\eigenvar & 0 & \cdots & 0 & * & \cdots & * \\
+      0 & \hat\eigenvar & \cdots & 0 & * & \cdots & * \\
+      \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+      0 & 0 & \cdots & \hat\eigenvar & * & \cdots & * \\
+      0 & 0 & \cdots & 0 & * & \cdots & * \\
+      \vdots & \vdots & \ddots & \vdots & \ddots & \vdots \\
+      0 & 0 & \cdots & 0 & * & \cdots & * \\
+    \end{mymatrix},
+  \end{equation*}
+  i.e., the first $m$ columns of $B$ are like those of a diagonal
+  matrix. Then from the cofactor method for computing determinants, we
+  know that $\det(B-\eigenvar I)$ contains the factor
+  $(\hat\eigenvar-\eigenvar)^m$. But since $A$ and $B$ are similar
+  matrices, they have the same characteristic polynomial. Therefore,
+  $\det(A-\eigenvar I)$ also has $(\hat\eigenvar-\eigenvar)^m$ as a
+  factor. It follows, by definition of algebraic multiplicity, that
+  $m\leq k$, as desired.
+\end{proof}
+
+The final property of eigenvalues and eigenvectors that we will
+consider in this section is the so-called \textbf{Cayley-Hamilton
+  theorem}%
+\index{Cayley-Hamilton theorem}%
+\index{characteristic polynomial!Cayley-Hamilton theorem}%
+\index{matrix!Cayley-Hamilton theorem}. It states that every square
+matrix is a root of its own characteristic polynomial.
+
+\begin{theorem}{Cayley-Hamilton theorem}{cayley-hamilton}
+  Let $A$ be a square matrix and let $p(\eigenvar)=\det(A-\eigenvar
+  I)$ be its characteristic polynomial. Then $p(A)=0$.
 \end{theorem}
+
+We will not prove this theorem here, but only consider an example.
+
+\begin{example}{Cayley-Hamilton theorem}{cayley-hamilton}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      3 & 4 \\
+      -1 & 2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Find the characteristic polynomial $p(\eigenvar)$, and compute
+  $p(A)$.
+\end{example}
+
+\begin{solution}
+  The characteristic polynomial is
+  \begin{equation*}
+    p(\eigenvar)
+    ~=~ \det(A-\eigenvar I)
+    ~=~ \begin{absmatrix}{cc}
+      3-\eigenvar & 4 \\
+      -1 & 2-\eigenvar \\
+    \end{absmatrix}
+    ~=~ (3-\eigenvar)(2-\eigenvar) - (-1)4
+    ~=~ \eigenvar^2 - 5\eigenvar + 10.
+  \end{equation*}
+  Applying the characteristic polynomial to $A$, we get
+  \begin{eqnarray*}
+    p(A) ~=~ A^2 - 5A + 10I
+    &=& \begin{mymatrix}{rr}
+      3 & 4 \\
+      -1 & 2 \\
+    \end{mymatrix}^2
+    - 5 \begin{mymatrix}{rr}
+      3 & 4 \\
+      -1 & 2 \\
+    \end{mymatrix}
+    + \begin{mymatrix}{rr}
+      10 & 0 \\
+      0 & 10 \\
+    \end{mymatrix} \\
+    &=& \begin{mymatrix}{rr}
+      5 & 20 \\
+      -5 & 0 \\
+    \end{mymatrix}
+    - \begin{mymatrix}{rr}
+      15 & 20 \\
+      -5 & 10 \\
+    \end{mymatrix}
+    + \begin{mymatrix}{rr}
+      10 & 0 \\
+      0 & 10 \\
+    \end{mymatrix}
+    ~=~ \begin{mymatrix}{rr}
+      0 & 0 \\
+      0 & 0 \\
+    \end{mymatrix},
+  \end{eqnarray*}
+  just as predicted by the Cayley-Hamilton theorem.
+\end{solution}
