@@ -1,0 +1,94 @@
+\Opensolutionfile{solutions}[ex]
+\section*{Exercises}
+
+\begin{enumialphparenastyle}
+
+\begin{ex}
+  Find the algebraic and geometric multiplicity of each eigenvalue of
+  the following matrices.
+  \begin{equation*}
+    (a)\quad
+    A = \begin{mymatrix}{rr} 1 & 1 \\ -1 & 3 \end{mymatrix},
+    \quad
+    (b)\quad
+    B = \begin{mymatrix}{rr} -7 & 8 \\ -4 & 5 \end{mymatrix},
+  \end{equation*}
+  \begin{equation*}
+    (c)\quad
+    C = \begin{mymatrix}{rrr}
+      2 & -1 & -1 \\
+      0 & 4 & 2 \\
+      0 & -1 & 1 \\
+    \end{mymatrix},
+    \quad
+    (d)\quad
+    D = \begin{mymatrix}{rrr}
+      3 & 1 & -1 \\
+      0 & 2 & 1 \\
+      0 & -1 & 4 \\
+    \end{mymatrix},
+    \quad
+    (e)\quad
+    E = \begin{mymatrix}{rrr}
+      -2 & 0 & 1 \\
+      -1 & -1 & 1 \\
+      -2 & 1 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    \begin{enumerate}
+    \item $\eigenvar=2$ has algebraic multiplicity 2 and geometric
+      multiplicity 1.
+    \item $\eigenvar=1$ has algebraic and geometric
+      multiplicity 1; $\eigenvar=-3$ has algebraic and geometric
+      multiplicity 1.
+    \item $\eigenvar=2$ has algebraic and geometric
+      multiplicity 2, $\eigenvar=3$ has algebraic and geometric
+      multiplicity 1.
+    \item $\eigenvar=3$ has algebraic multiplicity 3 and
+      geometric multiplicity 2.
+    \item $\eigenvar = -1$ has algebraic
+      multiplicity 3 and geometric multiplicity 1.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      5 & 7 \\
+      -4 & 3 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Find the characteristic polynomial $p(\eigenvar)$, and compute
+  $p(A)$.
+\end{ex}
+
+\begin{ex}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      1 & 2 & 0 \\
+      0 & 2 & -1 \\
+      0 & 1 & 4 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Find the characteristic polynomial $p(\eigenvar)$, and compute
+  $p(A)$.
+\end{ex}
+
+\begin{ex}
+  Let $A$ be a $2\times 2$-matrix. Prove that $A^2$ is a linear
+  combination of $A$ and $I$. 
+  \begin{sol}
+    The characteristic polynomial of $A$ is a quadratic polynomial,
+    and therefore it is of the form
+    $p(\eigenvar) = \eigenvar^2 + b\eigenvar + c$, for some
+    $r,s\in\R$. By the Cayley-Hamilton theorem, $p(A)=0$, therefore
+    $A^2 = -bA - cI$. This proves that $A^2$ is a linear combination
+    of $A$ and $I$.
+  \end{sol}
+\end{ex}
+
+\end{enumialphparenastyle}
