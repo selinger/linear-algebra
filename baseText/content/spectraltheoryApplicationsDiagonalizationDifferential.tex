@@ -61,7 +61,7 @@ of the \textbf{basic solutions}%
 $y=\cos(x)$. More generally, we have the following theorem from
 calculus:
 
-\begin{theorem}{Solutions of $y''=-qy$}{differential-equation}
+\begin{theorem}{Solutions of $y''=qy$}{differential-equation}
   Let $q$ be a positive real number.  The differential equation
   \begin{equation*}
     \begin{array}{l@{~~}l@{~}clllll}
@@ -338,13 +338,13 @@ vary with time, i.e., they can both be functions of $t$.
 \begin{solution}
   Let us start by defining appropriate coordinates.  Let $x$ be the
   position of the first car, $y$ the position of the second car, and
-  $z$ the position of the third car, measured in meters and increasing
-  to the right. Moreover, let us set the origin for each of the
-  variables $x$, $y$, and $z$ to the natural resting point of the
-  respective car when both springs are relaxed and the cars are not moving.
-  The $x$-, $y$-, and $z$-axes are shown in the following picture.
-  All of them are parallel to the train tracks, but they have their
-  origins in different places.
+  $z$ the position of the third car, measured in meters from left to
+  right, relative to each car's natural resting position. The $x$-,
+  $y$-, and $z$-axes are shown in the following picture.  All three
+  axes are parallel to the train tracks, but they have their origins
+  in different places. The coordinates are chosen so that when $x=0$,
+  $y=0$, and $z=0$, then all three cars are at rest and both springs
+  are in their natural relaxed state.
   \begin{equation*}
     \begin{tikzpicture}[scale=0.8, color=blue!50!black]
       \draw[thick] (0,0) -- (14.4,0);
@@ -379,17 +379,17 @@ vary with time, i.e., they can both be functions of $t$.
         -- ++(0.2,-0.6) -- ++(0.1,0.3)
         -- (2,1);
       \end{scope}
-      \begin{scope}[yshift=-0.5cm, color=black]
-        \draw[->] (0,0) -- (14.4,0) node[right] {$x$-axis};
+      \begin{scope}[yshift=-1cm, xshift=0cm, color=black]
+        \draw[->] (1.5,0) -- node[above] {$x$-axis} +(3,0);
         \draw (3,0) -- +(0,-0.2) node[below=-4pt] {$x=0$};
       \end{scope}
-      \begin{scope}[yshift=-1.3cm, color=black]
-        \draw[->] (0,0) -- (14.4,0) node[right] {$y$-axis};
-        \draw (7.2,0) -- +(0,-0.2) node[below=-4pt] {$y=0$};
+      \begin{scope}[yshift=-1cm, xshift=4.2cm, color=black]
+        \draw[->] (1.5,0) -- node[above] {$y$-axis} +(3,0);
+        \draw (3,0) -- +(0,-0.2) node[below=-4pt] {$y=0$};
       \end{scope}
-      \begin{scope}[yshift=-2.1cm, color=black]
-        \draw[->] (0,0) -- (14.4,0) node[right] {$z$-axis};
-        \draw (11.4,0) -- +(0,-0.2) node[below=-4pt] {$z=0$};
+      \begin{scope}[yshift=-1cm, xshift=8.4cm, color=black]
+        \draw[->] (1.5,0) -- node[above] {$z$-axis} +(3,0);
+        \draw (3,0) -- +(0,-0.2) node[below=-4pt] {$z=0$};
       \end{scope}
     \end{tikzpicture}
   \end{equation*}
@@ -729,7 +729,11 @@ vary with time, i.e., they can both be functions of $t$.
     $\sqrt{2}/2\pi$ oscillations per second, is also called an
     \textbf{eigenfrequency}%
     \index{eigenfrequency}%
-    \index{differential equation!eigenfrequency} of the system.
+    \index{differential equation!eigenfrequency} or \textbf{resonance
+      frequency}%
+    \index{resonance!frequency}%
+    \index{differential equation!resonance frequency}%
+    \index{frequency!resonance} of the system.
   \item \textbf{Solutions for $\eigenvar=-4$:}
     By Theorem~\ref{thm:differential-equation}, the basic solutions
     for $v'' = -4v$ are
@@ -978,8 +982,8 @@ vary with time, i.e., they can both be functions of $t$.
       \end{array}
     \end{equation*}
     This simply describes a linear motion: the three cars are moving
-    down the track at constant speed $b$, starting at some position
-    $a$.
+    down the track at constant speed $b$ from some initial starting
+    position $a$.
     \begin{equation*}
       \begin{tikzpicture}[scale=0.8, color=blue!50!black]
         \begin{scope}[yshift=0cm]
@@ -1142,7 +1146,19 @@ vary with time, i.e., they can both be functions of $t$.
     indicates linear motion. 
   \end{itemize}
   What we have described here are the {\em basic} solutions of the
-  system. As always, the general solution is a linear combination of
-  basic solutions; for example, the cars might be oscillating at two
-  different frequencies while also moving down the tracks.
+  system. The solutions corresponding to each of the eigenvalues are
+  also called \textbf{modes}%
+  \index{mode of resonance}%
+  \index{resonance!mode}%
+  \index{differential equation!mode} of the system. Thus, the train
+  has three modes, each corresponding to a particular eigenvalue of
+  the matrix $A$. In the first mode, the middle car is stationary and
+  the other two cars oscillate in opposite directions.  In the second
+  mode, the middle car oscillates in the opposite direction of the two
+  outer cars. The third mode is a linear movement along the track.
+
+  As always, the general solution is a linear combination of basic
+  solutions; for example, the cars might be oscillating in both the
+  first and second modes at their respective frequencies, while also
+  moving down the tracks.
 \end{solution}
