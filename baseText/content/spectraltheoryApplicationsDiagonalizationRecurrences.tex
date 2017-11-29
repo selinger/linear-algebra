@@ -170,7 +170,7 @@ for $F_n$, by diagonalizing the matrix $A$.
   \begin{equation*}
     \vect{w} = \begin{mymatrix}{c} 1 \\ \eigenvar_2 \end{mymatrix}.
   \end{equation*}
-  Therefore, by Theorem~\ref{eigenvectors-and-diagonalizable}, $A$ is
+  Therefore, by Theorem~\ref{thm:eigenvectors-and-diagonalizable}, $A$ is
   diagonalizable, and we have $P^{-1}AP=D$, where
   \begin{equation*}
     P = \begin{mymatrix}{cc}
@@ -308,16 +308,16 @@ another example:
   \end{equation*}
   The characteristic polynomial is
   \begin{equation*}
-    p(\eigenvar) = \lambda^2 - \lambda - 6,
+    p(\eigenvar) = \eigenvar^2 - \eigenvar - 6,
   \end{equation*}
-  with roots $\lambda=-2$ and $\lambda=3$. The respective eigenvectors
+  with roots $\eigenvar=-2$ and $\eigenvar=3$. The respective eigenvectors
   are 
   \begin{equation*}
     \begin{array}{ll}
       \vect{v} = \begin{mymatrix}{c} 1 \\ -2 \end{mymatrix}
-        &\quad\mbox{for the eigenvalue $\lambda=-2$,}\\\\[-2ex]
+        &\quad\mbox{for the eigenvalue $\eigenvar=-2$,}\\\\[-2ex]
       \vect{u} = \begin{mymatrix}{c} 1 \\ 3 \end{mymatrix}
-        &\quad\mbox{for the eigenvalue $\lambda=3$.}
+        &\quad\mbox{for the eigenvalue $\eigenvar=3$.}
     \end{array}
   \end{equation*}
   Therefore, $B = PDP^{-1}$, where
