@@ -1,7 +1,7 @@
 \section{Application: Systems of linear differential equations}
 
 % ----------------------------------------------------------------------
-\subsection{Linear differential equations}
+\subsection{Differential equations}
 
 Recall from calculus that if $y=f(x)$ is a function, then $y' = f'(x)$
 is its derivative%
@@ -236,107 +236,59 @@ possible to solve the equations.
     + b\,P\begin{mymatrix}{c} e^{-x} \\ 0 \end{mymatrix}
     + c\,P\begin{mymatrix}{c} 0 \\ \sin(\sqrt{2}\,x) \end{mymatrix}
     + d\,P\begin{mymatrix}{c} 0 \\ \cos(\sqrt{2}\,x) \end{mymatrix}\\
-    &=& a\,\begin{mymatrix}{c} e^{x} \\ e^{x} \end{mymatrix}
-    + b\,\begin{mymatrix}{c} e^{-x} \\ e^{-x} \end{mymatrix}
-    + c\,\begin{mymatrix}{c} \sin(\sqrt{2}\,x) \\ 2\sin(\sqrt{2}\,x) \end{mymatrix}
-    + d\,\begin{mymatrix}{c} \cos(\sqrt{2}\,x) \\ 2\cos(\sqrt{2}\,x) \end{mymatrix}.
+    &=& a\,e^{x}\begin{mymatrix}{c} 1 \\ 1 \end{mymatrix}
+    + b\,e^{-x}\begin{mymatrix}{c} 1 \\ 1 \end{mymatrix}
+    + c\,\sin(\sqrt{2}\,x)\begin{mymatrix}{c} 1 \\ 2 \end{mymatrix}
+    + d\,\cos(\sqrt{2}\,x)\begin{mymatrix}{c} 1 \\ 2 \end{mymatrix}.
   \end{eqnarray*}
 \end{solution}
 
 % ----------------------------------------------------------------------
-\subsection{Some physics}
+\subsection{An example from physics: coupled train cars}
 
 One of the reasons that differential equations are important is that
 the \textbf{laws of nature}%
 \index{laws of nature} often take the form of differential equations.
 For example, \textbf{Newton's second law of motion} asserts that the
-vector sum of the forces on an object is equal to the mass of the
-object multiplied by the acceleration of the object. In physics, it is
-common to use $t$ instead of $x$ for the independent variable, and $x$
-instead of $y$ for the dependent variable, so that we write $x=f(t)$
-instead of $y=f(x)$. If $x$ is the position of the object at time $t$,
-then the object's acceleration is $x''$, and Newton's second law takes
-the form
+acceleration of an object is equal to the total force on the object
+divided by the mass of the object. In physics, it is common to use $t$
+instead of $x$ for the independent variable, and $x$ instead of $y$
+for the dependent variable, so that we write $x=f(t)$ instead of
+$y=f(x)$. If $x$ is the position of the object at time $t$, then the
+object's acceleration is $x''$, and Newton's second law takes the form
 \begin{equation*}
-  F = mx''.
+  x'' = \frac{F}{m}.
 \end{equation*}
-This is a differential equation. Another law of physics that we will
-require is \textbf{Hooke's law}%
+This is a differential equation. In the following example, we will
+need another law of physics, namely \textbf{Hooke's law}%
 \index{spring (mechanics)!Hooke's law}%
 \index{Hooke's law} about the force exerted by a spring. A
 \textbf{spring}%
 \index{spring (mechanics)} is an object made from an elastic material
 (often in the shape of a coil), which returns to its original shape
 after being stretched or compressed. Hooke's law states that the force
-exerted by a spring is equal to
+exerted by a spring to both of its ends is equal to
 \begin{equation*}
-  F = -k x.
+  F = k x.
 \end{equation*}
 Here $x$ is the \textbf{extension}%
 \index{spring (mechanics)!extension} of the spring, i.e., the change
 in length of the spring, relative to its relaxed (natural)
 length. Also, $k$ is a constant called the \textbf{spring constant}%
-\index{spring (mechanics)!spring constant}. Hooke's law
-is not a differential equation, because it does not mention any
-derivatives. It is just an ordinary equation. Nevertheless, both the
-force $F$ and the extension $x$ can vary with time, i.e., they can
-both be functions of $t$.
+\index{spring (mechanics)!spring constant}, measured in units of
+$\frac{\SI{N}}{\m}$ (Newtons per meter). Of course the direction of
+the force on one end of the spring is the opposite of the direction on
+the other end. Hooke's law is not a differential equation, because it
+does not mention any derivatives. It is just an ordinary
+equation. Nevertheless, both the force $F$ and the extension $x$ can
+vary with time, i.e., they can both be functions of $t$.
 
-\begin{example}{A mass and a spring}{mass-spring}
-  Consider a train car of mass $m$ on a track, connected to a
-  stationary wall by a spring with spring constant $k$. Write down the
-  equation of motion and then solve it.
-  \begin{center}
-    \begin{tikzpicture}
-      \draw[fill=white] (-0.5,0) -- (-0.5,2) -- (0,2) -- (0,0);
-      \draw[thick] (-2,0) -- (5,0);
-      \draw[fill=white] (2,0.5) rectangle node {$m$} (4,1.5);
-      \draw[fill=white] (2.5,0.25) circle (0.25);
-      \draw[fill=white] (3.5,0.25) circle (0.25);
-      \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
-      -- ++(0.2,-0.6) -- ++(0.2,0.6)
-      -- ++(0.2,-0.6) -- ++(0.2,0.6)
-      -- ++(0.2,-0.6) -- ++(0.2,0.6)
-      -- ++(0.2,-0.6) -- ++(0.1,0.3)
-      -- (2,1);
-      \draw (1,1.3) node[above] {$k$};
-    \end{tikzpicture}
-  \end{center}
-\end{example}
-
-\begin{solution}
-  Let $x$ be the horizontal displacement of the car, measured in the
-  left-to-right direction, and calibrated so that $x=0$ corresponds to
-  the position of the car when the spring is in its relaxed state.
-  By Hooke's law, $F=-kx$, and by Newton's second law,
-  $F=mx''$. Putting these two equations together, we have
+\begin{example}{Coupled train cars}{coupled-train-cars}
+  Consider a train made up of three cars of mass $1\kg$, $2\kg$, and
+  $1\kg$, which are aligned on a linear track and connected by
+  springs. Assume that each spring has the same spring constant
+  $k=2\frac{\SI{N}}{\m}$.
   \begin{equation*}
-    mx'' = -kx,
-  \end{equation*}
-  or equivalently,
-  \begin{equation*}
-    x'' = -\frac{k}{m} x.
-  \end{equation*}
-  This is the equation of motion. By
-  Theorem~\ref{thm:differential-equation}, the general solution is
-  \begin{equation*}
-    x = a\sin(\sqrt{\frac{k}{m}}\,t) + b\cos(\sqrt{\frac{k}{m}}\,t).
-  \end{equation*}
-  Thus, the car will periodically move left and right, with a
-  frequency that is proportional to $\sqrt{k/m}$.  Note that in this
-  problem, we have ignored other effects such as friction, which would
-  eventually dampen the motion.
-\end{solution}
-
-% ----------------------------------------------------------------------
-\subsection{A system of linear differential equations}
-
-We now consider a system with more than one degree of
-freedom. Consider a train made up of three cars of mass $m_1=1\kg$,
-$m_2=2\kg$, and $m_3=1\kg$, which are aligned on a track and connected by
-springs. Let us assume that each spring has the same spring constant
-$k=1\frac{\SI{N}}{\m}$.
-\begin{equation*}
     \begin{tikzpicture}
       \draw[thick] (0,0) -- (14.4,0);
       \begin{scope}
@@ -373,72 +325,440 @@ $k=1\frac{\SI{N}}{\m}$.
         \draw (1,1.3) node[above] {$k$};
       \end{scope}
     \end{tikzpicture}
-\end{equation*}
-Let $x$ be the position of the first car, $y$ the position of the
-second car, and $z$ the position of the third car. Moreover, let us
-calibrate these variables so that each car's position is measured from
-its resting point, i.e., $x=0$, $y=0$, and $z=0$ means that all three
-cars are in their natural resting position where both springs are
-relaxed.
+  \end{equation*}
+  Find and solve the equations of motion of this system.
+\end{example}
 
-Then the extension of the left spring is $y-x$, and therefore the
-force acting on the leftmost car is
-\begin{equation*}
-  F_1 = k(y-x).
-\end{equation*}
-Note that we have not negated the force, because the spring is to the
-right of the car.  Also, the extension of the right spring is $z-y$,
-and therefore the force acting on the rightmost car is
-\begin{equation*}
-  F_3 = -k(z-y).
-\end{equation*}
-Finally, there are two forces acting on the middle car. They are
-$-F_1$ (from the left spring) and $-F_3$ (from the right
-spring). Thus, the total force acting on the middle car is
-\begin{equation*}
-  F_2  = -F_1-F_3 = -k(y-x)+k(z-y) = k(x-2y+z).
-\end{equation*}
-From Newton's second law, the acceleration of each car is given by
-$m_1x'' = F_1$, $m_2y'' = F_2$, and $m_3z''=F_3$. We therefore have
-the following equations of motion:
-\begin{eqnarray*}
-  x'' &=& \frac{k}{m_1}(y-x), \\
-  y'' &=& \frac{k}{m_2}(x-2y+z), \\
-  z'' &=& \frac{k}{m_3}(z-y). \\
-\end{eqnarray*}
-Notice that this not a single differential equation, but a system of
-differential equations. Each of $x''$, $y''$, and $z''$ can
-potentially depend on each of $x$, $y$, and $z$. Let's ignore the
-physical units and plug in $k=1$, $m_1=1$, $m_2=2$, and $m_3=1$. The
-equations now are:
-\begin{eqnarray*}
-  x'' &=& y-x, \\
-  y'' &=& \frac{1}{2}(x-2y+z), \\
-  z'' &=& z-y. \\
-\end{eqnarray*}
-Since the right-hand side is a linear function of $x$, $y$, and $z$,
-we can write it as a matrix multiplication:
-\begin{equation*}
-  \begin{mymatrix}{c} x'' \\ y'' \\ z'' \end{mymatrix}
-  =
-  \begin{mymatrix}{ccc}
-    -1 & 1 & 0 \\
-    \frac{1}{2} & -1 & \frac{1}{2} \\
-    0 & 1 & -1 \\
-  \end{mymatrix}
-  \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}.
-\end{equation*}
-If we let
-\begin{equation*}
-  \vect{v} = \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
-  \quad\mbox{and}\quad
-  A = \begin{mymatrix}{ccc}
-    -1 & 1 & 0 \\
-    \frac{1}{2} & -1 & \frac{1}{2} \\
-    0 & 1 & -1 \\
-  \end{mymatrix},
-\end{equation*}
-this equation can be written compactly as $\vect{v}'' = A\vect{v}$.
+\begin{solution}
+  Let us start by defining appropriate coordinates.  Let $x$ be the
+  position of the first car, $y$ the position of the second car, and
+  $z$ the position of the third car, measured in meters and increasing
+  to the right. Moreover, let us set the origin for each of the
+  variables $x$, $y$, and $z$ to the natural resting point of the
+  respective car when both springs are relaxed and the cars are not moving.
+  The $x$-, $y$-, and $z$-axes are shown in the following picture.
+  All of them are parallel to the train tracks, but they have their
+  origins in different places.
+  \begin{equation*}
+    \begin{tikzpicture}[scale=0.8, color=blue!50!black]
+      \draw[thick] (0,0) -- (14.4,0);
+      \begin{scope}
+        \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+        \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+        \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+      \end{scope}
+      \begin{scope}[xshift=4.2cm]
+        \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+        \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+        \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+      \end{scope}
+      \begin{scope}[xshift=8.4cm]
+        \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+        \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+        \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+      \end{scope}
+      \begin{scope}[xshift=4cm]
+        \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
+        -- ++(0.2,-0.6) -- ++(0.2,0.6)
+        -- ++(0.2,-0.6) -- ++(0.2,0.6)
+        -- ++(0.2,-0.6) -- ++(0.2,0.6)
+        -- ++(0.2,-0.6) -- ++(0.1,0.3)
+        -- (2,1);
+      \end{scope}
+      \begin{scope}[xshift=8.4cm]
+        \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
+        -- ++(0.2,-0.6) -- ++(0.2,0.6)
+        -- ++(0.2,-0.6) -- ++(0.2,0.6)
+        -- ++(0.2,-0.6) -- ++(0.2,0.6)
+        -- ++(0.2,-0.6) -- ++(0.1,0.3)
+        -- (2,1);
+      \end{scope}
+      \begin{scope}[yshift=-0.5cm, color=black]
+        \draw[->] (0,0) -- (14.4,0) node[right] {$x$-axis};
+        \draw (3,0) -- +(0,-0.2) node[below=-4pt] {$x=0$};
+      \end{scope}
+      \begin{scope}[yshift=-1.3cm, color=black]
+        \draw[->] (0,0) -- (14.4,0) node[right] {$y$-axis};
+        \draw (7.2,0) -- +(0,-0.2) node[below=-4pt] {$y=0$};
+      \end{scope}
+      \begin{scope}[yshift=-2.1cm, color=black]
+        \draw[->] (0,0) -- (14.4,0) node[right] {$z$-axis};
+        \draw (11.4,0) -- +(0,-0.2) node[below=-4pt] {$z=0$};
+      \end{scope}
+    \end{tikzpicture}
+  \end{equation*}
+  Then the extension of the left spring is $y-x$, and therefore the
+  left spring's contracting force is
+  \begin{equation*}
+    F_1 = k(y-x).
+  \end{equation*}
+  Similarly, the extension of the right spring is $z-y$, and therefore
+  its contracting force is
+  \begin{equation*}
+    F_2 = k(z-y).
+  \end{equation*}
+  The total force acting on the left car is $F_1$, the total force
+  acting on the middle car is $F_2-F_1$, and the total force acting on
+  the right car is $-F_2$. By Newton's second law, the acceleration
+  of each car is given by $x'' = \frac{F_1}{m_1}$,
+  $y'' = \frac{F_2-F_1}{m_2}$, and $z''=\frac{-F_2}{m_3}$. We
+  therefore have the following equations of motion:
+  \begin{eqnarray*}
+    x'' &=& \frac{k}{m_1}(y-x), \\
+    y'' &=& \frac{k}{m_2}(x-2y+z), \\
+    z'' &=& \frac{k}{m_3}(z-y). \\
+  \end{eqnarray*}
+  Let us ignore the physical units and plug in the masses $m_1=1$,
+  $m_2=2$, and $m_3=1$ and the spring constant $k=2$. Then the equations
+  of motion are:
+  \begin{eqnarray*}
+    x'' &=& 2(y-x), \\
+    y'' &=& x-2y+z, \\
+    z'' &=& 2(z-y), \\
+  \end{eqnarray*}
+  or equivalently in matrix form:
+  \begin{equation*}
+    \begin{mymatrix}{c} x'' \\ y'' \\ z'' \end{mymatrix}
+    =
+    \begin{mymatrix}{rrr}
+      -2 & 2 & 0 \\
+      1 & -2 & 1 \\
+      0 & 2 & -2 \\
+    \end{mymatrix}
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}.
+  \end{equation*}
+  We can also write this as $\vect{v}''=A\vect{v}$, where
+  \begin{equation*}
+    \vect{v} = \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    \quad\mbox{and}\quad
+    A = \begin{mymatrix}{rrr}
+      -2 & 2 & 0 \\
+      1 & -2 & 1 \\
+      0 & 2 & -2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  To solve the equation, we diagonalize the matrix $A$. Using the usual
+  method for diagonalization, we find that $A=P^{-1}DP$, where
+  \begin{equation*}
+    P = \begin{mymatrix}{rrr}
+      -1 &  1 & 1 \\
+      0  & -1 & 1 \\
+      1  &  1 & 1 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    D = \begin{mymatrix}{rrr}
+      -2 &  0 & 0 \\
+      0  & -4 & 0 \\
+      0  &  0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The equation $\vect{v}''=A\vect{v}$ then becomes
+  $\vect{v}''=PDP^{-1}\vect{v}$, or equivalently
+  $P^{-1}\vect{v}'' = DP^{-1}\vect{v}$. We then diagonalize the
+  equation by performing the change of variables
+  $\vect{w} = P^{-1}\vect{v}$. The equation becomes
+  \begin{equation*}
+    \vect{w}'' = D\vect{w}.
+  \end{equation*}
+  If the components of $\vect{w}$ are called $u$, $v$, and $w$, we can
+  write this as
+  \begin{equation*}
+    \begin{mymatrix}{c} u'' \\ v'' \\ w'' \end{mymatrix}
+    =
+    \begin{mymatrix}{rrr}
+      -2 &  0 & 0 \\
+      0  & -4 & 0 \\
+      0  &  0 & 0 \\
+    \end{mymatrix}
+    \begin{mymatrix}{c} u \\ v \\ w \end{mymatrix},
+  \end{equation*}
+  or equivalently,
+  \begin{equation*}
+    \begin{array}{c@{~}c@{~}c}
+      u'' &=& -2u, \\
+      v'' &=& -4v, \\
+      w'' &=& 0.   \\
+    \end{array}
+  \end{equation*}
+  Since the variables are now decoupled, we can solve each
+  differential equation individually.
+  \begin{itemize}
+  \item \textbf{Solutions for $u$:}
+    By Theorem~\ref{thm:differential-equation}, the basic solutions
+    for $u'' = -2u$ are
+    \begin{equation*}
+      u=\sin(\sqrt{2}\,t)
+      \quad\mbox{and}\quad
+      u=\cos(\sqrt{2}\,t).
+    \end{equation*}
+    This translates into the following basic solutions for $\vect{w}$:
+    \begin{equation*}
+      \vect{w}
+      = \sin(\sqrt{2}\,t)\begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix}
+      \quad\mbox{and}\quad
+      \vect{w}
+      = \cos(\sqrt{2}\,t)\begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix}.
+    \end{equation*}
+    Using $\vect{v} = P\vect{w}$ to change to the original variables,
+    we get the basic solutions
+    \begin{equation*}
+      \vect{v} 
+      = \sin(\sqrt{2}\,t)\begin{mymatrix}{r} -1 \\ 0 \\ 1 \end{mymatrix}
+      \quad\mbox{and}\quad
+      \vect{v}
+      = \cos(\sqrt{2}\,t)\begin{mymatrix}{r} -1 \\ 0 \\ 1 \end{mymatrix}.
+    \end{equation*}
+    For example, the first of these basic solutions, written in the
+    coordinates $x$, $y$, and $z$, gives
+    \begin{equation*}
+      \begin{array}{c@{~~}c@{~}l}
+        x &=& -\sin(\sqrt{2}\,t), \\
+        y &=& ~~~\,0, \\
+        z &=& ~~~\sin(\sqrt{2}\,t). \\
+      \end{array}
+    \end{equation*}
+    This corresponds to a periodic oscillation of the train where the
+    middle car is stationary, and the left car moves left when the
+    right car moves right. Each oscillation takes $2\pi/\sqrt{2}\approx
+    4.4$ seconds.
+    \begin{equation*}
+      \begin{tikzpicture}[scale=0.8, color=blue!50!black]
+        \draw[thick] (0,0) -- (14.4,0);
+        \begin{scope}[xshift=4cm]
+          \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
+          -- ++(0.2,-0.6) -- ++(0.2,0.6)
+          -- ++(0.2,-0.6) -- ++(0.2,0.6)
+          -- ++(0.2,-0.6) -- ++(0.2,0.6)
+          -- ++(0.2,-0.6) -- ++(0.1,0.3)
+          -- (2,1);
+        \end{scope}
+        \begin{scope}[xshift=8.4cm]
+          \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
+          -- ++(0.2,-0.6) -- ++(0.2,0.6)
+          -- ++(0.2,-0.6) -- ++(0.2,0.6)
+          -- ++(0.2,-0.6) -- ++(0.2,0.6)
+          -- ++(0.2,-0.6) -- ++(0.1,0.3)
+          -- (2,1);
+        \end{scope}
+        \begin{scope}[xshift=12.4cm,yshift=1cm]
+          \draw[color=red!50!black,fill=red!50]
+          (0,0.33) -- (0.5,0.33) -- (0.5,0.5) -- (1,0)
+          -- (0.5,-0.5) -- (0.5,-0.33) -- (0,-0.33);
+        \end{scope}
+        \begin{scope}[xshift=10.4cm,yshift=1cm]
+          \draw[color=green!30!black,fill=green!50]
+          (0,0.33) -- (-0.5,0.33) -- (-0.5,0.5) -- (-1,0)
+          -- (-0.5,-0.5) -- (-0.5,-0.33) -- (0,-0.33);
+        \end{scope}
+        \begin{scope}[xshift=4cm,yshift=1cm]
+          \draw[color=green!30!black,fill=green!50]
+          (0,0.33) -- (0.5,0.33) -- (0.5,0.5) -- (1,0)
+          -- (0.5,-0.5) -- (0.5,-0.33) -- (0,-0.33);
+        \end{scope}
+        \begin{scope}[xshift=2cm,yshift=1cm]
+          \draw[color=red!50!black,fill=red!50]
+          (0,0.33) -- (-0.5,0.33) -- (-0.5,0.5) -- (-1,0)
+          -- (-0.5,-0.5) -- (-0.5,-0.33) -- (0,-0.33);
+        \end{scope}
+        \begin{scope}
+          \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+          \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+          \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+        \end{scope}
+        \begin{scope}[xshift=4.2cm]
+          \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+          \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+          \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+        \end{scope}
+        \begin{scope}[xshift=8.4cm]
+          \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+          \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+          \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+        \end{scope}
+      \end{tikzpicture}
+    \end{equation*}
+    Here is a ``movie'' showing the first oscillation:
+    \begin{equation*}
+      \begin{tikzpicture}[scale=0.8, color=blue!50!black]
+        \begin{scope}[yshift=0cm]
+          \draw (-1,1) node[left] {$t=0\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=0cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-2cm]
+          \draw (-1,1) node[left] {$t=1.1\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=-1cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=9.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=3cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1625,0.3)
+            -- ++(0.325,-0.6) -- ++(0.325,0.6)
+            -- ++(0.325,-0.6) -- ++(0.325,0.6)
+            -- ++(0.325,-0.6) -- ++(0.325,0.6)
+            -- ++(0.325,-0.6) -- ++(0.1625,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1625,0.3)
+            -- ++(0.325,-0.6) -- ++(0.325,0.6)
+            -- ++(0.325,-0.6) -- ++(0.325,0.6)
+            -- ++(0.325,-0.6) -- ++(0.325,0.6)
+            -- ++(0.325,-0.6) -- ++(0.1625,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-4cm]
+          \draw (-1,1) node[left] {$t=2.2\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=0cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-6cm]
+          \draw (-1,1) node[left] {$t=3.3\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=1cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=7.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=5cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.0375,0.3)
+            -- ++(0.075,-0.6) -- ++(0.075,0.6)
+            -- ++(0.075,-0.6) -- ++(0.075,0.6)
+            -- ++(0.075,-0.6) -- ++(0.075,0.6)
+            -- ++(0.075,-0.6) -- ++(0.0375,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.0375,0.3)
+            -- ++(0.075,-0.6) -- ++(0.075,0.6)
+            -- ++(0.075,-0.6) -- ++(0.075,0.6)
+            -- ++(0.075,-0.6) -- ++(0.075,0.6)
+            -- ++(0.075,-0.6) -- ++(0.0375,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-8cm]
+          \draw (-1,1) node[left] {$t=4.4\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=0cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+      \end{tikzpicture}
+    \end{equation*}
+  \end{itemize}
+\end{solution}
 
 % ======================================================================
 \subsection{CONTINUE HERE...}
