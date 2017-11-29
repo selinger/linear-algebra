@@ -483,7 +483,7 @@ vary with time, i.e., they can both be functions of $t$.
   Since the variables are now decoupled, we can solve each
   differential equation individually.
   \begin{itemize}
-  \item \textbf{Solutions for $u$:}
+  \item \textbf{Solutions for $\eigenvar=-2$:}
     By Theorem~\ref{thm:differential-equation}, the basic solutions
     for $u'' = -2u$ are
     \begin{equation*}
@@ -716,9 +716,15 @@ vary with time, i.e., they can both be functions of $t$.
     \begin{equation*}
       \begin{mymatrix}{r} -1 \\ 0 \\ 1 \end{mymatrix},
     \end{equation*}
-    describes the relative motion of the three cars, whereas the
-    corresponding eigenvalue, $\lambda=-2$, determines the frequency.
-  \item \textbf{Solutions for $u$:}
+    describes the relative motion of the three cars, i.e., the first
+    and last cars are moving in opposite directions, whereas the
+    middle car is stationary. The corresponding eigenvalue
+    $\eigenvar=-2$ determines the frequency. The frequency, which is
+    $\sqrt{2}/2\pi$ oscillations per second, is also called an
+    \textbf{eigenfrequency}%
+    \index{eigenfrequency}%
+    \index{differential equation!eigenfrequency} of the system.
+  \item \textbf{Solutions for $\eigenvar=-4$:}
     By Theorem~\ref{thm:differential-equation}, the basic solutions
     for $v'' = -4v$ are
     \begin{equation*}
@@ -928,165 +934,209 @@ vary with time, i.e., they can both be functions of $t$.
         \end{scope}
       \end{tikzpicture}
     \end{equation*}
-    The other basic solution, with $\cos$ instead of $\sin$, is the
-    same motion, just starting at a different offset in time. Note how
-    the eigenvector of $A$,
+    As before, the other basic solution, using $\cos$ instead of
+    $\sin$, is the same motion, but shifted in time. Also, the
+    eigenvector
     \begin{equation*}
-      \begin{mymatrix}{r} -1 \\ 0 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ -1 \\ 1 \end{mymatrix}
     \end{equation*}
-    describes the relative motion of the three cars, whereas the
-    corresponding eigenvalue, $\lambda=-2$, determines the frequency.
-    
+    describes the relative motion of the three cars; here the first
+    and last car move in the same direction while the middle car moves
+    in the opposite direction. The eigenfrequency of this oscillation,
+    at $2/2\pi$ oscillations per second, is slightly higher than the
+    first one, due to the larger magnitude of the eigenvalue
+    $\eigenvar=-4$.
+  \item \textbf{Solutions for $\eigenvar=0$:} The last eigenvalue is
+    zero. By Theorem~\ref{thm:differential-equation}, the general
+    solution of $w'' = 0$ is
+    \begin{equation*}
+      w = a+bt,
+    \end{equation*}
+    where $a$ and $b$ are arbitrary constants. This translates into
+    the following solution for $\vect{w}$:
+    \begin{equation*}
+      \vect{w}
+      = (a+bt)\begin{mymatrix}{r} 0 \\ 0 \\ 1 \end{mymatrix},
+    \end{equation*}
+    and by the change of variables $\vect{v} = P\vect{w}$, we get
+    \begin{equation*}
+      \vect{v} 
+      = (a+bt)\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}.
+    \end{equation*}
+    Writing this in terms of the coordinates $x$, $y$, and $z$, we get
+    \begin{equation*}
+      \begin{array}{c@{~~}c@{~}l}
+        x &=& a+bt, \\
+        y &=& a+bt, \\
+        z &=& a+bt. \\
+      \end{array}
+    \end{equation*}
+    This simply describes a linear motion: the three cars are moving
+    down the track at constant speed $b$, starting at some position
+    $a$.
+    \begin{equation*}
+      \begin{tikzpicture}[scale=0.8, color=blue!50!black]
+        \begin{scope}[yshift=0cm]
+          \draw (-3,1) node[right] {$t=0\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=-1cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=3.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=7.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=3cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=7.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-2cm]
+          \draw (-3,1) node[right] {$t=1\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=0cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=8.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-4cm]
+          \draw (-3,1) node[right] {$t=2\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=1cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=5.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=9.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=5cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=9.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-6cm]
+          \draw (-3,1) node[right] {$t=3\s$};
+          \draw[thick] (0,0) -- (14.4,0);
+          \begin{scope}[xshift=2cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=6.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=10.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=6cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=10.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.2,0.6)
+            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[xshift=3cm,yshift=1cm,rotate=-90]
+          \draw[ultra thick, red] (0,-1) -- (6,2);
+        \end{scope}
+        \begin{scope}[xshift=7.2cm,yshift=1cm,rotate=-90]
+          \draw[ultra thick, red] (0,-1) -- (6,2);
+        \end{scope}
+        \begin{scope}[xshift=11.4cm,yshift=1cm,rotate=-90]
+          \draw[ultra thick, red] (0,-1) -- (6,2);
+        \end{scope}
+      \end{tikzpicture}
+    \end{equation*}
+    As before, the eigenvector
+    \begin{equation*}
+      \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}
+    \end{equation*}
+    describes the relative motion of the three cars (in this case all
+    moving in the same direction). The eigenvalue $\eigenvar=0$
+    indicates linear motion. 
   \end{itemize}
+  What we have described here are the {\em basic} solutions of the
+  system. As always, the general solution is a linear combination of
+  basic solutions; for example, the cars might be oscillating at two
+  different frequencies while also moving down the tracks.
 \end{solution}
-
-% ======================================================================
-\subsection{CONTINUE HERE...}
-
-  A
-differential equation of the form $ay''+by'+cy = 0$ is called a
-(homogeneous second order) \textbf{linear differential equation}%
-\index{differential equation!linear}. Note
-that the equation {\eqref{eqn:differential1}} is of this form, with
-$a=1$, $b=0$, and $c=1$. In this section, we will use linear algebra,
-and in particular diagonalization, to solve systems of homogeneous
-linear differential equations.
-
-This type of behavior along with complex eigenvalues is typical of the
-deviations from an equilibrium point in the Lotka Volterra system of
-differential equations which is a famous model for predator-prey
-interactions. These differential equations are given by
-\begin{eqnarray*}
-  x^{\prime } &=&x(a-by) \\
-  y^{\prime } &=&-y(c-dx)
-\end{eqnarray*}
-where $a,b,c,d$ are positive constants. For example, you might have
-$X$ be the population of moose and $Y$ the population of wolves on an
-island.
-
-Note that these equations make logical sense. The top says that the
-rate at which the moose population increases would be $aX$ if there
-were no predators $Y$.  However, this is modified by multiplying
-instead by $(a-bY) $ because if there are predators, these will
-militate against the population of moose.  The more predators there
-are, the more pronounced is this effect. As to the predator equation,
-you can see that the equations predict that if there are many prey
-around, then the rate of growth of the predators would seem to be
-high. However, this is modified by the term $-cY$ because if there are
-many predators, there would be competition for the available food
-supply and this would tend to decrease $Y^{\prime }$.
-
-The behavior near an equilibrium point, which is a point where the
-right side of the differential equations equals zero, is of great
-interest. In this case, the equilibrium point is
-\begin{equation*}
-  x=\frac{c}{d}, y=\frac{a}{b}.
-\end{equation*}
-Then one defines new variables according to the formula
-\begin{equation*}
-  x+\frac{c}{d}=x,\ y=y+\frac{a}{b}.
-\end{equation*}
-In terms of these new variables, the differential equations become
-\begin{eqnarray*}
-  x^{\prime } &=&\paren{x+\frac{c}{d}} \paren{a-b\paren{y+\frac{a}{b}
-                  }} \\
-  y^{\prime } &=&-\paren{y+\frac{a}{b}} \paren{c-d\paren{x+\frac{c}{d}
-                  }}.
-\end{eqnarray*}
-Multiplying out the right sides yields
-\begin{eqnarray*}
-  x^{\prime } &=&-bxy-b\frac{c}{d}y, \\
-  y^{\prime } &=&dxy+\frac{a}{b}dx.
-\end{eqnarray*}
-The interest is for $x,y$ small and so these equations are essentially
-equal to
-\begin{equation*}
-  x^{\prime }=-b\frac{c}{d}y,\ y^{\prime }=\frac{a}{b}dx.
-\end{equation*}
-Replace $x^{\prime }$ with the difference quotient
-$\frac{x(t+h) -x(t) }{h}$ where $h$ is a small positive number and
-$y^{\prime } $ with a similar difference quotient. For example one
-could have $h$ correspond to one day or even one hour. Thus, for $h$
-small enough, the following would seem to be a good approximation to
-the differential equations.
-\begin{eqnarray*}
-  x(t+h) &=&x(t) -hb\frac{c}{d}y, \\
-  y(t+h) &=&y(t) +h\frac{a}{b}dx.
-\end{eqnarray*}
-Let $1,2,3,\ldots$ denote the ends of discrete intervals of time
-having length $h$ chosen above. Then the above equations take the form
-\begin{equation*}
-  \begin{mymatrix}{c}
-    x(n+1) \\
-    y(n+1)
-  \end{mymatrix} =\begin{mymatrix}{cc}
-    1 & -\frac{hbc}{d} \\
-    \frac{had}{b} & 1
-  \end{mymatrix} \begin{mymatrix}{c}
-    x(n) \\
-    y(n).
-  \end{mymatrix}
-\end{equation*}
-Note that the eigenvalues of this matrix are always complex.
-
-We are not interested in time intervals of length $h$ for $h$ very
-small.  Instead, we are interested in much longer lengths of
-time. Thus, replacing the time interval with $mh$,
-\begin{equation*}
-  \begin{mymatrix}{c}
-    x(n+m) \\
-    y(n+m)
-  \end{mymatrix} =\begin{mymatrix}{cc}
-    1 & -\frac{hbc}{d} \\
-    \frac{had}{b} & 1
-  \end{mymatrix} ^{m}\begin{mymatrix}{c}
-    x(n) \\
-    y(n)
-  \end{mymatrix}.
-\end{equation*}
-For example, if $m=2$, you would have
-\begin{equation*}
-  \begin{mymatrix}{c}
-    x(n+2) \\
-    y(n+2)
-  \end{mymatrix} =\begin{mymatrix}{cc}
-    1-ach^{2} & -2b\frac{c}{d}h \\
-    2\frac{a}{b}dh & 1-ach^{2}
-  \end{mymatrix} \begin{mymatrix}{c}
-    x(n) \\
-    y(n)
-  \end{mymatrix}.
-\end{equation*}
-Note that most of the time, the eigenvalues of the new matrix will be
-complex.
-
-You can also notice that the upper right corner will be negative by
-considering higher powers of the matrix. Thus letting $1,2,3,\ldots$
-denote the ends of discrete intervals of time, the desired discrete
-dynamical system is of the form
-\begin{equation*}
-  \begin{mymatrix}{c}
-    x(n+1) \\
-    y(n+1)
-  \end{mymatrix} =\begin{mymatrix}{rr}
-    a & -b \\
-    c & d
-  \end{mymatrix} \begin{mymatrix}{c}
-    x(n) \\
-    y(n)
-  \end{mymatrix},
-\end{equation*}
-where $a,b,c,d$ are positive constants and the matrix will likely have
-complex eigenvalues because it is a power of a matrix which has
-complex eigenvalues.
-
-You can see from the above discussion that if the eigenvalues of the
-matrix used to define the dynamical system are less than 1 in absolute
-value, then the origin is stable in the sense that as
-$n\rightarrow \infty$, the solution converges to the origin. If either
-eigenvalue is larger than 1 in absolute value, then the solutions to
-the dynamical system will usually be unbounded, unless the initial
-condition is chosen very carefully. The next example exhibits the case
-where one eigenvalue is larger than 1 and the other is smaller than 1.
-
-The following example demonstrates a familiar concept as a dynamical system.
