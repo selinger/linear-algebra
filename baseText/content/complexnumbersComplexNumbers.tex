@@ -84,16 +84,12 @@ follows:
 \end{equation*}
 
 \begin{example}{Inverse of a complex number}{complex-inverse}
-  Find $\displaystyle\frac{1}{2+5i}$.
-\end{example}
-
-\begin{solution}
   \begin{equation*}
     \frac{1}{2+5i}
     = \frac{2-5i}{2^2+5^2}
     = \frac{2}{29} - \frac{5}{29}i.
   \end{equation*}
-\end{solution}
+\end{example}
 
 \textbf{Division}\index{complex number!division}%
 \index{division!of complex numbers} of complex numbers can then be
@@ -101,17 +97,116 @@ defined in terms of the multiplicative inverse, i.e.,
 $\frac{z}{w} = zw^{-1}$.
 
 \begin{example}{Division of complex numbers}{complex-division}
-  Find $\displaystyle\frac{3+4i}{5-7i}$.
-\end{example}
-
-\begin{solution}
   \begin{equation*}
     \frac{5+7i}{3-4i}
     = \frac{(5+7i)(3+4i)}{(3-4i)(3+4i)}
     = \frac{-13+41i}{3^2+4^2}
     = -\frac{13}{25} + \frac{41}{25}i.
   \end{equation*}
-\end{solution}
+\end{example}
+
+As a special case of division, note that
+\begin{equation*}
+  i^{-1} = \frac{1}{i} = \frac{1(-i)}{i(-i)} = -i.
+\end{equation*}
+
+The complex numbers form a {\em field}, i.e., they satisfy the nine
+field axioms. See Section~\ref{sec:fields} for the definition of a
+field.
+
+\begin{proposition}{The complex numbers form a field}{complex-field}
+  The complex numbers, with the operations of addition, subtraction,
+  multiplication, and division, form a {\em field}%
+  \index{complex number!field axioms}%
+  \index{field!of complex numbers}%
+  \index{properties of addition!complex numbers}%
+  \index{properties of multiplication!complex numbers}. Specifically,
+  this means that they satisfy the following properties:
+  \begin{itemize}
+  \item[(A1)] {Commutative law of addition:} $z+w=w+z$;
+  \item[(A2)] {Associative law of addition:} $(z+w)+u = z+(w+u)$;
+  \item[(A3)] {Unit law of addition:} $0+z = z$;
+  \item[(A4)] {Additive inverse:} $z+(-z)=0$;
+  \item[(M1)] {Commutative law of multiplication:} $zw=wz$;
+  \item[(M2)] {Associative law of multiplication:} $(zw)u=z(wu)$;
+  \item[(M3)] {Unit law of multiplication:} $1z=z$;
+  \item[(M4)] {Multiplicative inverse:} when $z$ is non-zero: $zz^{-1}=1$;
+  \item[(D)] {Distributive law:} $z(w+u)=zw+zu$.
+  \end{itemize}
+\end{proposition}
+
+Another useful operation on complex numbers is the complex
+conjugate. Let $z = a+bi$ be a complex number. Then the
+\textbf{conjugate}\index{complex number!conjugate}%
+\index{conjugate!of a complex number}%
+\index{complex conjugate} of $z$, written $\overline{z}$, is given by
+\begin{equation*}
+  \overline{z} = a-bi.
+\end{equation*}
+Note that if $z=a+bi$ is a complex number, then
+$z\overline{z} = (a+bi)(a-bi) = a^2+b^2$. Therefore, $z\overline{z}$
+is always a real number and $z\overline{z}\geq 0$. We define the
+\textbf{magnitude}\index{complex number!magnitude}%
+\index{magnitude!of a complex number} of $z$ to be
+\begin{equation*}
+  \abs{z} = \sqrt{z\overline{z}} = \sqrt{a^2+b^2}.
+\end{equation*}
+The magnitude is also sometimes called the \textbf{absolute
+  value}\index{complex number!absolute value|see{magnitude}}%
+\index{absolute value!of a complex number|see{magnitude}} or the
+\textbf{modulus}\index{complex number!modulus|see{magnitude}}%
+\index{modulus!of a complex number|see{magnitude}} of the complex
+number.
+
+\begin{example}{Conjugate and magnitude of a complex number}{complex-conjugate}
+  \begin{itemize}
+  \item $\overline{3+5i} = 3-5i$.
+  \item $\overline{i} = -i$.
+  \item $\overline{7} = 7$.
+  \item $\abs{3+5i} = 3^2+5^2 = 34$.
+  \item $\abs{i} = 1$.
+  \item $\abs{-6} = 6$.
+  \end{itemize}
+\end{example}
+
+Note that for a real number $a$, we have $\overline{a}=a$. Also, when
+$a$ is real, the magnitude $|a| = \sqrt{a^2}$ is just the usual
+absolute value of real numbers. The following two propositions
+list some basic properties of the conjugate and of the magnitude.
+
+\begin{proposition}{Properties of the conjugate}{properties-complex-conjugate}
+  Let $z$ and $w$ be complex numbers. Then, the following properties
+  of the conjugate hold.%
+  \index{complex number!conjugate!properties}%
+  \index{conjugate!of a complex number!properties}%
+  \index{complex conjugate!properties}%
+  \index{properties of complex conjugate}
+  \begin{itemize}
+  \item $\overline{z\pm w} = \overline{z} \pm \overline{w}$.
+  \item $\overline{(zw)} = \overline{z}~ \overline{w}$.
+  \item $\overline{z^{-1}} = \overline{z}^{-1}$.
+  \item $\overline{z/w} = \overline{z} / \overline{w}$.
+  \item $\overline{\overline{z}}=z$.
+  \item $z$ is real if and only if $\overline{z}=z$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proposition}{Properties of the magnitude}{properties-complex-magnitude}
+  Let $z,w$ be complex numbers.  The following properties hold.%
+  \index{complex number!magnitude!properties}%
+  \index{magnitude!of a complex number!properties}
+  \begin{itemize}
+  \item $\abs{z} \geq 0$, and $\abs{z}=0$ if and only if $z=0$.
+  \item $\abs{zw} = \abs{z}\abs{w}$.
+  \item $\abs{z+w} \leq \abs{z} +\abs{w}$. 
+  \end{itemize}
+  The last of these properties is called the \textbf{triangle
+    inequality}%
+  \index{triangle inequality!of complex numbers}.
+\end{proposition}
+
+% ----------------------------------------------------------------------
+\section{Geometric interpretation of the complex numbers}
 
 % ======================================================================
 \subsection{CONTINUE HERE...}
@@ -137,284 +232,13 @@ coordinates $(3,2)$.
   \end{tikzpicture}
 \end{center}
 
-Addition\index{complex numbers!addition} of complex numbers is defined as follows.
-\begin{equation*}
-  (a+bi) +(c+di) =(a+c) +(b+d)i
-\end{equation*}
+Recall that we refer to $z=a+bi$ as the standard form of the complex
+number. In the next section, we examine another form in which we can
+express the complex number.
 
-This addition obeys all the usual properties\index{field axioms} as the following theorem indicates.
-
-\begin{theorem}{Properties of addition of complex numbers}{properties-of-addition-complex-numbers}
-  Let $z,w$, and $v$ be complex numbers. Then the following properties hold.
-  \begin{itemize}
-  \item Commutative Law for Addition
-    \begin{equation*}
-      z+w=w+z
-    \end{equation*}
-
-  \item Additive Identity
-    \begin{equation*}
-      z+0=z
-    \end{equation*}
-
-  \item Existence of Additive Inverse
-    \begin{equation*}
-      \begin{array}{l}
-        \mbox{For each} \; z\in \C, \mbox{there exists}\; -z\in \C \mbox{ such that}\; 
-        z+(-z) =0 \\
-        \mbox{In fact if } z=a+bi, \mbox{ then } -z=-a-bi.
-      \end{array}
-    \end{equation*}
-
-  \item Associative Law for Addition
-    \begin{equation*}
-      (z+w) +v= z +(w+v)
-    \end{equation*}
-  \end{itemize}
-\end{theorem}
-
-The proof of this theorem is left as an exercise for the reader.
-
-Now, multiplication\index{complex numbers!multiplication} of complex numbers is defined the way you would expect, recalling that $i\,^{2} = -1$.
-\begin{eqnarray*}
-  (a+bi) (c+di) &=&ac+adi+bci+i\,^{2}bd \\
-                &=&(ac-bd) +(ad + bc)i 
-\end{eqnarray*}
-
-Consider the following examples.
-
-The following are important properties of multiplication of complex numbers.
-
-\begin{theorem}{Properties of multiplication of complex numbers}{properties-multiplication-complex-numbers}
-  Let $z,w$ and $v$ be complex numbers. Then, the following properties of multiplication hold.
-
-  \begin{itemize}
-
-  \item Commutative Law for Multiplication
-    \begin{equation*}
-      zw=wz
-    \end{equation*}
-
-  \item Associative Law for Multiplication
-    \begin{equation*}
-      (zw) v=z(wv) 
-    \end{equation*}
-
-  \item Multiplicative Identity
-    \begin{equation*}
-      1z=z
-    \end{equation*}
-
-  \item Existence of Multiplicative Inverse
-    \begin{equation*}
-      \mbox{For each}\; z\neq 0, \mbox{there exists}\; z^{-1} \mbox{ such that}\; zz^{-1}=1
-    \end{equation*}
-
-  \item Distributive Law
-    \begin{equation*}
-      z(w+v) =zw+zv
-    \end{equation*}
-  \end{itemize}
-\end{theorem}
-
-You may wish to verify some of these statements.  The real numbers
-also satisfy the above axioms, and in general any mathematical
-structure which satisfies these axioms is called a field. There are
-many other fields, in particular even finite ones particularly useful
-for cryptography, and the reason for specifying these axioms is that
-linear algebra is all about fields and we can do just about anything
-in this subject using any field. Although here, the fields of most
-interest will be the familiar field of real numbers, denoted as
-$\R$, and the field of complex numbers, denoted as
-$\C$.
-
-An important construction regarding complex numbers is the complex
-conjugate\index{complex numbers!conjugate} denoted by a horizontal line above the number, $\overline{z}$. It
-is defined as follows.
-
-\begin{definition}{Conjugate of a complex number}{conjugate}
-  Let $z = a+bi$ be a complex number. Then the \textbf{conjugate} of $z$, written $\overline{z}$ is given by 
-  \begin{equation*}
-    \overline{a+bi}= a-bi
-  \end{equation*}
-\end{definition}
-
-Geometrically, the action of the conjugate is to reflect a given complex number across the $x$ axis.
-Algebraically, it changes the sign on the imaginary part of the complex number. Therefore, for a real number $a$, $\overline{a} = a$. 
-
-\begin{example}{Conjugate of a complex number}{complex-conjugate}
-  \begin{itemize}
-
-  \item If $z=3+4i$, then $\overline{z}=3-4i$,
-    i.e., $\overline{3+4i}=3-4i$.
-
-  \item $\overline{-2+5i}= -2-5i$.
-
-  \item $\overline{i}= -i$.
-
-  \item $\overline{7}= 7$.
-  \end{itemize}
-\end{example}
-
-Consider the following computation. 
-\begin{eqnarray*}
-  (\overline{a+bi}) (a+bi) &=&(a-bi)
-                               (a+bi) \\
-                           &=&a^{2}+b^{2}-(ab-ab)i =a^{2}+b^{2}
-\end{eqnarray*}
-Notice that there is no imaginary part in the product, thus
-multiplying a complex number by its conjugate results in  a real number.
-
-\begin{theorem}{Properties of the conjugate}{properties-conjugate}
-  Let $z$ and $w$ be complex numbers. Then, the following properties of the conjugate hold.
-
-  \begin{itemize}
-  \item
-    $\overline{z\pm w} = \overline{z} \pm \overline{w}$.
-  \item
-    $\overline{(zw)} = \overline{z}~ \overline{w}$.
-  \item
-    $\overline{(\overline{z})}=z$.
-  \item
-    $\overline{\paren{\frac{z}{w}}} =
-    \frac{\overline{z}}{\overline{w}}$.
-  \item
-    $z$ is real if and only if $\overline{z}=z$.
-  \end{itemize}
-\end{theorem}
-
-Division of complex numbers is defined as follows. Let $z=a+bi$ and $w=c+di$ be complex numbers such that $c,d$ are not both zero. Then the quotient $z$ divided by $w$ is
-\begin{eqnarray*}
-  \frac{z}{w}=
-  \frac{a+bi}{c+di} & = & \frac{a+bi}{c+di}\times \frac{c-di}{c-di} \\
-                    & = & \frac{(ac+bd)+(bc-ad)i}{c^2+d^2} \\
-                    & = & \frac{ac+bd}{c^2+d^2} +\frac{bc-ad}{c^2+d^2}i.
-\end{eqnarray*}
-
-In other words, the quotient $\frac{z}{w}$ is obtained by multiplying
-both top and bottom of $\frac{z}{w}$ by $\overline{w}$ and
-then simplifying the expression.
-
-\begin{example}{Division of complex numbers}{division-complex}
-  \begin{itemize}
-  \item
-    \[ \frac{1}{i} = \frac{1}{i}\times \frac{-i}{-i}
-      =\frac{-i}{-i\,^2}=-i \]
-
-  \item
-    \[ \frac{2-i}{3+4i} = \frac{2-i}{3+4i}\times \frac{3-4i}{3-4i}
-      =\frac{(6-4)+(-3-8)i}{3^2+4^2}
-      =\frac{2-11i}{25}
-      =\frac{2}{25} - \frac{11}{25}i \]
-
-  \item
-
-    \[ \frac{1-2i}{-2+5i} = \frac{1-2i}{-2+5i}\times \frac{-2-5i}{-2-5i}
-      =\frac{(-2-10) + (4-5)i}{2^2+5^2}
-      =-\frac{12}{29}-\frac{1}{29}i  \]
-  \end{itemize}
-\end{example}
-
-Interestingly every non-zero complex number $a+bi$ has a unique
-multiplicative inverse. In other words, for a non-zero complex number
-$z$, there exists a number $z^{-1}$ (or $\frac{1}{z}$) so that
-$zz^{-1} = 1$. Note that $z=a+bi$ is non-zero exactly when
-$a^{2}+b^{2}\neq 0$, and its inverse can be written in standard form as defined now. 
+Geometrically, the action of the conjugate is to reflect a given
+complex number across the $x$ axis.  Algebraically, it changes the
+sign on the imaginary part of the complex number. Therefore, for a
+real number $a$, $\overline{a} = a$.
 
 
-Another important construction of complex numbers is that of the absolute value, also called the modulus. Consider the following definition. 
-
-\begin{definition}{Absolute value}{complex-abs-value}
-  \index{complex numbers!modulus}\index{complex numbers!absolute value}%
-  The absolute
-  value, or modulus, of a complex number, denoted $\abs{z}$ is defined as follows.
-  \begin{equation*}
-    \abs{a+bi} =
-    \sqrt{a^{2}+b^{2}}
-  \end{equation*}
-\end{definition}
-
-Thus, if $z$ is the complex number $z=a+bi$, it follows that
-\begin{equation*}
-  \abs{z} =(z\overline{z}) ^{1/2}
-\end{equation*}
-
-Also from the definition, if $z=a+bi$ and $w=c+di$ are two complex numbers,
-then $\abs{zw}=\abs{z}\abs{w}$. Take a moment to verify this.
-
-The triangle inequality\index{complex numbers!triangle inequality} is an important property of the absolute value
-of complex numbers. There are two useful versions which we present
-here, although the first one is officially called the triangle inequality. 
-
-\begin{proposition}{Triangle inequality}{triangle-inequality-complex}
-  Let $z,w$ be complex numbers. 
-
-  The following two inequalities hold for any  complex numbers $z,w$:
-  \begin{equation*}
-    \begin{array}{l}
-      \abs{z+w} \leq \abs{z} +\abs{w}  \\
-      \abs{\abs{z} -\abs{w}} \leq \abs{z-w} 
-    \end{array}
-  \end{equation*}
-  The first one is called the \em{Triangle Inequality}.
-\end{proposition}
-
-\begin{proof}
-  Let $z=a+bi$ and $w=c+di$. First note that
-  \begin{equation*}
-    z
-    \overline{w}=(a+bi) (c-di) =ac+bd+(
-    bc-ad)i
-  \end{equation*}
-  and so $\abs{ac+bd}\leq \abs{z\overline{w}}=\abs{z}\abs{w}$.
-
-  Then,
-  \begin{equation*}
-    \abs{z+w}^{2}=(a+c+i(b+d)) (
-    a+c-i(b+d))
-  \end{equation*}
-  \begin{equation*}
-    =(a+c) ^{2}+(b+d)
-    ^{2}=a^{2}+c^{2}+2ac+2bd+b^{2}+d^{2}
-  \end{equation*}
-  \begin{equation*}
-    \leq \abs{z}^{2}+\abs{w}^{2}+2\abs{z}\abs{w}=(\abs{z}+\abs{w}) ^{2}
-  \end{equation*}
-
-  Taking the square root, we have that 
-  \begin{equation*}
-    \abs{z+w}\leq \abs{z}+\abs{w}
-  \end{equation*}
-  so this verifies the triangle inequality. 
-
-  To get the  second inequality, write
-  \begin{equation*}
-    z=z-w+w,\;w=w-z+z
-  \end{equation*}
-  and so by the first form of the inequality we get both:
-  \begin{equation*}
-    \abs{z}\leq \abs{z-w}+\abs{w},\;\abs{w}\leq \abs{z-w}+\abs{z}\end{equation*}
-
-  Hence,  both $\abs{z}-\abs{w}$ and 
-  $\abs{w}-\abs{z}$ are no larger than 
-  $\abs{z-w}$. This proves the second version because 
-  $\abs{\abs{z}-\abs{w}}$ is
-  one of $\abs{z}-\abs{w}$ or $\abs{w}-\abs{z}$. 
-\end{proof}
-
-With this definition, it is important to note the following. You may wish to take
-the time to verify this remark.
-
-Let $z=a+bi$ and $w=c+di$. Then $\abs{z-w} =\sqrt{(
-  a-c) ^{2}+(b-d) ^{2}}$. Thus the distance between the
-point in the plane determined by the ordered pair $(a,b) $ and
-the ordered pair $(c,d) $ equals $\abs{z-w} $ where $z$
-and $w$ are as just described.
-
-For example, consider the distance between $(2,5) $ and $(
-1,8)$. Letting $z=2+5i$ and $w=1+8i$, $z-w=1-3i$, $(z-w)
-(\overline{z-w}) =(1-3i) (1+3i)
-= 10$ so $\abs{z-w}=\sqrt{10}$.
-
-Recall that we refer to $z=a+bi$ as the standard form of the complex number. In the next section, 
-we examine another form in which we can express the complex number. 
