@@ -1,4 +1,4 @@
-\section{Complex numbers}
+\section{The complex numbers}
 
 \begin{outcome}
   \begin{enumerate}
@@ -12,19 +12,109 @@
   \end{enumerate}
 \end{outcome}
 
-Although very powerful, the real numbers are inadequate to solve
-equations such as $x^2+1=0$, and this is where complex numbers come
-in. We define the number $i$ as the imaginary number such that $i^2 =
--1$, and define complex numbers as those of the form $z = a + bi$
-where $a$ and $b$ are real numbers. We call this the standard form\index{complex numbers!standard form}, or Cartesian form\index{complex numbers|Cartesian form}, of the complex number
-$z$.
-Then, we refer to $a$ as the
-{\em real} part of $z$, and $b$ as the {\em imaginary} part of
-$z$. It turns out that such numbers not only solve the above equation,
-but in fact also solve any polynomial of degree at least 1 with complex coefficients. This property, called the Fundamental Theorem of Algebra\index{Fundamental Theorem of Algebra}, is sometimes referred to by saying $\C$ is
-algebraically closed. Gauss is usually credited with giving a proof
-of this theorem in 1797 but many others worked on it and the first
-completely correct proof was due to Argand in 1806.
+\begin{definition}{The complex numbers}{complex-numbers}
+  Let $i$ be an imaginary number such that $i\,^2=-1$. A \textbf{complex
+    number}%
+  \index{complex number} is a number of the form
+  \begin{equation*}
+    z = a + bi,
+  \end{equation*}
+  where $a$ and $b$ are real numbers. The set of all complex numbers
+  is denoted $\C$.
+\end{definition}
+
+The form $z = a+bi$ is called the \textbf{standard form}%
+\index{complex number!standard form}%
+\index{standard form!of a complex number} or \textbf{Cartesian form}%
+\index{complex number|Cartesian form}%
+\index{Cartesian form!of a complex number} of the complex number $z$.
+We refer to $a$ as the \textbf{real part}%
+\index{complex number!real part}%
+\index{real part!of a complex number} and to $b$ as the
+\textbf{imaginary part}%
+\index{complex number!imaginary part}%
+\index{imaginary part!of a complex number} of $z$.
+
+\textbf{Addition}%
+\index{complex number!addition}%
+\index{addition!of complex numbers}, \textbf{subtraction}%
+\index{complex number!subtraction}%
+\index{subtraction!of complex numbers}, and \textbf{multiplication}%
+\index{complex number!multiplication}%
+\index{multiplication!of complex numbers} of complex numbers are
+defined in the obvious way, keeping in mind that $i\,^2=-1$. Namely, we
+have
+\begin{eqnarray*}
+  (a+bi) + (c+di) &=& (a+c) + (b+d)i, \\
+  (a+bi) - (c+di) &=& (a-c) + (b-d)i, \\
+  (a+bi) (c+di)   &=& ac+adi+bci+bdi\,^2 ~=~ (ac-bd) + (ad + bc)i.
+\end{eqnarray*}
+
+\begin{example}{Addition, subtraction, and multiplication of complex numbers}{complex-add-subtract-multiply}
+  \begin{itemize}
+  \item $(3+5i) + (2-3i) = (3+2) + (5-3)i         = 5 + 2i$.
+  \item $(3+5i) - (2-3i) = (3-2) + (5+3)i         = 1 + 8i$.
+  \item $(3+5i) (2-3i)   = 6 - 9i + 10i - 15i\,^2 = 21 + i$.
+  \end{itemize}
+\end{example}
+
+Division of complex numbers is more complicated. We first note that it
+is easy to divide a complex number by a {\em real} number. Namely,
+\begin{equation*}
+  \frac{a+bi}{r} = \frac{a}{r} + \frac{b}{r}i.
+\end{equation*}
+But how can we divide by a complex number? We use the following
+trick. Let $z=a+bi$ be a complex number, and consider the product
+$(a+bi)(a-bi)$. It is equal to
+\begin{equation*}
+  (a+bi)(a-bi) = a^2 - b^2i\,^2 = a^2+b^2.
+\end{equation*}
+Therefore, $(a+bi)(a-bi)$ is always a {\em real} number, and therefore
+easy to divide by. Therefore, we can compute the
+\textbf{multiplicative inverse}%
+\index{multipliciative inverse!of a complex number}%
+\index{inverse!of a complex number}%
+\index{complex number!inverse} of a complex number $z=a+bi$ as
+follows:
+\begin{equation*}
+  z^{-1}
+  = \frac{1}{z}
+  = \frac{1}{a+bi}
+  = \frac{1}{a+bi}\,\frac{a-bi}{a-bi}=\frac{a-bi}{a^{2}+b^{2}}.
+\end{equation*}
+
+\begin{example}{Inverse of a complex number}{complex-inverse}
+  Find $\displaystyle\frac{1}{2+5i}$.
+\end{example}
+
+\begin{solution}
+  \begin{equation*}
+    \frac{1}{2+5i}
+    = \frac{2-5i}{2^2+5^2}
+    = \frac{2}{29} - \frac{5}{29}i.
+  \end{equation*}
+\end{solution}
+
+\textbf{Division}\index{complex number!division}%
+\index{division!of complex numbers} of complex numbers can then be
+defined in terms of the multiplicative inverse, i.e.,
+$\frac{z}{w} = zw^{-1}$.
+
+\begin{example}{Division of complex numbers}{complex-division}
+  Find $\displaystyle\frac{3+4i}{5-7i}$.
+\end{example}
+
+\begin{solution}
+  \begin{equation*}
+    \frac{5+7i}{3-4i}
+    = \frac{(5+7i)(3+4i)}{(3-4i)(3+4i)}
+    = \frac{-13+41i}{3^2+4^2}
+    = -\frac{13}{25} + \frac{41}{25}i.
+  \end{equation*}
+\end{solution}
+
+% ======================================================================
+\subsection{CONTINUE HERE...}
 
 Just as a real number can be considered as a point on the line, a
 complex number $z = a + bi$ can be considered as a point $(
@@ -34,105 +124,97 @@ coordinate is $b$. For example, in the following picture, the point $z
 coordinates $(3,2)$.
 
 \begin{center}
-\begin{tikzpicture}
-\draw[<->](3.5,0)--(0,0)--(0,2.5);
-\draw(-0.2,2)--(0.2,2);
-\draw(-0.2,1)--(0.2,1);
-\draw(1,0.2)--(1,-0.2);
-\draw(2,0.2)--(2,-0.2);
-\draw(3,0.2)--(3,-0.2);
-\draw[help lines, dotted] (0,2)--(3,2)--(3,0);
-\draw[fill, red](3,2) circle [radius=1pt];
-\node[right] at (3,2){$z = (3,2)= 3+2i$};
-\end{tikzpicture}
+  \begin{tikzpicture}
+    \draw[<->](3.5,0)--(0,0)--(0,2.5);
+    \draw(-0.2,2)--(0.2,2);
+    \draw(-0.2,1)--(0.2,1);
+    \draw(1,0.2)--(1,-0.2);
+    \draw(2,0.2)--(2,-0.2);
+    \draw(3,0.2)--(3,-0.2);
+    \draw[help lines, dotted] (0,2)--(3,2)--(3,0);
+    \draw[fill, red](3,2) circle [radius=1pt];
+    \node[right] at (3,2){$z = (3,2)= 3+2i$};
+  \end{tikzpicture}
 \end{center}
 
 Addition\index{complex numbers!addition} of complex numbers is defined as follows.
 \begin{equation*}
-(a+bi) +(c+di) =(a+c) +(b+d)i
+  (a+bi) +(c+di) =(a+c) +(b+d)i
 \end{equation*}
 
 This addition obeys all the usual properties\index{field axioms} as the following theorem indicates.
 
 \begin{theorem}{Properties of addition of complex numbers}{properties-of-addition-complex-numbers}
-Let $z,w$, and $v$ be complex numbers. Then the following properties hold.
-\begin{itemize}
-\item Commutative Law for Addition
-\begin{equation*}
-z+w=w+z
-\end{equation*}
+  Let $z,w$, and $v$ be complex numbers. Then the following properties hold.
+  \begin{itemize}
+  \item Commutative Law for Addition
+    \begin{equation*}
+      z+w=w+z
+    \end{equation*}
 
-\item Additive Identity
-\begin{equation*}
-z+0=z
-\end{equation*}
+  \item Additive Identity
+    \begin{equation*}
+      z+0=z
+    \end{equation*}
 
-\item Existence of Additive Inverse
-\begin{equation*}
-\begin{array}{l}
-\mbox{For each} \; z\in \C, \mbox{there exists}\; -z\in \C \mbox{ such that}\; 
-z+(-z) =0 \\
-\mbox{In fact if } z=a+bi, \mbox{ then } -z=-a-bi.
-\end{array}
-\end{equation*}
+  \item Existence of Additive Inverse
+    \begin{equation*}
+      \begin{array}{l}
+        \mbox{For each} \; z\in \C, \mbox{there exists}\; -z\in \C \mbox{ such that}\; 
+        z+(-z) =0 \\
+        \mbox{In fact if } z=a+bi, \mbox{ then } -z=-a-bi.
+      \end{array}
+    \end{equation*}
 
-\item Associative Law for Addition
-\begin{equation*}
-(z+w) +v= z +(w+v)
-\end{equation*}
-\end{itemize}
+  \item Associative Law for Addition
+    \begin{equation*}
+      (z+w) +v= z +(w+v)
+    \end{equation*}
+  \end{itemize}
 \end{theorem}
 
 The proof of this theorem is left as an exercise for the reader.
 
-Now, multiplication\index{complex numbers!multiplication} of complex numbers is defined the way you would expect, recalling that $i^{2} = -1$.
+Now, multiplication\index{complex numbers!multiplication} of complex numbers is defined the way you would expect, recalling that $i\,^{2} = -1$.
 \begin{eqnarray*}
-(a+bi) (c+di) &=&ac+adi+bci+i^{2}bd \\
-&=&(ac-bd) +(ad + bc)i 
+  (a+bi) (c+di) &=&ac+adi+bci+i\,^{2}bd \\
+                &=&(ac-bd) +(ad + bc)i 
 \end{eqnarray*}
 
 Consider the following examples.
 
-\begin{example}{Multiplication of complex numbers}{complex-multiplication}
-\begin{itemize}
-\item $(2-3i)(-3+4i) = 6+17i$
-\item $(4-7i)(6-2i) = 10-50i$
-\item $(-3+6i)(5-i) = -9+33i$
-\end{itemize}
-\end{example}
-
 The following are important properties of multiplication of complex numbers.
 
 \begin{theorem}{Properties of multiplication of complex numbers}{properties-multiplication-complex-numbers}
-Let $z,w$ and $v$ be complex numbers. Then, the following properties of multiplication hold.
+  Let $z,w$ and $v$ be complex numbers. Then, the following properties of multiplication hold.
 
-\begin{itemize}
+  \begin{itemize}
 
-\item Commutative Law for Multiplication
-\begin{equation*}
-zw=wz
-\end{equation*}
+  \item Commutative Law for Multiplication
+    \begin{equation*}
+      zw=wz
+    \end{equation*}
 
-\item Associative Law for Multiplication
-\begin{equation*}
-(zw) v=z(wv) 
-\end{equation*}
+  \item Associative Law for Multiplication
+    \begin{equation*}
+      (zw) v=z(wv) 
+    \end{equation*}
 
-\item Multiplicative Identity
-\begin{equation*}
-1z=z
-\end{equation*}
+  \item Multiplicative Identity
+    \begin{equation*}
+      1z=z
+    \end{equation*}
 
-\item Existence of Multiplicative Inverse
-\begin{equation*}
-\mbox{For each}\; z\neq 0, \mbox{there exists}\; z^{-1} \mbox{ such that}\; zz^{-1}=1
-\end{equation*}
+  \item Existence of Multiplicative Inverse
+    \begin{equation*}
+      \mbox{For each}\; z\neq 0, \mbox{there exists}\; z^{-1} \mbox{ such that}\; zz^{-1}=1
+    \end{equation*}
 
-\item Distributive Law
-\begin{equation*}
-z(w+v) =zw+zv
-\end{equation*}
-\end{itemize}
+  \item Distributive Law
+    \begin{equation*}
+      z(w+v) =zw+zv
+    \end{equation*}
+  \end{itemize}
 \end{theorem}
 
 You may wish to verify some of these statements.  The real numbers
@@ -151,62 +233,62 @@ conjugate\index{complex numbers!conjugate} denoted by a horizontal line above th
 is defined as follows.
 
 \begin{definition}{Conjugate of a complex number}{conjugate}
-Let $z = a+bi$ be a complex number. Then the \textbf{conjugate} of $z$, written $\overline{z}$ is given by 
-\begin{equation*}
-\overline{a+bi}= a-bi
-\end{equation*}
+  Let $z = a+bi$ be a complex number. Then the \textbf{conjugate} of $z$, written $\overline{z}$ is given by 
+  \begin{equation*}
+    \overline{a+bi}= a-bi
+  \end{equation*}
 \end{definition}
 
 Geometrically, the action of the conjugate is to reflect a given complex number across the $x$ axis.
 Algebraically, it changes the sign on the imaginary part of the complex number. Therefore, for a real number $a$, $\overline{a} = a$. 
 
 \begin{example}{Conjugate of a complex number}{complex-conjugate}
-\begin{itemize}
+  \begin{itemize}
 
-\item If $z=3+4i$, then $\overline{z}=3-4i$,
-i.e., $\overline{3+4i}=3-4i$.
+  \item If $z=3+4i$, then $\overline{z}=3-4i$,
+    i.e., $\overline{3+4i}=3-4i$.
 
-\item $\overline{-2+5i}= -2-5i$.
+  \item $\overline{-2+5i}= -2-5i$.
 
-\item $\overline{i}= -i$.
+  \item $\overline{i}= -i$.
 
-\item $\overline{7}= 7$.
-\end{itemize}
+  \item $\overline{7}= 7$.
+  \end{itemize}
 \end{example}
 
 Consider the following computation. 
 \begin{eqnarray*}
-(\overline{a+bi}) (a+bi) &=&(a-bi)
-(a+bi) \\
-&=&a^{2}+b^{2}-(ab-ab)i =a^{2}+b^{2}
+  (\overline{a+bi}) (a+bi) &=&(a-bi)
+                               (a+bi) \\
+                           &=&a^{2}+b^{2}-(ab-ab)i =a^{2}+b^{2}
 \end{eqnarray*}
 Notice that there is no imaginary part in the product, thus
 multiplying a complex number by its conjugate results in  a real number.
 
 \begin{theorem}{Properties of the conjugate}{properties-conjugate}
-Let $z$ and $w$ be complex numbers. Then, the following properties of the conjugate hold.
+  Let $z$ and $w$ be complex numbers. Then, the following properties of the conjugate hold.
 
-\begin{itemize}
-\item
-$\overline{z\pm w} = \overline{z} \pm \overline{w}$.
-\item
-$\overline{(zw)} = \overline{z}~ \overline{w}$.
-\item
-$\overline{(\overline{z})}=z$.
-\item
-$\overline{\paren{\frac{z}{w}}} =
-\frac{\overline{z}}{\overline{w}}$.
-\item
-$z$ is real if and only if $\overline{z}=z$.
-\end{itemize}
+  \begin{itemize}
+  \item
+    $\overline{z\pm w} = \overline{z} \pm \overline{w}$.
+  \item
+    $\overline{(zw)} = \overline{z}~ \overline{w}$.
+  \item
+    $\overline{(\overline{z})}=z$.
+  \item
+    $\overline{\paren{\frac{z}{w}}} =
+    \frac{\overline{z}}{\overline{w}}$.
+  \item
+    $z$ is real if and only if $\overline{z}=z$.
+  \end{itemize}
 \end{theorem}
 
 Division of complex numbers is defined as follows. Let $z=a+bi$ and $w=c+di$ be complex numbers such that $c,d$ are not both zero. Then the quotient $z$ divided by $w$ is
 \begin{eqnarray*}
-\frac{z}{w}=
-\frac{a+bi}{c+di} & = & \frac{a+bi}{c+di}\times \frac{c-di}{c-di} \\
-& = & \frac{(ac+bd)+(bc-ad)i}{c^2+d^2} \\
-& = & \frac{ac+bd}{c^2+d^2} +\frac{bc-ad}{c^2+d^2}i.
+  \frac{z}{w}=
+  \frac{a+bi}{c+di} & = & \frac{a+bi}{c+di}\times \frac{c-di}{c-di} \\
+                    & = & \frac{(ac+bd)+(bc-ad)i}{c^2+d^2} \\
+                    & = & \frac{ac+bd}{c^2+d^2} +\frac{bc-ad}{c^2+d^2}i.
 \end{eqnarray*}
 
 In other words, the quotient $\frac{z}{w}$ is obtained by multiplying
@@ -214,23 +296,23 @@ both top and bottom of $\frac{z}{w}$ by $\overline{w}$ and
 then simplifying the expression.
 
 \begin{example}{Division of complex numbers}{division-complex}
-\begin{itemize}
-\item
-\[ \frac{1}{i} = \frac{1}{i}\times \frac{-i}{-i}
-=\frac{-i}{-i^2}=-i \]
+  \begin{itemize}
+  \item
+    \[ \frac{1}{i} = \frac{1}{i}\times \frac{-i}{-i}
+      =\frac{-i}{-i\,^2}=-i \]
 
-\item
-\[ \frac{2-i}{3+4i} = \frac{2-i}{3+4i}\times \frac{3-4i}{3-4i}
-=\frac{(6-4)+(-3-8)i}{3^2+4^2}
-=\frac{2-11i}{25}
-=\frac{2}{25} - \frac{11}{25}i \]
+  \item
+    \[ \frac{2-i}{3+4i} = \frac{2-i}{3+4i}\times \frac{3-4i}{3-4i}
+      =\frac{(6-4)+(-3-8)i}{3^2+4^2}
+      =\frac{2-11i}{25}
+      =\frac{2}{25} - \frac{11}{25}i \]
 
-\item
+  \item
 
-\[ \frac{1-2i}{-2+5i} = \frac{1-2i}{-2+5i}\times \frac{-2-5i}{-2-5i}
-=\frac{(-2-10) + (4-5)i}{2^2+5^2}
-=-\frac{12}{29}-\frac{1}{29}i  \]
-\end{itemize}
+    \[ \frac{1-2i}{-2+5i} = \frac{1-2i}{-2+5i}\times \frac{-2-5i}{-2-5i}
+      =\frac{(-2-10) + (4-5)i}{2^2+5^2}
+      =-\frac{12}{29}-\frac{1}{29}i  \]
+  \end{itemize}
 \end{example}
 
 Interestingly every non-zero complex number $a+bi$ has a unique
@@ -239,44 +321,22 @@ $z$, there exists a number $z^{-1}$ (or $\frac{1}{z}$) so that
 $zz^{-1} = 1$. Note that $z=a+bi$ is non-zero exactly when
 $a^{2}+b^{2}\neq 0$, and its inverse can be written in standard form as defined now. 
 
-\begin{definition}{Inverse of a complex number}{complex-inverse}
-Let $z = a+bi$ be a complex number. Then the multiplicative inverse of $z$, written $z^{-1}$ exists if and only if $a^{2}+b^{2}\neq 0$ and is given by 
-\begin{equation*}
-z^{-1} = \frac{1}{a+bi}  = \frac{1}{a+bi}\times \frac{a-bi}{a-bi}=\frac{a-bi}{a^{2}+b^{2}}=\frac{a}{a^{2}+b^{2}}-i\frac{b}{
-a^{2}+b^{2}}
-\end{equation*}
-\end{definition}
-
-Note that we may write $z^{-1}$ as $\frac{1}{z}$. Both notations represent the multiplicative inverse of the complex number $z$. Consider now an example.
-
-\begin{example}{Inverse of a complex number}{complex-inverse}
-Consider the complex number $z = 2 + 6i$. Then $z^{-1}$ is defined, and
-\begin{eqnarray*}
- \frac{1}{z} &=& \frac{1}{2+6i}\\
- &=& \frac{1}{2+6i}\times \frac{2-6i}{2-6i} \\
- &=& \frac{2-6i}{2^2+6^2} \\
- &=& \frac{2-6i}{40} \\
- &=& \frac{1}{20} -  \frac{3}{20}i
-\end{eqnarray*}
-
-You can always check your answer by computing $zz^{-1}$.
-\end{example}
 
 Another important construction of complex numbers is that of the absolute value, also called the modulus. Consider the following definition. 
 
 \begin{definition}{Absolute value}{complex-abs-value}
-\index{complex numbers!modulus}\index{complex numbers!absolute value}%
-The absolute
-value, or modulus, of a complex number, denoted $\abs{z}$ is defined as follows.
-\begin{equation*}
-\abs{a+bi} =
-\sqrt{a^{2}+b^{2}}
-\end{equation*}
+  \index{complex numbers!modulus}\index{complex numbers!absolute value}%
+  The absolute
+  value, or modulus, of a complex number, denoted $\abs{z}$ is defined as follows.
+  \begin{equation*}
+    \abs{a+bi} =
+    \sqrt{a^{2}+b^{2}}
+  \end{equation*}
 \end{definition}
 
 Thus, if $z$ is the complex number $z=a+bi$, it follows that
 \begin{equation*}
-\abs{z} =(z\overline{z}) ^{1/2}
+  \abs{z} =(z\overline{z}) ^{1/2}
 \end{equation*}
 
 Also from the definition, if $z=a+bi$ and $w=c+di$ are two complex numbers,
@@ -287,66 +347,66 @@ of complex numbers. There are two useful versions which we present
 here, although the first one is officially called the triangle inequality. 
 
 \begin{proposition}{Triangle inequality}{triangle-inequality-complex}
-Let $z,w$ be complex numbers. 
+  Let $z,w$ be complex numbers. 
 
-The following two inequalities hold for any  complex numbers $z,w$:
-\begin{equation*}
-\begin{array}{l}
-\abs{z+w} \leq \abs{z} +\abs{w}  \\
-\abs{\abs{z} -\abs{w}} \leq \abs{z-w} 
-\end{array}
-\end{equation*}
-The first one is called the \em{Triangle Inequality}.
+  The following two inequalities hold for any  complex numbers $z,w$:
+  \begin{equation*}
+    \begin{array}{l}
+      \abs{z+w} \leq \abs{z} +\abs{w}  \\
+      \abs{\abs{z} -\abs{w}} \leq \abs{z-w} 
+    \end{array}
+  \end{equation*}
+  The first one is called the \em{Triangle Inequality}.
 \end{proposition}
 
 \begin{proof}
-Let $z=a+bi$ and $w=c+di$. First note that
-\begin{equation*}
-z
-\overline{w}=(a+bi) (c-di) =ac+bd+(
-bc-ad)i
-\end{equation*}
-and so $\abs{ac+bd}\leq \abs{z\overline{w}}=\abs{z}\abs{w}$.
+  Let $z=a+bi$ and $w=c+di$. First note that
+  \begin{equation*}
+    z
+    \overline{w}=(a+bi) (c-di) =ac+bd+(
+    bc-ad)i
+  \end{equation*}
+  and so $\abs{ac+bd}\leq \abs{z\overline{w}}=\abs{z}\abs{w}$.
 
-Then,
-\begin{equation*}
-\abs{z+w}^{2}=(a+c+i(b+d)) (
-a+c-i(b+d))
-\end{equation*}
-\begin{equation*}
-=(a+c) ^{2}+(b+d)
-^{2}=a^{2}+c^{2}+2ac+2bd+b^{2}+d^{2}
-\end{equation*}
-\begin{equation*}
-\leq \abs{z}^{2}+\abs{w}^{2}+2\abs{z}\abs{w}=(\abs{z}+\abs{w}) ^{2}
-\end{equation*}
+  Then,
+  \begin{equation*}
+    \abs{z+w}^{2}=(a+c+i(b+d)) (
+    a+c-i(b+d))
+  \end{equation*}
+  \begin{equation*}
+    =(a+c) ^{2}+(b+d)
+    ^{2}=a^{2}+c^{2}+2ac+2bd+b^{2}+d^{2}
+  \end{equation*}
+  \begin{equation*}
+    \leq \abs{z}^{2}+\abs{w}^{2}+2\abs{z}\abs{w}=(\abs{z}+\abs{w}) ^{2}
+  \end{equation*}
 
-Taking the square root, we have that 
-\begin{equation*}
-\abs{z+w}\leq \abs{z}+\abs{w}
-\end{equation*}
-so this verifies the triangle inequality. 
+  Taking the square root, we have that 
+  \begin{equation*}
+    \abs{z+w}\leq \abs{z}+\abs{w}
+  \end{equation*}
+  so this verifies the triangle inequality. 
 
-To get the  second inequality, write
-\begin{equation*}
-z=z-w+w,\;w=w-z+z
-\end{equation*}
-and so by the first form of the inequality we get both:
-\begin{equation*}
-\abs{z}\leq \abs{z-w}+\abs{w},\;\abs{w}\leq \abs{z-w}+\abs{z}\end{equation*}
+  To get the  second inequality, write
+  \begin{equation*}
+    z=z-w+w,\;w=w-z+z
+  \end{equation*}
+  and so by the first form of the inequality we get both:
+  \begin{equation*}
+    \abs{z}\leq \abs{z-w}+\abs{w},\;\abs{w}\leq \abs{z-w}+\abs{z}\end{equation*}
 
-Hence,  both $\abs{z}-\abs{w}$ and 
-$\abs{w}-\abs{z}$ are no larger than 
-$\abs{z-w}$. This proves the second version because 
-$\abs{\abs{z}-\abs{w}}$ is
-one of $\abs{z}-\abs{w}$ or $\abs{w}-\abs{z}$. 
+  Hence,  both $\abs{z}-\abs{w}$ and 
+  $\abs{w}-\abs{z}$ are no larger than 
+  $\abs{z-w}$. This proves the second version because 
+  $\abs{\abs{z}-\abs{w}}$ is
+  one of $\abs{z}-\abs{w}$ or $\abs{w}-\abs{z}$. 
 \end{proof}
 
 With this definition, it is important to note the following. You may wish to take
 the time to verify this remark.
 
 Let $z=a+bi$ and $w=c+di$. Then $\abs{z-w} =\sqrt{(
-a-c) ^{2}+(b-d) ^{2}}$. Thus the distance between the
+  a-c) ^{2}+(b-d) ^{2}}$. Thus the distance between the
 point in the plane determined by the ordered pair $(a,b) $ and
 the ordered pair $(c,d) $ equals $\abs{z-w} $ where $z$
 and $w$ are as just described.
