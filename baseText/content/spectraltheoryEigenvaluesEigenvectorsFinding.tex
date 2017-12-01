@@ -139,9 +139,10 @@ polynomial in the variable $\eigenvar$. A \textbf{polynomial}%
 \begin{equation*}
   p(\eigenvar) = a_n\eigenvar^n + a_{n-1}\eigenvar^{n-1} + \ldots + a_1\eigenvar + a_0,
 \end{equation*}
-where $a_0,\ldots,a_n$ are constants called the \textbf{coefficients}
-of the polynomial. The polynomial $\det(A-\eigenvar I)$ has a special
-name:
+where $a_0,\ldots,a_n$ are constants called the \textbf{coefficients}%
+\index{coefficient!of a polynomial}%
+\index{polynomial!coefficient} of the polynomial. The polynomial
+$\det(A-\eigenvar I)$ has a special name:
 
 \begin{definition}{Characteristic polynomial}{characteristic-polynomial}
   Let $A$ be a square matrix. The expression
@@ -230,7 +231,12 @@ eigenvectors of a matrix.
   \begin{equation*}
     p(\eigenvar) = \det(A-\eigenvar I) = -\eigenvar^3 +4\eigenvar^2 +\eigenvar - 4.
   \end{equation*}
-  Finding the roots of a cubic polynomial can be a bit tricky, but
+  Finding the roots%
+  \index{characteristic polynomial!root}%
+  \index{matrix!characteristic polynomial!root}%
+  \index{root!of a polynomial}%
+  \index{polynomial!root}
+  of a cubic polynomial can be a bit tricky, but
   with some trial and error, we can find that $\eigenvar=1$ is a
   root. We can therefore factor out $(\eigenvar-1)$:
   \begin{equation*}
