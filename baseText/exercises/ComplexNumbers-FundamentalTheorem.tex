@@ -3,4 +3,27 @@
 
 \begin{enumialphparenastyle}
 
+\begin{ex}
+  Let $p(x) =a_{n}x^{n}+a_{n-1}x^{n-1}+\ldots+a_{1}x+a_{0}$ be a
+  polynomial with real coefficients, i.e., such that all the $a_{k}$
+  are real numbers. Suppose that $z$ is a root of $p$. Show that
+  $\overline{z}$ is also a root of $p$. 
+  \begin{sol}
+    If $p(z) =0$ and $a_0,\ldots,a_k$ are real, we have
+    \begin{eqnarray*}
+      p(\overline{z})
+      &=& a_{n}\overline{z}^{n}+a_{n-1}\overline{z}^{n-1}+\ldots +a_{1}\overline{z}          
+          +a_{0} \\
+      &=&\overline{a_{n}}\ \overline{z}^{n}+\overline{a_{n-1}}\ \overline{z}                
+      ^{n-1}+\ldots +\overline{a_{1}}\ \overline{z}+\overline{a_{0}}
+      \\
+      &=& \overline{a_{n}z^{n}}+\overline{a_{n-1}z^{n-1}}+\ldots +\overline{a_{1}z}+         
+          \overline{a_{0}} \\
+      &=& \overline{a_{n}z^{n}+a_{n-1}z^{n-1}+\ldots+a_{1}z+a_{0}} \\
+      &=& \overline{p(z) } \\
+      &=& 0.
+    \end{eqnarray*}
+  \end{sol}
+\end{ex}
+
 \end{enumialphparenastyle}
