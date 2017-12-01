@@ -68,7 +68,7 @@ the multiplication $(3+2i)(1+i)=1+5i$.
     \end{scope}
     \begin{scope}[xshift=7cm]
       \draw[help lines, dotted, fill=yellow!30] (0,0) -- (1,0) -- (1,1) -- cycle;
-      \filldraw[fill=blue!10,draw=blue!50!black] (0,0) -- (0.8,0) arc (0:45:0.8) -- cycle;
+      \filldraw[fill=blue!10,draw=blue!50!black] (0,0) -- (0.5,0) arc (0:45:0.5) -- cycle;
       \draw[->](-1.5,0) -- (3.5,0);
       \draw[->](0,0) -- (0,2.5);
       \draw(0,1) -- +(-0.2,0) node[left] {$i$};
@@ -107,5 +107,44 @@ the multiplication $(3+2i)(1+i)=1+5i$.
     \end{scope}
   \end{tikzpicture}
 \end{equation*}
+To take the multiplicative inverse of a complex number, we take the
+reciprocal of the magnitude and negate the argument. 
+\begin{equation*}
+  \begin{tikzpicture}
+    \draw[help lines, dotted] (30:4.5) -- (30:4.5 |- 0,0);
+    \draw[help lines, dotted] (-30:2) -- (-30:2 |- 0,0);
+    \filldraw[fill=green!20,draw=green!50!black] (0,0) -- (1.2,0) arc (0:30:1.2) -- cycle;
+    \filldraw[fill=green!20,draw=green!50!black] (0,0) -- (1.2,0) arc (0:-30:1.2) -- cycle;
+    \node at (15:9mm){$~\theta$};
+    \node at (-15:9mm){$-\theta~$};
+    \draw[->](-1.5,0) -- (5.5,0);
+    \draw[->](0,0) -- (0,3.5);
+    \draw(0,3) -- +(-0.2,0) node[left] {$i$};
+    \draw(3,0) -- +(0,-0.2) node[below] {$1$};
+    \draw[thick, blue] (0,0) -- node[above, black] {$r$} (30:4.5);
+    \draw[fill, black] (30:4.5) circle [radius=1.8pt] node [right] {$z$};
+    \draw[thick, blue] (0,0) -- node[below, black] {$\frac{1}{r}$} (-30:2);
+    \draw[fill, black] (-30:2) circle [radius=1.8pt] node [right] {$z^{-1}$};
+  \end{tikzpicture}
+\end{equation*}
 The effect of taking the complex conjugate is to reflect the given
-complex number about the $x$ axis.
+complex number about the $x$ axis (or equivalently, keep the magnitude
+unchanged and regate the argument).
+\begin{equation*}
+  \begin{tikzpicture}
+    \draw[help lines, dotted] (30:4.5) -- (30:4.5 |- 0,0);
+    \draw[help lines, dotted] (-30:4.5) -- (-30:4.5 |- 0,0);
+    \filldraw[fill=green!20,draw=green!50!black] (0,0) -- (1.2,0) arc (0:30:1.2) -- cycle;
+    \filldraw[fill=green!20,draw=green!50!black] (0,0) -- (1.2,0) arc (0:-30:1.2) -- cycle;
+    \node at (15:9mm){$~\theta$};
+    \node at (-15:9mm){$-\theta~$};
+    \draw[->](-1.5,0) -- (5.5,0);
+    \draw[->](0,0) -- (0,3.5);
+    \draw(0,3) -- +(-0.2,0) node[left] {$i$};
+    \draw(3,0) -- +(0,-0.2) node[below] {$1$};
+    \draw[thick, blue] (0,0) -- node[above, black] {$r$} (30:4.5);
+    \draw[fill, black] (30:4.5) circle [radius=1.8pt] node [right] {$z$};
+    \draw[thick, blue] (0,0) -- node[below, black] {$r$} (-30:4.5);
+    \draw[fill, black] (-30:4.5) circle [radius=1.8pt] node [right] {$\bar{z}$};
+  \end{tikzpicture}
+\end{equation*}
