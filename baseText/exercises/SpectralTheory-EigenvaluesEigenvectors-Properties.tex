@@ -79,15 +79,26 @@
 \end{ex}
 
 \begin{ex}
-  Let $A$ be a $2\times 2$-matrix. Prove that $A^2$ is a linear
-  combination of $A$ and $I$. 
+  \begin{enumerate}
+  \item Let $A$ be a $2\times 2$-matrix. Prove that $A^2$ is a linear
+    combination of $A$ and $I$.
+  \item Given an example of a $3\times 3$-matrix $A$ such that $A^2$
+    is not a linear combination of $A$ and $I$.
+  \end{enumerate}
   \begin{sol}
-    The characteristic polynomial of $A$ is a quadratic polynomial,
-    and therefore it is of the form
-    $p(\eigenvar) = \eigenvar^2 + b\eigenvar + c$, for some
-    $r,s\in\R$. By the Cayley-Hamilton theorem, $p(A)=0$, therefore
-    $A^2 = -bA - cI$. This proves that $A^2$ is a linear combination
-    of $A$ and $I$.
+    \begin{enumerate}
+    \item The characteristic polynomial of $A$ is a quadratic
+      polynomial, and therefore it is of the form
+      $p(\eigenvar) = \eigenvar^2 + b\eigenvar + c$, for some
+      $r,s\in\R$. By the Cayley-Hamilton theorem, $p(A)=0$, therefore
+      $A^2 = -bA - cI$. This proves that $A^2$ is a linear combination
+      of $A$ and $I$.
+    \item $A=\begin{mymatrix}{rrr}
+        0 & 1 & 0 \\
+        0 & 0 & 1 \\
+        0 & 0 & 0 \\
+      \end{mymatrix}$.
+    \end{enumerate}
   \end{sol}
 \end{ex}
 
