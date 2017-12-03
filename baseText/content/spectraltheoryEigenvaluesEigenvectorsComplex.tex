@@ -217,19 +217,52 @@ Appendix~\ref{app:complex}.
       \vect{v}_1 = \begin{mymatrix}{r} -1 \\ 1 \\ 0 \end{mymatrix}.
     \end{equation*}
   \item For $\lambda=1+2i$, we solve $(A-(1+2i)I)\vect{v}=\vect{0}$:
-    \begin{equation*}
+    \begin{eqnarray*}
       \begin{mymatrix}{ccc|c}
         -4-2i & -2  & 4    & 0 \\
         2     & -2i & 0    & 0 \\
         -2    & -2  & 2-2i & 0 \\
       \end{mymatrix}
-      \quad\roweq\ldots\roweq\quad
+      & \stackrel{R_1\rowop-R_1/2}{
+        \stackrel{R_2\rowop R_2/2}{
+        \stackrel{R_3\rowop -R_3/2}{\roweq}}} &
+      \begin{mymatrix}{ccc|c}
+        2+i &  1 &  -2 & 0 \\
+        1   & -i &  0  & 0 \\
+        1   &  1 & i-1 & 0 \\
+      \end{mymatrix}
+      \\
+      &\stackrel{R_1\rowswap R_2}{\roweq} &
+      \begin{mymatrix}{ccc|c}
+        1   & -i &  0  & 0 \\
+        2+i &  1 &  -2 & 0 \\
+        1   &  1 & i-1 & 0 \\
+      \end{mymatrix}
+      \\
+      & \stackrel{R_2\rowop R_2-(2+i)R_1}{
+        \stackrel{R_3\rowop R_3-R_1}{\roweq}} &
+      \begin{mymatrix}{ccc|c}
+        1   & -i  &  0  & 0 \\
+        0   & 2i  & -2  & 0 \\
+        0   & 1+i & i-1 & 0 \\
+      \end{mymatrix}
+      \\
+      & \stackrel{R_2 \rowop R_2/2i}{
+        \stackrel{R_3 \rowop R_3/(1+i)}{\roweq}} &
+      \begin{mymatrix}{ccc|c}
+        1   & -i  &  0  & 0 \\
+        0   & 1  &   i  & 0 \\
+        0   & 1   &  i  & 0 \\ 
+      \end{mymatrix}
+      \\
+      & \stackrel{R_1 \rowop R_1+iR_2}{
+        \stackrel{R_3 \rowop R_3-R_2}{\roweq}} &
       \begin{mymatrix}{ccc|c}
         1     & 0   & -1  & 0 \\
         0     & 1   & i   & 0 \\
         0     & 0   & 0   & 0 \\
       \end{mymatrix}.
-    \end{equation*}
+    \end{eqnarray*}
     The basic eigenvector is
     \begin{equation*}
       \vect{v}_2 = \begin{mymatrix}{r} 1 \\ -i \\ 1 \end{mymatrix}.
