@@ -1,2 +1,329 @@
 \section{Complex eigenvalues and eigenvectors}
 
+An $n\times n$-matrix is diagonalizable if and only if it has $n$
+linearly independent eigenvectors. But as we saw in
+Example~\ref{exa:no-real-eigenvalue}, if we work over the real
+numbers, it can sometimes happen that a matrix has no eigenvalues, and
+therefore no eigenvectors, at all. For example, the matrix
+\begin{equation*}
+  A=\begin{mymatrix}{rr}
+      0 & -1 \\
+      1 &  0 \\
+    \end{mymatrix}
+\end{equation*}
+has characteristic polynomial $\eigenvar^2+1$. Since the equation
+$\eigenvar^2+1$ does not have any roots in the real numbers, there are
+no real eigenvalues.
+
+On the other hand, the fundamental theorem of algebra tell us that
+over the {\em complex} numbers, every non-constant polynomial has a
+root. In fact, every polynomial of degree $n$ factors into $n$ linear
+factors. Therefore, every matrix has at least one eigenvalue over the
+complex numbers. Some matrices are diagonalizable over the complex
+numbers but not over the real numbers. An introduction to complex
+numbers and the fundamental theorem of algebra can be found in
+Appendix~\ref{app:complex}.
+
+\begin{example}{Complex eigenvalues and eigenvectors}{complex-eigenvalue1}
+  Find the eigenvectors and eigenvalues of
+  \begin{equation*}
+    A=\begin{mymatrix}{rr}
+      0 & -1 \\
+      1 &  0 \\
+    \end{mymatrix}
+  \end{equation*}
+  over the complex numbers. Diagonalize $A$ if possible.
+\end{example}
+
+\begin{solution}
+  The characteristic polynomial is $\eigenvar^2+1$. This has no roots
+  in the real numbers, but it has two roots $\eigenvar=i$ and
+  $\eigenvar=-i$\, in the complex numbers. To find the eigenvectors for
+  $\eigenvar=i$, we solve $(A-iI)\vect{v}=\vect{0}$:
+  \begin{equation*}
+    \begin{mymatrix}{rr|r}
+      -i & -1 & 0 \\
+      1 & -i & 0 \\
+    \end{mymatrix}
+    \quad\stackrel{R_1\rowswap R_2}{\roweq}\quad
+    \begin{mymatrix}{rr|r}
+      1 & -i & 0 \\
+      -i & -1 & 0 \\
+    \end{mymatrix}
+    \quad\stackrel{R_2\rowop R_2+iR_1}{\roweq}\quad
+    \begin{mymatrix}{rr|r}
+      1 & -i & 0 \\
+      0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Thus, the basic eigenvector for $\eigenvar=i$\, is
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{c} i \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Similarly, to find the eigenvectors for $\eigenvar=-i$, we solve
+  $(A+iI)\vect{v}=\vect{0}$:
+  \begin{equation*}
+    \begin{mymatrix}{cc|c}
+      i & -1 & 0 \\
+      1 &  i & 0 \\
+    \end{mymatrix}
+    \quad\stackrel{R_1\rowswap R_2}{\roweq}\quad
+    \begin{mymatrix}{cc|c}
+      1 &  i & 0 \\
+      i & -1 & 0 \\
+    \end{mymatrix}
+    \quad\stackrel{R_2\rowop R_2-iR_1}{\roweq}\quad
+    \begin{mymatrix}{cc|c}
+      1 & i & 0 \\
+      0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Thus, the basic eigenvector for $\eigenvar=-i$\, is
+  \begin{equation*}
+    \vect{v}_2 = \begin{mymatrix}{r} -i \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Since we have found two linearly independent eigenvectors, the
+  matrix $A$ is diagonalizable. We have $A=PDP^{-1}$, where
+  \begin{equation*}
+    P =
+    \begin{mymatrix}{cr}
+      i & -i \\
+      1 &  1 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    D =
+    \begin{mymatrix}{cr}
+      i &  0 \\
+      0 & -i \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{Complex eigenvalues and eigenvectors}{complex-eigenvalue2}
+  Find the eigenvectors and eigenvalues of
+  \begin{equation*}
+    A=\begin{mymatrix}{rr}
+      1 & -1 \\
+      1 &  1 \\
+    \end{mymatrix}
+  \end{equation*}
+  over the complex numbers. Diagonalize $A$ if possible.
+\end{example}
+
+\begin{solution}
+  The characteristic polynomial is
+  \begin{equation*}
+    \det(A-\eigenvar I)
+    = \begin{absmatrix}{cc}
+      1-\eigenvar & -1 \\
+      1 & 1-\eigenvar \\
+    \end{absmatrix}
+    = (1-\eigenvar)^2 + 1
+    = \eigenvar^2 - 2\eigenvar + 2.
+  \end{equation*}
+  To find the roots, we use the quadratic formula. The roots are given
+  by:
+  \begin{equation*}
+    \eigenvar
+    = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+    = \frac{2\pm\sqrt{-4}}{2} = 1\pm i.
+  \end{equation*}
+  Note that since the discriminant $b^2-4ac$ is negative, there are no
+  real solutions. However, we find two complex solutions $\eigenvar=1+i$
+  and $\eigenvar=1-i$. To find the eigenvectors for $\eigenvar=1+i$, we
+  solve the equation $(A-(1+i)I)\vect{v}=\vect{0}$:
+  \begin{equation*}
+    \begin{mymatrix}{rr|r}
+      -i & -1 & 0 \\
+      1 & -i & 0 \\
+    \end{mymatrix}
+    \quad\roweq\ldots\roweq\quad
+    \begin{mymatrix}{rr|r}
+      1 & -i & 0 \\
+      0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The basic eigenvector for $\eigenvar=1+i$\, is
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{c} i \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Similarly, the basic eigenvector for $\eigenvar=1-i$\, is
+  \begin{equation*}
+    \vect{v}_2 = \begin{mymatrix}{r} -i \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Since we have found two linearly independent eigenvectors, the
+  matrix $A$ is diagonalizable. We have $A=PDP^{-1}$, where
+  \begin{equation*}
+    P =
+    \begin{mymatrix}{cr}
+      i & -i \\
+      1 &  1 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    D =
+    \begin{mymatrix}{cc}
+      1+i &  0 \\
+      0 & 1-i \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{Diagonalize a matrix over the complex numbers}{complex-diagonalize}
+  Diagonalize the matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      -3 & -2 & 4 \\
+      2  &  1 & 0 \\
+      -2 & -2 & 3 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  The characteristic polynomial is
+  \begin{equation*}
+    p(\eigenvar)
+    = (-3-\eigenvar)(1-\eigenvar)(3-\eigenvar) - 16 +8(1-\eigenvar) + 4(3-\eigenvar)
+    = -\eigenvar^3 + \eigenvar^2 - 3\eigenvar - 5.
+  \end{equation*}
+  By trial and error, we find that $\eigenvar=-1$ is one of the
+  roots. We factor out $(\eigenvar + 1)$:
+  \begin{equation*}
+    p(\eigenvar) = (\eigenvar+1)(-\eigenvar^2 + 2\eigenvar - 5).
+  \end{equation*}
+  We then use the quadratic formula to find the other two eigenvalues,
+  i.e., the roots of $-\eigenvar^2 + 2\eigenvar - 5$. They are:
+  \begin{equation*}
+    \eigenvar = \frac{-2\pm\sqrt{-16}}{-2} = 1\pm 2i.
+  \end{equation*}
+  Eigenvectors:
+  \begin{itemize}
+  \item For $\lambda=-1$, we solve $(A-(-1)I)\vect{v}=\vect{0}$:
+    \begin{equation*}
+      \begin{mymatrix}{rrr|r}
+        -2 & -2 & 4 & 0 \\
+        2  &  2 & 0 & 0 \\
+        -2 & -2 & 4 & 0 \\
+      \end{mymatrix}
+      \quad\roweq\ldots\roweq\quad
+      \begin{mymatrix}{rrr|r}
+        1 & 1 &  0 & 0 \\
+        0 & 0 &  1 & 0 \\
+        0 & 0 &  0 & 0 \\
+      \end{mymatrix}.
+    \end{equation*}
+    The basic eigenvector is
+    \begin{equation*}
+      \vect{v}_1 = \begin{mymatrix}{r} -1 \\ 1 \\ 0 \end{mymatrix}.
+    \end{equation*}
+  \item For $\lambda=1+2i$, we solve $(A-(1+2i)I)\vect{v}=\vect{0}$:
+    \begin{equation*}
+      \begin{mymatrix}{ccc|c}
+        -4-2i & -2  & 4    & 0 \\
+        2     & -2i & 0    & 0 \\
+        -2    & -2  & 2-2i & 0 \\
+      \end{mymatrix}
+      \quad\roweq\ldots\roweq\quad
+      \begin{mymatrix}{ccc|c}
+        1     & 0   & -1  & 0 \\
+        0     & 1   & i   & 0 \\
+        0     & 0   & 0   & 0 \\
+      \end{mymatrix}.
+    \end{equation*}
+    The basic eigenvector is
+    \begin{equation*}
+      \vect{v}_2 = \begin{mymatrix}{r} 1 \\ -i \\ 1 \end{mymatrix}.
+    \end{equation*}
+  \item For $\lambda=1-2i$, we solve $(A-(1-2i)I)\vect{v}=\vect{0}$:
+    \begin{equation*}
+      \begin{mymatrix}{ccc|c}
+        -4+2i & -2  & 4    & 0 \\
+        2     &  2i & 0    & 0 \\
+        -2    & -2  & 2+2i & 0 \\
+      \end{mymatrix}
+      \quad\roweq\ldots\roweq\quad
+      \begin{mymatrix}{ccc|c}
+        1     & 0   & -1  & 0 \\
+        0     & 1   & -i  & 0 \\
+        0     & 0   & 0   & 0 \\
+      \end{mymatrix}.
+    \end{equation*}
+    The basic eigenvector is
+    \begin{equation*}
+      \vect{v}_3 = \begin{mymatrix}{c} 1 \\ i \\ 1 \end{mymatrix}.
+    \end{equation*}
+    Therefore, $A=PDP^{-1}$, where
+    \begin{equation*}
+      P =
+      \begin{mymatrix}{ccc}
+        -1 &  1 & 1 \\
+        1  & -i & i \\
+        0  &  1 & 1 \\
+      \end{mymatrix}
+      \quad\mbox{and}\quad
+      D =
+      \begin{mymatrix}{ccc}
+        -1 &  0   & 0    \\
+        0  & 1+2i & 0    \\
+        0  &  0   & 1-2i \\
+      \end{mymatrix}.
+    \end{equation*}
+  \end{itemize}
+\end{solution}
+
+It is important to note that even over the complex numbers, not all
+matrices are diagonalizable. On the one hand, the characteristic
+polynomial of an $n\times n$-matrix always factors into $n$ linear
+factors over the complex numbers. Therefore, the sum of the algebraic
+multiplicities of the eigenvalues is always $n$. However, it can still
+happen that the geometric multiplicity of some eigenvalue is less than
+its algebraic multiplicity. In that case, the matrix is not
+diagonalizable, even over the complex numbers. We have:
+
+\begin{proposition}{Diagonalizability criterion}{complex-diagonalizability}
+  A square matrix $A$ is diagonalizable over the complex numbers if
+  and only if the geometric multiplicity of each eigenvalue is equal
+  to its algebraic multiplicity.
+\end{proposition}
+
+\begin{proof}
+  Let $A$ be an $n\times n$-matrix. By
+  Proposition~\ref{prop:complex-factoring}, the characteristic
+  polynomial factors into $n$ linear factors:
+  \begin{equation*}
+    p(\eigenvar) = (b_1-\eigenvar)(b_2-\eigenvar)\cdots(b_n-\eigenvar).
+  \end{equation*}
+  Therefore, the sum of the algebraic multiplicities of all the
+  eigenvalues is $n$. If the geometric multiplicity of each eigenvalue
+  is equal to its algebraic multiplicity, then the sum of the
+  geometric multiplicities is also $n$, and therefore $A$ is
+  diagonalizable. On the other hand, if the geometric multiplicity of
+  some eigenvalue is less than its algebraic multiplicity, then the
+  sum of the geometric multiplicities is less than $n$, and $A$ is not
+  diagonalizable.
+\end{proof}
+
+\begin{example}{Non-diagonalizable matrix}{complex-non-diagonalizable}
+  Show that the matrix $A =
+    \begin{mymatrix}{rr}
+      1 & 1 \\
+      0 & 1
+    \end{mymatrix}$ cannot be diagonalized, even over the complex numbers.
+\end{example}
+
+\begin{solution}
+  The characteristic polynomial is $(1-\eigenvar)^2$, and therefore
+  the only eigenvalue is $\lambda=1$, with algebraic multiplicity
+  $2$. On the other hand, the eigenspace for $\lambda=1$ is
+  1-dimensional:
+  \begin{equation*}
+    \begin{mymatrix}{rr}
+      0 & 1 \\
+      0 & 0
+    \end{mymatrix}
+    \vect{v}
+    = \begin{mymatrix}{r} 0 \\ 0 \end{mymatrix}
+  \end{equation*}
+  has a 1-dimensional solution space. Therefore, we can find only one
+  basic eigenvector, and the matrix is not diagonalizable.
+\end{solution}
