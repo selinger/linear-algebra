@@ -342,13 +342,16 @@ diagonalizable, even over the complex numbers. We have:
   Let $A$ be an $n\times n$-matrix. By the fundamental theorem of
   algebra, the characteristic polynomial factors into $n$ linear
   factors. Therefore, the sum of the algebraic multiplicities of all
-  the eigenvalues is $n$. If the geometric multiplicity of each
-  eigenvalue is equal to its algebraic multiplicity, then the sum of
-  the geometric multiplicities is also $n$, and therefore $A$ is
-  diagonalizable. On the other hand, if the geometric multiplicity of
-  some eigenvalue is less than its algebraic multiplicity, then the
-  sum of the geometric multiplicities is less than $n$, and $A$ is not
-  diagonalizable.
+  the eigenvalues is $n$. We know by
+  Proposition~\ref{prop:dimension-eigenspace} that the geometric
+  multiplicity of each eigenvalue less than or equal to its algebraic
+  multiplicity. If the geometric multiplicity of each eigenvalue is
+  equal to its algebraic multiplicity, then the sum of the geometric
+  multiplicities is $n$, and therefore $A$ is diagonalizable by
+  Proposition~\ref{prop:multiplicity-and-diagonalization}. On the
+  other hand, if the geometric multiplicity of some eigenvalue is less
+  than its algebraic multiplicity, then the sum of the geometric
+  multiplicities is less than $n$, and $A$ is not diagonalizable.
 \end{proof}
 
 \begin{example}{Non-diagonalizable matrix}{complex-non-diagonalizable}
