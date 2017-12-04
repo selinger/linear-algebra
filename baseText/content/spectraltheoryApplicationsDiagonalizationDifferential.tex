@@ -296,39 +296,41 @@ vary with time, i.e., they can both be functions of $t$.
   $k=2\frac{\SI{N}}{\m}$.
   \begin{equation*}
     \begin{tikzpicture}
-      \draw[thick] (0,0) -- (14.4,0);
+      \draw[thick] (0,0) -- (16.4,0);
       \begin{scope}
         \draw[fill=white] (2,0.5) rectangle node {$1\kg$} (4,1.5);
         \draw[fill=white] (2.5,0.25) circle (0.25);
         \draw[fill=white] (3.5,0.25) circle (0.25);
       \end{scope}
-      \begin{scope}[xshift=4.2cm]
+      \begin{scope}[xshift=5.2cm]
         \draw[fill=white] (1.8,0.5) rectangle node {$2\kg$} (4.2,1.9);
         \draw[fill=white] (2.5,0.25) circle (0.25);
         \draw[fill=white] (3.5,0.25) circle (0.25);
       \end{scope}
-      \begin{scope}[xshift=8.4cm]
+      \begin{scope}[xshift=10.4cm]
         \draw[fill=white] (2,0.5) rectangle node {$1\kg$} (4,1.5);
         \draw[fill=white] (2.5,0.25) circle (0.25);
         \draw[fill=white] (3.5,0.25) circle (0.25);
       \end{scope}
       \begin{scope}[xshift=4cm]
-        \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.1,0.3)
-        -- (2,1);
-        \draw (1,1.3) node[above] {$k$};
+        \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.13,0.3)
+        -- ++(0.2,0);
+        \draw (1.5,1.3) node[above] {$k$};
       \end{scope}
-      \begin{scope}[xshift=8.4cm]
-        \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.1,0.3)
-        -- (2,1);
-        \draw (1,1.3) node[above] {$k$};
+      \begin{scope}[xshift=9.4cm]
+        \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.13,0.3)
+        -- ++(0.2,0);
+        \draw (1.5,1.3) node[above] {$k$};
       \end{scope}
     \end{tikzpicture}
   \end{equation*}
@@ -347,48 +349,50 @@ vary with time, i.e., they can both be functions of $t$.
   are in their natural relaxed state.
   \begin{equation*}
     \begin{tikzpicture}[scale=0.8, color=blue!50!black]
-      \draw[thick] (0,0) -- (14.4,0);
+      \draw[thick] (0,0) -- (16.4,0);
       \begin{scope}
         \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
         \draw[fill=blue!10] (2.5,0.25) circle (0.25);
         \draw[fill=blue!10] (3.5,0.25) circle (0.25);
       \end{scope}
-      \begin{scope}[xshift=4.2cm]
+      \begin{scope}[xshift=5.2cm]
         \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
         \draw[fill=blue!10] (2.5,0.25) circle (0.25);
         \draw[fill=blue!10] (3.5,0.25) circle (0.25);
       \end{scope}
-      \begin{scope}[xshift=8.4cm]
+      \begin{scope}[xshift=10.4cm]
         \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
         \draw[fill=blue!10] (2.5,0.25) circle (0.25);
         \draw[fill=blue!10] (3.5,0.25) circle (0.25);
       \end{scope}
       \begin{scope}[xshift=4cm]
-        \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.1,0.3)
-        -- (2,1);
+        \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.13,0.3)
+        -- ++(0.2,0);
       \end{scope}
-      \begin{scope}[xshift=8.4cm]
-        \draw (0,1) -- (0.2,1) -- ++(0.1,0.3)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.2,0.6)
-        -- ++(0.2,-0.6) -- ++(0.1,0.3)
-        -- (2,1);
+      \begin{scope}[xshift=9.4cm]
+        \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.26,0.6)
+        -- ++(0.26,-0.6) -- ++(0.13,0.3)
+        -- ++(0.2,0);
       \end{scope}
       \begin{scope}[yshift=-1cm, xshift=0cm, color=black]
-        \draw[->] (1.5,0) -- node[above] {$x$-axis} +(3,0);
+        \draw[->] (1,0) -- node[above] {$x$-axis} +(4,0);
         \draw (3,0) -- +(0,-0.2) node[below=-4pt] {$x=0$};
       \end{scope}
-      \begin{scope}[yshift=-1cm, xshift=4.2cm, color=black]
-        \draw[->] (1.5,0) -- node[above] {$y$-axis} +(3,0);
+      \begin{scope}[yshift=-1cm, xshift=5.2cm, color=black]
+        \draw[->] (1,0) -- node[above] {$y$-axis} +(4,0);
         \draw (3,0) -- +(0,-0.2) node[below=-4pt] {$y=0$};
       \end{scope}
-      \begin{scope}[yshift=-1cm, xshift=8.4cm, color=black]
-        \draw[->] (1.5,0) -- node[above] {$z$-axis} +(3,0);
+      \begin{scope}[yshift=-1cm, xshift=10.4cm, color=black]
+        \draw[->] (1,0) -- node[above] {$z$-axis} +(4,0);
         \draw (3,0) -- +(0,-0.2) node[below=-4pt] {$z=0$};
       \end{scope}
     \end{tikzpicture}
@@ -532,48 +536,124 @@ vary with time, i.e., they can both be functions of $t$.
       \begin{tikzpicture}[scale=0.8, color=blue!50!black]
         \begin{scope}[yshift=0cm]
           \draw (-3,1) node[right] {$t=0\s$};
-          \draw[thick] (0,0) -- (14.4,0);
+          \draw[thick] (0,0) -- (16.4,0);
           \begin{scope}[xshift=0cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=4.2cm]
+          \begin{scope}[xshift=5.2cm]
             \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=8.4cm]
+          \begin{scope}[xshift=10.4cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
           \begin{scope}[xshift=4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
-          \begin{scope}[xshift=8.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+          \begin{scope}[xshift=9.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
         \end{scope}
         \begin{scope}[yshift=-2cm]
           \draw (-3,1) node[right] {$t=1.1\s$};
-          \draw[thick] (0,0) -- (14.4,0);
+          \draw[thick] (0,0) -- (16.4,0);
           \begin{scope}[xshift=-1cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=4.2cm]
+          \begin{scope}[xshift=5.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=11.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=3cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.18,0.3)
+            -- ++(0.36,-0.6) -- ++(0.36,0.6)
+            -- ++(0.36,-0.6) -- ++(0.36,0.6)
+            -- ++(0.36,-0.6) -- ++(0.36,0.6)
+            -- ++(0.36,-0.6) -- ++(0.36,0.6)
+            -- ++(0.36,-0.6) -- ++(0.18,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=9.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.18,0.3)
+            -- ++(0.36,-0.6) -- ++(0.36,0.6)
+            -- ++(0.36,-0.6) -- ++(0.36,0.6)
+            -- ++(0.36,-0.6) -- ++(0.36,0.6)
+            -- ++(0.36,-0.6) -- ++(0.36,0.6)
+            -- ++(0.36,-0.6) -- ++(0.18,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-4cm]
+          \draw (-3,1) node[right] {$t=2.2\s$};
+          \draw[thick] (0,0) -- (16.4,0);
+          \begin{scope}[xshift=0cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=5.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=10.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=9.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-6cm]
+          \draw (-3,1) node[right] {$t=3.3\s$};
+          \draw[thick] (0,0) -- (16.4,0);
+          \begin{scope}[xshift=1cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=5.2cm]
             \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
@@ -583,135 +663,69 @@ vary with time, i.e., they can both be functions of $t$.
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=3cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1625,0.3)
-            -- ++(0.325,-0.6) -- ++(0.325,0.6)
-            -- ++(0.325,-0.6) -- ++(0.325,0.6)
-            -- ++(0.325,-0.6) -- ++(0.325,0.6)
-            -- ++(0.325,-0.6) -- ++(0.1625,0.3)
-            -- ++(0.2,0);
-          \end{scope}
-          \begin{scope}[xshift=8.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1625,0.3)
-            -- ++(0.325,-0.6) -- ++(0.325,0.6)
-            -- ++(0.325,-0.6) -- ++(0.325,0.6)
-            -- ++(0.325,-0.6) -- ++(0.325,0.6)
-            -- ++(0.325,-0.6) -- ++(0.1625,0.3)
-            -- ++(0.2,0);
-          \end{scope}
-        \end{scope}
-        \begin{scope}[yshift=-4cm]
-          \draw (-3,1) node[right] {$t=2.2\s$};
-          \draw[thick] (0,0) -- (14.4,0);
-          \begin{scope}[xshift=0cm]
-            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=4.2cm]
-            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=8.4cm]
-            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
-            -- ++(0.2,0);
-          \end{scope}
-          \begin{scope}[xshift=8.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
-            -- ++(0.2,0);
-          \end{scope}
-        \end{scope}
-        \begin{scope}[yshift=-6cm]
-          \draw (-3,1) node[right] {$t=3.3\s$};
-          \draw[thick] (0,0) -- (14.4,0);
-          \begin{scope}[xshift=1cm]
-            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=4.2cm]
-            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=7.4cm]
-            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
           \begin{scope}[xshift=5cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.0375,0.3)
-            -- ++(0.075,-0.6) -- ++(0.075,0.6)
-            -- ++(0.075,-0.6) -- ++(0.075,0.6)
-            -- ++(0.075,-0.6) -- ++(0.075,0.6)
-            -- ++(0.075,-0.6) -- ++(0.0375,0.3)
+            \draw (0,1) -- ++(0.2,0) -- ++(0.08,0.3)
+            -- ++(0.16,-0.6) -- ++(0.16,0.6)
+            -- ++(0.16,-0.6) -- ++(0.16,0.6)
+            -- ++(0.16,-0.6) -- ++(0.16,0.6)
+            -- ++(0.16,-0.6) -- ++(0.16,0.6)
+            -- ++(0.16,-0.6) -- ++(0.08,0.3)
             -- ++(0.2,0);
           \end{scope}
-          \begin{scope}[xshift=8.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.0375,0.3)
-            -- ++(0.075,-0.6) -- ++(0.075,0.6)
-            -- ++(0.075,-0.6) -- ++(0.075,0.6)
-            -- ++(0.075,-0.6) -- ++(0.075,0.6)
-            -- ++(0.075,-0.6) -- ++(0.0375,0.3)
+          \begin{scope}[xshift=9.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.08,0.3)
+            -- ++(0.16,-0.6) -- ++(0.16,0.6)
+            -- ++(0.16,-0.6) -- ++(0.16,0.6)
+            -- ++(0.16,-0.6) -- ++(0.16,0.6)
+            -- ++(0.16,-0.6) -- ++(0.16,0.6)
+            -- ++(0.16,-0.6) -- ++(0.08,0.3)
             -- ++(0.2,0);
           \end{scope}
         \end{scope}
         \begin{scope}[yshift=-8cm]
           \draw (-3,1) node[right] {$t=4.4\s$};
-          \draw[thick] (0,0) -- (14.4,0);
+          \draw[thick] (0,0) -- (16.4,0);
           \begin{scope}[xshift=0cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=4.2cm]
+          \begin{scope}[xshift=5.2cm]
             \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=8.4cm]
+          \begin{scope}[xshift=10.4cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
           \begin{scope}[xshift=4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
-          \begin{scope}[xshift=8.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+          \begin{scope}[xshift=9.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
         \end{scope}
         \begin{scope}[xshift=3cm,yshift=1cm,rotate=-90]
           \draw[ultra thick,red] (0,0) sin (2,-1) cos (4,0) sin (6,1) cos (8,0);
         \end{scope}
-        \begin{scope}[xshift=7.2cm,yshift=1cm,rotate=-90]
+        \begin{scope}[xshift=8.2cm,yshift=1cm,rotate=-90]
           \draw[ultra thick,red] (0,0) sin (2,0) cos (4,0) sin (6,0) cos (8,0);
         \end{scope}
-        \begin{scope}[xshift=11.4cm,yshift=1cm,rotate=-90]
+        \begin{scope}[xshift=13.4cm,yshift=1cm,rotate=-90]
           \draw[ultra thick,red] (0,0) sin (2,1) cos (4,0) sin (6,-1) cos (8,0);
         \end{scope}
       \end{tikzpicture}
@@ -776,43 +790,8 @@ vary with time, i.e., they can both be functions of $t$.
       \begin{tikzpicture}[scale=0.8, color=blue!50!black]
         \begin{scope}[yshift=0cm]
           \draw (-3,1) node[right] {$t=0\s$};
-          \draw[thick] (0,0) -- (14.4,0);
+          \draw[thick] (0,0) -- (16.4,0);
           \begin{scope}[xshift=0cm]
-            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=4.2cm]
-            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=8.4cm]
-            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
-            -- ++(0.2,0);
-          \end{scope}
-          \begin{scope}[xshift=8.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
-            -- ++(0.2,0);
-          \end{scope}
-        \end{scope}
-        \begin{scope}[yshift=-2cm]
-          \draw (-3,1) node[right] {$t=0.79\s$};
-          \draw[thick] (0,0) -- (14.4,0);
-          \begin{scope}[xshift=-1cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
@@ -822,64 +801,39 @@ vary with time, i.e., they can both be functions of $t$.
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=7.4cm]
-            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=3cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.225,0.3)
-            -- ++(0.45,-0.6) -- ++(0.45,0.6)
-            -- ++(0.45,-0.6) -- ++(0.45,0.6)
-            -- ++(0.45,-0.6) -- ++(0.45,0.6)
-            -- ++(0.45,-0.6) -- ++(0.225,0.3)
-            -- ++(0.2,0);
-          \end{scope}
-        \end{scope}
-        \begin{scope}[yshift=-4cm]
-          \draw (-3,1) node[right] {$t=1.57\s$};
-          \draw[thick] (0,0) -- (14.4,0);
-          \begin{scope}[xshift=0cm]
-            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=4.2cm]
-            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=8.4cm]
+          \begin{scope}[xshift=10.4cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
           \begin{scope}[xshift=4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
-          \begin{scope}[xshift=8.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+          \begin{scope}[xshift=9.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
         \end{scope}
-        \begin{scope}[yshift=-6cm]
-          \draw (-3,1) node[right] {$t=2.36\s$};
-          \draw[thick] (0,0) -- (14.4,0);
-          \begin{scope}[xshift=1cm]
+        \begin{scope}[yshift=-2cm]
+          \draw (-3,1) node[right] {$t=0.79\s$};
+          \draw[thick] (0,0) -- (16.4,0);
+          \begin{scope}[xshift=-1cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=3.2cm]
+          \begin{scope}[xshift=6.2cm]
             \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
@@ -889,19 +843,66 @@ vary with time, i.e., they can both be functions of $t$.
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=7.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.225,0.3)
-            -- ++(0.45,-0.6) -- ++(0.45,0.6)
-            -- ++(0.45,-0.6) -- ++(0.45,0.6)
-            -- ++(0.45,-0.6) -- ++(0.45,0.6)
-            -- ++(0.45,-0.6) -- ++(0.225,0.3)
+          \begin{scope}[xshift=3cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.23,0.3)
+            -- ++(0.46,-0.6) -- ++(0.46,0.6)
+            -- ++(0.46,-0.6) -- ++(0.46,0.6)
+            -- ++(0.46,-0.6) -- ++(0.46,0.6)
+            -- ++(0.46,-0.6) -- ++(0.46,0.6)
+            -- ++(0.46,-0.6) -- ++(0.23,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=10.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.03,0.3)
+            -- ++(0.06,-0.6) -- ++(0.06,0.6)
+            -- ++(0.06,-0.6) -- ++(0.06,0.6)
+            -- ++(0.06,-0.6) -- ++(0.06,0.6)
+            -- ++(0.06,-0.6) -- ++(0.06,0.6)
+            -- ++(0.06,-0.6) -- ++(0.03,0.3)
             -- ++(0.2,0);
           \end{scope}
         \end{scope}
-        \begin{scope}[yshift=-8cm]
-          \draw (-3,1) node[right] {$t=3.14\s$};
-          \draw[thick] (0,0) -- (14.4,0);
+        \begin{scope}[yshift=-4cm]
+          \draw (-3,1) node[right] {$t=1.57\s$};
+          \draw[thick] (0,0) -- (16.4,0);
           \begin{scope}[xshift=0cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=5.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=10.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+          \begin{scope}[xshift=9.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-6cm]
+          \draw (-3,1) node[right] {$t=2.36\s$};
+          \draw[thick] (0,0) -- (16.4,0);
+          \begin{scope}[xshift=1cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
@@ -911,35 +912,74 @@ vary with time, i.e., they can both be functions of $t$.
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
+          \begin{scope}[xshift=11.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=5cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.03,0.3)
+            -- ++(0.06,-0.6) -- ++(0.06,0.6)
+            -- ++(0.06,-0.6) -- ++(0.06,0.6)
+            -- ++(0.06,-0.6) -- ++(0.06,0.6)
+            -- ++(0.06,-0.6) -- ++(0.06,0.6)
+            -- ++(0.06,-0.6) -- ++(0.03,0.3)
+            -- ++(0.2,0);
+          \end{scope}
           \begin{scope}[xshift=8.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.23,0.3)
+            -- ++(0.46,-0.6) -- ++(0.46,0.6)
+            -- ++(0.46,-0.6) -- ++(0.46,0.6)
+            -- ++(0.46,-0.6) -- ++(0.46,0.6)
+            -- ++(0.46,-0.6) -- ++(0.46,0.6)
+            -- ++(0.46,-0.6) -- ++(0.23,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-8cm]
+          \draw (-3,1) node[right] {$t=3.14\s$};
+          \draw[thick] (0,0) -- (16.4,0);
+          \begin{scope}[xshift=0cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=5.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=10.4cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
           \begin{scope}[xshift=4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
-          \begin{scope}[xshift=8.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+          \begin{scope}[xshift=9.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
         \end{scope}
         \begin{scope}[xshift=3cm,yshift=1cm,rotate=-90]
           \draw[ultra thick,red] (0,0) sin (2,-1) cos (4,0) sin (6,1) cos (8,0);
         \end{scope}
-        \begin{scope}[xshift=7.2cm,yshift=1cm,rotate=-90]
+        \begin{scope}[xshift=8.2cm,yshift=1cm,rotate=-90]
           \draw[ultra thick,red] (0,0) sin (2,1) cos (4,0) sin (6,-1) cos (8,0);
         \end{scope}
-        \begin{scope}[xshift=11.4cm,yshift=1cm,rotate=-90]
+        \begin{scope}[xshift=13.4cm,yshift=1cm,rotate=-90]
           \draw[ultra thick,red] (0,0) sin (2,-1) cos (4,0) sin (6,1) cos (8,0);
         \end{scope}
       \end{tikzpicture}
@@ -988,43 +1028,8 @@ vary with time, i.e., they can both be functions of $t$.
       \begin{tikzpicture}[scale=0.8, color=blue!50!black]
         \begin{scope}[yshift=0cm]
           \draw (-3,1) node[right] {$t=0\s$};
-          \draw[thick] (0,0) -- (14.4,0);
+          \draw[thick] (0,0) -- (16.4,0);
           \begin{scope}[xshift=-1cm]
-            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=3.2cm]
-            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=7.4cm]
-            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
-            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
-            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
-          \end{scope}
-          \begin{scope}[xshift=3cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
-            -- ++(0.2,0);
-          \end{scope}
-          \begin{scope}[xshift=7.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
-            -- ++(0.2,0);
-          \end{scope}
-        \end{scope}
-        \begin{scope}[yshift=-2cm]
-          \draw (-3,1) node[right] {$t=1\s$};
-          \draw[thick] (0,0) -- (14.4,0);
-          \begin{scope}[xshift=0cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
@@ -1034,32 +1039,34 @@ vary with time, i.e., they can both be functions of $t$.
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=8.4cm]
+          \begin{scope}[xshift=9.4cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+          \begin{scope}[xshift=3cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
           \begin{scope}[xshift=8.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
         \end{scope}
-        \begin{scope}[yshift=-4cm]
-          \draw (-3,1) node[right] {$t=2\s$};
-          \draw[thick] (0,0) -- (14.4,0);
-          \begin{scope}[xshift=1cm]
+        \begin{scope}[yshift=-2cm]
+          \draw (-3,1) node[right] {$t=1\s$};
+          \draw[thick] (0,0) -- (16.4,0);
+          \begin{scope}[xshift=0cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
@@ -1069,32 +1076,34 @@ vary with time, i.e., they can both be functions of $t$.
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=9.4cm]
+          \begin{scope}[xshift=10.4cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
-          \begin{scope}[xshift=5cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+          \begin{scope}[xshift=4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
           \begin{scope}[xshift=9.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
         \end{scope}
-        \begin{scope}[yshift=-6cm]
-          \draw (-3,1) node[right] {$t=3\s$};
-          \draw[thick] (0,0) -- (14.4,0);
-          \begin{scope}[xshift=2cm]
+        \begin{scope}[yshift=-4cm]
+          \draw (-3,1) node[right] {$t=2\s$};
+          \draw[thick] (0,0) -- (16.4,0);
+          \begin{scope}[xshift=1cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
@@ -1104,35 +1113,74 @@ vary with time, i.e., they can both be functions of $t$.
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
+          \begin{scope}[xshift=11.4cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=5cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
+            -- ++(0.2,0);
+          \end{scope}
           \begin{scope}[xshift=10.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
+            -- ++(0.2,0);
+          \end{scope}
+        \end{scope}
+        \begin{scope}[yshift=-6cm]
+          \draw (-3,1) node[right] {$t=3\s$};
+          \draw[thick] (0,0) -- (16.4,0);
+          \begin{scope}[xshift=2cm]
+            \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=7.2cm]
+            \draw[fill=blue!10] (1.8,0.5) rectangle (4.2,1.9);
+            \draw[fill=blue!10] (2.5,0.25) circle (0.25);
+            \draw[fill=blue!10] (3.5,0.25) circle (0.25);
+          \end{scope}
+          \begin{scope}[xshift=12.4cm]
             \draw[fill=blue!10] (2,0.5) rectangle (4,1.5);
             \draw[fill=blue!10] (2.5,0.25) circle (0.25);
             \draw[fill=blue!10] (3.5,0.25) circle (0.25);
           \end{scope}
           \begin{scope}[xshift=6cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
-          \begin{scope}[xshift=10.4cm]
-            \draw (0,1) -- ++(0.2,0) -- ++(0.1,0.3)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.2,0.6)
-            -- ++(0.2,-0.6) -- ++(0.1,0.3)
+          \begin{scope}[xshift=11.4cm]
+            \draw (0,1) -- ++(0.2,0) -- ++(0.13,0.3)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.26,0.6)
+            -- ++(0.26,-0.6) -- ++(0.13,0.3)
             -- ++(0.2,0);
           \end{scope}
         \end{scope}
         \begin{scope}[xshift=3cm,yshift=1cm,rotate=-90]
           \draw[ultra thick, red] (0,-1) -- (6,2);
         \end{scope}
-        \begin{scope}[xshift=7.2cm,yshift=1cm,rotate=-90]
+        \begin{scope}[xshift=8.2cm,yshift=1cm,rotate=-90]
           \draw[ultra thick, red] (0,-1) -- (6,2);
         \end{scope}
-        \begin{scope}[xshift=11.4cm,yshift=1cm,rotate=-90]
+        \begin{scope}[xshift=13.4cm,yshift=1cm,rotate=-90]
           \draw[ultra thick, red] (0,-1) -- (6,2);
         \end{scope}
       \end{tikzpicture}
