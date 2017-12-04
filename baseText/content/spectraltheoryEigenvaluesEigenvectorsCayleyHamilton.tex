@@ -1,0 +1,175 @@
+\section{The Cayley-Hamilton Theorem}
+
+\begin{outcome}
+  \begin{enumerate}
+  \item For a square matrix $A$, find a polynomial $p(x)$ such that $p(A)=0$.
+  \end{enumerate}
+\end{outcome}
+
+In this section, we will consider the so-called
+\textbf{Cayley-Hamilton theorem}%
+\index{Cayley-Hamilton theorem}%
+\index{characteristic polynomial!Cayley-Hamilton theorem}%
+\index{matrix!Cayley-Hamilton theorem}. It states that every square
+matrix is a root of its own characteristic polynomial. We use the
+following notation. If
+\begin{equation*}
+  p(\lambda) = a_n\lambda^n + a_{n-1}\lambda^{n-1} + \ldots +
+  a_1\lambda + a_0
+\end{equation*}
+is a polynomial, we denote by $p(A)$ the matrix defined by
+\begin{equation*}
+  p(A) = a_nA^n + a_{n-1}A^{n-1} + \ldots + a_1A + a_0I.
+\end{equation*}
+The explanation for the last term is that $A^0$ is interpreted as $I$,
+the identity matrix.
+
+\begin{theorem}{Cayley-Hamilton theorem}{cayley-hamilton}
+  Let $A$ be a square matrix and let $p(\eigenvar)=\det(A-\eigenvar
+  I)$ be its characteristic polynomial. Then $p(A)=0$.
+\end{theorem}
+
+Before we prove this theorem, we consider an example.
+
+\begin{example}{Cayley-Hamilton theorem}{cayley-hamilton}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      3 & 4 \\
+      -1 & 2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Find the characteristic polynomial $p(\eigenvar)$, and compute
+  $p(A)$.
+\end{example}
+
+\begin{solution}
+  The characteristic polynomial is
+  \begin{equation*}
+    p(\eigenvar)
+    ~=~ \det(A-\eigenvar I)
+    ~=~ \begin{absmatrix}{cc}
+      3-\eigenvar & 4 \\
+      -1 & 2-\eigenvar \\
+    \end{absmatrix}
+    ~=~ (3-\eigenvar)(2-\eigenvar) - (-1)4
+    ~=~ \eigenvar^2 - 5\eigenvar + 10.
+  \end{equation*}
+  Applying the characteristic polynomial to $A$, we get
+  \begin{eqnarray*}
+    p(A) ~=~ A^2 - 5A + 10I
+    &=& \begin{mymatrix}{rr}
+      3 & 4 \\
+      -1 & 2 \\
+    \end{mymatrix}^2
+    - 5 \begin{mymatrix}{rr}
+      3 & 4 \\
+      -1 & 2 \\
+    \end{mymatrix}
+    + \begin{mymatrix}{rr}
+      10 & 0 \\
+      0 & 10 \\
+    \end{mymatrix} \\
+    &=& \begin{mymatrix}{rr}
+      5 & 20 \\
+      -5 & 0 \\
+    \end{mymatrix}
+    - \begin{mymatrix}{rr}
+      15 & 20 \\
+      -5 & 10 \\
+    \end{mymatrix}
+    + \begin{mymatrix}{rr}
+      10 & 0 \\
+      0 & 10 \\
+    \end{mymatrix}
+    ~=~ \begin{mymatrix}{rr}
+      0 & 0 \\
+      0 & 0 \\
+    \end{mymatrix},
+  \end{eqnarray*}
+  just as predicted by the Cayley-Hamilton theorem.
+\end{solution}
+
+The remainder of this section is devoted to the proof of the
+Cayley-Hamilton theorem. Readers who are not interested in the proof
+can skip this material. We begin with a lemma:
+
+\begin{lemma}{Polynomials with matrix coefficients}{polynomial-matrix-coefficient}
+  Let $A_0,\ldots,A_m$ be $n\times n$-matrices and assume that for all
+  scalars $\eigenvar$,
+  \begin{equation*}
+    A_0 + A_1\eigenvar + \ldots + A_m\eigenvar^m = 0.
+  \end{equation*}
+  Then each $A_i = 0$.
+\end{lemma}
+
+\begin{proof}
+  Multiply by $\eigenvar^{-m}$ to obtain
+  \begin{equation*}
+    A_0 \eigenvar^{-m} + A_1 \eigenvar^{-m+1} + \ldots + A_{m-1}\eigenvar^{-1} + A_m = 0.
+  \end{equation*}
+  Now let $\abs{\eigenvar}\rightarrow\infty$ to obtain $A_m = 0$. With
+  this, multiply by $\eigenvar$ to obtain
+  \begin{equation*}
+    A_0 \eigenvar^{-m+1} + A_1 \eigenvar^{-m+2} + \ldots + A_{m-1} = 0.
+  \end{equation*}
+  Now let $\abs{\eigenvar}\rightarrow\infty$ to obtain $A_{m-1} =
+  0$. Continue multiplying by $\eigenvar$ and letting
+  $\eigenvar\to\infty$ to obtain $A_i=0$ for all $i$.
+\end{proof}
+
+The following is a simple consequence of the lemma.
+
+\begin{corollary}{}{polynomial-matrix-coefficient}
+  Let $A_i$ and $B_i$ be $n\times n$-matrices and suppose that
+  \begin{equation*}
+    A_0 + A_1\eigenvar + \ldots + A_m\eigenvar^m =
+    B_0 + B_1\eigenvar + \ldots + B_m\eigenvar^m
+  \end{equation*}
+  for all $\eigenvar$. Then for any $n\times n$-matrix $C$,
+  \begin{equation*}
+    A_0 + A_1C + \ldots + A_mC^m =
+    B_0 + B_1C + \ldots + B_mC^m.
+  \end{equation*}
+\end{corollary}
+
+\begin{proof}
+  Subtracting the right-hand side from the left-hand side and using
+  Lemma~\ref{lem:polynomial-matrix-coefficient}, we get that $A_i=B_i$
+  for all $i$. But then the conclusion immediately follows.
+\end{proof}
+
+With this preparation, it is now relatively easy to prove the
+Cayley-Hamilton theorem.
+
+\begin{proofof}{of the Cayley-Hamilton Theorem} Let $A$ be an
+  $n\times n$-matrix, and let $p(\eigenvar)=\det(A-\eigenvar I)$ be
+  its characteristic polynomial.  Let $\adj(A-\eigenvar I)$ be the
+  adjugate of the matrix $A-\eigenvar I$ (see
+  Section~\ref{sec:adjugate} for the definition of the
+  adjugate). Since each of the entries of the adjugate is a cofactor
+  of $A-\eigenvar I$, the entries are polynomials in $\eigenvar$ of
+  degree at most $n-1$. Therefore, the adjugate can be written in the
+  form
+  \begin{equation*}
+    \adj(A-\eigenvar I) = C_0 + C_1\eigenvar + \ldots + C_{n-1}\eigenvar^{n-1}.
+  \end{equation*}
+  By Theorem~\ref{thm:inverse-and-determinant}, we have
+  \begin{equation*}
+    \det(A-\eigenvar I)\,I = (A-\eigenvar I) \, \adj(A-\eigenvar I),
+  \end{equation*}
+  or equivalently,
+  \begin{equation*}
+    p(\eigenvar)\,I = 
+    (A-\eigenvar I)\,(C_0 + C_1\eigenvar + \ldots + C_{n-1}\eigenvar^{n-1}).
+  \end{equation*}
+  Since this equation holds for all $\eigenvar$,
+  Corollary~\ref{cor:polynomial-matrix-coefficient} may be
+  used. Therefore, if $\eigenvar$ is replaced with $A$, the two sides
+  will be equal. Thus
+  \begin{equation*}
+    p(A)\,I = (A-A)\,(C_0 + C_1A + \ldots + C_{n-1}A^{n-1}) = 0.
+  \end{equation*}
+  It follows that $p(A)=0$, concluding the proof of the
+  Cayley-Hamilton Theorem.
+\end{proofof}
