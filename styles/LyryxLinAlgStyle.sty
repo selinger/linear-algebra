@@ -106,6 +106,12 @@
 \def\proof{\par\noindent{\prooffont{\bf{\underline{Proof.}}}} \ignorespaces}
 \def\endproof{\prooffont{\bf\xqed{$\spadesuit$}}\par\medskip\noindentafter}
 
+% Variant for proof "of" something:
+\def\proofof#1{\par\noindent{\prooffont{\bf{\underline{Proof #1.}}}} \ignorespaces}
+\let\endproofof\endproof
+
+%\newenvironment{proofof}[1]{\proofof{#1}}{\endproof}
+
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
