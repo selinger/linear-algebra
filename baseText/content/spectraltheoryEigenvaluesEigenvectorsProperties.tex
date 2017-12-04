@@ -13,14 +13,14 @@
 In this section, we state various useful properties of eigenvectors
 and eigenvalues. The first question we consider is whether
 eigenvectors for different eigenvalues are linearly independent. This
-is indeed the case, as the following theorem shows:
+is indeed the case, as the following proposition shows:
 
-\begin{theorem}{Eigenvectors for different eigenvalues are linearly independent}{linearly-independent-eigenvectors}
+\begin{proposition}{Eigenvectors for different eigenvalues are linearly independent}{linearly-independent-eigenvectors}
   Let $A$ be a square matrix, and suppose that $A$ has distinct
   eigenvalues $\eigenvar_1,\ldots,\eigenvar_k$ with
   corresponding eigenvectors $\vect{v}_1,\ldots,\vect{v}_k$.
   Then $\vect{v}_1,\ldots,\vect{v}_k$ are linearly independent.
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
   Suppose, for the sake of obtaining a contradiction, that
@@ -57,7 +57,7 @@ is indeed the case, as the following theorem shows:
   eigenvector (and therefore non-zero).
 \end{proof}
 
-An immediate consequence of this theorem is that an $n\times n$-matrix
+An immediate consequence of this proposition is that an $n\times n$-matrix
 with $n$ distinct eigenvalues is diagonalizable.
 
 \begin{corollary}{Distinct eigenvalues}{distinct-eigenvalues}
@@ -67,7 +67,7 @@ with $n$ distinct eigenvalues is diagonalizable.
 
 \begin{proof}
   Each of the $n$ eigenvalues has an eigenvector, and by
-  Theorem~\ref{thm:linearly-independent-eigenvectors}, they are
+  Proposition~\ref{prop:linearly-independent-eigenvectors}, they are
   linearly independent. Then $A$ is diagonalizable by
   Theorem~\ref{thm:eigenvectors-and-diagonalizable}.
 \end{proof}
