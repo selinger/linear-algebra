@@ -76,6 +76,7 @@ Ehsun
 eigen
 eigenfrequency
 eigenspace
+eigenspaces
 eigenvector
 eigenvectors
 endpoints
