@@ -203,6 +203,28 @@ that this is always the case.
   $m\leq k$, as desired.
 \end{proof}
 
+We know from Theorem~\ref{thm:eigenvectors-and-diagonalizable} that an
+$n\times n$-matrix is diagonalizable if and only if it has $n$
+linearly independent eigenvectors. We can re-state this in terms of
+geometric multiplicity as follows.
+
+\begin{theorem}{Geometric multiplicity and diagonalization}{multiplicity-and-diagonalization}
+  An $n\times n$-matrix $A$ is diagonalizable if and only if the sum
+  of the geometric multiplicities of all the eigenvalues of $A$ is
+  $n$.
+\end{theorem}
+
+\begin{proof}
+  By Proposition~\ref{prop:linearly-independent-eigenvectors},
+  eigenvectors corresponding to different eigenvalues are linearly
+  independent. Therefore, by taking a basis of each eigenspace, we can
+  obtain exactly as many linearly independent eigenvectors as the sum
+  of the dimensions of all the eigenspaces, i.e., the sum of the
+  geometric multiplicities of all eigenvalues. By
+  Theorem~\ref{thm:eigenvectors-and-diagonalizable}, $A$ is
+  diagonalizable if and only if this number is $n$.
+\end{proof}
+
 The final property of eigenvalues and eigenvectors that we will
 consider in this section is the so-called \textbf{Cayley-Hamilton
   theorem}%
