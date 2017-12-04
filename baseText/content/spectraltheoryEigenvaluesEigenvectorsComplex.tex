@@ -1,5 +1,12 @@
 \section{Complex eigenvalues and eigenvectors}
 
+\begin{outcome}
+  \begin{enumerate}
+  \item Find the complex eigenvalues and eigenvectors of a matrix.
+  \item Diagonalize a matrix over the complex numbers.
+  \end{enumerate}
+\end{outcome}
+
 An $n\times n$-matrix is diagonalizable if and only if it has $n$
 linearly independent eigenvectors. But as we saw in
 Example~\ref{exa:no-real-eigenvalue}, if we work over the real
@@ -320,16 +327,12 @@ diagonalizable, even over the complex numbers. We have:
 \end{proposition}
 
 \begin{proof}
-  Let $A$ be an $n\times n$-matrix. By
-  Proposition~\ref{prop:complex-factoring}, the characteristic
-  polynomial factors into $n$ linear factors:
-  \begin{equation*}
-    p(\eigenvar) = (b_1-\eigenvar)(b_2-\eigenvar)\cdots(b_n-\eigenvar).
-  \end{equation*}
-  Therefore, the sum of the algebraic multiplicities of all the
-  eigenvalues is $n$. If the geometric multiplicity of each eigenvalue
-  is equal to its algebraic multiplicity, then the sum of the
-  geometric multiplicities is also $n$, and therefore $A$ is
+  Let $A$ be an $n\times n$-matrix. By the fundamental theorem of
+  algebra, the characteristic polynomial factors into $n$ linear
+  factors. Therefore, the sum of the algebraic multiplicities of all
+  the eigenvalues is $n$. If the geometric multiplicity of each
+  eigenvalue is equal to its algebraic multiplicity, then the sum of
+  the geometric multiplicities is also $n$, and therefore $A$ is
   diagonalizable. On the other hand, if the geometric multiplicity of
   some eigenvalue is less than its algebraic multiplicity, then the
   sum of the geometric multiplicities is less than $n$, and $A$ is not
