@@ -1,9 +1,9 @@
 \newcommand{\booktitle}{Linear Algebra}
-\newcommand{\booksubtitle}{A First Course in}
-\newcommand{\bookfulltitle}{A First Course in Linear Algebra}
+\newcommand{\booksubtitle}{Matrix Theory and}
+\newcommand{\bookfulltitle}{Matrix Theory and Linear Algebra}
 \newcommand{\booksubject}{LINEAR ALGEBRA}
 \newcommand{\bookauthor}{Ken Kuttler}
 
-\newcommand{\version}{2017}
+\newcommand{\version}{Dal 2017}
 \newcommand{\revision}{A}
 
