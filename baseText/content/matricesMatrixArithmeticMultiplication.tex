@@ -635,3 +635,49 @@ sizes, and is summarized in the following proposition.
     I_mA = A = AI_n.
   \end{equation*}
 \end{proposition}
+
+We can also raise a square matrix to a power. For example, $A^5$ means
+$A\cdot A\cdot A\cdot A\cdot A$.
+
+\begin{example}{Raising a matrix to a power}{matrix-power}
+  Compute $A^3$, where
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      1 & 2 \\
+      -2 & 3 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We have
+  \begin{equation*}
+    A^3 = A\cdot A\cdot A
+    = \begin{mymatrix}{rr}
+      1 & 2 \\
+      -2 & 3 \\
+    \end{mymatrix}
+    \begin{mymatrix}{rr}
+      1 & 2 \\
+      -2 & 3 \\
+    \end{mymatrix}
+    \begin{mymatrix}{rr}
+      1 & 2 \\
+      -2 & 3 \\
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{rr}
+      -3 & 8 \\
+      -8 & 5 \\
+    \end{mymatrix}
+    \begin{mymatrix}{rr}
+      1 & 2 \\
+      -2 & 3 \\
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{rr}
+      -19 & 18 \\
+      -18 & -1 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
