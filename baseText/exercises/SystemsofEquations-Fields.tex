@@ -3,7 +3,7 @@
 \begin{enumialphparenastyle}
 
 \begin{ex}
-  Solve each of the following system of equations with scalars in
+  Solve each of the following systems of equations with scalars in
   $\Z_2$. If there is more than one solution, write the
   general solution in parametric form and also write down all of the
   solutions individually. How many solutions are there?
@@ -40,7 +40,7 @@
 \end{ex}
 
 \begin{ex}
-  Solve each of the following system of equations with scalars in
+  Solve each of the following systems of equations with scalars in
   $\Z_3$. How many solutions does each system have?
 
   \begin{equation*}
@@ -68,7 +68,7 @@
 \end{ex}
 
 \begin{ex}
-  Solve each of the following system of equations with scalars in
+  Solve each of the following systems of equations with scalars in
   $\Z_5$. 
 
   \begin{equation*}
@@ -112,6 +112,35 @@
   press to turn off all the light from the starting position shown
   above? Is the answer unique? Is every pattern of lights reachable
   from this starting position?
+\end{ex}
+
+\begin{ex}
+  Solve each of the following systems of equations with scalars in the
+  complex numbers.
+  \begin{equation*}
+    (a)~
+    \begin{mymatrix}{ccc|c}
+      1   & 1   & 1+i & 2    \\
+      1+i & 2+i & 3i  & 3+2i \\
+    \end{mymatrix}
+    \quad
+    (b)~
+    \begin{mymatrix}{ccc|c} 
+      1   & i    & 1+i & -1+2i \\
+      1+i & 2    & 1-i & 4+4i  \\
+      1   & -1+i & -i  & 0     \\
+    \end{mymatrix}
+  \end{equation*}
+
+  \begin{sol}
+    \begin{enumerate}
+    \item {\Rref}: $\begin{mymatrix}{ccc|c}
+      1 & 0 & 1 & 1 \\
+      0 & 1 & i & 1 \\
+    \end{mymatrix}$. General solution: $x=1-t$, $y=1-it$, $z=t$.
+    \item Solution: $x=1$, $y=1+i$, $z=i$.
+  \end{enumerate}
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}

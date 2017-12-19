@@ -489,3 +489,60 @@ We conclude this section with a fact that we will not prove.
   $\Z_5$, $\Z_7$, and $\Z_{11}$ are fields,
   whereas $\Z_4$, $\Z_6$, and $\Z_9$ are not.
 \end{theorem}
+
+Another field that is very useful in mathematics and the natural
+sciences is the field $\C$ of \textbf{complex numbers}%
+\index{complex number}%
+\index{field!of complex numbers}. You can read about the complex
+numbers in Appendix~\ref{app:complex}.
+
+\begin{example}{Solving a system of equations over $\C$}{system-c}
+  Solve the following system of equations over the complex numbers:
+  \begin{equation*}
+    \begin{array}{c@{~}c@{~}c}
+      x - y  + z      &=& -1+i, \\
+      x + iy + 3z &=& ~~1+3i. \\
+    \end{array}
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We perform Gauss-Jordan elimination on the augmented matrix. When
+  multiplying or dividing, we have to use complex number arithmetic.
+  For example,
+  \begin{equation*}
+    \frac{2}{1+i} = \frac{2}{1+i}\cdot\frac{1-i}{1-i} = \frac{2-2i}{2} = 1-i.
+  \end{equation*}
+  The row operations are:
+  \begin{equation*}
+    \begin{mymatrix}{ccc|c}
+      1 & -1 & 1 & -1+i \\
+      1 &  i & 3 & 1+3i \\
+    \end{mymatrix}
+    \stackrel{R_2\rowop R_2-R_1}{\roweq}
+    \begin{mymatrix}{ccc|c}
+      1 &  -1 & 1 & -1+i \\
+      0 & 1+i & 2 & 2+2i \\
+    \end{mymatrix}
+    \stackrel{R_2\rowop R_2/(1+i)}{\roweq}
+    \begin{mymatrix}{ccc|c}
+      1 & -1 & 1 & -1+i \\
+      0 &  1 & 1-i & 2 \\
+    \end{mymatrix}
+  \end{equation*}
+  \begin{equation*}
+    \stackrel{R_1\rowop R_1+R_2}{\roweq}
+    \begin{mymatrix}{ccc|c}
+      1 &  0 & 2-i & 1+i \\
+      0 &  1 & 1-i & 2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore the general solution is $z=t$, $y=2-(1-i)t$,
+  $x=1+i-(2-i)t$, where $t\in\C$ is a parameter, i.e., $t$ is any
+  complex number. In vector form, the general solution is
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    = \begin{mymatrix}{c} 1+i \\ 2 \\ 0 \end{mymatrix}
+    + t\begin{mymatrix}{c} -2+i \\ -1+i \\ 1 \end{mymatrix}.
+  \end{equation*}
+\end{solution}
