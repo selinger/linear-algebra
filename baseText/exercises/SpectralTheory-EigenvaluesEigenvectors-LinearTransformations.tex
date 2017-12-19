@@ -1,91 +1,127 @@
+\Opensolutionfile{solutions}[ex]
+\section*{Exercises}
+
 \begin{enumialphparenastyle}
 
-\begin{ex} If $A$ is the matrix of a linear transformation which rotates all
-vectors in $\R^{2}$ through $60^{\circ }$, explain why $A$ cannot
-have any real eigenvalues. Is there an angle such that rotation through this
-angle would have a real eigenvalue? What eigenvalues would be obtainable in
-this way? \vspace{1mm} 
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  For each of the following matrices, find the eigenvectors and
+  eigenvalues. Use this to visualize the linear transformation
+  $T:\R^2\to\R^2$ that is described by the matrix.
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      1 & 2 \\
+      2 & 1 \\
+    \end{mymatrix},
+    \quad
+    B = \begin{mymatrix}{rr}
+      1 & 0 \\
+      2 & -1 \\
+    \end{mymatrix},
+    \quad
+    C = \begin{mymatrix}{rr}
+      1 & 1 \\
+      0 & 2 \\
+    \end{mymatrix},
+    \quad
+    D = \begin{mymatrix}{rr}
+      1 & 1 \\
+      1 & 1 \\
+    \end{mymatrix},
+    \quad
+    E = \begin{mymatrix}{rr}
+      1 & 0 \\
+      -1 & 2 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{ex}
+  
+\begin{ex}
+  If $A$ is the matrix of a linear transformation that rotates all
+  vectors in $\R^{2}$ by $60^{\circ}$, explain why $A$ cannot have any
+  real eigenvalues. Is there an angle such that rotation by this
+  angle would have a real eigenvalue? What eigenvalues would be
+  obtainable in this way?
+  \begin{sol}
+    A rotation by $60^{\circ}$ cannot map any non-zero vector to a
+    scalar multiple of itself. The only rotations of $\R^2$ that have
+    real eigenvalues are rotations by $180^{\circ}$ and $0^{\circ}$.
+    The former has eigenvalue $-1$, and the latter has eigenvalue $1$
+    (with all vectors being eigenvectors).
+  \end{sol}
 \end{ex}
 
-
-\begin{ex} Let $A$ be the $2\times 2$-matrix of the linear transformation which
-rotates all vectors in $\R^{2}$ through an angle of $\theta$. For
-which values of $\theta $ does $A$ have a real eigenvalue? 
-\begin{sol}
-When you think of this geometrically, it is clear that the only two values
-of $\theta $ are 0 and $\pi $ or these added to integer multiples of $2\pi $
-\end{sol}
+\begin{ex}
+  Let $T$ be the linear transformation that reflects vectors about
+  the $x$-axis. Find a matrix for $T$ and then find its eigenvalues and
+  eigenvectors.
+  \begin{sol}
+    The matrix of $T$ is $\begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & -1
+    \end{mymatrix}$. The eigenvectors and eigenvalues are:
+    \begin{equation*}
+      \set{\begin{mymatrix}{c}
+          0 \\
+          1
+        \end{mymatrix} } ~\mbox{for eigenvalue}~ {-1},
+      \quad\set{\begin{mymatrix}{c}
+          1 \\
+          0
+        \end{mymatrix} } ~\mbox{for eigenvalue}~ {1}.
+    \end{equation*}
+  \end{sol}
 \end{ex}
 
-
-\begin{ex} Let $T$ be the linear transformation which reflects vectors about
-the $x$ axis. Find a matrix for $T$ and then find its eigenvalues and
-eigenvectors. 
-\begin{sol}
-The matrix of $T$ is $\begin{mymatrix}{rr}
-1 & 0 \\
-0 & -1
-\end{mymatrix}$. The eigenvectors and eigenvalues are:
-\[
-\set{\begin{mymatrix}{c}
-0 \\
-1
-\end{mymatrix} } \leftrightarrow -1,\set{\begin{mymatrix}{c}
-1 \\
-0
-\end{mymatrix} } \leftrightarrow 1
-\]
-\end{sol}
+\begin{ex}
+  Let $T$ be the linear transformation that reflects vectors about the
+  line $x=y$. Find a matrix of $T$ and then find eigenvalues and
+  eigenvectors.
+  \begin{sol}
+    The matrix of $T$ is $\begin{mymatrix}{rr}
+      0 & 1 \\
+      1 & 0
+    \end{mymatrix}$. The eigenvectors and eigenvalues are:
+    \begin{equation*}
+      \set{\begin{mymatrix}{c}
+          1 \\
+          1
+        \end{mymatrix} } ~\mbox{for eigenvalue}~ {-1},
+      \quad\set{\begin{mymatrix}{c}
+          -1 \\
+          1
+        \end{mymatrix} } ~\mbox{for eigenvalue}~ {1}.
+    \end{equation*}
+  \end{sol}
 \end{ex}
 
-\begin{ex} Let $T$ be the linear transformation which rotates all vectors in 
-$\R^{2}$ counterclockwise through an angle of $\pi /2$. Find a matrix
-of $T$ and then find eigenvalues and eigenvectors.
-\begin{sol}
-The matrix of $T$ is $\begin{mymatrix}{rr}
-0 & -1 \\
-1 & 0
-\end{mymatrix}$. The eigenvectors and eigenvalues are:
-\[
-\set{\begin{mymatrix}{r}
--i \\
-1
-\end{mymatrix} } \leftrightarrow -i,\set{\begin{mymatrix}{c}
-i \\
-1
-\end{mymatrix} } \leftrightarrow i
-\]
-\end{sol}
-\end{ex}
-
-\begin{ex} Let $T$ be the linear transformation which reflects all vectors in $
-\R^{3}$ through the $xy$ plane. Find a matrix for $T$ and then
-obtain its eigenvalues and eigenvectors. 
-\begin{sol}
-The matrix of $T$ is $\begin{mymatrix}{rrr}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & -1
-\end{mymatrix}$
-The eigenvectors and eigenvalues are:
-\[
-\set{\begin{mymatrix}{c}
-0 \\
-0 \\
-1
-\end{mymatrix} } \leftrightarrow -1,\set{\begin{mymatrix}{c}
-1 \\
-0 \\
-0
-\end{mymatrix} ,\begin{mymatrix}{c}
-0 \\
-1 \\
-0
-\end{mymatrix} } \leftrightarrow 1
-\]
-\end{sol}
+\begin{ex}
+  Let $T$ be the linear transformation that reflects all vectors in
+  $ \R^{3}$ about the $xy$-plane. Find a matrix for $T$ and then
+  obtain its eigenvalues and eigenvectors.
+  \begin{sol}
+    The matrix of $T$ is $\begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & -1
+    \end{mymatrix}$
+    The eigenvectors and eigenvalues are:
+    \begin{equation*}
+      \set{\begin{mymatrix}{c}
+          0 \\
+          0 \\
+          1
+        \end{mymatrix} } ~\mbox{for eigenvalue}~ {-1},
+      \quad\set{\begin{mymatrix}{c}
+          1 \\
+          0 \\
+          0
+        \end{mymatrix} ,\begin{mymatrix}{c}
+          0 \\
+          1 \\
+          0
+        \end{mymatrix} } ~\mbox{for eigenvalue}~ {1}.
+    \end{equation*}
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}

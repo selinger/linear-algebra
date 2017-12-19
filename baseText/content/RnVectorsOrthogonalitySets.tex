@@ -7,12 +7,13 @@ span of a set of vectors and a linear independent set of vectors. We
 include the definitions and examples here for convenience.
 
 \begin{definition}{Span of a set of vectors and subspace}{span}
-The collection of all linear combinations of a set of vectors $\set{\vect{u}_1,
-\cdots ,\vect{u}_k}$ in $\R^{n}$ is known as the span\index{span}\index{vector!span} of these
-vectors and is written as $\sspan \set{\vect{u}_1, \cdots ,
-\vect{u}_k}$. \\ 
-We call a collection of the form $\sspan \set{\vect{u}_1, \cdots , \vect{u}_k}$ 
-a subspace of $\R^{n}$.
+  The collection of all linear combinations of a set of vectors
+  $\set{\vect{u}_1,\ldots,\vect{u}_k}$ in $\R^{n}$ is known as the
+  span\index{span}\index{vector!span} of these vectors and is written
+  as $\sspan \set{\vect{u}_1,\ldots,
+    \vect{u}_k}$. \\
+  We call a collection of the form
+  $\sspan \set{\vect{u}_1,\ldots, \vect{u}_k}$ a subspace of $\R^{n}$.
 \end{definition}
 
 Consider the following example. 
@@ -61,7 +62,7 @@ The span of a set of a vectors in $\R^n$ is what we call a \textbf{subspace of $
 Another important property of sets of vectors is called linear independence. 
 
 \begin{definition}{Linearly independent set of vectors}{linear-independent-ortho}
-A set of non-zero vectors $\set{\vect{u}_1, \cdots ,\vect{u}_k}$ in $\R^{n}$ is said to be 
+A set of non-zero vectors $\set{\vect{u}_1,\ldots,\vect{u}_k}$ in $\R^{n}$ is said to be 
 \textbf{linearly independent}\index{linear independence}\index{vector!linear independence}
  if no vector in that set is in the span of the other vectors of that set.
 \end{definition}
@@ -106,13 +107,13 @@ then we say that it is a basis for the subspace.
 
 \begin{definition}{Basis of a subspace}{subspace-basis}
 Let $V$ be a subspace of $\R^{n}$. Then $\set{
-\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is a \textbf{basis}\index{basis}\index{vector!basis}\index{subspace!basis} for
+\vect{u}_{1},\ldots,\vect{u}_{k}} $ is a \textbf{basis}\index{basis}\index{vector!basis}\index{subspace!basis} for
 $V$ if the following two conditions
 hold.
 
 \begin{enumerate}
-\item $\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} =V$
-\item $\set{\vect{u}_{1},\cdots ,\vect{u}_{k}} $ is linearly
+\item $\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}} =V$
+\item $\set{\vect{u}_{1},\ldots,\vect{u}_{k}} $ is linearly
 independent
 \end{enumerate}
 \end{definition}
@@ -133,7 +134,7 @@ What type of vector is $\vect{u}$?
 \end{example}
 
 \begin{solution}
-Write $\vect{u}=t_1\vect{x}_1 + t_2\vect{x}_2 +\cdots +t_k\vect{x}_k$
+Write $\vect{u}=t_1\vect{x}_1 + t_2\vect{x}_2 +\ldots +t_k\vect{x}_k$
 for some $t_1, t_2, \ldots, t_k\in\R$
 (this is possible because
 $\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k$ span $\R^n$).
@@ -141,12 +142,12 @@ $\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k$ span $\R^n$).
 Then
 \begin{eqnarray*}
 \norm{\vect{u}}^2 & = & \vect{u}\dotprod\vect{u} \\
-& = & \vect{u}\dotprod(t_1\vect{x}_1 + t_2\vect{x}_2 +\cdots +t_k\vect{x}_k) \\
+& = & \vect{u}\dotprod(t_1\vect{x}_1 + t_2\vect{x}_2 +\ldots +t_k\vect{x}_k) \\
 & = & \vect{u}\dotprod (t_1\vect{x}_1) +  \vect{u}\dotprod (t_2\vect{x}_2) +
-\cdots +  \vect{u}\dotprod (t_k\vect{x}_k) \\
-& = & t_1(\vect{u}\dotprod \vect{x}_1) + t_2(\vect{u}\dotprod \vect{x}_2) + \cdots 
+\ldots +  \vect{u}\dotprod (t_k\vect{x}_k) \\
+& = & t_1(\vect{u}\dotprod \vect{x}_1) + t_2(\vect{u}\dotprod \vect{x}_2) + \ldots 
 + t_k(\vect{u}\dotprod \vect{x}_k) \\
-& = & t_1(0) + t_2(0) + \cdots + t_k(0) = 0.
+& = & t_1(0) + t_2(0) + \ldots + t_k(0) = 0.
 \end{eqnarray*}
 Since $\norm{\vect{u}}^2 =0$, $\norm{\vect{u}} =0$.
 We know that $\norm{\vect{u}}=0$ if and only if 
@@ -159,7 +160,7 @@ a spanning set of $\R^n$ is the zero vector.
 We can now discuss what is meant by an orthogonal\index{orthogonal} set of vectors. 
 
 \begin{definition}{Orthogonal set of vectors}{orth-set}
-Let $\set{\vect{u}_1, \vect{u}_2, \cdots, \vect{u}_m}$ be a set of
+Let $\set{\vect{u}_1, \vect{u}_2,\ldots, \vect{u}_m}$ be a set of
 vectors in $\R^n$. Then this set is called an
 \textbf{orthogonal set}\index{orthogonal}\index{vector!orthogonal}
 if the following conditions hold:
@@ -176,7 +177,7 @@ they have length 1, the resulting set is called an \textbf{orthonormal
 set} of vectors. They can be described as follows.
 
 \begin{definition}{Orthonormal set of vectors}{ortho-set-vectors}
-A set of vectors, $\set{\vect{w}_{1},\cdots ,\vect{w}_{m}} $
+A set of vectors, $\set{\vect{w}_{1},\ldots,\vect{w}_{m}} $
 is said to be an
 \textbf{orthonormal}\index{orthonormal}\index{vector!orthonormal}
 set if 
@@ -283,42 +284,42 @@ You can verify that this set is orthogonal.
 \end{solution}
 
 Consider an orthogonal set of vectors in $\R^n$, written $\set{
-\vect{w}_1, \cdots, \vect{w}_k}$ with $k \leq n$. The span of these
+\vect{w}_1,\ldots, \vect{w}_k}$ with $k \leq n$. The span of these
 vectors is a subspace $W$ of $\R^n$. If we
 could show that this orthogonal set is also linearly independent, we
 would have a basis of $W$. We will show this in the next theorem.
 
 \begin{theorem}{Orthogonal basis of a subspace}{orth-basis}
-Let $ \set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k}$ be an
+Let $ \set{\vect{w}_1, \vect{w}_2,\ldots, \vect{w}_k}$ be an
 orthonormal set of vectors in $\R^n$. Then this set is
 linearly independent and forms a basis for the subspace $W =
-\sspan \set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k}$.
+\sspan \set{\vect{w}_1, \vect{w}_2,\ldots, \vect{w}_k}$.
 \end{theorem}
 
 \begin{proof}
 To show it is a linearly independent set, suppose a linear combination
 of these vectors equals $\vect{0}$, such as:
 \[
-a_1 \vect{w}_1 + a_2 \vect{w}_2 + \cdots + a_k \vect{w}_k = \vect{0}, a_i \in \R 
+a_1 \vect{w}_1 + a_2 \vect{w}_2 + \ldots + a_k \vect{w}_k = \vect{0}, a_i \in \R 
 \]
 We need to show that all $a_i = 0$. To do so, take the dot product of
 each side of the above equation with the vector $\vect{w}_i$ and obtain the following. 
 
 \begin{eqnarray*}
-\vect{w}_i \dotprod (a_1 \vect{w}_1 + a_2 \vect{w}_2 + \cdots + a_k \vect{w}_k ) &=& \vect{w}_i \dotprod \vect{0}\\
-a_1 (\vect{w}_i \dotprod \vect{w}_1) + a_2 (\vect{w}_i \dotprod \vect{w}_2) + \cdots + a_k (\vect{w}_i \dotprod \vect{w}_k)  &=& 0 
+\vect{w}_i \dotprod (a_1 \vect{w}_1 + a_2 \vect{w}_2 + \ldots + a_k \vect{w}_k ) &=& \vect{w}_i \dotprod \vect{0}\\
+a_1 (\vect{w}_i \dotprod \vect{w}_1) + a_2 (\vect{w}_i \dotprod \vect{w}_2) + \ldots + a_k (\vect{w}_i \dotprod \vect{w}_k)  &=& 0 
 \end{eqnarray*}
 Now since the set is orthogonal, $\vect{w}_i \dotprod \vect{w}_m = 0$ for all $m \neq i$, so we have:
 \[
-a_1 (0) + \cdots + a_i(\vect{w}_i \dotprod \vect{w}_i) + \cdots + a_k (0) = 0
+a_1 (0) + \ldots + a_i(\vect{w}_i \dotprod \vect{w}_i) + \ldots + a_k (0) = 0
 \]
 \[
 a_i \norm{\vect{w}_i}^2 = 0
 \]
 
-Since the set is orthogonal, we know that $\norm{\vect{w}_i}^2  \neq 0$. It follows that $a_i =0$. Since the $a_i$ was chosen arbitrarily, the set $\set{\vect{w}_1, \vect{w}_2, \cdots, \vect{w}_k}$ is linearly independent. 
+Since the set is orthogonal, we know that $\norm{\vect{w}_i}^2  \neq 0$. It follows that $a_i =0$. Since the $a_i$ was chosen arbitrarily, the set $\set{\vect{w}_1, \vect{w}_2,\ldots, \vect{w}_k}$ is linearly independent. 
 
-Finally since $W = \mbox{span} \set{\vect{w}_1, \vect{w}_2, \cdots,
+Finally since $W = \mbox{span} \set{\vect{w}_1, \vect{w}_2,\ldots,
 \vect{w}_k}$, the set of vectors also spans $W$ and therefore forms a basis of $W$. 
 
 \end{proof}
@@ -334,10 +335,10 @@ Let $V$ be a subspace of $\R^n$ and suppose $\set{\vect{u}_1, \vect{u}_2, \ldots
 is an orthogonal basis of $V$. 
 Then for any $\vect{x}\in V$,
 \[ \vect{x} = 
-\tup{\frac{\vect{x}\dotprod \vect{u}_1}{\norm{\vect{u}_1}^2}} \vect{u}_1 +
-\tup{\frac{\vect{x}\dotprod \vect{u}_2}{\norm{\vect{u}_2}^2}} \vect{u}_2 +
-\cdots +
-\tup{\frac{\vect{x}\dotprod \vect{u}_m}{\norm{\vect{u}_m}^2}} \vect{u}_m.
+\paren{\frac{\vect{x}\dotprod \vect{u}_1}{\norm{\vect{u}_1}^2}} \vect{u}_1 +
+\paren{\frac{\vect{x}\dotprod \vect{u}_2}{\norm{\vect{u}_2}^2}} \vect{u}_2 +
+\ldots +
+\paren{\frac{\vect{x}\dotprod \vect{u}_m}{\norm{\vect{u}_m}^2}} \vect{u}_m.
 \]
 This expression is called the Fourier expansion 
 of $\vect{x}$, and 
@@ -373,9 +374,9 @@ That is:
 
 \[ 
 \vect{x}   = 
-\tup{\frac{\vect{x}\dotprod \vect{u}_1}{\norm{\vect{u}_1}^2}} \vect{u}_1 +
-\tup{\frac{\vect{x}\dotprod \vect{u}_2}{\norm{\vect{u}_2}^2}} \vect{u}_2 +
-\tup{\frac{\vect{x}\dotprod \vect{u}_3}{\norm{\vect{u}_3}^2}} \vect{u}_3.
+\paren{\frac{\vect{x}\dotprod \vect{u}_1}{\norm{\vect{u}_1}^2}} \vect{u}_1 +
+\paren{\frac{\vect{x}\dotprod \vect{u}_2}{\norm{\vect{u}_2}^2}} \vect{u}_2 +
+\paren{\frac{\vect{x}\dotprod \vect{u}_3}{\norm{\vect{u}_3}^2}} \vect{u}_3.
 \]
 
 We readily compute: 

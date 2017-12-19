@@ -21,10 +21,10 @@ triangle. The distance from $0$ to $P$ (measured positively in the
 direction of $\vect{u}$) is called the \textbf{component}%
 \index{component!of a vector}\index{vector!component} of $\vect{v}$ in
 the direction of $\vect{u}$, and is denoted
-$\func{comp}_{\vect{u}}(\vect{v})$. The vector $\longvect{0P}$ is
+$\comp_{\vect{u}}(\vect{v})$. The vector $\longvect{0P}$ is
 called the \textbf{projection}\index{projection!vector to
   vector}\index{vector!projection of} of $\vect{v}$ onto $\vect{u}$,
-and is denoted $\func{proj}_{\vect{u}}(\vect{v})$. We wish to find
+and is denoted $\proj_{\vect{u}}(\vect{v})$. We wish to find
 formulas for these quantities.
 
 Let $\theta$ be the included angle between $\vect{v}$ and
@@ -50,7 +50,7 @@ Putting equations {\eqref{eqn:component-1}} and
 {\eqref{eqn:component-2}} together, we obtain the desired formula for
 the component of $\vect{v}$ in the direction of $\vect{u}$:
 \begin{equation}\label{eqn:component}
-  \func{comp}_{\vect{u}}(\vect{v})
+  \comp_{\vect{u}}(\vect{v})
   = |0P|
   = \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}}}.
 \end{equation}
@@ -59,12 +59,12 @@ happens when the angle between $\vect{v}$ and $\vect{u}$ is obtuse.
 In this case, $\vect{v}$ will have a negative component along
 $\vect{u}$.
 
-The vector $\func{proj}_{\vect{u}}(\vect{v})=\longvect{0P}$ can now be
+The vector $\proj_{\vect{u}}(\vect{v})=\longvect{0P}$ can now be
 computed by re-scaling $\vect{u}$ to the correct length. Specifically,
 we first normalize $\vect{u}$ by dividing it by its own length, and
 then multiply by $|0P|$. In formulas:
 \begin{equation}
-  \func{proj}_{\vect{u}}(\vect{v})
+  \proj_{\vect{u}}(\vect{v})
   = \longvect{0P}
   = \frac{|0P|}{\norm{\vect{u}}}\vect{u}
   = \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}}^2}\,\vect{u}
@@ -77,13 +77,13 @@ The following definition summarizes what we have just found.
   the \textbf{component of $\vect{v}$ in the direction of
     $\vect{u}$}\index{vector!component} is defined to be the scalar
   \begin{equation*}
-    \func{comp}_{\vect{u}}(\vect{v})
+    \comp_{\vect{u}}(\vect{v})
     = \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}}}.
   \end{equation*}
   The \textbf{projection of $\vect{v}$ onto
     $\vect{u}$}\index{vector!projection of} is defined to be the vector
   \begin{equation*}
-    \func{proj}_{\vect{u}}\tup{\vect{v}} = 
+    \proj_{\vect{u}}(\vect{v}) = 
       \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u}
     =
     \frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\,\vect{u}.
@@ -94,7 +94,7 @@ The following definition summarizes what we have just found.
 \end{definition}
 
 \begin{example}{Find the projection of one vector onto another}{vector-projection}
-  Find $\func{proj}_{\vect{u}}\tup{\vect{v}}$ if
+  Find $\proj_{\vect{u}}(\vect{v})$ if
   \begin{equation*}
     \vect{u}=
     \begin{mymatrix}{r}
@@ -114,7 +114,7 @@ The following definition summarizes what we have just found.
 
 \begin{solution}
   We can use the formula provided in Definition~\ref{def:projection}
-  to find $\func{proj}_{\vect{u}}\tup{\vect{v}}$.  First, compute
+  to find $\proj_{\vect{u}}(\vect{v})$.  First, compute
   $\vect{v} \dotprod \vect{u}$.  This is given by
   \begin{equation*}
     \begin{mymatrix}{r}
@@ -149,7 +149,7 @@ The following definition summarizes what we have just found.
   \end{equation*}
   Therefore, the projection is equal to  
   \begin{equation*}
-    \func{proj}_{\vect{u}}\tup{\vect{v}}
+    \proj_{\vect{u}}(\vect{v})
     =-\frac{8}{29} 
         \begin{mymatrix}{r}
           2 \\
@@ -196,7 +196,7 @@ $\vect{u}$, and the other of which is orthogonal to $\vect{u}$.
   \end{center}
   To show that such a decomposition exists, let
   \begin{equation*}
-    \vect{v}_{\coll} = \func{proj}_{\vect{u}}\tup{\vect{v}} = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u},
+    \vect{v}_{\coll} = \proj_{\vect{u}}(\vect{v}) = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u},
   \end{equation*}
   and define $\vect{v}_{\bot} = \vect{v}-\vect{v}_{\coll}$. By
   definition, {\eqref{projection}} is satisfied, and

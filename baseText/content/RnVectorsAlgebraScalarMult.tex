@@ -78,18 +78,18 @@ theorem.
     \index{distributive law!over vector addition}%
     \index{vector!distributive law}%
     \begin{equation*}
-      k \tup{\vect{u}+\vect{v}} = k\vect{u} + k\vect{v}.
+      k (\vect{u}+\vect{v}) = k\vect{u} + k\vect{v}.
     \end{equation*}
   \item The distributive law over scalar addition
     \index{distributive law!over scalar addition}%
     \begin{equation*}
-      \tup{k + \ell} \vect{u} = k \vect{u} + \ell \vect{u}.
+      (k + \ell) \vect{u} = k \vect{u} + \ell \vect{u}.
     \end{equation*}
   \item The associative law for scalar multiplication
     \index{associative law!of scalar multiplication}%
     \index{vector!associative law of scalar multiplication}%
     \begin{equation*}
-      k \tup{\ell \vect{u}} = \tup{k \ell }\vect{u}.
+      k (\ell \vect{u}) = (k \ell)\vect{u}.
     \end{equation*}
   \item The rule for multiplication by $1$
     \index{rule for multiplication by 1}%
@@ -103,14 +103,14 @@ theorem.
 \begin{proof}
 We will show the proof of: 
 \begin{equation*}
-k \tup{\vect{u}+\vect{v}} = k \vect{u}+ k \vect{v}.
+k (\vect{u}+\vect{v}) = k \vect{u}+ k \vect{v}.
 \end{equation*}
 Assume $\vect{u}=\mat{u_{1},\ldots,u_{n}}^T$ and
 $\vect{v}=\mat{v_{1},\ldots,v_{n}}^T$. We have:
 \begin{equation*}
 \begin{array}{ll}
-k \tup{\vect{u}+\vect{v}} & =k \mat{u_{1}+v_{1},\ldots,u_{n}+v_{n}}^T \\
-& = \mat{k \tup{u_{1}+v_{1}}, \ldots, k \tup{u_{n}+v_{n}} }^T \\
+k (\vect{u}+\vect{v}) & =k \mat{u_{1}+v_{1},\ldots,u_{n}+v_{n}}^T \\
+& = \mat{k (u_{1}+v_{1}), \ldots, k (u_{n}+v_{n}) }^T \\
 & = \mat{k u_{1}+ k  v_{1}, \ldots, k u_{n}+ k v_{n}}^T \\
 & = \mat{k u_{1}, \ldots, k u_{n} }^T + \mat{k v_{1}, \ldots, k v_{n} }^T \\
 & = k \vect{u}+k \vect{v}.

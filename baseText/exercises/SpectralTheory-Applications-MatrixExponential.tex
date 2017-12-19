@@ -1,89 +1,80 @@
+\Opensolutionfile{solutions}[ex]
+\section*{Exercises}
+
 \begin{enumialphparenastyle}
 
 \begin{ex}
-Find the solution to the initial value problem 
-\begin{eqnarray*}
-\begin{mymatrix}{c}
-x \\ 
-y 
-\end{mymatrix} ^{\prime } &=&\begin{mymatrix}{rr}
-0 & -1 \\ 
-6 & 5 
-\end{mymatrix} \begin{mymatrix}{c}
-x \\ 
-y 
-\end{mymatrix} \\
-\begin{mymatrix}{c}
-x\tup{0} \\ 
-y\tup{0} 
-\end{mymatrix} &=&\begin{mymatrix}{r}
-2 \\ 
-2 
-\end{mymatrix}
-\end{eqnarray*} 
-Hint: form the matrix exponential $e^{At}$ and then the solution is $e^{At}C$ where $C$ is the initial vector. 
-\begin{sol}
-The solution is 
-\[
-e^{At}C = \begin{mymatrix}{c}
-8e^{2t} - 6e^{3t} \\
-18e^{3t} - 16e^{2t}
-\end{mymatrix}
-\]
-\end{sol}
-\end{ex}
-
-
-\begin{ex}
- Find the solution to the initial value problem 
-\begin{eqnarray*}
-\begin{mymatrix}{c}
-x \\ 
-y 
-\end{mymatrix} ^{\prime } &=&\begin{mymatrix}{rr}
--4 & -3 \\ 
-6 & 5 
-\end{mymatrix} \begin{mymatrix}{c}
-x \\ 
-y 
-\end{mymatrix} \\
-\begin{mymatrix}{c}
-x\tup{0} \\ 
-y\tup{0} 
-\end{mymatrix} &=&\begin{mymatrix}{r}
-3 \\ 
-4 
-\end{mymatrix}
-\end{eqnarray*} 
-Hint: form the matrix exponential $e^{At}$ and then the solution is $e^{At}C$ where $C$ is the initial vector. 
-%\begin{sol}
-%\end{sol}
+  Compute $e^A$ and $\cos A$ for the following matrices:
+  \begin{equation*}
+    (a)\quad
+    A = \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 2 \\
+    \end{mymatrix},
+    \quad
+    (b)\quad
+    A = \begin{mymatrix}{rr}
+      4  & 2  \\
+      -3 & -1 \\
+    \end{mymatrix},
+    \quad
+    (c)\quad
+    A = \begin{mymatrix}{rrr}
+      0 & 1 & 1 \\
+      1 & 0 & -1 \\
+      -1 & 1 & 2 \\
+    \end{mymatrix}.
+  \end{equation*}
 \end{ex}
 
 \begin{ex}
-Find the solution to the initial value problem 
-\begin{eqnarray*}
-\begin{mymatrix}{c}
-x \\ 
-y 
-\end{mymatrix} ^{\prime } &=&\begin{mymatrix}{rr}
--1 & 2 \\ 
--4 & 5 
-\end{mymatrix} \begin{mymatrix}{c}
-x \\ 
-y 
-\end{mymatrix} \\
-\begin{mymatrix}{c}
-x\tup{0} \\ 
-y\tup{0} 
-\end{mymatrix} &=&\begin{mymatrix}{r}
-2 \\ 
-2 
-\end{mymatrix}
-\end{eqnarray*} 
-Hint: form the matrix exponential $e^{At}$ and then the solution is $e^{At}C$ where $C$ is the initial vector. 
-%\begin{sol}
-%\end{sol}
+  The cube root is an analytic function. Compute the cube root of the
+  matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      22 & -21 \\
+      14 & -13 \\
+    \end{mymatrix}.
+  \end{equation*}
 \end{ex}
+
+\begin{ex}
+  Use matrix exponentials to find the solution to the
+  first-order linear differential equation
+  \begin{equation*}
+    \begin{mymatrix}{c}
+      x \\
+      y
+    \end{mymatrix} ^{\prime } = \begin{mymatrix}{rr}
+      0 & -1 \\
+      6 & 5
+    \end{mymatrix} \begin{mymatrix}{c}
+      x \\
+      y
+    \end{mymatrix}
+  \end{equation*}
+  with initial value
+  \begin{equation*}
+    \begin{mymatrix}{c}
+      x(0) \\
+      y(0)
+    \end{mymatrix} =\begin{mymatrix}{r}
+      2 \\
+      2
+    \end{mymatrix}.
+  \end{equation*}
+  Hint: form the matrix exponential $e^{At}$ and then the solution is
+  $e^{At}\,\vect{v}_0$, where $\vect{v}_0$ is the initial vector.
+  \begin{sol}
+    The solution is
+    \begin{equation*}
+      e^{At}C = \begin{mymatrix}{c}
+        8e^{2t} - 6e^{3t} \\
+        18e^{3t} - 16e^{2t}
+      \end{mymatrix}.
+    \end{equation*}
+  \end{sol}
+\end{ex}
+
 
 \end{enumialphparenastyle}

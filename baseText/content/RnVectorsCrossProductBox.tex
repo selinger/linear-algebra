@@ -59,7 +59,7 @@ The volume of this parallelepiped is the area of the base times the
 height which is just
 \begin{equation*}
   \norm{\vect{u}\times \vect{v}} \norm{\vect{w}} \cos \theta =
-  \tup{\vect{u}\times\vect{v}} \dotprod \vect{w}.
+  (\vect{u}\times\vect{v}) \dotprod \vect{w}.
 \end{equation*}
 This expression is known as the
 \textbf{box product}\index{box product} and is sometimes written as
@@ -76,7 +76,7 @@ We summarize this in the following proposition:
 \begin{proposition}{The box product}{box-product}
   Let $\vect{u}, \vect{v}, \vect{w}$ be three vectors in $\R^n$ that
   define a parallelepiped. The box product
-  $\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}$ is equal to:
+  $(\vect{u}\times\vect{v}) \dotprod \vect{w}$ is equal to:
   \begin{itemize}
   \item The volume%
     \index{box product!volume of parallelepiped}%
@@ -88,7 +88,7 @@ We summarize this in the following proposition:
   \end{itemize}
   In any case, the volume of the parallelepiped can be computed as the
   absolute value of the box product, given by
-  $\abs{\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}}$. 
+  $\abs{(\vect{u}\times\vect{v}) \dotprod \vect{w}}$. 
 \end{proposition}
 
 \begin{example}{Volume of a parallelepiped}{parallelepiped-volume}
@@ -178,25 +178,25 @@ directly from the geometric definition of the box product.
 
 \begin{proposition}{Box product law}{order-of-product}
   Let $\vect{u}$, $\vect{v}$, and $\vect{w}$ be vectors. Then
-  $\tup{\vect{u}\times\vect{v}} \dotprod \vect{w}=\vect{u}\dotprod
-  \tup{\vect{v}\times \vect{w}}$.
+  $(\vect{u}\times\vect{v}) \dotprod \vect{w}=\vect{u}\dotprod
+  (\vect{v}\times \vect{w})$.
 \end{proposition}
 
 \begin{proof}
   This follows from observing that both
-  $\tup{\vect{u}\times \vect{v}} \dotprod \vect{w}$ and
-  $\vect{u}\dotprod \tup{\vect{v}\times \vect{w}}$ compute the same
+  $(\vect{u}\times \vect{v}) \dotprod \vect{w}$ and
+  $\vect{u}\dotprod (\vect{v}\times \vect{w})$ compute the same
   box product, i.e., they either both give the volume of the
   parallelepiped or they both give the negative of the volume.
 
   Alternatively, we can calculate each product explicitly:
   \begin{eqnarray*}
-    \tup{\vect{u}\times \vect{v}} \dotprod \vect{w}
+    (\vect{u}\times \vect{v}) \dotprod \vect{w}
     &=&
         u_2v_3w_1 - u_3v_2w_1
       + u_3v_1w_2 - u_1v_3w_2
         + u_1v_2w_3 - u_2v_1w_3,\\
-    \vect{u}\dotprod \tup{\vect{v}\times \vect{w}}
+    \vect{u}\dotprod (\vect{v}\times \vect{w})
     &=&
         u_2v_3w_1 - u_3v_2w_1
       + u_3v_1w_2 - u_1v_3w_2

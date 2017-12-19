@@ -25,15 +25,17 @@ counterparts.
 
 \begin{definition}{Homogeneous system of equations}{homogeneous-system}
   A system of equations is called
-  \textbf{homogeneous}\index{system of linear equations!homogeneous}\index{homogeneous system}
+  \textbf{homogeneous}%
+  \index{system of linear equations!homogeneous}%
+  \index{homogeneous system}
   if each of the constant terms is equal to $0$. A homogeneous system
   therefore has the form
 \begin{equation*}
 \begin{array}{c}
-a_{11}x_{1}+a_{12}x_{2}+\cdots +a_{1n}x_{n}= 0 \\
-a_{21}x_{1}+a_{22}x_{2}+\cdots +a_{2n}x_{n}= 0  \\
+a_{11}x_{1}+a_{12}x_{2}+\ldots +a_{1n}x_{n}= 0 \\
+a_{21}x_{1}+a_{22}x_{2}+\ldots +a_{2n}x_{n}= 0  \\
 \vdots \\
-a_{m1}x_{1}+a_{m2}x_{2}+\cdots +a_{mn}x_{n}= 0, 
+a_{m1}x_{1}+a_{m2}x_{2}+\ldots +a_{mn}x_{n}= 0, 
 \end{array}
 \end{equation*}
 where $a_{ij}$ are coefficients and $x_{i}$ are variables.
@@ -47,7 +49,7 @@ $x_n=0$. This solution is called the
 \index{system of linear equations!trivial solution}.
 
 If the system has a solution in which not all of the
-$x_1, \cdots, x_n$ are equal to zero, then we call this solution
+$x_1,\ldots, x_n$ are equal to zero, then we call this solution
 \textbf{non-trivial}%
 \index{non-trivial solution}\index{solution!non-trivial}%
 \index{system of linear equations!non-trivial solution}.  When
@@ -65,7 +67,7 @@ of a system is the number of pivot variables in its {\ef}.
   assume that the coefficient matrix has rank $r$. Then the system is
   consistent, and 
 \begin{enumerate}
-\item if $r=n$, then the system has a unique solution;
+\item if $r=n$, then the system has only the trivial solution;
 \item if $r<n$, then the system has infinitely many solutions.
 \end{enumerate}
 \end{theorem}
@@ -125,7 +127,7 @@ x + 2y - 2z + 3w = 0
       2 & 1 & 1 & 4 & 0 \\ 
       1 & 2 & -1 & 5 & 0
     \end{mymatrix}
-    \sim
+    \roweq
     \begin{mymatrix}{rrrr|r}
       1 & 0 &  1 & 1 & 0 \\ 
       0 & 1 & -1 & 2 & 0
@@ -192,7 +194,9 @@ this case, we get the solution
   \end{mymatrix},
 \end{equation}
 which is the same as the column of coefficients for $s$. This is
-called a \textbf{basic solution}\index{basic solution}\index{solution!basic} of the
+called a \textbf{basic solution}%
+\index{basic solution}%
+\index{solution!basic} of the
 homogeneous system of equations. The other basic solution is obtained
 by setting $s=0$ and $t=1$. In this case,
 \begin{equation}\label{eqn:homogeneous-solution-3}
@@ -209,8 +213,8 @@ basic solutions {\eqref{eqn:homogeneous-solution-2}} and
 {\eqref{eqn:homogeneous-solution-3}}, then the general solution
 {\eqref{eqn:homogeneous-solution-1}} is of the form $sX_1+tX_2$.  We
 say that the general solution of the homogeneous system is a
-\textbf{linear combination}\index{linear combination!of basic
-  solutions} of its basic solutions.
+\textbf{linear combination}%
+\index{linear combination!of basic solutions} of its basic solutions.
 
 We explore this further in the following example.
 
@@ -232,7 +236,7 @@ We explore this further in the following example.
       1 & 4 & 3 & 0 \\
       3 & 12 & 9 & 0
     \end{mymatrix}
-    \sim
+    \roweq
     \begin{mymatrix}{rrr|r}
       1 & 4 & 3 & 0 \\
       0 & 0 & 0 & 0
@@ -294,7 +298,9 @@ We explore this further in the following example.
 We can take any non-homogeneous system of equations and get a new
 homogeneous system by keeping the left-hand sides the same and setting
 all of the constant terms equal to $0$. This is called the
-\textbf{associated homogeneous system}\index{homogeneous system!associated}\index{associated homogeneous system}
+\textbf{associated homogeneous system}%
+\index{homogeneous system!associated}%
+\index{associated homogeneous system}
 of the system of equations. We end this section by investigating how
 the solutions of a system of equations are related to the solutions of
 its associated homogeneous system.
@@ -322,7 +328,7 @@ its associated homogeneous system.
       1 & 4 & 3 & 2 \\
       3 & 12 & 9 & 6
     \end{mymatrix}
-    \sim
+    \roweq
     \begin{mymatrix}{rrr|r}
       1 & 4 & 3 & 2 \\
       0 & 0 & 0 & 0

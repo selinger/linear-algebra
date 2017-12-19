@@ -1,4 +1,4 @@
-\subsection{Complex eigenvalues}
+\section{Complex eigenvalues}
 
 In some applications, a matrix may have eigenvalues
 \index{complex eigenvalues} which are complex numbers. For example, this often occurs in
@@ -22,8 +22,8 @@ Find the eigenvalues and eigenvectors of $A$.
 We will first find the eigenvalues as usual by solving the following equation. 
 
 \begin{equation*}
-\det \tup{
-\eigenVar \begin{mymatrix}{rrr}
+\det \paren{
+\eigenvar \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
@@ -32,19 +32,19 @@ We will first find the eigenvalues as usual by solving the following equation.
 1 & 0 &  0 \\
 0 & 2 & -1 \\
 0 & 1 &  2
-\end{mymatrix}  } =0
+\end{mymatrix}} =0
 \end{equation*}
-This reduces to $ \tup{\eigenVar -1} \tup{
-\eigenVar^{2}-4 \eigenVar +5} =0$. The solutions are $\lambda_1
+This reduces to $ (\eigenvar -1) (
+\eigenvar^{2}-4 \eigenvar +5) =0$. The solutions are $\lambda_1
 =1,\lambda_2 = 2+i$ and $\lambda_3 =2-i$.
 
 There is nothing new about finding the eigenvectors for $\lambda_1 =1$ so 
 this is left as an exercise. 
 
-Consider now the eigenvalue $\lambda_2 =2+i$. As usual, we solve the equation $\tup{\lambda I -A } X = 0$ as given by 
+Consider now the eigenvalue $\lambda_2 =2+i$. As usual, we solve the equation $(\lambda I -A) X = 0$ as given by 
 \begin{equation*}
-\tup{
-\tup{2+i} \begin{mymatrix}{rrr}
+(
+(2+i) \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
@@ -54,7 +54,7 @@ Consider now the eigenvalue $\lambda_2 =2+i$. As usual, we solve the equation $\
 0 & 2 & -1 \\
 0 & 1 & 2
 \end{mymatrix}
- }
+)
 X
  =\begin{mymatrix}{r}
 0 \\
@@ -72,7 +72,7 @@ In other words, we need to solve the system represented by the augmented matrix
 \end{equation*}
 
 We now use our row operations to solve the system.
-Divide the first row by $\tup{1+i} $ and then take 
+Divide the first row by $(1+i) $ and then take 
 $-i$ times the second row and add to the third row. This yields
 \begin{equation*}
 \begin{mymatrix}{rrr|r}
@@ -125,7 +125,7 @@ X_3 = \begin{mymatrix}{r}
 \end{equation*}
 
 As usual, be sure to check your answers! To verify, we check that 
-$AX_3 = \tup{2 - i } X_3$ as follows.
+$AX_3 = (2 - i) X_3$ as follows.
 \begin{equation*}
 \begin{mymatrix}{rrr}
 1 & 0 &  0 \\
@@ -139,7 +139,7 @@ $AX_3 = \tup{2 - i } X_3$ as follows.
 0 \\
 -1-2i \\
 2-i
-\end{mymatrix} =\tup{2-i} \begin{mymatrix}{r}
+\end{mymatrix} =(2-i) \begin{mymatrix}{r}
 0 \\
 -i \\
 1

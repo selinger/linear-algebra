@@ -1,193 +1,263 @@
-\subsection{Raising a matrix to a high power}
+\section{Application: Matrix powers}
+
+\begin{outcome}
+  \begin{enumerate}
+  \item Use diagonalization to raise a matrix to a high power.
+  \item Use diagonalization to compute a square root of a matrix.
+  \end{enumerate}
+\end{outcome}
 
 Suppose we have a matrix $A$ and we want to find $A^{50}$. One could
-try to multiply $A$ with itself 50 times, but this is computationally
-extremely intensive (try it!). However diagonalization allows us to
-compute high powers of a matrix relatively easily.  Suppose $A$ is
-diagonalizable, so that $P^{-1}AP=D$. We can rearrange this equation
-to write $A=PDP^{-1}$.
-
-Now, consider $A^{2}$. Since $A=PDP^{-1}$, it follows that 
+try to multiply $A$ with itself 50 times, but this is a lot of work
+(try it!). However, diagonalization allows us to compute high powers
+of a matrix relatively easily.  Suppose $A$ is diagonalizable, so that
+$P^{-1}AP=D$. We can rearrange this equation to write $A=PDP^{-1}$.
+Now, consider $A^{2}$. Since $A=PDP^{-1}$, it follows that
 \begin{equation*}
-A^{2} = \tup{PDP^{-1}} ^{2}=PDP^{-1}PDP^{-1}=PD^{2}P^{-1}
+  A^{2} = (PDP^{-1}) ^{2}=PDP^{-1}PDP^{-1}=PD^{2}P^{-1}.
 \end{equation*}
-
 Similarly, 
 \begin{equation*}
-A^3 = \tup{PDP^{-1}} ^{3}=PDP^{-1}PDP^{-1}PDP^{-1}=PD^{3}P^{-1}
+  A^3 = (PDP^{-1}) ^{3}=PDP^{-1}PDP^{-1}PDP^{-1}=PD^{3}P^{-1}.
 \end{equation*}
-
 In general,
 \begin{equation*}
-A^n = \tup{PDP^{-1}} ^{n}=PD^{n}P^{-1}
+  A^n = (PDP^{-1}) ^{n}=PD^{n}P^{-1}.
 \end{equation*}
-
-Therefore, we have reduced the problem to finding $D^{n}$. In order to
-compute $D^{n}$, then because $D$ is diagonal we only need to raise
-every entry on the main diagonal of $D$ to the power of $n$.
-
-Through this method, we can compute large powers of matrices. Consider the following example.
+Therefore, we have reduced the problem to finding $D^{n}$. But as we
+saw in Example~\ref{exa:sums-products-diagonal}, computing a power of
+a diagonal matrix is easy. To compute $D^{n}$, we only need to raise
+every entry on the diagonal to the power of $n$. Through this method,
+we can compute large powers of matrices.
 
 \begin{example}{Raising a matrix to a high power}{matrix-high-power}
-Let
-\index{matrix!raising to a power}  $A=\begin{mymatrix}{rrr}
-2 & 1 & 0 \\
-0 & 1 & 0 \\
--1 & -1 & 1
-\end{mymatrix}. $ Find $A^{50}$.
+  Let\index{matrix!raising to a power}%
+  \index{power!of a matrix}
+  $A=\begin{mymatrix}{rrr}
+    2 & 1 & 0 \\
+    0 & 1 & 0 \\
+    -1 & -1 & 1
+  \end{mymatrix}$. Find $A^{50}$.
 \end{example}
 
 \begin{solution}
-We will first diagonalize $A$. The steps are left as an exercise and
-you may wish to verify that the eigenvalues of $A$ are $\lambda_1 =1,
-\lambda_2=1$, and $\lambda_3=2$.
-
-The basic eigenvectors corresponding to $\lambda_1, \lambda_2 = 1$ are
-\begin{equation*}
-X_1 = \begin{mymatrix}{r}
-0 \\
-0 \\
-1
-\end{mymatrix} ,
-X_2
-=
-\begin{mymatrix}{r}
--1 \\
-1 \\
-0
-\end{mymatrix}
-\end{equation*}
-
-The basic eigenvector corresponding to $\lambda_3 = 2$ is
-\begin{equation*}
-X_3
-=
-\begin{mymatrix}{r}
--1 \\
-0 \\
-1
-\end{mymatrix} 
-\end{equation*}
-
-Now we construct $P$ by using the basic eigenvectors of $A$ as the columns of $P$.
-Thus
-\begin{equation*}
-P=
-\begin{mymatrix}{rrr}
-X_1 & X_2 & X_3
-\end{mymatrix}
-=
-\begin{mymatrix}{rrr}
-0 & -1 & -1 \\
-0 & 1 & 0 \\
-1 & 0 & 1
-\end{mymatrix}
-\end{equation*}
-Then also
-\begin{equation*}
-P^{-1}=\begin{mymatrix}{rrr}
-1 & 1 & 1 \\
-0 & 1 & 0 \\
--1 & -1 & 0
-\end{mymatrix}
-\end{equation*}
-which you may wish to verify.
-
-Then, 
-\begin{eqnarray*}
-P^{-1}AP &=&\begin{mymatrix}{rrr}
-1 & 1 & 1 \\
-0 & 1 & 0 \\
--1 & -1 & 0
-\end{mymatrix} \begin{mymatrix}{rrr}
-2 & 1 & 0 \\
-0 & 1 & 0 \\
--1 & -1 & 1
-\end{mymatrix} \begin{mymatrix}{rrr}
-0 & -1 & -1 \\
-0 & 1 & 0 \\
-1 & 0 & 1
-\end{mymatrix} \\
-&=&\begin{mymatrix}{rrr}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 2
-\end{mymatrix} \\
-&=& D
-\end{eqnarray*}
-
-Now it follows by rearranging the equation that
-\begin{equation*}
-A=PDP^{-1}=\begin{mymatrix}{rrr}
-0 & -1 & -1 \\
-0 & 1 & 0 \\
-1 & 0 & 1
-\end{mymatrix} \begin{mymatrix}{rrr}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 2
-\end{mymatrix} \begin{mymatrix}{rrr}
-1 & 1 & 1 \\
-0 & 1 & 0 \\
--1 & -1 & 0
-\end{mymatrix} 
-\end{equation*}
-
-Therefore,
-\begin{eqnarray*}
-A^{50} &=&PD^{50}P^{-1} \\
-&=&\begin{mymatrix}{rrr}
-0 & -1 & -1 \\
-0 & 1 & 0 \\
-1 & 0 & 1
-\end{mymatrix} \begin{mymatrix}{rrr}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 2
-\end{mymatrix} ^{50}\begin{mymatrix}{rrr}
-1 & 1 & 1 \\
-0 & 1 & 0 \\
--1 & -1 & 0
-\end{mymatrix} 
-\end{eqnarray*}
-
-By our discussion above, $D^{50}$ is found as follows.
-\begin{equation*}
-\begin{mymatrix}{rrr}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 2
-\end{mymatrix} ^{50}=\begin{mymatrix}{rrr}
-1^{50} & 0      & 0 \\
-0      & 1^{50} & 0 \\
-0      & 0      & 2^{50}
-\end{mymatrix} 
-\end{equation*}
-
-It follows that
-\begin{eqnarray*}
-A^{50} &=&\begin{mymatrix}{rrr}
-0 & -1 & -1 \\
-0 & 1 & 0 \\
-1 & 0 & 1
-\end{mymatrix} \begin{mymatrix}{rrr}
-1^{50} & 0      & 0 \\
-0      & 1^{50} & 0 \\
-0      & 0      & 2^{50}
-\end{mymatrix} \begin{mymatrix}{rrr}
-1 & 1 & 1 \\
-0 & 1 & 0 \\
--1 & -1 & 0
-\end{mymatrix} \\
-&=&\begin{mymatrix}{ccc}
-2^{50} & -1+2^{50} & 0 \\
-0 & 1 & 0 \\
-1-2^{50} & 1-2^{50} & 1
-\end{mymatrix} 
-\end{eqnarray*}
-
+  First, we will diagonalize $A$. Following the usual steps, we find
+  that the eigenvalues are $\eigenvar=1$ and $\eigenvar=2$. The basic
+  eigenvectors corresponding to $\eigenvar=1$ are
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{r} 0 \\ 0 \\ 1 \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{v}_2 = \begin{mymatrix}{r} -1 \\ 1 \\ 0 \end{mymatrix},
+  \end{equation*}
+  and the basic eigenvector corresponding to $\eigenvar = 2$ is
+  \begin{equation*}
+    \vect{v}_3 = \begin{mymatrix}{r} -1 \\ 0 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Now we construct $P$ by using the basic eigenvectors of $A$ as the
+  columns of $P$.  Thus
+  \begin{equation*}
+    P =
+    \begin{mymatrix}{rrr}
+      0 & -1 & -1 \\
+      0 & 1 & 0 \\
+      1 & 0 & 1
+    \end{mymatrix}.
+  \end{equation*}
+  The inverse of $P$ is
+  \begin{equation*}
+    P^{-1}=\begin{mymatrix}{rrr}
+      1 & 1 & 1 \\
+      0 & 1 & 0 \\
+      -1 & -1 & 0
+    \end{mymatrix}.
+  \end{equation*}
+  Then
+  \begin{equation*}
+    P^{-1}AP
+    ~=~
+    \begin{mymatrix}{rrr}
+      1 & 1 & 1 \\
+      0 & 1 & 0 \\
+      -1 & -1 & 0
+    \end{mymatrix} \begin{mymatrix}{rrr}
+      2 & 1 & 0 \\
+      0 & 1 & 0 \\
+      -1 & -1 & 1
+    \end{mymatrix} \begin{mymatrix}{rrr}
+      0 & -1 & -1 \\
+      0 & 1 & 0 \\
+      1 & 0 & 1
+    \end{mymatrix} \\
+    ~=~
+    \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 2
+    \end{mymatrix} \\
+    ~=~
+    D.
+  \end{equation*}
+  Now it follows by rearranging the equation that $A=PDP^{-1}$, and
+  therefore, as noted above,
+  \begin{eqnarray*}
+    A^{50}
+    \quad=\quad
+    PD^{50}P^{-1} 
+    &=&\begin{mymatrix}{rrr}
+      0 & -1 & -1 \\
+      0 & 1 & 0 \\
+      1 & 0 & 1
+    \end{mymatrix} \begin{mymatrix}{rrr}
+      1^{50} & 0      & 0 \\
+      0      & 1^{50} & 0 \\
+      0      & 0      & 2^{50}
+    \end{mymatrix} \begin{mymatrix}{rrr}
+      1 & 1 & 1 \\
+      0 & 1 & 0 \\
+      -1 & -1 & 0
+    \end{mymatrix} \\
+    &=&\begin{mymatrix}{ccc}
+      2^{50} & -1+2^{50} & 0 \\
+      0 & 1 & 0 \\
+      1-2^{50} & 1-2^{50} & 1
+    \end{mymatrix}.
+  \end{eqnarray*}
+  \vspace{-6ex}\par  
 \end{solution}
 
-Through diagonalization, we can efficiently compute a high power of $A$. Without this, we would be forced to multiply this by hand! 
+Thus, through diagonalization, we have efficiently computed a high
+power of $A$. The following example shows that we can also use the
+same technique for finding a square root of a matrix.
 
-The next section explores another interesting application of diagonalization. 
+\begin{example}{Square root of a matrix}{matrix-root}
+  Let\index{matrix!square root of}%
+  \index{square root!of a matrix}
+  $A=\begin{mymatrix}{rrr}
+    1  &  3 & 3 \\
+    -1 &  5 & 3 \\
+    1  & -1 & 1 \\
+  \end{mymatrix}$. Find a square root of $A$, i.e., find a matrix $B$
+  such that $A=B^2$.
+\end{example}
+
+\begin{solution}
+  We first diagonalize $A$. The characteristic polynomial is
+  \begin{eqnarray*}
+    \begin{absmatrix}{ccc}
+      1-\eigenvar  &  3 & 3 \\
+      -1 &  5-\eigenvar & 3 \\
+      1  & -1 & 1-\eigenvar \\
+    \end{absmatrix}
+    &=&
+    (1-\eigenvar)(5-\eigenvar)(1-\eigenvar) + 9 + 3
+    - 3(5-\eigenvar) +3(1-\eigenvar) +3(1-\eigenvar)
+    \\
+    &=& -\eigenvar^3+7\eigenvar^2 -14\eigenvar + 8,
+  \end{eqnarray*}
+  with roots $\eigenvar=1$, $\eigenvar=2$, and $\eigenvar=4$. The
+  corresponding eigenvectors are
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ -1 \end{mymatrix},
+    \quad
+    \vect{v}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ -1 \end{mymatrix},
+    \quad\mbox{and}\quad
+    \vect{v}_3 = \begin{mymatrix}{r} 1 \\ 1 \\  0 \end{mymatrix},
+  \end{equation*}
+  respectively. Therefore we have $P^{-1}AP = D$, where
+  \begin{equation*}
+    P = \begin{mymatrix}{rrr}
+      1  &  0 & 1 \\
+      1  &  1 & 1 \\
+      -1 & -1 & 0 \\
+    \end{mymatrix},
+    \quad
+    P^{-1} = \begin{mymatrix}{rrr}
+      1  & -1 & -1 \\
+      -1 &  1 &  0 \\
+      0  &  1 &  1 \\
+    \end{mymatrix},
+    \quad\mbox{and}\quad
+    D = \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 2 & 0 \\
+      0 & 0 & 4 \\
+    \end{mymatrix}.
+  \end{equation*}
+  We can equivalently write $A = PDP^{-1}$. Finding a square root of a
+  diagonal matrix is easy:
+  \begin{equation*}
+    D^{\frac{1}{2}} =
+    \begin{mymatrix}{ccc}
+      1 & 0        & 0 \\
+      0 & \sqrt{2} & 0 \\
+      0 & 0        & 2 \\
+    \end{mymatrix}.    
+  \end{equation*}
+  If we now define $B=PD^{\frac{1}{2}}P^{-1}$, we clearly have $B^2 =
+  PD^{\frac{1}{2}}P^{-1}PD^{\frac{1}{2}}P^{-1} = PDP^{-1} = A$. So the
+  desired square root of $A$ is
+  \begin{equation*}
+    B
+    ~=~
+    PD^{\frac{1}{2}}P^{-1}
+    ~=~
+    \begin{mymatrix}{rrr}
+      1  &  0 & 1 \\
+      1  &  1 & 1 \\
+      -1 & -1 & 0 \\
+    \end{mymatrix}
+    \begin{mymatrix}{ccc}
+      1 & 0        & 0 \\
+      0 & \sqrt{2} & 0 \\
+      0 & 0        & 2 \\
+    \end{mymatrix}
+    \begin{mymatrix}{rrr}
+      1  & -1 & -1 \\
+      -1 &  1 &  0 \\
+      0  &  1 &  1 \\
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{ccc}
+      1           &  1          &  1 \\
+      1-\sqrt{2}  &  1+\sqrt{2} &  1 \\
+      -1+\sqrt{2} &  1-\sqrt{2} &  1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Finally, we verify that we have computed $B$ correctly by squaring
+  it and double-checking that we really get $A$.
+  \begin{equation*}
+    B^2 ~=~
+    \begin{mymatrix}{ccc}
+      1           &  1          &  1 \\
+      1-\sqrt{2}  &  1+\sqrt{2} &  1 \\
+      -1+\sqrt{2} &  1-\sqrt{2} &  1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{ccc}
+      1           &  1          &  1 \\
+      1-\sqrt{2}  &  1+\sqrt{2} &  1 \\
+      -1+\sqrt{2} &  1-\sqrt{2} &  1 \\
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{rrr}
+      1  &  3 & 3 \\
+      -1 &  5 & 3 \\
+      1  & -1 & 1 \\
+    \end{mymatrix}
+    ~=~
+    A.
+  \end{equation*}
+  We note that the square root of a matrix is not unique. In fact,
+  $D$ has 8 different square roots, all of the form
+  \begin{equation*}
+    \begin{mymatrix}{ccc}
+      \pm 1 & 0            & 0 \\
+      0     & \pm \sqrt{2} & 0 \\
+      0     & 0            & \pm 2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  It follows that $A$ has 8 different square roots as well. We leave
+  it as an exercise to compute them all.
+\end{solution}
+
+The same method can also be used to compute other powers of a matrix,
+for example a cube root.

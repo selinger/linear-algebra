@@ -1,232 +1,186 @@
-\subsection{Definition of eigenvectors and eigenvalues}
+\section{Eigenvectors and eigenvalues}
 
-In this section, we will work with the entire set of complex numbers, 
-denoted by $\C$. Recall that the real numbers, $\R$ are 
-contained in the complex numbers, so the discussions in this section 
-apply to both real and complex numbers. 
+\begin{outcome}
+  \begin{enumerate}
+  \item Determine whether a vector is an eigenvector of a matrix.
+  \item Given an eigenvector, find the corresponding eigenvalue.
+  \item Given an eigenvalue, find the corresponding eigenvectors.
+  \item Find a basis for the eigenspace of a given eigenvalue.
+  \end{enumerate}
+\end{outcome}
 
-To illustrate the idea behind what will be discussed, consider the following
-example.
+When we multiply a square matrix $A$ by a non-zero vector $\vect{v}$,
+we obtain another vector $A\vect{v}$. Most of the time, the vectors
+$A\vect{v}$ and $\vect{v}$ are unrelated; they could point in
+completely different directions. However, sometimes it can happen that
+$A\vect{v}$ is a scalar multiple of $\vect{v}$. In that case,
+$\vect{v}$ is called an \textbf{eigenvector} of $A$. We will see later
+in this chapter that we can learn a lot about the matrix $A$ by
+considering its eigenvectors.
 
-\begin{example}{Eigenvectors and eigenvalues}{eigenvectors-and-eigenvalues}
-Let
-\begin{equation*}
-A = \begin{mymatrix}{rrr}
-0 & 5 & -10 \\
-0 & 22 & 16 \\
-0 & -9 & -2
-\end{mymatrix} 
-\end{equation*}
-Compute the product $AX$ for 
-\begin{equation*}
-X = \begin{mymatrix}{r}
-5 \\
--4 \\
- 3
-\end{mymatrix}, X = \begin{mymatrix}{r}
-1 \\
-0 \\
-0
-\end{mymatrix}
-\end{equation*}
-What do you notice about $AX$ in each of these products? 
+\begin{definition}{Eigenvalues and eigenvectors}{eigenvalues-and-eigenvectors}
+  Let $A$ be an $n\times n$-matrix. Suppose that $\vect{v}\in\R^n$ is
+  a non-zero vector such that $A\vect{v}$ is a scalar multiple of
+  $\vect{v}$. In other words, suppose that there exists a scalar
+  $\eigenvar$ such that
+  \begin{equation*}
+    A\vect{v}=\eigenvar\vect{v}.
+  \end{equation*}
+  Then $\vect{v}$ is called an \textbf{eigenvector}%
+  \index{eigenvector}%
+  \index{vector!eigenvector}%
+  \index{matrix!eigenvector} of $A$, and $\eigenvar$ is called the
+  corresponding \textbf{eigenvalue}%
+  \index{eigenvalue}%
+  \index{matrix!eigenvalue}.
+\end{definition}
+
+\begin{example}{Eigenvalues and eigenvectors}{eigenvalues-and-eigenvectors}
+  Consider the matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      3 & -2 &  2 \\
+      1 &  2 &  1 \\
+      0 &  2 &  1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Which of the following vectors are eigenvectors of $A$? Find the
+  corresponding eigenvalues.
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{r} 2 \\ -1 \\ -2 \end{mymatrix},\quad
+    \vect{v}_2 = \begin{mymatrix}{r} 0 \\  1 \\  1 \end{mymatrix},\quad
+    \vect{v}_3 = \begin{mymatrix}{r} 1 \\  1 \\  1 \end{mymatrix},\quad
+    \vect{v}_4 = \begin{mymatrix}{r} 0 \\  0 \\  0 \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-First, compute $AX$ for 
-\begin{equation*}
-X =\begin{mymatrix}{r}
-5 \\
--4 \\
-3
-\end{mymatrix}
-\end{equation*}
-
-This product is given by 
-\begin{equation*}
-AX = \begin{mymatrix}{rrr}
-0 & 5 & -10 \\
-0 & 22 & 16 \\
-0 & -9 & -2
-\end{mymatrix} \begin{mymatrix}{r}
--5 \\
--4 \\
-3
-\end{mymatrix} = \begin{mymatrix}{r}
--50 \\
--40 \\
-30
-\end{mymatrix} =10\begin{mymatrix}{r}
--5 \\
--4 \\
-3
-\end{mymatrix} 
-\end{equation*}
-
-In this case, the product $AX$ resulted in a vector which is equal to $10$ times the vector $X$. 
-In other words, $AX=10X$.
-
-Let's see what happens in the next product.
-Compute $AX$ for the vector 
-\begin{equation*}
-X =  \begin{mymatrix}{r}
-1 \\
-0 \\
-0
-\end{mymatrix} 
-\end{equation*}
-
-This product is given by 
-\begin{equation*}
-AX = \begin{mymatrix}{rrr}
-0 & 5 & -10 \\
-0 & 22 & 16 \\
-0 & -9 & -2
-\end{mymatrix} \begin{mymatrix}{r}
-1 \\
-0 \\
-0
-\end{mymatrix} = \begin{mymatrix}{r}
-0 \\
-0 \\
-0
-\end{mymatrix} =0\begin{mymatrix}{r}
-1 \\
-0 \\
-0
-\end{mymatrix} 
-\end{equation*}
-
-In this case, the product $AX$ resulted in a vector equal to $0$ times the vector $X$, $AX=0X$. 
-
-Perhaps this matrix is such that $AX$ results in $kX$, for every vector $X$. However, consider
-\begin{equation*}
-\begin{mymatrix}{rrr}
-0 & 5 & -10 \\
-0 & 22 & 16 \\
-0 & -9 & -2
-\end{mymatrix} \begin{mymatrix}{r}
-1 \\
-1 \\
-1
-\end{mymatrix} = \begin{mymatrix}{r}
--5 \\
-38 \\
--11
-\end{mymatrix} 
-\end{equation*}
-In this case, $AX$ did not result in a vector of the form $kX$ for some scalar $k$. 
+  We compute
+  \begin{equation*}
+    A\vect{v}_1 = \begin{mymatrix}{r} 4 \\ -2 \\ -4 \end{mymatrix},\quad
+    A\vect{v}_2 = \begin{mymatrix}{r} 0 \\  3 \\  3 \end{mymatrix},\quad
+    A\vect{v}_3 = \begin{mymatrix}{r} 3 \\  4 \\  3 \end{mymatrix},\quad
+    A\vect{v}_4 = \begin{mymatrix}{r} 0 \\  0 \\  0 \end{mymatrix}.
+  \end{equation*}
+  \begin{itemize}
+  \item We see that $A\vect{v}_1$ is a scalar multiple of
+    $\vect{v}_1$, namely $A\vect{v}_1=2\vect{v}_1$. Therefore,
+    $\vect{v}_1$ is an eigenvector of $A$ with corresponding
+    eigenvalue $\eigenvar=2$.
+  \item Similarly, $A\vect{v}_2=3\vect{v}_2$, so $\vect{v}_2$ is an
+    eigenvector of $A$ with corresponding eigenvalue $\eigenvar=3$.
+  \item On the other hand, $A\vect{v}_3$ is not a scalar multiple of
+    $\vect{v}_3$. Hence, $\vect{v}_3$ is not an eigenvector of $A$.
+  \item Finally, although $A\vect{v}_4$ is a scalar multiple of
+    $\vect{v}_4$, the zero vector is not considered an eigenvector.
+  \end{itemize}
 \end{solution}
 
-There is something special about the first two products calculated in
-Example~\ref{exa:eigenvectors-and-eigenvalues}.  Notice that for each,
-$AX=kX$ where $k$ is some scalar.  When this equation holds for some
-$X$ and $k$, we call the scalar $k$ an \textbf{eigenvalue} of $A$. We
-often use the special symbol $\lambda$ instead of $k$ when referring
-to eigenvalues. In Example~\ref{exa:eigenvectors-and-eigenvalues}, the
-values $10$ and $0$ are eigenvalues for the matrix $A$ and we can
-label these as $\lambda_1 = 10$ and $\lambda_2 = 0$.
+\begin{example}{Find eigenvectors for the given eigenvalue}{find-eigenvectors-given-eigenvalue}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      2  &  0 & 0 \\
+      -1 &  3 & 1 \\
+      2  & -2 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Find the eigenvectors corresponding to the eigenvalue $\eigenvar=2$.
+\end{example}
 
-When $AX = \lambda X$ for some $X \neq 0$, we call such an $X$ an
-\textbf{eigenvector} of the matrix $A$. The eigenvectors of $A$ are
-associated to an eigenvalue.  Hence, if $\lambda_1$ is an eigenvalue
-of $A$ and $AX = \lambda_1 X$, we can label this eigenvector as
-$X_1$. Note again that in order to be an eigenvector, $X$ must be
-non-zero.
+\begin{solution}
+  We have to solve the equation $A\vect{v}=2\vect{v}$. We can use
+  algebra to rewrite this as
+  \begin{eqnarray*}
+    A\vect{v} = 2\vect{v}
+    &\iff& A\vect{v} - 2\vect{v} = \vect{0} \\
+    &\iff& (A-2I)\vect{v} = \vect{0} \\
+    &\iff& \begin{mymatrix}{rrr}
+      0  &  0 & 0 \\
+      -1 &  1 & 1 \\
+      2  & -2 & -2 \\
+    \end{mymatrix}\vect{v}
+    = \begin{mymatrix}{r} 0 \\ 0 \\ 0 \end{mymatrix}.
+  \end{eqnarray*}
+  This is a homogeneous system of equations with general
+  solution
+  \begin{equation*}
+    \vect{v}
+    ~=~ s \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix}
+    + t \begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix},
+  \end{equation*}
+  where $s$ and $t$ are parameters. These (except the zero vector) are
+  exactly the eigenvectors corresponding to the eigenvalue $\eigenvar = 2$.
+\end{solution}
 
-There is also a geometric significance to eigenvectors.  When you have a \textbf{non-zero} vector which, when multiplied by a matrix results in another vector
-which is parallel to the first or equal to \textbf{0}, this vector is called
-an eigenvector of the matrix. This is the meaning when the vectors are in 
-$\R^{n}$. 
+As the last example shows, the eigenvectors for a given eigenvalue
+$\eigenvar$, plus the zero vector, form a subspace of $\R^n$. This is
+called the \textbf{eigenspace} of $\eigenvar$.
 
-The formal definition of eigenvalues and eigenvectors is as follows.
-
-\begin{definition}{Eigenvalues and eigenvectors}{eigenvalues-and-eigenvectors}
-Let $A$ be an $n\times n$-matrix and let $X \in \C^{n}$ be a
-\textbf{non-zero vector} for which
-
-\begin{equation}
-AX=\lambda X  \label{eigen1}
-\end{equation}
-for some scalar $\lambda$. Then $\lambda $ is called an
-\textbf{eigenvalue}\index{eigenvalue}
-of the matrix $A$ and $X$ is called an \textbf{eigenvector}\index{eigenvector} of $A$ associated with $\lambda$, or a $\lambda$-eigenvector of $A$. 
- 
-The set of all eigenvalues of an $n\times n$-matrix $A$ is denoted by 
-$\sigma \tup{A} $ and is referred to as the \textbf{spectrum}\index{spectrum} of $A$.
+\begin{definition}{Eigenspace}{eigenspace}
+  Let $A$ be an $n\times n$-matrix, and let $\eigenvar$ be an eigenvalue
+  of $A$. The \textbf{eigenspace}%
+  \index{eigenspace}%
+  \index{matrix!eigenspace}%
+  \index{subspace!eigenspace} of $\eigenvar$ is the set
+  \begin{equation*}
+    E_{\eigenvar} = \set{\vect{v} \mid A\vect{v}=\eigenvar\vect{v}}.
+  \end{equation*}
+  It is a subspace of $\R^n$.
 \end{definition}
 
-The eigenvectors of a matrix $A$ are those vectors $X$ for which
-multiplication by $A$ results in a vector in the same direction or opposite
-direction to $X$. Since the zero vector $0$ has no
-direction this would make no sense for the zero vector. As noted above, 
-$0$ is never allowed to be an eigenvector. 
+Instead of finding {\em all} eigenvectors for a given eigenvalue, it
+is often sufficient to find a basis for the eigenspace. We also
+sometimes call the basis vectors of the eigenspace \textbf{basic
+  eigenvectors}%
+\index{basic eigenvector}%
+\index{eigenvector!basic}%
+\index{matrix!eigenvector!basic}.
 
-Let's look at eigenvectors in more detail. Suppose $X$ satisfies {\eqref{eigen1}}. Then
-\begin{equation*}
-\begin{array}{c}
-AX - \lambda X = 0 \\
-\mbox{or} \\
-\tup{A-\lambda I} X = 0
-\end{array}
-\end{equation*}
-for some $X \neq 0$. Equivalently you could write $\tup{\lambda
-I-A}X = 0$, which is more commonly used.  Hence, when we are looking for eigenvectors, we are
-looking for non-trivial solutions to this homogeneous system of equations!
+\begin{example}{Basis of eigenspace}{basis-eigenspace}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      2  &  0 & 0 \\
+      -1 &  3 & 1 \\
+      2  & -2 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The matrix $A$ has eigenvalues $\eigenvar=1$ and $\eigenvar=2$. Find a
+  basis for each eigenspace.
+\end{example}
 
-Recall that the solutions to a homogeneous system of equations consist
-of basic solutions, and the linear combinations of those basic
-solutions. In this context, we call the basic solutions of the
-equation $\tup{\lambda I - A} X = 0$ \textbf{basic
-eigenvectors}. It follows that any (non-zero) linear combination of basic
-eigenvectors is again an eigenvector.
-
-Suppose the matrix $\tup{\lambda I - A}$ is invertible, so that
-$\tup{\lambda I - A}^{-1}$ exists.
-Then the following equation would be true.
-\begin{eqnarray*}
-X &=& IX \\
-&=& \tup{\tup{\lambda I - A} ^{-1}\tup{\lambda I - A }
-} X \\
-&=&\tup{\lambda I - A} ^{-1}\tup{\tup{\lambda
-I - A} X} \\
-&=& \tup{\lambda I - A} ^{-1}0 \\
-&=& 0
-\end{eqnarray*}
-This claims that $X=0$. However, we have required that $ X \neq 0$. Therefore  $\tup{\lambda I - A}$
-cannot have an inverse! 
-
-Recall that if a matrix
-is not invertible, then its determinant is equal to $0$.  Therefore we
-can conclude that
-\begin{equation}
-\det \tup{\lambda I - A} =0  \label{eigen2}
-\end{equation}
-Note that this is equivalent to $\det \tup{A- \lambda I } =0$. 
-
-The expression $\det \tup{\eigenVar I-A} $ is a polynomial (in
-the variable $x$) called the
-\textbf{characteristic polynomial of $A$}, and 
-$\det \tup{\eigenVar I-A} =0$ is called the \textbf{characteristic
-equation}\index{characteristic equation}. For this reason we may also refer to
-the eigenvalues of $A$ as \textbf{characteristic values}, but the
-former is often used for historical reasons.
-
-The following theorem claims that the roots of the characteristic
-polynomial are the eigenvalues of $A$.  Thus when {\eqref{eigen2}}
-holds, $A$ has a non-zero eigenvector.
-
-\begin{theorem}{The existence of an eigenvector}{existence-of-eigenvector}
-Let $A$ be an $n\times n$-matrix and suppose $\det \tup{\lambda I -
-A} =0$ for some $ \lambda \in \C$.  \\
-Then $\lambda$ is an eigenvalue of $A$ and thus there exists a non-zero
-vector $X \in \C^{n}$ such that $AX=\lambda X$. 
-\end{theorem}
-
-\begin{proof}
-For $A$ an $n\times n$-matrix, the method of Laplace
-Expansion demonstrates that $\det \tup{\lambda I - A } $ is a
-polynomial of degree $n$. As such, the equation
-{\eqref{eigen2}} has a solution $\lambda \in \C$ by the Fundamental
-Theorem of Algebra. The fact that $\lambda$ is an eigenvalue is left as an exercise. 
-\end{proof}
+\begin{solution}
+  We already found a basis for the eigenspace $E_2$ in
+  Example~\ref{exa:find-eigenvectors-given-eigenvalue}.
+  \begin{equation*}
+    \mbox{Basis of $E_2$:}\quad\set{
+      \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix},\quad
+      \begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix}
+    }.
+  \end{equation*}
+  To find a basis for the eigenspace $E_1$, we proceed analogously.
+  We must solve the equation $A\vect{v}=1\vect{v}$. We have:
+  \begin{eqnarray*}
+    A\vect{v} = 1\vect{v}
+    &\iff& A\vect{v} - \vect{v} = \vect{0} \\
+    &\iff& (A-I)\vect{v} = \vect{0} \\
+    &\iff& \begin{mymatrix}{rrr}
+      1  &  0 & 0 \\
+      -1 &  2 & 1 \\
+      2  & -2 & -1 \\
+    \end{mymatrix}\vect{v}
+    = \begin{mymatrix}{r} 0 \\ 0 \\ 0 \end{mymatrix}.
+  \end{eqnarray*}
+  This is a homogeneous system of rank 2, with general solution
+  \begin{equation*}
+    \vect{v}
+    ~=~ t \begin{mymatrix}{r} 0 \\ -1 \\ 2 \end{mymatrix}.
+  \end{equation*}
+  Thus, the following is a basis for the eigenspace $E_1$:
+  \begin{equation*}
+    \mbox{Basis of $E_1$:}\quad\set{
+      \begin{mymatrix}{r} 0 \\ -1 \\ 2 \end{mymatrix}
+    }.
+  \end{equation*}
+\end{solution}

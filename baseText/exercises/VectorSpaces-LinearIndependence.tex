@@ -409,13 +409,13 @@ of the following are bases for this vector space.
 \item
 Suppose
 \[
-c_{1}\tup{x^{3}+1} +c_{2}\tup{x^{2}+x} +c_{3}\tup{
-2x^{3}+x^{2}} +c_{4}\tup{2x^{3}-x^{2}-3x+1} =0
+c_{1}(x^{3}+1) +c_{2}(x^{2}+x) +c_{3}(
+2x^{3}+x^{2}) +c_{4}(2x^{3}-x^{2}-3x+1) =0
 \]
 Then combine the terms according to power of $x$.
 \[
-\tup{c_{1}+2c_{3}+2c_{4}} x^{3}+\tup{c_{2}+c_{3}-c_{4}}
-x^{2}+\tup{c_{2}-3c_{4}} x+\tup{c_{1}+c_{4}} =0
+(c_{1}+2c_{3}+2c_{4}) x^{3}+(c_{2}+c_{3}-c_{4})
+x^{2}+(c_{2}-3c_{4}) x+(c_{1}+c_{4}) =0
 \]
 Is there a non-zero solution to the system $
 \begin{array}{c}
@@ -449,8 +449,8 @@ a_{4} & b_{4} & c_{4} & d_{4}
 \end{equation*}
 is an invertible matrix.
 \begin{sol}
-Let $p_{i}\tup{x} $ denote the $i^{th}$ of
-these polynomials. Suppose $\sum_{i}C_{i}p_{i}\tup{x} =0$. Then
+Let $p_{i}(x) $ denote the $i\th$ of
+these polynomials. Suppose $\sum_{i}C_{i}p_{i}(x) =0$. Then
 collecting terms according to the exponent of $x$, you need to have
 \begin{eqnarray*}
 C_{1}a_{1}+C_{2}a_{2}+C_{3}a_{3}+C_{4}a_{4} &=&0 \\
@@ -483,16 +483,16 @@ this is a basis.
 \begin{ex} Suppose $V$ is a finite dimensional vector space. Based on the
 exchange theorem above, it was shown that any two bases have the same number
 of vectors in them. Give a different proof of this fact using the earlier
-material in the book. \textbf{Hint: }Suppose $\set{\vect{x}_{1}\vect{
-,\cdots ,x}_{n}} $ and $\set{\vect{y}_{1}\vect{,\cdots ,y}
+material in the book. \textbf{Hint: }Suppose $\set{\vect{x}_{1}
+,\ldots,\vect{x}_{n}} $ and $\set{\vect{y}_{1},\ldots,\vect{y}
 _{m}} $ are two bases with $m<n$. Then define 
 \begin{equation*}
-\phi :\R^{n}\mapsto V,\psi :\R^{m}\mapsto V
+\phi :\R^{n}\to V,\psi :\R^{m}\to V
 \end{equation*}
 by 
 \begin{equation*}
-\phi \tup{\vect{a}} = \sum_{k=1}^{n}a_{k}\vect{x}
-_{k},\;\psi \tup{\vect{b}} = \sum_{j=1}^{m}b_{j}\vect{y}_{j}
+\phi (\vect{a}) = \sum_{k=1}^{n}a_{k}\vect{x}
+_{k},\;\psi (\vect{b}) = \sum_{j=1}^{m}b_{j}\vect{y}_{j}
 \end{equation*}
 Consider the linear transformation, $\psi ^{-1}\circ \phi$. Argue it is a
 one to one and onto mapping from $\R^{n}$ to $\R^{m}$. Now

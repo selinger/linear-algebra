@@ -47,7 +47,7 @@ equations is in a special form called {\em {\ef}}, which we now define.
 \end{definition}
 
 The word {\em echelon} comes from French {\em \'echelle}, which means
-ladder. This is because an echelon form looks a bit like a ladder or
+ladder. This is because an {\ef} looks a bit like a ladder or
 staircase. Here are some examples of {\ef}s.
 
 
@@ -161,13 +161,13 @@ examples show how to do this.
       2 & 10 & 7 & 27 \\
       1 & 1 & 2 & 5
     \end{mymatrix}
-    \stackrel{R_2\rowop R_2-2R_1}{\sim}
+    \stackrel{R_2\rowop R_2-2R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 4 & 3 & 11 \\
       0 & 2 & 1 & 5 \\
       1 & 1 & 2 & 5
     \end{mymatrix}
-    \stackrel{R_3\rowop R_3-R_1}{\sim}
+    \stackrel{R_3\rowop R_3-R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 4 & 3 & 11 \\
       0 & 2 & 1 & 5 \\
@@ -188,13 +188,13 @@ examples show how to do this.
       0 & \circled{2} & 1 & 5 \\
       0 & -3 & -1 & -6
     \end{mymatrix}
-    \stackrel{R_3\rowop 2R_3}{\sim}
+    \stackrel{R_3\rowop 2R_3}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 4 & 3 & 11 \\
       0 & \circled{2} & 1 & 5 \\
       0 & -6 & -2 & -12
     \end{mymatrix}
-    \stackrel{R_3\rowop R_3+3R_2}{\sim}
+    \stackrel{R_3\rowop R_3+3R_2}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 4 & 3 & 11 \\
       0 & \circled{2} & 1 & 5 \\
@@ -263,7 +263,7 @@ examples show how to do this.
   first pivot column. We switch the first two rows to move a non-zero
   number into the pivot position:
   \begin{equation*}
-  \stackrel{R_2\rowswap R_1}{\sim}
+  \stackrel{R_2\rowswap R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  1 &   2 & 2\\
@@ -273,7 +273,7 @@ examples show how to do this.
   To create zeros below the pivot entry, we subtract $2$ times the
   first row from the third row:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3-2R_1}{\sim}
+  \stackrel{R_3\rowop R_3-2R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  1 &   2 & 2\\
@@ -285,7 +285,7 @@ examples show how to do this.
   entry. We add $3$ times the second row to the third row to create a
   zero below the pivot:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3+3R_2}{\sim}
+  \stackrel{R_3\rowop R_3+3R_2}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  \circled{1} &   2 & 2\\
@@ -327,7 +327,7 @@ examples show how to do this.
   pivot entry. We use row operating to create zeros beneath the pivot
   entry. We subtract $2$ times the first row from the third row and get:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3-2R_1}{\sim}
+  \stackrel{R_3\rowop R_3-2R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{3} &  -1  &  5 & 8 \\
       0 &   1 & -10 & 1 \\
@@ -339,7 +339,7 @@ examples show how to do this.
   second column) and repeat the procedure. Subtracting the second row
   from the third row, we get:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3-R_2}{\sim}
+  \stackrel{R_3\rowop R_3-R_2}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{3} &  -1  &  5 & 8 \\
       0 &   \circled{1} & -10 & 1 \\
@@ -354,12 +354,12 @@ examples show how to do this.
   \textbf{free variable}\index{free variable}\index{variable!free}.
   The equations corresponding to
   this {\ef} are
-  \[
+  \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
       3x - y + 5z &=& 8 \\
       y - 10z &=& 1. 
     \end{array}
-  \]
+  \end{equation*}
   Observe that the free variable $z$ is not constrained by any
   equation. In fact, $z$ can equal any number. We choose $t$ to be any
   number and let $z = t$.  In this context $t$ is called a
@@ -369,25 +369,25 @@ examples show how to do this.
   have $3x = 8+y-5z = 2+(1+10t)-5t = 9+5t$, and therefore
   $x=3+\frac{5}{3}t$. Therefore, the general solution of this system
   is
-  \[
+  \begin{equation*}
     \begin{array}{l}
       x=3+\frac{5}{3}t \\
       y=1+10t \\
       z=t,
     \end{array}
-  \]
+  \end{equation*}
   where $t$ is arbitrary. The system has an infinite set of solutions
   which are given by these equations. For any value of the parameter
   $t$ we select, $x$, $y$, and $z$ will be given by the above
   equations. For example, if we choose $t=4$ then the corresponding
   solution would be
-  \[
+  \begin{equation*}
     \begin{array}{l}
       x = 3 + \frac{5}{3}(4) = \frac{29}{3}\\
       y = 1+10(4) = 41 \\
       z = 4.
     \end{array}
-  \]
+  \end{equation*}
 \end{solution}
 
 In Example~\ref{exa:infinite-set-of-soln} the solution involved a
@@ -420,13 +420,13 @@ than one parameter, as shown in the following example.
       1 & 2 & -1 & 3 & 5 \\
       1 & 2 & -3 & 1 & 1
     \end{mymatrix}
-    \stackrel{R_2\rowop R_2-R_1}{\stackrel{R_3\rowop R_3-R_1}{\sim}}
+    \stackrel{R_2\rowop R_2-R_1}{\stackrel{R_3\rowop R_3-R_1}{\roweq}}
     \begin{mymatrix}{rrrr|r}
       \circled{1} & 2 & -2 & 2 & 3 \\
       0 & 0 & 1 & 1 & 2 \\
       0 & 0 & -1 & -1 & -2
     \end{mymatrix}
-    \stackrel{R_3\rowop R_3+R_2}{\sim}
+    \stackrel{R_3\rowop R_3+R_2}{\roweq}
     \begin{mymatrix}{rrrr|r}
       \circled{1} & 2 & -2 & 2 & 3 \\
       0 & 0 & \circled{1} & 1 & 2 \\
@@ -475,11 +475,11 @@ To summarize, we have the following possibilities for a system of equations:
 
 \begin{enumerate}
 \item {\em No solution:} If the {\ef} has a row of the form
-  \[
+  \begin{equation*}
     \begin{mymatrix}{rrr|r}
       0 & 0 & 0 & b
     \end{mymatrix},
-  \]
+  \end{equation*}
   where $b\neq 0$, then the system is inconsistent and has no
   solution.
 
@@ -532,9 +532,9 @@ of equations. It is called the {\em rank} of the system.
 
 \begin{definition}{Rank of a matrix}{rank}
   Let $A$ be a matrix and consider any {\ef} of $A$.  Then, the number
-  $r$ of pivot entries of $A$ does not depend on the {\ef} you choose,
-  and is called the \textbf{rank}\index{matrix!rank}\index{rank} of $A$. We denote
-  it by $\func{rank}(A)$.
+  $r$ of pivot entries of $A$ does not depend on the {\ef} we choose,
+  and is called the \textbf{rank}\index{matrix!rank}\index{rank} of
+  $A$. We denote it by $\rank(A)$.
 
   The rank of a system of linear equations is the rank of its
   coefficient matrix (i.e., the matrix on the left-hand side).

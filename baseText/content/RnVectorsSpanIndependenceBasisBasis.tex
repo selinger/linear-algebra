@@ -1,0 +1,928 @@
+% ----------------------------------------------------------------------
+\section{Basis and dimension}
+
+\begin{outcome}
+  \begin{enumerate}
+  \item Find a basis for a subspace of $\R^n$.
+  \item Use the casting-out algorithm to find a basis for a subspace
+    given as a span.
+  \item Use basic solutions to find a basis for a subspace given as
+    the solution space of a homogeneous system of equations.
+  \item Find the coordinates of a vector with respect to a basis.
+  \item Find the dimension of a subspace of $\R^n$.
+  \item Extend a set of linearly independent vectors to a basis.
+  \item Shrink a spanning set to a basis by removing redundant vectors.
+  \item Determine whether $k$ vectors form a basis of a $k$-dimensional
+    space.
+  \end{enumerate}
+\end{outcome}
+
+% ----------------------------------------------------------------------
+\subsection{Definition of basis}
+
+We saw in Proposition~\ref{prop:span-subspace} that spans are
+subspaces of\/ $\R^n$. Interestingly, the converse is also true: every
+subspace of\/ $\R^n$ is the span of some finite set of vectors.
+
+\begin{theorem}{Subspaces are spans}{subspaces-are-spans}
+  \index{subspace!is a span}%
+  Let $V$ be a subspace of\/ $\R^n$. Then there exist linearly
+  independent vectors $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ in $V$
+  such that
+  \begin{equation*}
+    V= \sspan\set{\vect{u}_{1},\ldots ,\vect{u}_{k}}. 
+  \end{equation*}
+  \vspace{-3ex}
+\end{theorem}
+
+\begin{proof}
+  We proceed as follows.
+  \begin{enumerate}
+  \item[0.] If $V=\set{\vect{0}}$, then $V$ is the empty span, and we
+    are done.
+  \item[1.] Otherwise, $V$ contains some non-zero vector.  Pick a
+    non-zero vector $\vect{u}_{1}$ in $V$. If
+    $V=\sspan\set{\vect{u}_{1}}$, we are done.
+  \item[2.] Otherwise, pick a vector $\vect{u}_{2}$ in $V$ that is not
+    in $\sspan\set{\vect{u}_{1}}$. If
+    $V=\sspan\set{\vect{u}_{1},\vect{u}_{2}}$, we are done.
+  \item[3.] Otherwise, pick a vector $\vect{u}_{3}$ in $V$ that is not
+    in $\sspan\set{\vect{u}_{1},\vect{u}_{2}}$. If
+    $V=\sspan\set{\vect{u}_{1},\vect{u}_{2},\vect{u}_{3}}$, we are done.
+  \item[4.] Otherwise, pick a vector $\vect{u}_{4}$ in $V$ that is not
+    in $\sspan\set{\vect{u}_{1},\vect{u}_{2},\vect{u}_{4}}$, and so on.
+  \end{enumerate}
+  Continue in this way. Note that after the $j\th$ step of this
+  process, the vectors $\vect{u}_1,\ldots,\vect{u}_j$ are linearly
+  independent. This is because, by construction, no vector is in the
+  span of the previous vectors, and therefore no vector is redundant.
+  By
+  Theorem~\ref{thm:properties-linear-independence}(\ref{properties-linear-independence-c}),
+  there can be at most $n$ linearly independent vectors in $\R^n$.
+  Therefore the process must stop after $k$ steps for some $k\leq
+  n$. But then $V=\sspan\set{\vect{u}_{1},\ldots ,\vect{u}_{k}}$, as
+  desired.
+\end{proof}
+
+In summary, every subspace of\/ $\R^{n}$ is spanned by a finite,
+linearly independent collection of vectors.  Such a collection of
+vectors is called a \textbf{basis} of the subspace.
+
+\begin{definition}{Basis of a subspace}{subspace-basis}
+  Let $V$ be a subspace of\/ $\R^{n}$. Then
+  $\set{\vect{u}_{1},\ldots ,\vect{u}_{k}}$ is a \textbf{basis} for
+  $V$ if the following two conditions hold:%
+  \index{basis}%
+  \index{subspace!basis|see{basis}}%
+  \index{vector!basis|see{basis}}%
+  \begin{enumerate}
+  \item $\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}}=V$, and
+  \item $\vect{u}_{1},\ldots,\vect{u}_{k}$ are linearly independent.
+  \end{enumerate}
+\end{definition}
+
+Note that the plural of basis is \textbf{bases}.
+
+% ----------------------------------------------------------------------
+\subsection{Examples of bases}
+
+\begin{proposition}{Standard basis of\/ $\R^n$}{standard-basis}
+  Let $\vect{e}_i$ be the vector in $\R^n$ whose $i\th$ entry is $1$
+  and all of whose other entries are $0$. In other words, $\vect{e}_i$
+  is the $i\th$ column of the identity matrix.
+  \begin{equation*}
+    \vect{e}_1 = \begin{mymatrix}{c} 1 \\ 0 \\ 0 \\ \vdots \\ 0 \end{mymatrix},\quad
+    \vect{e}_2 = \begin{mymatrix}{c} 0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{mymatrix},\quad
+    \vect{e}_3 = \begin{mymatrix}{c} 0 \\ 0 \\ 1 \\ \vdots \\ 0 \end{mymatrix},\quad
+    \ldots~,\quad
+    \vect{e}_n = \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ \vdots \\ 1\end{mymatrix}.
+  \end{equation*}
+  Then $\set{\vect{e}_1,\vect{e}_2,\ldots,\vect{e}_n}$ is a basis for
+  $\R^n$. It is called the \textbf{standard basis}%
+  \index{standard basis}%
+  \index{basis!standard}
+  of\/ $\R^n$.
+\end{proposition}
+
+\begin{proof}
+  To see that it is a basis of\/ $\R^n$, first notice that the vectors
+  $\vect{e}_1,\vect{e}_2,\ldots,\vect{e}_n$ span $\R^n$. Indeed, every
+  vector $\vect{v} = \mat{x_1,\ldots,x_n}^T\in\R^n$ can be written as
+  $\vect{v} = x_1\vect{e}_1+\ldots+x_n\vect{e}_n$. Second, the vectors
+  $\vect{e}_1,\vect{e}_2,\ldots,\vect{e}_n$ are evidently linearly
+  independent, because none of these vectors can be written as a
+  linear combination of previous vectors. Since the vectors span
+  $\R^n$ and are linearly independent, they form a basis of\/ $\R^n$.
+\end{proof}
+
+\begin{example}{A non-standard basis of\/ $\R^3$}{non-standard-basis}
+  \index{basis!of Rn@of\/ $\R^n$}%
+  Check that the vectors
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix},\quad
+    \mbox{and}\quad
+    \vect{u}_3 = \begin{mymatrix}{r} -1 \\ 0 \\ 1 \end{mymatrix}
+  \end{equation*}
+  form a basis of\/ $\R^3$.
+\end{example}
+
+\begin{solution}
+  We must check that the vectors $\vect{u}_1,\vect{u}_2,\vect{u}_3$
+  are linearly independent and span $\R^3$. To check linear
+  independence, we use the casting-out algorithm.
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 0 & -1 \\
+      2 & 1 & 0 \\
+      1 & 0 & 1 \\
+    \end{mymatrix}
+    \quad\roweq\quad
+    \begin{mymatrix}{rrr}
+      \circled{1} & 0 & -1 \\
+      0 & \circled{1} & 2 \\
+      0 & 0 & \circled{2} \\
+    \end{mymatrix}.
+  \end{equation*}
+  Since all columns are pivot columns, there are no redundant vectors,
+  so $\vect{u}_1,\vect{u}_2,\vect{u}_3$ are linearly independent.
+  To check that they span all of\/ $\R^3$, let $\vect{w}=\mat{x,y,z}^T$
+  be an arbitrary element of\/ $\R^3$. We must show that $\vect{w}$ is a linear
+  combination of $\vect{u}_1,\vect{u}_2,\vect{u}_3$. This amounts to
+  solving the system of equations
+  \begin{equation*}
+    a_1\,\vect{u}_1+a_2\,\vect{u}_2+a_3\,\vect{u}_3 = \vect{w},
+  \end{equation*}
+  or in augmented matrix form,
+  \begin{equation*}
+    \begin{mymatrix}{rrr|c}
+      1 & 0 & -1 & x \\
+      2 & 1 & 0  & y \\
+      1 & 0 & 1  & z \\
+    \end{mymatrix}
+    \quad\roweq\quad
+    \begin{mymatrix}{rrr|c}
+      1 & 0 & -1 & x    \\
+      0 & 1 & 2  & y-2x \\
+      0 & 0 & 2  & z-x  \\
+    \end{mymatrix}.
+  \end{equation*}
+  The system is clearly consistent, so it has a solution, and
+  therefore $\vect{w}$ is indeed a linear combination of
+  $\vect{u}_1,\vect{u}_2,\vect{u}_3$. Since $\vect{w}$ was an
+  arbitrary vector of\/ $\R^3$, it follows that
+  $\vect{u}_1,\vect{u}_2,\vect{u}_3$ span $\R^3$.
+\end{solution}
+
+Generalizing the last example, we find that a set of $n$ vectors forms
+a basis of\/ $\R^n$ if and only if the matrix having those vectors as
+its columns is invertible. This is the content of the following
+proposition.
+
+\begin{proposition}{Invertible matrices and bases of\/ $\R^n$}{invertible-matrices}
+  \index{basis!of Rn@of\/ $\R^n$}%
+  \index{basis!and invertible matrix}%
+  Let $A$ be an $n\times n$-matrix. Then the columns of $A$ form a
+  basis of\/ $\R^n$ if and only if $A$ is invertible.
+\end{proposition}
+
+We turn to the question of finding bases for subspaces of\/ $\R^n$.
+
+\begin{example}{Basis of a span}{basis-of-span}
+  Let
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 2 \\ 0 \\ -2 \end{mymatrix},
+    \quad
+    \vect{u}_2 = \begin{mymatrix}{r} -1 \\ 0 \\ 1 \end{mymatrix},
+    \quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 3 \\ 5 \end{mymatrix},
+    \quad
+    \vect{u}_4 = \begin{mymatrix}{r} 3 \\ 5 \\ 7 \end{mymatrix},
+    \quad
+    \vect{u}_5 = \begin{mymatrix}{r} -1 \\ 1 \\ 3 \end{mymatrix}.
+  \end{equation*}
+  Find a basis of $\sspan\set{\vect{u}_1,\ldots,\vect{u}_5}$%
+  \index{basis!of a span}.
+\end{example}
+
+\begin{solution}
+  Let $S=\sspan\set{\vect{u}_1,\ldots,\vect{u}_5}$.  By
+  Theorem~\ref{thm:linearly-independent-subset}, we know that if we
+  remove the redundant vectors from
+  $\set{\vect{u}_1,\ldots,\vect{u}_5}$, then the remaining vectors
+  will be linearly independent and will still span $S$. In other
+  words, the remaining vectors will be a basis for $S$. We use the
+  casting-out algorithm to identity the redundant vectors:
+  \begin{equation*}
+    \begin{mymatrix}{rrrrr}
+      2 & -1 & 1 & 3 & -1 \\
+      0 & 0 & 3 & 5 & 1 \\
+      -2 & 1 & 5 & 7 & 3 \\
+    \end{mymatrix}
+    ~\roweq~
+    \begin{mymatrix}{rrrrr}
+      2 & -1 & 1 & 3 & -1 \\
+      0 & 0 & 3 & 5 & 1 \\
+      0 & 0 & 6 & 10 & 2 \\
+    \end{mymatrix}
+    ~\roweq~
+    \begin{mymatrix}{rrrrr}
+      \circled{2} & -1 & 1 & 3 & -1 \\
+      0 & 0 & \circled{3} & 5 & 1 \\
+      0 & 0 & 0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Since columns $2$, $4$, and $5$ are the non-pivot columns, it
+  follows that the vectors $\vect{u}_2$, $\vect{u}_4$, and
+  $\vect{u}_5$ are redundant. Therefore, the desired basis is
+  $\set{\vect{u}_1,\vect{u}_3}$. 
+\end{solution}
+
+\begin{example}{Basis of the solution space of a homogeneous system of equations}{basis-solution-space}
+  Find a basis for the solution space of the system of equations%
+  \index{basis!of a solution space}
+  \begin{equation*}
+    \begin{array}{r@{~}r@{~}r@{~}r@{~}r@{~}r@{~}r@{~}r@{~}r@{~}r@{~}r}
+     x &+& y  &-& z &+& 3w &-& 2v &=& 0, \\
+     x &+& y &+& z &-& 11w &+& 8v &=& 0, \\
+    4x &+& 4y &-& 3z &+& 5w &-& 3v &=& 0. \\
+    \end{array}
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We solve the system of equations in the usual way:
+  \begin{equation*}
+    \begin{mymatrix}{rrrrr|r}
+      1 & 1 & -1 & 3 & -2 & 0 \\
+      1 & 1 &  1 & -11 & 8 & 0 \\
+      4 & 4 & -3 & 5 & -3 & 0 \\
+    \end{mymatrix}
+    ~\roweq~
+    \begin{mymatrix}{rrrrr|r}
+      1 & 1 & -1 & 3 & -2 & 0 \\
+      0 & 0 & 2 & -14 & 10 & 0 \\
+      0 & 0 & 1 & -7 & 5 & 0 \\
+    \end{mymatrix}
+    ~\roweq~
+    \begin{mymatrix}{rrrrr|r}
+      \circled{1} & 1 & 0 & -4 & 3 & 0 \\
+      0 & 0 & \circled{1} & -7 & 5 & 0 \\
+      0 & 0 & 0 &  0 & 0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  From the {\rref}, we see that $y$, $w$, and $v$ are free
+  variables. The general solution is:
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \\ z \\ w \\ v \end{mymatrix}
+    \quad=\quad
+    t \begin{mymatrix}{r} -3 \\ 0 \\ -5 \\ 0 \\ 1 \end{mymatrix}
+    ~+~ s \begin{mymatrix}{r} 4 \\ 0 \\ 7 \\ 1 \\ 0 \end{mymatrix}
+    ~+~ r \begin{mymatrix}{r} -1 \\ 1 \\ 0 \\ 0 \\ 0 \end{mymatrix}.
+  \end{equation*}
+  Thus, the solution space is spanned by the vectors
+  \begin{equation*}
+    \set{\begin{mymatrix}{r} -3 \\ 0 \\ -5 \\ 0 \\ 1 \end{mymatrix},
+    \begin{mymatrix}{r} 4 \\ 0 \\ 7 \\ 1 \\ 0 \end{mymatrix},
+    \begin{mymatrix}{r} -1 \\ 1 \\ 0 \\ 0 \\ 0 \end{mymatrix}
+    }.
+  \end{equation*}
+  Moreover, these vectors are evidently linearly independent, because
+  each vector contains a $1$ in a position where all the previous
+  vectors have $0$ (and therefore, none of the vectors can be written
+  as a linear combination of previous vectors). It follows that the
+  above three vectors form a basis of the solution space.
+\end{solution}
+
+Note that the basis vectors of the solution space are exactly what we
+called the \textbf{basic solutions}%
+\index{basic solution}%
+\index{solution!basic}%
+\index{solution!basis of}
+in Section~\ref{sec:homogeneous-systems}. 
+
+% ----------------------------------------------------------------------
+\subsection{Bases and coordinate systems}
+
+Let $V$ be a subspace of\/ $\R^n$. A basis of $V$ is essentially the
+same thing as a coordinate system for $V$. To see why, let
+$B=\set{\vect{u}_1,\ldots,\vect{u}_k}$ be some basis of $V$. This
+means that the vectors $\vect{u}_1,\ldots,\vect{u}_k$ are linearly
+independent and span $V$. Because the basis vectors are spanning,
+every vector $\vect{v}\in V$ can be written as a linear combination of
+basis vectors
+\begin{equation*}
+  \vect{v} = a_1\,\vect{u}_1 + \ldots + a_k\,\vect{u}_k.
+\end{equation*}
+Moreover, because the basis vectors are linearly independent, it
+follows by Theorem~\ref{thm:unique-linear-combination} that the
+coefficients $a_1,\ldots,a_k$ are unique. We say that $a_1,\ldots,a_k$
+are the \textbf{coordinates of $\vect{v}$ with respect to the basis
+$B$}%
+\index{coordinate!with respect to basis}%
+\index{coordinate system!and basis}, and we write
+\begin{equation*}
+  \coord{\vect{v}}_B = \begin{mymatrix}{c} a_1 \\ a_2 \\ a_3 \end{mymatrix}.
+\end{equation*}
+\begin{center}
+  \begin{tikzpicture}
+    \begin{scope}[scale=2.5,x={(1.2cm,-0.2cm)},y={(0.5cm,0.4cm)},z={(0cm,0.8cm)}]
+      \draw(-2.5,0,0) -- (2.5,0,0);
+      \draw(0,-2.3,0) -- (0,2.3,0);
+      \draw(0,0,-1.3) -- (0,0,1.3);
+      \draw[->, thick, blue](0,0,0) -- node[below] {$\vect{u}_1$} +(1,0,0);
+      \draw[->, thick, blue](0,0,0) -- node[above left=-1ex] {$\vect{u}_2$} +(0,1,0);
+      \draw[->, thick, blue](0,0,0) -- node[left] {$\vect{u}_3$} +(0,0,1);
+      \draw(-2,0,0) -- +(0,0,-0.1) node[below] {$-2$};
+      \draw(-1,0,0) -- +(0,0,-0.1) node[below] {$-1$};
+      \draw(0,0,0) -- +(0,0,-0.1) node[below] {$0$};
+      \draw(1,0,0) -- +(0,0,-0.1) node[below] {$1$};
+      \draw(2,0,0) -- +(0,0,-0.1) node[below] {$2$};
+      \draw(0,-2,0) -- +(0,0,-0.1) node[below] {$-2$};
+      \draw(0,-1,0) -- +(0,0,-0.1) node[below] {$-1$};
+      \draw(0,1,0) -- +(0,0,-0.1) node[below] {$1$};
+      \draw(0,2,0) -- +(0,0,-0.1) node[below] {$2$};
+      \draw(0,0,-1) -- +(-0.1,0,0) node[left] {$-1$};
+      \draw(0,0,1) -- +(-0.1,0,0) node[left] {$1$};
+    \end{scope}
+    \path(0,-3.2) node {Basis as coordinate system};
+  \end{tikzpicture}
+\end{center}
+
+\begin{example}{Find a vector from its coordinates in a basis}{vector-from-coordinates}
+  Find the vector $\vect{v}$ that has coordinates
+  \begin{equation*}
+    \coord{\vect{v}}_B = \begin{mymatrix}{r} 1 \\ -1 \\ 2 \end{mymatrix}
+  \end{equation*}
+  with respect to the basis $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$
+  of\/ $\R^3$, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix},\quad
+    \mbox{and}\quad
+    \vect{u}_3 = \begin{mymatrix}{r} -1 \\ 0 \\ 1\end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  This simply means that $\vect{v} = 1\vect{u}_1 - 1\vect{u}_2 +
+  2\vect{u}_3$. We calculate
+  \begin{equation*}
+    \vect{v} =
+    1\begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix}
+    - 1\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}
+    + 2\begin{mymatrix}{r} -1 \\ 0 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{r} -1 \\ 1 \\ 3  \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+In case the basis is the standard basis, the coordinates are just the
+usual ones, as the following example illustrates:
+
+\begin{example}{Find a vector from its coordinates in the standard basis}{vector-from-coordinates-standard}
+  Find the vector $\vect{v}$ that has coordinates
+  \begin{equation*}
+    \coord{\vect{v}}_B = \begin{mymatrix}{r} 1 \\ -1 \\ 2 \end{mymatrix},
+  \end{equation*}
+  where $B$ is the standard basis of\/ $\R^3$.
+\end{example}
+
+\begin{solution}
+  The standard basis is
+  \begin{equation*}
+    \vect{e}_1 = \begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},\quad
+    \vect{e}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix},\quad
+    \mbox{and}\quad
+    \vect{e}_3 = \begin{mymatrix}{r} 0 \\ 0 \\ 1\end{mymatrix}.
+  \end{equation*}
+  We have to calculate
+  \begin{equation*}
+    \vect{v} = 1\vect{e}_1 - 1\vect{e}_2 + 2\vect{e}_3
+    = \begin{mymatrix}{r} 1 \\ -1 \\ 2  \end{mymatrix}.
+  \end{equation*}
+  We see that the coordinates of any vector with respect to the
+  standard basis are just the usual components of the vector.    
+\end{solution}
+
+We can also ask to find the coordinates of a given vector in a given
+basis.
+
+\begin{example}{Find the coordinates of a vector with respect to a basis}{coordinates-from-vector}
+  Find the coordinates of the vector
+  \begin{equation*}
+    \vect{v} = \begin{mymatrix}{r} 1 \\ 2 \\ 3 \end{mymatrix}
+  \end{equation*}
+  with respect to the basis $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$
+  of\/ $\R^3$, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix},\quad
+    \mbox{and}\quad
+    \vect{u}_3 = \begin{mymatrix}{r} -1 \\ 0 \\ 1\end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  To find the coordinates, we must solve the system of equations
+  $\vect{v} = a_1\,\vect{u}_1+a_2\,\vect{u}_2+a_3\,\vect{u}_3$. We
+  solve:
+  \begin{equation*}
+    \begin{mymatrix}{rrr|r}
+      1 & 0 & -1 & 1 \\
+      2 & 1 & 0 & 2 \\
+      1 & 0 & 1 & 3 \\
+    \end{mymatrix}
+    \quad\roweq\quad
+    \begin{mymatrix}{rrr|r}
+      1 & 0 & -1 & 1 \\
+      0 & 1 & 2 & 0 \\
+      0 & 0 & 2 & 2 \\
+    \end{mymatrix}
+    \quad\roweq\quad
+    \begin{mymatrix}{rrr|r}
+      1 & 0 & 0 & 2 \\
+      0 & 1 & 0 & -2 \\
+      0 & 0 & 1 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore, the unique solution is $(a_1,a_2,a_3) = (2,-2,1)$. The
+  coordinates of $\vect{v}$ with respect to the basis $B$ are
+  \begin{equation*}
+    \coord{\vect{v}}_B
+    = \begin{mymatrix}{r} a_1 \\ a_2 \\ a_3 \end{mymatrix}
+    = \begin{mymatrix}{r} 2 \\ -2 \\ 1 \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+% ----------------------------------------------------------------------
+\subsection{Dimension}
+
+One of the most important properties of bases is that any two bases
+for the same space must be of the same size. To show this, we will
+need the the following fundamental result, called the Exchange
+Lemma. This theorem states that spanning sets have at least as many
+vectors as linearly independent sets.
+
+\begin{lemma}{Exchange Lemma}{exchange-lemma}
+  \index{exchange lemma}%
+  Suppose $\vect{u}_{1},\ldots,\vect{u}_{r}$ are linearly independent
+  elements of $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{s}}$. Then
+  $r\leq s$.
+\end{lemma}
+
+\begin{proof}
+  Since each $\vect{u}_j$ is an element of
+  $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{s}}$, there exist
+  scalars $a_{ij}$ such that
+  \begin{equation*}
+    \vect{u}_{j} = a_{1j}\,\vect{v}_1 + \ldots + a_{sj}\,\vect{v}_s.
+  \end{equation*}
+  Let $A = \mat{a_{ij}}$. Note that this matrix has $s$ rows and $r$
+  columns, i.e., it is an $s\times r$-matrix. Now suppose, for the
+  sake of obtaining a contradiction, that $r>s$. Then by
+  Theorem~\ref{thm:rank-homogeneous-solutions}, the system
+  $A\vect{x}=\vect{0}$ has a non-trivial solution $\vect{x}$, i.e.,
+  there exists $\vect{x}\neq\vect{0}$ such that $A\vect{x}=\vect{0}$.
+  In other words, for all $i=1,\ldots,s$, 
+  \begin{equation*}
+    a_{i1}x_1 + \ldots + a_{ir}x_r = 0.
+  \end{equation*}
+  Therefore,
+  \begin{eqnarray*}
+    x_1\,\vect{u}_1 + \ldots + x_r\,\vect{u}_r
+    &=&
+        x_1(a_{11}\,\vect{v}_1 + \ldots + a_{s1}\,\vect{v}_s)
+        + \ldots
+        + x_r(a_{1r}\,\vect{v}_1 + \ldots + a_{sr}\,\vect{v}_s)
+    \\
+    &=&
+        (a_{11}x_1 + \ldots + a_{1r}x_r)\vect{v}_1
+        + \ldots
+        + (a_{s1}x_1 + \ldots + a_{sr}x_r)\vect{v}_s
+    \\
+    &=& 0\,\vect{v}_1 + \ldots + 0\,\vect{v}_s
+    \\
+    &=& 0.
+  \end{eqnarray*}
+  This contradicts the assumption that
+  $\vect{u}_{1},\ldots,\vect{u}_{r}$ are linearly independent. Since
+  we assumed $r>s$ and obtained a contradiction, it follows that
+  $r\leq s$, as desired.
+\end{proof}
+
+Armed with the Exchange Lemma, we are now ready to show that any two
+bases of a space are of the same size.
+
+\begin{theorem}{Bases are of the same size}{bases-same-size}
+  \index{basis!size of}%
+  Let $V$ be a subspace of\/ $\R^{n}$, and let $B_1$ and $B_2$ be
+  bases of $V$. Suppose $B_1$ contains $s$ vectors and $B_2$ contains
+  $r$ vectors. Then $s=r$.
+\end{theorem}
+
+\begin{proof}
+  This follows right away from the Exchange Lemma. Indeed, observe
+  that $B_1 = \set{ \vect{u}_{1},\ldots ,\vect{u}_{s}} $ is a spanning
+  set for $V$ while $ B_2 = \set{\vect{v}_{1},\ldots ,\vect{v}_{r}} $
+  is linearly independent, so $s \geq r$. Similarly
+  $B_2 = \set{\vect{v}_{1},\ldots ,\vect{v} _{r}} $ is a spanning set
+  for $V$ while $B_1 = \set{\vect{u}_{1},\ldots , \vect{u}_{s}} $ is
+  linearly independent, so $r\geq s$.
+\end{proof}
+
+Because every basis of $V$ has the same number of vectors, we give
+this number a special name. It is called the \textbf{dimension} of
+$V$.
+
+\begin{definition}{Dimension of a subspace}{dimension}
+  Let $V$ be a subspace of\/ $\R^{n}$. Then the \textbf{dimension}%
+  \index{dimension}%
+  \index{subspace!dimension} of $V$, written $\dim(V)$, is
+  defined to be the number of vectors in a basis.
+\end{definition}
+
+\begin{example}{Dimension of\/ $\R^n$}{dimension-Rn}
+  What is the dimension of $\R^{n}$?
+\end{example}
+
+\begin{solution}
+  The standard basis of $\R^{n}$ is
+  $\set{\vect{e}_{1},\ldots,\vect{e}_{n}}$. Since it has $n$ vectors,
+  so $\dim(\R^n) = n$.
+\end{solution}
+
+\begin{example}{Dimension of a subspace}{dimension-subspace}
+  \index{dimension!of solution space}%
+  \index{homogeneous system!dimension of solution space}%
+  \index{system of linear equations!homogeneous!dimension of solution space}%
+  Let 
+  \begin{equation*}
+    V=\set{\left.
+      \begin{mymatrix}{c} x\\ y\\ z\end{mymatrix}\in\R^3 ~\right\vert~
+      x-y+2z = 0
+    }.
+  \end{equation*}
+  What is the dimension of\/ $V$?
+\end{example}
+
+\begin{solution}
+  We know that $V$ is a subspace of $\R^3$, because it is the solution
+  space of a system of a homogeneous system of equations (in this
+  case, one equation in three variables). We can take $y=t$ and $z=s$
+  as the free variables and solve for $x=y-2z=t-2s$. Therefore, a
+  general element of $V$ is of the form
+  \begin{equation*}
+    \begin{mymatrix}{c} x\\ y\\ z\end{mymatrix}
+    ~=~ \begin{mymatrix}{c} t-2s \\ t \\ s \end{mymatrix}
+    ~=~~ t \begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}
+    + s \begin{mymatrix}{c} -2 \\ 0 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Thus,
+  \begin{equation*}
+    V = \sspan\set{
+      \begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix},~
+      \begin{mymatrix}{c} -2 \\ 0 \\ 1 \end{mymatrix}
+    }.
+  \end{equation*}
+  Since the two spanning vectors are linearly independent, they form a
+  basis of $V$, and thus $\dim(V)=2$. 
+\end{solution}
+
+Note that the dimension of the solution space of a system of equations
+is equal to the number of parameters in the general solution, which is
+equal to the number of free variables. For this reason, the dimension
+is also sometimes called the number of \textbf{degrees of freedom}%
+\index{degree!of freedom}%
+\index{freedom!degree of}.
+
+\begin{example}{Dimension of a span}{dimension-basis}
+  \index{dimension!of a span}%
+  \index{span!dimension of}%
+  Let 
+  \begin{equation*}
+    W = \sspan\set{
+      \begin{mymatrix}{r} 1 \\ 2 \\ -1 \\ 1 \end{mymatrix},~
+      \begin{mymatrix}{r} 1 \\ 3 \\ -1 \\ 1 \end{mymatrix},~
+      \begin{mymatrix}{r} 8 \\ 19 \\ -8 \\ 8 \end{mymatrix},~
+      \begin{mymatrix}{r} -6 \\ -15 \\ 6 \\ -6 \end{mymatrix},~
+      \begin{mymatrix}{r} 1 \\ 3 \\ 0 \\ 1 \end{mymatrix},~
+      \begin{mymatrix}{r} 1 \\ 5 \\ 0 \\ 1 \end{mymatrix}
+    }.
+  \end{equation*}
+  What is the dimension of $W$?
+\end{example}
+
+\begin{solution}
+  Let
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 2 \\ -1 \\ 1 \end{mymatrix},~~
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 3 \\ -1 \\ 1 \end{mymatrix},~~
+    \vect{u}_3 = \begin{mymatrix}{r} 8 \\ 19 \\ -8 \\ 8 \end{mymatrix},~~
+    \vect{u}_4 = \begin{mymatrix}{r} -6 \\ -15 \\ 6 \\ -6 \end{mymatrix},~~
+    \vect{u}_5 = \begin{mymatrix}{r} 1 \\ 3 \\ 0 \\ 1 \end{mymatrix},~~
+    \vect{u}_6 = \begin{mymatrix}{r} 1 \\ 5 \\ 0 \\ 1 \end{mymatrix},
+  \end{equation*}
+  so that $W=\sspan\set{\vect{u}_1,\ldots,\vect{u}_6}$.  We use the
+  casting-out algorithm to remove any redundant vectors from
+  $\vect{u}_1,\ldots,\vect{u}_6$. The remaining vectors will be
+  linearly independent, and therefore a basis of the span.
+  \begin{equation*}
+    \begin{mymatrix}{rrrrrr}
+      1 & 1 & 8 & -6 & 1 & 1 \\ 
+      2 & 3 & 19 & -15 & 3 & 5 \\ 
+      -1 & -1 & -8 & 6 & 0 & 0 \\ 
+      1 & 1 & 8 & -6 & 1 & 1
+    \end{mymatrix}
+    \quad\roweq\quad
+    \begin{mymatrix}{rrrrrr}
+      \circled{1} & 0 & 5 & -3 & 0 & -2 \\ 
+      0 & \circled{1} & 3 & -3 & 0 & 2 \\ 
+      0 & 0 & 0 & 0 & \circled{1} & 1 \\ 
+      0 & 0 & 0 & 0 & 0 & 0
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore, the vectors $\vect{u}_3$, $\vect{u}_4$, and $\vect{u}_6$
+  are redundant, and $\set{\vect{u}_1,\vect{u}_2,\vect{u}_5}$ is a
+  basis of $W$. It follows that $\dim(W)=3$. 
+\end{solution}
+
+% ----------------------------------------------------------------------
+\subsection{More properties of bases and dimension}
+
+We begin by noting that every subspace $V$ of $\R^n$ has a basis.
+
+\begin{theorem}{Existence of bases}{subspaces-have-bases}
+  \index{basis!existence}%
+  Every subspace of $\R^n$ has a basis. 
+\end{theorem}
+
+\begin{proof}
+  This is just a restatement of Theorem~\ref{thm:subspaces-are-spans}.
+\end{proof}
+
+Of course, the theorem does not mean that the basis is
+unique. Usually, a subspace of $\R^n$ will have many different
+bases. The theorem just states that there exists at least one.
+
+Sometimes, when we are looking for a basis of a space, we may already
+have a number of linearly independent vectors. We would like to obtain
+a basis by adding some {\em additional} linearly independent vectors
+to the ones we already have. The following lemma guarantees that this
+can always be done.
+
+\begin{lemma}{Linearly independent set can be extended to a basis}{extend-to-basis}
+  \index{linear independence!extending to basis}%
+  \index{basis!by extending linearly independent set}%
+  Let $V$ be a subspace of $\R^n$, and let
+  $\vect{u}_1,\ldots,\vect{u}_{\ell}$ be linearly independent elements
+  of $V$. Then it is possible to extend
+  $\set{\vect{u}_1,\ldots,\vect{u}_{\ell}}$ to a basis of $V$. In other
+  words, there exist zero or more vectors
+  $\vect{w}_1,\ldots,\vect{w}_s$ such that
+  \begin{equation*}
+    \set{\vect{u}_1,\ldots,\vect{u}_{\ell},\vect{w}_1,\ldots,\vect{w}_s}
+  \end{equation*}
+  is a basis of $V$.
+\end{lemma}
+
+\begin{proof}
+  By Theorem~\ref{thm:subspaces-have-bases}, we know that $V$ has some
+  basis, say $\set{\vect{v}_1,\ldots,\vect{v}_k}$. However, this may
+  not be the basis we are looking for, because maybe it does not
+  contain the vectors $\vect{u}_1,\ldots,\vect{u}_{\ell}$. Consider
+  the sequence of $\ell+k$ vectors
+  \begin{equation*}
+    \vect{u}_1,\ldots,\vect{u}_{\ell},\vect{v}_1,\ldots,\vect{v}_k.
+  \end{equation*}
+  Since $V$ is spanned by the vectors $\vect{v}_1,\ldots,\vect{v}_k$,
+  it is certainly also spanned by the larger set of vectors
+  $\vect{u}_1,\ldots,\vect{u}_{\ell},\vect{v}_1,\ldots,\vect{v}_k$.
+  From Theorem~\ref{thm:linearly-independent-subset}, we know that we
+  can obtain a basis of $V$ by removing the redundant vectors from
+  $\vect{u}_1,\ldots,\vect{u}_{\ell},\vect{v}_1,\ldots,\vect{v}_k$. On
+  the other hand, $\vect{u}_1,\ldots,\vect{u}_{\ell}$ are linearly
+  independent, so none of them can be redundant. It follows that the
+  resulting basis of $V$ contains all of the vectors
+  $\vect{u}_1,\ldots,\vect{u}_{\ell}$. In other words, we have found a
+  basis of $V$ that is an extension of
+  $\vect{u}_1,\ldots,\vect{u}_{\ell}$, which is what had to be shown.
+\end{proof}
+
+\begin{example}{Extending a linearly independent set to a basis}{extend-to-basis}
+  Extend $\set{\vect{u}_1,\vect{u}_2}$ to a basis of $\R^4$, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ -1 \\ 2 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 2 \\ -2 \\ 4 \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  Let $\set{\vect{e}_1,\ldots,\vect{e}_4}$ be the standard basis of
+  $\R^4$. We obtain the desired basis by applying the casting-out
+  algorithm to $\vect{u}_1,\vect{u}_2,\vect{e}_1,\vect{e}_2,\vect{e}_3,\vect{e}_4$:
+  \begin{equation*}
+    \begin{mymatrix}{rrrrrr}
+      1  & 1  & 1 & 0 & 0 & 0 \\
+      1  & 2  & 0 & 1 & 0 & 0 \\
+      -1 & -2 & 0 & 0 & 1 & 0 \\
+      2  & 4  & 0 & 0 & 0 & 1 \\
+    \end{mymatrix}
+    \quad\roweq\quad
+    \begin{mymatrix}{rrrrrr}
+      \circled{1} &  1 &  1 & 0  & 0 & 0 \\
+      0 &  \circled{1} & -1 & 1  & 0 & 0 \\
+      0 &  0 &  0 & \circled{1}  & 1 & 0 \\
+      0 &  0 &  0 & 0  & \circled{2} & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore, we cast out the vectors $\vect{e}_1$ and $\vect{e}_4$ and
+  keep the rest. The resulting basis is
+  \begin{equation*}
+    \set{\vect{u}_1,\vect{u}_2,\vect{e}_2,\vect{e}_3}
+    = \set{
+      \begin{mymatrix}{r} 1 \\ 1 \\ -1 \\ 2 \end{mymatrix},~
+      \begin{mymatrix}{r} 1 \\ 2 \\ -2 \\ 4 \end{mymatrix},~
+      \begin{mymatrix}{r} 0 \\ 1 \\  0 \\ 0 \end{mymatrix},~
+      \begin{mymatrix}{r} 0 \\ 0 \\  1 \\ 0 \end{mymatrix}
+    }.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{Extending a linearly independent set to a basis}{extend-to-basis2}
+  Let
+  \begin{equation*}
+    V = \set{\left.
+        \begin{mymatrix}{c} x \\ y \\ z \\ w \end{mymatrix}
+        ~\right\vert~
+      x+2y+z-w = 0
+    }.
+  \end{equation*}
+  Note that $\vect{u}_1,\vect{u}_2\in V$, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{c} 1 \\ -1 \\ 1 \\ 0 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{c} -2 \\ 1 \\ 1 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Extend $\set{\vect{u}_1,\vect{u}_2}$ to a basis of $V$.
+\end{example}
+
+\begin{solution}
+  We first find a basis of $V$ by solving the linear equation
+  $x+2y+z-w = 0$. Taking $y=r$, $z=s$, and $w=t$ as the free
+  variables, we get $x=-2y-z+w = -2r-s+t$, and therefore the general
+  solution is
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \\ z \\ w \end{mymatrix}
+    ~=~ \begin{mymatrix}{c} -2r-s+t \\ r \\ s \\ t \end{mymatrix}
+    ~=~~ r\begin{mymatrix}{c} -2 \\ 1 \\ 0 \\ 0 \end{mymatrix}
+    + s\begin{mymatrix}{c} -1 \\ 0 \\ 1 \\ 0 \end{mymatrix}
+    + t\begin{mymatrix}{c} 1 \\ 0 \\ 0 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Therefore, the vectors $\set{\vect{v}_1,\vect{v}_2,\vect{v}_3}$ form
+  a basis of $V$, where
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{c} -2 \\ 1 \\ 0 \\ 0 \end{mymatrix},\quad
+    \vect{v}_2 = \begin{mymatrix}{c} -1 \\ 0 \\ 1 \\ 0 \end{mymatrix},\quad
+    \vect{v}_3 = \begin{mymatrix}{c} 1 \\ 0 \\ 0 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  However, this is not the basis we are looking for, because it does
+  not extend $\set{\vect{u}_1,\vect{u}_2}$. To get a basis of $V$ that
+  extends $\set{\vect{u}_1,\vect{u}_2}$, we perform the casting-out
+  algorithm on the vectors
+  $\vect{u}_1,\vect{u}_2,\vect{v}_1,\vect{v}_2,\vect{v}_3$:
+  \begin{equation*}
+    \begin{mymatrix}{rrrrr}
+      1  & -2 & -2 & -1 & 1 \\
+      -1 & 1  & 1  & 0  & 0 \\
+      1  & 1  & 0  & 1  & 0 \\
+      0  & 1  & 0  & 0  & 1 \\
+    \end{mymatrix}
+    \quad\roweq\quad\ldots\quad\roweq\quad
+    \begin{mymatrix}{rrrrr}
+      \circled{1}  & -2 & -2 & -1 & 1 \\
+      0  & \circled{1}  & 1  & 1  & -1 \\
+      0  & 0  & \circled{1}  & 1  & -2 \\
+      0  & 0  & 0  & 0  & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Casting out $\vect{v}_2$ and $\vect{v}_3$, we find that the desired
+  basis is $\set{\vect{u}_1,\vect{u}_2,\vect{v}_1}$.  
+\end{solution}
+
+The next proposition often comes in handy when we need to check that
+some set of vectors is a basis for a subspace $V$, where the dimension
+of $V$ is already known. If $\dim(V)=k$, we know that any basis has to
+have size $k$. Interestingly, to check that a set of $k$ vectors is a
+basis of $V$, it is sufficient to check {\em either} that it is
+linearly independent {\em or} that it is spanning. This can save half
+the work in checking that some set of vectors is a basis (but it only
+works if the number of vectors is exactly $k$, the dimension of $V$).
+
+\begin{proposition}{Basis test for $k$ vectors in $k$-dimensional space}{basis-test-k-vectors}
+  \index{basis test}%
+  \index{basis!basis test}%
+  Let $V$ be a $k$-dimensional subspace of $\R^n$, and consider $k$
+  vectors $\vect{u}_{1},\ldots,\vect{u}_{k}$ in $V$.
+  \begin{itemize}
+  \item If $\vect{u}_{1},\ldots,\vect{u}_{k}$ are linearly
+    independent, then they form a basis for $V$.
+  \item If $\vect{u}_{1},\ldots,\vect{u}_{k}$ span $V$, then they
+    form a basis for $V$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  The first claim is an easy consequence of
+  Lemma~\ref{lem:extend-to-basis}. Assume that
+  $\vect{u}_{1},\ldots,\vect{u}_{k}$ are linearly independent. By
+  Lemma~\ref{lem:extend-to-basis}, we can add zero or more vectors to
+  $\vect{u}_{1},\ldots,\vect{u}_{k}$ to obtain a basis of $V$. On the
+  other hand, since $V$ is $k$-dimensional, every basis must have
+  exactly $k$ elements, so that the only possibility is that we have
+  added zero vectors. Therefore,
+  $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ is already a basis of $V$,
+  as claimed.
+
+  To prove the second claim, assume that
+  $V=\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$. By
+  Theorem~\ref{thm:subspaces-are-spans}, there exists a linearly
+  independent subset of $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ that
+  spans $V$, i.e., that is a basis for $V$. But since $\dim(V)=k$,
+  every basis must have exactly $k$ elements, so that the only
+  possible such subset is $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$
+  itself. Therefore, $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ is a
+  basis of $V$, as claimed.
+\end{proof}
+
+It is important to note that
+Proposition~\ref{prop:basis-test-k-vectors} does {\em not} say that
+every linearly independent set of vectors in $V$ is a basis. For
+example, a set of $k-1$ or fewer linearly independent vectors will not
+be spanning. Also, the proposition does {\em not} say that every
+spanning set of vectors in $V$ is a basis. For example, a set of $k+1$
+or more spanning vectors will not be linearly independent. Rather,
+what the proposition is saying is that if we have exactly $k$ vectors
+in a $k$-dimensional space, then linear independence implies spanning
+and vice versa. 
+
+\begin{example}{Basis test for $3$ vectors in $3$-dimensional space}{check-basis}
+  Do the vectors
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 2 \\ 3 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix},\quad
+    \mbox{and}\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 1 \\ 2 \end{mymatrix}
+  \end{equation*}
+  form a basis of\/ $\R^3$?
+\end{example}
+
+\begin{solution}
+  This is similar to Example~\ref{exa:non-standard-basis}. But because
+  we know that $\R^3$ is a $3$-dimensional space, and because we have
+  exactly $3$ vectors, by Proposition~\ref{prop:basis-test-k-vectors},
+  we only need to check {\em either} whether
+  $\vect{u}_1,\vect{u}_2,\vect{u}_3$ are linearly independent {\em or}
+  whether they are spanning. We check whether they are linearly
+  independent by using the casting-out algorithm.
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 1 & 1 \\
+      2 & 1 & 1 \\
+      3 & 1 & 2 \\
+    \end{mymatrix}
+    \quad\roweq\quad
+    \begin{mymatrix}{rrr}
+      1 & 1 & 1 \\
+      0 & -1 & -1 \\
+      0 & 0 & -1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Since the matrix has rank 3, the vectors
+  $\vect{u}_1,\vect{u}_2,\vect{u}_3$ are linearly
+  independent. Therefore, by
+  Proposition~\ref{prop:basis-test-k-vectors}, they form a basis of
+  $\R^3$.
+\end{solution}
+
+The following proposition is also a consequence of
+Lemma~\ref{lem:extend-to-basis}. It says that smaller subspaces have
+smaller dimension.
+
+\begin{proposition}{Subspace of a subspace}{subset-dimension}
+  Let $V$ and $W$ be subspaces of\/ $\R^n$, and suppose that
+  $V\subseteq W$.  Then $\dim(V)\leq\dim(W)$, with equality only when
+  $V=W$.
+\end{proposition}
+
+\begin{proof}
+  Consider any basis $\vect{u}_1,\ldots,\vect{u}_k$ of $V$. Because
+  $V\subseteq W$, the vectors $\vect{u}_1,\ldots,\vect{u}_k$ are
+  linearly independent elements of $W$, and therefore can be extended
+  to a basis of $W$ by Lemma~\ref{lem:extend-to-basis}. The resulting
+  basis of $W$ has at least $k$ elements, i.e., $\dim(V)\leq\dim(W)$.
+  To prove the last claim, assume moreover that $\dim(V)=\dim(W)$. In
+  that case, $\dim(W)=k$, so that the $k$ linearly independent vectors
+  $\vect{u}_1,\ldots,\vect{u}_k$ form a basis of $W$ by
+  Proposition~\ref{prop:basis-test-k-vectors}. Since both $V$ and $W$
+  are spanned by $\vect{u}_1,\ldots,\vect{u}_k$, we must have $V=W$,
+  as claimed.
+\end{proof}

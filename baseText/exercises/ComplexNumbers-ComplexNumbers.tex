@@ -3,134 +3,50 @@
 
 \begin{enumialphparenastyle}
 
-\begin{ex} Let $z=2+7i$ and let $w=3-8i$. Compute the following.
-
-\begin{enumerate}
-\item $z + w$
-
-\item $z - 2w$
-
-\item $zw$
-
-\item $\frac{w}{z}$
-\end{enumerate}
-\begin{sol}
-\begin{enumerate}
-\item $z + w = 5-i$
-\item $z - 2w = -4 + 23i$
-\item $zw = 62+5i$ 
-\item $\frac{w}{z} = -\frac{50}{53}-\frac{37}{53}i$
-\end{enumerate}
-\end{sol}
+\begin{ex}
+  Let $z=2+7i$ and let $w=3-8i$. Compute $z + w$, $z - 2w$, $zw$, and $\frac{w}{z}$.
+  \begin{sol}
+    $z + w = 5-i$, $z - 2w = -4 + 23i$, $zw = 62+5i$, and
+    $\displaystyle\frac{w}{z} = -\frac{50}{53}-\frac{37}{53}i$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Let $z = 1 - 4i$. Compute the following.
-
-\begin{enumerate}
-
-\item $\overline{z}$
-
-\item $z^{-1}$
-
-\item $\abs{z}$
-\end{enumerate}
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $z = 1 - 4i$. Compute $\overline{z}$, $z^{-1}$, and $\abs{z}$.
 \end{ex}
 
-\begin{ex} Let $z = 3 +5i$ and $w = 2 - i$. Compute the following.
-
-\begin{enumerate}
-\item $\overline{zw}$
-
-\item $\abs{zw}$
-
-\item $z^{-1}w$
-
-\end{enumerate}
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $z = 3+5i$ and $w = 2-i$. Compute $\overline{zw}$, $\abs{zw}$,
+  and $z^{-1}w$.
 \end{ex}
 
-\begin{ex} If $z$ is a complex number, show there exists a complex
-number $w$ with $\abs{w }=1$ and $wz=\abs{z}$. 
-\begin{sol}
-If $z=0$, let $w =1$. If $z\neq 0$, let $w =\displaystyle\frac{\overline{z}}{\abs{z}}$
-\end{sol}
+\begin{ex}
+  Use the properties of complex numbers to prove that if $z$ is a
+  complex number, then there exists a complex number $w$ with
+  $\abs{w}=1$ and $wz=\abs{z}$.
+  \begin{sol}
+    If $z=0$, let $w=1$. If $z\neq 0$, let
+    $w =\displaystyle\frac{\abs{z}}{z}$. Note that
+    $\displaystyle wz = \frac{\abs{z}}{z}z = \abs{z}$ and
+    $\displaystyle \abs{w} = \frac{\abs{z}}{\abs{z}} = 1$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} \label{exer-complex2}If $z,w$ are complex
-\index{complex numbers!conjugate of a product} numbers prove $
-\overline{zw}=\overline{z} \; \overline{w}$ and then show by induction that 
-$\overline{z_{1}\cdots z_{m}}=\overline{z_{1}}\cdots \overline{z_{m}}$. Also
-verify that $\overline{\sum_{k=1}^{m}z_{k}}=\sum_{k=1}^{m}\overline{z_{k}}$.
-In words this says the conjugate of a product equals the product of the
-conjugates and the conjugate of a sum equals the sum of the conjugates. 
-\begin{sol}
-\[
-\overline{\tup{a+bi} \tup{c+di} }=\overline{ac-bd+\tup{
-ad+bc}i }=\tup{ac-bd} -\tup{ad+bc}i \tup{
-a-bi} \tup{c-di} =ac-bd-\tup{ad+bc}i 
-\]
- which is the
-same thing. Thus it holds for a product of two complex numbers. Now suppose
- you have that it is true for the product of $n$ complex numbers. Then
-\[
-\overline{z_{1}\cdots z_{n+1}}=\overline{z_{1}\cdots z_{n}}\ \overline{
-z_{n+1}}
-\]
-and now, by induction this equals
-\[
-\overline{z_{1}}\cdots \overline{z_{n}}\ \overline{z_{n+1}}
-\]
-As to sums, this is even easier.
-\[
-\overline{\sum_{j=1}^{n}\tup{x_{j}+iy_{j}} }=\overline{%
-\sum_{j=1}^{n}x_{j}+i\sum_{j=1}^{n}y_{j}}
-\]
-\[
-=\sum_{j=1}^{n}x_{j}-i\sum_{j=1}^{n}y_{j}=\sum_{j=1}^{n}x_{j}-iy_{j}=
-\sum_{j=1}^{n}\overline{\tup{x_{j}+iy_{j}} }.
-\]
-\end{sol}
-\end{ex}
-
-\begin{ex} \label{15-july-prob2}Suppose $p\tup{x}
-=a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots +a_{1}x+a_{0}$ where all the $a_{k}$ are
-real numbers. Suppose also that $p\tup{z} =0$ for some $z\in \C$. Show it follows that $p\tup{\overline{z}} =0$ also. 
-\begin{sol}
-If $p\tup{z} =0$, then you have
-\[
-\overline{p\tup{z} }=0=\overline{a_{n}z^{n}+a_{n-1}z^{n-1}+\cdots
-+a_{1}z+a_{0}}
-\]
-\[
-=\overline{a_{n}z^{n}}+\overline{a_{n-1}z^{n-1}}+\cdots +\overline{a_{1}z}+
-\overline{a_{0}}
-\]
-\[
-=\overline{a_{n}}\ \overline{z}^{n}+\overline{a_{n-1}}\ \overline{z}
-^{n-1}+\cdots +\overline{a_{1}}\ \overline{z}+\overline{a_{0}}
-\]
-\[
-=a_{n}\overline{z}^{n}+a_{n-1}\overline{z}^{n-1}+\cdots +a_{1}\overline{z}
-+a_{0}
-\]
-\[
-=p\tup{\overline{z}}
-\]
-\end{sol}
-\end{ex}
-
-\begin{ex} I claim that $1=-1$. Here is why.
-\begin{equation*}
--1=i^{2}=\sqrt{-1}\sqrt{-1}=\sqrt{\tup{-1} ^{2}}=\sqrt{1}=1
-\end{equation*}
-This is clearly a remarkable result but is there something wrong with it? If
-so, what is wrong? 
-\begin{sol}
-The problem is that there is no single $\sqrt{-1}$.
-\end{sol}
+\begin{ex}
+  I claim that $1=-1$. Here is why.
+  \begin{equation*}
+    -1=i^{2}=\sqrt{-1}\sqrt{-1}=\sqrt{(-1) ^{2}}=\sqrt{1}=1.
+  \end{equation*}
+  What is wrong with this argument?
+  \begin{sol}
+    The problem is that there is no single $\sqrt{-1}$. In the complex
+    numbers, $-1$ has two square roots, namely $i$ and $-i$. Since
+    each complex number has two square roots, and generally neither of
+    them is positive or even real, the notation $\sqrt{z}$ does not
+    have a fixed meaning in the complex numbers. Therefore, the
+    equation $\sqrt{z}\sqrt{w} = \sqrt{zw}$ cannot be used. At best,
+    we could maybe say $\sqrt{z}\sqrt{w} = \pm\sqrt{zw}$.
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}

@@ -11,40 +11,40 @@ set of vectors with the same span, since from there an orthonormal set
 can be obtained by simply dividing each vector by its length.
 
 \begin{algorithm}{Gram-Schmidt process}{gram-schmidt-algorithm}
-Let $\set{\vect{u}_1,\cdots ,\vect{u}_n} $ be a set of
+Let $\set{\vect{u}_1,\ldots,\vect{u}_n} $ be a set of
 linearly independent vectors in $\R^{n}$.
 
-\textbf{I:} Construct a new set of vectors $\set{\vect{v}_1,\cdots ,\vect{v}_n} $ as follows:
+\textbf{I:} Construct a new set of vectors $\set{\vect{v}_1,\ldots,\vect{v}_n} $ as follows:
 \[ \begin{array}{ll}
 \vect{v}_1 & = \vect{u}_1 \\
-\vect{v}_{2} & = \vect{u}_{2} - \tup{\dfrac{ \vect{u}_2 \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2} }  \vect{v}_1\\
-\vect{v}_{3} & = \vect{u}_{3} - \tup{\dfrac{\vect{u}_3 \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2} }  \vect{v}_1
-	 - \tup{\dfrac{\vect{u}_3 \dotprod \vect{v}_2}{\norm{\vect{v}_2}^2} }  \vect{v}_2\\
+\vect{v}_{2} & = \vect{u}_{2} - \paren{\dfrac{ \vect{u}_2 \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2}}  \vect{v}_1\\
+\vect{v}_{3} & = \vect{u}_{3} - \paren{\dfrac{\vect{u}_3 \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2}}  \vect{v}_1
+	 - \paren{\dfrac{\vect{u}_3 \dotprod \vect{v}_2}{\norm{\vect{v}_2}^2}}  \vect{v}_2\\
 \vdots \\
-\vect{v}_{n} & = \vect{u}_{n} - \tup{\dfrac{\vect{u}_n \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2} }  \vect{v}_1
-	 - \tup{\dfrac{\vect{u}_n \dotprod \vect{v}_2}{\norm{\vect{v}_2}^2}  } \vect{v}_2 - \cdots
-	 - \tup{\dfrac{\vect{u}_{n} \dotprod \vect{v}_{n-1}}{\norm{\vect{v}_{n-1}}^2} } \vect{v}_{n-1} \\
+\vect{v}_{n} & = \vect{u}_{n} - \paren{\dfrac{\vect{u}_n \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2}}  \vect{v}_1
+	 - \paren{\dfrac{\vect{u}_n \dotprod \vect{v}_2}{\norm{\vect{v}_2}^2}} \vect{v}_2 - \ldots
+	 - \paren{\dfrac{\vect{u}_{n} \dotprod \vect{v}_{n-1}}{\norm{\vect{v}_{n-1}}^2}} \vect{v}_{n-1} \\
 \end{array} \]
 
-\textbf{II:} Now let $\vect{w}_i = \dfrac{\vect{v}_i}{\norm{\vect{v}_i}}$ for $i=1, \cdots ,n$.
+\textbf{II:} Now let $\vect{w}_i = \dfrac{\vect{v}_i}{\norm{\vect{v}_i}}$ for $i=1,\ldots,n$.
 
 Then 
 \begin{enumerate}
-\item $\set{\vect{v}_1, \cdots, \vect{v}_n }$ is an orthogonal set. 
-\item  $\set{\vect{w}_1,\cdots , \vect{w}_n  } $ is an orthonormal set. 
-\item $\sspan\set{\vect{u}_1,\cdots ,\vect{u}_n } = \sspan \set{\vect{v}_1, \cdots, \vect{v}_n } = \sspan\set{\vect{w}_1,\cdots ,\vect{w}_n }$.
+\item $\set{\vect{v}_1,\ldots, \vect{v}_n }$ is an orthogonal set. 
+\item  $\set{\vect{w}_1,\ldots, \vect{w}_n  } $ is an orthonormal set. 
+\item $\sspan\set{\vect{u}_1,\ldots,\vect{u}_n } = \sspan \set{\vect{v}_1,\ldots, \vect{v}_n } = \sspan\set{\vect{w}_1,\ldots,\vect{w}_n }$.
 \end{enumerate}
 \end{algorithm}
 
 \begin{proof}
 The full proof of this algorithm is beyond this material, however here is an indication of the arguments. 
 
-To show that  $\set{\vect{v}_1,\cdots , \vect{v}_n  } $ is an orthogonal set, let 
+To show that  $\set{\vect{v}_1,\ldots, \vect{v}_n  } $ is an orthogonal set, let 
 \[ a_2 =  \dfrac{ \vect{u}_2 \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2} \]
 then: 
 \[
 \begin{array}{ll}
- \vect{v}_1 \dotprod \vect{v}_2 &  =  \vect{v}_1 \dotprod \tup{\vect{u}_2 - a_2 \vect{v}_1 }  \\
+ \vect{v}_1 \dotprod \vect{v}_2 &  =  \vect{v}_1 \dotprod (\vect{u}_2 - a_2 \vect{v}_1)  \\
  & = \vect{v}_1 \dotprod \vect{u}_2 - a_2 (\vect{v}_1 \dotprod \vect{v}_1  \\
  & = \vect{v}_1 \dotprod \vect{u}_2 - \dfrac{ \vect{u}_2 \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2} \norm{\vect{v}_1}^2 \\
  & = ( \vect{v}_1 \dotprod \vect{u}_2 ) - ( \vect{u}_2 \dotprod \vect{v}_1 ) =0\\
@@ -54,12 +54,11 @@ Now that you have shown that $\set{\vect{v}_1, \vect{v}_2}$ is orthogonal,  use 
 $\set{\vect{v}_1, \vect{v}_2, \vect{v}_3}$ is also orthogonal,  and so on. 
 
 Then in a similar fashion you show that $\sspan\set{
-\vect{u}_1,\cdots ,\vect{u}_n } = \sspan\set{
-\vect{v}_1,\cdots ,\vect{v}_n }$.
+\vect{u}_1,\ldots,\vect{u}_n } = \sspan\set{
+\vect{v}_1,\ldots,\vect{v}_n }$.
 
 Finally defining $\vect{w}_i =
-\dfrac{\vect{v}_i}{\norm{\vect{v}_i}}$ for $i=1, \cdots
-,n$ does not affect orthogonality and yields vectors of length 1,
+\dfrac{\vect{v}_i}{\norm{\vect{v}_i}}$ for $i=1,\ldots,n$ does not affect orthogonality and yields vectors of length 1,
 hence an orthonormal set. You can also observe that it does not affect
 the span either and the proof would be complete.
 \end{proof}
@@ -94,7 +93,7 @@ Gram-Schmidt algorithm:
 0
 \end{mymatrix} \\
 && \\
-\vect{v}_{2} &=& \vect{u}_{2} - \tup{\dfrac{\vect{u}_2 \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2} }  \vect{v}_1\\ 
+\vect{v}_{2} &=& \vect{u}_{2} - \paren{\dfrac{\vect{u}_2 \dotprod \vect{v}_1}{\norm{\vect{v}_1}^2}}  \vect{v}_1\\ 
 && \\
 &=& \begin{mymatrix}{r}
 3 \\

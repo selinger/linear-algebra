@@ -47,17 +47,17 @@ $\norm{U\vect{x}} ^{2}=  U\vect{x} \dotprod U
  Next suppose distance is
 preserved by $U$. Then
 \begin{eqnarray*}
-\tup{U\tup{\vect{x}+\vect{y}}}  \dotprod \tup{U\tup{\vect{x}+\vect{y}
-} } &=&\norm{Ux} ^{2}+\norm{Uy}
-^{2}+2 \tup{Ux \dotprod Uy} \\
+(U(\vect{x}+\vect{y}))  \dotprod (U(\vect{x}+\vect{y}
+)) &=&\norm{Ux} ^{2}+\norm{Uy}
+^{2}+2 (Ux \dotprod Uy) \\
 &=&\norm{\vect{x}} ^{2}+\norm{\vect{y}}
-^{2}+2\tup{U^{T}U\vect{x} \dotprod \vect{y}}
+^{2}+2(U^{T}U\vect{x} \dotprod \vect{y})
 \end{eqnarray*}
 But since $U$ preserves distances, it is also the case that
 \[
-\tup{U\tup{\vect{x}+\vect{y}} \dotprod U\tup{\vect{x}+\vect{y}
-} } =\norm{\vect{x}} ^{2}+\norm{\vect{y}
-} ^{2}+2\tup{\vect{x}\dotprod \vect{y}}
+(U(\vect{x}+\vect{y}) \dotprod U(\vect{x}+\vect{y}
+)) =\norm{\vect{x}} ^{2}+\norm{\vect{y}
+} ^{2}+2(\vect{x}\dotprod \vect{y})
 \]
 Hence
 \[
@@ -65,16 +65,16 @@ Hence
 \]
 and so
 \[
-\tup{\tup{U^{T}U-I} \vect{x}} \dotprod \vect{y} =0
+((U^{T}U-I) \vect{x}) \dotprod \vect{y} =0
 \]
 Since $y$ is arbitrary, it follows that $U^{T}U-I=0$. Thus $U$ is orthogonal.
 \end{sol}
 \end{ex}
 
-\begin{ex} Suppose $U$ is an orthogonal $n\times n$-matrix. Explain why $\func{rank}\tup{U} =n$.
+\begin{ex} Suppose $U$ is an orthogonal $n\times n$-matrix. Explain why $\rank(U) =n$.
 \begin{sol}
-You could observe that $\det \tup{UU^{T}}
-=\tup{\det \tup{U} } ^{2}=1$ so $\det \tup{U} \neq 0.
+You could observe that $\det (UU^{T})
+=(\det (U)) ^{2}=1$ so $\det (U) \neq 0.
 $
 \end{sol}
 \end{ex}

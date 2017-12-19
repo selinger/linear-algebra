@@ -72,7 +72,7 @@ The latter set of equations are also called the \textbf{parametric
 
 \begin{example}{Vector and parametric equations}{plane-from-three-points}
   Find vector and parametric equations for the plane through the
-  points $P = \tup{1,2,0,0}$, $Q = \tup{2,2,0,1}$, and $R = \tup{0,1,1,0}$.
+  points $P = (1,2,0,0)$, $Q = (2,2,0,1)$, and $R = (0,1,1,0)$.
 \end{example}
 
 \begin{solution}
@@ -115,8 +115,8 @@ have obtained a different equation for the same plane.
 
 \begin{example}{Determine whether a point is on a plane}{point-on-plane-parametric}
   Determine whether the point $S=(4,4,-2,1)$ lies on the plane through
-  the points $P = \tup{1,2,0,0}$, $R = \tup{2,2,0,1}$, and
-  $Q = \tup{0,1,1,0}$.
+  the points $P = (1,2,0,0)$, $R = (2,2,0,1)$, and
+  $Q = (0,1,1,0)$.
 \end{example}
 
 \begin{solution}
@@ -229,15 +229,15 @@ This last form is called the \textbf{standard equation} of the plane.
   contains the point $P = (x_0, y_0, z_0)$. The \textbf{standard
     equation}\index{plane!standard equation}%
   \index{standard equation of a plane} of the plane is given by
-  \[
+  \begin{equation*}
     ax + by + cz = d,
-  \]
+  \end{equation*}
   where $a,b,c,d \in \R$ and $d = ax_0 + by_0 + cz_0$.
 \end{definition}
 
 \begin{example}{Normal and standard equations}{normal-from-three-points}
   Find normal and standard equations for the plane through the points
-  $P = \tup{0,1,3}$, $Q=\tup{2,-1,0}$, and $R=\tup{1,2,2}$.
+  $P = (0,1,3)$, $Q=(2,-1,0)$, and $R=(1,2,2)$.
 \end{example}
 
 \begin{solution}
@@ -298,22 +298,22 @@ This last form is called the \textbf{standard equation} of the plane.
   The standard equation $2x+3y-z=7$ can be rewritten as a normal
   equation
   \begin{equation*}
-    \begin{mymatrix}{c} 2\\3\\7 \end{mymatrix}
+    \begin{mymatrix}{r} 2\\3\\-1 \end{mymatrix}
     \dotprod
     \begin{mymatrix}{c} x\\y\\z \end{mymatrix}
     = 7.
   \end{equation*}
   Therefore,
   \begin{equation*}
-    \vect{n} = \begin{mymatrix}{c} 2\\3\\7 \end{mymatrix}
+    \vect{n} = \begin{mymatrix}{r} 2\\3\\-1 \end{mymatrix}
   \end{equation*}
   is a normal vector for the plane.
 \end{solution}
 
 \begin{example}{Determine whether a point is on a plane}{point-plane-normal}
   Let $\vect{n} = \mat{1,2,3}^T$ be the normal vector for a plane
-  which contains the point $P = \tup{2,1,4}$. Determine if the point
-  $Q = \tup{5,4,1}$ is in this plane.
+  which contains the point $P = (2,1,4)$. Determine if the point
+  $Q = (5,4,1)$ is in this plane.
 \end{example}
 
 \begin{solution}
@@ -346,7 +346,7 @@ Since both sides of the equation are equal to $16$, the equation is
 \begin{solution}
   This is the same thing as finding the general solution of a system
   of one linear equation in 3 variables. Since there is only a single
-  equation $x+3y-2z=7$, it is already in echelon form. The variables
+  equation $x+3y-2z=7$, it is already in {\ef}. The variables
   $y$ and $z$ are free, so we set them equal to parameters: $z=t$ and
   $y=s$. The variable $x$ is a pivot variable, and we get
   $x=7+2t-3s$. So the general solution of the equation is
@@ -379,12 +379,12 @@ Since both sides of the equation are equal to $16$, the equation is
       1 & -2 & 1 & 0 \\
       2 & -3 & -1 & 4
     \end{mymatrix}
-    \stackrel{R_2\rowop R_2-2R_1}{\sim}
+    \stackrel{R_2\rowop R_2-2R_1}{\roweq}
     \begin{mymatrix}{ccc|c}
       1 & -2 & 1 & 0 \\
       0 & 1 & -3 & 4
     \end{mymatrix}
-    \stackrel{R_1\rowop R_1+2R_2}{\sim}
+    \stackrel{R_1\rowop R_1+2R_2}{\roweq}
     \begin{mymatrix}{ccc|c}
       1 & 0 & -5 & 8 \\
       0 & 1 & -3 & 4
@@ -546,9 +546,9 @@ between points and planes.
   onto another, which was introduced in
   Section~\ref{ssec:projections}.  Pick an arbitrary point $R$ on
   the plane. Then, it follows that
-  \[
-    \longvect{QP} = \func{proj}_{\vect{n}}\,\longvect{RP}
-  \]
+  \begin{equation*}
+    \longvect{QP} = \proj_{\vect{n}}\,\longvect{RP}
+  \end{equation*}
   and $\norm{\longvect{QP}}$ is the shortest distance from $P$ to the
   plane. Further, the position vector of the point $Q$ can be computed
   as $\vect{q} = \vect{p} - \longvect{QP}$, where $\vect{p}$ is the
@@ -574,10 +574,10 @@ between points and planes.
     - \begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix} =
     \begin{mymatrix}{c} 2 \\ 2 \\ 3 \end{mymatrix}.
   \end{equation*}
-  Next, compute $\longvect{QP} = \func{proj}_{\vect{n}}\longvect{RP}$.
+  Next, compute $\longvect{QP} = \proj_{\vect{n}}\longvect{RP}$.
   \begin{equation*}
-    \longvect{QP} ~=~ \func{proj}_{\vect{n}}\longvect{RP} 
-    ~=~ \tup{\frac{ \longvect{RP} \dotprod \vect{n}}{\norm{\vect{n}} ^2}}\vect{n} 
+    \longvect{QP} ~=~ \proj_{\vect{n}}\longvect{RP} 
+    ~=~ \paren{\frac{ \longvect{RP} \dotprod \vect{n}}{\norm{\vect{n}} ^2}}\vect{n} 
     ~=~ \frac{12}{9} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix} 
     ~=~ \frac{4}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix}.
   \end{equation*}

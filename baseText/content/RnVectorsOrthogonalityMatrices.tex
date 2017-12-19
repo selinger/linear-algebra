@@ -105,7 +105,7 @@ defined
 \right.
 \end{equation*}
 
-In words, the product of the $i^{th}$ row of $U$ with the $k^{th}$ row
+In words, the product of the $i\th$ row of $U$ with the $k\th$ row
 gives $1$ if $i=k$ and $0$ if $i\neq k$. The same is true of the columns because 
 $U^{T}U=I$ also. Therefore, 
 \begin{equation*}
@@ -114,7 +114,7 @@ $U^{T}U=I$ also. Therefore,
 which says that the product of one column with another column gives $1$ if the two
 columns are the same and $0$ if the two columns are different.
 
-More succinctly, this states that if $\vect{u}_{1},\cdots ,\vect{u}_{n}$
+More succinctly, this states that if $\vect{u}_{1},\ldots,\vect{u}_{n}$
 are the columns of $U$, an orthogonal matrix, then 
 \[
 \vect{u}_{i}\dotprod \vect{u}_{j}=\delta _{ij} = \left\{
@@ -155,19 +155,19 @@ the previous matrix.
 
 Consider the following proposition.
 
-\begin{proposition}{Determinant of orthogonal matrices}{ortho-det}
-Suppose $U$ is an orthogonal matrix. Then $\det \tup{U} = \pm 1$. 
+\begin{proposition}{Determinant of orthogonal matrices}{ortho-determinant}
+Suppose $U$ is an orthogonal matrix. Then $\det (U) = \pm 1$. 
 \end{proposition}
 
 \begin{proof}
 This result follows from the properties of determinants. Recall that
 for any matrix $A$, $\det(A)^T = \det(A)$. Now if $U$ is orthogonal, then:
 \begin{equation*}
-(\det \tup{U}) ^{2}=\det \tup{U^{T}} \det \tup{U}
-=\det \tup{U^{T}U} =\det \tup{I} =1
+(\det (U)) ^{2}=\det (U^{T}) \det (U)
+=\det (U^{T}U) =\det (I) =1
 \end{equation*}
 
-Therefore $(\det (U))^2 = 1$ and it follows that $\det \tup{U} = \pm 1$. 
+Therefore $(\det (U))^2 = 1$ and it follows that $\det (U) = \pm 1$. 
 \end{proof}
 
 Orthogonal matrices are divided into two classes, proper and improper.

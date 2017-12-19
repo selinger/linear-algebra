@@ -4,7 +4,7 @@
 
 We begin this section with some important notation. Summation notation\index{summation notation}, written $\sum_{i=1}^{j} i$, represents a sum. Here, $i$ is called the index of the sum, and we add iterations until $i=j$. For example, 
 \[
-\sum_{i=1}^{j} i = 1 + 2 + \cdots + j 
+\sum_{i=1}^{j} i = 1 + 2 + \ldots + j 
 \]
 Another example: 
 \[
@@ -44,7 +44,7 @@ smallest element $z$ having the property that $z\leq x$ for all $x\in S$.
 
 In particular, the set of natural numbers defined as
 \begin{equation*}
-\N = \set{1,2,\cdots }
+\N = \set{1,2,\ldots}
 \end{equation*}
 is well ordered\index{well ordered}\index{mathematical induction}.
 
@@ -85,7 +85,7 @@ Mathematical induction is a very useful device for proving theorems about
 the integers. The procedure is as follows.
 
 \begin{procedure}{Proof by mathematical induction}{math-induction}
-Suppose $S_{n}$ is a statement which is a function of the number $n$, for $n=1,2,\cdots$, and
+Suppose $S_{n}$ is a statement which is a function of the number $n$, for $n=1,2,\ldots$, and
 we wish to show that $S_{n}$ is true for all $n \geq 1$. To do so using mathematical induction\index{mathematical induction}, use the 
 following steps.
 \begin{enumerate}
@@ -95,21 +95,21 @@ following steps.
 show that $S_{n+1}$ is true. 
 \end{enumerate}
 
-Proving these two steps shows that $S_{n}$ is true for all $n = 1,2,\cdots$.
+Proving these two steps shows that $S_{n}$ is true for all $n = 1,2,\ldots$.
 \end{procedure}
 
 We can use this procedure to solve the following examples.
 
 \begin{example}{Proving by induction}{proof-by-induction}
 Prove by induction that $\sum_{k=1}^{n}k^{2}=\displaystyle
-\frac{n\tup{n+1} \tup{2n+1} }{6}$.
+\frac{n(n+1) (2n+1) }{6}$.
 \end{example}
 
 \begin{solution}
 By Procedure~\ref{proc:math-induction}, we first need to show that this statement is true for $n=1$.
 When $n=1$, the statement says that 
 \begin{eqnarray*}
-\sum_{k=1}^{1}k^{2}&=&\frac{1\tup{1+1} \tup{2(1)+1} }{6}\\
+\sum_{k=1}^{1}k^{2}&=&\frac{1(1+1) (2(1)+1) }{6}\\
 &=&\frac{6}{6} \\
 &=& 1
 \end{eqnarray*}
@@ -119,47 +119,47 @@ Now suppose this formula is valid for some $n\geq
 1$ where $n$ is an integer. Hence, the following equation is true.
 \begin{equation}
 \sum_{k=1}^{n}k^{2}=
-\frac{n\tup{n+1} \tup{2n+1} }{6}
+\frac{n(n+1) (2n+1) }{6}
 \label{induction1}
 \end{equation}
 We want to show that this is true for $n+1$. 
 
 Suppose we add $(n+1)^2$ to both sides of equation {\eqref{induction1}}.
 \begin{eqnarray*}
-\sum_{k=1}^{n+1}k^{2}&=&\sum_{k=1}^{n}k^{2}+\tup{n+1} ^{2} \\
-&=&\frac{n\tup{n+1} \tup{2n+1} }{6}+\tup{n+1} ^{2}
+\sum_{k=1}^{n+1}k^{2}&=&\sum_{k=1}^{n}k^{2}+(n+1) ^{2} \\
+&=&\frac{n(n+1) (2n+1) }{6}+(n+1) ^{2}
 \end{eqnarray*}
 The step going from the first to the second line is based on the assumption
 that the formula is true for $n$.
 Now simplify the expression in the second line,
 \begin{equation*}
-\frac{n\tup{n+1} \tup{2n+1} }{6}+\tup{n+1} ^{2}
+\frac{n(n+1) (2n+1) }{6}+(n+1) ^{2}
 \end{equation*}
 This equals
 \begin{equation*}
-\tup{n+1} \tup{\frac{n\tup{2n+1} }{6}+\tup{n+1}
-}
+(n+1) (\frac{n(2n+1) }{6}+(n+1)
+)
 \end{equation*}
 and
 \begin{equation*}
-\frac{n\tup{2n+1} }{6}+\tup{n+1} =\frac{6\tup{n+1}
-+2n^{2}+n}{6}=\frac{\allowbreak \tup{n+2} \tup{2n+3} }{6}
+\frac{n(2n+1) }{6}+(n+1) =\frac{6(n+1)
++2n^{2}+n}{6}=\frac{\allowbreak (n+2) (2n+3) }{6}
 \end{equation*}
 Therefore,
 \begin{equation*}
-\sum_{k=1}^{n+1}k^{2}=\frac{\allowbreak \tup{n+1} \tup{n+2}
-\tup{2n+3} }{6}=\frac{\allowbreak \tup{n+1} \tup{\tup{
-n+1} +1} \tup{2\tup{n+1} +1} }{6}
+\sum_{k=1}^{n+1}k^{2}=\frac{\allowbreak (n+1) (n+2)
+(2n+3) }{6}=\frac{\allowbreak (n+1) ((
+n+1) +1) (2(n+1) +1) }{6}
 \end{equation*}
 showing the formula holds for $n+1$ whenever it holds for $n$. This proves
-the formula by mathematical induction. In other words, this formula is true for all $n = 1, 2, \cdots$.
+the formula by mathematical induction. In other words, this formula is true for all $n = 1, 2, \ldots$.
 \end{solution}
 
 Consider another example.
 
 \begin{example}{Proving an inequality by induction}{inequality-proof-by-induction}
 Show that for all $n\in \N$, $\displaystyle \frac{1}{2}\cdot 
-\displaystyle \frac{3}{4}\cdots \displaystyle \frac{2n-1}{2n}<\displaystyle
+\displaystyle \frac{3}{4}\cdot\ldots\cdot\displaystyle \frac{2n-1}{2n}<\displaystyle
 \frac{1}{\sqrt{2n+1}}$.
 \end{example}
 
@@ -174,24 +174,24 @@ Suppose $n=1$. Then the statement says
 Suppose then that
 the inequality holds for $n$. In other words, 
 \begin{equation*}
- \frac{1}{2}\cdot \frac{3}{4}\cdots \frac{2n-1}{2n} < \frac{1}{\sqrt{2n+1}}
+ \frac{1}{2}\cdot \frac{3}{4}\cdot\ldots\cdot \frac{2n-1}{2n} < \frac{1}{\sqrt{2n+1}}
 \end{equation*}
 is true.
 
 Now multiply both sides of this inequality by $\frac{2n+1}{2n+2}$.
 This yields
 \begin{equation*}
-\frac{1}{2}\cdot \frac{3}{4}\cdots \frac{2n-1}{2n}\cdot \frac{2n+1}{2n+2}<
+\frac{1}{2}\cdot \frac{3}{4}\cdot\ldots\cdot \frac{2n-1}{2n}\cdot \frac{2n+1}{2n+2}<
 \frac{1}{\sqrt{2n+1}}\frac{2n+1}{2n+2}=\frac{\sqrt{2n+1}}{2n+2}
 \end{equation*}
 The theorem will be proved if this last expression is less than $
 \displaystyle\frac{1}{\sqrt{2n+3}}$. This happens if and only if
 \begin{equation*}
-\tup{\frac{1}{\sqrt{2n+3}}} ^{2}=\frac{1}{2n+3}>\frac{2n+1}{\tup{
-2n+2} ^{2}}
+\paren{\frac{1}{\sqrt{2n+3}}} ^{2}=\frac{1}{2n+3}>\frac{2n+1}{(
+2n+2) ^{2}}
 \end{equation*}
-which occurs if and only if $\tup{2n+2} ^{2}>\tup{2n+3}
-\tup{2n+1} $ and this is clearly true which may be seen from
+which occurs if and only if $(2n+2) ^{2}>(2n+3)
+(2n+1) $ and this is clearly true which may be seen from
 expanding both sides. This proves the inequality.
 \end{solution}
 

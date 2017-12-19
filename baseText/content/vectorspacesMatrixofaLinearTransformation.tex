@@ -9,20 +9,20 @@
 
 You may recall from $\R^n$ that the matrix of a linear transformation depends on the bases chosen. This concept is explored in this section, where the linear transformation now maps from one arbitrary vector space to another. 
 
-Let $T: V \mapsto W$ be an isomorphism where $V$ and $W$ are vector spaces. Recall from Lemma~\ref{lem:bases-isomorphism} that $T$ maps a basis in $V$ to a basis in $W$. When discussing this Lemma, we were not specific on what this basis looked like. In this section we will make such a distinction. 
+Let $T: V \to W$ be an isomorphism where $V$ and $W$ are vector spaces. Recall from Lemma~\ref{lem:bases-isomorphism} that $T$ maps a basis in $V$ to a basis in $W$. When discussing this Lemma, we were not specific on what this basis looked like. In this section we will make such a distinction. 
 
 Consider now an important definition.
 
 \index{coordinate isomorphism}
 \begin{definition}{Coordinate isomorphism}{coordinate-isomorphism}
-Let $V$ be a vector space with $\func{dim}(V)=n$, let $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ be a fixed basis of $V$,
+Let $V$ be a vector space with $\dim(V)=n$, let $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ be a fixed basis of $V$,
 and let $\set{\vect{e}_1, \vect{e}_2, \ldots, \vect{e}_n}$
 denote the standard basis of $\R^n$.
 We define a transformation $C_B:V\to\R^n$ by
 \[
-C_B(a_1\vect{b}_1 + a_2\vect{b}_2 + \cdots + a_n\vect{b}_n)
+C_B(a_1\vect{b}_1 + a_2\vect{b}_2 + \ldots + a_n\vect{b}_n)
 =
-a_1\vect{e}_1 + a_2\vect{e}_2 + \cdots + a_n\vect{e}_n
+a_1\vect{e}_1 + a_2\vect{e}_2 + \ldots + a_n\vect{e}_n
 =
 \begin{mymatrix}{c} a_1 \\ a_2 \\ \vdots \\ a_n
 \end{mymatrix}.\]
@@ -38,7 +38,7 @@ We continue with another related definition.
 
 \index{coordinate vector}
 \begin{definition}{Coordinate vector}{coordinate-vector}
-Let $V$ be a finite dimensional vector space with $\func{dim}(V)=n$, and
+Let $V$ be a finite dimensional vector space with $\dim(V)=n$, and
 let $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ be an ordered basis of $V$ (meaning that the order that the
 vectors are listed is taken into account).
 The coordinate vector of $\vect{v}$ with respect to $B$ is defined
@@ -138,7 +138,7 @@ Then $C_B:V\to\R^n$ is an isomorphism whose inverse,
 is given by
 \[  C_B^{-1} =\begin{mymatrix}{c}
 a_1 \\ a_2 \\ \vdots \\ a_n \end{mymatrix} =
-a_1\vect{b}_1 + a_2\vect{b}_2 + \cdots + a_n\vect{b}_n
+a_1\vect{b}_1 + a_2\vect{b}_2 + \ldots + a_n\vect{b}_n
 ~\mbox{ for all }~
 \begin{mymatrix}{c}
 a_1 \\ a_2 \\ \vdots \\ a_n \end{mymatrix} \in\R^n.  \]
@@ -174,8 +174,8 @@ and thus for any $\vect{v}\in V$,
 Since $C_{B_1}(\vect{b}_j)=\vect{e}_j$
 for each $\vect{b}_j\in B_1$,
 $AC_{B_1}(\vect{b}_j)=A\vect{e}_j$, which is simply the
-$j^{th}$ column of $A$.
-Therefore, the $j^{th}$ column of $A$ is equal to $C_{B_2}[T(\vect{b}_j)]$.
+$j\th$ column of $A$.
+Therefore, the $j\th$ column of $A$ is equal to $C_{B_2}[T(\vect{b}_j)]$.
 
 The matrix of $T$ corresponding to the ordered
 bases $B_1$ and $B_2$ is denoted $ M_{B_2B_1}(T)$ and is given by 
@@ -200,7 +200,7 @@ This matrix satisfies  $C_{B_2}[T(\vect{v})]=M_{B_2B_1}(T)C_{B_1}(\vect{v})$ for
 We demonstrate this content in the following examples. 
 
 \begin{example}{Matrix of a linear transformation}{matrix-of-linear-transformation}
-Let $T: \Poly_3 \mapsto \R^4$ be an isomorphism defined by
+Let $T: \Poly_3 \to \R^4$ be an isomorphism defined by
 \[
 T( ax^3 + bx^2 + cx + d) = \begin{mymatrix}{c}
 a + b \\
@@ -277,12 +277,12 @@ T(1) = \begin{mymatrix}{c}
 
 Next we apply the coordinate isomorphism $C_{B_2}$ to each of these vectors. We will show the first in detail. 
 \[
-C_{B_2} \tup{\begin{mymatrix}{c}
+C_{B_2} \paren{\begin{mymatrix}{c}
 1 \\
 0 \\
 0 \\
 1 
-\end{mymatrix} } = a_1 \begin{mymatrix}{r}
+\end{mymatrix}} = a_1 \begin{mymatrix}{r}
 1 \\
 0 \\
 1 \\
@@ -361,7 +361,7 @@ M_{B_2B_1}(T) = \begin{mymatrix}{rrrr}
 The next example demonstrates that this method can be used to solve different types of problems. We will examine the above example and see if we can work backwards to determine the action of $T$ from the matrix $M_{B_2B_1}(T)$.
 
 \begin{example}{Finding the action of a linear transformation}{action-linear}
-Let $T: \Poly_3 \mapsto \R^4$ be an isomorphism with
+Let $T: \Poly_3 \to \R^4$ be an isomorphism with
 \[
 M_{B_2B_1}(T) = \begin{mymatrix}{rrrr}
 1 & 1 & 0 & 0 \\
@@ -471,7 +471,7 @@ You can verify that this was the definition of $T(p(x))$ given in the previous e
 We can also find the matrix of the composite of multiple transformations.
 
 \begin{theorem}{Matrix of composition}{matrix-composition}
-Let $V,W$ and $U$ be finite dimensional vector spaces, and suppose $T : V \mapsto W$, $S: W \mapsto U$ are linear transformations. 
+Let $V,W$ and $U$ be finite dimensional vector spaces, and suppose $T : V \to W$, $S: W \to U$ are linear transformations. 
 Suppose $V, W$ and $U$ have ordered bases of $B_1$, $B_2$ and $B_3$ respectively.  Then the matrix of the composite transformation $S \circ T$ (or $ST$) is given by 
 \[ M_{B_3B_1}(ST)=M_{B_3B_2}(S) M_{B_2B_1}(T).\]
 \end{theorem}
@@ -479,7 +479,7 @@ Suppose $V, W$ and $U$ have ordered bases of $B_1$, $B_2$ and $B_3$ respectively
 The next important theorem gives a condition on when $T$ is an isomorphism.
 
 \begin{theorem}{Isomorphism}{isomorphism}
-Let $V$ and $W$ be vector spaces such that both have dimension $n$ and let $T: V \mapsto W$ be a linear transformation. Suppose $B_1$ is an ordered basis of $V$ and $B_2$ is an ordered basis of $W$. 
+Let $V$ and $W$ be vector spaces such that both have dimension $n$ and let $T: V \to W$ be a linear transformation. Suppose $B_1$ is an ordered basis of $V$ and $B_2$ is an ordered basis of $W$. 
 
  Then the conditions that $M_{B_2B_1}(T)$ is invertible for \textbf{all} $B_1$ and $B_2$, and that $M_{B_2B_1}(T)$ is invertible for \textbf{some} $B_1$ and $B_2$ are equivalent. In fact, these occur if and only if $T$ is an isomorphism. 
 
@@ -556,18 +556,18 @@ You should verify that $M_{B_2B_1}(T) M_{B_1B_2}(T^{-1}) = I_4$. From this it fo
 
 \item 
 \begin{eqnarray*}
-C_{B_1}\tup{T^{-1}\begin{mymatrix}{cc}
+C_{B_1}\paren{T^{-1}\begin{mymatrix}{cc}
 p & q \\ r & s \end{mymatrix}} & = & 
 M_{B_1B_2}(T^{-1})
-C_{B_2}\tup{\begin{mymatrix}{cc}
+C_{B_2}\paren{\begin{mymatrix}{cc}
 p & q \\ r & s \end{mymatrix}}\\
 T^{-1}\begin{mymatrix}{cc}
 p & q \\ r & s \end{mymatrix} & = & 
-C_{B_1}^{-1}\tup{M_{B_1B_2}(T^{-1})
-C_{B_2}\tup{\begin{mymatrix}{cc}
+C_{B_1}^{-1}\paren{M_{B_1B_2}(T^{-1})
+C_{B_2}\paren{\begin{mymatrix}{cc}
 p & q \\ r & s \end{mymatrix}}}\\
 & = &
-C_{B_1}^{-1}\tup{
+C_{B_1}^{-1}\paren{
 \frac{1}{2}\begin{mymatrix}{rrrr}
 1 & 0 & 0 & 1 \\
 0 & 1 & 1 & 0 \\
@@ -575,7 +575,7 @@ C_{B_1}^{-1}\tup{
 1 & 0 & 0 & -1 \end{mymatrix}
 \begin{mymatrix}{c} p \\ q\\ r\\ s\end{mymatrix}} \\
 & =&
-C_{B_1}^{-1}\tup{\frac{1}{2}\begin{mymatrix}{c}
+C_{B_1}^{-1}\paren{\frac{1}{2}\begin{mymatrix}{c}
 p+s \\ q+r \\ r-q \\ p-s \end{mymatrix}} \\
 & = & \frac{1}{2}(p+s)x^3 +\frac{1}{2}(q+r)x^2 +\frac{1}{2}(r-q)x 
 + \frac{1}{2}(p-s).

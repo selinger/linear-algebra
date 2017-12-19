@@ -13,12 +13,12 @@ A fundamental identity is the
 \begin{theorem}{De Moivre's theorem}{de-moivre-theorem}
 For any positive integer $n$, we have
 \begin{equation*}
-\tup{e^{i \theta} }^n = e^{i n \theta}
+(e^{i \theta})^n = e^{i n \theta}
 \end{equation*}
 Thus for any real number $r>0$ and any positive integer $n$, we have:
 \begin{equation*}
-\tup{r\tup{\cos \theta+i\sin \theta} } ^{n}=r^{n}\tup{\cos n \theta +i\sin
-n\theta} 
+(r(\cos \theta+i\sin \theta)) ^{n}=r^{n}(\cos n \theta +i\sin
+n\theta) 
 \end{equation*}
 \end{theorem}
 
@@ -26,67 +26,67 @@ n\theta}
  The proof is by induction on $n$. It is clear the formula holds if $n=1$. Suppose it is true
 for $n$. Then, consider $n+1$.
 \begin{equation*}
-\tup{r\tup{\cos \theta+i\sin \theta} } ^{n+1}=\tup{r\tup{\cos
-\theta+i\sin \theta} } ^{n}\tup{r\tup{\cos \theta+i\sin \theta} }
+(r(\cos \theta+i\sin \theta)) ^{n+1}=(r(\cos
+\theta+i\sin \theta)) ^{n}(r(\cos \theta+i\sin \theta))
 \end{equation*}
 which by induction equals
 \begin{eqnarray*}
-&=&r^{n+1}\tup{\cos n\theta+i\sin n\theta} \tup{\cos \theta+i\sin \theta} \\
-&=& r^{n+1}\tup{\tup{\cos n\theta\cos \theta-\sin n\theta\sin \theta} +i\tup{\sin
-n\theta\cos \theta+\cos n\theta\sin \theta} }\\
-&=&r^{n+1}\tup{\cos \tup{n+1} \theta+i\sin \tup{n+1} \theta}
+&=&r^{n+1}(\cos n\theta+i\sin n\theta) (\cos \theta+i\sin \theta) \\
+&=& r^{n+1}((\cos n\theta\cos \theta-\sin n\theta\sin \theta) +i(\sin
+n\theta\cos \theta+\cos n\theta\sin \theta))\\
+&=&r^{n+1}(\cos (n+1) \theta+i\sin (n+1) \theta)
 \end{eqnarray*}
 by the formulas for the cosine and sine of the sum of two angles. 
 \end{proof}
 
 The process used in the previous proof, called {\em mathematical
-induction\em} is very powerful in Mathematics and Computer Science
+induction} is very powerful in Mathematics and Computer Science
 and explored in more detail in the Appendix.
 
 Now, consider a corollary of Theorem~\ref{thm:de-moivre-theorem}.
 
 \begin{corollary}{Roots of complex numbers}{roots-complex-numbers}
 Let $z$ be a non-zero complex number.
-\index{complex numbers!roots}Then there are always exactly $k$ many  $k^{th}$
+\index{complex numbers!roots}Then there are always exactly $k$ many  $k\th$
 roots of $z$ in $\C$.
 \end{corollary}
 
 \begin{proof}
-Let $z=a+bi$ and let $z=\abs{z}\tup{\cos
-\theta+i\sin \theta} $ be the polar form of the complex number. By De Moivre's
+Let $z=a+bi$ and let $z=\abs{z}(\cos
+\theta+i\sin \theta) $ be the polar form of the complex number. By De Moivre's
 theorem, a complex number
 \begin{equation*}
-w= r e^{i \alpha} = r\tup{\cos \alpha +i\sin \alpha } 
+w= r e^{i \alpha} = r(\cos \alpha +i\sin \alpha) 
 \end{equation*}
-is a $k^{th}$ root of $z$ if and only if
+is a $k\th$ root of $z$ if and only if
 \begin{equation*}
-w^k = (r e^{i \alpha})^k = r^k e^{ik\alpha} = r^{k}\tup{\cos k\alpha +i\sin k\alpha } =\abs{z}\tup{\cos \theta+i\sin \theta} 
+w^k = (r e^{i \alpha})^k = r^k e^{ik\alpha} = r^{k}(\cos k\alpha +i\sin k\alpha) =\abs{z}(\cos \theta+i\sin \theta) 
 \end{equation*}
-This requires $r^{k}=\abs{z}$ and so $r=\abs{z}^{1/k}$. Also, both $\cos \tup{k\alpha } =\cos \theta$ and
-$\sin \tup{k\alpha } =\sin \theta$. This can only happen if
+This requires $r^{k}=\abs{z}$ and so $r=\abs{z}^{1/k}$. Also, both $\cos (k\alpha) =\cos \theta$ and
+$\sin (k\alpha) =\sin \theta$. This can only happen if
 \begin{equation*}
 k\alpha =\theta+2 \ell \pi
 \end{equation*}
 for $\ell$ an integer. Thus
 \begin{equation*}
 \alpha =
-\frac{\theta+2 \ell \pi }{k},\; \ell = 0, 1, 2, \cdots, k-1 
+\frac{\theta+2 \ell \pi }{k},\; \ell = 0, 1, 2,\ldots, k-1 
 \end{equation*}
-and so the $k^{th}$ roots of $z$ are of the form
+and so the $k\th$ roots of $z$ are of the form
 \begin{equation*}
-\abs{z}^{1/k}\tup{\cos \tup{\frac{\theta+2 \ell \pi }{k}}
-+i\sin \tup{\frac{\theta+2 \ell \pi }{k}} } ,\;\ell = 0, 1, 2, \cdots, k-1 
+\abs{z}^{1/k}\paren{\cos \paren{\frac{\theta+2 \ell \pi }{k}}
++i\sin \paren{\frac{\theta+2 \ell \pi }{k}}} ,\;\ell = 0, 1, 2,\ldots, k-1 
 \end{equation*}
 Since the cosine and sine are periodic of period $2\pi$, there are exactly $
 k$ distinct numbers which result from this formula. 
 \end{proof}
 
-The procedure for finding the $k$ $k^{th}$ roots of $z \in \C$ is as follows.
+The procedure for finding the $k$ $k\th$ roots of $z \in \C$ is as follows.
 
 \begin{procedure}{Finding roots of a complex number}{finding-kth-roots}
-Let $w$ be a complex number. We wish to find the $n^{th}$ roots of $w$, that is all $z$ such that $z^n = w$. 
+Let $w$ be a complex number. We wish to find the $n\th$ roots of $w$, that is all $z$ such that $z^n = w$. 
 
-There are $n$ distinct $n^{th}$ roots and they can be found as follows:. 
+There are $n$ distinct $n\th$ roots and they can be found as follows:. 
  
 \begin{enumerate}
 \item Express both $z$ and $w$ in polar form $z=re^{i\theta}, w=se^{i\phi}$. Then $z^n = w$ becomes:
@@ -106,15 +106,15 @@ e^{i n \theta} &=& e^{i \phi}
 
 \item The solutions to $e^{i n \theta} = e^{i \phi}$ are given by:
 \[
-n\theta = \phi + 2\pi \ell,  \; \mbox{for} \; \ell = 0,1,2, \cdots, n-1
+n\theta = \phi + 2\pi \ell,  \; \mbox{for} \; \ell = 0,1,2,\ldots, n-1
 \]
 or
 \[
-\theta = \frac{\phi}{n} + \frac{2}{n} \pi \ell, \; \mbox{for} \; \ell = 0,1,2, \cdots, n-1 
+\theta = \frac{\phi}{n} + \frac{2}{n} \pi \ell, \; \mbox{for} \; \ell = 0,1,2,\ldots, n-1 
 \]
 \item
 Using the solutions $r, \theta$ to the equations given in (\ref{roots-eqns})
-construct the $n^{th}$ roots of the form $z = re^{i\theta}$.  
+construct the $n\th$ roots of the form $z = re^{i\theta}$.  
 \end{enumerate}
 \end{procedure}
 
@@ -164,7 +164,7 @@ Written in standard form, these roots are, respectively,
 
 \end{solution}
 
-The ability to find $k^{th}$ roots can also be used to factor some
+The ability to find $k\th$ roots can also be used to factor some
 polynomials.
 
 \begin{example}{Solving a polynomial equation}{solving-polynomial}
@@ -174,29 +174,29 @@ Factor the polynomial $x^{3}-27$.
 \begin{solution}
 First find the cube roots of 27. By the above procedure
 \index{polynomials!factoring}, these cube roots
-are $3,3\tup{\displaystyle
-\frac{-1}{2}+i\displaystyle\frac{\sqrt{3}}{2}}$, and $3\tup{
+are $3,3\paren{\displaystyle
+\frac{-1}{2}+i\displaystyle\frac{\sqrt{3}}{2}}$, and $3\paren{
 \displaystyle\frac{-1}{2}-i\displaystyle\frac{\sqrt{3}}{2}}$. You may wish to verify 
 this using the above steps.
 
 Therefore, $x^{3}-27 =$
 \begin{equation*}
- \tup{x-3} \tup{x-3\tup{\frac{-1}{2}+i\frac{\sqrt{3}}{2}}
-} \tup{x-3\tup{\frac{-1}{2}-i\frac{\sqrt{3}}{2}} } 
+ (x-3) \paren{x-3\paren{\frac{-1}{2}+i\frac{\sqrt{3}}{2}}
+} \paren{x-3\paren{\frac{-1}{2}-i\frac{\sqrt{3}}{2}}} 
 \end{equation*}
-Note also $\tup{x-3\tup{\frac{-1}{2}+i\frac{\sqrt{3}}{2}} }
-\tup{x-3\tup{\frac{-1}{2}-i\frac{\sqrt{3}}{2}} }
+Note also $\paren{x-3\paren{\frac{-1}{2}+i\frac{\sqrt{3}}{2}}}
+\paren{x-3\paren{\frac{-1}{2}-i\frac{\sqrt{3}}{2}}}
 =\allowbreak x^{2}+3x+9$ and so
 \begin{equation*}
-x^{3}-27=\tup{x-3} \tup{x^{2}+3x+9}
+x^{3}-27=(x-3) (x^{2}+3x+9)
 \end{equation*}
 where the quadratic polynomial $x^{2}+3x+9$ cannot be factored without using
 complex numbers.
 \end{solution}
 
 Note that even though the polynomial $x^{3}-27$ has all real coefficients,
-it has some complex zeros, $3\tup{\displaystyle
-\frac{-1}{2}+i\displaystyle\frac{\sqrt{3}}{2}}$, and $3\tup{
+it has some complex zeros, $3\paren{\displaystyle
+\frac{-1}{2}+i\displaystyle\frac{\sqrt{3}}{2}}$, and $3\paren{
 \displaystyle\frac{-1}{2}-i\displaystyle\frac{\sqrt{3}}{2}}$. 
 These zeros are complex conjugates of each other. It is always the case that if a polynomial has real 
 coefficients and a complex root, it will also

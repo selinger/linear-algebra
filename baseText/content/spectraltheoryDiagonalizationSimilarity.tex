@@ -1,4 +1,4 @@
-\subsection{Similarity and diagonalization}
+\section{Similarity}
 
 We begin this section by recalling the definition  of similar matrices. 
 Recall that if $A,B$ are two $n\times n$-matrices, then they are \textbf{similar}\index{similar matrices}
@@ -8,21 +8,21 @@ such that
 A=P^{-1}BP
 \end{equation*}
 
-In this case we write $A \sim B$. The concept of similarity is an example of an \textbf{equivalence relation}\index{equivalence relation}.
+In this case we write $A\similar B$. The concept of similarity is an example of an \textbf{equivalence relation}\index{equivalence relation}.
 
 \begin{lemma}{Similarity is an equivalence relation}{similarity-equivalence}
 Similarity is an equivalence relation, i.e. for $n \times n$-matrices $A,B$, and $C$, 
 \begin{enumerate}
-\item $A \sim A$ (reflexive)
-\item If $A \sim B$, then $B \sim A$ (symmetric)
-\item If $A \sim B$ and $B \sim C$, then $A \sim C$ (transitive)
+\item $A \similar A$ (reflexive)
+\item If $A \similar B$, then $B \similar A$ (symmetric)
+\item If $A \similar B$ and $B \similar C$, then $A \similar C$ (transitive)
 \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-It is clear that $A\sim A$, taking $P=I$. 
+It is clear that $A\similar A$, taking $P=I$. 
 
-Now, if $A\sim B$, then for some $P$ invertible,
+Now, if $A\similar B$, then for some $P$ invertible,
 \begin{equation*}
 A=P^{-1}BP
 \end{equation*}
@@ -32,18 +32,18 @@ PAP^{-1}=B
 \end{equation*}
 But then
 \begin{equation*}
-\tup{P^{-1}} ^{-1}AP^{-1}=B
+(P^{-1}) ^{-1}AP^{-1}=B
 \end{equation*}
-which shows that $B\sim A$.
+which shows that $B\similar A$.
 
-Now suppose $A\sim B$ and $B\sim C$. Then there exist invertible matrices 
+Now suppose $A\similar B$ and $B\similar C$. Then there exist invertible matrices 
 $P,Q$ such that
 \begin{equation*}
 A=P^{-1}BP,\ B=Q^{-1}CQ
 \end{equation*}
 Then,
 \begin{equation*}
-A=P^{-1} \tup{Q^{-1}CQ }P=\tup{QP} ^{-1}C\tup{QP}
+A=P^{-1} (Q^{-1}CQ)P=(QP) ^{-1}C(QP)
 \end{equation*}
 showing that $A$ is similar to $C$.
 \end{proof}
@@ -54,7 +54,7 @@ Another important concept necessary to this section is the trace of a matrix. Co
 \index{trace of a matrix}%
 If $A=[a_{ij}]$ is an $n\times n$-matrix, then the
 trace of $A$ is
-\[ \func{trace}(A) = \sum_{i=1}^n a_{ii}.\]
+\[ \tr(A) = \sum_{i=1}^n a_{ii}.\]
 \end{definition}
 
 In words, the trace of a matrix is the sum of the entries on the main diagonal. 
@@ -62,49 +62,22 @@ In words, the trace of a matrix is the sum of the entries on the main diagonal.
 \begin{lemma}{Properties of trace}{trace-properties}
 For $n\times n$-matrices $A$ and $B$, and any $k\in\R$,
 \begin{enumerate}
-\item $\func{trace}(A+B)=\func{trace}(A) + \func{trace}(B)$
-\item $\func{trace}(kA)=k\cdot\func{trace}(A)$
-\item $\func{trace}(AB)=\func{trace}(BA)$
+\item $\tr(A+B)=\tr(A) + \tr(B)$
+\item $\tr(kA)=k\cdot\tr(A)$
+\item $\tr(AB)=\tr(BA)$
 \end{enumerate}
 \end{lemma}
 
 The following theorem includes a reference to the characteristic polynomial of a matrix. Recall that for any $n \times n$-matrix $A$, the characteristic polynomial of $A$ is $c_A(x)=\det(xI-A)$.
 
 \begin{theorem}{Properties of similar matrices}{properties-similar}
-If $A$ and $B$ are $n\times n$-matrices and $A\sim B$, then
+If $A$ and $B$ are $n\times n$-matrices and $A\similar B$, then
 \begin{enumerate}
 \item $\det(A) = \det(B)$
-\item $\func{rank}(A) = \func{rank}(B)$
-\item $\func{trace}(A)= \func{trace}(B)$
+\item $\rank(A) = \rank(B)$
+\item $\tr(A)= \tr(B)$
 \item $c_A(x)=c_B(x)$
 \item $A$ and $B$ have the same eigenvalues
 \end{enumerate}
 \end{theorem}
 
-We now proceed to the main concept of this section. When a matrix is similar to a diagonal matrix, the matrix is said to
-be
-diagonalizable\index{diagonalizable}. 
-We define a diagonal matrix $D$ as a matrix containing a zero in every entry 
-except those on the main diagonal\index{matrix!diagonal matrix}\index{matrix!main diagonal}. More precisely, if $d_{ij}$ is the $ij^{th}$ entry of a diagonal matrix $D$, then
-$d_{ij}=0$ unless $i=j$. Such
-matrices look like the following.
-\begin{equation*}
-D = \begin{mymatrix}{ccc}
-\ast &  & 0 \\
-& \ddots &  \\
-0 &  & \ast
-\end{mymatrix}
-\end{equation*}
-where $\ast $ is a number which might not be zero.
-
-The following is the formal definition of a diagonalizable matrix. 
-
-\begin{definition}{Diagonalizable}{diagonalizable}
-Let $A$ be an $n\times n$-matrix. Then $A$ is said to be \textbf{diagonalizable}\index{diagonalizable} if there exists an invertible matrix $P$ such that
-\begin{equation*}
-P^{-1}AP=D
-\end{equation*}
-where $D$ is a diagonal matrix.
-\end{definition}
-
-Notice that the above equation can be rearranged as $A=PDP^{-1}$. Suppose we wanted to compute $A^{100}$. By diagonalizing $A$ first it suffices to then compute $\tup{PDP^{-1}}^{100}$, which reduces to $PD^{100}P^{-1}$. This last computation is much simpler than $A^{100}$. While this process is described in detail later, it provides motivation for diagonalization. 

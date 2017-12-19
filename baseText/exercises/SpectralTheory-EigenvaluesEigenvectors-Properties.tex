@@ -1,0 +1,82 @@
+\Opensolutionfile{solutions}[ex]
+\section*{Exercises}
+
+\begin{enumialphparenastyle}
+
+\begin{ex}
+  Find the algebraic and geometric multiplicity of each eigenvalue of
+  the following matrices. Which of the matrices are diagonalizable?
+  \begin{equation*}
+    (a)\quad
+    A = \begin{mymatrix}{rr} 1 & 1 \\ -1 & 3 \end{mymatrix},
+    \quad
+    (b)\quad
+    B = \begin{mymatrix}{rr} -7 & 8 \\ -4 & 5 \end{mymatrix},
+  \end{equation*}
+  \begin{equation*}
+    (c)\quad
+    C = \begin{mymatrix}{rrr}
+      2 & -1 & -1 \\
+      0 & 4 & 2 \\
+      0 & -1 & 1 \\
+    \end{mymatrix},
+    \quad
+    (d)\quad
+    D = \begin{mymatrix}{rrr}
+      3 & 1 & -1 \\
+      0 & 2 & 1 \\
+      0 & -1 & 4 \\
+    \end{mymatrix},
+    \quad
+    (e)\quad
+    E = \begin{mymatrix}{rrr}
+      -2 & 0 & 1 \\
+      -1 & -1 & 1 \\
+      -2 & 1 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    \begin{enumerate}
+    \item $\eigenvar=2$ has algebraic multiplicity 2 and geometric
+      multiplicity 1. Since the sum of the geometric multiplicities of
+      all eigenvalues is $1$, the matrix is not diagonalizable.
+    \item $\eigenvar=1$ has algebraic and geometric
+      multiplicity 1; $\eigenvar=-3$ has algebraic and geometric
+      multiplicity 1. Since the sum of the geometric multiplicities is
+      $2$, the matrix is diagonalizable.
+    \item $\eigenvar=2$ has algebraic and geometric
+      multiplicity 2, $\eigenvar=3$ has algebraic and geometric
+      multiplicity 1. Since the sum of the geometric multiplicities is
+      $3$, the matrix is diagonalizable.
+    \item $\eigenvar=3$ has algebraic multiplicity 3 and geometric
+      multiplicity 2. Since the sum of the geometric multiplicities of
+      all eigenvalues is $2$, the matrix is not diagonalizable.
+    \item $\eigenvar = -1$ has algebraic multiplicity 3 and geometric
+      multiplicity 1. Since the sum of the geometric multiplicities of
+      all eigenvalues is $1$, the matrix is not diagonalizable.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Determine which of the following matrices are diagonalizable.
+  \begin{enumerate}
+  \item $A$ is a $3\times 3$-matrix with eigenvalues $-1$ and $3$. The
+    eigenvalue $-1$ has algebraic multiplicity $2$ and geometric
+    multiplicity $1$. The eigenvalue $3$ has algebraic and geometric
+    multiplicity $1$.
+  \item $B$ is a $4\times 4$-matrix with eigenvalues $2$ and $-2$. The
+    eigenvalue $2$ has algebraic and geometric multiplicity $1$. The
+    eigenvalue $-2$ has algebraic and geometric multiplicity $3$.
+  \item $C$ is a $5\times 5$-matrix with eigenvalues $1$ and $3$. The
+    eigenvalue $1$ has algebraic and geometric multiplicity $2$, and
+    the eigenvalue $3$ has algebraic and geometric multiplicity $1$.
+  \end{enumerate}
+  \begin{sol}
+  \item Not diagonalizable.
+  \item Diagonalizable.
+  \item Not diagonalizable.
+  \end{sol}
+\end{ex}
+
+\end{enumialphparenastyle}

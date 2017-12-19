@@ -9,10 +9,10 @@ much easier to understand. For example, we all know that $x_1^2 + x_2^2=1$ repre
 We first formally define what is meant by a quadratic form. In this section we will work with only \textit{real} quadratic forms, which means that the coefficients will all be real numbers. 
 
 \begin{definition}{Quadratic form}{quadratic-form}
-A \textbf{quadratic form}\index{quadratic form} is a polynomial of degree two in $n$ variables $x_1, x_2, \cdots, x_n$, written as a linear combination of $x_i^{2}$ terms and $x_ix_j$ terms. 
+A \textbf{quadratic form}\index{quadratic form} is a polynomial of degree two in $n$ variables $x_1, x_2,\ldots, x_n$, written as a linear combination of $x_i^{2}$ terms and $x_ix_j$ terms. 
 \end{definition}
 
-Consider the quadratic form $q = a_{11}x_1^2 + a_{22}x_2^2 + \cdots + a_{nn}x_n^2 + a_{12}x_1x_2 + \cdots$. We can write $\vect{x} = \begin{mymatrix}{r}
+Consider the quadratic form $q = a_{11}x_1^2 + a_{22}x_2^2 + \ldots + a_{nn}x_n^2 + a_{12}x_1x_2 + \ldots$. We can write $\vect{x} = \begin{mymatrix}{r}
 x_1 \\
 x_2 \\
 \vdots \\
@@ -48,12 +48,12 @@ x_n
 x_1 & x_2 & \cdots & x_n
 \end{mymatrix} 
 \begin{mymatrix}{c}
-a_{11}x_1 + a_{21}x_2 + \cdots + a_{n1}x_n \\
-a_{12}x_1 + a_{22}x_2 + \cdots + a_{n2}x_n \\
+a_{11}x_1 + a_{21}x_2 + \ldots + a_{n1}x_n \\
+a_{12}x_1 + a_{22}x_2 + \ldots + a_{n2}x_n \\
 \vdots \\
-a_{1n}x_1 + a_{2n}x_2 + \cdots + a_{nn}x_n
+a_{1n}x_1 + a_{2n}x_2 + \ldots + a_{nn}x_n
 \end{mymatrix} \\
-&=& a_{11}x_1^2 + a_{22}x_2^2 + \cdots + a_{nn}x_n^2 + a_{12}x_1x_2 + \cdots
+&=& a_{11}x_1^2 + a_{22}x_2^2 + \ldots + a_{nn}x_n^2 + a_{12}x_1x_2 + \ldots
 \end{eqnarray*}
 
 Let's explore how to find this matrix $A$. Consider the following example.
@@ -93,12 +93,12 @@ x_2
 
 Notice that we have an $x_1x_2$ term as well as an $x_2x_1$ term. Since multiplication is commutative, these terms can be combined. This means that $q$ can be written 
 \[
-q =  a_{11}x_1^2 + \tup{a_{21}+ a_{12}} x_1x_2 + a_{22}x_2^2
+q =  a_{11}x_1^2 + (a_{21}+ a_{12}) x_1x_2 + a_{22}x_2^2
 \]
 
 Equating this to $q$ as given in the example, we have 
 \[
- a_{11}x_1^2 + \tup{a_{21}+ a_{12}} x_1x_2 + a_{22}x_2^2 =  6x_1^2 + 4x_1x_2 + 3x_2^2
+ a_{11}x_1^2 + (a_{21}+ a_{12}) x_1x_2 + a_{22}x_2^2 =  6x_1^2 + 4x_1x_2 + 3x_2^2
 \]
 
 Therefore,
@@ -131,19 +131,19 @@ The above procedure for choosing $A$ to be symmetric applies for any quadratic f
 
 We now turn our attention to the focus of this section. Our goal is to start with a quadratic form $q$ as given above and find a way to rewrite it to eliminate the $x_ix_j$ terms. This is done through a change of variables. In other words, we wish to find $y_i$ such that 
 \[
-q = d_{11}y_1^2 + d_{22}y_2^2 + \cdots + d_{nn}y_n^2
+q = d_{11}y_1^2 + d_{22}y_2^2 + \ldots + d_{nn}y_n^2
 \]
  Letting $\vect{y} = \begin{mymatrix}{r}
 y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{mymatrix}$ and $D = \mat{d_{ij} }$, we can write $q = \vect{y}^T D \vect{y}$ where $D$ is the matrix of coefficients from $q$. There is something special about this matrix $D$ that is crucial. Since no $y_iy_j$ terms exist in $q$, it follows that $d_{ij} = 0$ for all $i \neq j$. Therefore, $D$ is a diagonal matrix. Through this change of variables, we find the \textbf{principal axes}\index{principal axes} $y_1, y_2, \cdots, y_n$ of the quadratic form. 
+\end{mymatrix}$ and $D = \mat{d_{ij} }$, we can write $q = \vect{y}^T D \vect{y}$ where $D$ is the matrix of coefficients from $q$. There is something special about this matrix $D$ that is crucial. Since no $y_iy_j$ terms exist in $q$, it follows that $d_{ij} = 0$ for all $i \neq j$. Therefore, $D$ is a diagonal matrix. Through this change of variables, we find the \textbf{principal axes}\index{principal axes} $y_1, y_2,\ldots, y_n$ of the quadratic form. 
 
 This discussion sets the stage for the following essential theorem.
 
 \begin{theorem}{Diagonalizing a quadratic form}{diag-quadratic-form}
-Let $q$ be a quadratic form in the variables $x_1, \cdots, x_n$. It follows that $q$ can be written in the form $q = \vect{x}^T A \vect{x}$ where 
+Let $q$ be a quadratic form in the variables $x_1,\ldots, x_n$. It follows that $q$ can be written in the form $q = \vect{x}^T A \vect{x}$ where 
 \[
 \vect{x} = \begin{mymatrix}{r}
 x_1 \\
@@ -154,7 +154,7 @@ x_n
 \]
 and $A = \mat{a_{ij} }$ is the symmetric matrix of coefficients of $q$. 
 
-New variables $y_1, y_2, \cdots, y_n$ can be found such that $q = \vect{y}^T D \vect{y}$ where 
+New variables $y_1, y_2,\ldots, y_n$ can be found such that $q = \vect{y}^T D \vect{y}$ where 
 \[
 \vect{y} = \begin{mymatrix}{r} 
 y_1 \\
@@ -164,7 +164,7 @@ y_n
 \end{mymatrix} \] and $D=\mat{d_{ij} }$ is a diagonal matrix. The matrix $D$ contains the eigenvalues of $A$ and is found by orthogonally diagonalizing $A$. 
 \end{theorem}
 
-While not a formal proof, the following discussion should convince you that the above theorem holds. Let $q$ be a quadratic form in the variables $x_1, \cdots, x_n$. Then, $q$ can be written in the form $q = \vect{x}^T A \vect{x}$ for a symmetric matrix $A$.  
+While not a formal proof, the following discussion should convince you that the above theorem holds. Let $q$ be a quadratic form in the variables $x_1,\ldots, x_n$. Then, $q$ can be written in the form $q = \vect{x}^T A \vect{x}$ for a symmetric matrix $A$.  
 By Theorem~\ref{thm:orth-diag} we can orthogonally diagonalize the matrix $A$ such that $U^TAU = D$ for an orthogonal matrix $U$ and diagonal matrix $D$. 
 
 Then, the vector $\vect{y} = \begin{mymatrix}{r}
@@ -184,11 +184,11 @@ q &=& \vect{x}^T A \vect{x}\\
 The following procedure details the steps for the change of variables given in the above theorem. 
 
 \begin{procedure}{Diagonalizing a quadratic form}{diag-quadratic-form}
-Let $q$ be a quadratic form in the variables $x_1, \cdots, x_n$ given by 
+Let $q$ be a quadratic form in the variables $x_1,\ldots, x_n$ given by 
 \[
-q = a_{11}x_1^2 + a_{22}x_2^2 + \cdots + a_{nn}x_n^2 + a_{12}x_1x_2+\cdots
+q = a_{11}x_1^2 + a_{22}x_2^2 + \ldots + a_{nn}x_n^2 + a_{12}x_1x_2+\ldots
 \]
-Then, $q$ can be written as $q = d_{11}y_1^2 + \cdots + d_{nn}y_n^2$ as follows:
+Then, $q$ can be written as $q = d_{11}y_1^2 + \ldots + d_{nn}y_n^2$ as follows:
 
 \begin{enumerate}
 \item
@@ -208,7 +208,7 @@ y_n
 \item 
 The quadratic form $q$ will now be given by 
 \[
-q = d_{11}y_1^2 + \cdots + d_{nn}y_n^2 = \vect{y}^T D \vect{y}
+q = d_{11}y_1^2 + \ldots + d_{nn}y_n^2 = \vect{y}^T D \vect{y}
 \]
 where $D = \mat{d_{ij} }$ is the diagonal matrix found by orthogonally diagonalizing $A$. 
 \end{enumerate}

@@ -1,307 +1,263 @@
-\subsection{Properties of determinants I: Examples}
+\section{Properties of determinants}
 
-There are many important properties of determinants. Since many of these properties involve
-the row operations\index{determinant!row operations} discussed in Chapter 1, we recall that definition now. 
+\begin{outcome}
+  \begin{enumerate}
+  \item Use the determinant of a square matrix to decide whether the
+    matrix is invertible.
+  \item From the determinants of two matrices, calculate the
+    determinant of their product. 
+  \item From the determinant of a matrix, calculate the determinant of
+    its inverse.
+  \item From the determinant of a matrix, calculate the determinant of
+    its transpose.
+  \item Calculate the determinant of $kA$, if the determinant of $A$
+    is known.
+  \item Without calculation, find the determinant of a matrix
+    containing a row or column of zeros, or a matrix containing a row
+    (or column) that is a scalar multiple of another row (or column).
+  \item Use algebraic properties to reason about determinants.
+  \end{enumerate}
+\end{outcome}
 
-\begin{definition}{Row operations}{operations}
-The row operations\index{row operations}
-consist of the following
+One reason that the determinant is such an important quantity is that
+it permits us to tell whether a square matrix is invertible.
 
-\begin{enumerate}
-\item Switch two rows.
-
-\item Multiply a row by a non-zero number.
-
-\item Replace a row by a multiple of another row added to itself.
-\end{enumerate}
-\end{definition}
-
-We will now consider the effect of row operations on the determinant of a matrix. In future sections, we will see that using the following properties can 
-greatly assist in finding determinants. This section will use the theorems as motivation to provide various examples of the usefulness of the properties. 
-
-The first theorem explains the affect on the determinant of a matrix when two rows are switched. 
-
-\begin{theorem}{Switching rows}{switching-rows}
-Let $A$ be an $n\times n$-matrix and let $B$ be a matrix
-which results from switching two rows of $A$. Then $\det \tup{B}
-= - \det \tup{A}$. 
+\begin{theorem}{Determinants and invertible matrices}{determinant-invertible}
+  Let $A$ be an $n\times n$-matrix. Then $A$ is invertible%
+  \index{determinant!and invertibility}%
+  \index{matrix!determinant!and invertibility}%
+  \index{invertible matrix!and determinant}%
+  \index{matrix!invertible!and determinant} if and
+  only if $\det(A) \neq 0$.
 \end{theorem}
 
-When we switch two rows of a matrix, the determinant is multiplied by $-1$. Consider the following example.
+\begin{proof}
+  We know that every matrix $A$ can be converted to {\ef} by
+  elementary row operations. We also know from
+  Theorem~\ref{thm:determinant-row-operations} that no elementary row
+  operation changes whether the determinant is zero or not.  Let $R$
+  be an {\ef} of $A$. Because $R$ is an {\ef}, it is also an upper
+  triangular matrix. Case 1: $A$ is invertible. In that case, the rank
+  of $R$ is $n$, and every diagonal entry of $R$ is a pivot entry
+  (therefore non-zero). It follows that $\det(R)\neq 0$, which implies
+  $\det(A)\neq 0$. Case 2: $A$ is not invertible. In that case, the
+  triangular matrix $R$ contains a row of zeros. It follows that
+  $\det(R)=0$, and therefore $\det(A)=0$.
+\end{proof}
 
-\begin{example}{Switching two rows}{switching-rows}
-Let $A=\begin{mymatrix}{rr}
-1 & 2 \\
-3 & 4
-\end{mymatrix} $ and let $B=\begin{mymatrix}{rr}
-3 & 4 \\
-1 & 2
-\end{mymatrix}$. 
-Knowing that $\det \tup{A } =-2$, find $\det \tup{B}$.
+\begin{example}{Determinants and invertible matrices}{determinant-invertible}
+  Determine which of the following matrices are invertible by
+  computing their determinants.
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      3 & 6 \\
+      2 & 4 \\
+    \end{mymatrix},\quad
+    B = \begin{mymatrix}{rr}
+      2 & 3 \\
+      5 & 1 \\
+    \end{mymatrix},\quad
+    C = \begin{mymatrix}{rrr}
+      1 & 2 & -5 \\
+      2 & 0 & 2  \\
+      3 & 1 & 0  \\
+    \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-By Definition~\ref{def:two-by-two-determinant}, 
-$\det \tup{A} = 1 \times 4 - 3 \times 2 = -2$. 
-Notice that the rows of $B$ are the rows of $A$ but switched. 
-By Theorem~\ref{thm:switching-rows} since two rows of $A$ have been switched,
-$\det \tup{B} = - \det \tup{A} = - \tup{-2} = 2$.
-You can verify this using Definition~\ref{def:two-by-two-determinant}. 
+  We have $\det(A) = 3\cdot 4 - 2\cdot 6 = 0$ and $\det(B) = 2\cdot
+  1-5\cdot 3 = -13$. Therefore, $B$ is invertible and $A$ is not
+  invertible. A quick way to compute the determinant of $C$ is to
+  expand it along the third row. We have
+  \begin{equation*}
+    \det(C)
+    = 3\begin{absmatrix}{rr}
+      2 & -5 \\
+      0 & 2 \\
+    \end{absmatrix}
+    - 1\begin{absmatrix}{rr}
+      1 & -5 \\
+      2 & 2 \\
+    \end{absmatrix}
+    = 3\cdot 4 - 1\cdot 12 = 0.
+  \end{equation*}
+  Therefore, $C$ is not invertible.
 \end{solution}
 
-The next theorem demonstrates the effect on the determinant of a matrix when we multiply
-a row by a scalar.
+As an application of Theorem~\ref{thm:determinant-invertible}, we note
+that the determinant of an $n\times n$-matrix can be used to predict
+whether a homogeneous system of equations has non-trivial solutions.
 
-\begin{theorem}{Multiplying a row by a scalar}{multiplying-row-by-scalar}
-Let $A$ be an $n\times n$-matrix and let $B$ be a matrix
-which results from multiplying some row of $A$ by a scalar $k$. Then $\det
-\tup{B} = k \det \tup{A}$.
-\end{theorem}
+\begin{corollary}{Determinants and homogeneous systems}{determinant-homogeneous}
+  Let $A$ be an $n\times n$-matrix. Then the homogeneous system
+  $A\vect{v}=\vect{0}$ has non-trivial solutions if and only if $\det(A)=0$.
+\end{corollary}
 
-Notice that this theorem is true when we multiply {\em one\em} row of the matrix by $k$.
-If we were to multiply {\em two\em} rows of $A$ by $k$ to obtain $B$, we would have
-$\det \tup{B} = k^2 \det \tup{A}$.
-Suppose we were to multiply all $n$ rows of $A$ by $k$ to obtain the matrix $B$, so that 
-$B = kA$. Then, $\det \tup{B} = k^n \det \tup{A}$. This gives the next theorem.
+\begin{proof}
+  We know from Theorem~\ref{thm:rank-homogeneous-solutions} that the
+  homogeneous system has a non-trivial solution if and only if
+  $\rank(A)<n$. This is the case if and only if $A$ is not invertible,
+  i.e., if and only if $\det(A)=0$.
+\end{proof}
 
-\begin{theorem}{Scalar multiplication}{scalar-mult-det}
-Let $A$ and $B$ be $n \times n$-matrices and $k$ a scalar, such that $B = kA$. Then $\det(B) = k^n \det(A)$.
-\end{theorem}
-
-Consider the following example.
-
-\begin{example}{Multiplying a row by 5}{5-times-row}
-Let $A=\begin{mymatrix}{rr}
-1 & 2 \\
-3 & 4
-\end{mymatrix} ,\ B=\begin{mymatrix}{rr}
-5 & 10 \\
-3 & 4
-\end{mymatrix}$. 
-Knowing that $\det \tup{A } =-2$, find  $\det \tup{B}$.
-\end{example}
-
-\begin{solution} 
-By Definition~\ref{def:two-by-two-determinant}, $\det \tup{A} =-2$. We can also compute
-$\det \tup{B}$ using Definition~\ref{def:two-by-two-determinant}, and we see that $\det \tup{B} = -10$. 
-
-Now, let's compute  $\det \tup{B}$ using Theorem~\ref{thm:multiplying-row-by-scalar} and see if we
-obtain the same answer. Notice that the first row of $B$ is $5$ times the first row of $A$, while the
-second row of $B$ is equal to the second row of $A$. 
-By Theorem~\ref{thm:multiplying-row-by-scalar}, 
-$\det  \tup{B} = 5 \times \det \tup{A } = 5 \times -2 = -10$.
-
-You can see that this matches our answer above.
-\end{solution}
-
-Finally, consider the next theorem for the last row operation, that of adding a multiple of a row
-to another row. 
-
-\begin{theorem}{Adding a multiple of a row to another row}{adding-multiple-of-row}
-Let $A$ be an $n\times n$-matrix and let $B$ be a matrix
-which results from adding a multiple of a row to another row.
- Then $\det \tup{A} =\det
-\tup{B}$.
-\end{theorem}
-
-Therefore, when we add a multiple of a row to another row, the determinant of the matrix is unchanged. 
-Note that if a matrix $A$ contains a row which is a multiple of another row, $\det \tup{A}$ will equal $0$. To see this,
-suppose the first row of $A$ is equal to $-1$ times the second row. By Theorem~\ref{thm:adding-multiple-of-row}, we can 
-add the first row to the second row, and the determinant will be unchanged. However, this row operation will result in a row of zeros.
-Using Laplace Expansion along the row of zeros, we find that the determinant is $0$. 
-
-Consider the following example.
-
-\begin{example}{Adding a row to another row}{adding-row}
-Let $A=\begin{mymatrix}{rr}
-1 & 2 \\
-3 & 4
-\end{mymatrix} $ and let $B=\begin{mymatrix}{rr}
-1 & 2 \\
-5 & 8
-\end{mymatrix}$. 
-Find $\det \tup{B}$.
-\end{example}
-
-\begin{solution}
-By Definition~\ref{def:two-by-two-determinant}, $\det \tup{A} = -2$. 
-Notice that the second row of $B$ is two times the first row of $A$ added
-to the second row. 
-By Theorem~\ref{thm:switching-rows}, $\det \tup{B} = \det \tup{A }
-=-2$.
-As usual, you can verify this answer using Definition~\ref{def:two-by-two-determinant}.
-\end{solution}
-
-\begin{example}{Multiple of a row}{multiple-rows}
-Let $A = \begin{mymatrix}{rr}
-1 & 2 \\
-2 & 4 
-\end{mymatrix}$. Show that $\det \tup{A } = 0$. 
-\end{example}
-
-\begin{solution}
-Using Definition~\ref{def:two-by-two-determinant}, the determinant is given by
-\[
-\det \tup{A } = 1 \times 4 - 2 \times 2 = 0
-\]
-
-However notice that the second row is equal to $2$ times the first row. Then by the discussion above following Theorem~\ref{thm:adding-multiple-of-row} the determinant will equal $0$.
-\end{solution}
-
-Until now, our focus has primarily been on row operations. However, we can carry out the 
-same operations with columns, rather than rows. The three operations outlined in
-Definition~\ref{def:operations} can be done with columns instead of rows. 
-In this case, in Theorems~\ref{thm:switching-rows}, {\ref{thm:multiplying-row-by-scalar}}, 
-and {\ref{thm:adding-multiple-of-row}} you can replace
-the word, "row" with the word "column".
-
-There are several other major properties of determinants which do not involve
-row (or column) operations. The first is the determinant of a product of matrices. 
+Another reason the determinant is important is that it compatible with
+matrix product.
 
 \begin{theorem}{Determinant of a product}{determinant-of-product}
-Let $A$ and $B$ be two $n\times n$-matrices. Then\index{determinant!product}
-\begin{equation*}
-\det \tup{AB} =\det \tup{A} \det \tup{B}
-\end{equation*}
+  Let $A$ and $B$ be $n\times n$-matrices. Then%
+  \index{determinant!of product}%
+  \index{matrix!determinant!of product}%
+  \index{matrix!multiplication!determinant of product}%
+  \index{multiplication!of matrices!determinant of product}%
+  \begin{equation*}
+    \det(AB) =\det(A)\det(B)
+  \end{equation*}
 \end{theorem}
 
-In order to find the determinant of a product of matrices, we can simply take the product of the determinants. 
-
-Consider the following example.
+\begin{proof}
+  We first prove this in case $A=E$ is an elementary matrix. Remember
+  from Section~\ref{sec:elementary-matrices} that elementary matrices
+  correspond to elementary row operations.
+  \begin{enumerate}
+  \item If $E$ is an elementary matrix for swapping two rows, then
+    $\det(E)=-1$. Also, by Theorem~\ref{thm:determinant-row-operations}(1),
+    $\det(EB)=-\det(B)$. Therefore $\det(EB)=\det(E)\det(B)$.
+  \item If $E$ is an elementary matrix for multiplying a row by a
+    non-zero scalar $k$, then $\det(E)=k$. Also, by
+    Theorem~\ref{thm:determinant-row-operations}(2),
+    $\det(EB)=k\det(B)$. Therefore $\det(EB)=\det(E)\det(B)$.
+  \item If $E$ is an elementary matrix for adding a multiple of one
+    row to another, then $\det(E)=1$. Also, by
+    Theorem~\ref{thm:determinant-row-operations}(3),
+    $\det(EB)=\det(B)$. Therefore $\det(EB)=\det(E)\det(B)$.
+  \end{enumerate}
+  Now consider the case where $A$ is an arbitrary matrix. Case 1: $A$
+  is invertible. Then by Theorem~\ref{thm:prod-elementary}, we can
+  write $A$ as a product of elementary matrices $A=E_1E_2\cdots E_k$.
+  By repeatedly using the formula $\det(EB)=\det(E)\det(B)$ that we
+  proved above, we have
+  \begin{equation*}
+    \det(AB) = \det(E_1E_2\cdots E_kB) = \det(E_1)\det(E_2)\cdots\det(E_k)\det(B)
+    = \det(A)\det(B).
+  \end{equation*}
+  Case 2: $A$ is not invertible. Then $AB$ is also not invertible
+  (because if $C$ were an inverse of $AB$, we would have $ABC=I$, and
+  therefore, $BC$ would be an inverse of $A$). Therefore, by
+  Theorem~\ref{thm:determinant-invertible}, we have $\det(A)=0$ and
+  $\det(AB)=0$. It follows that $\det(AB)=\det(A)\det(B)$.
+\end{proof}
 
 \begin{example}{The determinant of a product}{determinant-of-product}
-Compare $\det \tup{AB} $ and $\det \tup{A} \det \tup{
-B} $ for
-\begin{equation*}
-A=\begin{mymatrix}{rr}
-1 & 2 \\
--3 & 2
-\end{mymatrix} ,B=\begin{mymatrix}{rr}
-3 & 2 \\
-4 & 1
-\end{mymatrix} 
-\end{equation*}
-\end{example}
-
-\begin{solution} First compute $AB$, which is given by 
-\begin{equation*}
-AB=\begin{mymatrix}{rr}
-1 & 2 \\
--3 & 2
-\end{mymatrix} \begin{mymatrix}{rr}
-3 & 2 \\
-4 & 1
-\end{mymatrix} = \begin{mymatrix}{rr}
-11 & 4 \\
--1 & -4
-\end{mymatrix}
-\end{equation*}
-and so by Definition~\ref{def:two-by-two-determinant}
-\begin{equation*}
-\det \tup{AB} =\det \begin{mymatrix}{rr}
-11 & 4 \\
--1 & -4
-\end{mymatrix} = -40
-\end{equation*}
-
-Now
-\begin{equation*}
-\det \tup{A} =\det \begin{mymatrix}{rr}
-1 & 2 \\
--3 & 2
-\end{mymatrix} = 8
-\end{equation*}
-and
-\begin{equation*}
-\det \tup{B} =\det \begin{mymatrix}{rr}
-3 & 2 \\
-4 & 1
-\end{mymatrix} = -5
-\end{equation*}
-
-Computing $\det \tup{A} \times \det \tup{B}$ we 
-have $8 \times -5 = -40$. This is the same answer as above and 
-you can see that $\det \tup{A} \det \tup{B} =8\times \tup{-5}
-=-40 = \det \tup{AB}$. 
-\end{solution}
-
-Consider the next important property. 
-
-\begin{theorem}{Determinant of the transpose}{transpose-determinant}
-Let $A$ be a matrix where $A^T$ is the transpose of $A$. Then,
-\begin{equation*}
-\det\tup{A^T} = \det \tup{A }
-\end{equation*}
-\end{theorem}
-
-This theorem is illustrated in the following example. 
-
-\begin{example}{Determinant of the transpose}{transpose-determinant}
-Let
-\begin{equation*}
-A
-=
-\begin{mymatrix}{rr}
-2 & 5 \\
-4 & 3
-\end{mymatrix}
-\end{equation*}
-Find $\det \tup{A^T}$.
+  Compare $\det(AB) $ and $\det(A)\det(B)$, where
+  \begin{equation*}
+    A=\begin{mymatrix}{rr}
+      1 & 2 \\
+      -3 & 2
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    B=\begin{mymatrix}{rr}
+      3 & 2 \\
+      4 & 1
+    \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-First, note that 
-\begin{equation*}
-A^{T}
-=
-\begin{mymatrix}{rr}
-2 & 4 \\
-5 & 3
-\end{mymatrix}
-\end{equation*}
-
-Using Definition~\ref{def:two-by-two-determinant}, we can compute $\det \tup{A}$ and $\det \tup{A^T}$. It follows that
-$\det \tup{A} = 2 \times 3 - 4 \times 5 = -14$ and $\det \tup{A^T} = 2 \times 3 - 5 \times 4 = -14$. 
-Hence, $\det \tup{A} = \det \tup{A^T}$.
+  We first compute $AB$:
+  \begin{equation*}
+    AB=\begin{mymatrix}{rr}
+      1 & 2 \\
+      -3 & 2
+    \end{mymatrix} \begin{mymatrix}{rr}
+      3 & 2 \\
+      4 & 1
+    \end{mymatrix} = \begin{mymatrix}{rr}
+      11 & 4 \\
+      -1 & -4
+    \end{mymatrix}.
+  \end{equation*}
+  The three determinants are
+  \begin{equation*}
+    \det(AB) = \begin{absmatrix}{rr}
+      11 & 4 \\
+      -1 & -4
+    \end{absmatrix} = -40,
+    \quad
+    \det(A) = \begin{absmatrix}{rr}
+      1 & 2 \\
+      -3 & 2
+    \end{absmatrix} = 8,
+    \quad\mbox{and}\quad
+    \det(B) = \begin{absmatrix}{rr}
+      3 & 2 \\
+      4 & 1
+    \end{absmatrix} = -5.
+  \end{equation*}
+  Therefore $\det(A)\det(B) = 8\cdot(-5) = -40 = \det(AB)$. 
 \end{solution}
 
-The following provides an essential property of the determinant, as well as a useful way to determine if a matrix is invertible.
+The following theorem summarizes some properties of determinants we
+have discussed so far, as well as additional properties.
 
-\begin{theorem}{Determinant of the inverse}{det-inverse}
-Let $A$ be an $n \times n$-matrix. Then $A$ is invertible if and only if $\det(A) \neq 0$. If this is true, it follows that 
-\[
-\det(A^{-1}) = \frac{1}{\det(A)}
-\]
+\begin{theorem}{Properties of determinants}{properties-of-determinants}
+  Let $A,B$ be $n\times n$-matrices. Then:%
+  \index{determinant!properties of}%
+  \index{properties of determinants}%
+  \index{matrix!determinant!properties}%
+  \index{matrix!properties of determinants}
+  \begin{enumerate}
+  \item $\det(AB)=\det(A)\det(B)$.
+  \item $\det(I) = 1$.
+  \item $A$ is invertible if and only if $\det(A)\neq 0$. Moreover, if
+    this is the case, then
+    \begin{equation*}
+      \det(A^{-1}) = \frac{1}{\det(A)}.
+    \end{equation*}
+  \item $\det(kA)=k^n\det(A)$.
+  \item $\det(A^T) = \det(A)$.
+  \end{enumerate}
 \end{theorem}
 
-Consider the following example.
+\begin{proof}
+  Property 1 is a restatement of
+  Theorem~\ref{thm:determinant-of-product}. Property 2 follows from
+  Theorem~\ref{thm:determinant-of-triangular-matrix}, because the
+  identity matrix is an upper triangular matrix. Property 3: The first
+  part is Theorem~\ref{thm:determinant-invertible}. For the second
+  part, assume $A$ is invertible. Then by properties 1 and 2,
+  $\det(A)\det(A^{-1}) = \det(AA^{-1}) = \det(I) = 1$. The claim
+  follows by dividing both sides of the equation by
+  $\det(A)$. Property 4 follows from
+  Theorem~\ref{thm:determinant-row-operations}(2), because $kA$ is
+  obtained from $A$ by multiplying all $n$ rows by $k$. Each time we
+  multiple one row by $k$, the determinant is multiplied by
+  $k$. Property 5 follows because expanding $\det(A)$ along columns
+  amounts to the same thing as expanding $\det(A^T)$ along rows.
+\end{proof}
 
-\begin{example}{Determinant of an invertible matrix}{det-invertible-matrix}
-Let $A = \begin{mymatrix}{rr}
-3 & 6 \\
-2 & 4 
-\end{mymatrix}, B = \begin{mymatrix}{rr}
-2 & 3 \\
-5 & 1
-\end{mymatrix}$. For each matrix, determine if it is invertible. If so, find the determinant of the inverse. 
-\end{example}
+We end this section with a few useful ways of spotting matrices of
+determinant 0.
 
-\begin{solution}
-Consider the matrix $A$ first. Using Definition~\ref{def:two-by-two-determinant} we can find the determinant as follows:
-\[
-\det \tup{A } = 3 \times 4 - 2 \times 6 = 12 - 12 = 0
-\]
-By Theorem~\ref{thm:det-inverse} $A$ is not invertible.
+\begin{theorem}{Special matrices with zero determinant}{special-determinant-zero}
+  Let $A$ be an $n\times n$-matrix.
+  \begin{enumerate}
+  \item If $A$ has a row consisting only of zeros, or a column
+    consisting only of zeros, then $\det(A)=0$.
+  \item If $A$ has a row that is a scalar multiple of another row, or
+    a column that is a scalar multiple of another column, then
+    $\det(A)=0$. 
+  \end{enumerate}
+\end{theorem}
 
-Now consider the matrix $B$. Again by Definition~\ref{def:two-by-two-determinant} we have 
-\[
-\det \tup{B} = 2 \times 1 - 5 \times 3 = 2 - 15 = -13
-\]
-By Theorem~\ref{thm:det-inverse} $B$ is invertible and the determinant of the inverse is given by 
-\begin{eqnarray*}
-\det \tup{A^{-1} } &=& \frac{1}{\det(A)} \\
-&=& \frac{1}{-13} \\
-&=& -\frac{1}{13}
-\end{eqnarray*}
-
-\end{solution}
+\begin{proof}
+  The first property follows by cofactor expansion: simply expand the
+  determinant along the row or column that consists only of zeros.
+  For the second property, assume that $A$ has a row that is a scalar
+  multiple of another row. We can then perform an elementary row
+  operation to create a row of zeros. By
+  Theorem~\ref{thm:determinant-row-operations}(3), the determinant is
+  unchanged, so that $\det(A)=0$. In the case that $A$ has a column
+  that is a scalar multiple of another column, we apply the same
+  reasoning to $A^T$ and use the fact that $\det(A)=\det(A^T)$.
+\end{proof}

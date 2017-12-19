@@ -3,128 +3,230 @@
 
 \begin{enumialphparenastyle}
 
-\begin{ex} Find the rank of the following matrix. Also find a basis for the row
-and column spaces.
-
-\begin{equation*}
-\begin{mymatrix}{rrrrrr}
-1 & 3 & 0 & -2 & 0 & 3 \\ 
-3 & 9 & 1 & -7 & 0 & 8 \\ 
-1 & 3 & 1 & -3 & 1 & -1 \\ 
-1 & 3 & -1 & -1 & -2 & 10
-\end{mymatrix} 
-\end{equation*}
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Determine the rank and nullity and find a basis of the column
+  space, row space, and null space of each of the following matrices.
+  \begin{enumerate}
+  \item
+    \begin{equation*}
+      A = \begin{mymatrix}{rrrrrr}
+        1 & 3 & 2 \\ 
+        3 & 9 & 6 \\ 
+        1 & 3 & 2 \\
+      \end{mymatrix} 
+    \end{equation*}
+  \item
+    \begin{equation*}
+      B = \begin{mymatrix}{rrrrrr}
+        1 & 3 & 0 & 2 \\
+        3 & 9 & 1 & 7 \\
+        1 & 3 & 1 & 3 \\
+      \end{mymatrix} 
+    \end{equation*}
+  \item
+    \begin{equation*}
+      C = \begin{mymatrix}{rrrrrr}
+        1 & 0 & 3 \\
+        3 & 1 & 10 \\
+        1 & 1 & 4 \\
+        1 & -1 & 2 \\
+      \end{mymatrix}
+    \end{equation*}
+  \item
+    \begin{equation*}
+      D = \begin{mymatrix}{rrrrr}
+        0 & 0 & -1 & 0 & 1 \\ 
+        1 & 2 & 3 & -2 & -18 \\ 
+        1 & 2 & 2 & -1 & -11 \\ 
+        -1 & -2 & -2 & 1 & 11
+      \end{mymatrix}
+    \end{equation*}
+  \item
+    \begin{equation*}
+      E = \begin{mymatrix}{rrrr}
+        1 & 0 & 3 & 0 \\ 
+        3 & 1 & 10 & 0 \\ 
+        -1 & 1 & -2 & 1 \\ 
+        1 & -1 & 2 & -2
+      \end{mymatrix}
+    \end{equation*}
+  \end{enumerate}
 \end{ex}
 
-\begin{ex} Find the rank of the following matrix. Also find a basis for the row
-and column spaces.
-\begin{equation*}
-\begin{mymatrix}{rrrrrr}
-1 & 3 & 0 & -2 & 7 & 3 \\ 
-3 & 9 & 1 & -7 & 23 & 8 \\ 
-1 & 3 & 1 & -3 & 9 & 2 \\ 
-1 & 3 & -1 & -1 & 5 & 4
-\end{mymatrix} 
-\end{equation*}
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Find $\nullspace(A)$ for the following matrices. 
+  \begin{enumerate}
+  \item 
+    \begin{equation*}
+      A = \begin{mymatrix}{rr}
+        2 & 3 \\
+        4 & 6 
+      \end{mymatrix}
+    \end{equation*}
+  \item
+    \begin{equation*}
+      A = \begin{mymatrix}{rrr}
+        1 & 0 & -1 \\
+        -1 & 1 & 3 \\
+        3 & 2 & 1 
+      \end{mymatrix}
+    \end{equation*}
+  \item 
+    \begin{equation*}
+      A = \begin{mymatrix}{rrr}
+        2 & 4 & 0 \\
+        3 & 6 & -2 \\
+        1 & 2 & -2
+      \end{mymatrix}
+    \end{equation*}
+  \item 
+    \begin{equation*}
+      A = \begin{mymatrix}{rrrr}
+        2 & -1 & 3 & 5 \\
+        2 & 0 & 1 & 2 \\
+        6 & 4 & -5 & -6 \\
+        0 & 2 & -4 & -6 
+      \end{mymatrix}
+    \end{equation*}
+  \end{enumerate}
 \end{ex}
 
-\begin{ex} Find the rank of the following matrix. Also find a basis for the row
-and column spaces.
-\begin{equation*}
-\begin{mymatrix}{rrrrrr}
-1 & 0 & 3 & 0 & 7 & 0 \\ 
-3 & 1 & 10 & 0 & 23 & 0 \\ 
-1 & 1 & 4 & 1 & 7 & 0 \\ 
-1 & -1 & 2 & -2 & 9 & 1
-\end{mymatrix}
-\end{equation*}
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Show that if $A$ is an $m\times n$-matrix, then $\nullspace(A)$
+  is a subspace of $\R^n$.
+  \begin{sol}
+    Clearly $\vect{0}\in\nullspace(A)$, since $A\vect{0}=\vect{0}$.
+    If $\vect{x},\vect{y}\in\nullspace(A)$, then
+    $A(\vect{x}+\vect{y}) = A\vect{x}+A\vect{y} = \vect{0}
+    +\vect{0}=\vect{0}$, and therefore
+    $\vect{x}+\vect{y}\in\nullspace(A)$. Similarly, if
+    $\vect{x}\in\nullspace(A)$ and $k$ is a scalar, then
+    $A(k\vect{x})=k(A\vect{x})=k\vect{0}=\vect{0}$, so
+    $k\vect{x}\in\nullspace(A)$. So $\nullspace(A)$ contains
+    $\vect{0}$, and is closed under addition and scalar
+    multiplication. It is therefore a subspace of $\R^n$. 
+  \end{sol}
 \end{ex}
 
-\begin{ex} Find the rank of the following matrix. Also find a basis for the row
-and column spaces. 
-\begin{equation*}
-\begin{mymatrix}{rrr}
-1 & 0 & 3 \\ 
-3 & 1 & 10 \\ 
-1 & 1 & 4 \\ 
-1 & -1 & 2
-\end{mymatrix}
-\end{equation*}
-%\begin{sol}
-%\end{sol}
+\begin{ex}\label{ex:column-space-is-image}
+  Let $A$ be an $m\times n$-matrix. Show that $\col(A) =
+  \set{A\vect{u} \mid \vect{u}\in\R^n}$. 
+  \begin{sol}
+    Let
+    \begin{equation*}
+      A = \begin{mymatrix}{ccc}
+        a_{11} & \cdots & a_{1n} \\
+        \vdots & \ddots & \vdots \\
+        a_{m1} & \cdots & a_{mn} \\
+      \end{mymatrix}.
+    \end{equation*}
+    Since $\col(A)$ is the span of the columns of $A$, we have
+    $\vect{v}\in\col(A)$ if and only if there exists scalars
+    $u_1,\ldots,u_n$ such that
+    \begin{equation*}
+      \vect{v}
+      = u_1 \begin{mymatrix}{c} a_{11} \\ \vdots \\ a_{m1} \end{mymatrix}
+      + \ldots
+      + u_n \begin{mymatrix}{c} a_{1n} \\ \vdots \\ a_{mn} \end{mymatrix}.
+    \end{equation*}
+    But this equation is equivalent to
+    \begin{equation*}
+      \vect{v} =
+      \begin{mymatrix}{ccc}
+        a_{11} & \cdots & a_{1n} \\
+        \vdots & \ddots & \vdots \\
+        a_{m1} & \cdots & a_{mn} \\
+      \end{mymatrix}
+      \begin{mymatrix}{c} u_1 \\ \vdots \\ u_n \end{mymatrix}
+      = A\vect{u}.
+    \end{equation*}
+    Therefore, $\vect{v}\in\col(A)$ if and only if $\vect{v}$ is of
+    the form $A\vect{u}$, for some $\vect{u}\in\R^n$. In other words,
+    $\col(A) = \set{A\vect{u}\mid\vect{u}\in\R^n}$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Find the rank of the following matrix. Also find a basis for the row
-and column spaces. 
-\begin{equation*}
-\begin{mymatrix}{rrrrr}
-0 & 0 & -1 & 0 & 1 \\ 
-1 & 2 & 3 & -2 & -18 \\ 
-1 & 2 & 2 & -1 & -11 \\ 
--1 & -2 & -2 & 1 & 11
-\end{mymatrix}
-\end{equation*}
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Show that $\rank(A)=\rank(A^T)$.
+  \begin{sol}
+    The row space of $A$ is the same as the column space of $A^T$
+    (except that it uses row vectors instead of column
+    vectors). Therefore, $\rank(A) = \dim(\row(A)) = \dim(\col(A^T)) =
+    \rank(A^T)$.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Find the rank of the following matrix. Also find a basis for the row
-and column spaces.
-\begin{equation*}
-\begin{mymatrix}{rrrr}
-1 & 0 & 3 & 0 \\ 
-3 & 1 & 10 & 0 \\ 
--1 & 1 & -2 & 1 \\ 
-1 & -1 & 2 & -2
-\end{mymatrix}
-\end{equation*}
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  For invertible matrices $B$ and $C$ of appropriate size, show that
+  $\rank(A) = \rank(BA) = \rank(AC)$.
+  \begin{sol}
+    From the theory of elementary matrices, we know that $B$ can be
+    written as a product of elementary matrices $B=E_1\cdots E_k$.  It
+    follows that $BA = E_1\cdots E_kA$. Since each elementary matrix
+    corresponds to an elementary row operation, it follows that $BA$
+    and $A$ are row equivalent. Therefore, $BA$ and $A$ have the same
+    row space. It follows that
+    $\rank(BA) = \dim(\row(BA)) = \dim(\row(A)) = \rank(A)$. This
+    proves the first claim. To show the claim about $AC$, first note
+    that by the above argument, $\rank(C^TA^T) = \rank(A^T)$, because
+    $C^T$ is invertible. Then $\rank(AC)=\rank(A)$ follows by taking
+    the transpose.
+  \end{sol}
 \end{ex}
 
-\begin{ex} Find $\ker \tup{A }$ for the following matrices. 
-
-\begin{enumerate}
-\item 
-$A = \begin{mymatrix}{rr}
-2 & 3 \\
-4 & 6 
-\end{mymatrix} $
-
-\item
-$A = \begin{mymatrix}{rrr}
-1 & 0 & -1 \\
--1 & 1 & 3 \\
-3 & 2 & 1 
-\end{mymatrix}$
-
-\item 
-$A = \begin{mymatrix}{rrr}
-2 & 4 & 0 \\
-3 & 6 & -2 \\
-1 & 2 & -2
-\end{mymatrix}$ 
-
-\item 
-$ A = \begin{mymatrix}{rrrr}
-2 & -1 & 3 & 5 \\
-2 & 0 & 1 & 2 \\
-6 & 4 & -5 & -6 \\
-0 & 2 & -4 & -6 
-\end{mymatrix}$
-
-\end{enumerate}
-%\begin{sol}
-%\begin{enumerate}
-%\item
-%\end{enumerate}
-%\end{sol}
+\begin{ex}
+  Suppose $A$ is an $m\times n$-matrix and $B$ is an $n\times p$-matrix.
+  Show that 
+  \begin{equation*}
+    \nullity(AB) \leq \nullity(A) + \nullity(B).
+  \end{equation*}
+  \textbf{Hint:} Consider the subspace $\col(B)\cap\nullspace(A)$ and
+  suppose a basis for this subspace is
+  $\set{\vect{w}_{1},\ldots,\vect{w}_{k}}$. Let
+  $\set{\vect{z}_{1},\ldots,\vect{z}_{k}}$ be such that
+  $B\vect{z}_{i}=\vect{w}_{i}$. Now suppose
+  $\set{\vect{u}_{1},\ldots,\vect{u}_{r}}$ is a basis for
+  $\nullspace(B)$, and argue that
+  $\nullspace(AB) \subseteq \sspan\set{\vect{u}_{1},\ldots,
+    \vect{u}_{r},\vect{z}_{1},\ldots,\vect{z}_{k}}$.
+  \begin{sol}
+    Let $\set{\vect{w}_{1},\ldots,\vect{w}_{k}}$ be a basis of
+    $\col(B)\cap\nullspace(A)$. Then for each $i$, we have
+    $\vect{w}_i\in\col(B)$, and therefore by
+    Exercise~\ref{ex:column-space-is-image}, we can find $\vect{z}_i$
+    such that $\vect{w}_i = B\vect{z}_{i}$. Also let
+    $\set{\vect{u}_{1},\ldots,\vect{u}_{r}} $ be a basis for
+    $\nullspace(B)$. Now assume $\vect{x}\in\nullspace(AB)$. Then
+    $AB\vect{x}=\vect{0}$, and therefore
+    $B\vect{x} \in \nullspace(A)\cap \col(B)$. We therefore have
+    \begin{equation*}
+      B\vect{x} = c_1\vect{w}_{1}+\ldots+c_k\vect{w}_{k}
+      = B(c_1\vect{z}_{1}+\ldots+c_k\vect{z}_{k}).
+    \end{equation*}
+    This implies
+    \begin{equation*}
+      \vect{x}-(c_1\vect{z}_{1}+\ldots+c_k\vect{z}_{k})\in \nullspace(B)
+    \end{equation*}
+    and so it is of the form
+    \begin{equation*}
+      \vect{x}-(c_1\vect{z}_{1}+\ldots+c_k\vect{z}_{k}) =
+      d_1\vect{u}_1 + \ldots + d_r\vect{u}_r. 
+    \end{equation*}
+    It follows that
+    \begin{equation*}
+      \vect{x}\in \sspan\set{\vect{z}_{1},\ldots,\vect{z}_{k},
+        \vect{u}_{1},\ldots,\vect{u}_{r}}.
+    \end{equation*}
+    Since we have shown that every element of $\nullspace(AB)$ is in
+    the span of these $k+r$ vectors, it follows that 
+    \begin{eqnarray*}
+      \dim(\nullspace(AB))
+      &\leq & k+r \\
+      &=& \dim(\col(B)\cap\nullspace(A)) + \dim(\nullspace(B)) \\
+      &\leq & \dim(\nullspace(A)) + \dim(\nullspace(B)),
+    \end{eqnarray*}
+    and therefore $\nullity(AB) \leq \nullity(A) + \nullity(B)$.
+  \end{sol}
 \end{ex}
 
 \end{enumialphparenastyle}

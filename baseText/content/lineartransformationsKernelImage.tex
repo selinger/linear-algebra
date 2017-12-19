@@ -11,53 +11,53 @@ In this section we will consider the case where the linear transformation is not
 isomorphism. First consider the following important definition.
 
 \begin{definition}{Kernel and image}{kernel-image}
-Let $V$ and $W$ be subspaces of $\R^n$ and let $T:V\mapsto W$ be a linear transformation. Then the image of $T$
-denoted as $\func{im}\tup{T} $ is defined to be the set 
+Let $V$ and $W$ be subspaces of $\R^n$ and let $T:V\to W$ be a linear transformation. Then the image of $T$
+denoted as $\func{im}(T) $ is defined to be the set 
 \index{linear map!image}
 \index{linear map!kernel} 
 \begin{equation*}
-\func{im}\tup{T} = \set{T (\vect{v}):\vect{v}\in V}
+\func{im}(T) = \set{T (\vect{v}):\vect{v}\in V}
 \end{equation*}
 In words, it consists of all vectors in $W$ which equal $T(\vect{v})$ for some $
 \vect{v}\in V$.
 
-The kernel of $T$, written $\ker \tup{T}$, consists of all $\vect{v}\in V$ such that $T(\vect{v})=\vect{0}$. That is, 
+The kernel of $T$, written $\ker (T)$, consists of all $\vect{v}\in V$ such that $T(\vect{v})=\vect{0}$. That is, 
 \begin{equation*}
-\ker \tup{T} =\set{\vect{v}\in V:T(\vect{v})=\vect{0}}
+\ker (T) =\set{\vect{v}\in V:T(\vect{v})=\vect{0}}
 \end{equation*}
 \end{definition}
 
-It follows that $\func{im}\tup{T} $ and $\ker \tup{T} $
+It follows that $\func{im}(T) $ and $\ker (T) $
 are subspaces of $W$ and $V$ respectively.
 
 \begin{proposition}{Kernel and image as subspaces}{kernel-image-subspaces}
-Let $V, W$ be subspaces of $\R^n$ and let $T:V\rightarrow W$ be a linear transformation. Then $\ker \tup{
-T} $ is a subspace of $V$ and $\func{im}\tup{T} $ is a
+Let $V, W$ be subspaces of $\R^n$ and let $T:V\rightarrow W$ be a linear transformation. Then $\ker (
+T) $ is a subspace of $V$ and $\func{im}(T) $ is a
 subspace of $W$.
 \end{proposition}
 
 \begin{proof}
-First consider $\ker \tup{T}$. It is necessary to
-show that if $\vect{v}_{1},\vect{v}_{2}$ are vectors in $\ker \tup{T} $
+First consider $\ker (T)$. It is necessary to
+show that if $\vect{v}_{1},\vect{v}_{2}$ are vectors in $\ker (T) $
 and if $a,b$ are scalars, then $a\vect{v}_{1}+b\vect{v}_{2}$ is also in $\ker
-\tup{T}$. But 
+(T)$. But 
 \begin{equation*}
-T\tup{a\vect{v}_{1}+b\vect{v}_{2}} =aT(\vect{v}_{1})+bT(\vect{v}_{2})=a\vect{0}+b\vect{0}=\vect{0}
+T(a\vect{v}_{1}+b\vect{v}_{2}) =aT(\vect{v}_{1})+bT(\vect{v}_{2})=a\vect{0}+b\vect{0}=\vect{0}
 \end{equation*}
-Thus $\ker \tup{T} $ is a subspace of $V$.
+Thus $\ker (T) $ is a subspace of $V$.
 
-Next suppose $T(\vect{v}_{1}),T(\vect{v}_{2})$ are two vectors in $\func{im}\tup{
-T}$. Then if $a,b$ are scalars, 
+Next suppose $T(\vect{v}_{1}),T(\vect{v}_{2})$ are two vectors in $\func{im}(
+T)$. Then if $a,b$ are scalars, 
 \begin{equation*}
-aT(\vect{v}_{2})+bT(\vect{v}_{2})=T\tup{a\vect{v}_{1}+b\vect{v}_{2}}
+aT(\vect{v}_{2})+bT(\vect{v}_{2})=T(a\vect{v}_{1}+b\vect{v}_{2})
 \end{equation*}
-and this last vector is in $\func{im}\tup{T} $ by definition. 
+and this last vector is in $\func{im}(T) $ by definition. 
 \end{proof}
 
 We will now examine how to find the kernel and image of a linear transformation and describe the basis of each. 
 
 \begin{example}{Kernel and image of a linear transformation}{kernel-image}
-Let $T: \R^4 \mapsto \R^2$ be defined by
+Let $T: \R^4 \to \R^2$ be defined by
 \[
 T \begin{mymatrix}{c}
 a \\
@@ -182,8 +182,8 @@ dimension of the image of a linear transformation. In the previous example $\fun
 \begin{theorem}{Dimension of kernel and image}{dimension-kernel-image}
 Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are subspaces of $\R^n$. Suppose the dimension of $V$ is $m$. Then 
 \[
-m=\dim \tup{\ker \tup{T} } +\dim \tup{\func{im}\tup{
-T} } 
+m=\dim (\ker (T)) +\dim (\func{im}(
+T)) 
 \]
 \index{rank added to nullity}
 \index{nullity}
@@ -191,15 +191,15 @@ T} }
 \end{theorem}
 
 \begin{proof}
-From Proposition~\ref{prop:kernel-image-subspaces}, $\func{im}\tup{T} $ is a subspace of $W$. We know that there exists a basis for $\func{im}\tup{T}$, $\set{T(\vect{v}
-_{1}),\cdots ,T(\vect{v}_{r})} . $ Similarly, there is a basis for $\ker
-\tup{T} ,\set{\vect{u}_{1},\cdots ,\vect{u}_{s}}$. Then if $
+From Proposition~\ref{prop:kernel-image-subspaces}, $\func{im}(T) $ is a subspace of $W$. We know that there exists a basis for $\func{im}(T)$, $\set{T(\vect{v}
+_{1}),\ldots,T(\vect{v}_{r})} . $ Similarly, there is a basis for $\ker
+(T) ,\set{\vect{u}_{1},\ldots,\vect{u}_{s}}$. Then if $
 \vect{v}\in V$, there exist scalars $c_{i}$ such that 
 \begin{equation*}
 T(\vect{v})=\sum_{i=1}^{r}c_{i}T(\vect{v}_{i})
 \end{equation*}
-Hence $T\tup{\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}} =0$. It follows
-that $\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}$ is in $\ker \tup{T}$.
+Hence $T\paren{\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}} =0$. It follows
+that $\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}$ is in $\ker (T)$.
 Hence there are scalars $a_{i}$ such that 
 \begin{equation*}
 \vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}=\sum_{j=1}^{s}a_{j}\vect{u}_{j}
@@ -207,10 +207,10 @@ Hence there are scalars $a_{i}$ such that
 Hence $\vect{v}=\sum_{i=1}^{r}c_{i}\vect{v}_{i}+\sum_{j=1}^{s}a_{j}\vect{u}
 _{j}. $ Since $\vect{v}$ is arbitrary, it follows that 
 \begin{equation*}
-V=\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
+V=\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{s},\vect{v}_{1},\ldots,
 \vect{v}_{r}}
 \end{equation*}
-If the vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
+If the vectors $\set{\vect{u}_{1},\ldots,\vect{u}_{s},\vect{v}_{1},\ldots,
 \vect{v}_{r}} $ are linearly independent, then it will follow that
 this set is a basis. Suppose then that 
 \begin{equation*}
@@ -221,14 +221,14 @@ Apply $T$ to both sides to obtain
 \sum_{i=1}^{r}c_{i}T(\vect{v}_{i})+\sum_{j=1}^{s}a_{j}T(\vect{u})
 _{j}=\sum_{i=1}^{r}c_{i}T(\vect{v}_{i})=0
 \end{equation*}
-Since $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})} $ is linearly
+Since $\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{r})} $ is linearly
 independent, it follows that each $c_{i}=0$. Hence $\sum_{j=1}^{s}a_{j}\vect{u
-}_{j}=0$ and so, since the $\set{\vect{u}_{1},\cdots ,\vect{u}_{s}} $
-are linearly independent, it follows that each $a_{j}=0$ also. Therefore $\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,\vect{v}
+}_{j}=0$ and so, since the $\set{\vect{u}_{1},\ldots,\vect{u}_{s}} $
+are linearly independent, it follows that each $a_{j}=0$ also. Therefore $\set{\vect{u}_{1},\ldots,\vect{u}_{s},\vect{v}_{1},\ldots,\vect{v}
 _{r}} $ is a basis for $V$ and so 
 \begin{equation*}
-n=s+r=\dim \tup{\ker \tup{T} } +\dim \tup{\func{im}\tup{
-T} } 
+n=s+r=\dim (\ker (T)) +\dim (\func{im}(
+T)) 
 \end{equation*}
 \end{proof}
 
@@ -237,15 +237,15 @@ The above theorem leads to the next corollary.
 \begin{corollary}{}{}
 Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are subspaces of $\R^n$. Suppose the dimension of $V$ is $m$. Then 
 \[
-\dim \tup{\ker \tup{T} } \leq m
+\dim (\ker (T)) \leq m
 \]
 \[
-\dim \tup{\func{im}\tup{T } } \leq m
+\dim (\func{im}(T)) \leq m
 \]
 \end{corollary}
 
-This follows directly from the fact that $n=\dim \tup{\ker \tup{T} } +\dim \tup{\func{im}\tup{
-T} }$.
+This follows directly from the fact that $n=\dim (\ker (T)) +\dim (\func{im}(
+T))$.
 
 Consider the following example.
 
@@ -258,14 +258,14 @@ T(\vect{x})=\begin{mymatrix}{rr}
 0 & 1
 \end{mymatrix} \vect{x}
 \end{equation*}
-Then $\func{im}\tup{T} =V$ is a subspace of $\R^{3}$ and $T$
+Then $\func{im}(T) =V$ is a subspace of $\R^{3}$ and $T$
 is an isomorphism of $\R^{2}$ and $V$. Find a $2\times 3$-matrix $A$
-such that the restriction of multiplication by $A$ to $V=\func{im}\tup{
-T} $ equals $T^{-1}$. 
+such that the restriction of multiplication by $A$ to $V=\func{im}(
+T) $ equals $T^{-1}$. 
 \end{example}
 
 \begin{solution}
-Since the two columns of the above matrix are linearly independent, we conclude that $\func{dim}(\func{im}(T)) = 2$ and therefore $\func{dim}(\func{ker}(T)) = 2 - \func{dim}(\func{im}(T)) = 2-2 = 0$ by Theorem~\ref{thm:dimension-kernel-image}. Then by Theorem~\ref{thm:one-to-one-kernel} it follows that $T$ is one to one. 
+Since the two columns of the above matrix are linearly independent, we conclude that $\dim(\func{im}(T)) = 2$ and therefore $\dim(\func{ker}(T)) = 2 - \dim(\func{im}(T)) = 2-2 = 0$ by Theorem~\ref{thm:dimension-kernel-image}. Then by Theorem~\ref{thm:one-to-one-kernel} it follows that $T$ is one to one. 
 
 Thus $T$ is an isomorphism of $\R^{2}$ and the two dimensional subspace of $\R^{3}$ which is the
 span of the columns of the given matrix. Now in particular, 

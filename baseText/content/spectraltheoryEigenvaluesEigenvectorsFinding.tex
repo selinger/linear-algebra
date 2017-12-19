@@ -1,660 +1,489 @@
-\subsection{Finding eigenvectors and eigenvalues}
+\section{Finding eigenvalues}
 
-Now that eigenvalues and eigenvectors have been defined, we will study how to find
- them for a matrix $A$. 
+\begin{outcome}
+  \begin{enumerate}
+  \item Find the characteristic polynomial, eigenvalues, and
+    eigenvectors of a matrix.
+  \item Find the eigenvalues of a triangular matrix.
+  \end{enumerate}
+\end{outcome}
 
-First, consider the following definition.
+In the previous section, we saw how to find the eigenvectors
+corresponding to a given eigenvalue $\eigenvar$, if $\eigenvar$ is already
+known. But we have not yet seen how to find the eigenvalues of a
+matrix. However, the calculations in
+Examples~\ref{exa:find-eigenvectors-given-eigenvalue} and
+{\ref{exa:basis-eigenspace}} suggest a way forward. We can see that
+the following are equivalent:
+\begin{enumerate}
+\item $\eigenvar$ is an eigenvalue of $A$.
+\item There exists a non-zero vector $\vect{v}$ such that
+  $A\vect{v}=\eigenvar\vect{v}$.
+\item The homogeneous system of equations
+  $(A-\eigenvar I)\vect{v}=\vect{0}$ has a non-trivial solution.
+\end{enumerate}
+Indeed, the equivalence between 1 and 2 is just the definition of an
+eigenvalue, and the equivalence between 2 and 3 is just algebra.
+By Corollary~\ref{cor:determinant-homogeneous}, we know that the
+system $(A-\eigenvar I)\vect{v}=\vect{0}$ has a non-trivial solution if
+and only if $\det(A-\eigenvar I)=0$. Therefore, we have proved the
+following theorem:
 
-\begin{definition}{Multiplicity of an eigenvalue}{multiplicity}
-Let $A$ be an $n \times n$-matrix with characteristic polynomial given by 
-$\det \tup{\eigenVar I -  A}$. Then, the multiplicity\index{multiplicity} of an eigenvalue $\lambda$ of $A$
-is the number of times $\lambda$ occurs as a root of that characteristic polynomial.
+\begin{theorem}{Eigenvalues}{eigenvalues}
+  Let $A$ be a square matrix, and let $\eigenvar$ be a scalar. Then
+  $\eigenvar$ is an eigenvalue of $A$ if and only if
+  \begin{equation*}
+    \det(A-\eigenvar I)=0.
+  \end{equation*}
+\end{theorem}
+
+\begin{example}{Finding the eigenvalues}{finding-eigenvalues}
+  Find the eigenvalues of the matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      -5 & 2 \\
+      -7 & 4 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  By Theorem~\ref{thm:eigenvalues}, a scalar $\eigenvar$ is an
+  eigenvalue of $A$ if and only if $\det(A-\eigenvar I)=0$. We calculate
+  the determinant:
+  \begin{eqnarray*}
+    \det(A-\eigenvar I)
+    &=&
+    \begin{absmatrix}{cc}
+      -5-\eigenvar & 2 \\
+      -7 & 4-\eigenvar \\
+    \end{absmatrix} \\
+    &=& (-5-\eigenvar)(4-\eigenvar) + 14 \\
+    &=& \eigenvar^2 + \eigenvar - 6.
+  \end{eqnarray*}
+  Therefore, $\eigenvar$ is an eigenvalue if and only if
+  $\eigenvar^2 + \eigenvar - 6 = 0$. We can find the roots of this
+  equation using the quadratic formula, or equivalently, by factoring
+  the left-hand side:
+  \begin{equation*}
+    \eigenvar^2 + \eigenvar - 6 = 0
+    \iff
+    (\eigenvar+3)(\eigenvar-2) = 0.
+  \end{equation*}
+  Therefore, the eigenvalues are $\eigenvar=-3$ and $\eigenvar=2$.
+\end{solution}
+
+\begin{example}{Finding the eigenvalues}{finding-eigenvalues2}
+  Find the eigenvalues of the matrix
+  \begin{equation*}
+    A=\begin{mymatrix}{rrr}
+      5 & -4 & 4 \\
+      2 & -1 & 2 \\
+      0 &  0 & 2 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  Once again, we calculate $\det(A-\eigenvar I)$:
+  \begin{eqnarray*}
+    \det(A-\eigenvar I)
+    &=&
+        \begin{absmatrix}{ccc}
+          5-\eigenvar & -4 & 4 \\
+          2 & -1-\eigenvar & 2 \\
+          0 &  0 & 2-\eigenvar \\
+        \end{absmatrix} \\
+    &=&
+        (5-\eigenvar)(-1-\eigenvar)(2-\eigenvar) - 2(-4)(2-\eigenvar) \\
+    &=& -\eigenvar^3 + 6\eigenvar^2 - 11\eigenvar + 6 \\
+    &=& (3-\eigenvar)(1-\eigenvar)(2-\eigenvar).
+  \end{eqnarray*}
+  The eigenvalues are the roots of this polynomial, i.e., the
+  solutions of the equation
+  $(\eigenvar-3)(\eigenvar-1)(2-\eigenvar)=0$. Therefore, the eigenvalues of
+  $A$ are $\eigenvar=1$, $\eigenvar=2$, and $\eigenvar=3$.
+\end{solution}
+
+\begin{example}{No real eigenvalue}{no-real-eigenvalue}
+  Find the eigenvalues of the matrix
+  \begin{equation*}
+    A=\begin{mymatrix}{rr}
+      0 & -1 \\
+      1 &  0 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We have
+  \begin{equation*}
+    \det(A-\eigenvar I)
+    ~=~
+        \begin{absmatrix}{cc}
+          -\eigenvar & -1 \\
+          1 & -\eigenvar \\
+        \end{absmatrix} \\
+    ~=~
+        \eigenvar^2 + 1.
+  \end{equation*}
+  Since $\eigenvar^2+1 = 0$ does not have any solutions in the real
+  numbers, the matrix $A$ has no real eigenvalues. (However, if we
+  were working over the field of complex numbers rather than real
+  numbers, this matrix would have eigenvalues $\eigenvar=\pm i$).
+\end{solution}
+
+As the examples show, the quantity $\det(A-\eigenvar I)$ is always a
+polynomial in the variable $\eigenvar$. A \textbf{polynomial}%
+\index{polynomial} is an expression of the form
+\begin{equation*}
+  p(\eigenvar) = a_n\eigenvar^n + a_{n-1}\eigenvar^{n-1} + \ldots + a_1\eigenvar + a_0,
+\end{equation*}
+where $a_0,\ldots,a_n$ are constants called the \textbf{coefficients}%
+\index{coefficient!of a polynomial}%
+\index{polynomial!coefficient} of the polynomial. The polynomial
+$\det(A-\eigenvar I)$ has a special name:
+
+\begin{definition}{Characteristic polynomial}{characteristic-polynomial}
+  Let $A$ be a square matrix. The expression
+  \begin{equation*}
+    p(\eigenvar) = \det(A-\eigenvar I)
+  \end{equation*}
+  is called the \textbf{characteristic polynomial}%
+  \index{characteristic polynomial}%
+  \index{polynomial!characteristic|see{characteristic polynomial}}%
+  \index{matrix!characteristic polynomial} of $A$.
 \end{definition}
 
-For example, suppose the characteristic polynomial of $A$ is given by
-$\tup{\eigenVar - 2 }^2$. Solving for the roots of this
-polynomial, we set $\tup{\eigenVar - 2 }^2 = 0$ and solve for
-$\eigenVar$.  We find that $\lambda = 2$ is a root that occurs
-twice. Hence, in this case, $\lambda = 2$ is an eigenvalue of $A$ of
-multiplicity equal to $2$.
+\begin{example}{Characteristic polynomial}{characteristic-polynomial}
+  Find the characteristic polynomial of the matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      3  & 0 &  2 \\
+      6  & 4 &  3 \\
+      -4 & 0 & -3 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
 
-We will now look at how to find the eigenvalues and eigenvectors for a
-matrix $A$ in detail.  The steps used are summarized in the following
-procedure.
+\begin{solution}
+  The characteristic polynomial is
+  \begin{eqnarray*}
+    \det(A-\eigenvar I) \\
+    &=&
+        \begin{absmatrix}{ccc}
+          3-\eigenvar  & 0 &  2 \\
+          6  & 4-\eigenvar &  3 \\
+          -4 & 0 & -3-\eigenvar \\
+        \end{absmatrix} \\
+    &=&
+        (3-\eigenvar)\begin{absmatrix}{ccc}
+          4-\eigenvar & 3 \\
+          0 & -3-\eigenvar \\
+        \end{absmatrix}
+    + 2 \begin{absmatrix}{ccc}
+          6  & 4-\eigenvar \\
+          -4 & 0 \\
+        \end{absmatrix} \\
+    &=& (3-\eigenvar)(4-\eigenvar)(-3-\eigenvar) +8(4-\eigenvar) \\
+    &=& -\eigenvar^3 +4\eigenvar^2 +\eigenvar - 4.
+  \end{eqnarray*}
+  \vspace{-8ex}\par
+\end{solution}
+
+It is time to summarize the method for finding the eigenvalues and
+eigenvectors of a matrix.
 
 \begin{procedure}{Finding eigenvalues and eigenvectors}{find-eigenvalues-vectors}
-\index{eigenvalues!calculating}\index{eigenvectors!calculating}%
-Let $A$ be an $n \times n$-matrix. 
-\begin{enumerate}
-\item First, find the eigenvalues $\lambda$ of $A$ by solving the equation $\det \tup{\eigenVar I -A } = 0$. 
-
-\item For each $\lambda$, find the basic eigenvectors $X \neq 0$ by finding the basic solutions to  $\tup{\lambda I - A } X = 0$.
-\end{enumerate}
-
-To verify your work, make sure that $AX=\lambda X$
-for each $\lambda$ and associated eigenvector $X$.
+  \index{eigenvalue!calculating}%
+  \index{eigenvector!calculating}%
+  \index{matrix!eigenvalue!calculating}%
+  \index{matrix!eigenvector!calculating}%
+  Let $A$ be an $n\times n$-matrix. To find the eigenvalues and
+  eigenvectors of $A$:
+  \begin{enumerate}
+  \item Calculate the characteristic polynomial $\det(A-\eigenvar I)$.
+  \item The eigenvalues are the roots of the characteristic polynomial.
+  \item For each eigenvalue $\eigenvar$, find a basis for the
+    eigenvectors by solving the homogeneous system
+    \begin{equation*}
+      (A-\eigenvar I)\vect{v} = \vect{0}.
+    \end{equation*}
+  \end{enumerate}
+  To double-check your work, make sure that $A\vect{v}=\eigenvar\vect{v}$
+  for each eigenvalue $\eigenvar$ and associated eigenvector $\vect{v}$.
 \end{procedure}
 
-We will explore these steps further in the following example.
-
-\begin{example}{Find the eigenvalues and eigenvectors}{find-eigenvectors-2x2}
-Let $A = \begin{mymatrix}{rr}
--5 & 2 \\
--7 & 4 
-\end{mymatrix}$. Find its eigenvalues and eigenvectors. 
+\begin{example}{Finding eigenvalues and eigenvectors}{finding-eigenvalues-eigenvectors}
+  Find the eigenvalues and eigenvectors of the matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      3  & 0 &  2 \\
+      6  & 4 &  3 \\
+      -4 & 0 & -3 \\
+    \end{mymatrix}.
+  \end{equation*}
 \end{example}
 
 \begin{solution}
-We will use Procedure~\ref{proc:find-eigenvalues-vectors}. First we find the eigenvalues of $A$ by solving the equation
-\[
-\det \tup{\eigenVar I - A } =0
-\]
-
-This gives
-\begin{eqnarray*}
-\det \tup{\eigenVar \begin{mymatrix}{rr}
-1 & 0 \\
-0 & 1 
-\end{mymatrix} 
-- 
-\begin{mymatrix}{rr}
--5 & 2 \\
--7 & 4
-\end{mymatrix} } &=& 0 \\
-\\
-\det \begin{mymatrix}{cc}
-\eigenVar+5 & -2 \\
-7 & \eigenVar-4 
-\end{mymatrix} &=& 0 
-\end{eqnarray*}
-
-Computing the determinant as usual, the result is
-\[
-\eigenVar^2 + \eigenVar - 6 = 0
-\]
-
-Solving this equation, we find that $\lambda_1 = 2$ and $\lambda_2 = -3$. 
-
-Now we need to find the basic eigenvectors for each $\lambda$. First we will find the eigenvectors for $\lambda_1 = 2$. We wish to find all vectors $X \neq 0$ such that $AX = 2X$. These are the solutions to $(2I - A)X = 0$. 
-\begin{eqnarray*}
-\tup{
-2 \begin{mymatrix}{rr}
-1 & 0 \\
-0 & 1 
-\end{mymatrix} - 
-\begin{mymatrix}{rr}
--5 & 2 \\
--7 & 4
-\end{mymatrix}
- } \begin{mymatrix}{c}
-x \\
-y 
-\end{mymatrix} &=& \begin{mymatrix}{r}
-0 \\
-0
-\end{mymatrix} \\
-\\
-\begin{mymatrix}{rr}
-7 & -2 \\
-7 & -2
-\end{mymatrix} \begin{mymatrix}{c}
-x \\
-y 
-\end{mymatrix} &=& \begin{mymatrix}{r}
-0 \\
-0
-\end{mymatrix} 
-\end{eqnarray*}
-
-The augmented matrix for this system and corresponding {\rref} are given by 
-\[
-\begin{mymatrix}{rr|r}
-7 & -2 & 0 \\
-7 & -2 & 0
-\end{mymatrix} 
-\rightarrow \cdots \rightarrow 
-\begin{mymatrix}{rr|r}
-1 & -\vspace{0.05in}\frac{2}{7} & 0 \\
-0 & 0 & 0 
-\end{mymatrix} 
-\]
-
-The solution is any vector of the form
-\[
-\begin{mymatrix}{c}
-\vspace{0.05in}\frac{2}{7}s \\
-s
-\end{mymatrix}
-=
-s
-\begin{mymatrix}{r}
-\vspace{0.05in}\frac{2}{7} \\
-1
-\end{mymatrix}
-\]
-
-Multiplying this vector by $7$ we obtain a simpler description for the solution to this system, given by
-\[
-t \begin{mymatrix}{r}
-2 \\
-7
-\end{mymatrix}
-\]
-
-This gives the basic eigenvector for $\lambda_1 = 2$ as 
-\[
-\begin{mymatrix}{r}
-2\\
-7
-\end{mymatrix}
-\]
-
-To check, we verify that $AX = 2X$ for this basic eigenvector. 
-
-\[
-\begin{mymatrix}{rr}
--5 & 2 \\
--7 & 4
-\end{mymatrix} 
-\begin{mymatrix}{r}
-2 \\
-7
-\end{mymatrix}
-=
-\begin{mymatrix}{r}
-4 \\
-14
-\end{mymatrix}
-=
-2
-\begin{mymatrix}{r}
-2\\
-7
-\end{mymatrix}
-\]
-
-This is what we wanted, so we know this basic eigenvector is correct. 
-
-Next we will repeat this process to find the basic eigenvector for $\lambda_2 = -3$. We wish to find all vectors $X \neq 0$ such that $AX = -3X$. These are the solutions to $((-3)I-A)X = 0$. 
-\begin{eqnarray*}
-\tup{
-(-3) \begin{mymatrix}{rr}
-1 & 0 \\
-0 & 1 
-\end{mymatrix} - 
-\begin{mymatrix}{rr}
--5 & 2 \\
--7 & 4
-\end{mymatrix}  } \begin{mymatrix}{c}
-x \\
-y 
-\end{mymatrix} &=& \begin{mymatrix}{r}
-0 \\
-0
-\end{mymatrix} \\
-\begin{mymatrix}{rr}
-2 & -2 \\
-7 & -7
-\end{mymatrix} \begin{mymatrix}{c}
-x \\
-y 
-\end{mymatrix} &=& \begin{mymatrix}{r}
-0 \\
-0
-\end{mymatrix} 
-\end{eqnarray*}
-
-The augmented matrix for this system and corresponding {\rref} are given by 
-\[
-\begin{mymatrix}{rr|r}
-2 & -2 & 0 \\
-7 & -7 & 0
-\end{mymatrix} 
-\rightarrow \cdots \rightarrow 
-\begin{mymatrix}{rr|r}
-1 & -1 & 0 \\
-0 & 0 & 0 
-\end{mymatrix} 
-\]
-
-The solution is any vector of the form
-\[
-\begin{mymatrix}{c}
-s \\
-s
-\end{mymatrix}
-=
-s
-\begin{mymatrix}{r}
-1 \\
-1
-\end{mymatrix}
-\]
-
-This gives the basic eigenvector for $\lambda_2 = -3$ as 
-\[
-\begin{mymatrix}{r}
-1\\
-1
-\end{mymatrix}
-\]
-
-To check, we verify that $AX = -3X$ for this basic eigenvector. 
-
-\[
-\begin{mymatrix}{rr}
--5 & 2 \\
--7 & 4
-\end{mymatrix} 
-\begin{mymatrix}{r}
-1 \\
-1
-\end{mymatrix}
-=
-\begin{mymatrix}{r}
--3 \\
--3
-\end{mymatrix}
-=
--3
-\begin{mymatrix}{r}
-1\\
-1
-\end{mymatrix}
-\]
-
-This is what we wanted, so we know this basic eigenvector is correct. 
+  We already found the characteristic polynomial in
+  Example~\ref{exa:characteristic-polynomial}. It is
+  \begin{equation*}
+    p(\eigenvar) = \det(A-\eigenvar I) = -\eigenvar^3 +4\eigenvar^2 +\eigenvar - 4.
+  \end{equation*}
+  Finding the roots%
+  \index{characteristic polynomial!root}%
+  \index{matrix!characteristic polynomial!root}%
+  \index{root!of a polynomial}%
+  \index{polynomial!root}
+  of a cubic polynomial can be a bit tricky, but
+  with some trial and error, we can find that $\eigenvar=1$ is a
+  root. We can therefore factor out $(\eigenvar-1)$:
+  \begin{equation*}
+    p(\eigenvar) = (\eigenvar-1)(-\eigenvar^2+3\eigenvar+4).
+  \end{equation*}
+  Then we can use the quadratic formula to find the remaining two
+  roots:
+  \begin{equation*}
+    \eigenvar = \frac{-3\pm\sqrt{9+16}}{-2},
+  \end{equation*}
+  which yields the two roots $\eigenvar=-1$ and $\eigenvar=4$. Therefore,
+  we have
+  \begin{equation*}
+    p(\eigenvar) = -(\eigenvar-1)(\eigenvar+1)(\eigenvar-4),
+  \end{equation*}
+  and the eigenvalues of $A$ are $\eigenvar=1$, $\eigenvar=-1$, and
+  $\eigenvar=4$. We now find the eigenvectors for each eigenvalue.
+  \begin{itemize}
+  \item {\bf{\underline{For $\eigenvar=1$:}}} We must solve
+    $(A-I)\/\vect{v}=\vect{0}$, i.e.,
+    \begin{equation*}
+      \begin{mymatrix}{rrr}
+        2  & 0 &  2 \\
+        6  & 3 &  3 \\
+        -4 & 0 & -4 \\
+      \end{mymatrix}\vect{v}=\vect{0}.
+    \end{equation*}
+    The basic solution is
+    \begin{equation*}
+      \vect{v}_1 = \begin{mymatrix}{r} -1 \\ 1 \\ 1 \end{mymatrix}.
+    \end{equation*}
+  \item {\bf{\underline{For $\eigenvar=-1$:}}} We must solve
+    $(A+I)\/\vect{v}=\vect{0}$, i.e.,
+    \begin{equation*}
+      \begin{mymatrix}{rrr}
+        4  & 0 &  2 \\
+        6  & 5 &  3 \\
+        -4 & 0 & -2 \\
+      \end{mymatrix}\vect{v}=\vect{0}.
+    \end{equation*}
+    The basic solution is
+    \begin{equation*}
+      \vect{v}_2 = \begin{mymatrix}{r} -1 \\ 0 \\ 2 \end{mymatrix}.
+    \end{equation*}
+  \item {\bf{\underline{For $\eigenvar=4$:}}} We must solve
+    $(A-4I)\vect{v}=\vect{0}$, i.e.,
+    \begin{equation*}
+      \begin{mymatrix}{rrr}
+        -1  & 0 &  2 \\
+        6  & 0 &  3 \\
+        -4 & 0 & -7 \\
+      \end{mymatrix}\vect{v}=\vect{0}.
+    \end{equation*}
+    The basic solution is
+    \begin{equation*}
+      \vect{v}_3 = \begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}.
+    \end{equation*}
+  \end{itemize}
 \end{solution}
-
-The following is an example using Procedure~\ref{proc:find-eigenvalues-vectors} for a $3 \times 3$-matrix. 
-
-\begin{example}{Find the eigenvalues and eigenvectors}{find-eigenvectors}
-Find the eigenvalues and eigenvectors for the matrix
-\begin{equation*}
-A=\begin{mymatrix}{rrr}
-5 & -10 & -5 \\
-2 & 14 & 2 \\
--4 & -8 & 6
-\end{mymatrix} 
-\end{equation*}
-\end{example}
-
-\begin{solution}
-We will use Procedure~\ref{proc:find-eigenvalues-vectors}.
-First we need to find the eigenvalues of $A$. Recall that they are the
-solutions of the equation
-\begin{equation*}
-\det \tup{\eigenVar I - A } =0
-\end{equation*}
-
-In this case the equation is
-\begin{equation*}
-\det \tup{
-\eigenVar \begin{mymatrix}{rrr}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1
-\end{mymatrix}
--
-\begin{mymatrix}{rrr}
-5 & -10 & -5 \\
-2 & 14 & 2 \\
--4 & -8 & 6
-\end{mymatrix}  } =0
-\end{equation*}
-
-which becomes
-
-\begin{equation*}
-\det \begin{mymatrix}{ccc}
-\eigenVar - 5 & 10 & 5 \\
--2 & \eigenVar - 14  & -2 \\
-4 & 8 & \eigenVar - 6
-\end{mymatrix} = 0
-\end{equation*}
-
-Using Laplace Expansion, compute this determinant and simplify.
-The result is the following equation.
-\begin{equation*}
-\tup{\eigenVar -5} \tup{\eigenVar ^{2}-20\eigenVar +100} =0
-\end{equation*}
-
-Solving this equation, we find that the eigenvalues are $\lambda_1 = 5, \lambda_2=10$ and
-$\lambda_3=10$. Notice that $10$ is a root of multiplicity two due to
-\begin{equation*}
-\eigenVar ^{2}-20\eigenVar +100=\tup{\eigenVar -10} ^{2}
-\end{equation*}
-Therefore, $\lambda_2 = 10$ is an eigenvalue of multiplicity two. 
-
-Now that we have found the eigenvalues for $A$, we can compute the eigenvectors.
-
-First we will find the basic eigenvectors for $\lambda_1 =5$. In other
-words, we want to find all non-zero vectors $X$ so that $AX =
-5X$. This requires that we solve the equation $\tup{5 I - A 
-} X = 0$ for $X$ as follows.
-\begin{equation*}
-\tup{5\begin{mymatrix}{rrr}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1
-\end{mymatrix} -  \begin{mymatrix}{rrr}
-5 & -10 & -5 \\
-2 & 14 & 2 \\
--4 & -8 & 6
-\end{mymatrix}  } \begin{mymatrix}{r}
-x \\
-y \\
-z
-\end{mymatrix} =\begin{mymatrix}{r}
-0 \\
-0 \\
-0
-\end{mymatrix} 
-\end{equation*}
-
-That is you need to find the solution to
-\begin{equation*}
-\allowbreak \begin{mymatrix}{rrr}
-0 & 10 & 5 \\
--2 & -9 & -2 \\
-4 & 8 & -1
-\end{mymatrix} \begin{mymatrix}{r}
-x \\
-y \\
-z
-\end{mymatrix} =\begin{mymatrix}{r}
-0 \\
-0 \\
-0
-\end{mymatrix}
-\end{equation*}
-
-By now this is a familiar problem. You set up the augmented matrix and row
-reduce to get the solution. Thus the matrix you must row reduce is
-\begin{equation*}
-\begin{mymatrix}{rrr|r}
- 0 & 10 & 5 & 0 \\
- -2 &  -9  &  -2 & 0 \\
-4 & 8  &  -1 & 0
-\end{mymatrix}  
-\end{equation*}
-The {\rref} is
-\begin{equation*}
-\begin{mymatrix}{rrr|r}
-1 & 0 & -
-\vspace{0.05in}\frac{5}{4} & 0 \\
-0 & 1 & \vspace{0.05in}\frac{1}{2} & 0 \\
-0 & 0 & 0 & 0
-\end{mymatrix}
-\end{equation*}
-
-and so the solution is any vector of the form
-\begin{equation*}
-\begin{mymatrix}{c}
-\vspace{0.05in}\frac{5}{4}s \\
--\vspace{0.05in}\frac{1}{2}s \\
-s
-\end{mymatrix} =s\begin{mymatrix}{r}
-\vspace{0.05in}\frac{5}{4} \\
--\vspace{0.05in}\frac{1}{2} \\
-1
-\end{mymatrix}
-\end{equation*}
-where $s\in \R$. If we multiply this vector by $4$, we obtain
-a simpler description for the solution to this system, as given by
-\begin{equation}
- t \begin{mymatrix}{r}
- 5 \\
--2 \\
- 4
-\end{mymatrix}  \label{basic-eigenvect}
-\end{equation}
-where $t\in \R$. Here, the basic eigenvector is given by 
-\begin{equation*}
-X_1 = 
-\begin{mymatrix}{r}
-5 \\
--2 \\
-4
-\end{mymatrix}
-\end{equation*}
-
-Notice that we cannot let $t=0$ here, because this would result in the zero vector and
-eigenvectors are never equal to 0!
-Other than this value, every other choice of $t$ in {\eqref{basic-eigenvect}} results in
-an eigenvector.
-
-It is a good idea to check your work! To do so, we will
-take the original matrix and multiply by the basic eigenvector $X_1$. We check 
-to see if we get $5X_1$.
-\begin{equation*}
-\begin{mymatrix}{rrr}
-5 & -10 & -5 \\
-2 & 14 & 2 \\
--4 & -8 & 6
-\end{mymatrix} \begin{mymatrix}{r}
- 5 \\
--2 \\
- 4
-\end{mymatrix} = \begin{mymatrix}{r}
- 25 \\
--10 \\
- 20
-\end{mymatrix} =5\begin{mymatrix}{r}
- 5 \\
--2 \\
- 4
-\end{mymatrix}
-\end{equation*}
-This is what we wanted, so we know that our calculations were correct.
-
-Next we will find the basic eigenvectors for $\lambda_2, \lambda_3=10$. These vectors are the basic 
-solutions to the equation,
-\begin{equation*}
-\tup{10\begin{mymatrix}{rrr}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1
-\end{mymatrix} - \begin{mymatrix}{rrr}
-5 & -10 & -5 \\
-2 & 14 & 2 \\
--4 & -8 & 6
-\end{mymatrix}  } \begin{mymatrix}{r}
-x \\
-y \\
-z
-\end{mymatrix} =\begin{mymatrix}{r}
-0 \\
-0 \\
-0
-\end{mymatrix}
-\end{equation*}
-That is you must find the solutions to
-\begin{equation*}
-\begin{mymatrix}{rrr}
-5 & 10 & 5 \\
- -2 &  -4  & -2 \\
-4 & 8  & 4
-\end{mymatrix} \begin{mymatrix}{c}
-x \\
-y \\
-z
-\end{mymatrix} =\begin{mymatrix}{r}
-0 \\
-0 \\
-0
-\end{mymatrix}
-\end{equation*}
-
-Consider the augmented matrix 
-\begin{equation*}
-\begin{mymatrix}{rrr|r}
-5 & 10 & 5 & 0 \\
- -2 &  -4  &  -2 & 0 \\
-4 & 8  & 4 & 0
-\end{mymatrix}
-\end{equation*}
-The {\rref} for this matrix is
-\begin{equation*}
-\begin{mymatrix}{rrr|r}
-1 & 2 & 1 & 0 \\
-0 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0
-\end{mymatrix}
-\end{equation*}
-and so the eigenvectors are of the form
-\begin{equation*}
-\begin{mymatrix}{c}
--2s-t \\
-s \\
-t
-\end{mymatrix} =s\begin{mymatrix}{r}
--2 \\
-1 \\
-0
-\end{mymatrix} +t\begin{mymatrix}{r}
--1 \\
-0 \\
-1
-\end{mymatrix} 
-\end{equation*}
-Note that you can't pick $t$ and $s$ both equal to zero because this would result in
-the zero vector and eigenvectors are never equal to zero. 
-
-Here, there are two basic eigenvectors, given by 
-\begin{equation*}
-X_2
-=
-\begin{mymatrix}{r}
--2 \\
-1\\
-0
-\end{mymatrix} ,
-X_3
-=
-\begin{mymatrix}{r}
--1 \\
-0 \\
-1
-\end{mymatrix}
-\end{equation*}
-
-Taking any (non-zero) linear combination of $X_2$ and $X_3$ will also result in an eigenvector for
-the eigenvalue $\lambda =10$. As in the case for $\lambda =5$, always check your work! 
-For the first basic eigenvector,  we can check $AX_2 = 10 X_2$ as follows. 
-\begin{equation*}
-\begin{mymatrix}{rrr}
-5 & -10 & -5 \\
-2 & 14 & 2 \\
--4 & -8 & 6
-\end{mymatrix} \begin{mymatrix}{r}
--1 \\
-0 \\
-1
-\end{mymatrix} = \begin{mymatrix}{r}
--10 \\
-0 \\
-10
-\end{mymatrix} =10\begin{mymatrix}{r}
--1 \\
-0 \\
-1
-\end{mymatrix}
-\end{equation*}
-This is what we wanted. Checking the second basic eigenvector, $X_3$, is left as an exercise. 
-\end{solution}
-
-It is important to remember that for any eigenvector $X$, $X \neq 0$. However, it is possible 
-to have eigenvalues equal to zero. This is illustrated in the following example. 
 
 \begin{example}{A zero eigenvalue}{zero-eigenvalue}
-Let
-\begin{equation*}
-A=\begin{mymatrix}{rrr}
-2 & 2 & -2 \\
-1 & 3 & -1 \\
--1 & 1 & 1
-\end{mymatrix}
-\end{equation*}
-Find the eigenvalues and eigenvectors of $A$.
+  Let
+  \begin{equation*}
+    A=\begin{mymatrix}{rrr}
+      2 & 2 & -2 \\
+      1 & 3 & -1 \\
+      -1 & 1 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Find the eigenvalues and eigenvectors of $A$.
 \end{example}
 
 \begin{solution}
-First we find the eigenvalues of $A$. We will do so using Definition~\ref{def:eigenvalues-and-eigenvectors}. 
-
-In order to find the eigenvalues of $A$, we solve the following equation.
-\begin{equation*}
-\det \tup{\eigenVar I -A } =
-\det  \begin{mymatrix}{ccc}
-\eigenVar -2 & -2 & 2 \\
- -1 & \eigenVar - 3  & 1 \\
-1 & -1 &  \eigenVar  -1 
-\end{mymatrix}
- =0
-\end{equation*}
-
-This reduces to $ \eigenVar^{3}-6 \eigenVar^{2}+8\eigenVar =0$. You can verify that the
-solutions are $ \lambda_1 = 0, \lambda_2 = 2, \lambda_3 = 4$.
-Notice that while eigenvectors can never equal $0$, it is possible to have an eigenvalue equal to $0$. 
-
-Now we will find the basic eigenvectors. For $\lambda_1 =0$, we need to solve the equation
-$\tup{0 I - A } X = 0$. This equation becomes $-AX=0$, and so the augmented matrix for finding
-the solutions is given by 
-\begin{equation*}
-\begin{mymatrix}{rrr|r}
--2 & -2 & 2 & 0 \\
--1 & -3 & 1 & 0 \\
-1 & -1 & -1 & 0
-\end{mymatrix}
-\end{equation*}
-The {\rref} is
-\begin{equation*}
-\begin{mymatrix}{rrr|r}
-1 & 0 & -1 & 0 \\
-0 & 1 &  0 & 0 \\
-0 & 0 &  0 & 0
-\end{mymatrix}
-\end{equation*}
-Therefore, the eigenvectors are of the form $ t\begin{mymatrix}{r}
-1 \\
-0 \\
-1
-\end{mymatrix}$ where $t\neq 0$ and the basic eigenvector is given by
-\begin{equation*}
-X_1
-=
-\begin{mymatrix}{r}
-1 \\
-0 \\
-1
-\end{mymatrix}
-\end{equation*}
-
-We can verify that this eigenvector is correct by checking that the equation $AX_1 = 0 X_1$ holds.
-The product $AX_1$ is given by
-\begin{equation*}
-AX_1=\begin{mymatrix}{rrr}
-2 & 2 & -2 \\
-1 & 3 & -1 \\
--1 & 1 & 1
-\end{mymatrix}
-\begin{mymatrix}{r}
-1 \\
-0 \\
-1
-\end{mymatrix}
-=
-\begin{mymatrix}{r}
-0 \\
-0 \\
-0
-\end{mymatrix}
-\end{equation*}
-
-This clearly equals $0X_1$, so the equation holds. Hence, $AX_1 = 0X_1$ and so $0$ is an eigenvalue of $A$.
-
-Computing the other basic eigenvectors is left as an exercise. 
+  To find the eigenvalues of $A$, we first compute the characteristic
+  polynomial.
+  \begin{equation*}
+    \det(A-\eigenvar I) =
+    \begin{absmatrix}{ccc}
+      2-\eigenvar & 2 & -2 \\
+      1 & 3-\eigenvar & -1 \\
+      -1 & 1 & 1-\eigenvar \\
+    \end{absmatrix}
+    = -\eigenvar^{3}+6 \eigenvar^{2}-8\eigenvar.
+  \end{equation*}
+  You can verify that the roots of this polynomial are
+  $\eigenvar_1 = 0$, $\eigenvar_2 = 2$, $\eigenvar_3 = 4$.  Notice that
+  while eigenvectors can never equal $0$, it is possible to have an
+  eigenvalue equal to $0$.  Now we will find the basic
+  eigenvectors.
+  \begin{itemize}
+  \item {\bf{\underline{For $\eigenvar_1 =0$:}}} We must solve the
+    equation $(A-0I)\vect{v} = \vect{0}$. This equation becomes
+    $A\vect{v}=\vect{0}$. We write the augmented matrix for this
+    system and reduce to {\ef}:
+    \begin{equation*}
+      \begin{mymatrix}{rrr|r}
+        2 & 2 & -2 & 0 \\
+        1 & 3 & -1 & 0 \\
+        -1 & 1 & 1 & 0 \\
+      \end{mymatrix}
+      \roweq\ldots\roweq
+      \begin{mymatrix}{rrr|r}
+        1 & 0 & -1 & 0 \\
+        0 & 1 &  0 & 0 \\
+        0 & 0 &  0 & 0 \\
+      \end{mymatrix}.
+    \end{equation*}
+    The basic solution is
+    \begin{equation*}
+      \vect{v}_1
+      =
+      \begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix}.
+    \end{equation*}
+  \item {\bf{\underline{For $\eigenvar_2=2$:}}} We solve the
+    equation $(A-2I)\vect{v} = \vect{0}$:
+    \begin{equation*}
+      \begin{mymatrix}{rrr|r}
+        0  & 2 & -2 & 0 \\
+        1  & 1 & -1 & 0 \\
+        -1 & 1 & -1 & 0 \\
+      \end{mymatrix}
+      \roweq\ldots\roweq
+      \begin{mymatrix}{rrr|r}
+        1  & 0 &  0 & 0 \\
+        0  & 1 & -1 & 0 \\
+        0  & 0 &  0 & 0 \\
+      \end{mymatrix}.
+    \end{equation*}
+    The basic solution is
+    \begin{equation*}
+      \vect{v}_2
+      =
+      \begin{mymatrix}{r} 0 \\ 1 \\ 1 \end{mymatrix}.
+    \end{equation*}
+  \item {\bf{\underline{For $\eigenvar_3=4$:}}} We solve the
+    equation $(A-4I)\vect{v} = \vect{0}$:
+    \begin{equation*}
+      \begin{mymatrix}{rrr|r}
+        -2 & 2  & -2 & 0 \\
+        1  & -1 & -1 & 0 \\
+        -1 &  1 & -3 & 0 \\
+      \end{mymatrix}
+      \roweq\ldots\roweq
+      \begin{mymatrix}{rrr|r}
+        1 & -1 & 0 & 0 \\
+        0 &  0 & 1 & 0 \\
+        0 &  0 & 0 & 0 \\
+      \end{mymatrix}.
+    \end{equation*}
+    The basic solution is
+    \begin{equation*}
+      \vect{v}_3
+      =
+      \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix}.
+    \end{equation*}
+  \end{itemize}
+  Thus we have found the eigenvectors $\vect{v}_1$ for $\eigenvar_1$,
+  $\vect{v}_2$ for $\eigenvar_2$, and $\vect{v}_3$ for $\eigenvar_3$.
+  We can double-check our answers by checking the equation
+  $A\vect{v}=\eigenvar\vect{v}$ in each case:
+  \begin{eqnarray*}
+    A\vect{v}_1
+    &=&
+    \begin{mymatrix}{rrr}
+      2 & 2 & -2 \\
+      1 & 3 & -1 \\
+      -1 & 1 & 1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix}
+    =
+    \begin{mymatrix}{r} 0 \\ 0 \\ 0 \end{mymatrix}
+    = 0\vect{v}_1,
+    \\
+    A\vect{v}_2
+    &=&
+    \begin{mymatrix}{rrr}
+      2 & 2 & -2 \\
+      1 & 3 & -1 \\
+      -1 & 1 & 1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{r} 0 \\ 1 \\ 1 \end{mymatrix}
+    =
+    \begin{mymatrix}{r} 0 \\ 2 \\ 2 \end{mymatrix}
+    = 2\vect{v}_2,
+    \\
+    A\vect{v}_3
+    &=&
+    \begin{mymatrix}{rrr}
+      2 & 2 & -2 \\
+      1 & 3 & -1 \\
+      -1 & 1 & 1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix}
+    =
+    \begin{mymatrix}{r} 4 \\ 4 \\ 0 \end{mymatrix}
+    = 4\vect{v}_3.
+  \end{eqnarray*}
+  Therefore, our eigenvectors and eigenvalues are correct.
 \end{solution}
 
-In the following sections, we examine ways to simplify this process of finding eigenvalues and eigenvectors by using 
-properties of special types of matrices.
+We conclude this section by considering the eigenvalues of a
+triangular matrix. Recall from
+Definition~\ref{def:triangular-matrices} that a matrix is
+\textbf{upper triangular}%
+\index{matrix!upper triangular!eigenvalues of}%
+\index{matrix!triangular!eigenvalues of}%
+\index{upper triangular matrix!eigenvalues}%
+\index{triangular matrix!eigenvalues}%
+\index{eigenvalue!of triangular matrix}
+if all entries below the main diagonal zero
+zero, and \textbf{lower triangular}%
+\index{matrix!lower triangular!eigenvalues of}%
+\index{lower triangular matrix!eigenvalues}
+if all entries above the main
+diagonal are zero.
+
+\begin{example}{Eigenvalues of a triangular matrix}{eigenvalues-triangular-matrix}
+  Find the eigenvalues of
+  \begin{equation*}
+    A=\begin{mymatrix}{rrr}
+      1 & 2 & 4 \\
+      0 & 4 & 7 \\
+      0 & 0 & 6 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We calculate $\det(A - \eigenvar I) = 0$ as follows:
+  \begin{eqnarray*}
+    \det (A - \eigenvar I) =
+    \det \begin{mymatrix}{ccc}
+      1-\eigenvar & 2 & 4 \\
+      0 & 4-\eigenvar & 7 \\
+      0 & 0 & 6-\eigenvar \\
+    \end{mymatrix} = (1-\eigenvar)(4-\eigenvar)(6-\eigenvar).
+  \end{eqnarray*}
+  Solving the equation $(1-\eigenvar)(4-\eigenvar)(6-\eigenvar) = 0$
+  results in the eigenvalues $\eigenvar_1 = 1$, $\eigenvar_2 = 4$, and
+  $\eigenvar_3 = 6$.  Thus the eigenvalues are the entries on the main
+  diagonal of $A$.
+\end{solution}
+
+Clearly, the same is true for any (upper or lower) triangular
+matrix. We therefore have the following proposition:
+
+\begin{proposition}{Eigenvalues of a triangular matrix}{eigenvalues-triangular-matrix}
+  Let $A$ be an upper or lower triangular matrix. Then the eigenvalues
+  of $A$ are the entries on the main diagonal.
+\end{proposition}

@@ -14,42 +14,42 @@ kernel of a linear transformation.
 
 \begin{definition}{Kernel and image}{}
 Let $V$ and $W$ be vector spaces and let $T:V\rightarrow W$ be a linear transformation. Then the image of $T$
-denoted as $\func{im}\tup{T} $ is defined to be the set 
+denoted as $\func{im}(T) $ is defined to be the set 
 \begin{equation*}
 \set{T(\vect{v}):\vect{v}\in V}
 \end{equation*}
 In words, it consists of all vectors in $W$ which equal $T(\vect{v})$ for some $
-\vect{v}\in V$. The kernel, $\ker \tup{T}$, 
+\vect{v}\in V$. The kernel, $\ker (T)$, 
 consists of all $\vect{v}\in V$ such that $T(\vect{v})=\vect{0}$. That is, 
 \begin{equation*}
-\ker \tup{T} =\set{\vect{v}\in V:T(\vect{v})=\vect{0}}
+\ker (T) =\set{\vect{v}\in V:T(\vect{v})=\vect{0}}
 \end{equation*}
 \end{definition}
 
-Then in fact, both $\func{im}\tup{T} $ and $\ker \tup{T} $
+Then in fact, both $\func{im}(T) $ and $\ker (T) $
 are subspaces of $W$ and $V$ respectively.
 
 \begin{proposition}{Kernel and image as subspaces}{kernel-image-vector-spaces}
-Let $V,W$ be vector spaces and let $T:V\rightarrow W$ be a linear transformation. Then $\ker \tup{
-T} \subseteq V$ and $\func{im}\tup{T} \subseteq W$. In fact, they are both subspaces. 
+Let $V,W$ be vector spaces and let $T:V\rightarrow W$ be a linear transformation. Then $\ker (
+T) \subseteq V$ and $\func{im}(T) \subseteq W$. In fact, they are both subspaces. 
 \end{proposition}
 
 \begin{proof}
-First consider $\ker \tup{T}$. It is necessary to
-show that if $\vect{v}_{1},\vect{v}_{2}$ are vectors in $\ker \tup{T} $
+First consider $\ker (T)$. It is necessary to
+show that if $\vect{v}_{1},\vect{v}_{2}$ are vectors in $\ker (T) $
 and if $a,b$ are scalars, then $a\vect{v}_{1}+b\vect{v}_{2}$ is also in $\ker
-\tup{T}$. But 
+(T)$. But 
 \begin{equation*}
-T\tup{a\vect{v}_{1}+b\vect{v}_{2}} =aT(\vect{v}_{1})+bT(\vect{v}_{2})=a\vect{0}+b\vect{0}=\vect{0}
+T(a\vect{v}_{1}+b\vect{v}_{2}) =aT(\vect{v}_{1})+bT(\vect{v}_{2})=a\vect{0}+b\vect{0}=\vect{0}
 \end{equation*}
-Thus $\ker \tup{T} $ is a subspace of $V$.
+Thus $\ker (T) $ is a subspace of $V$.
 
-Next suppose $T(\vect{v}_{1}),T(\vect{v}_{2})$ are two vectors in $\func{im}\tup{
-T}$. Then if $a,b$ are scalars, 
+Next suppose $T(\vect{v}_{1}),T(\vect{v}_{2})$ are two vectors in $\func{im}(
+T)$. Then if $a,b$ are scalars, 
 \begin{equation*}
-aT(\vect{v}_{2})+bT(\vect{v}_{2})=T\tup{a\vect{v}_{1}+b\vect{v}_{2}}
+aT(\vect{v}_{2})+bT(\vect{v}_{2})=T(a\vect{v}_{1}+b\vect{v}_{2})
 \end{equation*}
-and this last vector is in $\func{im}\tup{T} $ by definition. 
+and this last vector is in $\func{im}(T) $ by definition. 
 \end{proof}
 
 Consider the following example.
@@ -63,9 +63,9 @@ Find the kernel and image of $T$.
 \begin{solution}
 We will first find the kernel of $T$. It consists of all polynomials in $\Poly_1$ that have $1$ for a root. 
 \begin{eqnarray*}
-\func{ker}(T) & = & \set{p(x)\in \Poly_1 ~|~ p(1)=0} \\
-& = & \set{ax+b ~|~ a,b\in\R \mbox{ and }a+b=0} \\
-& = & \set{ax-a ~|~ a\in\R}
+\func{ker}(T) & = & \set{p(x)\in \Poly_1 \mid p(1)=0} \\
+& = & \set{ax+b \mid a,b\in\R \mbox{ and }a+b=0} \\
+& = & \set{ax-a \mid a\in\R}
 \end{eqnarray*}
 Therefore a basis for $\func{ker}(T)$ is 
 \[
@@ -75,9 +75,9 @@ Notice that this is a subspace of $\Poly_1$.
 
 Now consider the image. It consists of all numbers which can be obtained by evaluating all polynomials in $\Poly_1$ at $1$. 
 \begin{eqnarray*}
-\func{im}(T) & = & \set{p(1) ~|~ p(x)\in \Poly_1} \\
- & = & \set{a+b ~|~ ax+b\in \Poly_1} \\
- & = & \set{a+b ~|~ a,b\in\R}\\
+\func{im}(T) & = & \set{p(1) \mid p(x)\in \Poly_1} \\
+ & = & \set{a+b \mid ax+b\in \Poly_1} \\
+ & = & \set{a+b \mid a,b\in\R}\\
  & = & \R
 \end{eqnarray*}
 Therefore a basis for $\func{im}(T)$ is 
@@ -88,7 +88,7 @@ Notice that this is a subspace of $\R$, and in fact is the space $\R$ itself.
 \end{solution}
 
 \begin{example}{Kernel and image of a linear transformation}{finding-kernel-image}
-Let $T: \Mat_{22} \mapsto \R^2$ be defined by
+Let $T: \Mat_{22} \to \R^2$ be defined by
 \[
 T \begin{mymatrix}{cc}
 a & b \\
@@ -214,22 +214,22 @@ rank of $A$ equals $n$.
 \begin{theorem}{Dimension of kernel and image}{}
 Let $T:V\rightarrow W$ be a linear transformation where $V,W$ are vector
 spaces. Suppose the dimension of $V$ is $n$.
-Then $n=\dim \tup{\ker \tup{T} } +\dim \tup{\func{im}
-\tup{T} }$.
+Then $n=\dim (\ker (T)) +\dim (\func{im}
+(T))$.
 \end{theorem}
 
 \begin{proof}
-From Proposition~\ref{prop:kernel-image-vector-spaces}, $\func{im}\tup{T} $
+From Proposition~\ref{prop:kernel-image-vector-spaces}, $\func{im}(T) $
 is a subspace of $W$. By Theorem~\ref{thm:basis-vector-space}, there exists a basis for $
-\func{im}\tup{T} ,\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})}
-. $ Similarly, there is a basis for $\ker \tup{T} ,\set{\vect{u}
-_{1},\cdots ,\vect{u}_{s}}$. Then if $\vect{v}\in V$, there exist
+\func{im}(T) ,\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{r})}
+. $ Similarly, there is a basis for $\ker (T) ,\set{\vect{u}
+_{1},\ldots,\vect{u}_{s}}$. Then if $\vect{v}\in V$, there exist
 scalars $c_{i}$ such that 
 \begin{equation*}
 T(\vect{v})=\sum_{i=1}^{r}c_{i}T(\vect{v}_{i})
 \end{equation*}
-Hence $T\tup{\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}} =0$. It follows
-that $\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}$ is in $\ker \tup{T}$.
+Hence $T\paren{\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}} =0$. It follows
+that $\vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}$ is in $\ker (T)$.
 Hence there are scalars $a_{i}$ such that 
 \begin{equation*}
 \vect{v}-\sum_{i=1}^{r}c_{i}\vect{v}_{i}=\sum_{j=1}^{s}a_{j}\vect{u}_{j}
@@ -237,10 +237,10 @@ Hence there are scalars $a_{i}$ such that
 Hence $\vect{v}=\sum_{i=1}^{r}c_{i}\vect{v}_{i}+\sum_{j=1}^{s}a_{j}\vect{u}
 _{j}. $ Since $\vect{v}$ is arbitrary, it follows that 
 \begin{equation*}
-V=\sspan\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
+V=\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{s},\vect{v}_{1},\ldots,
 \vect{v}_{r}}
 \end{equation*}
-If the vectors $\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,
+If the vectors $\set{\vect{u}_{1},\ldots,\vect{u}_{s},\vect{v}_{1},\ldots,
 \vect{v}_{r}} $ are linearly independent, then it will follow that
 this set is a basis. Suppose then that 
 \begin{equation*}
@@ -251,15 +251,15 @@ Apply $T$ to both sides to obtain
 \sum_{i=1}^{r}c_{i}T(\vect{v}_{i})+\sum_{j=1}^{s}a_{j}T(\vect{u}
 _{j})=\sum_{i=1}^{r}c_{i}T(\vect{v}_{i})= \vect{0}
 \end{equation*}
-Since $\set{T(\vect{v}_{1}),\cdots ,T(\vect{v}_{r})} $ is linearly
+Since $\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{r})} $ is linearly
 independent, it follows that each $c_{i}=0$. Hence $\sum_{j=1}^{s}a_{j}\vect{u
-}_{j}=0$ and so, since the $\set{\vect{u}_{1},\cdots ,\vect{u}_{s}} $
+}_{j}=0$ and so, since the $\set{\vect{u}_{1},\ldots,\vect{u}_{s}} $
 are linearly independent, it follows that each $a_{j}=0$ also. It follows
-that $\set{\vect{u}_{1},\cdots ,\vect{u}_{s},\vect{v}_{1},\cdots ,\vect{v}
+that $\set{\vect{u}_{1},\ldots,\vect{u}_{s},\vect{v}_{1},\ldots,\vect{v}
 _{r}} $ is a basis for $V$ and so 
 \begin{equation*}
-n=s+r=\dim \tup{\ker \tup{T} } +\dim \tup{\func{im}\tup{
-T} }
+n=s+r=\dim (\ker (T)) +\dim (\func{im}(
+T))
 \end{equation*}
 \end{proof}
 
@@ -267,11 +267,11 @@ Consider the following definition.
 
 \begin{definition}{Rank of linear transformation}{}
 Let $T:V\rightarrow W$ be a linear transformation and suppose $V,W$ are finite dimensional vector spaces. Then
-the rank of $T$ denoted as $\func{rank}\tup{T} $ is defined as the
-dimension of $\func{im}\tup{T}$. The nullity of $T$ is the
-dimension of $\ker \tup{T}$. Thus the above theorem says that $
-\func{rank}\tup{T} +\dim \tup{\ker \tup{T} } =\dim
-\tup{V}$.
+the rank of $T$ denoted as $\rank(T) $ is defined as the
+dimension of $\func{im}(T)$. The nullity of $T$ is the
+dimension of $\ker (T)$. Thus the above theorem says that $
+\rank(T) +\dim (\ker (T)) =\dim
+(V)$.
 \end{definition}
 
 Recall the following important result. 
@@ -286,19 +286,18 @@ From this theorem follows the next corollary.
 \begin{corollary}{One to one and onto characterization}{one-one-onto-char}
 Let $T:V\rightarrow W$ be a linear map where the dimension of $V$ is $n$ and
 the dimension of $W$ is $m$. Then $T$ is one to one if and only if $\ker
-\tup{T} =\set{\vect{0}} $ and $T$ is onto if and only if $
-\func{rank}\tup{T} =m$.
+(T) =\set{\vect{0}} $ and $T$ is onto if and only if $
+\rank(T) =m$.
 \end{corollary}
 
 \begin{proof}
-The statement $\ker \tup{T } =\set{\vect{0}} $
-is equivalent to saying if $T \tup{\vect{v} }=\vect{0}$, it follows that $\vect{v}=\vect{0}$
+The statement $\ker (T) =\set{\vect{0}} $
+is equivalent to saying if $T (\vect{v})=\vect{0}$, it follows that $\vect{v}=\vect{0}$
 . Thus by Lemma~\ref{lem:one-to-one-abstract} $T$ is one to one. If $T$ is onto, then $
-\func{im}\tup{T} =W$ and so $\func{rank}\tup{T} $ which is
-defined as the dimension of $\func{im}\tup{T} $ is $m$. If $\func{
-rank}\tup{T} =m$, then by Theorem~\ref{thm:subspace-vector-space}, since $\func{im}
-\tup{T} $ is a subspace of $W$, it follows that $\func{im}\tup{
-T} =W$. 
+\func{im}(T) =W$ and so $\rank(T) $ which is
+defined as the dimension of $\func{im}(T) $ is $m$. If $\rank(T) =m$, then by Theorem~\ref{thm:subspace-vector-space}, since $\func{im}
+(T) $ is a subspace of $W$, it follows that $\func{im}(
+T) =W$. 
 \end{proof}
 
 \begin{example}{One to one transformation}{one-to-one-kernel}
@@ -317,8 +316,7 @@ Prove that $S$ is one to one but not onto.
 You may recall this example from earlier in Example~\ref{exa:one-to-one-general}. Here we will determine that $S$ is one to one, but not onto, using the method provided in Corollary~\ref{cor:one-one-onto-char}.
 
 By definition, 
-\[ \ker(S)=\set{ax^2+bx+c\in \Poly_2 ~|~ a+b=0,
-a+c=0, b-c=0, b+c=0}.\]
+\[ \ker(S)=\set{ax^2+bx+c\in \Poly_2 \mid a+b=0, a+c=0, b-c=0, b+c=0}.\]
 
 Suppose $p(x)=ax^2+bx+c\in\ker(S)$.
 This leads to a homogeneous system of four equations in three 
@@ -330,7 +328,7 @@ Putting the augmented matrix in {\rref}:
 1 & 0 & 1 & 0  \\
 0 & 1 & -1 & 0  \\
 0 & 1 & 1 & 0  \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\roweq\ldots\roweq
 \begin{mymatrix}{ccc|c}
 1 & 0 & 0 & 0  \\
 0 & 1 & 0 & 0  \\
@@ -340,7 +338,7 @@ Putting the augmented matrix in {\rref}:
 Since the unique solution is $a=b=c=0$, $\ker(S)=\set{\vect{0}}$, and thus
 $S$ is one-to-one by Corollary~\ref{cor:one-one-onto-char}.
 
-Similarly, by Corollary~\ref{cor:one-one-onto-char}, if $S$ is onto it will have $\func{rank}(S) = \func{dim}(\Mat_{22}) = 4$. The image of $S$ is given by 
+Similarly, by Corollary~\ref{cor:one-one-onto-char}, if $S$ is onto it will have $\rank(S) = \dim(\Mat_{22}) = 4$. The image of $S$ is given by 
 \[
 \func{im}(S) = \set{\begin{mymatrix}{cc}
 a+b & a+c \\ b-c & b+c \end{mymatrix} } = \sspan \set{\begin{mymatrix}{rr}
@@ -351,5 +349,5 @@ a+b & a+c \\ b-c & b+c \end{mymatrix} } = \sspan \set{\begin{mymatrix}{rr}
 0 & 1 \\
 -1 & 1 \end{mymatrix} }
 \]
-These matrices are linearly independent which means this set forms a basis for $\func{im}(S)$. Therefore the dimension of $\func{im}(S)$, also called $\func{rank}(S)$, is equal to $3$. It follows that $S$ is not onto. 
+These matrices are linearly independent which means this set forms a basis for $\func{im}(S)$. Therefore the dimension of $\func{im}(S)$, also called $\rank(S)$, is equal to $3$. It follows that $S$ is not onto. 
 \end{solution}

@@ -12,7 +12,7 @@ Recall the definition of a linear transformation discussed above.
 $T$ is a \textbf{linear transformation} if whenever $\vect{x}, \vect{y}$ are
 vectors and $k,p$ are scalars,
 \begin{equation*}
-T\tup{k\vect{x}+p\vect{y}} =k T \tup{\vect{x} } +p T\tup{\vect{y} }
+T(k\vect{x}+p\vect{y}) =k T (\vect{x}) +p T(\vect{y})
 \end{equation*}
 Thus linear transformations distribute across addition and pass scalars to
 the outside.
@@ -25,32 +25,32 @@ transformation $T_A$ induced by the coefficient matrix $A$. With this in mind co
 \begin{definition}{Particular solution of a system of equations}{particular-solutions}
 Suppose a system of linear equations can be written in the form
 \begin{equation*}
-T\tup{\vect{x}}=\vect{b}
+T(\vect{x})=\vect{b}
 \end{equation*}
-If $T\tup{\vect{x}_{p}}=\vect{b}$, 
+If $T(\vect{x}_{p})=\vect{b}$, 
 then $\vect{x}_{p}$ is called a \textbf{particular solution}\index{particular solution} of
 the linear system.
 \end{definition}
 
 Recall that a system is called homogeneous if every equation in the system is equal to $0$. 
-Suppose we represent a homogeneous system of equations by $T\tup{\vect{x}}=0$. It turns out
-that the $\vect{x}$ for which $T \tup{\vect{x}} = 0$ are part of a special set called the \textbf{null space}
-of $T$. We may also refer to the null space as the \textbf{kernel} of $T$, and we write $ker\tup{T}$. 
+Suppose we represent a homogeneous system of equations by $T(\vect{x})=0$. It turns out
+that the $\vect{x}$ for which $T (\vect{x}) = 0$ are part of a special set called the \textbf{null space}
+of $T$. We may also refer to the null space as the \textbf{kernel} of $T$, and we write $ker(T)$. 
 
 Consider the following definition.
 
 \begin{definition}{Null space or kernel of a linear transformation}{null-space-of-linear-transformation}
 Let $T$ be a linear transformation. Define
 \begin{equation*}
-\ker \tup{T} = \set{\vect{x}:T \tup{\vect{x} }= \vect{0} } 
+\ker (T) = \set{\vect{x}:T (\vect{x})= \vect{0} } 
 \end{equation*}
-The kernel\index{kernel}, $\ker \tup{T} $ consists of the set of all vectors $\vect{x}$ for which
+The kernel\index{kernel}, $\ker (T) $ consists of the set of all vectors $\vect{x}$ for which
 $T (\vect{x}) = \vect{0}$. This is also called the
 \textbf{null space}\index{null space} of $T$. 
 \end{definition}
 
 We may also refer to the kernel of $T$ as the
-\textbf{solution space}\index{solution space} of the equation $T \tup{\vect{x}} = \vect{0}$.
+\textbf{solution space}\index{solution space} of the equation $T (\vect{x}) = \vect{0}$.
 
 
 Consider the following example.
@@ -58,20 +58,20 @@ Consider the following example.
 \begin{example}{The kernel of the derivative}{kernel-derivative}
 Let $\frac{d}{dx}$ denote the linear transformation defined on $f$, the functions
 which are defined on $\R$ and have a continuous derivative. Find 
-$\ker \tup{\frac{d}{dx}}$.
+$\ker \paren{\frac{d}{dx}}$.
 \end{example}
 
 \begin{solution} The example asks for functions $f$ which the property that $\frac{df}{dx}
 =0. $ As you may know from calculus, these functions are the constant functions.
-Thus $\ker \tup{\frac{d}{dx}}$ is the set of constant functions.
+Thus $\ker \paren{\frac{d}{dx}}$ is the set of constant functions.
 \end{solution} 
 
-Definition~\ref{def:null-space-of-linear-transformation} states that $\ker \tup{T} $ is the set of
+Definition~\ref{def:null-space-of-linear-transformation} states that $\ker (T) $ is the set of
 solutions to the equation,
 \begin{equation*}
-T\tup{\vect{x} } = \vect{0}
+T(\vect{x}) = \vect{0}
 \end{equation*}
-Since we can write $T\tup{\vect{x} }$ as $A\vect{x}$, you have been solving such
+Since we can write $T(\vect{x})$ as $A\vect{x}$, you have been solving such
 equations for quite some time.
 
 We have spent a lot of time finding solutions to systems of equations in general, as well as
@@ -80,39 +80,39 @@ related homogeneous system. By this, we mean that we replace $\vect{b}$ by $\vec
 It turns out that there is a very important relationship between the solutions of the original
 system and the solutions of the associated homogeneous system. In the following 
 theorem, we use linear transformations to denote a system of equations. Remember that
-$T\tup{\vect{x}} = A\vect{x}$.
+$T(\vect{x}) = A\vect{x}$.
 
 \begin{theorem}{Particular solution and general solution}{particular-and-general-solution}
 Suppose $\vect{x}_{p}$ is a solution to the linear system given by
 \begin{equation*}
-T\tup{\vect{x} } = \vect{b}.
+T(\vect{x}) = \vect{b}.
 \end{equation*}
-Then if $\vect{y}$ is any other solution to $T\tup{\vect{x}}=\vect{b}$, 
+Then if $\vect{y}$ is any other solution to $T(\vect{x})=\vect{b}$, 
 \index{general solution!solution space} there exists $\vect{x}_0 \in \ker
-\tup{T} $ such that
+(T) $ such that
 \begin{equation*}
 \vect{y} = \vect{x}_{p}+ \vect{x}_0.
 \end{equation*}
 Hence, every solution to the linear system can be written as a sum of a particular solution, $\vect{x}_p$,
  and a solution $\vect{x}_0$ to the associated 
-homogeneous system given by $T\tup{\vect{x}}=\vect{0}$.
+homogeneous system given by $T(\vect{x})=\vect{0}$.
 \end{theorem}
 
 \begin{proof}
-Consider $\vect{y} - \vect{x}_{p}= \vect{y} + \tup{
--1} \vect{x}_{p}$. Then $T\tup{\vect{y} - \vect{x}_{p}} =T\tup{\vect{y}}
--T\tup{\vect{x}_{p} }$. Since $\vect{y}$ and $\vect{x}_{p}$ are both solutions to the system, it follows that $T\tup{\vect{y}}= \vect{b} $
-and $T\tup{\vect{x}_p} = \vect{b}$. 
+Consider $\vect{y} - \vect{x}_{p}= \vect{y} + (
+-1) \vect{x}_{p}$. Then $T(\vect{y} - \vect{x}_{p}) =T(\vect{y})
+-T(\vect{x}_{p})$. Since $\vect{y}$ and $\vect{x}_{p}$ are both solutions to the system, it follows that $T(\vect{y})= \vect{b} $
+and $T(\vect{x}_p) = \vect{b}$. 
 
-Hence, $T\tup{\vect{y}}-T\tup{\vect{x}_{p} }
+Hence, $T(\vect{y})-T(\vect{x}_{p})
 =\vect{b} - \vect{b} = \vect{0}$.  Let $\vect{x}_0 = \vect{y} - \vect{x}_{p}$.
-Then, $T\tup{\vect{x}_0}= \vect{0} $ so $\vect{x}_0$ is a solution to the associated homogeneous system and so is in $\ker \tup{T}$.
+Then, $T(\vect{x}_0)= \vect{0} $ so $\vect{x}_0$ is a solution to the associated homogeneous system and so is in $\ker (T)$.
 \end{proof}
 
 Sometimes people remember the above theorem in the following form. The
-solutions to the system $T\tup{\vect{x}}=\vect{b}$ are given by 
-$\vect{x}_{p}+\ker \tup{T} $ where $\vect{x}_{p}$ is a particular
-solution to $T\tup{\vect{x}}=\vect{b}$.
+solutions to the system $T(\vect{x})=\vect{b}$ are given by 
+$\vect{x}_{p}+\ker (T) $ where $\vect{x}_{p}$ is a particular
+solution to $T(\vect{x})=\vect{b}$.
 
 For now, we have been speaking about the kernel or null space of a linear transformation $T$. However, 
 we know that every linear transformation $T$ is determined by some matrix $A$. Therefore,
@@ -127,7 +127,7 @@ A=\begin{mymatrix}{rrrr}
 4 & 5 & 7 & 2
 \end{mymatrix}
 \end{equation*}
-Find $\func{null} \tup{A}$. Equivalently, find the solutions to the
+Find $\nullspace(A)$. Equivalently, find the solutions to the
 system of equations $A\vect{x}=\vect{0}$.
 \end{example}
 
@@ -170,7 +170,7 @@ To solve, set up the augmented matrix and row reduce to find the {\rref}.
 2 & 1 & 1 & 2 & 0 \\
 4 & 5 & 7 & 2 & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\roweq\ldots\roweq
 \begin{mymatrix}{rrrr|r}
 1 & 0 & -
 \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{4}{3} &  0 \\
@@ -180,7 +180,7 @@ To solve, set up the augmented matrix and row reduce to find the {\rref}.
 \end{equation*}
 This yields $x=\vspace{0.05in}\frac{1}{3}z-\vspace{0.05in}\frac{4}{3}w$ and 
 $y=\vspace{0.05in}\frac{2}{3}w-\vspace{0.05in}\frac{5}{3}z$.
-Since $\func{null} \tup{A} $ consists of the solutions to this system, it consists vectors of the form,
+Since $\nullspace(A) $ consists of the solutions to this system, it consists vectors of the form,
 \begin{equation*}
 \begin{mymatrix}{c}
 \vspace{0.05in}\frac{1}{3}z-\vspace{0.05in}\frac{4}{3}w \\

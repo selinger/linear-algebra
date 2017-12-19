@@ -3,34 +3,34 @@
 Recall the following definitions, given here in terms of vector spaces.
 
 \begin{definition}{One to one}{one-to-one-vector-space}
-Let $V, W$ be vector spaces with $\vect{v}_1, \vect{v}_2$ vectors in $V$. Then a linear transformation $T: V \mapsto W$ is called one to one if whenever $\vect{v}_1 \neq \vect{v}_2$ it follows that 
+Let $V, W$ be vector spaces with $\vect{v}_1, \vect{v}_2$ vectors in $V$. Then a linear transformation $T: V \to W$ is called one to one if whenever $\vect{v}_1 \neq \vect{v}_2$ it follows that 
 \[
 T(\vect{v}_1) \neq T (\vect{v}_2)
 \]
 \end{definition}
 
 \begin{definition}{Onto}{onto-vector-space}
-Let $V, W$ be vector spaces. Then a linear transformation $T: V \mapsto W$ is called onto if for all $\vect{w} \in \vect{W}$ there exists $\vect{v} \in V$ such that $T(\vect{v}) = \vect{w}$. 
+Let $V, W$ be vector spaces. Then a linear transformation $T: V \to W$ is called onto if for all $\vect{w} \in \vect{W}$ there exists $\vect{v} \in V$ such that $T(\vect{v}) = \vect{w}$. 
 \end{definition}
 
 Recall that every linear transformation $T$ has the property that $T(\vect{0})=\vect{0}$. This will be necessary to prove the following useful lemma. 
 
 \begin{lemma}{One to one}{one-to-one-abstract}
 The assertion that a linear transformation $T$ is one to one is equivalent to
-saying that if $T(\vect{v})=\vect{0}$, then $\vect{v}=0$. 
+saying that if $T(\vect{v})=\vect{0}$, then $\vect{v}=\vect{0}$. 
 \end{lemma}
 
 \begin{proof}
 Suppose first that $T$ is one to one. 
 \begin{equation*}
-T(\vect{0})=T\tup{\vect{0}+\vect{0}} =T(\vect{0})+T(\vect{0})
+T(\vect{0})=T(\vect{0}+\vect{0}) =T(\vect{0})+T(\vect{0})
 \end{equation*}
 and so, adding the additive inverse of $T(\vect{0})$ to both sides, one sees
 that $T(\vect{0})=\vect{0}$. Therefore, if $T(\vect{v})=\vect{0}$, it must be the
 case that $\vect{v}=\vect{0}$ because it was just shown that $T(\vect{0})=\vect{0}$.
 
-Now suppose that if $T(\vect{v})=\vect{0}$, then $\vect{v}=0$. If $T(\vect{v})=T(\vect{u})$, then $T(\vect{v})-T(\vect{u})=T\tup{\vect{v}-\vect{u}} =\vect{0}$ which
-shows that $\vect{v}-\vect{u}=0$ or in other words, $\vect{v}=\vect{u}$. 
+Now suppose that if $T(\vect{v})=\vect{0}$, then $\vect{v}=\vect{0}$. If $T(\vect{v})=T(\vect{u})$, then $T(\vect{v})-T(\vect{u})=T(\vect{v}-\vect{u}) =\vect{0}$ which
+shows that $\vect{v}-\vect{u}=\vect{0}$ or in other words, $\vect{v}=\vect{u}$. 
 \end{proof}
 
 Consider the following example.
@@ -49,8 +49,7 @@ Prove that $S$ is one to one but not onto.
 
 \begin{solution}
 By definition, 
-\[ \ker(S)=\set{ax^2+bx+c\in \Poly_2 ~|~ a+b=0,
-a+c=0, b-c=0, b+c=0}.\]
+\[ \ker(S)=\set{ax^2+bx+c\in \Poly_2 \mid a+b=0, a+c=0, b-c=0, b+c=0}.\]
 
 Suppose $p(x)=ax^2+bx+c\in\ker(S)$.
 This leads to a homogeneous system of four equations in three 
@@ -62,7 +61,7 @@ Putting the augmented matrix in {\rref}:
 1 & 0 & 1 & 0  \\
 0 & 1 & -1 & 0  \\
 0 & 1 & 1 & 0  \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\roweq\ldots\roweq
 \begin{mymatrix}{ccc|c}
 1 & 0 & 0 & 0  \\
 0 & 1 & 0 & 0  \\
@@ -122,7 +121,7 @@ $T$  is onto.
 By Lemma~\ref{lem:one-to-one-abstract} $T$ is one to one if and only if $T(A) = \vect{0} $ implies that $A = 0$ the zero matrix.
 Observe that
 \[
-T \tup{\begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix} }
+T \paren{\begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix}}
 =
 \begin{mymatrix}{c}
 1 + -1 \\
@@ -140,7 +139,7 @@ There exists a non-zero matrix $A$ such that $T(A) = \vect{0}$. It follows that 
 The following example demonstrates that a one to one transformation preserves linear independence.
 
 \begin{example}{One to one and independence}{preserves-independence}
-Let $V$ and $W$ be vector spaces and $T: V \mapsto W$ a linear
+Let $V$ and $W$ be vector spaces and $T: V \to W$ a linear
 transformation.
 Prove that if $T$ is one to one and
 $\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$ is an independent
@@ -154,19 +153,19 @@ Let $\vect{0}_V$ and $\vect{0}_W$ denote the zero vectors of $V$ and $W$,
 respectively.
 Suppose that 
 
-\[ a_1T(\vect{v}_1) + a_2T(\vect{v}_2) +\cdots +a_kT(\vect{v}_k) =\vect{0}_W \]
+\[ a_1T(\vect{v}_1) + a_2T(\vect{v}_2) +\ldots +a_kT(\vect{v}_k) =\vect{0}_W \]
 
 for some $a_1, a_2, \ldots, a_k\in\R$.
 Since linear transformations preserve linear combinations (addition
 and scalar multiplication),
 
-\[ T(a_1\vect{v}_1 + a_2\vect{v}_2 +\cdots +a_k\vect{v}_k) =\vect{0}_W. \]
+\[ T(a_1\vect{v}_1 + a_2\vect{v}_2 +\ldots +a_k\vect{v}_k) =\vect{0}_W. \]
 
 Now, since $T$ is one to one, $\ker(T)=\set{\vect{0}_V}$, and thus
 
-\[ a_1\vect{v}_1 + a_2\vect{v}_2 +\cdots +a_k\vect{v}_k =\vect{0}_V. \]
+\[ a_1\vect{v}_1 + a_2\vect{v}_2 +\ldots +a_k\vect{v}_k =\vect{0}_V. \]
 
-\noindent However, $\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$ is independent so $a_1=a_2=\cdots=a_k=0$.
+\noindent However, $\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$ is independent so $a_1=a_2=\ldots=a_k=0$.
 Therefore, $\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}$
 is independent.
 \end{solution}
@@ -187,13 +186,13 @@ Suppose that $T$ is onto and let $\vect{w}\in W$.
 Then there exists $\vect{v}\in V$ such that $T(\vect{v})=\vect{w}$.
 Since $V=\sspan\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$, there
 exist $a_1, a_2, \ldots a_k\in\R$ such that 
-$\vect{v} = a_1\vect{v}_1 + a_2\vect{v}_2 + \cdots + a_k\vect{v}_k$.
+$\vect{v} = a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_k\vect{v}_k$.
 Using the fact that $T$ is a linear transformation,
 
 \begin{eqnarray*}
 \vect{w}=T(\vect{v})
-& = & T(a_1\vect{v}_1 + a_2\vect{v}_2 + \cdots + a_k\vect{v}_k) \\
-& = & a_1T(\vect{v}_1) + a_2T(\vect{v}_2) + \cdots + a_kT(\vect{v}_k),
+& = & T(a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_k\vect{v}_k) \\
+& = & a_1T(\vect{v}_1) + a_2T(\vect{v}_2) + \ldots + a_kT(\vect{v}_k),
 \end{eqnarray*}
 
 i.e., $\vect{w}\in\sspan\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}$,

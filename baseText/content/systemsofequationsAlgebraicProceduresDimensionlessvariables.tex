@@ -46,12 +46,12 @@ the fluid. To say that the viscosity is large is to say that the tangential
 force applied to this area must be large in order to achieve a given change
 in speed of the fluid in a direction normal to the tangential force. Thus 
 \begin{equation*}
-\mu \tup{\text{area}} \tup{\text{velocity gradient}} =\text{
+\mu (\text{area}) (\text{velocity gradient}) =\text{
 tangential force}
 \end{equation*}
 Hence 
 \begin{equation*}
-\tup{\text{units of $\mu$} } \m^{2}\tup{\frac{\m}{\s \m}}
+(\text{units of $\mu$}) \m^{2}\paren{\frac{\m}{\s \m}}
 =\kg\s ^{-2}\m
 \end{equation*}
 Thus the units of $\mu $ are 
@@ -62,7 +62,7 @@ as claimed above.
 
 Returning to our original discussion, you may think that we would want 
 \begin{equation*}
-l=f\tup{A,B,\theta ,V,V_{0},\rho ,\mu } 
+l=f(A,B,\theta ,V,V_{0},\rho ,\mu) 
 \end{equation*}
 This is very cumbersome because it depends on seven variables. Also,
 it is likely that without much care, a change in the units such as
@@ -74,11 +74,11 @@ have fewer independent variables and secondly, you could expect the
 formula to hold independent of the way of specifying length, mass and
 so forth. One looks for
 \begin{equation*}
-l=f\tup{g_{1},\cdots ,g_{k}} \rho V^{2}AB
+l=f(g_{1},\ldots,g_{k}) \rho V^{2}AB
 \end{equation*}
 where the units of $\rho V^{2}AB$ are 
 \begin{equation*}
-\frac{\kg}{\m^{3}}\tup{\frac{\m}{\s }} ^{2}\m^{2}=\frac{\kg\times \m}{%
+\frac{\kg}{\m^{3}}\paren{\frac{\m}{\s }} ^{2}\m^{2}=\frac{\kg\times \m}{%
 \s ^{2}}
 \end{equation*}
 which are the units of force. Each of these $g_{i}$ is of the form 
@@ -90,9 +90,9 @@ and each $g_{i}$ is independent of the dimensions. That is, this expression
 must not depend on meters, kilograms, seconds, etc. Thus, placing in the
 units for each of these quantities, one needs 
 \begin{equation*}
-\m^{x_{1}}\m^{x_{2}}\tup{\m^{x_{4}}\s ^{-x_{4}}} \tup{\m^{x_{5}}\s
-^{-x_{5}}} \tup{\kg\m^{-3}} ^{x_{6}}\tup{\kg\s
-^{-1}\m^{-1}} ^{x_{7}}=\m^{0}\kg^{0}\s ^{0}
+\m^{x_{1}}\m^{x_{2}}(\m^{x_{4}}\s ^{-x_{4}}) (\m^{x_{5}}\s
+^{-x_{5}}) (\kg\m^{-3}) ^{x_{6}}(\kg\s
+^{-1}\m^{-1}) ^{x_{7}}=\m^{0}\kg^{0}\s ^{0}
 \end{equation*}
 Notice that there are no units of $\theta$ because it is just the radian
 measure of an angle. Hence its dimensions consist of length divided by
@@ -170,11 +170,11 @@ $x_{7}=1$ and all the other free variables equal 0. Then
 x_{1}=-1,x_{2}=0,x_{3}=0,x_{4}=-1,x_{5}=0,x_{6}=-1,x_{7}=1
 \end{equation*}
 then the dimensionless variable which results from this is $A^{-1}V^{-1}\rho
-^{-1}\mu$. It is customary to write it as $\func{Re}=\tup{AV\rho }
+^{-1}\mu$. It is customary to write it as $\func{Re}=(AV\rho)
 /\mu$. This one is called the Reynold's number. It is the one which
 involves viscosity. Thus we would look for 
 \begin{equation*}
-l=f\tup{\func{Re},AR,\theta ,\mathcal{M}} \kg\times \m/\s ^{2}
+l=f(\func{Re},AR,\theta ,\mathcal{M}) \kg\times \m/\s ^{2}
 \end{equation*}
 This is quite interesting because it is easy to vary $\func{Re}$ by simply
 adjusting the velocity or $A$ but it is hard to vary things like $\mu $ or $%

@@ -1,0 +1,106 @@
+\Opensolutionfile{solutions}[ex]
+\section*{Exercises}
+
+\begin{enumialphparenastyle}
+
+\begin{ex}
+  Find the (real or complex) eigenvalues and eigenvectors of the
+  following matrices. Diagonalize each matrix if possible.
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      2 & 1 \\
+      -1 & 2 \\
+    \end{mymatrix},
+    \quad
+    B = \begin{mymatrix}{rr}
+      -1 & -2 \\
+      1 &  1 \\
+    \end{mymatrix},
+    \quad
+    C = \begin{mymatrix}{rrr}
+      2   & -1  &  3  \\
+      0   &  1  &  1  \\
+      -1  &  1  &  0  \\
+    \end{mymatrix}
+    \quad
+    D = \begin{mymatrix}{rrr}
+      1  &  1 & 1 \\
+      -1 &  2 & 0 \\
+      1  & -1 & 1 \\
+    \end{mymatrix}
+  \end{equation*}
+  \begin{sol}
+    \begin{enumerate}
+    \item The characteristic polynomial is
+      $\eigenvar^2 -4\eigenvar + 5$, the eigenvalues are
+      $\eigenvar_1 = 2+i$ and $\eigenvar_2 = 2-i$, and the
+      corresponding basic eigenvectors are
+      $\vect{v}_1 = \mat{1, i\,}^T$ and
+      $\vect{v}_2 = \mat{1, -i\,}^T$, respectively. The matrix $A$ is
+      diagonalizable as $A=PDP^{-1}$, where
+      \begin{equation*}
+        P = \begin{mymatrix}{cc}
+          1 & 1 \\
+          i & -i \\
+        \end{mymatrix}
+        \quad\mbox{and}\quad
+        D = \begin{mymatrix}{cc}
+          2+i & 0 \\
+          0 & 2-i \\
+        \end{mymatrix}.
+      \end{equation*}
+    \item The characteristic polynomial is $\eigenvar^2 + 1$, the
+      eigenvalues are $\eigenvar_1=i$ and $\eigenvar_2=-i$, and the
+      corresponding basic eigenvectors are
+      $\vect{v}_1 = \mat{1-i, -1}^T$ and
+      $\vect{v}_2 = \mat{1+i, -1}^T$, respectively. Therefore
+      $B=PDP^{-1}$, where
+      \begin{equation*}
+        P = \begin{mymatrix}{cc}
+          1-i & 1+i \\
+          -1 & -1 \\
+        \end{mymatrix}
+        \quad\mbox{and}\quad
+        D = \begin{mymatrix}{cc}
+          i & 0 \\
+          0 & -i \\
+        \end{mymatrix}.
+      \end{equation*}
+    \item The characteristic polynomial is
+      $x^2 -2x + 2 - (x^3 -2x^2 + 2x)$
+      $-\eigenvar^3 - \eigenvar^2 + 2 =
+      (1-\eigenvar)(\eigenvar^2-2\eigenvar+2)$.  The eigenvalues are
+      $\eigenvar_1 = 1$, $\eigenvar_2 = 1+i$, and $\eigenvar_3 =
+      1-i$. The corresponding basic eigenvectors are
+      $\vect{v}_1 = \mat{1, 1, 0}^T$,
+      $\vect{v}_2 = \mat{-1-2i, -i, 1}^T$,
+      and $\vect{v}_2 = \mat{1+2i, i, 1}^T$,
+      respectively. Therefore
+      $C=PDP^{-1}$, where
+      \begin{equation*}
+        P = \begin{mymatrix}{ccc}
+          1 & -1-2i & 1+2i \\
+          1 &  -i   &  i   \\
+          0 &   1   &  1   \\
+        \end{mymatrix}
+        \quad\mbox{and}\quad
+        D = \begin{mymatrix}{ccc}
+          1 &  0  &  0  \\
+          0 & 1+i &  0  \\
+          0 &  0  & 1-i \\
+        \end{mymatrix}.
+      \end{equation*}
+    \item The characteristic polynomial is
+      $-\eigenvar^3 +4\eigenvar^2 -5\eigenvar + 2 =
+      -(\eigenvar-1)(\eigenvar-1)(\eigenvar-2)$. Therefore the
+      eigenvalues are $\eigenvar=1$ with algebraic multiplicity 2 and
+      $\eigenvar=2$ with algebraic multiplicity 1. The eigenspace for
+      $\eigenvar=1$ is 1-dimensional; it is spanned by
+      $\mat{1,1,-1}^T$. Since the geometric multiplicity of the
+      eigenvalue $1$ is less than its algebraic multiplicity, the
+      matrix is not diagonalizable, not even over the complex numbers.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\end{enumialphparenastyle}

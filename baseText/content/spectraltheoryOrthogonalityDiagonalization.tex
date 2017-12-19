@@ -48,8 +48,8 @@ entry replaced by its complex conjugate.
 Suppose $A$ is a real symmetric matrix and $A\vect{x}=\lambda \vect{x}$.
 Then 
 \begin{equation*}
-\overline{\lambda }\overline{\vect{x}}^{T}\vect{x}=\tup{\overline{A
-\vect{x}}} ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=
+\overline{\lambda }\overline{\vect{x}}^{T}\vect{x}=(\overline{A
+\vect{x}}) ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=
 \overline{\vect{x}}^{T}A\vect{x}=\lambda \overline{\vect{x}}^{T}
 \vect{x}
 \end{equation*}
@@ -62,7 +62,7 @@ is symmetric, it follows from Lemma~\ref{lem:dotproduct-lemma} about the dot pro
 \begin{equation*}
 \lambda \vect{x}\dotprod \vect{y}=A\vect{x}\dotprod \vect{y}=\vect{x}\dotprod A\vect{y}=\vect{x}\dotprod \mu \vect{y}=\mu \vect{x}\dotprod \vect{y}
 \end{equation*}
-Hence $\tup{\lambda -\mu } \vect{x}\dotprod \vect{y}=0$. It follows that,
+Hence $(\lambda -\mu) \vect{x}\dotprod \vect{y}=0$. It follows that,
 since $\lambda -\mu \neq 0$, it must be that $\vect{x}\dotprod \vect{y}=0$. Therefore the eigenvectors form an orthogonal set. 
 \end{proof}
 
@@ -78,8 +78,8 @@ First, note that if $A=0$ is the zero matrix, then $A$ is antisymmetric and has 
 Suppose $A=-A^{T}$ so $A$ is antisymmetric and $A\vect{x}=\lambda 
 \vect{x}$. Then 
 \begin{equation*}
-\overline{\lambda \vect{x}}^{T}\vect{x}=\tup{\overline{A
-\vect{x}}} ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=-
+\overline{\lambda \vect{x}}^{T}\vect{x}=(\overline{A
+\vect{x}}) ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=-
 \overline{\vect{x}}^{T}A\vect{x}=-\lambda \overline{\vect{x}}^{T}
 \vect{x}
 \end{equation*}
@@ -100,11 +100,11 @@ Let $A=\begin{mymatrix}{rr}
 \begin{solution}
 First notice that $A$ is antisymmetric. By Theorem~\ref{thm:antisymmetric-eigen}, the eigenvalues will either equal $0$ or be pure imaginary.  The eigenvalues of $A$ are obtained by solving the usual equation 
 \[
-\det (\eigenVar I - A ) = 
+\det (\eigenvar I - A ) = 
 \det \begin{mymatrix}{rr}
-\eigenVar & 1 \\ 
--1 & \eigenVar
-\end{mymatrix} =\eigenVar ^{2}+1=0
+\eigenvar & 1 \\ 
+-1 & \eigenvar
+\end{mymatrix} =\eigenvar ^{2}+1=0
 \]
 
 Hence the eigenvalues are $\pm i$, pure
@@ -123,11 +123,11 @@ Let $A=\begin{mymatrix}{rr}
 \begin{solution}
 First, notice that $A$ is symmetric. By Theorem~\ref{thm:symmetric-orthogonal-eigenvectors}, the eigenvalues will all be real. The eigenvalues of $A$ are obtained by solving the usual equation 
 \[
-\det (\eigenVar I - A) = 
+\det (\eigenvar I - A) = 
 \det \begin{mymatrix}{rr}
-\eigenVar - 1 & -2 \\ 
--2 & \eigenVar - 3 
-\end{mymatrix} = \eigenVar^2 -4\eigenVar -1=0
+\eigenvar - 1 & -2 \\ 
+-2 & \eigenvar - 3 
+\end{mymatrix} = \eigenvar^2 -4\eigenvar -1=0
 \]
 The eigenvalues are given by $\lambda_1 =2+
 \sqrt{5}$ and $\lambda_2 =2-\sqrt{5}$ which are both real. 
@@ -151,7 +151,7 @@ We can use this theorem to diagonalize a symmetric matrix, using orthogonal matr
 
 \begin{corollary}{Orthonormal set of eigenvectors}{orthonormal-eigenvectors}
 If $A$ is a real $n\times n$ symmetric matrix, then there exists an
-orthonormal set of eigenvectors, $\set{\vect{u}_{1},\cdots ,\vect{u}
+orthonormal set of eigenvectors, $\set{\vect{u}_{1},\ldots,\vect{u}
 _{n}}$.
 \end{corollary}
 
@@ -192,7 +192,7 @@ _{n}\vect{u}_{n}
 \end{eqnarray*}
 where the entries denote the columns of $AU$ and $UD$ respectively.
 Therefore, $A\vect{u}_{i}=\lambda _{i}\vect{u}_{i}$.  Since the matrix $U$
-is orthogonal, the $ij^{th}$ entry of $U^{T}U$ equals $\delta _{ij}$ and so 
+is orthogonal, the $\ijth$ entry of $U^{T}U$ equals $\delta _{ij}$ and so 
 \begin{equation*}
 \delta _{ij}=\vect{u}_{i}^{T}\vect{u}_{j}=\vect{u}_{i}\dotprod \vect{u}
 _{j}
@@ -252,7 +252,7 @@ Next find the eigenvector for $\lambda =9$. The augmented matrix and resulting {
 2 & 9-6 & -4 & 0 \\ 
 2 & -4 & 9-6 & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\roweq\ldots\roweq
 \begin{mymatrix}{rrr|r}
 1 & 0 & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & 1 & -1 & 0 \\ 
@@ -275,7 +275,7 @@ matrix and {\rref} are
 2 & 2-6 & -4 & 0 \\ 
 2 & -4 & 2-6 & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\roweq\ldots\roweq
 \begin{mymatrix}{rrr|r}
 1 & 0 & 0 & 0 \\ 
 0 & 1 & 1 & 0 \\ 
@@ -352,7 +352,7 @@ and {\rref} are given by
 -2 & 9-13 & -4 & 0 \\ 
 -2 & -4 & 9-13 & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow 
+\roweq\ldots\roweq 
 \begin{mymatrix}{rrr|r}
 1 & 2 & 2 & 0 \\ 
 0 & 0 & 0 & 0 \\ 
@@ -390,8 +390,8 @@ The values $y=-4$ and $z=5$ satisfy this equation, giving another eigenvector
 corresponding to $\lambda=9$ as 
 \begin{equation*}
 \begin{mymatrix}{c}
--2\tup{-4} -2\tup{5} \\ 
-\tup{-4} \\ 
+-2(-4) -2(5) \\ 
+(-4) \\ 
 5
 \end{mymatrix} =\begin{mymatrix}{r}
 -2 \\ 
@@ -406,7 +406,7 @@ Next find the eigenvector for $\lambda =18$. The augmented matrix and the result
 -2 & 18-13 & -4 & 0 \\ 
 -2 & -4 & 18-13 & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\roweq\ldots\roweq
 \begin{mymatrix}{rrr|r}
 1 & 0 & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & 1 & -1 & 0 \\ 
@@ -489,7 +489,7 @@ we will find an eigenvector for the eigenvalue $2$. The appropriate augmented ma
 0 & 2-\vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & -\vspace{0.05in}\frac{1}{2} & 2-\vspace{0.05in}\frac{3}{2} &  0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\roweq\ldots\roweq
 \begin{mymatrix}{rrr|r}
 1 & 0 & 0 & 0 \\ 
 0 & 1 & -1 & 0 \\ 
@@ -520,7 +520,7 @@ Next find the eigenvectors corresponding to the eigenvalue equal to $1$. The app
 0 & 1-\vspace{0.05in}\frac{3}{2} & -\vspace{0.05in}\frac{1}{2} & 0 \\ 
 0 & -\vspace{0.05in}\frac{1}{2} & 1-\vspace{0.05in}\frac{3}{2} & 0
 \end{mymatrix}
-\rightarrow \cdots \rightarrow
+\roweq\ldots\roweq
 \begin{mymatrix}{rrr|r}
 0 & 1 & 1 & 0 \\ 
 0 & 0 & 0 & 0 \\ 
@@ -590,8 +590,8 @@ Let $A$ be an $n \times n$-matrix. If $A$ has $n$ real eigenvalues, then an orth
 
 This Theorem provides a useful Corollary.
 
-\begin{corollary}{Determinant and trace}{det-trace}
-Let $A$ be an $n \times n$-matrix with eigenvalues $\lambda_1, \cdots, \lambda_n$. Then it follows that $\det(A)$ is equal to the product of the $\lambda_1$, while $\func{trace}(A)$ is equal to the sum of the $\lambda_i$. 
+\begin{corollary}{Determinant and trace}{determinant-trace}
+Let $A$ be an $n \times n$-matrix with eigenvalues $\lambda_1,\ldots, \lambda_n$. Then it follows that $\det(A)$ is equal to the product of the $\lambda_1$, while $\tr(A)$ is equal to the sum of the $\lambda_i$. 
 \end{corollary}
 
 \begin{proof}
@@ -602,7 +602,7 @@ of $P$ are $\lambda_1, \lambda_2, \ldots, \lambda_n$.
 Furthermore, since $P$ is (upper) triangular, the entries on the
 main diagonal of $P$ are its eigenvalues, so
 $\det(P)=\lambda_1 \lambda_2 \cdots \lambda_n$ and
-$\func{trace}(P)=\lambda_1 + \lambda_2 + \cdots + \lambda_n$.
-Since $P$ and $A$ are similar, $\det(A)=\det(P)$ and $\func{trace}(A)=\func{trace}(P)$,
+$\tr(P)=\lambda_1 + \lambda_2 + \ldots + \lambda_n$.
+Since $P$ and $A$ are similar, $\det(A)=\det(P)$ and $\tr(A)=\tr(P)$,
 and therefore the results follow.
 \end{proof}

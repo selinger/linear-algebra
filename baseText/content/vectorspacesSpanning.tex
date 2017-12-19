@@ -20,24 +20,24 @@ X \subseteq Y
 In particular, we often speak of subsets of a vector space, such as $X \subseteq V$. By this we mean that every element in the set $X$ is contained in the vector space $V$. 
 
 \begin{definition}{Linear combination}{linear-combination}
-Let $V$ be a vector space and let $\vect{v}_1, \vect{v}_2, \cdots, \vect{v}_n \subseteq V$. A vector $\vect{v} \in V$ is called a linear combination of the $\vect{v}_i$ if there exist scalars $c_i \in \R$ such that 
+Let $V$ be a vector space and let $\vect{v}_1, \vect{v}_2,\ldots, \vect{v}_n \subseteq V$. A vector $\vect{v} \in V$ is called a linear combination of the $\vect{v}_i$ if there exist scalars $c_i \in \R$ such that 
 \[
-\vect{v} = c_1 \vect{v}_1 + c_2 \vect{v}_2 + \cdots + c_n \vect{v}_n
+\vect{v} = c_1 \vect{v}_1 + c_2 \vect{v}_2 + \ldots + c_n \vect{v}_n
 \]
 \end{definition}
 
 This definition leads to our next concept of span.
 
 \begin{definition}{Span of vectors}{span}
-Let $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} \subseteq V$. Then\index{span}
+Let $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} \subseteq V$. Then\index{span}
 \begin{equation*}
-\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{n}} = 
+\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{n}} = 
 \set{\sum_{i=1}^{n}c_{i}\vect{v}_{i}: c_{i}\in \R
 } 
 \end{equation*}
 \end{definition}
 
-When we say that a vector $\vect{w}$ is in $\sspan\set{\vect{v}_{1},\cdots ,\vect{v}_{n}}$ we mean that $\vect{w}$ can be written as a linear combination of the $\vect{v}_1$. We say that a collection of vectors $\set{\vect{v}_{1},\cdots ,\vect{v}_{n}}$ is a \textbf{spanning set}\index{spanning set} for $V$ if $V = \sspan \set{\vect{v}_{1},\cdots ,\vect{v}_{n}}$. 
+When we say that a vector $\vect{w}$ is in $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ we mean that $\vect{w}$ can be written as a linear combination of the $\vect{v}_1$. We say that a collection of vectors $\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ is a \textbf{spanning set}\index{spanning set} for $V$ if $V = \sspan \set{\vect{v}_{1},\ldots,\vect{v}_{n}}$. 
 
 Consider the following example.
 
@@ -159,7 +159,7 @@ To check that a solution exists, set up the augmented matrix and row reduce:
 1 & 0 & 2 & a \\
 0 & 1 & -1 & b \\
 1 & -2 & 0 & c 
-\end{mymatrix} \rightarrow \cdots \rightarrow 
+\end{mymatrix} \roweq\ldots\roweq 
 \begin{mymatrix}{rrr|c} 
 1 & 0 & 0 & \frac{1}{2} a + 2b + \frac{1}{2}c\\
 0 & 1 & 0 & \frac{1}{4}a - \frac{1}{4}c \\

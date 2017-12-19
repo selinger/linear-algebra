@@ -1,0 +1,286 @@
+\Opensolutionfile{solutions}[ex]
+\section*{Exercises}
+
+\begin{enumialphparenastyle}
+
+\begin{ex}
+  For each of the following subspaces of $\R^4$, find a basis and
+  determine the dimension.
+  \begin{enumerate}
+  \item $V_1 = \sspan\set{
+      \begin{mymatrix}{r} 2 \\ 1 \\ 1 \\ 1 \end{mymatrix},~
+      \begin{mymatrix}{r} -1 \\ 0 \\ -1 \\ -1 \end{mymatrix},~
+      \begin{mymatrix}{r} 5 \\ 2 \\ 3 \\ 3 \end{mymatrix},~
+      \begin{mymatrix}{r} -1 \\ 1 \\ -2 \\ -2 \end{mymatrix}
+    }$.
+  \item $V_2 = \sspan\set{
+      \begin{mymatrix}{r} 0 \\ 1 \\ 1 \\ -1 \end{mymatrix},~
+      \begin{mymatrix}{r} -1 \\ -1 \\ -2 \\ 2 \end{mymatrix},~
+      \begin{mymatrix}{r} 2 \\ 3 \\ 5 \\ -5 \end{mymatrix},~
+      \begin{mymatrix}{r} 0 \\ 1 \\ 2 \\ -2 \end{mymatrix}
+    }$.
+  \item $V_3 = \sspan\set{
+      \begin{mymatrix}{r} -2 \\ 1 \\ 1 \\ -3 \end{mymatrix},~
+      \begin{mymatrix}{r} -9 \\ 4 \\ 3 \\ -9 \end{mymatrix},~
+      \begin{mymatrix}{r} -33 \\ 15 \\ 12 \\ -36 \end{mymatrix},~
+      \begin{mymatrix}{r} -22 \\ 10 \\ 8 \\ -24 \end{mymatrix}
+    }$.
+  \item $V_4 = \sspan\set{
+      \begin{mymatrix}{r} -1 \\ 1 \\ -1 \\ -2 \end{mymatrix},~
+      \begin{mymatrix}{r} -4 \\ 3 \\ -2 \\ -4 \end{mymatrix},~
+      \begin{mymatrix}{r} -3 \\ 2 \\ -1 \\ -2 \end{mymatrix},~
+      \begin{mymatrix}{r} -1 \\ 1 \\ -2 \\ -4 \end{mymatrix},~
+      \begin{mymatrix}{r} -7 \\ 5 \\ -3 \\ -6 \end{mymatrix}
+    }$.
+  \end{enumerate}
+\end{ex}
+
+\begin{ex}
+  Find a basis and the dimension of each of the following subspaces of
+  $\R^n$.
+  \begin{enumerate}
+  \item $S_1 = 
+    \set{\left.\begin{mymatrix}{c}
+          4u+v-5w \\ 
+          12u+6v-6w \\ 
+          4u+4v+4w
+        \end{mymatrix} ~\right\vert~u,v,w\in \R}.$
+  \item $S_2 = 
+    \set{\left.\begin{mymatrix}{c}
+          2u+6v+7w \\ 
+          -3u-9v-12w \\ 
+          2u+6v+6w \\ 
+          u+3v+3w
+        \end{mymatrix} ~\right\vert~u,v,w\in \R}.$
+  \item $S_3 =
+    \set{\left.\begin{mymatrix}{c}
+          2u+v \\ 
+          6v-3u+3w \\ 
+          3v-6u+3w
+        \end{mymatrix} ~\right\vert~u,v,w\in \R}.$
+  \end{enumerate}
+  % \begin{sol}
+  % \end{sol}
+\end{ex}
+
+\begin{ex}
+  Find a basis and the dimension of each of the following subspaces of
+  $\R^n$.
+  \begin{enumerate}
+  \item $W_1 = 
+    \set{\left.\begin{mymatrix}{c} u \\ v \\ w \end{mymatrix}
+        ~\right\vert~
+      \mbox{$u+v=0$ and $u-2w=0$}}.$
+  \item $W_2 = 
+    \set{\left.\begin{mymatrix}{c} u \\ v \\ w \end{mymatrix}
+        ~\right\vert~
+      \mbox{$u+v+w=0$}}.$
+  \item $S =
+    \set{\left.\begin{mymatrix}{c} u \\ v \\ w \\ x \end{mymatrix}
+        ~\right\vert~
+      \mbox{$u+v=w+x$ and $u+w=v+x$}}.$
+  \end{enumerate}
+  % \begin{sol}
+  % \end{sol}
+\end{ex}
+
+\begin{ex}
+  Find the vector $\vect{v}$ that has coordinates
+  \begin{equation*}
+    \coord{\vect{v}}_B = \begin{mymatrix}{r} 2 \\ 1 \\ -3 \end{mymatrix}
+  \end{equation*}
+  with respect to the basis $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$
+  of\/ $\R^3$, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 2 \\ 4 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ -1 \\ 0 \end{mymatrix},\quad
+    \mbox{and}\quad
+    \vect{u}_3 = \begin{mymatrix}{r} -1 \\ 0 \\ 3\end{mymatrix}.
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
+  Find the coordinates of each of $\vect{v}$, $\vect{w}$ with respect
+  to the basis $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$, where
+  \begin{equation*}
+    \vect{v} = \begin{mymatrix}{r} 4 \\ 3 \\ 8 \end{mymatrix},\quad
+    \vect{w} = \begin{mymatrix}{r} -1 \\ -1 \\ 3 \end{mymatrix},\quad
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 0 \\ 3 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ 1 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 2 \\ 2 \\ 1 \end{mymatrix}.
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
+  Extend $\set{\vect{u}_1,\vect{u}_2}$ to a basis of $\R^3$, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 3 \\ 3 \\ -6 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 0 \\ -1 \\ 2 \end{mymatrix}.
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
+  Let
+  \begin{equation*}
+    V ~=~ \set{\left.
+        \begin{mymatrix}{c} x \\ y \\ z \\ w \end{mymatrix}
+        ~\right\vert~
+      x+y+z+2w = 0
+    }.
+  \end{equation*}
+  Note that $\vect{u}_1,\vect{u}_2\in V$, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ -1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{c} -2 \\ -2 \\ -2 \\ 3 \end{mymatrix}.
+  \end{equation*}
+  Is $\set{\vect{u}_1,\vect{u}_2}$ a basis of $V$? If not, extend it
+  to a basis of $V$ by adding additional basis vectors.
+\end{ex}
+
+\begin{ex}
+  Shrink $\set{\vect{u}_1,\vect{u}_2,\vect{u}_3,\vect{u}_4}$ to a
+  basis of $\R^4$ by removing redundant vectors, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 2 \\  3 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 0 \\ -1 \\ 2 \end{mymatrix}.
+    \vect{u}_3 = \begin{mymatrix}{r} 2 \\ 3 \\  8 \end{mymatrix},\quad
+    \vect{u}_4 = \begin{mymatrix}{r} -7 \\ 2 \\ 1 \end{mymatrix}.
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
+  Use one of the basis tests of
+  Proposition~\ref{prop:basis-test-k-vectors} to determine whether the
+  vectors
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 4 \\ -2 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} -2 \\ 4 \\ 1 \end{mymatrix},\quad
+    \mbox{and}\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 1 \\ -2 \\ 4 \end{mymatrix}
+  \end{equation*}
+  form a basis of\/ $\R^3$.
+\end{ex}
+
+\begin{ex}
+  Use one of the basis tests of
+  Proposition~\ref{prop:basis-test-k-vectors} to determine whether the
+  vectors
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 2 \\ -1 \\ -1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} -1 \\ 2 \\ -1 \end{mymatrix},\quad
+    \mbox{and}\quad
+    \vect{u}_3 = \begin{mymatrix}{r} -1 \\ -1 \\ 2 \end{mymatrix}
+  \end{equation*}
+  form a basis of\/ $\R^3$.
+\end{ex}
+
+\begin{ex}
+  True or false? Explain.
+  \begin{enumerate}
+  \item Every set of $5$ vectors in $\R^{5}$ is linearly independent.
+  \item Every set of $4$ vectors in $\R^{5}$ is linearly independent.
+  \item Every set of $6$ vectors in $\R^{5}$ is linearly dependent.
+  \item No set of $4$ vectors spans $\R^{5}$.
+  \item Every linearly independent set of $5$ vectors in $\R^5$ is a
+    basis of $\R^5$.
+  \item Every linearly independent set of $4$ vectors in $\R^5$ is a
+    basis of $\R^5$.
+  \item Some linearly independent set of $4$ vectors in $\R^5$ is a
+    basis of $\R^5$.
+  \item Every spanning set of $6$ vectors in $\R^5$ is a basis of
+    $\R^5$.
+  \item Every linearly independent set of $4$ vectors in $\R^5$ spans
+    a $4$-dimensional subspace of $\R^5$.
+  \end{enumerate}
+  \begin{sol}
+    \begin{enumerate}
+    \item No. For example, the vectors
+      $\set{\vect{0},\vect{0},\vect{0},\vect{0},\vect{0}}$ are
+      linearly dependent.
+    \item No. For example, the vectors
+      $\set{\vect{0},\vect{0},\vect{0},\vect{0}}$ are linearly
+      dependent.
+    \item Yes, by Lemma~\ref{lem:exchange-lemma}.
+    \item Correct, by Lemma~\ref{lem:exchange-lemma}.
+    \item Yes, by Proposition~\ref{prop:basis-test-k-vectors}.
+    \item No, in fact no such set is a basis of $\R^5$, since every
+      basis of $\R^5$ consists of $5$ vectors by
+      Theorem~\ref{thm:bases-same-size}.
+    \item No, as noted in the previous answer.
+    \item No, no basis of $\R^3$ can have $6$ elements.
+    \item Yes, because a linearly independent set of vectors is a
+      basis of the subspace it spans.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  If you have $6$ vectors in $\R^{5}$, is it possible they are
+  linearly independent? Explain.
+  \begin{sol}
+    No. As a $5$-dimensional space, $\R^5$ is spanned by $5$
+    vectors. By the Exchange Lemma, any linearly independent set can
+    have size at most $5$.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Suppose $A$ is an $m\times n$-matrix and
+  $\set{\vect{w} _{1},\ldots,\vect{w}_{k}}$ is a linearly independent
+  set of vectors in $\R^{m}$. Now suppose
+  $A\vect{z}_{i}=\vect{w}_{i}$. Show
+  $\set{ \vect{z}_{1},\ldots,\vect{z}_{k}}$ is also linearly
+  independent.
+  \begin{sol}
+    Assume
+    $a_{1}\vect{z}_{1}+\ldots+a_{k}\vect{z}_{k}=\vect{0}$. Multiplying
+    both sides of the equation by $A$, we get
+    \begin{equation*}
+      a_{1}A\vect{z}_{1}+\ldots+a_{k}A\vect{z}_{k}=
+      a_{1}\vect{w}_{1}+\ldots+a_{k}\vect{w}_{k}=\vect{0}.
+    \end{equation*}
+    Since the $\vect{w}_{i}$ are linearly independent, it follows that
+    each $a_{i}=0$. Therefore the $\vect{z}_{i}$ are linearly
+    independent as well.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Suppose $V$ and $W$ both have dimension equal to $7$ and they are
+  subspaces of $\R^{10}$. What are the possibilities for the dimension
+  of $V\cap W$? \textbf{Hint:} Remember that a linear independent set can be
+  extended to form a basis.
+  % \begin{sol}
+  % \end{sol}
+\end{ex}
+
+\void{
+  %% Something is wrong with this problem. Whoever wrote the solution
+  %% did not prove that the $p+q-k$ vectors are in fact linearly
+  %% independent. This is required to conclude $p+q-k \neq n$.
+  \begin{ex}
+    Suppose $V$ has dimension $p$ and $W$ has dimension $q$ and they
+    are each contained in a subspace, $U$ which has dimension equal to $n$ where 
+    $n>\max (p,q)$. What are the possibilities for the dimension of 
+    $V\cap W$? \textbf{Hint:} Remember that a linearly independent set can be
+    extended to form a basis.
+    \begin{sol}
+      Let $\set{x_{1},\ldots,x_{k}}$ be a
+      basis for $V\cap W$. Then there are bases for $V$ and $W$ which are
+      respectively
+      \begin{equation*}
+        \set{x_{1},\ldots,x_{k},y_{k+1},\ldots,y_{p}},\ \set{
+          x_{1},\ldots,x_{k},z_{k+1},\ldots,z_{q}}.
+      \end{equation*}
+      None of the $y_{i}$ are in $W$ (or else they would be in
+      $V\cap W$, and therefore a linear combination of
+      $x_{1},\ldots,x_{k}$). Similarly, none of the $z_{j}$ are in
+      $V$. It follows that $k+p-k+q-k\leq n$, and so
+      \begin{equation*}
+        p+q-n\leq k
+      \end{equation*}
+    \end{sol}
+  \end{ex}
+}
+
+\end{enumialphparenastyle}

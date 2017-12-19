@@ -85,7 +85,7 @@ The following definition summarizes the above.
 
 \begin{example}{A line from a point and a direction vector}{line-point-and-direction-vector}
   Find a vector equation for the line which contains the point
-  $P = \tup{2,0,3}$ and has direction vector
+  $P = (2,0,3)$ and has direction vector
   $\vect{d} = \mat{1,2,1}^T$.
 \end{example}
 
@@ -102,7 +102,7 @@ The following definition summarizes the above.
 
 \begin{example}{A line from two points}{line-from-two-points}
   Find a vector equation for the line through the points
-  $P = \tup{1,2,0,1}$ and $R = \tup{2,-4,6,3}$.
+  $P = (1,2,0,1)$ and $R = (2,-4,6,3)$.
 \end{example}
 
 \begin{solution}
@@ -199,7 +199,7 @@ $3s$ or $1-r$.
 
 \begin{example}{Parametric equations}{parametric-equation}
   Find parametric equations for the line through the points
-  $P = \tup{1,2,0,1}$ and $R = \tup{2,-4,6,3}$.
+  $P = (1,2,0,1)$ and $R = (2,-4,6,3)$.
 \end{example}
 
 \begin{solution}
@@ -482,25 +482,25 @@ distance from a point to a line.
   In order to determine the shortest distance from $Q$ to $L$, we will
   first find the vector $\longvect{PQ}$ and then find the projection
   of this vector onto $L$.  The vector $\longvect{PQ}$ is given by
-  \[
+  \begin{equation*}
     \longvect{PQ}=
     \begin{mymatrix}{r} 1 \\ 3 \\ 5 \end{mymatrix}
     - \begin{mymatrix}{r} 0 \\ 4 \\ -2 \end{mymatrix}
     = \begin{mymatrix}{r} 1 \\ -1 \\ 7 \end{mymatrix}.
-  \]
+  \end{equation*}
   Then, if $R$ is the point on $L$ closest to $Q$, it follows that 
   \begin{equation*}
     \longvect{PR}
-    ~=~ \func{proj}_{\vect{d}}\longvect{PQ} \\
+    ~=~ \proj_{\vect{d}}\longvect{PQ} \\
     ~=~ \frac{ \longvect{PQ}\bullet \vect{d}}{\norm{\vect{d}}^2}\,\vect{d} \\
     ~=~ \frac{15}{9} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix} \\
     ~=~ \frac{5}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix}.
   \end{equation*}
   Now, the distance from $Q$ to $L$ is given by 
-  \[
+  \begin{equation*}
     \norm{\longvect{RQ}} = \norm{\longvect{PQ} - \longvect{PR}}
     = \sqrt{26}.
-  \]
+  \end{equation*}
   The point $R$ is found by adding the vector $\longvect{PR}$ to the
   position vector $\longvect{0P}$ for $P$ as follows
   \begin{equation*}

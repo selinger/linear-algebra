@@ -44,7 +44,7 @@ scalar. For this reason, the dot product is also called the
   \end{mymatrix}$ be two vectors in $\R^{n}$. We
   define their \textbf{dot product} as
   \begin{equation*}
-    \vect{u}\dotprod \vect{v} = u_1v_1+u_2v_2+\cdots+u_nv_n.
+    \vect{u}\dotprod \vect{v} = u_1v_1+u_2v_2+\ldots+u_nv_n.
   \end{equation*}
 \end{definition}
 
@@ -79,9 +79,9 @@ The dot product satisfies a number of important properties.
   \begin{itemize}
   \item $\vect{u}\dotprod\vect{v}=\vect{v}\dotprod\vect{u}$.
   \item $\vect{u}\dotprod\vect{u}\geq 0$, and $\vect{u}\dotprod\vect{u}=0$ if and only if $\vect{u}=\vect{0}$.
-  \item $\tup{k\vect{u}+\ell\vect{v}}\dotprod\vect{w}=k\tup{\vect{u}\dotprod\vect{w}}+\ell\tup{\vect{v}\dotprod\vect{w}}$.
-  \item $\vect{u}\dotprod\tup{k\vect{v}+\ell\vect{w}}
-    =k\tup{\vect{u}\dotprod \vect{v}}+\ell\tup{\vect{u}\dotprod\vect{w}}$.
+  \item $(k\vect{u}+\ell\vect{v})\dotprod\vect{w}=k(\vect{u}\dotprod\vect{w})+\ell(\vect{v}\dotprod\vect{w})$.
+  \item $\vect{u}\dotprod(k\vect{v}+\ell\vect{w})
+    =k(\vect{u}\dotprod \vect{v})+\ell(\vect{u}\dotprod\vect{w})$.
   \item $\vect{u}\dotprod\vect{u}=\norm{\vect{u}}^{2}$.
   \end{itemize}
 \end{theorem}
@@ -132,18 +132,18 @@ in the following theorem.
   this case. Therefore, we will assume in what follows that
   $\vect{u}\neq \vect{0}$.  Define a function of $t\in \R$ by
   \begin{equation*}
-    f(t) =\tup{t\vect{u}+\vect{v}} \dotprod \tup{t\vect{u}+
-      \vect{v}} 
+    f(t) =(t\vect{u}+\vect{v}) \dotprod (t\vect{u}+
+      \vect{v}) 
   \end{equation*}
   Then by Theorem~\ref{thm:properties-dot-product}, $f(t) \geq 0$
   for all $t\in \R$.  Also from
   Theorem~\ref{thm:properties-dot-product}, we have
   \begin{eqnarray*}
-    f(t) &=&t\vect{u}\dotprod \tup{t\vect{u}+\vect{v}} +
-                 \vect{v}\dotprod \tup{t\vect{u}+\vect{v}} \\
-             &=&t^2\vect{u}\dotprod \vect{u}+t\tup{\vect{u}\dotprod \vect{v}} + t \vect{v}\dotprod \vect{u}+
+    f(t) &=&t\vect{u}\dotprod (t\vect{u}+\vect{v}) +
+                 \vect{v}\dotprod (t\vect{u}+\vect{v}) \\
+             &=&t^2\vect{u}\dotprod \vect{u}+t(\vect{u}\dotprod \vect{v}) + t \vect{v}\dotprod \vect{u}+
                  \vect{v}\dotprod \vect{v} \\
-             &=&t^2\norm{\vect{u}}^{2}+2t\tup{\vect{u}\dotprod \vect{v}} +\norm{
+             &=&t^2\norm{\vect{u}}^{2}+2t(\vect{u}\dotprod \vect{v}) +\norm{
                  \vect{v}} ^{2}
   \end{eqnarray*}
   This means the graph of $y=f(t)$ is a parabola which opens upwards
@@ -152,7 +152,7 @@ in the following theorem.
   $at^2+bt+c$ has one or zero roots if and only if $b^2-4ac\leq
   0$. Applying this reasoning to the function $f(t)$, we obtain
   \begin{equation*}
-    \tup{2\tup{\vect{u}\dotprod \vect{v}} } ^{2}-4\norm{\vect{u}
+    (2(\vect{u}\dotprod \vect{v})) ^{2}-4\norm{\vect{u}
     } ^{2}\norm{\vect{v}} ^{2}<0,
   \end{equation*}
   which is equivalent to
@@ -160,9 +160,10 @@ in the following theorem.
 \end{proof}
 
 An important consequence of the Cauchy-Schwarz inequality is the
-so-called \textbf{triangle inequality}\index{triangle inequality},
-which states that the length of one side of a triangle is less than or
-equal the sum of the lengths of the two other sides.
+so-called \textbf{triangle inequality}%
+\index{triangle inequality!of vectors}, which states that the length
+of one side of a triangle is less than or equal the sum of the lengths
+of the two other sides.
 
 \begin{theorem}{Triangle inequality}{triangle-inequality-dot-product}
   For\/ $\vect{u},\vect{v}\in \R^{n}$, we have
@@ -184,15 +185,15 @@ equal the sum of the lengths of the two other sides.
   we have
   \begin{eqnarray*}
     \norm{\vect{u}+\vect{v}}^{2}
-    &=& \tup{\vect{u}+\vect{v}}\dotprod\tup{\vect{u}+\vect{v}} \\
-    & =&\tup{\vect{u}\dotprod\vect{u}}+\tup{\vect{u}\dotprod\vect{v}}+\tup{\vect{v}\dotprod\vect{u}}+\tup{\vect{v}\dotprod\vect{v}} \\
-    &=&\norm{\vect{u}}^{2}+2\tup{\vect{u}\dotprod\vect{v}}+\norm{\vect{v}}^{2} \\
+    &=& (\vect{u}+\vect{v})\dotprod(\vect{u}+\vect{v}) \\
+    & =&(\vect{u}\dotprod\vect{u})+(\vect{u}\dotprod\vect{v})+(\vect{v}\dotprod\vect{u})+(\vect{v}\dotprod\vect{v}) \\
+    &=&\norm{\vect{u}}^{2}+2(\vect{u}\dotprod\vect{v})+\norm{\vect{v}}^{2} \\
     &\leq& \norm{\vect{u}}^{2}+2\abs{\vect{u}\dotprod\vect{v}}+\norm{\vect{v}}^{2} \\
-    &\leq& \norm{\vect{u}}^{2}+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^{2} =\tup{\norm{\vect{u}}+\norm{\vect{v}}}^{2}.
+    &\leq& \norm{\vect{u}}^{2}+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^{2} =(\norm{\vect{u}}+\norm{\vect{v}})^{2}.
   \end{eqnarray*}
   Therefore,
   \begin{equation*}
-    \norm{\vect{u}+\vect{v}}^{2}\leq\tup{\norm{\vect{u}}+\norm{\vect{v}}}^{2}.
+    \norm{\vect{u}+\vect{v}}^{2}\leq(\norm{\vect{u}}+\norm{\vect{v}})^{2}.
   \end{equation*}
   Taking square roots of both sides, we obtain \eqref{triangle-ineq-1}.
 \end{proof}

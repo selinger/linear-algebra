@@ -1,4 +1,4 @@
-\section{The matrix of a linear \texorpdfstring{\}{ } transformation}
+\section{The matrix of a linear transformation}
 
 \begin{outcome}
   \begin{enumerate}
@@ -7,23 +7,23 @@
   \end{enumerate}
 \end{outcome}
 
-In the above examples, the action of the linear transformations was to multiply by a matrix. 
-It turns out that this is always the case for linear transformations.
-If $T$ is \textbf{any} linear transformation which maps $\R^{n}$ to 
-$\R^{m}$, there is \textbf{always} an $m\times n$-matrix $A$ with the
-property that
+In the above examples, the action of the linear transformations was to
+multiply by a matrix.  It turns out that this is always the case for
+linear transformations.  If $T$ is \textbf{any} linear transformation
+which maps $\R^{n}$ to $\R^{m}$, there is \textbf{always} an
+$m\times n$-matrix $A$ with the property that
 \begin{equation}
-T\tup{\vect{x}} = A\vect{x} \label{matrix-of-transf}
+T(\vect{x}) = A\vect{x} \label{matrix-of-transf}
 \end{equation}
 for all $\vect{x} \in \R^{n}$.
 
-\begin{theorem}{Matrix of a linear transformation}{matrix-lin-transf}
-Let $T:\R^{n}\mapsto \R^{m}$ be a linear transformation. Then we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
- In this case, we say that $T$ is {\em determined\em} or {\em induced\em}
+\begin{theorem}{Matrix of a linear transformation}{matrix-linear-transf}
+Let $T:\R^{n}\to \R^{m}$ be a linear transformation. Then we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
+ In this case, we say that $T$ is {\em determined} or {\em induced}
 by the matrix $A$.
 \end{theorem}
 
-Here is why. Suppose $T:\R^{n}\mapsto \R^{m}$ is a linear transformation and you want to find
+Here is why. Suppose $T:\R^{n}\to \R^{m}$ is a linear transformation and you want to find
 the matrix defined by this linear transformation as described in {\eqref{matrix-of-transf}}.
  Note that
 \begin{equation*}
@@ -42,23 +42,23 @@ x_{n}
 1 \\
 \vdots \\
 0
-\end{mymatrix} +\cdots + x_{n}\begin{mymatrix}{c}
+\end{mymatrix} +\ldots + x_{n}\begin{mymatrix}{c}
 0 \\
 0 \\
 \vdots \\
 1
 \end{mymatrix} = \sum_{i=1}^{n}x_{i}\vect{e}_{i}
 \end{equation*}
-where $\vect{e}_{i}$ is the $i^{th}$ column of $I_n$, that is the $n \times
-1$ vector which has zeros in every slot but the $i^{th}$ and a 1 in
+where $\vect{e}_{i}$ is the $i\th$ column of $I_n$, that is the $n \times
+1$ vector which has zeros in every slot but the $i\th$ and a 1 in
 this slot.
 
 Then since $T$ is linear,
 \begin{eqnarray*}
-T\tup{\vect{x} }&=&\sum_{i=1}^{n}x_{i}T\tup{\vect{e}_{i}} \\
+T(\vect{x})&=&\sum_{i=1}^{n}x_{i}T(\vect{e}_{i}) \\
 &=&\begin{mymatrix}{ccc}
 | &  & | \\
-T\tup{\vect{e}_{1}} & \cdots & T\tup{\vect{e}_{n}} \\
+T(\vect{e}_{1}) & \cdots & T(\vect{e}_{n}) \\
 | &  & |
 \end{mymatrix} \begin{mymatrix}{c}
 x_{1} \\
@@ -71,27 +71,27 @@ x_{1} \\
 x_{n}
 \end{mymatrix}
 \end{eqnarray*}
-Therefore,  the desired matrix is obtained from constructing the $i^{th}$
-column as $T\tup{\vect{e}_{i}}$. We state this formally as the
+Therefore,  the desired matrix is obtained from constructing the $i\th$
+column as $T(\vect{e}_{i})$. We state this formally as the
 following theorem.
 
 \begin{theorem}{Matrix of a linear transformation}{matrix-of-linear-transformation}
-Let $T: \R^{n} \mapsto \R^{m}$ be a linear transformation. Then the matrix $A$ satisfying $T\tup{\vect{x}}=A\vect{x}$\index{linear transformation!matrix} is given by
+Let $T: \R^{n} \to \R^{m}$ be a linear transformation. Then the matrix $A$ satisfying $T(\vect{x})=A\vect{x}$\index{linear transformation!matrix} is given by
 \begin{equation*}
 A=
 \begin{mymatrix}{ccc}
 | &  & | \\
-T\tup{\vect{e}_{1}} & \cdots & T\tup{\vect{e}_{n}} \\
+T(\vect{e}_{1}) & \cdots & T(\vect{e}_{n}) \\
 | &  & |
 \end{mymatrix}
 \end{equation*}
-where $\vect{e}_{i}$ is the $i^{th}$ column of $I_n$, and then $T\tup{\vect{e}_{i}
-}$ is the $i^{th}$ column of $A$.
+where $\vect{e}_{i}$ is the $i\th$ column of $I_n$, and then $T(\vect{e}_{i}
+)$ is the $i\th$ column of $A$.
 \end{theorem}
 
 The following Corollary is an essential result.
 
-\begin{corollary}{Matrix and linear transformation}{matrix-lin-transf-equivalence}
+\begin{corollary}{Matrix and linear transformation}{matrix-linear-transf-equivalence}
 A transformation $T$ is a linear transformation if and only if it is a matrix transformation. 
 \end{corollary}
 
@@ -123,7 +123,7 @@ T\begin{mymatrix}{r}
 1
 \end{mymatrix}
 \end{equation*}
-Find the matrix $A$ of $T$ such that $T \tup{\vect{x} }=A\vect{x}$  for all $\vect{x}$.
+Find the matrix $A$ of $T$ such that $T (\vect{x})=A\vect{x}$  for all $\vect{x}$.
 \end{example}
 
 \begin{solution} By Theorem~\ref{thm:matrix-of-linear-transformation} we construct $A$ as follows:
@@ -131,14 +131,14 @@ Find the matrix $A$ of $T$ such that $T \tup{\vect{x} }=A\vect{x}$  for all $\ve
 A = 
 \begin{mymatrix}{ccc}
 | &  & | \\
-T\tup{\vect{e}_{1}} & \cdots & T\tup{\vect{e}_{n}} \\
+T(\vect{e}_{1}) & \cdots & T(\vect{e}_{n}) \\
 | &  & |
 \end{mymatrix}
 \end{equation*}
 
 In this case, $A$ will be a $2 \times 3$-matrix, so we need to find $T
-\tup{\vect{e}_1 }, T \tup{\vect{e}_2 }$, and $T \tup{\vect{e}_3
-}$. Luckily, we have been given these values so we can fill in
+(\vect{e}_1), T (\vect{e}_2)$, and $T (\vect{e}_3
+)$. Luckily, we have been given these values so we can fill in
 $A$ as needed, using these vectors as the columns of $A$.  Hence,
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
@@ -148,11 +148,11 @@ A=\begin{mymatrix}{rrr}
 \end{equation*}
 \end{solution}
 
-In this example, we were given the resulting vectors of $T \tup{\vect{e}_1 }, 
-T \tup{\vect{e}_2 }$, and $T \tup{\vect{e}_3 }$. Constructing the matrix $A$ was simple, as we
-could simply use these vectors as the columns of $A$. The next example shows how to find $A$ when we are not given the $T \tup{\vect{e}_i }$ so clearly. 
+In this example, we were given the resulting vectors of $T (\vect{e}_1), 
+T (\vect{e}_2)$, and $T (\vect{e}_3)$. Constructing the matrix $A$ was simple, as we
+could simply use these vectors as the columns of $A$. The next example shows how to find $A$ when we are not given the $T (\vect{e}_i)$ so clearly. 
 
-\begin{example}{The matrix of linear transformation: inconveniently \\ defined}{2x2-inconvenient-matrix-of-lin-transf}
+\begin{example}{The matrix of linear transformation: inconveniently \\ defined}{2x2-inconvenient-matrix-of-linear-transf}
 Suppose $T$ is a linear transformation, $T:\R^{2}\rightarrow \R^{2}$ and
 \begin{equation*}
 T\begin{mymatrix}{r}
@@ -169,7 +169,7 @@ T\begin{mymatrix}{r}
 2
 \end{mymatrix}
 \end{equation*}
-Find the matrix $A$ of $T$ such that $T \tup{\vect{x} }=A\vect{x}$  for all $\vect{x}$.
+Find the matrix $A$ of $T$ such that $T (\vect{x})=A\vect{x}$  for all $\vect{x}$.
 \end{example}
 
 \begin{solution} By Theorem~\ref{thm:matrix-of-linear-transformation} to find this matrix, we need to determine the action of $T$ on
@@ -221,7 +221,7 @@ T\begin{mymatrix}{r}
 \end{equation}
 
 Therefore, if we know the values of $x$ and $y$ which satisfy {\eqref{matrix-values}}, we can substitute these into equation {\eqref{matrix-values2}}. By doing so,
-we find $T\tup{\vect{e}_1}$ which is the first column of the matrix $A$. 
+we find $T(\vect{e}_1)$ which is the first column of the matrix $A$. 
 
 We proceed to find $x$ and $y$. We do so by solving {\eqref{matrix-values}}, which can be done by solving the system
 \begin{equation*}
@@ -283,11 +283,11 @@ This example illustrates a very long procedure for finding the matrix of $A$. Wh
 will always result in the correct matrix $A$, the following procedure provides an alternative method. 
 
 \begin{procedure}{Finding the matrix of inconveniently defined linear transformation}{finding-matrix-of-linear-transformation}
-Suppose $T:\R^{n}\rightarrow \R^{m}$ is a linear transformation. Suppose there exist vectors $\set{\vect{a}_{1},\cdots ,\vect{a}_{n}} $ in $\R^{n}$ such that $\begin{mymatrix}{ccc}
+Suppose $T:\R^{n}\rightarrow \R^{m}$ is a linear transformation. Suppose there exist vectors $\set{\vect{a}_{1},\ldots,\vect{a}_{n}} $ in $\R^{n}$ such that $\begin{mymatrix}{ccc}
 \vect{a}_{1} & \cdots & \vect{a}_{n}
 \end{mymatrix} ^{-1}$ exists, and 
 \begin{equation*}
-T \tup{\vect{a}_{i}}=\vect{b}_{i}
+T (\vect{a}_{i})=\vect{b}_{i}
 \end{equation*}
 Then the matrix of $T$ must be of the form
 \begin{equation*}
@@ -300,9 +300,9 @@ Then the matrix of $T$ must be of the form
 \end{procedure}
 
 We will illustrate this procedure in the following example. You may also find it useful
-to work through Example~\ref{exa:2x2-inconvenient-matrix-of-lin-transf} using this procedure.
+to work through Example~\ref{exa:2x2-inconvenient-matrix-of-linear-transf} using this procedure.
 
-\begin{example}{Matrix of a linear transformation \\ given inconveniently}{inconvenient-matrix-lin-transf}
+\begin{example}{Matrix of a linear transformation \\ given inconveniently}{inconvenient-matrix-linear-transf}
 Suppose $T:\R^{3}\rightarrow \R^{3}$ is a linear
 transformation and
 \begin{equation*}
@@ -404,22 +404,22 @@ Indeed you can first verify that $T(\vect{x})=C\vect{x}$ for the 3 vectors above
 \end{equation*}
 
 But more generally $T(\vect{x})= C\vect{x}$ for any $\vect{x}$. To see this, let $\vect{y}=A^{-1}\vect{x}$ and then using linearity of $T$:
-\[ T(\vect{x})= T(A\vect{y}) = T \tup{\sum_i \vect{y}_i\vect{a}_i } = \sum \vect{y}_i T(\vect{a}_i) \sum \vect{y}_i \vect{b}_i = B\vect{y} = BA^{-1}\vect{x} = C\vect{x}\]
+\[ T(\vect{x})= T(A\vect{y}) = T \paren{\sum_i \vect{y}_i\vect{a}_i} = \sum \vect{y}_i T(\vect{a}_i) \sum \vect{y}_i \vect{b}_i = B\vect{y} = BA^{-1}\vect{x} = C\vect{x}\]
 \end{solution}
 
 Recall the dot product discussed earlier. Consider the map $\vect{v}$\textbf{$\mapsto $}
-$\func{proj}_{\vect{u}}\tup{\vect{v}} $ which takes a vector a transforms it to its projection onto a given vector $\vect{u}$. It turns out that
+$\proj_{\vect{u}}(\vect{v}) $ which takes a vector a transforms it to its projection onto a given vector $\vect{u}$. It turns out that
 this map is linear, a result which follows from the properties of the
 dot product. This is shown as follows.
 \begin{eqnarray*}
-\func{proj}_{\vect{u}}\tup{k \vect{v}+ p \vect{w}}
-&=&\tup{\vspace{0.05in}\frac{(k \vect{v}+ p \vect{w})\dotprod \vect{u}}{
+\proj_{\vect{u}}(k \vect{v}+ p \vect{w})
+&=&\paren{\vspace{0.05in}\frac{(k \vect{v}+ p \vect{w})\dotprod \vect{u}}{
 \vect{u}\dotprod \vect{u}}} \vect{u} \\
-&=& k  \tup{\vspace{0.05in}\frac{
-\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}} \vect{u}+p \tup{\vspace{
+&=& k  \paren{\vspace{0.05in}\frac{
+\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}} \vect{u}+p \paren{\vspace{
 0.05in}\frac{\vect{w}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}} \vect{u} \\
-&=& k \; \func{proj}_{\vect{u}}\tup{\vect{v}} +p \; \func{proj}
-_{\vect{u}}\tup{\vect{w}} 
+&=& k \; \proj_{\vect{u}}(\vect{v}) +p \; \proj
+_{\vect{u}}(\vect{w}) 
 \end{eqnarray*}
 
 Consider the following example.
@@ -429,9 +429,9 @@ Let $\vect{u} = \begin{mymatrix}{r}
 1 \\
 2 \\
 3
-\end{mymatrix}$ and let $T$ be the projection map $T: \R^3 \mapsto \R^3$ defined by 
+\end{mymatrix}$ and let $T$ be the projection map $T: \R^3 \to \R^3$ defined by 
 \[
-T(\vect{v}) = \func{proj}_{\vect{u}}\tup{\vect{v}}
+T(\vect{v}) = \proj_{\vect{u}}(\vect{v})
 \]
 for any $\vect{v} \in \R^3$.  
 \begin{enumerate}
@@ -444,15 +444,15 @@ multiplication by a matrix?
 \begin{solution}
 \begin{enumerate}
 \item
-First, we have just seen that $T (\vect{v}) = \func{proj}_{\vect{u}}\tup{\vect{v}}$ is linear. Therefore by Theorem~\ref{thm:matrix-lin-transf}, we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
+First, we have just seen that $T (\vect{v}) = \proj_{\vect{u}}(\vect{v})$ is linear. Therefore by Theorem~\ref{thm:matrix-linear-transf}, we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
 
 \item
 The columns of the matrix for $T$ are defined above as $T(\vect{e}_{i})$. 
-It follows that $T(\vect{e}_{i}) = \func{proj}
-_{\vect{u}}\tup{\vect{e}_{i}} $ gives the $i^{th}$ column of the
+It follows that $T(\vect{e}_{i}) = \proj
+_{\vect{u}}(\vect{e}_{i}) $ gives the $i\th$ column of the
 desired matrix. Therefore, we need to find
 \begin{equation*}
-\func{proj}_{\vect{u}}\tup{\vect{e}_{i}} = \tup{\vspace{0.05in}
+\proj_{\vect{u}}(\vect{e}_{i}) = \paren{\vspace{0.05in}
 \frac{\vect{e}_{i}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}}
 \vect{u}
 \end{equation*}

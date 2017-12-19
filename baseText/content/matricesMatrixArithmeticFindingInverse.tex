@@ -1,5 +1,6 @@
 % ----------------------------------------------------------------------
 \subsection{Computing inverses}
+\label{ssec:computing-inverses}
 
 In Example~\ref{exa:verifying-inverse}, we verified that a matrix $A$
 had an inverse. But we did not actually compute the inverse: the
@@ -83,12 +84,12 @@ already known what it is.
       1 & -2 & 1 & 0 \\
       2 & -3 & 0 & 1
     \end{mymatrix}
-    \stackrel{R_2\rowop R_2-2R_1}{\sim}
+    \stackrel{R_2\rowop R_2-2R_1}{\roweq}
     \begin{mymatrix}{rr|rr}
       1 & -2 &  1 & 0 \\
       0 &  1 & -2 & 1
     \end{mymatrix}
-    \stackrel{R_1\rowop R_1+2R_2}{\sim}
+    \stackrel{R_1\rowop R_1+2R_2}{\roweq}
     \begin{mymatrix}{rr|rr}
       1 & 0 & -3 & 2 \\
       0 & 1 & -2 & 1
@@ -146,7 +147,7 @@ matrix, which we summarize in the following algorithm.
     \mat{I\mid B}.
   \end{equation*}
   If this can be done, then $A$ is invertible and $A^{-1}=B$. If it is
-  not possible (i.e., if the reduced echelon form of $A$ has less than
+  not possible (i.e., if the {\rref} of $A$ has less than
   $n$ pivot entries), then $A$ is not invertible.
 \end{algorithm}
 
@@ -170,31 +171,31 @@ tells us if $A$ does not have an inverse.
       1 & 0 &  2 & 0 & 1 & 0 \\
       3 & 1 & -1 & 0 & 0 & 1
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_2\rowop R_2-R_1}{\stackrel{R_3\rowop R_3-3R_1}{\sim}}&
+    &\stackrel{R_2\rowop R_2-R_1}{\stackrel{R_3\rowop R_3-3R_1}{\roweq}}&
     \begin{mymatrix}{rrr|rrr}
       1 &  2 &  2 &  1 & 0 & 0 \\
       0 & -2 &  0 & -1 & 1 & 0 \\
       0 & -5 & -7 & -3 & 0 & 1
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_1\rowop 7R_1}{\stackrel{R_3\rowop -2R_3}{\sim}}&
+    &\stackrel{R_1\rowop 7R_1}{\stackrel{R_3\rowop -2R_3}{\roweq}}&
     \begin{mymatrix}{rrr|rrr}
       7 & 14 & 14 &  7 & 0 &  0 \\
       0 & -2 &  0 & -1 & 1 &  0 \\
       0 & 10 & 14 &  6 & 0 & -2
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_1\rowop R_1+7R_2}{\stackrel{R_3\rowop R_3+5R_2}{\sim}}&
+    &\stackrel{R_1\rowop R_1+7R_2}{\stackrel{R_3\rowop R_3+5R_2}{\roweq}}&
     \begin{mymatrix}{rrr|rrr}
       7 &  0 & 14 &  0 & 7 &  0 \\
       0 & -2 &  0 & -1 & 1 &  0 \\
       0 &  0 & 14 &  1 & 5 & -2
     \end{mymatrix}\\[1ex]
-    &\stackrel{R_1\rowop R_1-R_3}{\sim}&
+    &\stackrel{R_1\rowop R_1-R_3}{\roweq}&
     \begin{mymatrix}{rrr|rrr}
       7 &  0 &  0 & -1 & 2 &  2 \\
       0 & -2 &  0 & -1 & 1 &  0 \\
       0 &  0 & 14 &  1 & 5 & -2
     \end{mymatrix}\\[-1ex]
-    &\stackrel{R_1\rowop \frac{1}{7}R_1}{\stackrel{R_2\rowop -\frac{1}{2}R_2}{\stackrel{R_3\rowop \frac{1}{14}R_3}{\sim}}}&
+    &\stackrel{R_1\rowop \frac{1}{7}R_1}{\stackrel{R_2\rowop -\frac{1}{2}R_2}{\stackrel{R_3\rowop \frac{1}{14}R_3}{\roweq}}}&
     \def\arraystretch{1.5}
     \begin{mymatrix}{rrr|rrr}
       1 & 0 & 0 & -\frac{1}{7} & \frac{2}{7} & \frac{2}{7} \\
