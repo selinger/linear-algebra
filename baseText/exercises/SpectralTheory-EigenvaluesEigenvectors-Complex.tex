@@ -21,7 +21,7 @@
       2   & -1  &  3  \\
       0   &  1  &  1  \\
       -1  &  1  &  0  \\
-    \end{mymatrix}
+    \end{mymatrix},
     \quad
     D = \begin{mymatrix}{rrr}
       1  &  1 & 1 \\
@@ -99,6 +99,42 @@
       $\mat{1,1,-1}^T$. Since the geometric multiplicity of the
       eigenvalue $1$ is less than its algebraic multiplicity, the
       matrix is not diagonalizable, not even over the complex numbers.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  I know a certain real $2\times 2$-matrix $A$. My matrix has complex
+  eigenvalue $\eigenvar=1+2i$ and corresponding eigenvector
+  $\vect{v}=\begin{mymatrix}{c}1\\i\end{mymatrix}$.
+  \begin{enumerate}
+  \item Find another eigenvalue and corresponding eigenvector of $A$.
+  \item Diagonalize $A$.
+  \item What is the secret matrix $A$?
+  \end{enumerate}
+
+  \begin{sol}
+    \begin{enumerate}
+    \item By Proposition~\ref{prop:conjugate-eigenvalues}, the other
+      eigenvalue is $1-2i$ with corresponding eigenvector
+      $\begin{mymatrix}{c}1\\-i\end{mymatrix}$.
+    \item From the eigenvalues and eigenvectors, we know that
+      $A=PDP^{-1}$, where
+      \begin{equation*}
+        P = \begin{mymatrix}{cc}
+          1 & 1 \\
+          i & -i
+        \end{mymatrix}
+        \quad\mbox{and}\quad
+        D = \begin{mymatrix}{cc}
+          1+2i & 0 \\
+          0 & 1-2i
+        \end{mymatrix}.
+      \end{equation*}
+    \item $A = PDP^{-1} = \begin{mymatrix}{cc}
+        1 & 2 \\
+        -2 & 1 \\
+      \end{mymatrix}$.
     \end{enumerate}
   \end{sol}
 \end{ex}
