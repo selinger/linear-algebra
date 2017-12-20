@@ -110,10 +110,10 @@
 \usepackage[pages=some]{background}
 
 % Inputs information regarding book Title, Authors, Version and Revision
-\input frontmatter/bookinfo.txt
+\input{frontmatter/bookinfo.txt}
 
 % Inputs information regarding Institution,Course Code, Name, Session and Section (for adapted text)
-\input courseInfo.txt
+\input{courseInfo.txt}
 
 % Lyryx Math Style
 \usepackage{LyryxMathStyle}
@@ -210,11 +210,11 @@
 % Title page
 \ifthenelse{\equal{\detokenize{print-cover-front}}{\jobname}}{
 	\pagestyle{empty}
-	\input frontmatter/titlepage
+	\input{frontmatter/titlepage}
 }{
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
 	\pagestyle{empty}
-	\input frontmatter/titlepage
+	\input{frontmatter/titlepage}
 }{
 	\raggedbottom
 	\allowdisplaybreaks
@@ -223,17 +223,17 @@
 \ifthenelse{\equal{\detokenize{interior}}{\jobname}}{
 	% Skip title page for interior
 }{
-	\input frontmatter/titlepage.tex
+	\input{frontmatter/titlepage.tex}
 	\cleardoublepage
 }
 
 
 % License
-	\input frontmatter/license.tex
+	\input{frontmatter/license.tex}
 	\clearpage
 
 % Revision
-	\input frontmatter/revision.tex
+	\input{frontmatter/revision.tex}
 	\clearpage
 
 %\end{document} %to compile only the front matter
@@ -251,7 +251,7 @@
         \Opensolutionfile{solutions}[ex]
         
 %LOAD COURSE CONTENT
-	\input courseSetup.tex
+	\input{courseSetup.tex}
 
 % Solutions
 	\Closesolutionfile{solutions}
