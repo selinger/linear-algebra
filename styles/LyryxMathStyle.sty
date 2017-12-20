@@ -186,10 +186,11 @@
 
 % ex env
 % can \def\myextitle{#1} if we want to save the title for use in the solution
-\newenvironment{ex}{
-	\par\medskip\noindent\refstepcounter{ex}\textbf{Exercise \theex}\hspace{0.25em}\itshape
-}{
-\par\medskip
+\newenvironment{ex}{\par\medskip\noindent%
+  \begin{enumialphparenastyle}%
+    \refstepcounter{ex}\textbf{Exercise \theex}\hspace{0.25em}\itshape%
+}{\end{enumialphparenastyle}%
+\par\medskip%
 }
 
 % answers package will place solutions in an solout env
