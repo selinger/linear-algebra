@@ -231,3 +231,24 @@
   \end{sol}
 \end{ex}
 
+\begin{ex}
+  Suppose $A$ is an $m\times n$-matrix and
+  $\set{\vect{w} _{1},\ldots,\vect{w}_{k}}$ is a linearly independent
+  set of vectors in $\R^{m}$. Now suppose
+  $A\vect{z}_{i}=\vect{w}_{i}$. Show
+  $\set{ \vect{z}_{1},\ldots,\vect{z}_{k}}$ is also linearly
+  independent.
+  \begin{sol}
+    Assume
+    $a_{1}\vect{z}_{1}+\ldots+a_{k}\vect{z}_{k}=\vect{0}$. Multiplying
+    both sides of the equation by $A$, we get
+    \begin{equation*}
+      a_{1}A\vect{z}_{1}+\ldots+a_{k}A\vect{z}_{k}=
+      a_{1}\vect{w}_{1}+\ldots+a_{k}\vect{w}_{k}=\vect{0}.
+    \end{equation*}
+    Since the $\vect{w}_{i}$ are linearly independent, it follows that
+    each $a_{i}=0$. Therefore the $\vect{z}_{i}$ are linearly
+    independent as well.
+  \end{sol}
+\end{ex}
+
