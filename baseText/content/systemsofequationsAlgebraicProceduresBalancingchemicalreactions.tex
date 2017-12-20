@@ -1,8 +1,8 @@
 \section{Application: Balancing chemical reactions}
 
-The tools of linear algebra can also be used in the subject area of Chemistry, specifically for balancing chemical reactions. 
-Consider the chemical reaction 
-\index{chemical reactions!balancing} 
+The tools of linear algebra can also be used in the subject area of Chemistry, specifically for balancing chemical reactions.
+Consider the chemical reaction
+\index{chemical reactions!balancing}
 \begin{equation*}
 SnO_{2}+H_{2}\rightarrow Sn+H_{2}O.
 \end{equation*}
@@ -11,52 +11,52 @@ chemical reaction occurs that transforms a combination of tin dioxide ($SnO_2$)
 and hydrogen ($H_2$) into a combination of tin ($Sn$) and water ($H_{2}O$). When considering
 chemical reactions, we want to investigate how much of each substance we began with and how much of each substance is involved in the result.
 
-An important theory we will use here is the mass balance theory. It tells us that we cannot create or delete 
+An important theory we will use here is the mass balance theory. It tells us that we cannot create or delete
 elements within a chemical reaction. For example, in the above
 expression, we must have the same number of atoms of oxygen, tin,
 and hydrogen on both sides of the reaction. Notice that this is not currently the case.
  For example, there are two oxygen atoms on the left and only one
-on the right. In order to fix this, we want to find numbers $x,y,z,w$ such that 
+on the right. In order to fix this, we want to find numbers $x,y,z,w$ such that
 \begin{equation*}
 x\;SnO_{2}+y\;H_{2}\rightarrow z\;Sn+w\;H_{2}O,
 \end{equation*}
-where both sides of the reaction have the same number of atoms of the various elements. 
+where both sides of the reaction have the same number of atoms of the various elements.
 
-This is a familiar problem. We can solve it by setting up a system of equations 
-in the variables $x,y,z,w$. Thus we need 
+This is a familiar problem. We can solve it by setting up a system of equations
+in the variables $x,y,z,w$. Thus we need
 \begin{equation*}
 \begin{array}{cl}
-Sn: & x=z \\ 
-O: & 2x=w \\ 
+Sn: & x=z \\
+O: & 2x=w \\
 H: & 2y=2w.
 \end{array}
 \end{equation*}
 We can rewrite these equations as
 \begin{equation*}
 \begin{array}{cl}
-Sn: & x - z = 0 \\ 
-O: & 2x - w = 0 \\ 
+Sn: & x - z = 0 \\
+O: & 2x - w = 0 \\
 H: & 2y - 2w = 0.
 \end{array}
 \end{equation*}
-The augmented matrix for this system of equations is given by 
+The augmented matrix for this system of equations is given by
 \begin{equation*}
 \begin{mymatrix}{rrrr|r}
-1 & 0 & -1 & 0 & 0 \\ 
-2 & 0 & 0 & -1 & 0 \\ 
+1 & 0 & -1 & 0 & 0 \\
+2 & 0 & 0 & -1 & 0 \\
 0 & 2 & 0 & -2 & 0
 \end{mymatrix}.
 \end{equation*}
-The {\rref} of this matrix is 
+The {\rref} of this matrix is
 \begin{equation*}
 \def\arraystretch{1.2}
 \begin{mymatrix}{rrrr|r}
-1 & 0 & 0 & -\frac{1}{2} & 0 \\ 
-0 & 1 & 0 & -1 & 0 \\ 
+1 & 0 & 0 & -\frac{1}{2} & 0 \\
+0 & 1 & 0 & -1 & 0 \\
 0 & 0 & 1 & -\frac{1}{2} & 0
 \end{mymatrix},
 \end{equation*}
-and the solution is given in parametric form as 
+and the solution is given in parametric form as
 \begin{equation*}
 \begin{array}{r@{~}c@{~}ll}
 x &=& \frac{1}{2} t \\
@@ -89,7 +89,7 @@ Here is another example.
 
 \begin{example}{Balancing a chemical reaction}{balancing-chem}
 Potassium is denoted by $K$, oxygen by $O$,
-phosphorus by $P$ and hydrogen by $H$. 
+phosphorus by $P$ and hydrogen by $H$.
 Consider the reaction given by
 \begin{equation*}
 KOH+H_{3}PO_{4}\rightarrow K_{3}PO_{4}+H_{2}O.
@@ -98,27 +98,27 @@ Balance this chemical reaction.
 \end{example}
 
 \begin{solution}
-We will use the same procedure as above to solve this problem. We need to find values for 
-$x,y,z,w$ such that  
+We will use the same procedure as above to solve this problem. We need to find values for
+$x,y,z,w$ such that
 \begin{equation*}
 x\;KOH+y\;H_{3}PO_{4}\rightarrow z\;K_{3}PO_{4}+w\;H_{2}O.
 \end{equation*}
-preserves the total number of atoms of each element. 
+preserves the total number of atoms of each element.
 Finding these values can be done by finding the solution to the following system of equations.
 \begin{equation*}
 \begin{array}{cl}
-K: & x=3z \\ 
-O: & x+4y=4z+w \\ 
-H: & x+3y=2w \\ 
+K: & x=3z \\
+O: & x+4y=4z+w \\
+H: & x+3y=2w \\
 P: & y=z.
 \end{array}
 \end{equation*}
-The augmented matrix for this system is 
+The augmented matrix for this system is
 \begin{equation*}
 \begin{mymatrix}{rrrr|r}
-1 & 0 & -3 & 0 & 0 \\ 
-1 & 4 & -4 & -1 & 0 \\ 
-1 & 3 & 0 & -2 & 0 \\ 
+1 & 0 & -3 & 0 & 0 \\
+1 & 4 & -4 & -1 & 0 \\
+1 & 3 & 0 & -2 & 0 \\
 0 & 1 & -1 & 0 & 0
 \end{mymatrix},
 \end{equation*}
@@ -126,14 +126,14 @@ and the {\rref} is
 \begin{equation*}
 \def\arraystretch{1.2}
 \begin{mymatrix}{rrrr|r}
-1 & 0 & 0 & -1 & 0 \\ 
-0 & 1 & 0 & -\frac{1}{3} & 0 \\ 
-0 & 0 & 1 & -\frac{1}{3} & 0 \\ 
+1 & 0 & 0 & -1 & 0 \\
+0 & 1 & 0 & -\frac{1}{3} & 0 \\
+0 & 0 & 1 & -\frac{1}{3} & 0 \\
 0 & 0 & 0 & 0 & 0
 \end{mymatrix}.
 \end{equation*}
 
-The general solution is given in terms of the parameter $t$ as 
+The general solution is given in terms of the parameter $t$ as
 \begin{equation*}
 \begin{array}{c}
 x = t \\

@@ -5,15 +5,15 @@ The $QR$ factorization of a matrix has a very useful application. It turns out t
 \begin{procedure}{Using the $QR$ factorization to estimate eigenvalues}{qr-eigenvalues}
 Let $A$ be an invertible matrix. Define the matrices $A_1, A_2, \ldots$ as follows:
 \begin{enumerate}
-\item 
+\item
 $A_1 = A$ factored as $A_1 = Q_1R_1$
-\item 
+\item
 $A_2 = R_1Q_1$ factored as $A_2 = Q_2R_2$
-\item 
+\item
 $A_3 = R_2Q_2$ factored as $A_3 = Q_3R_3$
 \end{enumerate}
 
-Continue in this manner, where in general $A_k = Q_kR_k$ and $A_{k+1} = R_kQ_k$. 
+Continue in this manner, where in general $A_k = Q_kR_k$ and $A_{k+1} = R_kQ_k$.
 
-Then it follows that this sequence of $A_i$ converges to an upper triangular matrix which is similar to $A$. Therefore the eigenvalues of $A$ can be approximated by the entries on the main diagonal of this upper triangular matrix. 
+Then it follows that this sequence of $A_i$ converges to an upper triangular matrix which is similar to $A$. Therefore the eigenvalues of $A$ can be approximated by the entries on the main diagonal of this upper triangular matrix.
 \end{procedure}

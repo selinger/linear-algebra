@@ -38,7 +38,7 @@ definition generalizes this notion.
   \index{linear dependence}\index{vector!linearly dependent} if it
   contains one or more redundant vectors. Otherwise, we say that the
   vectors are \textbf{linearly independent}%
-  \index{linear independence}\index{vector!linearly independent}.  
+  \index{linear independence}\index{vector!linearly independent}.
 \end{definition}
 
 \begin{example}{Redundant vectors}{redundant-vectors}
@@ -93,7 +93,7 @@ definition generalizes this notion.
     has no solution.
   \item The vector $\vect{u}_4$ is redundant, because $\vect{u}_4 =
     \vect{u}_2 + \vect{u}_3$.
-  \item The vector $\vect{u}_5$ is not redundant, because 
+  \item The vector $\vect{u}_5$ is not redundant, because
     This is because the system of equations
     \begin{equation*}
       \begin{mymatrix}{llll|l}
@@ -132,7 +132,7 @@ Fortunately, there is a much faster and easier method, the so-called
   \textbf{Output:} the set of indices $j$ such that $\vect{u}_j$ is
   redundant.
   \smallskip
-  
+
   \textbf{Algorithm:} Write the vectors $\vect{u}_1,\ldots,\vect{u}_k$
   as the columns of an $n\times k$-matrix, and reduce to {\ef}. Every
   {\em non-pivot} column, if any, corresponds to a redundant vector.
@@ -189,7 +189,7 @@ algorithm the {\em extended casting-out algorithm}.
   redundant, and a set of coefficients for writing each redundant
   vector as a linear combination of previous vectors.
   \smallskip
-  
+
   \textbf{Algorithm:} Write the vectors $\vect{u}_1,\ldots,\vect{u}_k$
   as the columns of an $n\times k$-matrix, and reduce to
   {\rref}. Every {\em non-pivot} column, if any, corresponds to a
@@ -441,7 +441,7 @@ problems such as the following.
   \begin{eqnarray*}
     a + 2b & = & 0, \\
     a + c & = & 0, \\
-    b - 5c & = & 0. 
+    b - 5c & = & 0.
   \end{eqnarray*}
   We can solve this system of three equations in three variables, and
   we find that it has the unique solution $a=b=c=0$. Therefore,
@@ -504,8 +504,8 @@ The following are some properties of linearly independent sets.
   \begin{equation*}
     \begin{mymatrix}{r}
         1 \\
-        4 
-      \end{mymatrix},\quad 
+        4
+      \end{mymatrix},\quad
       \begin{mymatrix}{r}
         2 \\
         3
@@ -529,16 +529,16 @@ The following are some properties of linearly independent sets.
 In general, there is more than one way of writing a given vector as a
 linear combination of some spanning vectors. For example, consider
 \begin{equation*}
-  \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix},\quad 
-  \vect{u}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ 1 \end{mymatrix},\quad 
-  \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix},\quad 
+  \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix},\quad
+  \vect{u}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ 1 \end{mymatrix},\quad
+  \vect{u}_3 = \begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix},\quad
   \vect{v} = \begin{mymatrix}{r} 1 \\ 3 \\ 2 \end{mymatrix}.
 \end{equation*}
 We can write $\vect{v}$ in many different ways as a linear
 combination of $\vect{u}_1,\ldots,\vect{u}_3$, for example
 \begin{equation*}
   \begin{array}{r@{~}c@{~}c}
-    \vect{v} &=& -\vect{u}_1 + 2\vect{u}_3, \\    
+    \vect{v} &=& -\vect{u}_1 + 2\vect{u}_3, \\
     \vect{v} &=& \vect{u}_2 + \vect{u}_3, \\
     \vect{v} &=& \vect{u}_1 + 2\vect{u}_2, \\
     \vect{v} &=& 2\vect{u}_1 + 3\vect{u}_2 - \vect{u}_3. \\
@@ -610,7 +610,7 @@ subject of the following theorem.
   \begin{equation*}
     \sspan\set{\vect{u}_{j_1},\ldots,\vect{u}_{j_\ell}}
     =
-    \sspan\set{\vect{u}_1,\ldots,\vect{u}_k}.    
+    \sspan\set{\vect{u}_1,\ldots,\vect{u}_k}.
   \end{equation*}
 \end{theorem}
 

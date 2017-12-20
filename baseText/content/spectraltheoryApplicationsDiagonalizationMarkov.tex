@@ -2,7 +2,7 @@
 
 There are applications of great importance which feature a special type of matrix.  Matrices whose columns consist of non-negative numbers that sum to one are
 called \textbf{Markov matrices}\index{Markov matrices}. An important application of Markov matrices is
-in population migration, as illustrated in the following definition. 
+in population migration, as illustrated in the following definition.
 
 \begin{definition}{Migration matrices}{migration-matrix}
 Let $m$ locations be denoted by the numbers $1,2,\ldots,m$. Suppose
@@ -17,9 +17,9 @@ $A$ is also called a \textbf{migration matrix}\index{migration matrix}.
 Consider the following example which demonstrates this situation.
 
 \begin{example}{Migration matrix}{migration-matrix}
-Let $A$ be a Markov matrix given by 
+Let $A$ be a Markov matrix given by
 \begin{equation*}
-A = 
+A =
 \begin{mymatrix}{rr}
 0.4 & 0.2 \\
 0.6 & 0.8
@@ -29,7 +29,7 @@ Verify that $A$ is a Markov matrix and describe the entries of $A$ in terms of p
 \end{example}
 
 \begin{solution}
-The columns of $A$ are comprised of non-negative numbers which sum to $1$. Hence, $A$ is a Markov matrix. 
+The columns of $A$ are comprised of non-negative numbers which sum to $1$. Hence, $A$ is a Markov matrix.
 
 Now, consider the entries $a_{ij}$ of $A$ in terms of population. The
 entry $a_{11} = 0.4$ is the proportion of residents in location one
@@ -38,7 +38,7 @@ which stay in location one in a given time period.  Entry $a_{21} =
 location 2 in the same time period. Entry $a_{12} = 0.2$ is the
 proportion of residents in location 2 which move to location
 1. Finally, entry $a_{22} = 0.8$ is the proportion of residents in
-location 2 which stay in location 2 in this time period.  
+location 2 which stay in location 2 in this time period.
 
 Considered as a Markov matrix, these numbers are usually identified
 with probabilities. Hence, we can say that the probability that a
@@ -49,16 +49,16 @@ is $0.4$.
 Observe that in Example~\ref{exa:migration-matrix} if there was initially say 15
 thousand people in location 1 and 10 thousands in location 2, then
 after one year there would be $0.4 \times 15 + 0.2 \times 10 = 8$
-thousands people in location 1 the following year, and similarly 
+thousands people in location 1 the following year, and similarly
 there would be $0.6 \times 15 + 0.8 \times 10 = 17$
 thousands people in location 2 the following year.
 
 More generally let $X_n=\mat{x_{1n}, \ldots, x_{mn}} ^{T}$ where $x_{in}$ is the
 population of location $i$ at time period $n$. We call $X_n$ the \textbf{state vector at period $n$}\index{state vector}. In particular, we call $X_0$ the initial state vector. Letting $A$ be the migration matrix, we compute the population in each location $i$ one time period later by $AX_n$. In order to find the population of location $i$ after $k$
-years, we compute the $i\th$ component of $A^{k}X$. This discussion is summarized in the following theorem. 
+years, we compute the $i\th$ component of $A^{k}X$. This discussion is summarized in the following theorem.
 
 \begin{theorem}{State vector}{state-vector}
-Let $A$ be the migration matrix of a population and let $X_n$ be the vector whose entries give the population of each location at time period $n$. Then $X_n$ is the state vector at period $n$ and it follows that 
+Let $A$ be the migration matrix of a population and let $X_n$ be the vector whose entries give the population of each location at time period $n$. Then $X_n$ is the state vector at period $n$ and it follows that
 \[
 X_{n+1} = A X_n
 \]
@@ -66,7 +66,7 @@ X_{n+1} = A X_n
 
 The sum of the entries of $X_n$ will equal the sum of the entries of the initial
 vector $X_{0}$. Since the columns of $A$ sum to $1$, this sum is preserved for every
-multiplication by $A$ as demonstrated below. 
+multiplication by $A$ as demonstrated below.
 \begin{equation*}
 \sum_{i}\sum_{j}a_{ij}x_{j}=\sum_{j}x_{j}\paren{\sum_{i}a_{ij}}
 =\sum_{j}x_{j}
@@ -75,14 +75,14 @@ multiplication by $A$ as demonstrated below.
 Consider the following example.
 
 \begin{example}{Using a migration matrix}{using-migration-matrix}
-Consider the migration matrix 
+Consider the migration matrix
 \begin{equation*}
-A = 
+A =
 \begin{mymatrix}{rrr}
 0.6 & 0 & 0.1 \\
 0.2 & 0.8 & 0 \\
 0.2 & 0.2 & 0.9
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
  for locations $1,2$, and $3$. Suppose initially there are $100$
 residents in location $1$, $200$ in location $2$ and $400$ in location $3$. Find the
@@ -97,19 +97,19 @@ X_1 &=& AX_0 \\
 x_{11} \\
 x_{21} \\
 x_{31}
-\end{mymatrix} 
-&=& 
+\end{mymatrix}
+&=&
 \begin{mymatrix}{rrr}
 0.6 & 0 & 0.1 \\
 0.2 & 0.8 & 0 \\
 0.2 & 0.2 & 0.9
-\end{mymatrix} 
+\end{mymatrix}
 \begin{mymatrix}{r}
 100 \\
 200 \\
 400
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{r}
 100 \\
 180 \\
@@ -117,26 +117,26 @@ x_{31}
 \end{mymatrix}
 \end{eqnarray*}
 Therefore after one time period, location $1$ has $100$ residents, location $2$ has $180$, and location $3$ has $420$. Notice that the \textbf{total} population is unchanged, it simply migrates within the given locations.
-We find the locations after two time periods in the same way. 
+We find the locations after two time periods in the same way.
 \begin{eqnarray*}
 X_2 &=& AX_1 \\
 \begin{mymatrix}{r}
 x_{12} \\
 x_{22} \\
 x_{32}
-\end{mymatrix} 
-&=& 
+\end{mymatrix}
+&=&
 \begin{mymatrix}{rrr}
 0.6 & 0 & 0.1 \\
 0.2 & 0.8 & 0 \\
 0.2 & 0.2 & 0.9
-\end{mymatrix} 
+\end{mymatrix}
 \begin{mymatrix}{r}
 100 \\
 180 \\
 420
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{r}
 102 \\
 164 \\
@@ -144,16 +144,16 @@ x_{32}
 \end{mymatrix}
 \end{eqnarray*}
 
-We could progress in this manner to find the populations after $10$ time periods. However from our above discussion, we can simply calculate $(A^{n}X_0) _{i}$, 
-where $n$ denotes the number of time periods which have passed. Therefore, we compute the populations in each location after $10$ units of time as follows. 
+We could progress in this manner to find the populations after $10$ time periods. However from our above discussion, we can simply calculate $(A^{n}X_0) _{i}$,
+where $n$ denotes the number of time periods which have passed. Therefore, we compute the populations in each location after $10$ units of time as follows.
 \begin{eqnarray*}
 X_{10} &=& A^{10}X_0 \\
 \begin{mymatrix}{r}
 x_{1 10} \\
 x_{2 10} \\
-x_{3 10} 
-\end{mymatrix} 
-&=& 
+x_{3 10}
+\end{mymatrix}
+&=&
 \begin{mymatrix}{rrr}
 0.6 & 0 & 0.1 \\
 0.2 & 0.8 & 0 \\
@@ -169,7 +169,7 @@ x_{3 10}
 464.\,\allowbreak 783\,498\,34
 \end{mymatrix}
 \end{eqnarray*}
-Since we are speaking about populations, we would need to round these numbers to provide a logical 
+Since we are speaking about populations, we would need to round these numbers to provide a logical
 answer. Therefore, we can say that after $10$ units of time, there will be $115$ residents in location one, $120$ in location two,
 and $465$ in location three.
 \end{solution}
@@ -178,7 +178,7 @@ A second important application of Markov matrices is the concept of random walks
 \[
 \sum_{i=1}^{k}a_{ij}=1
 \]
-In this context, the vector $X_n=\mat{x_{1n}, \ldots, x_{mn}} ^{T}$ contains the probabilities $x_{in}$ the walker ends up in location $i, 1\leq i \leq m$ at time $n$. 
+In this context, the vector $X_n=\mat{x_{1n}, \ldots, x_{mn}} ^{T}$ contains the probabilities $x_{in}$ the walker ends up in location $i, 1\leq i \leq m$ at time $n$.
 
 \begin{example}{Random walks}{random-walks}
 Suppose three locations exist, referred to as locations $1, 2$ and $3$. The Markov matrix of probabilities $A = [a_{ij}]$ is given by
@@ -189,11 +189,11 @@ Suppose three locations exist, referred to as locations $1, 2$ and $3$. The Mark
 0.2 & 0.3 & 0.4
 \end{mymatrix}
 \]
-If the walker starts in location $1$, calculate the probability that he ends up in location $3$ at time $n = 2$. 
+If the walker starts in location $1$, calculate the probability that he ends up in location $3$ at time $n = 2$.
 \end{example}
 
 \begin{solution}
-Since the walker begins in location $1$, we have 
+Since the walker begins in location $1$, we have
 \[
 X_{0} = \begin{mymatrix}{c}
 1 \\
@@ -213,7 +213,7 @@ X_{1} &=& A X_{0} \\
 0 \\
 0
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{r}
 0.4 \\
 0.4 \\
@@ -231,7 +231,7 @@ X_{2} &=& A X_{1} \\
 0.4 \\
 0.2
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{r}
 0.3 \\
 0.42 \\
@@ -243,29 +243,29 @@ This gives the probabilities that our walker ends up in locations 1, 2, and 3. F
 
 Returning to the context of migration, suppose we wish to know how many residents will be in a certain location
 after a very long time. It turns out that if some power of the
-migration matrix has all positive entries, then there is a vector $X_s$ such that $A^{n}X_{0}$ approaches $X_s$ as $n$ becomes very large. Hence as more time passes and $n$ increases, $A^{n}X_{0}$ will become closer to the vector $X_s$. 
+migration matrix has all positive entries, then there is a vector $X_s$ such that $A^{n}X_{0}$ approaches $X_s$ as $n$ becomes very large. Hence as more time passes and $n$ increases, $A^{n}X_{0}$ will become closer to the vector $X_s$.
 
-Consider Theorem~\ref{thm:state-vector}. Let $n$ increase so that $X_n$ approaches $X_s$. As $X_n$ becomes closer to $X_s$, so too does $X_{n+1}$. For sufficiently large $n$, the statement $X_{n+1} = AX_n$ can be written as $X_s = AX_s$. 
+Consider Theorem~\ref{thm:state-vector}. Let $n$ increase so that $X_n$ approaches $X_s$. As $X_n$ becomes closer to $X_s$, so too does $X_{n+1}$. For sufficiently large $n$, the statement $X_{n+1} = AX_n$ can be written as $X_s = AX_s$.
 
 This discussion motivates the following theorem.
 
 \begin{theorem}{Steady state vector}{steady-state}
-Let $A$ be a migration matrix. Then there exists a \textbf{steady state vector} written $X_s$ such that 
+Let $A$ be a migration matrix. Then there exists a \textbf{steady state vector} written $X_s$ such that
 \[
 X_s = AX_s
 \]
-where $X_s$ has positive entries which have the same sum as the entries of $X_0$. 
+where $X_s$ has positive entries which have the same sum as the entries of $X_0$.
 
-As $n$ increases, the state vectors $X_n$ will approach $X_s$. 
+As $n$ increases, the state vectors $X_n$ will approach $X_s$.
 \end{theorem}
 
-Note that the condition in Theorem~\ref{thm:steady-state} can be written as $(I - A)X_s=0$, representing a homogeneous system of equations. 
+Note that the condition in Theorem~\ref{thm:steady-state} can be written as $(I - A)X_s=0$, representing a homogeneous system of equations.
 
 Consider the following example. Notice that it is the same example as the Example~\ref{exa:using-migration-matrix} but here it will
 involve a longer time frame.
 
 \begin{example}{Populations over the long run}{long-run-population}
-Consider the migration matrix 
+Consider the migration matrix
 \begin{equation*}
 A
 =
@@ -273,7 +273,7 @@ A
 0.6 & 0 & 0.1 \\
 0.2 & 0.8 & 0 \\
 0.2 & 0.2 & 0.9
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
  for locations $1,2$, and $3$. Suppose initially there are 100
 residents in location 1, 200 in location 2 and 400 in location 4. Find the
@@ -281,7 +281,7 @@ population in the three locations after a long time.
 \end{example}
 
 \begin{solution}
-By Theorem~\ref{thm:steady-state} the steady state vector $X_s$ can be found by solving the system $(I-A)X_s = 0$. 
+By Theorem~\ref{thm:steady-state} the steady state vector $X_s$ can be found by solving the system $(I-A)X_s = 0$.
 
 Thus we need to find a solution to
 \begin{equation*}
@@ -303,7 +303,7 @@ x_{3s}
 0
 \end{mymatrix}
 \end{equation*}
-The augmented matrix and the resulting {\rref} are given by 
+The augmented matrix and the resulting {\rref} are given by
 \begin{equation*}
 \begin{mymatrix}{rrr|r}
 0.4 & 0 & -0.1 & 0 \\
@@ -326,7 +326,7 @@ t\begin{mymatrix}{c}
 \end{mymatrix}
 \end{equation*}
 
-The initial vector $X_0$ is given by 
+The initial vector $X_0$ is given by
 \begin{equation*}
 \begin{mymatrix}{r}
 100 \\
@@ -350,7 +350,7 @@ is given by
 116. 666\,666\,666\, 666\,7 \\
 116. 666\,666\,666\, 666\,7 \\
 466. 666\,666\,666\, 666\,7
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 
 Again, because we are working with populations, these values need to be rounded. The steady state vector $X_s$ is given by
@@ -359,17 +359,17 @@ Again, because we are working with populations, these values need to be rounded.
 117 \\
 117 \\
 466
-\end{mymatrix} 
+\end{mymatrix}
 \]
 \end{solution}
 
 We can see that the numbers we calculated in Example~\ref{exa:using-migration-matrix} for the populations
-after the $10\th$ unit of time are not far from the long term values. 
+after the $10\th$ unit of time are not far from the long term values.
 
 Consider another example.
 
 \begin{example}{Populations after a long time}{population-after-long-time}
-Suppose a migration matrix is given by 
+Suppose a migration matrix is given by
 \begin{equation*}
 A = \begin{mymatrix}{ccc}
 \vspace{.05in} \frac{1}{5} & \vspace{.05in} \frac{1}{2} & \vspace{.05in}
@@ -378,14 +378,14 @@ A = \begin{mymatrix}{ccc}
 \frac{1}{2} \\
 \vspace{.05in} \frac{11}{20} & \vspace{.05in} \frac{1}{4} & \vspace{.05in}
 \frac{3}{10}
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
  Find the comparison between the populations in the three
 locations after a long time.
 \end{example}
 
 \begin{solution}
-In order to compare the populations in the long term, we want to find the steady state vector $X_s$. 
+In order to compare the populations in the long term, we want to find the steady state vector $X_s$.
 Solve
 \begin{equation*}
 \paren{\begin{mymatrix}{rrr}
@@ -407,7 +407,7 @@ x_{3s}
 0 \\
 0 \\
 0
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 The augmented matrix and the resulting {\rref} are given by
 \begin{equation*}
@@ -432,7 +432,7 @@ and so an eigenvector is
 16 \\
 18 \\
 19
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 
 Therefore, the proportion of population in location 2 to location 1 is given by $\vspace{.05in} \frac{18}{16}$.

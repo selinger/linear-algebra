@@ -523,7 +523,7 @@ between points and planes.
     \end{tikzpicture}
   \end{center}
   The direction vector of the line is $\mat{2,-1,-2}^T$ and the normal
-  vector of the plane is $\mat{2,2,-1}$. We have 
+  vector of the plane is $\mat{2,2,-1}$. We have
   \begin{equation*}
     \cos\phi =
     \frac{\vect{n}\dotprod\vect{d}}{\norm{\vect{n}}\norm{\vect{d}}}
@@ -576,19 +576,19 @@ between points and planes.
   \end{equation*}
   Next, compute $\longvect{QP} = \proj_{\vect{n}}\longvect{RP}$.
   \begin{equation*}
-    \longvect{QP} ~=~ \proj_{\vect{n}}\longvect{RP} 
-    ~=~ \paren{\frac{ \longvect{RP} \dotprod \vect{n}}{\norm{\vect{n}} ^2}}\vect{n} 
-    ~=~ \frac{12}{9} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix} 
+    \longvect{QP} ~=~ \proj_{\vect{n}}\longvect{RP}
+    ~=~ \paren{\frac{ \longvect{RP} \dotprod \vect{n}}{\norm{\vect{n}} ^2}}\vect{n}
+    ~=~ \frac{12}{9} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix}
     ~=~ \frac{4}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix}.
   \end{equation*}
   Then, $\norm{\longvect{QP}} = 4$ so the shortest distance from $P$
   to the plane is $4$.  To find the point $Q$ on the plane that is
   closest to $P$, we have
   \begin{equation*}
-    \vect{q} ~=~ \vect{p} - \longvect{QP} 
+    \vect{q} ~=~ \vect{p} - \longvect{QP}
     ~=~ \begin{mymatrix}{r} 3 \\ 2 \\ 3 \end{mymatrix}
     -
-    \frac{4}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix} 
+    \frac{4}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix}
     ~=~
     \frac{1}{3}
     \begin{mymatrix}{r} 1 \\ 2 \\ 1 \end{mymatrix}.

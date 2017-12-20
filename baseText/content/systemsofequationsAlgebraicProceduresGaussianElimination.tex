@@ -32,13 +32,13 @@ equations is in a special form called {\em {\ef}}, which we now define.
   An entry of an augmented matrix is called a
   \textbf{leading entry}\index{leading entry} or
   \textbf{pivot entry}\index{pivot entry}
-  if it is the leftmost non-zero entry of a row. 
+  if it is the leftmost non-zero entry of a row.
   An augmented matrix is in
   \textbf{\ef}\eindex{\ef}
   (also called \textbf{row echelon form}\index{row echelon form|see {\ef}}) if
   \begin{enumerate}
   \item All rows of zeros are below all non-zero rows.
-    
+
   \item Each leading entry of a row is in a column to the right of the
     leading entry of any row above it.
   \end{enumerate}
@@ -75,7 +75,7 @@ staircase. Here are some examples of {\ef}s.
 \end{example}
 
 \begin{example}{Not in {\ef}}{matrices-not-echelon}
-The following augmented matrices are not in {\ef}. 
+The following augmented matrices are not in {\ef}.
 
 \begin{equation*}
 \begin{mymatrix}{rrr|r}
@@ -93,7 +93,7 @@ The following augmented matrices are not in {\ef}.
 \circled{1} & 5 & 0 & 2 \\
 0 & 0 & \circled{1} & 0 \\
 0 & 0 & 0 & 0
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 In the first matrix, a row of zeros is above a non-zero row. In the
 second and third matrix, the leading entries of some rows are not to
@@ -255,7 +255,7 @@ examples show how to do this.
     \begin{mymatrix}{rrr|r}
       0 &  1 &   2 & 2\\
       2 &  1 &  -2 & 3\\
-      4 & -1 & -10 & 4      
+      4 & -1 & -10 & 4
     \end{mymatrix}.
   \end{equation*}
   We use Algorithm~\ref{algo:gaussian-elimination} to carry the
@@ -267,7 +267,7 @@ examples show how to do this.
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  1 &   2 & 2\\
-      4 & -1 & -10 & 4      
+      4 & -1 & -10 & 4
     \end{mymatrix}.
   \end{equation*}
   To create zeros below the pivot entry, we subtract $2$ times the
@@ -277,7 +277,7 @@ examples show how to do this.
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3\\
       0 &  1 &   2 & 2\\
-      0 & -3 & -6 & -2      
+      0 & -3 & -6 & -2
     \end{mymatrix}.
   \end{equation*}
   This finishes the first column. The second pivot column will be
@@ -332,7 +332,7 @@ examples show how to do this.
       \circled{3} &  -1  &  5 & 8 \\
       0 &   1 & -10 & 1 \\
       0 &   1 & -10 & 1
-    \end{mymatrix} 
+    \end{mymatrix}
   \end{equation*}
   Now, we have created zeros beneath the pivot entry in the first
   column, so we move on to the second pivot column (which is the
@@ -357,7 +357,7 @@ examples show how to do this.
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
       3x - y + 5z &=& 8 \\
-      y - 10z &=& 1. 
+      y - 10z &=& 1.
     \end{array}
   \end{equation*}
   Observe that the free variable $z$ is not constrained by any
@@ -491,9 +491,9 @@ To summarize, we have the following possibilities for a system of equations:
   \begin{equation*}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 1 & -2 & 5 \\
-      0 & \circled{2} & 3 & 0 \\ 
+      0 & \circled{2} & 3 & 0 \\
       0 & 0 & \circled{1} & 2 \\
-      0 & 0 & 0 & 0 
+      0 & 0 & 0 & 0
     \end{mymatrix}.
   \end{equation*}
 
@@ -513,9 +513,9 @@ To summarize, we have the following possibilities for a system of equations:
   \begin{equation*}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 1 & 5 \\
-      0 & \circled{1} & 2 & -3 \\ 
+      0 & \circled{1} & 2 & -3 \\
       0 & 0 & 0 & 0 \\
-      0 & 0 & 0 & 0 
+      0 & 0 & 0 & 0
     \end{mymatrix}
   \end{equation*}
   or
@@ -547,7 +547,7 @@ Consider the matrix
 \begin{mymatrix}{rrr}
 1 & 2 & 3 \\
 1 & 5 & 9 \\
-2 & 4 & 6 
+2 & 4 & 6
 \end{mymatrix}
 \end{equation*}
 What is its rank?

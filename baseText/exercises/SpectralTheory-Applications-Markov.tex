@@ -1,13 +1,13 @@
 \section*{Exercises}
 
- 
+
 \begin{ex} The following is a Markov (migration) matrix for three locations
 \begin{equation*}
 \begin{mymatrix}{rrr}
 \vspace{0.05in}\frac{7}{10} & \vspace{0.05in}\frac{1}{9} & \vspace{0.05in}\frac{1}{5} \\
 \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{7}{9} & \vspace{0.05in}\frac{2}{5} \\
 \vspace{0.05in}\frac{1}{5} & \vspace{0.05in}\frac{1}{9} & \vspace{0.05in}\frac{2}{5}
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 \begin{enumerate}
 \item
@@ -17,26 +17,26 @@ The total number of individuals in the migration process is $256$. After a long 
 \end{enumerate}
 \begin{sol}
 \begin{enumerate}
-\item  Multiply the given matrix by the initial state vector given by 
+\item  Multiply the given matrix by the initial state vector given by
 $\begin{mymatrix}{r}
 90 \\
 81 \\
 85
-\end{mymatrix}$. After one time period there are $89$ people in location $1$, $106$ in location $2$, and $61$ in location $3$. 
+\end{mymatrix}$. After one time period there are $89$ people in location $1$, $106$ in location $2$, and $61$ in location $3$.
 \item  Solve the system given by $(I - A) X_s = 0$ where $A$ is the migration matrix and $X_s = \begin{mymatrix}{c}
 x_{1s} \\
 x_{2s} \\
 x_{3s}
-\end{mymatrix}$ is the steady state vector. The solution to this system is given by 
+\end{mymatrix}$ is the steady state vector. The solution to this system is given by
 \begin{eqnarray*}
 x_{1s} &=& \frac{8}{5} x_{3s} \\
-x_{2s} &=& \frac{63}{25} x_{3s} 
+x_{2s} &=& \frac{63}{25} x_{3s}
 \end{eqnarray*}
 Letting $x_{3s} = t$ and using the fact that there are a total of $256$ individuals, we must solve
 \[
 \frac{8}{5} t + \frac{63}{25} t + t = 256
 \]
-We find that $t=50$. Therefore after a long time, there are $80$ people in location $1$, $126$ in location $2$, and $50$ in location $3$. 
+We find that $t=50$. Therefore after a long time, there are $80$ people in location $1$, $126$ in location $2$, and $50$ in location $3$.
 \end{enumerate}
 \end{sol}
 \end{ex}
@@ -47,7 +47,7 @@ We find that $t=50$. Therefore after a long time, there are $80$ people in locat
 \vspace{0.05in}\frac{1}{5} & \vspace{0.05in}\frac{1}{5} & \vspace{0.05in}\frac{2}{5} \\
 \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{1}{5} \\
 \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{2}{5}
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 \begin{enumerate}
 \item Initially, there are $130$ individuals in location $1$, $300$ in location $2$, and $70$ in location $3$. How many are in each location after two time periods?
@@ -75,9 +75,9 @@ long time, how many are in each location?
 We solve $(I-A)X_s = 0$ to find the steady state vector $X_s = \begin{mymatrix}{c}
 x_{1s} \\
 x_{2s} \\
-x_{3s} 
+x_{3s}
 \end{mymatrix}$.
-The solution to the system is given by 
+The solution to the system is given by
 \begin{eqnarray*}
 x_{1s} &=& \frac{5}{6} x_{3s} \\
 x_{2s} &=& \frac{2}{3} x_{3s}
@@ -86,7 +86,7 @@ Letting $x_{3s} = t$ and using the fact that there are a total of $480$ individu
 \[
 \frac{5}{6} t + \frac{2}{3} t + t = 480
 \]
-We find that $t=192$. Therefore after a long time, there are $160$ people in location $1$, $128$ in location $2$, and $192$ in location $3$. 
+We find that $t=192$. Therefore after a long time, there are $160$ people in location $1$, $128$ in location $2$, and $192$ in location $3$.
 \end{sol}
 \end{ex}
 
@@ -96,7 +96,7 @@ We find that $t=192$. Therefore after a long time, there are $160$ people in loc
 \vspace{0.05in}\frac{3}{10} & \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{1}{5} \\
 \vspace{0.05in}\frac{3}{10} & \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{7}{10} \\
 \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{1}{10}
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 The total number of individuals in the migration process is $1155$. After a
 long time, how many are in each location?
@@ -110,7 +110,7 @@ long time, how many are in each location?
 \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{1}{8} \\
 \vspace{0.05in}\frac{3}{10} & \vspace{0.05in}\frac{2}{5} & \vspace{0.05in}\frac{5}{8} \\
 \vspace{0.05in}\frac{3}{10} & \vspace{0.05in}\frac{1}{2} & \vspace{0.05in}\frac{1}{4}
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 The total number of individuals in the migration process is $704$. After a
 long time, how many are in each location?
@@ -135,7 +135,7 @@ X_{3} = \begin{mymatrix}{r}
 0.44
 \end{mymatrix}
 \]
-Therefore the probability of ending up back in location $2$ is $0.18$. 
+Therefore the probability of ending up back in location $2$ is $0.18$.
 \end{sol}
 \end{ex}
 
@@ -166,7 +166,7 @@ X_{2} = \begin{mymatrix}{r}
 0.1705
 \end{mymatrix}
 \]
-Therefore the probability of ending up in location $1$ is $0.367$. 
+Therefore the probability of ending up in location $1$ is $0.367$.
 \end{sol}
 \end{ex}
 
@@ -185,37 +185,37 @@ SW & $\frac{1}{9}$ & $\frac{1}{10}$ & $\frac{1}{10}$ & $\frac{1}{2}$ \\
 \end{tabular}
 \end{equation*}
 In this table, the probability that a trailer starting at $NE$ ends in $NW$
-is $1/10$, the probability that a trailer starting at $SW$ ends in $NW$ is 
+is $1/10$, the probability that a trailer starting at $SW$ ends in $NW$ is
 $1/5$, and so forth. Approximately how many will you have in each location
 after a long time if the total number of trailers is $413$?
 \begin{sol}
-The migration matrix is 
+The migration matrix is
 \[
-A = 
+A =
 \begin{mymatrix}{rrrr}
 \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{1}{10} &\vspace{0.05in}\frac{1}{5} \\
 \vspace{0.05in}\frac{1}{3} & \vspace{0.05in}\frac{7}{10} & \vspace{0.05in}\frac{1}{5} &\vspace{0.05in}\frac{1}{10} \\
 \vspace{0.05in}\frac{2}{9} & \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{3}{5} &\vspace{0.05in}\frac{1}{5} \\
-\vspace{0.05in}\frac{1}{9} & \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{1}{10} &\vspace{0.05in}\frac{1}{2} 
+\vspace{0.05in}\frac{1}{9} & \vspace{0.05in}\frac{1}{10} & \vspace{0.05in}\frac{1}{10} &\vspace{0.05in}\frac{1}{2}
 \end{mymatrix}
 \]
 To find the number of trailers in each location after a long time we solve system $(I - A)X_s = 0$ for the steady state vector $X_s = \begin{mymatrix}{c}
 x_{1s} \\
 x_{2s} \\
 x_{3s} \\
-x_{4s} 
-\end{mymatrix}$. 
-The solution to the system is 
+x_{4s}
+\end{mymatrix}$.
+The solution to the system is
 \begin{eqnarray*}
 x_{1s} &=& \frac{9}{10} x_{4s} \\
 x_{2s} &=& \frac{12}{5} x_{4s} \\
-x_{3s} &=& \frac{8}{5} x_{4s} 
+x_{3s} &=& \frac{8}{5} x_{4s}
 \end{eqnarray*}
 Letting $x_{4s} = t$ and using the fact that there are a total of $413$ trailers we must solve
 \[
 \frac{9}{10} t + \frac{12}{5} t + \frac{8}{5}t  + t = 413
 \]
-We find that $t=70$. Therefore after a long time, there are $63$ trailers in the SE, $168$ in the NE, $112$ in the NW and $70$ in the SW.  
+We find that $t=70$. Therefore after a long time, there are $63$ trailers in the SE, $168$ in the NE, $112$ in the NW and $70$ in the SW.
 \end{sol}
 \end{ex}
 
@@ -233,7 +233,7 @@ SW & $\frac{3}{7}$ & $\frac{1}{4}$ & $\frac{1}{10}$ & $\frac{1}{2}$ \\
 \end{tabular}
 \end{equation*}
 In this table, the probability that a trailer starting at $NE$ ends in $NW$
-is $1/10$, the probability that a trailer starting at $SW$ ends in $NW$ is 
+is $1/10$, the probability that a trailer starting at $SW$ ends in $NW$ is
 $1/5$, and so forth. Approximately how many will you have in each location
 after a long time if the total number of trailers is $1469$.
 %\begin{sol}
@@ -292,7 +292,7 @@ SW & $\frac{3}{11}$ & $\frac{1}{10}$ & $\frac{1}{10}$ & $\frac{1}{2}$ \\
 \end{tabular}
 \end{equation*}
 In this table, the probability that a trailer starting at $NE$ ends in $NW$
-is $1/10$, the probability that a trailer starting at $SW$ ends in $NW$ is 
+is $1/10$, the probability that a trailer starting at $SW$ ends in $NW$ is
 $1/5$, and so forth. Approximately how many will you have in each location
 after a long time if the total number of trailers is $407$?
 %\begin{sol}

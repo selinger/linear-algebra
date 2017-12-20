@@ -81,7 +81,7 @@ The following definition summarizes the above.
   the points $Q$ on the line $L$.  The vector $\vect{d}$ is called the
   \textbf{direction vector}%
   \index{direction vector}\index{vector!direction vector} of the line.
-\end{definition} 
+\end{definition}
 
 \begin{example}{A line from a point and a direction vector}{line-point-and-direction-vector}
   Find a vector equation for the line which contains the point
@@ -117,7 +117,7 @@ The following definition summarizes the above.
     = \begin{mymatrix}{c} 1 \\ 2 \\ 0 \\ 1\end{mymatrix}
     + t \begin{mymatrix}{r} 1 \\ -6 \\ 6 \\ 2\end{mymatrix}.
   \end{equation*}
-\end{solution} 
+\end{solution}
 
 When we write a vector equation in the form
 \begin{equation*}
@@ -233,7 +233,7 @@ $3s$ or $1-r$.
 
 \begin{solution}
   The point $P$ is on the line $L$ if and only if there exists some
-  $t\in\R$ such that 
+  $t\in\R$ such that
   \begin{equation*}
     \begin{mymatrix}{c} 1 \\ 2 \\ 1 \end{mymatrix}
     + t \begin{mymatrix}{c} 2 \\ 3 \\ 1 \end{mymatrix}
@@ -384,14 +384,14 @@ convert the equation of a line from symmetric form to parametric form.
     \begin{mymatrix}{r}
       2 \\
       1 \\
-      -3 
+      -3
     \end{mymatrix}
     +
     t
     \begin{mymatrix}{r}
       3 \\
       2 \\
-      1 
+      1
     \end{mymatrix}.
   \end{equation*}
 \end{solution}
@@ -424,7 +424,7 @@ two angles.
     L_1:  \;
     \begin{mymatrix}{r} x \\ y \\ z \end{mymatrix}
     = \begin{mymatrix}{r} 1 \\ 2 \\ 0 \end{mymatrix}
-    + t \begin{mymatrix}{r} -1 \\ 1 \\ 2 \end{mymatrix} 
+    + t \begin{mymatrix}{r} -1 \\ 1 \\ 2 \end{mymatrix}
   \end{equation*}
   and
   \begin{equation*}
@@ -442,7 +442,7 @@ two angles.
     \quad\mbox{and}\quad
     \vect{v}=\begin{mymatrix}{r} 2 \\ 1 \\ -1 \end{mymatrix}.
   \end{equation*}
-  The answer is given by 
+  The answer is given by
   \begin{equation*}
     \cos\theta =
     \frac{\vect{u}\dotprod\vect{v}}{\norm{\vect{u}}\norm{\vect{v}}} = -\frac{1}{2},
@@ -455,7 +455,7 @@ two angles.
 \end{solution}
 
 Finally, we will show how to use projections to find the shortest
-distance from a point to a line. 
+distance from a point to a line.
 
 \begin{example}{Shortest distance from a point to a line}{shortest-point-line}
   Let $L$ be the line which goes through the point $P = (0,4,-2)$ with
@@ -488,7 +488,7 @@ distance from a point to a line.
     - \begin{mymatrix}{r} 0 \\ 4 \\ -2 \end{mymatrix}
     = \begin{mymatrix}{r} 1 \\ -1 \\ 7 \end{mymatrix}.
   \end{equation*}
-  Then, if $R$ is the point on $L$ closest to $Q$, it follows that 
+  Then, if $R$ is the point on $L$ closest to $Q$, it follows that
   \begin{equation*}
     \longvect{PR}
     ~=~ \proj_{\vect{d}}\longvect{PQ} \\
@@ -496,7 +496,7 @@ distance from a point to a line.
     ~=~ \frac{15}{9} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix} \\
     ~=~ \frac{5}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix}.
   \end{equation*}
-  Now, the distance from $Q$ to $L$ is given by 
+  Now, the distance from $Q$ to $L$ is given by
   \begin{equation*}
     \norm{\longvect{RQ}} = \norm{\longvect{PQ} - \longvect{PR}}
     = \sqrt{26}.
@@ -505,7 +505,7 @@ distance from a point to a line.
   position vector $\longvect{0P}$ for $P$ as follows
   \begin{equation*}
     \begin{mymatrix}{r} 0 \\ 4 \\ -2 \end{mymatrix}
-    + \frac{5}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix} 
+    + \frac{5}{3} \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix}
     ~=~
     \begin{mymatrix}{c}
       10/3 \\
@@ -513,5 +513,5 @@ distance from a point to a line.
       4/3
     \end{mymatrix}.
   \end{equation*}
-  Therefore, $R = (\frac{10}{3}, \frac{17}{3}, \frac{4}{3})$. 
+  Therefore, $R = (\frac{10}{3}, \frac{17}{3}, \frac{4}{3})$.
 \end{solution}

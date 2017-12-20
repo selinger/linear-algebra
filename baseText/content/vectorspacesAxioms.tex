@@ -14,15 +14,15 @@ something which has two operations satisfying the following vector space
 axioms.
 
 \begin{definition}{Vector space}{vector-space}
-A vector space\index{vector space} $V$ is a set of vectors with two operations defined, addition and scalar multiplication, which satisfy the axioms of addition and scalar multiplication. 
+A vector space\index{vector space} $V$ is a set of vectors with two operations defined, addition and scalar multiplication, which satisfy the axioms of addition and scalar multiplication.
 \end{definition}
 
 In the following definition we define two operations; vector addition, denoted by $+$ and scalar
-multiplication denoted by placing the scalar next to the vector. A vector space need not have usual operations, and for this reason the operations will always be given in the definition of the vector space. The below axioms\index{vector space axioms} for addition (written +) and scalar multiplication must hold for however addition and scalar multiplication are defined for the vector space.  
+multiplication denoted by placing the scalar next to the vector. A vector space need not have usual operations, and for this reason the operations will always be given in the definition of the vector space. The below axioms\index{vector space axioms} for addition (written +) and scalar multiplication must hold for however addition and scalar multiplication are defined for the vector space.
 
-It is important to note that we have seen much of this content before, in terms of $\R^n$. We will prove in this section that $\R^n$ is an example of a vector space and therefore all discussions in this chapter will pertain to $\R^n$. While it may be useful to consider all concepts of this chapter in terms of $\R^n$, it is also important to understand that these concepts apply to \textit{all} vector spaces. 
+It is important to note that we have seen much of this content before, in terms of $\R^n$. We will prove in this section that $\R^n$ is an example of a vector space and therefore all discussions in this chapter will pertain to $\R^n$. While it may be useful to consider all concepts of this chapter in terms of $\R^n$, it is also important to understand that these concepts apply to \textit{all} vector spaces.
 
-In the following definition, we will choose scalars $a,b$ to be real numbers and are thus dealing with \textit{real} vector spaces. However, we could also choose scalars which are complex numbers. In this case, we would call the vector space $V$ complex. 
+In the following definition, we will choose scalars $a,b$ to be real numbers and are thus dealing with \textit{real} vector spaces. However, we could also choose scalars which are complex numbers. In this case, we would call the vector space $V$ complex.
 
 \begin{definition}{Axioms of addition}{vector-space-axioms-addition}
 Let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they satisfy the following axioms of addition:
@@ -30,7 +30,7 @@ Let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they s
 \begin{itemize}
 \item Closed under Addition
 \[ \mbox{If}\; \vect{v}, \vect{w} \;\mbox{are in}\; V, \;\mbox{then}\; \vect{v}+\vect{w} \;\mbox{is also in}\; V.
-\] 
+\]
 \item The Commutative Law of Addition
 \[
 \vect{v}+\vect{w}=\vect{w}+\vect{v}
@@ -38,7 +38,7 @@ Let $\vect{v}, \vect{w}, \vect{z}$ be vectors in a vector space $V$. Then they s
 \item The Associative Law of Addition
 \[
 (\vect{v}+\vect{w}) +\vect{z}=\vect{v}+(\vect{w}+
-\vect{z}) 
+\vect{z})
 \]
 \item The Existence of an Additive Identity
 \[
@@ -86,9 +86,9 @@ $\R^n$, under the usual operations of vector addition and scalar multiplication,
 \end{example}
 
 \begin{solution}
-To show that $\R^n$ is a vector space, we need to show that the above axioms hold. Let $\vect{x}, \vect{y}, \vect{z}$ be vectors in $\R^n$. We first prove the axioms for vector addition. 
+To show that $\R^n$ is a vector space, we need to show that the above axioms hold. Let $\vect{x}, \vect{y}, \vect{z}$ be vectors in $\R^n$. We first prove the axioms for vector addition.
 \begin{itemize}
-\item 
+\item
 To show that $\R^n$ is closed under addition, we must show that for two vectors in $\R^n$ their sum is also in $\R^n$. The sum $\vect{x} + \vect{y}$ is given by:
 \[
 \begin{mymatrix}{c}
@@ -96,13 +96,13 @@ x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{mymatrix} + 
+\end{mymatrix} +
 \begin{mymatrix}{c}
 y_1 \\
 y_2 \\
 \vdots \\
 y_n
-\end{mymatrix} = 
+\end{mymatrix} =
 \begin{mymatrix}{c}
 x_1 + y_1 \\
 x_2 + y_2 \\
@@ -130,14 +130,14 @@ y_n
 x_1 + y_1 \\
 x_2 + y_2 \\
 \vdots \\
-x_n + y_n 
-\end{mymatrix} \\ 
+x_n + y_n
+\end{mymatrix} \\
 &=& \begin{mymatrix}{c}
 y_1 + x_1 \\
 y_2 + x_2 \\
 \vdots \\
-y_n + x_n 
-\end{mymatrix} \\ 
+y_n + x_n
+\end{mymatrix} \\
 &=& \begin{mymatrix}{c}
 y_1 \\
 y_2 \\
@@ -152,12 +152,12 @@ x_n
 &=& \vect{y} + \vect{x}
 \end{eqnarray*}
 
-Hence addition of vectors in $\R^n$ is commutative. 
+Hence addition of vectors in $\R^n$ is commutative.
 
-\item 
-We will show that addition of vectors in $\R^n$ is associative in a similar way. 
-\begin{eqnarray*} 
-(\vect{x} + \vect{y}) + \vect{z} &=& 
+\item
+We will show that addition of vectors in $\R^n$ is associative in a similar way.
+\begin{eqnarray*}
+(\vect{x} + \vect{y}) + \vect{z} &=&
 \paren{\begin{mymatrix}{c}
 x_1 \\
 x_2 \\
@@ -176,7 +176,7 @@ z_2 \\
 \vdots \\
 z_n
 \end{mymatrix} \\
-&=& 
+&=&
  \begin{mymatrix}{c}
 x_1 + y_1 \\
 x_2 + y_2 \\
@@ -188,14 +188,14 @@ z_2 \\
 \vdots \\
 z_n
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{c}
 (x_1 + y_1) + z_1 \\
 (x_2 + y_2) + z_2\\
 \vdots \\
 (x_n + y_n) + z_n
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{c}
 x_1 + (y_1 + z_1) \\
 x_2 + (y_2 + z_2)\\
@@ -206,36 +206,36 @@ x_n + (y_n + z_n)
 x_1 \\
 x_2  \\
 \vdots \\
-x_n 
-\end{mymatrix} + 
+x_n
+\end{mymatrix} +
 \begin{mymatrix}{c}
  y_1 + z_1 \\
  y_2 + z_2\\
 \vdots \\
 y_n + z_n
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{c}
 x_1 \\
 x_2  \\
 \vdots \\
-x_n 
+x_n
 \end{mymatrix} + \paren{
 \begin{mymatrix}{c}
  y_1  \\
  y_2 \\
 \vdots \\
-y_n 
+y_n
 \end{mymatrix} + \begin{mymatrix}{c}
  z_1  \\
  z_2 \\
 \vdots \\
-z_n 
+z_n
 \end{mymatrix}} \\
 &=& \vect{x} + (\vect{y} + \vect{z})
 \end{eqnarray*}
 
-Hence addition of vectors is associative. 
+Hence addition of vectors is associative.
 
 \item
 Next, we show the existence of an additive identity. Let $\vect{0} = \begin{mymatrix}{c}
@@ -243,10 +243,10 @@ Next, we show the existence of an additive identity. Let $\vect{0} = \begin{myma
 0 \\
 \vdots \\
 0
-\end{mymatrix}$. 
+\end{mymatrix}$.
 
 \begin{eqnarray*}
-\vect{x} + \vect{0} &=& 
+\vect{x} + \vect{0} &=&
 \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
@@ -262,7 +262,7 @@ x_n
 x_1 + 0 \\
 x_2 + 0 \\
 \vdots \\
-x_n + 0 
+x_n + 0
 \end{mymatrix} \\
 &=& \begin{mymatrix}{c}
 x_1 \\
@@ -271,21 +271,21 @@ x_2 \\
 x_n
 \end{mymatrix} \\
 &=& \vect{x}
-\end{eqnarray*} 
+\end{eqnarray*}
 
-Hence the zero vector $\vect{0}$ is an additive identity. 
+Hence the zero vector $\vect{0}$ is an additive identity.
 
 \item
-Next, we prove the existence of an additive inverse. 
+Next, we prove the existence of an additive inverse.
 Let $-\vect{x} = \begin{mymatrix}{c}
 -x_1 \\
 -x_2 \\
 \vdots \\
 -x_n
-\end{mymatrix}$. 
+\end{mymatrix}$.
 
 \begin{eqnarray*}
-\vect{x} + (-\vect{x}) &=& 
+\vect{x} + (-\vect{x}) &=&
  \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
@@ -312,37 +312,37 @@ x_n-x_n
 &=& \vect{0}
 \end{eqnarray*}
 
-Hence $-\vect{x}$ is an additive inverse. 
+Hence $-\vect{x}$ is an additive inverse.
 \end{itemize}
 
-We now need to prove the axioms related to scalar multiplication. Let $a,b$ be real numbers and let $\vect{x}, \vect{y}$ be vectors in $\R^n$. 
+We now need to prove the axioms related to scalar multiplication. Let $a,b$ be real numbers and let $\vect{x}, \vect{y}$ be vectors in $\R^n$.
 
 \begin{itemize}
 \item
-We first show that $\R^n$ is closed under scalar multiplication. To do so, we show that $a\vect{x}$ is also a vector with $n$ entries. 
+We first show that $\R^n$ is closed under scalar multiplication. To do so, we show that $a\vect{x}$ is also a vector with $n$ entries.
 \[
 a\vect{x} = a\begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 \vdots \\
-x_n 
-\end{mymatrix} 
+x_n
+\end{mymatrix}
 =
 \begin{mymatrix}{c}
 ax_1 \\
 ax_2 \\
 \vdots \\
-ax_n 
+ax_n
 \end{mymatrix}
 \]
-The vector $a\vect{x}$ is again a vector with $n$ entries, showing that $\R^n$ is closed under scalar multiplication. 
+The vector $a\vect{x}$ is again a vector with $n$ entries, showing that $\R^n$ is closed under scalar multiplication.
 
 
 \item
-We wish to show that $a (\vect{x} + \vect{y}) = a\vect{x} + a\vect{y}$. 
+We wish to show that $a (\vect{x} + \vect{y}) = a\vect{x} + a\vect{y}$.
 
 \begin{eqnarray*}
-a (\vect{x} + \vect{y}) &=& 
+a (\vect{x} + \vect{y}) &=&
 a \paren{
 \begin{mymatrix}{c}
 x_1 \\
@@ -355,14 +355,14 @@ x_2 \\
 \vdots \\
 x_n
 \end{mymatrix}} \\
-&=& 
+&=&
 a \begin{mymatrix}{c}
 x_1 + y_1 \\
 x_2 + y_2\\
 \vdots \\
 x_n + y_n
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{c}
 a(x_1 +y_1)\\
 a(x_2 +y_2)\\
@@ -391,11 +391,11 @@ ay_n
 &=& a\vect{x} + a\vect{y}
 \end{eqnarray*}
 
-\item 
+\item
 Next, we wish to show that $(a+b)\vect{x} = a\vect{x} + b\vect{x}$.
 
-\begin{eqnarray*} 
-(a+b)\vect{x} &=& 
+\begin{eqnarray*}
+(a+b)\vect{x} &=&
 (a+b) \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
@@ -403,7 +403,7 @@ x_2 \\
 x_n
 \end{mymatrix}
 \\
-&=& 
+&=&
 \begin{mymatrix}{c}
 (a+b)x_1 \\
 (a+b)x_2 \\
@@ -434,9 +434,9 @@ bx_n
 \end{eqnarray*}
 
 \item
-We wish to show that $a(b\vect{x}) = (ab) \vect{x}$. 
+We wish to show that $a(b\vect{x}) = (ab) \vect{x}$.
 \begin{eqnarray*}
-a(b\vect{x}) &=& 
+a(b\vect{x}) &=&
 a\paren{b \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
@@ -490,7 +490,7 @@ x_n
 \vdots \\
 1x_n
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
@@ -501,33 +501,33 @@ x_n
 \end{eqnarray*}
 \end{itemize}
 
-By the above proofs, it is clear that $\R^n$ satisfies the vector space axioms. Hence, $\R^n$ is a vector space under the usual operations of vector addition and scalar multiplication. 
+By the above proofs, it is clear that $\R^n$ satisfies the vector space axioms. Hence, $\R^n$ is a vector space under the usual operations of vector addition and scalar multiplication.
 \end{solution}
 
-We now consider some examples of vector spaces. 
+We now consider some examples of vector spaces.
 
 \begin{example}{Vector space of polynomials}{vector-space-poly}
-Let $\Poly_2$ be the set of all polynomials of at most degree $2$ as well as the zero polynomial. Define addition to be the standard addition of polynomials, and scalar multiplication the usual multiplication of a polynomial by a number. Then $\Poly_2$ is a vector space. 
+Let $\Poly_2$ be the set of all polynomials of at most degree $2$ as well as the zero polynomial. Define addition to be the standard addition of polynomials, and scalar multiplication the usual multiplication of a polynomial by a number. Then $\Poly_2$ is a vector space.
 \end{example}
 
 \begin{solution}
-We can write $\Poly_2$ explicitly as 
+We can write $\Poly_2$ explicitly as
 \[
 \Poly_2 = \set{a_2x^2 + a_1x + a_0 \mid a_i \in \R \; \mbox{for all} \; i }
 \]
-To show that $\Poly_2$ is a vector space, we verify the axioms. Let $p(x), q(x), r(x)$ be polynomials in $\Poly_2$ and let $a,b,c$ be real numbers. Write $p(x)=p_2x^2 + p_1x + p_0$, $q(x)=q_2x^2 + q_1x + q_0$, and $r(x)=r_2x^2 + r_1x + r_0$. 
+To show that $\Poly_2$ is a vector space, we verify the axioms. Let $p(x), q(x), r(x)$ be polynomials in $\Poly_2$ and let $a,b,c$ be real numbers. Write $p(x)=p_2x^2 + p_1x + p_0$, $q(x)=q_2x^2 + q_1x + q_0$, and $r(x)=r_2x^2 + r_1x + r_0$.
 
 \begin{itemize}
 \item
 We first prove that addition of polynomials in $\Poly_2$ is closed. For two polynomials in $\Poly_2$ we need to show that their sum is also a polynomial in $\Poly_2$. From the definition of $\Poly_2$, a polynomial is contained in $\Poly_2$ if it is of degree at most $2$ or the zero polynomial.
 \begin{eqnarray*}
 p(x) + q(x) &=& p_2x^2 + p_1x + p_0 + q_2x^2+ q_1x + q_0 \\
-&=& (p_2+q_2)x^2 + (p_1+q_1)x + (p_0+q_0) 
+&=& (p_2+q_2)x^2 + (p_1+q_1)x + (p_0+q_0)
 \end{eqnarray*}
-The sum is a polynomial of degree $2$ and therefore is in $\Poly_2$. It follows that $\Poly_2$ is closed under addition. 
+The sum is a polynomial of degree $2$ and therefore is in $\Poly_2$. It follows that $\Poly_2$ is closed under addition.
 
 \item
-We need to show that addition is commutative, that is $p(x)+q(x) = q(x) + p(x)$.   
+We need to show that addition is commutative, that is $p(x)+q(x) = q(x) + p(x)$.
 \begin{eqnarray*}
 p(x) + q(x) &=&  p_2x^2 + p_1x + p_0 + q_2x^2 + q_1x + q_0\\
 &=& (p_2+q_2)x^2 + (p_1+q_1)x + (p_0+q_0)  \\
@@ -537,7 +537,7 @@ p(x) + q(x) &=&  p_2x^2 + p_1x + p_0 + q_2x^2 + q_1x + q_0\\
 \end{eqnarray*}
 
 \item
-Next, we need to show that addition is associative. That is, that $(p(x) + q(x)) + r(x) = p(x) + (q(x)+r(x))$. 
+Next, we need to show that addition is associative. That is, that $(p(x) + q(x)) + r(x) = p(x) + (q(x)+r(x))$.
 \begin{eqnarray*}
 (p(x) + q(x)) + r(x) &=& (p_2x^2 +p_1x + p_0 + q_2x^2 + q_1x + q_0) + r_2x^2 +r_1x + r_0 \\
 &=&  (p_2+q_2)x^2 + (p_1+q_1)x + (p_0 +q_0) + r_2x^2 + r_1x + r_0\\
@@ -548,16 +548,16 @@ Next, we need to show that addition is associative. That is, that $(p(x) + q(x))
 \end{eqnarray*}
 
 \item
-Next, we must prove that there exists an additive identity. Let $0(x)=0x^2+0x+0$. 
+Next, we must prove that there exists an additive identity. Let $0(x)=0x^2+0x+0$.
 \begin{eqnarray*}
 p(x) + 0(x)  &=&  p_2x^2 + p_1x + p_0 + 0x^2 + 0x + 0 \\
 &=&  (p_2 + 0)x^2  + (p_1 + 0)x + (p_0 + 0)\\
 &=&  p_2x^2 + p_1x + p_0 \\
 &=& p(x)
 \end{eqnarray*}
-Hence an additive identity exists, specifically the zero polynomial. 
+Hence an additive identity exists, specifically the zero polynomial.
 
-\item 
+\item
 Next we must prove that there exists an additive inverse. Let $-p(x) = -p_2x^2 - p_1x - p_0$ and consider the following:
 \begin{eqnarray*}
 p(x) + (-p(x)) &=&   p_2x^2 + p_1x + p_0 + (- p_2x^2  - p_1x - p_0) \\
@@ -566,33 +566,33 @@ p(x) + (-p(x)) &=&   p_2x^2 + p_1x + p_0 + (- p_2x^2  - p_1x - p_0) \\
 &=& 0(x)
 \end{eqnarray*}
 
-Hence an additive inverse $-p(x)$ exists such that $p(x) + (-p(x)) = 0(x)$. 
-\end{itemize} 
+Hence an additive inverse $-p(x)$ exists such that $p(x) + (-p(x)) = 0(x)$.
+\end{itemize}
 
-We now need to verify the axioms related to scalar multiplication. 
+We now need to verify the axioms related to scalar multiplication.
 \begin{itemize}
 \item
-First we prove that $\Poly_2$ is closed under scalar multiplication. That is, we show that $ap(x)$ is also a polynomial of degree at most $2$. 
+First we prove that $\Poly_2$ is closed under scalar multiplication. That is, we show that $ap(x)$ is also a polynomial of degree at most $2$.
 \[
 ap(x) = a(p_2x^2 + p_1x + p_0) = ap_2x^2 +ap_1x+ ap_0
 \]
-Therefore $\Poly_2$ is closed under scalar multiplication. 
+Therefore $\Poly_2$ is closed under scalar multiplication.
 
 \item
-We need to show that $a(p(x) + q(x)) = ap(x) + aq(x)$. 
+We need to show that $a(p(x) + q(x)) = ap(x) + aq(x)$.
 \begin{eqnarray*}
 a(p(x) + q(x)) &=& a (p_2x^2 + p_1x + p_0 + q_2x^2 + q_1x + q_0)\\
 &=& a ((p_2+q_2)x^2 + (p_1+q_1)x + (p_0+q_0))\\
 &=&  a(p_2+q_2)x^2  + a(p_1+q_1)x +  a(p_0 + q_0) \\
 &=& (ap_2 + aq_2)x^2 + (ap_1+aq_1)x + (ap_0 + aq_0)  \\
 &=&  ap_2x^2 + ap_1x + ap_0 + aq_2x^2 +aq_1x + aq_0\\
-&=& ap(x) + aq(x) 
+&=& ap(x) + aq(x)
 \end{eqnarray*}
 
 \item
-Next we show that $(a+b) p(x) = ap(x) + bp(x)$. 
+Next we show that $(a+b) p(x) = ap(x) + bp(x)$.
 
-\begin{eqnarray*} 
+\begin{eqnarray*}
 (a+b) p(x) &=& (a+b) ( p_2x^2 + p_1x + p_0)\\
 &=& (a+b)p_2x^2 + (a+b)p_1x + (a+b)p_0   \\
 &=&  ap_2x^2 + ap_1x + ap_0 + bp_2x^2 +bp_1x + bp_0\\
@@ -600,18 +600,18 @@ Next we show that $(a+b) p(x) = ap(x) + bp(x)$.
 \end{eqnarray*}
 
 \item
-The next axiom which needs to be verified is $a(bp(x)) = (ab)p(x)$. 
+The next axiom which needs to be verified is $a(bp(x)) = (ab)p(x)$.
 
 \begin{eqnarray*}
 a(bp(x)) &=& a (b (p_2x^2 + p_1x +p_0)) \\
 &=& a (bp_2x^2 +bp_1x + bp_0)\\
 &=&  abp_2x^2 + abp_1x + abp_0 \\
 &=& (ab) (p_2x^2 +p_1x + p_0)\\
-&=& (ab) p(x) 
+&=& (ab) p(x)
 \end{eqnarray*}
 
-\item 
-Finally, we show that $1p(x) = p(x)$. 
+\item
+Finally, we show that $1p(x) = p(x)$.
 
 \begin{eqnarray*}
 1p(x) &=& 1 (p_2x^2  + p_1x +  p_0)\\
@@ -622,13 +622,13 @@ Finally, we show that $1p(x) = p(x)$.
 
 \end{itemize}
 
-Since the above axioms hold, we know that $\Poly_2$ as described above is a vector space. 
+Since the above axioms hold, we know that $\Poly_2$ as described above is a vector space.
 \end{solution}
 
-Another important example of a vector space is the set of all matrices of the same size. 
+Another important example of a vector space is the set of all matrices of the same size.
 
 \begin{example}{Vector space of matrices}{vector-space-matrices}
-Let $\Mat_{2,3}$ be the set of all $2 \times 3$-matrices. Using the usual operations of matrix addition and scalar multiplication, show that $\Mat_{2,3}$ is a vector space. 
+Let $\Mat_{2,3}$ be the set of all $2 \times 3$-matrices. Using the usual operations of matrix addition and scalar multiplication, show that $\Mat_{2,3}$ is a vector space.
 \end{example}
 
 \begin{solution}
@@ -636,7 +636,7 @@ Let $A, B$ be $2 \times 3$-matrices in $\Mat_{2,3}$. We first prove the axioms f
 
 \begin{itemize}
 \item
-In order to prove that $\Mat_{2,3}$ is closed under matrix addition, we show that the sum $A+B$ is in $\Mat_{2,3}$. This means showing that $A+B$ is a $2 \times 3$-matrix. 
+In order to prove that $\Mat_{2,3}$ is closed under matrix addition, we show that the sum $A+B$ is in $\Mat_{2,3}$. This means showing that $A+B$ is a $2 \times 3$-matrix.
 \begin{eqnarray*}
 A+B &=& \begin{mymatrix}{rrr}
 a_{11} & a_{12} & a_{13}\\
@@ -650,9 +650,9 @@ a_{11} + b_{11} & a_{12}+b_{12} & a_{13}+b_{13}\\
 a_{21} +b_{21}& a_{22}+b_{22} & a_{23}+b_{23}
 \end{mymatrix}
 \end{eqnarray*}
-You can see that the sum is a $2\times 3$-matrix, so it is in $\Mat_{2,3}$. It follows that $\Mat_{2,3}$ is closed under matrix addition. 
+You can see that the sum is a $2\times 3$-matrix, so it is in $\Mat_{2,3}$. It follows that $\Mat_{2,3}$ is closed under matrix addition.
 
-\item 
+\item
 The remaining axioms regarding matrix addition follow from properties of matrix addition. Therefore $\Mat_{2,3}$ satisfies the axioms of matrix addition.
 \end{itemize}
 
@@ -672,60 +672,60 @@ ca_{21} & ca_{22} & ca_{23}
 \end{mymatrix}
 \end{eqnarray*}
 
-This is a $2 \times 3$-matrix in $\Mat_{2,3}$ which proves that the set is closed under scalar multiplication. 
+This is a $2 \times 3$-matrix in $\Mat_{2,3}$ which proves that the set is closed under scalar multiplication.
 
-\item The remaining axioms of scalar multiplication follow from properties of scalar multiplication of matrices. Therefore $\Mat_{2,3}$ satisfies the axioms of scalar multiplication. 
+\item The remaining axioms of scalar multiplication follow from properties of scalar multiplication of matrices. Therefore $\Mat_{2,3}$ satisfies the axioms of scalar multiplication.
 \end{itemize}
 
-In conclusion, $\Mat_{2,3}$ satisfies the required axioms and is a vector space. 
+In conclusion, $\Mat_{2,3}$ satisfies the required axioms and is a vector space.
 \end{solution}
 
-While here we proved that the set of all $2 \times 3$-matrices is a vector space, there is nothing special about this choice of matrix size. In fact if we instead consider $\Mat_{m,n}$, the set of all $m \times n$-matrices, then  $\Mat_{m,n}$ is a vector space under the operations of matrix addition and scalar multiplication. 
+While here we proved that the set of all $2 \times 3$-matrices is a vector space, there is nothing special about this choice of matrix size. In fact if we instead consider $\Mat_{m,n}$, the set of all $m \times n$-matrices, then  $\Mat_{m,n}$ is a vector space under the operations of matrix addition and scalar multiplication.
 
-We now examine an example of a set that does not satisfy all of the above axioms, and is therefore \textit{not} a vector space. 
+We now examine an example of a set that does not satisfy all of the above axioms, and is therefore \textit{not} a vector space.
 
 \begin{example}{Not a vector space}{not-vector-space}
 Let $V$ denote the set of $2 \times 3$-matrices. Let addition in $V$ be defined by $A + B = A$ for matrices $A,B$ in $V$. Let scalar multiplication in $V$ be the usual scalar multiplication of matrices. Show that $V$ is not a vector space.
 \end{example}
 
 \begin{solution}
-In order to show that $V$ is not a vector space, it suffices to find only one axiom which is not satisfied. We will begin by examining the axioms for addition until one is found which does not hold. Let $A,B$ be matrices in $V$. 
+In order to show that $V$ is not a vector space, it suffices to find only one axiom which is not satisfied. We will begin by examining the axioms for addition until one is found which does not hold. Let $A,B$ be matrices in $V$.
 
 \begin{itemize}
 \item
-We first want to check if addition is closed. Consider $A+B$. By the definition of addition in the example, we have that $A+B = A$. Since $A$ is a $2 \times 3$-matrix, it follows that the sum $A+B$ is in $V$, and $V$ is closed under addition. 
+We first want to check if addition is closed. Consider $A+B$. By the definition of addition in the example, we have that $A+B = A$. Since $A$ is a $2 \times 3$-matrix, it follows that the sum $A+B$ is in $V$, and $V$ is closed under addition.
 
 \item
-We now wish to check if addition is commutative. That is, we want to check if $A + B = B + A$ \textbf{for all} choices of $A$ and $B$ in $V$. From the definition of addition, we have that $A + B = A$ and $B + A = B$. Therefore, we can find $A$, $B$ in $V$ such that these sums are not equal. One example is 
+We now wish to check if addition is commutative. That is, we want to check if $A + B = B + A$ \textbf{for all} choices of $A$ and $B$ in $V$. From the definition of addition, we have that $A + B = A$ and $B + A = B$. Therefore, we can find $A$, $B$ in $V$ such that these sums are not equal. One example is
 \[
 A = \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
-0 & 0 & 0 
+0 & 0 & 0
 \end{mymatrix}, B = \begin{mymatrix}{rrr}
 0 & 0 & 0 \\
-1 & 0 & 0 
+1 & 0 & 0
 \end{mymatrix}
 \]
 
-Using the operation defined by $A+B=A$, we have 
+Using the operation defined by $A+B=A$, we have
 \begin{eqnarray*}
 A+B &=& A \\
 &=& \begin{mymatrix}{rrr}
 1 & 0 & 0 \\
-0 & 0 & 0 
+0 & 0 & 0
 \end{mymatrix} \\
 \\
 B+A &=& B \\
 &=& \begin{mymatrix}{rrr}
 0 & 0 & 0 \\
-1 & 0 & 0 
+1 & 0 & 0
 \end{mymatrix}
 \end{eqnarray*}
 It follows that $A+B \neq B+A$. Therefore addition as defined for $V$ is not commutative and $V$ fails this axiom. Hence $V$ is not a vector space.
 \end{itemize}
 \end{solution}
 
-Consider another example of a vector space. 
+Consider another example of a vector space.
 
 \begin{example}{Vector space of functions}{vector-space-function}
 Let $S$ be a nonempty set and define $\Func_S$ to be the set of \textit{real} functions
@@ -736,19 +736,19 @@ vector operations are defined as
 x)  \\
 (af) (x)  &=&a(f(x))
 \end{eqnarray*}
-Show that $\Func_S$ is a vector space. 
+Show that $\Func_S$ is a vector space.
 \end{example}
 
 \begin{solution}
-To verify that $\Func_S$ is a vector space, we must prove the axioms beginning with those for addition. Let $f, g, h$ be functions in $\Func_S$. 
+To verify that $\Func_S$ is a vector space, we must prove the axioms beginning with those for addition. Let $f, g, h$ be functions in $\Func_S$.
 
 \begin{itemize}
 \item
-First we check that addition is closed.  For functions $f, g$ defined on the set $S$, their sum given by 
+First we check that addition is closed.  For functions $f, g$ defined on the set $S$, their sum given by
 \[
 (f+g)(x) = f(x)+g(x)
 \]
-is again a function defined on $S$. Hence this sum is in $\Func_S$ and $\Func_S$ is closed under addition. 
+is again a function defined on $S$. Hence this sum is in $\Func_S$ and $\Func_S$ is closed under addition.
 
 \item
 Secondly, we check the commutative law of addition:
@@ -775,29 +775,29 @@ and so $(f+g) +h=f+(g+h)$.
 \item
 Next we check for an additive identity.  Let $0$ denote the
 function which is given by $0(x) =0$. Then this is an additive
-identity because 
+identity because
 \begin{equation*}
 (f+0) (x) =f(x) +0(x)
 =f(x)
 \end{equation*}
-and so $f+0=f$. 
+and so $f+0=f$.
 
 \item
 Finally, check for an additive inverse. Let $-f$ be the function which satisfies $(-f)
-(x) = -f(x)$. Then 
+(x) = -f(x)$. Then
 \begin{equation*}
 (f+(-f)) (x) = f(x)
 +(-f) (x) = f(x) +-f(x)
 =0
 \end{equation*}
-Hence $f+(-f) =0$. 
+Hence $f+(-f) =0$.
 \end{itemize}
 
 Now, check the axioms for scalar multiplication.
 \begin{itemize}
 \item
-We first need to check that $\Func_S$ is closed under scalar multiplication. 
-For a function $f(x)$ in $\Func_S$ and real number $a$, the function $(af)(x) = a(f(x))$ is again a function defined on the set $S$. Hence $a(f(x))$ is in $\Func_S$ and $\Func_S$ is closed under scalar multiplication. 
+We first need to check that $\Func_S$ is closed under scalar multiplication.
+For a function $f(x)$ in $\Func_S$ and real number $a$, the function $(af)(x) = a(f(x))$ is again a function defined on the set $S$. Hence $a(f(x))$ is in $\Func_S$ and $\Func_S$ is closed under scalar multiplication.
 
 \item
 \begin{equation*}
@@ -805,7 +805,7 @@ For a function $f(x)$ in $\Func_S$ and real number $a$, the function $(af)(x) = 
 f(x) =af(x) +bf(x) = (
 af+bf) (x)
 \end{equation*}
-and so $(a+b) f=af+bf$. 
+and so $(a+b) f=af+bf$.
 
 \item
 \begin{equation*}
@@ -816,7 +816,7 @@ and so $(a+b) f=af+bf$.
 =af(x) +bg(x) = (af+bg) (
 x)
 \end{equation*}
-and so $a(f+g) =af+bg$. 
+and so $a(f+g) =af+bg$.
 
 \item
 \begin{equation*}
@@ -824,7 +824,7 @@ and so $a(f+g) =af+bg$.
 f(x) =a(bf(x)) = (a(
 bf)) (x)
 \end{equation*}
-so $(abf) =a(bf)$. 
+so $(abf) =a(bf)$.
 
 \item
 Finally $(1f) (
@@ -846,20 +846,20 @@ $-\vect{x}$, the additive inverse, is unique
 \item
 $0\vect{x}=\vect{0}$ for all vectors $\vect{x}$
 \item
-$(-1) \vect{x}=-\vect{x}$ for all vectors $\vect{x}$ 
+$(-1) \vect{x}=-\vect{x}$ for all vectors $\vect{x}$
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
 \begin{enumerate}
 \item
-When we say that the additive identity, $\vect{0}$, is unique, we mean that if a vector acts like the additive identity, then it \textbf{is} the additive identity. To prove this uniqueness, we want to show that another vector which acts like the additive identity is actually equal to $\vect{0}$. 
+When we say that the additive identity, $\vect{0}$, is unique, we mean that if a vector acts like the additive identity, then it \textbf{is} the additive identity. To prove this uniqueness, we want to show that another vector which acts like the additive identity is actually equal to $\vect{0}$.
 
 Suppose $\vect{0}^{\prime }$ is also an additive identity. Then,
 \[
 \vect{0} + \vect{0}^{\prime} = \vect{0}
 \]
-Now, for $\vect{0}$ the additive identity given above in the axioms, we have that 
+Now, for $\vect{0}$ the additive identity given above in the axioms, we have that
 \[
 \vect{0}^{\prime} + \vect{0} = \vect{0}^{\prime}
 \]
@@ -871,8 +871,8 @@ So by the commutative property:
 This says that if a vector acts like an additive identity (such as $\vect{0}^{\prime}$), it in fact equals $\vect{0}$. This proves the uniqueness of $\vect{0}$.
 
 \item
-When we say that the additive inverse, $-\vect{x}$, is unique, we mean that if a vector acts like the additive inverse, then it \textbf{is} the additive inverse. 
-Suppose that $\vect{y}$ acts like an additive inverse: 
+When we say that the additive inverse, $-\vect{x}$, is unique, we mean that if a vector acts like the additive inverse, then it \textbf{is} the additive inverse.
+Suppose that $\vect{y}$ acts like an additive inverse:
 \begin{equation*}
 \vect{x}+\vect{y}=\vect{0}
 \end{equation*}
@@ -881,31 +881,31 @@ Then the following holds:
 \vect{y} = \vect{0} + \vect{y} = (-\vect{x} + \vect{x}) + \vect{y} = -\vect{x} + (\vect{x} + \vect{y}) = -\vect{x} + \vect{0} = -\vect{x}
 \]
 Thus if $\vect{y}$ acts like the additive inverse, it is equal to the additive
-inverse $-\vect{x}$. This proves the uniqueness of $-\vect{x}$. 
+inverse $-\vect{x}$. This proves the uniqueness of $-\vect{x}$.
 
 \item
 This statement claims that for all vectors $\vect{x}$, scalar multiplication by $0$ equals the zero vector $\vect{0}$. Consider the following, using the fact that we can write $0=0+0$:
 \begin{equation*}
 0\vect{x}=(0+0) \vect{x}=0\vect{x}+0\vect{x}
 \end{equation*}
-We use a small trick here: add $-0\vect{x}$ to both sides. This gives 
+We use a small trick here: add $-0\vect{x}$ to both sides. This gives
 \begin{eqnarray*}
 0\vect{x} + (-0\vect{x})&=&0\vect{x}+0\vect{x}+(-\vect{x})\\
 \vect{0} + 0 &=&0\vect{x} + 0 \\
 \vect{0} &=& 0\vect{x}
 \end{eqnarray*}
-This proves that scalar multiplication of any vector by $0$ results in the zero vector $\vect{0}$. 
+This proves that scalar multiplication of any vector by $0$ results in the zero vector $\vect{0}$.
 
 \item
-Finally, we wish to show that scalar multiplication of $-1$ and any vector $\vect{x}$ results in the additive inverse of that vector, $-\vect{x}$. Recall from $2$. above that the additive inverse is unique. 
-Consider the following: 
+Finally, we wish to show that scalar multiplication of $-1$ and any vector $\vect{x}$ results in the additive inverse of that vector, $-\vect{x}$. Recall from $2$. above that the additive inverse is unique.
+Consider the following:
 \begin{eqnarray*}
 (-1) \vect{x}+\vect{x} & =&(-1) \vect{x}+1\vect{x}\\
 &=&(-1+1) \vect{x} \\
 &=&0\vect{x} \\
 &=&\vect{0}
 \end{eqnarray*}
-By the uniqueness of the additive inverse shown earlier, any vector which acts like the additive inverse must be equal to the additive inverse. It follows that $(-1) 
+By the uniqueness of the additive inverse shown earlier, any vector which acts like the additive inverse must be equal to the additive inverse. It follows that $(-1)
 \vect{x}=-\vect{x}$.
 \end{enumerate}
 \end{proof}
@@ -916,4 +916,4 @@ An important use of the additive inverse is the following theorem.
 Let $V$ be a vector space. Then $\vect{v} + \vect{w} = \vect{v} + \vect{z}$ implies that $\vect{w} = \vect{z}$ for all $\vect{v}, \vect{w}, \vect{z} \in V$
 \end{theorem}
 
-The proof follows from the vector space axioms, in particular the existence of an additive inverse ($-\vect{u}$). The proof is left as an exercise to the reader. 
+The proof follows from the vector space axioms, in particular the existence of an additive inverse ($-\vect{u}$). The proof is left as an exercise to the reader.

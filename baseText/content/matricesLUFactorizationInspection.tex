@@ -14,27 +14,27 @@ Find an $LU$ factorization of $A=\begin{mymatrix}{cccc}
 
 One way to find the $LU$ factorization%
 \index{LU factorization!by inspection} is to simply look for it directly.
-You need 
+You need
 \begin{equation*}
 \begin{mymatrix}{cccc}
-1 & 2 & 0 & 2 \\ 
-1 & 3 & 2 & 1 \\ 
+1 & 2 & 0 & 2 \\
+1 & 3 & 2 & 1 \\
 2 & 3 & 4 & 0%
 \end{mymatrix} =\begin{mymatrix}{ccc}
-1 & 0 & 0 \\ 
-x & 1 & 0 \\ 
+1 & 0 & 0 \\
+x & 1 & 0 \\
 y & z & 1%
 \end{mymatrix} \begin{mymatrix}{cccc}
-a & d & h & j \\ 
-0 & b & e & i \\ 
+a & d & h & j \\
+0 & b & e & i \\
 0 & 0 & c & f%
 \end{mymatrix} .
 \end{equation*}
-Then multiplying these you get 
+Then multiplying these you get
 \begin{equation*}
 \allowbreak \begin{mymatrix}{cccc}
-a & d & h & j \\ 
-xa & xd+b & xh+e & xj+i \\ 
+a & d & h & j \\
+xa & xd+b & xh+e & xj+i \\
 ya & yd+zb & yh+ze+c & yj+iz+f%
 \end{mymatrix}
 \end{equation*}
@@ -42,15 +42,15 @@ and so you can now tell what the various quantities equal. From the first
 column, you need $a=1,x=1,y=2$. Now go to the second column. You need $
 d=2,xd+b=3$ so $b=1,yd+zb=3$ so $z=-1$. From the third column, $h=0,e=2,c=6$.
 Now from the fourth column, $j=2,i=-1,f=-5$. Therefore, an $LU$
-factorization is 
+factorization is
 \begin{equation*}
 \begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-1 & 1 & 0 \\ 
+1 & 0 & 0 \\
+1 & 1 & 0 \\
 2 & -1 & 1
 \end{mymatrix} \begin{mymatrix}{rrrr}
-1 & 2 & 0 & 2 \\ 
-0 & 1 & 2 & -1 \\ 
+1 & 2 & 0 & 2 \\
+0 & 1 & 2 & -1 \\
 0 & 0 & 6 & -5
 \end{mymatrix} .
 \end{equation*}

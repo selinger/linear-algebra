@@ -10,7 +10,7 @@ follows from orthogonal projections is that of the least square
 approximation\index{least square approximation}, and allows us to do
 exactly that.
 
-We begin with a lemma. 
+We begin with a lemma.
 
 Recall that we can form the image of an $m \times n$-matrix $A$ by
 $\func{im}(A) = \set{A\vect{x} \mid \vect{x} \in
@@ -55,9 +55,9 @@ Then
 We note a simple but useful observation.
 
 \begin{lemma}{Transpose and dot product}{transpose-and-dot-prod}
-Let $A$ be an $m\times n$-matrix. Then 
+Let $A$ be an $m\times n$-matrix. Then
 \begin{equation*}
-A\vect{x} \dotprod \vect{y} = \vect{x}\dotprod A^T\vect{y} 
+A\vect{x} \dotprod \vect{y} = \vect{x}\dotprod A^T\vect{y}
 \end{equation*}
 \end{lemma}
 
@@ -77,14 +77,14 @@ A^TA\vect{x}=A^T\vect{y}
 Furthermore, there always exists a solution to this system of equations.
 \end{corollary}
 
-\begin{proof} 
+\begin{proof}
 For $\vect{x}$ the minimizer of Theorem~\ref{thm:existenceminimizerhs}, $(
 \vect{y}-A\vect{x}) \dotprod A \vect{u} =0$ for all $\vect{u} \in \R^{n}$ and from
 Lemma~\ref{lem:transpose-and-dot-prod}, this is the same as saying
 \begin{equation*}
 A^T(\vect{y}-A\vect{x}) \dotprod \vect{u}=0
 \end{equation*}
-for all $\vect{u} \in \R^{n}$. This implies 
+for all $\vect{u} \in \R^{n}$. This implies
 \begin{equation*}
 A^T\vect{y}-A^TA\vect{x}=\vect{0}.
 \end{equation*}
@@ -94,23 +94,23 @@ solves the minimization problem of Theorem~\ref{thm:existenceminimizerhs}.
 
 Note that $\vect{x}$ might not be unique but $A\vect{x}$, the closest
 point of $A(\R^{n})$ to $\vect{y}$ is unique as was shown in the
-above argument. 
+above argument.
 
-Consider the following example. 
+Consider the following example.
 
 \begin{example}{Least squares solution to a system}{}
-Find a least squares solution to the system 
+Find a least squares solution to the system
 \begin{equation*}
 \begin{mymatrix}{rr}
-2 & 1 \\ 
--1 & 3 \\ 
+2 & 1 \\
+-1 & 3 \\
 4 & 5
 \end{mymatrix} \begin{mymatrix}{c}
-x \\ 
+x \\
 y
 \end{mymatrix} =\begin{mymatrix}{c}
-2 \\ 
-1 \\ 
+2 \\
+1 \\
 1
 \end{mymatrix}
 \end{equation*}
@@ -120,82 +120,82 @@ y
 First, consider whether there exists a real solution. To do so, set up the augmented matrix given by
 \begin{equation*}
 \begin{mymatrix}{rr|r}
-2 & 1 & 2 \\ 
--1 & 3 & 1 \\ 
+2 & 1 & 2 \\
+-1 & 3 & 1 \\
 4 & 5 & 1
 \end{mymatrix}
 \end{equation*}
-The {\rref} of this augmented matrix is 
+The {\rref} of this augmented matrix is
 \begin{equation*}
 \begin{mymatrix}{rr|r}
-1 & 0 & 0 \\ 
-0 & 1 & 0 \\ 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
 0 & 0 & 1
 \end{mymatrix}
 \end{equation*}
 
-It follows that there is no real solution to this system. Therefore we wish to find the least squares solution. The normal equations are 
+It follows that there is no real solution to this system. Therefore we wish to find the least squares solution. The normal equations are
 \begin{eqnarray*}
 A^T A \vect{x} &=& A^T \vect{y} \\
 \begin{mymatrix}{rrr}
-2 & -1 & 4 \\ 
+2 & -1 & 4 \\
 1 & 3 & 5
 \end{mymatrix} \begin{mymatrix}{rr}
-2 & 1 \\ 
--1 & 3 \\ 
+2 & 1 \\
+-1 & 3 \\
 4 & 5
 \end{mymatrix} \begin{mymatrix}{c}
-x \\ 
+x \\
 y
 \end{mymatrix} &=&\begin{mymatrix}{rrr}
-2 & -1 & 4 \\ 
+2 & -1 & 4 \\
 1 & 3 & 5
 \end{mymatrix} \begin{mymatrix}{c}
-2 \\ 
-1 \\ 
+2 \\
+1 \\
 1
 \end{mymatrix}
 \end{eqnarray*}
-and so we need to solve the system 
+and so we need to solve the system
 \begin{equation*}
 \begin{mymatrix}{rr}
-21 & 19 \\ 
+21 & 19 \\
 19 & 35
 \end{mymatrix} \begin{mymatrix}{c}
-x \\ 
+x \\
 y
 \end{mymatrix} =\begin{mymatrix}{r}
-7 \\ 
+7 \\
 10
 \end{mymatrix}
 \end{equation*}
-This is a familiar exercise and the solution is 
+This is a familiar exercise and the solution is
 \begin{equation*}
 \begin{mymatrix}{c}
-x \\ 
+x \\
 y
 \end{mymatrix} =\begin{mymatrix}{c}
-\vspace{0.05in}\frac{5}{34} \\ 
+\vspace{0.05in}\frac{5}{34} \\
 \vspace{0.05in}\frac{7}{34}
 \end{mymatrix}
 \end{equation*}
 \end{solution}
 
-Consider another example. 
+Consider another example.
 
 \begin{example}{Least squares solution to a system}{}
-Find a least squares solution to the system 
+Find a least squares solution to the system
 \begin{equation*}
 \begin{mymatrix}{rr}
-2 & 1 \\ 
--1 & 3 \\ 
+2 & 1 \\
+-1 & 3 \\
 4 & 5
 \end{mymatrix} \begin{mymatrix}{c}
-x \\ 
+x \\
 y
 \end{mymatrix} =\begin{mymatrix}{c}
-3 \\ 
-2 \\ 
+3 \\
+2 \\
 9
 \end{mymatrix}
 \end{equation*}
@@ -205,67 +205,67 @@ y
 First, consider whether there exists a real solution. To do so, set up the augmented matrix given by
 \begin{equation*}
 \begin{mymatrix}{rr|r}
-2 & 1 & 3 \\ 
--1 & 3 & 2 \\ 
+2 & 1 & 3 \\
+-1 & 3 & 2 \\
 4 & 5 & 9
 \end{mymatrix}
 \end{equation*}
-The {\rref} of this augmented matrix is 
+The {\rref} of this augmented matrix is
 \begin{equation*}
 \begin{mymatrix}{rr|r}
-1 & 0 & 1 \\ 
-0 & 1 & 1 \\ 
+1 & 0 & 1 \\
+0 & 1 & 1 \\
 0 & 0 & 0
 \end{mymatrix}
 \end{equation*}
 
 It follows that the system has a solution given by $x=y=1$. However we can also use the normal equations and find
-the least squares solution. 
+the least squares solution.
 \begin{equation*}
 \begin{mymatrix}{rrr}
-2 & -1 & 4 \\ 
+2 & -1 & 4 \\
 1 & 3 & 5
 \end{mymatrix} \begin{mymatrix}{rr}
-2 & 1 \\ 
--1 & 3 \\ 
+2 & 1 \\
+-1 & 3 \\
 4 & 5
 \end{mymatrix} \begin{mymatrix}{c}
-x \\ 
+x \\
 y
 \end{mymatrix} =\begin{mymatrix}{rrr}
-2 & -1 & 4 \\ 
+2 & -1 & 4 \\
 1 & 3 & 5
 \end{mymatrix} \begin{mymatrix}{r}
-3 \\ 
-2 \\ 
+3 \\
+2 \\
 9
 \end{mymatrix}
 \end{equation*}
 Then
 \begin{equation*}
 \begin{mymatrix}{rr}
-21 & 19 \\ 
+21 & 19 \\
 19 & 35
 \end{mymatrix} \begin{mymatrix}{c}
-x \\ 
+x \\
 y
 \end{mymatrix} =\begin{mymatrix}{c}
-40 \\ 
+40 \\
 54
 \end{mymatrix}
 \end{equation*}
 
-The least squares solution is  
+The least squares solution is
 \begin{equation*}
 \begin{mymatrix}{c}
-x \\ 
+x \\
 y
 \end{mymatrix} =\begin{mymatrix}{c}
-1 \\ 
+1 \\
 1
 \end{mymatrix}
 \end{equation*}
-which is the same as the solution found above. 
+which is the same as the solution found above.
 \end{solution}
 
 An important application of Corollary~\ref{cor:normal-equation} is the
@@ -277,71 +277,71 @@ line\index{regression line} in statistics.  Suppose you are given points in the 
 and you would like to find constants $m$ and $b$ such that the line $\vect{y}=m\vect{x}+b$
 goes through all these points. Of course this will be impossible in general.
 Therefore, we try to find $m,b$ such that the line will be as close as possible. The desired system
-is 
+is
 \begin{equation*}
 \begin{mymatrix}{c}
-y_{1} \\ 
-\vdots \\ 
+y_{1} \\
+\vdots \\
 y_{n}
 \end{mymatrix} =\begin{mymatrix}{cc}
-x_{1} & 1 \\ 
-\vdots & \vdots \\ 
+x_{1} & 1 \\
+\vdots & \vdots \\
 x_{n} & 1
 \end{mymatrix} \begin{mymatrix}{c}
-m \\ 
+m \\
 b
 \end{mymatrix}
 \end{equation*}
 which is of the form $\vect{y}=A\vect{x}$. It is desired to choose $m$
-and $b$ to make 
+and $b$ to make
 \begin{equation*}
 \norm{A\begin{mymatrix}{c}
-m \\ 
+m \\
 b
 \end{mymatrix} -\begin{mymatrix}{c}
-y_{1} \\ 
-\vdots \\ 
+y_{1} \\
+\vdots \\
 y_{n}
 \end{mymatrix}} ^{2}
 \end{equation*}
 as small as possible. According to Theorem~\ref{thm:existenceminimizerhs} and
 Corollary~\ref{cor:normal-equation}, the best values for $m$ and $b$ occur as the
-solution to 
+solution to
 \begin{equation*}
 A^{T}A\begin{mymatrix}{c}
-m \\ 
+m \\
 b
 \end{mymatrix} =A^{T}\begin{mymatrix}{c}
-y_{1} \\ 
-\vdots \\ 
+y_{1} \\
+\vdots \\
 y_{n}
 \end{mymatrix} ,\ \;\mbox{where}\; A=\begin{mymatrix}{cc}
-x_{1} & 1 \\ 
-\vdots & \vdots \\ 
+x_{1} & 1 \\
+\vdots & \vdots \\
 x_{n} & 1
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
-Thus, computing $A^{T}A$, 
+Thus, computing $A^{T}A$,
 \begin{equation*}
 \begin{mymatrix}{cc}
-\sum_{i=1}^{n}x_{i}^{2} & \sum_{i=1}^{n}x_{i} \\ 
+\sum_{i=1}^{n}x_{i}^{2} & \sum_{i=1}^{n}x_{i} \\
 \sum_{i=1}^{n}x_{i} & n
 \end{mymatrix} \begin{mymatrix}{c}
-m \\ 
+m \\
 b
 \end{mymatrix} =\begin{mymatrix}{c}
-\sum_{i=1}^{n}x_{i}y_{i} \\ 
+\sum_{i=1}^{n}x_{i}y_{i} \\
 \sum_{i=1}^{n}y_{i}
 \end{mymatrix}
 \end{equation*}
-Solving this system of equations for $m$ and $b$ (using Cramer's rule for example) yields: 
+Solving this system of equations for $m$ and $b$ (using Cramer's rule for example) yields:
 \begin{equation*}
 m=
 \frac{-\paren{\sum_{i=1}^{n}x_{i}} \paren{\sum_{i=1}^{n}y_{i}}
 +\paren{\sum_{i=1}^{n}x_{i}y_{i}} n}{\paren{
 \sum_{i=1}^{n}x_{i}^{2}} n-\paren{\sum_{i=1}^{n}x_{i}} ^{2}}
 \end{equation*}
-and 
+and
 \begin{equation*}
 b=\frac{-\paren{\sum_{i=1}^{n}x_{i}} \sum_{i=1}^{n}x_{i}y_{i}+\paren{
 \sum_{i=1}^{n}y_{i}} \sum_{i=1}^{n}x_{i}^{2}}{\paren{
@@ -372,7 +372,7 @@ b &=& \frac{- 10 * 38 + 14*30}{5*30-10^2} = 0.80
 \end{eqnarray*}
 
 The  least squares regression line for the set of data points is:
-\[ \vect{y} = \vect{x}+0.8 \] 
+\[ \vect{y} = \vect{x}+0.8 \]
 
 One could use this line to approximate other values for the data. For
 example for $x=6$ one could use $y(6)=6+0.8=6.8$ as an approximate
@@ -413,19 +413,19 @@ The following diagram shows the data points and the corresponding regression lin
 
 One could clearly do a least squares fit for curves of the form $
 y=ax^{2}+bx+c$ in the same way. In this case you want to solve as well as
-possible for $a,b$, and $c$ the system 
+possible for $a,b$, and $c$ the system
 \begin{equation*}
 \begin{mymatrix}{ccc}
-x_{1}^{2} & x_{1} & 1 \\ 
-\vdots & \vdots & \vdots \\ 
+x_{1}^{2} & x_{1} & 1 \\
+\vdots & \vdots & \vdots \\
 x_{n}^{2} & x_{n} & 1
 \end{mymatrix} \begin{mymatrix}{c}
-a \\ 
-b \\ 
+a \\
+b \\
 c
 \end{mymatrix} =\begin{mymatrix}{c}
-y_{1} \\ 
-\vdots \\ 
+y_{1} \\
+\vdots \\
 y_{n}
 \end{mymatrix}
 \end{equation*}

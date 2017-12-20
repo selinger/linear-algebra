@@ -1,11 +1,11 @@
 \subsection{Orthogonal matrices}
 
-Recall that the process to find the inverse of a matrix was often cumbersome. 
+Recall that the process to find the inverse of a matrix was often cumbersome.
 In contrast, it was very easy to take the transpose of a matrix. Luckily for some special
 matrices, the transpose equals the inverse. When an $n \times n$-matrix has all real
-entries and its transpose equals its inverse, the matrix is called an \textbf{orthogonal matrix}. 
+entries and its transpose equals its inverse, the matrix is called an \textbf{orthogonal matrix}.
 
-The precise definition is as follows. 
+The precise definition is as follows.
 
 \begin{definition}{Orthogonal matrices}{Ortho-Matrix}
 A real $n\times n$-matrix $U$ is called an
@@ -16,7 +16,7 @@ Note since $U$ is assumed to be a square matrix, it suffices to verify
 only one of these equalities $UU^{T}=I$ or $U^{T}U=I$ holds to
 guarantee that $U^T$ is the inverse of $U$.
 
-Consider the following example. 
+Consider the following example.
 
 \begin{example}{Orthogonal matrix}{}
 Show the matrix
@@ -34,15 +34,15 @@ All we need to do is verify (one of the equations from) the requirements of Defi
 
 \begin{equation*}
 UU^{T}=\begin{mymatrix}{rr}
-\vspace{0.05in}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
+\vspace{0.05in}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 \vspace{0.05in}\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
 \end{mymatrix} \begin{mymatrix}{rr}
-\vspace{0.05in}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\ 
+\vspace{0.05in}\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
 \vspace{0.05in}\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}}
 \end{mymatrix} =\allowbreak \begin{mymatrix}{cc}
-1 & 0 \\ 
+1 & 0 \\
 0 & 1
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 
 Since $UU^{T} = I$, this matrix is orthogonal.
@@ -59,30 +59,30 @@ Let $U=\begin{mymatrix}{rrr}
 \end{example}
 
 \begin{solution}
-Again the answer is yes and this can be verified simply by showing that $U^{T}U=I$: 
+Again the answer is yes and this can be verified simply by showing that $U^{T}U=I$:
 
 \begin{eqnarray*}
 U^{T}U&=&\begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-0 & 0 & -1 \\ 
+1 & 0 & 0 \\
+0 & 0 & -1 \\
 0 & -1 & 0
 \end{mymatrix} ^{T}\begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-0 & 0 & -1 \\ 
+1 & 0 & 0 \\
+0 & 0 & -1 \\
 0 & -1 & 0
 \end{mymatrix} \\
 &=&\begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-0 & 0 & -1 \\ 
+1 & 0 & 0 \\
+0 & 0 & -1 \\
 0 & -1 & 0
 \end{mymatrix} \begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-0 & 0 & -1 \\ 
+1 & 0 & 0 \\
+0 & 0 & -1 \\
 0 & -1 & 0
 \end{mymatrix} \\
 &=&\begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-0 & 1 & 0 \\ 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
 0 & 0 & 1
 \end{mymatrix}
 \end{eqnarray*}
@@ -106,8 +106,8 @@ defined
 \end{equation*}
 
 In words, the product of the $i\th$ row of $U$ with the $k\th$ row
-gives $1$ if $i=k$ and $0$ if $i\neq k$. The same is true of the columns because 
-$U^{T}U=I$ also. Therefore, 
+gives $1$ if $i=k$ and $0$ if $i\neq k$. The same is true of the columns because
+$U^{T}U=I$ also. Therefore,
 \begin{equation*}
 \sum_{j}u_{ij}^{T}u_{jk}=\sum_{j}u_{ji}u_{jk}=\delta _{ik}
 \end{equation*}
@@ -115,18 +115,18 @@ which says that the product of one column with another column gives $1$ if the t
 columns are the same and $0$ if the two columns are different.
 
 More succinctly, this states that if $\vect{u}_{1},\ldots,\vect{u}_{n}$
-are the columns of $U$, an orthogonal matrix, then 
+are the columns of $U$, an orthogonal matrix, then
 \[
 \vect{u}_{i}\dotprod \vect{u}_{j}=\delta _{ij} = \left\{
 \begin{array}{c}
-1\text{ if }i=j \\ 
+1\text{ if }i=j \\
 0\text{ if }i\neq j
 \end{array}
-\right.  
+\right.
 \]
 
 We will say that the columns form an orthonormal set of vectors, and similarly for the rows. Thus a matrix is \textbf{orthogonal} if its rows (or columns) form an
-\textbf{orthonormal} set of vectors. Notice that the convention is to call such a matrix orthogonal rather than orthonormal (although this may make more sense!). 
+\textbf{orthonormal} set of vectors. Notice that the convention is to call such a matrix orthogonal rather than orthonormal (although this may make more sense!).
 
 \begin{proposition}{Orthonormal basis}{orth-basis}
 The rows of an $n \times n$ orthogonal matrix form an orthonormal
@@ -156,7 +156,7 @@ the previous matrix.
 Consider the following proposition.
 
 \begin{proposition}{Determinant of orthogonal matrices}{ortho-determinant}
-Suppose $U$ is an orthogonal matrix. Then $\det (U) = \pm 1$. 
+Suppose $U$ is an orthogonal matrix. Then $\det (U) = \pm 1$.
 \end{proposition}
 
 \begin{proof}
@@ -167,7 +167,7 @@ for any matrix $A$, $\det(A)^T = \det(A)$. Now if $U$ is orthogonal, then:
 =\det (U^{T}U) =\det (I) =1
 \end{equation*}
 
-Therefore $(\det (U))^2 = 1$ and it follows that $\det (U) = \pm 1$. 
+Therefore $(\det (U))^2 = 1$ and it follows that $\det (U) = \pm 1$.
 \end{proof}
 
 Orthogonal matrices are divided into two classes, proper and improper.
@@ -184,20 +184,20 @@ proper orthogonal transformation. Geometrically, the linear
 transformations determined by the proper orthogonal matrices
 correspond to the composition of rotations.
 
-We conclude this section with two useful properties of orthogonal matrices. 
+We conclude this section with two useful properties of orthogonal matrices.
 
 \begin{example}{Product and inverse of orthogonal matrices}{product-inverse-orthogonal}
 Suppose $A$ and $B$ are orthogonal matrices. Then $AB$ and $A^{-1}$ both exist and are orthogonal.
 \end{example}
 
 \begin{solution}
-First we examine the product $AB$. 
+First we examine the product $AB$.
 \[ (AB)(B^TA^T)=A(BB^T)A^T =AA^T=I \]
 Since $AB$ is square, $B^TA^T=(AB)^T$ is the inverse of
 $AB$, so $AB$ is invertible, and $(AB)^{-1}=(AB)^T$
 Therefore, $AB$ is orthogonal.
 
-Next we show that $A^{-1}=A^T$ is also orthogonal. 
+Next we show that $A^{-1}=A^T$ is also orthogonal.
 \[ (A^{-1})^{-1} = A = (A^T)^{T}
 =(A^{-1})^{T} \]
 Therefore $A^{-1}$ is also orthogonal.

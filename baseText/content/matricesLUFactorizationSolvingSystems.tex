@@ -30,69 +30,69 @@ Of course one way is to write the augmented matrix and grind away. However,
 this involves more row operations than the computation of the $LU$
 factorization and it turns out that the $LU$ factorization can give the
 solution quickly. Here is how. The following is an $LU$ factorization for
-the matrix. 
+the matrix.
 \begin{equation*}
 \begin{mymatrix}{rrrr}
-1 & 2 & 3 & 2 \\ 
-4 & 3 & 1 & 1 \\ 
+1 & 2 & 3 & 2 \\
+4 & 3 & 1 & 1 \\
 1 & 2 & 3 & 0
 \end{mymatrix} \allowbreak =\allowbreak \begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-4 & 1 & 0 \\ 
+1 & 0 & 0 \\
+4 & 1 & 0 \\
 1 & 0 & 1
 \end{mymatrix} \begin{mymatrix}{rrrr}
-1 & 2 & 3 & 2 \\ 
-0 & -5 & -11 & -7 \\ 
+1 & 2 & 3 & 2 \\
+0 & -5 & -11 & -7 \\
 0 & 0 & 0 & -2
 \end{mymatrix} .
 \end{equation*}
 
-Let $UX=Y$ and consider $LY=B$ where in this case, $B=\mat{1,2,3} ^{T}$. Thus 
+Let $UX=Y$ and consider $LY=B$ where in this case, $B=\mat{1,2,3} ^{T}$. Thus
 \begin{equation*}
 \allowbreak \begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-4 & 1 & 0 \\ 
+1 & 0 & 0 \\
+4 & 1 & 0 \\
 1 & 0 & 1
 \end{mymatrix} \begin{mymatrix}{c}
-y_{1} \\ 
-y_{2} \\ 
+y_{1} \\
+y_{2} \\
 y_{3}
 \end{mymatrix} =\begin{mymatrix}{c}
-1 \\ 
-2 \\ 
+1 \\
+2 \\
 3
 \end{mymatrix}
 \end{equation*}
 which yields very quickly that $Y=\begin{mymatrix}{r}
-1 \\ 
--2 \\ 
+1 \\
+-2 \\
 2
-\end{mymatrix} \allowbreak$. 
+\end{mymatrix} \allowbreak$.
 
-Now you can find $X$ by solving $UX=Y$. Thus in this case, 
+Now you can find $X$ by solving $UX=Y$. Thus in this case,
 \begin{equation*}
 \begin{mymatrix}{rrrr}
-1 & 2 & 3 & 2 \\ 
-0 & -5 & -11 & -7 \\ 
+1 & 2 & 3 & 2 \\
+0 & -5 & -11 & -7 \\
 0 & 0 & 0 & -2
 \end{mymatrix} \begin{mymatrix}{c}
-x \\ 
-y \\ 
-z \\ 
+x \\
+y \\
+z \\
 w
 \end{mymatrix} =\begin{mymatrix}{r}
-1 \\ 
--2 \\ 
+1 \\
+-2 \\
 2
 \end{mymatrix}
 \end{equation*}
-which yields 
+which yields
 \begin{equation*}
 X=\begin{mymatrix}{c}
 -
-\vspace{0.05in}\frac{3}{5}+\vspace{0.05in}\frac{7}{5}t \\ 
-\vspace{0.05in}\frac{9}{5}-\vspace{0.05in}\frac{11}{5}t \\ 
-t \\ 
+\vspace{0.05in}\frac{3}{5}+\vspace{0.05in}\frac{7}{5}t \\
+\vspace{0.05in}\frac{9}{5}-\vspace{0.05in}\frac{11}{5}t \\
+t \\
 -1
 \end{mymatrix} ,\enspace t\in \R\text{.}
 \end{equation*}

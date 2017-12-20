@@ -1,6 +1,6 @@
 \section{Application: Resistor networks}
 
-The tools of linear algebra can be used to study the application of resistor networks. An example of an electrical circuit is below. 
+The tools of linear algebra can be used to study the application of resistor networks. An example of an electrical circuit is below.
 
 \medskip
 
@@ -35,7 +35,7 @@ Voltage is measured in volts, written as $\volt$.
 The current for a circuit is labelled $I_k$, and is measured in
 amperes, written as $\amp$.
 
-In the above figure, the current $I_1$ has been labelled with an arrow in the counterclockwise direction. This is an entirely arbitrary decision and we could have chosen to label the current in the counterclockwise direction.  With our choice of direction here, we define a positive current to flow in the counterclockwise direction and a negative current to flow in the clockwise direction. 
+In the above figure, the current $I_1$ has been labelled with an arrow in the counterclockwise direction. This is an entirely arbitrary decision and we could have chosen to label the current in the counterclockwise direction.  With our choice of direction here, we define a positive current to flow in the counterclockwise direction and a negative current to flow in the clockwise direction.
 
 The goal of this section is to use the values of resistors and voltage sources in a circuit to determine the current. An essential theorem for this application is Kirchhoff's law\index{Kirchhoff's law}.
 
@@ -45,12 +45,12 @@ around a loop equals the sum of the voltage sources ($V$) in the same direction
 around the loop.
 \end{theorem}
 
-Kirchhoff's law allows us to set up a system of linear equations and solve for any unknown variables. When setting up this system, it is important to trace the circuit in the counterclockwise direction. If a resistor or voltage source is crossed against this direction, the related term must be given a negative sign. 
+Kirchhoff's law allows us to set up a system of linear equations and solve for any unknown variables. When setting up this system, it is important to trace the circuit in the counterclockwise direction. If a resistor or voltage source is crossed against this direction, the related term must be given a negative sign.
 
 We will explore this in the next example where we determine the value of the current in the initial diagram.
 
 \begin{example}{Solving for current}{solve-current1}
-Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$. 
+Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$.
 
 \begin{center}
 \scalebox{0.8}{
@@ -69,7 +69,7 @@ Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$.
 \end{example}
 
 \begin{solution}
-Begin in the bottom left corner, and trace the circuit in the counterclockwise direction. At the first resistor, multiplying resistance and current gives $2I_1$. Continuing in this way through all three resistors gives $2I_1 + 4I_1 + 2 I_1$. This must equal the voltage source in the same direction. Notice that the direction of the voltage source matches the counterclockwise direction specified, so the voltage is positive. 
+Begin in the bottom left corner, and trace the circuit in the counterclockwise direction. At the first resistor, multiplying resistance and current gives $2I_1$. Continuing in this way through all three resistors gives $2I_1 + 4I_1 + 2 I_1$. This must equal the voltage source in the same direction. Notice that the direction of the voltage source matches the counterclockwise direction specified, so the voltage is positive.
 
 Therefore the equation and solution are given by
 \begin{eqnarray*}
@@ -78,11 +78,11 @@ Therefore the equation and solution are given by
 I_1 &=& \frac{9}{4} \amp
 \end{eqnarray*}
 
-Since the answer is positive, this confirms that the current flows counterclockwise. 
+Since the answer is positive, this confirms that the current flows counterclockwise.
 \end{solution}
 
 \begin{example}{Solving for current}{solve-current2}
-Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$. 
+Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$.
 
 \begin{center}
 \scalebox{0.8}{
@@ -102,7 +102,7 @@ Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$.
 \end{example}
 
 \begin{solution}
-Begin in the top left corner this time, and trace the circuit in the counterclockwise direction. At the first resistor, multiplying resistance and current gives $4I_1$. Continuing in this way through the four resistors gives $4I_1 + 6I_1 + 1 I_1 + 3I_1$. This must equal the voltage source in the same direction. Notice that the direction of the voltage source is opposite to the counterclockwise direction, so the voltage is negative. 
+Begin in the top left corner this time, and trace the circuit in the counterclockwise direction. At the first resistor, multiplying resistance and current gives $4I_1$. Continuing in this way through the four resistors gives $4I_1 + 6I_1 + 1 I_1 + 3I_1$. This must equal the voltage source in the same direction. Notice that the direction of the voltage source is opposite to the counterclockwise direction, so the voltage is negative.
 
 Therefore the equation and solution are given by
 \begin{eqnarray*}
@@ -111,10 +111,10 @@ Therefore the equation and solution are given by
 I_1 &=& -\frac{27}{14} \amp
 \end{eqnarray*}
 
-Since the answer is negative, this tells us that the current flows clockwise. 
+Since the answer is negative, this tells us that the current flows clockwise.
 \end{solution}
 
-A more complicated example follows. Two of the circuits below may be familiar; they were examined in the examples above. However as they are now part of a larger system of circuits, the answers will differ. 
+A more complicated example follows. Two of the circuits below may be familiar; they were examined in the examples above. However as they are now part of a larger system of circuits, the answers will differ.
 
 \begin{example}{Unknown currents}{unknown-current}
   The diagram below consists of four circuits. The current ($I_k$) in
@@ -136,11 +136,11 @@ The circuits are given in the following diagram.
 (6,4) to [battery1, v_= \raisebox{1ex}{$27\volt$}] (4,4)
 (6,4) to [R = $3 \ohm$] (8,4)
       to [R = $1 \ohm$] (8,0)
-(4,0) to [R = $6 \ohm$] (8,0)   
+(4,0) to [R = $6 \ohm$] (8,0)
       to [R = $2 \ohm$] (8,-4)
       to [R = $3 \ohm$] (4,-4)
       to [R = $1 \ohm$] (4,0)
-(4,-4)to [R = $5 \ohm$] (0,-4) 
+(4,-4)to [R = $5 \ohm$] (0,-4)
 (0,0) to [battery1, v_= $23\volt$~~] (0,-4)
 (2,2) node[scale=4]{$\circlearrowleft$}
 (2,2) node{$I_2$}
@@ -155,7 +155,7 @@ The circuits are given in the following diagram.
 }
 \end{center}
 
-Starting with the top left circuit, multiply the resistance by the amps and sum the resulting products. Specifically, consider the resistor labelled $2 \ohm$ that is part of the circuits of $I_1$ and $I_2$. Notice that current $I_2$ runs through this in a positive (counterclockwise) direction, and $I_1$ runs through in the opposite (negative) direction. The product of resistance and amps is then $2 (I_2 - I_1) = 2I_2 - 2I_1$. 
+Starting with the top left circuit, multiply the resistance by the amps and sum the resulting products. Specifically, consider the resistor labelled $2 \ohm$ that is part of the circuits of $I_1$ and $I_2$. Notice that current $I_2$ runs through this in a positive (counterclockwise) direction, and $I_1$ runs through in the opposite (negative) direction. The product of resistance and amps is then $2 (I_2 - I_1) = 2I_2 - 2I_1$.
 Continue in this way for each resistor, and set the sum of the products equal to the voltage source to write the equation:
 \begin{equation*}
 2I_{2}-2I_{1}+4I_{2}-4I_{3}+2I_{2}=18
@@ -187,7 +187,7 @@ and rearranging with variables in order, we have:
     8I_{1}-2I_{2} - I_{4} &=& -23
   \end{array}
 \end{equation*}
-The augmented matrix is 
+The augmented matrix is
 \begin{equation*}
 \begin{mymatrix}{rrrr|r}
 -2 & 8 & -4 & 0 & 18 \\
@@ -205,5 +205,5 @@ I_{3} &=& -\frac{5}{2} \amp\\
 I_{4} &=& -\frac{3}{2} \amp
 \end{eqnarray*}
 
-This tells us that currents $I_1, I_3$, and $I_4$ travel clockwise while $I_2$ travels counterclockwise. 
+This tells us that currents $I_1, I_3$, and $I_4$ travel clockwise while $I_2$ travels counterclockwise.
 \end{solution}

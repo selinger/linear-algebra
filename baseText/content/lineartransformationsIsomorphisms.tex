@@ -3,7 +3,7 @@
 \begin{outcome}
   \begin{enumerate}
   \item Determine if a linear transformation is an isomorphism.
-  \item Determine if two subspaces of $\R^n$ are isomorphic. 
+  \item Determine if two subspaces of $\R^n$ are isomorphic.
   \end{enumerate}
 \end{outcome}
 
@@ -14,7 +14,7 @@ operations of addition and
 \index{linear map}
 \index{linear transformation} scalar multiplication. Specifically, if $a,b$
 are scalars and $
-\vect{x},\vect{y}$ are vectors, 
+\vect{x},\vect{y}$ are vectors,
 \begin{equation*}
 T(a\vect{x}+b\vect{y}) =aT(\vect{x})+bT(\vect{y})
 \end{equation*}
@@ -22,7 +22,7 @@ T(a\vect{x}+b\vect{y}) =aT(\vect{x})+bT(\vect{y})
 Consider the following important definition.
 
 \begin{definition}{Isomorphism}{isomorphism}
-A linear map $T$ is called an \textbf{isomorphism} 
+A linear map $T$ is called an \textbf{isomorphism}
 \index{isomorphism}if the following two conditions are satisfied.
 
 \begin{itemize}
@@ -40,14 +40,14 @@ be \textbf{isomorphic.}
 Consider the following example of an isomorphism.
 
 \begin{example}{Isomorphism}{isomorphism}
-Let $T: \R^2 \to \R^2$ be defined by 
+Let $T: \R^2 \to \R^2$ be defined by
 \[
 T \begin{mymatrix}{c}
 x \\
 y
 \end{mymatrix} = \begin{mymatrix}{c}
 x + y \\
-x - y 
+x - y
 \end{mymatrix}
 \]
 Show that $T$ is an isomorphism.
@@ -66,7 +66,7 @@ We proceed as follows.
 \begin{enumerate}
 \item $T$ is a linear transformation:
 
-Let $k, p$ be scalars. 
+Let $k, p$ be scalars.
 \begin{eqnarray*}
 T \paren{k \begin{mymatrix}{c}
 x_1 \\
@@ -74,7 +74,7 @@ y_1
 \end{mymatrix} + p \begin{mymatrix}{c}
 x_2 \\
 y_2
-\end{mymatrix}} &=& 
+\end{mymatrix}} &=&
 T \paren{\begin{mymatrix}{c}
 kx_1 \\
 ky_1
@@ -87,12 +87,12 @@ T \paren{\begin{mymatrix}{c}
 kx_1 + px_2 \\
 ky_1 + py_2
 \end{mymatrix}} \\
-&=& 
+&=&
 \begin{mymatrix}{c}
 (kx_1 + px_2) + (ky_1 + py_2) \\
 (kx_1 + px_2) - (ky_1 + py_2)
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{c}
 (kx_1 + ky_1) + (px_2 + py_2) \\
 (kx_1  - ky_1) + (px_2 - py_2)
@@ -101,7 +101,7 @@ ky_1 + py_2
 \begin{mymatrix}{c}
 kx_1 + ky_1  \\
 kx_1  - ky_1
-\end{mymatrix} + 
+\end{mymatrix} +
 \begin{mymatrix}{c}
 px_2 + py_2 \\
 px_2 - py_2
@@ -109,12 +109,12 @@ px_2 - py_2
 &=& k \begin{mymatrix}{c}
 x_1 + y_1  \\
 x_1  - y_1
-\end{mymatrix} + 
+\end{mymatrix} +
 p \begin{mymatrix}{c}
 x_2 + y_2 \\
 x_2 - y_2
 \end{mymatrix} \\
-&=& 
+&=&
 k T \paren{\begin{mymatrix}{c}
 x_1 \\
 y_1
@@ -124,14 +124,14 @@ y_2
 \end{mymatrix}}
 \end{eqnarray*}
 
-Therefore $T$ is linear. 
+Therefore $T$ is linear.
 
 \item $T$ is one to one:
 
 We need to show that if $T (\vect{x}) = \vect{0}$ for a vector $\vect{x} \in \R^2$, then it follows that $\vect{x} = \vect{0}$.  Let $\vect{x} = \begin{mymatrix}{c}
 x \\
 y
-\end{mymatrix}$. 
+\end{mymatrix}$.
 
 \[
 T  \paren{\begin{mymatrix}{c}
@@ -139,18 +139,18 @@ x \\
 y
 \end{mymatrix}} = \begin{mymatrix}{c}
 x + y\\
-x - y 
+x - y
 \end{mymatrix} = \begin{mymatrix}{c}
 0 \\
 0
 \end{mymatrix}
 \]
-This provides a system of equations given by 
+This provides a system of equations given by
 \begin{eqnarray*}
 x + y &=& 0\\
 x - y &=& 0
 \end{eqnarray*}
-You can verify that the solution to this system if $x = y =0$. Therefore 
+You can verify that the solution to this system if $x = y =0$. Therefore
 \[
 \vect{x} = \begin{mymatrix}{c}
 x \\
@@ -165,21 +165,21 @@ and $T$ is one to one.
 
 \item $T$ is onto:
 
-Let $a,b$ be scalars. We want to check if there is always a solution to 
+Let $a,b$ be scalars. We want to check if there is always a solution to
 \[
 T  \paren{\begin{mymatrix}{c}
 x \\
 y
 \end{mymatrix}} = \begin{mymatrix}{c}
 x + y\\
-x - y 
+x - y
 \end{mymatrix} = \begin{mymatrix}{c}
 a \\
 b
 \end{mymatrix}
 \]
 
-This can be represented as the system of equations 
+This can be represented as the system of equations
 \begin{eqnarray*}
 x + y &=& a\\
 x - y &=& b
@@ -196,13 +196,13 @@ Setting up the augmented matrix and row reducing gives
 0 & 1 & \vspace{0.05in}\frac{a-b}{2}
 \end{mymatrix}
 \]
-This has a solution for all $a,b$ and therefore $T$ is onto. 
+This has a solution for all $a,b$ and therefore $T$ is onto.
 \end{enumerate}
 
 Therefore $T$ is an isomorphism.
 \end{solution}
 
-An important property of isomorphisms is that its inverse is also an isomorphism. 
+An important property of isomorphisms is that its inverse is also an isomorphism.
 
 \begin{proposition}{Inverse of an isomorphism}{inverse-isomorphism}
 Let $T:V\rightarrow W$ be an isomorphism and $V,W$ be subspaces of $\R^n$. Then $T^{-1}:W\rightarrow V$ is
@@ -212,21 +212,21 @@ also an isomorphism.
 
 \begin{proof} Let $T$ be an isomorphism.  Since $T$ is onto, a typical
 vector in $W$ is of the form $T(\vect{v})$ where $\vect{v} \in V$. Consider then for $a,b$
-scalars, 
+scalars,
 \begin{equation*}
 T^{-1}(aT(\vect{v}_{1})+bT(\vect{v}_{2}))
 \end{equation*}
-where $\vect{v}_{1}, \vect{v}_2 \in V$. Is this equal to 
+where $\vect{v}_{1}, \vect{v}_2 \in V$. Is this equal to
 \begin{equation*}
 aT^{-1}(T (\vect{v}_{1})) +bT^{-1}(T(\vect{v}_{2})) =a\vect{v}_{1}+b\vect{v}_{2}?
 \end{equation*}
-Since $T$ is one to one, this will be so if 
+Since $T$ is one to one, this will be so if
 \begin{equation*}
 T(a\vect{v}_{1}+b\vect{v}_{2}) =T(T^{-1}(aT(\vect{v}_{1})+bT(\vect{v}_{2}))
 ) =aT(\vect{v}_{1})+bT(\vect{v}_{2}).
 \end{equation*}
 However, the above statement is just the condition that $T$ is a linear map.
-Thus $T^{-1}$ is indeed a linear map. If $\vect{v} \in V$ is given, then $\vect{v}=T^{-1}(T(\vect{v})) $ and so $T^{-1}$ is onto. If $T^{-1} (\vect{v})=0$, then 
+Thus $T^{-1}$ is indeed a linear map. If $\vect{v} \in V$ is given, then $\vect{v}=T^{-1}(T(\vect{v})) $ and so $T^{-1}$ is onto. If $T^{-1} (\vect{v})=0$, then
 \begin{equation*}
 \vect{v}=T(T^{-1}(\vect{v})) =T(\vect{0})=\vect{0}
 \end{equation*}
@@ -246,7 +246,7 @@ T(\vect{v})) $ is also an isomorphism.
 Suppose $T:V\rightarrow W$ and  $S:W\rightarrow Z$ are isomorphisms. Why is $S\circ T$ a linear map?
 For $a,b$ scalars,
 \begin{eqnarray*}
-S\circ T(a\vect{v}_{1}+b(\vect{v}_{2})) 
+S\circ T(a\vect{v}_{1}+b(\vect{v}_{2}))
 &=& S(T(a\vect{v}_{1}+b\vect{v}_{2})) =S(aT\vect{v}_{1}+bT\vect{v}_{2}) \\
 &=&aS(T\vect{v}_{1}) +bS(T\vect{v}_{2}) = a(S\circ
 T) (\vect{v}_{1}) +b(S\circ T) (\vect{v}_{2})
@@ -273,7 +273,7 @@ satisfies the following conditions:
 
 We leave the verification of these conditions as an exercise.
 
-Consider the following example. 
+Consider the following example.
 
 \begin{example}{Matrix isomorphism}{matrix-isomorphism}
 Let $T:\R^{n}\rightarrow \R^{n}$ be defined by $T(\vect{x}) = A(\vect{x})$ where $A$ is an invertible $n\times n$-matrix. Then $T$ is
@@ -284,7 +284,7 @@ an isomorphism.
 The reason for this is that, since $A$ is invertible, the only vector it
 sends to $\vect{0}$ is the zero vector. Hence if $A(\vect{x})=A(\vect{y})$, then $A(\vect{x}-\vect{y}) =\vect{0}$ and so $\vect{x}=\vect{y}$. It is onto
 because if $\vect{y}\in \R^{n},A(A^{-1} (\vect{y})) =(
-AA^{-1}) (\vect{y})$ $=\vect{y}$. 
+AA^{-1}) (\vect{y})$ $=\vect{y}$.
 \end{solution}
 
 In fact, all isomorphisms from $\R^{n}$ to $\R^{n}$ can be expressed as $T(\vect{x}) = A(\vect{x})$ where $A$ is an invertible $n \times n$-matrix. One
@@ -299,7 +299,7 @@ subspaces of $\R^n$. If $T$ is one to one, then it has the property that if $\se
 
 More generally, $T$ is an isomorphism if and only if whenever $\set{
 \vect{v}_{1},\ldots,\vect{v}_{n}} $ is a basis for $V$, it follows that $\set{T
-(\vect{v}_{1}),\ldots,T(\vect{v}_{n})} $ is a basis for $W$. 
+(\vect{v}_{1}),\ldots,T(\vect{v}_{n})} $ is a basis for $W$.
 \index{isomorphism!bases}
 \index{one to one!linear independence}
 \end{lemma}
@@ -307,15 +307,15 @@ More generally, $T$ is an isomorphism if and only if whenever $\set{
 \begin{proof}First suppose that $T$ is a linear transformation and is one to one
 and $\set{\vect{u}_{1},\ldots,\vect{u}_{k}} $ is linearly
 independent. It is required to show that $\set{T(\vect{u}_{1}),\ldots,T(\vect{
-u}_{k})} $ is also linearly independent. Suppose then that 
+u}_{k})} $ is also linearly independent. Suppose then that
 \begin{equation*}
 \sum_{i=1}^{k}c_{i}T(\vect{u}_{i})=\vect{0}
 \end{equation*}
-Then, since $T$ is linear, 
+Then, since $T$ is linear,
 \begin{equation*}
 T\paren{\sum_{i=1}^{n}c_{i}\vect{u}_{i}} =\vect{0}
 \end{equation*}
-Since $T$ is one to one, it follows that 
+Since $T$ is one to one, it follows that
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}\vect{u}_{i}=0
 \end{equation*}
@@ -329,11 +329,11 @@ _{1}),\ldots,T(\vect{v}_{n})} $ is linearly independent. It remains to
 verify that span$\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})}=W$. If $\vect{w}\in W$, then since $T$ is onto there
 exists $\vect{v}\in V$ such that $T(\vect{v})=\vect{w}$. Since $\set{\vect{v}
 _{1},\ldots,\vect{v}_{n}} $ is a basis, it follows that there exists
-scalars $\set{c_{i}} _{i=1}^{n}$ such that 
+scalars $\set{c_{i}} _{i=1}^{n}$ such that
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}\vect{v}_{i}=\vect{v}.
 \end{equation*}
-Hence, 
+Hence,
 \begin{equation*}
 \vect{w}=T(\vect{v})=T\paren{\sum_{i=1}^{n}c_{i}\vect{v}_{i}}
 =\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})
@@ -348,9 +348,9 @@ w=\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\paren{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} $
 showing that $T$ is onto. If $T\paren{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} =\vect{0}$
 then $\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=\vect{0}$ and since the vectors $\set{T(\vect{v}
 _{1}),\ldots,T(\vect{v}_{n})} $ are linearly independent, it follows
-that each $c_{i}=0$. Since $\sum_{i=1}^{n}c_{i}\vect{v}_{i}$ is a typical vector in 
+that each $c_{i}=0$. Since $\sum_{i=1}^{n}c_{i}\vect{v}_{i}$ is a typical vector in
 $V$, this has shown that if $T(\vect{v})=\vect{0}$ then $\vect{v}=\vect{0}$ and so $T$ is also one to one.
-Thus $T$ is an isomorphism. 
+Thus $T$ is an isomorphism.
 \end{proof}
 
 The following theorem illustrates a very useful idea for defining an
@@ -377,7 +377,7 @@ following are equivalent.
 dimension. Let a basis for $V$ be $\set{
 \vect{v}_{1},\ldots,\vect{v}_{n}} $ and let a basis for $W$ be $
 \set{\vect{w}_{1},\ldots,\vect{w}_{n}}$. Now define $T$ as
-follows. 
+follows.
 \begin{equation*}
 T(\vect{v}_{i})=\vect{w}_{i}
 \end{equation*}
@@ -386,20 +386,20 @@ for $\sum_{i=1}^{n}c_{i}\vect{v}_{i}$ an arbitrary vector of $V$,
 T\paren{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} = \sum_{i=1}^{n}c_{i}T
 \vect{v}_{i}=\sum_{i=1}^{n}c_{i}\vect{w}_{i}.
 \end{equation*}
-It is necessary to verify that this is well defined. Suppose then that 
+It is necessary to verify that this is well defined. Suppose then that
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}\vect{v}_{i}=\sum_{i=1}^{n}\hat{c}_{i}\vect{v}_{i}
 \end{equation*}
-Then 
+Then
 \begin{equation*}
 \sum_{i=1}^{n}(c_{i}-\hat{c}_{i}) \vect{v}_{i}=\vect{0}
 \end{equation*}
 and since $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} $ is a basis, $
-c_{i}=\hat{c}_{i}$ for each $i$. Hence 
+c_{i}=\hat{c}_{i}$ for each $i$. Hence
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}\vect{w}_{i}=\sum_{i=1}^{n}\hat{c}_{i}\vect{w}_{i}
 \end{equation*}
-and so the mapping is well defined. Also if $a,b$ are scalars, 
+and so the mapping is well defined. Also if $a,b$ are scalars,
 \begin{eqnarray*}
 T\paren{a\sum_{i=1}^{n}c_{i}\vect{v}_{i}+b\sum_{i=1}^{n}\hat{c}_{i}\vect{v}%
 _{i}} &=&T(\sum_{i=1}^{n}(ac_{i}+b\hat{c}_{i}) \vect{v%
@@ -408,9 +408,9 @@ _{i}} &=&T(\sum_{i=1}^{n}(ac_{i}+b\hat{c}_{i}) \vect{v%
 &=&aT\paren{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} +bT\paren{\sum_{i=1}^{n}%
 \hat{c}_{i}\vect{v}_{i}}
 \end{eqnarray*}
-Thus $T$ is a linear transformation. 
+Thus $T$ is a linear transformation.
 
-Now if 
+Now if
 \begin{equation*}
 T\paren{\sum_{i=1}^{n}c_{i}\vect{v}_{i}} =\sum_{i=1}^{n}c_{i}\vect{w}%
 _{i}=\vect{0},
@@ -418,7 +418,7 @@ _{i}=\vect{0},
 then since the $\set{\vect{w}_{1},\ldots,\vect{w}_{n}} $ are
 independent, each $c_{i}=0$ and so $\sum_{i=1}^{n}c_{i}\vect{v}_{i}=\vect{0}$
 also. Hence $T$ is one to one. If $\sum_{i=1}^{n}c_{i}\vect{w}_{i}$ is a
-vector in $W$, then it equals 
+vector in $W$, then it equals
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\paren{\sum_{i=1}^{n}c_{i}\vect{v}_{i}}
 \end{equation*}
@@ -441,7 +441,7 @@ fail to span $W$. But then there would exist $\vect{w}\notin \sspan
 } $ would be linearly independent which is impossible because there exists a basis for $W$ of $n$ vectors.
 
 Hence $\sspan\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})} =W$ and
-so $\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})} $ is a basis. If $\vect{w}\in W$, there exist scalars $c_{i}$ such that 
+so $\set{T(\vect{v}_{1}),\ldots,T(\vect{v}_{n})} $ is a basis. If $\vect{w}\in W$, there exist scalars $c_{i}$ such that
 \begin{equation*}
 \vect{w}=\sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=T\paren{\sum_{i=1}^{n}c_{i}\vect{v}
 _{i}}
@@ -449,20 +449,20 @@ _{i}}
 showing that $T$ is onto. This shows that $1.)\Rightarrow 2.)$.
 
 Next consider the claim that $2.)\Rightarrow 3.)$. Since $2.)$ holds, it
-follows that $T$ is onto. It remains to verify that $T$ is one to one. Since 
+follows that $T$ is onto. It remains to verify that $T$ is one to one. Since
 $T$ is onto, there exists a basis of the form $\set{T(\vect{v}_{i}),\ldots,T(\vect{v}_{n})}$. Then it follows that $\set{\vect{v}_{1},\ldots,
-\vect{v}_{n}} $ is linearly independent. Suppose 
+\vect{v}_{n}} $ is linearly independent. Suppose
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}\vect{v}_{i}=\vect{0}
 \end{equation*}
-Then 
+Then
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=\vect{0}
 \end{equation*}
 Hence each $c_{i}=0$ and so, $\set{\vect{v}_{1},\ldots,\vect{v}
 _{n}} $ is a basis for $V$. Now it follows that a typical vector in $
 V $ is of the form $\sum_{i=1}^{n}c_{i}\vect{v}_{i}$. If $T\paren{
-\sum_{i=1}^{n}c_{i}\vect{v}_{i}} =\vect{0}$, it follows that 
+\sum_{i=1}^{n}c_{i}\vect{v}_{i}} =\vect{0}$, it follows that
 \begin{equation*}
 \sum_{i=1}^{n}c_{i}T(\vect{v}_{i})=\vect{0}
 \end{equation*}
@@ -481,26 +481,26 @@ part of the argument by describing what it does to a basis and then
 \index{linear map!defining on a basis}
 
 \begin{example}{Isomorphic subspaces}{}
-Let $V=\R^{3}$ and let $W$ denote 
+Let $V=\R^{3}$ and let $W$ denote
 \begin{equation*}
 \sspan\set{\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
-1 \\ 
+1 \\
+2 \\
+1 \\
 1
 \end{mymatrix} ,\begin{mymatrix}{r}
-0 \\ 
-1 \\ 
-0 \\ 
+0 \\
+1 \\
+0 \\
 1
 \end{mymatrix} ,\begin{mymatrix}{r}
-1 \\ 
-1 \\ 
-2 \\ 
+1 \\
+1 \\
+2 \\
 0
 \end{mymatrix} }
 \end{equation*}
-Show that $V$ and $W$ are isomorphic. 
+Show that $V$ and $W$ are isomorphic.
 \end{example}
 
 \begin{solution}
@@ -508,33 +508,33 @@ First observe that these subspaces are both of dimension 3 and so they are isomo
 three vectors which span $W$ are easily seen to be linearly independent by
 making them the columns of a matrix and row reducing to the {\rref}.
 
-You can exhibit an isomorphism of these two spaces as follows. 
+You can exhibit an isomorphism of these two spaces as follows.
 \begin{equation*}
 T(\vect{e}_{1})=\begin{mymatrix}{c}
-1 \\ 
-2 \\ 
-1 \\ 
+1 \\
+2 \\
+1 \\
 1
 \end{mymatrix}, T(\vect{e}_{2})=\begin{mymatrix}{c}
-0 \\ 
-1 \\ 
-0 \\ 
+0 \\
+1 \\
+0 \\
 1
 \end{mymatrix}, T(\vect{e}_{3})=\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
-2 \\ 
+1 \\
+1 \\
+2 \\
 0
 \end{mymatrix}
 \end{equation*}
 and extend linearly. Recall that the matrix of this linear transformation is
 just the matrix having these vectors as columns. Thus the matrix of this
-isomorphism is 
+isomorphism is
 \begin{equation*}
 \begin{mymatrix}{rrr}
-1 & 0 & 1 \\ 
-2 & 1 & 1 \\ 
-1 & 0 & 2 \\ 
+1 & 0 & 1 \\
+2 & 1 & 1 \\
+1 & 0 & 2 \\
 1 & 1 & 0
 \end{mymatrix}
 \end{equation*}
@@ -542,57 +542,57 @@ You should check that multiplication on the left by this matrix does
 reproduce the claimed effect resulting from an application by $T$.
 \end{solution}
 
-Consider the following example. 
+Consider the following example.
 
 \begin{example}{Finding the matrix of an isomorphism}{matrix-of-isomorphism}
-Let $V=\R^{3}$ and let $W$ denote 
+Let $V=\R^{3}$ and let $W$ denote
 \begin{equation*}
 \sspan\set{\begin{mymatrix}{c}
-1 \\ 
-2 \\ 
-1 \\ 
+1 \\
+2 \\
+1 \\
 1
 \end{mymatrix} ,\begin{mymatrix}{c}
-0 \\ 
-1 \\ 
-0 \\ 
+0 \\
+1 \\
+0 \\
 1
 \end{mymatrix} ,\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
-2 \\ 
+1 \\
+1 \\
+2 \\
 0
 \end{mymatrix} }
 \end{equation*}
 
-Let $T: V \to W$ be defined as follows. 
+Let $T: V \to W$ be defined as follows.
 \begin{equation*}
 T\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
+1 \\
+1 \\
 0
 \end{mymatrix} =\begin{mymatrix}{c}
-1 \\ 
-2 \\ 
-1 \\ 
+1 \\
+2 \\
+1 \\
 1
 \end{mymatrix} ,T\begin{mymatrix}{c}
-0 \\ 
-1 \\ 
+0 \\
+1 \\
 1
 \end{mymatrix} =\begin{mymatrix}{c}
-0 \\ 
-1 \\ 
-0 \\ 
+0 \\
+1 \\
+0 \\
 1
 \end{mymatrix} ,T\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
+1 \\
+1 \\
 1
 \end{mymatrix} =\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
-2 \\ 
+1 \\
+1 \\
+2 \\
 0
 \end{mymatrix}
 \end{equation*}
@@ -600,19 +600,19 @@ Find the matrix of this isomorphism $T$.
 \end{example}
 
 \begin{solution}
- First note that the vectors 
+ First note that the vectors
 \begin{equation*}
 \begin{mymatrix}{c}
-1 \\ 
-1 \\ 
+1 \\
+1 \\
 0
 \end{mymatrix} ,\begin{mymatrix}{c}
-0 \\ 
-1 \\ 
+0 \\
+1 \\
 1
 \end{mymatrix} ,\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
+1 \\
+1 \\
 1
 \end{mymatrix}
 \end{equation*}
@@ -620,34 +620,34 @@ are indeed a basis for $\R^{3}$ as can be seen by making them the
 columns of a matrix and using the {\rref}.
 
 Now recall the matrix of $T$ is a $4\times 3$-matrix $A$ which gives the same
-effect as $T$. Thus, from the way we multiply matrices, 
+effect as $T$. Thus, from the way we multiply matrices,
 \begin{equation*}
 A\begin{mymatrix}{rrr}
-1 & 0 & 1 \\ 
-1 & 1 & 1 \\ 
+1 & 0 & 1 \\
+1 & 1 & 1 \\
 0 & 1 & 1
 \end{mymatrix} =\begin{mymatrix}{rrr}
-1 & 0 & 1 \\ 
-2 & 1 & 1 \\ 
-1 & 0 & 2 \\ 
+1 & 0 & 1 \\
+2 & 1 & 1 \\
+1 & 0 & 2 \\
 1 & 1 & 0
 \end{mymatrix}
 \end{equation*}
-Hence, 
+Hence,
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
-1 & 0 & 1 \\ 
-2 & 1 & 1 \\ 
-1 & 0 & 2 \\ 
+1 & 0 & 1 \\
+2 & 1 & 1 \\
+1 & 0 & 2 \\
 1 & 1 & 0
 \end{mymatrix} \begin{mymatrix}{rrr}
-1 & 0 & 1 \\ 
-1 & 1 & 1 \\ 
+1 & 0 & 1 \\
+1 & 1 & 1 \\
 0 & 1 & 1
 \end{mymatrix} ^{-1}=\begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-0 & 2 & -1 \\ 
-2 & -1 & 1 \\ 
+1 & 0 & 0 \\
+0 & 2 & -1 \\
+2 & -1 & 1 \\
 -1 & 2 & -1
 \end{mymatrix}
 \end{equation*}
@@ -659,53 +659,53 @@ This idea of defining a linear transformation by what it does on a basis
 works for linear maps which are not necessarily isomorphisms.
 
 \begin{example}{Finding the matrix of an isomorphism}{}
-Let $V=\R^{3}$ and let $W$ denote 
+Let $V=\R^{3}$ and let $W$ denote
 \begin{equation*}
 \sspan\set{\begin{mymatrix}{c}
-1 \\ 
-0 \\ 
-1 \\ 
+1 \\
+0 \\
+1 \\
 1
 \end{mymatrix} ,\begin{mymatrix}{c}
-0 \\ 
-1 \\ 
-0 \\ 
+0 \\
+1 \\
+0 \\
 1
 \end{mymatrix} ,\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
-1 \\ 
+1 \\
+1 \\
+1 \\
 2
 \end{mymatrix} }
 \end{equation*}
-Let $T: V \to W$ be defined as follows. 
+Let $T: V \to W$ be defined as follows.
 \begin{equation*}
 T\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
+1 \\
+1 \\
 0
 \end{mymatrix} = \begin{mymatrix}{c}
-1 \\ 
-0 \\ 
-1 \\ 
+1 \\
+0 \\
+1 \\
 1
 \end{mymatrix} ,T\begin{mymatrix}{c}
-0 \\ 
-1 \\ 
+0 \\
+1 \\
 1
 \end{mymatrix} =\begin{mymatrix}{c}
-0 \\ 
-1 \\ 
-0 \\ 
+0 \\
+1 \\
+0 \\
 1
 \end{mymatrix} ,T\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
+1 \\
+1 \\
 1
 \end{mymatrix} =\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
-1 \\ 
+1 \\
+1 \\
+1 \\
 2
 \end{mymatrix}
 \end{equation*}
@@ -714,34 +714,34 @@ T\begin{mymatrix}{c}
 
 \begin{solution}
 Note that in this case, the three vectors which span $W$ are not linearly independent. Nevertheless the above procedure will still work.
-The reasoning is the same as before. If $A$ is this matrix, then 
+The reasoning is the same as before. If $A$ is this matrix, then
 \begin{equation*}
 A\begin{mymatrix}{rrr}
-1 & 0 & 1 \\ 
-1 & 1 & 1 \\ 
+1 & 0 & 1 \\
+1 & 1 & 1 \\
 0 & 1 & 1
 \end{mymatrix} =\begin{mymatrix}{rrr}
-1 & 0 & 1 \\ 
-0 & 1 & 1 \\ 
-1 & 0 & 1 \\ 
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+1 & 0 & 1 \\
 1 & 1 & 2
 \end{mymatrix}
 \end{equation*}
-and so 
+and so
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
-1 & 0 & 1 \\ 
-0 & 1 & 1 \\ 
-1 & 0 & 1 \\ 
+1 & 0 & 1 \\
+0 & 1 & 1 \\
+1 & 0 & 1 \\
 1 & 1 & 2
 \end{mymatrix} \begin{mymatrix}{rrr}
-1 & 0 & 1 \\ 
-1 & 1 & 1 \\ 
+1 & 0 & 1 \\
+1 & 1 & 1 \\
 0 & 1 & 1
 \end{mymatrix} ^{-1}=\begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-0 & 0 & 1 \\ 
-1 & 0 & 0 \\ 
+1 & 0 & 0 \\
+0 & 0 & 1 \\
+1 & 0 & 0 \\
 1 & 0 & 1
 \end{mymatrix}
 \end{equation*}

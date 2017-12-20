@@ -3,25 +3,25 @@
 Recall the following definitions, given here in terms of vector spaces.
 
 \begin{definition}{One to one}{one-to-one-vector-space}
-Let $V, W$ be vector spaces with $\vect{v}_1, \vect{v}_2$ vectors in $V$. Then a linear transformation $T: V \to W$ is called one to one if whenever $\vect{v}_1 \neq \vect{v}_2$ it follows that 
+Let $V, W$ be vector spaces with $\vect{v}_1, \vect{v}_2$ vectors in $V$. Then a linear transformation $T: V \to W$ is called one to one if whenever $\vect{v}_1 \neq \vect{v}_2$ it follows that
 \[
 T(\vect{v}_1) \neq T (\vect{v}_2)
 \]
 \end{definition}
 
 \begin{definition}{Onto}{onto-vector-space}
-Let $V, W$ be vector spaces. Then a linear transformation $T: V \to W$ is called onto if for all $\vect{w} \in \vect{W}$ there exists $\vect{v} \in V$ such that $T(\vect{v}) = \vect{w}$. 
+Let $V, W$ be vector spaces. Then a linear transformation $T: V \to W$ is called onto if for all $\vect{w} \in \vect{W}$ there exists $\vect{v} \in V$ such that $T(\vect{v}) = \vect{w}$.
 \end{definition}
 
-Recall that every linear transformation $T$ has the property that $T(\vect{0})=\vect{0}$. This will be necessary to prove the following useful lemma. 
+Recall that every linear transformation $T$ has the property that $T(\vect{0})=\vect{0}$. This will be necessary to prove the following useful lemma.
 
 \begin{lemma}{One to one}{one-to-one-abstract}
 The assertion that a linear transformation $T$ is one to one is equivalent to
-saying that if $T(\vect{v})=\vect{0}$, then $\vect{v}=\vect{0}$. 
+saying that if $T(\vect{v})=\vect{0}$, then $\vect{v}=\vect{0}$.
 \end{lemma}
 
 \begin{proof}
-Suppose first that $T$ is one to one. 
+Suppose first that $T$ is one to one.
 \begin{equation*}
 T(\vect{0})=T(\vect{0}+\vect{0}) =T(\vect{0})+T(\vect{0})
 \end{equation*}
@@ -30,7 +30,7 @@ that $T(\vect{0})=\vect{0}$. Therefore, if $T(\vect{v})=\vect{0}$, it must be th
 case that $\vect{v}=\vect{0}$ because it was just shown that $T(\vect{0})=\vect{0}$.
 
 Now suppose that if $T(\vect{v})=\vect{0}$, then $\vect{v}=\vect{0}$. If $T(\vect{v})=T(\vect{u})$, then $T(\vect{v})-T(\vect{u})=T(\vect{v}-\vect{u}) =\vect{0}$ which
-shows that $\vect{v}-\vect{u}=\vect{0}$ or in other words, $\vect{v}=\vect{u}$. 
+shows that $\vect{v}-\vect{u}=\vect{0}$ or in other words, $\vect{v}=\vect{u}$.
 \end{proof}
 
 Consider the following example.
@@ -48,12 +48,12 @@ Prove that $S$ is one to one but not onto.
 \end{example}
 
 \begin{solution}
-By definition, 
+By definition,
 \[ \ker(S)=\set{ax^2+bx+c\in \Poly_2 \mid a+b=0, a+c=0, b-c=0, b+c=0}.\]
 
 Suppose $p(x)=ax^2+bx+c\in\ker(S)$.
-This leads to a homogeneous system of four equations in three 
-variables.  
+This leads to a homogeneous system of four equations in three
+variables.
 Putting the augmented matrix in {\rref}:
 
 \[ \begin{mymatrix}{rrr|c}
@@ -68,13 +68,13 @@ Putting the augmented matrix in {\rref}:
 0 & 0 & 1 & 0  \\
 0 & 0 & 0 & 0  \end{mymatrix}. \]
 
-The solution is $a=b=c=0$. This tells us that if $S(p(x)) = 0$, then $p(x) = ax^2+bx+c = 0x^2 + 0x + 0 = 0$. Therefore it is one to one. 
+The solution is $a=b=c=0$. This tells us that if $S(p(x)) = 0$, then $p(x) = ax^2+bx+c = 0x^2 + 0x + 0 = 0$. Therefore it is one to one.
 
 To show that $S$ is \textbf{not} onto, find a matrix $A\in\Mat_{22}$
-such that for every $p(x)\in \Poly_2$, 
+such that for every $p(x)\in \Poly_2$,
 $S(p(x))\neq A$.
-Let 
-\[ A=\begin{mymatrix}{cc} 
+Let
+\[ A=\begin{mymatrix}{cc}
 0 & 1 \\ 0 & 2 \end{mymatrix},\]
 and suppose $p(x)=ax^2+bx+c\in \Poly_2$ is such that
 $S(p(x))=A$.
@@ -87,7 +87,7 @@ Solving this system
 1 & 0 & 1 & 1  \\
 0 & 1 & -1 & 0  \\
 0 & 1 & 1 & 2  \end{mymatrix}
-\rightarrow 
+\rightarrow
 \begin{mymatrix}{rrr|r}
 1 & 1 & 0 & 0  \\
 0 & -1 & 1 & 1  \\
@@ -108,12 +108,12 @@ a+d \\ b+c \end{mymatrix}
 \mbox{ for all }
 \begin{mymatrix}{cc}
 a & b \\ c & d \end{mymatrix} \in\Mat_{22}.\]
-Prove that $T$ is onto but not one to one. 
+Prove that $T$ is onto but not one to one.
 \end{example}
 
 \begin{solution}
-Let $\begin{mymatrix}{c} x \\ y \end{mymatrix}$ be an arbitrary vector in $\R^2$. 
-Since 
+Let $\begin{mymatrix}{c} x \\ y \end{mymatrix}$ be an arbitrary vector in $\R^2$.
+Since
 $T\begin{mymatrix}{cc} x & y \\ 0 & 0 \end{mymatrix}
 =\begin{mymatrix}{c} x \\ y \end{mymatrix}$,
 $T$  is onto.
@@ -125,12 +125,12 @@ T \paren{\begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix}}
 =
 \begin{mymatrix}{c}
 1 + -1 \\
-0 + 0 
+0 + 0
 \end{mymatrix}
 =
 \begin{mymatrix}{c}
 0 \\
-0 
+0
 \end{mymatrix}
 \]
 There exists a non-zero matrix $A$ such that $T(A) = \vect{0}$. It follows that $T$ is not one to one.
@@ -151,7 +151,7 @@ subset of $W$.
 \begin{solution}
 Let $\vect{0}_V$ and $\vect{0}_W$ denote the zero vectors of $V$ and $W$,
 respectively.
-Suppose that 
+Suppose that
 
 \[ a_1T(\vect{v}_1) + a_2T(\vect{v}_2) +\ldots +a_kT(\vect{v}_k) =\vect{0}_W \]
 
@@ -182,10 +182,10 @@ then
 \end{example}
 
 \begin{solution}
-Suppose that $T$ is onto and let $\vect{w}\in W$.  
+Suppose that $T$ is onto and let $\vect{w}\in W$.
 Then there exists $\vect{v}\in V$ such that $T(\vect{v})=\vect{w}$.
 Since $V=\sspan\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_k}$, there
-exist $a_1, a_2, \ldots a_k\in\R$ such that 
+exist $a_1, a_2, \ldots a_k\in\R$ such that
 $\vect{v} = a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_k\vect{v}_k$.
 Using the fact that $T$ is a linear transformation,
 
@@ -196,11 +196,11 @@ Using the fact that $T$ is a linear transformation,
 \end{eqnarray*}
 
 i.e., $\vect{w}\in\sspan\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}$,
-and thus 
+and thus
 
 \[ W\subseteq \sspan\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}.\]
 
-Since $T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\in W$, 
+Since $T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)\in W$,
 it follows from
 that
 $\sspan\set{T(\vect{v}_1), T(\vect{v}_2), \ldots, T(\vect{v}_k)}\subseteq W$,

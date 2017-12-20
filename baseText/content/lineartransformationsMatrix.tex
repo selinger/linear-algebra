@@ -18,7 +18,7 @@ T(\vect{x}) = A\vect{x} \label{matrix-of-transf}
 for all $\vect{x} \in \R^{n}$.
 
 \begin{theorem}{Matrix of a linear transformation}{matrix-linear-transf}
-Let $T:\R^{n}\to \R^{m}$ be a linear transformation. Then we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
+Let $T:\R^{n}\to \R^{m}$ be a linear transformation. Then we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$.
  In this case, we say that $T$ is {\em determined} or {\em induced}
 by the matrix $A$.
 \end{theorem}
@@ -92,13 +92,13 @@ where $\vect{e}_{i}$ is the $i\th$ column of $I_n$, and then $T(\vect{e}_{i}
 The following Corollary is an essential result.
 
 \begin{corollary}{Matrix and linear transformation}{matrix-linear-transf-equivalence}
-A transformation $T$ is a linear transformation if and only if it is a matrix transformation. 
+A transformation $T$ is a linear transformation if and only if it is a matrix transformation.
 \end{corollary}
 
 Consider the following example.
 
 \begin{example}{The matrix of a linear transformation}{matrix-of-linear-transformation}
-Suppose $T$ is a linear transformation, $T:\R^{3}\rightarrow \R^{2}$ where 
+Suppose $T$ is a linear transformation, $T:\R^{3}\rightarrow \R^{2}$ where
 \begin{equation*}
 T\begin{mymatrix}{r}
 1 \\
@@ -128,7 +128,7 @@ Find the matrix $A$ of $T$ such that $T (\vect{x})=A\vect{x}$  for all $\vect{x}
 
 \begin{solution} By Theorem~\ref{thm:matrix-of-linear-transformation} we construct $A$ as follows:
 \begin{equation*}
-A = 
+A =
 \begin{mymatrix}{ccc}
 | &  & | \\
 T(\vect{e}_{1}) & \cdots & T(\vect{e}_{n}) \\
@@ -148,9 +148,9 @@ A=\begin{mymatrix}{rrr}
 \end{equation*}
 \end{solution}
 
-In this example, we were given the resulting vectors of $T (\vect{e}_1), 
+In this example, we were given the resulting vectors of $T (\vect{e}_1),
 T (\vect{e}_2)$, and $T (\vect{e}_3)$. Constructing the matrix $A$ was simple, as we
-could simply use these vectors as the columns of $A$. The next example shows how to find $A$ when we are not given the $T (\vect{e}_i)$ so clearly. 
+could simply use these vectors as the columns of $A$. The next example shows how to find $A$ when we are not given the $T (\vect{e}_i)$ so clearly.
 
 \begin{example}{The matrix of linear transformation: inconveniently \\ defined}{2x2-inconvenient-matrix-of-linear-transf}
 Suppose $T$ is a linear transformation, $T:\R^{2}\rightarrow \R^{2}$ and
@@ -163,7 +163,7 @@ T\begin{mymatrix}{r}
 2
 \end{mymatrix} ,\ T\begin{mymatrix}{r}
 0 \\
--1 
+-1
 \end{mymatrix} =\begin{mymatrix}{r}
 3 \\
 2
@@ -185,8 +185,8 @@ of $T$ on $\vect{e}_{1}$ and $\vect{e}_{2}$? In particular for $\vect{e}_{1}$, s
 1
 \end{mymatrix} +y\begin{mymatrix}{r}
 0 \\
--1 
-\end{mymatrix} 
+-1
+\end{mymatrix}
 \label{matrix-values}
 \end{equation}
 
@@ -194,13 +194,13 @@ Then, since $T$ is linear,
 \begin{equation*}
 T\begin{mymatrix}{r}
 1 \\
-0 
+0
 \end{mymatrix}  = x T\begin{mymatrix}{r}
 1 \\
 1
 \end{mymatrix} +y T\begin{mymatrix}{r}
 0 \\
--1 
+-1
 \end{mymatrix}
 \end{equation*}
 
@@ -208,20 +208,20 @@ Substituting in values, this sum becomes
 \begin{equation}
 T\begin{mymatrix}{r}
 1 \\
-0 
-\end{mymatrix} = 
+0
+\end{mymatrix} =
  x\begin{mymatrix}{r}
 1 \\
 2
 \end{mymatrix} +y\begin{mymatrix}{r}
 3 \\
 2
-\end{mymatrix} 
+\end{mymatrix}
 \label{matrix-values2}
 \end{equation}
 
 Therefore, if we know the values of $x$ and $y$ which satisfy {\eqref{matrix-values}}, we can substitute these into equation {\eqref{matrix-values2}}. By doing so,
-we find $T(\vect{e}_1)$ which is the first column of the matrix $A$. 
+we find $T(\vect{e}_1)$ which is the first column of the matrix $A$.
 
 We proceed to find $x$ and $y$. We do so by solving {\eqref{matrix-values}}, which can be done by solving the system
 \begin{equation*}
@@ -231,21 +231,21 @@ x - y = 0
 \end{array}
 \end{equation*}
 
-We see that $x=1$ and $y=1$ is the solution to this system. 
-Substituting these values into equation {\eqref{matrix-values2}}, we have 
+We see that $x=1$ and $y=1$ is the solution to this system.
+Substituting these values into equation {\eqref{matrix-values2}}, we have
 \begin{equation*}
 T\begin{mymatrix}{r}
 1 \\
-0 
-\end{mymatrix} = 
+0
+\end{mymatrix} =
  1 \begin{mymatrix}{r}
 1 \\
 2
 \end{mymatrix} + 1 \begin{mymatrix}{r}
 3 \\
 2
-\end{mymatrix} 
-= 
+\end{mymatrix}
+=
  \begin{mymatrix}{r}
 1 \\
 2
@@ -264,11 +264,11 @@ Therefore $\begin{mymatrix}{r}
 4 \\
 4
 \end{mymatrix}$
-is the first column of $A$. 
+is the first column of $A$.
 
 Computing the second column is done in the same way, and is left as an exercise.
 
-The resulting matrix $A$ is given by 
+The resulting matrix $A$ is given by
 \begin{equation*}
 A
 =
@@ -280,12 +280,12 @@ A
 \end{solution}
 
 This example illustrates a very long procedure for finding the matrix of $A$. While this method is reliable and
-will always result in the correct matrix $A$, the following procedure provides an alternative method. 
+will always result in the correct matrix $A$, the following procedure provides an alternative method.
 
 \begin{procedure}{Finding the matrix of inconveniently defined linear transformation}{finding-matrix-of-linear-transformation}
 Suppose $T:\R^{n}\rightarrow \R^{m}$ is a linear transformation. Suppose there exist vectors $\set{\vect{a}_{1},\ldots,\vect{a}_{n}} $ in $\R^{n}$ such that $\begin{mymatrix}{ccc}
 \vect{a}_{1} & \cdots & \vect{a}_{n}
-\end{mymatrix} ^{-1}$ exists, and 
+\end{mymatrix} ^{-1}$ exists, and
 \begin{equation*}
 T (\vect{a}_{i})=\vect{b}_{i}
 \end{equation*}
@@ -336,21 +336,21 @@ Find the matrix of this linear transformation.
 \end{example}
 
 \begin{solution}
-By Procedure~\ref{proc:finding-matrix-of-linear-transformation}, 
+By Procedure~\ref{proc:finding-matrix-of-linear-transformation},
 $A=  \begin{mymatrix}{rrr}
 1 & 0 & 1 \\
 3 & 1 & 1 \\
 1 & 1 & 0
-\end{mymatrix} ^{-1}$ and 
+\end{mymatrix} ^{-1}$ and
  $B=\begin{mymatrix}{rrr}
 0 & 2 & 0 \\
 1 & 1 & 0 \\
 1 & 3 & 1
 \end{mymatrix}$
 
-Then, Procedure~\ref{proc:finding-matrix-of-linear-transformation} claims that the matrix of $T$ is 
+Then, Procedure~\ref{proc:finding-matrix-of-linear-transformation} claims that the matrix of $T$ is
 \begin{equation*}
-C= BA^{-1} 
+C= BA^{-1}
 =\begin{mymatrix}{rrr}
 2 & -2 & 4 \\
 0 & 0 & 1 \\
@@ -419,7 +419,7 @@ dot product. This is shown as follows.
 \vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}} \vect{u}+p \paren{\vspace{
 0.05in}\frac{\vect{w}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}} \vect{u} \\
 &=& k \; \proj_{\vect{u}}(\vect{v}) +p \; \proj
-_{\vect{u}}(\vect{w}) 
+_{\vect{u}}(\vect{w})
 \end{eqnarray*}
 
 Consider the following example.
@@ -429,11 +429,11 @@ Let $\vect{u} = \begin{mymatrix}{r}
 1 \\
 2 \\
 3
-\end{mymatrix}$ and let $T$ be the projection map $T: \R^3 \to \R^3$ defined by 
+\end{mymatrix}$ and let $T$ be the projection map $T: \R^3 \to \R^3$ defined by
 \[
 T(\vect{v}) = \proj_{\vect{u}}(\vect{v})
 \]
-for any $\vect{v} \in \R^3$.  
+for any $\vect{v} \in \R^3$.
 \begin{enumerate}
 \item Does this transformation come from
 multiplication by a matrix?
@@ -444,10 +444,10 @@ multiplication by a matrix?
 \begin{solution}
 \begin{enumerate}
 \item
-First, we have just seen that $T (\vect{v}) = \proj_{\vect{u}}(\vect{v})$ is linear. Therefore by Theorem~\ref{thm:matrix-linear-transf}, we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$. 
+First, we have just seen that $T (\vect{v}) = \proj_{\vect{u}}(\vect{v})$ is linear. Therefore by Theorem~\ref{thm:matrix-linear-transf}, we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$.
 
 \item
-The columns of the matrix for $T$ are defined above as $T(\vect{e}_{i})$. 
+The columns of the matrix for $T$ are defined above as $T(\vect{e}_{i})$.
 It follows that $T(\vect{e}_{i}) = \proj
 _{\vect{u}}(\vect{e}_{i}) $ gives the $i\th$ column of the
 desired matrix. Therefore, we need to find
@@ -471,7 +471,7 @@ matrix are
 1 \\
 2 \\
 3
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 which you can verify.
 Hence the matrix of $T$ is
@@ -480,7 +480,7 @@ Hence the matrix of $T$ is
 1 & 2 & 3 \\
 2 & 4 & 6 \\
 3 & 6 & 9
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 \end{enumerate}
 \end{solution}

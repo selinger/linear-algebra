@@ -35,7 +35,7 @@ counterparts.
 a_{11}x_{1}+a_{12}x_{2}+\ldots +a_{1n}x_{n}= 0 \\
 a_{21}x_{1}+a_{22}x_{2}+\ldots +a_{2n}x_{n}= 0  \\
 \vdots \\
-a_{m1}x_{1}+a_{m2}x_{2}+\ldots +a_{mn}x_{n}= 0, 
+a_{m1}x_{1}+a_{m2}x_{2}+\ldots +a_{mn}x_{n}= 0,
 \end{array}
 \end{equation*}
 where $a_{ij}$ are coefficients and $x_{i}$ are variables.
@@ -65,7 +65,7 @@ of a system is the number of pivot variables in its {\ef}.
 \begin{theorem}{Rank and solutions of homogeneous system of equations}{rank-homogeneous-solutions}
   Consider a homogeneous system of $m$ equations in $n$ variables, and
   assume that the coefficient matrix has rank $r$. Then the system is
-  consistent, and 
+  consistent, and
 \begin{enumerate}
 \item if $r=n$, then the system has only the trivial solution;
 \item if $r<n$, then the system has infinitely many solutions.
@@ -74,7 +74,7 @@ of a system is the number of pivot variables in its {\ef}.
 
 \begin{example}{Homogeneous system with more variables than equations}{homo-more-vars}
   True or false: Suppose a homogeneous system has more variables than
-  equations. Then the system has infinitely many solutions.  
+  equations. Then the system has infinitely many solutions.
 \end{example}
 
 \begin{solution}
@@ -83,7 +83,7 @@ of a system is the number of pivot variables in its {\ef}.
   infinitely many solutions. Note that it is not possible for a
   homogeneous system to be inconsistent, since there is always the
   trivial solution.
-\end{solution} 
+\end{solution}
 
 \begin{example}{Homogeneous system with an equal number of variables and equations}{homo-less-vars}
   True or false: Suppose a homogeneous system has the same number of
@@ -124,16 +124,16 @@ x + 2y - 2z + 3w = 0
   {\rref}.
   \begin{equation*}
     \begin{mymatrix}{rrrr|r}
-      2 & 1 & 1 & 4 & 0 \\ 
+      2 & 1 & 1 & 4 & 0 \\
       1 & 2 & -1 & 5 & 0
     \end{mymatrix}
     \roweq
     \begin{mymatrix}{rrrr|r}
-      1 & 0 &  1 & 1 & 0 \\ 
+      1 & 0 &  1 & 1 & 0 \\
       0 & 1 & -1 & 2 & 0
     \end{mymatrix}
   \end{equation*}
-  The corresponding system of equations is 
+  The corresponding system of equations is
   \begin{equation*}
     \begin{array}{r}
       x + z + w = 0 \\
@@ -155,7 +155,7 @@ x + 2y - 2z + 3w = 0
 \end{solution}
 
 Let us write the solution of the last example in another form.
-Specifically, it can be written as 
+Specifically, it can be written as
 \begin{equation}\label{eqn:homogeneous-solution-1}
   \begin{mymatrix}{r}
     x\\
@@ -219,7 +219,7 @@ say that the general solution of the homogeneous system is a
 We explore this further in the following example.
 
 \begin{example}{Basic solutions of a homogeneous system}{basic-solutions}
-  Consider the following homogeneous system of equations. 
+  Consider the following homogeneous system of equations.
   \begin{equation}\label{eqn:basic-solutions-1}
     \begin{array}{c}
       x + 4y + 3z = 0 \\
@@ -230,7 +230,7 @@ We explore this further in the following example.
 \end{example}
 
 \begin{solution}
-  The augmented matrix of this system and the resulting {\rref} are 
+  The augmented matrix of this system and the resulting {\rref} are
   \begin{equation*}
     \begin{mymatrix}{rrr|r}
       1 & 4 & 3 & 0 \\
@@ -242,7 +242,7 @@ We explore this further in the following example.
       0 & 0 & 0 & 0
     \end{mymatrix}.
   \end{equation*}
-  When written in equations, this system is given by 
+  When written in equations, this system is given by
   \begin{equation*}
     x + 4y +3z=0.
   \end{equation*}
@@ -256,7 +256,7 @@ We explore this further in the following example.
       z = t,
     \end{array}
   \end{equation*}
-  which can be written as 
+  which can be written as
   \begin{equation*}
     \begin{mymatrix}{r}
       x\\
@@ -270,7 +270,7 @@ We explore this further in the following example.
       1 \\
       0
     \end{mymatrix}
-    + 
+    +
     t
     \begin{mymatrix}{r}
       -3 \\
@@ -292,7 +292,7 @@ We explore this further in the following example.
       0 \\
       1
     \end{mymatrix}.
-  \end{equation*} 
+  \end{equation*}
 \end{solution}
 
 We can take any non-homogeneous system of equations and get a new
@@ -343,7 +343,7 @@ its associated homogeneous system.
       z = t,
     \end{array}
   \end{equation*}
-  which can be written as 
+  which can be written as
   \begin{equation}\label{eqn:non-homo-vs-homo-2}
     \begin{mymatrix}{r}
       x\\
@@ -356,14 +356,14 @@ its associated homogeneous system.
       0 \\
       0
     \end{mymatrix}
-    + 
+    +
     s
     \begin{mymatrix}{r}
       -4 \\
       1 \\
       0
     \end{mymatrix}
-    + 
+    +
     t
     \begin{mymatrix}{r}
       -3 \\
@@ -380,7 +380,7 @@ its associated homogeneous system.
       0 \\
       0
     \end{mymatrix}
-  \end{equation}    
+  \end{equation}
 \end{solution}
 
 Note that the column {\eqref{eqn:non-homo-vs-homo-3}}, by itself, is a

@@ -9,12 +9,12 @@ Power methods are based the consideration of powers of a given matrix. Let $
 \set{
 \vect{x}_{1},\ldots,\vect{x}_{n}} $ be a basis of eigenvectors for $
 \C^{n}$ such that $A\vect{x}_{n}=\lambda _{n}\vect{x}_{n}$. Now let $
-\vect{u}_{1}$ be some non-zero vector. Since $\set{\vect{x}_{1},\ldots,\vect{x}_{n}} $ is a basis, there exists unique scalars, $c_{i}$ such that 
+\vect{u}_{1}$ be some non-zero vector. Since $\set{\vect{x}_{1},\ldots,\vect{x}_{n}} $ is a basis, there exists unique scalars, $c_{i}$ such that
 \begin{equation*}
 \vect{u}_{1}=\sum_{k=1}^{n}c_{k}\vect{x}_{k}
 \end{equation*}
 Assume you have not been so unlucky as to pick $\vect{u}_{1}$ in such a way
-that $c_{n}=0$. Then let $A\vect{u}_{k}=\vect{u}_{k+1}$ so that 
+that $c_{n}=0$. Then let $A\vect{u}_{k}=\vect{u}_{k+1}$ so that
 \begin{equation}
 \vect{u}_{m}=A^{m}\vect{u}_{1}=\sum_{k=1}^{n-1}c_{k}\lambda _{k}^{m}\vect{x}
 _{k}+\lambda _{n}^{m}c_{n}\vect{x}_{n}.  \label{20-may-e1}
@@ -27,7 +27,7 @@ insignificant. Therefore, for large $m$, $\vect{u}_{m}$ is essentially a
 multiple of the eigenvector $\vect{x}_{n}$, the one which goes with $\lambda
 _{n}$. The only problem is that there is no control of the size of the
 vectors $\vect{u}_{m}$. You can fix this by scaling. Let $S_{2}$ denote the
-entry of $A\vect{u}_{1}$ which is largest in absolute value. We call this a 
+entry of $A\vect{u}_{1}$ which is largest in absolute value. We call this a
 \index{scaling factor} \textbf{scaling factor}. Then $\vect{u}_{2}$ will not be just $A\vect{u}_{1}$ but $A\vect{u}_{1}/S_{2}$. Next
 let $S_{3}$ denote the entry of $A\vect{u}_{2}$ which has largest absolute
 value and define $\vect{u}_{3}\equiv A\vect{u}_{2}/S_{3}$. Continue this way.
@@ -40,7 +40,7 @@ always equal to 1. Therefore, for large $m$,
 \vect{u}_{m}=\vspace{0.05in}\frac{\lambda _{n}^{m}c_{n}\vect{x}_{n}}{S_{2}S_{3}\cdots S_{m}}+(\text{relatively insignificant term}) .
 \end{equation*}
 Therefore, the entry of $A\vect{u}_{m}$ which has the largest absolute value
-is essentially equal to the entry having largest absolute value of 
+is essentially equal to the entry having largest absolute value of
 \begin{equation*}
 A\paren{\vspace{0.05in}\frac{\lambda _{n}^{m}c_{n}\vect{x}_{n}}{S_{2}S_{3}\cdots S_{m}}} =\vspace{0.05in}\frac{\lambda _{n}^{m+1}c_{n}
 \vect{x}_{n}}{S_{2}S_{3}\cdots S_{m}}\approx \lambda _{n}\vect{u}_{m}
@@ -54,7 +54,7 @@ This suggests the following procedure.
 the direction of $\vect{x}_{n}$. The vector $(1,\ldots,1) ^{T}$
 is usually a pretty good choice.
 
-\item If $\vect{u}_{k}$ is known, 
+\item If $\vect{u}_{k}$ is known,
 \begin{equation*}
 \vect{u}_{k+1}=\frac{A\vect{u}_{k}}{S_{k+1}}
 \end{equation*}
@@ -73,11 +73,11 @@ The shifted inverse power method involves finding the eigenvalue closest to
 a given complex number along with the associated eigenvalue. If $\mu $ is a
 complex number and you want to find $\lambda $ which is closest to $\mu$,
 you could consider the eigenvalues and eigenvectors of $(A-\mu
-I) ^{-1}$. Then $A\vect{x}=\lambda \vect{x}$ if and only if 
+I) ^{-1}$. Then $A\vect{x}=\lambda \vect{x}$ if and only if
 \begin{equation*}
 (A-\mu I) \vect{x}=(\lambda -\mu) \vect{x}
 \end{equation*}
-If and only if 
+If and only if
 \begin{equation*}
 \frac{1}{\lambda -\mu }\vect{x}=(A-\mu I) ^{-1}\vect{x}
 \end{equation*}
@@ -90,11 +90,11 @@ the closest to $\mu $ of all eigenvalues of $A$. You could use the
 eigenvector to determine this directly.
 
 \begin{example}{Finding eigenvalue and eigenvector}{}
-Find the eigenvalue and eigenvector for 
+Find the eigenvalue and eigenvector for
 \begin{equation*}
 \begin{mymatrix}{rrr}
-3 & 2 & 1 \\ 
--2 & 0 & -1 \\ 
+3 & 2 & 1 \\
+-2 & 0 & -1 \\
 -2 & -2 & 0
 \end{mymatrix}
 \end{equation*}
@@ -102,94 +102,94 @@ which is closest to $0.9+0.9i$.
 \end{example}
 
 \begin{solution}
-Form 
+Form
 \begin{eqnarray*}
 &&(\begin{mymatrix}{rrr}
-3 & 2 & 1 \\ 
--2 & 0 & -1 \\ 
+3 & 2 & 1 \\
+-2 & 0 & -1 \\
 -2 & -2 & 0
 \end{mymatrix} -(0.9+0.9i) \begin{mymatrix}{rrr}
-1 & 0 & 0 \\ 
-0 & 1 & 0 \\ 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
 0 & 0 & 1
 \end{mymatrix}) ^{-1} \\
 &=&\begin{mymatrix}{ccc}
 -0.619\,19-10.\,\allowbreak 545i & -5.\,\allowbreak 524\,9-4.\,\allowbreak
-972\,4i & -0.370\,57-5.\,\allowbreak 821\,3i \\ 
+972\,4i & -0.370\,57-5.\,\allowbreak 821\,3i \\
 5.\,\allowbreak 524\,9+4.\,\allowbreak 972\,4i & 5.\,\allowbreak
-276\,2+0.248\,62i & 2.\,\allowbreak 762\,4+2.\,\allowbreak 486\,2i \\ 
+276\,2+0.248\,62i & 2.\,\allowbreak 762\,4+2.\,\allowbreak 486\,2i \\
 0.741\,14+11.\,\allowbreak 643i & 5.\,\allowbreak 524\,9+4.\,\allowbreak
 972\,4i & 0.492\,52+6.\,\allowbreak 918\,9i%
 \end{array}%
 }
 \end{eqnarray*}
 Then pick an initial guess an multiply by this matrix raised to a large
-power. 
+power.
 \begin{equation*}
 \begin{mymatrix}{ccc}
 -0.619\,19-10.\,\allowbreak 545i & -5.\,\allowbreak 524\,9-4.\,\allowbreak
-972\,4i & -0.370\,57-5.\,\allowbreak 821\,3i \\ 
+972\,4i & -0.370\,57-5.\,\allowbreak 821\,3i \\
 5.\,\allowbreak 524\,9+4.\,\allowbreak 972\,4i & 5.\,\allowbreak
-276\,2+0.248\,62i & 2.\,\allowbreak 762\,4+2.\,\allowbreak 486\,2i \\ 
+276\,2+0.248\,62i & 2.\,\allowbreak 762\,4+2.\,\allowbreak 486\,2i \\
 0.741\,14+11.\,\allowbreak 643i & 5.\,\allowbreak 524\,9+4.\,\allowbreak
 972\,4i & 0.492\,52+6.\,\allowbreak 918\,9i%
 \end{mymatrix} ^{15}\begin{mymatrix}{c}
-1 \\ 
-1 \\ 
+1 \\
+1 \\
 1
 \end{mymatrix}
 \end{equation*}
-This equals 
+This equals
 \begin{equation*}
 \begin{mymatrix}{c}
 1.\,\allowbreak 562\,9\times 10^{13}-3.\,\allowbreak 899\,3\times 10^{12}i
-\\ 
+\\
 -5.\,\allowbreak 864\,5\times 10^{12}+9.\,\allowbreak 764\,2\times 10^{12}i
-\\ 
+\\
 -1.\,\allowbreak 562\,9\times 10^{13}+3.\,\allowbreak 899\,9\times 10^{12}i
 \end{mymatrix}
 \end{equation*}
-Now divide by an entry to make the vector have reasonable size. This yields 
+Now divide by an entry to make the vector have reasonable size. This yields
 \begin{equation*}
 \begin{mymatrix}{c}
--0.999\,99-3.\,\allowbreak 614\,0\times 10^{-5}i \\ 
-0.499\,99-0.499\,99i \\ 
+-0.999\,99-3.\,\allowbreak 614\,0\times 10^{-5}i \\
+0.499\,99-0.499\,99i \\
 1.0
 \end{mymatrix}
 \end{equation*}
-which is close to 
+which is close to
 \begin{equation*}
 \begin{mymatrix}{c}
--1 \\ 
-0.5-0.5i \\ 
+-1 \\
+0.5-0.5i \\
 1.0
 \end{mymatrix}
 \end{equation*}
-Then 
+Then
 \begin{equation*}
 \begin{mymatrix}{rrr}
-3 & 2 & 1 \\ 
--2 & 0 & -1 \\ 
+3 & 2 & 1 \\
+-2 & 0 & -1 \\
 -2 & -2 & 0
 \end{mymatrix} \begin{mymatrix}{c}
--1 \\ 
-0.5-0.5i \\ 
+-1 \\
+0.5-0.5i \\
 1.0
 \end{mymatrix} =\begin{mymatrix}{c}
--1.0-1.0i \\ 
-1.0 \\ 
+-1.0-1.0i \\
+1.0 \\
 1.0+1.0i
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
 Now to determine the eigenvalue, you could just take the ratio of
 corresponding entries. Pick the two corresponding entries which have the
 largest absolute values. In this case, you would get the eigenvalue is $1+i$
 which happens to be the exact eigenvalue. Thus an eigenvector and eigenvalue
-are 
+are
 \begin{equation*}
 \begin{mymatrix}{c}
--1 \\ 
-0.5-0.5i \\ 
+-1 \\
+0.5-0.5i \\
 1.0
 \end{mymatrix}, 1+i
 \end{equation*}

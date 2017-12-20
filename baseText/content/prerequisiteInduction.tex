@@ -2,36 +2,36 @@
 
 \label{well-ordering-section}
 
-We begin this section with some important notation. Summation notation\index{summation notation}, written $\sum_{i=1}^{j} i$, represents a sum. Here, $i$ is called the index of the sum, and we add iterations until $i=j$. For example, 
+We begin this section with some important notation. Summation notation\index{summation notation}, written $\sum_{i=1}^{j} i$, represents a sum. Here, $i$ is called the index of the sum, and we add iterations until $i=j$. For example,
 \[
-\sum_{i=1}^{j} i = 1 + 2 + \ldots + j 
+\sum_{i=1}^{j} i = 1 + 2 + \ldots + j
 \]
-Another example: 
+Another example:
 \[
 a_{11} + a_{12} + a_{13}  = \sum_{i=1}^{3} a_{1i}
 \]
 
-The following notation is a specific use of summation notation. 
+The following notation is a specific use of summation notation.
 
 \begin{notation}{Summation notation}{summation}
 Let $a_{ij}$ be real numbers, and suppose  $1\leq i\leq r$ while $
-1\leq j\leq s$. These numbers can be listed in a rectangular array as given by 
+1\leq j\leq s$. These numbers can be listed in a rectangular array as given by
 \begin{equation*}
 \begin{array}{cccc}
-a_{11} & a_{12} & \cdots & a_{1s} \\ 
-a_{21} & a_{22} & \cdots & a_{2s} \\ 
-\vdots & \vdots &  & \vdots \\ 
+a_{11} & a_{12} & \cdots & a_{1s} \\
+a_{21} & a_{22} & \cdots & a_{2s} \\
+\vdots & \vdots &  & \vdots \\
 a_{r1} & a_{r2} & \cdots & a_{rs}
 \end{array}
 \end{equation*}
 
 Then $\sum_{j=1}^{s}\sum_{i=1}^{r} a_{ij}$ means to first sum the numbers
-in each column (using $i$ as the index) and then to add the sums which result (using $j$ as the index). Similarly,  
+in each column (using $i$ as the index) and then to add the sums which result (using $j$ as the index). Similarly,
 $\sum_{i=1}^{r}\sum_{j=1}^{s} a_{ij}$ means to sum the vectors in
-each row (using $j$ as the index) and then to add the sums which result (using $i$ as the index). 
+each row (using $j$ as the index) and then to add the sums which result (using $i$ as the index).
 \end{notation}
 
-Notice that since addition is commutative, $\sum_{j=1}^{s}\sum_{i=1}^{r} a_{ij} = \sum_{i=1}^{r}\sum_{j=1}^{s} a_{ij}$. 
+Notice that since addition is commutative, $\sum_{j=1}^{s}\sum_{i=1}^{r} a_{ij} = \sum_{i=1}^{r}\sum_{j=1}^{s} a_{ij}$.
 
 We now consider the main concept of this section. Mathematical induction and well ordering are two extremely important
 principles in math. They are often used to prove significant things which
@@ -54,7 +54,7 @@ Consider the following proposition.
 Any set of integers larger than a given number is well ordered.
 \end{proposition}
 
-This proposition claims that if a set has a lower bound which is a real number, 
+This proposition claims that if a set has a lower bound which is a real number,
 then this set is well ordered.
 
 Further, this proposition implies the principle of mathematical induction\index{mathematical induction}. The symbol $\Z$ denotes the set of all
@@ -67,11 +67,11 @@ the property that $a\in S$ and $n+1\in S$ whenever $n\in S$, contains all
 integers $x\in \Z$ such that $x\geq a$.
 \end{theorem}
 
-\begin{proof} 
+\begin{proof}
 Let $T$ consist of all integers larger than or equal to $a$
-which are not in $S$. The theorem will be proved if $T=\emptyset$. If 
+which are not in $S$. The theorem will be proved if $T=\emptyset$. If
 $T\neq \emptyset $ then by the well ordering principle, there would have to
-exist a smallest element of $T$, denoted as $b$. It must be the case that 
+exist a smallest element of $T$, denoted as $b$. It must be the case that
 $b>a$ since by definition, $a\notin T$. Thus $b\geq a+1$, and so $b-1\geq a$
 and $b-1\notin S$ because if $b-1\in $ $S$, then $b-1+1=b\in S$ by the
 assumed property of $S$. Therefore, $b-1\in T$ which contradicts the choice
@@ -86,13 +86,13 @@ the integers. The procedure is as follows.
 
 \begin{procedure}{Proof by mathematical induction}{math-induction}
 Suppose $S_{n}$ is a statement which is a function of the number $n$, for $n=1,2,\ldots$, and
-we wish to show that $S_{n}$ is true for all $n \geq 1$. To do so using mathematical induction\index{mathematical induction}, use the 
+we wish to show that $S_{n}$ is true for all $n \geq 1$. To do so using mathematical induction\index{mathematical induction}, use the
 following steps.
 \begin{enumerate}
 \item \textbf{Base Case:}\index{base case} Show $S_{1}$ is true.
 
-\item Assume $S_{n}$ is true for some $n$, which is the \textbf{induction hypothesis}\index{induction hypothesis}. Then, using this assumption, 
-show that $S_{n+1}$ is true. 
+\item Assume $S_{n}$ is true for some $n$, which is the \textbf{induction hypothesis}\index{induction hypothesis}. Then, using this assumption,
+show that $S_{n+1}$ is true.
 \end{enumerate}
 
 Proving these two steps shows that $S_{n}$ is true for all $n = 1,2,\ldots$.
@@ -107,7 +107,7 @@ Prove by induction that $\sum_{k=1}^{n}k^{2}=\displaystyle
 
 \begin{solution}
 By Procedure~\ref{proc:math-induction}, we first need to show that this statement is true for $n=1$.
-When $n=1$, the statement says that 
+When $n=1$, the statement says that
 \begin{eqnarray*}
 \sum_{k=1}^{1}k^{2}&=&\frac{1(1+1) (2(1)+1) }{6}\\
 &=&\frac{6}{6} \\
@@ -122,7 +122,7 @@ Now suppose this formula is valid for some $n\geq
 \frac{n(n+1) (2n+1) }{6}
 \label{induction1}
 \end{equation}
-We want to show that this is true for $n+1$. 
+We want to show that this is true for $n+1$.
 
 Suppose we add $(n+1)^2$ to both sides of equation {\eqref{induction1}}.
 \begin{eqnarray*}
@@ -158,21 +158,21 @@ the formula by mathematical induction. In other words, this formula is true for 
 Consider another example.
 
 \begin{example}{Proving an inequality by induction}{inequality-proof-by-induction}
-Show that for all $n\in \N$, $\displaystyle \frac{1}{2}\cdot 
+Show that for all $n\in \N$, $\displaystyle \frac{1}{2}\cdot
 \displaystyle \frac{3}{4}\cdot\ldots\cdot\displaystyle \frac{2n-1}{2n}<\displaystyle
 \frac{1}{\sqrt{2n+1}}$.
 \end{example}
 
 \begin{solution}
 Again we will use the procedure given in Procedure~\ref{proc:math-induction} to prove that this statement is true for all $n$.
-Suppose $n=1$. Then the statement says 
+Suppose $n=1$. Then the statement says
 \begin{equation*}
 \frac{1}{2}< \frac{1}{\sqrt{3}}
 \end{equation*}
- which is true. 
+ which is true.
 
 Suppose then that
-the inequality holds for $n$. In other words, 
+the inequality holds for $n$. In other words,
 \begin{equation*}
  \frac{1}{2}\cdot \frac{3}{4}\cdot\ldots\cdot \frac{2n-1}{2n} < \frac{1}{\sqrt{2n+1}}
 \end{equation*}
@@ -200,4 +200,4 @@ large as $1$ for which the formula holds, the first step was to show $1\in S$
 and then that whenever $n\in S$, it follows $n+1\in S$. Therefore, by the
 principle of mathematical induction, $S$ contains $[1,\infty )\cap \Z
 $, all positive integers. In doing an inductive proof of this sort, the set $
-S$ is normally not mentioned. One just verifies the steps above. 
+S$ is normally not mentioned. One just verifies the steps above.

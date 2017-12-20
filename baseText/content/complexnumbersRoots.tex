@@ -18,7 +18,7 @@ For any positive integer $n$, we have
 Thus for any real number $r>0$ and any positive integer $n$, we have:
 \begin{equation*}
 (r(\cos \theta+i\sin \theta)) ^{n}=r^{n}(\cos n \theta +i\sin
-n\theta) 
+n\theta)
 \end{equation*}
 \end{theorem}
 
@@ -36,7 +36,7 @@ which by induction equals
 n\theta\cos \theta+\cos n\theta\sin \theta))\\
 &=&r^{n+1}(\cos (n+1) \theta+i\sin (n+1) \theta)
 \end{eqnarray*}
-by the formulas for the cosine and sine of the sum of two angles. 
+by the formulas for the cosine and sine of the sum of two angles.
 \end{proof}
 
 The process used in the previous proof, called {\em mathematical
@@ -56,11 +56,11 @@ Let $z=a+bi$ and let $z=\abs{z}(\cos
 \theta+i\sin \theta) $ be the polar form of the complex number. By De Moivre's
 theorem, a complex number
 \begin{equation*}
-w= r e^{i \alpha} = r(\cos \alpha +i\sin \alpha) 
+w= r e^{i \alpha} = r(\cos \alpha +i\sin \alpha)
 \end{equation*}
 is a $k\th$ root of $z$ if and only if
 \begin{equation*}
-w^k = (r e^{i \alpha})^k = r^k e^{ik\alpha} = r^{k}(\cos k\alpha +i\sin k\alpha) =\abs{z}(\cos \theta+i\sin \theta) 
+w^k = (r e^{i \alpha})^k = r^k e^{ik\alpha} = r^{k}(\cos k\alpha +i\sin k\alpha) =\abs{z}(\cos \theta+i\sin \theta)
 \end{equation*}
 This requires $r^{k}=\abs{z}$ and so $r=\abs{z}^{1/k}$. Also, both $\cos (k\alpha) =\cos \theta$ and
 $\sin (k\alpha) =\sin \theta$. This can only happen if
@@ -70,39 +70,39 @@ k\alpha =\theta+2 \ell \pi
 for $\ell$ an integer. Thus
 \begin{equation*}
 \alpha =
-\frac{\theta+2 \ell \pi }{k},\; \ell = 0, 1, 2,\ldots, k-1 
+\frac{\theta+2 \ell \pi }{k},\; \ell = 0, 1, 2,\ldots, k-1
 \end{equation*}
 and so the $k\th$ roots of $z$ are of the form
 \begin{equation*}
 \abs{z}^{1/k}\paren{\cos \paren{\frac{\theta+2 \ell \pi }{k}}
-+i\sin \paren{\frac{\theta+2 \ell \pi }{k}}} ,\;\ell = 0, 1, 2,\ldots, k-1 
++i\sin \paren{\frac{\theta+2 \ell \pi }{k}}} ,\;\ell = 0, 1, 2,\ldots, k-1
 \end{equation*}
 Since the cosine and sine are periodic of period $2\pi$, there are exactly $
-k$ distinct numbers which result from this formula. 
+k$ distinct numbers which result from this formula.
 \end{proof}
 
 The procedure for finding the $k$ $k\th$ roots of $z \in \C$ is as follows.
 
 \begin{procedure}{Finding roots of a complex number}{finding-kth-roots}
-Let $w$ be a complex number. We wish to find the $n\th$ roots of $w$, that is all $z$ such that $z^n = w$. 
+Let $w$ be a complex number. We wish to find the $n\th$ roots of $w$, that is all $z$ such that $z^n = w$.
 
-There are $n$ distinct $n\th$ roots and they can be found as follows:. 
- 
+There are $n$ distinct $n\th$ roots and they can be found as follows:.
+
 \begin{enumerate}
 \item Express both $z$ and $w$ in polar form $z=re^{i\theta}, w=se^{i\phi}$. Then $z^n = w$ becomes:
 \[
 (re^{i\theta})^n = r^n e^{i n \theta} = se^{i\phi}
 \]
-We need to solve for $r$ and $\theta$. 
+We need to solve for $r$ and $\theta$.
 \item Solve the following two equations:
 \begin{eqnarray*}
-r^n &=& s 
+r^n &=& s
 \end{eqnarray*}
 \begin{eqnarray}
 e^{i n \theta} &=& e^{i \phi}
 \label{roots-eqns}
 \end{eqnarray}
-\item The solutions to $r^n = s$ are given by $r = \sqrt[n]{s}$. 
+\item The solutions to $r^n = s$ are given by $r = \sqrt[n]{s}$.
 
 \item The solutions to $e^{i n \theta} = e^{i \phi}$ are given by:
 \[
@@ -110,19 +110,19 @@ n\theta = \phi + 2\pi \ell,  \; \mbox{for} \; \ell = 0,1,2,\ldots, n-1
 \]
 or
 \[
-\theta = \frac{\phi}{n} + \frac{2}{n} \pi \ell, \; \mbox{for} \; \ell = 0,1,2,\ldots, n-1 
+\theta = \frac{\phi}{n} + \frac{2}{n} \pi \ell, \; \mbox{for} \; \ell = 0,1,2,\ldots, n-1
 \]
 \item
 Using the solutions $r, \theta$ to the equations given in (\ref{roots-eqns})
-construct the $n\th$ roots of the form $z = re^{i\theta}$.  
+construct the $n\th$ roots of the form $z = re^{i\theta}$.
 \end{enumerate}
 \end{procedure}
 
-Notice that once the roots are obtained in the final step, they can then be converted to standard form if necessary. Let's consider an example of this concept. Note that according to Corollary~\ref{cor:roots-complex-numbers}, 
+Notice that once the roots are obtained in the final step, they can then be converted to standard form if necessary. Let's consider an example of this concept. Note that according to Corollary~\ref{cor:roots-complex-numbers},
 there are exactly $3$ cube roots of a complex number.
 
 \begin{example}{Finding cube roots}{cube-roots}
-Find the three cube roots of $i$. In other words find all $z$ such that $z^3 = i$. 
+Find the three cube roots of $i$. In other words find all $z$ such that $z^3 = i$.
 \end{example}
 
 \begin{solution}
@@ -130,12 +130,12 @@ First, convert each number to polar form: $z = re^{i\theta}$ and $i = 1 e^{i \pi
 \[
 (re^{i\theta})^3 = r^3 e^{3i\theta} = 1 e^{i \pi/2}
 \]
-Therefore, the two equations that we need to solve are $r^3 = 1$ and $3i\theta = i \pi/2$. Given that $r \in \R$ and $r^3 = 1$ it follows that $r=1$. 
+Therefore, the two equations that we need to solve are $r^3 = 1$ and $3i\theta = i \pi/2$. Given that $r \in \R$ and $r^3 = 1$ it follows that $r=1$.
 
-Solving the second equation is as follows. First divide by $i$. Then, since the argument of $i$ is not unique we write $3\theta = \pi/2 + 2\pi\ell$ for $\ell = 0,1,2$. 
+Solving the second equation is as follows. First divide by $i$. Then, since the argument of $i$ is not unique we write $3\theta = \pi/2 + 2\pi\ell$ for $\ell = 0,1,2$.
 \begin{eqnarray*}
 3\theta &=& \pi/2 + 2\pi\ell \; \mbox{for} \; \ell = 0,1,2 \\
-\theta &=& \pi/6 + \frac{2}{3} \pi\ell \; \mbox{for} \; \ell = 0,1,2 
+\theta &=& \pi/6 + \frac{2}{3} \pi\ell \; \mbox{for} \; \ell = 0,1,2
 \end{eqnarray*}
 
 For $\ell = 0$:
@@ -176,13 +176,13 @@ First find the cube roots of 27. By the above procedure
 \index{polynomials!factoring}, these cube roots
 are $3,3\paren{\displaystyle
 \frac{-1}{2}+i\displaystyle\frac{\sqrt{3}}{2}}$, and $3\paren{
-\displaystyle\frac{-1}{2}-i\displaystyle\frac{\sqrt{3}}{2}}$. You may wish to verify 
+\displaystyle\frac{-1}{2}-i\displaystyle\frac{\sqrt{3}}{2}}$. You may wish to verify
 this using the above steps.
 
 Therefore, $x^{3}-27 =$
 \begin{equation*}
  (x-3) \paren{x-3\paren{\frac{-1}{2}+i\frac{\sqrt{3}}{2}}
-} \paren{x-3\paren{\frac{-1}{2}-i\frac{\sqrt{3}}{2}}} 
+} \paren{x-3\paren{\frac{-1}{2}-i\frac{\sqrt{3}}{2}}}
 \end{equation*}
 Note also $\paren{x-3\paren{\frac{-1}{2}+i\frac{\sqrt{3}}{2}}}
 \paren{x-3\paren{\frac{-1}{2}-i\frac{\sqrt{3}}{2}}}
@@ -197,7 +197,7 @@ complex numbers.
 Note that even though the polynomial $x^{3}-27$ has all real coefficients,
 it has some complex zeros, $3\paren{\displaystyle
 \frac{-1}{2}+i\displaystyle\frac{\sqrt{3}}{2}}$, and $3\paren{
-\displaystyle\frac{-1}{2}-i\displaystyle\frac{\sqrt{3}}{2}}$. 
-These zeros are complex conjugates of each other. It is always the case that if a polynomial has real 
+\displaystyle\frac{-1}{2}-i\displaystyle\frac{\sqrt{3}}{2}}$.
+These zeros are complex conjugates of each other. It is always the case that if a polynomial has real
 coefficients and a complex root, it will also
 have a root equal to the complex conjugate.

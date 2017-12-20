@@ -13,15 +13,15 @@ Vectors are used to model force and other physical vectors like velocity.
 ingredients, its magnitude and its direction.
 
 Recall the special vectors which point along the coordinate axes.
-These are given by 
+These are given by
 \begin{equation*}
 \vect{e}_{i} = \mat{0,\ldots,0,1,0,\ldots,0}^T
 \end{equation*}
 where the $1$ is in the $i\th$ slot and there are zeros in all the other
 spaces. The direction of $\vect{e}_{i}$ is referred to as the $i\th$ direction.
 
-Consider the following picture which illustrates the case of $\R^{3}$. 
-Recall that in $\R^3$, we may refer to these vectors as $\vect{i}, \vect{j}$, and $\vect{k}$. 
+Consider the following picture which illustrates the case of $\R^{3}$.
+Recall that in $\R^3$, we may refer to these vectors as $\vect{i}, \vect{j}$, and $\vect{k}$.
 
 \begin{center}
 \begin{tikzpicture}
@@ -69,7 +69,7 @@ Consider now some examples of vector addition.
 
 \begin{example}{The resultant of three forces}{resultant-three-forces}
 There are three ropes attached to a car and three people pull on these
-ropes. The first exerts a force of $\vect{F}_1 = 
+ropes. The first exerts a force of $\vect{F}_1 =
 2\vect{i} + 3\vect{j} -2 \vect{k}$ Newtons, the second exerts a force of $\vect{F}_2
 =
 3\vect{i}+5\vect{j}+\vect{k}$ Newtons
@@ -78,8 +78,8 @@ the total force in the direction of $\vect{i}$.
 \end{example}
 
 \begin{solution}
-To find the total force, we add the vectors as described above. 
-This is given by 
+To find the total force, we add the vectors as described above.
+This is given by
 \begin{eqnarray*}
 &&(2\vect{i}+3\vect{j}-2\vect{k}) + (3\vect{i}+5\vect{j}+\vect{k}) + (5\vect{i}-\vect{j}+2\vect{k})\\
 &=&
@@ -108,11 +108,11 @@ A picture of this situation follows.
 \end{tikzpicture}
 \end{center}
 
-Therefore, we need to find the vector $\vect{u}$ which has length 100 and direction as shown in this diagram. 
+Therefore, we need to find the vector $\vect{u}$ which has length 100 and direction as shown in this diagram.
 We can consider the vector $\vect{u}$ as the hypotenuse of a
-right triangle having equal sides, since the direction of $\vect{u}$ corresponds with the $45 ^{\circ}$ line. 
+right triangle having equal sides, since the direction of $\vect{u}$ corresponds with the $45 ^{\circ}$ line.
 The sides, corresponding to the $\vect{i}$ and $\vect{j}$ directions,  should be each of length 100/$
-\sqrt{2}$. Therefore, the vector is given by 
+\sqrt{2}$. Therefore, the vector is given by
 \[
  \vect{u} = \frac{100}{\sqrt{2}} \vect{i}+ \frac{100}{\sqrt{2
 }}\vect{j}
@@ -136,12 +136,12 @@ magnitude but also specifying the direction.
 Thus the velocity vector in the above example is $\vspace{0.05in}\frac{100}{\sqrt{2}}\vect{i}+
 \vspace{0.05in}\frac{100}{\sqrt{2}}\vect{j}$, while the speed is $100\textrm{km}/\textrm{h}$.
 
-Consider the following example. 
+Consider the following example.
 
 \begin{example}{Position from velocity and time}{position-velocity-time}
 The velocity of an airplane is $100\vect{i}+\vect{j}+\vect{k}$
 measured in kilometers per hour and at a certain instant of time its
-position is $(1,2,1)$. 
+position is $(1,2,1)$.
 
 Find the position of this airplane one minute later.
 \end{example}
@@ -150,15 +150,15 @@ Find the position of this airplane one minute later.
 Here imagine a Cartesian coordinate
 system in which the third component is altitude and the first and second
 components are measured on a line from West to East and a line from South to
-North. 
+North.
 
 Consider the vector $
 \begin{mymatrix}{rrr}
 1 & 2 & 1
 \end{mymatrix}^T$, which is the initial position vector
-of the airplane. As the plane moves, the position vector changes according to the velocity vector. 
+of the airplane. As the plane moves, the position vector changes according to the velocity vector.
 After one minute (considered as $\frac{1}{60}$ of an hour)
-the airplane has moved in the $\vect{i}$ direction a distance of 
+the airplane has moved in the $\vect{i}$ direction a distance of
 $100\times \frac{1}{60}= \frac{5}{3}$ kilometer. In the $\vect{j}
 $ direction it has moved $\frac{1}{60}$ kilometer during this same time,
 while it moves $\frac{1}{60}$ kilometer in the $\vect{k}$ direction.
@@ -188,7 +188,7 @@ swimming?
 \end{example}
 
 \begin{solution}
-Consider the following picture which demonstrates the above scenario. 
+Consider the following picture which demonstrates the above scenario.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -201,17 +201,17 @@ Consider the following picture which demonstrates the above scenario.
 \end{tikzpicture}
 \end{center}
 
-First we want to know the total time of the swim across the river. 
+First we want to know the total time of the swim across the river.
 The velocity in the direction across the river is
 $3$ kilometers per hour, and the river is $\frac{1}{2}$ kilometer wide. It follows the trip
-takes $1/6$ hour or $10$ minutes. 
+takes $1/6$ hour or $10$ minutes.
 
-Now, we can compute how far downstream he will end up. Since the river runs at a rate of 
-$4$ kilometers per hour, and the trip takes $1/6$ hour, the distance travelled downstream 
-is given by $4 \paren{\frac{1}{6}} = \frac{2}{3}$ kilometers. 
+Now, we can compute how far downstream he will end up. Since the river runs at a rate of
+$4$ kilometers per hour, and the trip takes $1/6$ hour, the distance travelled downstream
+is given by $4 \paren{\frac{1}{6}} = \frac{2}{3}$ kilometers.
 
-The distance travelled by the swimmer is given by the hypotenuse of a right triangle. 
-The two arms of the triangle are given by the distance across the river, $\frac{1}{2}$km, and 
+The distance travelled by the swimmer is given by the hypotenuse of a right triangle.
+The two arms of the triangle are given by the distance across the river, $\frac{1}{2}$km, and
 the distance travelled downstream, $\frac{2}{3}$ km. Then, using the Pythagorean Theorem, we can calculate
 the total distance $d$ travelled.
 \begin{equation*}
@@ -222,5 +222,5 @@ d
 \frac{5}{6} \mbox{km}
 \end{equation*}
 
-Therefore, the swimmer travels a total distance of $\frac{5}{6}$ kilometers. 
+Therefore, the swimmer travels a total distance of $\frac{5}{6}$ kilometers.
 \end{solution}

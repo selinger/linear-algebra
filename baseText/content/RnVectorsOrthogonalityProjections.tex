@@ -1,6 +1,6 @@
 \subsection{Orthogonal projections}
 
-An important use of the Gram-Schmidt Process is in orthogonal projections, the focus of this section. 
+An important use of the Gram-Schmidt Process is in orthogonal projections, the focus of this section.
 
 You may recall that a subspace of $\R^n$ is a set of vectors
 which contains the zero vector, and is closed under addition and
@@ -73,7 +73,7 @@ Then, $Z$ is the point in $W$ closest to $Y$.
 \end{theorem}
 
 \begin{proof}
-First $Z$ is certainly a point in $W$  since it is in the span of a basis of $W$. 
+First $Z$ is certainly a point in $W$  since it is in the span of a basis of $W$.
 
 To show that $Z$ is the point in $W$ closest to $Y$, we wish to show
 that $|\vect{y}-\vect{z}_1| > |\vect{y}-\vect{z}|$ for all $\vect{z}_1
@@ -107,32 +107,32 @@ We must first find an orthogonal basis for $W$. Notice that $W$ is
 characterized by all points $(a,b,c)$ where $c = 2b-a$. In other
 words,
 \[
-W = 
+W =
 \begin{mymatrix}{c}
 a \\
 b \\
-2b - a 
+2b - a
 \end{mymatrix}
-= 
+=
 a \begin{mymatrix}{c}
 1 \\
 0 \\
--1 
+-1
 \end{mymatrix}
-+ 
++
 b \begin{mymatrix}{c}
 0 \\
 1 \\
-2 
-\end{mymatrix}, 
-\; 
+2
+\end{mymatrix},
+\;
 a,b \in \R
-\] 
+\]
 
-We can thus write $W$ as 
+We can thus write $W$ as
 \begin{eqnarray*}
 W &=& \mbox{span} \set{\vect{u}_1, \vect{u}_2 } \\
- &=& \mbox{span} 
+ &=& \mbox{span}
 \set{
 \begin{mymatrix}{r}
 1 \\
@@ -181,7 +181,7 @@ required that it be orthonormal.
 0 \\
 1 \\
 2
-\end{mymatrix} 
+\end{mymatrix}
 +
 \begin{mymatrix}{r}
 1 \\
@@ -196,15 +196,15 @@ required that it be orthonormal.
 \end{mymatrix}
 \end{eqnarray*}
 
-Therefore an orthogonal basis of $W$ is 
+Therefore an orthogonal basis of $W$ is
 \[
-\set{\vect{w}_1, \vect{w}_2 } = 
+\set{\vect{w}_1, \vect{w}_2 } =
 \set{
 \begin{mymatrix}{r}
 1 \\
 0 \\
 -1
-\end{mymatrix}, 
+\end{mymatrix},
 \begin{mymatrix}{c}
 1 \\
 1 \\
@@ -234,17 +234,17 @@ vector $\vect{y}$ of $Y$ as $\vect{y} = \begin{mymatrix}{c} 1 \\ 0 \\ 3
 \begin{mymatrix}{c}
 1 \\
 1 \\
-1 
+1
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{c}
 \vspace{0.05in}\frac{1}{3} \\
 \vspace{0.05in}\frac{4}{3} \\
-\vspace{0.05in}\frac{7}{3} 
+\vspace{0.05in}\frac{7}{3}
 \end{mymatrix}
 \end{eqnarray*}
 
-Therefore the point $Z$ on $W$ closest to the point $(1,0,3)$  is $\paren{\frac{1}{3}, \frac{4}{3}, \frac{7}{3}}$. 
+Therefore the point $Z$ on $W$ closest to the point $(1,0,3)$  is $\paren{\frac{1}{3}, \frac{4}{3}, \frac{7}{3}}$.
 
 \end{solution}
 
@@ -269,10 +269,10 @@ W^{\perp} = \set{\vect{x} \in \R^n \; \mbox{such that} \;
 The orthogonal complement is defined as the set of all vectors which are orthogonal to all vectors in the original subspace. It turns out that it is sufficient that the vectors in the orthogonal complement be orthogonal to a spanning set of the original space.
 
 \begin{proposition}{Orthogonal to spanning set}{orthogonal-spanning-set}
-Let $W$ be a subspace of $\R^n$ such that $W = \sspan \set{\vect{w}_1, \vect{w}_2,\ldots, \vect{w}_m }$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set. 
+Let $W$ be a subspace of $\R^n$ such that $W = \sspan \set{\vect{w}_1, \vect{w}_2,\ldots, \vect{w}_m }$. Then $W^{\perp}$ is the set of all vectors which are orthogonal to each $\vect{w}_i$ in the spanning set.
 \end{proposition}
 
-The following proposition demonstrates that the orthogonal complement of a subspace is itself a subspace. 
+The following proposition demonstrates that the orthogonal complement of a subspace is itself a subspace.
 
 \begin{proposition}{The orthogonal complement}{subspace-complement}
 Let $W$ be a subspace of $\R^n$. Then the orthogonal complement $W^{\perp}$ is also a subspace of $\R^n$.
@@ -285,7 +285,7 @@ The complement of $\R^n$ is the set containing the zero vector:
 \[
  (\R^n)^{\perp} = \set{\vect{0} }
 \]
-Similarly, 
+Similarly,
 \[
 \set{\vect{0} }^{\perp} = (\R^n)
 \]
@@ -293,14 +293,14 @@ Similarly,
 
 \begin{proof}
 Here, $\vect{0}$ is the zero vector of $\R^n$.
-Since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\R^n$, 
+Since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\R^n$,
 $\R^n\subseteq\set{\vect{0}}^{\perp}$.
 Since $\set{\vect{0}}^{\perp}\subseteq\R^n$, the equality follows,
 i.e., $\set{\vect{0}}^{\perp}=\R^n$.
 
 Again, since $\vect{x}\dotprod\vect{0}=0$ for all $\vect{x}\in\R^n$,
 $\vect{0}\in (\R^n)^{\perp}$, so $\set{\vect{0}}\subseteq(\R^n)^{\perp}$.
-Suppose $\vect{x}\in\R^n$, $\vect{x}\neq\vect{0}$.  
+Suppose $\vect{x}\in\R^n$, $\vect{x}\neq\vect{0}$.
 Since $\vect{x}\dotprod\vect{x}=||\vect{x}||^2$ and $\vect{x}\neq\vect{0}$,
 $\vect{x}\dotprod\vect{x}\neq 0$, so $\vect{x}\not\in(\R^n)^{\perp}$.
 Therefore $(\R^n)^{\perp}\subseteq \set{\vect{0}}$, and thus
@@ -317,9 +317,9 @@ a basis for the orthogonal complement of $W$.
 
 \begin{solution}
 
-From Example~\ref{exa:orth-proj} we know that we can write $W$ as 
+From Example~\ref{exa:orth-proj} we know that we can write $W$ as
 \[
-W = \mbox{span} \set{\vect{u}_1, \vect{u}_2 } = \mbox{span} 
+W = \mbox{span} \set{\vect{u}_1, \vect{u}_2 } = \mbox{span}
 \set{
 \begin{mymatrix}{r}
 1 \\
@@ -334,24 +334,24 @@ W = \mbox{span} \set{\vect{u}_1, \vect{u}_2 } = \mbox{span}
 }
 \]
 
-In order to find $W^{\perp}$, we need to find all $\vect{x}$ which are orthogonal to every vector in this span. 
+In order to find $W^{\perp}$, we need to find all $\vect{x}$ which are orthogonal to every vector in this span.
 
 Let $\vect{x} = \begin{mymatrix}{c}
 x_1 \\
 x_2 \\
 x_3
-\end{mymatrix}$. 
-In order to satisfy $\vect{x} \dotprod \vect{u}_1 = 0$, the following equation must hold. 
+\end{mymatrix}$.
+In order to satisfy $\vect{x} \dotprod \vect{u}_1 = 0$, the following equation must hold.
 \[
 x_1 - x_3 = 0
 \]
 
 In order to satisfy $\vect{x} \dotprod \vect{u}_2 = 0$, the following equation must hold.
 \[
-x_2 + 2x_3 = 0 
+x_2 + 2x_3 = 0
 \]
 
-Both of these equations must be satisfied, so we have the following system of equations. 
+Both of these equations must be satisfied, so we have the following system of equations.
 \[
 \begin{array}{c}
 x_1 - x_3 = 0 \\
@@ -359,12 +359,12 @@ x_2 + 2x_3 = 0
 \end{array}
 \]
 
-To solve, set up the augmented matrix. 
+To solve, set up the augmented matrix.
 
 \[
 \begin{mymatrix}{rrr|r}
 1 & 0 & -1 & 0 \\
-0 & 1 & 2 & 0 
+0 & 1 & 2 & 0
 \end{mymatrix}
 \]
 
@@ -373,21 +373,21 @@ Using Gaussian Elimination, we find that $W^{\perp} = \mbox{span} \set{\begin{my
 -2 \\
 1
 \end{mymatrix}
-}$, and hence 
+}$, and hence
 $\set{\begin{mymatrix}{r}
 1 \\
 -2 \\
 1
 \end{mymatrix}
-}$ is a basis for  $W^{\perp}$. 
+}$ is a basis for  $W^{\perp}$.
 \end{solution}
 
-The following results summarize the important properties of the orthogonal projection. 
+The following results summarize the important properties of the orthogonal projection.
 
 \begin{theorem}{Orthogonal projection}{orth-proj}
-Let $W$ be a subspace of $\R^n$, $Y$ be any point in $\R^n$, and let $Z$ be the point in $W$ closest to $Y$. Then, 
+Let $W$ be a subspace of $\R^n$, $Y$ be any point in $\R^n$, and let $Z$ be the point in $W$ closest to $Y$. Then,
 \begin{enumerate}
-\item 
+\item
 The position vector $\vect{z}$ of the point $Z$ is given by $\vect{z} = \proj_{W}(\vect{y})$
 \item
 $\vect{z} \in W$ and $\vect{y} - \vect{z} \in W^{\perp}$
@@ -420,7 +420,7 @@ We will first use the Gram-Schmidt Process to construct the orthogonal basis, $B
 }.\]
 
 By Theorem~\ref{thm:orth-proj},
-\[ \proj_U(\vect{v}) = 
+\[ \proj_U(\vect{v}) =
 \frac{2}{2} \begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix} +
 \frac{5}{1}\begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix} +
 \frac{12}{6}\begin{mymatrix}{r} 1\\ 2\\ -1\\ 0 \end{mymatrix}
@@ -429,7 +429,7 @@ By Theorem~\ref{thm:orth-proj},
 is the vector in $U$ closest to $\vect{y}$.
 \end{solution}
 
-Consider the next example. 
+Consider the next example.
 
 \begin{example}{Vector written as a sum of two vectors}{sum-of-two-vectors}
 Let $W$ be a subspace given by $W = \mbox{span} \set{
@@ -438,7 +438,7 @@ Let $W$ be a subspace given by $W = \mbox{span} \set{
 0 \\
 1 \\
 0 \\
-\end{mymatrix}, 
+\end{mymatrix},
 \begin{mymatrix}{c}
 0 \\
 1 \\
@@ -446,7 +446,7 @@ Let $W$ be a subspace given by $W = \mbox{span} \set{
 2 \\
 \end{mymatrix}
 }$, and $Y = (1,2,3,4)$. \\
-Find the point $Z$ in $W$ closest to $Y$, and moreover write $\vect{y}$ as the sum of a  vector in $W$ and a vector in $W^{\perp}$. 
+Find the point $Z$ in $W$ closest to $Y$, and moreover write $\vect{y}$ as the sum of a  vector in $W$ and a vector in $W^{\perp}$.
 \end{example}
 
 \begin{solution}
@@ -461,12 +461,12 @@ Notice that since the above vectors already give an orthogonal basis for $W$, we
 \paren{\frac{\vect{y} \dotprod \vect{w}_1}{ \norm{\vect{w}_1}^2}} \vect{w}_1
 +
 \paren{\frac{\vect{y} \dotprod \vect{w}_2}{ \norm{\vect{w}_2}^2}} \vect{w}_2 \\
-&=& 
+&=&
 \paren{\frac{4}{2}} \begin{mymatrix}{c}
 1 \\
 0 \\
 1 \\
-0 
+0
 \end{mymatrix}
 +
 \paren{\frac{10}{5}}
@@ -476,14 +476,14 @@ Notice that since the above vectors already give an orthogonal basis for $W$, we
 0 \\
 2
 \end{mymatrix} \\
-&=& 
+&=&
 \begin{mymatrix}{c}
 2 \\
 2 \\
 2 \\
-4 
+4
 \end{mymatrix}
-\end{eqnarray*} 
+\end{eqnarray*}
 
 Therefore the point in $W$ closest to $Y$ is $Z = (2,2,2,4)$. \\
 
@@ -493,22 +493,22 @@ vector in $W^{\perp}$. This can easily be done as follows:
 \vect{y} = \vect{z} + (\vect{y} - \vect{z})
 \]
 since $\vect{z}$ is in $W$ and as we have seen $\vect{y} - \vect{z}$ is in  $W^{\perp}$. \\
-The vector $\vect{y} - \vect{z}$ is given by 
+The vector $\vect{y} - \vect{z}$ is given by
 \[
 \vect{y} - \vect{z} = \begin{mymatrix}{c}
 1 \\
 2 \\
 3 \\
-4 
+4
 \end{mymatrix}
 -
 \begin{mymatrix}{c}
 2 \\
 2 \\
 2 \\
-4 
+4
 \end{mymatrix}
- = 
+ =
 \begin{mymatrix}{r}
 -1 \\
 0 \\
@@ -522,14 +522,14 @@ Therefore, we can write $\vect{y}$ as
 1 \\
 2 \\
 3 \\
-4 
+4
 \end{mymatrix}
 =
 \begin{mymatrix}{c}
 2 \\
 2 \\
 2 \\
-4 
+4
 \end{mymatrix}
 +
 \begin{mymatrix}{r}
@@ -568,7 +568,7 @@ Putting the augmented matrix in {\rref}:
 \]
 gives general solution $x=\frac{1}{3}s+\frac{2}{3}t$, $y=s$, $z=t$
 for any $s,t\in\R$.
-Then  
+Then
 \[
 W=\sspan \set{
 \begin{mymatrix}{r} -\frac{1}{3} \\ 1 \\ 0 \end{mymatrix},
@@ -581,7 +581,7 @@ $X=\set{
 Then $X$ is linearly independent and $\sspan(X)=W$, so $X$ is a basis of $W$.
 
 \item Use the Gram-Schmidt Process to get an
-orthogonal basis of $W$: 
+orthogonal basis of $W$:
 
 
 \[ \vect{f}_1=\begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix}
@@ -594,14 +594,14 @@ Therefore
 $B=\set{\begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix},
 \begin{mymatrix}{r} 3 \\ 1 \\ 5 \end{mymatrix} }$ is
 an orthogonal basis of $W$.
-\item To find 
+\item To find
 the point $Z$ on $W$ closest to $Y=(1,1,1)$, compute
 \begin{eqnarray*}
 \proj_{W}\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}
 & = &
 \frac{2}{10} \begin{mymatrix}{r} -1 \\ 3 \\ 0 \end{mymatrix}
 + \frac{9}{35}\begin{mymatrix}{r} 3 \\ 1 \\ 5 \end{mymatrix}\\
-& = & 
+& = &
 \frac{1}{7}\begin{mymatrix}{r} 4 \\ 6 \\ 9 \end{mymatrix}.
 \end{eqnarray*}
 Therefore, $Z=\paren{\frac{4}{7}, \frac{6}{7}, \frac{9}{7}}$.

@@ -7,9 +7,9 @@ Let $A$ be an $m\times n$-matrix. The singular values of $A$ are the square root
 eigenvalues of $A^TA$\index{singular values}.
 \end{definition}
 
-Singular Value Decomposition (SVD) can be thought of as 
+Singular Value Decomposition (SVD) can be thought of as
 a generalization of orthogonal diagonalization of a symmetric matrix
-to an arbitrary $m\times n$-matrix. This decomposition is the focus of this section. 
+to an arbitrary $m\times n$-matrix. This decomposition is the focus of this section.
 
 The following is a useful result that will help when computing the SVD of matrices.
 
@@ -32,7 +32,7 @@ A(A^TA)X & = & A\lambda X\\
 \end{eqnarray*}
 Since $\lambda\neq 0$ and $X\neq 0_n$, $\lambda X\neq 0_n$,
 and thus by equation~\eqref{non-zero},
-$(A^TA)X\neq 0_m$; thus $A^T(AX)\neq 0_m$, 
+$(A^TA)X\neq 0_m$; thus $A^T(AX)\neq 0_m$,
 implying that $AX\neq 0_m$.
 
 Therefore $AX$ is an eigenvector of $AA^T$ corresponding to eigenvalue
@@ -57,64 +57,64 @@ How can we find such a decomposition? We are aiming to decompose $A$ in the foll
 
 \begin{equation*}
 A=U\begin{mymatrix}{cc}
-\sigma & 0 \\ 
+\sigma & 0 \\
 0 & 0
-\end{mymatrix} V^T 
+\end{mymatrix} V^T
 \end{equation*}
 
-where $\sigma $ is of the form 
+where $\sigma $ is of the form
 \[
 \sigma =\begin{mymatrix}{ccc}
-\sigma _{1} &  & 0 \\ 
-& \ddots &  \\ 
+\sigma _{1} &  & 0 \\
+& \ddots &  \\
 0 &  & \sigma _{k}
 \end{mymatrix}
 \]
 
 Thus $A^T=V\begin{mymatrix}{cc}
-\sigma & 0 \\ 
+\sigma & 0 \\
 0 & 0
-\end{mymatrix} U^T$ and it follows that 
+\end{mymatrix} U^T$ and it follows that
 \begin{equation*}
 A^TA=V\begin{mymatrix}{cc}
-\sigma & 0 \\ 
+\sigma & 0 \\
 0 & 0
 \end{mymatrix} U^TU\begin{mymatrix}{cc}
-\sigma & 0 \\ 
+\sigma & 0 \\
 0 & 0
 \end{mymatrix} V^T=V\begin{mymatrix}{cc}
-\sigma ^{2} & 0 \\ 
+\sigma ^{2} & 0 \\
 0 & 0
 \end{mymatrix} V^T
 \end{equation*}
 and so $A^TAV=V\begin{mymatrix}{cc}
-\sigma ^{2} & 0 \\ 
+\sigma ^{2} & 0 \\
 0 & 0
 \end{mymatrix}$. Similarly, $AA^TU=U\begin{mymatrix}{cc}
-\sigma ^{2} & 0 \\ 
+\sigma ^{2} & 0 \\
 0 & 0
 \end{mymatrix}$. Therefore, you would find an orthonormal basis of eigenvectors
 for $AA^T$ make them the columns of a matrix such that the
 corresponding eigenvalues are decreasing. This gives $U$. You could then do
 the same for $A^TA$ to get $V$.
 
-We formalize this discussion in the following theorem. 
+We formalize this discussion in the following theorem.
 
 \begin{theorem}{Singular value decomposition}{sing-val-decomp}
 Let $A$ be an $m\times n$-matrix. Then there exist
 orthogonal matrices $U$ and $V$ of the appropriate size such that $A= U \Sigma V^T$ where $\Sigma$ is of the form
 \[
-\Sigma = 
+\Sigma =
 \begin{mymatrix}{cc}
-\sigma & 0 \\ 
+\sigma & 0 \\
 0 & 0
 \end{mymatrix}
 \]
-and $\sigma $ is of the form 
+and $\sigma $ is of the form
 \[
 \sigma =\begin{mymatrix}{ccc}
-\sigma _{1} &  & 0 \\ 
-& \ddots &  \\ 
+\sigma _{1} &  & 0 \\
+& \ddots &  \\
 0 &  & \sigma _{k}
 \end{mymatrix}
 \]
@@ -125,16 +125,16 @@ for the $\sigma _{i}$ the singular values of $A$.
 There exists an orthonormal basis, $\set{\vect{v}_{i}} _{i=1}^{n}$ such that $
 A^TA\vect{v}_{i}=\sigma _{i}^{2}\vect{v}_{i}$ where $\sigma
 _{i}^{2}>0$ for $i=1,\ldots,k,(\sigma _{i}>0) $ and equals zero
-if $i>k$. Thus for $i>k$, $A\vect{v}_{i}=\vect{0}$ because 
+if $i>k$. Thus for $i>k$, $A\vect{v}_{i}=\vect{0}$ because
 \begin{equation*}
  A\vect{v}_{i}\dotprod A\vect{v}_{i} = A^TA\vect{v}_{i} \dotprod \vect{v}_{i}  = \vect{0} \dotprod \vect{v}_{i} =0.
 \end{equation*}
-For $i=1,\ldots,k$, define $\vect{u}_{i}\in \R^{m}$ by 
+For $i=1,\ldots,k$, define $\vect{u}_{i}\in \R^{m}$ by
 \begin{equation*}
 \vect{u}_{i}= \sigma _{i}^{-1}A\vect{v}_{i}.
 \end{equation*}
 
-Thus $A\vect{v}_{i}=\sigma _{i}\vect{u}_{i}$. Now 
+Thus $A\vect{v}_{i}=\sigma _{i}\vect{u}_{i}$. Now
 \begin{eqnarray*}
 \vect{u}_{i} \dotprod \vect{u}_{j} &=&  \sigma _{i}^{-1}A
 \vect{v}_{i} \dotprod \sigma _{j}^{-1}A\vect{v}_{j}  = \sigma_{i}^{-1}\vect{v}_{i} \dotprod \sigma _{j}^{-1}A^TA\vect{v}_{j} \\
@@ -143,7 +143,7 @@ Thus $A\vect{v}_{i}=\sigma _{i}\vect{u}_{i}$. Now
 =\delta _{ij}.
 \end{eqnarray*}
 Thus $\set{\vect{u}_{i}} _{i=1}^{k}$ is an orthonormal set of
-vectors in $\R^{m}$. Also, 
+vectors in $\R^{m}$. Also,
 \begin{equation*}
 AA^T\vect{u}_{i}=AA^T\sigma _{i}^{-1}A\vect{v}_{i}=\sigma
 _{i}^{-1}AA^TA\vect{v}_{i}=\sigma _{i}^{-1}A\sigma _{i}^{2}\vect{v}
@@ -151,7 +151,7 @@ _{i}=\sigma _{i}^{2}\vect{u}_{i}.
 \end{equation*}
 Now extend $\set{\vect{u}_{i}} _{i=1}^{k}$ to an orthonormal
 basis for all of $\R^{m}$, $\set{\vect{u}_{i}} _{i=1}^{m}$
-and let 
+and let
 \begin{equation*}
 U= \begin{mymatrix}{ccc}
 \vect{u}_{1} & \cdots & \vect{u}_{m}
@@ -159,35 +159,35 @@ U= \begin{mymatrix}{ccc}
 \end{equation*}
 while $V= \mat{\vect{v}_{1},\ldots,\vect{v}_{n}}$. Thus $U$
 is the matrix which has the $\vect{u}_{i}$ as columns and $V$ is defined
-as the matrix which has the $\vect{v}_{i}$ as columns. Then 
+as the matrix which has the $\vect{v}_{i}$ as columns. Then
 \begin{equation*}
 U^TAV=\begin{mymatrix}{c}
-\vect{u}_{1}^T \\ 
-\vdots \\ 
-\vect{u}_{k}^T \\ 
-\vdots \\ 
+\vect{u}_{1}^T \\
+\vdots \\
+\vect{u}_{k}^T \\
+\vdots \\
 \vect{u}_{m}^T
 \end{mymatrix} A\mat{\vect{v}_{1},\ldots,\vect{v}_{n}}
 \end{equation*}
 \begin{equation*}
 =\begin{mymatrix}{c}
-\vect{u}_{1}^T \\ 
-\vdots \\ 
-\vect{u}_{k}^T \\ 
-\vdots \\ 
+\vect{u}_{1}^T \\
+\vdots \\
+\vect{u}_{k}^T \\
+\vdots \\
 \vect{u}_{m}^T
 \end{mymatrix} \begin{mymatrix}{cccccc}
 \sigma _{1}\vect{u}_{1} & \cdots & \sigma _{k}\vect{u}_{k} & \vect{0}
 & \cdots & \vect{0}
 \end{mymatrix} =\begin{mymatrix}{cc}
-\sigma & 0 \\ 
+\sigma & 0 \\
 0 & 0
 \end{mymatrix}
 \end{equation*}
-where $\sigma $ is given in the statement of the theorem. 
+where $\sigma $ is given in the statement of the theorem.
 \end{proof}
 
-The singular value decomposition has as an immediate corollary which is given in the following interesting result. 
+The singular value decomposition has as an immediate corollary which is given in the following interesting result.
 
 \begin{corollary}{Rank and singular values}{rank-singular-values}
 Let $A$ be an $m\times n$-matrix. Then the rank of $A$ and $A^T$equals
@@ -195,18 +195,18 @@ the number of singular values.
 \end{corollary}
 
 %%\begin{proof}
-%%Since $V$ and $U$ are unitary, it follows that 
+%%Since $V$ and $U$ are unitary, it follows that
 %%\begin{eqnarray*}
 %%\rank(A) &=&\rank(U^TAV) =
 %%\rank\mat{
 %%\begin{array}{cc}
-%%\sigma & 0 \\ 
+%%\sigma & 0 \\
 %%0 & 0
 %%\end{array}
 %%} \\
 %%&=&\text{number of singular values.}
 %%\end{eqnarray*}
-%%Also since $U,V$ are unitary, 
+%%Also since $U,V$ are unitary,
 %%\begin{equation*}
 %%\rank(A^T) =\rank(V^TA^{\ast
 %%}U) =\rank((U^TAV)^T)
@@ -214,7 +214,7 @@ the number of singular values.
 %%\begin{equation*}
 %%=\rank\paren{\mat{
 %%\begin{array}{cc}
-%%\sigma & 0 \\ 
+%%\sigma & 0 \\
 %%0 & 0
 %%\end{array}
 %%} ^T} =\text{number of singular values.}
@@ -226,7 +226,7 @@ the number of singular values.
 Let's compute the Singular Value Decomposition of a simple matrix.
 
 \begin{example}{Singular value decomposition}{SVD}
-Let 
+Let
 $A=\begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}$.
 Find the Singular Value Decomposition (SVD) of $A$.
 \end{example}
@@ -346,14 +346,14 @@ which implies that $AV_1=\sigma_1U_1 = 4U_1$ and
 $AV_2=\sigma_2U_2 = \sqrt 6 U_2$.
 
 Thus,
-\[ U_1 = \frac{1}{4}AV_1 
+\[ U_1 = \frac{1}{4}AV_1
 = \frac{1}{4}
 \begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}
 \frac{1}{\sqrt{2}}\begin{mymatrix}{r} 1\\ 0\\ 1 \end{mymatrix}
 = \frac{1}{4\sqrt 2}\begin{mymatrix}{r} 4\\ 4 \end{mymatrix}
 = \frac{1}{\sqrt 2}\begin{mymatrix}{r} 1\\ 1 \end{mymatrix},\]
 and
-\[ U_2 = \frac{1}{\sqrt 6}AV_2 
+\[ U_2 = \frac{1}{\sqrt 6}AV_2
 = \frac{1}{\sqrt 6}
 \begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}
 \frac{1}{\sqrt{3}}\begin{mymatrix}{r} -1\\ -1\\ 1 \end{mymatrix}
@@ -377,7 +377,7 @@ A & = & \begin{mymatrix}{rrr} 1 & -1 & 3 \\ 3 & 1 & 1 \end{mymatrix}\\
 \end{eqnarray*}
 \end{solution}
 
-Here is another example. 
+Here is another example.
 
 \begin{example}{Finding the SVD}{SVD2}
 Find an SVD for
@@ -395,7 +395,7 @@ the $3\times 3$-matrix $AA^T$.
 
 Thus $A^TA$ has eigenvalue $\lambda_1=9$, and
 the eigenvalues of $AA^T$ are $\lambda_1=9$, $\lambda_2=0$, and
-$\lambda_3=0$. 
+$\lambda_3=0$.
 Furthermore, $A$ has only one singular value, $\sigma_1=3$.
 
 {\bf To find the matrix $V$}:
@@ -424,7 +424,7 @@ A\begin{mymatrix}{r} V_1 \end{mymatrix}
 \end{eqnarray*}
 This gives us $AV_1=\sigma_1 U_1= 3U_1$, so
 
-\[ U_1 = \frac{1}{3}AV_1 
+\[ U_1 = \frac{1}{3}AV_1
 = \frac{1}{3}
 \begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix}
 \begin{mymatrix}{r} 1 \end{mymatrix}
@@ -477,7 +477,7 @@ and
 
 Finally,
 
-\[ A = 
+\[ A =
 \begin{mymatrix}{r} -1 \\ 2 \\ 2 \end{mymatrix}
 =
 \begin{mymatrix}{rrr} -\frac{1}{3} & \frac{4}{\sqrt{18}} & 0 \\
@@ -491,10 +491,10 @@ Finally,
 Consider another example.
 
 \begin{example}{Find the SVD}{SVD3}
-Find a singular value decomposition for the matrix 
+Find a singular value decomposition for the matrix
 \begin{equation*}
 A= \begin{mymatrix}{ccc}
-\frac{2}{5}\sqrt{2}\sqrt{5} & \frac{4}{5}\sqrt{2}\sqrt{5} & 0 \\ 
+\frac{2}{5}\sqrt{2}\sqrt{5} & \frac{4}{5}\sqrt{2}\sqrt{5} & 0 \\
 \frac{2}{5}\sqrt{2}\sqrt{5} & \frac{4}{5}\sqrt{2}\sqrt{5} & 0
 \end{mymatrix}
 \end{equation*}
@@ -503,8 +503,8 @@ A= \begin{mymatrix}{ccc}
 First consider $A^TA$
 \begin{equation*}
 \begin{mymatrix}{ccc}
-\frac{16}{5} & \frac{32}{5} & 0 \\ 
-\frac{32}{5} & \frac{64}{5} & 0 \\ 
+\frac{16}{5} & \frac{32}{5} & 0 \\
+\frac{32}{5} & \frac{64}{5} & 0 \\
 0 & 0 & 0
 \end{mymatrix}
 \end{equation*}
@@ -512,31 +512,31 @@ What are some eigenvalues and eigenvectors? Some computing shows these are
 
 \begin{equation*}
 \set{\begin{mymatrix}{c}
-0 \\ 
-0 \\ 
+0 \\
+0 \\
 1
 \end{mymatrix} ,\begin{mymatrix}{c}
--\frac{2}{5}\sqrt{5} \\ 
-\frac{1}{5}\sqrt{5} \\ 
+-\frac{2}{5}\sqrt{5} \\
+\frac{1}{5}\sqrt{5} \\
 0
 \end{mymatrix} } \leftrightarrow 0,\set{\begin{mymatrix}{c}
-\frac{1}{5}\sqrt{5} \\ 
-\frac{2}{5}\sqrt{5} \\ 
+\frac{1}{5}\sqrt{5} \\
+\frac{2}{5}\sqrt{5} \\
 0
 \end{mymatrix} } \leftrightarrow 16
 \end{equation*}
-Thus the matrix $V$ is given by 
+Thus the matrix $V$ is given by
 \begin{equation*}
 V=\begin{mymatrix}{ccc}
-\frac{1}{5}\sqrt{5} & -\frac{2}{5}\sqrt{5} & 0 \\ 
-\frac{2}{5}\sqrt{5} & \frac{1}{5}\sqrt{5} & 0 \\ 
+\frac{1}{5}\sqrt{5} & -\frac{2}{5}\sqrt{5} & 0 \\
+\frac{2}{5}\sqrt{5} & \frac{1}{5}\sqrt{5} & 0 \\
 0 & 0 & 1
 \end{mymatrix}
 \end{equation*}
 Next consider $AA^T$
 \begin{equation*}
 \begin{mymatrix}{cc}
-8 & 8 \\ 
+8 & 8 \\
 8 & 8
 \end{mymatrix}
 \end{equation*}
@@ -544,37 +544,37 @@ Eigenvectors and eigenvalues are
 
 \begin{equation*}
 \set{\begin{mymatrix}{c}
--\frac{1}{2}\sqrt{2} \\ 
+-\frac{1}{2}\sqrt{2} \\
 \frac{1}{2}\sqrt{2}
 \end{mymatrix} } \leftrightarrow 0,\set{\begin{mymatrix}{c}
-\frac{1}{2}\sqrt{2} \\ 
+\frac{1}{2}\sqrt{2} \\
 \frac{1}{2}\sqrt{2}
 \end{mymatrix} } \leftrightarrow 16
 \end{equation*}
-Thus you can let $U$ be given by 
+Thus you can let $U$ be given by
 \begin{equation*}
 U=\begin{mymatrix}{cc}
-\frac{1}{2}\sqrt{2} & -\frac{1}{2}\sqrt{2} \\ 
+\frac{1}{2}\sqrt{2} & -\frac{1}{2}\sqrt{2} \\
 \frac{1}{2}\sqrt{2} & \frac{1}{2}\sqrt{2}
 \end{mymatrix}
 \end{equation*}
-Let us check this. $U^TAV=$ 
+Let us check this. $U^TAV=$
 \begin{equation*}
 \begin{mymatrix}{cc}
-\frac{1}{2}\sqrt{2} & \frac{1}{2}\sqrt{2} \\ 
+\frac{1}{2}\sqrt{2} & \frac{1}{2}\sqrt{2} \\
 -\frac{1}{2}\sqrt{2} & \frac{1}{2}\sqrt{2}
 \end{mymatrix} \begin{mymatrix}{ccc}
-\frac{2}{5}\sqrt{2}\sqrt{5} & \frac{4}{5}\sqrt{2}\sqrt{5} & 0 \\ 
+\frac{2}{5}\sqrt{2}\sqrt{5} & \frac{4}{5}\sqrt{2}\sqrt{5} & 0 \\
 \frac{2}{5}\sqrt{2}\sqrt{5} & \frac{4}{5}\sqrt{2}\sqrt{5} & 0
 \end{mymatrix} \begin{mymatrix}{ccc}
-\frac{1}{5}\sqrt{5} & -\frac{2}{5}\sqrt{5} & 0 \\ 
-\frac{2}{5}\sqrt{5} & \frac{1}{5}\sqrt{5} & 0 \\ 
+\frac{1}{5}\sqrt{5} & -\frac{2}{5}\sqrt{5} & 0 \\
+\frac{2}{5}\sqrt{5} & \frac{1}{5}\sqrt{5} & 0 \\
 0 & 0 & 1
 \end{mymatrix}
 \end{equation*}
 \begin{equation*}
 =\begin{mymatrix}{ccc}
-4 & 0 & 0 \\ 
+4 & 0 & 0 \\
 0 & 0 & 0
 \end{mymatrix}
 \end{equation*}

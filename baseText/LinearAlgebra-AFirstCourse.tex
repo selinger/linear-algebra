@@ -90,8 +90,8 @@
 \tikzset{>={Latex[scale=1.2]}} % use a consistent arrow style
 \usepackage{circuitikz}
 
-% Thew following passes on paperheight to ps2pdf... bug fix  
-\pdfpageheight=\paperheight 
+% Thew following passes on paperheight to ps2pdf... bug fix
+\pdfpageheight=\paperheight
 
 % For plotting data
 \usepackage{pgfplots}
@@ -118,7 +118,7 @@
 % Lyryx Math Style
 \usepackage{LyryxMathStyle}
 
-% Lyryx Linear Algebra Style 
+% Lyryx Linear Algebra Style
 \usepackage{LyryxLinAlgStyle}
 
 
@@ -136,14 +136,14 @@
 % B+W Interior
 %\setlength{\pagethickness}{0.002252in}
 
-% TODO: Is there a way to automatically calculate the dimensions of the print-cover? 
+% TODO: Is there a way to automatically calculate the dimensions of the print-cover?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % PRINT COVER GEOMETRY CALCULATIONS
 %
 % % %
 %%% Here are the calculations from createspace:
-% 
+%
 % Spine width: --> black+white interior is 0.002252in * page count
 %              --> colour interior is 0.0025in * page count
 %
@@ -156,7 +156,7 @@
 %
 % Minimum Cover Width: Bleed + Back Cover Trim Size + Spine Width + Front Cover Trim Size + Bleed
 %
-% 
+%
 % For 108 pages in colour: (exclude front and back cover - 2 pages)
 %
 % paper width = 0.125 + 8.5 + (0.0025 * 108) + 8.5 + 0.125 = 17.52in
@@ -184,7 +184,7 @@
 %From Lulu:
 %Spine width = 0.419cm
 %Spine begins = 21.905cm from the left
-%Total cover width = 44.229cm X 28.571cm 
+%Total cover width = 44.229cm X 28.571cm
 
 %CreateSpace
 %\setlength{\coverwidth}{0.125in + 8.5in + (\pagethickness * \numpages) + 8.5in + 0.125in}
@@ -241,7 +241,7 @@
 % Table of Contents
 	\phantomsection
 	\addcontentsline{toc}{chapter}{Contents} %Adds contents to the table of contents itself
-	\setlength{\parskip}{3.5pt} % alter vertical space in subsequent contents. Can alter this value to adjust TOC to fit nicely on page and prevent widows/orphans, careful that this will affect the entire text. 
+	\setlength{\parskip}{3.5pt} % alter vertical space in subsequent contents. Can alter this value to adjust TOC to fit nicely on page and prevent widows/orphans, careful that this will affect the entire text.
 	\tableofcontents
 	\cleardoublepage
 	
@@ -249,7 +249,7 @@
 
 % Get ready for exercises and their solutions.
         \Opensolutionfile{solutions}[ex]
-        
+
 %LOAD COURSE CONTENT
 	\input{courseSetup.tex}
 

@@ -23,12 +23,12 @@ The key to this technique is a special kind of {\ef} called a
 
 \begin{definition}{\Rref}{rref}
   An augmented matrix is in \textbf{\rref}\eindex{\rref}\eindex{\ef!reduced} if
-  
+
   \begin{enumerate}
   \item It is in {\ef}.
-    
+
   \item Each leading entry is equal to $1$.
-    
+
   \item All entries above a leading entry are zero.
   \end{enumerate}
 \end{definition}
@@ -52,7 +52,7 @@ are equal to $1$, and they have zeros above them.
 \end{mymatrix} , \begin{mymatrix}{rrr|r}
 \circled{1} & 0 & 0 & 4 \\
 0 & \circled{1} & 0 & 3 \\
-0 & 0 & \circled{1} & 2 
+0 & 0 & \circled{1} & 2
 \end{mymatrix}
 \end{equation*}
 \end{example}
@@ -72,7 +72,7 @@ operations.
     changing the row containing the pivot entry, or any rows below it,
     use row operations to create zeros in the column above the pivot
     entry. Finally, divide the row by its pivot entry, to make the
-    pivot entry equal to $1$. 
+    pivot entry equal to $1$.
   \end{enumerate}
 \end{algorithm}
 
@@ -139,7 +139,7 @@ operations.
       x +2y  -z   +3w &=& 5 \\
       x +2y  -3z  +1w &=& 1.
     \end{array}
-  \end{equation*}    
+  \end{equation*}
 \end{example}
 
 \begin{solution}
@@ -208,7 +208,7 @@ operations.
   such cases, it may sometimes be easier to do back substitution. But in
   most cases, Gauss-Jordan elimination is simpler to do than back
   substitution, and therefore I recommend using the Gauss-Jordan method
-  most of the time. 
+  most of the time.
 \end{discussion}
 
 One situation where Gauss-Jordan elimination excels is when you have
@@ -270,5 +270,5 @@ matrix.
   \end{equation*}
   We see that the first system is inconsistent, because it contains a
   row of the form $\mat{0~0~0~|~1}$. The second system is consistent,
-  and we get the general solution $z=t$, $y=1-t$, $x=2-t$. 
+  and we get the general solution $z=t$, $y=1-t$, $x=2-t$.
 \end{solution}

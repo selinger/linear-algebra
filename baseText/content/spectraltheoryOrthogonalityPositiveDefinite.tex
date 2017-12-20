@@ -9,7 +9,7 @@ Let $A$ be an $n \times n$ symmetric matrix. Then $A$ is positive definite if al
 \index{positive definite}
 \end{definition}
 
-The relationship between a negative definite matrix and positive definite matrix is as follows. 
+The relationship between a negative definite matrix and positive definite matrix is as follows.
 
 \begin{lemma}{Negative definite matrix}{negative-definite-matrix}
 An $n\times n$-matrix $A$ is negative definite if and only if $-A$ is
@@ -17,7 +17,7 @@ positive definite.
 \end{lemma}
 
 %%\begin{proof}
-%%Suppose $A$ is negative definite. For all $\vect{x}$, 
+%%Suppose $A$ is negative definite. For all $\vect{x}$,
 %%\begin{equation*}
 %%\vect{x}^{T}A\vect{x}\leq -\delta \norm{\vect{x}} ^{2}
 %\end{equation*}
@@ -47,7 +47,7 @@ positive definite.
 %%
 %%\begin{proof}Suppose first that $A$ is positive definite. Let $\lambda $
 %%is an eigenvalue with eigenvector $
-%%\vect{u}$. Then, since $\lambda $ is real, 
+%%\vect{u}$. Then, since $\lambda $ is real,
 %%\begin{equation*}
 %%\vect{u}^{T}A\vect{u}=\lambda \vect{u}^{T}\vect{u}=\lambda \norm{
 %%u} ^{2}\geq \delta \norm{\vect{u}} ^{2}
@@ -58,7 +58,7 @@ positive definite.
 %%Next suppose that all eigenvalues are positive. Then letting $\delta $ be
 %%the smallest eigenvalue and $U$ a real orthogonal matrix such that $
 %%U^{T}AU=D$, a diagonal matrix having the eigenvalues of $A$ on the main
-%%diagonal, 
+%%diagonal,
 %%\begin{equation*}
 %%\vect{x}^{T}A\vect{x}=\vect{x}^{T}UDU^{T}\vect{x}=(U^{T}\vect{x})
 %%^{T}DU^{T}\vect{x}=\sum_{i=1}^{n}(U^{T}\vect{x}) _{i}^{2}\lambda
@@ -66,7 +66,7 @@ positive definite.
 %%\norm{U^{T}\vect{x}} ^{2}
 %%\end{equation*}
 %%Now $\norm{U^{T}\vect{x}} ^{2}=(U^{T}\vect{x})
-%%^{T}U^{T}\vect{x}=\vect{x}^{T}UU^{T}\vect{x}=\vect{x}^{T}\vect{x}=\norm{\vect{x}} ^{2}$ and so 
+%%^{T}U^{T}\vect{x}=\vect{x}^{T}UU^{T}\vect{x}=\vect{x}^{T}\vect{x}=\norm{\vect{x}} ^{2}$ and so
 %%\begin{equation*}
 %%\vect{x}^{T}A\vect{x}\geq \delta \norm{\vect{x}} ^{2}
 %%\end{equation*}
@@ -88,9 +88,9 @@ does not happen for a positive definite matrix. Hence $\vect{v}=\vect{0}$ and
 so $A$ is one to one. This is sufficient to conclude that it is invertible.
 \end{proof}
 
-Notice that this lemma implies that if a matrix $A$ is positive definite, then $\det(A) > 0$. 
+Notice that this lemma implies that if a matrix $A$ is positive definite, then $\det(A) > 0$.
 
-The following theorem provides another characterization of positive definite matrices. It gives a useful test for verifying if a matrix is positive definite. 
+The following theorem provides another characterization of positive definite matrices. It gives a useful test for verifying if a matrix is positive definite.
 
 \begin{theorem}{Positive definite matrix}{positive-definite}
 Let $A$ be a symmetric matrix. Then $A$ is positive definite if and
@@ -113,17 +113,17 @@ Then
 =\vect{y}^TD\vect{y}.\]
 
 Writing $\vect{y}^T=\begin{mymatrix}{cccc}
-y_1 & y_2 & \cdots & y_n\end{mymatrix}$, 
+y_1 & y_2 & \cdots & y_n\end{mymatrix}$,
 
 \begin{eqnarray*}
-\vect{x}^TA\vect{x} & = & 
+\vect{x}^TA\vect{x} & = &
 \begin{mymatrix}{cccc} y_1 & y_2 & \cdots & y_n\end{mymatrix}
 \func{diag}(\lambda_1,\lambda_2,\ldots,\lambda_n)
 \begin{mymatrix}{c} y_1 \\ y_2 \\ \vdots \\ y_n\end{mymatrix}\\
 & = & \lambda_1 y_1^2 + \lambda_2 y_2^2 + \ldots + \lambda_n y_n^2.
 \end{eqnarray*}
 
-$(\Rightarrow)$ First we will assume that $A$ is positive definite and prove that $\vect{x}^T A \vect{x} $ is positive. 
+$(\Rightarrow)$ First we will assume that $A$ is positive definite and prove that $\vect{x}^T A \vect{x} $ is positive.
 
 Suppose $A$ is positive definite, and $\vect{x}\in\R^n$,
 $\vect{x}\neq\vect{0}$.
@@ -140,7 +140,7 @@ $(\Leftarrow)$ Now we will assume $\vect{x}^T A \vect{x} $ is positive and show 
 If $\vect{x}^TA\vect{x}>0$ whenever $\vect{x}\neq \vect{0}$,
 choose $\vect{x}=U\vect{e}_j$, where $\vect{e}_j$ is the $j\th$
 column of $I_n$.
-Since $U$ is invertible, $\vect{x}\neq\vect{0}$, 
+Since $U$ is invertible, $\vect{x}\neq\vect{0}$,
 and thus
 \[ \vect{y}=U^T\vect{x}=U^T(U\vect{e}_j) =\vect{e}_j.\]
 Thus $y_j=1$ and $y_i=0$ when $i\neq j$, so
@@ -167,12 +167,12 @@ Let $A$ be an $n\times n$ positive definite matrix.  Then each submatrix $A_{k}$
 \end{lemma}
 
 \begin{proof}
-This follows right away from the above definition. Let $\vect{x}\in \R^{k}$ be non-zero. Then 
+This follows right away from the above definition. Let $\vect{x}\in \R^{k}$ be non-zero. Then
 \begin{equation*}
 \vect{x}^{T}A_{k}\vect{x}=\begin{mymatrix}{cc}
 \vect{x}^{T} & 0
 \end{mymatrix} A\begin{mymatrix}{c}
-\vect{x} \\ 
+\vect{x} \\
 0
 \end{mymatrix} >  0
 \end{equation*}
@@ -183,16 +183,16 @@ There is yet another way to recognize whether a matrix is positive definite
 which is described in terms of these submatrices. We state the result,  the proof
 of which can be found in more advanced texts.
 
-\begin{theorem}{Positive matrix and determinant of $A_k$}{positive-matrix-determinant-Ak}   
+\begin{theorem}{Positive matrix and determinant of $A_k$}{positive-matrix-determinant-Ak}
 Let $A$ be a symmetric matrix. Then $A$ is positive definite if
-and only if $\det (A_{k})$ is greater than $0$ for every submatrix $A_{k}$,  $k=1,\ldots,n$. 
+and only if $\det (A_{k})$ is greater than $0$ for every submatrix $A_{k}$,  $k=1,\ldots,n$.
 \index{principal submatrices!positive definite}
 \index{positive definite!principal submatrices}
 \end{theorem}
 
 \begin{proof}
 We prove this theorem by induction on $n$. It is clearly
-true if $n=1$. Suppose then that it is true for $n-1$ where $n\geq 2$. Since 
+true if $n=1$. Suppose then that it is true for $n-1$ where $n\geq 2$. Since
 $\det (A) =\det (A_{n}) >0$, it follows that all the
 eigenvalues are non-zero. We need to show that they are all positive. Suppose
 not. Then there is some even number of them which are negative, even because
@@ -201,8 +201,8 @@ the product of all the eigenvalues is known to be positive, equalling $\det
 \vect{u}_{i}=\lambda _{i}\vect{u}_{i}$ where $\vect{u}_{i}\neq \vect{0}$ for $
 i=1,2$ and $\vect{u}_{1}\dotprod \vect{u}_{2}=0$. Now if $\vect{y}\equiv \alpha
 _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}$ is an element of $\sspan\set{
-\vect{u}_{1},\vect{u}_{2}}$, then since these are eigenvalues and $\ 
-\vect{u}_{1}\dotprod \vect{u}_{2}=0$, a short computation shows 
+\vect{u}_{1},\vect{u}_{2}}$, then since these are eigenvalues and $\
+\vect{u}_{1}\dotprod \vect{u}_{2}=0$, a short computation shows
 \begin{equation*}
 (\alpha _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2}) ^{T}A(
 \alpha _{1}\vect{u}_{1}+\alpha _{2}\vect{u}_{2})
@@ -213,16 +213,16 @@ _{1}} ^{2}+\abs{\alpha _{2}}^{2}\lambda
 _{2}\norm{\vect{u}_{2}} ^{2}<0.
 \end{equation*}
 Now letting $\vect{x}\in \R^{n-1}$, we can use the induction
-hypothesis to write 
+hypothesis to write
 \begin{equation*}
 \begin{mymatrix}{cc}
 x^{T} & 0
 \end{mymatrix} A\begin{mymatrix}{c}
-\vect{x} \\ 
+\vect{x} \\
 0
 \end{mymatrix} =\vect{x}^{T}A_{n-1}\vect{x}>0.
 \end{equation*}
-Now the dimension of $\set{\vect{z}\in \R^{n}:z_{n}=0} $ is 
+Now the dimension of $\set{\vect{z}\in \R^{n}:z_{n}=0} $ is
 $n-1$ and the dimension of $\sspan\set{\vect{u}_{1},\vect{u}
 _{2}} =2$ and so there must be some non-zero $\vect{x}\in \R
 ^{n} $ which is in both of these subspaces of $\R^{n}$. However, the
@@ -230,12 +230,12 @@ first computation would require that $\vect{x}^{T}A\vect{x}<0$ while the
 second would require that $\vect{x}^{T}A\vect{x}>0$. This contradiction shows
 that all the eigenvalues must be positive. This proves the if part of the
 theorem. The converse can also be shown to be correct, but it is the
-direction which was just shown which is of most interest. 
+direction which was just shown which is of most interest.
 \end{proof}
 
-\begin{corollary}{Symmetric and negative definite matrix}{symmetric-definite-matrix} %\label{pd3} 
+\begin{corollary}{Symmetric and negative definite matrix}{symmetric-definite-matrix} %\label{pd3}
 Let $A$ be symmetric. Then $A$ is negative definite if and only
-if 
+if
 \begin{equation*}
 (-1) ^{k} \det (A_{k}) >0
 \end{equation*}
@@ -246,5 +246,5 @@ for every $k=1,\ldots,n$.
 that $A$ is negative definite if and only if $-A$ is positive definite.
 Therefore, if $\det (-A_{k}) >0$ for all $k=1,\ldots,n$, it
 follows that $A$ is negative definite. However, $\det (-A_{k})
-=(-1) ^{k}\det (A_{k})$. 
+=(-1) ^{k}\det (A_{k})$.
 \end{proof}

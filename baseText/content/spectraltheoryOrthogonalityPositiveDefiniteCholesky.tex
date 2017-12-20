@@ -3,7 +3,7 @@
 Another important theorem is the existence of a specific factorization of positive definite matrices. It is called the Cholesky Factorization and factors the matrix into the product of an upper triangular matrix and its transpose.
 
 \index{Cholesky factorization!positive definite}
-\index{positive definite!Cholesky factorization} 
+\index{positive definite!Cholesky factorization}
 \begin{theorem}{Cholesky factorization}{cholesky-factorization}
 Let $A$ be a positive definite matrix. Then
 there exists an upper triangular matrix $U$ whose main diagonal entries are positive, such that $A$ can be written
@@ -20,32 +20,32 @@ The process for finding such a matrix $U$ relies on simple row operations.
 \begin{procedure}{Finding the Cholesky factorization}{finding-cholesky}
 Let $A$ be a positive definite matrix. The matrix $U$ that creates the Cholesky Factorization can be found through two steps.
 \begin{enumerate}
-\item Using only type $3$ elementary row operations (multiples of rows added to other rows) put $A$ in upper triangular form. Call this matrix $\hat{U}$. Then $\hat{U}$ has positive entries on the main diagonal. 
-\item Divide each row of $\hat{U}$ by the square root of the diagonal entry in that row. The result is the matrix $U$. 
+\item Using only type $3$ elementary row operations (multiples of rows added to other rows) put $A$ in upper triangular form. Call this matrix $\hat{U}$. Then $\hat{U}$ has positive entries on the main diagonal.
+\item Divide each row of $\hat{U}$ by the square root of the diagonal entry in that row. The result is the matrix $U$.
 \end{enumerate}
 \end{procedure}
 
-Of course you can always verify that your factorization is correct by multiplying $U$ and $U^T$ to ensure the result is the original matrix $A$. 
+Of course you can always verify that your factorization is correct by multiplying $U$ and $U^T$ to ensure the result is the original matrix $A$.
 
 Consider the following example.
 
 \begin{example}{Cholesky factorization}{cholesky}
 Show that
 $A=\begin{mymatrix}{rrr}
-9 & -6 & 3 \\ -6 & 5 & -3 \\ 3 & -3 & 6 
-\end{mymatrix}$ 
+9 & -6 & 3 \\ -6 & 5 & -3 \\ 3 & -3 & 6
+\end{mymatrix}$
 is positive definite, and find the Cholesky factorization of $A$.
 \end{example}
 
 \begin{solution}
-First we show that $A$ is positive definite. By Theorem~\ref{thm:positive-matrix-determinant-Ak} it suffices to show that the determinant of each submatrix is positive. 
+First we show that $A$ is positive definite. By Theorem~\ref{thm:positive-matrix-determinant-Ak} it suffices to show that the determinant of each submatrix is positive.
 \[ A_{1}=\begin{mymatrix}{c} 9 \end{mymatrix}
 \mbox{ and }
 A_{2}=\begin{mymatrix}{rr} 9 & -6 \\ -6 & 5 \end{mymatrix},\]
 so $\det(A_{1})=9$ and $\det(A_{2})=9$.
 Since $\det(A)=36$, it follows that $A$ is positive definite.
 
-Now we use Procedure~\ref{proc:finding-cholesky} to find the Cholesky Factorization. Row reduce (using only type $3$ row operations) until an upper triangular matrix is obtained. 
+Now we use Procedure~\ref{proc:finding-cholesky} to find the Cholesky Factorization. Row reduce (using only type $3$ row operations) until an upper triangular matrix is obtained.
 \[ \begin{mymatrix}{rrr}
 9 & -6 & 3 \\ -6 & 5 & -3 \\ 3 & -3 & 6
 \end{mymatrix}
@@ -71,11 +71,11 @@ You can verify that $U^TU = A$.
 \end{solution}
 
 \begin{example}{Cholesky factorization}{cholesky}
-Let $A$ be a positive definite matrix given by 
+Let $A$ be a positive definite matrix given by
 \begin{equation*}
 \begin{mymatrix}{ccc}
-3 & 1 & 1 \\ 
-1 & 4 & 2 \\ 
+3 & 1 & 1 \\
+1 & 4 & 2 \\
 1 & 2 & 5
 \end{mymatrix}
 \end{equation*}
@@ -83,25 +83,25 @@ Determine its Cholesky factorization.
 \end{example}
 
 \begin{solution}
-You can verify that $A$ is in fact positive definite. 
+You can verify that $A$ is in fact positive definite.
 
-To find the Cholesky factorization we first row reduce to an upper triangular matrix. 
+To find the Cholesky factorization we first row reduce to an upper triangular matrix.
 \[
 \begin{mymatrix}{ccc}
-3 & 1 & 1 \\ 
-1 & 4 & 2 \\ 
+3 & 1 & 1 \\
+1 & 4 & 2 \\
 1 & 2 & 5
 \end{mymatrix}
 \rightarrow
 \begin{mymatrix}{ccc}
-3 & 1 & 1 \\ 
-0 & \vspace{0.05in}\frac{11}{3} & \vspace{0.05in}\frac{5}{3} \\ 
+3 & 1 & 1 \\
+0 & \vspace{0.05in}\frac{11}{3} & \vspace{0.05in}\frac{5}{3} \\
 0 & \vspace{0.05in}\frac{5}{3}  & \vspace{0.05in}\frac{14}{5}
 \end{mymatrix}
 \rightarrow
 \begin{mymatrix}{ccc}
-3 & 1 & 1 \\ 
-0 & \vspace{0.05in}\frac{11}{3} & \vspace{0.05in}\frac{5}{3} \\ 
+3 & 1 & 1 \\
+0 & \vspace{0.05in}\frac{11}{3} & \vspace{0.05in}\frac{5}{3} \\
 0 & 0 & \vspace{0.05in}\frac{43}{11}
 \end{mymatrix}
 \]
@@ -109,8 +109,8 @@ To find the Cholesky factorization we first row reduce to an upper triangular ma
 Now divide the entries in each row by the square root of the diagonal entry in that row and simplify.
 \[
 U = \begin{mymatrix}{ccc}
-\sqrt{3} & \vspace{0.05in}\frac{1}{3}\sqrt{3} & \vspace{0.05in}\frac{1}{3}\sqrt{3}  \\ 
-0  & \vspace{0.05in}\frac{1}{3}\sqrt{3}\sqrt{11} &  \vspace{0.05in}\frac{5}{33}\sqrt{3}\sqrt{11} \\ 
+\sqrt{3} & \vspace{0.05in}\frac{1}{3}\sqrt{3} & \vspace{0.05in}\frac{1}{3}\sqrt{3}  \\
+0  & \vspace{0.05in}\frac{1}{3}\sqrt{3}\sqrt{11} &  \vspace{0.05in}\frac{5}{33}\sqrt{3}\sqrt{11} \\
 
 0  & 0 & \vspace{0.05in}\frac{1}{11}\sqrt{11}\sqrt{43}
 \end{mymatrix}

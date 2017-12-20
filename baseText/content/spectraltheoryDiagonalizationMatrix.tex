@@ -4,7 +4,7 @@
   \begin{enumerate}
   \item Compute sums, products, and powers of diagonal matrices.
   \item Determine whether a square matrix is diagonalizable, and
-    diagonalize it if possible. 
+    diagonalize it if possible.
   \end{enumerate}
 \end{outcome}
 
@@ -211,7 +211,7 @@ eigenvalues is the following theorem.
   To double-check that $P^{-1}AP$ is indeed equal to $D$, we first
   compute the inverse of $P$:
   \begin{equation*}
-    P^{-1} = 
+    P^{-1} =
     \begin{mymatrix}{rrr}
       -2 & 0 & -1 \\
       1  & 0 &  1 \\
@@ -264,7 +264,7 @@ eigenvalues is the following theorem.
   First, we will find the characteristic polynomial of $A$:
   \begin{eqnarray*}
     \det(A-\eigenvar I)
-    &=& 
+    &=&
         \begin{absmatrix}{ccc}
           2-\eigenvar &  0 &  0 \\
           1 &  4-\eigenvar & -1 \\
@@ -385,7 +385,7 @@ The following example shows that not all matrices are diagonalizable.
       0 & 0 & 0 \\
     \end{mymatrix}.
   \end{equation*}
-  The general solution is 
+  The general solution is
   \begin{equation*}
     \vect{v} = t\begin{mymatrix}{r} 1 \\ 0 \end{mymatrix}.
   \end{equation*}
@@ -397,5 +397,5 @@ The following example shows that not all matrices are diagonalizable.
   Since the matrix $A$ has only one basic eigenvector, we cannot find
   two linearly independent eigenvectors. Therefore, by
   Theorem~\ref{thm:eigenvectors-and-diagonalizable}, $A$ cannot be
-  diagonalized. 
+  diagonalized.
 \end{solution}

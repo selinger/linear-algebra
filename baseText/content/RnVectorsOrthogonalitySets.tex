@@ -16,7 +16,7 @@ include the definitions and examples here for convenience.
   $\sspan \set{\vect{u}_1,\ldots, \vect{u}_k}$ a subspace of $\R^{n}$.
 \end{definition}
 
-Consider the following example. 
+Consider the following example.
 
 \begin{example}{Span of vectors}{span-vectors}
 Describe the span of the vectors $\vect{u}=\begin{mymatrix}{rrr}
@@ -28,10 +28,10 @@ $\vect{v}=\begin{mymatrix}{rrr}
 \end{example}
 
 \begin{solution}
-You can see that any linear combination of the vectors $\vect{u}$ and $\vect{v}$ yields a vector 
+You can see that any linear combination of the vectors $\vect{u}$ and $\vect{v}$ yields a vector
 $\begin{mymatrix}{rrr}
 x  & y & 0
-\end{mymatrix}^T$ in the $XY$-plane. 
+\end{mymatrix}^T$ in the $XY$-plane.
 
 Moreover every vector in the $XY$-plane is in fact such a linear
 combination of the vectors $\vect{u}$ and $\vect{v}$. That's because
@@ -39,7 +39,7 @@ combination of the vectors $\vect{u}$ and $\vect{v}$. That's because
 x \\
 y \\
 0
-\end{mymatrix} 
+\end{mymatrix}
 =
 (-2x+3y) \begin{mymatrix}{r}
 1 \\
@@ -51,35 +51,35 @@ y \\
 3 \\
 2 \\
 0
-\end{mymatrix} 
+\end{mymatrix}
 \]
 
 Thus  span$\set{\vect{u},\vect{v}}$ is precisely the $XY$-plane.
 \end{solution}
 
-The span of a set of a vectors in $\R^n$ is what we call a \textbf{subspace of $\R^n$}. A subspace $W$ is characterized by the feature that any linear combination of vectors of $W$ is again a vector contained in $W$. 
+The span of a set of a vectors in $\R^n$ is what we call a \textbf{subspace of $\R^n$}. A subspace $W$ is characterized by the feature that any linear combination of vectors of $W$ is again a vector contained in $W$.
 
-Another important property of sets of vectors is called linear independence. 
+Another important property of sets of vectors is called linear independence.
 
 \begin{definition}{Linearly independent set of vectors}{linear-independent-ortho}
-A set of non-zero vectors $\set{\vect{u}_1,\ldots,\vect{u}_k}$ in $\R^{n}$ is said to be 
+A set of non-zero vectors $\set{\vect{u}_1,\ldots,\vect{u}_k}$ in $\R^{n}$ is said to be
 \textbf{linearly independent}\index{linear independence}\index{vector!linear independence}
  if no vector in that set is in the span of the other vectors of that set.
 \end{definition}
 
-Here is an example.  
+Here is an example.
 
 \begin{example}{Linearly independent vectors}{linearly-independent-vectors}
 Consider vectors $\vect{u}=\begin{mymatrix}{rrr}
 1  & 1 & 0
-\end{mymatrix}^T$, 
+\end{mymatrix}^T$,
 $\vect{v}=\begin{mymatrix}{rrr}
 3  & 2 & 0
 \end{mymatrix}^T$, and
 $\vect{w}=\begin{mymatrix}{rrr}
 4  & 5 & 0
 \end{mymatrix}^T  \in \R^{3}$.
-Verify whether the set $\set{\vect{u}, \vect{v}, \vect{w}}$ is linearly independent. 
+Verify whether the set $\set{\vect{u}, \vect{v}, \vect{w}}$ is linearly independent.
 \end{example}
 
 \begin{solution}
@@ -122,7 +122,7 @@ Thus the set of vectors $\set{\vect{u}, \vect{v}}$ from Example~\ref{exa:linearl
 $\R^{3}$ since it is both linearly independent and spans
 the $XY$-plane.
 
- Recall from the properties of the dot product of vectors 
+ Recall from the properties of the dot product of vectors
 that two vectors $\vect{u}$ and $\vect{v}$ are orthogonal if $\vect{u}
 \dotprod \vect{v} = 0$. Suppose a vector is orthogonal to a spanning set of $\R^n$. What can be said about such a vector? This is the discussion in the following example.
 
@@ -138,26 +138,26 @@ Write $\vect{u}=t_1\vect{x}_1 + t_2\vect{x}_2 +\ldots +t_k\vect{x}_k$
 for some $t_1, t_2, \ldots, t_k\in\R$
 (this is possible because
 $\vect{x}_1, \vect{x}_2, \ldots, \vect{x}_k$ span $\R^n$).
- 
+
 Then
 \begin{eqnarray*}
 \norm{\vect{u}}^2 & = & \vect{u}\dotprod\vect{u} \\
 & = & \vect{u}\dotprod(t_1\vect{x}_1 + t_2\vect{x}_2 +\ldots +t_k\vect{x}_k) \\
 & = & \vect{u}\dotprod (t_1\vect{x}_1) +  \vect{u}\dotprod (t_2\vect{x}_2) +
 \ldots +  \vect{u}\dotprod (t_k\vect{x}_k) \\
-& = & t_1(\vect{u}\dotprod \vect{x}_1) + t_2(\vect{u}\dotprod \vect{x}_2) + \ldots 
+& = & t_1(\vect{u}\dotprod \vect{x}_1) + t_2(\vect{u}\dotprod \vect{x}_2) + \ldots
 + t_k(\vect{u}\dotprod \vect{x}_k) \\
 & = & t_1(0) + t_2(0) + \ldots + t_k(0) = 0.
 \end{eqnarray*}
 Since $\norm{\vect{u}}^2 =0$, $\norm{\vect{u}} =0$.
-We know that $\norm{\vect{u}}=0$ if and only if 
+We know that $\norm{\vect{u}}=0$ if and only if
 $\vect{u}=\vect{0}_n$.
 Therefore, $\vect{u}=\vect{0}_n$.
 In conclusion, the only vector orthogonal to every vector of
 a spanning set of $\R^n$ is the zero vector.
 \end{solution}
 
-We can now discuss what is meant by an orthogonal\index{orthogonal} set of vectors. 
+We can now discuss what is meant by an orthogonal\index{orthogonal} set of vectors.
 
 \begin{definition}{Orthogonal set of vectors}{orth-set}
 Let $\set{\vect{u}_1, \vect{u}_2,\ldots, \vect{u}_m}$ be a set of
@@ -165,8 +165,8 @@ vectors in $\R^n$. Then this set is called an
 \textbf{orthogonal set}\index{orthogonal}\index{vector!orthogonal}
 if the following conditions hold:
 \begin{enumerate}
-\item 
-$\vect{u}_i \dotprod \vect{u}_j = 0$ for all $i \neq j$ 
+\item
+$\vect{u}_i \dotprod \vect{u}_j = 0$ for all $i \neq j$
 \item
 $\vect{u}_i \neq \vect{0}$ for all $i$
 \end{enumerate}
@@ -180,11 +180,11 @@ set} of vectors. They can be described as follows.
 A set of vectors, $\set{\vect{w}_{1},\ldots,\vect{w}_{m}} $
 is said to be an
 \textbf{orthonormal}\index{orthonormal}\index{vector!orthonormal}
-set if 
+set if
 \[
 \vect{w}_i \dotprod \vect{w}_j = \delta _{ij} = \left\{
 \begin{array}{c}
-1\text{ if }i=j \\ 
+1\text{ if }i=j \\
 0\text{ if }i\neq j
 \end{array}
 \right.
@@ -196,12 +196,12 @@ necessarily true since the vectors may not be normalized. In order to
 normalize the vectors, we simply need divide each one by its length.
 
 \begin{definition}{Normalizing an orthogonal set}{normalizing}
-Normalizing an orthogonal set is the process of 
+Normalizing an orthogonal set is the process of
 turning an orthogonal (but not orthonormal) set into
 an orthonormal set.
 If $\set{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_k}$
-is an orthogonal subset of $\R^n$, 
-then 
+is an orthogonal subset of $\R^n$,
+then
 \[ \set{
 \frac{1}{\norm{\vect{u}_1}}\vect{u}_1,
 \frac{1}{\norm{\vect{u}_2}}\vect{u}_2, \ldots,
@@ -210,23 +210,23 @@ then
 is an orthonormal set.
 \end{definition}
 
-We illustrate this concept in the following example. 
+We illustrate this concept in the following example.
 
 \begin{example}{Orthonormal set}{orthonormal-set}
-Consider the set of vectors  given by 
+Consider the set of vectors  given by
 \[
 \set{\vect{u}_1, \vect{u}_2 } = \set{
 \begin{mymatrix}{c}
 1 \\
-1 
-\end{mymatrix}, 
+1
+\end{mymatrix},
 \begin{mymatrix}{r}
 -1 \\
 1
 \end{mymatrix}
 }
 \]
-Show that it is an orthogonal set of vectors  but not an orthonormal one. Find the corresponding orthonormal set. 
+Show that it is an orthogonal set of vectors  but not an orthonormal one. Find the corresponding orthonormal set.
 \end{example}
 
 \begin{solution}
@@ -242,42 +242,42 @@ for the corresponding orthonormal set. Then,
 \vect{w}_1 &=& \frac{1}{\norm{\vect{u}_1}} \vect{u}_1\\
 &=& \frac{1}{\sqrt{2}} \begin{mymatrix}{c}
 1 \\
-1 
+1
 \end{mymatrix} \\
 &=&
 \begin{mymatrix}{c}
 \vspace{0.05in} \frac{1}{\sqrt{2}}\\
-\vspace{0.05in}\frac{1}{\sqrt{2}} 
+\vspace{0.05in}\frac{1}{\sqrt{2}}
 \end{mymatrix}
 \end{eqnarray*}
 
-Similarly, 
+Similarly,
 \begin{eqnarray*}
 \vect{w}_2 &=& \frac{1}{\norm{\vect{u}_2}} \vect{u}_2\\
 &=& \frac{1}{\sqrt{2}} \begin{mymatrix}{r}
 -1 \\
-1 
+1
 \end{mymatrix} \\
 &=&
 \begin{mymatrix}{r}
 \vspace{0.05in} -\frac{1}{\sqrt{2}}\\
-\vspace{0.05in}\frac{1}{\sqrt{2}} 
+\vspace{0.05in}\frac{1}{\sqrt{2}}
 \end{mymatrix}
 \end{eqnarray*}
 
-Therefore the corresponding orthonormal set is 
+Therefore the corresponding orthonormal set is
 \[
-\set{\vect{w}_1, \vect{w}_2 } = 
+\set{\vect{w}_1, \vect{w}_2 } =
 \set{
 \begin{mymatrix}{c}
 \vspace{0.05in} \frac{1}{\sqrt{2}}\\
-\vspace{0.05in}\frac{1}{\sqrt{2}} 
+\vspace{0.05in}\frac{1}{\sqrt{2}}
 \end{mymatrix},
 \begin{mymatrix}{r}
 \vspace{0.05in} -\frac{1}{\sqrt{2}}\\
-\vspace{0.05in}\frac{1}{\sqrt{2}} 
+\vspace{0.05in}\frac{1}{\sqrt{2}}
 \end{mymatrix}
-} 
+}
 \]
 
 You can verify that this set is orthogonal.
@@ -300,14 +300,14 @@ linearly independent and forms a basis for the subspace $W =
 To show it is a linearly independent set, suppose a linear combination
 of these vectors equals $\vect{0}$, such as:
 \[
-a_1 \vect{w}_1 + a_2 \vect{w}_2 + \ldots + a_k \vect{w}_k = \vect{0}, a_i \in \R 
+a_1 \vect{w}_1 + a_2 \vect{w}_2 + \ldots + a_k \vect{w}_k = \vect{0}, a_i \in \R
 \]
 We need to show that all $a_i = 0$. To do so, take the dot product of
-each side of the above equation with the vector $\vect{w}_i$ and obtain the following. 
+each side of the above equation with the vector $\vect{w}_i$ and obtain the following.
 
 \begin{eqnarray*}
 \vect{w}_i \dotprod (a_1 \vect{w}_1 + a_2 \vect{w}_2 + \ldots + a_k \vect{w}_k ) &=& \vect{w}_i \dotprod \vect{0}\\
-a_1 (\vect{w}_i \dotprod \vect{w}_1) + a_2 (\vect{w}_i \dotprod \vect{w}_2) + \ldots + a_k (\vect{w}_i \dotprod \vect{w}_k)  &=& 0 
+a_1 (\vect{w}_i \dotprod \vect{w}_1) + a_2 (\vect{w}_i \dotprod \vect{w}_2) + \ldots + a_k (\vect{w}_i \dotprod \vect{w}_k)  &=& 0
 \end{eqnarray*}
 Now since the set is orthogonal, $\vect{w}_i \dotprod \vect{w}_m = 0$ for all $m \neq i$, so we have:
 \[
@@ -317,10 +317,10 @@ a_1 (0) + \ldots + a_i(\vect{w}_i \dotprod \vect{w}_i) + \ldots + a_k (0) = 0
 a_i \norm{\vect{w}_i}^2 = 0
 \]
 
-Since the set is orthogonal, we know that $\norm{\vect{w}_i}^2  \neq 0$. It follows that $a_i =0$. Since the $a_i$ was chosen arbitrarily, the set $\set{\vect{w}_1, \vect{w}_2,\ldots, \vect{w}_k}$ is linearly independent. 
+Since the set is orthogonal, we know that $\norm{\vect{w}_i}^2  \neq 0$. It follows that $a_i =0$. Since the $a_i$ was chosen arbitrarily, the set $\set{\vect{w}_1, \vect{w}_2,\ldots, \vect{w}_k}$ is linearly independent.
 
 Finally since $W = \mbox{span} \set{\vect{w}_1, \vect{w}_2,\ldots,
-\vect{w}_k}$, the set of vectors also spans $W$ and therefore forms a basis of $W$. 
+\vect{w}_k}$, the set of vectors also spans $W$ and therefore forms a basis of $W$.
 
 \end{proof}
 
@@ -328,20 +328,20 @@ If an orthogonal set is a basis for a subspace, we call this an
 orthogonal basis. Similarly, if an orthonormal set is a basis, we call
 this an orthonormal basis.
 
-We conclude this section with a discussion of Fourier expansions. Given any orthogonal basis $B$ of $\R^n$ and an arbitrary vector $\vect{x} \in \R^n$, how do we express $\vect{x}$ as a linear combination of vectors in $B$? The solution is Fourier expansion. 
+We conclude this section with a discussion of Fourier expansions. Given any orthogonal basis $B$ of $\R^n$ and an arbitrary vector $\vect{x} \in \R^n$, how do we express $\vect{x}$ as a linear combination of vectors in $B$? The solution is Fourier expansion.
 
 \begin{theorem}{Fourier expansion}{fourier-expansion}
 Let $V$ be a subspace of $\R^n$ and suppose $\set{\vect{u}_1, \vect{u}_2, \ldots, \vect{u}_m}$
-is an orthogonal basis of $V$. 
+is an orthogonal basis of $V$.
 Then for any $\vect{x}\in V$,
-\[ \vect{x} = 
+\[ \vect{x} =
 \paren{\frac{\vect{x}\dotprod \vect{u}_1}{\norm{\vect{u}_1}^2}} \vect{u}_1 +
 \paren{\frac{\vect{x}\dotprod \vect{u}_2}{\norm{\vect{u}_2}^2}} \vect{u}_2 +
 \ldots +
 \paren{\frac{\vect{x}\dotprod \vect{u}_m}{\norm{\vect{u}_m}^2}} \vect{u}_m.
 \]
-This expression is called the Fourier expansion 
-of $\vect{x}$, and 
+This expression is called the Fourier expansion
+of $\vect{x}$, and
 \[ \frac{\vect{x}\dotprod \vect{u}_j}{\norm{\vect{u}_j}^2},\]
 $j=1,2,\ldots,m$
 are the Fourier coefficients.
@@ -354,14 +354,14 @@ Let
 $\vect{u}_1= \begin{mymatrix}{r} 1 \\ -1 \\ 2 \end{mymatrix},
 \vect{u}_2= \begin{mymatrix}{r} 0 \\ 2 \\ 1  \end{mymatrix}$,
 and
-$\vect{u}_3 =\begin{mymatrix}{r} 5 \\ 1 \\ -2 \end{mymatrix}$, 
-and let 
+$\vect{u}_3 =\begin{mymatrix}{r} 5 \\ 1 \\ -2 \end{mymatrix}$,
+and let
 $\vect{x} =\begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}$.
 
 Then $B=\set{\vect{u}_1, \vect{u}_2, \vect{u}_3}$
-is an orthogonal basis of $\R^3$. 
+is an orthogonal basis of $\R^3$.
 
-Compute the Fourier expansion of $\vect{x}$, thus writing $\vect{x}$ as  a linear combination of the vectors of $B$. 
+Compute the Fourier expansion of $\vect{x}$, thus writing $\vect{x}$ as  a linear combination of the vectors of $B$.
 \end{example}
 
 \begin{solution}
@@ -372,22 +372,22 @@ Fourier expansion of $\vect{x}$.
 
 That is:
 
-\[ 
-\vect{x}   = 
+\[
+\vect{x}   =
 \paren{\frac{\vect{x}\dotprod \vect{u}_1}{\norm{\vect{u}_1}^2}} \vect{u}_1 +
 \paren{\frac{\vect{x}\dotprod \vect{u}_2}{\norm{\vect{u}_2}^2}} \vect{u}_2 +
 \paren{\frac{\vect{x}\dotprod \vect{u}_3}{\norm{\vect{u}_3}^2}} \vect{u}_3.
 \]
 
-We readily compute: 
+We readily compute:
 
 \[
-\frac{\vect{x}\dotprod\vect{u}_1}{\norm{\vect{u}_1}^2} = \frac{2}{6}, \; 
+\frac{\vect{x}\dotprod\vect{u}_1}{\norm{\vect{u}_1}^2} = \frac{2}{6}, \;
 \frac{\vect{x}\dotprod\vect{u}_2}{\norm{\vect{u}_2}^2} = \frac{3}{5},
 \mbox{ and }
 \frac{\vect{x}\dotprod\vect{u}_3}{\norm{\vect{u}_3}^2} = \frac{4}{30}.\]
 
-Therefore, 
+Therefore,
 \[ \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}
 = \frac{1}{3}\begin{mymatrix}{r} 1 \\ -1 \\ 2 \end{mymatrix}
 +\frac{3}{5}\begin{mymatrix}{r} 0 \\ 2 \\ 1  \end{mymatrix}

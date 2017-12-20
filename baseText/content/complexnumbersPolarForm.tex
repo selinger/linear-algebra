@@ -8,13 +8,13 @@
 \end{outcome}
 
 In the previous section, we identified a complex number $z=a+bi$ with
-a point $(a, b)$ in the coordinate plane. There is 
+a point $(a, b)$ in the coordinate plane. There is
 another form in which we can express the same number, called the {\em
 polar form}. The polar form is the focus of this section. It will turn out to be
 very useful if not crucial for certain calculations as we shall soon
 see.
 
-Suppose $z=a+bi$ is a complex number,  and let 
+Suppose $z=a+bi$ is a complex number,  and let
 $r=\sqrt{a^{2}+b^{2}} = |z|$. Recall that $r$ is the \textbf{modulus}\index{complex numbers!modulus}\index{modulus} of $z$. Note first that
 \begin{equation*}
 \paren{\frac{a}{r}} ^{2}+\paren{\frac{b}{r}} ^{2}=   \frac{a^2+b^2}{r^2}=1
@@ -27,9 +27,9 @@ is a point on the unit circle. Therefore, there exists an angle  $
 \end{equation*}
 In other words $\theta$ is an angle such
 that $ a = r\cos \theta$ and $b=r \sin \theta$, that is $\theta = \cos^{-1}(a/r)$ and $\theta = \sin^{-1}(b/r)$. We call
-this angle $\theta$ the \textbf{argument}\index{complex numbers!argument}\index{argument} of $z$. 
+this angle $\theta$ the \textbf{argument}\index{complex numbers!argument}\index{argument} of $z$.
 
-We often speak of the \textbf{principal argument}\index{principal argument} of $z$. This is the unique angle $\theta \in (-\pi, \pi]$ such that 
+We often speak of the \textbf{principal argument}\index{principal argument} of $z$. This is the unique angle $\theta \in (-\pi, \pi]$ such that
 \begin{equation*}
 \cos \theta =\frac{a}{r},\ \sin \theta =\frac{b}{r}
 \end{equation*}
@@ -39,14 +39,14 @@ The polar form of the complex number $z=a+bi = r (\cos \theta +i\sin \theta)$ is
 z = r e^{i \theta}
 \end{equation*}
 where $\theta $ is the argument of
-$z$. 
+$z$.
 
 \begin{definition}{Polar form of a complex number}{polar-form}
-Let $z = a + bi$ be a complex number. Then the \textbf{polar form}\index{complex numbers!polar form}\index{polar form} of $z$ is written as 
+Let $z = a + bi$ be a complex number. Then the \textbf{polar form}\index{complex numbers!polar form}\index{polar form} of $z$ is written as
 \[
 z = re^{i\theta}
 \]
-where $r = \sqrt{a^2 + b^2}$ and $\theta$ is the argument of $z$. 
+where $r = \sqrt{a^2 + b^2}$ and $\theta$ is the argument of $z$.
 \end{definition}
 
 When given $z = re^{i\theta}$, the identity $e^{i\theta} = \cos\theta + i \sin\theta$ will convert $z$ back to standard form. Here we think of $ e^{i \theta}$ as a short cut for $ \cos \theta
@@ -70,8 +70,8 @@ Thus we can convert any complex number in the standard (Cartesian) form $z = a+b
 into its polar form. Consider the following example.
 
 \begin{example}{Standard to polar form}{polar-form}
-Let $z = 2 + 2i$ be a complex number. 
-Write $z$ in the polar form 
+Let $z = 2 + 2i$ be a complex number.
+Write $z$ in the polar form
 \begin{equation*}
 z = re^{i \theta}
 \end{equation*}
@@ -89,8 +89,8 @@ r = \sqrt{2^{2} + 2^{2}} = \sqrt{8} =2\sqrt{2}
 Now, to find $\theta$, we plot the point $(2, 2)$ and
 find the angle from the positive $x$ axis to the line between this
 point and the origin. In this case, $\theta = 45^{\circ} =
-\frac{\pi}{4}$.  That is we found the unique angle $\theta$ such that 
-$\theta = \cos^{-1}(1/\sqrt{2})$ and $\theta = \sin^{-1}(1/\sqrt{2})$. 
+\frac{\pi}{4}$.  That is we found the unique angle $\theta$ such that
+$\theta = \cos^{-1}(1/\sqrt{2})$ and $\theta = \sin^{-1}(1/\sqrt{2})$.
 
 Note that in polar form, we always express angles in radians, not degrees.
 
@@ -107,21 +107,21 @@ to its polar form, we can also take a complex number in polar form and
 convert it back to standard form.
 
 \begin{example}{Polar to standard form}{polar-standard-form}
-Let $z = 2 e^{ 2\pi i/3}$. Write $z$ in the standard form 
+Let $z = 2 e^{ 2\pi i/3}$. Write $z$ in the standard form
 \begin{equation*}
 z = a+bi
 \end{equation*}
 \end{example}
 
 \begin{solution}
-Let $z = 2 e^{2\pi i/3}$ be the polar form of a complex number. Recall that 
+Let $z = 2 e^{2\pi i/3}$ be the polar form of a complex number. Recall that
 $e^{i\theta} = \cos \theta + i \sin \theta$. Therefore using standard values of $\sin$ and $\cos$ we get:
 \begin{eqnarray*}
 z = 2 e^{i 2\pi/3} &=& 2 (\cos (2\pi/3)+i\sin (2\pi/3))\\
 &=& 2 \paren{-\frac{1}{2} + i \frac{\sqrt{3}}{2}} \\
-&=&-1 + \sqrt{3}i 
+&=&-1 + \sqrt{3}i
 \end{eqnarray*}
 which is the standard form of this complex number.
 \end{solution}
 
-You can always verify your answer by converting it back to polar form and ensuring you reach the original answer. 
+You can always verify your answer by converting it back to polar form and ensuring you reach the original answer.

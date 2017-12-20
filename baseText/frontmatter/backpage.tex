@@ -9,12 +9,12 @@
 
 {\tikz[overlay,remember picture]
 	\fill[lyryxcolour]
-	([yshift=0cm]current page.north west) rectangle 
+	([yshift=0cm]current page.north west) rectangle
 	([yshift=-4.5cm] current page.north east);}
 \begin{tikzpicture}[overlay,remember picture,scale=0.5]
 % Main Lyryx logo with website address (on back cover)
 \node at ([xshift=9in,yshift=5in]current page.west) {\includegraphics[scale=0.5]{figures/LyryxLogo.eps}};
-\draw [line width=2,color=white,shift={([xshift=8.75in,yshift=4in]current page.west)}] (-9.5,0)--(10.5,0); 
+\draw [line width=2,color=white,shift={([xshift=8.75in,yshift=4in]current page.west)}] (-9.5,0)--(10.5,0);
 \node[font=\logofont] at ([xshift=8.75in,yshift=3.25in]current page.west) {\textcolor{white}{\fontsize{36}{48}\selectfont{\textbf{LYRYX.COM}}}};
 % Lyryx icons in banner of back cover
 % Left icon with 'adapted open text'
@@ -67,7 +67,7 @@
 --
 ($(0,0)+(30:8.5cm)$)
 --
-($(0,0)+(18:7.75cm)$) 
+($(0,0)+(18:7.75cm)$)
 --cycle;
 
 %To make tip wavy
@@ -79,7 +79,7 @@
 --
 ($(0,0)+(23:8cm)$)
 --
-($(0,0)+(18:7.75cm)$) 
+($(0,0)+(18:7.75cm)$)
 --cycle;
 
 %To make lead curved
@@ -93,12 +93,12 @@
 \draw [line width=0.4cm, color=lyryxcolour, shift={([xshift=\biconx,yshift=\bicony-1.38in]current page.west)}]
 (0,5.24)--(0,4);
 
-%%Wireless 
-%Background 
+%%Wireless
+%Background
 \draw [color=titlemainboxcolour, fill=titlemainboxcolour, shift={([xshift=\biconx,yshift=\bicony-1.58in]current page.west)}]
 ($(0,-1)+(45:4.5cm)$) arc (45:135:4.5cm)
 --
-($(0,-1)+(135:4.5cm)$) 
+($(0,-1)+(135:4.5cm)$)
 --(0,-1)
 --cycle;
 

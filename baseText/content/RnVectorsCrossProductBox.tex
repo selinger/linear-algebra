@@ -21,9 +21,9 @@ parallelepiped. We begin with a definition.
       \fill[blue!20] (0,0,0) -- (2,0,0) -- (3.5,1.5,0) -- (1.5,1.5,0) -- cycle;
       \fill[blue!35] (2,0,0) -- ++(1.5,1.5,0) -- ++(1,0,-1.5) -- ++(-1.5,-1.5,0) -- cycle;
       \fill[blue!12] (1.5,1.5,0) -- ++(2,0,0) -- ++(1,0,-1.5) -- ++(-2,0,0) -- cycle;
-      \draw[blue,->](0,0,0) -- node [below, near end] {$\vect{u}$} (2,0,0); %% u 
-      \draw[red,dashed,->](0,0,0) -- node [above left, near end] {$\vect{v}$} (1,0,-1.5); %% v 
-      \draw[green!50!black,->](0,0,0) -- node [left, near end] {$\vect{w}$} (1.5,1.5,0); %% w 
+      \draw[blue,->](0,0,0) -- node [below, near end] {$\vect{u}$} (2,0,0); %% u
+      \draw[red,dashed,->](0,0,0) -- node [above left, near end] {$\vect{v}$} (1,0,-1.5); %% v
+      \draw[green!50!black,->](0,0,0) -- node [left, near end] {$\vect{w}$} (1.5,1.5,0); %% w
       \draw[dashed](1,0,-1.5)--(3,0,-1.5);
       \draw[dashed](1,0,-1.5)--(2.5,1.5,-1.5);
       \draw(1.5,1.5,0)--(3.5,1.5,0)--(4.5,1.5,-1.5)--(2.5,1.5,-1.5)--(1.5,1.5,0);
@@ -44,9 +44,9 @@ this picture.
     \fill[blue!20] (0,0,0) -- (2,0,0) -- (3.5,1.5,0) -- (1.5,1.5,0) -- cycle;
     \fill[blue!35] (2,0,0) -- ++(1.5,1.5,0) -- ++(1,0,-1.5) -- ++(-1.5,-1.5,0) -- cycle;
     \fill[blue!12] (1.5,1.5,0) -- ++(2,0,0) -- ++(1,0,-1.5) -- ++(-2,0,0) -- cycle;
-    \draw[blue,->](0,0,0) -- node [below, near end] {$\vect{u}$} (2,0,0); %% u 
-    \draw[red,dashed,->](0,0,0) -- node [above left, near end] {$\vect{v}$} (1,0,-1.5); %% v 
-    \draw[green!50!black,->](0,0,0) -- node [left, near end] {$\vect{w}$} (1.5,1.5,0); %% w 
+    \draw[blue,->](0,0,0) -- node [below, near end] {$\vect{u}$} (2,0,0); %% u
+    \draw[red,dashed,->](0,0,0) -- node [above left, near end] {$\vect{v}$} (1,0,-1.5); %% v
+    \draw[green!50!black,->](0,0,0) -- node [left, near end] {$\vect{w}$} (1.5,1.5,0); %% w
     \draw[->](0,0,0) -- node[left] {$\vect{u}\times\vect{v}$} (0,2.5,0);
     \draw[dashed](1,0,-1.5)--(3,0,-1.5);
     \draw[dashed](1,0,-1.5)--(2.5,1.5,-1.5);
@@ -88,7 +88,7 @@ We summarize this in the following proposition:
   \end{itemize}
   In any case, the volume of the parallelepiped can be computed as the
   absolute value of the box product, given by
-  $\abs{(\vect{u}\times\vect{v}) \dotprod \vect{w}}$. 
+  $\abs{(\vect{u}\times\vect{v}) \dotprod \vect{w}}$.
 \end{proposition}
 
 \begin{example}{Volume of a parallelepiped}{parallelepiped-volume}
@@ -149,7 +149,7 @@ Find the volume of the parallelepiped determined by the vectors
       3 \\
       1 \\
       1
-    \end{mymatrix} 
+    \end{mymatrix}
   \end{equation*}
   Then we take the dot product of this vector with $\vect{w}$:
   \begin{equation*}
@@ -164,7 +164,7 @@ Find the volume of the parallelepiped determined by the vectors
     \begin{mymatrix}{r}
       3 \\
       2 \\
-      3 
+      3
     \end{mymatrix} \\
     = 9+2+3
     = 14.
@@ -174,7 +174,7 @@ Find the volume of the parallelepiped determined by the vectors
 
 We finish this section with a law involving the dot product and the
 cross product. It represents a fundamental observation that comes
-directly from the geometric definition of the box product. 
+directly from the geometric definition of the box product.
 
 \begin{proposition}{Box product law}{order-of-product}
   Let $\vect{u}$, $\vect{v}$, and $\vect{w}$ be vectors. Then
@@ -203,7 +203,7 @@ directly from the geometric definition of the box product.
         + u_1v_2w_3 - u_2v_1w_3.
   \end{eqnarray*}
   In Chapter~\ref{cha:determinants}, you will learn that these
-  expressions are a special case of a determinant. 
+  expressions are a special case of a determinant.
 \end{proof}
 
 

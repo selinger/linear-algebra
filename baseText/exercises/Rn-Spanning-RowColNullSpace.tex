@@ -8,10 +8,10 @@
   \item
     \begin{equation*}
       A = \begin{mymatrix}{rrrrrr}
-        1 & 3 & 2 \\ 
-        3 & 9 & 6 \\ 
         1 & 3 & 2 \\
-      \end{mymatrix} 
+        3 & 9 & 6 \\
+        1 & 3 & 2 \\
+      \end{mymatrix}
     \end{equation*}
   \item
     \begin{equation*}
@@ -19,7 +19,7 @@
         1 & 3 & 0 & 2 \\
         3 & 9 & 1 & 7 \\
         1 & 3 & 1 & 3 \\
-      \end{mymatrix} 
+      \end{mymatrix}
     \end{equation*}
   \item
     \begin{equation*}
@@ -33,18 +33,18 @@
   \item
     \begin{equation*}
       D = \begin{mymatrix}{rrrrr}
-        0 & 0 & -1 & 0 & 1 \\ 
-        1 & 2 & 3 & -2 & -18 \\ 
-        1 & 2 & 2 & -1 & -11 \\ 
+        0 & 0 & -1 & 0 & 1 \\
+        1 & 2 & 3 & -2 & -18 \\
+        1 & 2 & 2 & -1 & -11 \\
         -1 & -2 & -2 & 1 & 11
       \end{mymatrix}
     \end{equation*}
   \item
     \begin{equation*}
       E = \begin{mymatrix}{rrrr}
-        1 & 0 & 3 & 0 \\ 
-        3 & 1 & 10 & 0 \\ 
-        -1 & 1 & -2 & 1 \\ 
+        1 & 0 & 3 & 0 \\
+        3 & 1 & 10 & 0 \\
+        -1 & 1 & -2 & 1 \\
         1 & -1 & 2 & -2
       \end{mymatrix}
     \end{equation*}
@@ -52,13 +52,13 @@
 \end{ex}
 
 \begin{ex}
-  Find $\nullspace(A)$ for the following matrices. 
+  Find $\nullspace(A)$ for the following matrices.
   \begin{enumerate}
-  \item 
+  \item
     \begin{equation*}
       A = \begin{mymatrix}{rr}
         2 & 3 \\
-        4 & 6 
+        4 & 6
       \end{mymatrix}
     \end{equation*}
   \item
@@ -66,10 +66,10 @@
       A = \begin{mymatrix}{rrr}
         1 & 0 & -1 \\
         -1 & 1 & 3 \\
-        3 & 2 & 1 
+        3 & 2 & 1
       \end{mymatrix}
     \end{equation*}
-  \item 
+  \item
     \begin{equation*}
       A = \begin{mymatrix}{rrr}
         2 & 4 & 0 \\
@@ -77,13 +77,13 @@
         1 & 2 & -2
       \end{mymatrix}
     \end{equation*}
-  \item 
+  \item
     \begin{equation*}
       A = \begin{mymatrix}{rrrr}
         2 & -1 & 3 & 5 \\
         2 & 0 & 1 & 2 \\
         6 & 4 & -5 & -6 \\
-        0 & 2 & -4 & -6 
+        0 & 2 & -4 & -6
       \end{mymatrix}
     \end{equation*}
   \end{enumerate}
@@ -102,13 +102,13 @@
     $A(k\vect{x})=k(A\vect{x})=k\vect{0}=\vect{0}$, so
     $k\vect{x}\in\nullspace(A)$. So $\nullspace(A)$ contains
     $\vect{0}$, and is closed under addition and scalar
-    multiplication. It is therefore a subspace of $\R^n$. 
+    multiplication. It is therefore a subspace of $\R^n$.
   \end{sol}
 \end{ex}
 
 \begin{ex}\label{ex:column-space-is-image}
   Let $A$ be an $m\times n$-matrix. Show that $\col(A) =
-  \set{A\vect{u} \mid \vect{u}\in\R^n}$. 
+  \set{A\vect{u} \mid \vect{u}\in\R^n}$.
   \begin{sol}
     Let
     \begin{equation*}
@@ -174,7 +174,7 @@
 
 \begin{ex}
   Suppose $A$ is an $m\times n$-matrix and $B$ is an $n\times p$-matrix.
-  Show that 
+  Show that
   \begin{equation*}
     \nullity(AB) \leq \nullity(A) + \nullity(B).
   \end{equation*}
@@ -208,7 +208,7 @@
     and so it is of the form
     \begin{equation*}
       \vect{x}-(c_1\vect{z}_{1}+\ldots+c_k\vect{z}_{k}) =
-      d_1\vect{u}_1 + \ldots + d_r\vect{u}_r. 
+      d_1\vect{u}_1 + \ldots + d_r\vect{u}_r.
     \end{equation*}
     It follows that
     \begin{equation*}
@@ -216,7 +216,7 @@
         \vect{u}_{1},\ldots,\vect{u}_{r}}.
     \end{equation*}
     Since we have shown that every element of $\nullspace(AB)$ is in
-    the span of these $k+r$ vectors, it follows that 
+    the span of these $k+r$ vectors, it follows that
     \begin{eqnarray*}
       \dim(\nullspace(AB))
       &\leq & k+r \\

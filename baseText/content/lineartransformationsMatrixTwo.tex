@@ -1,6 +1,6 @@
 \section{The matrix of a linear transformation II}
 
-%Requires Linear Transformations. 
+%Requires Linear Transformations.
 
 \begin{outcome}
   \begin{enumerate}
@@ -9,11 +9,11 @@
   \end{enumerate}
 \end{outcome}
 
-We begin this section with an important lemma. 
+We begin this section with an important lemma.
 
 \begin{lemma}{Mapping of a basis}{mapping-basis}
 Let $T: \R^n \to \R^n$ be an isomorphism.  Then $T$ maps any basis of
-$\R^n$ to another basis for $\R^n$. 
+$\R^n$ to another basis for $\R^n$.
 
 Conversely, if $T:
 \R^n \to \R^n$ is a linear transformation which
@@ -26,7 +26,7 @@ First, suppose $T:\R^n \to \R^n$ is a linear
 transformation which is one to one and onto. Let $\set{
 \vect{v}_{1},\ldots,\vect{v}_{n}} $ be a basis for
 $\R^n$. We wish to show that $\set{T(\vect{v}_{1}),\ldots,
-T(\vect{v}_{n})} $ is also a basis for $\R^n$. 
+T(\vect{v}_{n})} $ is also a basis for $\R^n$.
 
 First consider why it is linearly independent. Suppose
 $\sum_{k=1}^{n}a_{k}T(\vect{v}_{k})=\vect{0}$. Then by linearity we have $T\paren{
@@ -35,7 +35,7 @@ to one, it follows that $\sum_{k=1}^{n}a_{k}\vect{v}_{k}=\vect{0}$.
 This requires that  each $a_{k}=0$ because $\set{\vect{v}_{1},\ldots,
 \vect{v}_{n}} $ is independent, and it follows that $\set{
 T(\vect{v}_{1}),\ldots, T(\vect{v}_{n})} $ is linearly
-independent. 
+independent.
 
 
 Next take $\vect{w}\in \R^n$. Since $T$ is onto, there exists
@@ -53,7 +53,7 @@ Suppose now that $T: \R^n \to \R^n$ is a linear
 transformation such that $T(\vect{v}_{i})=\vect{w}_{i}$ where
 $\set{\vect{v} _{1},\ldots,\vect{v}_{n}} $ and $\set{
 \vect{w}_{1},\ldots, \vect{w}_{n}} $ are two bases for
-$\R^n$. 
+$\R^n$.
 
 To show that $T$ is one to one, let $T\paren{
 \sum_{k=1}^{n}c_{k}\vect{v}_{k}} =\vect{0}$. Then
@@ -62,13 +62,13 @@ $\sum_{k=1}^{n}c_{k}T(\vect{v}_{k})=\sum_{k=1}^{n}c_{k}\vect{w}_{k}=\vect{
 $\set{\vect{w} _{1},\ldots,\vect{w}_{n}} $ is linearly
 independent. Hence $T\paren{\sum_{k=1}^{n}c_{k}\vect{v}_{k}}
 =\vect{0}$ implies that $\sum_{k=1}^{n}c_{k}\vect{v}_{k}=\vect{0}$ and
-so $T$ is one to one.  
+so $T$ is one to one.
 
 To show that $T$ is onto, let $\vect{w}$ be an arbitrary vector in
 $\R^n$. This vector can be written as $\vect{w} =
 \sum_{k=1}^{n}d_k\vect{w}_k =
 \sum_{k=1}^{n}d_{k}T(\vect{v}_{k})=T\paren{\sum_{k=1}^{n}d_{k}
-\vect{v}_{k}}$.  Therefore, $T$ is also onto. 
+\vect{v}_{k}}$.  Therefore, $T$ is also onto.
 \end{proof}
 
 Consider now an important definition.
@@ -79,7 +79,7 @@ be a basis for $\R^n$ and let $\vect{x}$ be an arbitrary
 vector in $\R^n$. Then $\vect{x}$ is uniquely represented as
 $\vect{x} = a_1\vect{v}_1 +
 a_2\vect{v}_2 + \ldots + a_n\vect{v}_n$ for scalars $a_1,\ldots,
-a_n$. 
+a_n$.
 
 The  \textbf{coordinate vector}\index{vector!coordinate vector}\index{coordinate vector} of $\vect{x}$ with respect to the
 basis $B$, written $C_B(\vect{x})$ or  $[\vect{x}]_B$,  is given by
@@ -90,7 +90,7 @@ a_2 \\
 \vdots \\
 a_n
 \end{mymatrix}
-\] 
+\]
 \end{definition}
 
 Consider the following example.
@@ -98,22 +98,22 @@ Consider the following example.
 \begin{example}{Coordinate vector}{coordinate-vector}
 Let $B = \set{\begin{mymatrix}{r}
 1 \\
-0 
+0
 \end{mymatrix}, \begin{mymatrix}{r}
 -1 \\
 1
 \end{mymatrix} }$ be a basis of $\R^2$ and let $\vect{x} = \begin{mymatrix}{r}
 3 \\
 -1
-\end{mymatrix}$ be a vector in $\R^2$. Find $C_B(\vect{x})$. 
+\end{mymatrix}$ be a vector in $\R^2$. Find $C_B(\vect{x})$.
 \end{example}
 
 \begin{solution}
-First, note the order of the basis is important so label the vectors in the basis $B$ as 
+First, note the order of the basis is important so label the vectors in the basis $B$ as
 \[
 B = \set{\begin{mymatrix}{r}
 1 \\
-0 
+0
 \end{mymatrix}, \begin{mymatrix}{r}
 -1 \\
 1
@@ -125,37 +125,37 @@ Now we need to find $a_1, a_2$ such that $\vect{x} = a_1 \vect{v}_1 + a_2 \vect{
 -1
 \end{mymatrix}
 =
-a_1 
+a_1
 \begin{mymatrix}{r}
 1 \\
-0 
+0
 \end{mymatrix}
 + a_2
 \begin{mymatrix}{r}
 -1 \\
-1 
+1
 \end{mymatrix}\]
-Solving this system gives $a_1 = 2, a_2 = -1$. Therefore the coordinate vector of $\vect{x}$ with respect to the basis $B$ is 
+Solving this system gives $a_1 = 2, a_2 = -1$. Therefore the coordinate vector of $\vect{x}$ with respect to the basis $B$ is
 \[
 C_B(\vect{x})
 =
 \begin{mymatrix}{r}
 a_1 \\
-a_2 
+a_2
 \end{mymatrix}
 = \begin{mymatrix}{r}
 2 \\
--1 
+-1
 \end{mymatrix}
 \]
 \end{solution}
 
-Given any basis $B$, one can easily verify that the coordinate function is actually an isomorphism. 
+Given any basis $B$, one can easily verify that the coordinate function is actually an isomorphism.
 
 \begin{theorem}{$C_B$ is a linear transformation}{coord-linear-transf}
 For any basis $B$ of $\R^n$, the coordinate function
 \[ C_B: \R^n  \rightarrow \R^n  \]
-is a linear transformation, and moreover an isomorphism. 
+is a linear transformation, and moreover an isomorphism.
 \end{theorem}
 
 We now discuss the main  result  of this section, that is how
@@ -173,7 +173,7 @@ C_{B_2} T = M_{B_{2} B_{1}} C_{B_1}   \label{matrix-equation}
 \end{equation}
 where $M_{B_{2} B_{1}}$  is a unique $m \times n$-matrix.
 
-If the basis $B_1$ is given by $B_1=\set{\vect{v}_1,\ldots, \vect{v}_n}$ in this order, then 
+If the basis $B_1$ is given by $B_1=\set{\vect{v}_1,\ldots, \vect{v}_n}$ in this order, then
 
 \[  M_{B_{2} B_{1}} = \mat{C_{B_2}(T(\vect{v}_1)), C_{B_2}(T(\vect{v}_2)), \ldots, C_{B_2}(T(\vect{v}_n)) } \]
 \end{theorem}
@@ -190,18 +190,18 @@ The above equation {\eqref{matrix-equation}} can be represented by the following
 \end{array}
 \end{equation*}
 
-Since $C_{B_1}$ is an isomorphism, then the matrix we are looking for is the matrix of the linear transformation 
+Since $C_{B_1}$ is an isomorphism, then the matrix we are looking for is the matrix of the linear transformation
 \[   C_{B_2} T C^{-1}_{B_1} : \R^n \to \R^m. \]
 By Theorem~\ref{thm:matrix-of-linear-transformation}, the columns are
 given by the image of the standard basis $\set{\vect{e}_1,
-\vect{e}_2,\ldots, \vect{e}_n }$. But since $C^{-1}_{B_1}( \vect{e}_i) = \vect{v}_i$, we readily obtain that 
+\vect{e}_2,\ldots, \vect{e}_n }$. But since $C^{-1}_{B_1}( \vect{e}_i) = \vect{v}_i$, we readily obtain that
 
-\[ \begin{array}{ll} 
-M_{B_{2} B_{1}} 
+\[ \begin{array}{ll}
+M_{B_{2} B_{1}}
 & = \mat{C_{B_2}T C^{-1}_{B_1} (\vect{e}_1), C_{B_2}T C^{-1}_{B_1} (\vect{2}_2), \ldots, C_{B_2}T C^{-1}_{B_1} (\vect{e}_n) } \\
-& = \mat{C_{B_2}(T(\vect{v}_1)), C_{B_2}(T(\vect{v}_2)), \ldots, C_{B_2}(T(\vect{v}_n)) } 
+& = \mat{C_{B_2}(T(\vect{v}_1)), C_{B_2}(T(\vect{v}_2)), \ldots, C_{B_2}(T(\vect{v}_n)) }
 \end{array}\]
-and this completes the proof. 
+and this completes the proof.
 \end{proof}
 
 Consider the following example.
@@ -212,8 +212,8 @@ a \\
 b
 \end{mymatrix}} = \begin{mymatrix}{r}
 b \\
-a 
-\end{mymatrix}$. 
+a
+\end{mymatrix}$.
 
 Consider the two bases
 \[
@@ -226,7 +226,7 @@ B_1 = \set{\vect{v}_{1}, \vect{v}_{2} } = \set{\begin{mymatrix}{r}
 \end{mymatrix}
 }
 \]
- and 
+ and
 \[
 B_2 = \set{\begin{mymatrix}{r}
 1 \\
@@ -238,7 +238,7 @@ B_2 = \set{\begin{mymatrix}{r}
 }
 \]
 
-Find the matrix $M_{B_2,B_1}$ of $T$ with respect to the bases $B_1$ and $B_2$. 
+Find the matrix $M_{B_2,B_1}$ of $T$ with respect to the bases $B_1$ and $B_2$.
 \end{example}
 
 \begin{solution}
@@ -256,13 +256,13 @@ T \paren{
 0 \\
 1
 \end{mymatrix} ,\]
-a standard calculation yields 
+a standard calculation yields
 \[
  \begin{mymatrix}{r}
 0 \\
 1
-\end{mymatrix} 
- =  
+\end{mymatrix}
+ =
 \paren{\frac{1}{2}}\begin{mymatrix}{r}
 1 \\
 1
@@ -277,9 +277,9 @@ a standard calculation yields
 the first column of $M_{B_{2} B_{1}}$ is $\begin{mymatrix}{r}
 \vspace{0.05in}\frac{1}{2}\\
 \vspace{0.05in}-\frac{1}{2}
-\end{mymatrix}$. 
+\end{mymatrix}$.
 
-The second column is found in a similar way. We have 
+The second column is found in a similar way. We have
 \[
 T \paren{
 \begin{mymatrix}{r}
@@ -291,7 +291,7 @@ T \paren{
 -1
 \end{mymatrix} , \]
 and with respect to $B_2$ calculate:
-\[ 
+\[
 \begin{mymatrix}{r}
 1 \\
 -1
@@ -311,18 +311,18 @@ and with respect to $B_2$ calculate:
 Hence the second column of $M_{B_{2} B_{1}}$ is given by $\begin{mymatrix}{r}
 0 \\
 1
-\end{mymatrix}$. We thus obtain 
+\end{mymatrix}$. We thus obtain
 \[
 M_{B_{2} B_{1}} = \begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{2} & 0 \\
-\vspace{0.05in}-\frac{1}{2} & 1 
+\vspace{0.05in}-\frac{1}{2} & 1
 \end{mymatrix} \]
 
 We can verify that this is the correct matrix $M_{B_{2} B_{1}}$ on the specific example
 \[
 \vect{v} = \begin{mymatrix}{r}
 3 \\
--1 
+-1
 \end{mymatrix} \]
 First applying $T$ gives
 \[
@@ -330,29 +330,29 @@ T( \vect{v} ) =
 T \paren{
 \begin{mymatrix}{r}
 3 \\
--1 
+-1
 \end{mymatrix}} = \begin{mymatrix}{r}
 -1\\
 3
 \end{mymatrix}
 \]
-and one can compute that  
-\[ C_{B_2} 
+and one can compute that
+\[ C_{B_2}
  \paren{
 \begin{mymatrix}{r}
 -1 \\
-3 
+3
 \end{mymatrix}} = \begin{mymatrix}{r}
 1\\
 -2
 \end{mymatrix} .\]
 
-On the other hand, one compute $C_{B_1}( \vect{v})$ as 
-\[ C_{B_1} 
+On the other hand, one compute $C_{B_1}( \vect{v})$ as
+\[ C_{B_1}
  \paren{
 \begin{mymatrix}{r}
 3 \\
--1 
+-1
 \end{mymatrix}} = \begin{mymatrix}{r}
 2\\
 -1
@@ -361,28 +361,28 @@ and finally applying $M_{B_1 B_2}$ gives
 
 \[\begin{mymatrix}{rr}
 \vspace{0.05in}\frac{1}{2} & 0 \\
-\vspace{0.05in}-\frac{1}{2} & 1 
-\end{mymatrix} 
+\vspace{0.05in}-\frac{1}{2} & 1
+\end{mymatrix}
 \begin{mymatrix}{r}
 2 \\
 -1
-\end{mymatrix} 
+\end{mymatrix}
 = \begin{mymatrix}{r}
 1 \\
 -2
 \end{mymatrix} \]
-as above. 
+as above.
 
 We see that the same vector results from either method, as suggested by Theorem~\ref{thm:matrix-linear-transf-bases}.
 \end{solution}
 
-If the bases $B_1$ and $B_2$ are equal, say $B$, then we write $M_{B}$ instead of  $M_{B B}$. 
+If the bases $B_1$ and $B_2$ are equal, say $B$, then we write $M_{B}$ instead of  $M_{B B}$.
 The following example illustrates how to compute  such a matrix. Note that this is what we did earlier when we considered only
-$B_1=B_2$ to be the standard basis. 
+$B_1=B_2$ to be the standard basis.
 
 \begin{example}{Matrix of a linear transformation with respect to an arbitrary   basis}{arbitrary-bases}
 
-Consider the basis $B$ of $\R^3$ given by 
+Consider the basis $B$ of $\R^3$ given by
 \begin{equation*}
 B = \set{\vect{v}_1 , \vect{v}_2,  \vect{v}_3} =
 \set{
@@ -401,7 +401,7 @@ B = \set{\vect{v}_1 , \vect{v}_2,  \vect{v}_3} =
 \end{mymatrix} }
 \]
 
-And let $T :\R^{3}\to \R^{3}$ be the linear transformation 
+And let $T :\R^{3}\to \R^{3}$ be the linear transformation
 defined on $B$ as:
 \begin{equation*}
 T\begin{mymatrix}{r}
@@ -440,41 +440,41 @@ T\begin{mymatrix}{r}
 
 \begin{solution}
 
-Equation  {\eqref{matrix-equation}}  gives $ C_BT=M_{B}C_B$, and thus 
-$M_{B} = C_BTC^{-1}_B$. 
+Equation  {\eqref{matrix-equation}}  gives $ C_BT=M_{B}C_B$, and thus
+$M_{B} = C_BTC^{-1}_B$.
 
 Now $C_B(\vect{v}_i) = \vect{e}_i$, so the matrix of $C_B^{-1}$ (with respect to the standard basis) is given by
-\[ \mat{C_B^{-1}(\vect{e}_1) \;\; C_B^{-1}(\vect{e}_2) \;\; C_B^{-1}(\vect{e}_2) } =  
+\[ \mat{C_B^{-1}(\vect{e}_1) \;\; C_B^{-1}(\vect{e}_2) \;\; C_B^{-1}(\vect{e}_2) } =
 \begin{mymatrix}{rrr}
-1 & 1 & -1 \\ 
-0 & 1 & 1 \\ 
+1 & 1 & -1 \\
+0 & 1 & 1 \\
 1 & 1 & 0
 \end{mymatrix}
 \]
-Moreover the matrix of  $T C_B^{-1}$ is given by 
-\[ \mat{TC_B^{-1}(\vect{e}_1) \;\; TC_B^{-1}(\vect{e}_2) \;\; TC_B^{-1}(\vect{e}_2) } =  
+Moreover the matrix of  $T C_B^{-1}$ is given by
+\[ \mat{TC_B^{-1}(\vect{e}_1) \;\; TC_B^{-1}(\vect{e}_2) \;\; TC_B^{-1}(\vect{e}_2) } =
 \begin{mymatrix}{rrr}
-1 & 1 & 0 \\ 
--1 & 2 & 1 \\ 
+1 & 1 & 0 \\
+-1 & 2 & 1 \\
 1 & -1 & 1
 \end{mymatrix}
 \]
-Thus 
+Thus
 \[ \begin{array}{ll}
 M_{B} & =  C_BTC^{-1}_B =  [C^{-1}_B]^{-1} [TC^{-1}_B] \\
-	& = 
+	& =
 \begin{mymatrix}{rrr}
-1 & 1 & -1 \\ 
-0 & 1 & 1 \\ 
+1 & 1 & -1 \\
+0 & 1 & 1 \\
 1 & 1 & 0
 \end{mymatrix} ^{-1}\begin{mymatrix}{rrr}
-1 & 1 & 0 \\ 
--1 & 2 & 1 \\ 
+1 & 1 & 0 \\
+-1 & 2 & 1 \\
 1 & -1 & 1
 \end{mymatrix} \\
 &=\begin{mymatrix}{rrr}
-2 & -5 & 1 \\ 
--1 & 4 & 0 \\ 
+2 & -5 & 1 \\
+-1 & 4 & 0 \\
 0 & -2 & 1
 \end{mymatrix}
 \end{array}
@@ -485,9 +485,9 @@ Consider how this works. Let $\vect{b} = \begin{mymatrix}{r}
 b_1 \\
 b_2 \\
 b_3
-\end{mymatrix}$ be an arbitrary vector in $\R^3$. 
+\end{mymatrix}$ be an arbitrary vector in $\R^3$.
 
-Apply $C^{-1}_{B}$ to $\vect{b}$ to get 
+Apply $C^{-1}_{B}$ to $\vect{b}$ to get
 \begin{equation*}
 b_1\begin{mymatrix}{r}
 1 \\
@@ -501,95 +501,95 @@ b_1\begin{mymatrix}{r}
 -1 \\
 1 \\
 0
-\end{mymatrix} 
+\end{mymatrix}
 \end{equation*}
-Apply $T$ to this linear combination to obtain 
+Apply $T$ to this linear combination to obtain
 \begin{equation*}
 b_1\begin{mymatrix}{r}
-1 \\ 
--1 \\ 
+1 \\
+-1 \\
 1
 \end{mymatrix} + b_2\begin{mymatrix}{r}
-1 \\ 
-2 \\ 
+1 \\
+2 \\
 -1
 \end{mymatrix} + b_3\begin{mymatrix}{r}
-0 \\ 
-1 \\ 
+0 \\
+1 \\
 1
 \end{mymatrix} =\begin{mymatrix}{c}
-b_1+b_2 \\ 
--b_1 + 2b_2+ b_3 \\ 
+b_1+b_2 \\
+-b_1 + 2b_2+ b_3 \\
 b_1-b_2+b_3
 \end{mymatrix}
 \end{equation*}
-Now take the matrix $M_{B}$ of the transformation (as found above) and multiply it by $\vect{b}$. 
+Now take the matrix $M_{B}$ of the transformation (as found above) and multiply it by $\vect{b}$.
 \begin{equation*}
 \begin{mymatrix}{rrr}
-2 & -5 & 1 \\ 
--1 & 4 & 0 \\ 
+2 & -5 & 1 \\
+-1 & 4 & 0 \\
 0 & -2 & 1
 \end{mymatrix} \begin{mymatrix}{c}
-b_1 \\ 
-b_2 \\ 
+b_1 \\
+b_2 \\
 b_3
 \end{mymatrix} =\begin{mymatrix}{c}
-2b_1-5b_2+b_3 \\ 
--b_1 + 4b_2 \\ 
+2b_1-5b_2+b_3 \\
+-b_1 + 4b_2 \\
 -2b_2 + b_3
 \end{mymatrix}
 \end{equation*}
-Is this the coordinate vector of the above relative to the given basis? We check as follows. 
+Is this the coordinate vector of the above relative to the given basis? We check as follows.
 \begin{equation*}
 (2b_1-5b_2+b_3) \begin{mymatrix}{c}
-1 \\ 
-0 \\ 
+1 \\
+0 \\
 1
 \end{mymatrix} +(-b_1 + 4b_2) \begin{mymatrix}{c}
-1 \\ 
-1 \\ 
+1 \\
+1 \\
 1
 \end{mymatrix} +(-2b_2+b_3) \begin{mymatrix}{c}
--1 \\ 
-1 \\ 
+-1 \\
+1 \\
 0
 \end{mymatrix}
 \end{equation*}
 \begin{equation*}
 = \begin{mymatrix}{c}
-b_1+b_2 \\ 
--b_1 + 2b_2+b_3 \\ 
+b_1+b_2 \\
+-b_1 + 2b_2+b_3 \\
 b_1-b_2+b_3
 \end{mymatrix}
 \end{equation*}
 You see it is the same thing.
 
 Now let us find the matrix of $T$ with respect to the standard basis. Let $A$ be
-this matrix. That is, multiplication by $A$ is the same as doing $T$. Thus 
+this matrix. That is, multiplication by $A$ is the same as doing $T$. Thus
 \begin{equation*}
 A\begin{mymatrix}{rrr}
-1 & 1 & -1 \\ 
-0 & 1 & 1 \\ 
+1 & 1 & -1 \\
+0 & 1 & 1 \\
 1 & 1 & 0
 \end{mymatrix} =\begin{mymatrix}{rrr}
-1 & 1 & 0 \\ 
--1 & 2 & 1 \\ 
+1 & 1 & 0 \\
+-1 & 2 & 1 \\
 1 & -1 & 1
 \end{mymatrix}
 \end{equation*}
-Hence 
+Hence
 \begin{equation*}
 A=\begin{mymatrix}{rrr}
-1 & 1 & 0 \\ 
--1 & 2 & 1 \\ 
+1 & 1 & 0 \\
+-1 & 2 & 1 \\
 1 & -1 & 1
 \end{mymatrix} \begin{mymatrix}{rrr}
-1 & 1 & -1 \\ 
-0 & 1 & 1 \\ 
+1 & 1 & -1 \\
+0 & 1 & 1 \\
 1 & 1 & 0
 \end{mymatrix} ^{-1}=\begin{mymatrix}{rrr}
-0 & 0 & 1 \\ 
-2 & 3 & -3 \\ 
+0 & 0 & 1 \\
+2 & 3 & -3 \\
 -3 & -2 & 4
 \end{mymatrix}
 \end{equation*}
