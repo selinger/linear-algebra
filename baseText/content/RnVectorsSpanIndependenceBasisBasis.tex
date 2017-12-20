@@ -808,6 +808,40 @@ can always be done.
   basis is $\set{\vect{u}_1,\vect{u}_2,\vect{v}_1}$.
 \end{solution}
 
+The following proposition tells us something about the size of a
+linearly independent set of vectors or the size of a spanning set of
+vectors.
+
+\begin{proposition}{Size of a linearly independent or spanning set of vectors}{size-linearly-independent-or-spanning}
+  Let $V$ be a $k$-dimensional subspace of $\R^n$. Then
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item Every linearly independent set of vectors in $V$ has at most
+      $k$ vectors.
+    \item Every spanning set of vectors in $V$ has at least $k$ vectors.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{proposition}
+
+\begin{proof}
+  Both properties follow from the Exchange Lemma
+  (Lemma~\ref{lem:exchange-lemma}). Since $V$ is $k$-dimensional, it
+  has some basis consisting of $k$ vectors
+  $\vect{v}_1,\ldots,\vect{v}_k$.
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item Suppose $\vect{u}_1,\ldots\vect{u}_r$ are linearly
+      independent vectors in $V$. Since $\vect{u}_1,\ldots\vect{u}_r$
+      are linearly independent and $\vect{v}_1,\ldots,\vect{v}_k$ are
+      spanning, the Exchange Lemma implies that $r\leq k$.
+    \item Suppose the vectors $\vect{u}_1,\ldots\vect{u}_s$ span
+      $V$. Since $\vect{v}_1,\ldots,\vect{v}_k$ are linearly
+      independent and $\vect{u}_1,\ldots\vect{u}_s$ are spanning, the
+      Exchange Lemma implies that $k\leq s$.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{proof}
+
 The next proposition often comes in handy when we need to check that
 some set of vectors is a basis for a subspace $V$, where the dimension
 of $V$ is already known. If $\dim(V)=k$, we know that any basis has to
