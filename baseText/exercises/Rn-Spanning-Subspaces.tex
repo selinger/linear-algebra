@@ -90,6 +90,53 @@
 \end{ex}
 
 \begin{ex}
+  In this exercise, we use scalars from the field $\Z_2$ of integers
+  modulo $2$ instead of real numbers (see Section~\ref{sec:fields},
+  ``Fields''). Which of the following sets are subspaces of
+  $(\Z_2)^3$?
+  \begin{enumerate}
+  \item $V_1 = \set{
+      \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 1 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 0 \\ 0 \end{mymatrix}
+    }$.
+  \item $V_2 = \set{
+      \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 0 \\ 0 \end{mymatrix}
+    }$.
+  \item $V_3 = \set{
+      \begin{mymatrix}{r} 0 \\ 0 \\ 0 \end{mymatrix}
+    }$.
+  \item $V_3 = \set{
+      \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 0 \\ 1 \end{mymatrix}
+    }$.
+  \end{enumerate}
+  \begin{sol}
+    \begin{enumerate}
+    \item $V_1$ is a subspace.
+    \item $V_2$ is not a subspace: not closed under addition. For example,
+      \begin{equation*} 
+        \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix} \in V_2,\quad
+        \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix} \in V_2,\quad
+        \mbox{but}\quad
+        \begin{mymatrix}{r} 1 \\ 1 \\ 1 \end{mymatrix}
+        + \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix}
+        = \begin{mymatrix}{r} 0 \\ 0 \\ 1 \end{mymatrix} \not\in V_2.
+      \end{equation*}
+    \item $V_3$ is a subspace.
+    \item $V_4$ is not a subspace. For example, it does not contain
+      the zero vector.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
   Suppose $V, W$ are subspaces of $\R^{n}$. Let $V\cap W$ be the set
   of all vectors that are in both $V$ and $W$. Show that $V\cap W$
   is also a subspace.

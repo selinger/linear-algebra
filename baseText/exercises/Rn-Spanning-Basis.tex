@@ -172,6 +172,63 @@
 \end{ex}
 
 \begin{ex}
+  In this exercise, we use scalars from the field $\Z_5$ of integers
+  modulo $5$ instead of real numbers (see Section~\ref{sec:fields},
+  ``Fields'').  Find a basis and the dimension of each of the
+  following subspaces of $(\Z_5)^n$.
+  \begin{enumerate}
+  \item $V_1 = \sspan\set{
+      \begin{mymatrix}{r} 2 \\ 3 \\ 1 \\ 4 \end{mymatrix},~
+      \begin{mymatrix}{r} 1 \\ 4 \\ 3 \\ 2 \end{mymatrix},~
+      \begin{mymatrix}{r} 4 \\ 1 \\ 2 \\ 3 \end{mymatrix},~
+      \begin{mymatrix}{r} 2 \\ 2 \\ 1 \\ 0 \end{mymatrix}
+    }$.
+  \item $V_2 =
+    \set{\left.\begin{mymatrix}{c} u \\ v \\ w \end{mymatrix}
+        ~\right\vert~
+      \mbox{$2u+v=0$ and $u+4w=0$}}.$
+  \item $V_3 =
+    \set{\left.\begin{mymatrix}{c} u \\ v \\ w \end{mymatrix}
+        ~\right\vert~
+      \mbox{$u+2v+3w=0$}}.$
+  \end{enumerate}
+  \begin{sol}
+    \begin{enumerate}
+    \item Basis $\set{\begin{mymatrix}{r} 2 \\ 3 \\ 1 \\ 4 \end{mymatrix},
+      \begin{mymatrix}{r} 2 \\ 2 \\ 1 \\ 0 \end{mymatrix}}$, dimension 2.
+    \item Basis $\set{\begin{mymatrix}{r} 1 \\ 3 \\ 1 \end{mymatrix}}$,
+      dimension 1.
+    \item Basis $\set{\begin{mymatrix}{r} 2 \\ 0 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 3 \\ 1 \\ 0 \end{mymatrix}}$,
+      dimension 2.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  In this exercise, we use scalars from the field $\Z_7$ of integers
+  modulo $7$ instead of real numbers.
+  Find the coordinates of $\vect{v}$ with respect
+  to the basis $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$ in $(\Z_7)^3$, where
+  \begin{equation*}
+    \vect{v} = \begin{mymatrix}{r} 3 \\ 1 \\ 4 \end{mymatrix},\quad
+    \vect{u}_1 = \begin{mymatrix}{r} 2 \\ 4 \\ 2 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 1 \\ 3 \\ 3 \end{mymatrix},\quad
+    \vect{u}_3 = \begin{mymatrix}{r} 4 \\ 1 \\ 2 \end{mymatrix}.
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
+  In this exercise, we use scalars from the field $\Z_2$ of integers
+  modulo $2$ instead of real numbers.
+  Extend $\set{\vect{u}_1,\vect{u}_2}$ to a basis of $(\Z_2)^4$, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 0 \\ 1 \\ 1 \end{mymatrix},\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 0 \\ 1 \\ 1 \\ 1 \end{mymatrix}.
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
   True or false? Explain.
   \begin{enumerate}
   \item Every set of $5$ vectors in $\R^{5}$ is linearly independent.
@@ -258,4 +315,3 @@
     \end{sol}
   \end{ex}
 }
-
