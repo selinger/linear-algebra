@@ -157,7 +157,6 @@ moivre
 Moivre's
 mol
 mols
-mult
 multivariable
 Murnaghan
 Nabal
