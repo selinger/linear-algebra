@@ -404,3 +404,147 @@ diagonalizable, even over the complex numbers. We have:
   has a 1-dimensional solution space. Therefore, we can find only one
   basic eigenvector, and the matrix is not diagonalizable.
 \end{solution}
+
+To finish up this chapter, we will consider an application of complex
+eigenvalues. We will solve a recurrence as in
+Section~\ref{sec:recurrence}. But this time, although the recurrence
+relation only uses real numbers, complex numbers will be required to
+solve it.
+
+\begin{example}{Solving a recurrence using complex eigenvalues}{recurrence-complex}
+  Consider the sequence of numbers defined by the recurrence
+  \begin{equation*}
+    \begin{array}{l@{~}c@{~}l}
+      f_0 &=& 1, \\
+      f_1 &=& 3, \\
+      f_{n+2} &=& 2f_{n+1} - 2f_{n}, \quad\mbox{for all $n\geq 0$.}\\
+    \end{array}
+  \end{equation*}
+  Solve the recurrence, i.e., find a closed formula for $f_n$.
+\end{example}
+
+\begin{solution}
+  The first few members of the sequence are:
+  \begin{equation*}
+    1, 3, 4, 2, -4, -12, -16, -8, 16, \ldots
+  \end{equation*}
+  To solve the recurrence, let
+  \begin{equation*}
+    \vect{v}_n = \begin{mymatrix}{c} f_n \\ f_{n+1} \end{mymatrix},
+  \end{equation*}
+  so that for all $n\geq 0$,
+  \begin{equation*}
+    \vect{v}_{n+1}
+    = \begin{mymatrix}{c} f_{n+1} \\ f_{n+2} \end{mymatrix}
+    = \begin{mymatrix}{c} f_{n+1} \\ 2f_{n+1} - 2f_{n} \end{mymatrix}
+    = \begin{mymatrix}{rr}
+      0  & 1 \\
+      -2 & 2 \\
+    \end{mymatrix}
+    \begin{mymatrix}{c} f_n \\ f_{n+1} \end{mymatrix}
+    = \begin{mymatrix}{rr}
+      0  & 1 \\
+      -2 & 2 \\
+    \end{mymatrix}
+    \vect{v}_n.
+  \end{equation*}
+  We then diagonalize the matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      0  & 1 \\
+      -2 & 2 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The characteristic polynomial is
+  \begin{equation*}
+    p(\eigenvar) = \eigenvar^2 - 2\eigenvar + 2.
+  \end{equation*}
+  The eigenvalues are the roots of the characteristic polynomial. We
+  compute them using the quadratic formula:
+  \begin{equation*}
+    \eigenvar_1,\eigenvar_2
+    = \frac{2\pm\sqrt{4-8}}{2}
+    = \frac{2\pm2i}{2}
+    = 1\pm i.    
+  \end{equation*}
+  To find the eigenvectors for $\eigenvar_1 = 1+i$, we solve the
+  equation $(A-(1+i)I)\vect{v} = \vect{0}$:
+  \begin{equation*}
+    \begin{mymatrix}{cc|r}
+      -1-i & 1 & 0 \\
+      -2 & 1-i & 0 \\
+    \end{mymatrix}
+    \quad\stackrel{R_1\rowop (1-i)R_1}{\roweq}\quad
+    \begin{mymatrix}{cc|r}
+      -2 & 1-i & 0 \\
+      -2 & 1-i & 0 \\
+    \end{mymatrix}
+    \quad\roweq\quad
+    \begin{mymatrix}{cc|r}
+      -2 & 1-i & 0 \\
+      0  &  0  & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  A basic eigenvector for $\eigenvar=1+i$\, is
+  \begin{equation*}
+    \vect{v} = \begin{mymatrix}{c} 1-i \\ 2 \end{mymatrix}.
+  \end{equation*}
+  Similarly, a basic eigenvector for $\eigenvar=1-i$\, is
+  \begin{equation*}
+    \vect{u} = \begin{mymatrix}{r} 1+i \\ 2 \end{mymatrix}.
+  \end{equation*}
+  Since we have found two linearly independent eigenvectors, the
+  matrix $A$ is diagonalizable. We have $A = PDP^{-1}$, where
+  \begin{equation*}
+    P = \begin{mymatrix}{cc}
+      1-i & 1+i \\
+      2   & 2   \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    D = \begin{mymatrix}{cc}
+      1+i & 0   \\
+      0   & 1-i \\
+    \end{mymatrix}.
+  \end{equation*}
+  The inverse of $P$ is
+  \begin{equation*}
+    P^{-1} =
+    \frac{1}{4}
+    \begin{mymatrix}{cc}
+      2i  & 1-i \\
+      -2i & 1+i \\
+    \end{mymatrix}.
+  \end{equation*}
+  Finally, we use this information to solve the recurrence:
+  \begin{eqnarray*}
+    f_n
+    &=& \begin{mymatrix}{cc} 1 & 0 \end{mymatrix}
+        \begin{mymatrix}{c} f_n \\ f_{n+1} \end{mymatrix} \\
+    &=& \begin{mymatrix}{cc} 1 & 0 \end{mymatrix}\vect{v}_n \\
+    &=& \begin{mymatrix}{cc} 1 & 0 \end{mymatrix}A^n\,\vect{v}_0 \\
+    &=& \begin{mymatrix}{cc} 1 & 0 \end{mymatrix}PD^nP^{-1}\,\vect{v}_0 \\
+    &=& \begin{mymatrix}{cc} 1 & 0 \end{mymatrix}
+        \begin{mymatrix}{cc} 1-i & 1+i \\ 2 & 2 \end{mymatrix}
+        \begin{mymatrix}{cc} (1+i)^n & 0 \\ 0 & (1-i)^n \end{mymatrix}
+        \frac{1}{4}
+        \begin{mymatrix}{cc} 2i & 1-i \\ -2i & 1+i \end{mymatrix}
+        \begin{mymatrix}{c} 1 \\ 3 \end{mymatrix} \\
+    &=& \frac{1}{4}
+        \begin{mymatrix}{cc} 1-i & 1+i \end{mymatrix}
+        \begin{mymatrix}{cc} (1+i)^n & 0 \\ 0 & (1-i)^n \end{mymatrix}
+        \begin{mymatrix}{c} 3-i \\ 3+i \end{mymatrix} \\
+    &=& \frac{1}{4}\paren{(1-i)(1+i)^n(3-i) + (1+i)(1-i)^n(3+i)} \\
+    &=& \frac{1}{4}\paren{(2-4i)(1+i)^n + (2+4i)(1-i)^n} \\
+    &=& \frac{1}{2}\paren{(1-2i)(1+i)^n + (1+2i)(1-i)^n}.
+  \end{eqnarray*}
+  We can use this, for example, to calculate the $8\th$ element of the
+  sequence:
+  \begin{equation*}
+    f_{8}
+    ~=~ \frac{1}{2}\paren{(1-2i)(1+i)^8 + (1+2i)(1-i)^8}
+    ~=~ \frac{1}{2}\paren{(1-2i)16 + (1+2i)16}
+    ~=~ \frac{32}{2}
+    ~=~ 16.
+  \end{equation*}
+
+\end{solution}
