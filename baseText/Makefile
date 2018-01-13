@@ -1,7 +1,7 @@
 #use Texlive 2015
 export PATH := /usr/local/texlive/2015/bin/x86_64-linux:$(PATH)
 
-TEXNAME=LinearAlgebra-AFirstCourse
+TEXNAME=LinearAlgebra
 
 export TEXINPUTS=.:../styles:
 

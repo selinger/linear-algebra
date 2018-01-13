@@ -23,7 +23,7 @@ Extract the .zip file on your computer.  It will contain two directories,
 "baseText" and "styles".  Both of these directories need to be side-by-side
 to compile the textbook.  The main textbook content is in "baseText".
 
-The top-level Latex file is "LinearAlgebra-AFirstCourse.tex".  This file lists all
+The top-level Latex file is "LinearAlgebra.tex".  This file lists all
 of the required packages and imports the files "courseInfo.txt" and "courseSetup.tex" that define the content to be included in the textbook.
 
 
