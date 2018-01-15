@@ -94,7 +94,7 @@ Our first example of a vector space is of course $\R^n$.
 
 We now consider some other examples of vector spaces.
 
-\begin{example}{Vector space of polynomials}{vector-space-poly}
+\begin{example}{Vector space of polynomials of degree 2}{vector-space-poly2}
   Let $\Poly_2$%
   \index{P2@$\Poly_2$}%
   \index{vector space!of polynomials} be the set of all polynomials%
@@ -206,7 +206,7 @@ $n\times m$-matrices.
 
 \begin{example}{Vector space of matrices}{vector-space-matrices}
   Let $\Mat_{n,m}$%
-  \index{Matnm@$\Mat_{n,m}$} be the set of all $n\times m$-matrices
+  \index{Mnm@$\Mat_{n,m}$} be the set of all $n\times m$-matrices
   with entries in a field $K$%
   \index{vector space!of matrices}%
   \index{matrix!vector space of}, together with the usual operations
@@ -361,3 +361,45 @@ Our next example looks a little different.
   vector space.
 \end{proof}
 
+For the next two examples of vector spaces, we leave the proofs as an
+exercise.
+
+\begin{example}{Infinite sequences}{vector-space-sequences}
+  Let $K$ be a field. A \textbf{sequence}%
+  \index{sequence} of elements of $K$ is an infinite list
+  \begin{equation*}
+    a_0,\,a_1,\,a_2,\,a_3\, \ldots,
+  \end{equation*}
+  where $a_i\in K$ for all $i$. We also use the notation
+  $(a_i)_{i\in\N}$, or occasionally $(a_i)$, to denote such a
+  sequence. Let $\Seq_K$ be the set of sequences%
+  \index{vector space!of sequences}%
+  \index{SeqK@$\Seq_K$} of elements of $K$. We add two
+  sequences by adding their $i\th$ elements:
+  \begin{equation*}
+    (a_i)_{i\in\N} + (b_i)_{i\in\N} = (a_i+b_i)_{i\in\N}.
+  \end{equation*}
+  We scale a sequence by scaling each of its elements:
+  \begin{equation*}
+    k(a_i)_{i\in\N} = (ka_i)_{i\in\N}.
+  \end{equation*}
+  Then $\Seq_K$ is a vector space.
+\end{example}
+
+\begin{example}{Vector space of polynomials of unbounded degree}{vector-space-poly}
+  Let $K$ be a field, and let $\Poly$%
+  \index{P@$\Poly$}%
+  \index{vector space!of polynomials} be the set of all polynomials%
+  \index{polynomial} (of any degree) with coefficients from $K$, i.e.,
+  expressions of the form
+  \begin{equation*}
+    p(x) = a_nx^n + a_{n-1}x^{n-1} + \ldots + a_1x + a_0,
+  \end{equation*}
+  where $n\geq 0$ and $a_0,\ldots,a_n\in K$. Addition and scalar
+  multiplication of polynomials are defined in the usual way
+  \index{polynomial!addition}%
+  \index{addition!of polynomials}%
+  \index{polynomial!scalar multiplication}%
+  \index{scalar multiplication!of polynomials}.
+  Then $\Poly$ is a vector space.
+\end{example}
