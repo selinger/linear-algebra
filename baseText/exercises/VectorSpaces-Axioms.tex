@@ -1,227 +1,132 @@
 \section*{Exercises}
 
-\begin{ex} Suppose you have $\R^{2}$ and the $+$ operation is as
-follows:\
-\begin{equation*}
-(a,b) +(c,d) =(a+d,b+c) .
-\end{equation*}
-Scalar multiplication is defined in the usual way. Is this a vector space?
-Explain why or why not.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Consider the set $\R^2$ with the following non-standard addition
+  operation $\oplus$:
+  \begin{equation*}
+    (a,b) \oplus (c,d) = (a+d,b+c).
+  \end{equation*}
+  Scalar multiplication is defined in the usual way. Is this a vector space?
+  Explain why or why not.
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex} Suppose you have $\R^{2}$ and the $+$ operation is defined as
-follows.
-\begin{equation*}
-(a,b) +(c,d) =(0,b+d)
-\end{equation*}
-Scalar multiplication is defined in the usual way. Is this a vector space?
-Explain why or why not.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Consider $\R^{2}$ with the following non-standard addition operation
+  $\oplus$:
+  \begin{equation*}
+    (a,b) \oplus (c,d) = (0,b+d).
+  \end{equation*}
+  Scalar multiplication is defined in the usual way. Is this a vector space?
+  Explain why or why not.
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex} Suppose you have $\R^{2}$ and scalar multiplication is defined
-as $c(a,b) =(a,cb) $ while vector addition is
-defined as usual. Is this a vector space? Explain why or why not.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Consider $\R^{2}$ with the following non-standard scalar multiplication:
+  \begin{equation*}
+    c\odot(a,b) = (a,cb).
+  \end{equation*}
+  Vector addition is defined as usual. Is this a vector space? Explain
+  why or why not.
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex} Suppose you have $\R^{2}$ and the $+$ operation is defined as
-follows.
-\begin{equation*}
-(a,b) +(c,d) =(a-c,b-d)
-\end{equation*}
-Scalar multiplication is same as usual. Is this a vector space? Explain why
-or why not.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Consider $\R^{2}$ with the following non-standard addition operation
+  $\oplus$:
+  \begin{equation*}
+    (a,b) \oplus (c,d) = (a-c,b-d).
+  \end{equation*}
+  Scalar multiplication is defined as usual. Is this a vector space?
+  Explain why or why not.
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex} \label{functions}Consider all the functions defined on a nonempty set
-which have values in $\R$. Is this a vector space? Explain.
-The operations are defined as follows. Here $f,g$ signify functions and $a$
-is a scalar.
-\begin{eqnarray*}
-(f+g) (x) &=&f(x) +g(x) \\
-(af) (x) &=&a(f(x))
-\end{eqnarray*}
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Prove that the set $\Seq_K$ from
+  Example~\ref{exa:vector-space-sequences} is a vector space.
+  Hint: this is a special case of
+  Example~\ref{exa:vector-space-function}, if you realize that a
+  sequence $(a_i)_{i\in\N}$ is the same thing as a function $a:\N\to K$.
 \end{ex}
 
-\begin{ex} Denote by $\R^{\N}$ the set of real valued sequences.
-For $\vect{a}\equiv \set{a_{n}} _{n=1}^{\infty },\vect{b}\equiv
-\set{b_{n}} _{n=1}^{\infty }$ two of these, define their sum to be
-given by
-\begin{equation*}
-\vect{a}+\vect{b} =  \set{a_{n}+b_{n}} _{n=1}^{\infty }
-\end{equation*}
-and define scalar multiplication by
-\begin{equation*}
-c\vect{a}=\set{ca_{n}} _{n=1}^{\infty }\text{ where }\vect{a}
-=\set{a_{n}} _{n=1}^{\infty }
-\end{equation*}
-Is this a special case of Problem~\ref{functions}? Is this a vector space?
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Prove that the set $\Poly$ from
+  Example~\ref{exa:vector-space-polynomials} is a vector space.
 \end{ex}
 
-\begin{ex} Let $\C^{2}$ be the set of ordered pairs of complex numbers.
-Define addition and scalar multiplication in the usual way.
-\begin{equation*}
-(z,w) +(\hat{z},\hat{w}) = (z+\hat{z},w+
-\hat{w}) ,\ u(z,w) \equiv (uz,uw)
-\end{equation*}
-Here the scalars are from $\C$. Show this is a vector space.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $V$ be the set of functions defined on a set $X$ that have
+  values in a vector space $W$. Is this a vector space? Explain.
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex} Let $V$ be the set of functions defined on a nonempty set which have
-values in a vector space $W$. Is this a vector space? Explain.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Consider the set $\R^{2}$ with the following non-standard operations
+  of addition and scalar multiplication:
+  \begin{equation*}
+    \begin{array}{rcl}
+      (a,b) \oplus (c,d) &=& (a+c-1,\, b+d-1), \\
+      k \odot (c,d) &=& (kc + (1-k),\, kd + (1-k)). \\
+    \end{array}
+  \end{equation*}
+  Show that $\R^2$ is a vector space with these operations. Hint: the
+  zero vector is not $(0,0)$, but $(1,1)$.
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex} Consider the space of $m\times n$-matrices with operation of addition
-and scalar multiplication defined the usual way. That is, if $A,B$ are two $
-m\times n$-matrices and $c$ a scalar,
-\begin{equation*}
-(A+B) _{ij}=A_{ij}+B_{ij},\ (cA) _{ij}\equiv c(
-A_{ij})
-\end{equation*}
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Consider the set $\R$ of real numbers. Addition of real numbers is
+  defined in the usual way, and scalar multiplication is just
+  multiplication of one real number by another. In other words, $x+y$
+  means to add the two numbers and $xy$ means to multiply them. Show
+  that $\R$, with these operations, is a real vector space.
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex} Consider the set of $n\times n$ symmetric matrices. That is, $A=A^{T}$.
-In other words, $A_{ij}=A_{ji}$. Show that this set of symmetric matrices is
-a vector space and a subspace of the vector space of $n\times n$-matrices.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $K=\Q$ be the field of rational numbers, and let $V$ be the set
+  of real numbers of the form $a+b\sqrt{2}$, where $a$ and $b$ are
+  rational numbers. Show that with the usual operations, $V$ is a
+  $\Q$-vector space.
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex} Consider the set of all vectors in $\R^{2},(x,y) $
-such that $x+y\geq 0$. Let the vector space operations be the usual ones. Is
-this a vector space? Is it a subspace of $\R^{2}$?
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $K=\Q$ be the field of rational numbers, and let $V=\R$ be the
+  set of real numbers. Show that with the usual operations, $V$ is a
+  $\Q$-vector space.
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex} Consider the vectors in $\R^{2},(x,y) $ such that $xy=0$. Is this a subspace of $\R^{2}$? Is it a vector space? The
-addition and scalar multiplication are the usual operations.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $\Poly_{3}$ be the set of all polynomials of degree 3 or
+  less. That is, these are of the form $ax^3+bx^2+cx+d$. Addition and
+  scalar multiplication of polynomials are defined as usual.  Show
+  that $\Poly_{3}$ is a vector space. Now let $V$ denote those
+  polynomials $a+bx+cx^{2}$ such that $a+b+c=0$. Is $V$ a subspace of
+  $\Poly_{2}$?  Explain.
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
-\begin{ex} Define the operation of vector addition on $\R^{2}$ by $(
-x,y) +(u,v) =(x+u,y+v+1)$. Let scalar
-multiplication be the usual operation. Is this a vector space with these
-operations? Explain.
-%\begin{sol}
-%\end{sol}
+\begin{ex}
+  Let $X=\set{1,2,\ldots,n}$, and consider the space $\Func_{X,\R}$ of
+  real-valued functions defined on $X$. Explain how $\Func_{X,\R}$ can be
+  considered as $\R^{n}$.
+  \begin{sol}
+    Let $f(i)$ be the $i\th$ component of a vector
+    $\vect{x}\in\R^{n}$. Thus a typical element in $\R^{n}$ is
+    $ (f(1),\ldots,f(n))$.
+  \end{sol}
 \end{ex}
-
-\begin{ex} Let the vectors be real numbers. Define vector space operations in the
-usual way. That is $x+y$ means to add the two numbers and $xy$ means to
-multiply them. Is $\R$ with these operations a vector space? Explain.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let the scalars be the rational numbers and let the vectors be
-real numbers which are the form $a+b\sqrt{2}$ for $a,b$ rational numbers.
-Show that with the usual operations, this is a vector space.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $\Poly_{2}$ be the set of all polynomials of degree 2 or
-less. That is, these are of the form $a+bx+cx^{2}$. Addition is defined as
-\begin{equation*}
-(a+bx+cx^{2}) +(\hat{a}+\hat{b}x+\hat{c}x^{2})
-=(a+\hat{a}) +(b+\hat{b}) x+(c+\hat{c})
-x^{2}
-\end{equation*}
-and scalar multiplication is defined as
-\begin{equation*}
-d(a+bx+cx^{2}) =da+dbx+cdx^{2}
-\end{equation*}
-Show that, with this definition of the vector space operations that $\Poly_{2}$ is a vector space. Now let $V$ denote those polynomials $a+bx+cx^{2}$
-such that $a+b+c=0$. Is $V$ a subspace of $\Poly_{2}$? Explain.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $M,N$ be subspaces of a vector space $V$ and consider $M+N$
-defined as the set of all $m+n$ where $m\in M$ and $n\in N$. Show that $M+N$
-is a subspace of $V$.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $M,N$ be subspaces of a vector space $V$. Then $M\cap N$ consists
-of all vectors which are in both $M$ and $N$. Show that $M\cap N$ is a
-subspace of $V$.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $M,N$ be subspaces of a vector space $\R^{2}$. Then $N\cup
-M$ consists of all vectors which are in either $M$ or $N$. Show that $N\cup
-M $ is not necessarily a subspace of $\R^{2}$ by giving an example
-where $N\cup M$ fails to be a subspace.
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} \label{4-july-prob1}Let $X$ consist of the real valued functions which
-are defined on an interval $\mat{a,b}$. For $f,g\in X,\;f+g$ is the
-name of the function which satisfies $(f+g) (x)
-=f(x) +g(x)$. For $s$ a real number, $
-(s f) (x) = s (f(x)
-)$. Show this is a vector space.
-\begin{sol}
-The axioms of a vector space all hold because they
-hold for a vector space. The only thing left to verify is the
-assertions about the things which are supposed to exist. $0$ would
-be the zero function which sends everything to $0$. This is an additive
-identity. Now if $f$ is a function, $-f(x) \equiv (
--f(x))$. Then
-\[
-(f+(-f)) (x) \equiv f(x)
-+(-f) (x) \equiv f(x) +(-f(
-x)) =0
-\]
-Hence $f+-f=\mathbf{0}$. For each $x\in \mat{a,b}$, let $%
-f_{x}(x) =1$ and $f_{x}(y) =0$ if $y\neq x$. Then
-these vectors are obviously linearly independent.
-\end{sol}
-\end{ex}
-
-\begin{ex} Consider functions defined on $\set{1,2,\ldots,n} $ having
-values in $\R$. Explain how, if $V$ is the set of all such
-functions, $V$ can be considered as $\R^{n}$.
-\begin{sol}
-Let $f(i) $ be the $i\th$ component of a vector $
-\vect{x}\in \R^{n}$. Thus a typical element in $\R^{n}$ is $
-(f(1) ,\ldots,f(n))$.
-\end{sol}
-\end{ex}
-
-\begin{ex} Let the vectors be polynomials of degree no more than 3. Show that
-with the usual definitions of scalar multiplication and addition wherein,
-for $p(x) $ a polynomial, $(a p) (
-x) = a p(x) $ and for $p,q$ polynomials $(
-p+q) (x) =  p(x) +q(x)$, this
-is a vector space.
-\begin{sol}
-This is just a subspace of the vector space of functions
-because it is closed with respect to vector addition and scalar
-multiplication. Hence this is a vector space.
-\end{sol}
-\end{ex}
-

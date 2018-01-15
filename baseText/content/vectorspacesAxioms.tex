@@ -2,10 +2,10 @@
 
 \begin{outcome}
   \begin{enumerate}
-  \item Develop the abstract concept of a vector space through axioms.
-  \item Deduce basic properties of vector spaces.
+  \item Develop the concept of a vector space through axioms.
   \item Use the vector space axioms to determine if a set and its
     operations constitute a vector space.
+  \item Encounter several examples of vector spaces.
   \end{enumerate}
 \end{outcome}
 
@@ -94,7 +94,7 @@ Our first example of a vector space is of course $\R^n$.
 
 We now consider some other examples of vector spaces.
 
-\begin{example}{Vector space of polynomials of degree 2}{vector-space-polynomial2}
+\begin{example}{Vector space of polynomials of degree 2}{vector-space-polynomials2}
   Let $\Poly_2$%
   \index{P2@$\Poly_2$}%
   \index{vector space!of polynomials} be the set of all polynomials%
@@ -254,10 +254,10 @@ above axioms, and is therefore \textit{not} a vector space.
 Our next example looks a little different. 
 
 \begin{example}{Vector space of functions}{vector-space-function}
-  Let $X$ be a nonempty set, $K$ a field, and define $\Func_X$%
-  \index{FuncX@$\Func_X$} to be the set of functions
+  Let $X$ be a nonempty set, $K$ a field, and define $\Func_{X,K}$%
+  \index{FuncXK@$\Func_{X,K}$} to be the set of functions
   \index{function!vector space of} defined on $X$ and valued in
-  $K$. In other words, the elements of $\Func_X$ are functions
+  $K$. In other words, the elements of $\Func_{X,K}$ are functions
   $f:X\to K$. The sum of two functions is defined by
   \begin{equation*}
     (f + g)(x) = f(x) + g(x),
@@ -266,12 +266,12 @@ Our next example looks a little different.
   \begin{equation*}
     (kf) (x) = k(f(x)).
   \end{equation*}
-  Then $\Func_X$ is a vector space.
+  Then $\Func_{X,K}$ is a vector space.
 \end{example}
 
 \begin{proof}
-  To verify that $\Func_X$ is a vector space, we must prove the 8
-  axioms of vector spaces. Let $f, g, h$ be functions in $\Func_X$,
+  To verify that $\Func_{X,K}$ is a vector space, we must prove the 8
+  axioms of vector spaces. Let $f, g, h$ be functions in $\Func_{X,K}$,
   and let $k,\ell$ be scalars. Recall that two functions $f,g$
   are \textbf{equal}%
   \index{function!equality of}%
@@ -357,7 +357,7 @@ Our next example looks a little different.
     and therefore $1f=f$.
   \end{itemize}
 
-  It follows that $\Func_X$ satisfies all the required axioms and is a
+  It follows that $\Func_{X,K}$ satisfies all the required axioms and is a
   vector space.
 \end{proof}
 
@@ -386,7 +386,7 @@ exercise.
   Then $\Seq_K$ is a vector space.
 \end{example}
 
-\begin{example}{Vector space of polynomials of unbounded degree}{vector-space-polynomial}
+\begin{example}{Vector space of polynomials of unbounded degree}{vector-space-polynomials}
   Let $K$ be a field, and let $\Poly$%
   \index{P@$\Poly$}%
   \index{vector space!of polynomials} be the set of all polynomials%
