@@ -10,8 +10,8 @@
 \end{outcome}
 
 \begin{definition}{Vector space}{vector-space}
-  Let $K$ be a field. A \textbf{vector space over $K$}\index{vector
-    space} is a set $V$ equipped with two operations of
+  Let $K$ be a field. A \textbf{vector space} over $K$%
+  \index{vector space} is a set $V$ equipped with two operations of
   \textbf{addition}%
   \index{addition!in a vector space}%
   \index{vector!addition} \index{addition!of vectors} and
@@ -19,8 +19,8 @@
   \index{scalar multiplication!in a vector space}%
   \index{vector!scalar multiplication}%
   \index{scalar multiplication!of a vector}%
-  \index{multiplication!scalar multiplication|see{scalar multiplication}},
-  such that the following properties hold:
+  \index{multiplication!scalar multiplication|see{scalar
+      multiplication}}, such that the following properties hold:
   \begin{itemize}\setlength\itemsep{0em}
   \item[(A1)] Commutative law of addition%
     \index{commutative law!of addition}%
@@ -61,18 +61,27 @@
 The above definition is concerned about two operations: vector
 addition, denoted by $\vect{v} + \vect{w}$, and scalar multiplication,
 denoted by $k\vect{v}$ or sometimes $k\cdot\vect{v}$. In the law of
-additive inverses, we have written $-\vect{u}$ for $(-1)\vect{u}$. Often, the
-scalars will be real numbers, but it is also possible to use scalars
-from a different field, which is why we have assumed a given field $K$
-of scalars in the definition.
+additive inverses, we have written $-\vect{u}$ for $(-1)\vect{u}$.
+Often, the scalars will be real numbers, but it is also possible to
+use scalars from a different field $K$. We also use the term
+\textbf{$K$-vector space}%
+\index{$K$-vector space} to refer to a vector space over a field $K$.
+When $K=\R$, we also speak of a \textbf{real vector space}%
+\index{vector space!real}%
+\index{real vector space}, and when $K=\C$, we speak of a
+\textbf{complex vector space}%
+\index{vector space!complex}%
+\index{complex vector space}. If the field is clear from the context,
+we often don't mention it at all, and just speak of a ``vector
+space''.
 
 Our first example of a vector space is of course $\R^n$.
 
-\begin{proposition}{$\R^n$ is a vector space}{Rn-vector-space}
+\begin{example}{$\R^n$ is a vector space}{Rn-vector-space}
   The set $\R^n$ of $n$-dimensional column vectors, with the usual
   operations of vector addition and scalar multiplication, is a vector
   space.
-\end{proposition}
+\end{example}
 
 \begin{proof}
   Properties (A1)--(A4) hold by
@@ -101,11 +110,8 @@ We now consider some other examples of vector spaces.
     (ax^2 + bx + c) + (a'x^2 + b'x + c') &=& (a + a')x^2 + (b + b')x + (c + c') \\
     k(ax^2 + bx + c) &=& ka\,x^2 + kb\,x + kc.
   \end{eqnarray*}
+  Then $\Poly_2$ is a vector space.
 \end{example}
-
-\begin{proposition}{$\Poly_2$ is a vector space}{vector-space-poly}
-  $\Poly_2$ is a vector space.
-\end{proposition}
 
 \begin{proof}
   To show that $\Poly_2$ is a vector space, we verify the $8$ vector
@@ -201,12 +207,9 @@ $n\times m$-matrices.
   with entries in a field $K$%
   \index{vector space!of matrices}%
   \index{matrix!vector space of}, together with the usual operations
-  of matrix addition and scalar multiplication.
+  of matrix addition and scalar multiplication. Then $\Mat_{n,m}$ is a
+  vector space.
 \end{example}
-
-\begin{proposition}{$\Mat_{n,m}$ is a vector space}{vector-space-matrices}
-  $\Mat_{n,m}$ is a vector space.
-\end{proposition}
 
 \begin{proof}
   The properties (A1)--(A4) hold by
@@ -248,12 +251,11 @@ above axioms, and is therefore \textit{not} a vector space.
 Our next example looks a little different. 
 
 \begin{example}{Vector space of functions}{vector-space-function}
-  Let $S$ be a nonempty set and define $\Func_S$%
-  \index{FuncS@$\Func_S$} to be the set of \textit{real-valued}
-  functions%
-  \index{function!vector space of} defined on $S$. In other words, the
-  elements of $\Func_S$ are functions $f:S\to\R$. The sum of two
-  functions is defined by
+  Let $X$ be a nonempty set, $K$ a field, and define $\Func_X$%
+  \index{FuncX@$\Func_X$} to be the set of functions
+  \index{function!vector space of} defined on $X$ and valued in
+  $K$. In other words, the elements of $\Func_X$ are functions
+  $f:X\to K$. The sum of two functions is defined by
   \begin{equation*}
     (f + g)(x) = f(x) + g(x),
   \end{equation*}
@@ -261,24 +263,21 @@ Our next example looks a little different.
   \begin{equation*}
     (kf) (x) = k(f(x)).
   \end{equation*}
+  Then $\Func_X$ is a $K$-vector space.
 \end{example}
 
-\begin{proposition}{$\Func_S$ is a vector space}{vector-space-function}
-  $\Func_S$ is a vector space.
-\end{proposition}
-
 \begin{proof}
-  To verify that $\Func_S$ is a vector space, we must prove the 8
-  axioms of vector spaces. Let $f, g, h$ be functions in $\Func_S$,
-  and let $k,\ell$ be real numbers. Recall that two functions $f,g$
+  To verify that $\Func_X$ is a vector space, we must prove the 8
+  axioms of vector spaces. Let $f, g, h$ be functions in $\Func_X$,
+  and let $k,\ell$ be scalars. Recall that two functions $f,g$
   are \textbf{equal}%
   \index{function!equality of}%
-  \index{equality of functions} if for all $x\in S$, we have
+  \index{equality of functions} if for all $x\in X$, we have
   $f(x)=g(x)$.
 
   \begin{itemize}
   \item[(A1)] We prove the commutative law of addition. For all
-    $x\in S$, we have
+    $x\in X$, we have
     \begin{equation*}
       (f + g) (x)
       ~=~ f(x) + g(x)
@@ -287,7 +286,7 @@ Our next example looks a little different.
     \end{equation*}
     Therefore, $f + g = g + f$.
   \item[(A2)] We prove the associative law of addition. For all
-    $x\in S$, we have
+    $x\in X$, we have
     \begin{equation*}
       ((f + g) + h) (x)
       ~=~ (f + g) (x) + h(x)
@@ -348,20 +347,14 @@ Our next example looks a little different.
     \end{equation*}
     so $(k\ell f) =k(\ell f)$.
   \item[(SM4)] Finally, we prove the rule for multiplication by one.
-    For all $x\in S$, we have
+    For all $x\in X$, we have
     \begin{equation*}
       (1f) ( x) ~=~ 1f(x) ~=~f(x),
     \end{equation*}
     and therefore $1f=f$.
   \end{itemize}
 
-  It follows that $\Func_S$ satisfies all the required axioms and is a
+  It follows that $\Func_X$ satisfies all the required axioms and is a
   vector space.
 \end{proof}
 
-In the last example, we took $\Func_S$ to be the set of
-\textit{real-valued} functions on $S$, i.e., functions whose domain is
-the set $S$ and whose values are real numbers. Instead, we could have
-also considered the set of functions valued in $K$, where $K$ is an
-arbitrary field. Proposition~\ref{prop:vector-space-function} remains
-true in this more general case.
