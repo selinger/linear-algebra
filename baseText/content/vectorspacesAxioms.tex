@@ -78,9 +78,12 @@ space''.
 Our first example of a vector space is of course $\R^n$.
 
 \begin{example}{$\R^n$ is a vector space}{Rn-vector-space}
-  The set $\R^n$ of $n$-dimensional column vectors, with the usual
-  operations of vector addition and scalar multiplication, is a vector
-  space.
+  The set $\R^n$ of $n$-dimensional real column vectors, with the
+  usual operations of vector addition and scalar multiplication, is a
+  vector space.
+
+  More generally, if $K$ is a field, the set $K^n$ of $n$-dimensional
+  column vectors with entries in $K$ is a $K$-vector space.
 \end{example}
 
 \begin{proof}
@@ -95,12 +98,12 @@ We now consider some other examples of vector spaces.
   Let $\Poly_2$%
   \index{P2@$\Poly_2$}%
   \index{vector space!of polynomials} be the set of all polynomials%
-  \index{polynomial} of degree at most $2$, i.e., expressions of the
-  form
+  \index{polynomial} of degree at most $2$ with coefficients from a
+  field $K$, i.e., expressions of the form
   \begin{equation*}
     p(x) = ax^2 + bx + c,
   \end{equation*}
-  where $a$, $b$, and $c$ are scalars. Define addition%
+  where $a,b,c\in K$. Define addition%
   \index{polynomial!addition}%
   \index{addition!of polynomials} and scalar multiplication%
   \index{polynomial!scalar multiplication}%
@@ -263,7 +266,7 @@ Our next example looks a little different.
   \begin{equation*}
     (kf) (x) = k(f(x)).
   \end{equation*}
-  Then $\Func_X$ is a $K$-vector space.
+  Then $\Func_X$ is a vector space.
 \end{example}
 
 \begin{proof}
