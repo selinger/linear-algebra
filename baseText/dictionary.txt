@@ -93,6 +93,7 @@ Farah
 fibonacci
 fourier
 Friess
+FuncX
 Gaston
 gauss
 gaussian
@@ -152,6 +153,7 @@ MacKenzie
 minimizer
 minimizers
 mm
+Mnm
 modulo
 moivre
 Moivre's
@@ -186,7 +188,6 @@ pdf
 perp
 PJQZGBOQKW
 plaintext
-poly
 Poohbah
 pos
 pre
@@ -213,6 +214,7 @@ schwarz
 seealso
 Selinger
 semithick
+SeqK
 sextuple
 shearings
 soln
