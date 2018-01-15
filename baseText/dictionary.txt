@@ -93,7 +93,7 @@ Farah
 fibonacci
 fourier
 Friess
-FuncX
+FuncXK
 Gaston
 gauss
 gaussian
