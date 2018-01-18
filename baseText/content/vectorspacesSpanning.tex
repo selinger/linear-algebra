@@ -111,149 +111,141 @@ section.
   \end{equation*}
 \end{solution}
 
-% ======================================================================
-\subsection*{CONTINUE HERE...}
+As in Chapter~\ref{cha:vectors-rn}, the span of a set of vectors is
+defined as the set of all of its linear combinations. We generalize
+the concept of span to consider spans of arbitrary (possibly finite,
+possibly infinite) sets of vectors.
 
-This definition leads to our next concept of span.
-
-\begin{definition}{Span of vectors}{span}
-  Let $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} \subseteq V$.
-  Then\index{span}
-  \begin{equation*} \sspan\set{\vect{v}_{1},\ldots,\vect{v}_{n}} =
-    \set{\sum_{i=1}^{n}c_{i}\vect{v}_{i}: c_{i}\in \R }
+\begin{definition}{Span of a set of vectors}{vector-space-span}
+  Let $V$ be a vector space over some field $K$, and let $S$ be a set
+  of vectors (i.e., a subset of $V$). The \textbf{span}%
+  \index{span}%
+  \index{vector!span} of $S$ is the set of all linear combinations of
+  elements of $S$. In symbols, we have
+  \begin{equation*}
+    \sspan S
+    ~=~ \set{a_1\vect{u}_1+\ldots+a_k\vect{u}_k \mid
+      \mbox{
+        $\vect{u}_1,\ldots,\vect{u}_k\in S$
+        and
+        $a_1,\ldots,a_k\in K$
+      }}.
   \end{equation*}
 \end{definition}
 
-When we say that a vector $\vect{w}$ is in
-$\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ we mean that $\vect{w}$
-can be written as a linear combination of the $\vect{v}_1$. We say
-that a collection of vectors $\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$
-is a \textbf{spanning set}\index{spanning set} for $V$ if $V = \sspan
-\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$.
+It is important not to misunderstand this definition.  Even when the
+set $S$ is infinite, each {\em individual} element
+$\vect{v}\in\sspan S$ is a linear combination of only {\em finitely
+  many} elements $\vect{u}_1,\ldots,\vect{u}_k$ of $S$.
+The definition does not talk about infinite linear combinations
+\begin{equation*}
+  a_1\vect{u}_1 + a_2\vect{u}_2 + a_3\vect{u}_3 + \ldots
+\end{equation*}
+Indeed, such infinite sums do not typically exist.  However, different
+elements $\vect{v},\vect{w}\in\sspan S$ can be linear combinations of
+a different (finite) number of vectors of $S$. For example, it is
+possible that $\vect{v}$ is a linear combination of 10 elements of
+$S$, and $\vect{w}$ is a linear combination of 100 elements of $S$.
 
-Consider the following example.
-
-\begin{example}{Matrix span}{matrix-span}
-  Let $A = \begin{mymatrix}{rr} 1 & 0 \\ 0 & 2 \end{mymatrix}$,
-  $B = \begin{mymatrix}{rr} 0 & 1 \\ 1 & 0 \end{mymatrix}$.
-  Determine if $A$ and $B$ are in
+\begin{example}{Spans of sequences}{spans-sequences}
+  Consider the vector space $\Seq_K$ of infinite sequences. For every
+  $k\in\N$, let $e^k$ be the sequence that has a $1$ in the $k\th$
+  component, and is $0$ everywhere else, i.e., 
   \begin{equation*}
-    \sspan\set{M_1, M_2 } = \sspan
-    \set{\begin{mymatrix}{rr} 1 & 0 \\ 0 & 0 \end{mymatrix},
-      \begin{mymatrix}{rr} 0 & 0 \\ 0 & 1 \end{mymatrix} }
+    \begin{array}{l}
+      e^0 = 1,0,0,0,0,\ldots, \\
+      e^1 = 0,1,0,0,0,\ldots, \\
+      e^2 = 0,0,1,0,0,\ldots, \\
+    \end{array}
   \end{equation*}
+  and so on.
+  Let $S=\set{e^k \mid k\in\N}$. Which of the following sequences are in
+  $\sspan S$?
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item $f = 1,1,1,0,0,0,0,0,\ldots$ (followed by infinitely many zeros),
+    \item $g = 1,2,0,5,0,0,0,0,\ldots$ (followed by infinitely many zeros),
+    \item $h = 1,1,1,1,1,1,1,1,\ldots$ (followed by infinitely many ones),
+    \item $k = 1,0,1,0,1,0,1,0,\ldots$ (forever alternating between $1$ and $0$).
+    \end{enumerate}
+  \end{enumialphparenastyle}
 \end{example}
 
 \begin{solution}
-
-  First consider $A$. We want to see if scalars $s,t$ can be found
-  such that $A = s M_1 + t M_2$.
-  \begin{equation*}
-    \begin{mymatrix}{rr} 1 & 0 \\ 0 & 2 \end{mymatrix}
-    = s \begin{mymatrix}{rr} 1 & 0 \\ 0 & 0 \end{mymatrix}
-    + t \begin{mymatrix}{rr} 0 & 0 \\ 0 & 1 \end{mymatrix}
-  \end{equation*}
-  The solution to this equation is given by
-  \begin{eqnarray*}
-    1 &=& s \\
-    2 &=& t
-  \end{eqnarray*}
-  and it follows that $A$ is in $\sspan \set{M_1, M_2}$.
-
-  Now consider $B$. Again we write $B = sM_1 + t M_2$ and see if a
-  solution can be found for $s, t$.
-  \begin{equation*}
-    \begin{mymatrix}{rr} 0 & 1 \\ 1 & 0 \end{mymatrix}
-    = s \begin{mymatrix}{rr} 1 & 0 \\ 0 & 0 \end{mymatrix}
-    + t \begin{mymatrix}{rr} 0 & 0 \\ 0 & 1 \end{mymatrix}
-  \end{equation*}
-  Clearly no values of $s$ and $t$ can be found such that this
-  equation holds. Therefore $B$ is not in $\sspan \set{M_1, M_2 }$.
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item We have $f\in\sspan S$, because $f = e^0 + e^1 + e^2$.
+    \item We have $g\in\sspan S$, because $g = 1e^0 + 2e^1 + 5e^3$.
+    \item The sequence $h$ is not in $\sspan S$, because each element
+      of $\sspan S$ is, by definition, a linear combinations of {\em
+        finitely many} elements of $S$. No linear combinations of
+      finitely many $e^k$ can end in infinitely many ones. Note that
+      we are not permitted to write an infinite sum such as
+      $e^0+e^1+e^2+\ldots$. Such infinite sums are not defined in
+      vector spaces.
+    \item The sequence $k$ is not in $\sspan S$, for the same reason.
+      We would need to add infinitely many sequences of the form $e^k$
+      to get a sequence that contains infinitely many non-zero
+      elements. However, this is not permitted by the definition of
+      span.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+  \vspace{-4ex}
 \end{solution}
 
-Consider another example.
-
-\begin{example}{Polynomial span}{polynomial-span}
-  Show that $p(x) =
-  7x^2 + 4x - 3$ is in $\sspan\set{4x^2 + x, x^2 -2x + 3 }$.
+\begin{example}{Span of polynomials}{span-of-polynomials}
+  Let $p(x)=7x^2+4x-3$. Is $p(x)\in\sspan\set{x^2,~ (x+1)^2,~ (x+2)^2}$?
 \end{example}
 
 \begin{solution}
-  To show that $p(x)$ is in the given span, we need to
-  show that it can be written as a linear combination of polynomials in
-  the span. Suppose scalars $a, b$ existed such that
-  \begin{equation*}
-    7x^2 +4x - 3= a(4x^2+x) + b (x^2-2x+3)
-  \end{equation*}
-  If this linear combination were to hold, the
-  following would be true:
-  \begin{eqnarray*}
-    4a + b &=& 7 \\
-    a - 2b &=& 4 \\
-    3b &=& -3
-  \end{eqnarray*}
-
-  You can verify that $a = 2, b = -1$ satisfies this system of
-  equations. This means that we can write $p(x)$ as follows:
-  \begin{equation*}
-    7x^2 +4x-3= 2(4x^2+x) - (x^2-2x+3)
-  \end{equation*}
-
-  Hence $p(x)$ is in the given span.
+  The answer is yes, because we found in
+  Example~\ref{exa:linear-combination-polynomials} that
+  $p(x) = \frac{5}{2}\,x^2 ~+~ 7\,(x+1)^2 ~-~ \frac{5}{2}\,(x+2)^2$.
 \end{solution}
 
-Consider the following example.
+We say that a set of vectors $S$ is a \textbf{spanning set}%
+\index{spanning set}%
+\index{vector space!spanning set} for $V$ if $V = \sspan S$.
 
 \begin{example}{Spanning set}{spanning-set}
-  Let $S = \set{x^2 + 1,
-    x-2, 2x^2 - x }$. Show that $S$ is a spanning set for $\Poly_2$, the
-  set of all polynomials of degree at most $2$.
+  Let $S = \set{x^2,~ (x+1)^2,~ (x+2)^2 }$. Show that $S$ is a
+  spanning set for $\Poly_2$, the vector space of all polynomials of
+  degree at most $2$.
 \end{example}
 
 \begin{solution}
-  Let $p(x)= ax^2 + bx + c$ be an arbitrary polynomial
-  in $\Poly_2$. To show that $S$ is a spanning set, it suffices to show
-  that $p(x)$ can be written as a linear combination of the elements of
-  $S$. In other words, can we find $r,s,t$ such that:
+  This is analogous to Example~\ref{exa:linear-combination-polynomials}.
+  Consider an arbitrary element $p(x) = p_2x^2 + p^1x + p_0$ of
+  $\Poly_2$. We must show that $p(x)\in\sspan S$, i.e., that there
+  exists $a,b,c\in K$ such that
   \begin{equation*}
-    p(x) = ax^2 +bx + c = r(x^2 + 1) + s(x -2) +
-    t(2x^2 - x)
+    p(x) = ax^2 + b(x+1)^2 + c(x+2)^2.
   \end{equation*}
-
-  If a solution $r,s,t$ can be found, then this shows that for any
-  such polynomial $p(x)$, it can be written as a linear combination of
-  the above polynomials and $S$ is a spanning set.
-
-  \begin{eqnarray*}
-    ax^2 +bx + c
-    &=& r(x^2 + 1) + s(x -2) + t(2x^2 - x) \\
-    &=& rx^2 + r + sx - 2s + 2tx^2 - tx \\
-    &=& (r+2t)x^2 + (s-t)x + (r-2s)
-  \end{eqnarray*}
-
-  For this to be true, the following must hold:
-  \begin{eqnarray*}
-    a &=& r+2t \\
-    b &=& s-t \\
-    c &=& r-2s
-  \end{eqnarray*}
-
-  To check that a solution exists, set up the augmented matrix and row
-  reduce:
+  We can equivalently rewrite this equation as
   \begin{equation*}
-    \begin{mymatrix}{rrr|r}
-      1 & 0 & 2 & a \\
-      0 & 1 & -1 & b \\
-      1 & -2 & 0 & c
-    \end{mymatrix}
-    \roweq\ldots\roweq
-    \begin{mymatrix}{rrr|c}
-      1 & 0 & 0 & \frac{1}{2} a + 2b + \frac{1}{2}c\\
-      0 & 1 & 0 & \frac{1}{4}a - \frac{1}{4}c \\
-      0 & 0 & 1 & \frac{1}{4}a - b - \frac{1}{4}c
-    \end{mymatrix}
+    p_2x^2 + p^1x + p_0 ~=~ (a+b+c)x^2 ~+~ (2b+4c)x ~+~ (b+4c),
   \end{equation*}
-
-  Clearly a solution exists for any choice of $a,b,c$. Hence $S$ is a
-  spanning set for $\Poly_2$.
+  which yields the system of equations
+  \begin{equation*}
+    \begin{array}{r@{~~}c@{~}r}
+      a+b+c &=& p_2 \\
+      2b+4c &=& p_1 \\
+      b+4c &=& p_0
+    \end{array}
+    \quad\roweq\quad
+    \begin{mymatrix}{ccc|c}
+      1 & 1 & 1 & p_2 \\
+      0 & 2 & 4 & p_1 \\
+      0 & 1 & 4 & p_0 \\
+    \end{mymatrix}
+    \quad\roweq\quad
+    \begin{mymatrix}{ccc|c}
+      1 & 0 & 0 & p_2-\frac{3}{4}p_1+\frac{1}{2}p_0 \\
+      0 & 1 & 0 & p_1-p_0 \\
+      0 & 0 & 1 & \frac{1}{2}p_0-\frac{1}{4}p_1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Since the system has rank 3, it has a solution. Therefore,
+  $p(x)\in\sspan S$. Since $p(x)$ was an arbitrary element of
+  $\Poly_2$, it follows that $S$ is a spanning set for $\Poly_2$. 
 \end{solution}
