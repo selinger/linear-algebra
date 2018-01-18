@@ -1,4 +1,4 @@
-\section{Spanning sets}
+\section{Linear combinations, span, and linear independence}
 
 \begin{outcome}
   \begin{enumerate}
@@ -6,166 +6,292 @@
   \end{enumerate}
 \end{outcome}
 
-In this section we will examine the concept of spanning introduced earlier in terms of $\R^n$. Here, we will discuss these concepts in terms of abstract vector spaces.
-
-Consider the following definition.
-
-\begin{definition}{Subset}{subset}
-Let $X$ and $Y$ be two sets. If all elements of $X$ are also elements of $Y$ then we say that $X$ is a \textbf{subset}\index{subset} of $Y$ and we write
-\[
-X \subseteq Y
-\]
-\end{definition}
-
-In particular, we often speak of subsets of a vector space, such as $X \subseteq V$. By this we mean that every element in the set $X$ is contained in the vector space $V$.
+We can now revisit many of the concepts first introduced in
+Chapter~\ref{cha:vectors-rn} in the context of general vector spaces.
+We will look at linear combinations, span, and linear independence in
+this section, and at subspaces, bases, and dimension in the next
+section.
 
 \begin{definition}{Linear combination}{linear-combination}
-Let $V$ be a vector space and let $\vect{v}_1, \vect{v}_2,\ldots, \vect{v}_n \subseteq V$. A vector $\vect{v} \in V$ is called a linear combination of the $\vect{v}_i$ if there exist scalars $c_i \in \R$ such that
-\[
-\vect{v} = c_1 \vect{v}_1 + c_2 \vect{v}_2 + \ldots + c_n \vect{v}_n
-\]
+  Let $V$ be a vector space over a field $K$. Let
+  $\vect{u}_1,\ldots,\vect{u}_n\in V$. A vector
+  $\vect{v}\in V$ is called a \textbf{linear combination}%
+  \index{linear combination!in a vector space}%
+  \index{linear combination!of vectors} of
+  $\vect{u}_1,\ldots,\vect{u}_n$ if there exist scalars
+  $a_{1},\ldots,a_{n}\in K$ such that
+  \begin{equation*}
+    \vect{v} = a_1 \vect{u}_1 + \ldots + a_n \vect{u}_n.
+  \end{equation*}
 \end{definition}
+
+\begin{example}{Linear combination of matrices}{linear-combination-matrix}
+  Write the matrix $A=\begin{mymatrix}{rr} 1 & 3 \\ -1 & 2 \end{mymatrix}$
+  as a linear combination%
+  \index{linear combination!of matrices} of
+  \begin{equation*}
+    \begin{mymatrix}{rr} 1 & 0 \\ 0 & 1 \end{mymatrix},\quad
+    \begin{mymatrix}{rr} 1 & 0 \\ 0 & -1 \end{mymatrix},\quad
+    \begin{mymatrix}{rr} 0 & 1 \\ 1 & 0 \end{mymatrix},\quad\mbox{and}\quad
+    \begin{mymatrix}{rr} 0 & -1 \\ 1 & 0 \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We must find coefficients $a,b,c,d$ such that
+  \begin{equation*}
+    \begin{mymatrix}{rr} 1 & 3 \\ -1 & 2 \end{mymatrix}
+    ~=~ a \begin{mymatrix}{rr} 1 & 0 \\ 0 & 1 \end{mymatrix}
+    + b \begin{mymatrix}{rr} 1 & 0 \\ 0 & -1 \end{mymatrix}
+    + c \begin{mymatrix}{rr} 0 & 1 \\ 1 & 0 \end{mymatrix}
+    + d \begin{mymatrix}{rr} 0 & -1 \\ 1 & 0 \end{mymatrix},
+  \end{equation*}
+  or equivalently,
+  \begin{equation*}
+    \begin{mymatrix}{rr} 1 & 3 \\ -1 & 2 \end{mymatrix}
+    ~=~ \begin{mymatrix}{cc} a+b & c-d \\ c+d & a-b \end{mymatrix}.
+  \end{equation*}
+  This yields a system of four equations in four variables:
+  \begin{equation*}
+    \begin{array}{r@{~~}c@{~}r}
+      a+b &=& 1, \\
+      c+d &=& -1, \\
+      c-d &=& 3, \\
+      a-b &=& 2.
+    \end{array}
+  \end{equation*}
+  We can easily solve the system of equations to find the unique
+  solution $a=\frac{3}{2}$, $b=-\frac{1}{2}$, $c=1$, $d=-2$.
+  Therefore
+  \begin{equation*}
+    \begin{mymatrix}{rr} 1 & 3 \\ -1 & 2 \end{mymatrix}
+    ~=~ \frac{3}{2} \begin{mymatrix}{rr} 1 & 0 \\ 0 & 1 \end{mymatrix}
+    - \frac{1}{2} \begin{mymatrix}{rr} 1 & 0 \\ 0 & -1 \end{mymatrix}
+    + 1 \begin{mymatrix}{rr} 0 & 1 \\ 1 & 0 \end{mymatrix}
+    - 2 \begin{mymatrix}{rr} 0 & -1 \\ 1 & 0 \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{Linear combination of polynomials}{linear-combination-polynomials}
+  Write the polynomial $p(x) = 7x^2 + 4x - 3$ as a linear combination%
+  \index{linear combination!of polynomials} of
+  \begin{equation*}
+    q_1(x) = x^2,\quad
+    q_2(x) = (x+1)^2,\quad\mbox{and}\quad
+    q_3(x) = (x+2)^2.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We will show two different methods of solving this problem.
+  \begin{itemize}
+  \item \textbf{Method 1:} We must find coefficients $a,b,c$ such that
+    $p(x) = aq_1(x) + bq_2(x) + cq_3(x)$.  Note that
+    $q_2(x) = (x+1)^2 = x^2 + 2x + 1$ and
+    $q_3(x) = (x+2)^2 = x^2 + 4x + 4$. Therefore, we must solve the
+    equation
+    \begin{equation*}
+      7x^2 + 4x - 3 ~=~ ax^2 ~+~ b(x^2 + 2x + 1) ~+~ c(x^2 + 4x + 4).
+    \end{equation*}
+    Collecting equal powers of $x$, we can rewrite this as
+    \begin{equation*}
+      7x^2 + 4x - 3 ~=~ (a+b+c)x^2 ~+~ (2b+4c)x ~+~ (b+4c).
+    \end{equation*}
+    Since two polynomials are equal if and only if each corresponding
+    coefficient is equal, this yields a system of three equations in
+    three variables
+    \begin{equation*}
+      \begin{array}{r@{~~}c@{~}r}
+        a+b+c &=& 7, \\
+        2b+4c &=& 4, \\
+        b+4c &=& -3.
+      \end{array}
+    \end{equation*}      
+    We can easily solve this system of equations and find that the
+    unique solution is $a=\frac{5}{2}$, $b=7$,
+    $c=-\frac{5}{2}$. Therefore
+    \begin{equation*}
+      p(x) ~=~ \frac{5}{2}\,q_1(x) ~+~ 7\,q_2(x) ~-~ \frac{5}{2}\,q_3(x).
+    \end{equation*}
+  \item\textbf{Method 2:} We must find coefficients $a,b,c$ such that
+    $p(x) = aq_1(x) + bq_2(x) + cq_3(x)$. We substitute three
+    different values of $x$ into the equation, for example $x=0$,
+    $x=-1$, and $x=-2$, to obtain three scalar equations:
+    \begin{equation*}
+      \begin{array}{l@{~~}l@{~~}l@{\,}l@{~}l@{~}l@{\,}l@{~}l@{~}l@{\,}l@{~}l}
+        p(0)  &=& a&q_1(0)  &+& b&q_2(0)  &+& c&q_3(0), \\
+        p(-1) &=& a&q_1(-1) &+& b&q_2(-1) &+& c&q_3(-1), \\
+        p(-2) &=& a&q_1(-2) &+& b&q_2(-2) &+& c&q_3(-2). \\
+      \end{array}
+    \end{equation*}
+    We can calculate the 12 coefficients: $p(0)=-3$, $p(-1)=0$,
+    $p(-2)=17$, $q_1(0)=0$, $q_1(-1)=1$, $q_1(-2)=4$, $q_2(0)=1$,
+    $q_2(-1)=0$, $q_2(-2)=1$, $q_3(0)=4$, $q_3(-1)=1$, $q_3(-2)=0$.
+    Therefore, we obtain the system of equations
+    \begin{equation*}
+      \begin{array}{r@{~~}c@{~~}l}
+        -3  &=& 0a ~+~ 1b ~+~ 4c, \\
+        0   &=& 1a ~+~ 0b ~+~ 1c, \\
+        17  &=& 4a ~+~ 1b ~+~ 0c.
+      \end{array}
+    \end{equation*}
+    We can solve this system of equations to find the unique solution
+    $a=\frac{5}{2}$, $b=7$, $c=-\frac{5}{2}$. This yields the
+    polynomial $\frac{5}{2}\,q_1(x) ~+~ 7\,q_2(x) ~-~
+    \frac{5}{2}\,q_3(x)$.
+
+    Unlike in method 1, however, we still have one more step to do: we
+    must check whether $p(x)$ is indeed equal to
+    $\frac{5}{2}\,q_1(x) ~+~ 7\,q_2(x) ~-~ \frac{5}{2}\,q_3(x)$.
+    Because we have only compared the two functions at 3 points $x=0$,
+    $x=-1$, and $x=-2$, it is not automatically guaranteed that they
+    will be equal for all $x$.
+  \end{itemize}
+\end{solution}
+
+% ======================================================================
+\subsection*{CONTINUE HERE...}
 
 This definition leads to our next concept of span.
 
 \begin{definition}{Span of vectors}{span}
-Let $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} \subseteq V$. Then\index{span}
-\begin{equation*}
-\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{n}} =
-\set{\sum_{i=1}^{n}c_{i}\vect{v}_{i}: c_{i}\in \R
-}
-\end{equation*}
+  Let $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} \subseteq V$.
+  Then\index{span}
+  \begin{equation*} \sspan\set{\vect{v}_{1},\ldots,\vect{v}_{n}} =
+    \set{\sum_{i=1}^{n}c_{i}\vect{v}_{i}: c_{i}\in \R }
+  \end{equation*}
 \end{definition}
 
-When we say that a vector $\vect{w}$ is in $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ we mean that $\vect{w}$ can be written as a linear combination of the $\vect{v}_1$. We say that a collection of vectors $\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ is a \textbf{spanning set}\index{spanning set} for $V$ if $V = \sspan \set{\vect{v}_{1},\ldots,\vect{v}_{n}}$.
+When we say that a vector $\vect{w}$ is in
+$\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ we mean that $\vect{w}$
+can be written as a linear combination of the $\vect{v}_1$. We say
+that a collection of vectors $\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$
+is a \textbf{spanning set}\index{spanning set} for $V$ if $V = \sspan
+\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$.
 
 Consider the following example.
 
 \begin{example}{Matrix span}{matrix-span}
-Let $A = \begin{mymatrix}{rr}
-1 & 0 \\
-0 & 2
-\end{mymatrix}$, $B = \begin{mymatrix}{rr}
-0 & 1 \\
-1 & 0
-\end{mymatrix}$.
-Determine if $A$ and $B$ are in
-\[
-\sspan\set{M_1, M_2 } = \sspan \set{\begin{mymatrix}{rr}
-1 & 0 \\
-0 & 0
-\end{mymatrix}, \begin{mymatrix}{rr}
-0 & 0 \\
-0 & 1
-\end{mymatrix} }\]
+  Let $A = \begin{mymatrix}{rr} 1 & 0 \\ 0 & 2 \end{mymatrix}$,
+  $B = \begin{mymatrix}{rr} 0 & 1 \\ 1 & 0 \end{mymatrix}$.
+  Determine if $A$ and $B$ are in
+  \begin{equation*}
+    \sspan\set{M_1, M_2 } = \sspan
+    \set{\begin{mymatrix}{rr} 1 & 0 \\ 0 & 0 \end{mymatrix},
+      \begin{mymatrix}{rr} 0 & 0 \\ 0 & 1 \end{mymatrix} }
+  \end{equation*}
 \end{example}
 
 \begin{solution}
 
-First consider $A$. We want to see if scalars $s,t$ can be found such that $A = s M_1 + t M_2$.
-\begin{equation*}
-\begin{mymatrix}{rr}
-1 & 0 \\
-0 & 2
-\end{mymatrix} =
-s \begin{mymatrix}{rr}
-1 & 0 \\
-0 & 0
-\end{mymatrix} + t \begin{mymatrix}{rr}
-0 & 0 \\
-0 & 1
-\end{mymatrix}
-\end{equation*}
-The solution to this equation is given by
-\begin{eqnarray*}
-1 &=& s \\
-2 &=& t
-\end{eqnarray*}
-and it follows that $A$ is in $\sspan \set{M_1, M_2 }$.
+  First consider $A$. We want to see if scalars $s,t$ can be found
+  such that $A = s M_1 + t M_2$.
+  \begin{equation*}
+    \begin{mymatrix}{rr} 1 & 0 \\ 0 & 2 \end{mymatrix}
+    = s \begin{mymatrix}{rr} 1 & 0 \\ 0 & 0 \end{mymatrix}
+    + t \begin{mymatrix}{rr} 0 & 0 \\ 0 & 1 \end{mymatrix}
+  \end{equation*}
+  The solution to this equation is given by
+  \begin{eqnarray*}
+    1 &=& s \\
+    2 &=& t
+  \end{eqnarray*}
+  and it follows that $A$ is in $\sspan \set{M_1, M_2}$.
 
-Now consider $B$. Again we write $B = sM_1 + t M_2$ and see if a solution can be found for $s, t$.
-\begin{equation*}
-\begin{mymatrix}{rr}
-0 & 1 \\
-1 & 0
-\end{mymatrix} =
-s \begin{mymatrix}{rr}
-1 & 0 \\
-0 & 0
-\end{mymatrix} + t \begin{mymatrix}{rr}
-0 & 0 \\
-0 & 1
-\end{mymatrix}
-\end{equation*}
-Clearly no values of $s$ and $t$ can be found such that this equation holds. Therefore $B$ is not in $\sspan \set{M_1, M_2 }$.
+  Now consider $B$. Again we write $B = sM_1 + t M_2$ and see if a
+  solution can be found for $s, t$.
+  \begin{equation*}
+    \begin{mymatrix}{rr} 0 & 1 \\ 1 & 0 \end{mymatrix}
+    = s \begin{mymatrix}{rr} 1 & 0 \\ 0 & 0 \end{mymatrix}
+    + t \begin{mymatrix}{rr} 0 & 0 \\ 0 & 1 \end{mymatrix}
+  \end{equation*}
+  Clearly no values of $s$ and $t$ can be found such that this
+  equation holds. Therefore $B$ is not in $\sspan \set{M_1, M_2 }$.
 \end{solution}
 
 Consider another example.
 
 \begin{example}{Polynomial span}{polynomial-span}
-Show that $p(x) = 7x^2 + 4x - 3$ is in $\sspan\set{4x^2 + x, x^2 -2x + 3 }$.
+  Show that $p(x) =
+  7x^2 + 4x - 3$ is in $\sspan\set{4x^2 + x, x^2 -2x + 3 }$.
 \end{example}
 
 \begin{solution}
-To show that $p(x)$ is in the given span, we need to show that it can be written as a linear combination of polynomials in the span. Suppose scalars $a, b$ existed such that
-\[
-7x^2 +4x - 3= a(4x^2+x) + b (x^2-2x+3)
-\]
-If this linear combination were to hold, the following would be true:
-\begin{eqnarray*}
-4a + b &=& 7 \\
-a - 2b &=& 4 \\
-3b &=& -3
-\end{eqnarray*}
+  To show that $p(x)$ is in the given span, we need to
+  show that it can be written as a linear combination of polynomials in
+  the span. Suppose scalars $a, b$ existed such that
+  \begin{equation*}
+    7x^2 +4x - 3= a(4x^2+x) + b (x^2-2x+3)
+  \end{equation*}
+  If this linear combination were to hold, the
+  following would be true:
+  \begin{eqnarray*}
+    4a + b &=& 7 \\
+    a - 2b &=& 4 \\
+    3b &=& -3
+  \end{eqnarray*}
 
-You can verify that $a = 2, b = -1$ satisfies this system of equations. This means that we can write $p(x)$ as follows:
-\[
- 7x^2 +4x-3= 2(4x^2+x)  - (x^2-2x+3)
-\]
+  You can verify that $a = 2, b = -1$ satisfies this system of
+  equations. This means that we can write $p(x)$ as follows:
+  \begin{equation*}
+    7x^2 +4x-3= 2(4x^2+x) - (x^2-2x+3)
+  \end{equation*}
 
-Hence $p(x)$ is in the given span.
+  Hence $p(x)$ is in the given span.
 \end{solution}
 
 Consider the following example.
 
 \begin{example}{Spanning set}{spanning-set}
-Let $S = \set{x^2 + 1, x-2, 2x^2 - x }$. Show that $S$ is a spanning set for $\Poly_2$, the set of all polynomials of degree at most $2$.
+  Let $S = \set{x^2 + 1,
+    x-2, 2x^2 - x }$. Show that $S$ is a spanning set for $\Poly_2$, the
+  set of all polynomials of degree at most $2$.
 \end{example}
 
 \begin{solution}
-Let $p(x)= ax^2 + bx + c$ be an arbitrary polynomial in $\Poly_2$. To show that $S$ is a spanning set, it suffices to show that $p(x)$ can be written as a linear combination of the elements of $S$. In other words, can we find $r,s,t$ such that:
-\[
-p(x) =  ax^2 +bx + c = r(x^2 + 1) + s(x -2) + t(2x^2 - x)
-\]
+  Let $p(x)= ax^2 + bx + c$ be an arbitrary polynomial
+  in $\Poly_2$. To show that $S$ is a spanning set, it suffices to show
+  that $p(x)$ can be written as a linear combination of the elements of
+  $S$. In other words, can we find $r,s,t$ such that:
+  \begin{equation*}
+    p(x) = ax^2 +bx + c = r(x^2 + 1) + s(x -2) +
+    t(2x^2 - x)
+  \end{equation*}
 
-If a solution $r,s,t$ can be found, then this shows that for any such polynomial $p(x)$, it can be written as a linear combination of the above polynomials and $S$ is a spanning set.
+  If a solution $r,s,t$ can be found, then this shows that for any
+  such polynomial $p(x)$, it can be written as a linear combination of
+  the above polynomials and $S$ is a spanning set.
 
-\begin{eqnarray*}
-ax^2 +bx + c &=& r(x^2 + 1) + s(x -2) + t(2x^2 - x) \\
-&=& rx^2 + r + sx - 2s + 2tx^2 - tx \\
-&=& (r+2t)x^2 + (s-t)x +  (r-2s)
-\end{eqnarray*}
+  \begin{eqnarray*}
+    ax^2 +bx + c
+    &=& r(x^2 + 1) + s(x -2) + t(2x^2 - x) \\
+    &=& rx^2 + r + sx - 2s + 2tx^2 - tx \\
+    &=& (r+2t)x^2 + (s-t)x + (r-2s)
+  \end{eqnarray*}
 
-For this to be true, the following must hold:
-\begin{eqnarray*}
-a &=& r+2t \\
-b &=& s-t \\
-c &=& r-2s
-\end{eqnarray*}
+  For this to be true, the following must hold:
+  \begin{eqnarray*}
+    a &=& r+2t \\
+    b &=& s-t \\
+    c &=& r-2s
+  \end{eqnarray*}
 
-To check that a solution exists, set up the augmented matrix and row reduce:
-\[
-\begin{mymatrix}{rrr|r}
-1 & 0 & 2 & a \\
-0 & 1 & -1 & b \\
-1 & -2 & 0 & c
-\end{mymatrix} \roweq\ldots\roweq
-\begin{mymatrix}{rrr|c}
-1 & 0 & 0 & \frac{1}{2} a + 2b + \frac{1}{2}c\\
-0 & 1 & 0 & \frac{1}{4}a - \frac{1}{4}c \\
-0 & 0 & 1 & \frac{1}{4}a - b - \frac{1}{4}c
-\end{mymatrix}
-\]
+  To check that a solution exists, set up the augmented matrix and row
+  reduce:
+  \begin{equation*}
+    \begin{mymatrix}{rrr|r}
+      1 & 0 & 2 & a \\
+      0 & 1 & -1 & b \\
+      1 & -2 & 0 & c
+    \end{mymatrix}
+    \roweq\ldots\roweq
+    \begin{mymatrix}{rrr|c}
+      1 & 0 & 0 & \frac{1}{2} a + 2b + \frac{1}{2}c\\
+      0 & 1 & 0 & \frac{1}{4}a - \frac{1}{4}c \\
+      0 & 0 & 1 & \frac{1}{4}a - b - \frac{1}{4}c
+    \end{mymatrix}
+  \end{equation*}
 
-Clearly a solution exists for any choice of $a,b,c$. Hence $S$ is a spanning set for $\Poly_2$.
+  Clearly a solution exists for any choice of $a,b,c$. Hence $S$ is a
+  spanning set for $\Poly_2$.
 \end{solution}
