@@ -7,7 +7,7 @@ entries and its transpose equals its inverse, the matrix is called an \textbf{or
 
 The precise definition is as follows.
 
-\begin{definition}{Orthogonal matrices}{Ortho-Matrix}
+\begin{definition}{Orthogonal matrices}{orthogonal-matrices}
 A real $n\times n$-matrix $U$ is called an
 \index{matrix!orthogonal} \textbf{orthogonal} matrix if $UU^{T}=U^{T}U=I$.
 \end{definition}
@@ -30,7 +30,7 @@ is orthogonal.
 \end{example}
 
 \begin{solution}
-All we need to do is verify (one of the equations from) the requirements of Definition~\ref{def:Ortho-Matrix}.
+All we need to do is verify (one of the equations from) the requirements of Definition~\ref{def:orthogonal-matrices}.
 
 \begin{equation*}
 UU^{T}=\begin{mymatrix}{rr}
@@ -128,7 +128,7 @@ are the columns of $U$, an orthogonal matrix, then
 We will say that the columns form an orthonormal set of vectors, and similarly for the rows. Thus a matrix is \textbf{orthogonal} if its rows (or columns) form an
 \textbf{orthonormal} set of vectors. Notice that the convention is to call such a matrix orthogonal rather than orthonormal (although this may make more sense!).
 
-\begin{proposition}{Orthonormal basis}{orth-basis}
+\begin{proposition}{Orthonormal basis}{orthonormal-basis}
 The rows of an $n \times n$ orthogonal matrix form an orthonormal
 basis of $\R^n$. Further, any orthonormal basis of
 $\R^n$ can be used to construct an $n \times n$ orthogonal
@@ -136,7 +136,7 @@ matrix.
 \end{proposition}
 
 \begin{proof}
-Recall from Theorem~\ref{thm:orth-basis} that an orthonormal set is
+Recall from Theorem~\ref{thm:orthonormal-basis} that an orthonormal set is
 linearly independent and forms a basis for its span. Since the rows of
 an $n \times n$ orthogonal matrix form an orthonormal set, they must
 be linearly independent. Now we have $n$ linearly independent vectors,
@@ -155,7 +155,7 @@ the previous matrix.
 
 Consider the following proposition.
 
-\begin{proposition}{Determinant of orthogonal matrices}{ortho-determinant}
+\begin{proposition}{Determinant of orthogonal matrices}{orthogonal-determinant}
 Suppose $U$ is an orthogonal matrix. Then $\det (U) = \pm 1$.
 \end{proposition}
 

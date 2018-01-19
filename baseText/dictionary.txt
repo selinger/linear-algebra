@@ -32,13 +32,10 @@ cof
 cofactor
 cofactors
 com
-comm
 commutativity
-comp
 componentnode
 componentwise
 conformable
-coord
 coords
 cos
 Cramer's
@@ -51,15 +48,11 @@ DA
 Dal
 Dalhousie
 de
-decomp
 decouple
 decoupled
 decrypt
 decryption
 def
-defn
-deg
-diag
 diagonalizability
 diagonalizable
 diagonalization
@@ -68,12 +61,10 @@ diagonalized
 diagonalizing
 distributivity
 Dolittle's
-dotproduct
 DU
 DXYBJUWW
 EFNOR
 Ehsun
-eigen
 eigenfrequency
 eigenspace
 eigenspaces
@@ -81,7 +72,6 @@ eigenvector
 eigenvectors
 endpoints
 enuitem
-eq
 eqn
 equalities
 ERM
@@ -97,8 +87,6 @@ FuncXK
 Gaston
 gauss
 gaussian
-geo
-geomet
 gj
 GLFN
 hamilton
@@ -153,7 +141,7 @@ MacKenzie
 minimizer
 minimizers
 mm
-Mnm
+Mmn
 modulo
 moivre
 Moivre's
@@ -168,15 +156,11 @@ NDbook
 NDlogis
 NDsupp
 nilpotent
-nofield
 notational
 NRQEUAPOM
 NW
 okay
-ops
 org
-orth
-ortho
 orthogonalize
 orthogonally
 orthonormal
@@ -185,7 +169,6 @@ OZUGXABPWGTV
 parallelepiped
 parametric
 pdf
-perp
 PJQZGBOQKW
 plaintext
 Poohbah
@@ -217,8 +200,6 @@ semithick
 SeqK
 sextuple
 shearings
-soln
-solns
 sqrt
 st
 submatrices
@@ -229,7 +210,6 @@ summands
 surjection
 SVD
 SW
-symm
 Tamsyn
 TAV
 TGVXKHGSW
@@ -238,7 +218,6 @@ tikz
 titlemainbgcolour
 titlemainboxcolour
 toc
-transf
 TSZS
 tuple
 tuples
@@ -246,9 +225,6 @@ UDU
 uploads
 UTF
 UU
-val
-vars
-vect
 versa
 VKIXIQA
 Volterra

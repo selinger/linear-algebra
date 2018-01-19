@@ -17,7 +17,7 @@ T(\vect{x}) = A\vect{x} \label{matrix-of-transf}
 \end{equation}
 for all $\vect{x} \in \R^{n}$.
 
-\begin{theorem}{Matrix of a linear transformation}{matrix-linear-transf}
+\begin{theorem}{Matrix of a linear transformation}{matrix-linear-transformation}
 Let $T:\R^{n}\to \R^{m}$ be a linear transformation. Then we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$.
  In this case, we say that $T$ is {\em determined} or {\em induced}
 by the matrix $A$.
@@ -91,7 +91,7 @@ where $\vect{e}_{i}$ is the $i\th$ column of $I_n$, and then $T(\vect{e}_{i}
 
 The following Corollary is an essential result.
 
-\begin{corollary}{Matrix and linear transformation}{matrix-linear-transf-equivalence}
+\begin{corollary}{Matrix and linear transformation}{matrix-linear-transformation-equivalence}
 A transformation $T$ is a linear transformation if and only if it is a matrix transformation.
 \end{corollary}
 
@@ -152,7 +152,7 @@ In this example, we were given the resulting vectors of $T (\vect{e}_1),
 T (\vect{e}_2)$, and $T (\vect{e}_3)$. Constructing the matrix $A$ was simple, as we
 could simply use these vectors as the columns of $A$. The next example shows how to find $A$ when we are not given the $T (\vect{e}_i)$ so clearly.
 
-\begin{example}{The matrix of linear transformation: inconveniently \\ defined}{2x2-inconvenient-matrix-of-linear-transf}
+\begin{example}{The matrix of linear transformation: inconveniently \\ defined}{2x2-inconvenient-matrix-of-linear-transformation}
 Suppose $T$ is a linear transformation, $T:\R^{2}\rightarrow \R^{2}$ and
 \begin{equation*}
 T\begin{mymatrix}{r}
@@ -300,9 +300,9 @@ Then the matrix of $T$ must be of the form
 \end{procedure}
 
 We will illustrate this procedure in the following example. You may also find it useful
-to work through Example~\ref{exa:2x2-inconvenient-matrix-of-linear-transf} using this procedure.
+to work through Example~\ref{exa:2x2-inconvenient-matrix-of-linear-transformation} using this procedure.
 
-\begin{example}{Matrix of a linear transformation \\ given inconveniently}{inconvenient-matrix-linear-transf}
+\begin{example}{Matrix of a linear transformation \\ given inconveniently}{inconvenient-matrix-linear-transformation}
 Suppose $T:\R^{3}\rightarrow \R^{3}$ is a linear
 transformation and
 \begin{equation*}
@@ -444,7 +444,7 @@ multiplication by a matrix?
 \begin{solution}
 \begin{enumerate}
 \item
-First, we have just seen that $T (\vect{v}) = \proj_{\vect{u}}(\vect{v})$ is linear. Therefore by Theorem~\ref{thm:matrix-linear-transf}, we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$.
+First, we have just seen that $T (\vect{v}) = \proj_{\vect{u}}(\vect{v})$ is linear. Therefore by Theorem~\ref{thm:matrix-linear-transformation}, we can find a matrix $A$ such that $T(\vect{x}) = A\vect{x}$.
 
 \item
 The columns of the matrix for $T$ are defined above as $T(\vect{e}_{i})$.

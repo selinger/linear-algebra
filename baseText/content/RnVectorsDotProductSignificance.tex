@@ -14,7 +14,7 @@ such that $0 \leq \theta \leq \pi$.
 The dot product can be used to determine the included angle between
 two vectors.
 
-\begin{proposition}{The dot product and the included angle}{dotproduct-angle}
+\begin{proposition}{The dot product and the included angle}{dot-product-angle}
   Let $\vect{u}$ and $\vect{v}$ be two vectors in $\R^n$, and let
   $\theta$ be the included angle. Then the following equation holds.
   \begin{equation*}
@@ -48,7 +48,7 @@ Find the angle between the vectors
 \end{example}
 
 \begin{solution}
-  By Proposition~\ref{prop:dotproduct-angle},
+  By Proposition~\ref{prop:dot-product-angle},
   \begin{equation*}
     \vect{u}\dotprod \vect{v}=\norm{\vect{u}} \norm{\vect{v}} \cos \theta.
   \end{equation*}
@@ -78,7 +78,7 @@ Find the angle between the vectors
 \end{example}
 
 \begin{solution}
-  From Proposition~\ref{prop:dotproduct-angle}, we have
+  From Proposition~\ref{prop:dot-product-angle}, we have
   \begin{equation*}
     \vect{u}\dotprod \vect{v}
     =\norm{\vect{u}} \norm{\vect{v}} \cos \theta
@@ -98,7 +98,7 @@ if the included angle is $\pi /2$ radians ($90^{\circ })$. By
 convention, we also say that the zero vector is orthogonal to all
 vectors.
 
-\begin{proposition}{Orthogonal vectors}{perp-vectors}
+\begin{proposition}{Orthogonal vectors}{orthogonal-vectors}
   Let $\vect{u}$ and $\vect{v}$ be vectors in $\R^n$. Then $\vect{u}$
   and $\vect{v}$ are orthogonal\index{vector!orthogonal} if and only
   if
@@ -111,7 +111,7 @@ vectors.
   If $\vect{u}$ or $\vect{v}$ is zero, the vectors are orthogonal by
   definition, and the dot product is $0$ in that case, so the
   proposition holds. Now assume $\vect{u}$ and $\vect{v}$ are both
-  non-zero.  Then by Proposition~\ref{prop:dotproduct-angle}, we have
+  non-zero.  Then by Proposition~\ref{prop:dot-product-angle}, we have
   $\vect{u} \dotprod \vect{v} = 0$ if and only if
   $\norm{\vect{u}} \norm{\vect{v}} \cos \theta$ if and only if
   $\cos\theta=0$. Recall that the included angle is between $0$ and
@@ -149,5 +149,5 @@ are orthogonal.
     =
     0,
   \end{equation*}
-  and therefore, by Proposition~\ref{prop:perp-vectors}, the two vectors are orthogonal.
+  and therefore, by Proposition~\ref{prop:orthogonal-vectors}, the two vectors are orthogonal.
 \end{solution}

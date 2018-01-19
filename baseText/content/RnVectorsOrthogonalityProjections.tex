@@ -37,7 +37,7 @@ vector contained in $W$) as in the following diagram.
 The vector $\vect{z}$ is called the \textbf{orthogonal projection} of
 $\vect{y}$ on $W$. The definition is given as follows.
 
-\begin{definition}{Orthogonal projection}{orth-proj}
+\begin{definition}{Orthogonal projection}{orthogonal-projection}
 Let $W$ be a subspace of $\R^n$, and $Y$ be any point in
 $\R^n$. Then the orthogonal projection of $Y$ onto $W$ is given by
 \[
@@ -96,7 +96,7 @@ side, we obtain the desired result.
 
 Consider the following example.
 
-\begin{example}{Orthogonal projection}{orth-proj}
+\begin{example}{Orthogonal projection}{orthogonal-projection}
 Let $W$ be the plane through the origin given by the equation $x - 2y
 + z = 0$. \\
 Find the point in $W$ closest to the point $Y = (1,0,3)$.
@@ -216,7 +216,7 @@ Therefore an orthogonal basis of $W$ is
 We can now use this basis to find the orthogonal projection of the
 point $Y=(1,0,3)$ on the subspace $W$. We will write the position
 vector $\vect{y}$ of $Y$ as $\vect{y} = \begin{mymatrix}{c} 1 \\ 0 \\ 3
-\end{mymatrix}$. Using Definition~\ref{def:orth-proj}, we compute the projection as follows:
+\end{mymatrix}$. Using Definition~\ref{def:orthogonal-projection}, we compute the projection as follows:
 \begin{eqnarray*}
 \vect{z} &=& \proj_{W}(\vect{y})\\
 &=&
@@ -255,7 +255,7 @@ perpendicular to $W$. We call this set of vectors the
 \textbf{orthogonal complement}\index{orthogonal complement} of $W$ and
 denote it $W^{\perp}$.
 
-\begin{definition}{Orthogonal complement}{orth-comp}
+\begin{definition}{Orthogonal complement}{orthogonal-complement}
 Let $W$ be a subspace of $\R^n$. Then the orthogonal
 complement of $W$, written $W^{\perp}$, is the set of all vectors
 $\vect{x}$ such that $\vect{x} \dotprod \vect{z} = 0$ for all vectors
@@ -310,14 +310,14 @@ $(\R^n)^{\perp}=\set{\vect{0}}$.
 In the next example, we will look at how to find
 $W^{\perp}$.
 
-\begin{example}{Orthogonal complement}{orth-comp}
+\begin{example}{Orthogonal complement}{orthogonal-complement}
 Let $W$ be the  plane through the origin given by the equation  $x - 2y + z = 0$. Find
 a basis for the orthogonal complement of $W$.
 \end{example}
 
 \begin{solution}
 
-From Example~\ref{exa:orth-proj} we know that we can write $W$ as
+From Example~\ref{exa:orthogonal-projection} we know that we can write $W$ as
 \[
 W = \mbox{span} \set{\vect{u}_1, \vect{u}_2 } = \mbox{span}
 \set{
@@ -384,7 +384,7 @@ $\set{\begin{mymatrix}{r}
 
 The following results summarize the important properties of the orthogonal projection.
 
-\begin{theorem}{Orthogonal projection}{orth-proj}
+\begin{theorem}{Orthogonal projection}{orthogonal-projection}
 Let $W$ be a subspace of $\R^n$, $Y$ be any point in $\R^n$, and let $Z$ be the point in $W$ closest to $Y$. Then,
 \begin{enumerate}
 \item
@@ -419,7 +419,7 @@ We will first use the Gram-Schmidt Process to construct the orthogonal basis, $B
 \begin{mymatrix}{r} 1\\ 2\\ -1\\ 0 \end{mymatrix}
 }.\]
 
-By Theorem~\ref{thm:orth-proj},
+By Theorem~\ref{thm:orthogonal-projection},
 \[ \proj_U(\vect{v}) =
 \frac{2}{2} \begin{mymatrix}{c} 1\\ 0\\ 1\\ 0 \end{mymatrix} +
 \frac{5}{1}\begin{mymatrix}{c} 0\\ 0\\ 0\\ 1 \end{mymatrix} +

@@ -142,7 +142,7 @@ y_n
 
 This discussion sets the stage for the following essential theorem.
 
-\begin{theorem}{Diagonalizing a quadratic form}{diag-quadratic-form}
+\begin{theorem}{Diagonalizing a quadratic form}{diagonalize-quadratic-form}
 Let $q$ be a quadratic form in the variables $x_1,\ldots, x_n$. It follows that $q$ can be written in the form $q = \vect{x}^T A \vect{x}$ where
 \[
 \vect{x} = \begin{mymatrix}{r}
@@ -165,7 +165,7 @@ y_n
 \end{theorem}
 
 While not a formal proof, the following discussion should convince you that the above theorem holds. Let $q$ be a quadratic form in the variables $x_1,\ldots, x_n$. Then, $q$ can be written in the form $q = \vect{x}^T A \vect{x}$ for a symmetric matrix $A$.
-By Theorem~\ref{thm:orth-diag} we can orthogonally diagonalize the matrix $A$ such that $U^TAU = D$ for an orthogonal matrix $U$ and diagonal matrix $D$.
+By Theorem~\ref{thm:orthogonal-diagonalization} we can orthogonally diagonalize the matrix $A$ such that $U^TAU = D$ for an orthogonal matrix $U$ and diagonal matrix $D$.
 
 Then, the vector $\vect{y} = \begin{mymatrix}{r}
 y_1 \\
@@ -183,7 +183,7 @@ q &=& \vect{x}^T A \vect{x}\\
 
 The following procedure details the steps for the change of variables given in the above theorem.
 
-\begin{procedure}{Diagonalizing a quadratic form}{diag-quadratic-form}
+\begin{procedure}{Diagonalizing a quadratic form}{diagonalize-quadratic-form}
 Let $q$ be a quadratic form in the variables $x_1,\ldots, x_n$ given by
 \[
 q = a_{11}x_1^2 + a_{22}x_2^2 + \ldots + a_{nn}x_n^2 + a_{12}x_1x_2+\ldots

@@ -1,8 +1,8 @@
 \subsection{Orthogonal diagonalization}
 
-We begin this section by recalling some important definitions. Recall from Definition~\ref{def:orth-set} that non-zero vectors are called orthogonal if their dot product equals $0$.  A set is orthonormal if it is orthogonal and each vector is a unit vector.
+We begin this section by recalling some important definitions. Recall from Definition~\ref{def:orthogonal-set} that non-zero vectors are called orthogonal if their dot product equals $0$.  A set is orthonormal if it is orthogonal and each vector is a unit vector.
 
-An orthogonal matrix $U$, from Definition~\ref{def:Ortho-Matrix}, is one in which $UU^{T} = I$. In other words, the transpose of an orthogonal matrix is equal to its inverse. A key characteristic of orthogonal matrices, which will be essential in this section, is that the columns of an orthogonal matrix form an orthonormal set.
+An orthogonal matrix $U$, from Definition~\ref{def:orthogonal-matrices}, is one in which $UU^{T} = I$. In other words, the transpose of an orthogonal matrix is equal to its inverse. A key characteristic of orthogonal matrices, which will be essential in this section, is that the columns of an orthogonal matrix form an orthonormal set.
 
 We now recall another important definition.
 
@@ -14,7 +14,7 @@ A=-A^{T}$, then $A$ is called \textbf{antisymmetric. }
 
 Before proving an essential theorem, we first examine the following lemma which will be used below.
 
-\begin{lemma}{The dot product}{dotproduct-lemma}
+\begin{lemma}{The dot product}{dot-product-lemma}
 Let $A=\mat{a_{ij} }$ be a real symmetric $n \times n$-matrix, and let $\vect{x}, \vect{y} \in \R^n$. Then
 \[
 A\vect{x} \dotprod \vect{y} = \vect{x} \dotprod A \vect{y}
@@ -58,7 +58,7 @@ Dividing by $\overline{\vect{x}}^{T}\vect{x}$ on both sides yields $
 
 Now suppose $A$ is real symmetric and $A\vect{x}=\lambda \vect{x}$, $A
 \vect{y}=\mu \vect{y}$ where $\mu \neq \lambda$. Then since $A$
-is symmetric, it follows from Lemma~\ref{lem:dotproduct-lemma} about the dot product that
+is symmetric, it follows from Lemma~\ref{lem:dot-product-lemma} about the dot product that
 \begin{equation*}
 \lambda \vect{x}\dotprod \vect{y}=A\vect{x}\dotprod \vect{y}=\vect{x}\dotprod A\vect{y}=\vect{x}\dotprod \mu \vect{y}=\mu \vect{x}\dotprod \vect{y}
 \end{equation*}
@@ -68,7 +68,7 @@ since $\lambda -\mu \neq 0$, it must be that $\vect{x}\dotprod \vect{y}=0$. Ther
 
 The following theorem is proved in a similar manner.
 
-\begin{theorem}{Eigenvalues of antisymmetric matrix}{antisymmetric-eigen}
+\begin{theorem}{Eigenvalues of antisymmetric matrix}{antisymmetric-eigenvalues}
 The eigenvalues of a real antisymmetric matrix are either equal to $0$ or are pure imaginary numbers.
 \end{theorem}
 
@@ -98,7 +98,7 @@ Let $A=\begin{mymatrix}{rr}
 \end{example}
 
 \begin{solution}
-First notice that $A$ is antisymmetric. By Theorem~\ref{thm:antisymmetric-eigen}, the eigenvalues will either equal $0$ or be pure imaginary.  The eigenvalues of $A$ are obtained by solving the usual equation
+First notice that $A$ is antisymmetric. By Theorem~\ref{thm:antisymmetric-eigenvalues}, the eigenvalues will either equal $0$ or be pure imaginary.  The eigenvalues of $A$ are obtained by solving the usual equation
 \[
 \det (\eigenvar I - A ) =
 \det \begin{mymatrix}{rr}
@@ -137,7 +137,7 @@ Recall that a diagonal matrix $D=\mat{d_{ij} }$ is one in which $d_{ij} = 0$ whe
 
 Consider the following important theorem.
 
-\begin{theorem}{Orthogonal diagonalization}{orth-diag}
+\begin{theorem}{Orthogonal diagonalization}{orthogonal-diagonalization}
 Let $A$ be a real symmetric matrix. Then there exists an
 orthogonal matrix $U$ such that
 \[
@@ -156,7 +156,7 @@ _{n}}$.
 \end{corollary}
 
 \begin{proof}
-Since $A$ is symmetric, then by Theorem~\ref{thm:orth-diag},
+Since $A$ is symmetric, then by Theorem~\ref{thm:orthogonal-diagonalization},
 there exists an orthogonal matrix $U$ such that $U^{T}AU=D$, a diagonal
 matrix whose diagonal entries are the eigenvalues of $A$. Therefore, since $
 A $ is symmetric and all the matrices are real,
@@ -208,7 +208,7 @@ Let $A$ be an $n \times n$-matrix. Then the principal axes of $A$ is a set of or
 
 In the next example, we examine how to find such a set of orthonormal eigenvectors.
 
-\begin{example}{Find an orthonormal set of eigenvectors}{orth-basis-eigenvectors}
+\begin{example}{Find an orthonormal set of eigenvectors}{orthonormal-basis-eigenvectors}
 Find an orthonormal set of eigenvectors for the symmetric matrix
 \begin{equation*}
 A = \begin{mymatrix}{rrr}
@@ -456,12 +456,12 @@ An $n\times n$-matrix $A$ is said to be \textbf{non-defective}
 P^{-1}AP=D$ where $D$ is a diagonal matrix.
 \end{definition}
 
-As indicated in Theorem~\ref{thm:orth-diag} if $A$ is a real symmetric matrix, there exists an
+As indicated in Theorem~\ref{thm:orthogonal-diagonalization} if $A$ is a real symmetric matrix, there exists an
 orthogonal matrix $U$ such that $U^{T}AU=D$ where $D$ is a diagonal matrix. Therefore,
 every symmetric matrix is diagonalizable because if $U$ is an orthogonal
 matrix, it is invertible and its inverse is $U^{T}$. In this case, we say that $A$ is \textbf{orthogonally diagonalizable}\index{orthogonally diagonalizable}. Therefore every symmetric matrix is in fact orthogonally diagonalizable. The next theorem provides another way to determine if a matrix is orthogonally diagonalizable.
 
-\begin{theorem}{Orthogonally diagonalizable}{orth-diagonalizable}
+\begin{theorem}{Orthogonally diagonalizable}{orthogonal-diagonalizable}
 Let $A$ be an $n \times n$-matrix. Then $A$ is orthogonally diagonalizable if and only if $A$ has an orthonormal set of eigenvectors.
 \end{theorem}
 
@@ -470,7 +470,7 @@ Recall from Corollary~\ref{cor:orthonormal-eigenvectors} that every symmetric ma
 In the following example, the orthogonal
 matrix $U$ will be found to orthogonally diagonalize a matrix.
 
-\begin{example}{Diagonalize a symmetric matrix}{orth-diag}
+\begin{example}{Diagonalize a symmetric matrix}{orthogonal-diagonalization}
 Let $A=\begin{mymatrix}{rrr}
 1 & 0 & 0 \\
 0 &

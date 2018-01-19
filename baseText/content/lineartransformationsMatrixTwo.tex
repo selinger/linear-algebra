@@ -151,7 +151,7 @@ a_2
 
 Given any basis $B$, one can easily verify that the coordinate function is actually an isomorphism.
 
-\begin{theorem}{$C_B$ is a linear transformation}{coord-linear-transf}
+\begin{theorem}{$C_B$ is a linear transformation}{coordinate-linear-transformation}
 For any basis $B$ of $\R^n$, the coordinate function
 \[ C_B: \R^n  \rightarrow \R^n  \]
 is a linear transformation, and moreover an isomorphism.
@@ -161,7 +161,7 @@ We now discuss the main  result  of this section, that is how
 to represent a linear transformation with respect to different
 bases.
 
-\begin{theorem}{The matrix of a linear transformation}{matrix-linear-transf-bases}
+\begin{theorem}{The matrix of a linear transformation}{matrix-linear-transformation-bases}
 Let $T: \R^n \to \R^m$ be a linear transformation,
 and let $B_1$ and $B_2$ be bases of $\R^{n}$ and
 $\R^{m}$ respectively.
@@ -205,7 +205,7 @@ and this completes the proof.
 
 Consider the following example.
 
-\begin{example}{Matrix of a linear transformation}{matrix-linear-transf}
+\begin{example}{Matrix of a linear transformation}{matrix-linear-transformation}
 Let $T: \R^2 \to \R^2$ be a linear transformation defined by $T \paren{\begin{mymatrix}{r}
 a \\
 b
@@ -241,7 +241,7 @@ Find the matrix $M_{B_2,B_1}$ of $T$ with respect to the bases $B_1$ and $B_2$.
 \end{example}
 
 \begin{solution}
-By Theorem~\ref{thm:matrix-linear-transf-bases}, the columns of $M_{B_{2} B_{1}}$ are the
+By Theorem~\ref{thm:matrix-linear-transformation-bases}, the columns of $M_{B_{2} B_{1}}$ are the
 coordinate vectors of $T(\vect{v}_{1}), T(\vect{v}_{2})$ with respect
 to $B_2$.
 
@@ -372,7 +372,7 @@ and finally applying $M_{B_1 B_2}$ gives
 \end{mymatrix} \]
 as above.
 
-We see that the same vector results from either method, as suggested by Theorem~\ref{thm:matrix-linear-transf-bases}.
+We see that the same vector results from either method, as suggested by Theorem~\ref{thm:matrix-linear-transformation-bases}.
 \end{solution}
 
 If the bases $B_1$ and $B_2$ are equal, say $B$, then we write $M_{B}$ instead of  $M_{B B}$.
