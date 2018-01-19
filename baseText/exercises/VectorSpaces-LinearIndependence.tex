@@ -484,3 +484,43 @@ this is a basis.
 \end{sol}
 \end{ex}
 
+
+\begin{ex}
+  Assume $\vect{u},\vect{v},\vect{w}$ are linearly independent
+  elements of some vector space $V$. Consider the set of vectors
+  \begin{equation*}
+    \textstyle
+    R = \set{2\vect{u} - \vect{w},~
+      \vect{w} + \vect{v},~
+      3\vect{v} + \frac{1}{2} \vect{u} }.
+  \end{equation*}
+  Determine whether $R$ is linearly independent.
+
+  \begin{sol}
+    To determine whether $R$ is linearly independent, we must solve
+    the equation
+    \begin{equation*}
+      \textstyle
+      a(2\vect{u} - \vect{w}) + b(\vect{w} + \vect{v}) + c( 3\vect{v} +
+      \frac{1}{2}\vect{u}) ~=~ \vect{0}.
+    \end{equation*}
+    If the only solution is the trivial solution, the set is linearly
+    independent. We rewrite the
+    equation as follows.
+    \begin{equation*}
+      \textstyle
+      (2a + \frac{1}{2}c) \vect{u} + (b+3c)\vect{v} + (-a + b) \vect{w} ~=~ \vect{0}.
+    \end{equation*}
+    Since $\vect{u},\vect{v},\vect{w}$ are linearly independent, the
+    coefficients in the last equation must all equal $0$.
+    In other words:
+    \begin{eqnarray*}
+      \textstyle
+      2a + \frac{1}{2} c &=& 0, \\
+      b + 3c &=& 0, \\
+      -a + b &=& 0.
+    \end{eqnarray*}
+    We solve and find that the unique solution is
+    $a=b=c=0$. Therefore, the set $R$ is linearly independent.
+  \end{sol}
+\end{ex}
