@@ -11,10 +11,10 @@ In this section we will consider subspaces of general vector spaces.
 
 \begin{definition}{Subspace}{subspace-vector-space}
   Let $V$ be a vector space over a field $K$. A subset $W\subseteq V$
-  is said to be a \textbf{subspace}\index{subspace} of $V$ if the
+  is said to be a \textbf{subspace}\index{subspace} of\/ $V$ if the
   following conditions hold:
   \begin{enumerate}
-  \item $\vect{0}\in W$, where $\vect{0}$ is the additive unit of $V$.
+  \item $\vect{0}\in W$, where $\vect{0}$ is the additive unit of\/ $V$.
   \item $W$ is \textbf{closed under addition}%
     \index{closed under!addition}%
     \index{addition!close under}: Whenever $\vect{u}, \vect{v}\in W$,
@@ -22,7 +22,7 @@ In this section we will consider subspaces of general vector spaces.
   \item $W$ is \textbf{closed under scalar multiplication}%
     \index{closed under!scalar multiplication}%
     \index{scalar multiplication!closed under}: Whenever $k\in K$ and
-    $\vect{u}\in W$, then $k\vect{u}\in W$. 
+    $\vect{u}\in W$, then $k\vect{u}\in W$.
   \end{enumerate}
 \end{definition}
 
@@ -43,7 +43,7 @@ In this section we will consider subspaces of general vector spaces.
   real numbers. Let $W\subseteq V$ be the subset of {\em continuous}
   functions%
   \index{continuous function}%
-  \index{function!continuous}. Then $W$ is a subspace of $V$.
+  \index{function!continuous}. Then $W$ is a subspace of\/ $V$.
 \end{example}
 
 \begin{proof}
@@ -54,10 +54,10 @@ In this section we will consider subspaces of general vector spaces.
   \item if $f,g$ are continuous functions, then $f+g$ is
     continuous;
   \item if $f$ is a continuous function and $k$ a constant, then $kf$
-    is continuous. 
+    is continuous.
   \end{enumerate}
   It follows that $W$ contains $0$, and is closed under addition and
-  scalar multiplication. Therefore, $W$ is a subspace of $V$.
+  scalar multiplication. Therefore, $W$ is a subspace of\/ $V$.
 \end{proof}
 
 \begin{example}{Space of differentiable functions}{subspace-differentiable}
@@ -66,7 +66,7 @@ In this section we will consider subspaces of general vector spaces.
   \index{differentiable function}%
   \index{function!differentiable} if the derivative $f'(x)$ exists for
   all $x\in\R$. Let $W\subseteq V$ be the subset of differentiable
-  functions. Then $W$ is a subspace of $V$.
+  functions. Then $W$ is a subspace of\/ $V$.
 \end{example}
 
 \begin{proof}
@@ -80,7 +80,7 @@ In this section we will consider subspaces of general vector spaces.
     $h=kf$ is differentiable. In fact, $h' = kf'$.
   \end{enumerate}
   It follows that $W$ contains $0$, and is closed under addition and
-  scalar multiplication. Therefore, $W$ is a subspace of $V$.
+  scalar multiplication. Therefore, $W$ is a subspace of\/ $V$.
 \end{proof}
 
 \begin{example}{Space of sequences satisfying a linear recurrence}{subspace-recurrence}
@@ -90,7 +90,7 @@ In this section we will consider subspaces of general vector spaces.
     W = \set{a \in \Seq_{\R} \mid \mbox{for all $n\geq 0$, $a_{n+2}=a_n+a_{n+1}$}}.
   \end{equation*}
   In other words, $W$ is the set of all sequences satisfying the
-  recurrence relation $a_{n+2}=a_n+a_{n+1}$. Then $W$ is a subspace of $V$.
+  recurrence relation $a_{n+2}=a_n+a_{n+1}$. Then $W$ is a subspace of\/ $V$.
 \end{example}
 
 \begin{proof}
@@ -98,7 +98,7 @@ In this section we will consider subspaces of general vector spaces.
   \def\y#1{\makebox[3em][r]{$#1$}}
   \def\z#1{\makebox[0em][l]{$#1$}}
   Before we prove that $W$ is a subspace, let us first consider an
-  example. The following sequences are elements of $W$, because they
+  example. The following sequences are elements of\/ $W$, because they
   both satisfy the recurrence:
   \begin{equation*}
     \begin{array}{rc@{}l}
@@ -160,13 +160,13 @@ In this section we will consider subspaces of general vector spaces.
   $f(x)=\cos x$, and $f(x)=0$ are examples of solutions of this
   differential equation.  Let $W$ be the set of all functions that are
   solutions of the differential equation $f'' = -f$. Then $W$ is a
-  subspace of $V$.
+  subspace of\/ $V$.
 \end{example}
 
 \begin{proof}
   \begin{enumerate}
   \item The zero function $f(x)=0$ is a solution of the differential
-    equation, and therefore an element of $W$.
+    equation, and therefore an element of\/ $W$.
   \item To show that $W$ is closed under addition, let $f,g\in W$ and
     consider $h=f+g$. Then $f''=-f$ and $g''=-g$, and therefore
     $h'' = f'' + g'' = -f+(-g) = -h$. Therefore, $h\in W$, and $W$ is
@@ -176,6 +176,47 @@ In this section we will consider subspaces of general vector spaces.
     therefore $h'' = kf'' = k(-f) = -h$. It follows that $h\in W$, and
     therefore $W$ is closed under scalar multiplication.
   \end{enumerate}
+\end{proof}
+
+\begin{example}{Subspace of polynomials}{polynomial-subspace}
+  Consider $\Poly_2$, the vector space of polynomials of degree at
+  most 2, with coefficients in a field $K$. Fix some element $r\in K$,
+  and let $W \subseteq \Poly_2$ be the subset of polynomials that have
+  $r$ as a root. Then $W$ is a subspace of $\Poly_2$.
+\end{example}
+
+\begin{proof}
+  We can express $W$ as follows:
+  \begin{equation*}
+    W = \set{p\in\Poly_2 \mid p(r)  = 0}.
+  \end{equation*}
+  We need to show that $W$ is a subspace.
+  \begin{enumerate}
+  \item The zero polynomial, given by $0(x)=0$, satisfies $0(r)=0$, so
+    $0\in W$.
+  \item To show that $W$ is closed under addition, assume
+    $p, q\in W$, and let $s=p+r$. Then $p(r)=0$ and $q(r)=0$,
+    therefore $s(r) = p(r)+q(r) = 0$. It follows that $s\in W$.
+  \item To show that $W$ is closed under scalar multiplication, assume
+    $p(x)\in W$ and $k$ be a scalar. Then $(kp)(r)=k(p(r))=k0=0$, and
+    therefore $kp\in W$.
+  \end{enumerate}
+\end{proof}
+
+\begin{example}{Trivial subspaces of\/ $V$}{trivial-subspaces}
+  Let $V$ be an arbitrary vector space over a field $K$. Then
+  $\set{\vect{0}}$ is a subspace of\/ $V$, called the \textbf{zero
+    subspace}. Also, $V$ is a subspace of itself.
+\end{example}
+
+\begin{proof}
+  Clearly $\set{\vect{0}}$ contains $\vect{0}$, and is closed under
+  addition and scalar multiplication because
+  $\vect{0}+\vect{0}=\vect{0}$ and $k\vect{0}=\vect{0}$ for all $k$.
+  Similarly, $V$ contains $\vect{0}$ and is closed under addition and
+  scalar multiplication, because addition and scalar multiplication
+  are operations on $V$.  Therefore, both $\set{\vect{0}}$ and $V$ are
+  subspaces of\/ $V$.
 \end{proof}
 
 The interest of subspaces lies in the fact that they are vector spaces
@@ -193,188 +234,107 @@ in their own right, as stated in the following proposition.
   multiplication. This ensures that addition and scalar multiplication
   are well-defined operations on $W$. The axioms (A1), (A2), (A4), and
   (SM1)--(SM4) all obviously hold in $W$, because they hold in $V$
-  (two elements of $W$ are equal in $W$ if and only if they are equal
+  (two elements of\/ $W$ are equal in $W$ if and only if they are equal
   in $V$). The axiom (A3) holds because $\vect{0}\in W$.
 \end{proof}
 
+We end this section with an observation about spans.
 
-% ======================================================================
-\subsection{CONTINUE HERE...}
+\begin{proposition}{Span is smallest subspace containing given vectors}{span-subspace}
+  Let $V$ be a vector space over some field $K$, and consider a set of
+  vectors $S\subseteq V$. Then $\sspan S$ is the smallest subspace of\/
+  $V$ containing $S$. More explicitly, we have:
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item The set $\sspan S$ is a subspace of\/ $V$, and
+      $S\subseteq \sspan S$.
+    \item If $W$ is any other subspace of\/ $V$ such that
+      $S\subseteq W$, then $\sspan S\subseteq W$.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{proposition}
 
+\begin{proof}
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item To show that $\sspan S$ is a subspace, first note that
+      $\vect{0}\in\sspan S$, because $\vect{0}$ is the empty linear
+      combination. Also, if $\vect{v},\vect{u}\in\sspan S$, then by
+      definition of span, there exist
+      $\vect{v}_1,\ldots,\vect{v}_k,\vect{u}_1,\ldots,\vect{u}_{\ell}\in
+      S$ and $a_1,\ldots,a_k,b_1,\ldots,b_{\ell}\in K$ such that
+      \begin{eqnarray*}
+        \vect{v} &=& a_1\vect{v}_1 + \ldots + a_k\vect{v}_k, \\
+        \vect{u} &=& b_1\vect{u}_1 + \ldots + b_{\ell}\vect{u}_{\ell}.
+      \end{eqnarray*}
+      Then
+      \begin{eqnarray*}
+        \vect{v}+\vect{u}
+        &=& a_1\vect{v}_1 + \ldots + a_k\vect{v}_k
+            + b_1\vect{u}_1 + \ldots + b_{\ell}\vect{u},
+      \end{eqnarray*}
+      and therefore $\vect{v}+\vect{u}\in\sspan S$. It follows that
+      $\sspan S$ is closed under addition. The proof for scalar
+      multiplication is similar. Finally, every $\vect{v}\in S$ is
+      trivially a linear combination of itself, $\vect{v}=1\vect{v}$,
+      and therefore $S\subseteq \sspan S$.
+    \item Consider any other subspace $W$ of $V$ such that
+      $S\subseteq W$. To show that $\sspan S\subseteq W$, consider an
+      arbitrary element $\vect{v}\in\sspan S$. By definition of span,
+      there exist $\vect{v}_1,\ldots,\vect{v}_k\in S$ and
+      $a_1,\ldots,a_k\in K$ such that
+      $\vect{v}=a_1\vect{v}_1 + \ldots + a_k\vect{v}_k$. By
+      assumption, $\vect{v}_1,\ldots,\vect{v}_k\in W$. Since $W$ is
+      closed under addition and scalar multiplication, it follows that
+      $\vect{v}\in W$. Since $\vect{v}$ was an arbitrary element of
+      $\sspan S$, it follows that $\sspan S\subseteq W$.      
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{proof}
 
-THE CHAPTER IS TOO LONG. SPLIT INTO ``SUBSPACES'' and ``BASIS AND DIMENSION''.
+While the last proposition looks technical, it can actually be useful
+for proving that two sets of vectors span the same subspace. The
+following in an example of this.
 
-
-As a matter of fact, the space $W$ of the last example is a
-2-dimensional space. From calculus, we know that the general solution
-of the differential equation $f''=-f$ is
-\begin{equation*}
-  f(x) = A\sin x + B\cos x,
-\end{equation*}
-where $A,B$ are constants. This means that $W=\sspan\set{\sin x, \cos x}$.
-
-
-The span of a set of vectors as described in Definition~\ref{def:span}
-is an example of a subspace. The following fundamental result says
-that subspaces are subsets of a vector space which are themselves
-vector spaces.
-
-Consider the following useful Corollary.
-
-\begin{corollary}{Span is a subspace}{span-subspace}
-  Let $V$ be a vector space with $W \subseteq V$. If
-  $W = \sspan \set{\vect{v}_1,\ldots, \vect{v}_n }$ then $W$ is a
-  subspace of $V$.
-\end{corollary}
-
-When determining spanning sets the following theorem proves useful.
-
-\begin{theorem}{Spanning set}{spanning-set}
-  Let $W \subseteq V$ for a vector space $V$ and suppose
-  $W = \sspan \set{\vect{v}_1, \vect{v}_2,\ldots, \vect{v}_n }$.
-
-  Let $U \subseteq V$ be a subspace such that
-  $\vect{v}_1, \vect{v}_2,\ldots, \vect{v}_n \in U$. Then it follows
-  that $W \subseteq U$.
-\end{theorem}
-
-In other words, this theorem claims that any subspace that contains a
-set of vectors must also contain the span of these vectors.
-
-The following example will show that two spans, described differently,
-can in fact be equal.
-
-\begin{example}{Equal span}{equal-span}
-  Let $p(x), q(x)$ be polynomials and suppose
-  $U = \sspan\set{2p(x) - q(x), p(x) + 3q(x)} $ and
-  $W = \sspan\set{p(x), q(x) }$. Show that $U = W$.
-\end{example}
-
-\begin{solution}
-  We will use Theorem~\ref{thm:spanning-set} to show that
-  $U \subseteq W$ and $W \subseteq U$. It will then follow that $U=W$.
-  \begin{enumerate}
-  \item $U \subseteq W$
-
-    Notice that $2p(x) - q(x)$ and $p(x) + 3q(x)$ are both in
-    $W = \sspan \set{p(x), q(x) }$. Then by
-    Theorem~\ref{thm:spanning-set} $W$ must contain the span of these
-    polynomials and so $U \subseteq W$.
-
-  \item $W \subseteq U$
-
-    Notice that
-    \begin{eqnarray*}
-      p(x) &=& \frac{3}{7} (2p(x) - q(x))  + \frac{2}{7} (p(x) + 3q(x)) \\
-      q(x) &=& -\frac{1}{7} (2p(x) - q(x))  + \frac{2}{7} (p(x) + 3q(x))
-    \end{eqnarray*}
-    Hence $p(x), q(x)$ are in
-    $\sspan \set{2p(x) - q(x), p(x) + 3q(x) }$. By
-    Theorem~\ref{thm:spanning-set} $U$ must contain the span of these
-    polynomials and so $W \subseteq U$.
-  \end{enumerate}
-\end{solution}
-
-To prove that a set is a vector space, one must verify each of the
-axioms given in Definitions~\ref{def:vector-space-axioms-addition} and
-{\ref{def:vector-space-axioms-scalar-mult}}. This is a cumbersome
-task, and therefore a shorter procedure is used to verify a subspace.
-
-\begin{procedure}{Subspace test}{subspace-test}
-\end{procedure}
-
-Therefore it suffices to prove these three steps to show that a set is
-a subspace.
-
-Consider the following example.
-
-\begin{example}{Improper subspaces}{improper-subspaces}
-  Let $V$ be an arbitrary vector space. Then $V$ is a subspace of
-  itself. Similarly, the set $\set{\vect{0} }$ containing only the
-  zero vector is also a subspace.
-\end{example}
-
-\begin{solution}
-  Using the subspace test in Procedure~\ref{proc:subspace-test} we can
-  show that $V$ and $\set{\vect{0} }$ are subspaces of $V$.
-
-  Since $V$ satisfies the vector space axioms it also satisfies the
-  three steps of the subspace test. Therefore $V$ is a subspace.
-
-  Let's consider the set $\set{\vect{0} }$.
-  \begin{enumerate}
-  \item The vector $\vect{0}$ is clearly contained in
-    $\set{\vect{0} }$, so the first condition is satisfied.
-
-  \item Let $\vect{w}_1, \vect{w}_2$ be in $\set{\vect{0} }$. Then
-    $\vect{w}_1 = \vect{0}$ and $\vect{w}_2 = \vect{0}$ and so
-    \begin{equation*}
-      \vect{w}_1 + \vect{w}_2 = \vect{0} + \vect{0} = \vect{0}
-    \end{equation*}
-    It follows that the sum is contained in $\set{\vect{0} }$ and the
-    second condition is satisfied.
-
-  \item Let $\vect{w}_1$ be in $\set{\vect{0} }$ and let $a$ be an
-    arbitrary scalar. Then
-    \begin{equation*}
-      a\vect{w}_1  = a\vect{0} = \vect{0}
-    \end{equation*}
-    Hence the product is contained in $\set{\vect{0} }$ and the third
-    condition is satisfied.
-  \end{enumerate}
-
-  It follows that $\set{\vect{0} }$ is a subspace of $V$.
-\end{solution}
-
-The two subspaces described above are called \textbf{improper
-  subspaces}\index{improper subspace}. Any subspace of a vector space
-$V$ which is not equal to $V$ or $\set{\vect{0} }$ is called a
-\textbf{proper subspace}\index{proper subspace}.
-
-Consider another example.
-
-\begin{example}{Subspace of polynomials}{polynomial-subspace}
-  Let $\Poly_2$ be the vector space of polynomials of degree two or
-  less. Let $W \subseteq \Poly_2$ be all polynomials of degree two or
-  less which have $1$ as a root. Show that $W$ is a subspace of
-  $\Poly_2$.
-\end{example}
-
-\begin{solution}
-  First, express $W$ as follows:
+\begin{example}{Equal spans}{equal-span}
+  Show that the sets $S=\set{x^2-2x+1, x-1}$ and
+  $T=\set{x^2-1, x^2-x}$ span the same subspace of $\Poly_2$. In other
+  words, show that
   \begin{equation*}
-    W = \set{p(x) = ax^2 +bx +c, a,b,c, \in \R \mid p(1)  = 0 }
+    \sspan S = \sspan T.
   \end{equation*}
+\end{example}
 
-  We need to show that $W$ satisfies the three conditions of
-  Procedure~\ref{proc:subspace-test}.
+\begin{solution}
+  To show that two sets are equal, we must show that each is a subset
+  of the other. So we will show $\sspan S \subseteq \sspan T$ and
+  $\sspan T \subseteq \sspan S$. By
+  Proposition~\ref{prop:span-subspace}, it is sufficient to show that
+  $S\subseteq \sspan T$ and $T\subseteq \sspan S$, i.e., we must show
+  that every element of $S$ is a linear combination of elements of $T$
+  and vice versa.
   \begin{enumerate}
-  \item The zero polynomial of $\Poly_2$ is given by
-    $0(x) = 0x^2 + 0x + 0 = 0$. Clearly $0(1) = 0$ so $0(x)$ is
-    contained in $W$.
-
-  \item Let $p(x), q(x)$ be polynomials in $W$.  It follows that
-    $p(1) = 0 $ and $q(1) = 0$. Now consider $p(x) + q(x)$. Let $r(x)$
-    represent this sum.
-    \begin{eqnarray*}
-      r(1) &=& p(1) + q(1) \\
-           &=& 0 + 0 \\
-           &=& 0
-    \end{eqnarray*}
-
-    Therefore the sum is also in $W$ and the second condition is satisfied.
-
-  \item Let $p(x)$ be a polynomial in $W$ and let $a$ be a scalar. It
-    follows that $p(1) = 0$. Consider the product $ap(x)$.
-    \begin{eqnarray*}
-      ap(1) &=& a(0) \\
-            &=& 0
-    \end{eqnarray*}
-
-    Therefore the product is in $W$ and the third condition is
-    satisfied.
+  \item $S \subseteq \sspan T$. We have
+    \begin{equation*}
+      \begin{array}{rclcl}
+      x^2-2x+1 &=& (-1)(x^2-1) + 2(x^2-x) &\in& \sspan T, \\
+      x-1 &=& 1(x^2-1) - 1(x^2-x) &\in& \sspan T.
+      \end{array}
+    \end{equation*}
+    Since each element of $S$ is an element of $\sspan T$, it follows
+    that $S\subseteq\sspan T$. By
+    Proposition~\ref{prop:span-subspace}, this implies that
+    $\sspan S\subseteq \sspan T$.
+  \item $T \subseteq \sspan S$. We have
+    \begin{equation*}
+      \begin{array}{rclcl}
+        x^2-1 &=& 1(x^2-2x+1) - 2(x-1) &\in& \sspan S, \\
+        x^2-x &=& 1(x^2-2x+1) - 1(x-1) &\in& \sspan S.
+      \end{array}
+    \end{equation*}
+    Since each element of $T$ is an element of $\sspan S$, it follows
+    that $T\subseteq\sspan S$. By
+    Proposition~\ref{prop:span-subspace}, this implies that
+    $\sspan T\subseteq \sspan S$.
   \end{enumerate}
-
-  It follows that $W$ is a subspace of $\Poly_2$.
 \end{solution}
-
