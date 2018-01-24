@@ -7,6 +7,99 @@
   \end{enumerate}
 \end{outcome}
 
+\begin{definition}{Basis}{basis-vector-space}
+  Let $V$ be a vector space. A set $B$ of vectors is called a
+  \textbf{basis}%
+  \index{basis}%
+  \index{basis!of a vector space}%
+  \index{vector space!basis} of $V$ if
+  \begin{enumerate}
+  \item $B$ is a spanning set for $V$, and
+  \item $B$ is linearly independent.
+  \end{enumerate}
+\end{definition}
+
+\begin{example}{Bases of $\Poly_2$}{basis-p2}
+  Consider the vector space $\Poly_2$ of polynomials of degree at most
+  2 with coefficients in a field $K$.%
+  \index{P2@$\Poly_2$!basis of}
+  \begin{itemize}
+  \item $\set{1, x, x^2}$ is a basis of $\Poly_2$.
+  \item $\set{x^2, (x+1)^2, (x+2)^2}$ is a basis of $\Poly_2$.
+  \item $\set{1, x-1, (x-1)^2}$ is a basis of $\Poly_2$.
+  \end{itemize}
+  Unlike $\R^n$, a general vector space like $\Poly_2$ does not
+  necessarily have a ``standard'' basis. One basis might be useful for
+  one application, and another basis for a different application.
+\end{example}
+
+\begin{proof}
+  It is easy to verify that each set of vectors is linearly
+  independent and spanning. See Examples~\ref{exa:spanning-set},
+  {\ref{exa:linear-independence-polynomial}}, and
+  {\ref{exa:polynomials-increasing-degree}} for similar calculations.
+\end{proof}
+
+\begin{example}{An infinite basis}{basis-p}
+  Consider the vector space $\Poly$ of all polynomials with
+  coefficients in a field $K$. The following is a basis for $\Poly$%
+  \index{P@$\Poly$!basis of}:
+  \begin{equation*}
+    \set{1, x, x^2, x^3, x^4, \ldots}.
+  \end{equation*}
+  Note that this basis is infinite.
+\end{example}
+
+\begin{proof}
+  The polynomials $1, x, x^2, x^3, x^4, \ldots$ are linearly
+  independent by Proposition~\ref{prop:linear-dependence-redundant}.
+  Namely, if they were linearly dependent, then one of the polynomials
+  could be written as a linear combination of earlier ones. However,
+  this is not possible because a polynomial of degree $n$ cannot be a
+  linear combination of polynomials of degree less than $n$.
+
+  To show that the polynomials $1, x, x^2, x^3, x^4, \ldots$ are a
+  spanning set, consider an arbitrary element $p(x)$ of $\Poly$.
+  Then by definition, $p(x)$ is of the form
+  \begin{equation*}
+    p(x) = a_nx^n + a_{n-1}x^{n-1} + \ldots + a_1x + a_0,
+  \end{equation*}
+  for some $n\geq 0$ and $a_0,\ldots,a_n\in K$. But then $p(x)$ is a
+  linear combination of $1,\ldots,x^n$, i.e., it is in the span of
+  $\set{1, x, x^2, x^3, x^4, \ldots}$.
+\end{proof}
+
+\begin{example}{Not a basis}{not-a-basis}
+  Consider the vector space $\Seq_K$ of infinite sequences. As before,
+  let $e^k$ be the sequence whose $k\th$ component is $1$ and which is
+  $0$ everywhere else, i.e.,
+    \begin{equation*}
+    \begin{array}{l}
+      e^0 = 1,0,0,0,0,\ldots, \\
+      e^1 = 0,1,0,0,0,\ldots, \\
+      e^2 = 0,0,1,0,0,\ldots, \\
+    \end{array}
+  \end{equation*}
+  and so on. Then the set
+  \begin{equation*}
+    \set{e^0, e^1, e^2, \ldots}
+  \end{equation*}
+  is \textit{not} a basis of $\Seq_K$. Indeed, although we saw in
+  Example~\ref{exa:linear-independence-sequences} that the sequences
+  $e^0, e^1, e^2, \ldots$ are linearly independent,
+  Example~\ref{exa:spans-sequences} shows that they are not spanning.
+  Indeed,
+  \begin{equation*}
+    W = \sspan\set{e^0, e^1, e^2, \ldots}
+  \end{equation*}
+  is a subspace of $\Seq_K$, consisting exactly of the
+  \textbf{finitely supported}%
+  \index{finitely supported sequence}%
+  \index{sequence!finitely supported} sequences, i.e., those sequences
+  that have only finitely many non-zero entries. Thus, $\set{e^0, e^1,
+    e^2, \ldots}$ is a basis of $W$.
+\end{example}
+
 % ======================================================================
 \subsection{CONTINUE HERE}
 
@@ -20,43 +113,6 @@
   where $A,B$ are constants. This means that $W=\sspan\set{\sin x, \cos x}$.
 \end{example}
 
-
-Recall the definition of basis, considered now in the context of vector spaces.
-
-\begin{definition}{Basis}{basis-vector-space}
-  Let $V$ be a vector space. Then
-  $\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ is called a
-  basis\index{basis} for $V$ if the following conditions hold.
-  \begin{enumerate}
-  \item
-    $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{n}} = V$
-  \item
-    $\set{\vect{v}_{1},\ldots,\vect{v}_{n}}$ is linearly independent
-  \end{enumerate}
-\end{definition}
-
-Consider the following example.
-
-\begin{example}{Polynomials of degree two}{polynomial-degree-two}
-  Let $\Poly_2$ be the set polynomials of degree no more than 2. We
-  can write $\Poly_2=\sspan\set{x^{2}, x, 1}$. Is $\set{x^{2}, x, 1} $
-  a basis for $\Poly_2$?
-\end{example}
-
-\begin{solution}
-  It can be verified that $\Poly_2$ is a vector space defined under
-  the usual addition and scalar multiplication of polynomials.
-
-  Now, since $\Poly_2=\sspan\set{x^{2},x, 1}$, the set
-  $\set{x^{2}, x, 1} $ is a basis if it is linearly
-  independent. Suppose then that
-  \begin{equation*}
-    ax^{2}+bx+c=0x^2 + 0x + 0
-  \end{equation*}
-  where $a,b,c$ are real numbers. It is clear that this can only occur
-  if $a=b=c=0$. Hence the set is linearly independent and forms a
-  basis of $\Poly_2$.
-\end{solution}
 
 The next theorem is an essential result in linear algebra and is
 called the exchange theorem\index{exchange theorem}.
@@ -387,7 +443,7 @@ Consider the following example.
       2c + d & = & 0
     \end{array}.
   \end{equation*}
-  
+
   The solution to this system is
   $a=s$, $b=-\frac{1}{2}t$, $c=-\frac{1}{2}t$,  $d=t$ for any $s,t\in\R$,
   and thus

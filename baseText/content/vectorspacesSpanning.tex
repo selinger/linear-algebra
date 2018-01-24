@@ -391,10 +391,11 @@ to any vector space of dimension $n$). We also have the usual
 characterization of linear dependence in terms of redundant vectors:
 
 \begin{proposition}{Linear dependence and redundant vectors}{linear-dependence-redundant}
-  Let $V$ be a vector space, and let $\vect{u}_1,\ldots,\vect{u}_k$ be
-  a sequence of vectors in $V$. If $\vect{u}_1,\ldots,\vect{u}_k$ are
-  linearly dependent, then at least one of the vectors can be written
-  as a linear combination of earlier vectors in the sequence:
+  Let $V$ be a vector space, and let $\vect{u}_1,\vect{u}_2,\ldots$ be
+  a (finite or infinite) sequence of vectors in $V$. If
+  $\vect{u}_1,\vect{u}_2,\ldots$ are linearly dependent, then at least
+  one of the vectors can be written as a linear combination of earlier
+  vectors in the sequence:
   \begin{equation*}
     \vect{u}_j = a_1\,\vect{u}_1 + a_2\,\vect{u}_2 + \ldots + a_{j-1}\,\vect{u}_{j-1},
   \end{equation*}
@@ -402,10 +403,10 @@ characterization of linear dependence in terms of redundant vectors:
 \end{proposition}
 
 \begin{proof}
-  Suppose $\vect{u}_1,\ldots,\vect{u}_k$ are linearly dependent. Then
-  the equation $b_1\vect{u}_1+\ldots+b_k\vect{u}_k=0$ has a
-  non-trivial solution. In other words, there exist scalars
-  $b_1,\ldots,b_k$, not all equal to zero, such that
+  Suppose that the vectors are linearly dependent. Then the equation
+  $b_1\vect{u}_1+\ldots+b_k\vect{u}_k=0$ has a non-trivial solution
+  for some $k$. In other words, there exist scalars $b_1,\ldots,b_k$,
+  not all equal to zero, such that
   $b_1\vect{u}_1+\ldots+b_k\vect{u}_k=0$. Let $j$ be the largest index
   such that $b_j\neq 0$. Then
   $b_1\vect{u}_1+\ldots+b_j\vect{u}_j=0$. Dividing by $b_j$ and
