@@ -1,0 +1,380 @@
+\section{Subspaces}
+
+\begin{outcome}
+  \begin{enumerate}
+  \item Utilize the subspace test to determine if a set is a subspace
+    of a given vector space.
+  \end{enumerate}
+\end{outcome}
+
+In this section we will consider subspaces of general vector spaces.
+
+\begin{definition}{Subspace}{subspace-vector-space}
+  Let $V$ be a vector space over a field $K$. A subset $W\subseteq V$
+  is said to be a \textbf{subspace}\index{subspace} of $V$ if the
+  following conditions hold:
+  \begin{enumerate}
+  \item $\vect{0}\in W$, where $\vect{0}$ is the additive unit of $V$.
+  \item $W$ is \textbf{closed under addition}%
+    \index{closed under!addition}%
+    \index{addition!close under}: Whenever $\vect{u}, \vect{v}\in W$,
+    then $\vect{u} + \vect{v}\in W$.
+  \item $W$ is \textbf{closed under scalar multiplication}%
+    \index{closed under!scalar multiplication}%
+    \index{scalar multiplication!closed under}: Whenever $k\in K$ and
+    $\vect{u}\in W$, then $k\vect{u}\in W$. 
+  \end{enumerate}
+\end{definition}
+
+\begin{example}{Subspaces of $\R^3$}{subspaces-r3}
+  As we have seen in Section~\ref{sec:subspaces-rn}, the subspaces of
+  $\R^3$ are:
+  \begin{itemize}
+  \item the zero subspace%
+    \index{zero subspace} $\set{\vect{0}}$;
+  \item lines through the origin;
+  \item planes through the origin;
+  \item $\R^3$ itself.
+  \end{itemize}
+\end{example}
+
+\begin{example}{Space of continuous functions}{subspace-continuous}
+  Let $V = \Func_{\R,\R}$, the vector space of functions from real numbers to
+  real numbers. Let $W\subseteq V$ be the subset of {\em continuous}
+  functions%
+  \index{continuous function}%
+  \index{function!continuous}. Then $W$ is a subspace of $V$.
+\end{example}
+
+\begin{proof}
+  We know from calculus that:
+  \begin{enumerate}
+  \item the zero function, defined by $f(x)=0$ for all $x$, is
+    continuous;
+  \item if $f,g$ are continuous functions, then $f+g$ is
+    continuous;
+  \item if $f$ is a continuous function and $k$ a constant, then $kf$
+    is continuous. 
+  \end{enumerate}
+  It follows that $W$ contains $0$, and is closed under addition and
+  scalar multiplication. Therefore, $W$ is a subspace of $V$.
+\end{proof}
+
+\begin{example}{Space of differentiable functions}{subspace-differentiable}
+  Let $V = \Func_{\R,\R}$. Recall from calculus that a function
+  $f:\R\to\R$ is called \textbf{differentiable}%
+  \index{differentiable function}%
+  \index{function!differentiable} if the derivative $f'(x)$ exists for
+  all $x\in\R$. Let $W\subseteq V$ be the subset of differentiable
+  functions. Then $W$ is a subspace of $V$.
+\end{example}
+
+\begin{proof}
+  We know from calculus that:
+  \begin{enumerate}
+  \item The zero function, defined by $f(x)=0$ for all $x$, is
+    differentiable. In fact, its derivative is $f'(x) = 0$.
+  \item If $f,g$ are differentiable functions, then $h=f+g$ is
+    differentiable. In fact, $h'(x) = f'(x) + g'(x)$.
+  \item if $f$ is a differentiable function and $k$ a constant, then
+    $h=kf$ is differentiable. In fact, $h' = kf'$.
+  \end{enumerate}
+  It follows that $W$ contains $0$, and is closed under addition and
+  scalar multiplication. Therefore, $W$ is a subspace of $V$.
+\end{proof}
+
+\begin{example}{Space of sequences satisfying a linear recurrence}{subspace-recurrence}
+  Let $V=\Seq_{\R}$, the vector space of sequences of real
+  numbers. Let
+  \begin{equation*}
+    W = \set{a \in \Seq_{\R} \mid \mbox{for all $n\geq 0$, $a_{n+2}=a_n+a_{n+1}$}}.
+  \end{equation*}
+  In other words, $W$ is the set of all sequences satisfying the
+  recurrence relation $a_{n+2}=a_n+a_{n+1}$. Then $W$ is a subspace of $V$.
+\end{example}
+
+\begin{proof}
+  \def\x#1{\makebox[1.2em][r]{$#1$}}
+  \def\y#1{\makebox[3em][r]{$#1$}}
+  \def\z#1{\makebox[0em][l]{$#1$}}
+  Before we prove that $W$ is a subspace, let us first consider an
+  example. The following sequences are elements of $W$, because they
+  both satisfy the recurrence:
+  \begin{equation*}
+    \begin{array}{rc@{}l}
+      \y{a} &=& \x{1},\x{1},\x{2},\x{3},\x{5},\x{8},\x{13},\x{21},\x{\ldots} \\
+      \y{b} &=& \x{1},\x{3},\x{4},\x{7},\x{11},\x{18},\x{29},\x{47},\x{\ldots}
+    \end{array}
+  \end{equation*}
+  Note that if we add these sequences, we get
+  \begin{equation*}
+    \begin{array}{rc@{}l}
+      \y{a+b} &=& \x{2},\x{4},\x{6},\x{10},\x{16},\x{26},\x{42},\x{68},\x{\ldots}\z{,} \\
+    \end{array}
+  \end{equation*}
+  which again satisfies the recurrence. Therefore, the set $W$ is
+  closed under the addition of these particular sequences $a$ and
+  $b$. We now prove the properties in general.
+  \begin{enumerate}
+  \item Let $z$ be the zero sequence%
+    \index{zero sequence}%
+    \index{sequence!zero sequence}, defined by $z_n=0$ for all $n$.
+    Then $z$ satisfies the recurrence relation, since for all $n\geq 0$,
+    $z_{n+2}=0=z_n+z_{n+1}$. Therefore $z\in W$.
+  \item To show that $W$ is closed under addition, consider any two
+    sequences $a,b\in W$, and let $c=a+b$. Then for all $n\geq 0$,
+    \begin{equation*}
+      c_{n+2}
+      = a_{n+2} + b_{n+2}
+      = (a_n + a_{n+1}) + (b_n + b_{n+1})
+      = (a_n + b_n) + (a_{n+1} + b_{n+1})
+      = c_n + c_{n+1},
+    \end{equation*}
+    so $c$ satisfies the recurrence. It follows that $c\in W$, and
+    therefore $W$ is closed under addition.
+  \item To show that $W$ is closed under scalar multiplication,
+    consider any $k\in\R$ and $a\in W$, and let $c=ka$. Then for all
+    $n\geq 0$,
+    \begin{equation*}
+      c_{n+2}
+      = ka_{n+2}
+      = k(a_n + a_{n+1})
+      = ka_n + ka_{n+1}
+      = c_n + c_{n+1},
+    \end{equation*}
+    so $c$ satisfies the recurrence. It follows that $c\in W$, and
+    therefore $W$ is closed under scalar multiplication.
+  \end{enumerate}
+\end{proof}
+
+\begin{example}{Solution space of a linear differential equation}{subspace-differential-equation}
+  Let $V=\Func_{\R,\R}$. Recall from calculus that a
+  \textbf{differential equation}%
+  \index{equation!differential|see{differential equation}}%
+  \index{differential equation} is an equation about an unknown
+  function and its derivatives. For example
+  \begin{equation*}
+    f'' = -f
+  \end{equation*}
+  is a differential equation. The functions $f(x)=\sin x$,
+  $f(x)=\cos x$, and $f(x)=0$ are examples of solutions of this
+  differential equation.  Let $W$ be the set of all functions that are
+  solutions of the differential equation $f'' = -f$. Then $W$ is a
+  subspace of $V$.
+\end{example}
+
+\begin{proof}
+  \begin{enumerate}
+  \item The zero function $f(x)=0$ is a solution of the differential
+    equation, and therefore an element of $W$.
+  \item To show that $W$ is closed under addition, let $f,g\in W$ and
+    consider $h=f+g$. Then $f''=-f$ and $g''=-g$, and therefore
+    $h'' = f'' + g'' = -f+(-g) = -h$. Therefore, $h\in W$, and $W$ is
+    closed under addition.
+  \item To show that $W$ is closed under scalar multiplication, let
+    $k\in\R$ and $f\in W$, and consider $h=kf$. Then $f''=-f$, and
+    therefore $h'' = kf'' = k(-f) = -h$. It follows that $h\in W$, and
+    therefore $W$ is closed under scalar multiplication.
+  \end{enumerate}
+\end{proof}
+
+The interest of subspaces lies in the fact that they are vector spaces
+in their own right, as stated in the following proposition.
+
+\begin{proposition}{Subspaces are vector spaces}{subspaces-are-vector-spaces}
+  Let $W$ be a subspace of a vector space $V$. Then $W$ satisfies the
+  vector space axioms (A1)--(A4) and (SM1)--(SM4), with respect to the
+  same operations (addition and scalar multiplication) as those
+  defined on $V$.
+\end{proposition}
+
+\begin{proof}
+  Since $W$ is a subspace, it is closed under addition and scalar
+  multiplication. This ensures that addition and scalar multiplication
+  are well-defined operations on $W$. The axioms (A1), (A2), (A4), and
+  (SM1)--(SM4) all obviously hold in $W$, because they hold in $V$
+  (two elements of $W$ are equal in $W$ if and only if they are equal
+  in $V$). The axiom (A3) holds because $\vect{0}\in W$.
+\end{proof}
+
+
+% ======================================================================
+\subsection{CONTINUE HERE...}
+
+
+THE CHAPTER IS TOO LONG. SPLIT INTO ``SUBSPACES'' and ``BASIS AND DIMENSION''.
+
+
+As a matter of fact, the space $W$ of the last example is a
+2-dimensional space. From calculus, we know that the general solution
+of the differential equation $f''=-f$ is
+\begin{equation*}
+  f(x) = A\sin x + B\cos x,
+\end{equation*}
+where $A,B$ are constants. This means that $W=\sspan\set{\sin x, \cos x}$.
+
+
+The span of a set of vectors as described in Definition~\ref{def:span}
+is an example of a subspace. The following fundamental result says
+that subspaces are subsets of a vector space which are themselves
+vector spaces.
+
+Consider the following useful Corollary.
+
+\begin{corollary}{Span is a subspace}{span-subspace}
+  Let $V$ be a vector space with $W \subseteq V$. If
+  $W = \sspan \set{\vect{v}_1,\ldots, \vect{v}_n }$ then $W$ is a
+  subspace of $V$.
+\end{corollary}
+
+When determining spanning sets the following theorem proves useful.
+
+\begin{theorem}{Spanning set}{spanning-set}
+  Let $W \subseteq V$ for a vector space $V$ and suppose
+  $W = \sspan \set{\vect{v}_1, \vect{v}_2,\ldots, \vect{v}_n }$.
+
+  Let $U \subseteq V$ be a subspace such that
+  $\vect{v}_1, \vect{v}_2,\ldots, \vect{v}_n \in U$. Then it follows
+  that $W \subseteq U$.
+\end{theorem}
+
+In other words, this theorem claims that any subspace that contains a
+set of vectors must also contain the span of these vectors.
+
+The following example will show that two spans, described differently,
+can in fact be equal.
+
+\begin{example}{Equal span}{equal-span}
+  Let $p(x), q(x)$ be polynomials and suppose
+  $U = \sspan\set{2p(x) - q(x), p(x) + 3q(x)} $ and
+  $W = \sspan\set{p(x), q(x) }$. Show that $U = W$.
+\end{example}
+
+\begin{solution}
+  We will use Theorem~\ref{thm:spanning-set} to show that
+  $U \subseteq W$ and $W \subseteq U$. It will then follow that $U=W$.
+  \begin{enumerate}
+  \item $U \subseteq W$
+
+    Notice that $2p(x) - q(x)$ and $p(x) + 3q(x)$ are both in
+    $W = \sspan \set{p(x), q(x) }$. Then by
+    Theorem~\ref{thm:spanning-set} $W$ must contain the span of these
+    polynomials and so $U \subseteq W$.
+
+  \item $W \subseteq U$
+
+    Notice that
+    \begin{eqnarray*}
+      p(x) &=& \frac{3}{7} (2p(x) - q(x))  + \frac{2}{7} (p(x) + 3q(x)) \\
+      q(x) &=& -\frac{1}{7} (2p(x) - q(x))  + \frac{2}{7} (p(x) + 3q(x))
+    \end{eqnarray*}
+    Hence $p(x), q(x)$ are in
+    $\sspan \set{2p(x) - q(x), p(x) + 3q(x) }$. By
+    Theorem~\ref{thm:spanning-set} $U$ must contain the span of these
+    polynomials and so $W \subseteq U$.
+  \end{enumerate}
+\end{solution}
+
+To prove that a set is a vector space, one must verify each of the
+axioms given in Definitions~\ref{def:vector-space-axioms-addition} and
+{\ref{def:vector-space-axioms-scalar-mult}}. This is a cumbersome
+task, and therefore a shorter procedure is used to verify a subspace.
+
+\begin{procedure}{Subspace test}{subspace-test}
+\end{procedure}
+
+Therefore it suffices to prove these three steps to show that a set is
+a subspace.
+
+Consider the following example.
+
+\begin{example}{Improper subspaces}{improper-subspaces}
+  Let $V$ be an arbitrary vector space. Then $V$ is a subspace of
+  itself. Similarly, the set $\set{\vect{0} }$ containing only the
+  zero vector is also a subspace.
+\end{example}
+
+\begin{solution}
+  Using the subspace test in Procedure~\ref{proc:subspace-test} we can
+  show that $V$ and $\set{\vect{0} }$ are subspaces of $V$.
+
+  Since $V$ satisfies the vector space axioms it also satisfies the
+  three steps of the subspace test. Therefore $V$ is a subspace.
+
+  Let's consider the set $\set{\vect{0} }$.
+  \begin{enumerate}
+  \item The vector $\vect{0}$ is clearly contained in
+    $\set{\vect{0} }$, so the first condition is satisfied.
+
+  \item Let $\vect{w}_1, \vect{w}_2$ be in $\set{\vect{0} }$. Then
+    $\vect{w}_1 = \vect{0}$ and $\vect{w}_2 = \vect{0}$ and so
+    \begin{equation*}
+      \vect{w}_1 + \vect{w}_2 = \vect{0} + \vect{0} = \vect{0}
+    \end{equation*}
+    It follows that the sum is contained in $\set{\vect{0} }$ and the
+    second condition is satisfied.
+
+  \item Let $\vect{w}_1$ be in $\set{\vect{0} }$ and let $a$ be an
+    arbitrary scalar. Then
+    \begin{equation*}
+      a\vect{w}_1  = a\vect{0} = \vect{0}
+    \end{equation*}
+    Hence the product is contained in $\set{\vect{0} }$ and the third
+    condition is satisfied.
+  \end{enumerate}
+
+  It follows that $\set{\vect{0} }$ is a subspace of $V$.
+\end{solution}
+
+The two subspaces described above are called \textbf{improper
+  subspaces}\index{improper subspace}. Any subspace of a vector space
+$V$ which is not equal to $V$ or $\set{\vect{0} }$ is called a
+\textbf{proper subspace}\index{proper subspace}.
+
+Consider another example.
+
+\begin{example}{Subspace of polynomials}{polynomial-subspace}
+  Let $\Poly_2$ be the vector space of polynomials of degree two or
+  less. Let $W \subseteq \Poly_2$ be all polynomials of degree two or
+  less which have $1$ as a root. Show that $W$ is a subspace of
+  $\Poly_2$.
+\end{example}
+
+\begin{solution}
+  First, express $W$ as follows:
+  \begin{equation*}
+    W = \set{p(x) = ax^2 +bx +c, a,b,c, \in \R \mid p(1)  = 0 }
+  \end{equation*}
+
+  We need to show that $W$ satisfies the three conditions of
+  Procedure~\ref{proc:subspace-test}.
+  \begin{enumerate}
+  \item The zero polynomial of $\Poly_2$ is given by
+    $0(x) = 0x^2 + 0x + 0 = 0$. Clearly $0(1) = 0$ so $0(x)$ is
+    contained in $W$.
+
+  \item Let $p(x), q(x)$ be polynomials in $W$.  It follows that
+    $p(1) = 0 $ and $q(1) = 0$. Now consider $p(x) + q(x)$. Let $r(x)$
+    represent this sum.
+    \begin{eqnarray*}
+      r(1) &=& p(1) + q(1) \\
+           &=& 0 + 0 \\
+           &=& 0
+    \end{eqnarray*}
+
+    Therefore the sum is also in $W$ and the second condition is satisfied.
+
+  \item Let $p(x)$ be a polynomial in $W$ and let $a$ be a scalar. It
+    follows that $p(1) = 0$. Consider the product $ap(x)$.
+    \begin{eqnarray*}
+      ap(1) &=& a(0) \\
+            &=& 0
+    \end{eqnarray*}
+
+    Therefore the product is in $W$ and the third condition is
+    satisfied.
+  \end{enumerate}
+
+  It follows that $W$ is a subspace of $\Poly_2$.
+\end{solution}
+
