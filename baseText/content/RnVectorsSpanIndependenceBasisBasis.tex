@@ -1,5 +1,6 @@
 % ----------------------------------------------------------------------
 \section{Basis and dimension}
+\label{sec:basis-and-dimension}
 
 \begin{outcome}
   \begin{enumerate}\setlength\itemsep{0em}
@@ -460,11 +461,11 @@ basis.
 One of the most important properties of bases is that any two bases
 for the same space must be of the same size. To show this, we will
 need the the following fundamental result, called the Exchange
-Lemma. This theorem states that spanning sets have at least as many
+Lemma. This lemma states that spanning sets have at least as many
 vectors as linearly independent sets.
 
 \begin{lemma}{Exchange Lemma}{exchange-lemma}
-  \index{exchange lemma}%
+  \index{exchange lemma!in $\R^n$}%
   Suppose $\vect{u}_{1},\ldots,\vect{u}_{r}$ are linearly independent
   elements of $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{s}}$. Then
   $r\leq s$.
@@ -522,11 +523,11 @@ bases of a space are of the same size.
 
 \begin{proof}
   This follows right away from the Exchange Lemma. Indeed, observe
-  that $B_1 = \set{ \vect{u}_{1},\ldots ,\vect{u}_{s}} $ is a spanning
-  set for $V$ while $ B_2 = \set{\vect{v}_{1},\ldots ,\vect{v}_{r}} $
-  is linearly independent, so $s \geq r$. Similarly
-  $B_2 = \set{\vect{v}_{1},\ldots ,\vect{v} _{r}} $ is a spanning set
-  for $V$ while $B_1 = \set{\vect{u}_{1},\ldots , \vect{u}_{s}} $ is
+  that $B_1 = \set{ \vect{u}_{1},\ldots ,\vect{u}_{s}}$ is a spanning
+  set for $V$ while $ B_2 = \set{\vect{v}_{1},\ldots,\vect{v}_{r}}$ is
+  linearly independent, so $s\geq r$. Similarly
+  $B_2 = \set{\vect{v}_{1},\ldots,\vect{v} _{r}} $ is a spanning set
+  for $V$ while $B_1 = \set{\vect{u}_{1},\ldots, \vect{u}_{s}}$ is
   linearly independent, so $r\geq s$.
 \end{proof}
 
@@ -536,7 +537,7 @@ $V$.
 
 \begin{definition}{Dimension of a subspace}{dimension}
   Let $V$ be a subspace of\/ $\R^{n}$. Then the \textbf{dimension}%
-  \index{dimension}%
+  \index{dimension!of subspace of $\R^n$}%
   \index{subspace!dimension} of $V$, written $\dim(V)$, is
   defined to be the number of vectors in a basis.
 \end{definition}
