@@ -382,6 +382,32 @@ vectors.
   dependent.
 \end{solution}
 
+\begin{example}{Linearly independent functions}{linearly-independent-functions}
+  In the vector space $\Func_{\R,\R}$ of real-valued functions on the
+  real numbers, show that the functions $f(x)=\sin x$ and $g(x)=\cos
+  x$ are linearly independent.
+\end{example}
+
+\begin{solution}
+  Assume $A\sin x+B\cos x=0$. Note that this is an equality of
+  functions, which means that it is true for all $x$. In particular,
+  substituting $x=0$ into the equation, and using the fact that
+  $\sin 0=0$ and $\cos 0=1$, we have
+  \begin{equation*}
+    0 = A\sin 0 + B\cos 0 = A\cdot 0 + B\cdot 1 = B,
+  \end{equation*}
+  and therefore $B=0$. On the other hand, substituting
+  $x=\frac{\pi}{2}$ into the equation, and using the fact that
+  $\sin\frac{\pi}{2} = 1$ and $\cos\frac{\pi}{2}=0$, we have
+  \begin{equation*}
+    0 = A\sin\frac{\pi}{2} + B\cos\frac{\pi}{2} = A\cdot 1 + B\cdot 0
+    = A,
+  \end{equation*}
+  and therefore $A=0$. Therefore, the equation $A\sin x+B\cos x=0$
+  only has the trivial solution $A=B=0$, and it follows that $\sin x$
+  and $\cos x$ are linearly independent.
+\end{solution}
+
 The properties of linear independence that were discussed in
 Chapter~\ref{cha:vectors-rn} remain true in the general setting of
 vector spaces. For example, the first two parts of
