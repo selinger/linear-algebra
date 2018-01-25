@@ -202,7 +202,7 @@ Sections~\ref{sec:definition-vector-spaces} and
 \item The subspace of $\Func_{\R,\R}$ consisting of the differentiable
   functions is infinite-dimensional. Again, the set
   $\set{1,x,x^2,x^3,\ldots}$ is an infinite linearly independent set
-  in this space. 
+  in this space.
 \end{itemize}
 
 \begin{example}{Space of sequences satisfying a linear recurrence}{subspace-recurrence-dimension}
@@ -251,205 +251,36 @@ Sections~\ref{sec:definition-vector-spaces} and
   solution space is therefore 2-dimensional.
 \end{solution}
 
-% ======================================================================
-\subsection{CONTINUE HERE}
+We conclude this section by stating two properties of bases that
+generalize Theorem~\ref{thm:linearly-independent-subset} and
+Lemma~\ref{lem:extend-to-basis}: every linearly independent set can be
+extended to a basis by adding 0 or more vectors, and every spanning
+set can be reduced to a basis by removing 0 or more vectors.
 
-* nested space, same (finite) dimension => equal
-* shrink spanning set to basis; grow linearly independent set to basis.
-* grow basis of subspace to basis of space
+\begin{proposition}{Extending a linearly independent set to a basis}{basis-from-linear-independent}
+  Let $V$ be a vector space, and let $S\subseteq V$ be a linearly
+  independent set of vectors. Then $S$ can be extended to a basis of
+  $V$, i.e., there exists a basis $B$ of $V$ such that $S\subseteq
+  B$.%
+  \index{linear independence!extending to basis}%
+  \index{basis!by extending linearly independent set}
+\end{proposition}
 
+\begin{proposition}{Shrinking a spanning set to a basis}{basis-from-spanning}
+  Let $V$ be a vector space, and let $S\subseteq V$ be a spanning set
+  of $V$. Then $S$ can be shrunk to a basis, i.e., there exists a
+  basis $B$ of $V$ such that $B\subseteq S$.
+\end{proposition}
 
-
-If in fact $W$ has $n$ vectors, then it follows that $W=V$.
-
-\begin{theorem}{Subspace of same dimension}{subspace-vector-space}
-  Let $V$ be a vector space of dimension $n$ and let $W$ be a
-  subspace. Then $W=V$ if and only if the dimension of $W$ is also
-  $n$.
-\end{theorem}
-
-\begin{proof}
-  First suppose $W=V$. Then obviously the dimension of $W=n$.
-
-  Now suppose that the dimension of $W$ is $n$. Let a basis for $W$ be
-  $ \set{\vect{w}_{1},\ldots,\vect{w}_{n}}$. If $W$ is not equal to
-  $V$ , then let $\vect{v}$ be a vector of $V$ which is not contained
-  in $W$. Thus $ \vect{v}$ is not in
-  $\sspan\set{\vect{w}_{1},\ldots,\vect{w} _{n}} $ and by
-  Lemma~\ref{lem:bases-isomorphism},
-  $\set{\vect{w}_{1},\ldots,\vect{w}_{n},\vect{v}} $ is linearly
-  independent which contradicts Theorem~\ref{thm:exchange-theorem}
-  because it would be an independent set of $n+1$ vectors even though
-  each of these vectors is in a spanning set of $n$ vectors, a basis
-  of $V$.
-\end{proof}
-
-Consider the following example.
-
-\begin{example}{Basis of a subspace}{basis-subspace}
-  Let $U=\set{A\in\Mat_{22} \left\vert
-      A\begin{mymatrix}{rr}
-        1 & 0 \\ 1 & -1 \end{mymatrix}
-      = \begin{mymatrix}{rr}
-        1 & 1 \\ 0 & -1 \end{mymatrix} A \right.}$.
-  Then $U$ is a subspace of $\Mat_{22}$
-  Find a basis of $U$, and hence $\dim(U)$.
-\end{example}
-
-\begin{solution}
-  Let $A=\begin{mymatrix}{rr} a & b \\ c & d \end{mymatrix}
-  \in\Mat_{22}$.
-  Then
+\begin{example}{Extending a linearly independent set to a basis}{adding-linear-independent-basis}
+  Let $S \subseteq M_{22}$ be the linearly independent set given by
   \begin{equation*}
-    A\begin{mymatrix}{rr} 1 & 0 \\ 1 & -1 \end{mymatrix}
-    = \begin{mymatrix}{rr} a & b \\ c & d \end{mymatrix}
-    \begin{mymatrix}{rr} 1 & 0 \\ 1 & -1 \end{mymatrix}
-    =\begin{mymatrix}{rr} a+b & -b \\ c+d & -d \end{mymatrix}
-  \end{equation*}
-  and
-  \begin{equation*}
-    \begin{mymatrix}{rr} 1 & 1 \\ 0 & -1 \end{mymatrix} A
-    = \begin{mymatrix}{rr} 1 & 1 \\ 0 & -1 \end{mymatrix}
-    \begin{mymatrix}{rr} a & b \\ c & d \end{mymatrix}
-    =\begin{mymatrix}{cc} a+c & b+d \\ -c & -d \end{mymatrix}.
-  \end{equation*}
-  If $A\in U$, then
-  $\begin{mymatrix}{cc} a+b & -b \\ c+d & -d \end{mymatrix}=
-  \begin{mymatrix}{cc} a+c & b+d \\ -c & -d \end{mymatrix}$.
-
-  Equating entries leads to a system of four equations in the four
-  variables $a,b,c$ and $d$.
-  \begin{equation*}
-    \begin{array}{ccc}
-      a+b & = & a + c \\
-      -b & = & b + d \\
-      c + d & = & -c \\
-      -d & = & -d \end{array}
-    \quad\mbox{or}\quad
-    \begin{array}{rcc}
-      b - c & = & 0 \\
-      -2b - d & = & 0 \\
-      2c + d & = & 0
-    \end{array}.
-  \end{equation*}
-
-  The solution to this system is
-  $a=s$, $b=-\frac{1}{2}t$, $c=-\frac{1}{2}t$,  $d=t$ for any $s,t\in\R$,
-  and thus
-  \begin{equation*}
-    A=\begin{mymatrix}{cc} s & \frac{t}{2} \\
-      -\frac{t}{2} & t \end{mymatrix}
-    = s\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix}
-    + t\begin{mymatrix}{rr} 0  & -\frac{1}{2} \\
-      -\frac{1}{2} & 1 \end{mymatrix} .
-  \end{equation*}
-  Let
-  \begin{equation*}
-    B=\set{
-      \begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
-      \begin{mymatrix}{rr} 0  & -\frac{1}{2} \\
-        -\frac{1}{2} & 1 \end{mymatrix}
-    }.
-  \end{equation*}
-  Then $\sspan(B)=U$, and it is routine to verify that $B$ is an
-  independent subset of $\Mat_{22}$.  Therefore $B$ is a basis of $U$,
-  and $\dim(U)=2$.
-\end{solution}
-
-The following theorem claims that a spanning set of a vector space $V$
-can be shrunk down to a basis of $V$. Similarly, a linearly
-independent set within $V$ can be enlarged to create a basis of $V$.
-
-\begin{theorem}{Basis of $V$}{basis-from-spanning-linear-independent}
-  If $V=\sspan\set{\vect{u}_{1},\ldots,\vect{u} _{n}} $ is a vector
-  space, then some subset of $\set{\vect{u}_{1},\ldots,\vect{u}_{n}}$
-  is a basis for $V$. Also, if
-  $\set{\vect{u}_{1},\ldots,\vect{u} _{k}}\subseteq V$ is linearly
-  independent and the vector space is finite dimensional, then the set
-  $\set{ \vect{u}_{1},\ldots,\vect{u}_{k}}$, can be enlarged to obtain
-  a basis of $V$\index{linear independence!enlarging to form a basis}.
-\end{theorem}
-
-\begin{proof}
-  Let
-  \begin{equation*}
-    S=\set{E\subseteq \set{\vect{u}_{1},\ldots,\vect{u}_{n}}\text{ such that }%
-      \sspan\set{E} =V}.
-  \end{equation*}
-  For $E\in S$, let $\abs{E}$ denote the number of elements of
-  $E$. Let
-  \begin{equation*}
-    m= \min \set{\abs{E}\text{ such that }E\in S}.
-  \end{equation*}
-  Thus there exist vectors
-  \begin{equation*}
-    \set{\vect{v}_{1},\ldots,\vect{v}_{m}}\subseteq \set{\vect{u}_{1},\ldots,%
-      \vect{u}_{n}}
-  \end{equation*}
-  such that
-  \begin{equation*}
-    \sspan\set{\vect{v}_{1},\ldots,\vect{v}_{m}} =V
-  \end{equation*}
-  and $m$ is as small as possible for this to happen. If this set is
-  linearly independent, it follows it is a basis for $V$ and the
-  theorem is proved. On the other hand, if the set is not linearly
-  independent, then there exist scalars, $c_{1},\ldots,c_{m}$ such
-  that
-  \begin{equation*}
-    \vect{0}=\sum_{i=1}^{m}c_{i}\vect{v}_{i}
-  \end{equation*}
-  and not all the $c_{i}$ are equal to zero. Suppose $c_{k}\neq
-  0$. Then solve for the vector $\vect{v}_{k}$ in terms of the other
-  vectors.  Consequently,
-  \begin{equation*}
-    V=\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{k-1},\vect{v}
-      _{k+1},\ldots,\vect{v}_{m}}
-  \end{equation*}
-  contradicting the definition of $m$. This proves the first part of the
-  theorem.
-
-  To obtain the second part, begin with $\set{\vect{u}_{1},\ldots,\vect{u}
-    _{k}}$ and suppose a basis for $V$ is
-  \begin{equation*}
-    \set{\vect{v}_{1},\ldots,\vect{v}_{n}}
-  \end{equation*}
-  If
-  \begin{equation*}
-    \sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}} =V,
-  \end{equation*}
-  then $k=n$. If not, there exists a vector
-  \begin{equation*}
-    \vect{u}_{k+1}\notin \sspan\set{\vect{u}_{1},\ldots,\vect{u}
-      _{k}}
-  \end{equation*}
-  Then from Lemma~\ref{lem:adding-linearly-independent},
-  $\set{\vect{u}_{1},\ldots,\vect{u}_{k}, \vect{u}_{k+1}}$ is also
-  linearly independent. Continue adding vectors in this way until $n$
-  linearly independent vectors have been obtained. Then
-  \begin{equation*}
-    \sspan\set{\vect{u}_{1},\ldots,\vect{u}_{n}} =V
-  \end{equation*}
-  because if it did not do so, there would exist $\vect{u}_{n+1}$ as
-  just described and $\set{\vect{u}_{1},\ldots,\vect{u}_{n+1}} $ would
-  be a linearly independent set of vectors having $n+1$ elements. This
-  contradicts the fact that $\set{\vect{v}_{1},\ldots,\vect{v}_{n}} $
-  is a basis.  In turn this would contradict
-  Theorem~\ref{thm:exchange-theorem}. Therefore, this list is a basis.
-\end{proof}
-
-Recall Example~\ref{exa:adding-linear-independent} in which we added a
-matrix to a linearly independent set to create a larger linearly
-independent set. By
-Theorem~\ref{thm:basis-from-spanning-linear-independent} we can extend
-a linearly independent set to a basis.
-
-\begin{example}{Adding to a linearly independent set}{adding-linear-independent-basis}
-  Let $S \subseteq M_{22}$ be a linearly independent set given by
-  \begin{equation*}
-    S  = \set{\begin{mymatrix}{rr}
+    S  = \set{
+      \begin{mymatrix}{rr}
         1 & 0 \\
         0 & 0
-      \end{mymatrix}, \begin{mymatrix}{rr}
+      \end{mymatrix},~
+      \begin{mymatrix}{rr}
         0 & 1 \\
         0 & 0
       \end{mymatrix} }
@@ -458,343 +289,61 @@ a linearly independent set to a basis.
 \end{example}
 
 \begin{solution}
-  Recall from the solution of
-  Example~\ref{exa:adding-linear-independent} that the set
-  $R \subseteq M_{22}$ given by
+  We can obtain a basis of $M_{22}$ by adding two more linearly
+  independent matrices
   \begin{equation*}
-    R = \set{\begin{mymatrix}{rr}
-        1 & 0 \\
-        0 & 0
-      \end{mymatrix}, \begin{mymatrix}{rr}
-        0 & 1 \\
-        0 & 0
-      \end{mymatrix}, \begin{mymatrix}{rr}
-        0 & 0 \\
-        1 & 0
-      \end{mymatrix} }
+    \begin{mymatrix}{rr}
+      0 & 0 \\
+      1 & 0
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    \begin{mymatrix}{rr}
+      0 & 0 \\
+      0 & 1
+    \end{mymatrix}.
   \end{equation*}
-  is also linearly independent.  However this set is still not a basis
-  for $M_{22}$ as it is not a spanning set. In particular,
-  $\begin{mymatrix}{rr}
-    0 & 0 \\
-    0 & 1
-  \end{mymatrix}$ is not in $\sspan R$. Therefore, this matrix can be
-  added to the set by Lemma~\ref{lem:adding-linearly-independent} to
-  obtain a new linearly independent set given by
+  The resulting basis is
   \begin{equation*}
-    T = \set{\begin{mymatrix}{rr}
+    B = \set{
+      \begin{mymatrix}{rr}
         1 & 0 \\
         0 & 0
-      \end{mymatrix}, \begin{mymatrix}{rr}
+      \end{mymatrix},~
+      \begin{mymatrix}{rr}
         0 & 1 \\
         0 & 0
-      \end{mymatrix}, \begin{mymatrix}{rr}
+      \end{mymatrix},~
+      \begin{mymatrix}{rr}
         0 & 0 \\
         1 & 0
-      \end{mymatrix}, \begin{mymatrix}{rr}
+      \end{mymatrix},~
+      \begin{mymatrix}{rr}
         0 & 0 \\
         0 & 1
-      \end{mymatrix} }
+      \end{mymatrix}
+    }.
   \end{equation*}
-
-  This set is linearly independent and now spans $M_{22}$. Hence $T$
-  is a basis.
 \end{solution}
 
-Next we consider the case where you have a spanning set and you want a
-subset which is a basis. The above discussion involved adding vectors
-to a set. The next theorem involves removing vectors.
-
-\begin{theorem}{Basis from a spanning set}{}
-  Let $V$ be a vector space and let $W$ be a subspace. Also suppose
-  that $W=\sspan\set{\vect{w}_{1},\ldots,\vect{w} _{m}}$. Then there
-  exists a subset of $\set{\vect{w}_{1},\ldots, \vect{w}_{m}} $ which
-  is a basis for $W$.
-\end{theorem}
-
-\begin{proof}
-  Let $S$ denote the set of positive integers such that for $ k\in S$,
-  there exists a subset of $\set{\vect{w}_{1},\ldots,\vect{w} _{m}} $
-  consisting of exactly $k$ vectors which is a spanning set for
-  $W$. Thus $m\in S$. Pick the smallest positive integer in $S$. Call
-  it $k$.  Then there exists
-  $\set{\vect{u}_{1},\ldots,\vect{u}_{k}} \subseteq
-  \set{\vect{w}_{1},\ldots,\vect{w}_{m}} $ such that
-  $\sspan \set{\vect{u}_{1},\ldots,\vect{u}_{k}} =W$. If
+\begin{example}{Shrinking a spanning set to a basis}{shrink-spanning}
+  Consider the spanning set $S \subseteq \Poly_2$ given by
   \begin{equation*}
-    \sum_{i=1}^{k}c_{i}\vect{w}_{i}=\vect{0}
+    S = \set{1, x, 2x+1, x^2+1, x^2+2 }
   \end{equation*}
-  and not all of the $c_{i}=0$, then you could pick $c_{j}\neq 0$,
-  divide by it and solve for $\vect{u}_{j}$ in terms of the others.
-  \begin{equation*}
-    \vect{w}_{j}=\sum_{i\neq j}\paren{-\frac{c_{i}}{c_{j}}} \vect{w}_{i}
-  \end{equation*}
-  Then you could delete $\vect{w}_{j}$ from the list and have the same
-  span.  In any linear combination involving $\vect{w}_{j}$, the
-  linear combination would equal one in which $\vect{w}_{j}$ is
-  replaced with the above sum, showing that it could have been
-  obtained as a linear combination of $\vect{w}_{i}$ for $i\neq
-  j$. Thus $k-1\in S$ contrary to the choice of $k$ . Hence each
-  $c_{i}=0$ and so $\set{\vect{u}_{1},\ldots,\vect{u} _{k}} $ is a
-  basis for $W$ consisting of vectors of
-  $\set{\vect{w} _{1},\ldots,\vect{w}_{m}}$.
-\end{proof}
-
-Consider the following example of this concept.
-
-\begin{example}{Basis from a spanning set}{}
-  Let $V$ be the vector space of polynomials of degree no more than 3,
-  denoted earlier as $\Poly_{3}$. Consider the following vectors in
-  $V$.
-  \begin{eqnarray*}
-    &&2x^{2}+x+1,x^{3}+4x^{2}+2x+2,2x^{3}+2x^{2}+2x+1, \\
-    &&x^{3}+4x^{2}-3x+2,x^{3}+3x^{2}+2x+1
-  \end{eqnarray*}
-  Then, as mentioned above, $V$ has dimension 4 and so clearly these
-  vectors are not linearly independent. A basis for $V$ is
-  $\set{ 1,x,x^{2},x^{3}}$. Determine a linearly independent subset of
-  these which has the same span. Determine whether this subset is a
-  basis for $V$.
+  Shrink $S$ to a basis of $\Poly_2$.
 \end{example}
 
 \begin{solution}
-  Consider an isomorphism which maps $\R%
-  ^{4}$ to $V$ in the obvious way. Thus
+  We use a version of the casting-out method. We examine each element
+  $S$ from left to right and cast out the elements that are linear
+  combinations of previous elements. Clearly the first two elements,
+  $1$ and $x$, are linearly independent. The next element, $2x+1$, is
+  redundant because it is a linear combination of $1$ and $x$. The
+  next element $x^2+1$ is linearly independent of $1$ and $x$. The
+  final element $x^2+2$ is redundant because it is a linear
+  combination of $1$ and $x^2+1$. Therefore, the following subset of
+  $S$ is a basis of $\Poly_2$:
   \begin{equation*}
-    \begin{mymatrix}{c}
-      1 \\
-      1 \\
-      2 \\
-      0
-    \end{mymatrix}
+    B = \set{1, x, x^2+1 }.
   \end{equation*}
-  corresponds to $2x^{2}+x+1$ through the use of this
-  isomorphism. Then corresponding to the above vectors in $V$ we would
-  have the following vectors in $\R^{4}$.
-  \begin{equation*}
-    \begin{mymatrix}{c}
-      1 \\
-      1 \\
-      2 \\
-      0
-    \end{mymatrix},
-    \begin{mymatrix}{c}
-      2 \\
-      2 \\
-      4 \\
-      1
-    \end{mymatrix},
-    \begin{mymatrix}{c}
-      1 \\
-      2 \\
-      2 \\
-      2
-    \end{mymatrix},
-    \begin{mymatrix}{r}
-      2 \\
-      -3 \\
-      4 \\
-      1
-    \end{mymatrix},
-    \begin{mymatrix}{c}
-      1 \\
-      2 \\
-      3 \\
-      1
-    \end{mymatrix}
-  \end{equation*}
-  Now if we obtain a subset of these which has the same span but which
-  is linearly independent, then the corresponding vectors from $V$
-  will also be linearly independent. If there are four in the list,
-  then the resulting vectors from $V$ must be a basis for $V$.  The
-  {\rref} for the matrix which has the above vectors as columns is
-  \begin{equation*}
-    \begin{mymatrix}{rrrrr}
-      1 & 0 & 0 & -15 & 0 \\
-      0 & 1 & 0 & 11 & 0 \\
-      0 & 0 & 1 & -5 & 0 \\
-      0 & 0 & 0 & 0 & 1
-    \end{mymatrix}
-  \end{equation*}
-  Therefore, a basis for $V$ consists of the vectors
-  \begin{eqnarray*}
-    &&2x^{2}+x+1,x^{3}+4x^{2}+2x+2,2x^{3}+2x^{2}+2x+1, \\
-    &&x^{3}+3x^{2}+2x+1.
-  \end{eqnarray*}
-  Note how this is a subset of the original set of vectors. If there
-  had been only three pivot columns in this matrix, then we would not
-  have had a basis for $V$ but we would at least have obtained a
-  linearly independent subset of the original set of vectors in this
-  way.
-
-  Note also that, since all linear relations are preserved by an
-  isomorphism,
-  \begin{eqnarray*}
-    &&-15(2x^{2}+x+1) +11(x^{3}+4x^{2}+2x+2) +(
-       -5) (2x^{3}+2x^{2}+2x+1) \\
-    &=&x^{3}+4x^{2}-3x+2
-  \end{eqnarray*}
-
-\end{solution}
-
-Consider the following example.
-
-\begin{example}{Shrinking a spanning set}{shrink-spanning}
-  Consider the set $S \subseteq \Poly_2$ given by
-  \begin{equation*}
-    S = \set{1, x, x^2, x^2 + 1 }
-  \end{equation*}
-  Show that $S$ spans $\Poly_2$, then remove vectors from $S$ until it
-  creates a basis.
-\end{example}
-
-\begin{solution}
-  First we need to show that $S$ spans $\Poly_2$. Let $ax^2 + bx + c$
-  be an arbitrary polynomial in $\Poly_2$. Write
-  \begin{equation*}
-    ax^2 + bx + c = r(1) + s(x) + t(x^2) + u (x^2 + 1)
-  \end{equation*}
-  Then,
-  \begin{eqnarray*}
-    ax^2 +bx + c &=& r(1) + s(x) + t(x^2) + u (x^2 + 1) \\
-                 &=& (t+u) x^2 + s(x) + (r+u)
-  \end{eqnarray*}
-
-  It follows that
-  \begin{eqnarray*}
-    a &=& t + u \\
-    b &=& s \\
-    c &=& r + u
-  \end{eqnarray*}
-  Clearly a solution exists for all $a,b,c$ and so $S$ is a spanning
-  set for $\Poly_2$. By
-  Theorem~\ref{thm:basis-from-spanning-linear-independent}, some
-  subset of $S$ is a basis for $\Poly_2$.
-
-  Recall that a basis must be both a spanning set and a linearly
-  independent set.  Therefore we must remove a vector from $S$ keeping
-  this in mind. Suppose we remove $x$ from $S$. The resulting set
-  would be $\set{1, x^2, x^2 + 1 }$. This set is clearly linearly
-  dependent (and also does not span $\Poly_2$) and so is not a basis.
-
-  Suppose we remove $x^2 + 1$ from $S$. The resulting set is
-  $\set{1, x, x^2 }$ which is both linearly independent and spans
-  $\Poly_2$. Hence this is a basis for $\Poly_2$. Note that removing
-  any one of $1, x^2$, or $x^2 + 1$ will result in a basis.
-\end{solution}
-
-Now the following is a fundamental result about subspaces.
-
-\begin{theorem}{Basis of a vector space}{basis-vector-space}
-  Let $V$ be a finite dimensional vector space and let $W$ be a
-  non-zero subspace. Then $W$ has a basis. That is, there exists a
-  linearly independent set of vectors
-  $\set{\vect{w}_{1},\ldots,\vect{w}_{r}} $ such that
-  \begin{equation*}
-    \sspan\set{\vect{w}_{1},\ldots,\vect{w}_{r}} =W
-  \end{equation*}
-  Also if $\set{\vect{w}_{1},\ldots,\vect{w}_{s}} $ is a linearly
-  independent set of vectors, then $W$ has a basis of the form
-  $\set{\vect{w} _{1},\ldots,\vect{w}_{s},\ldots,\vect{w}_{r}} $ for
-  $r\geq s$.
-\end{theorem}
-
-\begin{proof}
-  Let the dimension of $V$ be $n$. Pick $\vect{w}_{1}\in W$ where
-  $\vect{w}_{1}\neq \vect{0}$. If $\vect{w}_{1},\ldots,\vect{w}_{s}$
-  have been chosen such that $\set{\vect{w}_{1},\ldots,\vect{w}_{s}} $
-  is linearly independent, if
-  $\sspan\set{\vect{w}_{1},\ldots,\vect{w} _{r}} =W$, stop. You have
-  the desired basis. Otherwise, there exists
-  $ \vect{w}_{s+1}\notin \sspan\set{\vect{w}_{1},\ldots,\vect{w} _{s}}
-  $ and $\set{\vect{w}_{1},\ldots, \vect{w}_{s},\vect{w}_{s+1}} $ is
-  linearly independent. Continue this way until the process stops. It
-  must stop since otherwise, you could obtain a linearly independent
-  set of vectors having more than $n$ vectors which is impossible.
-
-  The last claim is proved by following the above procedure starting
-  with $ \set{\vect{w}_{1},\ldots,\vect{w}_{s}} $ as above.
-\end{proof}
-
-This also proves the following corollary. Let $V$ play the role of
-$ W$ in the above theorem and begin with a basis for $W$, enlarging it
-to form a basis for $V$ as discussed above.
-
-\begin{corollary}{Basis extension}{}
-  Let $W$ be any non-zero subspace of a vector space $V$.  Then every
-  basis of $W$ can be extended to a basis for $V$.
-\end{corollary}
-
-Consider the following example.
-
-\begin{example}{Basis extension}{}
-  Let $V=\R^{4}$ and let
-  \begin{equation*}
-    W=\sspan\set{\begin{mymatrix}{c}
-        1 \\
-        0 \\
-        1 \\
-        1
-      \end{mymatrix} ,\begin{mymatrix}{c}
-        0 \\
-        1 \\
-        0 \\
-        1
-      \end{mymatrix} }
-  \end{equation*}
-  Extend this basis of $W$ to a basis of $V$.
-\end{example}
-
-\begin{solution}
-  An easy way to do this is to take the {\rref} of the matrix
-  \begin{equation}
-    \begin{mymatrix}{cccccc}
-      1 & 0 & 1 & 0 & 0 & 0 \\
-      0 & 1 & 0 & 1 & 0 & 0 \\
-      1 & 0 & 0 & 0 & 1 & 0 \\
-      1 & 1 & 0 & 0 & 0 & 1
-    \end{mymatrix}  \label{vector-space-eq1}
-  \end{equation}
-  Note how the given vectors were placed as the first two and then the
-  matrix was extended in such a way that it is clear that the span of
-  the columns of this matrix yield all of $\R^{4}$. Now determine the
-  pivot columns.  The {\rref} is
-  \begin{equation}
-    \begin{mymatrix}{rrrrrr}
-      1 & 0 & 0 & 0 & 1 & 0 \\
-      0 & 1 & 0 & 0 & -1 & 1 \\
-      0 & 0 & 1 & 0 & -1 & 0 \\
-      0 & 0 & 0 & 1 & 1 & -1
-    \end{mymatrix}  \label{vector-space-eq2}
-  \end{equation}
-  These are
-  \begin{equation*}
-    \begin{mymatrix}{c}
-      1 \\
-      0 \\
-      1 \\
-      1
-    \end{mymatrix} ,\begin{mymatrix}{c}
-      0 \\
-      1 \\
-      0 \\
-      1
-    \end{mymatrix} ,\begin{mymatrix}{c}
-      1 \\
-      0 \\
-      0 \\
-      0
-    \end{mymatrix} ,\begin{mymatrix}{c}
-      0 \\
-      1 \\
-      0 \\
-      0
-    \end{mymatrix}
-  \end{equation*}
-  and now this is an extension of the given basis for $W$ to a basis
-  for $ \R^{4}$.
-
-  Why does this work? The columns of {\eqref{vector-space-eq1}}
-  obviously span $\R ^{4}$ the span of the first four is the same as
-  the span of all six.
 \end{solution}
