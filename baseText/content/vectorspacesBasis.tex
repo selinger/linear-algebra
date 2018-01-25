@@ -28,7 +28,7 @@
   \item $\set{x^2, (x+1)^2, (x+2)^2}$ is a basis of $\Poly_2$.
   \item $\set{1, x-1, (x-1)^2}$ is a basis of $\Poly_2$.
   \end{itemize}
-  Unlike $\R^n$, a general vector space like $\Poly_2$ does not
+  Unlike $\R^n$, a vector space like $\Poly_2$ does not
   necessarily have a ``standard'' basis. One basis might be useful for
   one application, and another basis for a different application.
 \end{example}
@@ -100,276 +100,165 @@
     e^2, \ldots}$ is a basis of $W$.
 \end{example}
 
-% ======================================================================
-\subsection{CONTINUE HERE}
+The following theorem ensures that every vector space has a basis.  We
+will not prove this theorem, because when the spaces are
+infinite-dimensional, the proof uses mathematics that is beyond the
+scope of this book. The proof uses a reasoning principle called the
+\textbf{axiom of choice}%
+\index{axiom of choice}, which allows us to prove the existence of a
+basis even in cases where we cannot find an actual concrete example of
+a basis.  For example, it is not possible to give a specific example
+of a basis for the space $\Seq_K$, even though the following theorem
+guarantees that such a basis exists.
 
-\begin{example}{}{}
-  As a matter of fact, the space $W$ of the last example is a
-  2-dimensional space. From calculus, we know that the general solution
-  of the differential equation $f''=-f$ is
+\begin{theorem}{Existence of bases}{basis-existence}
+  Every vector space has a basis.
+\end{theorem}
+
+The Exchange Lemma, which we proved in the context of $\R^n$ in
+Section~\ref{sec:basis-and-dimension}, is true in general vector
+spaces.
+
+\begin{lemma}{Exchange Lemma}{exchange-lemma-vector-space}
+  \index{exchange lemma!in a vector space}%
+  Let $V$ be a vector space over a field $K$. Suppose
+  $\vect{u}_{1},\ldots,\vect{u}_{r}$ are linearly independent elements
+  of $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{s}}$. Then $r\leq s$.
+\end{lemma}
+
+The proof is exactly the same as that of
+Lemma~\ref{lem:exchange-lemma}, so we do not repeat it here.  As in
+Section~\ref{sec:basis-and-dimension}, an important consequence of the
+Exchange Lemma is that any two bases of a vector space have the same
+size.
+
+\begin{theorem}{Bases are of the same size}{basis-same-size-vector-space}
+  \index{basis!size of}%
+  Let $V$ be a vector space over some field $K$, and let $B_1$ and
+  $B_2$ be bases of $V$. Then either $B_1$ and $B_2$ are both finite
+  and have the same number of elements, or else $B_1$ and $B_2$ are
+  both infinite.
+\end{theorem}
+
+\begin{proof}
+  We first show that $B_1$ and $B_2$ are either both finite or both
+  infinite. Assume one of them, say $B_1$, is finite and contains $s$
+  vectors. Since $B_1$ is spanning and $B_2$ is linearly independent,
+  it follows from the Exchange Lemma that $B_2$ cannot contain more
+  than $s$ vectors, and in particular, $B_2$ must be finite.  So the
+  sets are either both finite or both infinite. If they are both
+  finite, say of size $s$ and $r$, then by the Exchange Lemma, we have
+  $s\leq r$ and $r\leq s$, hence $r=s$.
+\end{proof}
+
+This allows us to define the dimension of a vector space.
+
+\begin{definition}{Dimension}{dimension-vector-space}
+  Let $V$ be a vector space over a field $K$. If $V$ has a basis
+  consisting of $n$ vectors, we say that $V$ has \textbf{dimension}%
+  \index{dimension!of vector space}%
+  \index{vector space!dimension} $n$, and we write $\dim(V)=n$. In
+  this case we also say that $V$ is \textbf{finite-dimensional}%
+  \index{finite-dimensional}%
+  \index{vector space!finite-dimensional}. If $V$ has an infinite
+  basis, we say that $V$ is \textbf{infinite-dimensional}%
+  \index{infinite-dimensional}%
+  \index{space!infinite-dimensional}, and we write $\dim(V) = \infty$.
+\end{definition}
+
+Note that the dimension is well-defined by Theorems
+{\ref{thm:basis-existence}} and
+{\ref{thm:basis-same-size-vector-space}}, since these theorems ensure
+that every vector space has a basis (and therefore a dimension), and
+that any two bases are of the same size (and therefore a vector space
+cannot have more than one dimension).
+
+We now calculate the dimensions of some vector spaces we encountered in
+Sections~\ref{sec:definition-vector-spaces} and
+{\ref{sec:vector-space-subspaces}}.
+
+\begin{itemize}
+\item The space $\R^n$ has dimension $n$.
+\item The space $\Poly_2$ has dimension $3$. We found several bases
+  for this space in Example~\ref{exa:basis-p2}.
+\item The space $\Mat_{m,n}$ has dimension $mn$. A possible basis
+  consists of all the matrices that contain a single $1$ and zeros
+  everywhere else.
+\item The space $\Func_{X,K}$ is infinite-dimensional if $X$ is an
+  infinite set. If $X$ is a finite set of $n$ elements, then this
+  space is $n$-dimensional. In that case, a basis is given by the set
+  of functions whose value is $1$ for one input and $0$ for all other
+  inputs.
+\item The space $\Seq_K$ is infinite-dimensional. We found an infinite
+  linearly independent set in
+  Example~\ref{exa:linear-independence-sequences}, showing that the
+  space cannot be finite dimensional.
+\item The space $\Poly$ is infinite-dimensional. We found a basis for
+  this space in Example~\ref{exa:basis-p}.
+\item The subspace of $\Func_{\R,\R}$ consisting of the continuous
+  functions is infinite-dimensional. For example, the functions
+  $\set{1,x,x^2,x^3,\ldots}$ form an infinite, linearly independent
+  set of continuous functions.
+\item The subspace of $\Func_{\R,\R}$ consisting of the differentiable
+  functions is infinite-dimensional. Again, the set
+  $\set{1,x,x^2,x^3,\ldots}$ is an infinite linearly independent set
+  in this space. 
+\end{itemize}
+
+\begin{example}{Space of sequences satisfying a linear recurrence}{subspace-recurrence-dimension}
+  In Example~\ref{exa:subspace-recurrence}, we considered the space
+  $W$ of sequences of real numbers that satisfy the recurrence
+  $a_{n+2}=a_n+a_{n+1}$. What is the dimension of this space?
+\end{example}
+
+\begin{solution}
+  The space is 2-dimensional. The easiest way to see this is to
+  observe that a sequence $a\in W$ is determined by its first two
+  elements. We can say that the first two elements of the sequence are
+  parameters, and all the other elements are then computed by the
+  recurrence relation. Specifically, suppose $a_0=x$ and
+  $a_1=y$. Using the recurrence relation to compute the remaining
+  elements, we have
+  \begin{eqnarray*}
+    a &=& (x,y,x+y,x+2y,2x+3y,3x+5y,\ldots) \\
+      &=& x(1,0,1,1,2,3,\ldots) + y(0,1,1,2,3,5,\ldots).
+  \end{eqnarray*}
+  Since this is the general form of the elements of $W$, and since the
+  two sequences starting with 1,0 and 0,1 are clearly linearly
+  independent, it follows that
+  \begin{equation*}
+    \set{(1,0,1,1,2,3,\ldots),~ (0,1,1,2,3,5,\ldots)}
+  \end{equation*}
+  is a basis of $W$.
+\end{solution}
+
+\begin{example}{Solution space of a linear differential equation}{dimension-differential-equation}
+  In Example~\ref{exa:subspace-differential-equation}, we considered
+  the space of solutions of the differential equation $f''=-f$. What
+  is the dimension of this space?
+\end{example}
+
+\begin{solution}
+  From calculus, we know that the general solution of the differential
+  equation $f''=-f$ is
   \begin{equation*}
     f(x) = A\sin x + B\cos x,
   \end{equation*}
-  where $A,B$ are constants. This means that $W=\sspan\set{\sin x, \cos x}$.
-\end{example}
-
-
-The next theorem is an essential result in linear algebra and is
-called the exchange theorem\index{exchange theorem}.
-
-\begin{theorem}{Exchange theorem}{exchange-theorem}
-  Let $\set{\vect{x}_{1},\ldots,\vect{x}_{r}} $ be a linearly
-  independent set of vectors such that each $\vect{x}_{i}$ is
-  contained in span$\set{\vect{y}_{1},\ldots,\vect{y}_{s}}$. Then
-  $ r\leq s$.
-\end{theorem}
-
-\begin{proof}
-  The proof will proceed as follows. First, we set up the necessary
-  steps for the proof. Next, we will assume that $r > s$ and show that
-  this leads to a contradiction, thus requiring that $r \leq s$.
-
-  Define span$\set{\vect{y}_{1},\ldots,\vect{y}_{s}} = V$. Since each
-  $\vect{x}_i$ is in span$\set{\vect{y}_{1},\ldots,\vect{y}_{s}}$, it
-  follows there exist scalars $c_{1},\ldots,c_{s}$ such that
-  \begin{equation}
-    \vect{x}_{1}=\sum_{i=1}^{s}c_{i}\vect{y}_{i}  \label{linear-comb}
-  \end{equation}
-  Note that not all of these scalars $c_i$ can equal zero. Suppose
-  that all the $c_i=0$. Then it would follow that
-  $\vect{x}_{1}=\vect{0}$ and so
-  $\set{\vect{x} _{1},\ldots,\vect{x}_{r}} $ would not be linearly
-  independent.  Indeed, if $\vect{x}_{1}=\vect{0}$,
-  $1\vect{x}_{1}+\sum_{i=2}^{r}0 \vect{x}_{i}=\vect{x}_{1}=\vect{0}$
-  and so there would exist a non-trivial linear combination of the
-  vectors $\set{\vect{x}_{1},\ldots, \vect{x}_{r}} $ which equals
-  zero. Therefore at least one $c_i$ is non-zero.
-
-  Say $c_{k}\neq 0$. Then solve {\eqref{linear-comb}} for
-  $\vect{y}_{k}$ and obtain
-  \begin{equation*}
-    \vect{y}_{k}\in \sspan\set{\vect{x}_{1},\overset{\text{s-1
-          vectors here}}{\overbrace{\vect{y}_{1},\ldots,\vect{y}_{k-1},\vect{y}
-          _{k+1},\ldots,\vect{y}_{s}}}} .
-  \end{equation*}
-  Define $\set{\vect{z}_{1},\ldots,\vect{z}_{s-1}} $ to be
-  \begin{equation*}
-    \set{\vect{z}_{1},\ldots,\vect{z}_{s-1}} = \set{
-      \vect{y}_{1},\ldots,\vect{y}_{k-1},\vect{y}_{k+1},\ldots,\vect{y}
-      _{s}}
-  \end{equation*}
-  Now we can write
-  \begin{equation*}
-    \vect{y}_{k}\in \sspan\set{\vect{x}_{1}, \vect{z}_{1},\ldots, \vect{z}_{s-1}}
-  \end{equation*}
-  Therefore,
-  $\sspan\set{\vect{x}_{1},\vect{z}_{1},\ldots,\vect{z }_{s-1}}=V$. To
-  see this, suppose $\vect{v}\in V$. Then there exist constants
-  $ c_{1},\ldots,c_{s}$ such that
-  \begin{equation*}
-    \vect{v}=\sum_{i=1}^{s-1}c_{i}\vect{z}_{i}+c_{s}\vect{y}_{k}.
-  \end{equation*}
-  Replace this $\vect{y}_{k}$ with a linear combination of the vectors
-  $\set{\vect{x}_{1},\vect{z}_{1},\ldots,\vect{z}_{s-1}}$ to obtain
-  $\vect{v}\in \sspan\set{\vect{x}_{1},\vect{z}
-    _{1},\ldots,\vect{z}_{s-1}}$. The vector $\vect{y}_{k}$, in the
-  list $\set{\vect{y}_{1},\ldots,\vect{y}_{s}}$, has now been replaced
-  with the vector $\vect{x}_{1}$ and the resulting modified list of
-  vectors has the same span as the original list of vectors,
-  $\set{\vect{y }_{1},\ldots,\vect{y}_{s}}$.
-
-  We are now ready to move on to the proof. Suppose that $r>s$ and
-  that
-  \begin{equation*}
-    \sspan\set{\vect{x}_{1},\ldots,
-      \vect{x}_{l},\vect{z}_{1},\ldots,\vect{z}_{p}} =V
-  \end{equation*}
-  where the process established above has continued. In other words,
-  the vectors $\vect{z}_{1},\ldots,\vect{z}_{p}$ are each taken from
-  the set $\set{\vect{y}_{1},\ldots,\vect{y}_{s}} $ and $l+p=s$.  This
-  was done for $l=1$ above. Then since $r>s$, it follows that
-  $ l\leq s<r$ and so $l+1\leq r$. Therefore, $\vect{x}_{l+1}$ is a
-  vector not in the list, $\set{\vect{x}_{1},\ldots,\vect{x}_{l}} $
-  and since
-  \begin{equation*}
-    \sspan\set{\vect{x}_{1},\ldots,\vect{x}_{l},\vect{z}
-      _{1},\ldots,\vect{z}_{p}} =V
-  \end{equation*}
-  there exist scalars, $c_{i}$ and $
-  d_{j}$ such that
-  \begin{equation}
-    \vect{x}_{l+1}=\sum_{i=1}^{l}c_{i}\vect{x}_{i}+\sum_{j=1}^{p}d_{j}
-    \vect{z}_{j}.  \label{linear-comb2}
-  \end{equation}
-  Not all the $d_{j}$ can equal zero because if this were so, it would
-  follow that $\set{\vect{x}_{1},\ldots,\vect{x}_{r}} $ would be a
-  linearly dependent set because one of the vectors would equal a
-  linear combination of the others. Therefore, {\eqref{linear-comb2}}
-  can be solved for one of the $\vect{z}_{i}$, say $\vect{z}_{k}$, in
-  terms of $\vect{x}_{l+1}$ and the other $\vect{z}_{i}$ and just as
-  in the above argument, replace that $ \vect{z}_{i}$ with
-  $\vect{x}_{l+1}$ to obtain
-  \begin{equation*}
-    \sspan\set{\vect{x}_{1},\ldots,\vect{x}_{l},\vect{x}_{l+1},
-      \overset{\text{p-1 vectors here}}{\overbrace{\vect{z}_{1},\ldots,\vect{z}
-          _{k-1},\vect{z}_{k+1},\ldots,\vect{z}_{p}}}} =V
-  \end{equation*}
-  Continue this way, eventually obtaining
-  \begin{equation*}
-    \sspan\set{\vect{x}_{1},\ldots,\vect{x}_{s}} =V.
-  \end{equation*}
-  But then $\vect{x}_{r}\in $
-  $\sspan\set{\vect{x}_{1},\ldots, \vect{x}_{s}} $ contrary to the
-  assumption that $\set{\vect{x} _{1},\ldots,\vect{x}_{r}} $ is
-  linearly independent. Therefore, $ r\leq s$ as claimed.
-\end{proof}
-
-The following corollary follows from the exchange theorem.
-
-\begin{corollary}{Two bases of the same length}{bases-length}
-  Let $B_1$, $B_2$ be two bases of a vector space $V$. Suppose $B_1$
-  contains $m$ vectors and $B_2$ contains $n$ vectors. Then
-  $m = n$.\index{basis!any two same size}
-\end{corollary}
-
-\begin{proof}
-  By Theorem~\ref{thm:exchange-theorem}, $m\leq n$ and $n\leq
-  m$. Therefore $m=n$.
-\end{proof}
-
-This corollary is very important so we provide another proof
-independent of the exchange theorem above.
-
-\begin{proof}
-  Suppose $n > m$. Then since the vectors
-  $\set{\vect{u} _{1},\ldots,\vect{u}_{m}} $ span $V$, there exist
-  scalars $c_{ij}$ such that
-  \begin{equation*}
-    \sum_{i=1}^{m}c_{ij}\vect{u}_{i}=\vect{v}_{j}.
-  \end{equation*}
-  Therefore,
-  \begin{equation*}
-    \sum_{j=1}^{n}d_{j}\vect{v}_{j}=\vect{0}
-    \text{ if and only if }\sum_{j=1}^{n}\sum_{i=1}^{m}c_{ij}d_{j}\vect{u}_{i}=
-    \vect{0}
-  \end{equation*}
-  if and only if
-  \begin{equation*}
-    \sum_{i=1}^{m}\paren{\sum_{j=1}^{n}c_{ij}d_{j}} \vect{u}_{i}=\vect{
-      0}
-  \end{equation*}
-  Now since $\set{\vect{u}_{1},\ldots,\vect{u}_{n}}$ is independent, this
-  happens if and only if
-  \begin{equation*}
-    \sum_{j=1}^{n}c_{ij}d_{j}=0,\;i=1,2,\ldots,m.
-  \end{equation*}
-  However, this is a system of $m$ equations in $n$ variables,
-  $d_{1},\ldots,d_{n}$ and $m<n$. Therefore, there exists a solution
-  to this system of equations in which not all the $d_{j}$ are equal
-  to zero. Recall why this is so. The augmented matrix for the system
-  is of the form $\begin{mymatrix}{c|c} C & \vect{0}
-  \end{mymatrix} $ where $C$ is a matrix which has more columns than
-  rows. Therefore, there are free variables and hence non-zero
-  solutions to the system of equations. However, this contradicts the
-  linear independence of $\set{
-    \vect{u}_{1},\ldots,\vect{u}_{m}}$. Similarly it cannot happen
-  that $m > n$.
-\end{proof}
-
-Given the result of the previous corollary, the following definition follows.
-
-\begin{definition}{Dimension}{dimension-vector-space}
-  A vector space $V$ is of dimension $n$ if it has a basis consisting
-  of $n$ vectors\index{dimension of vector space}\index{vector
-    space!dimension}.
-\end{definition}
-
-Notice that the dimension is well defined by
-Corollary~\ref{cor:bases-length}. It is assumed here that $n<\infty $
-and therefore such a vector space is said to be \textbf{finite
-  dimensional}\index{finite dimensional}.
-
-\begin{example}{Dimension of a vector space}{dimension}
-  Let $\Poly_2$ be the set of all polynomials of degree at most
-  $2$. Find the dimension of $\Poly_2$.
-\end{example}
-
-\begin{solution}
-  If we can find a basis of $\Poly_2$ then the number of vectors in
-  the basis will give the dimension. Recall from
-  Example~\ref{exa:poly-degree-two} that a basis of $\Poly_2$ is given
-  by
-  \begin{equation*}
-    S  = \set{x^2, x, 1 }
-  \end{equation*}
-  There are three polynomials in $S$ and hence the dimension of
-  $\Poly_2$ is three.
+  where $A,B$ are constants. We also know, from
+  Example~\ref{exa:linearly-independent-functions}, that $\sin x$ and
+  $\cos x$ are linearly independent. It follows that
+  $\set{\sin x, \cos x}$ is a basis for the solution space. The
+  solution space is therefore 2-dimensional.
 \end{solution}
 
-It is important to note that a basis for a vector space is not
-unique. A vector space can have many bases. Consider the following
-example.
+% ======================================================================
+\subsection{CONTINUE HERE}
 
-\begin{example}{A different basis for polynomials of degree two}{polynomial-degree-two-different-basis}
-  Let $\Poly_2$ be the polynomials of degree no more than 2. Is
-  $\set{ x^{2}+x+1,2x+1,3x^{2}+1} $ a basis for $\Poly_2$?
-\end{example}
+* nested space, same (finite) dimension => equal
+* shrink spanning set to basis; grow linearly independent set to basis.
+* grow basis of subspace to basis of space
 
-\begin{solution}
-  Suppose these vectors are linearly independent but do not form a
-  spanning set for $\Poly_2$. Then by
-  Lemma~\ref{lem:adding-linearly-independent}, we could find a fourth
-  polynomial in $\Poly_2$ to create a new linearly independent set
-  containing four polynomials. However this would imply that we could
-  find a basis of $\Poly_2$ of more than three polynomials. This
-  contradicts the result of Example~\ref{exa:dimension} in which we
-  determined the dimension of $\Poly_2$ is three.  Therefore if these
-  vectors are linearly independent they must also form a spanning set
-  and thus a basis for $\Poly_2$.
 
-  Suppose then that
-  \begin{eqnarray*}
-    a(x^{2}+x+1) +b(2x+1) +c(3x^{2}+1) &=& 0\\
-    (a+3c) x^{2}+(a+2b) x+(a+b+c) &=& 0
-  \end{eqnarray*}
-  We know that $\set{x^2, x, 1 }$ is linearly independent, and so it
-  follows that
-  \begin{eqnarray*}
-    a+3c &=& 0 \\
-    a+2b &=& 0 \\
-    a+b+c &=& 0
-  \end{eqnarray*}
-  and there is only one solution to this system of equations,
-  $a=b=c=0$.  Therefore, these are linearly independent and form a
-  basis for $\Poly_2$.
-\end{solution}
-
-Consider the following theorem.
-
-\begin{theorem}{Every subspace has a basis}{every-subspace-basis}
-  Let $W$ be a non-zero subspace of a finite dimensional vector
-  space $V$. Suppose $V$ has dimension $n$.
-  Then $W$ has a basis\index{subspace!has a basis}
-  with no more than $n$ vectors.
-\end{theorem}
-
-\begin{proof}
-  Let $\vect{v}_{1}\in V$ where $\vect{v}_{1}\neq 0$. If
-  $ \sspan\set{\vect{v}_{1}} =V$, then it follows that
-  $\set{\vect{v} _{1}} $ is a basis for $V$. Otherwise, there exists
-  $\vect{v} _{2}\in V$ which is not in $\sspan\set{\vect{v}_{1}}$. By
-  Lemma~\ref{lem:adding-linearly-independent}
-  $\set{\vect{v}_{1},\vect{v}_{2}} $ is a linearly independent set of
-  vectors. Then $\set{\vect{v}_{1},\vect{v} _{2}} $ is a basis for $V$
-  and we are done. If $\sspan\set{\vect{v}_{1}, \vect{v}_{2}} \neq V$,
-  then there exists
-  $\vect{v}_{3}\notin \sspan\set{\vect{v}_{1},\vect{v}_{2}} $ and
-  $\set{\vect{v} _{1},\vect{v}_{2},\vect{v}_{3}} $ is a larger
-  linearly independent set of vectors. Continuing this way, the
-  process must stop before $n+1$ steps because if not, it would be
-  possible to obtain $n+1$ linearly independent vectors contrary to
-  the exchange theorem, Theorem~\ref{thm:exchange-theorem}.
-\end{proof}
 
 If in fact $W$ has $n$ vectors, then it follows that $W=V$.
 
