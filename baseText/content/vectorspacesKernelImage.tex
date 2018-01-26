@@ -88,7 +88,7 @@ Notice that this is a subspace of $\R$, and in fact is the space $\R$ itself.
 \end{solution}
 
 \begin{example}{Kernel and image of a linear transformation}{finding-kernel-image}
-Let $T: \Mat_{22} \to \R^2$ be defined by
+Let $T: \Mat_{2,2} \to \R^2$ be defined by
 \[
 T \begin{mymatrix}{cc}
 a & b \\
@@ -301,7 +301,7 @@ T) =W$.
 \end{proof}
 
 \begin{example}{One to one transformation}{one-to-one-kernel}
-Let $S:\Poly_2\to\Mat_{22}$ be a linear transformation
+Let $S:\Poly_2\to\Mat_{2,2}$ be a linear transformation
 defined by
 \[ S(ax^2+bx+c)
 =
@@ -338,7 +338,7 @@ Putting the augmented matrix in {\rref}:
 Since the unique solution is $a=b=c=0$, $\ker(S)=\set{\vect{0}}$, and thus
 $S$ is one-to-one by Corollary~\ref{cor:one-one-onto-char}.
 
-Similarly, by Corollary~\ref{cor:one-one-onto-char}, if $S$ is onto it will have $\rank(S) = \dim(\Mat_{22}) = 4$. The image of $S$ is given by
+Similarly, by Corollary~\ref{cor:one-one-onto-char}, if $S$ is onto it will have $\rank(S) = \dim(\Mat_{2,2}) = 4$. The image of $S$ is given by
 \[
 \func{im}(S) = \set{\begin{mymatrix}{cc}
 a+b & a+c \\ b-c & b+c \end{mymatrix} } = \sspan \set{\begin{mymatrix}{rr}
