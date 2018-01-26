@@ -26,9 +26,9 @@
   2 with coefficients in a field $K$.%
   \index{P2@$\Poly_2$!basis of}
   \begin{itemize}
-  \item $\set{1, x, x^2}$ is a basis of $\Poly_2$.
-  \item $\set{x^2, (x+1)^2, (x+2)^2}$ is a basis of $\Poly_2$.
-  \item $\set{1, x-1, (x-1)^2}$ is a basis of $\Poly_2$.
+  \item $\set{1,~ x,~ x^2}$ is a basis of $\Poly_2$.
+  \item $\set{x^2,~ (x+1)^2,~ (x+2)^2}$ is a basis of $\Poly_2$.
+  \item $\set{1,~ x-1,~ (x-1)^2}$ is a basis of $\Poly_2$.
   \end{itemize}
   Unlike $\R^n$, a vector space like $\Poly_2$ does not
   necessarily have a ``standard'' basis. One basis might be useful for
@@ -47,28 +47,28 @@
   coefficients in a field $K$. The following is a basis for $\Poly$%
   \index{P@$\Poly$!basis of}:
   \begin{equation*}
-    \set{1, x, x^2, x^3, x^4, \ldots}.
+    \set{1,~ x,~ x^2,~ x^3,~ x^4,~ \ldots}.
   \end{equation*}
   Note that this basis is infinite.
 \end{example}
 
 \begin{proof}
-  The polynomials $1, x, x^2, x^3, x^4, \ldots$ are linearly
+  The polynomials $1$, $x$, $x^2$, $x^3$, $x^4$, $\ldots$ are linearly
   independent by Proposition~\ref{prop:linear-dependence-redundant}.
   Namely, if they were linearly dependent, then one of the polynomials
   could be written as a linear combination of earlier ones. However,
   this is not possible because a polynomial of degree $n$ cannot be a
   linear combination of polynomials of degree less than $n$.
 
-  To show that the polynomials $1, x, x^2, x^3, x^4, \ldots$ are a
-  spanning set, consider an arbitrary element $p(x)$ of $\Poly$.
+  To show that the polynomials $1$, $x$, $x^2$, $x^3$, $x^4$, $\ldots$
+  are a spanning set, consider an arbitrary element $p(x)$ of $\Poly$.
   Then by definition, $p(x)$ is of the form
   \begin{equation*}
     p(x) = a_nx^n + a_{n-1}x^{n-1} + \ldots + a_1x + a_0,
   \end{equation*}
   for some $n\geq 0$ and $a_0,\ldots,a_n\in K$. But then $p(x)$ is a
   linear combination of $1,\ldots,x^n$, i.e., it is in the span of
-  $\set{1, x, x^2, x^3, x^4, \ldots}$.
+  $\set{1,~ x,~ x^2,~ x^3,~ x^4,~ \ldots}$.
 \end{proof}
 
 \begin{example}{Not a basis}{not-a-basis}
@@ -84,22 +84,22 @@
   \end{equation*}
   and so on. Then the set
   \begin{equation*}
-    \set{e^0, e^1, e^2, \ldots}
+    \set{e^0,~ e^1,~ e^2,~ \ldots}
   \end{equation*}
   is \textit{not} a basis of $\Seq_K$. Indeed, although we saw in
   Example~\ref{exa:linear-independence-sequences} that the sequences
-  $e^0, e^1, e^2, \ldots$ are linearly independent,
+  $e^0$, $e^1$, $e^2$, $\ldots$ are linearly independent,
   Example~\ref{exa:spans-sequences} shows that they are not spanning.
   Indeed,
   \begin{equation*}
-    W = \sspan\set{e^0, e^1, e^2, \ldots}
+    W = \sspan\set{e^0,~ e^1,~ e^2,~ \ldots}
   \end{equation*}
   is a subspace of $\Seq_K$, consisting exactly of the
   \textbf{finitely supported}%
   \index{finitely supported sequence}%
   \index{sequence!finitely supported} sequences, i.e., those sequences
-  that have only finitely many non-zero entries. Thus, $\set{e^0, e^1,
-    e^2, \ldots}$ is a basis of $W$.
+  that have only finitely many non-zero entries. Thus, $\set{e^0,~ e^1,~
+    e^2,~ \ldots}$ is a basis of $W$.
 \end{example}
 
 The following theorem ensures that every vector space has a basis.  We
@@ -222,7 +222,7 @@ Sections~\ref{sec:definition-vector-spaces} and
   $a_1=y$. Using the recurrence relation to compute the remaining
   elements, we have
   \begin{eqnarray*}
-    a &=& (x,y,x+y,x+2y,2x+3y,3x+5y,\ldots) \\
+    a &=& (x,~y,~x+y,~x+2y,~2x+3y,~3x+5y,~\ldots) \\
       &=& x(1,0,1,1,2,3,\ldots) + y(0,1,1,2,3,5,\ldots).
   \end{eqnarray*}
   Since this is the general form of the elements of $W$, and since the
@@ -330,7 +330,7 @@ set can be reduced to a basis by removing 0 or more vectors.
 \begin{example}{Shrinking a spanning set to a basis}{shrink-spanning}
   Consider the spanning set $S \subseteq \Poly_2$ given by
   \begin{equation*}
-    S = \set{1, x, 2x+1, x^2+1, x^2+2 }
+    S = \set{1,~ x,~ 2x+1,~ x^2+1,~ x^2+2 }
   \end{equation*}
   Shrink $S$ to a basis of $\Poly_2$.
 \end{example}
@@ -346,6 +346,6 @@ set can be reduced to a basis by removing 0 or more vectors.
   combination of $1$ and $x^2+1$. Therefore, the following subset of
   $S$ is a basis of $\Poly_2$:
   \begin{equation*}
-    B = \set{1, x, x^2+1 }.
+    B = \set{1,~ x,~ x^2+1 }.
   \end{equation*}
 \end{solution}
