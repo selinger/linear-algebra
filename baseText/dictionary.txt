@@ -59,6 +59,7 @@ diagonalization
 diagonalize
 diagonalized
 diagonalizing
+differentiable
 distributivity
 Dolittle's
 DU
