@@ -38,7 +38,7 @@ We continue with another related definition.
 
 \index{coordinate vector}
 \begin{definition}{Coordinate vector}{coordinate-vector}
-Let $V$ be a finite dimensional vector space with $\dim(V)=n$, and
+Let $V$ be a finite-dimensional vector space with $\dim(V)=n$, and
 let $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ be an ordered basis of $V$ (meaning that the order that the
 vectors are listed is taken into account).
 The coordinate vector of $\vect{v}$ with respect to $B$ is defined
@@ -131,7 +131,7 @@ C_B(\vect{x}) =
 Given that the coordinate transformation $C_B:V\to\R^n$ is an isomorphism, its inverse exists.
 
 \begin{theorem}{Inverse of the coordinate isomorphism}{coordinate-inverse}
-Let $V$ be a finite dimensional vector space with dimension $n$
+Let $V$ be a finite-dimensional vector space with dimension $n$
 and ordered basis $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$.
 Then $C_B:V\to\R^n$ is an isomorphism whose inverse,
 \[ C_B^{-1}:\R^n\to V\]
@@ -148,7 +148,7 @@ We now discuss the main result of this section, that is how
 to represent a linear transformation with respect to different
 bases.
 
-Let $V$ and $W$ be finite dimensional vector spaces, and suppose
+Let $V$ and $W$ be finite-dimensional vector spaces, and suppose
 \begin{itemize}
 \item $\dim(V)=n$ and $B_1=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$
 is an ordered basis of $V$;
@@ -471,7 +471,7 @@ You can verify that this was the definition of $T(p(x))$ given in the previous e
 We can also find the matrix of the composite of multiple transformations.
 
 \begin{theorem}{Matrix of composition}{matrix-composition}
-Let $V,W$ and $U$ be finite dimensional vector spaces, and suppose $T : V \to W$, $S: W \to U$ are linear transformations.
+Let $V,W$ and $U$ be finite-dimensional vector spaces, and suppose $T : V \to W$, $S: W \to U$ are linear transformations.
 Suppose $V, W$ and $U$ have ordered bases of $B_1$, $B_2$ and $B_3$ respectively.  Then the matrix of the composite transformation $S \circ T$ (or $ST$) is given by
 \[ M_{B_3B_1}(ST)=M_{B_3B_2}(S) M_{B_2B_1}(T).\]
 \end{theorem}
