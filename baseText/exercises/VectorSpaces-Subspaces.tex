@@ -3,502 +3,174 @@
 \begin{ex}
   Consider the set of $n\times n$ symmetric matrices, i.e., matrices
   satisfying $A=A^{T}$. Show that this set of symmetric matrices is a
-  vector space and a subspace of the vector space of
-  $n\times n$-matrices.
+  subspace of $\Mat_{n,n}$, the vector space of $n\times n$-matrices.
   % \begin{sol}
   % \end{sol}
 \end{ex}
 
 \begin{ex}
-  Consider the set of all vectors in $\R^{2},(x,y) $
-  such that $x+y\geq 0$. Let the vector space operations be the usual ones. Is
-  this a vector space? Is it a subspace of $\R^{2}$?
+  Consider the set of all vectors
+  $\begin{mysmallmatrix}{c}x\\y\end{mysmallmatrix}\in\R^2$ such that
+  $x+y\geq 0$. Is this a subspace of $\R^{2}$?
+  \begin{sol}
+    No. It is not closed under scalar multiplication.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Consider the set of all vectors
+  $\begin{mysmallmatrix}{c}x\\y\end{mysmallmatrix}\in\R^2$ such that $xy=0$. Is
+  this a subspace of $\R^{2}$?
+  \begin{sol}
+    No. It is not closed under addition.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Let $V$ be the set of those polynomials $ax^2+bx+c\in\Poly_{2}$ such
+  that $a+b+c=0$. Is $V$ a subspace of $\Poly_{2}$? Explain.
   % \begin{sol}
   % \end{sol}
 \end{ex}
 
 \begin{ex}
-  Consider the vectors in $\R^{2},(x,y) $ such that $xy=0$. Is this a subspace of $\R^{2}$? Is it a vector space? The
-  addition and scalar multiplication are the usual operations.
+  Let $U,W$ be subspaces of a vector space $V$ and consider $U+W$
+  defined as the set of all vectors that can be written of the form
+  $\vect{u}+\vect{w}$, where $\vect{u}\in U$ and $\vect{w}\in W$. Show
+  that $U+W$ is a subspace of $V$.
   % \begin{sol}
   % \end{sol}
 \end{ex}
 
 \begin{ex}
-  Let $V$ denote those polynomials $ax^2+bx+c\in\Poly_{2}$ such that
-  $a+b+c=0$. Is $V$ a subspace of $\Poly_{2}$?  Explain.
-  % \begin{sol}
-  % \end{sol}
-\end{ex}
-
-\begin{ex}
-  Let $M,N$ be subspaces of a vector space $V$ and consider $M+N$
-  defined as the set of all $m+n$ where $m\in M$ and $n\in N$. Show that $M+N$
-  is a subspace of $V$.
-  % \begin{sol}
-  % \end{sol}
-\end{ex}
-
-\begin{ex}
-  Let $M,N$ be subspaces of a vector space $V$. Then $M\cap N$ consists
-  of all vectors which are in both $M$ and $N$. Show that $M\cap N$ is a
+  Let $U,W$ be subspaces of a vector space $V$. Then $U\cap W$ consists
+  of all vectors which are in both $U$ and $W$. Show that $U\cap W$ is a
   subspace of $V$.
   % \begin{sol}
   % \end{sol}
 \end{ex}
 
 \begin{ex}
-  Let $M,N$ be subspaces of a vector space $\R^{2}$. Then $N\cup
-  M$ consists of all vectors which are in either $M$ or $N$. Show that $N\cup
-  M $ is not necessarily a subspace of $\R^{2}$ by giving an example
-  where $N\cup M$ fails to be a subspace.
+  Let $U,W$ be subspaces of a vector space $V$. Then $U\cup W$
+  consists of all vectors which are in either $U$ or $W$. Show that
+  $U\cup W$ is not necessarily a subspace of $V$ by giving an example
+  where $U\cup W$ fails to be a subspace.
   % \begin{sol}
   % \end{sol}
 \end{ex}
 
-\begin{ex} Let $M=\set{\vect{u}=(u_{1},u_{2},u_{3},u_{4}) \in
-\R^{4}:\abs{u_{1}} \leq 4}$. Is $M$ a subspace of $\R^4$?
-\begin{sol}
-This is not a subspace. $\begin{mymatrix}{r}
-1 \\
-1 \\
-1 \\
-1
-\end{mymatrix} $ is in
-it, but $20\begin{mymatrix}{r}
-1 \\
-1 \\
-1 \\
-1
-\end{mymatrix} $ is not.
-\end{sol}
-\end{ex}
-
-\begin{ex} Let $M=\set{\vect{u}=(u_{1},u_{2},u_{3},u_{4}) \in
-\R^{4}:\sin (u_{1}) =1}$. Is $M$ a subspace of $\R^4$?
-\begin{sol}
-This is not a subspace.
-\end{sol}
-\end{ex}
-
-\begin{ex} Let $W$ be a subset of $M_{22}$ given by
-\[
-W = \set{A \mid A \in M_{22}, A^T = A }
-\]
-In words, $W$ is the set of all symmetric $2 \times 2$-matrices. Is $W$ a subspace of $M_{22}$?
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $W$ be a subset of $M_{22}$ given by
-\[
-W = \set{\begin{mymatrix}{rr}
-a  & b \\
-c & d
-\end{mymatrix} \mid a,b,c,d \in \R, a + b = c + d }
-\]
-Is $W$ a subspace of $M_{22}$?
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $W$ be a subset of $P_3$ given by
-\[
-W = \set{
-ax^3 + bx^2 + cx + d \mid a,b,c,d \in \R, d = 0 }
-\]
-Is $W$ a subspace of $P_3$?
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-\begin{ex} Let $W$ be a subset of $P_3$ given by
-\[
-W = \set{
-p(x) = ax^3 + bx^2 + cx + d \mid a,b,c,d \in \R, p(2) = 1 }
-\]
-Is $W$ a subspace of $P_3$?
-%\begin{sol}
-%\end{sol}
-\end{ex}
-
-
 \begin{ex}
-  Consider the vector space of polynomials of degree at
-  most $2$, denoted $\Poly_{2}$. Determine whether the following is
-  a basis for $\Poly_{2}$.
-  \begin{equation*}
-    \set{x^{2}+x+1,2x^{2}+2x+1,x+1}
-  \end{equation*}
-  \textbf{Hint:\ }There is a isomorphism from $\R^{3}$ to
-  $\Poly_{2}$. It is defined as follows:\
-  \begin{equation*}
-    T\vect{e}_{1}=1,T\vect{e}_{2}=x,T\vect{e}_{3}=x^{2}
-  \end{equation*}
-  Then extend $T$ linearly. Thus
-  \begin{equation*}
-    T\begin{mymatrix}{c}
-      1 \\
-      1 \\
-      1
-    \end{mymatrix} =x^{2}+x+1,T\begin{mymatrix}{c}
-      1 \\
-      2 \\
-      2
-    \end{mymatrix} =2x^{2}+2x+1,T\begin{mymatrix}{c}
-      1 \\
-      1 \\
-      0
-    \end{mymatrix} =1+x
-  \end{equation*}
-  It follows that if
-  \begin{equation*}
-    \set{\begin{mymatrix}{c}
-        1 \\
-        1 \\
-        1
-      \end{mymatrix} ,\begin{mymatrix}{c}
-        1 \\
-        2 \\
-        2
-      \end{mymatrix} ,\begin{mymatrix}{c}
-        1 \\
-        1 \\
-        0
-      \end{mymatrix} }
-  \end{equation*}
-  is a basis for $\R^{3}$, then the polynomials will be a basis for
-  $\Poly_{2}$ because they will be independent. Recall that an isomorphism
-  takes a linearly independent set to a linearly independent set. Also, since
-  $T$ is an isomorphism, it preserves all linear relations.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{2}$ for the subspace
-  \begin{equation*}
-    \sspan\set{1+x+x^{2},1+2x,1+5x-3x^{2}}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them as a
-  linear combination of the others. \textbf{Hint:\ }This is the situation in
-  which you have a spanning set and you want to cut it down to form a linearly
-  independent set which is also a spanning set. Use the same isomorphism
-  above. Since $T$ is an isomorphism, it preserves all linear relations so if
-  such can be found in $\R^{3}$, the same linear relations will be
-  present in $\Poly_{2}$.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      1+x-x^{2}+x^{3},1+2x+3x^{3},-1+3x+5x^{2}+7x^{3},1+6x+4x^{2}+11x^{3}}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them as a
-  linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      1+x-x^{2}+x^{3},1+2x+3x^{3},-1+3x+5x^{2}+7x^{3},1+6x+4x^{2}+11x^{3}}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them as a
-  linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-2x^{2}+x+2,3x^{3}-x^{2}+2x+2,7x^{3}+x^{2}+4x+2,5x^{3}+3x+2}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them as a
-  linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}+2x^{2}+x-2,3x^{3}+3x^{2}+2x-2,3x^{3}+x+2,3x^{3}+x+2}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them as a
-  linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-5x^{2}+x+5,3x^{3}-4x^{2}+2x+5,5x^{3}+8x^{2}+2x-5,11x^{3}+6x+5}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them as a
-  linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-3x^{2}+x+3,3x^{3}-2x^{2}+2x+3,7x^{3}+7x^{2}+3x-3,7x^{3}+4x+3}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one
-  of them as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-x^{2}+x+1,3x^{3}+2x+1,4x^{3}+x^{2}+2x+1,3x^{3}+2x-1}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one
-  of them as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-x^{2}+x+1,3x^{3}+2x+1,13x^{3}+x^{2}+8x+4,3x^{3}+2x-1}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one
-  of them as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-3x^{2}+x+3,3x^{3}-2x^{2}+2x+3,-5x^{3}+5x^{2}-4x-6,7x^{3}+4x-3}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one
-  of them as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-2x^{2}+x+2,3x^{3}-x^{2}+2x+2,7x^{3}-x^{2}+4x+4,5x^{3}+3x-2}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one
-  of them as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-2x^{2}+x+2,3x^{3}-x^{2}+2x+2,3x^{3}+4x^{2}+x-2,7x^{3}-x^{2}+4x+4
-    }
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one
-  of them as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-4x^{2}+x+4,3x^{3}-3x^{2}+2x+4,-3x^{3}+3x^{2}-2x-4,-2x^{3}+4x^{2}-2x-4
-    }
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one
-  of them as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}+2x^{2}+x-2,3x^{3}+3x^{2}+2x-2,5x^{3}+x^{2}+2x+2,10x^{3}+10x^{2}+6x-6
-    }
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one
-  of them as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}+x^{2}+x-1,3x^{3}+2x^{2}+2x-1,x^{3}+1,4x^{3}+3x^{2}+2x-1}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one
-  of them as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-x^{2}+x+1,3x^{3}+2x+1,x^{3}+2x^{2}-1,4x^{3}+x^{2}+2x+1}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one
-  of them as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}+x^{2}-x-1,3x^{3}+2x^{2}+2x-1}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}-2x^{2}-x+2,3x^{3}-x^{2}+2x+2}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}-3x^{2}-x+3,3x^{3}-2x^{2}+2x+3}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}-2x^{2}-3x+2,3x^{3}-x^{2}-6x+2,-8x^{3}+18x+10}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}-3x^{2}-3x+3,3x^{3}-2x^{2}-6x+3,-8x^{3}+18x+40}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}-x^{2}+x+1,3x^{3}+2x+1,4x^{3}+2x+2}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}+x^{2}+2x-1,3x^{3}+2x^{2}+4x-1,7x^{3}+8x+23}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  If you have $5$ vectors in $\R^{5}$ and the vectors are
-  linearly independent, can it always be concluded they span $\R^{5}$?
+  Let $U=\set{\left.\mat{x,y,z}^T \in \R^{3}~\right\vert~\abs{x} \leq 4}$. Is $U$ a
+  subspace of $\R^3$?
   \begin{sol}
-    Yes. If not, there would exist a vector not in the span. But then
-    you could add in this vector and obtain a linearly independent set of
-    vectors with more vectors than a basis.
+    This is not a subspace.
+    $\begin{mysmallmatrix}{r} 1 \\ 1 \\ 1 \end{mysmallmatrix}$ is in it, but
+    $5\begin{mysmallmatrix}{r} 1 \\ 1 \\ 1 \end{mysmallmatrix} $ is not.
   \end{sol}
 \end{ex}
 
 \begin{ex}
-  If you have $6$ vectors in $\R^{5}$, is it possible they are
-  linearly independent? Explain.
-  \begin{sol}
-    No. They can't be.
-  \end{sol}
-\end{ex}
-
-\begin{ex}
-  Let $\Poly_3$ be the vector space of polynomials of degree at most
-  3. Determine which of the following are bases for this vector space.
-
-  \begin{enumerate}
-  \item $\set{x+1,x^{3}+x^{2}+2x,x^{2}+x,x^{3}+x^{2}+x} $
-
-  \item $\set{x^{3}+1,x^{2}+x,2x^{3}+x^{2},2x^{3}-x^{2}-3x+1} $
-  \end{enumerate}
-
-  \begin{sol}
-    \begin{enumerate}
-    \item
-    \item
-      Suppose
-      \begin{equation*}
-        c_{1}(x^{3}+1) +c_{2}(x^{2}+x) +c_{3}(
-        2x^{3}+x^{2}) +c_{4}(2x^{3}-x^{2}-3x+1) =0
-      \end{equation*}
-      Then combine the terms according to power of $x$.
-      \begin{equation*}
-        (c_{1}+2c_{3}+2c_{4}) x^{3}+(c_{2}+c_{3}-c_{4})
-        x^{2}+(c_{2}-3c_{4}) x+(c_{1}+c_{4}) =0
-      \end{equation*}
-      Is there a non-zero solution to the system $
-      \begin{array}{c}
-        c_{1}+2c_{3}+2c_{4}=0 \\
-        c_{2}+c_{3}-c_{4}=0 \\
-        c_{2}-3c_{4}=0 \\
-        c_{1}+c_{4}=0
-      \end{array}
-      $, Solution is:
-      \begin{equation*}
-        \mat{c_{1}=0,c_{2}=0,c_{3}=0,c_{4}=0}
-      \end{equation*}
-      Therefore, these are linearly independent.
-    \end{enumerate}
-  \end{sol}
-\end{ex}
-
-\begin{ex}
-  Let the field of scalars be $\Q$, the set of rational
-  numbers. Consider vectors of the form $a+b\sqrt{2}$ where $a,b$ are
-  rational numbers. Show that this collection of vectors is a vector
-  space over $\Q$ and give a basis for this vector space.
-  \begin{sol}
-    When you add two of these you get one and when you multiply one of these by
-    a scalar, you get another one. A basis is $\set{1,\sqrt{2}}$. By
-    definition, the span of these gives the collection of vectors. Are they
-    independent? Say $a+b\sqrt{2}=0$ where $a,b$ are rational numbers. If $a\neq
-    0$, then $b\sqrt{2}=-a$ which can't happen since $a$ is rational. If $b\neq
-    0$, then $-a=b\sqrt{2}$ which again can't happen because on the left is a
-    rational number and on the right is an irrational. Hence both $a,b=0$ and so
-    this is a basis.
-  \end{sol}
-\end{ex}
-
-\begin{ex}
-  Suppose $V$ is a finite-dimensional vector space. Based on the
-  exchange theorem above, it was shown that any two bases have the same number
-  of vectors in them. Give a different proof of this fact using the earlier
-  material in the book. \textbf{Hint: }Suppose $\set{\vect{x}_1
-    ,\ldots,\vect{x}_{n}} $ and $\set{\vect{y}_1,\ldots,\vect{y}
-    _{m}} $ are two bases with $m<n$. Then define
+  Let $W$ be the subset of\/ $\Mat_{2,2}$ given by
   \begin{equation*}
-    \phi :\R^{n}\to V,\psi :\R^{m}\to V
+    W = \set{\left.\begin{mysmallmatrix}{rr}
+        a  & b \\
+        c & d
+      \end{mysmallmatrix}~\right\vert~ a,b,c,d \in K,~ a + b = c + d }
   \end{equation*}
-  by
-  \begin{equation*}
-    \phi (\vect{a}) = \sum_{k=1}^{n}a_{k}\vect{x}
-    _{k},\;\psi (\vect{b}) = \sum_{j=1}^{m}b_{j}\vect{y}_{j}
-  \end{equation*}
-  Consider the linear transformation, $\psi ^{-1}\circ \phi$. Argue it is a
-  one to one and onto mapping from $\R^{n}$ to $\R^{m}$. Now
-  consider a matrix of this linear transformation and its {\rref}.
-  \begin{sol}
-    This is obvious because
-    when you add two of these you get one and when you multiply one of these by
-    a scalar, you get another one. A basis is $\set{1,\sqrt{2}}$. By
-    definition, the span of these gives the collection of vectors. Are they
-    independent? Say $a+b\sqrt{2}=0$ where $a,b$ are rational numbers. If $a\neq
-    0$, then $b\sqrt{2}=-a$ which can't happen since $a$ is rational. If $b\neq
-    0$, then $-a=b\sqrt{2}$ which again can't happen because on the left is a
-    rational number and on the right is an irrational. Hence both $a,b=0$ and so
-    this is a basis.
-  \end{sol}
+  Is $W$ a subspace of $\Mat_{2,2}$?
+  % \begin{sol}
+  % \end{sol}
 \end{ex}
 
+\begin{ex}
+  Let $U=\set{
+    A\in\Mat_{2,2}
+    ~\left\vert~
+      A\begin{mysmallmatrix}{rr} 1 & 0 \\ 1 & -1 \end{mysmallmatrix}
+      = \begin{mysmallmatrix}{rr} 1 & 1 \\ 0 & -1 \end{mysmallmatrix} A
+    \right.}$.
+  Show that $U$ is a subspace of $\Mat_{2,2}$.
+\end{ex}
+
+\begin{ex}
+  Let $W$ be the subset of\/ $\Poly_3$ given by
+  \begin{equation*}
+    W = \set{ ax^3 + bx^2 + cx + d \mid a,b,c,d \in K, d = 0 }
+  \end{equation*}
+  Is $W$ a subspace of $\Poly_3$?
+  % \begin{sol}
+  % \end{sol}
+\end{ex}
+
+\begin{ex}
+  Let $W$ be the subset of\/ $\Poly_3$ given by
+  \begin{equation*}
+    W = \set{ p(x) \mid p(2) = 1 }
+  \end{equation*}
+  Is $W$ a subspace of $\Poly_3$?
+  % \begin{sol}
+  % \end{sol}
+\end{ex}
+
+\begin{ex}
+  Let $W$ be the subset of $\Seq_{\R}$ consisting of all sequences
+  that are alternating, i.e., where $a_i\geq 0$ for even $i$ and
+  $a_i\leq 0$ for odd $i$, or vice versa. Is $W$ a subspace of
+  $\Seq_{\R}$?
+\end{ex}
+
+\begin{ex}
+  Let $W$ be the subset of $\Seq_{K}$ consisting of all sequences that
+  satisfy the recurrence relation
+  $a_{n+3} = a_{n+2} + 2a_{n+1} - a_{n}$. Is $W$ a subspace of
+  $\Seq_{K}$?
+\end{ex}
+
+\begin{ex}
+  A sequence $(a_i)_{i\in\N}$ is called \textbf{periodic}%
+  \index{periodic sequence}%
+  \index{sequence!periodic} if there exists some $k>0$ such that for
+  all $i$, $a_{i+k}=a_i$. The number $k$ is called a \textbf{period}
+  of the sequence. For example, the following is a periodic sequence
+  with period $3$:
+  \begin{equation*}
+    1,5,-7,1,5,-7,1,5,-7,1,5,-7,1,\ldots
+  \end{equation*}
+  Show that the set of all cyclic sequences of a
+  fixed period $k$ forms a subspace of $\Seq_K$. More difficult: show
+  that the set of all cyclic sequences of all periods forms a subspace
+  of $\Seq_K$.
+\end{ex}
+
+\begin{ex}
+  A function $f:\R\to\R$ is called \textbf{symmetric}%
+  \index{function!symmetric}%
+  \index{symmetric function} if $f(x)=f(-x)$ for all $x\in\R$.  Let
+  $W$ be the subset of $\Func_{\R,\R}$ consisting of all symmetric
+  functions. Is $W$ a subspace of $\Func_{\R,\R}$?
+\end{ex}
+
+\begin{ex}
+  A function $f:\R\to\R$ is said to \textbf{vanish at infinity}%
+  \index{function!vanishing at infinity}%
+  \index{vanish at infinity} if $\lim_{x\to\infty}f(x)=0$ and
+  $\lim_{x\to-\infty}f(x)=0$. Let $W$ be the subset of $\Func_{\R,\R}$
+  consisting of all functions that vanish at infinity. Prove that $W$
+  is a subspace of $\Func_{\R,\R}$.
+\end{ex}
+
+\begin{ex}
+  Show that the sets $S=\set{x+2,(x+2)^2}$ and
+  $T=\set{x^2-4, x^2+x-2}$ span the same subspace of $\Poly_2$.
+\end{ex}
+
+\begin{ex}
+  Show that the sets $S=\set{
+    \begin{mysmallmatrix}{rr} 1 & 0 \\ 0 & 1 \end{mysmallmatrix},~
+    \begin{mysmallmatrix}{rr} 0 & 1 \\ 1 & 0 \end{mysmallmatrix}
+  }$ and $T=\set{
+    \begin{mysmallmatrix}{rr} 1 & 1 \\ 1 & -1 \end{mysmallmatrix},~
+    \begin{mysmallmatrix}{rr} 1 & 1 \\ -1 & 1 \end{mysmallmatrix}
+  }$
+  span the same subspace of $\Mat_{2,2}$.
+\end{ex}
