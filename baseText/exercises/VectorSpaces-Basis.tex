@@ -1,359 +1,200 @@
 \section*{Exercises}
 
 \begin{ex}
-  Consider $\Poly_{2}$, the vector space of polynomials of degree at
-  most $2$. Determine whether the following is a basis for
-  $\Poly_{2}$.
-  \begin{equation*}
-    \set{x^{2}+x+1,2x^{2}+2x+1,x+1}
-  \end{equation*}
-  \textbf{Hint:\ }There is a isomorphism from $\R^{3}$ to
-  $\Poly_{2}$. It is defined as follows:\
-  \begin{equation*}
-    T\vect{e}_{1}=1,T\vect{e}_{2}=x,T\vect{e}_{3}=x^{2}
-  \end{equation*}
-  Then extend $T$ linearly. Thus
-  \begin{equation*}
-    T\begin{mymatrix}{c}
-      1 \\
-      1 \\
-      1
-    \end{mymatrix} =x^{2}+x+1,T\begin{mymatrix}{c}
-      1 \\
-      2 \\
-      2
-    \end{mymatrix} =2x^{2}+2x+1,T\begin{mymatrix}{c}
-      1 \\
-      1 \\
-      0
-    \end{mymatrix} =1+x
-  \end{equation*}
-  It follows that if
-  \begin{equation*}
-    \set{\begin{mymatrix}{c}
-        1 \\
-        1 \\
-        1
-      \end{mymatrix} ,\begin{mymatrix}{c}
-        1 \\
-        2 \\
-        2
-      \end{mymatrix} ,\begin{mymatrix}{c}
-        1 \\
-        1 \\
-        0
-      \end{mymatrix} }
-  \end{equation*}
-  is a basis for $\R^{3}$, then the polynomials will be a basis for
-  $\Poly_{2}$ because they will be independent. Recall that an
-  isomorphism takes a linearly independent set to a linearly
-  independent set. Also, since $T$ is an isomorphism, it preserves all
-  linear relations.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{2}$ for the subspace
-  \begin{equation*}
-    \sspan\set{1+x+x^{2},1+2x,1+5x-3x^{2}}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others. \textbf{Hint:\ }This is the
-  situation in which you have a spanning set and you want to cut it
-  down to form a linearly independent set which is also a spanning
-  set. Use the same isomorphism above. Since $T$ is an isomorphism, it
-  preserves all linear relations so if such can be found in $\R^{3}$,
-  the same linear relations will be present in $\Poly_{2}$.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      1+x-x^{2}+x^{3},1+2x+3x^{3},-1+3x+5x^{2}+7x^{3},1+6x+4x^{2}+11x^{3}}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      1+x-x^{2}+x^{3},1+2x+3x^{3},-1+3x+5x^{2}+7x^{3},1+6x+4x^{2}+11x^{3}}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-2x^{2}+x+2,3x^{3}-x^{2}+2x+2,7x^{3}+x^{2}+4x+2,5x^{3}+3x+2}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}+2x^{2}+x-2,3x^{3}+3x^{2}+2x-2,3x^{3}+x+2,3x^{3}+x+2}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-5x^{2}+x+5,3x^{3}-4x^{2}+2x+5,5x^{3}+8x^{2}+2x-5,11x^{3}+6x+5}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-3x^{2}+x+3,3x^{3}-2x^{2}+2x+3,7x^{3}+7x^{2}+3x-3,7x^{3}+4x+3}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-x^{2}+x+1,3x^{3}+2x+1,4x^{3}+x^{2}+2x+1,3x^{3}+2x-1}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-x^{2}+x+1,3x^{3}+2x+1,13x^{3}+x^{2}+8x+4,3x^{3}+2x-1}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-3x^{2}+x+3,3x^{3}-2x^{2}+2x+3,-5x^{3}+5x^{2}-4x-6,7x^{3}+4x-3}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-2x^{2}+x+2,3x^{3}-x^{2}+2x+2,7x^{3}-x^{2}+4x+4,5x^{3}+3x-2}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-2x^{2}+x+2,3x^{3}-x^{2}+2x+2,3x^{3}+4x^{2}+x-2,7x^{3}-x^{2}+4x+4
-    }
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-4x^{2}+x+4,3x^{3}-3x^{2}+2x+4,-3x^{3}+3x^{2}-2x-4,-2x^{3}+4x^{2}-2x-4
-    }
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}+2x^{2}+x-2,3x^{3}+3x^{2}+2x-2,5x^{3}+x^{2}+2x+2,10x^{3}+10x^{2}+6x-6
-    }
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}+x^{2}+x-1,3x^{3}+2x^{2}+2x-1,x^{3}+1,4x^{3}+3x^{2}+2x-1}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Find a basis in $\Poly_{3}$ for the subspace
-  \begin{equation*}
-    \sspan\set{
-      x^{3}-x^{2}+x+1,3x^{3}+2x+1,x^{3}+2x^{2}-1,4x^{3}+x^{2}+2x+1}
-  \end{equation*}
-  If the above three vectors do not yield a basis, exhibit one of them
-  as a linear combination of the others.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}+x^{2}-x-1,3x^{3}+2x^{2}+2x-1}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of
-  $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}-2x^{2}-x+2,3x^{3}-x^{2}+2x+2}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of
-  $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}-3x^{2}-x+3,3x^{3}-2x^{2}+2x+3}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of
-  $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}-2x^{2}-3x+2,3x^{3}-x^{2}-6x+2,-8x^{3}+18x+10}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of
-  $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}-3x^{2}-3x+3,3x^{3}-2x^{2}-6x+3,-8x^{3}+18x+40}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of
-  $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}-x^{2}+x+1,3x^{3}+2x+1,4x^{3}+2x+2}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of
-  $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  Here are some vectors.
-  \begin{equation*}
-    \set{x^{3}+x^{2}+2x-1,3x^{3}+2x^{2}+4x-1,7x^{3}+8x+23}
-  \end{equation*}
-  If these are linearly independent, extend to a basis for all of
-  $\Poly_{3}$.
-\end{ex}
-
-\begin{ex}
-  If you have $5$ vectors in $\R^{5}$ and the vectors are linearly
-  independent, can it always be concluded they span $\R^{5}$?
-  \begin{sol}
-    Yes. If not, there would exist a vector not in the span. But then
-    you could add in this vector and obtain a linearly independent set
-    of vectors with more vectors than a basis.
-  \end{sol}
-\end{ex}
-
-\begin{ex}
-  If you have $6$ vectors in $\R^{5}$, is it possible they are
-  linearly independent? Explain.
-  \begin{sol}
-    No. They can't be.
-  \end{sol}
-\end{ex}
-
-\begin{ex}
   Let $\Poly_3$ be the vector space of polynomials of degree at most
   3. Determine which of the following are bases for this vector space.
 
   \begin{enumerate}
-  \item $\set{x+1,x^{3}+x^{2}+2x,x^{2}+x,x^{3}+x^{2}+x} $
-
-  \item $\set{x^{3}+1,x^{2}+x,2x^{3}+x^{2},2x^{3}-x^{2}-3x+1} $
+  \item $\set{x^{3}+1,~x^{2}+x,~2x^{3}+x^{2},~2x^{3}-x^{2}-3x+1}$.
+  \item $\set{x+1,~x^{3}+x^{2}+2x,~x^{2}+x,~x^{3}+x^{2}+x}$.
   \end{enumerate}
 
   \begin{sol}
     \begin{enumerate}
     \item
-    \item
-      Suppose
+      Yes. Suppose
       \begin{equation*}
         c_{1}(x^{3}+1) +c_{2}(x^{2}+x) +c_{3}(
-        2x^{3}+x^{2}) +c_{4}(2x^{3}-x^{2}-3x+1) =0
+        2x^{3}+x^{2}) +c_{4}(2x^{3}-x^{2}-3x+1) =0.
       \end{equation*}
-      Then combine the terms according to power of $x$.
+      Then collect equal powers of $x$:
       \begin{equation*}
         (c_{1}+2c_{3}+2c_{4}) x^{3}+(c_{2}+c_{3}-c_{4})
-        x^{2}+(c_{2}-3c_{4}) x+(c_{1}+c_{4}) =0
+        x^{2}+(c_{2}-3c_{4}) x+(c_{1}+c_{4}) =0.
       \end{equation*}
-      Is there a non-zero solution to the system $
-      \begin{array}{c}
-        c_{1}+2c_{3}+2c_{4}=0 \\
-        c_{2}+c_{3}-c_{4}=0 \\
-        c_{2}-3c_{4}=0 \\
-        c_{1}+c_{4}=0
-      \end{array}
-      $, Solution is:
+      Does the system
       \begin{equation*}
-        \mat{c_{1}=0,c_{2}=0,c_{3}=0,c_{4}=0}
+        \begin{array}{c}
+          c_{1}+2c_{3}+2c_{4}=0 \\
+          c_{2}+c_{3}-c_{4}=0 \\
+          c_{2}-3c_{4}=0 \\
+          c_{1}+c_{4}=0
+        \end{array}
       \end{equation*}
-      Therefore, these are linearly independent.
+      have a non-trivial solution? The only solution is
+      \begin{equation*}
+        c_{1}=0,\quad
+        c_{2}=0,\quad
+        c_{3}=0,\quad
+        c_{4}=0,
+      \end{equation*}
+      and therefore, the polynomials are linearly independent. Since
+      there are $4$ linearly independent polynomials in a
+      $4$-dimensional space, they form a basis.
+    \item Yes.
     \end{enumerate}
   \end{sol}
 \end{ex}
 
 \begin{ex}
-  Let the field of scalars be $\Q$, the set of rational
-  numbers. Consider vectors of the form $a+b\sqrt{2}$ where $a,b$ are
-  rational numbers. Show that this collection of vectors is a vector
-  space over $\Q$ and give a basis for this vector space.
+  Determine whether the following is a basis for $\Poly_{2}$, the
+  vector space of polynomials of degree at most $2$.
+  \begin{equation*}
+    \set{x^{2}+x+1,~2x^{2}+2x+1,~x+1}.
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
+  Find a basis for the following subspace of $\Poly_{2}$:
+  \begin{equation*}
+    W=\sspan\set{1+x+x^{2},~1+2x,~1+5x-3x^{2}}.
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
+  Find a basis for the following subspace of $\Poly_{3}$:
+  \begin{equation*}
+    W = \sspan\set{
+      1+x-x^{2}+x^{3},~1+2x+3x^{3},~-1+3x+5x^{2}+7x^{3},~1+6x+4x^{2}+11x^{3}}.
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
+  Extend the following linearly independent set of polynomials to a
+  basis of $\Poly_3$:
+  \begin{equation*}
+    \set{x^{3}+x^{2}-x-1,~3x^{3}+2x^{2}+2x-1}.
+  \end{equation*}
+\end{ex}
+
+\begin{ex}
+  Let $V$ be a $5$-dimensional vector space.
+  If you have $5$ linearly independent vectors in $V$, can you
+  conclude that the vectors span $V$?
   \begin{sol}
-    When you add two of these you get one and when you multiply one of
-    these by a scalar, you get another one. A basis is
-    $\set{1,\sqrt{2}}$. By definition, the span of these gives the
-    collection of vectors. Are they independent? Say $a+b\sqrt{2}=0$
-    where $a,b$ are rational numbers. If $a\neq 0$, then
-    $b\sqrt{2}=-a$ which can't happen since $a$ is rational. If
-    $b\neq 0$, then $-a=b\sqrt{2}$ which again can't happen because on
-    the left is a rational number and on the right is an
-    irrational. Hence both $a,b=0$ and so this is a basis.
+    Yes, because the set of $5$ linearly independent vectors can be
+    extended to a basis $B$ of $V$. But since $V$ is $5$-dimensional,
+    $B$ has only $5$ elements, which must be the original $5$ vectors.
   \end{sol}
 \end{ex}
 
+\begin{ex}
+  Let $V$ be a $5$-dimensional vector space.  If you have $6$ vectors
+  in $V$, is it possible that they are linearly independent? Explain.
+  \begin{sol}
+    No. Since $V$ has a spanning set of size $5$, the $6$ vectors
+    cannot be linearly independent by the Exchange Lemma.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Find a basis for the vector space of symmetric $3\times 3$-matrices%
+  \index{matrix!symmetric}%
+  \index{symmetric matrix}, i.e., matrices satisfying $A=A^{T}$.
+  What is the dimension of this space?
+\end{ex}
+
+\begin{ex}
+  Let $W$ be the subspace of $\Poly_3$ (over the field $\R$)
+  consisting of all polynomials $p(x)$ that satisfy $p(3)=0$.
+  Find a basis for $W$. What is the dimension of $W$?
+\end{ex}
+
+\begin{ex}
+  Find a basis for
+  $U=\set{ A\in\Mat_{2,2} ~\left\vert~ A\begin{mysmallmatrix}{rr} 1 &
+        0 \\ 1 & -1 \end{mysmallmatrix} = \begin{mysmallmatrix}{rr} 1
+        & 1 \\ 0 & -1 \end{mysmallmatrix} A \right.}$.  What is the
+  dimension of $U$?
+\end{ex}
+
+\begin{ex}
+  \begin{enumerate}
+  \item Let $k$ be a positive integer, let $W_k\subseteq\Seq_K$ be the
+    subspace consisting of all sequences that are periodic%
+    \index{periodic sequence}%
+    \index{sequence!periodic} with period $k$ (see
+    Exercise~\ref{ex:periodic}). Find a basis for $W_k$. What is its
+    dimension?
+  \item More difficult: find a basis for the infinite-dimensional
+    vector space consisting of all periodic sequences of all periods.
+  \end{enumerate}
+  \begin{sol}
+    \begin{enumerate}
+    \item In case $k=3$, the following sequences form a basis for
+      $W_3$:
+      \begin{equation*}
+        \begin{array}{l}
+          1,0,0,1,0,0,1,0,0,1,\ldots,\\
+          0,1,0,0,1,0,0,1,0,0,\ldots,\\
+          0,0,1,0,0,1,0,0,1,0,\ldots.\\
+        \end{array}
+      \end{equation*}
+      Therefore, $W_3$ is a 3-dimensional space. For general $k$,
+      the situation is analogous and the dimension of $W_k$ is $k$.
+    \item Let $U$ be the set of all periodic sequences of all
+      periods. We can find an (infinite) spanning set for $U$ by
+      taking all the basis vectors for all of the spaces $W_k$:
+      \begin{equation*}
+        \begin{array}{ll}
+          1,1,1,1,1,1,1,1,1,1,\ldots & \mbox{(period $1$)},\\[1ex]
+          1,0,1,0,1,0,1,0,1,0,\ldots & \mbox{(period $2$)},\\
+          0,1,0,1,0,1,0,1,0,1,\ldots & \mbox{(period $2$)},\\[1ex]
+          1,0,0,1,0,0,1,0,0,1,\ldots & \mbox{(period $3$)},\\
+          0,1,0,0,1,0,0,1,0,0,\ldots & \mbox{(period $3$)},\\
+          0,0,1,0,0,1,0,0,1,0,\ldots & \mbox{(period $3$)},\\[1ex]
+          1,0,0,0,1,0,0,0,1,0,\ldots & \mbox{(period $4$)},\\
+          0,1,0,0,0,1,0,0,0,1,\ldots & \mbox{(period $4$)},\\
+          0,0,1,0,0,0,1,0,0,0,\ldots & \mbox{(period $4$)},\\
+          0,0,0,1,0,0,0,1,0,0,\ldots & \mbox{(period $4$)},\\
+        \end{array}
+      \end{equation*}
+      and so on. However, these sequences are not linearly
+      independent. For example, we can obtain the sequence
+      $(1,0,1,0,1,0,1,0,\ldots)$ of period $2$ as a linear combination
+      of two sequences of period $4$, namely
+      $(1,0,0,0,1,0,0,0,\ldots)$ and $(0,0,1,0,0,0,1,0,\ldots)$. By
+      Proposition~\ref{prop:basis-from-spanning}, we know that it is
+      possible to shrink the above spanning set to a basis by removing
+      certain sequences. How exactly to do this is an interesting
+      question. One way to construct a basis is to keep exactly those
+      sequences of period $k$ that start with $\ell$ zeros, where
+      $\gcd(\ell,k)=1$. Proving that this really works is an
+      interesting project.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Let $K=\Q$, the field of rational numbers. Consider vectors of the
+  form $a+b\sqrt{2}$ where $a,b$ are rational numbers. Show that this
+  collection of vectors is a vector space over $\Q$ and give a basis
+  for this vector space. What is its dimension?
+  \begin{sol}
+    When we add two number of the form $a+b\sqrt{2}$, we get another
+    number of the same form. When we multiply a number of the form
+    $a+b\sqrt{2}$ by a (rational) scalar, we get another number of the
+    same form. Also, $0=0+0\sqrt{2}$ is of the required form. The 8
+    axioms of a vector space are satisfied because all of them are
+    laws of the arithmetic of real numbers. A basis is
+    $\set{1,\sqrt{2}}$. By definition, the span of these gives the
+    collection of vectors. To prove that they are linearly
+    independent, assume $a+b\sqrt{2}=0$, where $a,b$ are rational
+    numbers. If $b\neq 0$, then $\sqrt{2}=-\frac{a}{b}$, which cannot
+    happen because $\sqrt{2}$ is irrational. If $a\neq 0$, then
+    $\frac{1}{\sqrt{2}}=-\frac{b}{a}$, which again cannot happen since
+    $\frac{1}{\sqrt{2}}$ is irrational. Hence both $a,b=0$. Therefore,
+    $1$ and $\sqrt{2}$ are linearly independent over the rational
+    numbers, and form a basis. The dimension of the space is $2$.
+  \end{sol}
+\end{ex}
