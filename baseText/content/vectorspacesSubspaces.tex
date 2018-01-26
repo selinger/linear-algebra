@@ -19,7 +19,7 @@ In this section we will consider subspaces of general vector spaces.
   \item $\vect{0}\in W$, where $\vect{0}$ is the additive unit of\/ $V$.
   \item $W$ is \textbf{closed under addition}%
     \index{closed under!addition}%
-    \index{addition!close under}: Whenever $\vect{u}, \vect{v}\in W$,
+    \index{addition!closed under}: Whenever $\vect{u}, \vect{v}\in W$,
     then $\vect{u} + \vect{v}\in W$.
   \item $W$ is \textbf{closed under scalar multiplication}%
     \index{closed under!scalar multiplication}%
@@ -152,7 +152,6 @@ In this section we will consider subspaces of general vector spaces.
 \begin{example}{Solution space of a linear differential equation}{subspace-differential-equation}
   Let $V=\Func_{\R,\R}$. Recall from calculus that a
   \textbf{differential equation}%
-  \index{equation!differential|see{differential equation}}%
   \index{differential equation} is an equation about an unknown
   function and its derivatives. For example
   \begin{equation*}
@@ -242,7 +241,7 @@ in their own right, as stated in the following proposition.
 
 We end this section with an observation about spans.
 
-\begin{proposition}{Span is smallest subspace containing given vectors}{span-subspace}
+\begin{proposition}{Span is smallest subspace containing given vectors}{span-smallest-subspace}
   Let $V$ be a vector space over some field $K$, and consider a set of
   vectors $S\subseteq V$. Then $\sspan S$ is the smallest subspace of\/
   $V$ containing $S$. More explicitly, we have:
@@ -311,7 +310,7 @@ following in an example of this.
   To show that two sets are equal, we must show that each is a subset
   of the other. So we will show $\sspan S \subseteq \sspan T$ and
   $\sspan T \subseteq \sspan S$. By
-  Proposition~\ref{prop:span-subspace}, it is sufficient to show that
+  Proposition~\ref{prop:span-smallest-subspace}, it is sufficient to show that
   $S\subseteq \sspan T$ and $T\subseteq \sspan S$, i.e., we must show
   that every element of $S$ is a linear combination of elements of $T$
   and vice versa.
@@ -325,7 +324,7 @@ following in an example of this.
     \end{equation*}
     Since each element of $S$ is an element of $\sspan T$, it follows
     that $S\subseteq\sspan T$. By
-    Proposition~\ref{prop:span-subspace}, this implies that
+    Proposition~\ref{prop:span-smallest-subspace}, this implies that
     $\sspan S\subseteq \sspan T$.
   \item $T \subseteq \sspan S$. We have
     \begin{equation*}
@@ -336,7 +335,7 @@ following in an example of this.
     \end{equation*}
     Since each element of $T$ is an element of $\sspan S$, it follows
     that $T\subseteq\sspan S$. By
-    Proposition~\ref{prop:span-subspace}, this implies that
+    Proposition~\ref{prop:span-smallest-subspace}, this implies that
     $\sspan T\subseteq \sspan S$.
   \end{enumerate}
 \end{solution}
