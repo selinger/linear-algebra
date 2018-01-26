@@ -809,6 +809,26 @@ can always be done.
   basis is $\set{\vect{u}_1,\vect{u}_2,\vect{v}_1}$.
 \end{solution}
 
+We also have a kind of opposite of Lemma~\ref{lem:extend-to-basis}:
+every spanning set can be shrunk to a basis.
+
+\begin{lemma}{Spanning set can be shrunk to a basis}{shrink-to-basis}
+  \index{spanning set!shrink to basis}%
+  \index{basis!by shrinking spanning set}%
+  Let $V$ be a subspace of $\R^n$, and let
+  $\vect{u}_1,\ldots,\vect{u}_{\ell}$ be a set of vectors spanning
+  $V$. Then it is possible to obtain a basis of $V$ by ``shrinking''
+  the set, i.e., by removing zero or more vectors from it.
+\end{lemma}
+
+\begin{proof}
+  This is merely a restatement of
+  Theorem~\ref{thm:linearly-independent-subset}. We obtain the
+  linearly independent subset by removing the redundant vectors, which
+  can be achieved by the casting-out algorithm. See also
+  Example~\ref{exa:linearly-independent-subset}.
+\end{proof}
+
 The following proposition tells us something about the size of a
 linearly independent set of vectors or the size of a spanning set of
 vectors.
