@@ -210,25 +210,27 @@ following definition and proposition.
 
 \begin{definition}{Error detection and error correction}{detection-correction}
   \begin{itemize}
-  \item We say that a code $C$ can \textbf{detect $m$ errors}%
-    \index{error correction code!detecting errors}%
-    \index{detecting errors} if for all valid code blocks $\vect{v}$,
-    whenever\/ $\vect{w}$ is obtained from $\vect{v}$ by introducing up
-    to $m$ bit errors, then $\vect{w}$ is not a valid code block.
-  \item We say that a code $C$ can \textbf{correct $m$ errors}%
-    \index{error correction code!correcting errors}%
-    \index{correcting errors} if for all valid code blocks $\vect{v}$,
-    whenever\/ $\vect{w}$ is obtained from $\vect{v}$ by introducing up
-    to $m$ bit errors, then $\vect{v}$ is the only valid code block
-    within Hamming distance $m$ of $\vect{w}$.
+  \item We say that a code $C$ is \textbf{$m$-error detecting}%
+    \index{error correction code!m-error detecting@$m$-error detecting}%
+    \index{m-error detecting code@$m$-error detecting code} if for all
+    valid code blocks $\vect{v}$, whenever\/ $\vect{w}$ is obtained
+    from $\vect{v}$ by introducing up to $m$ bit errors, then
+    $\vect{w}$ is not a valid code block.
+  \item We say that a code $C$ is \textbf{$m$-error correcting}%
+    \index{error correction code!m-error correcting@$m$-error correcting}%
+    \index{m-error correcting code@$m$-error correcting code} if for
+    all valid code blocks $\vect{v}$, whenever\/ $\vect{w}$ is
+    obtained from $\vect{v}$ by introducing up to $m$ bit errors, then
+    $\vect{v}$ is the only valid code block within Hamming distance
+    $m$ of $\vect{w}$.
   \end{itemize}  
 \end{definition}
 
 \begin{proposition}{Error detection and error correction}{detection-correction}
-  Consider an code with Hamming distance $d$. Then the code can:
+  Consider an code with Hamming distance $d$. Then the code is:
   \begin{itemize}
-  \item detect $m$ errors per code block if $m\leq d-1$;
-  \item correct $m$ errors per code block if $2m\leq d-1$. 
+  \item $m$-error detecting if $m\leq d-1$;
+  \item $m$-error correcting if $2m\leq d-1$. 
   \end{itemize}
 \end{proposition}
 
@@ -255,9 +257,9 @@ following definition and proposition.
 \end{proof}
 
 \begin{example}{Error detection and error correction}{detection-correction}
-  Consider a code with Hamming distance $3$. How many errors can
-  the code detect? How many errors can it correct? Answer the
-  analogous question for Hamming distance $2$, $4$ and $5$.
+  Consider a code with Hamming distance $3$. How many errors per code
+  word can the code detect? How many can it correct? Also answer this
+  question for Hamming distance $2$, $4$ and $5$.
 \end{example}
 
 \begin{solution}
@@ -278,18 +280,47 @@ following definition and proposition.
   \end{equation*}
 \end{solution}
 
-We can therefore say that a ``good'' error correcting code is one that
-has a high rate (of message length divided by block length) and a
-large Hamming distance.
+\begin{example}
+  The following message has been encoded using the code of
+  Example~\ref{exa:code-simple}. It contains some errors, but no more
+  than 1 error per code block. Can you decode the message?
+  \begin{equation*}
+    01000~11101~11011~11111~00011
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  Since the code of Example~\ref{exa:code-simple} has Hamming distance
+  $3$, it can correct up to 1 error per code block, so we are able to
+  decode the message uniquely. For each code block, we must find the
+  unique valid code block that is within Hamming distance $1$ or less.
+  \begin{center}
+    \begin{tabular}{|l|l|l|l|}
+      \hline
+      Received & Error & Corrected & Decoded \\\hline
+      $01000$  & bit 2 & $00000$   & $00$    \\
+      $11101$  & bit 5 & $11100$   & $10$    \\
+      $11011$  & none  & $11011$   & $11$    \\
+      $11111$  & bit 3 & $11011$   & $11$    \\
+      $00011$  & bit 3 & $00111$   & $01$    \\
+      \hline
+    \end{tabular}
+  \end{center}
+  The decoded message is $00~10~11~11~01$.
+\end{solution}
+
+We can say that a ``good'' error correcting code is one that has a
+high rate (of message length divided by block length) and a large
+Hamming distance.
 
 To construct a code of message length $n$, we need to specify a set of
 $2^n$ codewords. If $n$ is large, it is not really feasible to write
 down a list of all the code blocks, and to check all their Hamming
-distances by hand. For example, if $n=10$, we would need $2^{10}=1024$
-code blocks, and we would need to check nearly a million Hamming
-distances. Instead, we will use linear algebra to specify the code and
-to calculate the Hamming distance. The next definition focuses on a
-particularly useful class of codes called linear codes.
+distances by hand. For example, a code of block length $n=10$ requires
+$2^{10}=1024$ code blocks, and we need to check more than half a
+million Hamming distances. Instead, we will focus on a particular
+class of codes that is much easier to describe. These are the linear
+codes.
 
 \begin{definition}{Linear code}{linear-code}
   A \textbf{linear code} is a subspace of $\Z_2^n$. If the subspace is
@@ -322,14 +353,11 @@ of the code.
   basis for the code is $\set{00111, 11100}$
 \end{solution}
 
-From Section~\ref{sec:...}, we know that every subspace of $\Z_2^n$,
-and therefore every linear code, is the column space of some matrix
-$G$, and also the null space of some matrix $H$. Such matrices are
-called a generator matrix and a check matrix for the code,
+From Section~\ref{sec:null-space}, we know that every subspace of
+$\Z_2^n$, and therefore every linear code, is the column space of some
+matrix $G$, and also the null space of some matrix $H$. Such matrices
+are called a generator matrix and a check matrix for the code,
 respectively.
 
-
-..... Reformulate errors in terms of error patterns, i.e., w = v+e.
-This will make it easier, later, to introduce syndromes.
-
-
+\begin{definition}{}{}
+\end{definition}
