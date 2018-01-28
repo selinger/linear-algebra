@@ -1,0 +1,335 @@
+\section{Application: Error correcting codes}
+
+\begin{outcome}
+  \begin{enumerate}
+  \item 
+  \end{enumerate}
+\end{outcome}
+
+When transmitting or storing information on digital media, the
+information is usually encoded as a sequence of bits, i.e., 0s and 1s.
+For example, in the ASCII code, each symbol is encoded as a sequence
+of 8 bits. The letter ``A'' is encoded as $01000001$, the letter ``B''
+is encoded as $01000010$, and so on. We can think of a sequence of $n$
+bits as an $n$-dimensional column vector over the field $\Z_2$, i.e.,
+as an element of $\Z_2^n$. For our purposes, it is convenient to
+continue writing bit sequences horizontally, but we will consider this
+to be merely an alternate notation for a column vector.
+
+One issue with digital data is that the data can sometimes be
+corrupted. DVDs may be scratched, magnetic storage may depolarize, and
+data sent by radio transmission may be subject to interference. This
+can result in errors in the data, such as some 0s being changed to 1s
+or vice versa. One of the ways to deal with such errors is to
+introduce \textbf{redundancy}%
+\index{redundancy} in the way the data is encoded.
+
+A very simple example of redundant encoding is the so-called
+\textbf{repetition code}%
+\index{error correcting code!repetition code}%
+\index{repetition code}. This simply means to repeat each bit 3
+times. Thus, the bit $0$ is encoded as $000$ and the bit $1$ as
+$111$. For example, the bit string $100101$ is encoded as
+$111000000111000111$. With this encoding, single bit errors are easy
+to detect and correct. Assuming that at most one error occurs within
+each 3-bit block, the blocks can be decoded by ``majority
+decision''. Namely, if the bits in a block are not the same, we assume
+that the error occurred in the bit that is in the minority. The
+following table shows the decoding scheme:
+\begin{center}
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    Received & Likely error & Corrected & Decoded \\\hline
+    $000$    & none         & $000$     & $0$     \\
+    $100$    & bit 1        & $000$     & $0$     \\
+    $010$    & bit 2        & $000$     & $0$     \\
+    $001$    & bit 3        & $000$     & $0$     \\
+    $011$    & bit 1        & $111$     & $1$     \\
+    $101$    & bit 2        & $111$     & $1$     \\
+    $110$    & bit 3        & $111$     & $1$     \\
+    $111$    & none         & $111$     & $1$     \\\hline
+  \end{tabular}
+\end{center}
+
+\begin{example}{Decoding the repetition code}{decode-repetition}
+  A message was encoded with the repetition code. The receiver
+  receives the following data: $001011000100111110$. What was the
+  likely message?
+\end{example}
+
+\begin{solution}
+  We start by dividing the received data into blocks of 3 bits:
+  \begin{equation*}
+    001~011~000~100~111~110.
+  \end{equation*}
+  We then decode each block separately, using the majority rule.
+  The first block $001$ has a majority of zeros, so the likely error is
+  in the third bit and the likely decoding is $0$. The second block $011$
+  has a majority of ones, so the likely error is in the first bit and
+  the likely decoding is $1$. Continuing this way, we find that the
+  likely original message was $01~00~11$.
+\end{solution}
+
+Since the repetition code can be used to correct some errors, it is
+called an \textbf{error correcting code}%
+\index{error correcting code}%
+\index{code!error correcting|see{error correcting code}}. This
+particular code only works if there are not too many errors; namely,
+it can correct at most one error per code block. The main drawback of
+the repetition code is that it increases the message length by a
+factor of 3. In this section, we will use linear algebra over the
+field $\Z_2$ to construct better error-correcting codes.
+
+Most error correcting codes do not work by encoding individual
+bits. Rather, the codes work by dividing the message into
+\textit{message blocks} of length $k$, and encoding each such message
+block by a \textit{code block} of length $n$.  This leads us to the
+following definition:
+
+\begin{definition}{Code}{code}
+  Let $n$ and $k$ be positive integers with $k\leq n$. A
+  \textbf{code}%
+  \index{code} with \textbf{message length}%
+  \index{message length}%
+  \index{error correcting code!message length} $k$ and \textbf{block
+    length}%
+  \index{block length}%
+  \index{error correcting code!block length} $n$ is a is a set $C$ of
+  $2^k$ different vectors in $\Z_2^n$. We call the elements of $C$ the
+  \textbf{code blocks}%
+  \index{code block}%
+  \index{error correcting code!code block}%
+  \index{block!code block}. Since there are $2^k$ different code
+  blocks, they can be used to encode \textbf{message blocks}%
+  \index{message block}%
+  \index{error correcting code!message block}%
+  \index{block!message block} of length $k$. We say that the
+  \textbf{rate}%
+  \index{rate of a code}%
+  \index{error correcting code!rate} of the code is $\frac{k}{n}$,
+  because for every $n$ bits of encoded data transmitted, $k$
+  bits of decoded data are obtained.
+\end{definition}
+
+\begin{example}{A simple code}{code-simple}
+  Consider the following code with message length $k=2$ and block
+  length $n=5$:
+  \begin{center}
+    \begin{tabular}{|l|l|}
+      \hline
+      Message block & Code block \\\hline
+      $00$ & $00000$ \\
+      $01$ & $00111$ \\
+      $10$ & $11100$ \\
+      $11$ & $11011$ \\\hline
+    \end{tabular}
+  \end{center}
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item Encode the message $011110$.
+    \item Decode the message $111000011111011$.
+    \item What is the rate of this code? Is it better or worse than
+      the rate of the repetition code?
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{example}
+
+\begin{solution}
+  (a) We divide the message into blocks of length $2$:
+  $01~11~10$. Then we encode each block separately:
+  $00111~11011~11100$. (b) We divide the message into blocks of length
+  $5$: $11100~00111~11011$. Then we decode each block separately:
+  $10~01~11$. (c) The rate is $\frac{2}{5}=0.4$. It is slightly
+  higher, and therefore better, than the rate of the repetition code,
+  which is $\frac{1}{3}\approx 0.33$.
+\end{solution}
+
+The error correction cababilities of a code depend on a property
+called the \textit{Hamming distance} of the code, which we now define.
+
+\begin{definition}{Hamming weight and Hamming distance}{hamming-distance}
+  \begin{itemize}
+  \item Let $\vect{v}$ be a vector in $\Z_2^n$. The \textbf{Hamming
+      weight}%
+    \index{Hamming weight}%
+    \index{error correcting code!Hamming weight} of\/ $\vect{v}$,
+    denoted $\Hw(\vect{v})$, is the number of entries of\/ $\vect{v}$
+    that are equal to 1.
+  \item Let $\vect{v},\vect{w}$ be two vectors in $\Z_2^n$. The
+    \textbf{Hamming distance}%
+    \index{Hamming distance}%
+    \index{error correcting code!Hamming distance} between $\vect{v}$
+    and $\vect{w}$, denoted $\Hd(\vect{v},\vect{w})$, is the number of
+    entries where $\vect{v}$ and $\vect{w}$ differ. We can also
+    express this as the Hamming weight of\/ $\vect{v}-\vect{w}$, i.e.,
+    $\Hd(\vect{v},\vect{w})=\Hw(\vect{v}-\vect{w})$.
+  \item Finally, we say that the \textbf{Hamming distance of a code}
+    is equal to the smallest Hamming distance between any two code
+    blocks.
+  \end{itemize}
+  A code with block length $n$, message length $k$, and Hamming
+  distance $d$ is also called an \textbf{$(n,k,d)$-code}%
+  \index{nkd-code@$(n,k,d)$-code}%
+  \index{error correcting code!nkd-code@$(n,k,d)$-code}.
+\end{definition}
+
+\begin{example}{Hamming distance}{hamming-distance}
+  Calculate the Hamming distance between $00111$ and $11100$. What is
+  the Hamming distance of repetition code? What is the
+  Hamming distance of the code in Example~\ref{exa:code-simple}?
+\end{example}
+
+\begin{solution}
+  The vectors $00111$ and $11100$ differ in 4 places, so their Hamming
+  distance is $\Hd(00111,11100)=4$. This is also equal to the Hamming
+  weight of $00111-11100 = 11011$.
+
+  The repetition code has only two code blocks: $000$ and
+  $111$. Since their Hamming distance is 3, the Hamming distance of
+  the code is also 3.
+
+  To calculate the Hamming distance of the code from
+  Example~\ref{exa:code-simple}, we calculate the Hamming distance
+  between all pairs of code blocks:
+  \begin{equation*}
+    \begin{array}{rcl}
+      \Hd(00000,00111) &=& 3, \\
+      \Hd(00000,11100) &=& 3, \\
+      \Hd(00000,11011) &=& 4, \\
+      \Hd(00111,11100) &=& 4, \\
+      \Hd(00111,11011) &=& 3, \\
+      \Hd(11100,11011) &=& 3. \\
+    \end{array}
+  \end{equation*}
+  Since the smallest distance between any two code blocks is $3$, the
+  Hamming distance of the code is $3$.
+\end{solution}
+
+The significance of a code's Hamming distance is explained by the
+following definition and proposition.
+
+\begin{definition}{Error detection and error correction}{detection-correction}
+  \begin{itemize}
+  \item We say that a code $C$ can \textbf{detect $m$ errors}%
+    \index{error correction code!detecting errors}%
+    \index{detecting errors} if for all valid code blocks $\vect{v}$,
+    whenever\/ $\vect{w}$ is obtained from $\vect{v}$ by introducing up
+    to $m$ bit errors, then $\vect{w}$ is not a valid code block.
+  \item We say that a code $C$ can \textbf{correct $m$ errors}%
+    \index{error correction code!correcting errors}%
+    \index{correcting errors} if for all valid code blocks $\vect{v}$,
+    whenever\/ $\vect{w}$ is obtained from $\vect{v}$ by introducing up
+    to $m$ bit errors, then $\vect{v}$ is the only valid code block
+    within Hamming distance $m$ of $\vect{w}$.
+  \end{itemize}  
+\end{definition}
+
+\begin{proposition}{Error detection and error correction}{detection-correction}
+  Consider an code with Hamming distance $d$. Then the code can:
+  \begin{itemize}
+  \item detect $m$ errors per code block if $m\leq d-1$;
+  \item correct $m$ errors per code block if $2m\leq d-1$. 
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  Assume up to $m$ errors have happened. In other words, let
+  $\vect{v}$ be a valid code block, and let $\vect{w}$ be the code
+  block obtained from $\vect{v}$ by introducing up to $m$ errors.  To
+  prove the first claim, assume $m\leq d-1$.  Then
+  $\Hd(\vect{v},\vect{w})\leq m\leq d-1$. Since $d$ is the minimum
+  distance between any two valid code blocks, $\vect{w}$ cannot be a
+  valid code block. Hence, the errors can be detected.  To prove the
+  second claim, assume $2m\leq d-1$. Then
+  $\Hd(\vect{v},\vect{w})\leq m$. Assume that there exists another
+  valid code block $\vect{u}$ within Hamming distance $m$ of
+  $\vect{w}$, i.e., assume $\Hd(\vect{w},\vect{u})\leq m$. Then
+  \begin{equation*}
+    \Hd(\vect{v},\vect{u}) \leq \Hd(\vect{v},\vect{w}) +
+    \Hd(\vect{w},\vect{u}) \leq m+m \leq d-1.
+  \end{equation*}
+  Therefore, the Hamming distance of $\vect{v}$ and $\vect{u}$ is at
+  most $d-1$, contradicting the assumption that the code has Hamming
+  distance $d$. Hence, there is no such code block $\vect{u}$, and the
+  errors can be corrected.
+\end{proof}
+
+\begin{example}{Error detection and error correction}{detection-correction}
+  Consider a code with Hamming distance $3$. How many errors can
+  the code detect? How many errors can it correct? Answer the
+  analogous question for Hamming distance $2$, $4$ and $5$.
+\end{example}
+
+\begin{solution}
+  By Proposition~\ref{prop:detection-correction}, a code with Hamming
+  distance $3$ can detect up to $2$ errors and correct up to $1$
+  error. The answers for other Hamming distances are summarized in the
+  following table:
+  \begin{equation*}
+    \begin{array}{|c|c|c|}
+      \hline
+      \mbox{Hamming distance} & \mbox{Errors detected} & \mbox{Errors corrected} \\\hline
+      2 & 1 & 0 \\
+      3 & 2 & 1 \\
+      4 & 3 & 1 \\
+      5 & 4 & 2 \\
+      \hline
+    \end{array}
+  \end{equation*}
+\end{solution}
+
+We can therefore say that a ``good'' error correcting code is one that
+has a high rate (of message length divided by block length) and a
+large Hamming distance.
+
+To construct a code of message length $n$, we need to specify a set of
+$2^n$ codewords. If $n$ is large, it is not really feasible to write
+down a list of all the code blocks, and to check all their Hamming
+distances by hand. For example, if $n=10$, we would need $2^{10}=1024$
+code blocks, and we would need to check nearly a million Hamming
+distances. Instead, we will use linear algebra to specify the code and
+to calculate the Hamming distance. The next definition focuses on a
+particularly useful class of codes called linear codes.
+
+\begin{definition}{Linear code}{linear-code}
+  A \textbf{linear code} is a subspace of $\Z_2^n$. If the subspace is
+  $k$-dimensional, then the code has message length $k$ and block
+  length $n$.
+\end{definition}
+
+The advantage of a linear code is that to specify the code blocks, we
+only need to list $k$ basis elements, rather than all $2^k$ elements
+of the code.
+
+\begin{example}{Linear code}{linear-code}
+  Show that the code from Example~\ref{exa:code-simple} is
+  linear. What is a basis for the code?
+\end{example}
+
+\begin{solution}
+  Consider all linear combinations of $00111$ and $11100$ (with
+  scalars in $\Z_2$):
+  \begin{equation*}
+    \begin{array}{rcl}
+      0(00111) + 0(11100) &=& 00000, \\
+      0(00111) + 1(11100) &=& 00111, \\
+      1(00111) + 0(11100) &=& 11100, \\
+      1(00111) + 1(11100) &=& 11011. \\
+    \end{array}
+  \end{equation*}
+  This shows that the code of Example~\ref{exa:code-simple} is
+  $\sspan\set{00111, 11100}$, and hence a subspace of $\Z_2^5$. A
+  basis for the code is $\set{00111, 11100}$
+\end{solution}
+
+From Section~\ref{sec:...}, we know that every subspace of $\Z_2^n$,
+and therefore every linear code, is the column space of some matrix
+$G$, and also the null space of some matrix $H$. Such matrices are
+called a generator matrix and a check matrix for the code,
+respectively.
+
+
+..... Reformulate errors in terms of error patterns, i.e., w = v+e.
+This will make it easier, later, to introduce syndromes.
+
+
