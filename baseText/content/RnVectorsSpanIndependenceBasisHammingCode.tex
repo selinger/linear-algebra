@@ -25,9 +25,10 @@ introduce \textbf{redundancy}%
 \index{redundancy} in the way the data is encoded.
 
 A very simple example of redundant encoding is the so-called
-\textbf{repetition code}%
-\index{error correcting code!repetition code}%
-\index{repetition code}. This simply means to repeat each bit 3
+\textbf{3-repetition code}%
+\index{error correcting code!3-repetition code}%
+\index{repetition code}%
+\index{3-repetition code}. This simply means to repeat each bit 3
 times. Thus, the bit $0$ is encoded as $000$ and the bit $1$ as
 $111$. For example, the bit string $100101$ is encoded as
 $111000000111000111$. With this encoding, single bit errors are easy
@@ -51,8 +52,8 @@ following table shows the decoding scheme:
   \end{tabular}
 \end{center}
 
-\begin{example}{Decoding the repetition code}{decode-repetition}
-  A message was encoded with the repetition code. The receiver
+\begin{example}{Decoding the 3-repetition code}{decode-repetition}
+  A message was encoded with the 3-repetition code. The receiver
   receives the following data: $001011000100111110$. What was the
   likely message?
 \end{example}
@@ -70,13 +71,13 @@ following table shows the decoding scheme:
   likely original message was $01~00~11$.
 \end{solution}
 
-Since the repetition code can be used to correct some errors, it is
+Since the 3-repetition code can be used to correct some errors, it is
 called an \textbf{error correcting code}%
 \index{error correcting code}%
 \index{code!error correcting|see{error correcting code}}. This
 particular code only works if there are not too many errors; namely,
 it can correct at most one error per code block. The main drawback of
-the repetition code is that it increases the message length by a
+the 3-repetition code is that it increases the message length by a
 factor of 3. In this section, we will use linear algebra over the
 field $\Z_2$ to construct better error-correcting codes.
 
@@ -129,7 +130,7 @@ following definition:
     \item Encode the message $011110$.
     \item Decode the message $111000011111011$.
     \item What is the rate of this code? Is it better or worse than
-      the rate of the repetition code?
+      the rate of the 3-repetition code?
     \end{enumerate}
   \end{enumialphparenastyle}
 \end{example}
@@ -140,7 +141,7 @@ following definition:
   $00111~11011~11100$. (b) We divide the message into blocks of length
   $5$: $11100~00111~11011$. Then we decode each block separately:
   $10~01~11$. (c) The rate is $\frac{2}{5}=0.4$. It is slightly
-  higher, and therefore better, than the rate of the repetition code,
+  higher, and therefore better, than the rate of the 3-repetition code,
   which is $\frac{1}{3}\approx 0.33$.
 \end{solution}
 
@@ -175,7 +176,7 @@ called the \textit{Hamming distance} of the code, which we now define.
 
 \begin{example}{Hamming distance}{hamming-distance}
   Calculate the Hamming distance between $00111$ and $11100$. What is
-  the Hamming distance of repetition code? What is the
+  the Hamming distance of 3-repetition code? What is the
   Hamming distance of the code in Example~\ref{exa:code-simple}?
 \end{example}
 
@@ -184,7 +185,7 @@ called the \textit{Hamming distance} of the code, which we now define.
   distance is $\Hd(00111,11100)=4$. This is also equal to the Hamming
   weight of $00111-11100 = 11011$.
 
-  The repetition code has only two code blocks: $000$ and
+  The 3-repetition code has only two code blocks: $000$ and
   $111$. Since their Hamming distance is 3, the Hamming distance of
   the code is also 3.
 
