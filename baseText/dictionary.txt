@@ -53,6 +53,7 @@ decoupled
 decrypt
 decryption
 def
+depolarize
 diagonalizability
 diagonalizable
 diagonalization
@@ -63,6 +64,7 @@ differentiable
 distributivity
 Dolittle's
 DU
+DVDs
 DXYBJUWW
 EFNOR
 Ehsun
@@ -157,6 +159,7 @@ NDbook
 NDlogis
 NDsupp
 nilpotent
+nkd
 notational
 NRQEUAPOM
 NW
