@@ -1,2 +1,107 @@
 \section*{Exercises}
 
+\begin{ex}
+  Encode the message $0110$ using the 3-repetition code.  Decode the
+  message $100$ $011$ $000$ $110$ $101$ $110$ after correcting single-bit
+  errors.
+\end{ex}
+
+\begin{ex}
+  Use the code of Example~\ref{exa:code-simple} to encode the message
+  $01~11~10~00~01$. Use the syndrome method to correct all single-bit
+  errors in the message $10100~00001~11001$. What is the decoded message?
+\end{ex}
+
+\begin{ex}
+  Consider the code
+  \begin{equation*}
+    C=\set{000000,011100,111010,101001,100110,110101,010011,001111}.
+  \end{equation*}
+  Is this a linear code? What are the message length and block length
+  of this code?  What is its Hamming distance? How many errors per
+  code block can this code detect? How many can it correct?
+\end{ex}
+
+\begin{ex}
+  Consider a linear code with check matrix
+  \begin{equation*}
+    H = \begin{mymatrix}{cccccc}
+      1 & 1 & 0 & 0 & 0 \\
+      1 & 0 & 1 & 1 & 0 \\
+      1 & 0 & 1 & 0 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Find a generator matrix for this code (hint: the columns of $G$
+  should form a basis for the null space of $H$). List all possible
+  code blocks. What is the Hamming distance of the code? Make a
+  syndrome table for this code.
+\end{ex}
+
+\begin{ex}
+  Use the generator matrix
+  \begin{equation*}
+    G = \begin{mymatrix}{ccc}
+      1 & 0 & 0 \\
+      1 & 1 & 1 \\
+      1 & 0 & 1 \\
+      0 & 1 & 0 \\
+      1 & 1 & 0 \\
+      0 & 0 & 1 \\
+    \end{mymatrix}
+  \end{equation*}
+  to encode the message $111~110~101~001$. Find a check matrix for
+  this code and make a syndrome table. Is the code 1-error correcting?
+  Use the syndrome method to correct and decode the message
+  $111000~101111~100111~110100$.
+\end{ex}
+
+\begin{ex}
+  Construct check and generator matrices of a Hamming code for $r=4$.
+  What is the block length and message length of this code? Encode the
+  message $00110011000~10100000001$. Decode the message
+  $001000010010000~010000001000001$ after correcting single-bit errors.
+  \begin{sol}
+    The block length is $n=r-1=15$ and the message length is
+    $k=n-r=11$.  The check matrix and generator matrix are not unique,
+    because there are different ways of ordering the columns of the
+    check matrix. Here is one possible answer:
+    \begin{equation*}
+      H = \begin{mysmallmatrix}{ccccccccccc|cccc}
+        1&1&0&1&1&0&1&0&1&0&1&1&0&0&0 \\
+        1&0&1&1&0&1&1&0&0&1&1&0&1&0&0 \\
+        0&1&1&1&0&0&0&1&1&1&1&0&0&1&0 \\
+        0&0&0&0&1&1&1&1&1&1&1&0&0&0&1 \\
+      \end{mysmallmatrix},
+      \quad
+      G = \begin{mysmallmatrix}{ccccccccccc}
+        1&0&0&0&0&0&0&0&0&0&0 \\
+        0&1&0&0&0&0&0&0&0&0&0 \\
+        0&0&1&0&0&0&0&0&0&0&0 \\
+        0&0&0&1&0&0&0&0&0&0&0 \\
+        0&0&0&0&1&0&0&0&0&0&0 \\
+        0&0&0&0&0&1&0&0&0&0&0 \\
+        0&0&0&0&0&0&1&0&0&0&0 \\
+        0&0&0&0&0&0&0&1&0&0&0 \\
+        0&0&0&0&0&0&0&0&1&0&0 \\
+        0&0&0&0&0&0&0&0&0&1&0 \\
+        0&0&0&0&0&0&0&0&0&0&1 \\\hline
+        1&1&0&1&1&0&1&0&1&0&1 \\
+        1&0&1&1&0&1&1&0&0&1&1 \\
+        0&1&1&1&0&0&0&1&1&1&1 \\
+        0&0&0&0&1&1&1&1&1&1&1 \\
+      \end{mysmallmatrix}.
+    \end{equation*}
+    With these matrices, the encoding of $00110011000~10100000001$ is
+    $001100110000110~101101110110101$. The error syndrome for
+    $001000010010000$ is $1010$, which corresponds to an error in bit
+    $2$. The corrected code block is $011000010010000$, and the decoding
+    is $01100001001$. The error syndrome for $010000100000001$ is
+    $0110$, which corresponds to an error in bit $3$. The corrected
+    code block is $011000100000001$ and the decoding is $01100010000$.
+    However, if you have used a different check matrix and/or
+    generator matrix, your answers might differ.
+  \end{sol}
+\end{ex}
+
+
+
