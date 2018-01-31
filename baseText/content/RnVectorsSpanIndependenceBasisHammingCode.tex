@@ -2,9 +2,12 @@
 
 \begin{outcome}
   \begin{enumerate}
-  \item 
+  \item
   \end{enumerate}
 \end{outcome}
+
+% ----------------------------------------------------------------------
+\subsection*{Binary codes}
 
 When transmitting or storing information on digital media, the
 information is usually encoded as a sequence of bits, i.e., 0s and 1s.
@@ -79,7 +82,7 @@ particular code only works if there are not too many errors; namely,
 it can correct at most one error per code block. The main drawback of
 the 3-repetition code is that it increases the message length by a
 factor of 3. In this section, we will use linear algebra over the
-field $\Z_2$ to construct better error-correcting codes.
+field $\Z_2$ to construct better error correcting codes.
 
 Most error correcting codes do not work by encoding individual
 bits. Rather, the codes work by dividing the message into
@@ -144,6 +147,9 @@ following definition:
   higher, and therefore better, than the rate of the 3-repetition code,
   which is $\frac{1}{3}\approx 0.33$.
 \end{solution}
+
+% ----------------------------------------------------------------------
+\subsection*{Hamming distance and error correction}
 
 The error correction capabilities of a code depend on a property
 called the \textit{Hamming distance} of the code, which we now define.
@@ -224,14 +230,14 @@ following definition and proposition.
     obtained from $\vect{v}$ by introducing up to $m$ bit errors, then
     $\vect{v}$ is the only valid code block within Hamming distance
     $m$ of $\vect{w}$.
-  \end{itemize}  
+  \end{itemize}
 \end{definition}
 
 \begin{proposition}{Error detection and error correction}{detection-correction}
   Consider an code with Hamming distance $d$. Then the code is:
   \begin{itemize}
   \item $m$-error detecting if $m\leq d-1$;
-  \item $m$-error correcting if $2m\leq d-1$. 
+  \item $m$-error correcting if $2m\leq d-1$.
   \end{itemize}
 \end{proposition}
 
@@ -259,7 +265,7 @@ following definition and proposition.
 
 \begin{example}{Error detection and error correction}{detection-correction}
   Consider a code with Hamming distance $3$. How many errors per code
-  word can the code detect? How many can it correct? Also answer this
+  block can the code detect? How many can it correct? Also answer this
   question for Hamming distance $2$, $4$ and $5$.
 \end{example}
 
@@ -281,12 +287,12 @@ following definition and proposition.
   \end{equation*}
 \end{solution}
 
-\begin{example}
+\begin{example}{Decoding}{simple-code-decoding}
   The following message has been encoded using the code of
   Example~\ref{exa:code-simple}. It contains some errors, but no more
   than 1 error per code block. Can you decode the message?
   \begin{equation*}
-    01000~11101~11011~11111~00011
+    11101~01000~11011~11111~00011
   \end{equation*}
 \end{example}
 
@@ -299,20 +305,23 @@ following definition and proposition.
     \begin{tabular}{|l|l|l|l|}
       \hline
       Received & Error & Corrected & Decoded \\\hline
-      $01000$  & bit 2 & $00000$   & $00$    \\
       $11101$  & bit 5 & $11100$   & $10$    \\
+      $01000$  & bit 2 & $00000$   & $00$    \\
       $11011$  & none  & $11011$   & $11$    \\
       $11111$  & bit 3 & $11011$   & $11$    \\
       $00011$  & bit 3 & $00111$   & $01$    \\
       \hline
     \end{tabular}
   \end{center}
-  The decoded message is $00~10~11~11~01$.
+  The decoded message is $10~00~11~11~01$.
 \end{solution}
 
 We can say that a ``good'' error correcting code is one that has a
 high rate (of message length divided by block length) and a large
 Hamming distance.
+
+% ----------------------------------------------------------------------
+\subsection*{Linear codes}
 
 To construct a code of message length $n$, we need to specify a set of
 $2^n$ code blocks. If $n$ is large, it is not really feasible to write
@@ -324,9 +333,11 @@ class of codes that is much easier to describe. These are the linear
 codes.
 
 \begin{definition}{Linear code}{linear-code}
-  A \textbf{linear code} is a subspace of $\Z_2^n$. If the subspace is
-  $k$-dimensional, then the code has message length $k$ and block
-  length $n$.
+  A \textbf{linear code}%
+  \index{linear code}%
+  \index{error correcting code!linear code} is a subspace of
+  $\Z_2^n$. If the subspace is $k$-dimensional, then the code has
+  message length $k$ and block length $n$.
 \end{definition}
 
 The advantage of a linear code is that to specify the code blocks, we
@@ -339,26 +350,515 @@ of the code.
 \end{example}
 
 \begin{solution}
-  Consider all linear combinations of $00111$ and $11100$ (with
+  Consider all linear combinations of $11100$ and $00111$ (with
   scalars in $\Z_2$):
   \begin{equation*}
     \begin{array}{rcl}
-      0(00111) + 0(11100) &=& 00000, \\
-      0(00111) + 1(11100) &=& 00111, \\
-      1(00111) + 0(11100) &=& 11100, \\
-      1(00111) + 1(11100) &=& 11011. \\
+      0(11100) + 0(00111) &=& 00000, \\
+      0(11100) + 1(00111) &=& 00111, \\
+      1(11100) + 0(00111) &=& 11100, \\
+      1(11100) + 1(00111) &=& 11011. \\
     \end{array}
   \end{equation*}
   This shows that the code of Example~\ref{exa:code-simple} is
-  $\sspan\set{00111, 11100}$, and hence a subspace of $\Z_2^5$. A
-  basis for the code is $\set{00111, 11100}$
+  $\sspan\set{11100, 00111}$, and hence a subspace of $\Z_2^5$. A
+  basis for the code is $\set{11100, 00111}$
 \end{solution}
 
 From Section~\ref{sec:null-space}, we know that every subspace of
 $\Z_2^n$, and therefore every linear code, is the column space of some
 matrix $G$, and also the null space of some matrix $H$. Such matrices
-are called a generator matrix and a check matrix for the code,
-respectively.
+are called a {\em generator matrix} and a {\em check matrix} for the
+code, respectively.
 
-\begin{definition}{}{}
+\begin{definition}{Generator matrix and check matrix}{generator-check-matrix}
+  Consider a linear code $C$ with block length $n$ and message length
+  $k$, i.e., a $k$-dimensional subspace of $\Z_2^n$.
+  \begin{itemize}
+  \item A \textbf{generator matrix}%
+    \index{generator matrix}%
+    \index{linear code!generator matrix}%
+    \index{error correcting code!generator matrix} for the code is an
+    $n\times k$-matrix $G$ such that $C$ is the column space of $G$.
+  \item A \textbf{check matrix}%
+    \index{check matrix}%
+    \index{linear code!check matrix}%
+    \index{error correcting code!check matrix} for the code is an
+    $(n-k)\times n$-matrix $H$ such that $C$ is the null space of $H$.
+  \end{itemize}
 \end{definition}
+
+\begin{example}{Generator matrix and check matrix}{generator-check-matrix}
+  Find a generator matrix and check matrix for the linear code from
+  Example~\ref{exa:code-simple}.
+\end{example}
+
+\begin{solution}
+  We already found in Example~\ref{exa:linear-code} that
+  $\set{11100, 00111}$ is a basis for this code. We can obtain a
+  generator matrix by using the basis vectors as columns:
+  \begin{equation*}
+    G = \begin{mymatrix}{cc}
+      1 & 0 \\
+      1 & 0 \\
+      1 & 1 \\
+      0 & 1 \\
+      0 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  To find a check matrix, assume that $\mat{a,b,c,d,e}$ is a row of
+  the check matrix. Then for every code block $\vect{v}\in C$, we must
+  have $\mat{a,b,c,d,e}\vect{v}=0$. Since the code blocks are spanned
+  by $11100$ and $00111$, it suffices to consider the two equations
+  \begin{equation*}
+    \begin{mymatrix}{ccccc} a & b & c & d & e \end{mymatrix}
+    \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}
+    = 1a+1b+1c+0d+0e = 0
+  \end{equation*}
+  and
+  \begin{equation*}
+    \begin{mymatrix}{ccccc} a & b & c & d & e \end{mymatrix}
+    \begin{mymatrix}{c} 0 \\ 0 \\ 1 \\ 1 \\ 1 \end{mymatrix}
+    = 0a+0b+1c+1d+1e = 0.
+  \end{equation*}
+  Solving this system of equations, we find that the following is a
+  basis for the solution space:
+  \begin{equation*}
+    \set{
+      \begin{mymatrix}{ccccc} 1 & 1 & 0 & 0 & 0 \end{mymatrix},
+      \begin{mymatrix}{ccccc} 1 & 0 & 1 & 1 & 0 \end{mymatrix},
+      \begin{mymatrix}{ccccc} 1 & 0 & 1 & 0 & 1 \end{mymatrix}
+    }
+  \end{equation*}
+  We can use these basic solutions as the rows of the check matrix:
+  \begin{equation*}
+    H = \begin{mymatrix}{ccccc}
+      1 & 1 & 0 & 0 & 0 \\
+      1 & 0 & 1 & 1 & 0 \\
+      1 & 0 & 1 & 0 & 1 \\
+    \end{mymatrix}
+  \end{equation*}
+  \vspace{-6ex}\par
+\end{solution}
+
+% ----------------------------------------------------------------------
+\subsection*{Encoding and the generator matrix}
+
+Let $C$ be a linear code with generator matrix $G$. Since $C$ is the
+column space of the generator matrix, there is a simple encoding
+method: we can simply multiply the generator matrix $G$ by a message
+block to obtain the corresponding code block. In other words, if
+$\vect{u}\in\Z_2^k$ is a message block, we can use
+$\vect{v}=G\vect{u}\in\Z_2^n$ as the code block.
+
+\begin{example}{Using the generator matrix for encoding}{generator-matrix-encoding}
+  Use the generator matrix
+  \begin{equation*}
+    G = \begin{mymatrix}{cc}
+      1 & 0 \\
+      1 & 0 \\
+      1 & 1 \\
+      0 & 1 \\
+      0 & 1 \\
+    \end{mymatrix}
+  \end{equation*}
+  to encode the message\/ $01~11~10$.
+\end{example}
+
+\begin{solution}
+  The message blocks are
+  $\vect{u}_1 = \begin{mysmallmatrix}{c} 0 \\ 1 \end{mysmallmatrix}$,
+  $\vect{u}_2 = \begin{mysmallmatrix}{c} 1 \\ 1 \end{mysmallmatrix}$,
+  and
+  $\vect{u}_3 = \begin{mysmallmatrix}{c} 1 \\ 0 \end{mysmallmatrix}$.
+  We obtain the corresponding code blocks by multiplication with the
+  generator matrix:
+  \begin{equation*}
+    \vect{v}_1
+    = G\vect{u}_1
+    = \begin{mymatrix}{c} 0 \\ 0 \\ 1 \\ 1 \\ 1 \end{mymatrix}
+    \quad
+    \vect{v}_2
+    = G\vect{u}_2
+    = \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 1 \\ 1 \end{mymatrix}
+    \quad
+    \vect{v}_3
+    = G\vect{u}_3
+    = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}
+  \end{equation*}
+  Therefore the encoded messsage is $00111~11011~11100$. Note that
+  this is the same answer as in Example~\ref{exa:code-simple}(a).
+\end{solution}
+
+% ----------------------------------------------------------------------
+\subsection*{Decoding and the check matrix}
+
+Let $C$ be a linear code with check matrix $H$.  By definition, $C$ is
+the null space of the check matrix. This means that a vector
+$\vect{v}\in\Z_2^n$ is a valid code block (i.e., a code block without
+errors) if and only if $H\vect{v}=\vect{0}$. So we can easily use the
+check matrix to determine whether a code block contains errors or not.
+
+However, something even better is true. The value of $H\vect{v}$, when
+it is not zero, tell us not only {\em that} an error has occured, but
+also {\em which} error has occurred! To see why, consider a code block
+$\vect{v}'$ possibly containing errors. Then
+$\vect{v}' = \vect{v} + \vect{e}$, where $\vect{v}$ is a valid code
+block and $\vect{e}$ is an \textbf{error pattern}%
+\index{error pattern}%
+\index{error correcting code!error pattern}%
+\index{linear code!error pattern}. The error pattern is the vector
+$\vect{e}$ that has a $1$ in every component in which an error
+occurred, and a $0$ everywhere else.  Then we have
+\begin{equation*}
+  H\vect{v}' = H(\vect{v} + \vect{e}) = H\vect{v} + H\vect{e} =
+  \vect{0} + H\vect{e} = H\vect{e}.
+\end{equation*}
+Therefore, the value of $H\vect{v}'$ only depends on the error
+pattern, and not on $\vect{v}$. The value
+$\vect{s} = H\vect{v'} = H\vect{e}$ is called the \textbf{syndrome}%
+\index{syndrome}%
+\index{error correcting code!syndrome}%
+\index{linear code!syndrome} of the error. A code is error correcting,
+for a class of error patterns, if and only if each such error pattern
+has a different syndrome. In that case, we can simply make a table of
+all the syndromes and corresponding error patterns, as an efficient
+method for correcting errors. Such a table is called a
+\textbf{syndrome table}%
+\index{syndrome table}%
+\index{error correcting code!syndrome table}%
+\index{linear code!syndrome table} and the corresponding decoding
+method is called \textbf{syndrome decoding}%
+\index{syndrome decoding}%
+\index{error correcting code!syndrome decoding}%
+\index{linear code!syndrome decoding}.
+
+\begin{example}{Syndrome decoding}{syndrome-decoding}
+  Consider the linear code of Example~\ref{exa:simple-code} with check
+  matrix
+  \begin{equation*}
+    H = \begin{mymatrix}{ccccc}
+      1 & 1 & 0 & 0 & 0 \\
+      1 & 0 & 1 & 1 & 0 \\
+      1 & 0 & 1 & 0 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Make a syndrome table for all single-bit errors.  Then use your
+  syndrome table to decode the message
+  $11101~01000~11011~11111~00011$.
+\end{example}
+
+\begin{solution}
+  Since we are only interested in single-bit errors, there are six
+  error patterns to consider: $00000$ (no error), $10000$, $01000$,
+  $00100$, $00010$, and $00001$. For each of these error patterns
+  $\vect{e}$, we compute the corresponding syndrome $H\vect{e}$. For
+  example,
+  \begin{equation*}
+    H \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ 0 \\ 0 \end{mymatrix}
+    = \begin{mymatrix}{c} 0 \\ 0 \\ 0 \end{mymatrix},\quad
+    H \begin{mymatrix}{c} 1 \\ 0 \\ 0 \\ 0 \\ 0 \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \end{mymatrix},\quad
+    H \begin{mymatrix}{c} 0 \\ 1 \\ 0 \\ 0 \\ 0 \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix},
+  \end{equation*}
+  and so on. We put this information in a table (writing the vectors
+  horizontally as usual in this section). This is the syndrom table:
+  \begin{equation*}
+    \begin{array}{|c|c|}
+      \hline
+      \mbox{Error pattern $\vect{e}$} & \mbox{Syndrome $H\vect{e}$} \\\hline
+      00000 & 000 \\
+      10000 & 111 \\
+      01000 & 100 \\
+      00100 & 011 \\
+      00010 & 010 \\
+      00001 & 001 \\
+      \hline
+    \end{array}
+  \end{equation*}
+  To decode the message $11101~01000~11011~11111~00011$, we first
+  calculate the syndrome of each code block by multiplying it by the
+  check matrix. The syndrome table then tells us the corresponding
+  error pattern, which we can use to correct the code block.
+
+  For example, consider the first code block $11101$. Multiplying by
+  $H$, we get the syndrome $001$:
+  \begin{equation*}
+    H \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 0 \\ 0 \\ 1 \end{mymatrix}
+  \end{equation*}
+  The syndrome table then tells us that the correspondig error pattern
+  is $00001$. Therefore, the corrected code block is $11101 + 00001 =
+  11100$. The decoded block is $10$. We proceed in the same way for
+  all the code blocks:
+  \begin{equation*}
+    \begin{array}{|c|c|c|c|c|}
+      \hline
+      \mbox{Received code block $\vect{v}'$} &
+      \mbox{Syndrome $H\vect{v}'$} &
+      \mbox{Error pattern $\vect{e}$} &
+      \mbox{Corrected code block $\vect{v}=\vect{v}'+\vect{e}$} &
+      \mbox{Decoded} \\
+      \hline
+      11101 & 001 & 00001 & 11100 & 10 \\
+      01000 & 100 & 01000 & 00000 & 00 \\
+      11011 & 000 & 00000 & 11011 & 11 \\
+      11111 & 011 & 00100 & 11011 & 11 \\
+      00011 & 011 & 00100 & 00111 & 01 \\
+      \hline
+    \end{array}
+  \end{equation*}
+  Therefore, the decoded message is $10~00~11~11~01$. Note that this
+  is the same answer we got in Example~\ref{exa:simple-code-decoding}.
+  But the syndrome table gives a more systematic method of finding the
+  error patterns, which we previously had to do by guessing, or by
+  comparing to all possible code blocks.
+\end{solution}
+
+\begin{example}{An invalid code block}{invalid-code-block}
+  Using the code of the previous example, suppose you have received
+  the code block $10010$. Can you decode it?  
+\end{example}
+
+\begin{solution}
+  The syndrome of this code block is
+  \begin{equation*}
+    H \begin{mymatrix}{c} 1 \\ 0 \\ 0 \\ 1 \\ 0 \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 0 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Since the syndrome $101$ is not in our syndrome table, it is not the
+  syndrome of any single-bit error. Therefore, the code block $10010$
+  must contain more than one error. Since our code is only 1-error
+  correcting, this error cannot be corrected. (In fact, there are two
+  valid code words within Hamming distance $2$, namely $00000$ and
+  $11011$).
+\end{solution}
+
+% ----------------------------------------------------------------------
+\subsection*{Hamming codes}
+
+The syndrome decoding method immediately gives us the following
+theorem:
+
+\begin{theorem}{Check matrices of 1-error correcting codes}{1-error-check}
+  Consider a linear code with check matrix $H$. Then the code is
+  1-error correcting if and only if all columns of the check matrix
+  are non-zero and distinct. 
+\end{theorem}
+
+\begin{proof}
+  The syndrome of the zero error pattern is always
+  $H\vect{0}=\vect{0}$. Let $\vect{e}_i$ be the error pattern
+  containing a single bit error in the $i\th$ component. Then its
+  syndrome is $H\vect{e}_i$, which is the $i\th$ column of $H$.
+
+  If $H$ has distinct, non-zero columns, then each possible single bit
+  error has a different syndrome. Therefore, the errors can be
+  corrected.
+
+  Conversely, if $H$ has a column that is zero, or two columns that
+  are equal, then the corresponding error patterns have the same
+  syndrome, and therefore cannot be corrected.
+\end{proof}
+
+This theorem was discovered by Richard Hamming%
+\index{Richard Hamming}%
+\index{Hamming, Richard} in 1950. Hamming then realized that the best
+single-error correcting binary codes can be constructed by letting the
+check matrix have {\em all} possible non-zero columns. The resulting
+codes are called Hamming codes.
+
+\begin{definition}{Hamming code}{hamming-code}
+  Let $r\geq 2$ The $r\th$ \textbf{Hamming code}%
+  \index{Hamming code}%
+  \index{error correcing code!Hamming code}%
+  \index{linear code!Hamming code} is a linear code whose check matrix
+  $H$ is an $r\times (2^r-1)$-matrix that has all possible non-zero
+  column vectors as its columns.
+\end{definition}
+
+From the size of the check matrix, we know that the code length is
+$n=2^r-1$. Since the check matrix has rank $r$, its null space has
+dimension $k=n-r$. Thus, the $r\th$ Hamming code is an $(n,k,3)$-code,
+where $n=2^r-1$ and $k=2^r-1-r$.
+
+It is customary to order the columns of the check matrix so that the
+last $r$ columns are the standard basis vectors. In other words, the
+check matrix is usually taken to be of the form
+\begin{equation*}
+  H=\begin{mymatrix}{c|c}A&I\end{mymatrix}
+\end{equation*}
+where $I$ is the $r\times r$-identity matrix and $A$ is the
+$r\times k$-matrix consisting of the remaining columns of $H$. In that
+case, we can take the $n\times k$-matrix
+\begin{equation*}
+  G = \begin{mymatrix}{c} I \\\hline A \end{mymatrix}
+\end{equation*}
+as the generator matrix, where $I$ is the $k\times k$-identity
+matrix. Specifically, for this choice of $G$, we have $HG=0$, ensuring
+that the column space of $G$ is contained in the null space of
+$H$. Moreover, since $\rank G = k$, the column space of $G$ is
+$k$-dimensional, and therefore equal to the null space of $H$, so that
+$G$ is indeed a correct generator matrix for the code.
+
+\begin{example}{Hamming code for $r=3$}{hamming-code-3}
+  Construct a check matrix and generator matrix for the Hamming code
+  with $r=3$. Then encode the message $0101~1110~0111$.
+\end{example}
+
+\begin{solution}
+  The check matrix must be a $3\times 7$-matrix whose columns are all
+  the possible non-zero vectors of length 3. Moreover, we will follow
+  the convention of using the standard basis vectors as the last 3
+  columns. Such a matrix is
+  \begin{equation*}
+    H = \begin{mymatrix}{cccc|ccc}
+      1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+      1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+      0 & 1 & 1 & 1 & 0 & 0 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The corresponding generator matrix $G$ is
+  \begin{equation*}
+    G = \begin{mymatrix}{cccc}
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1 \\\hline
+      1 & 1 & 0 & 1 \\
+      1 & 0 & 1 & 1 \\
+      0 & 1 & 1 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  To encode the message $0101~1110~0111$, we multiply the generator
+  matrix by each code block:
+  \begin{equation*}
+    G \begin{mymatrix}{c} 0 \\ 1 \\ 0 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 0 \\ 1 \\ 0 \\ 1 \\ 0 \\ 1 \\ 0 \end{mymatrix},
+    \quad
+    G \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0 \end{mymatrix},
+    \quad
+    G \begin{mymatrix}{c} 0 \\ 1 \\ 1 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 0 \\ 1 \\ 1 \\ 1 \\ 0 \\ 0 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Thus, the encoded message is $0101010~1110000~0111001$. Note that
+  the fact that the top part of the generator matrix $G$ is the
+  identity matrix has the pleasant effect that the $k$ first bits of
+  each code block are the corresponding message block. This makes
+  decoding especially convenient (after any errors have been corrected
+  first).
+\end{solution}  
+
+\begin{example}{Decoding a Hamming code}{hamming-3-decoding}
+  Using the Hamming $(7,4,3)$-code of the previous example, correct
+  the errors in the message $1011101~1101001~0001101~1110000$ and
+  decode it.
+\end{example}
+
+\begin{solution}
+  We do not need to make a syndrome table, because the syndromes are
+  exactly the columns of the check matrix $H$. More precisely, the
+  $i\th$ column of the check matrix is the syndrome of the error
+  pattern containing a single-bit error in the $i\th$ bit. 
+  We use the check matrix
+  \begin{equation*}
+    H = \begin{mymatrix}{cccc|ccc}
+      1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+      1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+      0 & 1 & 1 & 1 & 0 & 0 & 1 \\
+    \end{mymatrix}
+  \end{equation*}
+  to calculate the syndrome of each code block:
+  \begin{equation*}
+    H \begin{mymatrix}{c} 1 \\ 0 \\ 1 \\ 1 \\ 1 \\ 0 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \end{mymatrix},
+    \quad
+    H \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 1 \\ 0 \\ 0 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 0 \\ 1 \end{mymatrix},
+    \quad
+    H \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ 1 \\ 1 \\ 0 \\ 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 0 \\ 1 \\ 0 \end{mymatrix},
+    \quad
+    H \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0 \end{mymatrix}
+    = \begin{mymatrix}{c} 0 \\ 0 \\ 0 \end{mymatrix}.
+  \end{equation*}
+  From these syndromes, we can read off the error locations and
+  correct the errors:
+  \begin{equation*}
+    \begin{array}{|c|c|c|c|c|c|}
+      \hline
+      \mbox{Received code block} &
+      \mbox{Syndrome} &
+      \mbox{Error position} &
+      \mbox{Error pattern} &
+      \mbox{Corrected code block} &
+      \mbox{Decoded} \\
+      \hline
+      1011101 & 111 & \mbox{bit 4} & 0001000 & 1010101 & 1010 \\
+      1101001 & 101 & \mbox{bit 2} & 0100000 & 1001001 & 1001 \\
+      0001101 & 010 & \mbox{bit 6} & 0000010 & 0001111 & 0001 \\
+      1110000 & 000 & \mbox{none}  & 0000000 & 1110000 & 1110 \\
+      \hline
+    \end{array}
+  \end{equation*}
+  Thus, the decoded message is $1010~1001~0001~1110$.
+\end{solution}
+
+\begin{example}{Hamming code for $r=2$}{hamming-code-2}
+  What is the Hamming code for $r=2$? Have you seen this code before?
+\end{example}
+
+\begin{solution}
+  The check matrix and generator matrix for the Hamming code with
+  $r=2$ are
+  \begin{equation*}
+    H = \begin{mymatrix}{c|cc}
+      1 & 1 & 0 \\
+      1 & 0 & 1 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    G = \begin{mymatrix}{c} 1 \\\hline 1 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  The code has block size $n=3$ and message length $k=1$. The encoding
+  function is
+  \begin{equation*}
+    G\begin{mymatrix}{c} 0 \end{mymatrix}
+    = \begin{mymatrix}{c} 0 \\ 0 \\ 0 \end{mymatrix},\quad
+    G\begin{mymatrix}{c} 1 \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  This is exactly the 3-repetition code.
+\end{solution}
+
+We end this section by remarking that the Hamming codes are very
+efficient. The rate of the $r\th$ Hamming code is
+\begin{equation*}
+  \frac{k}{n}
+  ~=~ \frac{2^r-1-r}{2^r-1}
+  ~=~ 1 - \frac{r}{2^r-1},
+\end{equation*}
+which is very close to $1$ when $r$ is large. The following table
+lists the block sizes, message sizes, and rates of all Hamming codes
+up to $r=8$.
+\begin{equation*}
+  \begin{array}{|c|c|c|c|}
+    \hline
+    r & \mbox{Block size $n$} & \mbox{Message size $k$} & \mbox{Rate} \\\hline
+    2  & 3    & 1    & 0.333 \\
+    3  & 7    & 4    & 0.571 \\
+    4  & 15   & 11   & 0.733 \\
+    5  & 31   & 26   & 0.839 \\
+    6  & 63   & 57   & 0.905 \\
+    7  & 127  & 120  & 0.945 \\
+    8  & 255  & 247  & 0.969 \\
+    \hline
+  \end{array}    
+\end{equation*}
+Of course, since the codes are only 1-error correcting, one cannot
+increase the block size indefinitely, or else the probability of
+having two or more errors in a block becomes too large. There exist
+more sophisticated error correcting codes with larger Hamming
+distances, which can correct many errors per code block. You might
+learn more about such codes in a course on applied modern algebra.
