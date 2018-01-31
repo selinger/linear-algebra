@@ -31,13 +31,13 @@ data sent by radio transmission may be subject to interference. This
 can result in errors in the data, such as some 0s being changed to 1s
 or vice versa. One of the ways to deal with such errors is to
 introduce \textbf{redundancy}%
+\index{error correcting code!redundancy}%
 \index{redundancy} in the way the data is encoded.
 
 A very simple example of redundant encoding is the so-called
 \textbf{3-repetition code}%
-\index{error correcting code!3-repetition code}%
-\index{repetition code}%
-\index{3-repetition code}. This simply means to repeat each bit 3
+\index{error correcting code!repetition code}%
+\index{repetition code}. This simply means to repeat each bit 3
 times. Thus, the bit $0$ is encoded as $000$ and the bit $1$ as
 $111$. For example, the bit string $100101$ is encoded as
 $111000000111000111$. With this encoding, single bit errors are easy
@@ -103,7 +103,7 @@ following definition:
   \index{message length}%
   \index{error correcting code!message length} $k$ and \textbf{block
     length}%
-  \index{block length}%
+  \index{block!block length}%
   \index{error correcting code!block length} $n$ is a is a set $C$ of
   $2^k$ different vectors in $\Z_2^n$. We call the elements of $C$ the
   \textbf{code blocks}%
@@ -224,18 +224,16 @@ following definition and proposition.
 \begin{definition}{Error detection and error correction}{detection-correction}
   \begin{itemize}
   \item We say that a code $C$ is \textbf{$m$-error detecting}%
-    \index{error correction code!m-error detecting@$m$-error detecting}%
-    \index{m-error detecting code@$m$-error detecting code} if for all
-    valid code blocks $\vect{v}$, whenever\/ $\vect{w}$ is obtained
-    from $\vect{v}$ by introducing up to $m$ bit errors, then
-    $\vect{w}$ is not a valid code block.
+    \index{error correcting code!m-error detecting@$m$-error
+      detecting} if for all valid code blocks $\vect{v}$, whenever\/
+    $\vect{w}$ is obtained from $\vect{v}$ by introducing up to $m$
+    bit errors, then $\vect{w}$ is not a valid code block.
   \item We say that a code $C$ is \textbf{$m$-error correcting}%
-    \index{error correction code!m-error correcting@$m$-error correcting}%
-    \index{m-error correcting code@$m$-error correcting code} if for
-    all valid code blocks $\vect{v}$, whenever\/ $\vect{w}$ is
-    obtained from $\vect{v}$ by introducing up to $m$ bit errors, then
-    $\vect{v}$ is the only valid code block within Hamming distance
-    $m$ of $\vect{w}$.
+    \index{error correcting code!m-error correcting@$m$-error
+      correcting} if for all valid code blocks $\vect{v}$, whenever\/
+    $\vect{w}$ is obtained from $\vect{v}$ by introducing up to $m$
+    bit errors, then $\vect{v}$ is the only valid code block within
+    Hamming distance $m$ of $\vect{w}$.
   \end{itemize}
 \end{definition}
 
@@ -540,7 +538,7 @@ method is called \textbf{syndrome decoding}%
 \index{linear code!syndrome decoding}.
 
 \begin{example}{Syndrome decoding}{syndrome-decoding}
-  Consider the linear code of Example~\ref{exa:simple-code} with check
+  Consider the linear code of Example~\ref{exa:code-simple} with check
   matrix
   \begin{equation*}
     H = \begin{mymatrix}{ccccc}
