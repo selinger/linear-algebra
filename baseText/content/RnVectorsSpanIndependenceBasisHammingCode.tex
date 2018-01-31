@@ -486,7 +486,7 @@ $\vect{v}=G\vect{u}\in\Z_2^n$ as the code block.
     = G\vect{u}_3
     = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}
   \end{equation*}
-  Therefore the encoded messsage is $00111~11011~11100$. Note that
+  Therefore the encoded message is $00111~11011~11100$. Note that
   this is the same answer as in Example~\ref{exa:code-simple}(a).
 \end{solution}
 
@@ -500,7 +500,7 @@ errors) if and only if $H\vect{v}=\vect{0}$. So we can easily use the
 check matrix to determine whether a code block contains errors or not.
 
 However, something even better is true. The value of $H\vect{v}$, when
-it is not zero, tell us not only {\em that} an error has occured, but
+it is not zero, tell us not only {\em that} an error has occurred, but
 also {\em which} error has occurred! To see why, consider a code block
 $\vect{v}'$ possibly containing errors. Then
 $\vect{v}' = \vect{v} + \vect{e}$, where $\vect{v}$ is a valid code
@@ -563,7 +563,7 @@ method is called \textbf{syndrome decoding}%
     = \begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix},
   \end{equation*}
   and so on. We put this information in a table (writing the vectors
-  horizontally as usual in this section). This is the syndrom table:
+  horizontally as usual in this section). This is the syndrome table:
   \begin{equation*}
     \begin{array}{|c|c|}
       \hline
@@ -588,7 +588,7 @@ method is called \textbf{syndrome decoding}%
     H \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \\ 1 \end{mymatrix}
     = \begin{mymatrix}{c} 0 \\ 0 \\ 1 \end{mymatrix}
   \end{equation*}
-  The syndrome table then tells us that the correspondig error pattern
+  The syndrome table then tells us that the corresponding error pattern
   is $00001$. Therefore, the corrected code block is $11101 + 00001 =
   11100$. The decoded block is $10$. We proceed in the same way for
   all the code blocks:
@@ -672,7 +672,7 @@ codes are called Hamming codes.
 \begin{definition}{Hamming code}{hamming-code}
   Let $r\geq 2$ The $r\th$ \textbf{Hamming code}%
   \index{Hamming code}%
-  \index{error correcing code!Hamming code}%
+  \index{error correcting code!Hamming code}%
   \index{linear code!Hamming code} is a linear code whose check matrix
   $H$ is an $r\times (2^r-1)$-matrix that has all possible non-zero
   column vectors as its columns.
