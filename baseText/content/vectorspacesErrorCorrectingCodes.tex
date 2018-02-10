@@ -47,7 +47,7 @@ decision''. Namely, if the bits in a block are not the same, we assume
 that the error occurred in the bit that is in the minority. The
 following table shows the decoding scheme:
 \begin{center}
-  \begin{tabular}{|l|l|l|l|}
+  \begin{tabular}{|c|c|c|c|}
     \hline
     Received & Likely error & Corrected & Decoded \\\hline
     $000$    & none         & $000$     & $0$     \\
@@ -125,7 +125,7 @@ following definition:
   Consider the following code with message length $k=2$ and block
   length $n=5$:
   \begin{center}
-    \begin{tabular}{|l|l|}
+    \begin{tabular}{|c|c|}
       \hline
       Message block & Code block \\\hline
       $00$ & $00000$ \\
@@ -306,7 +306,7 @@ following definition and proposition.
   decode the message uniquely. For each code block, we must find the
   unique valid code block that is within Hamming distance $1$ or less.
   \begin{center}
-    \begin{tabular}{|l|l|l|l|}
+    \begin{tabular}{|c|c|c|c|}
       \hline
       Received & Error & Corrected & Decoded \\\hline
       $11101$  & bit 5 & $11100$   & $10$    \\
