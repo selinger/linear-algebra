@@ -7,578 +7,753 @@
   \end{enumerate}
 \end{outcome}
 
-You may recall from $\R^n$ that the matrix of a linear transformation depends on the bases chosen. This concept is explored in this section, where the linear transformation now maps from one arbitrary vector space to another.
 
-Let $T: V \to W$ be an isomorphism where $V$ and $W$ are vector spaces. Recall from Lemma~\ref{lem:bases-isomorphism} that $T$ maps a basis in $V$ to a basis in $W$. When discussing this Lemma, we were not specific on what this basis looked like. In this section we will make such a distinction.
+% ----------------------------------------------------------------------
+\subsection{CONTINUE HERE...}
+
+$T(v) = S(v)$: subspace
+
+Consider the following example using the above theorem.
+
+\begin{example}{Linear combination}{linear-transformation-combination2}
+  Let $T:\Poly_2 \to \R$ be a linear transformation such that
+  \begin{equation*}
+    T(x^2+x)=-1; T(x^2-x)=1; T(x^2+1)=3.
+  \end{equation*}
+  Find $T(4x^2+5x-3)$.
+\end{example}
+
+\begin{solution}
+  We provide two solutions to this problem.
+
+  \textbf{Solution 1:}
+  Suppose $a(x^2+x) + b(x^2-x) + c(x^2+1) = 4x^2+5x-3$.  Then
+  \begin{equation*}
+    (a+b+c)x^2 + (a-b)x + c = 4x^2+5x-3.
+  \end{equation*}
+  Solving for $a$, $b$, and $c$ results in the unique solution
+  $a=6$, $b=1$, $c=-3$.
+
+  Thus
+  \begin{eqnarray*}
+    T(4x^2+5x-3)
+    & = & T(6(x^2+x) + (x^2-x) -3(x^2+1)) \\
+    & = & 6T(x^2+x) + T(x^2-x) -3T(x^2+1) \\
+    & = & 6(-1) + 1 -3(3) = -14.
+  \end{eqnarray*}
+
+  \textbf{Solution 2:}
+  Notice that $S=\set{x^2+x, x^2-x, x^2+1}$ is a basis of $\Poly_2$,
+  and thus $x^2$, $x$, and $1$ can each be written as a linear
+  combination of elements of $S$.
+
+  \begin{eqnarray*}
+    x^2 & = & \textstyle \frac{1}{2}(x^2+x) + \frac{1}{2}(x^2-x) \\
+    x & = & \textstyle \frac{1}{2}(x^2+x) - \frac{1}{2}(x^2-x) \\
+    1 & = & (x^2+1)-\textstyle \frac{1}{2}(x^2+x) - \frac{1}{2}(x^2-x).
+  \end{eqnarray*}
+  Then
+  \begin{eqnarray*}
+    T(x^2)
+    & = & \textstyle T\paren{\frac{1}{2}(x^2+x) + \frac{1}{2}(x^2-x)}
+          =\frac{1}{2}T(x^2+x) + \frac{1}{2}T(x^2-x)\\
+    & = & \textstyle \frac{1}{2}(-1) + \frac{1}{2}(1) = 0.  \\
+    T(x)
+    & = & \textstyle T\paren{\frac{1}{2}(x^2+x) - \frac{1}{2}(x^2-x)}
+          = \frac{1}{2}T(x^2+x) - \frac{1}{2}T(x^2-x) \\
+    & = & \textstyle \frac{1}{2}(-1) - \frac{1}{2}(1) = -1.\\
+    T(1)
+    & = & \textstyle T\paren{(x^2+1)-\frac{1}{2}(x^2+x) -
+          \frac{1}{2}(x^2-x)}\\
+    & = & \textstyle T(x^2+1)-\frac{1}{2}T(x^2+x) - \frac{1}{2}T(x^2-x) \\
+    & = & \textstyle 3-\frac{1}{2}(-1) - \frac{1}{2}(1) = 3.
+  \end{eqnarray*}
+  Therefore,
+  \begin{eqnarray*}
+    T(4x^2+5x-3) & = & 4T(x^2) + 5T(x) -3T(1) \\
+                 & = & 4(0) + 5(-1) - 3(3)=-14.
+  \end{eqnarray*}
+  The advantage of \textbf{Solution 2} over \textbf{Solution 1} is
+  that if you were now asked to find $T(-6x^2-13x+9)$, it is easy to
+  use $T(x^2)=0$, $T(x)=-1$ and $T(1)= 3$:
+  \begin{eqnarray*}
+    T(-6x^2-13x+9) & = & -6T(x^2)-13T(x)+9T(1) \\
+                   & = & -6(0)-13(-1)+9(3)=13+27=40.
+  \end{eqnarray*}
+  More generally,
+  \begin{eqnarray*}
+    T(ax^2+bx+c) & = & aT(x^2)+bT(x)+cT(1) \\
+                 & = & a(0)+b(-1)+c(3)=-b+3c.
+  \end{eqnarray*}
+\end{solution}
+
+The next theorem argues that it is only necessary to check the action
+of the transformations on basis vectors.
+
+\begin{theorem}{Transformation of a spanning set}{transformation-spanning-set}
+  Let $V$ and $W$ be vector spaces and suppose that $S$ and $T$ are
+  linear transformations from $V$ to $W$. Then in order for $S$ and
+  $T$ to be equal, it suffices that $S(\vect{v}_i) = T(\vect{v}_i)$
+  where $V=\sspan \set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_n}$.
+\end{theorem}
+
+This theorem tells us that a linear transformation is completely
+determined by its actions on a spanning set. We can also examine the
+effect of a linear transformation on a basis.
+
+\begin{theorem}{Transformation of a basis}{transformation-basis}
+  Suppose $V$ and $W$ are vector spaces and let
+  $\set{\vect{w}_1, \vect{w}_2, \ldots, \vect{w}_n}$ be any given
+  vectors in $W$ that may not be distinct. Then there exists a basis
+  $\set{\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_n}$ of $V$ and a
+  unique linear transformation $T: V \to W$ with
+  $T (\vect{v}_i) = \vect{w}_i$.
+
+  Furthermore, if
+  \begin{equation*}
+    \vect{v} = k_1\vect{v}_1+k_2\vect{v}_2+\ldots+ k_n\vect{v}_n
+  \end{equation*}
+  is a vector of $V$, then
+  \begin{equation*}
+    T(\vect{v}) = k_1\vect{w}_1+k_2\vect{w}_2+\ldots+ k_n\vect{w}_n.
+  \end{equation*}
+\end{theorem}
+
+
+% ----------------------------------------------------------------------
+
+You may recall from $\R^n$ that the matrix of a linear transformation
+depends on the bases chosen. This concept is explored in this section,
+where the linear transformation now maps from one arbitrary vector
+space to another.
+
+Let $T: V \to W$ be an isomorphism where $V$ and $W$ are vector
+spaces. Recall from Lemma~\ref{lem:bases-isomorphism} that $T$ maps a
+basis in $V$ to a basis in $W$. When discussing this Lemma, we were
+not specific on what this basis looked like. In this section we will
+make such a distinction.
 
 Consider now an important definition.
 
 \index{coordinate isomorphism}
 \begin{definition}{Coordinate isomorphism}{coordinate-isomorphism}
-Let $V$ be a vector space with $\dim(V)=n$, let $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ be a fixed basis of $V$,
-and let $\set{\vect{e}_1, \vect{e}_2, \ldots, \vect{e}_n}$
-denote the standard basis of $\R^n$.
-We define a transformation $C_B:V\to\R^n$ by
-\[
-C_B(a_1\vect{b}_1 + a_2\vect{b}_2 + \ldots + a_n\vect{b}_n)
-=
-a_1\vect{e}_1 + a_2\vect{e}_2 + \ldots + a_n\vect{e}_n
-=
-\begin{mymatrix}{c} a_1 \\ a_2 \\ \vdots \\ a_n
-\end{mymatrix}.\]
-Then $C_B$ is a linear transformation
-such that
-$C_B(\vect{b}_i)=\vect{e}_i$, $1\leq i\leq n$.
+  Let $V$ be a vector space with $\dim(V)=n$, let
+  $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ be a fixed
+  basis of $V$, and let
+  $\set{\vect{e}_1, \vect{e}_2, \ldots, \vect{e}_n}$ denote the
+  standard basis of $\R^n$.  We define a transformation $C_B:V\to\R^n$
+  by
+  \begin{equation*}
+    C_B(a_1\vect{b}_1 + a_2\vect{b}_2 + \ldots + a_n\vect{b}_n)
+    =
+    a_1\vect{e}_1 + a_2\vect{e}_2 + \ldots + a_n\vect{e}_n
+    =
+    \begin{mymatrix}{c} a_1 \\ a_2 \\ \vdots \\ a_n
+    \end{mymatrix}.
+  \end{equation*}
+  Then $C_B$ is a linear transformation
+  such that
+  $C_B(\vect{b}_i)=\vect{e}_i$, $1\leq i\leq n$.
 
-$C_B$ is an isomorphism, called
-the coordinate isomorphism corresponding to $B$.
+  $C_B$ is an isomorphism, called
+  the coordinate isomorphism corresponding to $B$.
 \end{definition}
 
 We continue with another related definition.
 
 \index{coordinate vector}
 \begin{definition}{Coordinate vector}{coordinate-vector}
-Let $V$ be a finite-dimensional vector space with $\dim(V)=n$, and
-let $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ be an ordered basis of $V$ (meaning that the order that the
-vectors are listed is taken into account).
-The coordinate vector of $\vect{v}$ with respect to $B$ is defined
-as $C_B(\vect{v})$.
+  Let $V$ be a finite-dimensional vector space with $\dim(V)=n$, and
+  let $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ be an
+  ordered basis of $V$ (meaning that the order that the vectors are
+  listed is taken into account).  The coordinate vector of $\vect{v}$
+  with respect to $B$ is defined as $C_B(\vect{v})$.
 \end{definition}
 
 Consider the following example.
 
 \begin{example}{Coordinate vector}{coordinate-vector}
-Let $V = \Poly_2$ and $\vect{x} = -x^2 -2x + 4$.
-Find $C_B(\vect{x})$ for the following bases $B$:
-\begin{enumerate}
-\item $B = \set{1, x, x^2 }$
-\item $B = \set{x^2, x, 1 }$
-\item $B = \set{x + x^2 , x , 4 }$
-\end{enumerate}
+  Let $V = \Poly_2$ and $\vect{x} = -x^2 -2x + 4$.
+  Find $C_B(\vect{x})$ for the following bases $B$:
+  \begin{enumerate}
+  \item $B = \set{1, x, x^2 }$
+  \item $B = \set{x^2, x, 1 }$
+  \item $B = \set{x + x^2 , x , 4 }$
+  \end{enumerate}
 \end{example}
 
 \begin{solution}
-\begin{enumerate}
-\item
-First, note the order of the basis is important.
-Now we need to find $a_1, a_2, a_3$ such that $\vect{x} = a_1 (1) + a_2 (x) + a_3(x^2)$, that is:
-\[
--x^2 -2x + 4 = a_1 (1) + a_2 (x) + a_3(x^2)
-\]
-Clearly the solution is
-\begin{eqnarray*}
-a_1 &=& 4 \\
-a_2 &=& -2 \\
-a_3 &=& -1
-\end{eqnarray*}
-Therefore the coordinate vector is
-\[
-C_B(\vect{x}) =
-\begin{mymatrix}{r}
-4 \\
--2 \\
--1
-\end{mymatrix}
-\]
+  \begin{enumerate}
+  \item First, note the order of the basis is important.  Now we need
+    to find $a_1, a_2, a_3$ such that
+    $\vect{x} = a_1 (1) + a_2 (x) + a_3(x^2)$, that is:
+    \begin{equation*}
+      -x^2 -2x + 4 = a_1 (1) + a_2 (x) + a_3(x^2)
+    \end{equation*}
+    Clearly the solution is
+    \begin{eqnarray*}
+      a_1 &=& 4 \\
+      a_2 &=& -2 \\
+      a_3 &=& -1
+    \end{eqnarray*}
+    Therefore the coordinate vector is
+    \begin{equation*}
+      C_B(\vect{x}) =
+      \begin{mymatrix}{r}
+        4 \\
+        -2 \\
+        -1
+      \end{mymatrix}
+    \end{equation*}
 
-\item
-Again remember that the order of $B$ is important. We proceed as above.
-We need to find $a_1, a_2, a_3$ such that $\vect{x} = a_1 (x^2) + a_2 (x) + a_3(1)$, that is:
-\[
--x^2 -2x + 4 = a_1 (x^2) + a_2 (x) + a_3(1)
-\]
-Here the solution is
-\begin{eqnarray*}
-a_1 &=& -1 \\
-a_2 &=& -2 \\
-a_3 &=& 4
-\end{eqnarray*}
-Therefore the coordinate vector is
-\[
-C_B(\vect{x}) =
-\begin{mymatrix}{r}
--1 \\
--2 \\
-4
-\end{mymatrix}
-\]
+  \item Again remember that the order of $B$ is important. We proceed
+    as above.  We need to find $a_1, a_2, a_3$ such that
+    $\vect{x} = a_1 (x^2) + a_2 (x) + a_3(1)$, that is:
+    \begin{equation*}
+      -x^2 -2x + 4 = a_1 (x^2) + a_2 (x) + a_3(1)
+    \end{equation*}
+    Here the solution is
+    \begin{eqnarray*}
+      a_1 &=& -1 \\
+      a_2 &=& -2 \\
+      a_3 &=& 4
+    \end{eqnarray*}
+    Therefore the coordinate vector is
+    \begin{equation*}
+      C_B(\vect{x}) =
+      \begin{mymatrix}{r}
+        -1 \\
+        -2 \\
+        4
+      \end{mymatrix}
+    \end{equation*}
 
-\item
-Now we need to find $a_1, a_2, a_3$ such that $\vect{x} = a_1 (x + x^2) + a_2 (x) + a_3(4)$, that is:
-\begin{eqnarray*}
--x^2 -2x + 4 &=& a_1 (x + x^2 ) + a_2 (x) + a_3(4)\\
-&=& a_1 (x^2) + (a_1 + a_2) (x) + a_3(4)
-\end{eqnarray*}
+  \item Now we need to find $a_1, a_2, a_3$ such that
+    $\vect{x} = a_1 (x + x^2) + a_2 (x) + a_3(4)$, that is:
+    \begin{eqnarray*}
+      -x^2 -2x + 4 &=& a_1 (x + x^2 ) + a_2 (x) + a_3(4)\\
+                   &=& a_1 (x^2) + (a_1 + a_2) (x) + a_3(4)
+    \end{eqnarray*}
 
-The solution is
-\begin{eqnarray*}
-a_1 &=& -1 \\
-a_2 &=& -1 \\
-a_3 &=& 1
-\end{eqnarray*}
-and the coordinate vector is
-\[
-C_B(\vect{x}) =
-\begin{mymatrix}{r}
--1 \\
--1 \\
-1
-\end{mymatrix}
-\]
-\end{enumerate}
+    The solution is
+    \begin{eqnarray*}
+      a_1 &=& -1 \\
+      a_2 &=& -1 \\
+      a_3 &=& 1
+    \end{eqnarray*}
+    and the coordinate vector is
+    \begin{equation*}
+      C_B(\vect{x}) =
+      \begin{mymatrix}{r}
+        -1 \\
+        -1 \\
+        1
+      \end{mymatrix}
+    \end{equation*}
+  \end{enumerate}
 \end{solution}
 
-Given that the coordinate transformation $C_B:V\to\R^n$ is an isomorphism, its inverse exists.
+Given that the coordinate transformation $C_B:V\to\R^n$ is an
+isomorphism, its inverse exists.
 
 \begin{theorem}{Inverse of the coordinate isomorphism}{coordinate-inverse}
-Let $V$ be a finite-dimensional vector space with dimension $n$
-and ordered basis $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$.
-Then $C_B:V\to\R^n$ is an isomorphism whose inverse,
-\[ C_B^{-1}:\R^n\to V\]
-is given by
-\[  C_B^{-1} =\begin{mymatrix}{c}
-a_1 \\ a_2 \\ \vdots \\ a_n \end{mymatrix} =
-a_1\vect{b}_1 + a_2\vect{b}_2 + \ldots + a_n\vect{b}_n
-~\mbox{ for all }~
-\begin{mymatrix}{c}
-a_1 \\ a_2 \\ \vdots \\ a_n \end{mymatrix} \in\R^n.  \]
+  Let $V$ be a finite-dimensional vector space with dimension $n$ and
+  ordered basis $B=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$.
+  Then $C_B:V\to\R^n$ is an isomorphism whose inverse,
+  \begin{equation*}
+    C_B^{-1}:\R^n\to V
+  \end{equation*}
+  is given by
+  \begin{equation*}
+    C_B^{-1} =\begin{mymatrix}{c}
+      a_1 \\ a_2 \\ \vdots \\ a_n \end{mymatrix} =
+    a_1\vect{b}_1 + a_2\vect{b}_2 + \ldots + a_n\vect{b}_n
+    ~\mbox{ for all }~
+    \begin{mymatrix}{c}
+      a_1 \\ a_2 \\ \vdots \\ a_n \end{mymatrix} \in\R^n.
+  \end{equation*}
 \end{theorem}
 
-We now discuss the main result of this section, that is how
-to represent a linear transformation with respect to different
-bases.
+We now discuss the main result of this section, that is how to
+represent a linear transformation with respect to different bases.
 
 Let $V$ and $W$ be finite-dimensional vector spaces, and suppose
 \begin{itemize}
-\item $\dim(V)=n$ and $B_1=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$
-is an ordered basis of $V$;
+\item $\dim(V)=n$ and
+  $B_1=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ is an ordered
+  basis of $V$;
 \item $\dim(W)=m$ and $B_2$ is an ordered basis of $W$.
 \end{itemize}
-Let $T:V\to W$ be a linear transformation.
-If $V=\R^n$ and $W=\R^m$, then we can find a
-matrix $A$ so that $T_A=T$. For arbitrary vector spaces $V$ and $W$,
-our goal is to represent $T$ as a matrix.,
-i.e.,
-find a matrix $A$ so that $T_A:\R^n\to\R^m$
-and $T_A=C_{B_2}TC_{B_1}^{-1}$.
+Let $T:V\to W$ be a linear transformation.  If $V=\R^n$ and $W=\R^m$,
+then we can find a matrix $A$ so that $T_A=T$. For arbitrary vector
+spaces $V$ and $W$, our goal is to represent $T$ as a matrix., i.e.,
+find a matrix $A$ so that $T_A:\R^n\to\R^m$ and
+$T_A=C_{B_2}TC_{B_1}^{-1}$.
 
 To find the matrix $A$:
 
-\[ T_A=C_{B_2}TC_{B_1}^{-1}~\mbox{ implies that }~
-T_AC_{B_1}=C_{B_2}T,\]
+\begin{equation*}
+  T_A=C_{B_2}TC_{B_1}^{-1}~\mbox{ implies that }~
+  T_AC_{B_1}=C_{B_2}T,
+\end{equation*}
 
 and thus for any $\vect{v}\in V$,
-\[ C_{B_2}[T(\vect{v})] = T_A[C_{B_1}(\vect{v})]
-=AC_{B_1}(\vect{v}).\]
+\begin{equation*}
+  C_{B_2}[T(\vect{v})] = T_A[C_{B_1}(\vect{v})]
+  =AC_{B_1}(\vect{v}).
+\end{equation*}
 
-Since $C_{B_1}(\vect{b}_j)=\vect{e}_j$
-for each $\vect{b}_j\in B_1$,
-$AC_{B_1}(\vect{b}_j)=A\vect{e}_j$, which is simply the
-$j\th$ column of $A$.
-Therefore, the $j\th$ column of $A$ is equal to $C_{B_2}[T(\vect{b}_j)]$.
+Since $C_{B_1}(\vect{b}_j)=\vect{e}_j$ for each $\vect{b}_j\in B_1$,
+$AC_{B_1}(\vect{b}_j)=A\vect{e}_j$, which is simply the $j\th$ column
+of $A$.  Therefore, the $j\th$ column of $A$ is equal to
+$C_{B_2}[T(\vect{b}_j)]$.
 
-The matrix of $T$ corresponding to the ordered
-bases $B_1$ and $B_2$ is denoted $ M_{B_2B_1}(T)$ and is given by
-\[ M_{B_2B_1}(T)=
-\begin{mymatrix}{cccc}
-C_{B_2} [ T(\vect{b}_1)] & C_{B_2}[T(\vect{b}_2) ] &
-\cdots & C_{B_2}[T(\vect{b}_n) ] \end{mymatrix}.\]
+The matrix of $T$ corresponding to the ordered bases $B_1$ and $B_2$
+is denoted $ M_{B_2B_1}(T)$ and is given by
+\begin{equation*}
+  M_{B_2B_1}(T)=
+  \begin{mymatrix}{cccc}
+    C_{B_2} [ T(\vect{b}_1)] & C_{B_2}[T(\vect{b}_2) ] &
+    \cdots & C_{B_2}[T(\vect{b}_n) ] \end{mymatrix}.
+\end{equation*}
 This result is given in the following theorem.
 
 \begin{theorem}{}{}
-Let $V$ and $W$ be vectors spaces of dimension
-$n$ and $m$ respectively, with $B_1=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ an
-ordered basis of $V$ and $B_2$ an ordered basis of $W$. Suppose $T:V\to W$ is a linear transformation. Then the unique matrix $M_{B_2B_1}(T)$ of $T$ corresponding to $B_1$ and $B_2$ is given by
-\[ M_{B_2B_1}(T)=
-\begin{mymatrix}{cccc}
-C_{B_2}[T(\vect{b}_1)] & C_{B_2}[T(\vect{b}_2)] &
-\cdots & C_{B_2}[T(\vect{b}_n)] \end{mymatrix}.\]
+  Let $V$ and $W$ be vectors spaces of dimension $n$ and $m$
+  respectively, with
+  $B_1=\set{\vect{b}_1, \vect{b}_2, \ldots, \vect{b}_n}$ an ordered
+  basis of $V$ and $B_2$ an ordered basis of $W$. Suppose $T:V\to W$
+  is a linear transformation. Then the unique matrix $M_{B_2B_1}(T)$
+  of $T$ corresponding to $B_1$ and $B_2$ is given by
+  \begin{equation*}
+    M_{B_2B_1}(T)=
+    \begin{mymatrix}{cccc}
+      C_{B_2}[T(\vect{b}_1)] & C_{B_2}[T(\vect{b}_2)] &
+      \cdots & C_{B_2}[T(\vect{b}_n)] \end{mymatrix}.
+  \end{equation*}
 
-This matrix satisfies  $C_{B_2}[T(\vect{v})]=M_{B_2B_1}(T)C_{B_1}(\vect{v})$ for all $\vect{v}\in V$.
+  This matrix satisfies
+  $C_{B_2}[T(\vect{v})]=M_{B_2B_1}(T)C_{B_1}(\vect{v})$ for all
+  $\vect{v}\in V$.
 \end{theorem}
 
 We demonstrate this content in the following examples.
 
 \begin{example}{Matrix of a linear transformation}{matrix-of-linear-transformation}
-Let $T: \Poly_3 \to \R^4$ be an isomorphism defined by
-\[
-T( ax^3 + bx^2 + cx + d) = \begin{mymatrix}{c}
-a + b \\
-b - c \\
-c + d \\
-d + a
-\end{mymatrix}
-\]
+  Let $T: \Poly_3 \to \R^4$ be an isomorphism defined by
+  \begin{equation*}
+    T( ax^3 + bx^2 + cx + d) = \begin{mymatrix}{c}
+      a + b \\
+      b - c \\
+      c + d \\
+      d + a
+    \end{mymatrix}
+  \end{equation*}
 
-Suppose $B_1 = \set{x^3, x^2, x, 1 }$ is an ordered basis of $\Poly_3$ and
-\[
-B_2 = \set{\begin{mymatrix}{r}
-1 \\
-0 \\
-1 \\
-0
-\end{mymatrix}, \begin{mymatrix}{r}
-0 \\
-1 \\
-0 \\
-0
-\end{mymatrix},
-\begin{mymatrix}{r}
-0 \\
-0 \\
--1 \\
-0
-\end{mymatrix},
-\begin{mymatrix}{r}
-0 \\
-0 \\
-0 \\
-1
-\end{mymatrix} }
-\]
-be an ordered basis of $\R^4$.
-Find the matrix $M_{B_2B_1}(T)$.
+  Suppose $B_1 = \set{x^3, x^2, x, 1 }$ is an ordered basis of
+  $\Poly_3$ and
+  \begin{equation*}
+    B_2 = \set{\begin{mymatrix}{r}
+        1 \\
+        0 \\
+        1 \\
+        0
+      \end{mymatrix}, \begin{mymatrix}{r}
+        0 \\
+        1 \\
+        0 \\
+        0
+      \end{mymatrix},
+      \begin{mymatrix}{r}
+        0 \\
+        0 \\
+        -1 \\
+        0
+      \end{mymatrix},
+      \begin{mymatrix}{r}
+        0 \\
+        0 \\
+        0 \\
+        1
+      \end{mymatrix} }
+  \end{equation*}
+  be an ordered basis of $\R^4$.  Find the matrix $M_{B_2B_1}(T)$.
 \end{example}
 
 \begin{solution}
-To find $M_{B_2B_1}(T)$, we use the following definition.
-\[
-M_{B_2B_1}(T) = \begin{mymatrix}{cccc}
-C_{B_2}[T(x^3)] & C_{B_2}[T(x^2)] & C_{B_2}[T(x)] & C_{B_2}[T(x^2)]
-\end{mymatrix}
-\]
-First we find the result of applying $T$ to the basis $B_1$.
-\[
-T(x^3)  = \begin{mymatrix}{c}
-1 \\
-0 \\
-0 \\
-1
-\end{mymatrix},
-T(x^2)  = \begin{mymatrix}{c}
-1 \\
-1 \\
-0  \\
-0
-\end{mymatrix},
-T(x) = \begin{mymatrix}{c}
-0  \\
--1 \\
-1  \\
-0
-\end{mymatrix},
-T(1) = \begin{mymatrix}{c}
-0  \\
-0  \\
-1 \\
-1
-\end{mymatrix}
-\]
+  To find $M_{B_2B_1}(T)$, we use the following definition.
+  \begin{equation*}
+    M_{B_2B_1}(T) = \begin{mymatrix}{cccc}
+      C_{B_2}[T(x^3)] & C_{B_2}[T(x^2)] & C_{B_2}[T(x)] & C_{B_2}[T(x^2)]
+    \end{mymatrix}
+  \end{equation*}
+  First we find the result of applying $T$ to the basis $B_1$.
+  \begin{equation*}
+    T(x^3)  = \begin{mymatrix}{c}
+      1 \\
+      0 \\
+      0 \\
+      1
+    \end{mymatrix},
+    T(x^2)  = \begin{mymatrix}{c}
+      1 \\
+      1 \\
+      0  \\
+      0
+    \end{mymatrix},
+    T(x) = \begin{mymatrix}{c}
+      0  \\
+      -1 \\
+      1  \\
+      0
+    \end{mymatrix},
+    T(1) = \begin{mymatrix}{c}
+      0  \\
+      0  \\
+      1 \\
+      1
+    \end{mymatrix}
+  \end{equation*}
 
-Next we apply the coordinate isomorphism $C_{B_2}$ to each of these vectors. We will show the first in detail.
-\[
-C_{B_2} \paren{\begin{mymatrix}{c}
-1 \\
-0 \\
-0 \\
-1
-\end{mymatrix}} = a_1 \begin{mymatrix}{r}
-1 \\
-0 \\
-1 \\
-0
-\end{mymatrix} + a_2  \begin{mymatrix}{r}
-0 \\
-1 \\
-0 \\
-0
-\end{mymatrix} + a_3
-\begin{mymatrix}{r}
-0 \\
-0 \\
--1 \\
-0
-\end{mymatrix} + a_4
-\begin{mymatrix}{r}
-0 \\
-0 \\
-0 \\
-1
-\end{mymatrix} \]
-This implies that
-\begin{eqnarray*}
-a_1 &=& 1 \\
-a_2 &=& 0 \\
-a_1 - a_3 &=& 0 \\
-a_4 &=& 1
-\end{eqnarray*}
-which has a solution given by
-\begin{eqnarray*}
-a_1 &=& 1 \\
-a_2 &=& 0 \\
-a_3 &=& 1 \\
-a_4 &=& 1
-\end{eqnarray*}
+  Next we apply the coordinate isomorphism $C_{B_2}$ to each of these
+  vectors. We will show the first in detail.
+  \begin{equation*}
+    C_{B_2} \paren{\begin{mymatrix}{c}
+        1 \\
+        0 \\
+        0 \\
+        1
+      \end{mymatrix}} = a_1 \begin{mymatrix}{r}
+      1 \\
+      0 \\
+      1 \\
+      0
+    \end{mymatrix} + a_2  \begin{mymatrix}{r}
+      0 \\
+      1 \\
+      0 \\
+      0
+    \end{mymatrix} + a_3
+    \begin{mymatrix}{r}
+      0 \\
+      0 \\
+      -1 \\
+      0
+    \end{mymatrix} + a_4
+    \begin{mymatrix}{r}
+      0 \\
+      0 \\
+      0 \\
+      1
+    \end{mymatrix}
+  \end{equation*}
+  This implies that
+  \begin{eqnarray*}
+    a_1 &=& 1 \\
+    a_2 &=& 0 \\
+    a_1 - a_3 &=& 0 \\
+    a_4 &=& 1
+  \end{eqnarray*}
+  which has a solution given by
+  \begin{eqnarray*}
+    a_1 &=& 1 \\
+    a_2 &=& 0 \\
+    a_3 &=& 1 \\
+    a_4 &=& 1
+  \end{eqnarray*}
 
-Therefore $C_{B_2} [T(x^3)] = \begin{mymatrix}{r}
-1 \\
-0 \\
-1 \\
-1
-\end{mymatrix}$.
+  Therefore $C_{B_2} [T(x^3)] = \begin{mymatrix}{r}
+    1 \\
+    0 \\
+    1 \\
+    1
+  \end{mymatrix}$.
 
-You can verify that the following are true.
-\[
-C_{B_2}[T(x^2)] = \begin{mymatrix}{r}
-1 \\
-1 \\
-1 \\
-0
-\end{mymatrix},  C_{B_2}[T(x)] = \begin{mymatrix}{r}
-0 \\
--1 \\
--1 \\
-0
-\end{mymatrix},  C_{B_2}[T(1)] = \begin{mymatrix}{r}
-0 \\
-0 \\
--1 \\
-1
-\end{mymatrix}
-\]
+  You can verify that the following are true.
+  \begin{equation*}
+    C_{B_2}[T(x^2)] = \begin{mymatrix}{r}
+      1 \\
+      1 \\
+      1 \\
+      0
+    \end{mymatrix},  C_{B_2}[T(x)] = \begin{mymatrix}{r}
+      0 \\
+      -1 \\
+      -1 \\
+      0
+    \end{mymatrix},  C_{B_2}[T(1)] = \begin{mymatrix}{r}
+      0 \\
+      0 \\
+      -1 \\
+      1
+    \end{mymatrix}
+  \end{equation*}
 
-Using these vectors as the columns of $M_{B_2B_1}(T)$ we have
-\[
-M_{B_2B_1}(T) = \begin{mymatrix}{rrrr}
-1 & 1 & 0 & 0 \\
-0 & 1 & -1 & 0 \\
-1 & 1 & -1 & -1 \\
-1 & 0 & 0 & 1
-\end{mymatrix}
-\]
+  Using these vectors as the columns of $M_{B_2B_1}(T)$ we have
+  \begin{equation*}
+    M_{B_2B_1}(T) = \begin{mymatrix}{rrrr}
+      1 & 1 & 0 & 0 \\
+      0 & 1 & -1 & 0 \\
+      1 & 1 & -1 & -1 \\
+      1 & 0 & 0 & 1
+    \end{mymatrix}
+  \end{equation*}
 \end{solution}
 
-The next example demonstrates that this method can be used to solve different types of problems. We will examine the above example and see if we can work backwards to determine the action of $T$ from the matrix $M_{B_2B_1}(T)$.
+The next example demonstrates that this method can be used to solve
+different types of problems. We will examine the above example and see
+if we can work backwards to determine the action of $T$ from the
+matrix $M_{B_2B_1}(T)$.
 
 \begin{example}{Finding the action of a linear transformation}{action-linear}
-Let $T: \Poly_3 \to \R^4$ be an isomorphism with
-\[
-M_{B_2B_1}(T) = \begin{mymatrix}{rrrr}
-1 & 1 & 0 & 0 \\
-0 & 1 & -1 & 0 \\
-1 & 1 & -1 & -1 \\
-1 & 0 & 0 & 1
-\end{mymatrix},
-\]
-where $B_1 = \set{x^3, x^2, x, 1 }$ is an ordered basis of $\Poly_3$ and
-\[
-B_2 = \set{\begin{mymatrix}{r}
-1 \\
-0 \\
-1 \\
-0
-\end{mymatrix}, \begin{mymatrix}{r}
-0 \\
-1 \\
-0 \\
-0
-\end{mymatrix},
-\begin{mymatrix}{r}
-0 \\
-0 \\
--1 \\
-0
-\end{mymatrix},
-\begin{mymatrix}{r}
-0 \\
-0 \\
-0 \\
-1
-\end{mymatrix} }
-\]
-is an ordered basis of $\R^4$. If $p(x) = ax^3 + bx^2 + cx + d$, find $T(p(x))$.
+  Let $T: \Poly_3 \to \R^4$ be an isomorphism with
+  \begin{equation*}
+    M_{B_2B_1}(T) = \begin{mymatrix}{rrrr}
+      1 & 1 & 0 & 0 \\
+      0 & 1 & -1 & 0 \\
+      1 & 1 & -1 & -1 \\
+      1 & 0 & 0 & 1
+    \end{mymatrix},
+  \end{equation*}
+  where $B_1 = \set{x^3, x^2, x, 1 }$ is an ordered basis of $\Poly_3$
+  and
+  \begin{equation*}
+    B_2 = \set{\begin{mymatrix}{r}
+        1 \\
+        0 \\
+        1 \\
+        0
+      \end{mymatrix}, \begin{mymatrix}{r}
+        0 \\
+        1 \\
+        0 \\
+        0
+      \end{mymatrix},
+      \begin{mymatrix}{r}
+        0 \\
+        0 \\
+        -1 \\
+        0
+      \end{mymatrix},
+      \begin{mymatrix}{r}
+        0 \\
+        0 \\
+        0 \\
+        1
+      \end{mymatrix} }
+  \end{equation*}
+  is an ordered basis of $\R^4$. If $p(x) = ax^3 + bx^2 + cx + d$,
+  find $T(p(x))$.
 \end{example}
 
 \begin{solution}
-Recall that $C_{B_2}[T(p(x))] = M_{B_2B_1}(T) C_{B_1}(p(x))$.
-Then we have
-\begin{eqnarray*}
-C_{B_2}[T(p(x))] &=& M_{B_2B_1}(T) C_{B_1}(p(x)) \\
-&=&
-\begin{mymatrix}{rrrr}
-1 & 1 & 0 & 0 \\
-0 & 1 & -1 & 0 \\
-1 & 1 & -1 & -1 \\
-1 & 0 & 0 & 1
-\end{mymatrix} \begin{mymatrix}{c}
-a \\
-b \\
-c \\
-d
-\end{mymatrix} \\
-&=&
-\begin{mymatrix}{c}
-a + b \\
-b - c \\
-a + b - c - d\\
-a + d
-\end{mymatrix}
-\end{eqnarray*}
+  Recall that $C_{B_2}[T(p(x))] = M_{B_2B_1}(T) C_{B_1}(p(x))$.
+  Then we have
+  \begin{eqnarray*}
+    C_{B_2}[T(p(x))] &=& M_{B_2B_1}(T) C_{B_1}(p(x)) \\
+                     &=&
+                         \begin{mymatrix}{rrrr}
+                           1 & 1 & 0 & 0 \\
+                           0 & 1 & -1 & 0 \\
+                           1 & 1 & -1 & -1 \\
+                           1 & 0 & 0 & 1
+                         \end{mymatrix} \begin{mymatrix}{c}
+                           a \\
+                           b \\
+                           c \\
+                           d
+                         \end{mymatrix} \\
+                     &=&
+                         \begin{mymatrix}{c}
+                           a + b \\
+                           b - c \\
+                           a + b - c - d\\
+                           a + d
+                         \end{mymatrix}
+  \end{eqnarray*}
 
-Therefore
-\begin{eqnarray*}
-T(p(x)) &=& C^{-1}_D \begin{mymatrix}{c}
-a + b \\
-b - c \\
-a + b - c - d\\
-a + d
-\end{mymatrix} \\
-&=& (a+b) \begin{mymatrix}{r}
-1 \\
-0 \\
-1 \\
-0
-\end{mymatrix} + (b-c) \begin{mymatrix}{r}
-0 \\
-1 \\
-0 \\
-0
-\end{mymatrix} +
-(a+b-c-d) \begin{mymatrix}{r}
-0 \\
-0 \\
--1 \\
-0
-\end{mymatrix} +
-(a+d) \begin{mymatrix}{r}
-0 \\
-0 \\
-0 \\
-1
-\end{mymatrix} \\
-&=&
-\begin{mymatrix}{c}
-a + b \\
-b - c \\
-c + d \\
-a +d
-\end{mymatrix}
-\end{eqnarray*}
+  Therefore
+  \begin{eqnarray*}
+    T(p(x)) &=& C^{-1}_D \begin{mymatrix}{c}
+      a + b \\
+      b - c \\
+      a + b - c - d\\
+      a + d
+    \end{mymatrix} \\
+            &=& (a+b) \begin{mymatrix}{r}
+              1 \\
+              0 \\
+              1 \\
+              0
+            \end{mymatrix} + (b-c) \begin{mymatrix}{r}
+              0 \\
+              1 \\
+              0 \\
+              0
+            \end{mymatrix} +
+    (a+b-c-d) \begin{mymatrix}{r}
+      0 \\
+      0 \\
+      -1 \\
+      0
+    \end{mymatrix} +
+    (a+d) \begin{mymatrix}{r}
+      0 \\
+      0 \\
+      0 \\
+      1
+    \end{mymatrix} \\
+            &=&
+                \begin{mymatrix}{c}
+                  a + b \\
+                  b - c \\
+                  c + d \\
+                  a +d
+                \end{mymatrix}
+  \end{eqnarray*}
 
-You can verify that this was the definition of $T(p(x))$ given in the previous example.
+  You can verify that this was the definition of $T(p(x))$ given in
+  the previous example.
 \end{solution}
 
 We can also find the matrix of the composite of multiple transformations.
 
 \begin{theorem}{Matrix of composition}{matrix-composition}
-Let $V,W$ and $U$ be finite-dimensional vector spaces, and suppose $T : V \to W$, $S: W \to U$ are linear transformations.
-Suppose $V, W$ and $U$ have ordered bases of $B_1$, $B_2$ and $B_3$ respectively.  Then the matrix of the composite transformation $S \circ T$ (or $ST$) is given by
-\[ M_{B_3B_1}(ST)=M_{B_3B_2}(S) M_{B_2B_1}(T).\]
+  Let $V,W$ and $U$ be finite-dimensional vector spaces, and suppose
+  $T : V \to W$, $S: W \to U$ are linear transformations.  Suppose
+  $V, W$ and $U$ have ordered bases of $B_1$, $B_2$ and $B_3$
+  respectively.  Then the matrix of the composite transformation
+  $S \circ T$ (or $ST$) is given by
+  \begin{equation*}
+    M_{B_3B_1}(ST)=M_{B_3B_2}(S) M_{B_2B_1}(T).
+  \end{equation*}
 \end{theorem}
 
 The next important theorem gives a condition on when $T$ is an isomorphism.
 
 \begin{theorem}{Isomorphism}{isomorphism}
-Let $V$ and $W$ be vector spaces such that both have dimension $n$ and let $T: V \to W$ be a linear transformation. Suppose $B_1$ is an ordered basis of $V$ and $B_2$ is an ordered basis of $W$.
+  Let $V$ and $W$ be vector spaces such that both have dimension $n$
+  and let $T: V \to W$ be a linear transformation. Suppose $B_1$ is an
+  ordered basis of $V$ and $B_2$ is an ordered basis of $W$.
 
- Then the conditions that $M_{B_2B_1}(T)$ is invertible for \textbf{all} $B_1$ and $B_2$, and that $M_{B_2B_1}(T)$ is invertible for \textbf{some} $B_1$ and $B_2$ are equivalent. In fact, these occur if and only if $T$ is an isomorphism.
+  Then the conditions that $M_{B_2B_1}(T)$ is invertible for
+  \textbf{all} $B_1$ and $B_2$, and that $M_{B_2B_1}(T)$ is invertible
+  for \textbf{some} $B_1$ and $B_2$ are equivalent. In fact, these
+  occur if and only if $T$ is an isomorphism.
 
-If $T$ is an isomorphism, the matrix $M_{B_2B_1}(T)$ is invertible and its inverse is given by $\mat{M_{B_2B_1}(T) } ^{-1} = M_{B_1B_2}(T^{-1})$.
+  If $T$ is an isomorphism, the matrix $M_{B_2B_1}(T)$ is invertible
+  and its inverse is given by
+  $\mat{M_{B_2B_1}(T) } ^{-1} = M_{B_1B_2}(T^{-1})$.
 \end{theorem}
 
 Consider the following example.
 
 \begin{example}{}{}
-Suppose $T:\Poly_3\to\Mat_{2,2}$ is a linear transformation
-defined by
-\[ T(ax^3+bx^2+cx+d)=
-\begin{mymatrix}{cc} a+d & b-c \\ b+c & a-d \end{mymatrix}\]
-for all $ax^3+bx^2+cx+d\in\Poly_3$. Let
-$B_1=\set{x^3, x^2, x, 1}$ and
-\[ B_2=\set{
-\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
-\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix},
-\begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix},
-\begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}}\]
-be ordered bases of $\Poly_3$ and $\Mat_{2,2}$, respectively.
-\begin{enumerate}
-\item Find $M_{B_2B_1}(T)$.
-\item Verify that $T$ is an isomorphism by proving that $M_{B_2B_1}(T)$
-is invertible.
-\item Find $M_{B_1B_2}(T^{-1})$, and verify that
-$M_{B_1B_2}(T^{-1}) = \mat{M_{B_2B_1}(T)}^{-1}$.
-\item Use $M_{B_1B_2}(T^{-1})$ to find $T^{-1}$.
-\end{enumerate}
+  Suppose $T:\Poly_3\to\Mat_{2,2}$ is a linear transformation
+  defined by
+  \begin{equation*}
+    T(ax^3+bx^2+cx+d)=
+    \begin{mymatrix}{cc} a+d & b-c \\ b+c & a-d \end{mymatrix}
+  \end{equation*}
+  for all $ax^3+bx^2+cx+d\in\Poly_3$. Let
+  $B_1=\set{x^3, x^2, x, 1}$ and
+  \begin{equation*}
+    B_2=\set{
+      \begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}}
+  \end{equation*}
+  be ordered bases of $\Poly_3$ and $\Mat_{2,2}$, respectively.
+  \begin{enumerate}
+  \item Find $M_{B_2B_1}(T)$.
+  \item Verify that $T$ is an isomorphism by proving that $M_{B_2B_1}(T)$
+    is invertible.
+  \item Find $M_{B_1B_2}(T^{-1})$, and verify that
+    $M_{B_1B_2}(T^{-1}) = \mat{M_{B_2B_1}(T)}^{-1}$.
+  \item Use $M_{B_1B_2}(T^{-1})$ to find $T^{-1}$.
+  \end{enumerate}
 \end{example}
 
 \begin{solution}
-\begin{enumerate}
-\item
-\begin{eqnarray*}
-M_{B_2B_1}(T) & = &
-\begin{mymatrix}{cccc} C_{B_2}[T(1)] & C_{B_2}[T(x)] & C_{B_2}[T(x^2)]
-& C_{B_2}[T(x^3)] \end{mymatrix} \\
-& = &
-\begin{mymatrix}{cccc}
-C_{B_2}\begin{mymatrix}{cc} 1 & 0 \\ 0 & 1 \end{mymatrix}
-& C_{B_2}\begin{mymatrix}{cc} 0 & 1 \\ 1 & 0 \end{mymatrix}
-& C_{B_2}\begin{mymatrix}{cc} 0 & -1 \\ 1 & 0 \end{mymatrix}
-& C_{B_2}\begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix}
-\end{mymatrix} \\
-& = & \begin{mymatrix}{rrrr}
-1 & 0 & 0 & 1 \\
-0 & 1 & -1 & 0 \\
-0 & 1 & 1 & 0 \\
-1 & 0 & 0 & -1 \end{mymatrix}
-\end{eqnarray*}
+  \begin{enumerate}
+  \item
+    \begin{eqnarray*}
+      M_{B_2B_1}(T)
+      & = &
+            \begin{mymatrix}{cccc} C_{B_2}[T(1)] & C_{B_2}[T(x)] & C_{B_2}[T(x^2)]
+              & C_{B_2}[T(x^3)] \end{mymatrix} \\
+      & = &
+            \begin{mymatrix}{cccc}
+              C_{B_2}\begin{mymatrix}{cc} 1 & 0 \\ 0 & 1 \end{mymatrix}
+              & C_{B_2}\begin{mymatrix}{cc} 0 & 1 \\ 1 & 0 \end{mymatrix}
+              & C_{B_2}\begin{mymatrix}{cc} 0 & -1 \\ 1 & 0 \end{mymatrix}
+              & C_{B_2}\begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix}
+            \end{mymatrix} \\
+      & = & \begin{mymatrix}{rrrr}
+        1 & 0 & 0 & 1 \\
+        0 & 1 & -1 & 0 \\
+        0 & 1 & 1 & 0 \\
+        1 & 0 & 0 & -1 \end{mymatrix}
+    \end{eqnarray*}
 
-\item $\det(M_{B_2B_1}(T))=4$, so the matrix is invertible, and hence $T$
-is an isomorphism.
+  \item $\det(M_{B_2B_1}(T))=4$, so the matrix is invertible, and hence $T$
+    is an isomorphism.
 
-\item
-\[ T^{-1}\begin{mymatrix}{cc} 1 & 0 \\ 0 & 1 \end{mymatrix} = 1,
-T^{-1}\begin{mymatrix}{cc} 0 & 1 \\ 1 & 0 \end{mymatrix}= x,
-T^{-1}\begin{mymatrix}{cc} 0 & -1 \\ 1 & 0 \end{mymatrix}= x^2,
-T^{-1}\begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix}=x^3,\]
-so
-\[ T^{-1}\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix} = \frac{1+x^3}{2},
-T^{-1}\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix}= \frac{x-x^2}{2}, \]
-\[ T^{-1}\begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix} = \frac{x+x^2}{2},
-T^{-1}\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix}= \frac{1-x^3}{2}. \]
-Therefore,
-\[ M_{B_1B_2}(T^{-1})=\frac{1}{2}\begin{mymatrix}{rrrr}
-1 & 0 & 0 & 1 \\
-0 & 1 & 1 & 0 \\
-0 & -1 & 1 & 0 \\
-1 & 0 & 0 & -1 \end{mymatrix} \]
+  \item
+    \begin{equation*}
+      T^{-1}\begin{mymatrix}{cc} 1 & 0 \\ 0 & 1 \end{mymatrix} = 1,
+      T^{-1}\begin{mymatrix}{cc} 0 & 1 \\ 1 & 0 \end{mymatrix}= x,
+      T^{-1}\begin{mymatrix}{cc} 0 & -1 \\ 1 & 0 \end{mymatrix}= x^2,
+      T^{-1}\begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix}=x^3,
+    \end{equation*}
+    so
+    \begin{equation*}
+      T^{-1}\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix} = \frac{1+x^3}{2},
+      T^{-1}\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix}= \frac{x-x^2}{2},
+    \end{equation*}
+    \begin{equation*}
+      T^{-1}\begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix} = \frac{x+x^2}{2},
+      T^{-1}\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix}= \frac{1-x^3}{2}. 
+    \end{equation*}
+    Therefore,
+    \begin{equation*}
+      M_{B_1B_2}(T^{-1})=\frac{1}{2}\begin{mymatrix}{rrrr}
+        1 & 0 & 0 & 1 \\
+        0 & 1 & 1 & 0 \\
+        0 & -1 & 1 & 0 \\
+        1 & 0 & 0 & -1 \end{mymatrix} 
+    \end{equation*}
 
-You should verify that $M_{B_2B_1}(T) M_{B_1B_2}(T^{-1}) = I_4$. From this it follows that $[M_{B_2B_1}(T)]^{-1}= M_{B_1B_2}(T^{-1})$.
+    You should verify that $M_{B_2B_1}(T) M_{B_1B_2}(T^{-1}) =
+    I_4$. From this it follows that
+    $[M_{B_2B_1}(T)]^{-1}= M_{B_1B_2}(T^{-1})$.
 
-\item
-\begin{eqnarray*}
-C_{B_1}\paren{T^{-1}\begin{mymatrix}{cc}
-p & q \\ r & s \end{mymatrix}} & = &
-M_{B_1B_2}(T^{-1})
-C_{B_2}\paren{\begin{mymatrix}{cc}
-p & q \\ r & s \end{mymatrix}}\\
-T^{-1}\begin{mymatrix}{cc}
-p & q \\ r & s \end{mymatrix} & = &
-C_{B_1}^{-1}\paren{M_{B_1B_2}(T^{-1})
-C_{B_2}\paren{\begin{mymatrix}{cc}
-p & q \\ r & s \end{mymatrix}}}\\
-& = &
-C_{B_1}^{-1}\paren{
-\frac{1}{2}\begin{mymatrix}{rrrr}
-1 & 0 & 0 & 1 \\
-0 & 1 & 1 & 0 \\
-0 & -1 & 1 & 0 \\
-1 & 0 & 0 & -1 \end{mymatrix}
-\begin{mymatrix}{c} p \\ q\\ r\\ s\end{mymatrix}} \\
-& =&
-C_{B_1}^{-1}\paren{\frac{1}{2}\begin{mymatrix}{c}
-p+s \\ q+r \\ r-q \\ p-s \end{mymatrix}} \\
-& = & \frac{1}{2}(p+s)x^3 +\frac{1}{2}(q+r)x^2 +\frac{1}{2}(r-q)x
-+ \frac{1}{2}(p-s).
-\end{eqnarray*}
-\end{enumerate}
+  \item
+    \begin{eqnarray*}
+      C_{B_1}\paren{T^{-1}\begin{mymatrix}{cc} p & q \\ r & s \end{mymatrix}}
+      & = &
+            M_{B_1B_2}(T^{-1})
+            C_{B_2}\paren{\begin{mymatrix}{cc}
+                p & q \\ r & s \end{mymatrix}}\\
+      T^{-1}\begin{mymatrix}{cc}
+        p & q \\ r & s \end{mymatrix} & = &
+                                            C_{B_1}^{-1}\paren{M_{B_1B_2}(T^{-1})
+                                            C_{B_2}\paren{\begin{mymatrix}{cc}
+                                                p & q \\ r & s \end{mymatrix}}}\\
+            & = &
+                  C_{B_1}^{-1}\paren{
+                  \frac{1}{2}\begin{mymatrix}{rrrr}
+                    1 & 0 & 0 & 1 \\
+                    0 & 1 & 1 & 0 \\
+                    0 & -1 & 1 & 0 \\
+                    1 & 0 & 0 & -1 \end{mymatrix}
+                                \begin{mymatrix}{c} p \\ q\\ r\\ s\end{mymatrix}} \\
+            & =&
+                 C_{B_1}^{-1}\paren{\frac{1}{2}\begin{mymatrix}{c}
+                     p+s \\ q+r \\ r-q \\ p-s \end{mymatrix}} \\
+            & = & \frac{1}{2}(p+s)x^3 +\frac{1}{2}(q+r)x^2 +\frac{1}{2}(r-q)x
+                  + \frac{1}{2}(p-s).
+    \end{eqnarray*}
+  \end{enumerate}
 \end{solution}
