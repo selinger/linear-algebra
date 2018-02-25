@@ -44,36 +44,51 @@ There are many interesting examples of linear transformations on
 vector spaces other than $\R^n$. We will consider a few such examples.
 
 \begin{example}{Derivative operator}{derivative-operator}
-  Let $\Poly_3$ be the vector space of real polynomials of degree at
-  most $3$. Show that the function $D:\Poly_3\to\Poly_2$ defined by
+  Let $\Poly_n$ be the vector space of real polynomials of degree at
+  most $n$. The function $D:\Poly_3\to\Poly_2$ is defined by
   \begin{equation*}
     D(p(x)) = p'(x),
   \end{equation*}
-  is a linear transformation. Here, $p'(x)$ denotes the derivative of
-  the polynomial $p(x)$. The function $D$ is called the
-  \textbf{derivative operator}.
+  where $p'(x)$ denotes the derivative of the polynomial $p(x)$. The
+  function $D$ is called the \textbf{derivative operator}.
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item Compute $D(x^3)$, $D(2x^2+x)$, and $D(ax^3+bx^2+cx+d)$.
+    \item Show that $D$ is a linear transformation.
+    \end{enumerate}
+  \end{enumialphparenastyle}
 \end{example}
 
 \begin{solution}
-  First, we note that if $p(x)$ is a polynomial of degree at most $3$,
-  then its derivative $p'(x)$ is a polynomial of degree at most
-  $2$. Therefore, the derivative operator $D$ is a well-defined
-  function from $\Poly_3$ to $\Poly_2$. To show that it preserves
-  addition, consider any two polynomials $p(x),q(x)\in\Poly_3$. From
-  calculus, we know that the derivative of $p(x)+q(x)$ is
-  $p'(x)+q'(x)$. Therefore,
-  \begin{equation*}
-    D(p(x)+q(x)) ~=~ (p(x)+q(x))' ~=~ p'(x)+q'(x) ~=~ D(p(x)) + D(q(x)),
-  \end{equation*}
-  and so $D$ preserves addition. To show that it preserves scalar
-  multiplication, consider $p(x)\in\Poly_3$ and $k\in\R$. From
-  calculus, we know that the derivative of $kp(x)$ is $kp'(x)$, and
-  therefore
-  \begin{equation*}
-    D(kp(x)) ~=~ (kp(x))' ~=~ kp'(x) ~=~ kD(p(x)).
-  \end{equation*}
-  Hence, $D$ preserves scalar multiplication. It follows that $D$ is a
-  linear transformation.
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item In each case, we simply take the derivative:
+      \begin{eqnarray*}
+        D(x^3) &=& 3x^2, \\
+        D(2x^2+x) &=& 4x+1, \\
+        D(ax^3+bx^2+cx+d) &=& 3ax^2 + 2bx + c.
+      \end{eqnarray*}
+    \item First, we note that if $p(x)$ is a polynomial of degree at
+      most $3$, then its derivative $p'(x)$ is a polynomial of degree
+      at most $2$. Therefore, the derivative operator $D$ is a
+      well-defined function from $\Poly_3$ to $\Poly_2$. To show that
+      it preserves addition, consider any two polynomials
+      $p(x),q(x)\in\Poly_3$. From calculus, we know that the
+      derivative of $p(x)+q(x)$ is $p'(x)+q'(x)$. Therefore,
+      \begin{equation*}
+        D(p(x)+q(x)) ~=~ (p(x)+q(x))' ~=~ p'(x)+q'(x) ~=~ D(p(x)) + D(q(x)),
+      \end{equation*}
+      and so $D$ preserves addition. To show that it preserves scalar
+      multiplication, consider $p(x)\in\Poly_3$ and $k\in\R$. From
+      calculus, we know that the derivative of $kp(x)$ is $kp'(x)$, and
+      therefore
+      \begin{equation*}
+        D(kp(x)) ~=~ (kp(x))' ~=~ kp'(x) ~=~ kD(p(x)).
+      \end{equation*}
+      Hence, $D$ preserves scalar multiplication. It follows that $D$ is a
+      linear transformation.
+    \end{enumerate}
+  \end{enumialphparenastyle}
 \end{solution}
 
 It is important to understand that we are not claiming that the
@@ -83,19 +98,6 @@ the act of {\em taking} the derivative is a linear operation, i.e.,
 the derivative of a sum is the sum of the derivatives, and the
 derivative of a constant times a function is a constant times the
 derivative.
-
-\begin{example}{Derivative operator examples}{derivative-operator-examples}
-  Compute $D(x^3)$, $D(2x^2+x)$, and $D(ax^3+bx^2+cx+d)$.
-\end{example}
-
-\begin{solution}
-  In each case, we simply take the derivative:
-  \begin{eqnarray*}
-    D(x^3) &=& 3x^2, \\
-    D(2x^2+x) &=& 4x+1, \\
-    D(ax^3+bx^2+cx+d) &=& 3ax^2 + 2bx + c.
-  \end{eqnarray*}
-\end{solution}
 
 \begin{example}{The shift and unshift operators}{shift-unshift}
   Consider the vector space $\Seq_K$ of infinite sequences of elements
@@ -110,13 +112,52 @@ derivative.
   \begin{equation*}
     \unshift(a_0,a_1,a_2,a_3,\ldots) = (0,a_0,a_1,a_2,\ldots).
   \end{equation*}
-
-
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item Compute $\shift(1,2,3,\ldots)$,
+      $\unshift(\shift(1,1,1,\ldots))$, and
+      $\shift(\unshift(1,1,1,\ldots))$.
+    \item Show that $\shift$ and $\unshift$ are linear transformations.
+    \end{enumerate}
+  \end{enumialphparenastyle}
 \end{example}
+
+\begin{solution}
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item We have
+      \begin{eqnarray*}
+        \shift(1,2,3,4,\ldots)
+        &=& (2,3,4,5,\ldots), \\
+        \unshift(\shift(1,1,1,1,\ldots))
+        &=& \unshift(1,1,1,1,\ldots)
+        ~~=~~ (0,1,1,1,\ldots), \\
+        \shift(\unshift(1,1,1,1,\ldots))
+        &=& \shift(0,1,1,1,\ldots)
+        ~~=~~ (1,1,1,1,\ldots).            
+      \end{eqnarray*}
+    \item To show that $\shift$ is a linear transformation, we show
+      that it preserves addition and scalar multiplication. Let
+      $a=(a_0,a_1,a_2,\ldots)$ and $b=(b_0,b_1,b_2,\ldots)$. Then
+      \begin{eqnarray*}
+        \shift(a+b) &=& \shift(a_0+b_0,~a_1+b_1,~a_2+b_2,~\ldots) \\
+                    &=& (a_1+b_1,~a_2+b_2,~a_3+b_3,~\ldots) \\
+                    &=& (a_1,~a_2,~a_3,~\ldots) + (b_1,~b_2,~b_3,~\ldots) \\
+                    &=& \shift(a) + \shift(b),~ \\
+        \shift(ka)  &=& \shift(ka_0,~ka_1,~ka_2,~\ldots) \\
+                    &=& (ka_1,~ka_2,~ka_3,~\ldots) \\
+                    &=& k(a_1,~a_2,~a_3,~\ldots) \\
+                    &=& k\shift(a). \\
+      \end{eqnarray*}
+      Therefore, $\shift$ is a linear transformation. The proof for
+      $\unshift$ is similar.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{solution}
 
 
 % ----------------------------------------------------------------------
-% CONTINUE HERE...
+\subsection{CONTINUE HERE...}
 
 Several important examples of linear transformations include the zero
 transformation, the identity transformation, and the scalar
