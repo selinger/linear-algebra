@@ -1,107 +1,116 @@
+\section{The algebra of linear transformations}
+
+Two linear transformations are considered to be equal if they act in
+the same way on all vectors. This is the content of the following
+definition.
+
+\begin{definition}{Equal transformations}{equal-transformations}
+  Let $S$ and $T$ be linear transformations from $V$ to $W$. We say
+  that $S$ and $T$ are \textbf{equal}%
+  \index{linear transformation!equality of}%
+  \index{equality!of linear transformations}, and we write $S = T$, if
+  for all $\vect{v}\in V$,
+  \begin{equation*}
+    S(\vect{v}) = T(\vect{v}).
+  \end{equation*}
+\end{definition}
+
+We now consider several operations on linear transformations. These
+include addition and scalar multiplication of linear transformations,
+as well as the zero transformation.
+
+\begin{definition}{Addition and scalar multiplication of linear transformations}{addition-linear-transformations}
+  Let $V$ and $W$ be vector spaces over a field $K$.
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item The \textbf{zero transformation}%
+      \index{zero transformation}%
+      \index{linear transformation!zero transformation} $0:V\to W$ is
+      defined by $0(\vect{v})=\vect{0}$ for all $\vect{v}\in V$.
+    \item If $T,S:V\to W$ are linear transformations, then their
+      \textbf{sum}%
+      \index{addition!of linear transformations}%
+      \index{linear transformation!addition of}
+      $T+S:V\to W$ is the linear transformation defined by
+      \begin{equation*}
+        (T+S)(\vect{v}) = T(\vect{v}) + S(\vect{v})
+      \end{equation*}
+      for all $\vect{v}\in V$.
+    \item If $T:V\to W$ is a linear transformation and $k\in K$, the
+      linear transformation%
+      \index{scalar multiplication!of linear transformations}%
+      \index{linear transformation!scalar multiplication of}
+      $kT : V\to W$ is defined by
+      \begin{equation*}
+        (kT)(\vect{v}) = k(T(\vect{v}))
+      \end{equation*}
+      for all $\vect{v}\in V$.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{definition}
+
+\begin{proposition}{Addition and scalar multiplication of linear transformations}{addition-linear-transformations}
+  If $T,S:V\to W$ are linear transformations, then so are $T+S$ and $kT$.
+\end{proposition}
+
+\begin{proof}
+  To show that $T+S$ is linear, we must verify that it preserves
+  addition and scalar multiplication. Let $\vect{v},\vect{u}\in
+  V$. Then we have
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}ll}
+      (T+S)(\vect{v}+\vect{u})
+      &=& T(\vect{v}+\vect{u}) + S(\vect{v}+\vect{u})
+      & \mbox{by definition of $T+S$,} \\
+      &=& (T(\vect{v}) + T(\vect{u})) + (S(\vect{v}) + S(\vect{u}))
+      & \mbox{by linearity of $T$ and $S$,} \\
+      &=& (T(\vect{v}) + S(\vect{v})) + (T(\vect{u}) + S(\vect{u}))
+      & \mbox{by the associative and commutative laws of vectors,} \\
+      &=& (T+S)(\vect{v}) + (T+S)(\vect{u})
+      & \mbox{by definition of $T+S$.}
+    \end{array}
+  \end{equation*}
+  Therefore, $T+S$ preserves addition. Also, for $\vect{v}\in V$ and
+  $a\in K$, we have
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}ll}
+      (T+S)(a\vect{v})
+      &=& T(a\vect{v}) + S(a\vect{v})
+      & \mbox{by definition of $T+S$} \\
+      &=& aT(\vect{v}) + aS(\vect{v})
+      & \mbox{by linearity of $T$ and $S$} \\
+      &=& a(T(\vect{v}) + S(\vect{v}))
+      & \mbox{by the distributive law over vector addition} \\
+      &=& a((T+S)(\vect{v}))
+      & \mbox{by definition of $T+S$.}
+    \end{array}
+  \end{equation*}
+  Therefore, $T+S$ preserves scalar multiplication. 
+  The proof of the linearity of $kT$ is left as an exercise.
+\end{proof}
+
+
 
 % ----------------------------------------------------------------------
 \subsection{CONTINUE HERE...}
 
+\begin{definition}{Special linear transformations}{special-linear-transformations}
+  Let $V$ and $W$ be vector spaces over a field $K$.
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item The \textbf{identity transformation}%
+      \index{identity transformation}%
+      \index{linear transformation!identity transformation}
+      $1_V:V\to V$ is defined by $1_V(\vect{v})=\vect{v}$ for all
+      $\vect{v}\in V$. We often omit the subscript and just write
+      $1:V\to V$ when $V$ is clear from the context.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{definition}
+
+
+
 $T(v) = S(v)$: subspace
-
-\begin{example}{Recurrences as linear equations}{recurrence-as-equation}
-  Find a basis for the solution space of the following linear
-  equation:
-  
-\end{example}
-
-Several important examples of linear transformations include the zero
-transformation, the identity transformation, and the scalar
-transformation.
-
-\begin{example}{Linear transformations}{linear-transformations}
-  Let $V$ and $W$ be vector spaces.
-
-  \begin{enumerate}
-  \item \textbf{The zero transformation}\index{zero transformation}
-
-    $0:V\to W$ is defined by $0(\vect{v})=\vect{0}$ for all
-    $\vect{v}\in V$.
-
-  \item \textbf{The identity transformation}\index{identity transformation}
-
-    $1_V:V\to V$ is defined by $1_V(\vect{v})=\vect{v}$ for all
-    $\vect{v}\in V$.
-
-  \item \textbf{The scalar transformation}\index{scalar
-      transformation} Let $a\in\R$.
-
-    $s_a:V\to V$ is defined by $s_a(\vect{v})=a\vect{v}$ for all
-    $\vect{v}\in V$.
-  \end{enumerate}
-\end{example}
-
-\begin{solution}
-  We will show that the scalar transformation $s_a$ is linear, the
-  rest are left as an exercise.
-
-  By Definition~\ref{def:linear-transformation} we must show that for
-  all scalars $k ,p $ and vectors $\vect{v}_1$ and $\vect{v}_2$ in
-  $V$,
-  $s_a(k \vect{v}_1 + p \vect{v}_2) = k s_a(\vect{v}_1)+ p
-  s_a(\vect{v}_{2})$. Assume that $a$ is also a scalar.
-  \begin{eqnarray*}
-    s_a(k \vect{v}_1 + p \vect{v}_2)
-    &=& a (k \vect{v}_1 + p \vect{v}_2) \\
-    &=&  ak \vect{v}_1 + ap \vect{v}_2  \\
-    &=&  k (a \vect{v}_1) + p(a \vect{v}_2)  \\
-    &=& k s_a(\vect{v}_1)  + p s_a (\vect{v}_2)
-  \end{eqnarray*}
-  Therefore $s_a$ is a linear transformation.
-\end{solution}
-
-Consider the following important theorem.
-
-\begin{theorem}{Properties of linear transformations}{properties}
-  Let $V$ and $W$ be vector spaces, and $T:V \to W$ a linear
-  transformation.  Then
-  \begin{enumerate}
-  \item $T$ preserves the zero vector.
-    \begin{equation*}
-      T(\vect{0})=\vect{0}
-    \end{equation*}
-  \item $T$ preserves additive inverses.
-    For all $\vect{v}\in V$,
-    \begin{equation*}
-      T(-\vect{v})= -T(\vect{v})
-    \end{equation*}
-  \item $T$ preserves linear combinations.
-    For all $\vect{v}_1, \vect{v}_2, \ldots, \vect{v}_m \in V$ and
-    all $k_1, k_2, \ldots, k_m\in\R$,
-    \begin{equation*}
-      T(k_1\vect{v}_1 + k_2\vect{v}_2 + \ldots + k_m\vect{v}_m)
-      = k_1T(\vect{v}_1) + k_2T(\vect{v}_2) + \ldots + k_mT(\vect{v}_m).
-    \end{equation*}
-  \end{enumerate}
-\end{theorem}
-
-\begin{proof}
-  \begin{enumerate}
-  \item Let $\vect{0}_V$ denote the zero vector of $V$ and let
-    $\vect{0}_W$ denote the zero vector of $W$.  We want to prove that
-    $T(\vect{0}_V)=\vect{0}_W$.  Let $\vect{v}\in V$.  Then
-    $0\vect{v}=\vect{0}_V$ and
-    \begin{equation*}
-      T(\vect{0}_V)=T(0\vect{v})=0T(\vect{v})=\vect{0}_W.
-    \end{equation*}
-  \item Let $\vect{v}\in V$; then $-\vect{v}\in V$ is the additive
-    inverse of $\vect{v}$, so $\vect{v} + (-\vect{v})=\vect{0}_V$.
-    Thus
-    \begin{eqnarray*}
-      T(\vect{v} + (-\vect{v})) & = & T(\vect{0}_V) \\
-      T(\vect{v}) + T(-\vect{v})) & = & \vect{0}_W \\
-      T(-\vect{v}) & = & \vect{0}_W - T(\vect{v}) =  - T(\vect{v}).
-    \end{eqnarray*}
-  \item This result follows from preservation of addition and
-    preservation of scalar multiplication.  A formal proof would be by
-    induction on $m$.
-  \end{enumerate}
-\end{proof}
 
 Consider the following example using the above theorem.
 
@@ -175,21 +184,8 @@ Consider the following example using the above theorem.
   \end{eqnarray*}
 \end{solution}
 
-Suppose two linear transformations act in the same way on $\vect{v}$
-for all vectors. Then we say that these transformations are equal.
-
-\begin{definition}{Equal transformations}{equal-transformations}
-  Let $S$ and $T$ be linear transformations from $V$ to $W$. Then
-  $S = T$ if and only if for every $\vect{v} \in V$,
-  \begin{equation*}
-    S (\vect{v}) = T (\vect{v})
-  \end{equation*}
-\end{definition}
-
-The definition above requires that two transformations have the same
-action on every vector in order for them to be equal. The next theorem
-argues that it is only necessary to check the action of the
-transformations on basis vectors.
+The next theorem argues that it is only necessary to check the action
+of the transformations on basis vectors.
 
 \begin{theorem}{Transformation of a spanning set}{transformation-spanning-set}
   Let $V$ and $W$ be vector spaces and suppose that $S$ and $T$ are

@@ -234,3 +234,41 @@ derivative.
     \set{(1,0,1,1,2,3,\ldots),~ (0,1,1,2,3,5,\ldots)}.
   \end{equation*}
 \end{solution}
+
+We conclude this section by stating some elementary properties of
+linear transformations. ``Elementary'' means that these properties
+follow directly from the definition, i.e., from the fact that linear
+transformations preserve addition and scalar multiplication.
+
+\begin{theorem}{Properties of linear transformations}{properties}
+  Let $V$ and $W$ be vector spaces over a field $K$, and let
+  $T:V \to W$ be a linear transformation.  Then
+  \begin{itemize}
+  \item $T$ preserves the zero vector:
+    $T(\vect{0})=\vect{0}$.
+  \item $T$ preserves additive inverses:
+    $T(-\vect{v})= -T(\vect{v})$.
+  \item $T$ preserves linear combinations:
+    \begin{equation*}
+      T(a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_k\vect{v}_k)
+      ~=~
+      a_1T(\vect{v}_1) + a_2T(\vect{v}_2) + \ldots + a_kT(\vect{v}_k).
+    \end{equation*}
+  \end{itemize}
+\end{theorem}
+
+\begin{proof}
+  To prove the first property, let $k=0$ in the equation
+  $T(k\vect{v}) = kT(\vect{v})$. Since $0\vect{v}=\vect{0}$ and
+  $0T(\vect{v})=\vect{0}$ by
+  Proposition~\ref{vector-space-elementary}, we therefore have
+  $T(\vect{0}) = \vect{0}$.  Similarly, to prove the second property,
+  let $k=-1$ in the equation $T(k\vect{v}) = kT(\vect{v})$.
+  Finally, the third property is a direct consequence of the fact that
+  $T$ preserves addition and scalar multiplication:
+  \begin{eqnarray*}
+    T(a_1\vect{v}_1 + a_2\vect{v}_2 + \ldots + a_k\vect{v}_k)
+    &=& T(a_1\vect{v}_1) + T(a_2\vect{v}_2) + \ldots + T(a_k\vect{v}_k) \\
+    &=& a_1T(\vect{v}_1) + a_2T(\vect{v}_2) + \ldots + a_kT(\vect{v}_k).
+  \end{eqnarray*}
+\end{proof}
