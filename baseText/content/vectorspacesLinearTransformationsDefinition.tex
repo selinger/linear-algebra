@@ -14,10 +14,10 @@ more general setting of vector spaces $V$ and $W$.
 
 \begin{definition}{Linear transformation}{linear-transformation-vector-space}
   Let $V$ and $W$ be vector spaces over some field $K$. A function
-  $T: V \to W$ is called \textbf{linear} or a \textbf{linear
+  $T: V \to W$ is called \textbf{linear}, or a \textbf{linear
     transformation}%
-  \index{linear transformation!on vector spaces} if it satisfies the
-  following two conditions:
+  \index{linear transformation!on vector spaces} from $V$ to $W$, if
+  it satisfies the following two conditions:
   \begin{enumerate}
   \item $T$ preserves addition, i.e., for all\/
     $\vect{v},\vect{w}\in V$, we have
@@ -99,6 +99,22 @@ the derivative of a sum is the sum of the derivatives, and the
 derivative of a constant times a function is a constant times the
 derivative.
 
+\begin{example}{A differential equation}{differential-equation-derivative-operator}
+  Solve the equation $p(x) = x^3 + D(p(x))$, where
+  $D:\Poly_3\to\Poly_2$ is the derivative operator of the previous example.
+\end{example}
+
+\begin{solution}
+  Every element of $P_3$ is of the form $p(x) = ax^3 + bx^2 + cx + d$.
+  We can write the equation $p(x) = x^3 + D(p(x))$ as
+  \begin{equation*}
+    (ax^3 + bx^2 + cx + d) = x^3 + (3ax^2 + 2bx + c).
+  \end{equation*}
+  For the left-hand side and right-hand side to be equal, we must have
+  $a=1$, $b=3a$, $c=2b$, and $d=c$. This yields the unique solution
+  $(a,b,c,d) = (1,3,6,6)$, or $p(x) = x^3+3x^2+6x+6$.
+\end{solution}
+
 \begin{example}{The shift and unshift operators}{shift-unshift}
   Consider the vector space $\Seq_K$ of infinite sequences of elements
   of $K$. The function $\shift:\Seq_K\to\Seq_K$ is defined by shifting
@@ -134,7 +150,7 @@ derivative.
         ~~=~~ (0,1,1,1,\ldots), \\
         \shift(\unshift(1,1,1,1,\ldots))
         &=& \shift(0,1,1,1,\ldots)
-        ~~=~~ (1,1,1,1,\ldots).            
+        ~~=~~ (1,1,1,1,\ldots).
       \end{eqnarray*}
     \item To show that $\shift$ is a linear transformation, we show
       that it preserves addition and scalar multiplication. Let
@@ -155,6 +171,66 @@ derivative.
   \end{enumialphparenastyle}
 \end{solution}
 
-We note that for all sequences $a$, we have
-$\shift(\unshift(a))=a$. However, in general,
-$\unshift(\shift(a))\neq a$.
+\begin{example}{Properties of shift and unshift}{shift-unshift-properties}
+  Show that for all sequences $a\in\Seq_K$, we have
+  $\shift(\unshift(a))=a$. On the other hand, show that in general,
+  $\unshift(\shift(a))\neq a$.
+\end{example}
+
+\begin{solution}
+  For $a=(a_0,a_1,a_2,\ldots)$, we have
+  \begin{equation*}
+    \shift(\unshift(a))
+    ~=~ \shift(\unshift(a_0,a_1,a_2,\ldots))
+    ~=~ \shift(0,a_0,a_1,\ldots)
+    ~=~ (a_0,a_1,a_2,\ldots)
+    ~=~ a.
+  \end{equation*}
+  On the other hand, we have
+  \begin{equation*}
+    \unshift(\shift(a))
+    ~=~ \unshift(\shift(a_0,a_1,a_2,\ldots))
+    ~=~ \unshift(a_1,a_2,a_3,\ldots)
+    ~=~ (0,a_1,a_2,\ldots).
+  \end{equation*}
+  The latter is not equal to $a$ unless $a_0=0$.
+\end{solution}
+
+\begin{example}{Recurrence as a linear equation}{recurrence-as-equation}
+  Find the general solution to the following equation, where
+  $a\in\Seq_K$:
+  \begin{equation*}
+    \shift(\shift(a)) = \shift(a) + a.
+  \end{equation*}
+  Where have you seen this equation before?
+\end{example}
+
+\begin{solution}
+  For $a=(a_0,a_1,a_2,\ldots)$, we have
+  \begin{eqnarray*}
+    \shift(\shift(a)) &=& (a_2,a_3,a_4,\ldots), \\
+    \shift(a) &=& (a_1,a_2,a_3,\ldots), \\
+    a &=& (a_0,a_1,a_2,\ldots).
+  \end{eqnarray*}
+  Therefore $a$ is a solution of the equation $\shift(\shift(a)) =
+  \shift(a) + a$ if and only if
+  \begin{eqnarray*}
+    a_2 &=& a_1 + a_0, \\
+    a_3 &=& a_2 + a_1, \\
+    a_4 &=& a_3 + a_2,
+  \end{eqnarray*}
+  and so on. In other words, $a$ is a solution if and only if
+  $a_{n+2} = a_{n+1} + a_n$ holds for all $n\geq 0$. This is nothing
+  but the recurrence relation of
+  Example~\ref{exa:subspace-recurrence}. We already calculated the
+  general solution in
+  Example~{\ref{exa:subspace-recurrence-dimension}}. The general
+  solution is
+  \begin{equation*}
+    a = (x,~y,~x+y,~x+2y,~2x+3y,~3x+5y,~\ldots),
+  \end{equation*}
+  and a basis for the solution space is
+  \begin{equation*}
+    \set{(1,0,1,1,2,3,\ldots),~ (0,1,1,2,3,5,\ldots)}.
+  \end{equation*}
+\end{solution}
