@@ -256,7 +256,7 @@ map between finite-dimensional vector spaces as a matrix.
   for all $\vect{v}\in V$.
 \end{definition}
 
-\begin{example}{The matrix of a linear transformation}{matrix-of-linear-transformation}
+\begin{example}{Finding the matrix of a linear transformation}{matrix-of-linear-transformation}
   Find the matrix of the derivative operator $D:\Poly_3\to\Poly_2$
   with respect to the basis $B=\set{1,x,x^2,x^3}$ of $\Poly_3$ and the
   basis $C=\set{1,x,x^2}$ of $\Poly_2$.
@@ -288,7 +288,7 @@ map between finite-dimensional vector spaces as a matrix.
   \end{equation*}
 \end{solution}
 
-\begin{example}{The matrix of a linear transformation}{matrix-of-linear-transformation2}
+\begin{example}{Same linear transformation, different bases}{matrix-of-linear-transformation2}
   Find the matrix of the derivative operator $D:\Poly_3\to\Poly_2$
   with respect to the basis $B'=\set{1,x+1,x^2+x+1,x^3+x^2+x+1}$ of
   $\Poly_3$ and the basis $C'=\set{1,x-1,x^2-1}$ of $\Poly_2$.
@@ -330,6 +330,103 @@ application. Often, a ``convenient'' basis is one that gives rise to
 simple matrices, for example, matrices containing many zeros, or
 matrices that are diagonal.
 
+\begin{example}{Finding a convenient basis}{matrix-of-linear-transformation3}
+  Let $T:\Poly_3\to\Mat_{2,2}$ be the linear transformation
+  defined by
+  \begin{equation*}
+    T(ax^3+bx^2+cx+d)=
+    \begin{mymatrix}{cc} a+d & b-c \\ b+c & a-d \end{mymatrix}
+  \end{equation*}
+  for all $ax^3+bx^2+cx+d\in\Poly_3$. Let
+  $B=\set{x^3, x^2, x, 1}$ and
+  \begin{equation*}
+    C=\set{
+      \begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}
+    }
+  \end{equation*}
+  be bases of $\Poly_3$ and $\Mat_{2,2}$, respectively.
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item Find $\coord{T}_{C,B}$.
+    \item Find a basis $C'$ of $\Mat_{2,2}$ such that
+      $\coord{T}_{C',B}$ is the identity matrix.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{example}
+
+\begin{solution}
+  (a) We have
+  \begin{equation*}
+    \begin{array}{rcccl}
+      T(x^3)
+      &=& \begin{mymatrix}{rr} 1 & 0 \\ 0 & 1 \end{mymatrix}
+      &=&
+      1\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix}
+      +0\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix}
+      +0\begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix}
+      +1\begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}, \\\\[-2ex]
+      T(x^2)
+      &=& \begin{mymatrix}{rr} 0 & 1 \\ 1 & 0 \end{mymatrix}
+      &=&
+      0\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix}
+      +1\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix}
+      +1\begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix}
+      +0\begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}, \\\\[-2ex]
+      T(x)
+      &=& \begin{mymatrix}{rr} 0 & -1 \\ 1 & 0 \end{mymatrix}
+      &=&
+      0\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix}
+      -1\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix}
+      +1\begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix}
+      +0\begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}, \\\\[-2ex]
+      T(1)
+      &=& \begin{mymatrix}{rr} 1 & 0 \\ 0 & -1 \end{mymatrix}
+      &=&
+      1\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix}
+      +0\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix}
+      +0\begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix}
+      -1\begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}.
+    \end{array}
+  \end{equation*}
+  Therefore, 
+  \begin{equation*}
+    \coord{T}_{C,B}
+    =
+    \begin{mymatrix}{rrrr}
+      1 & 0 &  0 &  1 \\
+      0 & 1 & -1 &  0 \\
+      0 & 1 &  1 &  0 \\
+      1 & 0 &  0 & -1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  
+  \noindent (b) Since the matrices $T(x^3)$, $T(x^2)$, $T(x)$, and $T(1)$
+  form a basis of $\Mat_{2,2}$, we can take $C'$ to consist of
+  these four matrices, i.e., 
+  \begin{equation*}
+    C' = \set{
+      \begin{mymatrix}{cc} 1 &  0 \\ 0 &  1 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 &  1 \\ 1 &  0 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 & -1 \\ 1 &  0 \end{mymatrix},
+      \begin{mymatrix}{cc} 1 &  0 \\ 0 & -1 \end{mymatrix}
+    }.
+  \end{equation*}
+  Then 
+  \begin{equation*}
+    \coord{T}_{C',B}
+    =
+    \begin{mymatrix}{rrrr}
+      1 & 0 &  0 &  0 \\
+      0 & 1 &  0 &  0 \\
+      0 & 0 &  1 &  0 \\
+      0 & 0 &  0 &  1 \\
+    \end{mymatrix}
+  \end{equation*}
+  is the identity matrix.
+\end{solution}
 
 % ----------------------------------------------------------------------
 \subsection{CONTINUE HERE...}
@@ -372,112 +469,3 @@ The next important theorem gives a condition on when $T$ is an isomorphism.
 
 Consider the following example.
 
-\begin{example}{}{}
-  Suppose $T:\Poly_3\to\Mat_{2,2}$ is a linear transformation
-  defined by
-  \begin{equation*}
-    T(ax^3+bx^2+cx+d)=
-    \begin{mymatrix}{cc} a+d & b-c \\ b+c & a-d \end{mymatrix}
-  \end{equation*}
-  for all $ax^3+bx^2+cx+d\in\Poly_3$. Let
-  $B_1=\set{x^3, x^2, x, 1}$ and
-  \begin{equation*}
-    B_2=\set{
-      \begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
-      \begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix},
-      \begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix},
-      \begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}}
-  \end{equation*}
-  be ordered bases of $\Poly_3$ and $\Mat_{2,2}$, respectively.
-  \begin{enumerate}
-  \item Find $M_{B_2B_1}(T)$.
-  \item Verify that $T$ is an isomorphism by proving that $M_{B_2B_1}(T)$
-    is invertible.
-  \item Find $M_{B_1B_2}(T^{-1})$, and verify that
-    $M_{B_1B_2}(T^{-1}) = \mat{M_{B_2B_1}(T)}^{-1}$.
-  \item Use $M_{B_1B_2}(T^{-1})$ to find $T^{-1}$.
-  \end{enumerate}
-\end{example}
-
-\begin{solution}
-  \begin{enumerate}
-  \item
-    \begin{eqnarray*}
-      M_{B_2B_1}(T)
-      & = &
-            \begin{mymatrix}{cccc} C_{B_2}[T(1)] & C_{B_2}[T(x)] & C_{B_2}[T(x^2)]
-              & C_{B_2}[T(x^3)] \end{mymatrix} \\
-      & = &
-            \begin{mymatrix}{cccc}
-              C_{B_2}\begin{mymatrix}{cc} 1 & 0 \\ 0 & 1 \end{mymatrix}
-              & C_{B_2}\begin{mymatrix}{cc} 0 & 1 \\ 1 & 0 \end{mymatrix}
-              & C_{B_2}\begin{mymatrix}{cc} 0 & -1 \\ 1 & 0 \end{mymatrix}
-              & C_{B_2}\begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix}
-            \end{mymatrix} \\
-      & = & \begin{mymatrix}{rrrr}
-        1 & 0 & 0 & 1 \\
-        0 & 1 & -1 & 0 \\
-        0 & 1 & 1 & 0 \\
-        1 & 0 & 0 & -1 \end{mymatrix}
-    \end{eqnarray*}
-
-  \item $\det(M_{B_2B_1}(T))=4$, so the matrix is invertible, and hence $T$
-    is an isomorphism.
-
-  \item
-    \begin{equation*}
-      T^{-1}\begin{mymatrix}{cc} 1 & 0 \\ 0 & 1 \end{mymatrix} = 1,
-      T^{-1}\begin{mymatrix}{cc} 0 & 1 \\ 1 & 0 \end{mymatrix}= x,
-      T^{-1}\begin{mymatrix}{cc} 0 & -1 \\ 1 & 0 \end{mymatrix}= x^2,
-      T^{-1}\begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix}=x^3,
-    \end{equation*}
-    so
-    \begin{equation*}
-      T^{-1}\begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix} = \frac{1+x^3}{2},
-      T^{-1}\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix}= \frac{x-x^2}{2},
-    \end{equation*}
-    \begin{equation*}
-      T^{-1}\begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix} = \frac{x+x^2}{2},
-      T^{-1}\begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix}= \frac{1-x^3}{2}.
-    \end{equation*}
-    Therefore,
-    \begin{equation*}
-      M_{B_1B_2}(T^{-1})=\frac{1}{2}\begin{mymatrix}{rrrr}
-        1 & 0 & 0 & 1 \\
-        0 & 1 & 1 & 0 \\
-        0 & -1 & 1 & 0 \\
-        1 & 0 & 0 & -1 \end{mymatrix}
-    \end{equation*}
-
-    You should verify that $M_{B_2B_1}(T) M_{B_1B_2}(T^{-1}) =
-    I_4$. From this it follows that
-    $[M_{B_2B_1}(T)]^{-1}= M_{B_1B_2}(T^{-1})$.
-
-  \item
-    \begin{eqnarray*}
-      C_{B_1}\paren{T^{-1}\begin{mymatrix}{cc} p & q \\ r & s \end{mymatrix}}
-      & = &
-            M_{B_1B_2}(T^{-1})
-            C_{B_2}\paren{\begin{mymatrix}{cc}
-                p & q \\ r & s \end{mymatrix}}\\
-      T^{-1}\begin{mymatrix}{cc}
-        p & q \\ r & s \end{mymatrix} & = &
-                                            C_{B_1}^{-1}\paren{M_{B_1B_2}(T^{-1})
-                                            C_{B_2}\paren{\begin{mymatrix}{cc}
-                                                p & q \\ r & s \end{mymatrix}}}\\
-            & = &
-                  C_{B_1}^{-1}\paren{
-                  \frac{1}{2}\begin{mymatrix}{rrrr}
-                    1 & 0 & 0 & 1 \\
-                    0 & 1 & 1 & 0 \\
-                    0 & -1 & 1 & 0 \\
-                    1 & 0 & 0 & -1 \end{mymatrix}
-                                \begin{mymatrix}{c} p \\ q\\ r\\ s\end{mymatrix}} \\
-            & =&
-                 C_{B_1}^{-1}\paren{\frac{1}{2}\begin{mymatrix}{c}
-                     p+s \\ q+r \\ r-q \\ p-s \end{mymatrix}} \\
-            & = & \frac{1}{2}(p+s)x^3 +\frac{1}{2}(q+r)x^2 +\frac{1}{2}(r-q)x
-                  + \frac{1}{2}(p-s).
-    \end{eqnarray*}
-  \end{enumerate}
-\end{solution}
