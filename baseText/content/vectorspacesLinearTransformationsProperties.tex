@@ -71,33 +71,92 @@ as well as the zero transformation.
     \end{array}
   \end{equation*}
   Therefore, $T+S$ preserves addition. Also, for $\vect{v}\in V$ and
-  $a\in K$, we have
+  $\ell\in K$, we have
   \begin{equation*}
     \begin{array}{r@{~}c@{~}ll}
-      (T+S)(a\vect{v})
-      &=& T(a\vect{v}) + S(a\vect{v})
+      (T+S)(\ell\vect{v})
+      &=& T(\ell\vect{v}) + S(\ell\vect{v})
       & \mbox{by definition of $T+S$} \\
-      &=& aT(\vect{v}) + aS(\vect{v})
+      &=& \ell T(\vect{v}) + \ell S(\vect{v})
       & \mbox{by linearity of $T$ and $S$} \\
-      &=& a(T(\vect{v}) + S(\vect{v}))
+      &=& \ell(T(\vect{v}) + S(\vect{v}))
       & \mbox{by the distributive law over vector addition} \\
-      &=& a((T+S)(\vect{v}))
+      &=& \ell((T+S)(\vect{v}))
       & \mbox{by definition of $T+S$.}
     \end{array}
   \end{equation*}
-  Therefore, $T+S$ preserves scalar multiplication. 
-  The proof of the linearity of $kT$ is left as an exercise.
+  Therefore, $T+S$ preserves scalar multiplication, and hence $T+S$ is
+  a linear transformation. The proof that $kT$ is a linear
+  transformation is left as an exercise.
 \end{proof}
 
+There operations satisfy the following properties:
 
+\begin{proposition}{Properties of addition and scalar multiplication of linear transformations}{properties-addition-linear-transformation}
+  Let $V,W$ be vector spaces over a field $K$, let $T,S,R:V\to W$
+  be linear transformations, and let $k,\ell\in K$ be scalars. Then
+  the following hold:%
+  \index{properties of addition!linear transformations}%
+  \index{linear transformations!properties of addition}%
+  \index{linear transformations!addition!properties}%
+  \index{properties of scalar multiplication!linear transformations}%
+  \index{linear transformations!properties of scalar multiplication}%
+  \index{linear transformations!scalar multiplication!properties}
+  \begin{itemize}\setlength\itemsep{0em}
+  \item Commutative law of addition:
+    $T+S = S+T$.
+  \item Associative law of addition:
+    $(T+S)+R = T+(S+R)$.
+  \item The existence of an additive unit: there exists an element $\vect{0}\in
+    V$ such that for all $T$,
+    $T + 0 = T$.
+  \item The law of additive inverses:
+    $T + (-T) = 0$.
+  \item The distributive law over vector addition:
+    $k(T + S) = kT + kS$.
+  \item The distributive law over scalar addition:
+    $(k + \ell) T = k T + \ell T$.
+  \item The associative law for scalar multiplication:
+    $k(\ell T) = (k \ell)T$.
+  \item The rule for multiplication by one:
+    $1T=T$.
+  \end{itemize}
+\end{proposition}
 
-% ----------------------------------------------------------------------
-\subsection{CONTINUE HERE...}
+But these 8 properties are just the vector space laws (A1)--(A4) and
+(SM1)--(SM4)! Therefore, the set of linear transformations from $V$ to
+$W$, with the above operations of addition and scalar multiplication,
+forms a vector space.
 
-\begin{definition}{Special linear transformations}{special-linear-transformations}
-  Let $V$ and $W$ be vector spaces over a field $K$.
+\begin{definition}
+  Let $V,W$ be vector spaces over a field $K$. We define $\Lin_{V,W}$%
+  \index{vector space!of linear transformations}%
+  \index{LinVW@$\Lin_{V,W}$} to be the vector space of all linear
+  transformations from $V$ to $W$, with the above operations of
+  addition and scalar multiplication.
+\end{definition}
+
+Another important operation is the composition of linear
+transformations. We have already encountered this in
+Definition~\ref{def:composite-transformations} for the case of
+$\R^n$. Here, we generalize it to linear transformations of arbitrary
+vector spaces.  We also consider the identity transformation on a
+vector space, which forms the unit for composition.
+
+\begin{definition}{Composition of linear transformations}{composition-linear-transformation}
+  Let $V,U,W$ be vector spaces over a field $K$, and let $S:V\to U$
+  and $T:U\to W$ be linear transformations.
   \begin{enumialphparenastyle}
     \begin{enumerate}
+    \item The
+      \textbf{composition}%
+      \index{linear transformation!composition}%
+      \index{composition of linear transformations} $T\circ S:V\to W$ is
+      the linear transformation defined by
+      \begin{equation*}
+        (T\circ S) (\vect{v}) = T(S(\vect{v}))
+      \end{equation*}
+      for all $\vect{v}\in V$.
     \item The \textbf{identity transformation}%
       \index{identity transformation}%
       \index{linear transformation!identity transformation}
@@ -108,7 +167,73 @@ as well as the zero transformation.
   \end{enumialphparenastyle}
 \end{definition}
 
+Composition of linear transformations satisfies the following properties:
 
+\begin{proposition}{Properties of composition of linear transformations}{properties-composition}
+  Composition of linear transformations satisfies the following
+  properties, for all $R,S,T$ as appropriate for each law:%
+  \index{properties of composition!linear transformations}%
+  \index{linear transformations!properties of composition}%
+  \index{linear transformations!composition!properties}%
+  \begin{itemize}\setlength\itemsep{0em}
+  \item Associative law of composition: 
+    $(T\circ S)\circ R = T\circ (S\circ R)$.
+  \item Unit laws of composition: $T\circ 1_V = T$ and $1_W\circ T = T$, where
+    $T:V\to W$.
+  \item Distributive laws: $(T+S)\circ R = T\circ R + S\circ R$ and
+    $P\circ (T+S) = P\circ T + P\circ S$.
+  \item Zero laws: $0\circ R = 0$ and $R\circ 0 = 0$.
+  \item Compatibility with scalar multiplication:
+    $(kT)\circ S = k(T\circ S) = T\circ (kS)$, where $k\in K$.
+  \end{itemize}
+\end{proposition}
+
+Finally, we consider the notion of the inverse of a linear
+transformation.
+
+\begin{definition}{Inverse of a linear transformation}{inverse-linear-transformation}
+  Let $V,U$ be vector spaces over a field $K$, and let $S:V\to U$ and
+  $T:U\to V$ be linear transformations.  We say that $S$ and $T$ are
+  \textbf{inverses}%
+  \index{inverse!of a linear transformation}%
+  \index{linear transformation!inverse} if
+  \begin{equation*}
+    T\circ S = 1_V
+    \quad\mbox{and}\quad
+    S\circ T = 1_U.
+  \end{equation*}
+  In this case, we also write $S=T^{-1}$ and $T=S^{-1}$.  
+\end{definition}
+
+\begin{proposition}{Uniqueness of inverses}{uniqueness-inverses-linear-transformation}
+  Inverses are unique. In other words, if $S$ and $S'$ are two inverses
+  of $T$, then $S=S'$.
+\end{proposition}
+
+\begin{proof}
+  Suppose both $S$ and $S'$ are inverses of $T$. Consider
+  $S\circ T\circ S'$. Since $S$ and $T$ are inverses, this is equal to
+  $S'$, but since $T$ and $S'$ are inverses, it is also equal to
+  $S$. Therefore, $S=S'$.
+\end{proof}
+
+\begin{proposition}{Properties of inverses of linear transformations}{properties-inverse-linear-transformation}
+  \begin{itemize}
+  \item If $S:V\to U$ and $T:U\to W$ are both invertible, then so is
+    $T\circ S$, and we have
+    \begin{equation*}
+      (T\circ S)^{-1} = S^{-1}\circ T^{-1}.
+    \end{equation*}
+  \item $1^{-1} = 1$.
+  \item If $S:V\to U$ is invertible and $k$ is a non-zero scalar, then
+    \begin{equation*}
+      (kT)^{-1} = k^{-1}T^{-1}.
+    \end{equation*}
+  \end{itemize}
+\end{proposition}
+
+% ----------------------------------------------------------------------
+\subsection{CONTINUE HERE...}
 
 $T(v) = S(v)$: subspace
 
