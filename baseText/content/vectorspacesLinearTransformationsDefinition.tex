@@ -1,4 +1,4 @@
-\section{Linear transformations}
+\section{Definition and examples}
 
 \begin{outcome}
   \begin{enumerate}
@@ -7,19 +7,116 @@
   \end{enumerate}
 \end{outcome}
 
-Recall that a function is simply a transformation of a vector to
-result in a new vector. Consider the following definition.
+In Chapter~\ref{cha:linear-transformation}, we defined a linear
+transformation $T:\R^n\to\R^m$ to be a function that preserves
+addition and scalar multiplication. We now revisit this concept in the
+more general setting of vector spaces $V$ and $W$.
 
-\begin{definition}{Linear transformation}{linear-transformation}
-  Let $V$ and $W$ be vector spaces. Suppose $T: V \to W$ is a
-  function, where for each $\vect{x} \in V ,T(\vect{x})\in W$. Then
-  $T$ is a \textbf{linear transformation}\index{linear transformation}
-  if whenever $k ,p $ are scalars and $\vect{v}_1$ and $\vect{v}_2$
-  are vectors in $V$
-  \begin{equation*}
-    T(k \vect{v}_1 + p \vect{v}_2) = kT(\vect{v}_1)+ pT(\vect{v}_{2})
-  \end{equation*}
+\begin{definition}{Linear transformation}{linear-transformation-vector-space}
+  Let $V$ and $W$ be vector spaces over some field $K$. A function
+  $T: V \to W$ is called \textbf{linear} or a \textbf{linear
+    transformation}%
+  \index{linear transformation!on vector spaces} if it satisfies the
+  following two conditions:
+  \begin{enumerate}
+  \item $T$ preserves addition, i.e., for all\/
+    $\vect{v},\vect{w}\in V$, we have
+    $T(\vect{v}+\vect{w}) = T(\vect{v}) + T(\vect{w})$;
+  \item $T$ preserves scalar multiplication, i.e, for all\/
+    $\vect{v}\in V$ and $k\in K$, we have
+    $T(k\vect{v}) = kT(\vect{v})$.
+  \end{enumerate}
 \end{definition}
+
+Our first example of a linear transformation is a matrix
+transformation. We have already seen this in
+Section~\ref{sec:matrix-of-transformation}.
+
+\begin{example}{Matrix transformation}{matrix-transformation}
+  Let $A$ be an $m\times n$-matrix. Then the function $T:\R^m\to\R^n$
+  defined by $T(\vect{v})=A\vect{v}$ is a linear transformation,
+  called a \textbf{matrix transformation}%
+  \index{matrix transformation}. This was proved in
+  Proposition~\ref{prop:matrix-are-linear}.
+\end{example}
+
+There are many interesting examples of linear transformations on
+vector spaces other than $\R^n$. We will consider a few such examples.
+
+\begin{example}{Derivative operator}{derivative-operator}
+  Let $\Poly_3$ be the vector space of real polynomials of degree at
+  most $3$. Show that the function $D:\Poly_3\to\Poly_2$ defined by
+  \begin{equation*}
+    D(p(x)) = p'(x),
+  \end{equation*}
+  is a linear transformation. Here, $p'(x)$ denotes the derivative of
+  the polynomial $p(x)$. The function $D$ is called the
+  \textbf{derivative operator}.
+\end{example}
+
+\begin{solution}
+  First, we note that if $p(x)$ is a polynomial of degree at most $3$,
+  then its derivative $p'(x)$ is a polynomial of degree at most
+  $2$. Therefore, the derivative operator $D$ is a well-defined
+  function from $\Poly_3$ to $\Poly_2$. To show that it preserves
+  addition, consider any two polynomials $p(x),q(x)\in\Poly_3$. From
+  calculus, we know that the derivative of $p(x)+q(x)$ is
+  $p'(x)+q'(x)$. Therefore,
+  \begin{equation*}
+    D(p(x)+q(x)) ~=~ (p(x)+q(x))' ~=~ p'(x)+q'(x) ~=~ D(p(x)) + D(q(x)),
+  \end{equation*}
+  and so $D$ preserves addition. To show that it preserves scalar
+  multiplication, consider $p(x)\in\Poly_3$ and $k\in\R$. From
+  calculus, we know that the derivative of $kp(x)$ is $kp'(x)$, and
+  therefore
+  \begin{equation*}
+    D(kp(x)) ~=~ (kp(x))' ~=~ kp'(x) ~=~ kD(p(x)).
+  \end{equation*}
+  Hence, $D$ preserves scalar multiplication. It follows that $D$ is a
+  linear transformation.
+\end{solution}
+
+It is important to understand that we are not claiming that the
+derivative $p'(x)$ of a polynomial $p(x)$ is a linear function. It is
+of course a polynomial. Rather, what the above example shows is that
+the act of {\em taking} the derivative is a linear operation, i.e.,
+the derivative of a sum is the sum of the derivatives, and the
+derivative of a constant times a function is a constant times the
+derivative.
+
+\begin{example}{Derivative operator examples}{derivative-operator-examples}
+  Compute $D(x^3)$, $D(2x^2+x)$, and $D(ax^3+bx^2+cx+d)$.
+\end{example}
+
+\begin{solution}
+  In each case, we simply take the derivative:
+  \begin{eqnarray*}
+    D(x^3) &=& 3x^2, \\
+    D(2x^2+x) &=& 4x+1, \\
+    D(ax^3+bx^2+cx+d) &=& 3ax^2 + 2bx + c.
+  \end{eqnarray*}
+\end{solution}
+
+\begin{example}{The shift and unshift operators}{shift-unshift}
+  Consider the vector space $\Seq_K$ of infinite sequences of elements
+  of $K$. The function $\shift:\Seq_K\to\Seq_K$ is defined by shifting
+  the entire sequence to the left and dropping the first element:
+  \begin{equation*}
+    \shift(a_0,a_1,a_2,a_3,\ldots) = (a_1,a_2,a_3,a_4,\ldots).
+  \end{equation*}
+  The function $\unshift:\Seq_K\to\Seq_K$ is defined by shifting the
+  entire sequence to the right and adding $0$ as the new first
+  element:
+  \begin{equation*}
+    \unshift(a_0,a_1,a_2,a_3,\ldots) = (0,a_0,a_1,a_2,\ldots).
+  \end{equation*}
+
+
+\end{example}
+
+
+% ----------------------------------------------------------------------
+% CONTINUE HERE...
 
 Several important examples of linear transformations include the zero
 transformation, the identity transformation, and the scalar
