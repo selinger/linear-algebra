@@ -412,114 +412,119 @@ vector space axioms.
 
 \begin{proposition}{Elementary consequences of the vector space axioms}{vector-space-elementary}
   In any vector space, the following are true:
-  \begin{enumerate}
-  \item The additive unit is unique. In other words, whenever
-    $\vect{u}+\vect{v}=\vect{u}$, then $\vect{v}=\vect{0}$.
-  \item Additive inverses are unique. In other words, whenever
-    $\vect{u}+\vect{v}=\vect{0}$, then $\vect{v}=-\vect{u}$. 
-  \item $0\vect{u}=\vect{0}$ for all vectors $\vect{u}$.
-  \item The following \textbf{cancellation law}%
-    \index{cancellation law!of addition}%
-    \index{vector!cancellation law}
-    holds: if $\vect{u} + \vect{w} = \vect{v} + \vect{w}$, then
-    $\vect{u} = \vect{v}$.
-  \end{enumerate}
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item The additive unit is unique. In other words, whenever
+      $\vect{u}+\vect{v}=\vect{u}$, then $\vect{v}=\vect{0}$.
+    \item Additive inverses are unique. In other words, whenever
+      $\vect{u}+\vect{v}=\vect{0}$, then $\vect{v}=-\vect{u}$. 
+    \item\label{vector-space-elementary-c} $0\vect{u}=\vect{0}$ for
+      all vectors $\vect{u}$.
+    \item The following \textbf{cancellation law}%
+      \index{cancellation law!of addition}%
+      \index{vector!cancellation law}
+      holds: if $\vect{u} + \vect{w} = \vect{v} + \vect{w}$, then
+      $\vect{u} = \vect{v}$.
+    \end{enumerate}
+  \end{enumialphparenastyle}
 \end{proposition}
 
 \begin{proof}
   We prove the first three properties, and leave the last one as an
   exercise. Assume $V$ is any vector space over a field $K$.
-  \begin{enumerate}
-  \item Consider arbitrary vectors $\vect{u},\vect{v}\in V$ and assume
-    \begin{equation*}
-      \vect{u}+\vect{v}=\vect{u}.
-    \end{equation*}
-    Applying the law (A1) (commutative law) to the left-hand side, we have
-    \begin{equation*}
-      \vect{v}+\vect{u}=\vect{u}.
-    \end{equation*}
-    Adding $-\vect{u}$ to both sides of the equation, we have
-    \begin{equation*}
-      (\vect{v}+\vect{u})+(-\vect{u}) = \vect{u}+(-\vect{u}).
-    \end{equation*}
-    Applying the law (A2) (associative law) to the left-hand side, we
-    have
-    \begin{equation*}
-      \vect{v}+(\vect{u}+(-\vect{u})) = \vect{u}+(-\vect{u}).
-    \end{equation*}
-    Applying the law (A4) (additive inverse law) to both sides of the
-    equation, we have
-    \begin{equation*}
-      \vect{v}+\vect{0} = \vect{0}.
-    \end{equation*}
-    Applying the law (A3) (additive unit law) to the left-hand side,
-    we have
-    \begin{equation*}
-      \vect{v} = \vect{0}.
-    \end{equation*}
-    This proves that whenever $\vect{u}+\vect{v}=\vect{u}$, then
-    $\vect{v} = \vect{0}$, or in other words, $\vect{v} = \vect{0}$ is
-    the only element acting as an additive unit.
-    
-  \item Consider arbitrary vectors $\vect{u},\vect{v}\in V$ and assume
-    \begin{equation*}
-      \vect{u}+\vect{v}=\vect{0}.
-    \end{equation*}
-    Applying the law (A1) (commutative law) to the left-hand side, we
-    have
-    \begin{equation*}
-      \vect{v}+\vect{u}=\vect{0}.
-    \end{equation*}
-    Adding $-\vect{u}$ to both sides of the equation, we have
-    \begin{equation*}
-      (\vect{v}+\vect{u})+(-\vect{u}) = \vect{0}+(-\vect{u}).
-    \end{equation*}
-    Applying the law (A2) (associative law) to the left-hand side, we
-    have
-    \begin{equation*}
-      \vect{v}+(\vect{u}+(-\vect{u})) = \vect{0}+(-\vect{u}).
-    \end{equation*}
-    Applying the law (A4) (additive inverse law) to the left-hand
-    side, we have
-    \begin{equation*}
-      \vect{v}+\vect{0} = \vect{0}+(-\vect{u}).
-    \end{equation*}
-    Applying the law (A1) (commutative law) to the right-hand side, we
-    have
-    \begin{equation*}
-      \vect{v}+\vect{0} = -\vect{u} + \vect{0}.
-    \end{equation*}
-    Applying the law (A3) (additive unit law) to both sides of the
-    equation, we have
-    \begin{equation*}
-      \vect{v} = -\vect{u}.
-    \end{equation*}
-    This proves that whenever $\vect{u}+\vect{v}=\vect{0}$, then
-    $\vect{v} = -\vect{u}$, or in other words, $\vect{v} = -\vect{u}$
-    is the only element acting as an additive inverse of $\vect{u}$.
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item Consider arbitrary vectors $\vect{u},\vect{v}\in V$ and assume
+      \begin{equation*}
+        \vect{u}+\vect{v}=\vect{u}.
+      \end{equation*}
+      Applying the law (A1) (commutative law) to the left-hand side, we have
+      \begin{equation*}
+        \vect{v}+\vect{u}=\vect{u}.
+      \end{equation*}
+      Adding $-\vect{u}$ to both sides of the equation, we have
+      \begin{equation*}
+        (\vect{v}+\vect{u})+(-\vect{u}) = \vect{u}+(-\vect{u}).
+      \end{equation*}
+      Applying the law (A2) (associative law) to the left-hand side, we
+      have
+      \begin{equation*}
+        \vect{v}+(\vect{u}+(-\vect{u})) = \vect{u}+(-\vect{u}).
+      \end{equation*}
+      Applying the law (A4) (additive inverse law) to both sides of the
+      equation, we have
+      \begin{equation*}
+        \vect{v}+\vect{0} = \vect{0}.
+      \end{equation*}
+      Applying the law (A3) (additive unit law) to the left-hand side,
+      we have
+      \begin{equation*}
+        \vect{v} = \vect{0}.
+      \end{equation*}
+      This proves that whenever $\vect{u}+\vect{v}=\vect{u}$, then
+      $\vect{v} = \vect{0}$, or in other words, $\vect{v} = \vect{0}$ is
+      the only element acting as an additive unit.
+      
+    \item Consider arbitrary vectors $\vect{u},\vect{v}\in V$ and assume
+      \begin{equation*}
+        \vect{u}+\vect{v}=\vect{0}.
+      \end{equation*}
+      Applying the law (A1) (commutative law) to the left-hand side, we
+      have
+      \begin{equation*}
+        \vect{v}+\vect{u}=\vect{0}.
+      \end{equation*}
+      Adding $-\vect{u}$ to both sides of the equation, we have
+      \begin{equation*}
+        (\vect{v}+\vect{u})+(-\vect{u}) = \vect{0}+(-\vect{u}).
+      \end{equation*}
+      Applying the law (A2) (associative law) to the left-hand side, we
+      have
+      \begin{equation*}
+        \vect{v}+(\vect{u}+(-\vect{u})) = \vect{0}+(-\vect{u}).
+      \end{equation*}
+      Applying the law (A4) (additive inverse law) to the left-hand
+      side, we have
+      \begin{equation*}
+        \vect{v}+\vect{0} = \vect{0}+(-\vect{u}).
+      \end{equation*}
+      Applying the law (A1) (commutative law) to the right-hand side, we
+      have
+      \begin{equation*}
+        \vect{v}+\vect{0} = -\vect{u} + \vect{0}.
+      \end{equation*}
+      Applying the law (A3) (additive unit law) to both sides of the
+      equation, we have
+      \begin{equation*}
+        \vect{v} = -\vect{u}.
+      \end{equation*}
+      This proves that whenever $\vect{u}+\vect{v}=\vect{0}$, then
+      $\vect{v} = -\vect{u}$, or in other words, $\vect{v} = -\vect{u}$
+      is the only element acting as an additive inverse of $\vect{u}$.
 
-  \item First, note that the scalar $0\in K$ satisfies the property
-    $0+0=0$, by property (A3) of the definition of a field. Now let
-    $\vect{u}\in V$ be any vector. Using the vector space law (SM2)
-    (distributive law over scalar addition) and $0+0=0$, we have
-    \begin{equation*}
-      0\vect{u}+0\vect{u} = (0+0) \vect{u} = 0\vect{u}.
-    \end{equation*}
-    Next, we use a small trick: add $-(0\vect{u})$ to both sides of
-    the equation. This gives
-    \begin{eqnarray*}
-      (0\vect{u}+0\vect{u})+(-(0\vect{u})) &=& 0\vect{u} + (-(0\vect{u})).
-    \end{eqnarray*}
-    Applying the additional laws (A2), (A4), and (A3), we have
-    \begin{eqnarray*}
-      0\vect{u}+(0\vect{u}+(-(0\vect{u}))) &=& 0\vect{u} + (-(0\vect{u})), \\
-      0\vect{u} + \vect{0} &=& \vect{0}, \\
-      0\vect{u} &=& \vect{0}.
-    \end{eqnarray*}
-    This proves that $0\vect{u} = \vect{0}$ holds for all vectors
-    $\vect{u}$, as desired.
+    \item First, note that the scalar $0\in K$ satisfies the property
+      $0+0=0$, by property (A3) of the definition of a field. Now let
+      $\vect{u}\in V$ be any vector. Using the vector space law (SM2)
+      (distributive law over scalar addition) and $0+0=0$, we have
+      \begin{equation*}
+        0\vect{u}+0\vect{u} = (0+0) \vect{u} = 0\vect{u}.
+      \end{equation*}
+      Next, we use a small trick: add $-(0\vect{u})$ to both sides of
+      the equation. This gives
+      \begin{eqnarray*}
+        (0\vect{u}+0\vect{u})+(-(0\vect{u})) &=& 0\vect{u} + (-(0\vect{u})).
+      \end{eqnarray*}
+      Applying the additional laws (A2), (A4), and (A3), we have
+      \begin{eqnarray*}
+        0\vect{u}+(0\vect{u}+(-(0\vect{u}))) &=& 0\vect{u} + (-(0\vect{u})), \\
+        0\vect{u} + \vect{0} &=& \vect{0}, \\
+        0\vect{u} &=& \vect{0}.
+      \end{eqnarray*}
+      This proves that $0\vect{u} = \vect{0}$ holds for all vectors
+      $\vect{u}$, as desired.
 
-  \item This is left as an exercise.
-  \end{enumerate}
+    \item This is left as an exercise.
+    \end{enumerate}
+  \end{enumialphparenastyle}
 \end{proof}
 
