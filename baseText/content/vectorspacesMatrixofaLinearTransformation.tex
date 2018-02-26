@@ -428,44 +428,23 @@ matrices that are diagonal.
   is the identity matrix.
 \end{solution}
 
-% ----------------------------------------------------------------------
-\subsection{CONTINUE HERE...}
+We end this section with some properties of matrices of linear
+transformations.
 
-Properties: Matrix of composition, identity, inverse. Matrix of
-addition, scalar multiplication.
-
-
-% ----------------------------------------------------------------------
-
-We can also find the matrix of the composite of multiple transformations.
-
-\begin{theorem}{Matrix of composition}{matrix-composition}
-  Let $V,W$ and $U$ be finite-dimensional vector spaces, and suppose
-  $T : V \to W$, $S: W \to U$ are linear transformations.  Suppose
-  $V, W$ and $U$ have ordered bases of $B_1$, $B_2$ and $B_3$
-  respectively.  Then the matrix of the composite transformation
-  $S \circ T$ (or $ST$) is given by
-  \begin{equation*}
-    M_{B_3B_1}(ST)=M_{B_3B_2}(S) M_{B_2B_1}(T).
-  \end{equation*}
-\end{theorem}
-
-The next important theorem gives a condition on when $T$ is an isomorphism.
-
-\begin{theorem}{Isomorphism}{isomorphism}
-  Let $V$ and $W$ be vector spaces such that both have dimension $n$
-  and let $T: V \to W$ be a linear transformation. Suppose $B_1$ is an
-  ordered basis of $V$ and $B_2$ is an ordered basis of $W$.
-
-  Then the conditions that $M_{B_2B_1}(T)$ is invertible for
-  \textbf{all} $B_1$ and $B_2$, and that $M_{B_2B_1}(T)$ is invertible
-  for \textbf{some} $B_1$ and $B_2$ are equivalent. In fact, these
-  occur if and only if $T$ is an isomorphism.
-
-  If $T$ is an isomorphism, the matrix $M_{B_2B_1}(T)$ is invertible
-  and its inverse is given by
-  $\mat{M_{B_2B_1}(T) } ^{-1} = M_{B_1B_2}(T^{-1})$.
-\end{theorem}
-
-Consider the following example.
-
+\begin{proposition}{Properties of matrices of linear transformations.}{matrix-of-linear-transformation-properties}
+  Let $V$, $W$, and $U$ be finite-dimensional vector spaces with
+  respective bases $B$, $C$, and $D$. Suppose $T,T':V\to W$ and
+  $S:W\to U$ are linear transformations. The following hold:
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item $\coord{S\circ T}_{D,B} = \coord{S}_{D,C}\coord{T}_{C,B}$.      
+    \item $\coord{1_V}_{B,B} = I$.
+    \item $T$ is invertible if and only if $\coord{T}_{C,B}$ is
+      invertible, and in that case,
+      $\coord{T^{-1}}_{B,C} = (\coord{T}_{C,B})^{-1}$.
+    \item $\coord{0}_{C,B} = 0$.
+    \item $\coord{T+T'}_{C,B} = \coord{T}_{C,B} + \coord{T'}_{C,B}$.
+    \item $\coord{kT}_{C,B} = k\coord{T}_{C,B}$.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{proposition}
