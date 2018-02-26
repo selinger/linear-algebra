@@ -1,0 +1,153 @@
+\section{Linear transformations defined on a basis}
+
+\begin{outcome}
+  \begin{enumerate}
+  \item 
+  \end{enumerate}
+\end{outcome}
+
+Recall that, by definition, two linear transformations $S,T:V\to W$
+are equal if and only if for all $\vect{v}\in V$, we have
+$S(\vect{v}) = T(\vect{v})$.  However, this is not a very practical
+way of checking whether $S=T$, as it theoretically requires checking
+$S(\vect{v}) = T(\vect{v})$ for each one of infinitely many vectors
+$\vect{v}$. The following proposition states that it is sufficient to
+check the actions of $S$ and $T$ on a spanning set of vectors.
+
+\begin{proposition}{Equality of linear transformations}{transformation-spanning-set}
+  Let $V$ and $W$ be vector spaces over a field $K$, and let
+  $S,T:V\to W$ be linear transformations. Moreover, let $X\subseteq V$
+  be a spanning set of $V$, i.e., such that $V=\sspan X$.
+  If $S(\vect{v}) = T(\vect{v})$ for all $v\in X$, then $S=T$.%
+  \index{linear transformation!equality of}%
+  \index{equality!of linear transformations}
+\end{proposition}
+
+\begin{proof}
+  Assume that $S(\vect{v}) = T(\vect{v})$ holds for all $v\in X$. To
+  show that $S=T$, let $\vect{u}\in V$ be an arbitrary vector. Since
+  $X$ is a spanning set, we can write
+  $\vect{u}=a_1\vect{v}_1+\ldots+a_n\vect{v}_n$, for some
+  $\vect{v}_1,\ldots,\vect{v}_n\in X$ and $a_1,\ldots,a_n\in K$.
+  By assumption, $S(\vect{v}_i) = T(\vect{v}_i)$ for all $i$, because
+  $\vect{v}_i\in X$. Then we have
+  \begin{eqnarray*}
+    S(\vect{u})
+    &=& S(a_1\vect{v}_1+\ldots+a_n\vect{v}_n \\
+    &=& a_1S(\vect{v}_1)+\ldots+a_nS(\vect{v}_n) \\
+    &=& a_1T(\vect{v}_1)+\ldots+a_nT(\vect{v}_n) \\
+    &=& T(a_1\vect{v}_1+\ldots+a_n\vect{v}_n \\
+    &=& T(\vect{u}).
+  \end{eqnarray*}
+  Since $\vect{u}\in V$ was arbitrary, it follows that $S=T$.
+\end{proof}
+
+Therefore, if we know how a linear transformation acts on a spanning
+set (and in particular, on a basis), then we know how it acts on the
+entire space. There is also a kind of converse to this: given a basis
+of $V$, we can map the basis vectors to any elements of $W$ we like,
+and this will always determine a unique linear transformations. This
+is the content of the following theorem.
+
+\begin{theorem}{Linear transformation defined on a basis}{transformation-basis}
+  Suppose $V$ and $W$ are vector spaces over a field $K$. Suppose
+  $\vect{v}_1,\vect{v}_2,\ldots,\vect{v}_n$ is a basis of $V$, and
+  $\vect{w}_1,\vect{w}_2,\ldots,\vect{w}_n$ are any vectors in $W$
+  (which may or may not be distinct). Then there exists a unique
+  linear transformation%
+  \index{linear transformation!defined on a basis}
+  $T:V\to W$ such that
+  \begin{equation*}
+    T(\vect{v}_1) = \vect{w}_1,
+    \quad
+    T(\vect{v}_2) = \vect{w}_2,
+    \quad\ldots\quad
+    T(\vect{v}_n) = \vect{w}_n.
+  \end{equation*}
+\end{theorem}
+
+\begin{proof}
+  To show that such a linear transformation $T$ exists, we first
+  define a function $T:V\to W$ as follows. Given any $\vect{v}\in V$,
+  there exists a unique set of coordinates $a_1,\ldots,a_n\in K$ such
+  that
+  \begin{equation*}
+    \vect{v} = a_1\vect{v}_1 + \ldots + a_n\vect{v}_n.
+  \end{equation*}
+  Then define
+  \begin{equation*}
+    T(\vect{v}) = a_1\vect{w}_1 + \ldots + a_n\vect{w}_n.
+  \end{equation*}
+  This defines a function $T:V\to W$.  Next, we must check that $T$ is
+  linear. To show that $T$ preserves addition, consider
+  $\vect{v},\vect{v}'\in V$, with
+  $\vect{v} = a_1\vect{v}_1 + \ldots + a_n\vect{v}_n$ and
+  $\vect{v}' = b_1\vect{v}_1 + \ldots + b_n\vect{v}_n$.  Then
+  \begin{eqnarray*}
+    T(\vect{v}+\vect{v}')
+    &=& T((a_1+b_1)\vect{v}_1 + \ldots + (a_n+b_n)\vect{v}_n) \\
+    &=& (a_1+b_1)\vect{w}_1 + \ldots + (a_n+b_n)\vect{w}_n \\
+    &=& (a_1\vect{w}_1 + \ldots + a_n\vect{w}_n)
+        + (b_1\vect{w}_1 + \ldots + b_n\vect{w}_n) \\
+    &=& T(\vect{v}) + T(\vect{v}').
+  \end{eqnarray*}
+  Therefore, $T$ preserves addition. To show that $T$ preserves scalar
+  multiplication, consider $\vect{v} = a_1\vect{v}_1 + \ldots +
+  a_n\vect{v}_n$ and $k\in K$. Then
+  \begin{eqnarray*}
+    T(k\vect{v})
+    &=& T(ka_1\vect{v}_1 + \ldots + ka_n\vect{v}_n) \\
+    &=& ka_1\vect{w}_1 + \ldots + ka_n\vect{w}_n \\
+    &=& k(a_1\vect{w}_1 + \ldots + a_n\vect{w}_n) \\
+    &=& kT(\vect{v}).
+  \end{eqnarray*}
+  Therefore, $T$ preserves scalar multiplication. It follows that $T$
+  is linear. Next, we must show that $T$ satisfies the condition of
+  the theorem, i.e., that $T(\vect{v}_i) = \vect{w}_i$ for each $i$.
+  But this is clearly the case, because in this case, $a_i=1$ and
+  $a_j=0$ for all $j\neq i$. We have shown that there exists a linear
+  function $T$ satisfying all of the conditions required by the
+  theorem.
+
+  Finally, the only thing left to show is uniqueness. But this follows
+  from Proposition~\ref{prop:transformation-spanning-set}. Namely, if
+  $T'$ is another linear transformation such that
+  $T'(\vect{v}_i) = \vect{w}_i$ for all $i$, then $T$ and $T'$ agree
+  on $\vect{v}_1,\ldots,\vect{v}_n$, which is a basis and hence a
+  spanning set. By Proposition~\ref{prop:transformation-spanning-set},
+  $T=T'$.
+\end{proof}
+
+\begin{example}{Linear transformation defined on a basis}{transformation-basis}
+  Recall that $\set{x^2, (x+1)^2, (x+2)^2}$ is a basis of $\Poly_2$.
+  Consider the linear function $T:\Poly_2\to\Mat_{22}$ defined by
+  \begin{equation*}
+    T(x^2) = \begin{mymatrix}{rr} 1 & 1 \\ 0 & 0 \end{mymatrix},\quad
+    T((x+1)^2) = \begin{mymatrix}{rr} 0 & 1 \\ 0 & 1 \end{mymatrix},\quad
+    T((x+2)^2) = \begin{mymatrix}{rr} 0 & 0 \\ 1 & 1 \end{mymatrix}.
+  \end{equation*}
+  Find $T(4x)$.
+\end{example}
+
+\begin{solution}
+  Let $\vect{v}_1=x^2$, $\vect{v}_2=(x+1)^2$, $\vect{v}_3=(x+2)^2$,
+  $\vect{w}_1 = \begin{mysmallmatrix}{rr} 1 & 1 \\ 0 & 0 \end{mysmallmatrix}$,
+  $\vect{w}_2 = \begin{mysmallmatrix}{rr} 0 & 1 \\ 0 & 1 \end{mysmallmatrix}$,
+  and
+  $\vect{w}_3 = \begin{mysmallmatrix}{rr} 0 & 0 \\ 1 & 1 \end{mysmallmatrix}$.
+  We must first find $a,b,c$ such that
+  $4x=a\vect{v}_1+b\vect{v}_2+c\vect{v}_3$. We do this by solving a
+  system of equations, using the same method as in
+  Example~\ref{exa:linear-combination-polynomials}. We find that
+  $a=-3$, $b=4$, and $c=-1$.  Therefore
+  \begin{equation*}
+    T(x)
+    ~=~ T(-3\vect{v}_1 + 4\vect{v}_2 - \vect{v}_3)
+    ~=~ -3\vect{w}_1 + 4\vect{w}_2 - \vect{w}_3
+    ~=~ \begin{mymatrix}{rr}
+      -3 & 1 \\
+      -1 & 3 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
