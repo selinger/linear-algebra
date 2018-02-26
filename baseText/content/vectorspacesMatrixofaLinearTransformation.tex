@@ -7,6 +7,18 @@
   \end{enumerate}
 \end{outcome}
 
+In Section~\ref{sec:matrix-of-transformation}, we saw that linear
+transformations $T:\R^n\to\R^m$ are in one-to-one correspondence with
+$m\times n$-matrices. Here, we will generalize this correspondence to
+arbitrary finite-dimensional vector spaces. There is an important
+difference, however. While $\R^n$ comes with a natural coordinate
+system (i.e., every vector in $\R^n$ has a first component, second
+component, and so on), there is no distinguished coordinate system on
+an arbitrary vector space. To define the matrix of a linear
+tranformation $T:V\to W$, we must first choose a basis, or
+equivalently a coordinate system, for $V$ and for $W$. Different
+choices of basis will give rise to different matrices.
+
 Let $V$ be a vector space with basis
 $B=\set{\vect{v}_1,\ldots,\vect{v}_n}$. Recall from
 Section~\ref{ssec:bases-and-coordinates} that the \textbf{coordinates}
@@ -96,11 +108,13 @@ map between finite-dimensional vector spaces as a matrix.
 \end{proof}
 
 \begin{definition}{The matrix of a linear transformation}{matrix-of-linear-transformation}
-  The matrix $A$ is called the \textbf{matrix of the linear
-    transformation\/ $T$ with respect to the bases $B$ and $C$}%
+  The matrix $A$ of
+  Proposition~\ref{prop:matrix-of-linear-transformation} is called the
+  \textbf{matrix of the linear transformation\/ $T$ with respect to
+    the bases $B$ and $C$}%
   \index{linear transformation!matrix of!w.r.t. basis}%
-  \index{matrix!of a linear transformation!w.r.t. basis}.
-  We also write
+  \index{matrix!of a linear transformation!w.r.t. basis}.  We also
+  write
   \begin{equation*}
     A = \coord{T}_{C,B}.
   \end{equation*}
