@@ -37,7 +37,7 @@ to denote the coordinates of $\vect{v}$ with respect to the basis $B$.
 We will now see how to use bases and coordinates to encode any linear
 map between finite-dimensional vector spaces as a matrix. 
 
-\begin{proposition}{The matrix of a linear transformation}{matrix-of-linear-transformation}
+\begin{proposition}{The matrix of a linear transformation}{matrix-of-linear-transformation-vector-space}
   Let $V$ and $W$ be vector spaces over a field $K$. Assume
   $B=\set{\vect{v}_1,\ldots,\vect{v}_n}$ is a basis of $V$, and
   $C=\set{\vect{w}_1,\ldots,\vect{w}_m}$ is a basis of $W$.
@@ -107,9 +107,9 @@ map between finite-dimensional vector spaces as a matrix.
   desired.
 \end{proof}
 
-\begin{definition}{The matrix of a linear transformation}{matrix-of-linear-transformation}
+\begin{definition}{The matrix of a linear transformation}{matrix-of-linear-transformation-vector-space}
   The matrix $A$ of
-  Proposition~\ref{prop:matrix-of-linear-transformation} is called the
+  Proposition~\ref{prop:matrix-of-linear-transformation-vector-space} is called the
   \textbf{matrix of the linear transformation\/ $T$ with respect to
     the bases $B$ and $C$}%
   \index{linear transformation!matrix of!w.r.t. basis}%
@@ -125,7 +125,7 @@ map between finite-dimensional vector spaces as a matrix.
   for all $\vect{v}\in V$.
 \end{definition}
 
-\begin{example}{Finding the matrix of a linear transformation}{matrix-of-linear-transformation}
+\begin{example}{Finding the matrix of a linear transformation}{matrix-of-linear-transformation-vector-space}
   Find the matrix of the derivative operator $D:\Poly_3\to\Poly_2$
   with respect to the basis $B=\set{1,x,x^2,x^3}$ of $\Poly_3$ and the
   basis $C=\set{1,x,x^2}$ of $\Poly_2$.
@@ -157,7 +157,7 @@ map between finite-dimensional vector spaces as a matrix.
   \end{equation*}
 \end{solution}
 
-\begin{example}{Same linear transformation, different bases}{matrix-of-linear-transformation2}
+\begin{example}{Same linear transformation, different bases}{matrix-of-linear-transformation-vector-space2}
   Find the matrix of the derivative operator $D:\Poly_3\to\Poly_2$
   with respect to the basis $B'=\set{1,x+1,x^2+x+1,x^3+x^2+x+1}$ of
   $\Poly_3$ and the basis $C'=\set{1,x-1,x^2-1}$ of $\Poly_2$.
@@ -199,7 +199,7 @@ application. Often, a ``convenient'' basis is one that gives rise to
 simple matrices, for example, matrices containing many zeros, or
 matrices that are diagonal.
 
-\begin{example}{Finding a convenient basis}{matrix-of-linear-transformation3}
+\begin{example}{Finding a convenient basis}{matrix-of-linear-transformation-vector-space3}
   Let $T:\Poly_3\to\Mat_{2,2}$ be the linear transformation
   defined by
   \begin{equation*}
