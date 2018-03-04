@@ -3,15 +3,32 @@
 \begin{ex}
   Let $T:\Poly_2 \to \R$ be a linear transformation such that
   \begin{equation*}
-    T(x^2)=1; T(x^2+x)=5; T(x^2+x+1)=-1.
+    T(x^2)=1,
+    \quad
+    T(x^2+x)=5,
+    \quad\mbox{and}\quad
+    T(x^2+x+1)=-1.
   \end{equation*}
   Find $T(ax^2+bx+c)$.
   \begin{sol}
     By linearity we have
     $T(x^2)=1$, $T(x) = T(x^2+x - x^2)= T(x^2+x) - T(x^2)= 5-1=5$, and
     $T(1) = T(x^2+x+1 -(x^2+x))=T(x^2+x+1) -T(x^2+x))= -1-5=-6$.
+    Thus $T(ax^2+bx+c) = aT(x^2) + bT(x) + cT(1) = a+5b-6c$.
+  \end{sol}
+\end{ex}
 
-    Thus$T(ax^2+bx+c) = aT(x^2) + bT(x) + cT(1) = a+5b-6c$.
+\begin{ex}
+  Let vectors $\vect{v}_1,\ldots,\vect{v}_n\in\R^n$ and
+  $\vect{w}_1,\ldots,\vect{w}_n\in\R^m$ be given. Let $A$ be the
+  matrix whose columns are $\vect{v}_1,\ldots,\vect{v}_n$, and assume
+  that $A^{-1}$ exists. Show that there exists a linear transformation
+  $T$ such that $T(\vect{v}_i)=\vect{w}_i$ for $i=1,\ldots,n$.
+  \begin{sol}
+    The matrix $A$ is invertible if and only if its rank is $n$, which
+    means that $\vect{v}_1,\ldots,\vect{v}_n$ are linearly independent
+    and therefore a basis of $\R^n$. The existence of $T$ then follows
+    from Theorem~\ref{thm:transformation-basis}.
   \end{sol}
 \end{ex}
 

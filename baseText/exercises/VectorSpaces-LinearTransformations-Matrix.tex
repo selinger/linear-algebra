@@ -1,650 +1,233 @@
 \section*{Exercises}
 
-\begin{ex} \label{exer-linear-transf}
-  Consider the following functions which map $\R^{n}$ to $\R^{n}$.
+\begin{ex}
+  Let $B = \set{\begin{mymatrix}{r} 2 \\ -1 \end{mymatrix},
+    \begin{mymatrix}{r} 3 \\ 2 \end{mymatrix} }$ be a basis of $\R^2$
+  and let $\vect{x} = \begin{mymatrix}{r} 5 \\ -7 \end{mymatrix}$ be a
+  vector in $\R^2$. Find $\coord{\vect{x}}_B$.
+\end{ex}
 
-  \begin{enumerate}
-  \item $T$ multiplies the $j\th$ component of $\vect{x}$ by a non-zero
-    number $b$.
-
-  \item $T$ replaces the $i\th$ component of $\vect{x}$ with $b$ times the
-    $j\th$ component added to the $i\th$ component.
-
-  \item $T$ switches the $i\th$ and $j\th$ components.
-  \end{enumerate}
-
-  Show these functions are linear transformations and describe their matrices $A$ such that $T(\vect{x}) = A\vect{x}$.
+\begin{ex}
+  Let $B = \set{\begin{mymatrix}{r} 1 \\ -1 \\ 2 \end{mymatrix},
+    \begin{mymatrix}{r} 2 \\ 1 \\ 2 \end{mymatrix},
+    \begin{mymatrix}{r} -1 \\ 0 \\ 2 \end{mymatrix}}$ be a basis of
+  $\R^3$ and let
+  $\vect{x} = \begin{mymatrix}{r} 5 \\ -1 \\ 4 \end{mymatrix}$ be a
+  vector in $\R^2$. Find $\coord{\vect{x}}_B$.
   \begin{sol}
-    \begin{enumerate}
-    \item The matrix of $T$ is the elementary matrix which multiplies
-      the $j\th$ diagonal entry of the identity matrix by $b$.
-    \item The matrix of $T$ is the
-      elementary matrix which takes $b$ times the $j\th$ row and adds to the $%
-      i\th$ row.
-    \item The matrix of $T$ is the elementary matrix which switches the $%
-      i\th$ and the $j\th$ rows where the two components are in the $i\th$
-      and $j\th$ positions.
-    \end{enumerate}
+    $\coord{\vect{x}}_B
+    = \begin{mymatrix}{r} 2 \\ 1 \\ -1 \end{mymatrix}$.
   \end{sol}
 \end{ex}
 
-\begin{ex} You are given a linear transformation $T:\R^{n}\rightarrow
-  \R^{m}$ and you know that
+\begin{ex}
+  Suppose $T:\R^3\to\R^3$ is a linear transformation such that
   \begin{equation*}
-    T(A_{i})=B_{i}
-  \end{equation*}
-  where $\begin{mymatrix}{ccc}
-    A_{1} & \cdots & A_{n}
-  \end{mymatrix} ^{-1}$ exists. Show that the matrix of $T$ is of the form
-  \begin{equation*}
-    \begin{mymatrix}{ccc}
-      B_{1} & \cdots & B_{n}
-    \end{mymatrix} \begin{mymatrix}{ccc}
-      A_{1} & \cdots & A_{n}
-    \end{mymatrix} ^{-1}
-  \end{equation*}
-  \begin{sol}
-    Suppose
-    \begin{equation*}
-      \begin{mymatrix}{c}
-        \vect{c}_{1}^{T} \\
-        \vdots \\
-        \vect{c}_{n}^{T}
-      \end{mymatrix} =\begin{mymatrix}{ccc}
-        \vect{a}_{1} & \cdots & \vect{a}_{n}
-      \end{mymatrix}^{-1}
-    \end{equation*}
-    Thus $\vect{c}_{i}^{T}\vect{a}_{j}=\delta _{ij}$. Therefore,
-    \begin{eqnarray*}
-      \begin{mymatrix}{ccc}
-        \vect{b}_{1} & \cdots & \vect{b}_{n}
-      \end{mymatrix} \begin{mymatrix}{ccc}
-        \vect{a}_{1} & \cdots & \vect{a}_{n}
-      \end{mymatrix} ^{-1}\vect{a}_{i} &=&
-                                           \begin{mymatrix}{ccc}
-                                             \vect{b}_{1} & \cdots & \vect{b}_{n}
-                                           \end{mymatrix} \begin{mymatrix}{c}
-                                             \vect{c}_{1}^{T} \\
-                                             \vdots \\
-                                             \vect{c}_{n}^{T}
-                                           \end{mymatrix} \vect{a}_{i} \\
-                     &=&\begin{mymatrix}{ccc}
-                       \vect{b}_{1} & \cdots & \vect{b}_{n}
-                     \end{mymatrix} \vect{e}_{i} \\
-                     &=&\vect{b}_{i}
-    \end{eqnarray*}
-    Thus $T\vect{a}_{i}=\begin{mymatrix}{ccc}
-      \vect{b}_{1} & \cdots & \vect{b}_{n}
-    \end{mymatrix} \begin{mymatrix}{ccc}
-      \vect{a}_{1} & \cdots & \vect{a}_{n}
-    \end{mymatrix} ^{-1}\vect{a}_{i} =  A\vect{a}_{i}$. If $\vect{x}$ is
-    arbitrary, then since the matrix $\begin{mymatrix}{ccc}
-      \vect{a}_{1} & \cdots & \vect{a}_{n}
-    \end{mymatrix} $ is invertible, there exists a unique $\vect{y}$ such that $
-    \begin{mymatrix}{ccc}
-      \vect{a}_{1} & \cdots & \vect{a}_{n}
-    \end{mymatrix} \vect{y}=\vect{x}$ Hence
-    \begin{equation*}
-      T\vect{x}=T\paren{\sum_{i=1}^{n}y_{i}\vect{a}_{i}}
-      =\sum_{i=1}^{n}y_{i}T\vect{a}_{i}=\sum_{i=1}^{n}y_{i}A\vect{a}
-      _{i}=A\paren{\sum_{i=1}^{n}y_{i}\vect{a}_{i}} =A\vect{x}
-    \end{equation*}
-
-  \end{sol}
-\end{ex}
-
-\begin{ex} Suppose $T:\R^3\to\R^3$ is a linear transformation such that
-  \begin{equation*}
-    T\begin{mymatrix}{r} 1 \\ 1 \\ -7 \end{mymatrix}
+    T\begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix}
     = \begin{mymatrix}{r} 3 \\ 3 \\ 3 \end{mymatrix},
     \quad
-    T\begin{mymatrix}{r} -1 \\ 0 \\ 6 \end{mymatrix}
+    T\begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix}
     = \begin{mymatrix}{r} 1 \\ 2 \\ 3 \end{mymatrix},
     \quad
-    T\begin{mymatrix}{r} 0 \\ -1 \\ 2 \end{mymatrix}
+    T\begin{mymatrix}{r} 0 \\ 0 \\ 1 \end{mymatrix}
     = \begin{mymatrix}{r} 1 \\ 3 \\ -1 \end{mymatrix}.
   \end{equation*}
   Let $E=\set{\vect{e}_1,\vect{e}_2,\vect{e}_3}$ be the standard basis
-  of $\R^3$.  Find the matrix of $T$ with respect to $E$, i.e., find
-  $\coord{T}_{E,E}$. 
-  \begin{sol}
-    \begin{equation*}
-      \begin{mymatrix}{ccc}
-        29 & 9 & 5 \\
-        46 & 13 & 8 \\
-        27 & 11 & 5
-      \end{mymatrix}
-    \end{equation*}
-  \end{sol}
-\end{ex}
-
-\begin{ex}
-  Suppose $T$ is a linear transformation such that
+  of $\R^3$, and let
   \begin{equation*}
-    T\begin{mymatrix}{r}
-      1 \\
-      2 \\
-      -18
-    \end{mymatrix} =\begin{mymatrix}{r}
-      5 \\
-      2 \\
-      5
-    \end{mymatrix}, \quad
-    T\begin{mymatrix}{r}
-      -1 \\
-      -1 \\
-      15
-    \end{mymatrix} =\begin{mymatrix}{r}
-      3 \\
-      3 \\
-      5
-    \end{mymatrix},\quad
-    T\begin{mymatrix}{r}
-      0 \\
-      -1 \\
-      4
-    \end{mymatrix} =\begin{mymatrix}{r}
-      2 \\
-      5 \\
-      -2
-    \end{mymatrix}
+    B = \set{\vect{v}_1,\vect{v}_2,\vect{v}_3} = \set{
+      \begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},~
+      \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix},~
+      \begin{mymatrix}{r} 2 \\ 1 \\ 1 \end{mymatrix}
+    }
   \end{equation*}
-  Let $E=\set{\vect{e}_1,\vect{e}_2,\vect{e}_3}$ be the standard basis
-  of $\R^3$.  Find the matrix of $T$ with respect to $E$, i.e., find
-  $\coord{T}_{E,E}$. 
+  be another basis.
+  \begin{enumerate}
+  \item  Find the matrix of $T$ with respect to $E$, i.e.,
+    find $\coord{T}_{E,E}$.
+  \item Find $\coord{T}_{B,B}$.
+  \end{enumerate}
   \begin{sol}
-    \begin{equation*}
-      \begin{mymatrix}{ccc}
-        109 & 38 & 10 \\
-        112 & 35 & 10 \\
-        81 & 34 & 8
-      \end{mymatrix}
-    \end{equation*}
-  \end{sol}
+    \begin{enumerate}
+      \item The $i\th$ column of $\coord{T}_{E,E}$ is
+      $\coord{T(\vect{e}_i)}_E = T(\vect{e}_i)$, so
+      \begin{equation*}
+        \coord{T}_{E,E} = 
+        \begin{mymatrix}{ccc}
+          3 & 1 & 1 \\
+          3 & 2 & 3 \\
+          3 & 3 & -1
+        \end{mymatrix}.
+      \end{equation*}
+      \item The $i\th$ column of $\coord{T}_{B,B}$ is
+        $\coord{T(\vect{v}_i)}_B$. This requires a calculation:
+        \begin{equation*}
+          T(\vect{v}_1) = T\begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix} 
+          = \begin{mymatrix}{c} 3 \\ 3 \\ 3 \end{mymatrix} =
+          -3\begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix}
+          +0\begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}
+          +3\begin{mymatrix}{c} 2 \\ 1 \\ 1 \end{mymatrix},
+          \quad\mbox{therefore}
+          \coord{T(\vect{v}_1)}_B =
+          \begin{mymatrix}{r} -3 \\ 0 \\ 3 \end{mymatrix}.
+        \end{equation*}
+        \begin{equation*}
+          T(\vect{v}_2) = T\begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix} 
+          = \begin{mymatrix}{c} 4 \\ 5 \\ 6 \end{mymatrix} =
+          -7\begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix}
+          -1\begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}
+          +6\begin{mymatrix}{c} 2 \\ 1 \\ 1 \end{mymatrix},
+          \quad\mbox{therefore}
+          \coord{T(\vect{v}_2)}_B =
+          \begin{mymatrix}{r} -7 \\ -1 \\ 6 \end{mymatrix}.
+        \end{equation*}
+        \begin{equation*}
+          T(\vect{v}_3) = T\begin{mymatrix}{c} 2 \\ 1 \\ 1 \end{mymatrix} 
+          = \begin{mymatrix}{c} 8 \\ 11 \\ 8 \end{mymatrix} =
+          -11\begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix}
+          +3\begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}
+          +8\begin{mymatrix}{c} 2 \\ 1 \\ 1 \end{mymatrix},
+          \quad\mbox{therefore}
+          \coord{T(\vect{v}_3)}_B =
+          \begin{mymatrix}{c} -11 \\ 3 \\ 8 \end{mymatrix}.
+        \end{equation*}
+        We therefore have
+        \begin{equation*}
+          \coord{T}_{B,B} = 
+          \begin{mymatrix}{rrc}
+            -3 & -7 & -11 \\
+            0  & -1 &   3 \\
+            3  &  6 &   8 \\
+          \end{mymatrix}.
+        \end{equation*}
+      \end{enumerate}
+\end{sol}
 \end{ex}
 
 \begin{ex}
-  Suppose $T$ is a linear transformation such that
-  \begin{eqnarray*}
-    T\begin{mymatrix}{r}
-      1 \\
-      2 \\
-      -6
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      5 \\
-      1 \\
-      3
-    \end{mymatrix} \\
-    T\begin{mymatrix}{r}
-      -1 \\
-      -1 \\
-      5
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      1 \\
-      1 \\
-      5
-    \end{mymatrix} \\
-    T\begin{mymatrix}{r}
-      0 \\
-      -1 \\
-      2
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      5 \\
-      3 \\
-      -2
-    \end{mymatrix}
-  \end{eqnarray*}
-  Find the matrix of $T$. That is find $A$ such that $T(\vect{x})=A\vect{x}$. \vspace{1mm}
-  \begin{sol}
-    \begin{equation*}
-      \begin{mymatrix}{rrr}
-        5 & 1 & 5 \\
-        1 & 1 & 3 \\
-        3 & 5 & -2
-      \end{mymatrix} \begin{mymatrix}{ccc}
-        3 & 2 & 1 \\
-        2 & 2 & 1 \\
-        4 & 1 & 1
-      \end{mymatrix} =\begin{mymatrix}{ccc}
-        37 & 17 & 11 \\
-        17 & 7 & 5 \\
-        11 & 14 & 6
-      \end{mymatrix}
-    \end{equation*}
-  \end{sol}
-\end{ex}
-
-\begin{ex} Suppose $T$ is a linear transformation such that
-  \begin{eqnarray*}
-    T\begin{mymatrix}{r}
-      1 \\
-      1 \\
-      -8
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      1 \\
-      3 \\
-      1
-    \end{mymatrix} \\
-    T\begin{mymatrix}{r}
-      -1 \\
-      0 \\
-      6
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      2 \\
-      4 \\
-      1
-    \end{mymatrix} \\
-    T\begin{mymatrix}{r}
-      0 \\
-      -1 \\
-      3
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      6 \\
-      1 \\
-      -1
-    \end{mymatrix}
-  \end{eqnarray*}
-  Find the matrix of $T$. That is find $A$ such that $T(\vect{x})=A\vect{x}$. \vspace{1mm}
-  \begin{sol}
-    \begin{equation*}
-      \begin{mymatrix}{rrr}
-        1 & 2 & 6 \\
-        3 & 4 & 1 \\
-        1 & 1 & -1
-      \end{mymatrix} \begin{mymatrix}{ccc}
-        6 & 3 & 1 \\
-        5 & 3 & 1 \\
-        6 & 2 & 1
-      \end{mymatrix} =\begin{mymatrix}{ccc}
-        52 & 21 & 9 \\
-        44 & 23 & 8 \\
-        5 & 4 & 1
-      \end{mymatrix}
-    \end{equation*}
-  \end{sol}
-\end{ex}
-
-\begin{ex} Suppose $T$ is a linear transformation such that
-  \begin{eqnarray*}
-    T\begin{mymatrix}{r}
-      1 \\
-      3 \\
-      -7
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      -3 \\
-      1 \\
-      3
-    \end{mymatrix} \\
-    T\begin{mymatrix}{r}
-      -1 \\
-      -2 \\
-      6
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      1 \\
-      3 \\
-      -3
-    \end{mymatrix} \\
-    T\begin{mymatrix}{r}
-      0 \\
-      -1 \\
-      2
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      5 \\
-      3 \\
-      -3
-    \end{mymatrix}
-  \end{eqnarray*}
-  Find the matrix of $T$. That is find $A$ such that $T(\vect{x})=A\vect{x}$. \vspace{1mm}\vspace{1mm}
-  \begin{sol}
-    \begin{equation*}
-      \begin{mymatrix}{rrr}
-        -3 & 1 & 5 \\
-        1 & 3 & 3 \\
-        3 & -3 & -3
-      \end{mymatrix} \begin{mymatrix}{ccc}
-        2 & 2 & 1 \\
-        1 & 2 & 1 \\
-        4 & 1 & 1
-      \end{mymatrix} = \begin{mymatrix}{rrr}
-        15 & 1 & 3 \\
-        17 & 11 & 7 \\
-        -9 & -3 & -3
-      \end{mymatrix}
-    \end{equation*}
-  \end{sol}
-\end{ex}
-
-\begin{ex} Suppose $T$ is a linear transformation such that
-  \begin{eqnarray*}
-    T\begin{mymatrix}{r}
-      1 \\
-      1 \\
-      -7
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      3 \\
-      3 \\
-      3
-    \end{mymatrix} \\
-    T\begin{mymatrix}{r}
-      -1 \\
-      0 \\
-      6
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      1 \\
-      2 \\
-      3
-    \end{mymatrix} \\
-    T\begin{mymatrix}{r}
-      0 \\
-      -1 \\
-      2
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      1 \\
-      3 \\
-      -1
-    \end{mymatrix}
-  \end{eqnarray*}
-  Find the matrix of $T$. That is find $A$ such that $T(\vect{x})=A\vect{x}$. \vspace{1mm}
-  \begin{sol}
-    \begin{equation*}
-      \begin{mymatrix}{rrr}
-        3 & 1 & 1 \\
-        3 & 2 & 3 \\
-        3 & 3 & -1
-      \end{mymatrix} \begin{mymatrix}{ccc}
-        6 & 2 & 1 \\
-        5 & 2 & 1 \\
-        6 & 1 & 1
-      \end{mymatrix} =\allowbreak \begin{mymatrix}{ccc}
-        29 & 9 & 5 \\
-        46 & 13 & 8 \\
-        27 & 11 & 5
-      \end{mymatrix}
-    \end{equation*}
-  \end{sol}
-\end{ex}
-
-\begin{ex} Suppose $T$ is a linear transformation such that
-  \begin{eqnarray*}
-    T\begin{mymatrix}{r}
-      1 \\
-      2 \\
-      -18
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      5 \\
-      2 \\
-      5
-    \end{mymatrix} \\
-    T\begin{mymatrix}{r}
-      -1 \\
-      -1 \\
-      15
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      3 \\
-      3 \\
-      5
-    \end{mymatrix} \\
-    T\begin{mymatrix}{r}
-      0 \\
-      -1 \\
-      4
-    \end{mymatrix} &=&\begin{mymatrix}{r}
-      2 \\
-      5 \\
-      -2
-    \end{mymatrix}
-  \end{eqnarray*}
-  Find the matrix of $T$. That is find $A$ such that $T(\vect{x})=A\vect{x}$. \vspace{1mm}
-  \begin{sol}
-    \begin{equation*}
-      \begin{mymatrix}{rrr}
-        5 & 3 & 2 \\
-        2 & 3 & 5 \\
-        5 & 5 & -2
-      \end{mymatrix} \begin{mymatrix}{ccc}
-        11 & 4 & 1 \\
-        10 & 4 & 1 \\
-        12 & 3 & 1
-      \end{mymatrix} =\begin{mymatrix}{ccc}
-        109 & 38 & 10 \\
-        112 & 35 & 10 \\
-        81 & 34 & 8
-      \end{mymatrix}
-    \end{equation*}
-  \end{sol}
-\end{ex}
-
-\begin{ex} Consider the following functions $T:\R^{3}\rightarrow \R^{2}$.
-  Show that each is a linear transformation and determine for each the matrix $A$ such that
-  $T(\vect{x})=A\vect{x}$.
-
-  \begin{enumerate}
-  \item $T\begin{mymatrix}{c}
-      x \\
-      y \\
-      z
-    \end{mymatrix} =\begin{mymatrix}{c}
-      x+2y+3z \\
-      2y-3x+z
-    \end{mymatrix} $
-
-  \item $T\begin{mymatrix}{c}
-      x \\
-      y \\
-      z
-    \end{mymatrix} =\begin{mymatrix}{c}
-      7x+2y+z \\
-      3x-11y+2z
-    \end{mymatrix} $
-
-  \item $T\begin{mymatrix}{c}
-      x \\
-      y \\
-      z
-    \end{mymatrix} =\begin{mymatrix}{c}
-      3x+2y+z \\
-      x+2y+6z
-    \end{mymatrix} $
-
-  \item $T\begin{mymatrix}{c}
-      x \\
-      y \\
-      z
-    \end{mymatrix} =\begin{mymatrix}{c}
-      2y-5x+z \\
-      x+y+z
-    \end{mymatrix} $
-  \end{enumerate}
-  % \begin{sol}
-  % \end{sol}
-\end{ex}
-
-\begin{ex} Consider the following functions $T:\R^{3}\rightarrow \R^{2}$.
-  Explain why each of these functions $T$ is not linear.
-
-  \begin{enumerate}
-  \item $T\begin{mymatrix}{c}
-      x \\
-      y \\
-      z
-    \end{mymatrix} =\begin{mymatrix}{c}
-      x+2y+3z+1 \\
-      2y-3x+z
-    \end{mymatrix} $
-
-  \item $T\begin{mymatrix}{c}
-      x \\
-      y \\
-      z
-    \end{mymatrix} =\begin{mymatrix}{c}
-      x+2y^{2}+3z \\
-      2y+3x+z
-    \end{mymatrix} $
-
-  \item $T\begin{mymatrix}{c}
-      x \\
-      y \\
-      z
-    \end{mymatrix} =\begin{mymatrix}{c}
-      \sin x+2y+3z \\
-      2y+3x+z
-    \end{mymatrix} $
-
-  \item $T\begin{mymatrix}{c}
-      x \\
-      y \\
-      z
-    \end{mymatrix} =\begin{mymatrix}{c}
-      x+2y+3z \\
-      2y+3x-\ln z
-    \end{mymatrix} $
-  \end{enumerate}
-  % \begin{sol}
-  % \end{sol}
-\end{ex}
-
-\begin{ex} Suppose
+  Let $T: \R^2 \to \R^2$ be a linear transformation defined by
   \begin{equation*}
-    \begin{mymatrix}{ccc}
-      A_{1} & \cdots & A_{n}
-    \end{mymatrix} ^{-1}
+    T \paren{\begin{mymatrix}{c} a \\ b \end{mymatrix}}
+    = \begin{mymatrix}{c} a+b \\ a-b \end{mymatrix}.
   \end{equation*}
-  exists where each $A_{j}\in \R^{n}$ and let
-  vectors  $\set{B_{1},\ldots,B_{n}} $ in $\R^{m}$ be given.
-  Show that there \textbf{always }exists a linear
-  transformation $T$ such that $T(A_{i})=B_{i}$.
-  % \begin{sol}
-  % \end{sol}
-\end{ex}
-
-\begin{ex}  Find the matrix for $T(\vect{w}) = \proj_{\vect{v}}(\vect{w}) $
-  where $\vect{v}=\begin{mymatrix}{rrr}
-    1 & -2 & 3
-  \end{mymatrix} ^{T}$.
+  Consider the two bases
+  \begin{equation*}
+    B_1 = \set{\vect{v}_{1}, \vect{v}_{2} }
+    = \set{\begin{mymatrix}{r} 1 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} -1 \\ 1 \end{mymatrix}
+    }
+  \end{equation*}
+  and
+  \begin{equation*}
+    B_2 = \set{\begin{mymatrix}{r} 1 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ -1 \end{mymatrix}
+    }.
+  \end{equation*}
+  Find the matrix $M_{B_2,B_1}$ of $T$ with respect to the bases $B_1$
+  and $B_2$.
   \begin{sol}
-    Recall that $\proj_{\vect{u}}(\vect{v}) =\frac{\vect{v}\dotprod\vect{u} }{\norm{\vect{u}} ^{2}}\vect{u}$ and so the desired matrix
-    has $i\th$ column equal to $\proj_{\vect{u}}(\vect{e}_{i})$. Therefore, the matrix desired is
-    \begin{equation*}
-      \frac{1}{14}\begin{mymatrix}{rrr}
-        1 & -2 & 3 \\
-        -2 & 4 & -6 \\
-        3 & -6 & 9
-      \end{mymatrix}
-    \end{equation*}
-  \end{sol}
-\end{ex}
-
-\begin{ex}  Find the matrix for $T(\vect{w}) = \proj_{\vect{v}}(\vect{w}) $
-  where $\vect{v}=\begin{mymatrix}{rrr}
-    1 & 5 & 3
-  \end{mymatrix} ^{T}$.
-  \begin{sol}
-    \begin{equation*}
-      \frac{1}{35}\begin{mymatrix}{rrr}
-        1 & 5 & 3 \\
-        5 & 25 & 15 \\
-        3 & 15 & 9
-      \end{mymatrix}
-    \end{equation*}
-  \end{sol}
-\end{ex}
-
-\begin{ex} Find the matrix for $T(\vect{w}) = \proj_{\vect{v}}(\vect{w}) $
-  where $\vect{v}=\begin{mymatrix}{rrr}
-    1 & 0 & 3
-  \end{mymatrix} ^{T}$.
-  \begin{sol}
-    \begin{equation*}
-      \frac{1}{10}\begin{mymatrix}{ccc}
-        1 & 0 & 3 \\
-        0 & 0 & 0 \\
-        3 & 0 & 9
-      \end{mymatrix}
-    \end{equation*}
-  \end{sol}
-\end{ex}
-
-\begin{ex}
-  Let $B = \set{\begin{mymatrix}{r}
-      2 \\
-      -1
-    \end{mymatrix}, \begin{mymatrix}{r}
-      3 \\
-      2
-    \end{mymatrix} }$ be a basis of $\R^2$ and let $\vect{x} = \begin{mymatrix}{r}
-    5 \\
-    -7
-  \end{mymatrix}$ be a vector in $\R^2$. Find $C_B(\vect{x})$.
-\end{ex}
-
-\begin{ex}
-  Let $B = \set{\begin{mymatrix}{r}
-      1 \\
-      -1 \\
-      2
-    \end{mymatrix}, \begin{mymatrix}{r}
-      2 \\
-      1 \\
-      2
-    \end{mymatrix}, \begin{mymatrix}{r}
-      -1 \\
-      0 \\
-      2
-    \end{mymatrix} }$
-  be a basis of $\R^3$ and let $\vect{x} = \begin{mymatrix}{r}
-    5 \\
-    -1 \\
-    4
-  \end{mymatrix}$ be a vector in $\R^2$. Find $C_B(\vect{x})$.
-  \begin{sol}
-    $C_B(\vect{x}) =
-    \begin{mymatrix}{r}
-      2 \\
-      1 \\
-      -1
+    $M_{B_{2} B_{1}} = \begin{mymatrix}{rr}
+      1 & 0 \\
+      -1 & 1
     \end{mymatrix}$.
   \end{sol}
 \end{ex}
 
 \begin{ex}
-  Let $T: \R^2 \to \R^2$ be a linear transformation defined by $T \paren{\begin{mymatrix}{r}
-      a \\
-      b
-    \end{mymatrix}} = \begin{mymatrix}{r}
-    a+b \\
-    a-b
-  \end{mymatrix}$.
-
-  Consider the two bases
+  Let $M=\begin{mymatrix}{rr} 1 & 2 \\ -2 & 1 \end{mymatrix}$, and
+  consider the linear transformation $T:\Mat_{2,2}\to\Mat_{2,2}$ given
+  by $T(A) = MAM$. Find the matrix of $T$ with respect to the basis
   \begin{equation*}
-    B_1 = \set{\vect{v}_{1}, \vect{v}_{2} } = \set{\begin{mymatrix}{r}
-        1 \\
-        0
-      \end{mymatrix}, \begin{mymatrix}{r}
-        -1 \\
-        1
-      \end{mymatrix}
+    B=\set{
+      \begin{mymatrix}{cc} 1 & 0 \\ 0 & 0 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 & 1 \\ 0 & 0 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 & 0 \\ 1 & 0 \end{mymatrix},
+      \begin{mymatrix}{cc} 0 & 0 \\ 0 & 1 \end{mymatrix}.
     }
   \end{equation*}
-  and
-  \begin{equation*}
-    B_2 = \set{\begin{mymatrix}{r}
-        1 \\
-        1
-      \end{mymatrix}, \begin{mymatrix}{r}
-        1 \\
-        -1
-      \end{mymatrix}
-    }
-  \end{equation*}
+\end{ex}
 
-  Find the matrix $M_{B_2,B_1}$ of $T$ with respect to the bases $B_1$ and $B_2$.
+\begin{ex}
+  Consider the linear transformation $T:\Poly_3\to\Poly_3$ given by
+  $T(p(x)) = p(x+1)$. Find $\coord{T}_{B,B}$, where $B=\set{1,x,x^2,x^3}$.
+\end{ex}
+
+\begin{ex}
+  Let $\vect{v}=\begin{mymatrix}{r} 1 \\ -2 \\ 3 \end{mymatrix}$
+  and consider the linear function
+  $T(\vect{w}) = \proj_{\vect{v}}(\vect{w})$.  Find the matrix of $T$
+  with respect to the standard basis of $\R^3$.
   \begin{sol}
-    $
-    M_{B_{2} B_{1}} = \begin{mymatrix}{rr}
-      \vspace{0.05in}1 & 0 \\
-      \vspace{0.05in}-1 & 1
-    \end{mymatrix} $
+    Recall that
+    $\proj_{\vect{v}}(\vect{w}) =\frac{\vect{w}\dotprod\vect{v}
+    }{\norm{\vect{v}}^{2}}\vect{v}$. The desired matrix has $i\th$
+    column equal to $\proj_{\vect{v}}(\vect{e}_{i})$. Therefore, the
+    desired matrix is
+    \begin{equation*}
+      \frac{1}{14}\begin{mymatrix}{rrr}
+        1 & -2 & 3 \\
+        -2 & 4 & -6 \\
+        3 & -6 & 9
+      \end{mymatrix}.
+    \end{equation*}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Let $\vect{v}=\begin{mymatrix}{r} 1 \\ -2 \\ 3 \end{mymatrix}$
+  and consider the linear function
+  $T(\vect{w}) = \proj_{\vect{v}}(\vect{w})$.  Find the matrix of $T$
+  with respect to the basis
+  \begin{equation*}
+    B = \set{\vect{v}_1,\vect{v}_2,\vect{v}_3} = \set{
+      \begin{mymatrix}{r} 1 \\ -2 \\  3 \end{mymatrix},~
+      \begin{mymatrix}{r} 2 \\  1 \\  0 \end{mymatrix},~
+      \begin{mymatrix}{r} 3 \\  0 \\  1 \end{mymatrix}
+    }.
+  \end{equation*}
+  \begin{sol}
+    We have $T(\vect{v}_1) = \vect{v}_1$, $T(\vect{v}_2) = \vect{0}$,
+    and $T(\vect{v}_3) = \vect{0}$. Therefore
+    \begin{equation*}
+      \coord{T}_{B,B} = 
+      \begin{mymatrix}{rrr}
+        1 & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+      \end{mymatrix}.
+    \end{equation*}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Suppose that $V$ and $W$ are finite-dimensional vector spaces with
+  bases $B$ and $C$, respectively. Let $T:V\to W$ be a linear
+  transformation such that
+  \begin{equation*}
+    T(\vect{v}_i)=\vect{w}_i
+  \end{equation*}
+  for $i=1,\ldots,n$. Let $M$ be the matrix whose columns are
+  $\coord{\vect{v}_1}_B,\ldots,\coord{\vect{v}_n}_B$, and let $N$ be
+  the matrix whose columns are
+  $\coord{\vect{w}_1}_C,\ldots,\coord{\vect{w}_n}_C$.  Suppose that
+  $M$ is invertible. Show that $\coord{T}_{C,B} = NM^{-1}$. 
+  \begin{sol}
+    Since $M$ is invertible, its columns
+    $\coord{\vect{v}_1}_B,\ldots,\coord{\vect{v}_n}_B$ are linearly
+    independent and span $\R^n$; it follows that
+    $\vect{v}_1,\ldots,\vect{v}_n$ is a basis of $V$. To show that
+    $\coord{T}_{C,B} = NM^{-1}$, it is sufficient to check that
+    $NM^{-1}\coord{\vect{v}_i}_B = \coord{\vect{w}_i}_C$, for all
+    $i=1,\ldots,n$. But by assumption, $\coord{\vect{v}_i}_B$ is the
+    $i\th$ column of $M$, so that $\coord{\vect{v}_i}_B =
+    M\vect{e}_i$, where $\vect{e}_i$ is the $i\th$ basis
+    vector. Therefore $M^{-1}\coord{\vect{v}_i}_B  = \vect{e}_i$.
+    On the other hand, $N\vect{e}_i$ is the $i\th$ column of $N$,
+    i.e., $\coord{\vect{w}_i}_C$. We therefore have
+    \begin{equation*}
+      NM^{-1}\coord{\vect{v}_i}_B = N\vect{e}_i = \coord{\vect{w}_i}_C,
+    \end{equation*}
+    as desired.
   \end{sol}
 \end{ex}
 
