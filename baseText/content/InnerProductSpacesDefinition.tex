@@ -1,0 +1,292 @@
+\section{Real inner product spaces}
+
+In this section, we fix $K$ to be the field of real numbers.
+
+\begin{definition}{Real inner product space}{real-inner-product-space}
+  A \textbf{(real) inner product space}%
+  \index{inner product space!real}%
+  \index{real inner product space} is a real vector space $V$ equipped
+  with an operation that assigns to any pair of vectors
+  $\vect{u},\vect{v}\in V$ a real number $\iprod{\vect{u},\vect{v}}$,
+  called the \textbf{inner product}%
+  \index{inner product}%
+  \index{product!inner product} of $\vect{u}$ and $\vect{v}$. This
+  operation must satisfy the following properties:
+  \begin{enumerate}
+  \item Symmetry: $\iprod{\vect{u},\vect{v}} = \iprod{\vect{v},\vect{u}}$.
+  \item Linearity:
+    $\iprod{\vect{u},k\vect{v}} = k\iprod{\vect{u},\vect{v}}$ and
+    $\iprod{\vect{u},\vect{v}+\vect{v}'} = \iprod{\vect{u},\vect{v}} +
+    \iprod{\vect{u},\vect{v}'}$.
+  \item The positive definite property: $\iprod{\vect{u},\vect{u}}
+    \geq 0$, and moreover, $\iprod{\vect{u},\vect{u}}=0$ if and only
+    if $\vect{u} = \vect{0}$.
+  \end{enumerate}
+\end{definition}
+
+\begin{example}{$\R^n$ with the usual dot product}{rn-with-dot-product}
+  $V=\R^n$, with the usual dot product
+  \begin{equation*}
+    \iprod{\vect{u},\vect{v}} = \vect{u}\dotprod\vect{v} =
+    u_1v_1 + \ldots + u_nv_n
+  \end{equation*}
+  is an inner product space.
+\end{example}
+
+\begin{proof}
+  The relevant properties were shown in
+  Theorem~\ref{thm:properties-dot-product}.
+\end{proof}
+
+There exist other inner product operations on $\R^n$ besides the dot
+product. The following is an example.
+
+\begin{example}{$\R^2$ with a non-standard inner product}{rn-with-inner-product}
+  Let $V=\R^2$, and consider the matrix
+  $A=\begin{mymatrix}{cc} 1 & 1 \\ 1 & 2 \end{mymatrix}$.
+  Define an operation $\iprod{-,-}$ by
+  \begin{equation*}
+    \iprod{\vect{u},\vect{v}} = \vect{u}^T A \vect{v} =
+    \begin{mymatrix}{cc} u_1 & u_2 \end{mymatrix}
+    \begin{mymatrix}{cc} 1 & 1 \\ 1 & 2 \end{mymatrix}
+    \begin{mymatrix}{c} v_1 \\ v_2 \end{mymatrix}
+    = u_1v_1 + u_1v_2 + u_2v_1 + 2u_2v_2.
+  \end{equation*}
+  Then $\R^2$, with this operation, is an inner product space.
+\end{example}
+
+\begin{proof}
+  We must show the three properties are satisfied. For symmetry, note
+  that a scalar is equal to its own transpose. Therefore
+  \begin{equation*}
+    \iprod{\vect{u},\vect{v}}
+    ~=~ \vect{u}^T A \vect{v}
+    ~=~ (\vect{u}^T A \vect{v})^T
+    ~=~ \vect{v}^T A^T \vect{u}.
+  \end{equation*}
+  But this is equal to $\iprod{\vect{v},\vect{u}}$ because $A$ is a
+  symmetric matrix, i.e., $A^T=A$.
+  For linearity, note that, by properties of matrix multiplication,
+  \begin{equation*}
+    \iprod{\vect{u},k\vect{v}}
+    ~=~ \vect{u}^T A(k\vect{v})
+    ~=~ k\vect{u}^T A\vect{v}
+    ~=~ k\iprod{\vect{u},\vect{v}}
+  \end{equation*}
+  and
+  \begin{equation*}
+    \iprod{\vect{u},\vect{v}+\vect{v}'}
+    ~=~ \vect{u}^T A(\vect{v}+\vect{v}')
+    ~=~ \vect{u}^T A\vect{v}+\vect{u}^T A\vect{v}'
+    ~=~ \iprod{\vect{u},\vect{v}} +
+    \iprod{\vect{u},\vect{v}'}.
+  \end{equation*}
+  For the positive definite property, we have
+  \begin{equation*}
+    \iprod{\vect{u},\vect{u}}
+    ~=~ u_1^2 + 2u_1u_2 + 2u_2^2
+    ~=~ (u_1^2 + 2u_1u_2 + u_2^2) + u_2^2
+    ~=~ (u_1+u_2)^2 + u_2^2
+    ~\geq~ 0,
+  \end{equation*}
+  because the sum of two squares is always non-negative. Moreover, if
+  equality holds in the last equation, then we must have $u_1+u_2=0$
+  and $u_2=0$, and this is only possible if $\vect{u}=\vect{0}$.
+\end{proof}
+
+\begin{example}{Continuous functions on an interval}{continuous-interval}
+  Let $a<b$ be real numbers, and let
+  \begin{equation*}
+    [a,b] = \set{x \mid a \leq x \leq b}
+  \end{equation*}
+  be the closed interval. Let $V=C[a,b]$%
+  \index{Cab@$C[a,b]$} be the vector space of all continuous
+  functions%
+  \index{continuous function}%
+  \index{function!continuous}%
+  \index{inner product space!of continuous functions}
+  $f:[a,b]\to\R$. Given two functions $f,g\in C[a,b]$, define
+  \begin{equation*}
+    \iprod{f,g} = \int_a^b f(t)g(t)\,dt.
+  \end{equation*}
+  This is an inner product.
+\end{example}
+
+\begin{proof}
+  This follows from well-known properties of integrals. For symmetry,
+  we have
+  \begin{equation*}
+    \iprod{f,g}
+    ~=~ \int_a^b f(t)g(t)\,dt
+    ~=~ \int_a^b g(t)f(t)\,dt
+    ~=~ \iprod{g,f}.
+  \end{equation*}
+  For linearity, we have
+  \begin{equation*}
+    \iprod{f,kg}
+    ~=~ \int_a^b f(t)kg(t)\,dt
+    ~=~ k\int_a^b f(t)g(t)\,dt
+    ~=~ k\iprod{f,g}.
+  \end{equation*}
+  and
+  \begin{eqnarray*}
+    \iprod{f,g_1+g_2}
+    &=& \int_a^b f(t)(g_1(t)+g_2(t))\,dt \\
+    &=& \int_a^b f(t)g_1(t) + f(t)g_2(t)\,dt \\
+    &=& \int_a^b f(t)g_1(t)\,dt + \int_a^b f(t)g_2(t)\,dt \\
+    &=& \iprod{f,g_1} + \iprod{f,g_2}.
+  \end{eqnarray*}
+  For the positive definite property, we have
+  \begin{equation*}
+    \iprod{f,f}
+    = \int_a^b f(t)^2\,dt
+    \geq 0.
+  \end{equation*}
+  This is $\geq 0$ because $a<b$ and the integral over a non-negative
+  function is non-negative. Moreover, since $f$ is continuous, we know
+  from calculus that the last integral can only be equal to $0$ if $f$
+  is the constant zero function.
+\end{proof}
+
+\begin{example}{Polynomials}{inner-product-polynomials}
+  Let $\Poly$ be the vector space of polynomials (of any degree) with
+  real coefficients. Let $a<b$ be real numbers, and consider the inner
+  product defined by
+  \begin{equation*}
+    \iprod{p,q} = \int_a^b p(t)q(t)\,dt.
+  \end{equation*}
+  This is an inner product space.
+\end{example}
+
+\begin{proof}
+  The proof is the same as for $C[a,b]$. 
+\end{proof}
+
+\begin{example}{Real Hilbert space}{hilbert-space}
+  Let $V$ be the vector space of all infinite sequences of real
+  numbers $a=(a_0,a_1,a_2,\ldots)$ satifying
+  \begin{equation*}
+    a_0^2 + a_1^2 + a_2^2 + \ldots < \infty.
+  \end{equation*}
+  These are called the \textbf{square summable} sequences%
+  \index{sequence!square summable}%
+  \index{square summable sequence}. (One needs
+  to do a little bit of work to show that it is indeed a vector space;
+  in particular, to show that the sum of two square summable sequences
+  is square summable.) On this space, we can
+  define an inner product as follows:
+  \begin{equation*}
+    \iprod{a,b} = a_0b_0 + a_1b_1 + a_2b_2 + \ldots.
+  \end{equation*}
+  The details will be worked out in Exercise~\ref{ex:hilbert-space}.
+  This inner product space is called \textbf{(real) Hilbert space}%
+  \index{Hilbert space}.
+\end{example}
+
+We now look at some properties of inner products. The first thing to
+note is that while the axioms require linearity in the right
+component, symmetry ensures that linearity in the left component also
+holds.
+
+\begin{proposition}{Left linearity}{inner-product-left-linearity}
+  Let $V$ be an inner product space. Then
+  $\iprod{k\vect{u},\vect{v}} = k\iprod{\vect{u},\vect{v}}$ and
+  $\iprod{\vect{u}+\vect{u}',\vect{v}} = \iprod{\vect{u},\vect{v}} +
+  \iprod{\vect{u}',\vect{v}}$.
+\end{proposition}
+
+\begin{proof}
+  This follows directly from symmetry. We have
+  \begin{equation*}
+    \iprod{k\vect{u},\vect{v}}
+    = \iprod{\vect{v},k\vect{u}}
+    = k\iprod{\vect{v},\vect{u}}
+    = k\iprod{\vect{u},\vect{v}}
+  \end{equation*}
+  and
+  \begin{equation*}
+    \iprod{\vect{u}+\vect{u}',\vect{v}}
+    = \iprod{\vect{v},\vect{u}+\vect{u}'}
+    = \iprod{\vect{v},\vect{u}} + \iprod{\vect{v},\vect{u}'}
+    = \iprod{\vect{u},\vect{v}} + \iprod{\vect{u}',\vect{v}}
+  \end{equation*}
+\end{proof}
+
+Another important property of inner products is the Cauchy-Schwarz
+inequality. We have already encountered this in the context of the dot
+product in Section~\ref{sec:dot-product}.
+
+\begin{theorem}{Cauchy-Schwarz inequality}{inner-product-cauchy-schwarz}
+  Let $\vect{u},\vect{v}$ be vectors in an inner product space. Then%
+  \index{Cauchy-Schwarz inequality!in inner product space}
+  \begin{equation}\label{cauchy-inner}
+    \iprod{\vect{u},\vect{v}}^2
+    \leq \iprod{\vect{u},\vect{u}} \cdot \iprod{\vect{v},\vect{v}}.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  The proof is almost identical to that of
+  Theorem~\ref{thm:cauchy-schwarz-inequality}.  First note that if
+  $\vect{u}=\vect{0}$, then both sides of {\eqref{cauchy-inner}} are
+  equal to zero, and so there is nothing to show. Therefore, we will
+  assume in what follows that $\vect{u}\neq \vect{0}$.  Define a
+  function of $t\in \R$ by
+  \begin{equation*}
+    f(t) = \iprod{t\vect{u}+\vect{v}, t\vect{u}+ \vect{v}}.
+  \end{equation*}
+  Then by the positive definite property, we know that $f(t)\geq 0$
+  for all $t\in \R$.  Also from linearity and symmetry, we have
+  \begin{eqnarray*}
+    f(t) &=& \iprod{t\vect{u}, t\vect{u}+\vect{v}} +
+             \iprod{\vect{v}, t\vect{u}+\vect{v}} \\
+         &=& t^2\iprod{\vect{u}, \vect{u}}+t\iprod{\vect{u}, \vect{v}} + t\iprod{\vect{v}, \vect{u}}+
+             \iprod{\vect{v}, \vect{v}} \\
+         &=&t^2\iprod{\vect{u},\vect{u}}+2t\iprod{\vect{u}, \vect{v}}
+             + \iprod{\vect{v}, \vect{v}}.
+  \end{eqnarray*}
+  This means the graph of $y=f(t)$ is a parabola which opens upwards
+  and is never negative. It follows that this function has at most one
+  root. From the quadratic formula, we know that a quadratic function
+  $at^2+bt+c$ has one or zero roots if and only if $b^2-4ac\leq
+  0$. Applying this reasoning to the function $f(t)$, we obtain
+  \begin{equation*}
+    (2\iprod{\vect{u}, \vect{v}})^2
+    - 4\iprod{\vect{u},\vect{u}}\iprod{\vect{v},\vect{v}} < 0,
+  \end{equation*}
+  which is equivalent to
+  $\iprod{\vect{u},\vect{v}}^2 \leq \iprod{\vect{u},\vect{u}} \cdot
+  \iprod{\vect{v},\vect{v}}$.
+\end{proof}
+
+Finally, we can use the inner product to define the norm of a vector.
+
+\begin{definition}
+  Let $\vect{u}$ be a vector in an inner product space. Then the
+  \textbf{norm}%
+  \index{norm!in inner product space}%
+  \index{vector!norm} of $\vect{u}$ is defined as
+  \begin{equation*}
+    \norm{\vect{u}} = \sqrt{\iprod{\vect{u},\vect{u}}}.
+  \end{equation*}
+\end{definition}
+
+\begin{example}{Norm in $C[-1,1]$}{norm-in-continuous-functions}
+  Calculate the norm of $f(t) = t^2$ in $C[-1,1]$.
+\end{example}
+
+\begin{solution}
+  In the vector space $C[-1,1]$, the inner product is defined as
+  \begin{equation*}
+    \iprod{f,g} = \int_{-1}^{1} f(t)g(t)\,dt.
+  \end{equation*}
+  We therefore have
+  \begin{equation*}
+    \iprod{f,f}
+    = \int_{-1}^{1} f(t)^2\, dt
+    = \int_{-1}^{1} t^4\, dt
+    = \bigbracket{\frac{1}{5}t^5}_{-1}^{1}
+    = \frac{2}{5}.
+  \end{equation*}
+  Therefore, $\norm{f} = \sqrt{\iprod{f,f}} = \sqrt{\frac{2}{5}}$.
+\end{solution}
