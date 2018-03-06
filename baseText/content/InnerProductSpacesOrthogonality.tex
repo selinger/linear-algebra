@@ -150,11 +150,11 @@ independent.
         + a_i\iprod{\vect{u}_i,\vect{u}_i}
         + \ldots
         + a_k\iprod{\vect{u}_k,\vect{u}_i} \\
-    &=& a_10
+    &=& 0
         + \ldots
         + a_i\iprod{\vect{u}_i,\vect{u}_i}
         + \ldots
-        + a_k0 \\
+        + 0 \\
     &=& a_i \iprod{\vect{u}_i,\vect{u}_i}.
   \end{eqnarray*}
   On the other hand,
@@ -167,6 +167,38 @@ independent.
   $a_i=0$. Since the choice of $i$ was arbitrary, it follows that
   $a_1,\ldots,a_k = 0$, and $\vect{u}_1,\ldots,\vect{u}_k$ are
   linearly independent.
+\end{proof}
+
+\begin{example}{An orthogonal set of functions}{orthogonal-set-sin-cos}
+  Consider the inner product space $C[0,2\pi]$. The following
+  functions form an (infinite) orthogonal set:
+  \begin{eqnarray*}
+    g_0(x) &=& 1 \\
+    f_1(x) &=& \sin x \\
+    g_1(x) &=& \cos x \\
+    f_2(x) &=& \sin 2x \\
+    g_2(x) &=& \cos 2x \\
+    &\vdots& \\
+    f_k(x) &=& \sin kx \\
+    g_k(x) &=& \cos kx \\
+    &\vdots&
+  \end{eqnarray*}
+\end{example}
+
+\begin{proof}
+  We have to check that any two functions are orthogonal to each
+  other. This is true because of trigonometric identities. For
+  example,
+  \begin{eqnarray*}
+    \iprod{g_i,g_j}
+    &=& \int_{0}^{2\pi} \cos(ix)\cos(jx)\,dx \\
+    &=& \frac{1}{2}\int_{0}^{2\pi} \cos((i-j)x) + \cos((i+j)x)\,dx \\
+    &=& \bigbracket{\frac{1}{2(i-j)} \sin((i-j)x) + \frac{1}{2(i+j)}
+      \sin((i+j)x)}_{0}^{2\pi} \\
+    &=& 0
+  \end{eqnarray*}
+  when $i,j\geq 0$ and $i\neq j$. The cases for $\iprod{f_i,f_j}$ and
+  $\iprod{f_i,g_j}$ are similar.
 \end{proof}
 
 \begin{definition}{Orthogonal and orthonormal bases}{orthogonal-basis}
@@ -212,4 +244,108 @@ independent, and therefore an actual basis of $W$.
   \end{itemize}
 \end{example}
 
+So why are we interested in orthogonal and orthonormal bases? The main
+reason is that finding coordinates is {\em much easier} when the bases
+are orthogonal (and even better when they are orthonormal). We have
+the following property:
 
+\begin{proposition}{Fourier coefficients}{fourier-coefficients}
+  Let $B=\set{\vect{u}_1,\ldots,\vect{u}_n}$ be an orthogonal basis of
+  some space $W$, and suppose $\vect{v}\in W$. Then
+  \begin{equation*}
+    \vect{v} = a_1\vect{u}_1 + \ldots + a_n\vect{u}_n,
+  \end{equation*}
+  where
+  \begin{equation*}
+    a_i = \frac{\iprod{\vect{v},\vect{u}_i}}{\iprod{\vect{u}_i,\vect{u}_i}}.
+  \end{equation*}
+  In this situation, the coordinates $a_1,\ldots,a_n$ are also called
+  the \textbf{Fourier coefficients}%
+  \index{Fourier coefficients} of $\vect{v}$ (with respect to the
+  orthogonal basis $B$).
+  \smallskip\smallskip
+
+  In case $B$ is an orthonormal basis, the formula is even simpler. In
+  that case:
+    \begin{equation*}
+    a_i = \iprod{\vect{v},\vect{u}_i}.
+  \end{equation*}
+\end{proposition}
+
+\begin{proof}
+  Since $B$ is a basis of $W$, we know that there exist coefficients
+  $a_1,\ldots,a_n$ such that
+  $\vect{v} = a_1\vect{u}_1 + \ldots + a_n\vect{u}_n$. It remains to
+  verify that the coefficients satisfy the required formula. This is a
+  simple calculation. We have
+  \begin{eqnarray*}
+    \iprod{\vect{v},\vect{u}_i}
+    &=& \iprod{a_1\vect{u}_1 + \ldots + a_n\vect{u}_n, \vect{u}_i} \\
+    &=& a_1\iprod{\vect{u}_1,\vect{u}_i}
+        + \ldots
+        + a_i\iprod{\vect{u}_i,\vect{u}_i}
+        + \ldots
+        + a_n\iprod{\vect{u}_n,\vect{u}_i} \\
+    &=& 0
+        + \ldots
+        + a_i\iprod{\vect{u}_i,\vect{u}_i}
+        + \ldots
+        + 0 \\
+    &=& a_i \iprod{\vect{u}_i,\vect{u}_i}.
+  \end{eqnarray*}
+  Since $\vect{u}_i\neq \vect{0}$, we have
+  $\iprod{\vect{u}_i,\vect{u}_i}\neq 0$ by the positive definite
+  property. We can therefore divide both sides of the equation by
+  $\iprod{\vect{u}_i,\vect{u}_i}$ to obtain
+  \begin{equation*}
+    a_i = \frac{\iprod{\vect{v},\vect{u}_i}}{\iprod{\vect{u}_i,\vect{u}_i}},
+  \end{equation*}
+  as desired. Finally, if the basis is orthonormal, then
+  $\iprod{\vect{u}_i,\vect{u}_i}=1$, and the denominator disappears,
+  so that $a_i = \iprod{\vect{v},\vect{u}_i}$.
+\end{proof}
+
+The proposition shows that if $\set{\vect{u}_1,\ldots,\vect{u}_n}$ is
+an orthogonal basis, then we can solve
+$\vect{v} = a_1\vect{u}_1 + \ldots + a_n\vect{u}_n$ without having to
+solve a system of equations. This is very useful, although perhaps it
+is merely a convenience (if we have to solve a system of equations, it
+is also fine). However, there is another very useful property of
+Fourier coefficients. The coefficient $a_i$ only depends on the basis
+vector $\vect{u}_i$, and not on any of the other basis vectors. This
+is very useful in situations where only {\em part} of an orthogonal
+basis is known. We can calculate the corresponding coefficients
+without having to wait for the rest of the basis.
+
+\begin{example}{Fourier coefficients}{fourier-coefficients}
+  Suppose $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$ is an orthogonal
+  basis for an inner product space $V$, such that
+  $\norm{\vect{u}_1}=1$, $\norm{\vect{u}_2}=\sqrt{2}$, and
+  $\norm{\vect{u}_3}=2$.  Moreover, suppose that $\vect{v}\in V$ is a
+  vector such that $\iprod{\vect{v},\vect{u}_1} = 3$,
+  $\iprod{\vect{v},\vect{u}_2} = -1$, and
+  $\iprod{\vect{v},\vect{u}_3} = 2$.  Find the coordinates of
+  $\vect{v}$ with respect to $B$.
+\end{example}
+
+\begin{solution}
+  We have to find $a_1,a_2,a_3$ such that
+  \begin{equation*}
+    \vect{v} = a_1\vect{u}_1 + a_2\vect{u}_2 + a_3\vect{u}_3.
+  \end{equation*}
+  We have sufficient information to compute $a_1,a_2,a_3$. Namely,
+  \begin{eqnarray*}
+    a_1
+    &=& \frac{\iprod{\vect{v},\vect{u}_1}}{\iprod{\vect{u}_1,\vect{u}_1}}
+        ~=~ \frac{\iprod{\vect{v},\vect{u}_1}}{\norm{\vect{u}_1}^2}
+        ~=~ \frac{3}{1} ~=~ 3, \\
+    a_2
+    &=& \frac{\iprod{\vect{v},\vect{u}_2}}{\iprod{\vect{u}_2,\vect{u}_2}}
+        ~=~ \frac{\iprod{\vect{v},\vect{u}_2}}{\norm{\vect{u}_2}^2}
+        ~=~ \frac{-1}{2} ~=~ -0.5, \\
+    a_3
+    &=& \frac{\iprod{\vect{v},\vect{u}_3}}{\iprod{\vect{u}_3,\vect{u}_3}}
+        ~=~ \frac{\iprod{\vect{v},\vect{u}_3}}{\norm{\vect{u}_3}^2}
+        ~=~ \frac{2}{4} ~=~ 0.5, \\
+  \end{eqnarray*}
+\end{solution}
