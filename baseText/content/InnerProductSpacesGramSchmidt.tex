@@ -380,12 +380,16 @@ orthogonal polynomials. The first few elements of this sequence are:
 \end{eqnarray*}
 \begin{center}
   \begin{tikzpicture}[domain=1:-1, scale=4]
-    \draw[thick,color=yellow] plot (\x,{abs(\x^6)-15/11*abs(\x^4)+5/11*abs(\x^2)-5/231}) node[left=2ex] {$x^6 - \frac{15}{11}x^4 + \frac{5}{11}x^2 - \frac{5}{231}$};
-    \draw[thick,color=blue!30!white] plot (\x,{\x^5 - 10/9*\x^3+5/21*\x}) node[left=2ex] {$x^5 - \frac{10}{9}x^3 + \frac{5}{21}x$};
+    \definecolor{bleu}{rgb}{0,0.87,1.00}
+    \definecolor{pinque}{rgb}{0.97,0.23,0.81}
+    \definecolor{jello}{rgb}{1.00,0.87,0.00}
+    \definecolor{pineapple}{rgb}{1.00,0.73,0.00}
+    \draw[thick,color=jello] plot (\x,{abs(\x^6)-15/11*abs(\x^4)+5/11*abs(\x^2)-5/231}) node[left=2ex] {$x^6 - \frac{15}{11}x^4 + \frac{5}{11}x^2 - \frac{5}{231}$};
+    \draw[thick,color=bleu] plot (\x,{\x^5 - 10/9*\x^3+5/21*\x}) node[left=2ex] {$x^5 - \frac{10}{9}x^3 + \frac{5}{21}x$};
     \draw[thick,color=orange] plot (\x,{abs(\x^4)-6/7*abs(\x^2)+3/35}) node[left=2ex] {$x^4 - \frac{6}{7}x^2 + \frac{3}{35}$};
     \draw[thick,color=green!70!black] plot (\x,\x^3-3/5*\x) node[left=2ex] {$x^3 - \frac{3}{5}x$};
-    \draw[thick,color=blue] plot (\x,{abs(\x^2)-1/3}) node[left=2ex] {$x^2-\frac{1}{3}$};
-    \draw[thick,color=red] plot (\x,\x) node[left=2ex] {$x$};
+    \draw[thick,color=red] plot (\x,{abs(\x^2)-1/3}) node[left=2ex] {$x^2-\frac{1}{3}$};
+    \draw[thick,color=blue] plot (\x,\x) node[left=2ex] {$x$};
     \draw[thick,color=purple] plot (\x,1) node[left=2ex] {$1$};
     \draw[->] (-1.2,0) -- (1.2,0) node[right] {$x$};
     \draw[->] (0,-1.2) -- (0,1.2) node[above] {$p(x)$};
