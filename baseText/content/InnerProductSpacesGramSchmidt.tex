@@ -65,7 +65,7 @@ to $\vect{w}_1$.
     &=& \vect{v}_1
         ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix},\\
     \vect{w}_2
-    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{v}_1,\vect{v}_2}}{\iprod{\vect{v}_1,\vect{v}_1}}\vect{w}_1
+    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
         ~=~ \begin{mymatrix}{c} 0 \\ 1 \\ 1 \end{mymatrix}
     ~-~ \frac{1}{2}\begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}
     ~=~ \begin{mymatrix}{c} -1/2 \\ 1/2 \\ 1 \end{mymatrix}.
@@ -82,7 +82,11 @@ vectors.
 
 \begin{proposition}{Gram-Schmidt orthogonalization procedure for $k$ vectors}{gram-schmidt-k}
   Let $\set{\vect{v}_1,\ldots,\vect{v}_k}$ be a basis for some subspace $W$
-  of an inner product space $V$. Define vectors
+  of an inner product space $V$.%
+  \index{Gram-Schmidt procedure}%
+  \index{orthogonalization}%
+  \index{orthogonal basis!Gram-Schmidt procedure}
+  Define vectors
   $\vect{w}_1,\ldots,\vect{w}_k$ as follows:
   \begin{eqnarray*}
     \vect{w}_1
@@ -116,16 +120,11 @@ vectors.
   $\vect{w}_1,\ldots,\vect{w}_i$ and conversely, each $\vect{w}_i$ is
   a linear combination of $\vect{v}_1,\ldots,\vect{v}_i$. So the only
   thing we must check is that $\set{\vect{w}_1,\ldots,\vect{w}_k}$ is
-  an orthogonal set.
-
-  We prove this by induction on $k$. Assume that
-  $\set{\vect{w}_1,\ldots,\vect{w}_{i-1}}$ is already known to be an
-  orthogonal set. We will prove that $\vect{w}_i$ is orthogonal to all
-  vectors in $\set{\vect{w}_1,\ldots,\vect{w}_{i-1}}$, thereby showing
-  that $\set{\vect{w}_1,\ldots,\vect{w}_{i}}$ is an orthogonal set.
-  To show that $\vect{w}_i$ is orthogonal to all vectors in
-  $\set{\vect{w}_1,\ldots,\vect{w}_{i-1}}$, let $j<i$. We will show
-  that $\iprod{\vect{w}_j,\vect{w}_i}=0$. We have:
+  an orthogonal set. In other words, we must show that
+  $\iprod{\vect{w}_j,\vect{w}_i}=0$ for all $j<i$. We prove this by
+  induction on $i$, i.e., we assume it is already true for all pairs
+  of indices smaller than $i$. To show
+  $\iprod{\vect{w}_j,\vect{w}_i}=0$, we calculate:
   \begin{eqnarray*}
     \iprod{\vect{w}_j,\vect{w}_i}
     &=& \textstyle
@@ -157,4 +156,241 @@ vectors.
     \\
     &=& 0.
   \end{eqnarray*}
+  It follows that $\set{\vect{w}_1,\ldots,\vect{w}_k}$ is orthogonal,
+  as desired.
 \end{proof}
+
+\begin{example}{Gram-Schmidt orthogonalization procedure}{gram-schmidt-r4}
+  In $\R^4$, find an orthogonal basis for
+  \begin{equation*}
+    \sspan\set{
+      \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix},~
+      \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \end{mymatrix},~
+      \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}
+    }.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  Let
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix},\quad
+    \vect{v}_2 = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \end{mymatrix},\quad\mbox{and}\quad
+    \vect{v}_3 = \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}.
+  \end{equation*}
+  We calculate
+  \begin{eqnarray*}
+    \vect{w}_1
+    &=& \vect{v}_1
+        ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix},
+    \\
+    \vect{w}_2
+    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+    ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \end{mymatrix}
+    ~-~ \frac{3}{4}\begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix}
+    ~=~ \begin{mymatrix}{c} 1/4 \\ 1/4 \\ 1/4 \\ -3/4 \end{mymatrix},
+    \\
+    \vect{w}_3
+    &=& \vect{v}_3
+        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_3}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_3}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
+    \\
+    &=& \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}
+    ~-~ \frac{2}{4}\begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix}
+    ~-~ \frac{1/2}{3/4}\begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \end{mymatrix}
+    ~=~ \begin{mymatrix}{c} 1/3 \\ 1/3 \\ -2/3 \\ 0 \end{mymatrix},
+  \end{eqnarray*}
+  Therefore the orthogonal basis is
+  $\set{\vect{w}_1,\vect{w}_2,\vect{w}_3} = \set{
+    \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix},~
+    \begin{mymatrix}{c} 1/4 \\ 1/4 \\ 1/4 \\ -3/4 \end{mymatrix},~
+    \begin{mymatrix}{c} 1/3 \\ 1/3 \\ -2/3 \\ 0 \end{mymatrix}}$.
+\end{solution}
+
+The Gram-Schmidt procedure is sensitive to reordering the vectors. For
+example, if we order the original basis vectors in
+Example~\ref{exa:gram-schmidt-r4} in the opposite order, we end up
+with a different orthogonal basis at the end. Sometimes this can
+simplify the calculations, as the following example shows.
+
+\begin{example}{Gram-Schmidt orthogonalization procedure: reordering the vectors}{gram-schmidt-r4-b}
+  In $\R^4$, find an orthogonal basis for
+  \begin{equation*}
+    \sspan\set{
+      \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix},~
+      \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \end{mymatrix},~
+      \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix}
+    }.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  Note that these are the same basis vectors as in
+  Example~\ref{exa:gram-schmidt-r4}, but listed in a different order.
+  Let
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix},\quad
+    \vect{v}_2 = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \end{mymatrix},\quad\mbox{and}\quad
+    \vect{v}_3 = \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  We calculate
+  \begin{eqnarray*}
+    \vect{w}_1
+    &=& \vect{v}_1
+        ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix},
+    \\
+    \vect{w}_2
+    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+    ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \end{mymatrix}
+    ~-~ \frac{2}{2}\begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}
+    ~=~ \begin{mymatrix}{c} 0 \\ 0 \\ 1 \\ 0 \end{mymatrix},
+    \\
+    \vect{w}_3
+    &=& \vect{v}_3
+        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_3}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_3}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
+    \\
+    &=& \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix}
+    ~-~ \frac{2}{2}\begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}
+    ~-~ \frac{1}{1}\begin{mymatrix}{c} 0 \\ 0 \\ 1 \\ 0 \end{mymatrix}
+    ~=~ \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ 1 \end{mymatrix}.
+  \end{eqnarray*}
+  This time, we end up with the orthogonal basis
+  $\set{\vect{w}_1,\vect{w}_2,\vect{w}_3} = \set{
+    \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix},~
+    \begin{mymatrix}{c} 0 \\ 0 \\ 1 \\ 0 \end{mymatrix},~
+    \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ 1 \end{mymatrix}}$.
+\end{solution}
+
+\begin{example}{Legendre polynomials}{legendre-polynomials}
+  Consider the vector space $\Poly$ of polynomials, with the inner product
+  \begin{equation*}
+    \iprod{p,q} = \int_{-1}^{1} p(x)q(x)\,dx.
+  \end{equation*}
+  Use the Gram-Schmidt procedure to find an orthogonal basis for
+  $\sspan\set{1,x,x^2,x^3}$.%
+  \index{Legendre polynomials}%
+  \index{polynomial!Legendre polynomial}
+\end{example}
+
+\begin{solution}
+  Let $\vect{v}_1=1$, $\vect{v}_2=x$, $\vect{v}_3=x^2$, and
+  $\vect{v}_4=x^3$. We follow the Gram-Schmidt procedure:
+  \begin{eqnarray*}
+    \vect{w}_1
+    &=& \vect{v}_1
+        ~=~ 1.
+  \end{eqnarray*}
+  Before we calculate $\vect{w}_2$, we have to evaluate two integrals:
+  \begin{eqnarray*}
+    \iprod{\vect{w}_1,\vect{v}_2}
+    &=& \int_{-1}^{1} 1\cdot x\,dx
+    ~=~ \bigbracket{\textstyle\frac{1}{2}x^2}_{-1}^{1}
+    ~=~ 0,
+    \\
+    \iprod{\vect{w}_1,\vect{w}_1}
+    &=& \int_{-1}^{1} 1\cdot 1\,dx
+    ~=~ \bigbracket{x}_{-1}^{1}
+    ~=~ 2.
+  \end{eqnarray*}
+  Then
+  \begin{eqnarray*}
+    \vect{w}_2
+    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+    ~=~ x ~-~ \frac{0}{2}\cdot 1 ~=~ x.
+  \end{eqnarray*}
+  To calculate $\vect{w}_2$, we first evaluate three integrals:
+  \begin{eqnarray*}
+    \iprod{\vect{w}_1,\vect{v}_3}
+    &=& \int_{-1}^{1} 1\cdot x^2\,dx
+    ~=~ \bigbracket{\textstyle\frac{1}{3}x^3}_{-1}^{1}
+    ~=~ \frac{2}{3},
+    \\
+    \iprod{\vect{w}_2,\vect{v}_3}
+    &=& \int_{-1}^{1} x\cdot x^2\,dx
+    ~=~ \bigbracket{\textstyle\frac{1}{4}x^4}_{-1}^{1}
+    ~=~ 0,
+    \\
+    \iprod{\vect{w}_2,\vect{w}_2}
+    &=& \int_{-1}^{1} x\cdot x\,dx
+    ~=~ \bigbracket{\textstyle\frac{1}{3}x^3}_{-1}^{1}
+    ~=~ \frac{2}{3}.
+  \end{eqnarray*}
+  Then
+  \begin{eqnarray*}
+    \vect{w}_3
+    &=& \vect{v}_3
+        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_3}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_3}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
+        ~=~ x^2 ~-~ \frac{2/3}{2}\cdot 1 ~-~ 0\cdot x
+        ~=~ x^2 - \frac{1}{3}.
+  \end{eqnarray*}
+  To calculate $\vect{w}_3$, we first evaluate four integrals:
+  \begin{eqnarray*}
+    \iprod{\vect{w}_1,\vect{v}_4}
+    &=& \int_{-1}^{1} 1\cdot x^3\,dx
+    ~=~ \bigbracket{\textstyle\frac{1}{4}x^4}_{-1}^{1}
+    ~=~ 0,
+    \\
+    \iprod{\vect{w}_2,\vect{v}_4}
+    &=& \int_{-1}^{1} x\cdot x^3\,dx
+    ~=~ \bigbracket{\textstyle\frac{1}{5}x^5}_{-1}^{1}
+    ~=~ \frac{2}{5},
+    \\
+    \iprod{\vect{w}_3,\vect{v}_4}
+    &=& \int_{-1}^{1} (x^2-\frac{1}{3})\cdot x^3\,dx
+    ~=~ \bigbracket{\textstyle\frac{1}{6}x^6 - \frac{1}{12}x^4}_{-1}^{1}
+    ~=~ 0,
+    \\
+    \iprod{\vect{w}_3,\vect{w}_3}
+    &=& \int_{-1}^{1} (x^2-\frac{1}{3})^2\,dx
+    ~=~ \bigbracket{\textstyle\frac{1}{5}x^5-\frac{2}{9}x^3+\frac{1}{9}x}_{-1}^{1}
+    ~=~ \frac{8}{45}.
+  \end{eqnarray*}
+  Then
+  \begin{eqnarray*}
+    \vect{w}_4
+    &=& \vect{v}_4
+        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_4}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_4}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
+        ~-~ \frac{\iprod{\vect{w}_3,\vect{v}_4}}{\iprod{\vect{w}_3,\vect{w}_3}}\vect{w}_3
+    \\
+    &=& x^3 ~-~ \frac{0}{2}\cdot 1 ~-~ \frac{2/5}{2/3}\cdot x ~-~ \frac{0}{8/45}\cdot(x^2-\frac{1}{3})
+        ~=~ x^3 - \frac{3}{5}x.
+  \end{eqnarray*}
+  Thus, we obtain the orthogonal basis $\set{\vect{w}_1,\vect{w}_2,\vect{w}_3,\vect{w}_4} =
+  \set{1,~ x,~ x^2-\frac{1}{3},~ x^3 - \frac{3}{5}x}$.
+\end{solution}
+
+The orthogonal polynomials from Example~\ref{exa:legendre-polynomials}
+are known (up to scalar multiples) as \textbf{Legendre polynomials}%
+\index{Legendre polynomials}%
+\index{polynomial!Legendre polynomial}.  We can continue in the same
+fashion applying the Gram-Schmidt procedure to the polynomials
+$1, x, x^2, x^3, x^4, x^5, x^6, \ldots$ to get an infinite sequence of
+orthogonal polynomials. The first few elements of this sequence are:
+\begin{eqnarray*}
+  p_0(x) &=& 1, \\
+  p_1(x) &=& x, \\
+  p_2(x) &=& x^2-\frac{1}{3}, \\
+  p_3(x) &=& x^3 - \frac{3}{5}x, \\
+  p_4(x) &=& x^4 - \frac{6}{7}x^2 + \frac{3}{35}, \\
+  p_5(x) &=& x^5 - \frac{10}{9}x^3 + \frac{5}{21}x, \\
+  p_6(x) &=& x^6 - \frac{15}{11}x^4 + \frac{5}{11}x^2 - \frac{5}{231}. \\
+\end{eqnarray*}
+\begin{center}
+  \begin{tikzpicture}[domain=1:-1, scale=4]
+    \draw[thick,color=yellow] plot (\x,{abs(\x^6)-15/11*abs(\x^4)+5/11*abs(\x^2)-5/231}) node[left=2ex] {$x^6 - \frac{15}{11}x^4 + \frac{5}{11}x^2 - \frac{5}{231}$};
+    \draw[thick,color=blue!30!white] plot (\x,{\x^5 - 10/9*\x^3+5/21*\x}) node[left=2ex] {$x^5 - \frac{10}{9}x^3 + \frac{5}{21}x$};
+    \draw[thick,color=orange] plot (\x,{abs(\x^4)-6/7*abs(\x^2)+3/35}) node[left=2ex] {$x^4 - \frac{6}{7}x^2 + \frac{3}{35}$};
+    \draw[thick,color=green!70!black] plot (\x,\x^3-3/5*\x) node[left=2ex] {$x^3 - \frac{3}{5}x$};
+    \draw[thick,color=blue] plot (\x,{abs(\x^2)-1/3}) node[left=2ex] {$x^2-\frac{1}{3}$};
+    \draw[thick,color=red] plot (\x,\x) node[left=2ex] {$x$};
+    \draw[thick,color=purple] plot (\x,1) node[left=2ex] {$1$};
+    \draw[->] (-1.2,0) -- (1.2,0) node[right] {$x$};
+    \draw[->] (0,-1.2) -- (0,1.2) node[above] {$p(x)$};
+    \draw (1,0) -- (1,-0.05) node[below] {$1$};
+    \draw (-1,0) -- (-1,-0.05) node[below] {$-1$};
+  \end{tikzpicture}
+\end{center}
+
