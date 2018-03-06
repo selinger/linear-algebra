@@ -3,6 +3,7 @@ adj
 adjoint
 adjugate
 AES
+affine
 AFJE
 AHI
 AHIFNEPL
