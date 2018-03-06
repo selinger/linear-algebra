@@ -107,7 +107,7 @@ product. The following is an example.
   \index{inner product space!of continuous functions}
   $f:[a,b]\to\R$. Given two functions $f,g\in C[a,b]$, define
   \begin{equation*}
-    \iprod{f,g} = \int_a^b f(t)g(t)\,dt.
+    \iprod{f,g} = \int_a^b f(x)g(x)\,dx.
   \end{equation*}
   This is an inner product.
 \end{example}
@@ -117,29 +117,29 @@ product. The following is an example.
   we have
   \begin{equation*}
     \iprod{f,g}
-    ~=~ \int_a^b f(t)g(t)\,dt
-    ~=~ \int_a^b g(t)f(t)\,dt
+    ~=~ \int_a^b f(x)g(x)\,dx
+    ~=~ \int_a^b g(x)f(x)\,dx
     ~=~ \iprod{g,f}.
   \end{equation*}
   For linearity, we have
   \begin{equation*}
     \iprod{f,kg}
-    ~=~ \int_a^b f(t)kg(t)\,dt
-    ~=~ k\int_a^b f(t)g(t)\,dt
+    ~=~ \int_a^b f(x)kg(x)\,dx
+    ~=~ k\int_a^b f(x)g(x)\,dx
     ~=~ k\iprod{f,g}.
   \end{equation*}
   and
   \begin{eqnarray*}
     \iprod{f,g_1+g_2}
-    &=& \int_a^b f(t)(g_1(t)+g_2(t))\,dt \\
-    &=& \int_a^b f(t)g_1(t) + f(t)g_2(t)\,dt \\
-    &=& \int_a^b f(t)g_1(t)\,dt + \int_a^b f(t)g_2(t)\,dt \\
+    &=& \int_a^b f(x)(g_1(x)+g_2(x))\,dx \\
+    &=& \int_a^b f(x)g_1(x) + f(x)g_2(x)\,dx \\
+    &=& \int_a^b f(x)g_1(x)\,dx + \int_a^b f(x)g_2(x)\,dx \\
     &=& \iprod{f,g_1} + \iprod{f,g_2}.
   \end{eqnarray*}
   For the positive definite property, we have
   \begin{equation*}
     \iprod{f,f}
-    = \int_a^b f(t)^2\,dt
+    = \int_a^b f(x)^2\,dx
     \geq 0.
   \end{equation*}
   This is $\geq 0$ because $a<b$ and the integral over a non-negative
@@ -153,7 +153,7 @@ product. The following is an example.
   real coefficients. Let $a<b$ be real numbers, and consider the inner
   product defined by
   \begin{equation*}
-    \iprod{p,q} = \int_a^b p(t)q(t)\,dt.
+    \iprod{p,q} = \int_a^b p(x)q(x)\,dx.
   \end{equation*}
   This is an inner product space.
 \end{example}
@@ -272,21 +272,34 @@ Finally, we can use the inner product to define the norm of a vector.
 \end{definition}
 
 \begin{example}{Norm in $C[-1,1]$}{norm-in-continuous-functions}
-  Calculate the norm of $f(t) = t^2$ in $C[-1,1]$.
+  Calculate the norm of $f(x) = x^2$ in $C[-1,1]$.
 \end{example}
 
 \begin{solution}
   In the vector space $C[-1,1]$, the inner product is defined as
   \begin{equation*}
-    \iprod{f,g} = \int_{-1}^{1} f(t)g(t)\,dt.
+    \iprod{f,g} = \int_{-1}^{1} f(x)g(x)\,dx.
   \end{equation*}
   We therefore have
   \begin{equation*}
     \iprod{f,f}
-    = \int_{-1}^{1} f(t)^2\, dt
-    = \int_{-1}^{1} t^4\, dt
-    = \bigbracket{\frac{1}{5}t^5}_{-1}^{1}
+    = \int_{-1}^{1} f(x)^2\, dx
+    = \int_{-1}^{1} x^4\, dx
+    = \bigbracket{\frac{1}{5}x^5}_{-1}^{1}
     = \frac{2}{5}.
   \end{equation*}
   Therefore, $\norm{f} = \sqrt{\iprod{f,f}} = \sqrt{\frac{2}{5}}$.
 \end{solution}
+
+A vector $\vect{u}$ in an inner product space is called
+\textbf{normalized}%
+\index{vector!normalized}%
+\index{normalized vector} or a \textbf{unit vector}%
+\index{vector!unit vector}%
+\index{unit vector} if $\norm{\vect{u}} = 1$.
+We note that if $\vect{v}$ is any non-zero vector in an inner product
+space, then
+\begin{equation*}
+  \vect{u} = \frac{1}{\norm{\vect{v}}} \vect{v}
+\end{equation*}
+is normalized.
