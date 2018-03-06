@@ -1,0 +1,215 @@
+\section{Orthogonality}
+
+\begin{definition}{Orthogonality}{inner-product-orthogonality}
+  Let $\vect{u}$ and $\vect{v}$ be vectors in an inner product space.
+  We say that $\vect{u}$ and $\vect{v}$ are \textbf{orthogonal}%
+  \index{vector!orthogonal}%
+  \index{orthogonal vectors} if
+  \begin{equation*}
+    \iprod{\vect{u}, \vect{v}} = 0.
+  \end{equation*}
+\end{definition}
+
+We note that the zero vector $\vect{0}$ is orthogonal to all vectors,
+because $\iprod{\vect{u},\vect{0}} = 0$ follows from the linearity of
+the inner product. We also note, of course, that $\vect{u}$ is
+orthogonal to $\vect{v}$ if and only if $\vect{v}$ is orthogonal to
+$\vect{u}$; this follows from the symmetry of the inner product.
+
+\begin{definition}{Orthogonal complement}{inner-product-orthogonal-complement}
+  Let $S$ be a subset of an inner product space $V$. The
+  \textbf{orthogonal complement}%
+  \index{orthogonal complement} of $S$ is the set
+  \begin{equation*}
+    S^{\perp} = \set{\vect{v}\in V \mid
+      \mbox{
+        $\iprod{\vect{v},\vect{w}} = 0$ for all $\vect{w}\in S$
+      }}.
+  \end{equation*}
+\end{definition}
+
+\begin{proposition}
+  If $S$ is any subset of an inner product space $V$, then $S^{\perp}$
+  is a subspace.
+\end{proposition}
+
+\begin{proof}
+  We clearly have $\vect{0}\in S^{\perp}$, because $\vect{0}$ is
+  orthogonal to all vectors. To show that $S^{\perp}$ is closed under
+  addition, assume $\vect{v}, \vect{v}'\in S^{\perp}$. We have to show
+  $\vect{v}+\vect{v}'\in S^{\perp}$. So take an arbitrary $\vect{w}\in
+  S$. Then we have
+  \begin{equation*}
+    \iprod{\vect{v}+\vect{v}',\vect{w}}
+    = \iprod{\vect{v},\vect{w}} + \iprod{\vect{v}',\vect{w}}
+    = 0 + 0 = 0.
+  \end{equation*}
+  Therefore, $\vect{v}+\vect{v}'\in S^{\perp}$. Finally, to show that
+  $S^{\perp}$ is closed under scalar multiplication, assume
+  $\vect{v}\in S^{\perp}$ and $k\in\R$. We have to show
+  $k\vect{v}\in S^{\perp}$. So take an arbitrary
+  $\vect{w}\in S$. Then we have
+  \begin{equation*}
+    \iprod{k\vect{v},\vect{w}}
+    = k\iprod{\vect{v},\vect{w}}
+    = k0 = 0.
+  \end{equation*}
+  Therefore, $k\vect{v}\in S^{\perp}$. It follows that $S^{\perp}$ is
+  a subspace of $V$.
+\end{proof}
+
+Here is an illustration of a subspace $S$ of $\R^3$ and its orthogonal
+complement $S^{\perp}$:
+
+\begin{center}
+  \begin{tikzpicture}[x={(1cm,0cm)},y={(1cm,0.5cm)},z={(0cm,1cm)},rotate=0]
+    \draw[thick,blue!80!black](-2,0,0) -- (2,0,0);
+    \filldraw[draw=red!80,fill=red!10](0,-1,-1.5) -- (0,-1,1.5) --
+    (0,1,1.5) -- (0,1,-1.5) -- cycle;
+    \path[red!80] (0,0,0.5) node[above] {$S$};
+    \draw[thick,blue!80!black](0,0,0) -- node[above, pos=0.7] {$S^{\perp}$} (2,0,0);
+  \end{tikzpicture}
+\end{center}
+
+\begin{example}{Orthogonal complement}{inner-product-orthogonal-complement}
+  Consider the inner product space $\Poly_3$ of polynomials of degree
+  at most $3$, with the inner product defined by
+  \begin{equation*}
+    \iprod{f,g} = \int_{-1}^{1} f(x)g(x)\,dx.
+  \end{equation*}
+  Find the orthogonal complement of $\set{x^2}$.
+\end{example}
+
+\begin{solution}
+  We have to compute the set of all polynomials of the form
+  $p(x)=ax^3+bx^2+cx+d$ that are orthogonal to $x^2$. So let us
+  compute the inner product:
+  \begin{eqnarray*}
+    \iprod{p(x), x^2}
+    &=& \int_{-1}^{1} (ax^3+bx^2+cx+d)x^2\,dx \\
+    &=& \int_{-1}^{1} ax^5+bx^4+cx^3+dx^2\,dx \\
+    &=& 0a  + \frac{2}{5}b + 0c + \frac{2}{3}d.
+  \end{eqnarray*}
+  Setting this equal to $0$, we see that $\iprod{p(x), x^2}=0$ if and
+  only if $\frac{2}{5}b + \frac{2}{3}d = 0$, or equivalently,
+  $3b+5d=0$. The basic solutions are
+  \begin{equation*}
+    \begin{mymatrix}{c} a \\ b \\ c \\ d \end{mymatrix}
+    = \begin{mymatrix}{c} 1 \\ 0 \\ 0 \\ 0 \end{mymatrix},\quad
+    \begin{mymatrix}{c} a \\ b \\ c \\ d \end{mymatrix}
+    = \begin{mymatrix}{c} 0 \\ 5 \\ 0 \\ -3 \end{mymatrix},\quad
+    \begin{mymatrix}{c} a \\ b \\ c \\ d \end{mymatrix}
+    = \begin{mymatrix}{c} 0 \\ 0 \\ 1 \\ 0 \end{mymatrix},
+  \end{equation*}
+  giving the following basis for the space of polynomials orthogonal
+  to $x^2$:
+  \begin{equation*}
+    \set{x^3,\quad 5x^2-3, \quad x}.
+  \end{equation*}
+\end{solution}
+
+We now consider orthogonal sets and bases.
+
+\begin{definition}{Orthogonal and orthonormal sets of vectors}{orthogonal-set}
+  A set of vectors $\set{\vect{u}_1,\ldots,\vect{u}_k}$ in an inner
+  product space is called an \textbf{orthogonal set}%
+  \index{orthogonal set} if the vectors are non-zero and pairwise
+  orthogonal, i.e., for all $i$, $\vect{u}_i\neq\vect{0}$ and for all
+  $i\leq j$, $\iprod{\vect{u}_i,\vect{u}_j}=0$.
+  \smallskip\smallskip
+
+  Moreover, the set of vectors $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is
+  called \textbf{orthonormal}%
+  \index{orthonormal set} if it is orthogonal and each vector is
+  normalized, i.e., $\norm{\vect{u}_i}=1$.
+\end{definition}
+
+The interest of orthogonal and orthonormal sets of vectors lies, among
+other things, in the fact that they are automatically linearly
+independent.
+
+\begin{proposition}{Orthogonal set is linearly independent}{orthogonal-linear-independence}
+  If $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is an orthogonal set of
+  vectors, then $\vect{u}_1,\ldots,\vect{u}_k$ are linearly
+  independent.
+\end{proposition}
+
+\begin{proof}
+  Assume $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is an orthogonal set. To
+  show that $\vect{u}_1,\ldots,\vect{u}_k$ are linearly
+  independent, assume
+  \begin{equation*}
+    a_1\vect{u}_1 + \ldots + a_k\vect{u}_k = \vect{0}.
+  \end{equation*}
+  We must show that $a_1,\ldots,a_k = 0$. So pick some
+  $i\in\set{1,\ldots,k}$. We compute
+  \begin{eqnarray*}
+    \iprod{a_1\vect{u}_1 + \ldots + a_k\vect{u}_k, \vect{u}_i}
+    &=& a_1\iprod{\vect{u}_1,\vect{u}_i}
+        + \ldots
+        + a_i\iprod{\vect{u}_i,\vect{u}_i}
+        + \ldots
+        + a_k\iprod{\vect{u}_k,\vect{u}_i} \\
+    &=& a_10
+        + \ldots
+        + a_i\iprod{\vect{u}_i,\vect{u}_i}
+        + \ldots
+        + a_k0 \\
+    &=& a_i \iprod{\vect{u}_i,\vect{u}_i}.
+  \end{eqnarray*}
+  On the other hand,
+  \begin{equation*}
+    \iprod{a_1\vect{u}_1 + \ldots + a_k\vect{u}_k, \vect{u}_i}
+    = \iprod{\vect{0}, \vect{u}_i} = 0.
+  \end{equation*}
+  It follows that $a_i \iprod{\vect{u}_i,\vect{u}_i} = 0$. Since
+  $\iprod{\vect{u}_i,\vect{u}_i}\neq 0$, it follows that
+  $a_i=0$. Since the choice of $i$ was arbitrary, it follows that
+  $a_1,\ldots,a_k = 0$, and $\vect{u}_1,\ldots,\vect{u}_k$ are
+  linearly independent.
+\end{proof}
+
+\begin{definition}{Orthogonal and orthonormal bases}{orthogonal-basis}
+  Let $V$ be an inner product space, and let $W$ be a subspace of
+  $V$. We say that $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is an
+  \textbf{orthogonal basis}%
+  \index{orthogonal basis}%
+  \index{basis!orthogonal} for $W$ if it is an orthogonal set and
+  spans $W$.
+  \smallskip\smallskip
+
+  If, moreover, each $\vect{u}_i$ is normalized, we say that
+  $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is an \textbf{orthonormal
+    basis}%
+  \index{orthonormal basis}%
+  \index{basis!orthonormal} for $W$.
+\end{definition}
+
+We note that, by
+Proposition~\ref{prop:orthogonal-linear-independence}, every
+orthogonal (or orthonormal) basis is automatically linearly
+independent, and therefore an actual basis of $W$.
+
+\begin{example}{Orthogonal, orthonormal, and non-orthogonal bases}{orthogonal-basis}
+  Consider $\R^2$ as an inner product space with the usual dot product.
+  \begin{itemize}
+  \item $\set{\begin{mymatrix}{r} 1 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 1 \end{mymatrix}}$ is an orthonormal
+    basis of $\R^2$.
+  \item
+    $\set{\frac{1}{\sqrt{2}}\begin{mymatrix}{r} 1 \\ 1 \end{mymatrix},
+      \frac{1}{\sqrt{2}}\begin{mymatrix}{r} 1 \\ -1 \end{mymatrix}}$
+    is an orthonormal basis of $\R^2$.
+  \item $\set{\begin{mymatrix}{r} 2 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 3 \end{mymatrix}}$ is an orthogonal
+    basis of $\R^2$, but not orthonormal.
+  \item $\set{\begin{mymatrix}{r} 1 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ -1 \end{mymatrix}}$ is an orthogonal
+    basis of $\R^2$, but not orthonormal.
+  \item $\set{\begin{mymatrix}{r} 1 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ 1 \end{mymatrix}}$ is a basis of
+    $\R^2$, but neither orthogonal nor orthonormal.
+  \end{itemize}
+\end{example}
+
+
