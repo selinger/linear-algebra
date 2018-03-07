@@ -43,7 +43,8 @@ In this section, we fix $K$ to be the field of real numbers.
     \iprod{\vect{u},\vect{v}} = \vect{u}\dotprod\vect{v} =
     u_1v_1 + \ldots + u_nv_n
   \end{equation*}
-  is an inner product space.
+  is an inner product space.%
+  \index{inner product space!Rn@$R^n$}
 \end{example}
 
 \begin{proof}
@@ -168,7 +169,8 @@ product. The following is an example.
   \begin{equation*}
     \iprod{p,q} = \int_a^b p(x)q(x)\,dx.
   \end{equation*}
-  This is an inner product space.
+  This is an inner product space.%
+  \index{inner product space!of polynomials}
 \end{example}
 
 \begin{proof}
@@ -192,7 +194,8 @@ product. The following is an example.
     \iprod{a,b} = a_0b_0 + a_1b_1 + a_2b_2 + \ldots.
   \end{equation*}
   This inner product space is called \textbf{(real) Hilbert space}%
-  \index{Hilbert space}.
+  \index{Hilbert space}%
+  \index{inner product space!Hilbert space}.
 \end{example}
 
 We now look at some properties of inner products. The first thing to
@@ -230,7 +233,8 @@ product in Section~\ref{sec:dot-product}.
 
 \begin{theorem}{Cauchy-Schwarz inequality}{inner-product-cauchy-schwarz}
   Let $\vect{u},\vect{v}$ be vectors in an inner product space. Then%
-  \index{Cauchy-Schwarz inequality!in inner product space}
+  \index{Cauchy-Schwarz inequality!in inner product space}%
+  \index{inner product space!Cauchy-Schwarz inequality}
   \begin{equation}\label{cauchy-inner}
     \iprod{\vect{u},\vect{v}}^2
     \leq \iprod{\vect{u},\vect{u}} \cdot \iprod{\vect{v},\vect{v}}.
@@ -277,7 +281,8 @@ Finally, we can use the inner product to define the norm of a vector.
   Let $\vect{u}$ be a vector in an inner product space. Then the
   \textbf{norm}%
   \index{norm!in inner product space}%
-  \index{vector!norm} of $\vect{u}$ is defined as
+  \index{vector!norm}%
+  \index{inner product space!norm} of $\vect{u}$ is defined as
   \begin{equation*}
     \norm{\vect{u}} = \sqrt{\iprod{\vect{u},\vect{u}}}.
   \end{equation*}
@@ -338,7 +343,8 @@ By the Cauchy-Schwarz inequality, we have the following properties:
     \norm{\vect{u}+\vect{v}} \leq \norm{\vect{u}} + \norm{\vect{v}}.
   \end{equation*}
   This is called the \textbf{triangle inequality}%
-  \index{triangle inequality!in inner product space}.
+  \index{triangle inequality!in inner product space}%
+  \index{inner product space!triangle inequality}.
 \end{proposition}
 
 \begin{proof}
