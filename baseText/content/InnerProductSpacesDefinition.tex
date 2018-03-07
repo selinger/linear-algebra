@@ -304,7 +304,7 @@ space, then
 \end{equation*}
 is normalized.
 
-By the Cauchy-Schwarz inequality, we have the following property:
+By the Cauchy-Schwarz inequality, we have the following properties:
 
 \begin{proposition}{Inner product and norm}{inner-product-and-norm}
   Let $\vect{u},\vect{v}$ be vectors in an inner product space. Then
@@ -318,4 +318,28 @@ By the Cauchy-Schwarz inequality, we have the following property:
   $\iprod{\vect{u},\vect{v}}^2 \leq
   \norm{\vect{u}}^2\norm{\vect{v}}^2$. The claim follows by taking the
   square root of both sides of the equation.
+\end{proof}
+
+\begin{proposition}{Triangle inequality}{inner-product-triangle-inequality}
+  Let $\vect{u},\vect{v}$ be vectors in an inner product space. Then 
+  \begin{equation*}
+    \norm{\vect{u}+\vect{v}} \leq \norm{\vect{u}} + \norm{\vect{v}}.
+  \end{equation*}
+  This is called the \textbf{triangle inequality}%
+  \index{triangle inequality!in inner product space}.
+\end{proposition}
+
+\begin{proof}
+  The proof is essentially the same as that of
+  Theorem~\ref{thm:triangle-inequality-dot-product}. We have
+  \begin{eqnarray*}
+    \norm{\vect{u}+\vect{v}}^{2}
+    &=& \iprod{\vect{u}+\vect{v},\vect{u}+\vect{v}} \\
+    &=& \iprod{\vect{u},\vect{u}}+\iprod{\vect{u},\vect{v}}+\iprod{\vect{v},\vect{u}}+\iprod{\vect{v},\vect{v}} \\
+    &=&\norm{\vect{u}}^{2}+2\iprod{\vect{u},\vect{v}}+\norm{\vect{v}}^{2} \\
+    &\leq& \norm{\vect{u}}^{2}+2\abs{\iprod{\vect{u},\vect{v}}}+\norm{\vect{v}}^{2} \\
+    &\leq& \norm{\vect{u}}^{2}+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^{2} \\
+    &=& (\norm{\vect{u}}+\norm{\vect{v}})^{2}.
+  \end{eqnarray*}
+  The triangle inequality follows by taking square roots of both sides.
 \end{proof}
