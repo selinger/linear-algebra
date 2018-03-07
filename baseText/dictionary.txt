@@ -95,6 +95,7 @@ gj
 GLFN
 hamilton
 Hermitian
+hilbert
 HL
 homo
 Hooke's
@@ -134,6 +135,7 @@ Langlois
 Laplace's
 Larissa
 leftmargin
+legendre
 lightgray
 linearity
 LinVW
@@ -167,6 +169,7 @@ NRQEUAPOM
 NW
 okay
 org
+orthogonalization
 orthogonalize
 orthogonally
 orthonormal
@@ -188,6 +191,7 @@ radians
 recurrere
 remix
 Reynold's
+rgb
 rk
 rn
 RNOLFPHHCIGH
@@ -212,6 +216,7 @@ submatrices
 submatrix
 subsequence
 subspaces
+summable
 summands
 surjection
 SVD
