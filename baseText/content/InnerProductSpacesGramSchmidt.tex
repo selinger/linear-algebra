@@ -502,3 +502,45 @@ procedure itself does not involve computing any square roots.
     }.
   \end{equation*}
 \end{solution}
+
+We finish this section by remarking that the formula
+\begin{equation*}
+  \frac{\iprod{\vect{w},\vect{v}}}{\iprod{\vect{w},\vect{w}}}\vect{w}
+\end{equation*}
+is exactly what we called the \textbf{projection of $\vect{v}$ onto
+  $\vect{w}$}%
+\index{vector!projection of}%
+\index{projection!in inner product space} in
+Section~\ref{ssec:projections}, except that we have generalized this
+concept from $\R^n$ to an arbitrary inner product space. We can define
+\begin{equation*}
+  \proj_{\vect{w}}(\vect{v})
+  = \frac{\iprod{\vect{w},\vect{v}}}{\iprod{\vect{w},\vect{w}}}\vect{w}.
+\end{equation*}
+With this definition, the Gram-Schmidt procedure can also be expressed
+more succinctly as follows.
+\begin{equation*}
+  \begin{array}{rcl}
+    \vect{w}_1
+    &=& \vect{v}_1,
+    \\
+    \vect{w}_2
+    &=& \vect{v}_2
+        ~-~ \proj_{\vect{w}_1}(\vect{v}_2),
+    \\
+    \vect{w}_3
+    &=& \vect{v}_3
+        ~-~ \proj_{\vect{w}_1}(\vect{v}_3)
+        ~-~ \proj_{\vect{w}_2}(\vect{v}_3),
+    \\
+    &\vdots&
+    \\
+    \vect{w}_k
+    &=& \vect{v}_k
+        ~-~ \proj_{\vect{w}_1}(\vect{v}_k)
+        ~-~ \proj_{\vect{w}_2}(\vect{v}_k)
+        ~-~ \ldots
+        ~-~ \proj_{\vect{w}_{k-1}}(\vect{v}_k).
+  \end{array}
+\end{equation*}
+  
