@@ -19,13 +19,14 @@ of $\vect{v}$. The point $P$ lies at the place along $\vect{u}$ that
 is closest to $Q$, or equivalently, such that $(0,P,Q)$ forms a right
 triangle. The distance from $0$ to $P$ (measured positively in the
 direction of $\vect{u}$) is called the \textbf{component}%
-\index{component!of a vector}\index{vector!component} of $\vect{v}$ in
-the direction of $\vect{u}$, and is denoted
-$\comp_{\vect{u}}(\vect{v})$. The vector $\longvect{0P}$ is
-called the \textbf{projection}\index{projection!vector to
-  vector}\index{vector!projection of} of $\vect{v}$ onto $\vect{u}$,
-and is denoted $\proj_{\vect{u}}(\vect{v})$. We wish to find
-formulas for these quantities.
+\index{component!of a vector}%
+\index{vector!component} of $\vect{v}$ in the direction of $\vect{u}$,
+and is denoted $\comp_{\vect{u}}(\vect{v})$. The vector
+$\longvect{0P}$ is called the \textbf{projection}%
+\index{projection!vector to vector}%
+\index{vector!projection of} of $\vect{v}$ onto $\vect{u}$, and is
+denoted $\proj_{\vect{u}}(\vect{v})$. We wish to find formulas for
+these quantities.
 
 Let $\theta$ be the included angle between $\vect{v}$ and
 $\vect{u}$. From trigonometry, considering the right triangle
@@ -74,23 +75,23 @@ The following definition summarizes what we have just found.
 
 \begin{definition}{Vector projection}{projection}
   Let $\vect{u}$ by a non-zero vector and $\vect{v}$ any vector. Then
-  the \textbf{component of $\vect{v}$ in the direction of
-    $\vect{u}$}\index{vector!component} is defined to be the scalar
+  the \textbf{component of $\vect{v}$ in the direction of $\vect{u}$}%
+  \index{vector!component} is defined to be the scalar
   \begin{equation*}
     \comp_{\vect{u}}(\vect{v})
     = \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}}}.
   \end{equation*}
-  The \textbf{projection of $\vect{v}$ onto
-    $\vect{u}$}\index{vector!projection of} is defined to be the vector
+  The \textbf{projection of $\vect{v}$ onto $\vect{u}$}%
+  \index{vector!projection of} is defined to be the vector
   \begin{equation*}
     \proj_{\vect{u}}(\vect{v}) =
       \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u}
     =
     \frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\,\vect{u}.
   \end{equation*}
-  These two operations are also called the \textbf{scalar
-    projection}\index{scalar projection}
-  and \textbf{vector projection}\index{vector projection}, respectively.
+  These two operations are also called the \textbf{scalar projection}%
+  \index{scalar projection} and \textbf{vector projection}%
+  \index{vector projection}, respectively.
 \end{definition}
 
 \begin{example}{Find the projection of one vector onto another}{vector-projection}
