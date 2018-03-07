@@ -1,5 +1,74 @@
 \section*{Exercises}
 
+\begin{ex}\label{ex:hilbert-space}.
+  In this exercise, we will work out the details of
+  Example~\ref{exa:hilbert-space}. We must show that $\Hilb_{\R}$ is a
+  vector space. We will do this by showing that it is a subspace of
+  $\Seq_{\R}$. Further, we must show that the inner product is
+  well-defined. This requires some knowledge of convergent series from
+  calculus.
+  \begin{enumerate}
+  \item Assume $a=(a_0,a_1,\ldots)$ and $b=(b_0,b_1,\ldots)$ are
+    square summable sequences. Show that the series
+    $a_0b_0 + a_1b_1 + a_2b_2 + \ldots$ converges to a real
+    number. Hint: consider the series
+    $\abs{a_0b_0} + \abs{a_1b_2} + \ldots$ and use the Cauchy-Schwarz
+    inequality and the absolute convergence test.
+  \item Using the result of part (a), show that $\Hilb_{\R}$ is a
+    subspace of $\Seq_{\R}$. 
+  \item Show that the operation $\iprod{a,b} = a_0b_0 + a_1b_1 +
+    a_2b_2 + \ldots$ is an inner product on $\Hilb_{\R}$.
+  \end{enumerate}
+  \begin{sol}
+    (a) By assumption, $a$ and $b$ are square summable. Let
+    $N=a_0^2 + a_1^2 + \ldots$ and $M=b_0^2 + b_1^2 + \ldots$.
+    By the Cauchy-Schwarz inequality, for all $n$, we have
+    \begin{equation*}
+      \abs{a_0}\abs{b_0} + \ldots + \abs{a_n}\abs{b_n}
+      ~\leq~ \sqrt{\abs{a_0}^2 + \ldots + \abs{a_n}^2} \sqrt{\abs{b_0}^2 + \ldots + \abs{b_n}^2}
+      ~\leq~ \sqrt{N}\sqrt{M}.
+    \end{equation*}
+    Therefore the series $\abs{a_0b_0} + \abs{a_1b_1} + \ldots$ is
+    bounded. By the absolute convergence test from calculus, it
+    follows that the series $a_0b_0 + a_1b_1 + \ldots$ converges.
+
+    (b) It is clear that the zero sequence is square summable, and
+    also that a scalar multiple of a square summable sequence is
+    square summable. Hence $\Hilb_{\R}$ contains the zero vector and
+    is closed under scalar multiplication. To show that it is closed
+    under addition, assume $a,b\in\Hilb_{\R}$, and let $c=a+b$. We
+    must show that $c$ is square summable. But
+    \begin{equation*}
+      c_0^2 + c_1^2 + \ldots
+      ~=~
+      (a_0+b_0)^2 + (a_1+b_1)^2 + \ldots
+      ~=~ (a_0^2 + a_1^2 + \ldots) + (b_0^2 + b_1^2 + \ldots)
+      + (2a_0b_0 + 2a_1b_1 + \ldots).
+    \end{equation*}
+    The series $a_0^2 + a_1^2 + \ldots$ and $b_0^2 + b_1^2 + \ldots$
+    converge by assumption, and the series $2a_0b_0 + 2a_1b_1 +
+    \ldots$ converges by part (a). It follows that $\Hilb_{\R}$ is
+    closed under addition.
+
+    (c) Symmetry and linearity follow straightforwardly from
+    properties of convergent series. For example,
+    \begin{equation*}
+      \iprod{a,b+c}
+      ~=~ a_0(b_0+c_0) + a_1(b_1+c_1) + \ldots
+      ~=~ (a_0b_0 + a_1b_1 + \ldots) + (a_0c_0 + a_1c_1 + \ldots)
+      ~=~ \iprod{a,b} + \iprod{a,c}.
+    \end{equation*}
+    As for the positive definite property, note that
+    \begin{equation*}
+      \iprod{a,a}
+      ~=~ a_0^2 + a_1^2 + \ldots
+      ~\geq~ 0.      
+    \end{equation*}
+    Moreover, since all terms in the series are $\geq 0$, it follows
+    that $\iprod{a,a}=0$ if and only if $a_i=0$ for all $i$.
+  \end{sol}
+\end{ex}
+
 \begin{ex}
   For $\vect{u},\vect{v}$ vectors in $\R^{3}$, define the product
   $\vect{u}\ast \vect{v} = u_{1}v_{1}+2u_{2}v_{2}+3u_{3}v_{3}$. Show
