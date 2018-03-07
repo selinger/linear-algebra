@@ -362,3 +362,51 @@ By the Cauchy-Schwarz inequality, we have the following properties:
   \end{eqnarray*}
   The triangle inequality follows by taking square roots of both sides.
 \end{proof}
+
+Generalizing the situation in $\R^n$, we can define the angle
+between any two vectors in an inner product space. Note that by the
+Cauchy-Schwarz inequality,
+\begin{equation*}
+  \frac{\abs{\iprod{\vect{u},\vect{v}}}}{\norm{\vect{u}}\norm{\vect{v}}}
+  \leq 1,
+\end{equation*}
+and therefore,
+\begin{equation*}
+  -1 \leq \frac{\iprod{\vect{u},\vect{v}}}{\norm{\vect{u}}\norm{\vect{v}}}
+  \leq 1.
+\end{equation*}
+This ensures that the following definition is well-defined.
+
+\begin{definition}{Angle between two vectors}{inner-product-angle}
+  Let $\vect{u},\vect{v}$ be vectors in an inner product space.
+  The \textbf{angle}%
+  \index{angle!in inner product space}%
+  \index{angle!between vectors} between $\vect{u}$ and
+  $\vect{v}$ is, by definition, the unique $\theta$ such that
+  $0\leq\theta\leq 2\pi$ and
+  \begin{equation*}
+    \cos\theta = \frac{\iprod{\vect{u},\vect{v}}}{\norm{\vect{u}}\norm{\vect{v}}}.
+  \end{equation*}
+\end{definition}
+
+\begin{example}{Find the angle between two vectors}{inner-product-angle}
+  Find the angle between $1$ and $x^2$ in $C[-1,1]$.
+\end{example}
+
+\begin{solution}
+  We have
+  \begin{eqnarray*}
+    \iprod{1,1} &=& \int_{-1}^1 1\cdot 1\,dx ~=~ 2, \\
+    \iprod{x^2,x^2} &=& \int_{-1}^1 x^2\cdot x^2\,dx ~=~ \frac{2}{5}, \\
+    \iprod{1, x^2} &=& \int_{-1}^1 1\cdot x^2\,dx ~=~ \frac{2}{3}.
+  \end{eqnarray*}
+  Therefore
+  \begin{equation*}
+    \cos\theta
+    ~=~ \frac{\iprod{1,x^2}}{\norm{1}\norm{x^2}}
+    ~=~ \frac{\frac{2}{3}}{\sqrt{2}\sqrt{\frac{2}{5}}}
+    ~=~ \frac{\sqrt{5}}{3}.
+  \end{equation*}
+  The angle $\theta$ is approximately $0.73$ radians, or $41.8$ degrees.
+  
+\end{solution}
