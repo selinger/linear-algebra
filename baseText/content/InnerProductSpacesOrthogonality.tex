@@ -199,18 +199,23 @@ independent.
 
 \begin{proof}
   We have to check that any two functions are orthogonal to each
-  other. This is true because of trigonometric identities. For
-  example,
+  other. This is true because of trigonometric identities. We have the
+  following trigonometric identities:
+  \begin{eqnarray*}
+    \sin\alpha\sin\beta &=& \frac{1}{2}(\cos(\alpha-\beta) - \cos(\alpha+\beta)), \\
+    \cos\alpha\cos\beta &=& \frac{1}{2}(\cos(\alpha-\beta) + \cos(\alpha+\beta)), \\
+    \sin\alpha\cos\beta &=& \frac{1}{2}(\sin(\alpha-\beta) + \sin(\alpha+\beta)).
+  \end{eqnarray*}
+  Using these, we can compute the relevant inner products. Assume $i\neq j$. Then
   \begin{eqnarray*}
     \iprod{g_i,g_j}
     &=& \int_{0}^{2\pi} \cos(ix)\cos(jx)\,dx \\
     &=& \frac{1}{2}\int_{0}^{2\pi} \cos((i-j)x) + \cos((i+j)x)\,dx \\
-    &=& \bigbracket{\frac{1}{2(i-j)} \sin((i-j)x) + \frac{1}{2(i+j)}
+    &=& \frac{1}{2}\bigbracket{\frac{1}{(i-j)} \sin((i-j)x) + \frac{1}{(i+j)}
       \sin((i+j)x)}_{0}^{2\pi} \\
-    &=& 0
+    &=& 0.
   \end{eqnarray*}
-  when $i,j\geq 0$ and $i\neq j$. The cases for $\iprod{f_i,f_j}$ and
-  $\iprod{f_i,g_j}$ are similar.
+  The cases for $\iprod{f_i,f_j}$ and $\iprod{f_i,g_j}$ are similar.
 \end{proof}
 
 \begin{definition}{Orthogonal and orthonormal bases}{orthogonal-basis}
