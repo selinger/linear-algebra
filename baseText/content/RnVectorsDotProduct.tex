@@ -69,7 +69,7 @@ scalar. For this reason, the dot product is also called the
 
 The dot product satisfies a number of important properties.
 
-\begin{theorem}{Properties of the dot product}{properties-dot-product}
+\begin{proposition}{Properties of the dot product}{properties-dot-product}
   \index{dot product!properties}%
   \index{properties of dot product}%
   \index{vector!dot product!properties}%
@@ -85,10 +85,10 @@ The dot product satisfies a number of important properties.
     =k(\vect{u}\dotprod \vect{v})+\ell(\vect{u}\dotprod\vect{w})$.
   \item $\vect{u}\dotprod\vect{u}=\norm{\vect{u}}^{2}$.
   \end{itemize}
-\end{theorem}
+\end{proposition}
 
 The proof is left as an exercise. Note that, by the last part of the
-theorem, we can also use the dot product to find the length of a
+proposition, we can also use the dot product to find the length of a
 vector.
 
 \begin{example}{Length of a vector}{dot-product-length}
@@ -106,7 +106,7 @@ vector.
 \end{example}
 
 \begin{solution}
-  By the last part of Theorem~\ref{thm:properties-dot-product}, we have
+  By the last part of Proposition~\ref{prop:properties-dot-product}, we have
   $\norm{\vect{u}} = \sqrt {\vect{u} \dotprod \vect{u}}$. We have
   $\vect{u} \dotprod \vect{u} = 2^2+1^2+4^2+2^2 = 25$, and therefore
   $\norm{\vect{u}} = \sqrt{\vect{u} \dotprod \vect{u}} = \sqrt{25} = 5$.
@@ -118,15 +118,15 @@ vector.
 The \textbf{Cauchy-Schwarz inequality}%
 \index{Cauchy-Schwarz inequality!for dot product} is a fundamental
 inequality satisfied by the dot product.  It is given in the following
-theorem.
+proposition.
 
-\begin{theorem}{Cauchy-Schwarz inequality}{cauchy-schwarz-inequality}
+\begin{proposition}{Cauchy-Schwarz inequality}{cauchy-schwarz-inequality}
   The dot product satisfies the inequality
   \begin{equation}\label{cauchy}
     \abs{\vect{u}\dotprod \vect{v}}\leq \norm{\vect{u}} \norm{\vect{v}}
   \end{equation}
   Furthermore equality is obtained if and only if one of $\vect{u}$ or $\vect{v}$ is a scalar multiple of the other.
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
   First note that if $\vect{u}=\vect{0}$, then both sides of
@@ -136,9 +136,9 @@ theorem.
   \begin{equation*}
     f(t) =(t\vect{u}+\vect{v}) \dotprod (t\vect{u}+ \vect{v}).
   \end{equation*}
-  Then by Theorem~\ref{thm:properties-dot-product}, $f(t) \geq 0$
+  Then by Proposition~\ref{prop:properties-dot-product}, $f(t) \geq 0$
   for all $t\in \R$.  Also from
-  Theorem~\ref{thm:properties-dot-product}, we have
+  Proposition~\ref{prop:properties-dot-product}, we have
   \begin{eqnarray*}
     f(t) &=&t\vect{u}\dotprod (t\vect{u}+\vect{v}) +
              \vect{v}\dotprod (t\vect{u}+\vect{v}) \\
@@ -162,11 +162,11 @@ theorem.
 
 An important consequence of the Cauchy-Schwarz inequality is the
 so-called \textbf{triangle inequality}%
-\index{triangle inequality!of vectors}, which states that the length
+\index{triangle inequality!in $\R^n$}, which states that the length
 of one side of a triangle is less than or equal the sum of the lengths
 of the two other sides.
 
-\begin{theorem}{Triangle inequality}{triangle-inequality-dot-product}
+\begin{proposition}{Triangle inequality}{triangle-inequality-dot-product}
   For\/ $\vect{u},\vect{v}\in \R^{n}$, we have
   \begin{equation}\label{triangle-ineq-1}
     \norm{\vect{u}+\vect{v}} \leq \norm{\vect{u}} +\norm{\vect{v}}.
@@ -179,7 +179,7 @@ of the two other sides.
       \draw[->, thick, red](0.75,0) -- node[below right]{$\vect{v}$} (1.5,1);
     \end{tikzpicture}
   \end{center}
-\end{theorem}
+\end{proposition}
 
 \begin{proof}
   By properties of the dot product and the Cauchy-Schwarz inequality,
@@ -190,7 +190,8 @@ of the two other sides.
     & =&(\vect{u}\dotprod\vect{u})+(\vect{u}\dotprod\vect{v})+(\vect{v}\dotprod\vect{u})+(\vect{v}\dotprod\vect{v}) \\
     &=&\norm{\vect{u}}^{2}+2(\vect{u}\dotprod\vect{v})+\norm{\vect{v}}^{2} \\
     &\leq& \norm{\vect{u}}^{2}+2\abs{\vect{u}\dotprod\vect{v}}+\norm{\vect{v}}^{2} \\
-    &\leq& \norm{\vect{u}}^{2}+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^{2} =(\norm{\vect{u}}+\norm{\vect{v}})^{2}.
+    &\leq& \norm{\vect{u}}^{2}+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^{2} \\
+    &=& (\norm{\vect{u}}+\norm{\vect{v}})^{2}.
   \end{eqnarray*}
   Therefore,
   \begin{equation*}
