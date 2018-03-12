@@ -1,7 +1,5 @@
 \section{Application: Fourier series}
 
-\void{
-
 % ----------------------------------------------------------------------
 % Legendre 1
 
@@ -163,8 +161,6 @@
   \end{tikzpicture}
 \end{center}
 
-}
-
 % ----------------------------------------------------------------------
 % Fourier 2
 
@@ -183,7 +179,7 @@
     \draw[thick,color=red,samples=200]     plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})+((-0.05092958178940641)*\fK{\x})}) node[above right=2ex] {};
     \draw[thick,color=blue,samples=200]    plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})+((-0.05092958178940641)*\fK{\x})+((-0.025984480504798825)*\fO{\x})}) node[above right=2ex] {};
     \draw[->] (-0.8,0) -- (6*pi+0.8,0) node[right] {$x$};
-    \draw[->] (0,-3.5) -- (0,3.5) node[above] {$f(x)$};
+    \draw[->] (0,-2) -- (0,2) node[above] {$f(x)$};
     \draw (pi,0) -- (pi,-0.05) node[below] {$\pi$};
     \draw (2*pi,0) -- (2*pi,-0.05) node[below] {$2\pi$};
     \draw (3*pi,0) -- (3*pi,-0.05) node[below] {$3\pi$};
@@ -208,19 +204,19 @@
       node[right]{$~~=~~\left\{\rule{0mm}{3cm}\right.$};
     \end{scope}
     \begin{scope}[yshift=-4cm]
-      \draw[thick,color=green]   plot (\x,{((-1.2732395447351623)*\fC{\x})}) node[below right=2ex] {};
+      \draw[thick,color=green]   plot (\x,{((-1.2732395447351623)*\fC{\x})}) (6*pi,0) node[right=2ex] {$-\frac{4}{\pi}cos(x)$};
       \draw[->] (-1.5,0) -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-8cm]
-      \draw[thick,color=my-blue] plot (\x,{((-0.14147106052612904)*\fG{\x})}) node[above right=2ex] {};
+      \draw[thick,color=my-blue] plot (\x,{((-0.14147106052612904)*\fG{\x})}) (6*pi,0) node[right=2ex] {$-\frac{4}{9\pi}\cos(3x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-12cm]
-      \draw[thick,color=red]     plot (\x,{((-0.05092958178940641)*\fK{\x})}) node[above right=2ex] {};
+      \draw[thick,color=red]     plot (\x,{((-0.05092958178940641)*\fK{\x})}) (6*pi,0) node[right=2ex] {$-\frac{4}{25\pi}\cos(5x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-16cm]
-      \draw[thick,color=blue]    plot (\x,{((-0.025984480504798825)*\fO{\x})}) node[above right=2ex] {};
+      \draw[thick,color=blue]    plot (\x,{((-0.025984480504798825)*\fO{\x})}) (6*pi,0) node[right=2ex] {$-\frac{4}{49\pi}\cos(7x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-20cm]
@@ -251,7 +247,7 @@
     \draw[thick,color=red,samples=200]     plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})+((0.25464790894703326)*\fJ{\x})}) node[above right=2ex] {};
     \draw[thick,color=blue,samples=300]    plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})+((0.25464790894703326)*\fJ{\x})+((0.18189136353359486)*\fN{\x})}) node[above right=2ex] {};
     \draw[->] (-0.8,0) -- (6*pi+0.8,0) node[right] {$x$};
-    \draw[->] (0,-3.5) -- (0,3.5) node[above] {$f(x)$};
+    \draw[->] (0,-2) -- (0,2) node[above] {$f(x)$};
     \draw (pi,0) -- (pi,-0.05) node[below] {$\pi$};
     \draw (2*pi,0) -- (2*pi,-0.05) node[below] {$2\pi$};
     \draw (3*pi,0) -- (3*pi,-0.05) node[below] {$3\pi$};
@@ -280,19 +276,19 @@
       node[right]{$~~=~~\left\{\rule{0mm}{3cm}\right.$};
     \end{scope}
     \begin{scope}[yshift=-4cm]
-      \draw[thick,color=green]   plot (\x,{((1.2732395447351623)*\fB{\x})}) node[below right=2ex] {};
+      \draw[thick,color=green]   plot (\x,{((1.2732395447351623)*\fB{\x})}) node[right=2ex] {$\frac{4}{\pi}\sin(x)$};
       \draw[->] (-1.5,0) -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-8cm]
-      \draw[thick,color=my-blue] plot (\x,{((0.4244131815783881)*\fF{\x})}) node[above right=2ex] {};
+      \draw[thick,color=my-blue] plot (\x,{((0.4244131815783881)*\fF{\x})}) node[right=2ex] {$\frac{4}{3\pi}\sin(3x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-12cm]
-      \draw[thick,color=red,samples=150]     plot (\x,{((0.25464790894703326)*\fJ{\x})}) node[above right=2ex] {};
+      \draw[thick,color=red,samples=150]     plot (\x,{((0.25464790894703326)*\fJ{\x})}) node[right=2ex] {$\frac{4}{5\pi}\sin(5x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-16cm]
-      \draw[thick,color=blue,samples=200]    plot (\x,{((0.18189136353359486)*\fN{\x})}) node[above right=2ex] {};
+      \draw[thick,color=blue,samples=200]    plot (\x,{((0.18189136353359486)*\fN{\x})}) node[right=2ex] {$\frac{4}{7\pi}\sin(7x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-20cm]
