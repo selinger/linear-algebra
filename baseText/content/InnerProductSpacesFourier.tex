@@ -47,7 +47,9 @@ provided that we have an orthogonal basis of the subspace.
   The vector $\vect{v}'$ is called the \textbf{orthogonal projection
     of $\vect{v}$ onto $W$}%
   \index{orthogonal projection!onto subspace}%
-  \index{projection!onto subspace}.
+  \index{projection!onto subspace}. We also say that $\vect{v}'$ is
+  the \textbf{best approximation}%
+  \index{approximation} of $\vect{v}$ in $W$.
 \end{proposition}
 
 \begin{proof}
@@ -128,9 +130,7 @@ provided that we have an orthogonal basis of the subspace.
   \begin{equation*}
     \vect{v} = \begin{mymatrix}{r} 1 \\ 2 \\ 3 \\ 4 \end{mymatrix}.
   \end{equation*}
-  Find the element of\/ $W$ that is closest to $\vect{v}$. In other
-  words, find $\vect{v}'\in W$ such that $\norm{\vect{v}-\vect{v}'}$
-  is as small as possible.
+  Find the best approximation of $\vect{v}$ in $W$.
 \end{example}
 
 \begin{solution}
@@ -153,7 +153,8 @@ had to do is calculate a few inner products. It is not even necessary
 to solve a system of equations. Such is the power of orthogonal bases.
 
 The next example shows that we can use exactly the same method to find
-approximations of functions.
+approximations%
+\index{approximation!of functions} of functions.
 
 \begin{example}{Approximating a function by a polynomial}{projection-subspace-polynomial}
   Let $V=C[-1,1]$ be the vector space of continuous functions, with the
@@ -224,12 +225,15 @@ approximations of functions.
     &=&
     \frac{\iprod{f,p_0}}{\iprod{p_0,p_0}}\,p_0
         + \frac{\iprod{f,p_1}}{\iprod{p_1,p_1}}\,p_1
-        + \frac{\iprod{f,p_2}}{\iprod{p_2,p_2}}\,p_2 \\
-    &=& \frac{1}{2}\cdot 1
-        + \frac{0}{2/3}\, x
-        - \frac{1/6}{8/45}(x^2-\frac{1}{3}) \\
+        + \frac{\iprod{f,p_2}}{\iprod{p_2,p_2}}\,p_2
+    \\
+    &=& \frac{1}{2}\,p_0
+        + \frac{0}{2/3}\,p_1
+        - \frac{1/6}{8/45}\,p_2
+    \\
     &=& \frac{1}{2} 
-        - \frac{15}{16}(x^2-\frac{1}{3}) \\
+        - \frac{15}{16}(x^2-\frac{1}{3})
+    \\
     &=& \frac{13}{16} - \frac{15}{16}x^2.
   \end{eqnarray*}
   The following graph shows the function $f(x)$ as well as the
@@ -251,39 +255,164 @@ approximations of functions.
   \end{center}
 \end{solution}
 
+When approximating a function $f$ by a polynomial, as in the last
+example, there is no need to stop with polynomials of degree 2. We can
+also ask what is the best approximation%
+\index{approximation!of functions} of $f$ by a polynomial of
+degree 3, of degree 4, of degree 5, and so on. By increasing the
+degree of the polynomials, we get better and better approximations to
+$f$. This leads us to the concept of a generalized Fourier series.
+
+\begin{definition}{Generalized Fourier series}{generalized-fourier-series}
+  Let $V$ be an inner product space and let
+  $\set{\vect{u}_1,\vect{u}_2,\vect{u}_3,\ldots}$ be an infinite
+  orthogonal set of vectors.  Let $\vect{v}\in V$. The
+  \textbf{generalized Fourier series}%
+  \index{generalized Fourier series}%
+  \index{Fourier series!generalized}%
+  \index{series!Fourier series} of $\vect{v}$ (with respect to
+  $\vect{u}_1,\vect{u}_2,\vect{u}_3,\ldots$) consists of the following
+  sequence of vectors:
+  \begin{eqnarray*}
+    \vect{v}_1
+    &=& \frac{\iprod{\vect{v},\vect{u}_1}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\vect{u}_1, \\
+    \vect{v}_2
+    &=& \frac{\iprod{\vect{v},\vect{u}_1}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\vect{u}_1
+        + \frac{\iprod{\vect{v},\vect{u}_2}}{\iprod{\vect{u}_2,\vect{u}_2}}\,\vect{u}_2, \\
+    \vect{v}_3
+    &=& \frac{\iprod{\vect{v},\vect{u}_1}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\vect{u}_1
+        + \frac{\iprod{\vect{v},\vect{u}_2}}{\iprod{\vect{u}_2,\vect{u}_2}}\,\vect{u}_2
+        + \frac{\iprod{\vect{v},\vect{u}_3}}{\iprod{\vect{u}_3,\vect{u}_3}}\,\vect{u}_3, \\
+    \vect{v}_4
+    &=& \frac{\iprod{\vect{v},\vect{u}_1}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\vect{u}_1
+        + \frac{\iprod{\vect{v},\vect{u}_2}}{\iprod{\vect{u}_2,\vect{u}_2}}\,\vect{u}_2
+        + \frac{\iprod{\vect{v},\vect{u}_3}}{\iprod{\vect{u}_3,\vect{u}_3}}\,\vect{u}_3
+        + \frac{\iprod{\vect{v},\vect{u}_4}}{\iprod{\vect{u}_4,\vect{u}_4}}\,\vect{u}_4, \\
+    &\vdots        &
+  \end{eqnarray*}
+  The vectors $\vect{v}_i$ are also called \textbf{generalized Fourier
+    approximations}%
+  \index{Fourier approximation}%
+  \index{approximation!Fourier} of $\vect{v}$.
+\end{definition}
+
+By Proposition~\ref{prop:projection-subspace}, we know that each
+$\vect{v}_i$ is the best approximation of $\vect{v}$ in the subspace
+$\sspan\set{\vect{u}_1,\ldots,\vect{u}_i}$. In particular,
+$\norm{\vect{v}-\vect{v}_{i+1}} \leq \norm{\vect{v}-\vect{v}_i}$, so
+each $\vect{v}_i$ is potentially a better approximation of $\vect{v}$
+than the previous one. In a course on analysis%
+\footnote{``Algebra'' is the name for those subjects where all sums
+  are finite. This includes, for example, linear algebra and abstract
+  algebra. ``Analysis'' is the name for those subjects where sums are
+  potentially infinite (and may or may not converge). This includes,
+  for example, calculus, complex analysis, and functional analysis.},
+you will learn that in many situations, the sequence
+$\vect{v}_1,\vect{v}_2,\vect{v}_3,\ldots$ can be shown to converge to
+$\vect{v}$.
+
+\begin{example}{Generalized Fourier series}{generalized-fourier-series}
+  Proceeding as in Example~\ref{exa:projection-subspace-polynomial},
+  find the generalized Fourier approximations of $f(x)=1-\abs{x}$ up
+  to degree 8.
+\end{example}
+
+\begin{solution}
+  We use the Legendre polynomials $p_0,\ldots,p_8$ from
+  Section~\ref{sec:gram-schmidt} and calculate the relevant inner
+  products, each of which requires solving an integral. As these
+  integrals get a bit complicated, it is best to use a computer
+  algebra system to compute them.
+  \begin{equation*}
+    \def\arraystretch{1.4}
+    \begin{array}{rcl}
+      \iprod{f,p_0} &=& 1, \\
+      \iprod{f,p_1} &=& 0, \\
+      \iprod{f,p_2} &=& -\frac{1}{6}, \\
+      \iprod{f,p_3} &=& 0, \\
+      \iprod{f,p_4} &=& \frac{1}{105}, \\
+      \iprod{f,p_5} &=& 0, \\
+      \iprod{f,p_6} &=& -\frac{1}{924}, \\
+      \iprod{f,p_7} &=& 0, \\
+      \iprod{f,p_8} &=& \frac{1}{6435}, \\
+    \end{array}
+    \quad
+    \begin{array}{rcl}
+      \iprod{p_0,p_0} &=& 2, \\
+      \iprod{p_1,p_1} &=& \frac{2}{3}, \\
+      \iprod{p_2,p_2} &=& \frac{8}{45}, \\
+      \iprod{p_3,p_3} &=& \frac{8}{175}, \\
+      \iprod{p_4,p_4} &=& \frac{128}{11025}, \\
+      \iprod{p_5,p_5} &=& \frac{128}{43659}, \\
+      \iprod{p_6,p_6} &=& \frac{512}{693693}, \\
+      \iprod{p_7,p_7} &=& \frac{512}{2760615}, \\
+      \iprod{p_8,p_8} &=& \frac{32768}{703956825}. \\
+    \end{array}
+  \end{equation*}
+  We therefore have the following approximations:
+  \begin{eqnarray*}
+    f_0 &=& f_1 ~~=~~
+            \frac{1}{2}\,p_0,
+    \\
+    f_2 &=& f_3 ~~=~~
+            \frac{1}{2}\,p_0
+            - \frac{15}{16}\,p_2,
+    \\
+    f_4 &=& f_5 ~~=~~
+            \frac{1}{2}\,p_0
+            - \frac{15}{16}\,p_2
+            + \frac{105}{128}\,p_4,
+    \\
+    f_6 &=& f_7 ~~=~~
+            \frac{1}{2}\,p_0
+            - \frac{15}{16}\,p_2
+            + \frac{105}{128}\,p_4
+            - \frac{3003}{2048}\,p_6,
+    \\
+    f_8 &=& f_9 ~~=~~
+            \frac{1}{2}\,p_0
+            - \frac{15}{16}\,p_2
+            + \frac{105}{128}\,p_4
+            - \frac{3003}{2048}\,p_6
+            + \frac{109395}{32768}\,p_8.
+  \end{eqnarray*}
+  The following graph shows the function $f$ as well as its
+  approximations $f_0$, $f_2$, $f_4$, $f_6$, and $f_8$. It can be seen
+  that each successive approximation is closer to the function $f$
+  than the previous one.
+  \begin{center}
+    \begin{tikzpicture}[domain=-1:1, scale=4, samples=25]
+      \def\fA#1{1}
+      \def\fB#1{(#1)}
+      \def\fC#1{(abs((#1)^2)-1/3)}
+      \def\fD#1{((#1)^3-3/5*(#1))}
+      \def\fE#1{(abs((#1)^4)-6/7*abs((#1)^2)+3/35)}
+      \def\fF#1{((#1)^5 - 10/9*(#1)^3+5/21*(#1))}
+      \def\fG#1{(abs((#1)^6)-15/11*abs((#1)^4)+5/11*abs((#1)^2)-5/231)}
+      \def\fH#1{((429*(#1)^7 - 693*(#1)^5 + 315*(#1)^3 - 35*(#1))/429)}
+      \def\fI#1{((6435*abs((#1)^8)-12012*abs((#1)^6)+6930*abs((#1)^4)-1260*abs((#1)^2)+35)/6435)}
+      \definecolor{my-blue}{rgb}{0,0.87,1.00}
+      \definecolor{my-yellow}{rgb}{1.00,0.87,0.00}
+      \draw[thick,color=gray] (-1,0) -- (0,1) -- (1,0);
+      \path[color=gray] (0,1) node[right=2ex] {$f$};
+      \draw[thick,color=my-yellow] plot (\x,0.5*\fA{\x}) (1,0.5) node[right=1ex] {$f_0$};
+      \draw[thick,color=green] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}}) (1,-0.18) node[right=1ex] {$f_2$};
+      \draw[thick,color=my-blue,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x}}) (1,0.18) node[right=1ex] {$f_4$};
+      \draw[thick,color=red,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}}) (1,-0.06) node[right=1ex] {$f_6$};
+      \draw[thick,color=blue,samples=75] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}+3.338470458984375*\fI{\x}}) (1,0.06) node[right=1ex] {$f_8$};
+      \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
+      \draw[->] (0,-0.3) -- (0,1.1) node[above] {$p(x)$};
+      \draw (1,0) -- (1,-0.05) node[below] {$1$};
+      \draw (-1,0) -- (-1,-0.05) node[below] {$-1$};
+    \end{tikzpicture}
+  \end{center}
+\end{solution}
+
+
 % ======================================================================
 % CONTINUE HERE...
 
 \void{
-
-% ----------------------------------------------------------------------
-% Legendre 1
-
-\begin{center}
-  \begin{tikzpicture}[domain=-1:1, scale=4, samples=25]
-    \def\fA#1{1}
-    \def\fB#1{(#1)}
-    \def\fC#1{(abs((#1)^2)-1/3)}
-    \def\fD#1{((#1)^3-3/5*(#1))}
-    \def\fE#1{(abs((#1)^4)-6/7*abs((#1)^2)+3/35)}
-    \def\fF#1{((#1)^5 - 10/9*(#1)^3+5/21*(#1))}
-    \def\fG#1{(abs((#1)^6)-15/11*abs((#1)^4)+5/11*abs((#1)^2)-5/231)}
-    \def\fH#1{((429*(#1)^7 - 693*(#1)^5 + 315*(#1)^3 - 35*(#1))/429)}
-    \def\fI#1{((6435*abs((#1)^8)-12012*abs((#1)^6)+6930*abs((#1)^4)-1260*abs((#1)^2)+35)/6435)}
-    \definecolor{my-blue}{rgb}{0,0.87,1.00}
-    \definecolor{my-yellow}{rgb}{1.00,0.87,0.00}
-    \draw[thick,color=gray] (-1,0) -- (0,1) -- (1,0);
-    \draw[thick,color=my-yellow] plot (\x,0.5*\fA{\x}) node[right=2ex] {$1$};
-    \draw[thick,color=green] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}}) node[below right=2ex] {$x$};
-    \draw[thick,color=my-blue,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x}}) node[above right=2ex] {$x^2-\frac{1}{3}$};
-    \draw[thick,color=red,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}}) node[right=2ex] {$x^2-\frac{1}{3}$};
-    \draw[thick,color=blue,samples=75] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}+3.338470458984375*\fI{\x}}) node[right=2ex] {$x^2-\frac{1}{3}$};
-    \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
-    \draw[->] (0,-0.3) -- (0,1.1) node[above] {$p(x)$};
-    \draw (1,0) -- (1,-0.05) node[below] {$1$};
-    \draw (-1,0) -- (-1,-0.05) node[below] {$-1$};
-  \end{tikzpicture}
-\end{center}
 
 % ----------------------------------------------------------------------
 % Legendre 2
