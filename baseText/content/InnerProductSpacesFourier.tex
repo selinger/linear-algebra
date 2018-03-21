@@ -500,17 +500,81 @@ eventually converges to $f$.
   \end{tikzpicture}
 \end{center}
 
+So far, we have worked with Legendre polynomials, but there are of
+course other examples of orthogonal sets of functions. An important
+such set is given by sine and cosine waves. We will see that every
+periodic function can be decomposed into sine and cosine waves of
+varying frequencies. This was Fourier's original discovery, and the
+corresponding series are just known as \textbf{Fourier series}%
+\index{Fourier series}%
+\index{series!Fourier series} (i.e., not ``generalized'').
 
+\begin{example}{Fourier series}{fourier-series}
+  Consider the inner product space $C[0,2\pi]$. Recall from
+  Example~\ref{exa:orthogonal-set-sin-cos} that the following
+  functions form an orthogonal set:
+  \begin{eqnarray*}
+    \vect{u}_0 &=& 1 \\
+    \vect{u}_1 &=& \sin x \\
+    \vect{u}_2 &=& \cos x \\
+    \vect{u}_3 &=& \sin 2x \\
+    \vect{u}_4 &=& \cos 2x \\
+    \vect{u}_5 &=& \sin 3x \\
+    \vect{u}_6 &=& \cos 3x \\
+    &\vdots&
+  \end{eqnarray*}
+  Consider the function $f(x) = x - \pi$, where $x\in[0,2\pi]$. Find
+  its Fourier series.
+\end{example}
 
+\begin{solution}
+  Following Definition~\ref{def:generalized-fourier-series}, we must
+  calculate a number of inner products. We have
+  $\iprod{\vect{u}_0,\vect{u}_0}=2\pi$. Also, for all $i\geq 1$, we
+  have $\iprod{\vect{u}_i,\vect{u}_i}=\pi$. We note the following
+  antiderivatives, for $k\geq 1$:
+  \begin{equation*}
+    \int x\sin kx\,dx ~=~ -\frac{x}{k}\cos kx + \frac{1}{k^2}\sin kx, \qquad
+    \int x\cos kx\,dx ~=~ \frac{x}{k}\sin kx + \frac{1}{k^2}\cos kx.
+  \end{equation*}
+  Using these formulas, we can compute the following inner products
+  quite easily:
+  \begin{eqnarray*}
+    \iprod{f, \vect{u}_0}
+    &=& \int_{0}^{2\pi} (x-\pi)
+        ~~=~~ 0, \\
+    \iprod{f, \vect{u}_1}
+    &=& \int_{0}^{2\pi} (x-\pi)\sin x
+        \,~~=~~ -2\pi, \\
+    \iprod{f, \vect{u}_2}
+    &=& \int_{0}^{2\pi} (x-\pi)\cos x
+        ~~=~~ 0, \\
+    \iprod{f, \vect{u}_3}
+    &=& \int_{0}^{2\pi} (x-\pi)\sin 2x
+        \,~~=~~ -\frac{2\pi}{2}, \\
+    \iprod{f, \vect{u}_4}
+    &=& \int_{0}^{2\pi} (x-\pi)\cos 2x
+        ~~=~~ 0, \\
+    \iprod{f, \vect{u}_5}
+    &=& \int_{0}^{2\pi} (x-\pi)\sin 3x
+        \,~~=~~ -\frac{2\pi}{3}, \\
+    \iprod{f, \vect{u}_6}
+    &=& \int_{0}^{2\pi} (x-\pi)\cos 3x
+        ~~=~~ 0, \\
+  \end{eqnarray*}
+  and so on. We therefore find the following Fourier series:
+  \begin{eqnarray*}
+    f_1 &=& -2 \sin x, \\
+    f_3 &=& -2 \sin x - \frac{2}{2}\sin 2x, \\
+    f_5 &=& -2 \sin x - \frac{2}{2}\sin 2x - \frac{2}{3}\sin 3x, \\
+    f_7 &=& -2 \sin x - \frac{2}{2}\sin 2x - \frac{2}{3}\sin 3x - \frac{2}{4}\sin 4x, \\
+    f_9 &=& -2 \sin x - \frac{2}{2}\sin 2x - \frac{2}{3}\sin 3x - \frac{2}{4}\sin 4x - \frac{2}{5}\sin 5x, \\
+  \end{eqnarray*}
+  and so on. 
+\end{solution}
 
-% ======================================================================
-% CONTINUE HERE...
-
-\void{
-
-% ----------------------------------------------------------------------
-% Fourier 1
-
+The following graph illustrates the successive approximations of this
+Fourier series.
 \begin{center}
   \begin{tikzpicture}[domain=0:6*pi, scale=0.8, samples=100]
     \def\fA#1{1}
@@ -522,14 +586,13 @@ eventually converges to $f$.
     \def\fG#1{(cos(3*(#1)/pi*180))}
     \def\fH#1{(sin(4*(#1)/pi*180))}
     \def\fI#1{(cos(4*(#1)/pi*180))}
-    \draw[thick,color=my-gray] (0,0) -- (0,-pi) -- (2*pi,pi) -- (2*pi,-pi) --
-    (4*pi,pi) -- (4*pi,-pi) -- (6*pi, pi) -- (6*pi, 0);
-    \draw[thick,color=my-green]   plot (\x,{((-2)*\fB{\x})}) node[below right=2ex] {};
-    \draw[thick,color=my-lightblue,samples=200] plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})}) node[above right=2ex] {};
-    \draw[thick,color=my-red,samples=200]     plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})+((-2/3)*\fF{\x})}) node[right=2ex] {};
-    \draw[thick,color=my-blue,samples=300]    plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})+((-2/3)*\fF{\x})+((-1/2)*\fH{\x})}) node[right=2ex] {};
+    \draw[thick,color=my-gray] (0,0) -- (0,-pi) -- (2*pi,pi) -- (2*pi,-pi) -- (4*pi,pi) -- (4*pi,-pi) -- (6*pi, pi) -- (6*pi, 0) (2*pi, pi) node[right] {$f$};
+    \draw[thick,color=my-green]                 plot (\x,{((-2)*\fB{\x})}) (pi,0) +(0.6*pi,0.6*pi) node[left=4ex] {$f_1$};
+    \draw[thick,color=my-lightblue,samples=200] plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})}) (pi,0) +(0.75*pi,0.75*pi) node[left=4ex] {$f_3$};
+    \draw[thick,color=my-red,samples=200]       plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})+((-2/3)*\fF{\x})}) (pi,0) +(0.9*pi,0.9*pi) node[left=4ex] {$f_5$};
+    \draw[thick,color=my-blue,samples=300]      plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})+((-2/3)*\fF{\x})+((-1/2)*\fH{\x})}) (pi,0) +(1.05*pi,1.05*pi) node[left=4ex] {$f_7$};
     \draw[->] (-0.8,0) -- (6*pi+0.8,0) node[right] {$x$};
-    \draw[->] (0,-3.5) -- (0,3.5) node[above] {$f(x)$};
+    \draw[->] (0,-3.5) -- (0,3.5);
     \draw (pi,0) -- (pi,-0.05) node[below] {$\pi$};
     \draw (2*pi,0) -- (2*pi,-0.05) node[below] {$2\pi$};
     \draw (3*pi,0) -- (3*pi,-0.05) node[below] {$3\pi$};
@@ -538,6 +601,17 @@ eventually converges to $f$.
     \draw (6*pi,0) -- (6*pi,-0.05) node[below] {$6\pi$};
   \end{tikzpicture}
 \end{center}
+Note that, although the function $f$ is defined on the interval
+$[0,2\pi]$, we have extended it periodically for $[2\pi,4\pi]$,
+$[4\pi,6\pi]$, and so on. This makes sense because all of the
+orthogonal functions $1$, $\sin x$, $\cos x$, $\sin 2x$, and so on,
+have period $2\pi$.
+
+We can also illustrate the same information differently, by showing
+the individual sine waves making up the wave form of the function
+$f(x)$. In the context of audio signals, these sine waves are also
+called the \textbf{harmonics}%
+\index{harmonic} of the signal.
 
 \begin{center}
   \begin{tikzpicture}[domain=0:6*pi, scale=0.3, samples=100]
@@ -578,23 +652,29 @@ eventually converges to $f$.
   \end{tikzpicture}
 \end{center}
 
-% ----------------------------------------------------------------------
-% Fourier 2
-
+\begin{example}{Fourier series}{fourier-series2}
+  The following graph shows the first few Fourier approximations of the function
+  \begin{equation*}
+    f(x) ~=~ \begin{cases}
+      x - \frac{\pi}{2} & \mbox{if $0\leq x<\pi$,} \\
+      \frac{3\pi}{2} - x & \mbox{if $\pi\leq x\leq 2\pi$.}
+    \end{cases}
+  \end{equation*}
+\end{example}
+      
 \begin{center}
   \begin{tikzpicture}[domain=0:6*pi, scale=0.8, samples=100]
     \def\fC#1{(cos((#1)/pi*180))}
     \def\fG#1{(cos(3*(#1)/pi*180))}
     \def\fK#1{(cos(5*(#1)/pi*180))}
     \def\fO#1{(cos(7*(#1)/pi*180))}
-    \draw[thick,color=my-gray] (0,-pi/2) -- (pi,pi/2) -- (2*pi,-pi/2) -- (3*pi,pi/2) --
-    (4*pi,-pi/2) -- (5*pi,pi/2) -- (6*pi, -pi/2);
-    \draw[thick,color=my-green]   plot (\x,{((-1.2732395447351623)*\fC{\x})}) node[below right=2ex] {};
-    \draw[thick,color=my-lightblue,samples=200] plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})}) node[above right=2ex] {};
-    \draw[thick,color=my-red,samples=200]     plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})+((-0.05092958178940641)*\fK{\x})}) node[above right=2ex] {};
-    \draw[thick,color=my-blue,samples=200]    plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})+((-0.05092958178940641)*\fK{\x})+((-0.025984480504798825)*\fO{\x})}) node[above right=2ex] {};
+    \draw[thick,color=my-gray] (0,-pi/2) -- (pi,pi/2) -- (2*pi,-pi/2) -- (3*pi,pi/2) -- (4*pi,-pi/2) -- (5*pi,pi/2) -- (6*pi, -pi/2) (pi,pi/2) node [above] {$f$};
+    \draw[thick,color=my-green]   plot (\x,{((-1.2732395447351623)*\fC{\x})}) (0.6*pi,-pi/2+0.6*pi) node[left=2ex] {$f_2$};
+    \draw[thick,color=my-lightblue,samples=200] plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})}) (0.75*pi,-pi/2+0.75*pi) node[left=2ex] {$f_4$};
+    \draw[thick,color=my-red,samples=200]     plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})+((-0.05092958178940641)*\fK{\x})}) (0.9*pi,-pi/2+0.9*pi) node[left=2ex] {$f_6$};
+    \draw[thick,color=my-blue,samples=200]    plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})+((-0.05092958178940641)*\fK{\x})+((-0.025984480504798825)*\fO{\x})}) (1.05*pi,-pi/2+1.05*pi) node[left=2ex] {$f_8$};
     \draw[->] (-0.8,0) -- (6*pi+0.8,0) node[right] {$x$};
-    \draw[->] (0,-2) -- (0,2) node[above] {$f(x)$};
+    \draw[->] (0,-2) -- (0,2);
     \draw (pi,0) -- (pi,-0.05) node[below] {$\pi$};
     \draw (2*pi,0) -- (2*pi,-0.05) node[below] {$2\pi$};
     \draw (3*pi,0) -- (3*pi,-0.05) node[below] {$3\pi$};
@@ -603,6 +683,12 @@ eventually converges to $f$.
     \draw (6*pi,0) -- (6*pi,-0.05) node[below] {$6\pi$};
   \end{tikzpicture}
 \end{center}
+
+\noindent Note how rapidly this Fourier series converges to $f$. The
+following image shows the function $f$ (extended periodically outside
+the interval $[0,2\pi]$) as a sum of its harmonics. Compared to
+Example~\ref{exa:fourier-series}, we see that the higher harmonics
+have much smaller amplitudes, which explains the rapid convergence.
 
 \begin{center}
   \begin{tikzpicture}[domain=0:6*pi, scale=0.3, samples=100]
@@ -638,9 +724,16 @@ eventually converges to $f$.
   \end{tikzpicture}
 \end{center}
 
-% ----------------------------------------------------------------------
-% Fourier 3
-
+\begin{example}{Fourier series}{fourier-series3}
+  The following graph shows the first few Fourier approximations of the function
+  \begin{equation*}
+    f(x) ~=~ \begin{cases}
+      1 & \mbox{if $0\leq x<\pi$,} \\
+      -1 & \mbox{if $\pi\leq x\leq 2\pi$.}
+    \end{cases}
+  \end{equation*}
+\end{example}
+      
 \begin{center}
   \begin{tikzpicture}[domain=0:6*pi, scale=0.8, samples=100]
     \def\fB#1{(sin((#1)/pi*180))}
@@ -652,13 +745,13 @@ eventually converges to $f$.
     (3*pi,1) -- (3*pi,-1) --
     (4*pi,-1) -- (4*pi,1) --
     (5*pi,1) -- (5*pi,-1) --
-    (6*pi,-1) -- (6*pi,0);
-    \draw[thick,color=my-green]   plot (\x,{((1.2732395447351623)*\fB{\x})}) node[below right=2ex] {};
-    \draw[thick,color=my-lightblue,samples=200] plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})}) node[above right=2ex] {};
-    \draw[thick,color=my-red,samples=200]     plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})+((0.25464790894703326)*\fJ{\x})}) node[above right=2ex] {};
-    \draw[thick,color=my-blue,samples=300]    plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})+((0.25464790894703326)*\fJ{\x})+((0.18189136353359486)*\fN{\x})}) node[above right=2ex] {};
+    (6*pi,-1) -- (6*pi,0) (pi, 1) node[right] {$f$};
+    \draw[thick,color=my-green]   plot (\x,{((1.2732395447351623)*\fB{\x})}) (0.4*pi, 1.2) node[above] {$f_1$};
+    \draw[thick,color=my-lightblue,samples=200] plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})}) (0.6*pi, 1.2) node[above] {$f_3$};
+    \draw[thick,color=my-red,samples=200]     plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})+((0.25464790894703326)*\fJ{\x})}) (0.8*pi, 1.2) node[above] {$f_5$};
+    \draw[thick,color=my-blue,samples=300]    plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})+((0.25464790894703326)*\fJ{\x})+((0.18189136353359486)*\fN{\x})}) (1.0*pi, 1.2) node[above] {$f_7$};
     \draw[->] (-0.8,0) -- (6*pi+0.8,0) node[right] {$x$};
-    \draw[->] (0,-2) -- (0,2) node[above] {$f(x)$};
+    \draw[->] (0,-2) -- (0,2);
     \draw (pi,0) -- (pi,-0.05) node[below] {$\pi$};
     \draw (2*pi,0) -- (2*pi,-0.05) node[below] {$2\pi$};
     \draw (3*pi,0) -- (3*pi,-0.05) node[below] {$3\pi$};
@@ -667,6 +760,9 @@ eventually converges to $f$.
     \draw (6*pi,0) -- (6*pi,-0.05) node[below] {$6\pi$};
   \end{tikzpicture}
 \end{center}
+
+\noindent Once again, here is an image showing the function $f$ as a
+sum of its harmonics:
 
 \begin{center}
   \begin{tikzpicture}[domain=0:6*pi, scale=0.3, samples=100]
@@ -705,6 +801,5 @@ eventually converges to $f$.
     \end{scope}
   \end{tikzpicture}
 \end{center}
-}
 
 \endgroup
