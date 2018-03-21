@@ -239,13 +239,14 @@ approximations%
   The following graph shows the function $f(x)$ as well as the
   polynomial $g(x)$:
   \begin{center}
-    \begin{tikzpicture}[domain=-1:1, scale=4, samples=25]
+    \begin{tikzpicture}[domain=-1:1, scale=3, samples=25]
       \def\fA#1{1}
       \def\fC#1{(abs((#1)^2)-1/3)}
       \definecolor{my-gray}{rgb}{0.4,0.4,0.4}
+      \definecolor{my-green}{rgb}{0.3,0.7,0}
       \draw[thick,color=my-gray] (-1,0) -- (0,1) -- (1,0);
-      \draw[thick,color=green!80!black] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}});
-      \path[color=green!80!black] (0.6,0.6) node[right]{$g(x)= \frac{13}{16} - \frac{15}{16}x^2$};
+      \draw[thick,color=my-green] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}});
+      \path[color=my-green] (0.6,0.6) node[right]{$g(x)= \frac{13}{16} - \frac{15}{16}x^2$};
       \path[color=my-gray] (0.2,0.9) node[right]{$f(x) = 1-\abs{x}$};
       \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
       \draw[->] (0,-0.3) -- (0,1.1) node[above] {$p(x)$};
@@ -391,15 +392,18 @@ $\vect{v}$.
       \def\fG#1{(abs((#1)^6)-15/11*abs((#1)^4)+5/11*abs((#1)^2)-5/231)}
       \def\fH#1{((429*(#1)^7 - 693*(#1)^5 + 315*(#1)^3 - 35*(#1))/429)}
       \def\fI#1{((6435*abs((#1)^8)-12012*abs((#1)^6)+6930*abs((#1)^4)-1260*abs((#1)^2)+35)/6435)}
-      \definecolor{my-blue}{rgb}{0,0.87,1.00}
+      \definecolor{my-blue}{rgb}{0,0.66,0.9}
       \definecolor{my-yellow}{rgb}{1.00,0.87,0.00}
-      \draw[thick,color=gray] (-1,0) -- (0,1) -- (1,0);
-      \path[color=gray] (0,1) node[right=2ex] {$f$};
+      \definecolor{my-gray}{rgb}{0.4,0.4,0.4}
+      \definecolor{my-green}{rgb}{0.3,0.8,0}
+      \definecolor{my-orange}{rgb}{1,0.5,0}
+      \draw[thick,color=my-gray] (-1,0) -- (0,1) -- (1,0);
+      \path[color=my-gray] (0,1) node[right=2ex] {$f$};
       \draw[thick,color=my-yellow] plot (\x,0.5*\fA{\x}) (1,0.5) node[right=1ex] {$f_0$};
-      \draw[thick,color=green] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}}) (1,-0.18) node[right=1ex] {$f_2$};
+      \draw[thick,color=my-green] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}}) (1,-0.18) node[right=1ex] {$f_2$};
       \draw[thick,color=my-blue,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x}}) (1,0.18) node[right=1ex] {$f_4$};
-      \draw[thick,color=red,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}}) (1,-0.06) node[right=1ex] {$f_6$};
-      \draw[thick,color=blue,samples=75] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}+3.338470458984375*\fI{\x}}) (1,0.06) node[right=1ex] {$f_8$};
+      \draw[thick,color=blue,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}}) (1,-0.06) node[right=1ex] {$f_6$};
+      \draw[thick,color=red,samples=75] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}+3.338470458984375*\fI{\x}}) (1,0.06) node[right=1ex] {$f_8$};
       \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
       \draw[->] (0,-0.3) -- (0,1.1) node[above] {$p(x)$};
       \draw (1,0) -- (1,-0.05) node[below] {$1$};
