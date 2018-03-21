@@ -10,6 +10,7 @@ AHIFNEPL
 Ak
 american
 Andrée
+antiderivatives
 antisymmetric
 Argand
 ASCII
@@ -86,6 +87,7 @@ factorizations
 Farah
 fibonacci
 fourier
+Fourier's
 Friess
 FuncXK
 Gaston
@@ -136,6 +138,7 @@ Laplace's
 Larissa
 leftmargin
 legendre
+lightblue
 lightgray
 linearity
 LinVW
@@ -178,6 +181,7 @@ OZUGXABPWGTV
 parallelepiped
 parametric
 pdf
+piecewise
 PJQZGBOQKW
 plaintext
 Poohbah
