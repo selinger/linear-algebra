@@ -1,8 +1,8 @@
 \section{Orthogonal projections and Fourier series}
 
 \definecolor{my-yellow}{rgb}{1.00,0.87,0.00}
-\definecolor{my-green}{rgb}{0.4,0.9,0}
-\definecolor{my-blue}{rgb}{0,0.7,0.9}
+\definecolor{my-green}{rgb}{0.3,0.7,0}
+\definecolor{my-blue}{rgb}{0,0.8,1}
 \definecolor{my-darkblue}{rgb}{0,0.3,1}
 \definecolor{my-red}{rgb}{1,0,0}
 \definecolor{my-gray}{rgb}{0.4,0.4,0.4}
@@ -250,8 +250,8 @@ approximations%
       \def\fA#1{1}
       \def\fC#1{(abs((#1)^2)-1/3)}
       \draw[thick,color=my-gray] (-1,0) -- (0,1) -- (1,0);
-      \draw[thick,color=my-green] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}});
-      \path[color=my-green] (0.6,0.6) node[right]{$g(x)= \frac{13}{16} - \frac{15}{16}x^2$};
+      \draw[thick,color=my-blue] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}});
+      \path[color=my-blue] (0.6,0.6) node[right]{$g(x)= \frac{13}{16} - \frac{15}{16}x^2$};
       \path[color=my-gray] (0.2,0.9) node[right]{$f(x) = 1-\abs{x}$};
       \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
       \draw[->] (0,-0.3) -- (0,1.1) node[above] {$p(x)$};
@@ -400,8 +400,8 @@ $\vect{v}$.
       \draw[thick,color=my-gray] (-1,0) -- (0,1) -- (1,0);
       \path[color=my-gray] (0,1) node[right=2ex] {$f$};
       \draw[thick,color=my-yellow] plot (\x,0.5*\fA{\x}) (1,0.5) node[right=1ex] {$f_0$};
-      \draw[thick,color=my-green] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}}) (1,-0.18) node[right=1ex] {$f_2$};
-      \draw[thick,color=my-blue,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x}}) (1,0.18) node[right=1ex] {$f_4$};
+      \draw[thick,color=my-blue] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}}) (1,-0.18) node[right=1ex] {$f_2$};
+      \draw[thick,color=my-green,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x}}) (1,0.18) node[right=1ex] {$f_4$};
       \draw[thick,color=my-darkblue,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}}) (1,-0.06) node[right=1ex] {$f_6$};
       \draw[thick,color=my-red,samples=75] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}+3.338470458984375*\fI{\x}}) (1,0.06) node[right=1ex] {$f_8$};
       \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
