@@ -46,7 +46,7 @@ vector spaces other than $\R^n$. We will consider a few such examples.
 
 \begin{example}{Derivative operator}{derivative-operator}
   Let $\Poly_n$ be the vector space of real polynomials of degree at
-  most $n$. The function $D:\Poly_3\to\Poly_2$ is defined by
+  most $n$. The function $D:\Poly_n\to\Poly_{n-1}$ is defined by
   \begin{equation*}
     D(p(x)) = p'(x),
   \end{equation*}
@@ -70,17 +70,17 @@ vector spaces other than $\R^n$. We will consider a few such examples.
         D(ax^3+bx^2+cx+d) &=& 3ax^2 + 2bx + c.
       \end{eqnarray*}
     \item First, we note that if $p(x)$ is a polynomial of degree at
-      most $3$, then its derivative $p'(x)$ is a polynomial of degree
-      at most $2$. Therefore, the derivative operator $D$ is a
-      well-defined function from $\Poly_3$ to $\Poly_2$. To show that
+      most $n$, then its derivative $p'(x)$ is a polynomial of degree
+      at most $n-1$. Therefore, the derivative operator $D$ is a
+      well-defined function from $\Poly_n$ to $\Poly_{n-1}$. To show that
       it preserves addition, consider any two polynomials
-      $p(x),q(x)\in\Poly_3$. From calculus, we know that the
+      $p(x),q(x)\in\Poly_n$. From calculus, we know that the
       derivative of $p(x)+q(x)$ is $p'(x)+q'(x)$. Therefore,
       \begin{equation*}
         D(p(x)+q(x)) ~=~ (p(x)+q(x))' ~=~ p'(x)+q'(x) ~=~ D(p(x)) + D(q(x)),
       \end{equation*}
       and so $D$ preserves addition. To show that it preserves scalar
-      multiplication, consider $p(x)\in\Poly_3$ and $k\in\R$. From
+      multiplication, consider $p(x)\in\Poly_n$ and $k\in\R$. From
       calculus, we know that the derivative of $kp(x)$ is $kp'(x)$, and
       therefore
       \begin{equation*}
@@ -102,7 +102,8 @@ derivative.
 
 \begin{example}{A differential equation}{differential-equation-derivative-operator}
   Solve the equation $p(x) = x^3 + D(p(x))$, where
-  $D:\Poly_3\to\Poly_2$ is the derivative operator of the previous example.
+  $D:\Poly_3\to\Poly_2$ is the derivative operator of
+  Example~\ref{exa:derivative-operator}.
 \end{example}
 
 \begin{solution}
