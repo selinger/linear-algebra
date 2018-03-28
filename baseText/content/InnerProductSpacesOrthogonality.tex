@@ -366,3 +366,63 @@ without having to wait for the rest of the basis.
         ~=~ \frac{2}{4} ~=~ 0.5.
   \end{eqnarray*}
 \end{solution}
+
+Orthonormal bases allow us to make a close connection between
+arbitrary inner products and dot products. Once an orthonormal basis
+has been chosen on an inner product space, computing inner products is
+essentially the same as computing dot products. The following
+proposition makes this more precise.
+
+\begin{proposition}{Inner product and dot product}{inner-product-dot-product}
+  Let $V$ be an inner product space, and suppose that
+  $B=\set{\vect{u}_1,\ldots\vect{u}_n}$ is an orthonormal basis. Then
+  for any pair of vectors $\vect{v},\vect{w}\in V$, their inner
+  product is equal to the dot product of their coordinate vectors with
+  respect to the basis $B$, i.e.
+  \begin{equation*}
+    \iprod{\vect{v},\vect{w}}
+    = \coord{\vect{v}}_B \dotprod \coord{\vect{w}}_B.
+  \end{equation*}
+\end{proposition}
+
+\begin{proof}
+  By definition of coordinate vectors, we have
+  \begin{equation*}
+    \coord{\vect{v}}_B
+    = \begin{mymatrix}{c} a_1 \\ \vdots \\ a_n \end{mymatrix}
+    \quad\mbox{and}\quad
+    \coord{\vect{w}}_B
+    = \begin{mymatrix}{c} b_1 \\ \vdots \\ b_n \end{mymatrix},
+  \end{equation*}    
+  where $\vect{v} = a_1\vect{u}_1 + \ldots + a_n\vect{u}_n$ 
+  and $\vect{w} = b_1\vect{u}_1 + \ldots + b_n\vect{u}_n$.
+  We calculate
+  \begin{eqnarray*}
+    \iprod{\vect{v},\vect{w}}
+    &=& \iprod{a_1\vect{u}_1 + \ldots + a_n\vect{u}_n, b_1\vect{u}_1 +
+        \ldots + b_n\vect{u}_n} \\
+    &=& \begin{array}[t]{@{}c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
+          &   a_1b_1\iprod{\vect{u}_1,\vect{u}_1}
+          &+& a_1b_2\iprod{\vect{u}_1,\vect{u}_2}
+          &+& \ldots
+          &+& a_1b_n\iprod{\vect{u}_1,\vect{u}_n} \\
+          +&  a_2b_1\iprod{\vect{u}_2,\vect{u}_1} 
+          &+& a_2b_2\iprod{\vect{u}_2,\vect{u}_2}
+          &+& \ldots
+          &+& a_2b_n\iprod{\vect{u}_2,\vect{u}_n} \\
+          +&  \vdots
+          && \vdots
+          && 
+          && \vdots \\
+          +&  a_nb_1\iprod{\vect{u}_n,\vect{u}_1}
+          &+& a_nb_2\iprod{\vect{u}_n,\vect{u}_2}
+          &+& \ldots
+          &+& a_nb_n\iprod{\vect{u}_n,\vect{u}_n}
+        \end{array} \\
+    &=& a_1b_1 + a_2b_2 + \ldots + a_nb_n \\
+    &=& \coord{\vect{v}}_B \dotprod \coord{\vect{w}}_B.        
+  \end{eqnarray*}
+  Here we have used the fact that $\iprod{\vect{u}_i,\vect{u}_j}=1$
+  when $i=j$ and $\iprod{\vect{u}_i,\vect{u}_j}=0$ otherwise, which
+  holds because $B$ is orthonormal.
+\end{proof}
