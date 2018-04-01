@@ -257,8 +257,10 @@ An important application of least squares approximations is
 \textbf{curve fitting}%
 \index{curve fitting}: finding the ``best'' function of a given type
 (for example, linear, quadratic) to fit a given series of data points.
+The next two examples show how to use least square approximations to
+solve curve fitting problems.
 
-\begin{example}{Linear regression}{linear-regression}
+\begin{example}{Least squares line}{least-squares-line}
   A company has collected daily data on temperature and ice cream
   sales over a period of one week. The data is as follows:
   \begin{equation*}
@@ -276,11 +278,16 @@ An important application of least squares approximations is
   The company is interested in predicting how temperature will affect
   future sales. Find a function of the form $y=a+bx$ that best fits
   the data, where $x$ is temperature in degrees Celsius and $y$ is
-  sales in dollars. Such a function is called a \textbf{linear
-    regression} for the data.  By ``best fit'', we mean that the sum
-  of the square of the errors should be as small as possible (where
-  each error is the difference between the dollar amount predicted by
-  the formula $y=a+bx$ and the actual dollar amount).
+  sales in dollars. By ``best fit'', we mean that the sum of the
+  square of the errors should be as small as possible (where each
+  error is the difference between the dollar amount predicted by the
+  formula $y=a+bx$ and the actual dollar amount).  Such a function is
+  called a \textbf{least squares line}%
+  \index{least squares line}%
+  \index{curve fitting!least squares line} or a \textbf{linear
+    regression}%
+  \index{linear regression}%
+  \index{curve fitting!linear regression} for the data.
 \end{example}
 
 \begin{solution}
@@ -328,26 +335,26 @@ An important application of least squares approximations is
   By Proposition~\ref{least-squares-approximation}, we must solve the equation
   $A^TA\vect{v} = A^T\vect{b}$. We calculate
   \begin{equation*}
-    A^TA = \begin{mymatrix}{rr}
+    A^TA = \begin{mymatrix}{cc}
       7 & 155 \\
       155 & 3483
     \end{mymatrix}
     \quad\mbox{and}\quad
     A^T\vect{b} =
-    \begin{mymatrix}{r}
+    \begin{mymatrix}{c}
       4260 \\
       97380
     \end{mymatrix}.
   \end{equation*}
   So the system of equations we must solve is
   \begin{equation*}
-    \begin{mymatrix}{rr}
+    \begin{mymatrix}{cc}
       7 & 155 \\
       155 & 3483
     \end{mymatrix}
     \begin{mymatrix}{c} a \\ b \end{mymatrix}
     =
-    \begin{mymatrix}{r}
+    \begin{mymatrix}{c}
       4260 \\
       97380
     \end{mymatrix}.
@@ -368,14 +375,132 @@ An important application of least squares approximations is
       \draw (15,6)  -- +(-0.5,0) node[left] {600};
       \draw (15,8)  -- +(-0.5,0) node[left] {800};
       \draw (15,10) -- +(-0.5,0) node[left] {1000};
-      \fill (17,3.2) circle [radius=4.4pt];
-      \fill (22,5.7) circle [radius=4.4pt];
-      \fill (26,8.5) circle [radius=4.4pt];
-      \fill (20,4.7) circle [radius=4.4pt];
-      \fill (24,7.5) circle [radius=4.4pt];
-      \fill (23,6.2) circle [radius=4.4pt];
-      \fill (23,6.8) circle [radius=4.4pt];
+      \fill (17,3.2) circle [radius=3.1pt];
+      \fill (22,5.7) circle [radius=3.1pt];
+      \fill (26,8.5) circle [radius=3.1pt];
+      \fill (20,4.7) circle [radius=3.1pt];
+      \fill (24,7.5) circle [radius=3.1pt];
+      \fill (23,6.2) circle [radius=3.1pt];
+      \fill (23,6.8) circle [radius=3.1pt];
       \draw[red,thick] (15.5,2.1) -- (27.5,9.3);
+    \end{tikzpicture}
+  \end{center}
+\end{solution}
+
+\begin{example}{Least squares parabola}{least-squares-parabola}
+  \index{least squares parabola}%
+  \index{curve fitting!least squares parabola}
+  Find a quadratic polynomial that is the best fit for the following
+  data points:
+  \begin{equation*}
+    \begin{array}{rcr@{~}r}
+      (x_1,y_1) &=& ( 3,& 23.5), \\
+      (x_2,y_2) &=& ( 4,& 13.5), \\
+      (x_3,y_3) &=& ( 5,& 12.5), \\
+      (x_4,y_4) &=& ( 6,&  5.5), \\
+      (x_5,y_5) &=& ( 7,&  9.0), \\
+      (x_6,y_6) &=& ( 8,&  8.0), \\
+      (x_7,y_7) &=& ( 9,& 19.0). \\
+    \end{array}
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We are looking for an equation of the form
+  $y=a+bx+cx^2$. Substituting each of the seven data points into the
+  equation, we obtain 7 equations in the unknowns $a$, $b$, and $c$:
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}r@{~}c@{~}rcr}
+      a &+& 3b &+&  9c &=& 23.5, \\
+      a &+& 4b &+& 16c &=& 13.5, \\
+      a &+& 5b &+& 25c &=& 12.5, \\
+      a &+& 6b &+& 36c &=&  5.5, \\
+      a &+& 7b &+& 49c &=&  9.0, \\
+      a &+& 8b &+& 64c &=&  8.0, \\
+      a &+& 9b &+& 81c &=& 19.0. \\
+    \end{array}
+  \end{equation*}
+  We write this in matrix form at $A\vect{v} = \vect{b}$, where
+  \begin{equation*}
+    A =
+    \begin{mymatrix}{rrr}
+      1 & 3 &  9 \\
+      1 & 4 & 16 \\
+      1 & 5 & 25 \\
+      1 & 6 & 36 \\
+      1 & 7 & 49 \\
+      1 & 8 & 64 \\
+      1 & 9 & 81 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{b} =
+    \begin{mymatrix}{r}
+      23.5 \\
+      13.5 \\
+      12.5 \\
+      5.5 \\
+      9.0 \\
+      8.0 \\
+      19.0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  To find the least squares approximation, we calculate
+  \begin{equation*}
+    A^TA = \begin{mymatrix}{ccc}
+      7 & 42 & 280 \\
+      42 & 280 & 2016 \\
+      280 & 2016 & 15316 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    A^T\vect{b} = 
+    \begin{mymatrix}{c}
+      91 \\
+      518 \\
+      3430 \\
+    \end{mymatrix}
+  \end{equation*}
+  and solve the system of equations $A^TA\vect{v} = A^T\vect{b}$, i.e.,
+  \begin{equation*}
+    \begin{mymatrix}{ccc}
+      7 & 42 & 280 \\
+      42 & 280 & 2016 \\
+      280 & 2016 & 15316 \\
+    \end{mymatrix}
+    \begin{mymatrix}{c} a \\ b \\ c \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{c}
+      91 \\
+      518 \\
+      3430 \\
+    \end{mymatrix}.
+  \end{equation*}
+  After doing some row operations, we find that the unique solution is
+  $(a,b,c) = (67,-19,1.5)$. Therefore, the desired quadratic
+  approximation is $y = 67 - 19x + 1.5x^2$. The following plot shows
+  this function along with the original data points.
+  \begin{center}
+    \def\X{*2.0}
+    \def\Y{*0.4}
+    \begin{tikzpicture}[scale=0.5, domain=2.67:10, samples=50]
+      \draw[->] (0\X,0\Y) -- (12\X,0\Y) node[right] {$x$};
+      \draw[->] (0\X,0\Y) -- (0\X,27\Y) node[above] {$y$};
+      \draw (0\X,0\Y) -- +(0,-0.5) node[below] {0};
+      \draw (5\X,0\Y) -- +(0,-0.5) node[below] {5};
+      \draw (10\X,0\Y) -- +(0,-0.5) node[below] {10};
+      \draw (0\X,0\Y)  -- +(-0.5,0) node[left] {0};
+      \draw (0\X,5\Y)  -- +(-0.5,0) node[left] {5};
+      \draw (0\X,10\Y)  -- +(-0.5,0) node[left] {10};
+      \draw (0\X,15\Y)  -- +(-0.5,0) node[left] {15};
+      \draw (0\X,20\Y) -- +(-0.5,0) node[left] {20};
+      \draw (0\X,25\Y) -- +(-0.5,0) node[left] {25};
+      \fill ( 3\X, 23.5\Y) circle [radius=4.4pt];
+      \fill ( 4\X, 13.5\Y) circle [radius=4.4pt];
+      \fill ( 5\X, 12.5\Y) circle [radius=4.4pt];
+      \fill ( 6\X,  5.5\Y) circle [radius=4.4pt];
+      \fill ( 7\X,  9.0\Y) circle [radius=4.4pt];
+      \fill ( 8\X,  8.0\Y) circle [radius=4.4pt];
+      \fill ( 9\X, 19.0\Y) circle [radius=4.4pt];
+      \draw[red,thick] plot (\x\X,{(67-19*\x+1.5*\x*\x)\Y});
     \end{tikzpicture}
   \end{center}
 \end{solution}
