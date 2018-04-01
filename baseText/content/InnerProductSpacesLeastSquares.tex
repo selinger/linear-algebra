@@ -385,6 +385,22 @@ solve curve fitting problems.
       \draw[red,thick] (15.5,2.1) -- (27.5,9.3);
     \end{tikzpicture}
   \end{center}
+  The following table compares the observed data to the computed
+  linear regression (sorted by increasing temperature). It also shows
+  the error for each data point.
+  \begin{equation*}
+    \begin{array}{c@{~~~}|c|@{~~~}c|@{~~~}c}
+      \mbox{Temperature} & \mbox{Actual sales} & \mbox{Best linear fit} & \mbox{Error}\\\hline
+      17 & 320 & 300 & -20 \\
+      20 & 470 & 480 & +10 \\
+      22 & 570 & 600 & +30 \\
+      23 & 620 & 660 & +40 \\
+      23 & 680 & 660 & -20 \\
+      24 & 750 & 720 & -30 \\
+      26 & 850 & 840 & -10 \\
+    \end{array}
+  \end{equation*}
+  The sum of the squares of the errors is $20^2 + 10^2 + 30^2 + 40^2 + 20^2 + 30^2 + 10^2 = 4400$.
 \end{solution}
 
 \begin{example}{Least squares parabola}{least-squares-parabola}
@@ -503,4 +519,19 @@ solve curve fitting problems.
       \draw[red,thick] plot (\x\X,{(67-19*\x+1.5*\x*\x)\Y});
     \end{tikzpicture}
   \end{center}
+  The following table shows the original data, the values of the
+  best fit parabola, and the error for each data point.
+  \begin{equation*}
+    \begin{array}{c@{~~~}|c|@{~~~}c|@{~~~}c}
+      x & \mbox{Actual $y$} & \mbox{Best fit parabola} & \mbox{Error} \\\hline
+      3 &  23.5 &  23.5 & ~~~0.0 \\
+      4 &  13.5 &  15.0 &   +1.5 \\
+      5 &  12.5 & ~~9.5 &   -3.0 \\
+      6 & ~~5.5 & ~~7.0 &   +1.5 \\
+      7 & ~~9.0 & ~~7.5 &   -1.5 \\
+      8 & ~~8.0 &  11.0 &   +3.0 \\
+      9 &  19.0 &  17.5 &   -1.5 \\
+    \end{array}
+  \end{equation*}
+  The sum of the squares of the errors is $0^2 + 1.5^2 + 3^2 + 1.5^2 + 1.5^2 + 3^2 + 1.5^2 = 27$.
 \end{solution}
