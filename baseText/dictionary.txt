@@ -115,8 +115,11 @@ Ilijas
 invertibility
 invertible
 ir
+isometries
+isometry
 isomorphism
 isomorphisms
+isos
 iteratively
 JHYJSCDSBQIRPEV
 jordan
@@ -148,6 +151,7 @@ lyryx
 lyryxcolour
 lyryxlogoy
 MacKenzie
+metron
 minimizer
 minimizers
 mm
