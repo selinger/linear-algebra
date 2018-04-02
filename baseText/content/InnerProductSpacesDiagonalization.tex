@@ -1,0 +1,338 @@
+\section{Diagonalization of symmetric matrices}
+
+In Chapter~\ref{cha:eigenvalues}, we saw that some matrices are
+diagonalizable, and others are not. In this section, we will see that
+the theory of diagonalization is much nicer when the matrix to be
+diagonalized is symmetric. Recall that a matrix $A$ is
+\textbf{symmetric}%
+\index{symmetric matrix}%
+\index{matrix!symmetric} if $A=A^T$. We begin with some observations
+about the eigenvalues and eigenvectors of a symmetric matrix.
+
+\begin{lemma}{Eigenvalues and eigenvectors of symmetric matrices}{eigenvalues-symmetric}
+  Let $A$ be a symmetric matrix with real entries. Then
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item All eigenvalues of $A$ are real (i.e., not complex).
+    \item Eigenvectors for distinct eigenvalues of $A$ are orthogonal.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{lemma}
+
+\begin{proof}
+  (a) Suppose $\eigenvar$ is a (possibly complex) eigenvalue of $A$,
+  with (possibly complex) eigenvector $\vect{v}$. We will show that
+  $\eigenvar$ is in fact real. Let $\overline{\eigenvar}$ be the
+  complex conjugate of $\eigenvar$, and let $\overline{\vect{v}}$ be
+  the complex conjugate of $\vect{v}$, i.e., the vector obtained from
+  $\vect{v}$ by taking the complex conjugate of each of its entries.
+  Since $\vect{v}$ is an eigenvector for eigenvalue $\eigenvar$ of
+  $A$, we have
+  \begin{equation}\label{eqn:eigenvalues-symmetric-1}
+    \overline{\vect{v}}^T A\vect{v}
+    = \eigenvar \overline{\vect{v}}^T\vect{v}.
+  \end{equation}
+  Taking the complex conjugate of both sides of the equation, and
+  using the fact that $\overline{A}=A$ (since $A$ is
+  real), we get
+  \begin{equation}
+    \vect{v}^T A\overline{\vect{v}}
+    = \overline{\eigenvar} \vect{v}^T\overline{\vect{v}}.
+  \end{equation}
+  Then, taking the transpose of both sides of the equation, and using
+  the fact that $A^T=A$ (since $A$ is symmetric), we have
+  \begin{equation}\label{eqn:eigenvalues-symmetric-2}
+    \overline{\vect{v}}^T A\vect{v}
+    = \overline{\eigenvar} \overline{\vect{v}}^T\vect{v}.
+  \end{equation}
+  Comparing equations {\eqref{eqn:eigenvalues-symmetric-1}} and
+  {\eqref{eqn:eigenvalues-symmetric-2}}, we find that
+  $\eigenvar \overline{\vect{v}}^T\vect{v} = \overline{\eigenvar}
+  \overline{\vect{v}}^T\vect{v}$. Since
+  $\overline{\vect{v}}^T\vect{v}$ is a non-zero scalar, it follows
+  that $\eigenvar = \overline{\eigenvar}$, i.e., $\eigenvar$ is real.
+
+  \noindent
+  (b) Suppose $\vect{v}$ is an eigenvector for eigenvalue
+  $\eigenvarA$, $\vect{w}$ is an eigenvector for eigenvalue
+  $\eigenvarB$, and $\eigenvarA\neq\eigenvarB$.  We evaluate
+  $\vect{v}^TA\vect{w}$ in two different ways. On the on hand, we have
+  \begin{equation*}
+    \vect{v}^TA\vect{w}
+    = \vect{v}^T(A\vect{w})
+    = \vect{v}^T(\eigenvarB\vect{w})
+    = \eigenvarB \vect{v}^T\vect{w}.
+  \end{equation*}
+  On the other hand, we have
+  \begin{equation*}
+    \vect{v}^TA\vect{w}
+    = (\vect{v}^TA)\vect{w}
+    = (A^T\vect{v})^T\vect{w}
+    = (A\vect{v})^T\vect{w}
+    = (\eigenvarA\vect{v})^T\vect{w}
+    = \eigenvarA\vect{v}^T\vect{w}
+  \end{equation*}
+  Therefore,
+  $\eigenvarB\vect{v}^T\vect{w} = \eigenvarA\vect{v}^T\vect{w}$, or
+  equivalently $(\eigenvarA - \eigenvarB)\vect{v}^T\vect{w} =
+  0$. Since by assumption, $\eigenvarA - \eigenvarB\neq 0$, we must
+  have $\vect{v}^T\vect{w} = 0$, i.e., $\vect{v}$ and $\vect{w}$ are
+  orthogonal.
+\end{proof}
+
+Recall that an $n\times n$-matrix $A$ is \textbf{diagonalizable}%
+\index{diagonalizable matrix}%
+\index{matrix!diagonalizable} if there exists an invertible matrix $P$
+and a diagonal matrix $D$ such that $D = P^{-1}AP$. We say that $A$ is
+\textbf{orthogonally diagonalizable}%
+\index{orthogonally diagonalizable matrix}%
+\index{diagonalizable matrix!orthogonally diagonalizable}%
+\index{diagonalization!orthogonal diagonalization}%
+\index{matrix!orthogonally diagonalizable}%
+\index{matrix!diagonalizable!orthogonally} if $P$ can, moreover, be
+chosen to be orthogonal. Orthogonal diagonalizability is a convenient
+property, because when $P$ is orthogonal, then $P^{-1}=P^T$, and we
+can interchangeably write $D = P^{-1}AP$ or $D = P^TAP$.  The
+following is the main theorem about the diagonalization of real
+symmetric matrices.
+
+\begin{theorem}{Diagonalization of symmetric matrices}{diagonalization-symmetric}
+  Every real symmetric matrix $A$ is orthogonally diagonalizable.
+\end{theorem}
+
+\begin{proof}
+  By induction on the size of the matrix. For a $1\times 1$-matrix,
+  there is nothing to show, as it is already diagonal. Now consider a
+  real symmetric $n\times n$-matrix $A$ with $n\geq 2$. By the
+  fundamental theorem of algebra, the characteristic polynomial has at
+  least one root, so that $A$ has at least one (possibly complex)
+  eigenvalue $\eigenvar$. By Lemma~\ref{lem:eigenvalues-symmetric}(a),
+  $\eigenvar$ is real. Since we can solve the system of equations
+  $(A-\eigenvar I)\vect{v}=\vect{0}$ over the real numbers, there
+  exists a real eigenvector $\vect{v}$ for the eigenvalue
+  $\eigenvar$. We can assume without loss of generality that
+  $\vect{v}$ is normalized, because else we could replace $\vect{v}$
+  by $\frac{1}{\norm{\vect{v}}}\vect{v}$. By the Gram-Schmidt method,
+  we can find an orthonormal basis
+  $\set{\vect{u}_1,\ldots,\vect{u}_n}$ of $\R^n$ such that
+  $\vect{u}_1=\vect{v}$. Let $Q$ be the orthogonal matrix that has
+  $\vect{u}_1,\ldots,\vect{u}_n$ as its columns, and consider
+  $B=Q^{-1}AQ$. Since
+  $B\vect{e}_1 = Q^{-1}AQ\vect{e}_1 = Q^{-1}A\vect{u}_1 = \eigenvar
+  Q^{-1}\vect{u}_1 = \eigenvar\vect{e}_1$, the matrix $B$ is of the
+  form
+  \begin{equation*}
+    B = \begin{mymatrix}{cccc}
+      \eigenvar & b_{12} & \cdots & b_{1n} \\
+      0 & b_{22} & \cdots & b_{2n} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      0 & b_{n2} & \cdots & b_{nn} \\
+    \end{mymatrix}.
+  \end{equation*}
+  Moreover, since $B=Q^{-1}AQ = Q^TAQ$, the matrix $B$ is symmetric.
+  Therefore $b_{12},\ldots,b_{1n} = 0$, and $B$ is of the form
+  \begin{equation*}
+    B = \begin{mymatrix}{c|ccc}
+      \eigenvar & 0 & \cdots & 0 \\\hline
+      0 &  & & \\
+      \vdots & & C & \\
+      0 &  & & \\
+    \end{mymatrix},
+  \end{equation*}
+  where $C$ is a symmetric matrix of dimension $n-1$. By induction
+  hypothesis, $C$ is orthogonally diagonalizable, i.e., there exists
+  an orthogonal matrix $R$ such that $R^{-1}CR$ is diagonal. Let
+  \begin{equation*}
+    S = \begin{mymatrix}{c|ccc}
+      1 & 0 & \cdots & 0 \\\hline
+      0 &  & & \\
+      \vdots & & R & \\
+      0 &  & & \\
+    \end{mymatrix}.
+  \end{equation*}
+  Then $S$ is orthogonal and $S^{-1}BS$ is diagonal, say
+  $S^{-1}BS = D$. Let $P=QS$. Then $P$ is orthogonal, and we have
+  \begin{equation*}
+    P^{-1}AP = S^{-1}Q^{-1}AQS = S^{-1}BS = D.
+  \end{equation*}
+  Therefore, $A$ is orthogonally diagonalizable.
+\end{proof}
+
+\begin{example}{Diagonalization of symmetric matrices}{diagonalization-symmetric}
+  Orthogonally diagonalize the matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      3 & 2 \\
+      2 & 6 \\
+    \end{mymatrix},
+  \end{equation*}
+  i.e., find an orthogonal matrix $P$ and a diagonal matrix $D$ such
+  that $D = P^{-1}AP$.
+\end{example}
+
+\begin{solution}
+  We proceed in much the same way as in Chapter~\ref{cha:eigenvalues},
+  except that at a crucial moment, we ensure that $P$ is orthogonal.
+  We start by calculating the characteristic polynomial of $A$:
+  \begin{equation*}
+    \det(A-\eigenvar I)
+    ~=~ \begin{absmatrix}{cc}
+      3-\eigenvar & 2 \\
+      2 & 6-\eigenvar
+    \end{absmatrix}
+    ~=~ (3-\eigenvar)(6-\eigenvar) - 4
+    ~=~ \eigenvar^2 - 9\eigenvar + 14.
+  \end{equation*}
+  We find the roots using the quadratic formula. The roots of the
+  characteristic polynomial, and therefore the eigenvalues of $A$, are
+  $\eigenvar=7$ and $\eigenvar=2$. For the eigenvalue $\eigenvar=7$,
+  we find the eigenvector
+  \begin{equation*}
+    \vect{v} = \begin{mymatrix}{r} 1 \\ 2 \end{mymatrix},
+  \end{equation*}
+  and for the eigenvalue $\eigenvar=2$, we find the eigenvector
+  \begin{equation*}
+    \vect{w} = \begin{mymatrix}{r} -2 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  We note that these two eigenvectors are orthogonal to each other,
+  exactly as predicted by Lemma~\ref{lem:eigenvalues-symmetric}. So
+  the vectors $\set{\vect{v},\vect{w}}$ form an orthogonal set. We
+  turn this into an orthonormal set by normalizing each eigenvector,
+  i.e., the normalized eigenvectors are
+  \begin{equation*}
+    \frac{1}{\norm{\vect{v}}}\vect{v}
+    ~=~ \frac{1}{\sqrt{5}} \begin{mymatrix}{r} 1 \\ 2 \end{mymatrix}
+    \quad\mbox{and}\quad
+    \frac{1}{\norm{\vect{w}}}\vect{w}
+    ~=~ \frac{1}{\sqrt{5}} \begin{mymatrix}{r} -2 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  We let $P$ be the matrix that has the normalized eigenvectors as
+  columns, i.e.,
+  \begin{equation*}
+    P = \frac{1}{\sqrt{5}} \begin{mymatrix}{rr} 1 & -2 \\ 2 & 1 \end{mymatrix}.
+  \end{equation*}
+  Note that since $P$ has an orthonormal set of columns, it is
+  automatically orthogonal by
+  Proposition~\ref{prop:conditions-orthogonal-matrix}. Moreover, we
+  have
+  \begin{equation*}
+    P^{-1}
+    ~=~ P^T
+    ~=~ \frac{1}{\sqrt{5}} \begin{mymatrix}{rr} 1 & 2 \\ -2 & 1 \end{mymatrix}.
+  \end{equation*}
+  Finally,
+  \begin{equation*}
+    P^{-1}AP
+    ~=~ P^TAP
+    ~=~ \frac{1}{5}
+    \begin{mymatrix}{rr} 1 & 2 \\ -2 & 1 \end{mymatrix}
+    \begin{mymatrix}{rr} 3 & 2 \\ 2 & 6 \end{mymatrix}
+    \begin{mymatrix}{rr} 1 & -2 \\ 2 & 1 \end{mymatrix}
+    ~=~ \begin{mymatrix}{rr} 7 & 0 \\ 0 & 2 \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{Diagonalization of symmetric matrices}{diagonalization-symmetric2}
+  Find an orthogonal matrix $P$ and a diagonal matrix $D$ such $D =
+  P^{-1}AP$, where
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      3  & 1 & -2 \\
+      1  & 3 &  2 \\
+      -2 & 2 &  0 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  Again, we start by calculating the characteristic polynomial and its roots:
+  \begin{equation*}
+    \det(A-\eigenvar I)
+    ~=~ \begin{absmatrix}{ccc}
+      3-\eigenvar  & 1 & -2 \\
+      1  & 3-\eigenvar &  2 \\
+      -2 & 2 &  -\eigenvar  \\
+    \end{absmatrix}
+    ~=~ - \eigenvar^3 + 6\eigenvar^2 -32.
+  \end{equation*}
+  The roots are $\eigenvar=4$ and $\eigenvar=-2$. To find the
+  eigenvectors for $\eigenvar=4$, we solve the system of equations
+  \begin{equation*}
+    (A-4I)\vect{v}
+    =
+    \begin{mymatrix}{rrr}
+      -1  & 1 & -2 \\
+      1  & -1 &  2 \\
+      -2 & 2 &  -4 \\
+    \end{mymatrix}\vect{v}
+    = \vect{0}.
+  \end{equation*}
+  The solution space is 2-dimensional, with basis
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{v}_2 = \begin{mymatrix}{r} 0 \\ 2 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  To find the eigenvectors for $\eigenvar=-2$, we solve the system of
+  equations
+  \begin{equation*}
+    (A+2I)\vect{v}
+    =
+    \begin{mymatrix}{rrr}
+      5  & 1 & -2 \\
+      1  & 5 &  2 \\
+      -2 & 2 &  2 \\
+    \end{mymatrix}\vect{v}
+    = \vect{0}.
+  \end{equation*}
+  The solution space is 2-dimensional, with basis
+  \begin{equation*}
+    \vect{v}_3 = \begin{mymatrix}{r} 1 \\ -1 \\ 2 \end{mymatrix}.
+  \end{equation*}
+  As predicted by Lemma~\ref{lem:eigenvalues-symmetric}, $\vect{v}_3$
+  is orthogonal to $\vect{v}_1$ and $\vect{v}_2$. However, there is a
+  slight complication: $\vect{v}_1$ and $\vect{v}_2$ are not
+  orthogonal to each other. This is because they are eigenvectors for
+  the {\em same} eigenvalue ($\eigenvar=4$), not for {\em distinct}
+  eigenvalues. We found basis $\set{\vect{v}_1,\vect{v}_2}$ for the
+  eigenspace for $\eigenvar=4$, but it doesn't happen to be an
+  orthogonal basis. However, we can fix this by applying the
+  Gram-Schmidt method to $\set{\vect{v}_1,\vect{v}_2}$. This yields
+  the orthogonal basis $\set{\vect{u}_1,\vect{u}_2}$ for the
+  eigenspace for $\eigenvar=4$, where
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{u}_2 = \begin{mymatrix}{r} -1 \\ 1 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  We now have an orthogonal basis
+  $\set{\vect{u}_1,\vect{u}_2,\vect{v}_3}$ of eigenvectors of the
+  matrix $A$. We normalize the three vectors and use them as the
+  columns of $P$:
+  \begin{equation*}
+    \def\arraystretch{1.4}
+    P = \begin{mymatrix}{ccc}
+      \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{6}}  \\
+      \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}}  & -\frac{1}{\sqrt{6}} \\
+      0                  & \frac{1}{\sqrt{3}}  & \frac{2}{\sqrt{6}}  \\
+    \end{mymatrix}.
+  \end{equation*}
+  It seems that inverting $P$ will not be all that easy, but in fact,
+  since $P$ is orthogonal, the inverse is just the transpose:
+  \begin{equation*}
+    \def\arraystretch{1.4}
+    P^{-1}
+    ~=~ P^T
+    ~=~ \begin{mymatrix}{ccc}
+      \frac{1}{\sqrt{2}}  & \frac{1}{\sqrt{2}}  & 0 \\
+      -\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{3}}  & \frac{1}{\sqrt{3}} \\
+      \frac{1}{\sqrt{6}}  & -\frac{1}{\sqrt{6}} & \frac{2}{\sqrt{6}} \\
+    \end{mymatrix}.
+  \end{equation*}
+  We have
+  \begin{equation*}
+    P^{-1}AP
+    ~=~ D
+    ~=~ \begin{mymatrix}{rrr} 4 & 0 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & -2 \end{mymatrix}.
+  \end{equation*}
+\end{solution}
