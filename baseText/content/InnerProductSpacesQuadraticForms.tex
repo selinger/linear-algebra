@@ -1,0 +1,317 @@
+\section{Application: Simplification of quadratic forms}
+
+In this section, we will explore an application of the diagonalization
+of symmetric matrices, namely, the simplification of quadratic forms.
+Quadratic forms are special kinds of functions that arise, for
+example, in calculus when we approximate some quantity up to terms of
+second order.
+
+\begin{definition}{Quadratic form}{quadratic-form}
+  A \textbf{quadratic form}%
+  \index{quadratic form} is a polynomial in $n$ variables in which
+  each term is of degree 2. For example, the following is a quadratic
+  form in $3$ variables:
+  \begin{equation*}
+    f(x,y,z) = 3x^2 + 3y^2 + 2xy - 4xz + 4yz.
+  \end{equation*}
+  More generally, a quadratic form is a function of the form
+  \begin{equation*}
+    f(x_1,\ldots,x_n) = q_1\,x_1^2 + \ldots + q_n\,x_n^2 + q_{12}\,x_1x_2 +
+    \ldots + q_{ij}\,x_ix_j + \ldots + q_{n-1,n}\,x_{n-1}x_n.
+  \end{equation*}
+  The numbers $q_1,\ldots,q_n,q_{12},\ldots,q_{n-1,n}$, which may be
+  positive, negative, or zero, are called the \textbf{coefficients}%
+  \index{coefficient!of a quadratic form}%
+  \index{quadratic form!coefficient} of the quadratic form.
+\end{definition}
+
+\begin{example}{Quadratic forms}{quadratic-form}
+  Which of the following are quadratic forms?
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item $f(x,y,z) = 2xy + 3xz - 5yz$.
+    \item $g(x,y,z) = x^2 + 2xy + y^2 + 3$.
+    \item $h(x,y,z) = (x+y)^2 - z^2$.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{example}
+
+\begin{solution}
+  The function $f$ is a quadratic form. The function $g$ is not a
+  quadratic form, because the constant term, $+3$, is not of degree
+  2. It should be either a coefficient times the square of a variable,
+  or a coefficient times the product of two variables. The function
+  $h$ is a quadratic form. We can simplify it to $h(x,y,z) = x^2 + 2xy
+  + y^2 - z^2$.
+\end{solution}
+
+\begin{definition}{Matrix form of a quadratic form}{quadratic-form-matrix}
+  Let $A$ be a symmetric $n\times n$-matrix, and let
+  $\vect{v} = \mat{x_1,\ldots,x_n}^T$.  Then
+  \begin{equation*}
+    f(x_1,\ldots,x_n) = \vect{v}^T A\vect{v}
+  \end{equation*}
+  is a quadratic form in $n$ variables. Conversely, every quadratic
+  form in $n$ variables can be uniquely written in this way. We call
+  this the \textbf{matrix form} of the quadratic form%
+  \index{quadratic form!matrix form}%
+  \index{matrix form of quadratic form}.
+\end{definition}
+
+\begin{example}{Matrix form of a quadratic form}{quadratic-form-matrix}
+  Find the coefficients of the quadratic form $f(x,y,z) = \vect{v}^T
+  A\vect{v}$, where
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      1 &  2 &  4 \\
+      2 &  0 & -1 \\
+      4 & -1 & -2 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We have
+  \begin{equation*}
+    f(x,y,z)
+    ~=~
+    \begin{mymatrix}{ccc} x & y & z \end{mymatrix}
+    \begin{mymatrix}{rrr}
+      1 &  2 &  4 \\
+      2 &  0 & -1 \\
+      4 & -1 & -2 \\
+    \end{mymatrix}
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    ~=~ x^2 - 2z^2 + 4xy + 8xz - 2yz.
+  \end{equation*}
+  Note that there is a term $2xy$ and a term $2yx$, which together
+  yield $4xy$. Similarly the term $4xz$ and $4zx$ are combined into
+  $8xz$, and the terms $-yz$ and $-zy$ are combined into $-2yz$.
+\end{solution}
+
+\begin{example}{Matrix form of a quadratic form}{quadratic-form-matrix2}
+  Write the quadratic form
+  \begin{equation*}
+    f(x,y,z) = 5x^2 - y^2 + z^2 + 2xy - 4xz + 3yz
+  \end{equation*}
+  in matrix form.
+\end{example}
+
+\begin{solution}
+  We can write this as
+  \begin{equation*}
+    f(x,y,z)
+    ~=~
+    \begin{mymatrix}{ccc} x & y & z \end{mymatrix}
+    \begin{mymatrix}{rrr}
+      5  &   1 &  -2 \\
+      1  &  -1 & 1.5 \\
+      -2 & 1.5 &   1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}.
+  \end{equation*}
+  Note: since the matrix $A$ must be symmetric, we have no choice but
+  to split the term $2xy$ evenly into $1xy$ and $1yx$. This explains
+  why the $(1,2)$- and $(2,1)$-entries of the matrix are $1$. Also,
+  $-4xz$ has been split into $-2xz$ and $-2zx$, and $3yz$ has been
+  split into $1.5yz$ and $1.5zy$. In general, the matrix of the
+  quadratic form
+  \begin{equation*}
+    f(x,y,z) = ax^2 + by^2 + cz^2 + dxy + exz + fyz
+  \end{equation*}
+  is
+  \begin{equation*}
+    \def\arraystretch{1.3}
+    A = \begin{mymatrix}{rrr}
+      a & \frac{d}{2} & \frac{e}{2} \\
+      \frac{d}{2} & b & \frac{f}{2} \\
+      \frac{e}{2} & \frac{f}{2} & c \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+
+We will now turn to the question of how to simplify quadratic
+forms. The primary tool we have for doing so is a \textbf{change of
+  variables}%
+\index{change of variables!quadratic form}%
+\index{quadratic form!change of variables}. This means replacing the
+variables $x_1,\ldots,x_n$ by new variables $y_1,\ldots,y_n$ that are
+linear combinations of $x_1,\ldots,x_n$.
+
+\begin{example}{Change of variables}{quadratic-form-change-of-variables}
+  Apply the change of variables
+  \begin{eqnarray*}
+    x &=& u \\
+    y &=& v-w \\
+    z &=& w
+  \end{eqnarray*}
+  to the quadratic form
+  \begin{equation*}
+    3x^2 + y^2 + 2xy + 2xz + 2yz
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We have
+  \begin{equation*}
+    \begin{array}{l}
+      3x^2 + y^2 + 2xy + 2xz + 2yz \\
+      =~~ 3u^2 + (v-w)^2 + 2u(v-w) + 2uw + 2(v-w)w \\
+      =~~ 3u^2 + v^2 - w^2 + 2uv.
+    \end{array}
+  \end{equation*}
+\end{solution}
+
+The simplest kind of quadratic form is one that involves only squared
+variables, and no products of two different variables. We call such
+quadratic forms \textbf{diagonal}.
+
+\begin{definition}{Diagonal quadratic form}{diagonal-quadratic-form}
+  A quadratic form is \textbf{diagonal}%
+  \index{diagonal quadratic form}%
+  \index{quadratic form!diagonal} if it is of the form
+  \begin{equation*}
+    f(x_1,\ldots,x_n) = q_1\,x_1^2 + \ldots + q_n\,x_n^2.
+  \end{equation*}
+\end{definition}
+
+\begin{proposition}{Diagonalization of quadratic forms}{quadratic-form-diagonalize}
+  Every quadratic form can be made diagonal by a change of variables.
+\end{proposition}
+
+\begin{proof}
+  We first write the quadratic form in matrix form, i.e.,
+  \begin{equation*}
+    f(x_1,\ldots,x_n) = \vect{v}^T A \vect{v},
+  \end{equation*}
+  where $A$ is a symmetric matrix and
+  $\vect{v}=\mat{x_1,\ldots,x_n}^T$. By
+  Theorem~\ref{thm:diagonalization-symmetric}, $A$ is orthogonally
+  diagonalizable. So let $P$ be an orthogonal matrix such that
+  \begin{equation*}
+    P^{-1}AP
+    ~=~ P^TAP
+    ~=~ D
+    ~=~ \begin{mymatrix}{ccc}
+      d_{11} & \cdots & 0      \\
+      \vdots & \ddots & \vdots \\
+      0      & \cdots & d_{nn} \\
+    \end{mymatrix}
+  \end{equation*}
+  is diagonal. Let $\vect{w}=\mat{y_1,\ldots,y_n}^T$ be a new set of
+  variables such that $\vect{v} = P \vect{w}$.  Then
+  \begin{equation*}
+    \vect{v}^T A \vect{v}
+    ~=~ \vect{w}^T P^TAP \vect{w}
+    ~=~ \vect{w}^T D \vect{w}
+    ~=~ d_{11}y_1^2 + \ldots + d_{nn}y_n^2.
+  \end{equation*}
+  So the quadratic form is diagonal in the variables $y_1,\ldots,y_n$.
+\end{proof}
+
+\begin{example}{Diagonalization of quadratic forms}{quadratic-form-diagonalize}
+  Consider the quadratic form
+  \begin{equation*}
+    f(x,y) = 3x^2 + 4xy + 6y^2.
+  \end{equation*}
+  Perform a change of variables so that the quadratic form becomes diagonal.
+\end{example}
+
+\begin{solution}
+  We first write $f(x,y)$ in matrix form:
+  \begin{equation*}
+    f(x,y)
+    = \begin{mymatrix}{cc} x & y \end{mymatrix}
+    \begin{mymatrix}{rr} 3 & 2 \\ 2 & 6 \end{mymatrix}
+    \begin{mymatrix}{c} x \\ y \end{mymatrix}.
+  \end{equation*}
+  Next, we orthogonally diagonalize the matrix
+  $A = \begin{mymatrix}{rr} 3 & 2 \\ 2 & 6 \end{mymatrix}$. In
+  Example~\ref{exa:diagonalization-symmetric}, we found that $P^{-1}AP = D$, where
+  \begin{equation*}
+    P = \frac{1}{\sqrt{5}} \begin{mymatrix}{rr} 1 & -2 \\ 2 & 1 \end{mymatrix}
+    \quad\mbox{and}\quad
+    D = \begin{mymatrix}{rr} 7 & 0 \\ 0 & 2 \end{mymatrix}.
+  \end{equation*}
+  Since $P$ is orthogonal, we also have $P^TAP=D$. Next, let $u,v$ be
+  new variables such that
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \end{mymatrix}
+    = P \begin{mymatrix}{c} u \\ v \end{mymatrix}
+    = \begin{mymatrix}{c} (u-2v)/\sqrt{5} \\ (2u+v)/\sqrt{2} \end{mymatrix}
+  \end{equation*}
+  Then the change of variables gives
+  \begin{equation*}
+    f(x,y)
+    ~=~ \begin{mymatrix}{cc} x & y \end{mymatrix}
+    A
+    \begin{mymatrix}{c} x \\ y \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{cc} u & v \end{mymatrix}
+    P^TAP
+    \begin{mymatrix}{c} u \\ v \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{cc} u & v \end{mymatrix}
+    D
+    \begin{mymatrix}{c} u \\ v \end{mymatrix}
+    ~=~
+    7u^2 + 2v^2.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{Diagonalization of quadratic forms}{quadratic-form-diagonalize2}
+  Diagonalize the quadratic form
+  \begin{equation*}
+    f(x,y,z) = 3x^2 + 3y^2 + 2xy - 4xz + 4yz.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  The matrix form of $f(x,y,z)$ is
+  \begin{equation*}
+    f(x,y,z)
+    = \begin{mymatrix}{ccc} x & y & z \end{mymatrix}
+    \begin{mymatrix}{rrr}
+      3  & 1 & -2 \\
+      1  & 3 &  2 \\
+      -2 & 2 &  0 \\
+    \end{mymatrix}
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    = \vect{v}^T A\vect{v}.
+  \end{equation*}
+  We orthogonally diagonalize the matrix $A$. In
+  Example~\ref{exa:diagonalization-symmetric}, we found that
+  $P^{-1}AP = D$, where
+  \begin{equation*}
+    P = \begin{mymatrix}{ccc}
+      \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{6}}  \\
+      \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}}  & -\frac{1}{\sqrt{6}} \\
+      0                  & \frac{1}{\sqrt{3}}  & \frac{2}{\sqrt{6}}  \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    D = \begin{mymatrix}{rrr} 4 & 0 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & -2 \end{mymatrix}.
+  \end{equation*}
+  Let $u,v,w$ be new variables such that
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix}
+    = P \begin{mymatrix}{c} u \\ v \\ w \end{mymatrix}.
+  \end{equation*}
+  Then the change of variables gives
+  \begin{eqnarray*}
+    f(x,y,z)
+    &=& \begin{mymatrix}{ccc} x & y & z \end{mymatrix}
+    A
+    \begin{mymatrix}{c} x \\ y \\ z \end{mymatrix} \\
+    &=&
+    \begin{mymatrix}{ccc} u & v & w \end{mymatrix}
+    P^TAP
+    \begin{mymatrix}{c} u \\ v \\ w \end{mymatrix} \\
+    &=&
+    \begin{mymatrix}{ccc} u & v & w \end{mymatrix}
+    D
+    \begin{mymatrix}{c} u \\ v \\ w \end{mymatrix} \\
+    &=&
+    4u^2 + 4v^2 - 2w^2.
+  \end{eqnarray*}
+\end{solution}
+
