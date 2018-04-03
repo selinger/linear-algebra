@@ -406,7 +406,7 @@ axes. When they are not, a change of coordinates is helpful.
   Here,
   \begin{equation*}
     P
-    = \frac{1}{\sqrt{5}} \begin{mymatrix}{rr} 1 & 2 \\ -2 & 1 \end{mymatrix}.
+    = \frac{1}{\sqrt{5}} \begin{mymatrix}{rr} 1 & -2 \\ 2 & 1 \end{mymatrix}.
   \end{equation*}
   We know that in the $(u,v)$-coordinate system, the curve
   $7u^2+2v^2=1$ is an ellipse with $u$-intercept $1/\sqrt{7}$ and
@@ -421,7 +421,7 @@ axes. When they are not, a change of coordinates is helpful.
     \quad\mbox{corresponds to}\quad
     \begin{mymatrix}{c} x \\ y \end{mymatrix}
     = P \begin{mymatrix}{c} 1 \\ 0 \end{mymatrix}
-    = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} 1 \\ -2 \end{mymatrix}
+    = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} 1 \\ 2 \end{mymatrix}
   \end{equation*}
   and the point
   \begin{equation*}
@@ -431,7 +431,7 @@ axes. When they are not, a change of coordinates is helpful.
     \quad\mbox{corresponds to}\quad
     \begin{mymatrix}{c} x \\ y \end{mymatrix}
     = P \begin{mymatrix}{c} 0 \\ 1 \end{mymatrix}
-    = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} 2 \\ 1 \end{mymatrix}.
+    = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} -2 \\ 1 \end{mymatrix}.
   \end{equation*}
   Therefore, we obtain the following picture. The $(x,y)$-coordinate
   system is shown in black and the $(u,v)$-coordinate system is shown
@@ -441,25 +441,25 @@ axes. When they are not, a change of coordinates is helpful.
       \begin{scope}[color=black]
         \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
         \draw[->] (0,-1.5) -- (0,1.5) node[below right] {$y$};
-        \draw (-1,0) -- +(0,-.1) node[below] {$-1$};
-        \draw (1,0) -- +(0,-.1) node[below] {$1$};
-        \draw (0,-1) -- +(-.1,0) node[left] {$-1$};
-        \draw (0,1) -- +(-.1,0) node[left] {$1$};
+        \draw (-1,0) -- +(0,-.1) +(0,-0.2) node {$-1$};
+        \draw (1,0) -- +(0,-.1) +(0,-0.2) node {$1$};
+        \draw (0,-1) -- +(-.1,0) +(-0.2,0) node {$-1$};
+        \draw (0,1) -- +(-.1,0) +(-0.2,0) node {$1$};
       \end{scope}
-      \begin{scope}[color=blue,cm={(1/sqrt(5),-2/sqrt(5),2/sqrt(5),1/sqrt(5),(0,0))}]
+      \begin{scope}[color=blue,cm={(1/sqrt(5),2/sqrt(5),-2/sqrt(5),1/sqrt(5),(0,0))}]
         \draw[thick,red] (0,0) circle [x radius={1/sqrt(7)}, y radius={1/sqrt(2)}];
         \draw[->] (-1.5,0) -- (1.5,0) node[right] {$u$};
-        \draw[->] (0,-1.5) -- (0,1.5) node[right] {$v$};
-        \draw (-1,0) -- +(0,-.1) node[left] {$-1$};
-        \draw (1,0) -- +(0,-.1) node[left] {$1$};
-        \draw (0,-1) -- +(.1,0) node[below] {$-1$};
-        \draw (0,1) -- +(.1,0) node[below] {$1$};
-        \draw ({-1/sqrt(7)},0) -- +(0,-.1) +(-0,-0.2) node {$-\frac{1}{\sqrt{7}}$};
-        \draw ({1/sqrt(7)},0) -- +(0,-.1) +(0,-0.2) node {$\frac{1}{\sqrt{7}}$};
-        \draw (0,{-1/sqrt(2)}) -- +(.1,0) +(0.2,0) node {$-\frac{1}{\sqrt{2}}$};
-        \draw (0,{1/sqrt(2)}) -- +(.1,0) +(0.2,0) node {$\frac{1}{\sqrt{2}}$};
-        \fill[color=black] (1,0) circle [radius=0.9pt] node[right=5pt] {$(x,y)=(\frac{1}{\sqrt{5}},-\frac{2}{\sqrt{5}})$};
-        \fill[color=black] (0,1) circle [radius=0.9pt] node[right=9pt] {$(x,y)=(\frac{2}{\sqrt{5}},\frac{1}{\sqrt{5}})$};
+        \draw[->] (0,-1.5) -- (0,1.5) node[above] {$v$};
+        \draw (-1,0) -- +(0,.1) +(0,0.2) node {$-1$};
+        \draw (1,0) -- +(0,.1) +(0,0.2) node {$1$};
+        \draw (0,-1) -- +(-.1,0) +(-0.2,0) node {$-1$};
+        \draw (0,1) -- +(-.1,0) +(-0.2,0) node {$1$};
+        \draw ({-1/sqrt(7)},0) -- +(0,.1) +(-0.15,0.2) node {$-\frac{1}{\sqrt{7}}$};
+        \draw ({1/sqrt(7)},0) -- +(0,.1) +(0.1,0.15) node {$\frac{1}{\sqrt{7}}$};
+        \draw (0,{-1/sqrt(2)}) -- +(-.1,0) +(-0.25,0) node {$-\frac{1}{\sqrt{2}}$};
+        \draw (0,{1/sqrt(2)}) -- +(-.1,0) +(-0.225,0) node {$\frac{1}{\sqrt{2}}$};
+        \fill[color=black] (1,0) circle [radius=0.9pt] node[right=5pt] {$(x,y)=(\frac{1}{\sqrt{5}},\frac{2}{\sqrt{5}})$};
+        \fill[color=black] (0,1) circle [radius=0.9pt] node[left=11pt] {$(x,y)=(-\frac{2}{\sqrt{5}},\frac{1}{\sqrt{5}})$};
       \end{scope}
     \end{tikzpicture}
   \end{equation*}
