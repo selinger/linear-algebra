@@ -315,3 +315,83 @@ quadratic forms \textbf{diagonal}.
   \end{eqnarray*}
 \end{solution}
 
+Next, we turn our attention to the task of sketching the solutions of
+quadratic equations in 2 or more variables.
+
+\begin{example}{Sketching circles and ellipses}{sketching-circles-ellipses}
+  Sketch the following curves:
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item $x^2+y^2=1$,
+    \item $x^2+2y^2=1$.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{example}
+
+\begin{solution}
+  (a) The curve $x^2+y^2=1$ is the familiar unit circle.
+  \begin{equation*}
+    \begin{tikzpicture}[scale=2]
+      \draw[thick,red] (0,0) circle [radius=1];
+      \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
+      \draw[->] (0,-1.5) -- (0,1.5) node[below right] {$y$};
+      \draw (-1,0) -- +(0,-.1) node[below left] {$-1$};
+      \draw (1,0) -- +(0,-.1) node[below right] {$1$};
+      \draw (0,-1) -- +(-.1,0) node[below left] {$-1$};
+      \draw (0,1) -- +(-.1,0) node[above left] {$1$};
+    \end{tikzpicture}
+  \end{equation*}
+  (b) The curve $x^2+2y^2=1$ is the same, except that it has been
+  stretched by a factor of $1/\sqrt{2}$ in the $y$-direction.
+  In other words, it is an ellipse with $x$-intercepts $\pm 1$ and
+  $y$-intercepts $\pm 1/\sqrt{2}$.
+  \begin{equation*}
+    \begin{tikzpicture}[scale=2]
+      \draw[thick,red,yscale={1/sqrt(2)}] (0,0) circle [radius=1];
+      \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
+      \draw[->] (0,-1.1) -- (0,1.1) node[below right] {$y$};
+      \draw (-1,0) -- +(0,-.1) node[below left] {$-1$};
+      \draw (1,0) -- +(0,-.1) node[below right] {$1$};
+      \draw (0,{-1/sqrt(2)}) -- +(-.1,0) node[below left] {$-\frac{1}{\sqrt{2}}$};
+      \draw (0,{1/sqrt(2)}) -- +(-.1,0) node[above left] {$\frac{1}{\sqrt{2}}$};
+    \end{tikzpicture}
+  \end{equation*}
+\end{solution}
+
+In general, the curve $ax^2 + by^2 = 1$ is an ellipse with
+$x$-intercepts $\pm 1/\sqrt{a}$ and $y$-intercepts $\pm
+1/\sqrt{b}$. Similarly, the equation $ax^2 + by^2 + cz^2 = 1$
+describes a $3$-dimensional ellipsoid with $x$-intercepts
+$\pm 1/\sqrt{a}$, $y$-intercepts $\pm 1/\sqrt{b}$, and $z$-intercepts
+$\pm 1/\sqrt{c}$:
+\begin{equation*}
+  \begin{tikzpicture}[scale=2]
+    \begin{scope}[y={(1cm,-0.3cm)},x={(-0.8cm,-0.4cm)},z={(0cm,1cm)}]
+      \draw[->] (-1.5,0,0) -- (1.5,0,0) node[left] {$x$};
+      \draw[->] (0,-1.5,0) -- (0,1.5,0) node[right] {$y$};
+      \draw[->] (0,0,-1.5) -- (0,0,1.5) node[below right] {$z$};
+    \end{scope}
+    \fill[ball color=red!70] (0,0,0) circle [x radius=1.17, y radius=0.7, rotate=-10];
+    \begin{scope}[y={(1cm,-0.3cm)},x={(-0.8cm,-0.4cm)},z={(0cm,1cm)}]
+      %\draw[thick,black,x={(1cm,-0.3cm)},y={(0.56cm,0.28cm)}] (0,0,0) circle [radius=1];
+      %\draw[thick,black,x={(1cm,-0.3cm)},y={(0cm,0.58cm)}] (0,0,0) circle [radius=1];
+      %\foreach\x in {0} {
+      %  \draw[thick,black,x={(0.56cm,0.28cm)},y={(0cm,0.58cm)},z={(1cm,-0.3cm)}] (0,0,\x) circle [radius=sqrt(1-abs(\x^2))];
+      %}
+      \draw[->] (0.7,0,0) -- (1.5,0,0);
+      \draw[->] (0,1,0) -- (0,1.5,0);
+      \draw[->] (0,0,0.58) -- (0,0,1.5);
+      %\draw (-0.7,0,0) -- +(0,0,-.1) node[below] {$-\frac{1}{\sqrt{a}}$};
+      \draw (0.7,0,0) -- +(0,0,0.1) -- +(0,0,-0.1) +(0,0,-0.45) node {$\frac{1}{\sqrt{a}}$};
+      \draw (0.7,0,0) -- +(0,0.1,0) -- +(0,-0.1,0);
+      %\draw (0,-1,0) -- +(0,0,-.1) node[below] {$-\frac{1}{\sqrt{b}}$};
+      \draw (0,1,0) -- +(0,0,0.1) -- +(0,0,-0.1) +(0,0,-0.4) node {$\frac{1}{\sqrt{b}}$};
+      \draw (0,1,0) -- +(0.1,0,0) -- +(-0.1,0,0);
+      %\draw (0,0,-0.58) -- +(.1,0,0) node[below left] {$-\frac{1}{\sqrt{c}}$};
+      \draw (0,0,0.58) -- +(-0.1,0,0) -- +(0.1,0,0);
+      \draw (0,0,0.58) -- +(0,0.1,0) -- +(0,-0.1,0) +(0,-0.3,0) node {$\frac{1}{\sqrt{c}}$};
+    \end{scope}
+  \end{tikzpicture}
+\end{equation*}
+
+
