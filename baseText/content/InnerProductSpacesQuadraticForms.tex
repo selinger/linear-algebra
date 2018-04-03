@@ -373,25 +373,95 @@ $\pm 1/\sqrt{c}$:
     \end{scope}
     \fill[ball color=red!70] (0,0,0) circle [x radius=1.17, y radius=0.7, rotate=-10];
     \begin{scope}[y={(1cm,-0.3cm)},x={(-0.8cm,-0.4cm)},z={(0cm,1cm)}]
-      %\draw[thick,black,x={(1cm,-0.3cm)},y={(0.56cm,0.28cm)}] (0,0,0) circle [radius=1];
-      %\draw[thick,black,x={(1cm,-0.3cm)},y={(0cm,0.58cm)}] (0,0,0) circle [radius=1];
-      %\foreach\x in {0} {
-      %  \draw[thick,black,x={(0.56cm,0.28cm)},y={(0cm,0.58cm)},z={(1cm,-0.3cm)}] (0,0,\x) circle [radius=sqrt(1-abs(\x^2))];
-      %}
       \draw[->] (0.7,0,0) -- (1.5,0,0);
       \draw[->] (0,1,0) -- (0,1.5,0);
       \draw[->] (0,0,0.58) -- (0,0,1.5);
-      %\draw (-0.7,0,0) -- +(0,0,-.1) node[below] {$-\frac{1}{\sqrt{a}}$};
       \draw (0.7,0,0) -- +(0,0,0.1) -- +(0,0,-0.1) +(0,0,-0.45) node {$\frac{1}{\sqrt{a}}$};
       \draw (0.7,0,0) -- +(0,0.1,0) -- +(0,-0.1,0);
-      %\draw (0,-1,0) -- +(0,0,-.1) node[below] {$-\frac{1}{\sqrt{b}}$};
       \draw (0,1,0) -- +(0,0,0.1) -- +(0,0,-0.1) +(0,0,-0.4) node {$\frac{1}{\sqrt{b}}$};
       \draw (0,1,0) -- +(0.1,0,0) -- +(-0.1,0,0);
-      %\draw (0,0,-0.58) -- +(.1,0,0) node[below left] {$-\frac{1}{\sqrt{c}}$};
       \draw (0,0,0.58) -- +(-0.1,0,0) -- +(0.1,0,0);
       \draw (0,0,0.58) -- +(0,0.1,0) -- +(0,-0.1,0) +(0,-0.3,0) node {$\frac{1}{\sqrt{c}}$};
     \end{scope}
   \end{tikzpicture}
 \end{equation*}
 
+\noindent
+What the above examples have in common is that in all cases, the main
+``axes'' of the ellipse or ellipsoid are parallel to the coordinate
+axes. When they are not, a change of coordinates is helpful.
+
+\begin{example}{Sketching quadratic curves}{sketching-quadratic}
+  Sketch the curve $3x^2 + 4xy + 6y^2 = 1$.
+\end{example}
+
+\begin{solution}
+  From Example~\ref{exa:quadratic-form-diagonalize}, we know that the
+  curve is equivalent to $7u^2 + 2v^2 = 1$, where the coordinates
+  $(u,v)$ are obtained from $(x,y)$ by the change of variables
+  \begin{equation*}
+    \begin{mymatrix}{c} x \\ y \end{mymatrix}
+    = P \begin{mymatrix}{c} u \\ v \end{mymatrix}.
+  \end{equation*}
+  Here,
+  \begin{equation*}
+    P
+    = \frac{1}{\sqrt{5}} \begin{mymatrix}{rr} 1 & 2 \\ -2 & 1 \end{mymatrix}.
+  \end{equation*}
+  We know that in the $(u,v)$-coordinate system, the curve
+  $7u^2+2v^2=1$ is an ellipse with $u$-intercept $1/\sqrt{7}$ and
+  $v$-intercept $1/\sqrt{2}$. To sketch the curve, what remains to do
+  is to figure out the relative location of the $(u,v)$-coordinate
+  system with respect to the $(x,y)$-coordinate system. We can use the
+  above change of variables formula to figure out that the point
+  \begin{equation*}
+    \begin{mymatrix}{c} u \\ v \end{mymatrix}
+    =
+    \begin{mymatrix}{c} 1 \\ 0 \end{mymatrix}
+    \quad\mbox{corresponds to}\quad
+    \begin{mymatrix}{c} x \\ y \end{mymatrix}
+    = P \begin{mymatrix}{c} 1 \\ 0 \end{mymatrix}
+    = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} 1 \\ -2 \end{mymatrix}
+  \end{equation*}
+  and the point
+  \begin{equation*}
+    \begin{mymatrix}{c} u \\ v \end{mymatrix}
+    =
+    \begin{mymatrix}{c} 0 \\ 1 \end{mymatrix}
+    \quad\mbox{corresponds to}\quad
+    \begin{mymatrix}{c} x \\ y \end{mymatrix}
+    = P \begin{mymatrix}{c} 0 \\ 1 \end{mymatrix}
+    = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} 2 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Therefore, we obtain the following picture. The $(x,y)$-coordinate
+  system is shown in black and the $(u,v)$-coordinate system is shown
+  in blue.
+  \begin{equation*}
+    \begin{tikzpicture}[scale=3]
+      \begin{scope}[color=black]
+        \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
+        \draw[->] (0,-1.5) -- (0,1.5) node[below right] {$y$};
+        \draw (-1,0) -- +(0,-.1) node[below] {$-1$};
+        \draw (1,0) -- +(0,-.1) node[below] {$1$};
+        \draw (0,-1) -- +(-.1,0) node[left] {$-1$};
+        \draw (0,1) -- +(-.1,0) node[left] {$1$};
+      \end{scope}
+      \begin{scope}[color=blue,cm={(1/sqrt(5),-2/sqrt(5),2/sqrt(5),1/sqrt(5),(0,0))}]
+        \draw[thick,red] (0,0) circle [x radius={1/sqrt(7)}, y radius={1/sqrt(2)}];
+        \draw[->] (-1.5,0) -- (1.5,0) node[right] {$u$};
+        \draw[->] (0,-1.5) -- (0,1.5) node[right] {$v$};
+        \draw (-1,0) -- +(0,-.1) node[left] {$-1$};
+        \draw (1,0) -- +(0,-.1) node[left] {$1$};
+        \draw (0,-1) -- +(.1,0) node[below] {$-1$};
+        \draw (0,1) -- +(.1,0) node[below] {$1$};
+        \draw ({-1/sqrt(7)},0) -- +(0,-.1) +(-0,-0.2) node {$-\frac{1}{\sqrt{7}}$};
+        \draw ({1/sqrt(7)},0) -- +(0,-.1) +(0,-0.2) node {$\frac{1}{\sqrt{7}}$};
+        \draw (0,{-1/sqrt(2)}) -- +(.1,0) +(0.2,0) node {$-\frac{1}{\sqrt{2}}$};
+        \draw (0,{1/sqrt(2)}) -- +(.1,0) +(0.2,0) node {$\frac{1}{\sqrt{2}}$};
+        \fill[color=black] (1,0) circle [radius=0.9pt] node[right=5pt] {$(x,y)=(\frac{1}{\sqrt{5}},-\frac{2}{\sqrt{5}})$};
+        \fill[color=black] (0,1) circle [radius=0.9pt] node[right=9pt] {$(x,y)=(\frac{2}{\sqrt{5}},\frac{1}{\sqrt{5}})$};
+      \end{scope}
+    \end{tikzpicture}
+  \end{equation*}
+\end{solution}
 
