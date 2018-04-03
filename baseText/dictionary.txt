@@ -75,6 +75,7 @@ eigenspace
 eigenspaces
 eigenvector
 eigenvectors
+ellipsoid
 endpoints
 enuitem
 eqn
