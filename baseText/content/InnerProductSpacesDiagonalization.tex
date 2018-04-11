@@ -200,19 +200,21 @@ symmetric matrices.
   turn this into an orthonormal set by normalizing each eigenvector,
   i.e., the normalized eigenvectors are
   \begin{equation*}
-    \frac{1}{\norm{\vect{v}}}\vect{v}
+    \vect{u}_1
+    ~=~ \frac{1}{\norm{\vect{v}}}\vect{v}
     ~=~ \frac{1}{\sqrt{5}} \begin{mymatrix}{r} 1 \\ 2 \end{mymatrix}
     \quad\mbox{and}\quad
-    \frac{1}{\norm{\vect{w}}}\vect{w}
+    \vect{u}_2
+    ~=~ \frac{1}{\norm{\vect{w}}}\vect{w}
     ~=~ \frac{1}{\sqrt{5}} \begin{mymatrix}{r} -2 \\ 1 \end{mymatrix}.
   \end{equation*}
-  We let $P$ be the matrix that has the normalized eigenvectors as
-  columns, i.e.,
+  We let $P$ be the matrix that has columns $\vect{u}_1$ and
+  $\vect{u}_2$, i.e.,
   \begin{equation*}
     P = \frac{1}{\sqrt{5}} \begin{mymatrix}{rr} 1 & -2 \\ 2 & 1 \end{mymatrix}.
   \end{equation*}
-  Note that since $P$ has an orthonormal set of columns, it is
-  automatically orthogonal by
+  Note that since $\vect{u}_1$ and $\vect{u}_2$ are orthonormal, $P$
+  is automatically orthogonal by
   Proposition~\ref{prop:conditions-orthogonal-matrix}. Moreover, we
   have
   \begin{equation*}
