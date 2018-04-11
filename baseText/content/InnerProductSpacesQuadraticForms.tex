@@ -193,9 +193,9 @@ quadratic forms \textbf{diagonal}.
     ~=~ P^TAP
     ~=~ D
     ~=~ \begin{mymatrix}{ccc}
-      d_{11} & \cdots & 0      \\
+      \eigenvar_{1} & \cdots & 0      \\
       \vdots & \ddots & \vdots \\
-      0      & \cdots & d_{nn} \\
+      0      & \cdots & \eigenvar_{nn} \\
     \end{mymatrix}
   \end{equation*}
   is diagonal. Let $\vect{w}=\mat{y_1,\ldots,y_n}^T$ be a new set of
@@ -204,7 +204,7 @@ quadratic forms \textbf{diagonal}.
     \vect{v}^T A \vect{v}
     ~=~ \vect{w}^T P^TAP \vect{w}
     ~=~ \vect{w}^T D \vect{w}
-    ~=~ d_{11}y_1^2 + \ldots + d_{nn}y_n^2.
+    ~=~ \eigenvar_{1}y_1^2 + \ldots + \eigenvar_{n}y_n^2.
   \end{equation*}
   So the quadratic form is diagonal in the variables $y_1,\ldots,y_n$.
 \end{proof}
@@ -387,76 +387,76 @@ $\pm 1/\sqrt{c}$:
 \end{equation*}
 
 \noindent
-What the above examples have in common is that the main ``axes'' of
-the ellipse or ellipsoid are parallel to the coordinate axes. When
-they are not, a change of coordinates is helpful.
+Each ellipse or ellipsoid has a set of \textbf{principal axes}%
+\index{principal axis}%
+\index{quadratic form!principal axes}, which are its axes of
+symmetry. When the quadratic forms are diagonal, as in the above
+examples, the principal axes are the standard coordinate axes. When
+the quadratic forms are not diagonal, the principal axes are the
+eigenvectors of the matrix $A$. This is the content of the following
+proposition.
 
-\begin{definition}{Principal axes}{principal-axes}
+\begin{proposition}{Principal axes of a quadratic form}{principal-axes}
   Consider a quadratic form in matrix form,
-  $f(\vect{v}) = \vect{v}^TA\vect{v}$. The normalized eigenvectors of
-  $A$ are also called the \textbf{principal axes}%
-  \index{principal axis}%
-  \index{quadratic form!principal axes} of the quadratic form.
-\end{definition}
+  $f(\vect{v}) = \vect{v}^TA\vect{v}$, where $A$ is a symmetric
+  $n\times n$-matrix. Let $\set{\vect{u}_1,\ldots,\vect{u}_n}$ be an
+  orthonormal set of eigenvectors of $A$, and let
+  $\eigenvar_1,\ldots,\eigenvar_n$ be the corresponding eigenvalues.
+  Then the solutions of the equation
+  \begin{equation*}
+    \vect{v}^TA\vect{v} = 1
+  \end{equation*}
+  form an $n$-dimensional ellipsoid whose principal axes are parallel
+  to $\vect{u}_1,\ldots,\vect{u}_n$ and whose $\vect{u}_i$-intercepts
+  are $\pm\frac{1}{\sqrt{\eigenvar_i}}$.  
+\end{proposition}
 
-The geometric significance of the principal axes is illustrated by the
-following example.
+\begin{proof}
+  Let $P$ be the orthogonal matrix whose columns are
+  $\vect{u}_1,\ldots,\vect{u}_n$. From the proof of
+  Proposition~\ref{prop:quadratic-form-diagonalize}, we know that the
+  equation $\vect{v}^TA\vect{v} = 1$ is equivalent to
+  $\eigenvar_1y_1^2 + \ldots + \eigenvar_ny_n^2=1$, where
+  $y_1,\ldots,y_n$ are variables such that
+  \begin{equation}\label{eqn:principal-axes}
+    \vect{v} = P\begin{mymatrix}{c} y_1 \\ \vdots \\ y_n \end{mymatrix}.
+  \end{equation}
+  We know that in the $(y_1,\ldots,y_n)$-coordinate system, the
+  equation $\eigenvar_1y_1^2 + \ldots + \eigenvar_ny_n^2 = 1$
+  describes an ellipsoid with $y_1$-intercepts
+  $\pm1/\sqrt{\lambda_1}$, $y_2$-intercepts $\pm1/\sqrt{\lambda_2}$,
+  and so on. The only thing that remains to do is to figure out the
+  direction of the coordinate axes. The $y_1$-axis points in the
+  direction of the point with coordinates
+  $(y_1,\ldots,y_n) = (1,0,\ldots,0)$.  Using the change of variables
+  formula {\eqref{eqn:principal-axes}}, we find that this corresponds
+  to the first column of $P$, i.e., $\vect{v}=\vect{u}_1$. Similarly, the
+  $y_2$-axis points in the direction of $\vect{u}_2$, and so on.
+\end{proof}
 
-\begin{example}{Sketching quadratic curves}{sketching-quadratic}
+\begin{example}{Sketching a quadratic curve}{sketching-quadratic}
   Sketch the curve $3x^2 + 4xy + 6y^2 = 1$.
 \end{example}
 
 \begin{solution}
+  The matrix for the quadratic form $3x^2 + 4xy + 6y^2$ is
+  \begin{equation*}
+    A = \begin{mymatrix}{rr} 3 & 2 \\ 2 & 6 \end{mymatrix}.
+  \end{equation*}
   From Example~\ref{exa:quadratic-form-diagonalize}, we know that the
-  curve is equivalent to $7u^2 + 2v^2 = 1$, where the coordinates
-  $(u,v)$ are obtained from $(x,y)$ by the change of variables
-  \begin{equation*}
-    \begin{mymatrix}{c} x \\ y \end{mymatrix}
-    = P \begin{mymatrix}{c} u \\ v \end{mymatrix}.
-  \end{equation*}
-  Here,
-  \begin{equation*}
-    P
-    = \frac{1}{\sqrt{5}} \begin{mymatrix}{rr} 1 & -2 \\ 2 & 1 \end{mymatrix}.
-  \end{equation*}
-  The principal axes are the columns of $P$, i.e.,
+  normalized eigenvectors of $A$ are
   \begin{equation*}
     \vect{u}_1
     ~=~ \frac{1}{\sqrt{5}} \begin{mymatrix}{r} 1 \\ 2 \end{mymatrix}
     \quad\mbox{and}\quad
     \vect{u}_2
-    ~=~ \frac{1}{\sqrt{5}} \begin{mymatrix}{r} -2 \\ 1 \end{mymatrix}.    
+    ~=~ \frac{1}{\sqrt{5}} \begin{mymatrix}{r} -2 \\ 1 \end{mymatrix},
   \end{equation*}
-  We know that in the $(u,v)$-coordinate system, the curve
-  $7u^2+2v^2=1$ is an ellipse with $u$-intercept $1/\sqrt{7}$ and
-  $v$-intercept $1/\sqrt{2}$. To sketch the curve, what remains to do
-  is to figure out the relative location of the $(u,v)$-coordinate
-  system with respect to the $(x,y)$-coordinate system. We can use the
-  above change of variables formula to figure out that the point
-  \begin{equation*}
-    \begin{mymatrix}{c} u \\ v \end{mymatrix}
-    =
-    \begin{mymatrix}{c} 1 \\ 0 \end{mymatrix}
-    \quad\mbox{corresponds to}\quad
-    \begin{mymatrix}{c} x \\ y \end{mymatrix}
-    = P \begin{mymatrix}{c} 1 \\ 0 \end{mymatrix}
-    = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} 1 \\ 2 \end{mymatrix}
-    = \vect{u}_1,
-  \end{equation*}
-  and the point
-  \begin{equation*}
-    \begin{mymatrix}{c} u \\ v \end{mymatrix}
-    =
-    \begin{mymatrix}{c} 0 \\ 1 \end{mymatrix}
-    \quad\mbox{corresponds to}\quad
-    \begin{mymatrix}{c} x \\ y \end{mymatrix}
-    = P \begin{mymatrix}{c} 0 \\ 1 \end{mymatrix}
-    = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} -2 \\ 1 \end{mymatrix}
-    = \vect{u}_2.
-  \end{equation*}
-  Therefore, we obtain the following picture. The $(x,y)$-coordinate
-  system is shown in black and the $(u,v)$-coordinate system is shown
-  in blue.
+  with respective eigenvalues $\eigenvar_1 = 7$ and $\eigenvar_2 =
+  2$. Therefore, by Proposition~\ref{prop:principal-axes}, the curve
+  $3x^2 + 4xy + 6y^2 = 1$ is an ellipse with principal axes
+  $\vect{u}_1$ and $\vect{u}_2$, and with respective intercepts
+  $\pm1/\sqrt{7}$ and $\pm1/\sqrt{2}$.
   \begin{equation*}
     \begin{tikzpicture}[scale=3]
       \begin{scope}[color=black]
@@ -469,8 +469,8 @@ following example.
       \end{scope}
       \begin{scope}[color=blue,cm={(1/sqrt(5),2/sqrt(5),-2/sqrt(5),1/sqrt(5),(0,0))}]
         \draw[thick,red] (0,0) circle [x radius={1/sqrt(7)}, y radius={1/sqrt(2)}];
-        \draw[->,blue!50] (-1.5,0) -- (1.5,0) node[right] {$u$};
-        \draw[->,blue!50] (0,-1.5) -- (0,1.5) node[above] {$v$};
+        \draw[->,blue!50] (-1.5,0) -- (1.5,0);
+        \draw[->,blue!50] (0,-1.5) -- (0,1.5);
         \draw[blue!50] (-1,0) -- +(0,.1) +(0,0.2) node {$-1$};
         \draw[blue!50] (1,0) -- +(0,.1) +(0,0.2) node {$1$};
         \draw[blue!50] (0,-1) -- +(-.1,0) +(-0.2,0) node {$-1$};
