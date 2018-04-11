@@ -387,9 +387,20 @@ $\pm 1/\sqrt{c}$:
 \end{equation*}
 
 \noindent
-What the above examples have in common is that in all cases, the main
-``axes'' of the ellipse or ellipsoid are parallel to the coordinate
-axes. When they are not, a change of coordinates is helpful.
+What the above examples have in common is that the main ``axes'' of
+the ellipse or ellipsoid are parallel to the coordinate axes. When
+they are not, a change of coordinates is helpful.
+
+\begin{definition}{Principal axes}{principal-axes}
+  Consider a quadratic form in matrix form,
+  $f(\vect{v}) = \vect{v}^TA\vect{v}$. The normalized eigenvectors of
+  $A$ are also called the \textbf{principal axes}%
+  \index{principal axis}%
+  \index{quadratic form!principal axes} of the quadratic form.
+\end{definition}
+
+The geometric significance of the principal axes is illustrated by the
+following example.
 
 \begin{example}{Sketching quadratic curves}{sketching-quadratic}
   Sketch the curve $3x^2 + 4xy + 6y^2 = 1$.
@@ -408,6 +419,14 @@ axes. When they are not, a change of coordinates is helpful.
     P
     = \frac{1}{\sqrt{5}} \begin{mymatrix}{rr} 1 & -2 \\ 2 & 1 \end{mymatrix}.
   \end{equation*}
+  The principal axes are the columns of $P$, i.e.,
+  \begin{equation*}
+    \vect{u}_1
+    ~=~ \frac{1}{\sqrt{5}} \begin{mymatrix}{r} 1 \\ 2 \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{u}_2
+    ~=~ \frac{1}{\sqrt{5}} \begin{mymatrix}{r} -2 \\ 1 \end{mymatrix}.    
+  \end{equation*}
   We know that in the $(u,v)$-coordinate system, the curve
   $7u^2+2v^2=1$ is an ellipse with $u$-intercept $1/\sqrt{7}$ and
   $v$-intercept $1/\sqrt{2}$. To sketch the curve, what remains to do
@@ -422,6 +441,7 @@ axes. When they are not, a change of coordinates is helpful.
     \begin{mymatrix}{c} x \\ y \end{mymatrix}
     = P \begin{mymatrix}{c} 1 \\ 0 \end{mymatrix}
     = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} 1 \\ 2 \end{mymatrix}
+    = \vect{u}_1,
   \end{equation*}
   and the point
   \begin{equation*}
@@ -431,7 +451,8 @@ axes. When they are not, a change of coordinates is helpful.
     \quad\mbox{corresponds to}\quad
     \begin{mymatrix}{c} x \\ y \end{mymatrix}
     = P \begin{mymatrix}{c} 0 \\ 1 \end{mymatrix}
-    = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} -2 \\ 1 \end{mymatrix}.
+    = \frac{1}{\sqrt{5}} \begin{mymatrix}{c} -2 \\ 1 \end{mymatrix}
+    = \vect{u}_2.
   \end{equation*}
   Therefore, we obtain the following picture. The $(x,y)$-coordinate
   system is shown in black and the $(u,v)$-coordinate system is shown
@@ -448,18 +469,20 @@ axes. When they are not, a change of coordinates is helpful.
       \end{scope}
       \begin{scope}[color=blue,cm={(1/sqrt(5),2/sqrt(5),-2/sqrt(5),1/sqrt(5),(0,0))}]
         \draw[thick,red] (0,0) circle [x radius={1/sqrt(7)}, y radius={1/sqrt(2)}];
-        \draw[->] (-1.5,0) -- (1.5,0) node[right] {$u$};
-        \draw[->] (0,-1.5) -- (0,1.5) node[above] {$v$};
-        \draw (-1,0) -- +(0,.1) +(0,0.2) node {$-1$};
-        \draw (1,0) -- +(0,.1) +(0,0.2) node {$1$};
-        \draw (0,-1) -- +(-.1,0) +(-0.2,0) node {$-1$};
-        \draw (0,1) -- +(-.1,0) +(-0.2,0) node {$1$};
+        \draw[->,blue!50] (-1.5,0) -- (1.5,0) node[right] {$u$};
+        \draw[->,blue!50] (0,-1.5) -- (0,1.5) node[above] {$v$};
+        \draw[blue!50] (-1,0) -- +(0,.1) +(0,0.2) node {$-1$};
+        \draw[blue!50] (1,0) -- +(0,.1) +(0,0.2) node {$1$};
+        \draw[blue!50] (0,-1) -- +(-.1,0) +(-0.2,0) node {$-1$};
+        \draw[blue!50] (0,1) -- +(-.1,0) +(-0.2,0) node {$1$};
         \draw ({-1/sqrt(7)},0) -- +(0,.1) +(-0.15,0.2) node {$-\frac{1}{\sqrt{7}}$};
         \draw ({1/sqrt(7)},0) -- +(0,.1) +(0.1,0.15) node {$\frac{1}{\sqrt{7}}$};
         \draw (0,{-1/sqrt(2)}) -- +(-.1,0) +(-0.25,0) node {$-\frac{1}{\sqrt{2}}$};
         \draw (0,{1/sqrt(2)}) -- +(-.1,0) +(-0.225,0) node {$\frac{1}{\sqrt{2}}$};
-        \fill[color=black] (1,0) circle [radius=0.9pt] node[right=5pt] {$(x,y)=(\frac{1}{\sqrt{5}},\frac{2}{\sqrt{5}})$};
-        \fill[color=black] (0,1) circle [radius=0.9pt] node[left=11pt] {$(x,y)=(-\frac{2}{\sqrt{5}},\frac{1}{\sqrt{5}})$};
+        %\fill[color=black] (1,0) circle [radius=0.9pt] node[right=5pt] {$(x,y)=(\frac{1}{\sqrt{5}},\frac{2}{\sqrt{5}})$};
+        %\fill[color=black] (0,1) circle [radius=0.9pt] node[left=11pt] {$(x,y)=(-\frac{2}{\sqrt{5}},\frac{1}{\sqrt{5}})$};
+        \draw[thick,blue,->] (0,0) -- (1,0) node[right] {$\vect{u}_1$};
+        \draw[thick,blue,->] (0,0) -- (0,1) node[above] {$\vect{u}_2$};
       \end{scope}
     \end{tikzpicture}
   \end{equation*}
