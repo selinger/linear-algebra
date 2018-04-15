@@ -1,0 +1,239 @@
+\section{Inner products and positive definite matrices}
+
+In Example~\ref{exa:rn-with-inner-product}, we saw that it is
+sometimes possible to define an inner product on $\R^n$ from an
+$n\times n$-matrix $A$ by the formula
+\begin{equation*}
+  \iprod{\vect{u},\vect{v}} = \vect{u}^T A \vect{v}.
+\end{equation*}
+We will now explore in more detail under what conditions this formula
+defines an inner product.
+
+\begin{definition}{Positive semidefinite and positive definite matrices}{positive-matrix}
+  Let $A$ be an $n\times n$-matrix over the real numbers.
+  \begin{itemize}
+  \item $A$ is called \textbf{symmetric}%
+    \index{symmetric matrix}%
+    \index{matrix!symmetric} if $A=A^T$.
+  \item $A$ is called \textbf{positive semidefinite}%
+    \index{positive semidefinite matrix}%
+    \index{matrix!positive semidefinite}%
+    \index{semidefinite} if it is symmetric and for all
+    $\vect{v}\in\R^n$, we have $\vect{v}^TA\vect{v}\geq 0$.
+  \item $A$ is called \textbf{positive definite}%
+    \index{positive definite matrix}%
+    \index{matrix!positive definite} if it is positive semidefinite
+    and $\vect{v}^TA\vect{v}=0$ if and only if $\vect{v}=\vect{0}$.
+\end{itemize}
+\end{definition}
+
+We note that the positive definite property can be equivalently stated
+as follows: $A$ is positive definite if it is symmetric and for all
+$\vect{v}\in\R^n$ with $\vect{v}\neq\vect{0}$, we have
+$\vect{v}^TA\vect{v}>0$.
+
+\begin{example}{Positive semidefinite and positive definite matrices}{positive-matrix}
+  Which of the following matrices are positive semidefinite? Which
+  ones are positive definite?
+  \begin{equation*}
+    A = \begin{mymatrix}{cc} 2 & -1 \\ -1 & 1 \end{mymatrix},\quad
+    B = \begin{mymatrix}{cc} 1 & 2 \\ 2 & 1 \end{mymatrix},\quad
+    C = \begin{mymatrix}{cc} 1 & -1 \\ -1 & 1 \end{mymatrix},\quad
+    D = \begin{mymatrix}{cc} 2 & 0 \\ 2 & 1 \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  The matrix $A$ is positive definite. To see why, consider any vector
+  $\vect{v}=\begin{mymatrix}{c} x \\ y \end{mymatrix}$. Then
+  \begin{equation*}
+    \vect{v}^TA\vect{v}
+    ~=~
+    \begin{mymatrix}{cc} x & y \end{mymatrix}
+    \begin{mymatrix}{cc} 2 & -1 \\ -1 & 1 \end{mymatrix}
+    \begin{mymatrix}{c} x \\ y \end{mymatrix}
+    ~=~ 2x^2 - 2xy + y^2
+    ~=~ x^2 + (x-y)^2
+    ~\geq~ 0.
+  \end{equation*}
+  This inequality implies that $A$ is positive semidefinite. Moreover,
+  $\vect{v}^TA\vect{v}=0$ if and only if $x=0$ and $x-y=0$, which
+  implies $x=y=0$. So $\vect{v}=\vect{0}$ is the only solution of
+  $\vect{v}^TA\vect{v}=0$, and $A$ is positive definite.
+
+  The matrix $B$ is not positive semidefinite (and therefore not
+  positive definite either). For example, consider
+  $\vect{v}=\begin{mymatrix}{c} 1 \\ -1 \end{mymatrix}$. Then
+  \begin{equation*}
+    \vect{v}^TB\vect{v}
+    ~=~
+    \begin{mymatrix}{cc} 1 & -1 \end{mymatrix}
+    \begin{mymatrix}{cc} 1 & 2 \\ 2 & 1 \end{mymatrix}
+    \begin{mymatrix}{c} 1 \\ -1 \end{mymatrix}
+    ~=~ 1-2-2+1
+    ~=~ -2
+    ~<~ 0,
+  \end{equation*}
+  showing that $B$ is not positive semidefinite.
+
+  The matrix $C$ is positive semidefinite, but not positive definite.
+  To see why, consider
+  $\vect{v}=\begin{mymatrix}{c} x \\ y \end{mymatrix}$. Then
+  \begin{equation*}
+    \vect{v}^TC\vect{v}
+    ~=~
+    \begin{mymatrix}{cc} x & y \end{mymatrix}
+    \begin{mymatrix}{cc} 1 & -1 \\ -1 & 1 \end{mymatrix}
+    \begin{mymatrix}{c} x \\ y \end{mymatrix}
+    ~=~ x^2 - 2xy + y^2
+    ~=~ (x-y)^2
+    ~\geq~ 0.
+  \end{equation*}
+  Therefore, $C$ is positive semidefinite. However, it is not positive
+  definite because, for example, for
+  $\vect{v}=\begin{mymatrix}{c} 1 \\ 1 \end{mymatrix}$, we have
+  $\vect{v}\neq\vect{0}$ but $\vect{v}^TC\vect{v}=0$.
+
+  The matrix $D$ is not symmetric, and therefore neither positive
+  semidefinite nor positive definite.
+\end{solution}
+
+The interest of positive definite matrices lies in the following
+proposition.
+
+\begin{proposition}{Positive definite matrices and inner products on $\R^n$}{positive-definite-and-inner-product}
+  Let $A$ be an $n\times n$-matrix over the real numbers. Then the
+  formula
+  \begin{equation*}
+    \iprod{\vect{u},\vect{v}} = \vect{u}^T A \vect{v}
+  \end{equation*}
+  defines an inner product on $\R^n$ if and only if $A$ is positive
+  definite. Moreover, every inner product on $\R^n$ arises from some
+  positive definite matrix $A$ in this way.
+\end{proposition}
+
+\begin{proof}
+  Define $\iprod{\vect{u},\vect{v}} = \vect{u}^T A \vect{v}$. We will
+  check each of the three properties of an inner product from
+  Definition~\ref{def:real-inner-product-space}. Linearity holds
+  for all matrices $A$, because
+  \begin{equation*}
+    \iprod{\vect{u},k\vect{v}} 
+    ~=~ \vect{u}^T A (k\vect{v}) 
+    ~=~ k(\vect{u}^T A \vect{v}) 
+    ~=~ k\iprod{\vect{u},\vect{v}}
+  \end{equation*}
+  and
+  \begin{equation*}
+    \iprod{\vect{u},\vect{v}+\vect{v}'} 
+    ~=~ \vect{u}^T A (\vect{v}+\vect{v}') 
+    ~=~ \vect{u}^T A \vect{v} + \vect{u}^T A \vect{v}' 
+    ~=~ \iprod{\vect{u},\vect{v}} + \iprod{\vect{u},\vect{v}'}.
+  \end{equation*}
+  For symmetry, first observe that for all $\vect{u},\vect{v}$, 
+  \begin{equation*}
+    \iprod{\vect{v},\vect{u}}
+    ~=~ \vect{v}^T A \vect{u}
+    ~=~ (\vect{v}^T A \vect{u})^T
+    ~=~ \vect{u}^T A^T \vect{v}.
+  \end{equation*}
+  Therefore $\iprod{\vect{u},\vect{v}}=\iprod{\vect{v},\vect{u}}$ if
+  and only if $\vect{u}^T A \vect{v} = \vect{u}^T A^T \vect{v}$. This
+  holds for all $\vect{u},\vect{v}$ if and only if $A=A^T$. Therefore,
+  symmetry holds if and only if $A$ is symmetric.  Finally, the
+  positive definite property of the inner product holds, by
+  definition, if and only if $A$ is positive definite.
+
+  To prove the second part, consider any inner product
+  $\iprod{\vect{u},\vect{v}}$ on $\R^n$. Let
+  $\vect{e}_1,\ldots,\vect{e}_n$ be the standard basis vectors, and
+  define $a_{ij} = \iprod{\vect{e}_i,\vect{e}_j}$. Then
+  $A=\mat{a_{ij}}$ is a matrix. We claim that
+  $\iprod{\vect{u},\vect{v}}=\vect{u}^TA\vect{v}$ for all
+  $\vect{u},\vect{v}$. Indeed, let
+  $\vect{u}=u_1\vect{e}_1+\ldots+u_n\vect{e}_n$ and
+  $\vect{v}=v_1\vect{e}_1+\ldots+v_n\vect{e}_n$. Then
+  \begin{eqnarray*}
+    \iprod{\vect{u},\vect{v}}
+    &=& \iprod{u_1\vect{e}_1+\ldots+u_n\vect{e}_n,~ v_1\vect{e}_1+\ldots+v_n\vect{e}_n}\\
+    &=& u_1v_1\iprod{\vect{e}_1, \vect{e}_1}
+    +   u_1v_2\iprod{\vect{e}_1, \vect{e}_2}
+    + \ldots
+    +   u_nv_n\iprod{\vect{e}_n, \vect{e}_n}\\
+    &=& u_1v_1a_{11}
+    +   u_1v_2a_{12}
+    + \ldots
+    +   u_nv_na_{nn}\\
+    &=& \vect{u}^TA\vect{v}.
+  \end{eqnarray*}
+  By the first part, $A$ is positive definite.  
+\end{proof}
+
+Given a symmetric matrix $A$, it is not always an easy task to
+determine whether $A$ is positive definite (or semidefinite) by using
+the definition directly. This would require checking the condition
+$\vect{v}^TA\vect{v}\geq 0$ for {\em all} vectors $\vect{v}$, of which
+there are infinitely many. The following proposition gives us a more
+practical method for determining whether a matrix is positive
+(semi)definite.
+
+\begin{proposition}{Characterization of positive definite and positive semidefinite matrices}{characterize-positive}
+  Let $A$ be a symmetric $n\times n$-matrix, and let
+  $\eigenvar_1,\ldots,\eigenvar_n$ be its eigenvalues. Then $A$ is
+  positive semidefinite if and only if
+  $\eigenvar_1,\ldots,\eigenvar_n\geq 0$. Moreover, $A$ is positive
+  definite if and only if $\eigenvar_1,\ldots,\eigenvar_n>0$.
+\end{proposition}
+
+\begin{proof}
+  By Theorem~\ref{thm:diagonalization-symmetric}, we know that $A$ is
+  orthogonally diagonalizable, i.e., $D=P^TAP$, where $P$ is an
+  orthogonal matrix and
+  \begin{equation*}
+    D = \begin{mymatrix}{ccc}
+      \eigenvar_1 & \cdots & 0 \\
+      \vdots & \ddots & \vdots \\
+      0 & \cdots & \eigenvar_n
+    \end{mymatrix}.
+  \end{equation*}
+  Let $\vect{v}=\mat{x_1,\ldots,x_n}^T$ be any vector, and let
+  $\vect{w}=P\vect{v}$. Then
+  $\vect{w}^TA\vect{w} = \vect{v}^TP^TAP\vect{v} =
+  \vect{v}^TD\vect{v}$, so that $A$ is positive (semi)definite if and
+  only if $D$ is positive (semi)definite. Also, we have
+  $\vect{v}^TD\vect{v} = \eigenvar_1x_1^2 + \ldots +
+  \eigenvar_nx_n^2$. Therefore $\vect{v}^TD\vect{v}\geq 0$ for all
+  $\vect{v}$ if and only if $\eigenvar_1,\ldots,\eigenvar_n\geq
+  0$. Moreover, $\vect{v}^TD\vect{v}>0$ for all
+  $\vect{v}\neq \vect{0}$ if and only if
+  $\eigenvar_1,\ldots,\eigenvar_n>0$, as claimed.
+\end{proof}
+
+\begin{example}{Characterization of positive definite and positive semidefinite matrices}{characterize-positive}
+  Determine whether the matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{ccc}
+      5 & 0 & 2 \\
+      0 & 5 & 1 \\
+      2 & 1 & 1 \\
+    \end{mymatrix}
+  \end{equation*}
+  is positive definite, positive semidefinite, or neither.
+\end{example}
+
+\begin{solution}
+  The characteristic polynomial is
+  \begin{equation*}
+    \det(A-\eigenvar I)
+    ~=~ \begin{absmatrix}{ccc}
+      5-\eigenvar & 0 & 2 \\
+      0 & 5-\eigenvar & 1 \\
+      2 & 1 & 1-\eigenvar \\
+    \end{absmatrix}
+    ~=~ -\eigenvar^3 + 11\eigenvar^2 - 30\eigenvar
+    ~=~ -\eigenvar(\eigenvar-5)(\eigenvar-6).
+  \end{equation*}
+  The eigenvalues are $\eigenvar_1=0$, $\eigenvar_2=5$, and
+  $\eigenvar_3=6$.  Therefore, the matrix $A$ is positive
+  semidefinite, but not positive definite.
+\end{solution}
