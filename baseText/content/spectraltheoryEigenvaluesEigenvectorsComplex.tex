@@ -326,20 +326,20 @@ pairs? The following proposition states that this is always the case.
 
 \begin{proposition}{Complex conjugate eigenvalues}{conjugate-eigenvalues}
   Let $A$ be a square matrix whose entries are real numbers. If
-  $\eigenvar$ is an eigenvalue of $A$, then so is $\overline{\eigenvar}$.
+  $\eigenvar$ is an eigenvalue of $A$, then so is $\conjugate{\eigenvar}$.
 \end{proposition}
 
 \begin{proof}
   Assume $\eigenvar$ is an eigenvalue of $A$ with corresponding
   eigenvector $\vect{v}$. Then $A\vect{v} = \eigenvar\vect{v}$. Taking
   complex conjugates of both sides of the equation, we have
-  $\overline{A\vect{v}} = \overline{\eigenvar\vect{v}}$, and therefore
-  $\overline{A}\overline{\vect{v}} =
-  \overline{\eigenvar}\overline{\vect{v}}$. Since $A$ is matrix with
-  real entries, we have $\overline{A}=A$, and therefore
-  $A\overline{\vect{v}} = \overline{\eigenvar}\overline{\vect{v}}$.
-  It follows that $\overline{\eigenvar}$ is an eigenvalue of $A$ with
-  corresponding eigenvector $\overline{\vect{v}}$.
+  $\conjugate{A\vect{v}} = \conjugate{\eigenvar\vect{v}}$, and therefore
+  $\conjugate{A}\conjugate{\vect{v}} =
+  \conjugate{\eigenvar}\conjugate{\vect{v}}$. Since $A$ is matrix with
+  real entries, we have $\conjugate{A}=A$, and therefore
+  $A\conjugate{\vect{v}} = \conjugate{\eigenvar}\conjugate{\vect{v}}$.
+  It follows that $\conjugate{\eigenvar}$ is an eigenvalue of $A$ with
+  corresponding eigenvector $\conjugate{\vect{v}}$.
 \end{proof}
 
 It is important to note that even over the complex numbers, not all

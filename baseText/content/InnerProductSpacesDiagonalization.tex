@@ -22,35 +22,35 @@ about the eigenvalues and eigenvectors of a symmetric matrix.
 \begin{proof}
   (a) Suppose $\eigenvar$ is a (possibly complex) eigenvalue of $A$,
   with (possibly complex) eigenvector $\vect{v}$. We will show that
-  $\eigenvar$ is in fact real. Let $\overline{\eigenvar}$ be the
-  complex conjugate of $\eigenvar$, and let $\overline{\vect{v}}$ be
+  $\eigenvar$ is in fact real. Let $\conjugate{\eigenvar}$ be the
+  complex conjugate of $\eigenvar$, and let $\conjugate{\vect{v}}$ be
   the complex conjugate of $\vect{v}$, i.e., the vector obtained from
   $\vect{v}$ by taking the complex conjugate of each of its entries.
   Since $\vect{v}$ is an eigenvector for eigenvalue $\eigenvar$ of
   $A$, we have
   \begin{equation}\label{eqn:eigenvalues-symmetric-1}
-    \overline{\vect{v}}^T A\vect{v}
-    = \eigenvar \overline{\vect{v}}^T\vect{v}.
+    \conjugate{\vect{v}}^T A\vect{v}
+    = \eigenvar \conjugate{\vect{v}}^T\vect{v}.
   \end{equation}
   Taking the complex conjugate of both sides of the equation, and
-  using the fact that $\overline{A}=A$ (since $A$ is
+  using the fact that $\conjugate{A}=A$ (since $A$ is
   real), we get
   \begin{equation}
-    \vect{v}^T A\overline{\vect{v}}
-    = \overline{\eigenvar} \vect{v}^T\overline{\vect{v}}.
+    \vect{v}^T A\conjugate{\vect{v}}
+    = \conjugate{\eigenvar} \vect{v}^T\conjugate{\vect{v}}.
   \end{equation}
   Then, taking the transpose of both sides of the equation, and using
   the fact that $A^T=A$ (since $A$ is symmetric), we have
   \begin{equation}\label{eqn:eigenvalues-symmetric-2}
-    \overline{\vect{v}}^T A\vect{v}
-    = \overline{\eigenvar} \overline{\vect{v}}^T\vect{v}.
+    \conjugate{\vect{v}}^T A\vect{v}
+    = \conjugate{\eigenvar} \conjugate{\vect{v}}^T\vect{v}.
   \end{equation}
   Comparing equations {\eqref{eqn:eigenvalues-symmetric-1}} and
   {\eqref{eqn:eigenvalues-symmetric-2}}, we find that
-  $\eigenvar \overline{\vect{v}}^T\vect{v} = \overline{\eigenvar}
-  \overline{\vect{v}}^T\vect{v}$. Since
-  $\overline{\vect{v}}^T\vect{v}$ is a non-zero scalar, it follows
-  that $\eigenvar = \overline{\eigenvar}$, i.e., $\eigenvar$ is real.
+  $\eigenvar \conjugate{\vect{v}}^T\vect{v} = \conjugate{\eigenvar}
+  \conjugate{\vect{v}}^T\vect{v}$. Since
+  $\conjugate{\vect{v}}^T\vect{v}$ is a non-zero scalar, it follows
+  that $\eigenvar = \conjugate{\eigenvar}$, i.e., $\eigenvar$ is real.
 
   \noindent
   (b) Suppose $\vect{v}$ is an eigenvector for eigenvalue

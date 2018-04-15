@@ -140,17 +140,17 @@ Another useful operation on complex numbers is the complex
 conjugate. Let $z = a+bi$ be a complex number. Then the
 \textbf{conjugate}\index{complex number!conjugate}%
 \index{conjugate!of a complex number}%
-\index{complex conjugate} of $z$, written $\overline{z}$, is given by
+\index{complex conjugate} of $z$, written $\conjugate{z}$, is given by
 \begin{equation*}
-  \overline{z} = a-bi.
+  \conjugate{z} = a-bi.
 \end{equation*}
 Note that if $z=a+bi$ is a complex number, then
-$z\overline{z} = (a+bi)(a-bi) = a^2+b^2$. Therefore, $z\overline{z}$
-is always a real number and $z\overline{z}\geq 0$. We define the
+$z\conjugate{z} = (a+bi)(a-bi) = a^2+b^2$. Therefore, $z\conjugate{z}$
+is always a real number and $z\conjugate{z}\geq 0$. We define the
 \textbf{magnitude}\index{complex number!magnitude}%
 \index{magnitude!of a complex number} of $z$ to be
 \begin{equation*}
-  \abs{z} = \sqrt{z\overline{z}} = \sqrt{a^2+b^2}.
+  \abs{z} = \sqrt{z\conjugate{z}} = \sqrt{a^2+b^2}.
 \end{equation*}
 The magnitude is also sometimes called the \textbf{absolute
   value}\index{complex number!absolute value|see{magnitude}}%
@@ -161,16 +161,16 @@ number.
 
 \begin{example}{Conjugate and magnitude of a complex number}{complex-conjugate}
   \begin{itemize}
-  \item $\overline{3+5i} = 3-5i$.
-  \item $\overline{i} = -i$.
-  \item $\overline{7} = 7$.
+  \item $\conjugate{3+5i} = 3-5i$.
+  \item $\conjugate{i} = -i$.
+  \item $\conjugate{7} = 7$.
   \item $\abs{3+5i} = \sqrt{3^2+5^2} = \sqrt{34}$.
   \item $\abs{i} = 1$.
   \item $\abs{-6} = 6$.
   \end{itemize}
 \end{example}
 
-Note that for a real number $a$, we have $\overline{a}=a$. Also, when
+Note that for a real number $a$, we have $\conjugate{a}=a$. Also, when
 $a$ is real, the magnitude $|a| = \sqrt{a^2}$ is just the usual
 absolute value of real numbers. The following two propositions
 list some basic properties of the conjugate and of the magnitude.
@@ -183,12 +183,12 @@ list some basic properties of the conjugate and of the magnitude.
   \index{complex conjugate!properties}%
   \index{properties of complex conjugate}
   \begin{itemize}
-  \item $\overline{z\pm w} = \overline{z} \pm \overline{w}$.
-  \item $\overline{(zw)} = \overline{z}~ \overline{w}$.
-  \item $\overline{z^{-1}} = \overline{z}^{-1}$.
-  \item $\overline{z/w} = \overline{z} / \overline{w}$.
-  \item $\overline{\overline{z}}=z$.
-  \item $z$ is real if and only if $\overline{z}=z$.
+  \item $\conjugate{z\pm w} = \conjugate{z} \pm \conjugate{w}$.
+  \item $\conjugate{(zw)} = \conjugate{z}~ \conjugate{w}$.
+  \item $\conjugate{z^{-1}} = \conjugate{z}^{-1}$.
+  \item $\conjugate{z/w} = \conjugate{z} / \conjugate{w}$.
+  \item $\conjugate{\conjugate{z}}=z$.
+  \item $z$ is real if and only if $\conjugate{z}=z$.
   \end{itemize}
 \end{proposition}
 
@@ -199,7 +199,7 @@ list some basic properties of the conjugate and of the magnitude.
   \begin{itemize}
   \item $\abs{z} \geq 0$, and $\abs{z}=0$ if and only if $z=0$.
   \item $\abs{zw} = \abs{z}\abs{w}$.
-  \item $\abs{\overline{z}} = \abs{z}$.
+  \item $\abs{\conjugate{z}} = \abs{z}$.
   \item $\abs{z/w} = \abs{z}/\abs{w}$.
   \item \textbf{Triangle inequality}%
     \index{triangle inequality!in complex numbers}:

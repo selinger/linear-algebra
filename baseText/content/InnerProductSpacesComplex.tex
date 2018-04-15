@@ -36,9 +36,9 @@ not be positive. For example, if $z=i$, then $z^2=-1$.
 
 Fortunately, all is not lost: the complex numbers actually do have a
 useful positivity property. Namely, if $z=a+bi$ is a complex number
-and $\overline{z}=a-bi$ is its complex conjugate, then
+and $\conjugate{z}=a-bi$ is its complex conjugate, then
 \begin{equation*}
-  \overline{z}z = (a-bi)(a+bi) = a^2 + b^2 \geq 0.
+  \conjugate{z}z = (a-bi)(a+bi) = a^2 + b^2 \geq 0.
 \end{equation*}
 So instead of squaring a complex number, we should multiply it by its
 conjugate. With this in mind, we arrive at the following definition of
@@ -57,7 +57,7 @@ dot product on $\C^n$:
   \index{complex dot product}
   is defined to be
   \begin{equation*}
-    \vect{v}\dotprod \vect{w} = \overline{v_1}w_1 + \ldots + \overline{v_n}w_n.
+    \vect{v}\dotprod \vect{w} = \conjugate{v_1}w_1 + \ldots + \conjugate{v_n}w_n.
   \end{equation*}
 \end{definition}
 
@@ -74,10 +74,10 @@ product.
   The dot product satisfies the following properties, where
   $\vect{u},\vect{v},\vect{w}\in\C^n$ and $k,\ell\in\C$.
   \begin{itemize}
-  \item Skew symmetry: $\vect{u}\dotprod\vect{v}=\overline{\vect{v}\dotprod\vect{u}}$.
+  \item Skew symmetry: $\vect{u}\dotprod\vect{v}=\conjugate{\vect{v}\dotprod\vect{u}}$.
   \item Linearity on the right: $\vect{u}\dotprod(k\vect{v}+\ell\vect{w})
     =k(\vect{u}\dotprod \vect{v})+\ell(\vect{u}\dotprod\vect{w})$.
-  \item Skew linearity on the left: $(k\vect{u}+\ell\vect{v})\dotprod\vect{w}=\overline{k}(\vect{u}\dotprod\vect{w})+\overline{\ell}(\vect{v}\dotprod\vect{w})$.
+  \item Skew linearity on the left: $(k\vect{u}+\ell\vect{v})\dotprod\vect{w}=\conjugate{k}(\vect{u}\dotprod\vect{w})+\conjugate{\ell}(\vect{v}\dotprod\vect{w})$.
   \item The positive definite property: $\vect{u}\dotprod\vect{u}\geq 0$, and $\vect{u}\dotprod\vect{u}=0$ if and only if $\vect{u}=\vect{0}$.
   \end{itemize}
 \end{proposition}
@@ -86,11 +86,11 @@ We note that the complex dot product can be equivalently expressed as
 a matrix product, namely
 \begin{equation*}
   \vect{v}\dotprod\vect{w}
-  ~=~ \begin{mymatrix}{ccc} \overline{v_1} & \cdots & \overline{v_n} \end{mymatrix}
+  ~=~ \begin{mymatrix}{ccc} \conjugate{v_1} & \cdots & \conjugate{v_n} \end{mymatrix}
   \begin{mymatrix}{c} w_1 \\ \vdots \\ w_n \end{mymatrix}
-  ~=~ \overline{\vect{v}}^T \vect{w}.
+  ~=~ \conjugate{\vect{v}}^T \vect{w}.
 \end{equation*}
-Here, $\overline{\vect{v}}$ denotes the complex conjugate of a vector
+Here, $\conjugate{\vect{v}}$ denotes the complex conjugate of a vector
 (i.e., taking the complex conjugate of each component of a vector),
 and $(-)^T$ denotes the transpose as usual.  As a matter of fact, when
 working with complex vectors and matrices, it turns out that we should
@@ -103,7 +103,7 @@ notation for the conjugate transpose of a vector or matrix.
   $A$, denoted $A^*$, is the transpose of the complex conjugate of
   $A$. In symbols:
   \begin{equation*}
-    A^{\adjoint} = \overline{A}{}^T.
+    A^{\adjoint} = \conjugate{A}{}^T.
   \end{equation*}
 \end{definition}
 

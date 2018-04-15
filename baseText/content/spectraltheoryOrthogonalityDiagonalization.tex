@@ -41,20 +41,20 @@ Let $A$ be a real symmetric matrix. Then the eigenvalues of $A$ are real numbers
 
 \begin{proof}
 Recall that for a complex number $a+ib$, the complex conjugate, denoted by $
-\overline{a+ib}$ is given by $\overline{a+ib}=a-ib$. The
-notation, $\overline{\vect{x}}$ will denote the vector which has every
+\conjugate{a+ib}$ is given by $\conjugate{a+ib}=a-ib$. The
+notation, $\conjugate{\vect{x}}$ will denote the vector which has every
 entry replaced by its complex conjugate.
 
 Suppose $A$ is a real symmetric matrix and $A\vect{x}=\lambda \vect{x}$.
 Then
 \begin{equation*}
-\overline{\lambda }\overline{\vect{x}}^{T}\vect{x}=(\overline{A
-\vect{x}}) ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=
-\overline{\vect{x}}^{T}A\vect{x}=\lambda \overline{\vect{x}}^{T}
+\conjugate{\lambda }\conjugate{\vect{x}}^{T}\vect{x}=(\conjugate{A
+\vect{x}}) ^{T}\vect{x}=\conjugate{\vect{x}}^{T}A^{T}\vect{x}=
+\conjugate{\vect{x}}^{T}A\vect{x}=\lambda \conjugate{\vect{x}}^{T}
 \vect{x}
 \end{equation*}
-Dividing by $\overline{\vect{x}}^{T}\vect{x}$ on both sides yields $
-\overline{\lambda }=\lambda $ which says $\lambda $ is real. To do this, we need to ensure that $\overline{\vect{x}}^{T}\vect{x} \neq 0$. Notice that $\overline{\vect{x}}^{T}\vect{x} = 0$ if and only if $\vect{x} = \vect{0}$. Since we chose $\vect{x}$ such that $A\vect{x} = \lambda \vect{x}$, $\vect{x}$ is an eigenvector and therefore must be non-zero.
+Dividing by $\conjugate{\vect{x}}^{T}\vect{x}$ on both sides yields $
+\conjugate{\lambda }=\lambda $ which says $\lambda $ is real. To do this, we need to ensure that $\conjugate{\vect{x}}^{T}\vect{x} \neq 0$. Notice that $\conjugate{\vect{x}}^{T}\vect{x} = 0$ if and only if $\vect{x} = \vect{0}$. Since we chose $\vect{x}$ such that $A\vect{x} = \lambda \vect{x}$, $\vect{x}$ is an eigenvector and therefore must be non-zero.
 
 Now suppose $A$ is real symmetric and $A\vect{x}=\lambda \vect{x}$, $A
 \vect{y}=\mu \vect{y}$ where $\mu \neq \lambda$. Then since $A$
@@ -78,13 +78,13 @@ First, note that if $A=0$ is the zero matrix, then $A$ is antisymmetric and has 
 Suppose $A=-A^{T}$ so $A$ is antisymmetric and $A\vect{x}=\lambda
 \vect{x}$. Then
 \begin{equation*}
-\overline{\lambda \vect{x}}^{T}\vect{x}=(\overline{A
-\vect{x}}) ^{T}\vect{x}=\overline{\vect{x}}^{T}A^{T}\vect{x}=-
-\overline{\vect{x}}^{T}A\vect{x}=-\lambda \overline{\vect{x}}^{T}
+\conjugate{\lambda \vect{x}}^{T}\vect{x}=(\conjugate{A
+\vect{x}}) ^{T}\vect{x}=\conjugate{\vect{x}}^{T}A^{T}\vect{x}=-
+\conjugate{\vect{x}}^{T}A\vect{x}=-\lambda \conjugate{\vect{x}}^{T}
 \vect{x}
 \end{equation*}
-and so, dividing by $\overline{\vect{x}}^{T}\vect{x}$ as before, $
-\overline{\lambda }=-\lambda$. Letting $\lambda =a+ib$, this means $
+and so, dividing by $\conjugate{\vect{x}}^{T}\vect{x}$ as before, $
+\conjugate{\lambda }=-\lambda$. Letting $\lambda =a+ib$, this means $
 a-ib=-a-ib$ and so $a=0$. Thus $\lambda $ is pure imaginary.
 \end{proof}
 
@@ -161,7 +161,7 @@ there exists an orthogonal matrix $U$ such that $U^{T}AU=D$, a diagonal
 matrix whose diagonal entries are the eigenvalues of $A$. Therefore, since $
 A $ is symmetric and all the matrices are real,
 \begin{equation*}
-\overline{D}=\overline{D^{T}}=\overline{U^{T}A^{T}U}=U^{T}A^{T}U=U^{T}AU=D
+\conjugate{D}=\conjugate{D^{T}}=\conjugate{U^{T}A^{T}U}=U^{T}A^{T}U=U^{T}AU=D
 \end{equation*}
 showing $D$ is real because each entry of $D$ equals its complex conjugate.
 
