@@ -215,6 +215,7 @@ schmidt
 schwarz
 seealso
 Selinger
+semidefinite
 semithick
 SeqK
 sextuple
