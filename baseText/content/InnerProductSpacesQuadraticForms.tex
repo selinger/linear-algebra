@@ -358,12 +358,12 @@ quadratic equations in 2 or more variables.
   \end{equation*}
 \end{solution}
 
-In general, the curve $ax^2 + by^2 = 1$ is an ellipse with
-$x$-intercepts $\pm 1/\sqrt{a}$ and $y$-intercepts $\pm
-1/\sqrt{b}$. Similarly, the equation $ax^2 + by^2 + cz^2 = 1$
-describes a $3$-dimensional ellipsoid with $x$-intercepts
-$\pm 1/\sqrt{a}$, $y$-intercepts $\pm 1/\sqrt{b}$, and $z$-intercepts
-$\pm 1/\sqrt{c}$:
+In general, for $a,b>0$, the curve $ax^2 + by^2 = 1$ is an ellipse
+with $x$-intercepts $\pm 1/\sqrt{a}$ and $y$-intercepts
+$\pm 1/\sqrt{b}$. Similarly, for $a,b,c>0$, the equation
+$ax^2 + by^2 + cz^2 = 1$ describes a $3$-dimensional ellipsoid with
+$x$-intercepts $\pm 1/\sqrt{a}$, $y$-intercepts $\pm 1/\sqrt{b}$, and
+$z$-intercepts $\pm 1/\sqrt{c}$:
 \begin{equation*}
   \begin{tikzpicture}[scale=2]
     \begin{scope}[y={(1cm,-0.3cm)},x={(-0.8cm,-0.4cm)},z={(0cm,1cm)}]
@@ -398,7 +398,7 @@ proposition.
 
 \begin{proposition}{Principal axes of a quadratic form}{principal-axes}
   Consider a quadratic form in matrix form,
-  $f(\vect{v}) = \vect{v}^TA\vect{v}$, where $A$ is a symmetric
+  $f(\vect{v}) = \vect{v}^TA\vect{v}$, where $A$ is a positive definite
   $n\times n$-matrix. Let $\set{\vect{u}_1,\ldots,\vect{u}_n}$ be an
   orthonormal set of eigenvectors of $A$, and let
   $\eigenvar_1,\ldots,\eigenvar_n$ be the corresponding eigenvalues.
@@ -421,17 +421,20 @@ proposition.
   \begin{equation}\label{eqn:principal-axes}
     \vect{v} = P\begin{mymatrix}{c} y_1 \\ \vdots \\ y_n \end{mymatrix}.
   \end{equation}
-  We know that in the $(y_1,\ldots,y_n)$-coordinate system, the
-  equation $\eigenvar_1y_1^2 + \ldots + \eigenvar_ny_n^2 = 1$
-  describes an ellipsoid with $y_1$-intercepts
-  $\pm1/\sqrt{\lambda_1}$, $y_2$-intercepts $\pm1/\sqrt{\lambda_2}$,
-  and so on. The only thing that remains to do is to figure out the
-  direction of the coordinate axes. The $y_1$-axis points in the
-  direction of the point with coordinates
-  $(y_1,\ldots,y_n) = (1,0,\ldots,0)$.  Using the change of variables
-  formula {\eqref{eqn:principal-axes}}, we find that this corresponds
-  to the first column of $P$, i.e., $\vect{v}=\vect{u}_1$. Similarly, the
-  $y_2$-axis points in the direction of $\vect{u}_2$, and so on.
+  Since $A$ is positive definite, we have
+  $\lambda_1,\ldots,\lambda_n>0$ by
+  Proposition~\ref{prop:characterize-positive}.  We therefore know
+  that in the $(y_1,\ldots,y_n)$-coordinate system, the equation
+  $\eigenvar_1y_1^2 + \ldots + \eigenvar_ny_n^2 = 1$ describes an
+  ellipsoid whose $y_1$-intercepts are $\pm1/\sqrt{\lambda_1}$, whose
+  $y_2$-intercepts are $\pm1/\sqrt{\lambda_2}$, and so on. The only
+  thing that remains to do is to figure out the direction of the
+  coordinate axes. The $y_1$-axis points in the direction of the point
+  with coordinates $(y_1,\ldots,y_n) = (1,0,\ldots,0)$.  Using the
+  change of variables formula {\eqref{eqn:principal-axes}}, we find
+  that this corresponds to the first column of $P$, i.e.,
+  $\vect{v}=\vect{u}_1$. Similarly, the $y_2$-axis points in the
+  direction of $\vect{u}_2$, and so on.
 \end{proof}
 
 \begin{example}{Sketching a quadratic curve}{sketching-quadratic}
