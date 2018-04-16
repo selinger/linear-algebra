@@ -74,10 +74,10 @@ product.
   The dot product satisfies the following properties, where
   $\vect{u},\vect{v},\vect{w}\in\C^n$ and $k,\ell\in\C$.
   \begin{itemize}
-  \item Skew symmetry: $\vect{u}\dotprod\vect{v}=\conjugate{\vect{v}\dotprod\vect{u}}$.
+  \item Conjugate symmetry: $\vect{u}\dotprod\vect{v}=\conjugate{\vect{v}\dotprod\vect{u}}$.
   \item Linearity on the right: $\vect{u}\dotprod(k\vect{v}+\ell\vect{w})
     =k(\vect{u}\dotprod \vect{v})+\ell(\vect{u}\dotprod\vect{w})$.
-  \item Skew linearity on the left: $(k\vect{u}+\ell\vect{v})\dotprod\vect{w}=\conjugate{k}(\vect{u}\dotprod\vect{w})+\conjugate{\ell}(\vect{v}\dotprod\vect{w})$.
+  \item Antilinearity on the left: $(k\vect{u}+\ell\vect{v})\dotprod\vect{w}=\conjugate{k}(\vect{u}\dotprod\vect{w})+\conjugate{\ell}(\vect{v}\dotprod\vect{w})$.
   \item The positive definite property: $\vect{u}\dotprod\vect{u}\geq 0$, and $\vect{u}\dotprod\vect{u}=0$ if and only if $\vect{u}=\vect{0}$.
   \end{itemize}
 \end{proposition}
@@ -111,4 +111,459 @@ With this definition, we can also write the dot product as
 \begin{equation*}
   \vect{v}\dotprod\vect{w} = \vect{v}^{\adjoint}\vect{w}.
 \end{equation*}
+
+We are now ready to state the definition of a complex inner product,
+which is a generalization of the complex dot product.
+
+\begin{definition}{Complex inner product space}{complex-inner-product-space}
+  A \textbf{complex inner product space}%
+  \index{inner product space!complex}%
+  \index{complex inner product space|see{inner product space}} is a
+  complex vector space $V$ equipped with an operation that assigns to
+  any pair of vectors $\vect{u},\vect{v}\in V$ a complex number
+  $\iprod{\vect{u},\vect{v}}$, called the \textbf{inner product}%
+  \index{inner product!complex}%
+  \index{product!complex inner product} of $\vect{u}$ and $\vect{v}$,
+  satisfying the following properties:
+  \begin{enumerate}
+  \item Conjugate symmetry:%
+    \index{conjugate symmetry!of inner product}%
+    \index{symmetry!conjugate symmetry}
+    $\iprod{\vect{u},\vect{v}} =
+    \conjugate{\iprod{\vect{v},\vect{u}}}$.
+  \item Linearity on the right:%
+    \index{linearity!of inner product}
+    $\iprod{\vect{u},k\vect{v}+\ell\vect{w}}
+    =k\iprod{\vect{u}, \vect{v}}+\ell\iprod{\vect{u},\vect{w}}$.
+  \item Antilinearity on the left:%
+    \index{antilinearity!of inner product}
+    $\iprod{k\vect{u}+\ell\vect{v},\vect{w}}=\conjugate{k}\iprod{\vect{u},\vect{w}}+\conjugate{\ell}\iprod{\vect{v},\vect{w}}$.
+  \item The positive definite property:%
+    \index{positive definite property}
+    $\iprod{\vect{u},\vect{u}} \geq 0$, and
+    $\iprod{\vect{u},\vect{u}}=0$ if and only if
+    $\vect{u} = \vect{0}$.
+  \end{enumerate}
+\end{definition}
+
+Note that conjugate symmetry implies that $\iprod{\vect{u},\vect{u}}$
+is a real number for every vector $\vect{u}$. Namely, let
+$z=\iprod{\vect{u},\vect{u}}$. Then by conjugate symmetry, we have
+\begin{equation*}
+  z
+  = \iprod{\vect{u},\vect{u}}
+  = \conjugate{\iprod{\vect{u},\vect{u}}}
+  = \conjugate{z}.
+\end{equation*}
+Since $z$ is equal to its own conjugate, it must be a real
+number. Therefore, the positive definite property makes sense: when we
+require that $\iprod{\vect{u},\vect{u}} \geq 0$, we are talking about
+a real number that is greater than or equal to $0$. (It would not in
+general make sense to ask whether a complex number is  greater than or
+equal to $0$).
+
+The space $\C^n$ with the complex dot product is evidently an example
+of a complex inner product space. Here is another example:
+
+\begin{example}{Complex-valued continuous functions}{continuous-complex}
+  Let $a<b$ be real numbers, and let $C[a,b]$ be the space of
+  continuous, complex-valued functions $f : [a,b]\to\C$. Given two such
+  functions $f,g\in C[a,b]$, we define their inner product as
+  \begin{equation*}
+    \iprod{f,g} = \int_a^b \conjugate{f(x)}g(x)\,dx.
+  \end{equation*}
+  With this operation, $C[a,b]$ is a complex inner product space.
+\end{example}
+
+Armed with this definition of complex inner products, we can now
+pretty much redo everything we did for real inner products in the
+complex case. The only thing we have to be careful about is to put the
+complex conjugate operation in the correct places.
+
+\begin{itemize}
+\item The \textbf{norm}%
+  \index{norm!in Cn@in $\C^n$}%
+  \index{vector!norm}%
+  \index{inner product space!norm} of a vector in a complex inner
+  product space is defined to be
+  $\norm{\vect{u}} = \sqrt{\iprod{\vect{u},\vect{u}}}$.  This
+  definition makes sense because $\iprod{\vect{u},\vect{u}}\geq 0$.
+\item The \textbf{Cauchy-Schwarz inequality}%
+  \index{Cauchy-Schwarz inequality!complex}%
+  \index{inner product space!Cauchy-Schwarz inequality}
+  $\abs{\iprod{\vect{u},\vect{v}}}\leq \norm{\vect{u}}\norm{\vect{v}}$
+  and the \textbf{triangle inequality}%
+  \index{triangle inequality!complex}%
+  \index{inner product space!triangle inequality}
+  $\norm{\vect{u}+\vect{v}}\leq \norm{\vect{u}} + \norm{\vect{v}}$
+  hold in complex inner product spaces.
+\item Two vectors $\vect{u},\vect{v}$ in a complex inner product space
+  are called \textbf{orthogonal}%
+  \index{orthogonal vectors}%
+  \index{vector!orthogonal} if $\iprod{\vect{u},\vect{v}}=0$.
+\item A vector $\vect{u}$ in a complex inner product space is called
+  \textbf{normalized}%
+  \index{normalized vector}%
+  \index{vector!normalized} if $\norm{\vect{u}} = 1$.
+\item A set of vectors $\set{\vect{u}_1,\ldots,\vect{u}_n}$ is called
+  an \textbf{orthogonal set}%
+  \index{orthogonal set} if the vectors are non-zero and pairwise
+  orthogonal, and an \textbf{orthonormal set}%
+  \index{orthonormal set} if the vectors are moreover normalized.
+\end{itemize}
+
+\begin{example}{Orthogonal vectors}{orthogonal-vectors-complex}
+  Consider $\C^2$ with the complex dot product, and the following
+  vectors:
+  \begin{equation*}
+    \vect{u}=\begin{mymatrix}{c} 1 \\ i \end{mymatrix},
+    \quad
+    \vect{v}=\begin{mymatrix}{c} -i \\ 1 \end{mymatrix},
+    \quad\mbox{and}\quad
+    \vect{w}=\begin{mymatrix}{c} i \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Are $\vect{u}$ and $\vect{v}$ orthogonal? Are $\vect{u}$ and
+  $\vect{w}$ orthogonal?
+\end{example}
+
+\begin{solution}
+  We have
+  \begin{equation*}
+    \iprod{\vect{u},\vect{v}}
+    = \vect{u}^{\adjoint}\vect{v}
+    = \begin{mymatrix}{cc} 1 & -i \end{mymatrix}
+    \begin{mymatrix}{c} -i \\ 1 \end{mymatrix}
+    = -i-i
+    = -2i
+    \neq 0,
+  \end{equation*}
+  so $\vect{u}$ and $\vect{v}$ are not orthogonal. We have
+  \begin{equation*}
+    \iprod{\vect{u},\vect{w}}
+    = \vect{u}^{\adjoint}\vect{w}
+    = \begin{mymatrix}{cc} 1 & -i \end{mymatrix}
+    \begin{mymatrix}{c} i \\ 1 \end{mymatrix}
+    = i-i
+    = 0,
+  \end{equation*}
+  so $\vect{u}$ and $\vect{w}$ are orthogonal. Note that it is crucial
+  here that we did not forget to take the complex conjugate of
+  $\vect{u}$, or else we would have gotten a different answer.
+\end{solution}
+
+In some formulas, we must be careful about whether we use
+$\iprod{\vect{v},\vect{w}}$ or $\iprod{\vect{w},\vect{v}}$. Although
+this did not make any difference in the case of real inner products,
+it does make a difference for complex inner products, because in
+general, $\iprod{\vect{v},\vect{w}}\neq \iprod{\vect{w},\vect{v}}$. In
+particular, we have to be careful about this in the formulas for
+Fourier coefficients, projections, and the Gram-Schmidt procedure.
+
+\begin{example}{Complex Fourier coefficients}{complex-fourier-coefficients}
+  Let $\set{\vect{u}_1,\ldots,\vect{u}_n}$ be an orthogonal set of
+  vectors in a complex inner product space, and let
+  \begin{equation*}
+    \vect{v} = a_1\vect{u}_1 + \ldots + a_n\vect{u}_n.
+  \end{equation*}
+  Which of the following formulas is correct?
+  \begin{equation*}
+    a_i = \frac{\iprod{\vect{v},\vect{u}_i}}{\iprod{\vect{u}_i,\vect{u}_i}}
+    \quad\mbox{or}\quad
+    a_i = \frac{\iprod{\vect{u}_i,\vect{v}}}{\iprod{\vect{u}_i,\vect{u}_i}}
+    \quad?
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  To check whether the first formula is correct, we calculate
+  \begin{eqnarray*}
+    \frac{\iprod{\vect{v},\vect{u}_i}}{\iprod{\vect{u}_i,\vect{u}_i}}
+    &=&
+        \frac{\iprod{a_1\vect{u}_1 + \ldots + a_i\vect{u}_i + \ldots + a_n\vect{u}_n,\vect{u}_i}}{\iprod{\vect{u}_i,\vect{u}_i}} \\
+    &=&
+        \conjugate{a_1}\frac{\iprod{\vect{u}_1,\vect{u}_i}}{\iprod{\vect{u}_i,\vect{u}_i}}
+        + \ldots
+        + \conjugate{a_i}\frac{\iprod{\vect{u}_i,\vect{u}_i}}{\iprod{\vect{u}_i,\vect{u}_i}}
+        + \ldots
+        + \conjugate{a_n}\frac{\iprod{\vect{u}_n,\vect{u}_i}}{\iprod{\vect{u}_i,\vect{u}_i}} \\
+    &=&
+        \conjugate{a_1}\cdot 0
+        + \ldots
+        + \conjugate{a_i}\cdot 1
+        + \ldots
+        + \conjugate{a_n}\cdot 0\\
+    &=&
+        \conjugate{a_i}.
+  \end{eqnarray*}
+  Note that because of antilinearity, this formula came out to be
+  $\conjugate{a_i}$, and not $a_i$. Therefore, the first formula is
+  not correct.  The check the second formula, we calculate
+  \begin{eqnarray*}
+    \frac{\iprod{\vect{u}_i,\vect{v}}}{\iprod{\vect{u}_i,\vect{u}_i}}
+    &=&
+        \frac{\iprod{\vect{u}_i,a_1\vect{u}_1 + \ldots + a_i\vect{u}_i + \ldots + a_n\vect{u}_n}}{\iprod{\vect{u}_i,\vect{u}_i}} \\
+    &=&
+        a_1\frac{\iprod{\vect{u}_i,\vect{u}_1}}{\iprod{\vect{u}_i}}
+        + \ldots
+        + a_i\frac{\iprod{\vect{u}_i,\vect{u}_i}}{\iprod{\vect{u}_i,\vect{u}_i}}
+        + \ldots
+        + a_n\frac{\iprod{\vect{u}_i,\vect{u}_n}}{\iprod{\vect{u}_i,\vect{u}_i}} \\
+    &=&
+        a_1\cdot 0
+        + \ldots
+        + a_i 1
+        + \ldots
+        + a_n\cdot 0\\
+    &=&
+        a_i.
+  \end{eqnarray*}
+  Therefore, the second formula is correct.
+\end{solution}
+
+Since this is an important result, we state it as a proposition.
+
+\begin{proposition}{Complex Fourier coefficients}{complex-fourier-coefficients}
+  If $\set{\vect{u}_1,\ldots,\vect{u}_n}$ is an orthogonal set of
+  vectors in a complex inner product space and
+  \begin{equation*}
+    \vect{v} = a_1\vect{u}_1 + \ldots + a_n\vect{u}_n,
+  \end{equation*}
+  then
+  \begin{equation*}
+    a_i = \frac{\iprod{\vect{u}_i,\vect{v}}}{\iprod{\vect{u}_i,\vect{u}_i}}
+    \quad\mbox{and}\quad
+    \conjugate{a_i} = \frac{\iprod{\vect{v},\vect{u}_i}}{\iprod{\vect{u}_i,\vect{u}_i}}.
+  \end{equation*}
+\end{proposition}
+
+\begin{example}{Calculating complex Fourier coefficients}{calculating-complex-fourier-coefficients}
+  Suppose that $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$ is an
+  orthogonal basis for a complex inner product space $V$, such that
+  $\norm{\vect{u}_1}=1$, $\norm{\vect{u}_2}=\sqrt{5}$, and
+  $\norm{\vect{u}_3}=2$. Moreover, suppose that $\vect{v}\in V$ is a
+  vector such that $\iprod{\vect{u}_1,\vect{v}} = i$,
+  $\iprod{\vect{u}_2,\vect{v}} = -2$, and
+  $\iprod{\vect{u}_3,\vect{v}} = 1-2i$. Find the coordinates of
+  $\vect{v}$ with respect to $B$.
+\end{example}
+
+\begin{solution}
+  We need to find $a_1, a_2, a_3$ such that
+  $\vect{v} = a_1\vect{u}_1 + a_2\vect{u}_2 + a_3\vect{u}_3$.  By
+  Proposition~\ref{prop:complex-fourier-coefficients}, we have
+  \begin{eqnarray*}
+    a_1
+    &=& \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}}
+        ~~=~~ \frac{\iprod{\vect{u}_1,\vect{v}}}{\norm{\vect{u}_1}^2}
+        ~~=~~ \frac{i}{1}
+        ~~=~~ i, \\
+    a_2
+    &=& \frac{\iprod{\vect{u}_2,\vect{v}}}{\iprod{\vect{u}_2,\vect{u}_2}}
+        ~~=~~ \frac{\iprod{\vect{u}_2,\vect{v}}}{\norm{\vect{u}_2}^2}
+        ~~=~~ \frac{-2}{5}
+        ~~=~~ -\frac{2}{5}, \\
+    a_3
+    &=& \frac{\iprod{\vect{u}_3,\vect{v}}}{\iprod{\vect{u}_3,\vect{u}_3}}
+        ~~=~~ \frac{\iprod{\vect{u}_3,\vect{v}}}{\norm{\vect{u}_3}^2}
+        ~~=~~ \frac{1-2i}{4}
+        ~~=~~ \frac{1}{4} - \frac{1}{2}i.
+  \end{eqnarray*}
+\end{solution}
+
+The Gram-Schmidt orthogonalization procedure works without changes in
+complex inner product spaces, as long as we are careful not to confuse
+$\iprod{\vect{w}_i,\vect{v}_j}$ with $\iprod{\vect{v}_j,\vect{w}_i}$.
+
+\begin{proposition}{Complex Gram-Schmidt orthogonalization procedure}{gram-schmidt-complex}
+  Let $\set{\vect{v}_1,\ldots,\vect{v}_k}$ be a basis for some subspace $W$
+  of a complex inner product space $V$.%
+  \index{Gram-Schmidt procedure!complex}%
+  \index{orthogonalization!complex}%
+  \index{orthogonal basis!Gram-Schmidt procedure!complex}
+  Define vectors
+  $\vect{w}_1,\ldots,\vect{w}_k$ as follows:
+  \begin{eqnarray*}
+    \vect{w}_1
+    &=& \vect{v}_1,
+    \\
+    \vect{w}_2
+    &=& \vect{v}_2
+        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1,
+    \\
+    \vect{w}_3
+    &=& \vect{v}_3
+        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_3}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_3}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2,
+    \\
+    &\vdots&
+    \\
+    \vect{w}_k
+    &=& \vect{v}_k
+        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_k}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_k}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
+        ~-~ \ldots
+        ~-~ \frac{\iprod{\vect{w}_{k-1},\vect{v}_k}}{\iprod{\vect{w}_{k-1},\vect{w}_{k-1}}}\vect{w}_{k-1}.
+  \end{eqnarray*}
+  Then $\set{\vect{w}_1,\ldots,\vect{w}_k}$ is an orthogonal basis of $W$.
+\end{proposition}
+
+\begin{example}{Complex Gram-Schmidt orthogonalization procedure}{gram-schmidt-complex}
+  Consider $\C^3$ with the complex dot product. Let
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{c} 1+i \\ 1 \\ i \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{v}_2 = \begin{mymatrix}{c} i \\ -1 \\ -3  \end{mymatrix}
+  \end{equation*}
+  Use the Gram-Schmidt procedure to find an orthogonal basis for
+  $\sspan\set{\vect{v}_1,\vect{v}_2}$.
+\end{example}
+
+\begin{solution}
+  We start with
+  \begin{equation*}
+    \vect{w}_1
+    ~=~ \vect{v}_1
+    ~=~ \begin{mymatrix}{c} 1+i \\ 1 \\ i \end{mymatrix}.
+  \end{equation*}
+  Next, we calculate
+  \begin{equation*}
+    \iprod{\vect{w}_1,\vect{v}_2}
+    ~=~ \vect{w}_1^{\adjoint} \vect{v}_2
+    ~=~ \begin{mymatrix}{ccc} 1-i & 1 & -i \end{mymatrix}
+    \begin{mymatrix}{c} i \\ -1 \\ -3  \end{mymatrix}
+    ~=~ (1-i)i + 1(-1) + (-i)(-3)
+    ~=~ 4i
+  \end{equation*}
+  and
+  \begin{equation*}
+    \iprod{\vect{w}_1,\vect{w}_1}
+    ~=~ \vect{w}_1^{\adjoint} \vect{w}_1
+    ~=~ \begin{mymatrix}{ccc} 1-i & 1 & -i \end{mymatrix}
+    \begin{mymatrix}{c} 1+i \\ 1 \\ i  \end{mymatrix}
+    ~=~ (1-i)(1+i) + 1\cdot 1 + (-i)(i)
+    ~=~ 4.
+  \end{equation*}
+  Therefore
+  \begin{equation*}
+    \vect{w}_2
+    ~=~ \vect{v}_2
+    - \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+    ~=~ \vect{v}_2
+    - \frac{4i}{4} \vect{w}_1
+    ~=~ \vect{v}_2
+    - i \vect{w}_1
+    ~=~ \begin{mymatrix}{c} i \\ -1 \\ -3  \end{mymatrix}
+    -i \begin{mymatrix}{c} 1+i \\ 1 \\ i \end{mymatrix}
+    ~=~ \begin{mymatrix}{c} 1 \\ -1-i \\ -2  \end{mymatrix}.
+  \end{equation*}
+  The desired orthogonal basis is $\set{\vect{w}_1,\vect{w}_2}$. We
+  double-check that $\vect{w}_1$ and $\vect{w}_2$ are indeed
+  orthogonal:
+  \begin{equation*}
+    \iprod{\vect{w}_1,\vect{w}_2}
+    ~=~ \vect{w}_1^{\adjoint}\vect{w}_2
+    ~=~ \begin{mymatrix}{ccc} 1-i & 1 & -i \end{mymatrix}
+    \begin{mymatrix}{c} 1 \\ -1-i \\ -2  \end{mymatrix}
+    ~=~ (1-i)1 + 1(-1-i) + (-i)(-2)
+    ~=~ 0.
+  \end{equation*}
+\end{solution}
+
+Orthogonal projections also work in complex inner product spaces.
+
+\begin{proposition}{Orthogonal projection onto a subspace}{projection-subspace-complex}
+  Let $V$ be a complex inner product space, and let $W$ be a subspace
+  of\/ $V$. Assume $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is an
+  orthogonal basis of\/ $W$, and $\vect{v}\in V$ is any vector.
+  Let 
+  \begin{equation*}
+    \vect{v}' =
+    \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\vect{u}_1
+    + \frac{\iprod{\vect{u}_2,\vect{v}}}{\iprod{\vect{u}_2,\vect{u}_2}}\,\vect{u}_2
+    + \ldots
+    + \frac{\iprod{\vect{u}_k,\vect{v}}}{\iprod{\vect{u}_k,\vect{u}_k}}\,\vect{u}_k.
+  \end{equation*}
+  Then $\vect{v}'$ is the best approximation%
+  \index{approximation} of $\vect{v}$ in $W$, i.e., it is the element
+  of $W$ such that $\norm{\vect{v}-\vect{v}'}$ is as small as
+  possible. Moreover, the vector $\vect{v}-\vect{v}'$ is orthogonal to
+  $W$. We say that $\vect{v}'$ is the \textbf{orthogonal projection of
+    $\vect{v}$ onto $W$}%
+  \index{orthogonal projection!onto subspace!complex}%
+  \index{projection!onto subspace!complex}.
+\end{proposition}
+
+\begin{example}{Orthogonal projection onto a subspace}{projection-subspace-complex}
+  Consider the subspace of $\C^3$ spanned by
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{c} 1 \\ i \\ 0 \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{u}_2 = \begin{mymatrix}{c} i \\ 1 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  With respect to the complex dot product, find the best approximation
+  of $\vect{v}=\begin{mymatrix}{c} 0 \\ 2 \\ 4\end{mymatrix}$ in this
+  subspace.
+\end{example}
+
+\begin{solution}
+  First notice that $\iprod{\vect{u}_1,\vect{u}_2}=0$, so that
+  $\vect{u}_1$ and $\vect{u}_2$ are orthogonal. Therefore, the best
+  approximation is given by
+  \begin{equation*}
+    \vect{v}' =
+    \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\vect{u}_1
+    + \frac{\iprod{\vect{u}_2,\vect{v}}}{\iprod{\vect{u}_2,\vect{u}_2}}\,\vect{u}_2.
+  \end{equation*}
+  We calculate the relevant inner products:
+  \begin{eqnarray*}
+    \iprod{\vect{u}_1,\vect{v}}
+    &=& \begin{mymatrix}{ccc} 1 & -i & 0 \end{mymatrix}
+        \begin{mymatrix}{c} 0 \\ 2 \\ 4\end{mymatrix}
+    ~~=~~ -2i,\\
+    \iprod{\vect{u}_2,\vect{v}}
+    &=& \begin{mymatrix}{ccc} -i & 1 & 1 \end{mymatrix}
+        \begin{mymatrix}{c} 0 \\ 2 \\ 4\end{mymatrix}
+    ~~=~~ 6,\\
+    \iprod{\vect{u}_1,\vect{u}_1}
+    &=& \begin{mymatrix}{ccc} 1 & -i & 0 \end{mymatrix}
+        \begin{mymatrix}{c} 1 \\ i \\ 0 \end{mymatrix}
+    ~~=~~ 2,\\
+    \iprod{\vect{u}_2,\vect{u}_2}
+    &=& \begin{mymatrix}{ccc} -i & 1 & 1 \end{mymatrix}
+        \begin{mymatrix}{c} i \\ 1 \\ 1\end{mymatrix}
+    ~~=~~ 3.
+  \end{eqnarray*}    
+  Therefore,
+  \begin{equation*}
+    \vect{v}'
+    ~~=~~
+    \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\vect{u}_1
+    + \frac{\iprod{\vect{u}_2,\vect{v}}}{\iprod{\vect{u}_2,\vect{u}_2}}\,\vect{u}_2.
+    ~~=~~
+    \frac{-2i}{2}\,\vect{u}_1 + \frac{6}{3}\,\vect{u}_2
+    ~~=~~
+    -i\begin{mymatrix}{c} 1 \\ i \\ 0 \end{mymatrix}
+    +2\begin{mymatrix}{c} i \\ 1 \\ 1 \end{mymatrix}
+    ~~=~~
+    \begin{mymatrix}{c} i \\ 3 \\ 2 \end{mymatrix}.
+  \end{equation*}
+  To double-check the answer, we can check that $\vect{v}-\vect{v}'$
+  is indeed orthogonal to $\vect{u}_1$ and $\vect{u}_2$. We have
+  \begin{equation*}
+    \vect{v}-\vect{v}' = \begin{mymatrix}{c} -i \\ -1 \\ 2 \end{mymatrix}
+  \end{equation*}
+  and
+  \begin{eqnarray*}
+    \iprod{\vect{u}_1,\vect{v}-\vect{v}'}
+    &=&
+    \begin{mymatrix}{ccc} 1 & -i & 0 \end{mymatrix}
+    \begin{mymatrix}{c} -i \\ -1 \\ 2 \end{mymatrix}
+    ~~=~~ 0,\\
+    \iprod{\vect{u}_2,\vect{v}-\vect{v}'}
+    &=&
+    \begin{mymatrix}{ccc} -i & 1 & 1 \end{mymatrix}
+    \begin{mymatrix}{c} -i \\ -1 \\ 2 \end{mymatrix}
+    ~~=~~ 0.
+  \end{eqnarray*}
+\end{solution}
 
