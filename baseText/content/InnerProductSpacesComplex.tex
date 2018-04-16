@@ -123,7 +123,8 @@ which is a generalization of the complex dot product.
   any pair of vectors $\vect{u},\vect{v}\in V$ a complex number
   $\iprod{\vect{u},\vect{v}}$, called the \textbf{inner product}%
   \index{inner product!complex}%
-  \index{product!complex inner product} of $\vect{u}$ and $\vect{v}$,
+  \index{product!complex inner product}%
+  \index{multiplication!complex inner product} of $\vect{u}$ and $\vect{v}$,
   satisfying the following properties:
   \begin{enumerate}
   \item Conjugate symmetry:%
@@ -566,4 +567,27 @@ Orthogonal projections also work in complex inner product spaces.
     ~~=~~ 0.
   \end{eqnarray*}
 \end{solution}
+
+We finish this section with some remarks on the differences between
+the notations used in mathematics and in physics. Complex inner
+product spaces are very important in physics because they are the
+foundation of quantum mechanics. The adjoint of a matrix $A$ is
+usually denoted $A^{\adjoint}$ in mathematics and $A^{\dagger}$ in
+physics. In quantum mechanics, a column vector $\vect{v}$ is often
+written $\ket{v}$, and the corresponding row vector
+$\vect{v}^{\adjoint}$ is then written as $\bra{v}$.  This is the
+so-called \textbf{Dirac notation}%
+\index{Dirac notation}. With this convention, an inner product
+$\vect{v}^{\adjoint}\vect{w}$ is $\bra{v}\ket{w}$, which is usually
+written as $\braket{v}{w}$. Also, the matrix
+$\vect{v}\vect{w}^{\adjoint}$ is written $\ket{v}\bra{w}$ and is
+called an \textbf{outer product}%
+\index{outer product}%
+\index{multiplication!outer product}. In mathematics, it is customary
+for inner products to be linear in the left component and antilinear
+in the right component. In physics, it is customary to use the
+opposite convention, i.e., inner products are antilinear in the left
+component and linear in the right component. In this book, we have
+used the physics convention of antilinearity in the left component,
+because it is the better convention.
 
