@@ -1,8 +1,9 @@
 \section{Orthogonal functions and orthogonal matrices}
+\label{sec:orthogonal-matrices}
 
 \begin{definition}{Isometries and orthogonal maps}{isometry-orthogonal-map}
-  Let $V,W$ be inner product spaces, and let $T:V\to W$ be a linear
-  transformation. We say that $T$ is an \textbf{isometry}%
+  Let $V,W$ be real inner product spaces, and let $T:V\to W$ be a
+  linear transformation. We say that $T$ is an \textbf{isometry}%
   \index{isometry}%
   \index{linear transformation!isometry} if for all
   $\vect{u},\vect{v}\in V$,
@@ -170,16 +171,16 @@ $\cos\theta =
 \end{example}
 
 \begin{proposition}{The matrix of an orthogonal transformation}{matrix-orthogonal}
-  Let $V,W$ be inner product spaces, let $T:V\to W$ be a linear
-  transformation. Let $B=\set{\vect{v}_1,\ldots,\vect{v}_m}$ be an
-  orthonormal basis of $V$ and let
-  $C=\set{\vect{w}_1,\ldots,\vect{w}_n}$ be an orthonormal basis of
-  $W$. Let $P=\coord{T}_{C,B}$ be the matrix of $T$ with respect to
-  the bases $B$ and $C$. Then
+  Let $V,W$ be finite-dimensional real inner product spaces and let
+  $T:V\to W$ be a linear transformation. Let $B$ and $C$ be
+  orthonormal bases of $V$ and $W$, respectively, and let
+  $P=\coord{T}_{C,B}$ be the matrix of $T$ with respect to the bases
+  $B$ and $C$. Then
   \begin{enumialphparenastyle}
     \begin{enumerate}
     \item $T$ is an isometry if and only if $P^TP = I$.
-    \item $T$ is orthogonal if and only if $P^TP = I$ and $n=m$.
+    \item $T$ is orthogonal if and only if $P^TP = I$ and $\dim V=\dim
+      W$.
     \end{enumerate}
   \end{enumialphparenastyle}
 \end{proposition}
@@ -215,13 +216,14 @@ $\cos\theta =
 
   (b) By definition, $T$ is orthogonal if and only if it is an
   isometry and invertible. Therefore, if $T$ is orthogonal, then
-  $P^TP=I$ by part (a) and $n=m$ because every invertible matrix is
-  square (see Theorem~\ref{thm:invertible-square}). Conversely, assume
-  that $P^TP=I$ and $n=m$. Then $T$ is an isometry by part (a). Also,
-  by Theorem~\ref{thm:right-square-left}, since $P$ is square and
-  $P^T$ is a left inverse of $P$, the matrix $P$, and therefore the
-  linear transformation $T$, is invertible. Therefore, $T$ is
-  orthogonal.
+  $P^TP=I$ by part (a) and $\dim V=\dim W$ because every invertible
+  matrix is square (see
+  Theorem~\ref{thm:invertible-square}). Conversely, assume that
+  $P^TP=I$ and $\dim V=\dim W$. Then $T$ is an isometry by part
+  (a). Also, by Theorem~\ref{thm:right-square-left}, since $P$ is
+  square and $P^T$ is a left inverse of $P$, the matrix $P$, and
+  therefore the linear transformation $T$, is invertible. Therefore,
+  $T$ is orthogonal.
 \end{proof}
 
 \begin{example}{Orthogonal transformations}{orthogonal-transformations}
