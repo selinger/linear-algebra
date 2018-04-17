@@ -11,6 +11,8 @@ Ak
 american
 Andrée
 antiderivatives
+antilinear
+antilinearity
 antisymmetric
 Argand
 ASCII
@@ -30,6 +32,7 @@ cholesky
 ciphertext
 circuitikz
 cm
+Cn
 cof
 cofactor
 cofactors
@@ -97,7 +100,7 @@ gaussian
 gj
 GLFN
 hamilton
-Hermitian
+hermitian
 hilbert
 HL
 homo
@@ -191,6 +194,7 @@ PJQZGBOQKW
 plaintext
 Poohbah
 pos
+positivity
 pre
 proj
 pt
@@ -243,6 +247,7 @@ TSZS
 tuple
 tuples
 UDU
+unitarily
 unshift
 uploads
 UTF
