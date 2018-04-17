@@ -30,7 +30,7 @@ orthonormal bases) if and only if $P^TP=I$. In the complex case, we
 have an analogous property, except that we must use the adjoint
 instead of the transpose.
 
-\begin{proposition}{The matrix of an orthogonal transformation}{matrix-orthogonal}
+\begin{proposition}{The matrix of a unitary transformation}{matrix-unitary}
   Let $T:V\to W$ be a linear transformation between finite-dimensional
   complex inner product spaces $V$ and $W$. Let $B$ and $C$ be
   orthonormal bases of $V$ and $W$, respectively, and let
@@ -39,7 +39,7 @@ instead of the transpose.
   \begin{enumialphparenastyle}
     \begin{enumerate}
     \item $T$ is an isometry if and only if $P^{\adjoint}P = I$.
-    \item $T$ is orthogonal if and only if $P^{\adjoint}P = I$ and
+    \item $T$ is unitary if and only if $P^{\adjoint}P = I$ and
       $\dim V=\dim W$.
     \end{enumerate}
   \end{enumialphparenastyle}
@@ -293,7 +293,7 @@ Theorem~\ref{thm:diagonalization-symmetric} in the real case.
   \begin{equation*}
     \det(A-\eigenvar I)
     = \begin{absmatrix}{cc} 3-\eigenvar & -2i \\ 2i & 6-\eigenvar \end{absmatrix}
-    = (3-\eigenvar)(6-\eigenvar) + 4i^2
+    = (3-\eigenvar)(6-\eigenvar) + 4i\,^2
     = \eigenvar^2 - 9\eigenvar + 14.
   \end{equation*}
   Its roots are $\eigenvar_1=2$ and $\eigenvar_2=7$. For the eigenvalue
