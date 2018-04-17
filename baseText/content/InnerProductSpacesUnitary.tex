@@ -1,0 +1,318 @@
+\section{Unitary and hermitian matrices}
+
+In the context of real inner product spaces, we studied orthogonal
+functions, orthogonal matrices, and symmetric matrices. The
+corresponding concepts in the context of complex inner product spaces
+are unitary functions, unitary matrices, and hermitian matrices. We
+will introduce these concepts in this section. Since the proofs are
+similar to those in Section~\ref{sec:orthogonal-matrices}, we omit
+most of them.
+
+\begin{definition}{Isometries and unitary maps of complex inner product spaces}{complex-isometries-unitary}
+  Let $V,W$ be complex inner product spaces. A linear transformation
+  $T:V\to W$ is called an \textbf{isometry}%
+  \index{isometry}%
+  \index{linear transformation!isometry} if for all
+  $\vect{u},\vect{v}\in V$,
+  \begin{equation*}
+    \iprod{T(\vect{u}),T(\vect{v})} = \iprod{\vect{u},\vect{v}}.
+  \end{equation*}
+  An isometry that is also invertible is called a \textbf{unitary
+    transformation}%
+  \index{unitary transformation}%
+  \index{linear transformation!unitary}, or simply \textbf{unitary}.
+\end{definition}
+
+In the case of real inner product spaces, we found in
+Proposition~\ref{prop:matrix-orthogonal} that a square matrix $P$ is
+the matrix of an orthogonal transformation (with respect to
+orthonormal bases) if and only if $P^TP=I$. In the complex case, we
+have an analogous property, except that we must use the adjoint
+instead of the transpose.
+
+\begin{proposition}{The matrix of an orthogonal transformation}{matrix-orthogonal}
+  Let $T:V\to W$ be a linear transformation between finite-dimensional
+  complex inner product spaces $V$ and $W$. Let $B$ and $C$ be
+  orthonormal bases of $V$ and $W$, respectively, and let
+  $P=\coord{T}_{C,B}$ be the matrix of $T$ with respect to the bases
+  $B$ and $C$. Then
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item $T$ is an isometry if and only if $P^{\adjoint}P = I$.
+    \item $T$ is orthogonal if and only if $P^{\adjoint}P = I$ and
+      $\dim V=\dim W$.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{proposition}
+
+This motivates the following definition.  We therefore define a
+\textbf{unitary}%
+\index{unitary matrix} matrix to be an $n\times n$-matrix satisfying
+$P^{\adjoint}P=I$.
+
+\begin{definition}{Unitary matrix}{unitary-matrix}
+  An $n\times n$-matrix $P$ is called \textbf{unitary}%
+  \index{unitary matrix}%
+  \index{matrix!unitary} if $P^{\adjoint}P=I$.
+\end{definition}
+
+We have the following analogue of
+Proposition~\ref{prop:conditions-orthogonal-matrix}:
+
+\begin{proposition}{Conditions for unitary matrices}{conditions-unitary-matrix}
+  The following are equivalent for a complex $n\times n$-matrix $P$:
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item $P$ is unitary.
+    \item $P^{\adjoint}P=I$.
+    \item $P$ is invertible and $P^{-1}=P^{\adjoint}$.
+    \item $PP^{\adjoint}=I$.
+    \item $P^{\adjoint}$ is unitary.
+    \item The columns of $P$ form an orthonormal set of vectors.
+    \item The rows of $P$ form an orthonormal set of vectors.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{proposition}
+
+\begin{example}{Unitary matrices}{unitary-matrices}
+  Determine which of the following matrices are unitary.
+  \begin{equation*}
+    A = \begin{mymatrix}{cc}
+      1 & 0 \\
+      0 & i \\
+    \end{mymatrix},
+    \quad
+    B = \frac{1}{\sqrt{2}}
+    \begin{mymatrix}{rr}
+      1 & i \\
+      i & 1 \\
+    \end{mymatrix},
+    \quad
+    C = \frac{1}{\sqrt{2}}
+    \begin{mymatrix}{rr}
+      1 & i \\
+      -i & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  We have
+  \begin{equation*}
+    A^{\adjoint}A =
+    \begin{mymatrix}{cc}
+      1 & 0 \\
+      0 & -i \\
+    \end{mymatrix}\begin{mymatrix}{cc}
+      1 & 0 \\
+      0 & i \\
+    \end{mymatrix}
+    = \begin{mymatrix}{cc}
+      1 & 0 \\
+      0 & 1 \\
+    \end{mymatrix}
+    = I,
+  \end{equation*}
+  so $A$ is unitary. Similarly, we have
+  \begin{equation*}
+    B^{\adjoint}B =
+    \frac{1}{2}
+    \begin{mymatrix}{rr}
+      1 & i \\
+      i & 1 \\
+    \end{mymatrix}\begin{mymatrix}{rr}
+      1 & -i \\
+      -i & 1 \\
+    \end{mymatrix}
+    = \frac{1}{2}
+    \begin{mymatrix}{rr}
+      2 & 0 \\
+      0 & 2 \\
+    \end{mymatrix}
+    = I,
+  \end{equation*}
+  so $B$ is unitary as well. On the other hand,
+  \begin{equation*}
+    C^{\adjoint}C =
+    \frac{1}{2}
+    \begin{mymatrix}{rr}
+      1 & i \\
+      -i & 1 \\
+    \end{mymatrix}\begin{mymatrix}{rr}
+      1 & i \\
+      -i & 1 \\
+    \end{mymatrix}
+    = \frac{1}{2}
+    \begin{mymatrix}{rr}
+      2 & 2i \\
+      -2i & 2 \\
+    \end{mymatrix}
+    \neq I,
+  \end{equation*}
+  so $C$ is not unitary. Equivalently, we could have checked whether
+  the columns of $A$, $B$, and $C$ form an orthonormal set of vectors
+  (they do, in the case of $A$ and $B$, but don't, in the case of
+  $C$. See also Example~\ref{exa:orthogonal-vectors-complex}).
+\end{solution}
+
+Of course, if $P$ happens to be a matrix with real entries, then $P$
+is unitary if and only if it is orthogonal, because in that case
+$P^{\adjoint}=\conjugate{P}^T = P^{T}$.
+
+Recall that a matrix $A$ is called \textbf{symmetric} if $A=A^T$. In
+the complex world, we are more often interested in the property
+$A=A^{\adjoint}$. A matrix with this property is called
+\textbf{hermitian} (after the French mathematician Charles Hermite,
+1822--1901).
+
+\begin{definition}{Hermitian matrix}{hermitian-matrix}
+  A complex $n\times n$-matrix $A$ is called \textbf{hermitian}%
+  \index{hermitian matrix}%
+  \index{matrix!hermitian}
+  if $A=A^{\adjoint}$.
+\end{definition}
+
+\begin{example}{Hermitian vs. symmetric matrices}{hermitian-matrix}
+  Which of the following matrices are hermitian? Which ones are
+  symmetric?
+  \begin{equation*}
+    A = \begin{mymatrix}{cc} 1 & 2 \\ 2 & 1 \end{mymatrix}, \quad
+    B = \begin{mymatrix}{cc} 1 & 2i \\ 2i & 1 \end{mymatrix}, \quad
+    C = \begin{mymatrix}{cc} 1 & 2i \\ -2i & 1 \end{mymatrix}, \quad
+    D = \begin{mymatrix}{cc} i & 2 \\ 2 & i \end{mymatrix}, \quad
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  The matrix $A$ is symmetric and also hermitian. The matrix $B$ is
+  symmetric but not hermitian. In fact, we have
+  \begin{equation*}
+    B^{\adjoint} = \begin{mymatrix}{cc} 1 & -2i \\ -2i & 1 \end{mymatrix} \neq B.
+  \end{equation*}
+  The matrix $C$ is hermitian but not symmetric. The matrix $D$ is
+  symmetric but not hermitian.
+\end{solution}
+
+A matrix $A=\mat{a_{ij}}$ is hermitian if and only if
+$a_{ij} = \conjugate{a_{ji}}$, for all $i,j$. In particular, the
+diagonal entries of a hermitian matrix are always real, and the
+off-diagonal entries come in complex conjugate pairs. If all of the
+entries in a matrix $A$ are real, then $A$ is hermitian if and only if
+it is symmetric.
+
+Hermitian matrices are of interest, among other things, because their
+eigenvalues are always real. Moreover, eigenvectors for distinct
+eigenvalues are orthogonal. The following proposition is analogous to
+Proposition~\ref{prop:eigenvalues-symmetric}.
+
+\begin{proposition}{Eigenvalues and eigenvectors of hermitian matrices}{eigenvalues-hermitian}
+  Let $A$ be a hermitian matrix. Then
+  \begin{enumialphparenastyle}
+    \begin{enumerate}
+    \item All eigenvalues of $A$ are real.
+    \item Eigenvectors for distinct eigenvalues of $A$ are orthogonal.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{proposition}
+
+\begin{proof}
+  (a) Suppose $\eigenvar$ is an eigenvalue of $A$, with eigenvector
+  $\vect{v}$. We will evaluate $\vect{v}^{\adjoint}A\vect{v}$ in two
+  different ways:
+  \begin{eqnarray*}
+    \vect{v}^{\adjoint}A\vect{v}
+    &=& \vect{v}^{\adjoint}(A\vect{v})
+        = \vect{v}^{\adjoint}(\eigenvar\vect{v})
+        = \eigenvar\vect{v}^{\adjoint}\vect{v}, \\
+    \vect{v}^{\adjoint}A\vect{v}
+    &=& (\vect{v}^{\adjoint}A)\vect{v}
+        = (\vect{v}^{\adjoint}A^{\adjoint})\vect{v}
+        = (A\vect{v})^{\adjoint}\vect{v}
+        = (\eigenvar\vect{v})^{\adjoint}\vect{v}
+        = \conjugate{\eigenvar}\vect{v}^{\adjoint}\vect{v}.
+  \end{eqnarray*}
+  Therefore,
+  $\eigenvar\vect{v}^{\adjoint}\vect{v} =
+  \conjugate{\eigenvar}\vect{v}^{\adjoint}\vect{v}$. Since
+  $\vect{v}^{\adjoint}\vect{v}$ is non-zero, this implies
+  $\eigenvar=\conjugate{\eigenvar}$, i.e., $\eigenvar$ is real.
+
+  \noindent
+  (b) Suppose $\vect{v}$ and $\vect{w}$ are eigenvectors for
+  eigenvalues $\eigenvarA$ and $\eigenvarB$, respectively, and
+  $\eigenvarA\neq\eigenvarB$. From part (a), we know that both
+  $\eigenvarA$ and $\eigenvarB$ are real.  By evaluating
+  $\vect{v}^{\adjoint}A\vect{w}$ in two different ways, we find that
+  \begin{eqnarray*}
+    \vect{v}^{\adjoint}A\vect{w}
+    &=& \vect{v}^{\adjoint}(A\vect{w})
+    = \vect{v}^{\adjoint}(\eigenvarB\vect{w})
+    = \eigenvarB \vect{v}^{\adjoint}\vect{w},\\
+    \vect{v}^{\adjoint}A\vect{w}
+    &=& (\vect{v}^{\adjoint}A)\vect{w}
+    = (A^{\adjoint}\vect{v})^{\adjoint}\vect{w}
+    = (A\vect{v})^{\adjoint}\vect{w}
+    = (\eigenvarA\vect{v})^{\adjoint}\vect{w}
+    = \eigenvarA\vect{v}^{\adjoint}\vect{w}.
+  \end{eqnarray*}
+  Therefore,
+  $\eigenvarB\vect{v}^{\adjoint}\vect{w} = \eigenvarA\vect{v}^{\adjoint}\vect{w}$, or
+  equivalently $(\eigenvarA - \eigenvarB)\vect{v}^{\adjoint}\vect{w} =
+  0$. Since by assumption, $\eigenvarA - \eigenvarB\neq 0$, we must
+  have $\vect{v}^{\adjoint}\vect{w} = 0$, i.e., $\vect{v}$ and $\vect{w}$ are
+  orthogonal.
+\end{proof}
+
+We say that a matrix $A$ is \textbf{unitarily diagonalizable}%
+\index{unitarily diagonalizable matrix}%
+\index{diagonalizable matrix!unitarily diagonalizable}%
+\index{diagonalization!unitary diagonalization}%
+\index{matrix!unitarily diagonalizable}%
+\index{matrix!diagonalizable!unitarily} if there exists a unitary
+matrix $P$ and a diagonal matrix $D$ such that $D = P^{-1}AP$.  The
+following is the main theorem about the diagonalization of hermitian
+matrices. It is analogous to
+Theorem~\ref{thm:diagonalization-symmetric} in the real case.
+
+\begin{theorem}{Diagonalization of hermitian matrices}{diagonalization-hermitian}
+  Every hermitian matrix $A$ is unitarily diagonalizable as
+  $D = P^{-1}AP$. Moreover, the entries of $D$ are real.
+\end{theorem}
+
+\begin{example}{Diagonalization of hermitian matrices}{diagonalization-hermitian}
+  The matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{cc}  3 & -2i \\ 2i & 6 \end{mymatrix}
+  \end{equation*}
+  is hermitian. Unitarily diagonalize $A$, i.e., find a unitary matrix
+  $P$ and a real diagonal matrix $D$ such that $D = P^{-1}AP$.
+\end{example}
+
+\begin{solution}
+  The characteristic polynomial is
+  \begin{equation*}
+    \det(A-\eigenvar I)
+    = \begin{absmatrix}{cc} 3-\eigenvar & -2i \\ 2i & 6-\eigenvar \end{absmatrix}
+    = (3-\eigenvar)(6-\eigenvar) + 4i^2
+    = \eigenvar^2 - 9\eigenvar + 14.
+  \end{equation*}
+  Its roots are $\eigenvar_1=2$ and $\eigenvar_2=7$. For the eigenvalue
+  $\eigenvar_1=2$, we find the normalized eigenvector
+  \begin{equation*}
+    \vect{v}_1 = \frac{1}{\sqrt{5}}\begin{mymatrix}{c} 2i \\ 1 \end{mymatrix}.
+  \end{equation*}
+  For the eigenvalue
+  $\eigenvar_2=7$, we find the normalized eigenvector
+  \begin{equation*}
+    \vect{v}_2 = \frac{1}{\sqrt{5}}\begin{mymatrix}{c} 1 \\ 2i \end{mymatrix}.
+  \end{equation*}
+  Note that these eigenvectors are orthogonal to each other,
+  confirming Proposition~\ref{prop:eigenvalues-hermitian}. We
+  therefore have $D=P^{-1}AP$, where
+  \begin{equation*}
+    D = \begin{mymatrix}{cc} 2 & 0 \\ 0 & 7 \end{mymatrix}
+    \quad\mbox{and}\quad
+    P = \frac{1}{\sqrt{5}} \begin{mymatrix}{cc} 2i & 1 \\ 1 & 2i \end{mymatrix}.
+  \end{equation*}
+  Note that $P$ is unitary and $D$ is real diagonal.
+\end{solution}
