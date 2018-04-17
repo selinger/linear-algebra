@@ -9,7 +9,7 @@ diagonalized is symmetric. Recall that a matrix $A$ is
 \index{matrix!symmetric} if $A=A^T$. We begin with some observations
 about the eigenvalues and eigenvectors of a symmetric matrix.
 
-\begin{lemma}{Eigenvalues and eigenvectors of symmetric matrices}{eigenvalues-symmetric}
+\begin{proposition}{Eigenvalues and eigenvectors of symmetric matrices}{eigenvalues-symmetric}
   Let $A$ be a symmetric matrix with real entries. Then
   \begin{enumialphparenastyle}
     \begin{enumerate}
@@ -17,7 +17,7 @@ about the eigenvalues and eigenvectors of a symmetric matrix.
     \item Eigenvectors for distinct eigenvalues of $A$ are orthogonal.
     \end{enumerate}
   \end{enumialphparenastyle}
-\end{lemma}
+\end{proposition}
 
 \begin{proof}
   (a) Suppose $\eigenvar$ is a (possibly complex) eigenvalue of $A$,
@@ -70,7 +70,7 @@ about the eigenvalues and eigenvectors of a symmetric matrix.
     = (A^T\vect{v})^T\vect{w}
     = (A\vect{v})^T\vect{w}
     = (\eigenvarA\vect{v})^T\vect{w}
-    = \eigenvarA\vect{v}^T\vect{w}
+    = \eigenvarA\vect{v}^T\vect{w}.
   \end{equation*}
   Therefore,
   $\eigenvarB\vect{v}^T\vect{w} = \eigenvarA\vect{v}^T\vect{w}$, or
@@ -106,7 +106,7 @@ symmetric matrices.
   real symmetric $n\times n$-matrix $A$ with $n\geq 2$. By the
   fundamental theorem of algebra, the characteristic polynomial has at
   least one root, so that $A$ has at least one (possibly complex)
-  eigenvalue $\eigenvar$. By Lemma~\ref{lem:eigenvalues-symmetric}(a),
+  eigenvalue $\eigenvar$. By Proposition~\ref{prop:eigenvalues-symmetric}(a),
   $\eigenvar$ is real. Since we can solve the system of equations
   $(A-\eigenvar I)\vect{v}=\vect{0}$ over the real numbers, there
   exists a real eigenvector $\vect{v}$ for the eigenvalue
@@ -195,7 +195,7 @@ symmetric matrices.
     \vect{w} = \begin{mymatrix}{r} -2 \\ 1 \end{mymatrix}.
   \end{equation*}
   We note that these two eigenvectors are orthogonal to each other,
-  exactly as predicted by Lemma~\ref{lem:eigenvalues-symmetric}. So
+  exactly as predicted by Proposition~\ref{prop:eigenvalues-symmetric}. So
   the vectors $\set{\vect{v},\vect{w}}$ form an orthogonal set. We
   turn this into an orthonormal set by normalizing each eigenvector,
   i.e., the normalized eigenvectors are
@@ -291,17 +291,18 @@ symmetric matrices.
   \begin{equation*}
     \vect{v}_3 = \begin{mymatrix}{r} 1 \\ -1 \\ 2 \end{mymatrix}.
   \end{equation*}
-  As predicted by Lemma~\ref{lem:eigenvalues-symmetric}, $\vect{v}_3$
-  is orthogonal to $\vect{v}_1$ and $\vect{v}_2$. However, there is a
-  slight complication: $\vect{v}_1$ and $\vect{v}_2$ are not
-  orthogonal to each other. This is because they are eigenvectors for
-  the {\em same} eigenvalue ($\eigenvar=4$), not for {\em distinct}
-  eigenvalues. We found basis $\set{\vect{v}_1,\vect{v}_2}$ for the
-  eigenspace for $\eigenvar=4$, but it doesn't happen to be an
-  orthogonal basis. However, we can fix this by applying the
-  Gram-Schmidt method to $\set{\vect{v}_1,\vect{v}_2}$. This yields
-  the orthogonal basis $\set{\vect{u}_1,\vect{u}_2}$ for the
-  eigenspace for $\eigenvar=4$, where
+  As predicted by Proposition~\ref{prop:eigenvalues-symmetric},
+  $\vect{v}_3$ is orthogonal to $\vect{v}_1$ and
+  $\vect{v}_2$. However, there is a slight complication: $\vect{v}_1$
+  and $\vect{v}_2$ are not orthogonal to each other. This is because
+  they are eigenvectors for the {\em same} eigenvalue ($\eigenvar=4$),
+  not for {\em distinct} eigenvalues. We found basis
+  $\set{\vect{v}_1,\vect{v}_2}$ for the eigenspace for $\eigenvar=4$,
+  but it doesn't happen to be an orthogonal basis. However, we can fix
+  this by applying the Gram-Schmidt method to
+  $\set{\vect{v}_1,\vect{v}_2}$. This yields the orthogonal basis
+  $\set{\vect{u}_1,\vect{u}_2}$ for the eigenspace for $\eigenvar=4$,
+  where
   \begin{equation*}
     \vect{u}_1 = \begin{mymatrix}{r} 1 \\ 1 \\ 0 \end{mymatrix}
     \quad\mbox{and}\quad
