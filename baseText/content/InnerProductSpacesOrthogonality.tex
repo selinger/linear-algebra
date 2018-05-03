@@ -20,20 +20,22 @@
   \begin{equation*}
     \iprod{\vect{u}, \vect{v}} = 0.
   \end{equation*}
+  We also write $\vect{u}\orth\vect{v}$ to indicate that $\vect{u}$
+  and $\vect{v}$ are orthogonal.
 \end{definition}
 
 We note that the zero vector $\vect{0}$ is orthogonal to all vectors,
 because $\iprod{\vect{u},\vect{0}} = 0$ follows from the linearity of
-the inner product. We also note, of course, that $\vect{u}$ is
-orthogonal to $\vect{v}$ if and only if $\vect{v}$ is orthogonal to
-$\vect{u}$; this follows from the symmetry of the inner product.
+the inner product. We also note, of course, that
+$\vect{u}\orth\vect{v}$ if and only if $\vect{v}\orth\vect{u}$; this
+follows from the symmetry of the inner product.
 
 \begin{definition}{Orthogonal complement}{inner-product-orthogonal-complement}
   Let $S$ be a subset of an inner product space $V$. The
   \textbf{orthogonal complement}%
   \index{orthogonal complement} of $S$ is the set
   \begin{equation*}
-    S^{\perp} = \set{\vect{v}\in V \mid
+    S^{\orth} = \set{\vect{v}\in V \mid
       \mbox{
         $\iprod{\vect{v},\vect{w}} = 0$ for all $\vect{w}\in S$
       }}.
@@ -41,37 +43,37 @@ $\vect{u}$; this follows from the symmetry of the inner product.
 \end{definition}
 
 \begin{proposition}{Orthogonal complement}{inner-product-orthogonal-complement}
-  If $S$ is any subset of an inner product space $V$, then $S^{\perp}$
+  If $S$ is any subset of an inner product space $V$, then $S^{\orth}$
   is a subspace.
 \end{proposition}
 
 \begin{proof}
-  We clearly have $\vect{0}\in S^{\perp}$, because $\vect{0}$ is
-  orthogonal to all vectors. To show that $S^{\perp}$ is closed under
-  addition, assume $\vect{v}, \vect{v}'\in S^{\perp}$. We have to show
-  $\vect{v}+\vect{v}'\in S^{\perp}$. So take an arbitrary $\vect{w}\in
+  We clearly have $\vect{0}\in S^{\orth}$, because $\vect{0}$ is
+  orthogonal to all vectors. To show that $S^{\orth}$ is closed under
+  addition, assume $\vect{v}, \vect{v}'\in S^{\orth}$. We have to show
+  $\vect{v}+\vect{v}'\in S^{\orth}$. So take an arbitrary $\vect{w}\in
   S$. Then we have
   \begin{equation*}
     \iprod{\vect{v}+\vect{v}',\vect{w}}
     = \iprod{\vect{v},\vect{w}} + \iprod{\vect{v}',\vect{w}}
     = 0 + 0 = 0.
   \end{equation*}
-  Therefore, $\vect{v}+\vect{v}'\in S^{\perp}$. Finally, to show that
-  $S^{\perp}$ is closed under scalar multiplication, assume
-  $\vect{v}\in S^{\perp}$ and $k\in\R$. We have to show
-  $k\vect{v}\in S^{\perp}$. So take an arbitrary
+  Therefore, $\vect{v}+\vect{v}'\in S^{\orth}$. Finally, to show that
+  $S^{\orth}$ is closed under scalar multiplication, assume
+  $\vect{v}\in S^{\orth}$ and $k\in\R$. We have to show
+  $k\vect{v}\in S^{\orth}$. So take an arbitrary
   $\vect{w}\in S$. Then we have
   \begin{equation*}
     \iprod{k\vect{v},\vect{w}}
     = k\iprod{\vect{v},\vect{w}}
     = k0 = 0.
   \end{equation*}
-  Therefore, $k\vect{v}\in S^{\perp}$. It follows that $S^{\perp}$ is
+  Therefore, $k\vect{v}\in S^{\orth}$. It follows that $S^{\orth}$ is
   a subspace of $V$.
 \end{proof}
 
 Here is an illustration of a subspace $S$ of $\R^3$ and its orthogonal
-complement $S^{\perp}$:
+complement $S^{\orth}$:
 
 \begin{center}
   \begin{tikzpicture}[x={(1cm,0cm)},y={(1cm,0.5cm)},z={(0cm,1cm)},rotate=0]
@@ -79,7 +81,7 @@ complement $S^{\perp}$:
     \filldraw[draw=red!80,fill=red!10](0,-1,-1.5) -- (0,-1,1.5) --
     (0,1,1.5) -- (0,1,-1.5) -- cycle;
     \path[red!80] (0,0,0.5) node[above] {$S$};
-    \draw[thick,blue!80!black](0,0,0) -- node[above, pos=0.7] {$S^{\perp}$} (2,0,0);
+    \draw[thick,blue!80!black](0,0,0) -- node[above, pos=0.7] {$S^{\orth}$} (2,0,0);
   \end{tikzpicture}
 \end{center}
 
@@ -127,7 +129,7 @@ We now consider orthogonal sets and bases.
   product space is called an \textbf{orthogonal set}%
   \index{orthogonal set} if the vectors are non-zero and pairwise
   orthogonal, i.e., for all $i$, $\vect{u}_i\neq\vect{0}$ and for all
-  $i\leq j$, $\iprod{\vect{u}_i,\vect{u}_j}=0$.
+  $i\neq j$, $\vect{u}_i\orth\vect{u}_j$.
   \smallskip\smallskip
 
   Moreover, the set of vectors $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is
@@ -213,9 +215,10 @@ independent.
     &=& \frac{1}{2}\int_{0}^{2\pi} \cos((i-j)x) + \cos((i+j)x)\,dx \\
     &=& \frac{1}{2}\bigbracket{\frac{1}{(i-j)} \sin((i-j)x) + \frac{1}{(i+j)}
       \sin((i+j)x)}_{0}^{2\pi} \\
-    &=& 0.
+    &=& 0,
   \end{eqnarray*}
-  The cases for $\iprod{f_i,f_j}$ and $\iprod{f_i,g_j}$ are similar.
+  and therefore $g_i\orth g_j$. The proofs of $f_i\orth f_j$ and
+  $f_i\orth g_j$ are similar.
 \end{proof}
 
 \begin{definition}{Orthogonal and orthonormal bases}{orthogonal-basis}
