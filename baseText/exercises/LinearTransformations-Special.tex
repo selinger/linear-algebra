@@ -95,22 +95,22 @@
     \begin{equation*}
       \vect{v}'
       = \proj_{\vect{u}} \vect{v}
-      = \frac{\vect{v}\dotprod\vect{u}}{\norm{\vect{u}}^2}\,\vect{u}.
+      = \frac{\vect{u}\dotprod\vect{v}}{\norm{\vect{u}}^2}\,\vect{u}.
     \end{equation*}
     But since $\vect{u}$ is a unit vector, this simplifies to
-    $\vect{v}' = (\vect{v}\dotprod\vect{u})\vect{u}$.
+    $\vect{v}' = (\vect{u}\dotprod\vect{v})\vect{u}$.
     From the above picture, we see that $T(\vect{v}) = \vect{v} +
     2(\vect{v}'-\vect{v}) = 2\vect{v}' - \vect{v} =
-    2(\vect{v}\dotprod\vect{u})\vect{u} - \vect{v}$.
+    2(\vect{u}\dotprod\vect{v})\vect{u} - \vect{v}$.
     To get the matrix of this linear transformation, we must compute
     the image of the standard basis vectors:
     \begin{equation*}
-      T(\vect{e}_1) = 2(\vect{e}_1\dotprod\vect{u})\vect{u} - \vect{e}_1
+      T(\vect{e}_1) = 2(\vect{u}\dotprod\vect{e}_1)\vect{u} - \vect{e}_1
       = 2a\begin{mymatrix}{c} a\\b \end{mymatrix} - \begin{mymatrix}{c} 1\\0 \end{mymatrix}
       = \begin{mymatrix}{c} 2a^2-1\\2ab \end{mymatrix}
     \end{equation*}
     \begin{equation*}
-      T(\vect{e}_2) = 2(\vect{e}_2\dotprod\vect{u})\vect{u} - \vect{e}_2
+      T(\vect{e}_2) = 2(\vect{u}\dotprod\vect{e}_2)\vect{u} - \vect{e}_2
       = 2b\begin{mymatrix}{c} a\\b \end{mymatrix} - \begin{mymatrix}{c} 0\\1 \end{mymatrix}
       = \begin{mymatrix}{c} 2ab\\2b^2-1 \end{mymatrix}.
     \end{equation*}

@@ -83,15 +83,15 @@
   \begin{sol}
     We have
     \begin{eqnarray*}
-      T_{\vect{u}}(a\vect{v}+b\vect{w})
+      T(a\vect{v}+b\vect{w})
       &=& a\vect{v}+b\vect{w}
-          -\frac{(a\vect{v}+b\vect{w})\dotprod\vect{u}}{\norm{\vect{u}}^{2}}
+          -\frac{\vect{u}\dotprod(a\vect{v}+b\vect{w})}{\norm{\vect{u}}^{2}}
           \vect{u} \\
       &=& a\vect{v}
-          -a\frac{(\vect{v}\dotprod\vect{u})}{\norm{\vect{u}}^{2}}\vect{u}
+          -a\frac{\vect{u}\dotprod\vect{v}}{\norm{\vect{u}}^{2}}\vect{u}
           +b\vect{w}
-          -b\frac{(\vect{w}\dotprod\vect{u})}{\norm{\vect{u}}^{2}}\vect{u} \\
-      &=& aT_{\vect{u}}(\vect{v}) +bT_{\vect{u}}(\vect{w}).
+          -b\frac{\vect{u}\dotprod\vect{w}}{\norm{\vect{u}}^{2}}\vect{u} \\
+      &=& aT(\vect{v}) +bT(\vect{w}).
     \end{eqnarray*}
     Therefore, $T$ is linear.
   \end{sol}

@@ -85,9 +85,9 @@ The following definition summarizes what we have just found.
   \index{vector!projection of} is defined to be the vector
   \begin{equation*}
     \proj_{\vect{u}}(\vect{v}) =
-      \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u}
+      \frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod \vect{u}}\, \vect{u}
     =
-    \frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{u}} ^{2}}\,\vect{u}.
+    \frac{\vect{u}\dotprod \vect{v}}{\norm{\vect{u}} ^{2}}\,\vect{u}.
   \end{equation*}
   These two operations are also called the \textbf{scalar projection}%
   \index{scalar projection} and \textbf{vector projection}%
@@ -116,18 +116,18 @@ The following definition summarizes what we have just found.
 \begin{solution}
   We can use the formula provided in Definition~\ref{def:projection}
   to find $\proj_{\vect{u}}(\vect{v})$.  First, compute
-  $\vect{v} \dotprod \vect{u}$.  This is given by
+  $\vect{u} \dotprod \vect{v}$.  This is given by
   \begin{equation*}
-    \begin{mymatrix}{r}
-      1 \\
-      -2 \\
-      1
-    \end{mymatrix}
-    \dotprod
     \begin{mymatrix}{r}
       2 \\
       3 \\
       -4
+    \end{mymatrix}
+    \dotprod
+    \begin{mymatrix}{r}
+      1 \\
+      -2 \\
+      1
     \end{mymatrix}
     = (2)(1) + (3)(-2) + (-4)(1)
     = -8.
@@ -197,7 +197,7 @@ $\vect{u}$, and the other of which is orthogonal to $\vect{u}$.
   \end{center}
   To show that such a decomposition exists, let
   \begin{equation*}
-    \vect{v}_{\coll} = \proj_{\vect{u}}(\vect{v}) = \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u},
+    \vect{v}_{\coll} = \proj_{\vect{u}}(\vect{v}) = \frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod \vect{u}}\, \vect{u},
   \end{equation*}
   and define $\vect{v}_{\bot} = \vect{v}-\vect{v}_{\coll}$. By
   definition, {\eqref{projection}} is satisfied, and
@@ -205,24 +205,26 @@ $\vect{u}$, and the other of which is orthogonal to $\vect{u}$.
   that $\vect{v}_{\bot}$ is orthogonal to $\vect{u}$. For this,
   we verify that their dot product equals zero:
   \begin{eqnarray*}
-    \vect{v}_{\bot }\dotprod \vect{u}
-    &=& \vect{v}\dotprod \vect{u}-\frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod\vect{u}}\,\vect{u}\dotprod \vect{u} \\
-    &=& \vect{v}\dotprod\vect{u}-\vect{v}\dotprod \vect{u}\\
+    \vect{u}\dotprod\vect{v}_{\bot}
+    &=& \vect{u}\dotprod(\vect{v}-\vect{v}_{\coll}) \\
+    &=& \vect{u}\dotprod\vect{v}-\vect{u}\dotprod\vect{v}_{\coll} \\
+    &=& \vect{u}\dotprod \vect{v}-\frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod\vect{u}}\,\vect{u}\dotprod \vect{u} \\
+    &=& \vect{u}\dotprod\vect{v}-\vect{u}\dotprod \vect{v} \\
     &=& 0.
   \end{eqnarray*}
   To show uniqueness, suppose that {\eqref{projection}} holds and
   $\vect{v}_{\coll}= k \vect{u}$.  Taking the dot product of both
   sides of {\eqref{projection}} with $\vect{u}$ and using
-  $\vect{v}_{\bot }\dotprod \vect{u}=0$, this yields
+  $\vect{u}\dotprod\vect{v}_{\bot}=0$, this yields
   \begin{equation*}
     \begin{array}{ll}
-      \vect{v}\dotprod \vect{u} & = ( \vect{v}_{\coll}+\vect{v}_{\bot }) \dotprod \vect{u} \\
-                                & =  k\vect{u} \dotprod \vect{u} + \vect{v}_{\bot} \dotprod \vect{u} \\
-                                & = k \norm{\vect{u}} ^{2},
+      \vect{u}\dotprod \vect{v} & = \vect{u}\dotprod( \vect{v}_{\coll}+\vect{v}_{\bot }) \\
+                                & =  \vect{u} \dotprod k\vect{u} + \vect{u}\dotprod\vect{v}_{\bot} \\
+                                & = k \norm{\vect{u}}^{2},
     \end{array}
   \end{equation*}
-  which requires
-  $k =\vect{v}\dotprod \vect{u} / \norm{\vect{u}} ^{2}$.  Thus there
+  which implies
+  $k =\vect{u}\dotprod \vect{v} / \norm{\vect{u}} ^{2}$.  Thus there
   can be no more than one such vector $\vect{v}_{\coll}$. Since
   $\vect{v}_{\bot}$ must equal $\vect{v}-\vect{v}_{\coll}$, it follows
   that there can be no more than one choice for both
@@ -246,7 +248,7 @@ $\vect{u}$, and the other of which is orthogonal to $\vect{u}$.
   \begin{equation*}
     \vect{a} ~=~ \vect{v}_{\coll}
     ~=~ \func{proj}_{\vect{u}}\paren{\vect{v}}
-    ~=~ \frac{\vect{v}\dotprod \vect{u}}{\vect{u}\dotprod \vect{u}}\, \vect{u}
+    ~=~ \frac{\vect{u}\dotprod \vect{v}}{\vect{u}\dotprod \vect{u}}\, \vect{u}
     ~=~ \frac{11}{9}\, \begin{mymatrix}{r} 1\\2\\-2 \end{mymatrix}
     ~=~ \begin{mymatrix}{r} 11/9\\22/9\\-22/9 \end{mymatrix}
   \end{equation*}
