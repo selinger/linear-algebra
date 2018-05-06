@@ -325,18 +325,6 @@ the following property:
   so that $a_i = \iprod{\vect{u}_i,\vect{v}}$.
 \end{proof}
 
-The proposition shows that if $\set{\vect{u}_1,\ldots,\vect{u}_n}$ is
-an orthogonal basis, then we can solve
-$\vect{v} = a_1\vect{u}_1 + \ldots + a_n\vect{u}_n$ without having to
-solve a system of equations. This is very useful, although perhaps it
-is merely a convenience (if we have to solve a system of equations, it
-is also fine). However, there is another very useful property of
-Fourier coefficients. The coefficient $a_i$ only depends on the basis
-vector $\vect{u}_i$, and not on any of the other basis vectors. This
-is very useful in situations where only {\em part} of an orthogonal
-basis is known. We can calculate the corresponding coefficients
-without having to wait for the rest of the basis.
-
 \begin{example}{Fourier coefficients}{fourier-coefficients}
   Suppose $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$ is an orthogonal
   basis for an inner product space $V$, such that
@@ -368,6 +356,48 @@ without having to wait for the rest of the basis.
         ~=~ \frac{\iprod{\vect{u}_3,\vect{v}}}{\norm{\vect{u}_3}^2}
         ~=~ \frac{2}{4} ~=~ 0.5.
   \end{eqnarray*}
+\end{solution}
+
+Proposition~\ref{prop-fourier-coefficients} shows that if
+$\set{\vect{u}_1,\ldots,\vect{u}_n}$ is an orthogonal basis, then we
+can solve $\vect{v} = a_1\vect{u}_1 + \ldots + a_n\vect{u}_n$ without
+having to solve a system of equations. While this is a useful thing to
+be able to do, perhaps it is merely a convenience (solving a system of
+equations would also be fine). However, there is another very useful
+property of Fourier coefficients. The coefficient $a_i$ only depends
+on the basis vector $\vect{u}_i$, and not on any of the other basis
+vectors. This is useful in situations where only {\em part} of an
+orthogonal basis is known. We can calculate the corresponding
+coefficients without having to know the rest of the basis.
+
+\begin{example}{Finding partial coordinates}{partial-coordinates}
+  Suppose $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3,\vect{u}_4}$ is an
+  orthogonal basis of $\R^4$. We have been told that
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{c} 1 \\ 2 \\ -1 \\ 0 \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{u}_2 = \begin{mymatrix}{c} 0 \\ 1 \\ 2 \\ 3 \end{mymatrix},
+  \end{equation*}
+  but it is not known what $\vect{u}_3$ and $\vect{u}_4$ are. Find the
+  first two coordinates of the vector
+  \begin{equation*}
+    \vect{v} = \begin{mymatrix}{c} 1 \\ 0 \\ 2 \\ 0 \end{mymatrix}
+  \end{equation*}
+  with respect to the basis $B$.
+\end{example}
+
+\begin{solution}
+  We have $\vect{v} = a_1\vect{u}_1 + a_2\vect{u}_2 + a_3\vect{u}_3 +
+  a_4\vect{u}_4$, where
+  \begin{equation*}
+    a_1
+    = \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}}
+    = \frac{-1}{6}
+    \quad\mbox{and}\quad
+    a_2
+    = \frac{\iprod{\vect{u}_2,\vect{v}}}{\iprod{\vect{u}_2,\vect{u}_2}}
+    = \frac{4}{14}.
+  \end{equation*}
 \end{solution}
 
 Orthonormal bases allow us to make a close connection between
