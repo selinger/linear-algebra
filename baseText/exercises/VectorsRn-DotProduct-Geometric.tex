@@ -53,24 +53,22 @@
 \end{ex}
 
 \begin{ex}
-  Show that the triangle with vertices $A=(2,0,-3)$, $B=(5,-2,1)$ and
-  $C=(7,5,3)$ is a right triangle.
+  Use the formula given in Proposition~\ref{prop:dot-product-angle} to
+  verify the Cauchy Schwarz inequality and to show that equality
+  occurs if and only if one of the vectors is a scalar multiple of the
+  other.
   \begin{sol}
-    This triangle has sides $\overrightarrow{AB}$,
-    $\overrightarrow{BC}$, $\overrightarrow{CA}$. The direction of the
-    sides does not matter, since scalar multiplication preserves
-    orthogonality.
-    \begin{align*}
-      \overrightarrow{PQ}&=(5,-2,1)-(2,0,3)=(3,-2,4),\\
-      \overrightarrow{QR}&=(7,5,3)-(5,-2,1)=(2,7,2),\\
-      \overrightarrow{RP}&=(2,0,-3)-(7,5,3)=(-5,-5,-6).
-    \end{align*}
-    If any pair of these is orthogonal then we are done:
+    This formula says that
+    $\vect{u}\dotprod \vect{v}=\norm{ \vect{u}} \norm{\vect{v}} \cos
+    \theta$ where $ \theta $ is the included angle between the two
+    vectors. Thus
     \begin{equation*}
-      \overrightarrow{AB}\cdot\overrightarrow{BC}
-      =(3,-2,4)\cdot (2,7,2)=6-14+8=0.
+      \norm{\vect{u}\dotprod \vect{v}} =\norm{\vect{u}}
+      \norm{\vect{v}} \norm{\cos \theta} \leq
+      \norm{\vect{u}} \norm{\vect{v}}
     \end{equation*}
-    The triangle has a right angle at $B$.
+    and equality holds if and only if $\theta =0$ or $\pi$. This means
+    that the two vectors either point in the same direction or
+    opposite directions. Hence one is a multiple of the other.
   \end{sol}
 \end{ex}
-

@@ -1,0 +1,22 @@
+\begin{ex}
+  Show that the triangle with vertices $A=(2,0,-3)$, $B=(5,-2,1)$ and
+  $C=(7,5,3)$ is a right triangle.
+  \begin{sol}
+    This triangle has sides $\overrightarrow{AB}$,
+    $\overrightarrow{BC}$, $\overrightarrow{CA}$. The direction of the
+    sides does not matter, since scalar multiplication preserves
+    orthogonality.
+    \begin{align*}
+      \overrightarrow{PQ}&=(5,-2,1)-(2,0,3)=(3,-2,4),\\
+      \overrightarrow{QR}&=(7,5,3)-(5,-2,1)=(2,7,2),\\
+      \overrightarrow{RP}&=(2,0,-3)-(7,5,3)=(-5,-5,-6).
+    \end{align*}
+    If any pair of these is orthogonal then we are done:
+    \begin{equation*}
+      \overrightarrow{AB}\cdot\overrightarrow{BC}
+      =(3,-2,4)\cdot (2,7,2)=6-14+8=0.
+    \end{equation*}
+    The triangle has a right angle at $B$.
+  \end{sol}
+\end{ex}
+
