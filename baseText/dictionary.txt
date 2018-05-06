@@ -106,9 +106,11 @@ HL
 homo
 Hooke's
 hs
+http
 https
 hyperplane
 hyperplanes
+IAMpH
 Ichabod
 idempotent
 II
@@ -258,6 +260,7 @@ Volterra
 VXUAJYY
 wp
 www
+xF
 xlabel
 xmax
 xmin
