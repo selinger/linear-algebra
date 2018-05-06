@@ -31,9 +31,8 @@ In this section, we fix $K$ to be the field of real numbers.
     $\iprod{\vect{u},\vect{v}} = \iprod{\vect{v},\vect{u}}$.
   \item Linearity:%
     \index{linearity!of inner product}
-    $\iprod{\vect{u},k\vect{v}} = k\iprod{\vect{u},\vect{v}}$ and
-    $\iprod{\vect{u},\vect{v}+\vect{v}'} = \iprod{\vect{u},\vect{v}} +
-    \iprod{\vect{u},\vect{v}'}$.
+    $\iprod{\vect{u},k\vect{v}+\ell\vect{w}}
+    = k\iprod{\vect{u},\vect{v}}+\ell\iprod{\vect{u},\vect{w}}$.
   \item The positive definite property:%
     \index{positive definite property}
     $\iprod{\vect{u},\vect{u}} \geq 0$, and moreover,
@@ -87,18 +86,10 @@ product. The following is an example.
   symmetric matrix, i.e., $A^T=A$.
   For linearity, note that, by properties of matrix multiplication,
   \begin{equation*}
-    \iprod{\vect{u},k\vect{v}}
-    ~=~ \vect{u}^T A(k\vect{v})
-    ~=~ k\vect{u}^T A\vect{v}
-    ~=~ k\iprod{\vect{u},\vect{v}}
-  \end{equation*}
-  and
-  \begin{equation*}
-    \iprod{\vect{u},\vect{v}+\vect{v}'}
-    ~=~ \vect{u}^T A(\vect{v}+\vect{v}')
-    ~=~ \vect{u}^T A\vect{v}+\vect{u}^T A\vect{v}'
-    ~=~ \iprod{\vect{u},\vect{v}} +
-    \iprod{\vect{u},\vect{v}'}.
+    \iprod{\vect{u},k\vect{v}+\ell\vect{w}}
+    ~=~ \vect{u}^T A(k\vect{v}+\ell\vect{w})
+    ~=~ k\vect{u}^T A\vect{v} + \ell\vect{u}^T A\vect{w}
+    ~=~ k\iprod{\vect{u},\vect{v}} + \ell\iprod{\vect{u},\vect{w}}.
   \end{equation*}
   For the positive definite property, we have
   \begin{equation*}
@@ -142,19 +133,11 @@ product. The following is an example.
   \end{equation*}
   For linearity, we have
   \begin{equation*}
-    \iprod{f,kg}
-    ~=~ \int_a^b f(x)kg(x)\,dx
-    ~=~ k\int_a^b f(x)g(x)\,dx
-    ~=~ k\iprod{f,g}.
+    \iprod{f,kg+\ell h}
+    ~=~ \int_a^b f(x)(kg(x)+\ell h(x))\,dx
+    ~=~ k\int_a^b f(x)g(x)\,dx+\ell\int_a^b f(x)h(x)\,dx
+    ~=~ k\iprod{f,g}+\ell\iprod{f,h}.
   \end{equation*}
-  and
-  \begin{eqnarray*}
-    \iprod{f,g_1+g_2}
-    &=& \int_a^b f(x)(g_1(x)+g_2(x))\,dx \\
-    &=& \int_a^b f(x)g_1(x) + f(x)g_2(x)\,dx \\
-    &=& \int_a^b f(x)g_1(x)\,dx + \int_a^b f(x)g_2(x)\,dx \\
-    &=& \iprod{f,g_1} + \iprod{f,g_2}.
-  \end{eqnarray*}
   For the positive definite property, we have
   \begin{equation*}
     \iprod{f,f}
@@ -211,25 +194,19 @@ holds.
 
 \begin{proposition}{Left linearity}{inner-product-left-linearity}
   Let $V$ be an inner product space. Then
-  $\iprod{k\vect{u},\vect{v}} = k\iprod{\vect{u},\vect{v}}$ and
-  $\iprod{\vect{u}+\vect{u}',\vect{v}} = \iprod{\vect{u},\vect{v}} +
-  \iprod{\vect{u}',\vect{v}}$.
+  $\iprod{k\vect{u}+\ell\vect{v},\vect{w}}
+  = k\iprod{\vect{u},\vect{w}} + \ell\iprod{\vect{v},\vect{w}}$.
 \end{proposition}
 
 \begin{proof}
   This follows directly from symmetry. We have
   \begin{equation*}
-    \iprod{k\vect{u},\vect{v}}
-    = \iprod{\vect{v},k\vect{u}}
-    = k\iprod{\vect{v},\vect{u}}
-    = k\iprod{\vect{u},\vect{v}}
-  \end{equation*}
-  and
-  \begin{equation*}
-    \iprod{\vect{u}+\vect{u}',\vect{v}}
-    = \iprod{\vect{v},\vect{u}+\vect{u}'}
-    = \iprod{\vect{v},\vect{u}} + \iprod{\vect{v},\vect{u}'}
-    = \iprod{\vect{u},\vect{v}} + \iprod{\vect{u}',\vect{v}}
+    \iprod{k\vect{u}+\ell\vect{v},\vect{w}}
+    = \iprod{\vect{w},k\vect{u}+\ell\vect{v}}
+    = k\iprod{\vect{w},\vect{u}}
+    + \ell\iprod{\vect{w},\vect{v}}
+    = k\iprod{\vect{u},\vect{w}}
+    + \ell\iprod{\vect{v},\vect{w}}.
   \end{equation*}
 \end{proof}
 
