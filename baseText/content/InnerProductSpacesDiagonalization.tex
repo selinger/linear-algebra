@@ -140,7 +140,7 @@ symmetric matrices.
   \end{equation*}
   where $C$ is a symmetric matrix of dimension $n-1$. By induction
   hypothesis, $C$ is orthogonally diagonalizable, i.e., there exists
-  an orthogonal matrix $R$ such that $R^{-1}CR$ is diagonal. Let
+  an orthogonal matrix $R$ such that $R^{-1}CR=D$ is diagonal. Let
   \begin{equation*}
     S = \begin{mymatrix}{c|ccc}
       1 & 0 & \cdots & 0 \\\hline
@@ -149,10 +149,32 @@ symmetric matrices.
       0 &  & & \\
     \end{mymatrix}.
   \end{equation*}
-  Then $S$ is orthogonal and $S^{-1}BS$ is diagonal, say
-  $S^{-1}BS = D$. Let $P=QS$. Then $P$ is orthogonal, and we have
+  Then $S$ is orthogonal by
+  Proposition~\ref{prop:properties-orthogonal}(\ref{item:properties-orthogonal-d}).
+  Let $E = S^{-1}BS$. Then
   \begin{equation*}
-    P^{-1}AP = S^{-1}Q^{-1}AQS = S^{-1}BS = D.
+    E =
+    S^{-1}BS =
+    \begin{mymatrix}{c|ccc}
+      \eigenvar & 0 & \cdots & 0 \\\hline
+      0 &  & & \\
+      \vdots & & R^{-1}CR & \\
+      0 &  & & \\
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{c|ccc}
+      \eigenvar & 0 & \cdots & 0 \\\hline
+      0 &  & & \\
+      \vdots & & D & \\
+      0 &  & & \\
+    \end{mymatrix}.
+  \end{equation*}
+  Therefore, $E$ is diagonal. Let $P=QS$. Then $P$ is orthogonal
+  by
+  Proposition~\ref{prop:properties-orthogonal}(\ref{item:properties-orthogonal-a}). Moreover,
+  we have
+  \begin{equation*}
+    P^{-1}AP = S^{-1}Q^{-1}AQS = S^{-1}BS = E.
   \end{equation*}
   Therefore, $A$ is orthogonally diagonalizable.
 \end{proof}

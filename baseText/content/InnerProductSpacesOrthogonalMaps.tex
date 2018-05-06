@@ -433,3 +433,25 @@ whether an $n\times n$-matrix $P$ is orthogonal.
   matrix. The columns of $D$ are normalized, but not orthogonal, so
   $D$ is not an orthogonal matrix either.
 \end{solution}
+
+\begin{proposition}{Properties of orthogonal matrices}{properties-orthogonal}
+  \begin{enumialphparenastyle}
+  \begin{enumerate}
+  \item\label{item:properties-orthogonal-a}
+    If $P,Q$ are orthogonal $n\times n$-matrices, then $PQ$ is
+    orthogonal.
+  \item The identity matrix is orthogonal.
+  \item If $P$ is orthogonal, then so is $P^{-1}$.
+  \item\label{item:properties-orthogonal-d}
+    If $P$ is an orthogonal $n\times n$-matrix and $Q$ is an
+    orthogonal $m\times m$-matrix, then the $(n+m)\times(n+m)$-matrix
+    \begin{equation*}
+      \begin{mymatrix}{c|c}
+        P & 0 \\\hline
+        0 & Q
+      \end{mymatrix}
+    \end{equation*}
+    is orthogonal.
+    \end{enumerate}
+  \end{enumialphparenastyle}
+\end{proposition}
