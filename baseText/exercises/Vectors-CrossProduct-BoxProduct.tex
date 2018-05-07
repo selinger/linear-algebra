@@ -28,8 +28,7 @@
 \begin{ex}
   Which of the following systems of vectors
   $\vect{u},\vect{v},\vect{w}$ are right-handed? Which are
-  left-handed? Which are coplanar (i.e., neither right-handed nor
-  left-handed: the three vectors line in a plane)?
+  left-handed? Which are coplanar?
   \begin{enumerate}
   \item $\vect{u}=\mat{1,0,1}^T$, $\vect{v}=\mat{1,2,0}^T$, $\vect{w}=\mat{0,0,1}^T$.
   \item $\vect{u}=\mat{0,1,1}^T$, $\vect{v}=\mat{-1,2,0}^T$, $\vect{w}=\mat{1,1,2}^T$.
@@ -37,25 +36,27 @@
   \item $\vect{u}=\mat{1,0,0}^T$, $\vect{v}=\mat{1,2,0}^T$, $\vect{w}=\mat{2,0,-1}^T$.
   \end{enumerate}
   \begin{sol}
-  \item We have
-    $\boxprod{\vect{u},\vect{v},\vect{w}} = (\vect{u}\times\vect{v})
-    \dotprod \vect{w} = \mat{-2,1,2}^T\dotprod\mat{0,0,1}^T=2$, so
-    the box product is positive. This means that the system of vectors
-    $\vect{u},\vect{v},\vect{w}$ is right-handed.
-  \item We have
-    $\boxprod{\vect{u},\vect{v},\vect{w}} = (\vect{u}\times\vect{v})
-    \dotprod \vect{w} = \mat{-2,-1,1}^T\dotprod\mat{1,1,2}^T=-1$, so
-    the box product is negative and the system is left-handed.
-  \item We have
-    $\boxprod{\vect{u},\vect{v},\vect{w}} = (\vect{u}\times\vect{v})
-    \dotprod \vect{w} = \mat{-1,-1,1}^T\dotprod\mat{3,1,4}^T=0$, so
-    the box product is zero. This means that the volume of the
-    parallelepiped spanned by $\vect{u},\vect{v},\vect{w}$ is empty,
-    i.e., the vectors are coplanar.
-  \item We have
-    $\boxprod{\vect{u},\vect{v},\vect{w}} = (\vect{u}\times\vect{v})
-    \dotprod \vect{w} = \mat{0,0,2}^T\dotprod\mat{2,0,-1}^T=-2$, so
-    the box product is negative and the system is left-handed.
+    \begin{enumerate}
+    \item We have
+      $\boxprod{\vect{u},\vect{v},\vect{w}} = (\vect{u}\times\vect{v})
+      \dotprod \vect{w} = \mat{-2,1,2}^T\dotprod\mat{0,0,1}^T=2$, so
+      the box product is positive. This means that the system of vectors
+      $\vect{u},\vect{v},\vect{w}$ is right-handed.
+    \item We have
+      $\boxprod{\vect{u},\vect{v},\vect{w}} = (\vect{u}\times\vect{v})
+      \dotprod \vect{w} = \mat{-2,-1,1}^T\dotprod\mat{1,1,2}^T=-1$, so
+      the box product is negative and the system is left-handed.
+    \item We have
+      $\boxprod{\vect{u},\vect{v},\vect{w}} = (\vect{u}\times\vect{v})
+      \dotprod \vect{w} = \mat{-1,-1,1}^T\dotprod\mat{3,1,4}^T=0$, so
+      the box product is zero. This means that the volume of the
+      parallelepiped spanned by $\vect{u},\vect{v},\vect{w}$ is empty,
+      i.e., the vectors are coplanar.
+    \item We have
+      $\boxprod{\vect{u},\vect{v},\vect{w}} = (\vect{u}\times\vect{v})
+      \dotprod \vect{w} = \mat{0,0,2}^T\dotprod\mat{2,0,-1}^T=-2$, so
+      the box product is negative and the system is left-handed.
+    \end{enumerate}
   \end{sol}
 \end{ex}
 
