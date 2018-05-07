@@ -273,6 +273,83 @@ simplify the calculations, as the following example shows.
   }$.
 \end{solution}
 
+In the next example, we will consider $\R^n$, but with a non-standard
+inner product.
+
+\begin{example}{Gram-Schmidt orthogonalization procedure, non-standard inner product}{gram-schmidt-non-standard}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{ccc}
+      1 & 2 & -2 \\
+      2 & 6 & -1 \\
+      -2 & -1 & 9 \\
+    \end{mymatrix},
+  \end{equation*}
+  and consider the vector space $\R^3$ with the inner product given by
+  $\iprod{\vect{v},\vect{w}} = \vect{v}^T A\vect{w}$.
+  Let
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix},
+    \quad
+    \vect{v}_2 = \begin{mymatrix}{c} 0 \\ 1 \\ 0 \end{mymatrix},
+    \quad\mbox{and}\quad
+    \vect{v}_3 = \begin{mymatrix}{c} 0 \\ 0 \\ 1 \end{mymatrix}.
+  \end{equation*}
+  Apply the Gram-Schmidt procedure to
+  $\vect{v}_1,\vect{v}_2,\vect{v}_3$ to find an orthogonal basis
+  $\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$ for $\R^3$ with respect to
+  the above inner product.
+\end{example}
+
+\begin{solution}
+  As usual, we start with
+  \begin{eqnarray*}
+    \vect{u}_1 &=& \vect{v}_1 = \begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix}.
+  \end{eqnarray*}
+  Next, we calculate
+  \begin{eqnarray*}
+    \iprod{\vect{u}_1,\vect{v}_2} &=& \vect{u}_1^TA\vect{v}_2 = 2, \\
+    \iprod{\vect{u}_1,\vect{u}_1} &=& \vect{u}_1^TA\vect{u}_1 = 1.
+  \end{eqnarray*}
+  Therefore,
+  \begin{eqnarray*}
+    \vect{u}_2
+    &=& \vect{v}_2
+        - \frac{\iprod{\vect{u}_1,\vect{v}_2}}{\iprod{\vect{u}_1,\vect{u}_1}} \vect{u}_1
+        = \begin{mymatrix}{c} 0 \\ 1 \\ 0 \end{mymatrix}
+    - \frac{2}{1} \begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix}
+    = \begin{mymatrix}{c} -2 \\ 1 \\ 0 \end{mymatrix}.
+  \end{eqnarray*}
+  Finally, we calculate
+  \begin{eqnarray*}
+    \iprod{\vect{u}_1,\vect{v}_3} &=& \vect{u}_1^TA\vect{v}_3 = -2, \\
+    \iprod{\vect{u}_2,\vect{v}_3} &=& \vect{u}_2^TA\vect{v}_3 = 3, \\
+    \iprod{\vect{u}_2,\vect{u}_2} &=& \vect{u}_2^TA\vect{u}_2 = 2.
+  \end{eqnarray*}
+  Therefore,
+  \begin{eqnarray*}
+    \vect{u}_3
+    &=& \vect{v}_3
+        - \frac{\iprod{\vect{u}_1,\vect{v}_3}}{\iprod{\vect{u}_1,\vect{u}_1}} \vect{u}_1
+        - \frac{\iprod{\vect{u}_2,\vect{v}_3}}{\iprod{\vect{u}_2,\vect{u}_2}} \vect{u}_2
+        = \begin{mymatrix}{c} 0 \\ 0 \\ 1 \end{mymatrix}
+    - \frac{-2}{1} \begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix}
+    - \frac{3}{2} \begin{mymatrix}{c} -2 \\ 1 \\ 0 \end{mymatrix}
+    = \begin{mymatrix}{c} 5 \\ -3/2 \\ 1 \end{mymatrix}.
+  \end{eqnarray*}
+  So the desired orthogonal basis is
+  \begin{equation*}
+    \set{\vect{u}_1,\vect{u}_2,\vect{u}_3}
+    = \set{
+      \begin{mymatrix}{c} 1 \\ 0 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{c} -2 \\ 1 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{c} 5 \\ -3/2 \\ 1 \end{mymatrix}
+    }.
+  \end{equation*}
+  Note that it is not orthogonal with respect to the dot product, but
+  with respect to the inner product defined above.
+\end{solution}
+
 \begin{example}{Legendre polynomials}{legendre-polynomials}
   Consider the vector space $\Poly$ of polynomials, with the inner product
   \begin{equation*}
