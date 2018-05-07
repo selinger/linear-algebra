@@ -1,0 +1,36 @@
+\begin{ex}
+  Solve the following system of equations by using the inverse of a suitable matrix.
+  \begin{equation*}
+    \begin{array}{c}
+      8x + 2y + 3z = -1 \\
+      y - 2z = 2 \\
+      x + z = 1
+    \end{array}
+  \end{equation*}
+  \begin{sol}
+    The system can be written in matrix form as $A\vect{v}=\vect{b}$,
+    where
+    \begin{equation*}
+      A = \begin{mymatrix}{ccc}
+        8 & 2 & 3 \\
+        0 & 1 & -2 \\
+        1 & 0 & 1 \\
+      \end{mymatrix}
+      \quad\mbox{and}\quad
+      \vect{b} = \begin{mymatrix}{c} -1 \\ 2 \\ 1 \end{mymatrix}.
+    \end{equation*}
+    The inverse of $A$ is
+    \begin{equation*}
+      A^{-1} = \begin{mymatrix}{ccc}
+        1 & -2 & -7 \\
+        -2 & 5 & 16 \\
+        -1 & 2 & 8 \\
+      \end{mymatrix}.
+    \end{equation*}
+    Therefore,
+    \begin{equation*}
+      \vect{v} = A^{-1}\vect{b} =
+      \begin{mymatrix}{c} -12 \\ 28 \\ 13 \end{mymatrix}.
+    \end{equation*}
+  \end{sol}
+\end{ex}
