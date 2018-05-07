@@ -1,0 +1,127 @@
+\subsection{Right and left inverses}
+
+So far, we have only talked about the inverses of square matrices. But
+what about matrices that are not square? Can they be invertible? It
+turns out that non-square matrices can never be invertible. However,
+they can have left inverses or right inverses.
+
+\begin{definition}{Left and right inverses}{left-and-right-inverse}
+  Let $A$ be an $m\times n$-matrix and $B$ an $n\times m$-matrix.
+  We say that $B$ is a \textbf{left inverse}%
+  \index{inverse!left inverse}\index{left inverse}%
+  \index{matrix!left inverse}\index{matrix!inverse!left inverse} of
+  $A$ if
+  \begin{equation*}
+    BA=I.
+  \end{equation*}
+  We say that $B$ is a \textbf{right inverse}%
+  \index{inverse!right inverse}\index{right inverse}%
+  \index{matrix!right inverse}\index{matrix!inverse!right inverse} of
+  $A$ if
+  \begin{equation*}
+    AB=I.
+  \end{equation*}
+  If $A$ has a left inverse, we also say that $A$ is
+  \textbf{left invertible}. Similarly, if $A$ has a right inverse, we
+  say that $A$ is \textbf{right invertible}.
+\end{definition}
+
+\begin{example}{Right inverse}{right-inverse}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+    \end{mymatrix}
+    \quad\mbox{and}\quad
+    B = \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1 \\
+      0 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Show that $B$ is a right inverse, but not a left inverse, of $A$.
+\end{example}
+
+\begin{solution}
+  We compute
+  \begin{equation*}
+    AB
+    ~=~ \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+    \end{mymatrix}
+    \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1 \\
+      0 & 0 \\
+    \end{mymatrix}
+    ~=~ \begin{mymatrix}{rrr}
+      1 & 0 \\
+      0 & 1 \\
+    \end{mymatrix}
+    ~=~ I,
+  \end{equation*}
+  \begin{equation*}
+    BA
+    ~=~ \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1 \\
+      0 & 0 \\
+    \end{mymatrix}
+    \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+    \end{mymatrix}
+    ~=~ \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 0 \\
+    \end{mymatrix}
+    ~\neq~ I.
+  \end{equation*}
+  Therefore, $B$ is a right inverse, but not a left inverse, of $A$.
+\end{solution}
+
+Recall from Definition~\ref{def:invertible-matrix} that $B$ is called
+an \textbf{inverse}%
+\index{inverse!of a matrix}\index{matrix!inverse} of $A$ if it is both
+a left inverse and a right inverse. A crucial fact is that invertible
+matrices are always square.
+
+\begin{theorem}{Invertible matrices are square}{invertible-square}
+  Let $A$ be an $m\times n$-matrix.
+  \begin{itemize}
+  \item If $A$ is left invertible, then $m\geq n$.
+  \item If $A$ is right invertible, then $m\leq n$.
+  \item If $A$ is invertible, then $m=n$.
+  \end{itemize}
+  In particular, only square matrices can be invertible.
+\end{theorem}
+
+\begin{proof}
+  To prove the first claim, assume that $A$ is left invertible, i.e.,
+  assume that $BA=I$ for some $n\times m$-matrix $B$. We must show
+  that $m\geq n$. Assume, for the sake of obtaining a contradiction,
+  that this is not the case, i.e., that $m<n$. Then the matrix $A$ has
+  more columns than rows. It follows that the homogeneous system of
+  equations $A\vect{x}=\vect{0}$ has a non-trivial solution; let
+  $\vect{x}$ be such a solution. We obtain a contradiction by a
+  similar method as in
+  Example~\ref{exa:non-invertible-matrix}. Namely, we have
+  \begin{equation*}
+    \vect{x} ~=~ I\,\vect{x} ~=~ (BA)\vect{x} ~=~ B(A\vect{x}) ~=~ B\vect{0} ~=~
+    \vect{0},
+  \end{equation*}
+  contradicting the fact that $\vect{x}$ was non-trivial.  Since we
+  got a contradiction from the assumption that $m<n$, it follows that
+  $m\geq n$.
+
+  The second claim is proved similarly, but exchanging the roles of
+  $A$ and $B$.  The third claim follows directly from the first two
+  claims, because every invertible matrix is both left and right
+  invertible.
+\end{proof}
+
+Of course, not all square matrices are invertible. In particular, zero
+matrices are not invertible, along with many other square matrices.

@@ -1,0 +1,151 @@
+\subsection{Definition and uniqueness}
+
+We now define a matrix operation which in some ways plays the role
+of division. We cannot divide by a matrix, but we can multiply by the
+inverse of a matrix, which is almost as good.
+
+\begin{definition}{The inverse of a matrix}{invertible-matrix}
+  Let $A$ and $B$ be $n\times n$-matrices. We say that $B$ is an
+  \textbf{inverse}\index{inverse!of a matrix}%
+  \index{matrix!inverse} of $A$ if
+  \begin{equation*}
+    BA=I\quad\mbox{and}\quad
+    AB=I.
+  \end{equation*}
+  If this is the case, we also write $B=A^{-1}$. When a matrix has an
+  inverse, it is called \textbf{invertible}\index{matrix!invertible}%
+  \index{invertible matrix}.
+\end{definition}
+
+\begin{example}{Verifying the inverse of a matrix}{verifying-inverse}
+  Let $A=\begin{mymatrix}{rr}
+    1 & 1 \\
+    1 & 2
+  \end{mymatrix}$. Check that $B=\begin{mymatrix}{rr}
+    2 & -1 \\
+    -1 & 1
+  \end{mymatrix}$ is an inverse of $A$.
+\end{example}
+
+\begin{solution}
+  To check this, multiply
+  \begin{equation*}
+    AB = \begin{mymatrix}{rr}
+      1 & 1 \\
+      1 & 2
+    \end{mymatrix} \begin{mymatrix}{rr}
+      2 & -1 \\
+      -1 & 1
+    \end{mymatrix} =\allowbreak \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1
+    \end{mymatrix} = I
+  \end{equation*}
+  and
+  \begin{equation*}
+    BA = \begin{mymatrix}{rr}
+      2 & -1 \\
+      -1 & 1
+    \end{mymatrix} \begin{mymatrix}{rr}
+      1 & 1 \\
+      1 & 2
+    \end{mymatrix} =\allowbreak \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 1
+    \end{mymatrix} = I.
+  \end{equation*}
+  This shows that $B$ is indeed an inverse of $A$.
+\end{solution}
+
+Unlike multiplication of scalars, it can happen that $A\neq 0$ but $A$
+does not have an inverse. This is illustrated in the following
+example.
+
+\begin{example}{A non-zero matrix with no inverse}{non-invertible-matrix}
+  Let $A=\begin{mymatrix}{rr}
+    1 & 1 \\
+    1 & 1
+  \end{mymatrix}$. Show that $A$ is not invertible.
+\end{example}
+
+\begin{solution}
+  One might think $A$ has an inverse because it does not equal zero.
+  However, note that
+  \begin{equation*}
+    \begin{mymatrix}{rr}
+      1 & 1 \\
+      1 & 1
+    \end{mymatrix} \begin{mymatrix}{r}
+      -1 \\
+      1
+    \end{mymatrix} =\begin{mymatrix}{r}
+      0 \\
+      0
+    \end{mymatrix}.
+  \end{equation*}
+  If an inverse $A^{-1}$ existed, we would have the following:
+  \begin{eqnarray*}
+    \begin{mymatrix}{r}
+      -1 \\
+      1
+    \end{mymatrix}
+    &=&
+        I\begin{mymatrix}{r}
+          -1 \\
+          1
+        \end{mymatrix} \\
+    &=&
+        (A^{-1}A) \begin{mymatrix}{r}
+          -1 \\
+          1
+        \end{mymatrix} \\
+    &=&
+        A^{-1}\paren{A\begin{mymatrix}{r}
+            -1 \\
+            1
+          \end{mymatrix}} \\
+    &=&
+        A^{-1}\paren{\begin{mymatrix}{r}
+            0 \\
+            0
+          \end{mymatrix}} \\
+    &=&
+        \begin{mymatrix}{r}
+          0 \\
+          0
+        \end{mymatrix}.
+\end{eqnarray*}
+  This says that
+  \begin{equation*}
+    \begin{mymatrix}{r}
+      -1 \\
+      1
+    \end{mymatrix}
+    =
+    \begin{mymatrix}{r}
+      0 \\
+      0
+    \end{mymatrix},
+  \end{equation*}
+  which is impossible! Therefore, $A$ does not have an inverse.
+\end{solution}
+
+Can a matrix have more than one inverse? It turns out that this is not
+the case: the following theorem shows that if $A$ has an inverse, then
+the inverse is unique. We can therefore speak of ``the'' inverse,
+rather than just ``an'' inverse, of $A$.
+
+\begin{theorem}{Uniqueness of inverse}{unique-inverse}
+  Suppose $A$ is an $n\times n$-matrix such that both $B$ and $C$ are
+  inverses of $A$. Then $B=C$.
+\end{theorem}
+
+\begin{proof}
+  By assumption, both $B$ and $C$ are inverses of $A$, so we have
+  $AB=I$, $BA=I$, $AC=I$, and $CA=I$. Using the associative and unit
+  properties of matrix multiplication, we have:
+  \begin{equation*}
+    B = BI = B(AC) = (BA)C = IC = C.
+  \end{equation*}
+  Therefore, $B=C$, as desired.
+\end{proof}
