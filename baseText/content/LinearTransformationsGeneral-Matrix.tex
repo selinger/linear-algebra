@@ -38,18 +38,23 @@ We will now see how to use bases and coordinates to encode any linear
 map between finite-dimensional vector spaces as a matrix. 
 
 \begin{proposition}{The matrix of a linear transformation}{matrix-of-linear-transformation-vector-space}
-  Let $V$ and $W$ be vector spaces over a field $K$. Assume
-  $B=\set{\vect{v}_1,\ldots,\vect{v}_n}$ is a basis of $V$, and
-  $C=\set{\vect{w}_1,\ldots,\vect{w}_m}$ is a basis of $W$.
-  Let $T:V\to W$ be a linear transformation. Then there exists a
-  unique $m\times n$-matrix $A$ such that for all $\vect{v}\in V$,
+  Let $V$ and $W$ be finite-dimensional vector spaces over a field
+  $K$. Assume $B$ is a basis of $V$ and $C$ is a basis of $W$.  Let
+  $T:V\to W$ be a linear transformation. Then there exists a unique
+  $m\times n$-matrix $A$ such that for all $\vect{v}\in V$,
   \begin{equation*}
     A\coord{\vect{v}}_B = \coord{T\vect{v}}_C.
   \end{equation*}
+  Moreover, $A$ can be computed as follows: the $i\th$ column of $A$
+  holds the coordinates of $T(\vect{v}_i)$, where $\vect{v}_i$ is the
+  $i\th$ vector of the basis $B$, and the coordinates are computed
+  with respect to the basis $C$.
 \end{proposition}
 
 \begin{proof}
-  By Theorem~\ref{thm:transformation-basis}, the linear transformation
+  Let $B=\set{\vect{v}_1,\ldots,T(\vect{v}_n}$ and
+  $C=\set{\vect{w}_1,\ldots,\vect{w}_m}$.  By
+  Theorem~\ref{thm:transformation-basis}, the linear transformation
   $T$ is completely determined by the images of the basis vectors,
   $T(\vect{v}_1),\ldots,T(\vect{v}_n)\in W$. Since
   $\set{\vect{w}_1,\ldots,\vect{w}_m}$ is a basis of $W$, we can write
