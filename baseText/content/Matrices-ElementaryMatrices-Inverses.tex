@@ -1,0 +1,57 @@
+\subsection{Inverses of elementary matrices}
+
+Suppose we have applied a row operation to a matrix $A$. Consider the
+row operation required to return $A$ to its original form, i.e., to
+undo the row operation. It turns out that this action is described by
+the inverse of an elementary matrix. The following theorem ensures
+that the inverse of each elementary matrix is itself an elementary
+matrix.
+
+\begin{theorem}{Inverses of elementary matrices}{inverse-elementary-matrix}
+  Every elementary matrix is invertible and its inverse is also an
+  elementary matrix%
+  \index{elementary matrix!inverse}%
+  \index{matrix!elementary matrix!inverse}.
+\end{theorem}
+
+In fact, the inverse of an elementary matrix is constructed by doing
+the {\em reverse }row operation on $I$. $E^{-1}$ is obtained by
+performing the row operation which would carry $E$ back to $I$.
+
+\begin{itemize}
+\item If $E$ is obtained by switching rows $i$ and $j$, then $E^{-1}$
+  is also obtained by switching rows $i$ and $j$.
+\item If $E$ is obtained by multiplying row $i$ by the scalar $k$,
+  then $E^{-1}$ is obtained by multiplying row $i$ by the scalar
+  $\frac{1}{k}$.
+\item If $E$ is obtained by adding $k$ times row $i$ to row $j$, then
+  $E^{-1}$ is obtained by subtracting $k$ times row $i$ from row $j$.
+\end{itemize}
+
+\begin{example}{Inverse of an elementary matrix}{inverse-elementary-matrix}
+  Find $E^{-1}$, where $E$ is the elementary matrix
+  \begin{equation*}
+    E
+    =
+    \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & 2
+    \end{mymatrix}
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  $E$ is obtained from the $2\times 2$ identity matrix by multiplying
+  the second row by $2$. In order to carry $E$ back to the identity,
+  we need to multiply the second row of $E$ by $\frac{1}{2}$.  Hence,
+  $E^{-1}$ is given by
+  \begin{equation*}
+    E^{-1}
+    =
+    \begin{mymatrix}{rr}
+      1 & 0 \\
+      0 & \frac{1}{2}
+    \end{mymatrix}.
+  \end{equation*}
+\end{solution}
+

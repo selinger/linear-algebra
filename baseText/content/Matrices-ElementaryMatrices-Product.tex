@@ -1,0 +1,126 @@
+\subsection{Writing an invertible matrix as a product of elementary matrices}
+
+Recall from Algorithm~\ref{algo:matrix-inversion-algorithm} that an
+$n\times n$-matrix $A$ is invertible if and only if $A$ can be carried
+to the $n\times n$ identity matrix using elementary row
+operations. Combining this with our discussion of elementary matrices
+we see that $A$ is invertible if and only if it can be written as a
+product of elementary matrices. This is the content of the following
+theorem.
+
+\begin{theorem}{Product of elementary matrices}{prod-elementary}
+  Let $A$ be an $n \times n$-matrix. Then $A$ is invertible if and
+  only if it can be written as a product of elementary matrices.
+\end{theorem}
+
+\begin{proof}
+  If $A$ is an invertible $n\times n$-matrix, then its {\rref} is the
+  $n\times n$ identity matrix $I$. By Theorem~\ref{thm:form-rua}, we
+  can write $I=UA$, where $U = E_k\cdots E_2E_1$ is a product of
+  elementary matrices. Then
+  \begin{equation*}
+    A ~=~ U^{-1} ~=~ E_1^{-1}E_2^{-1}\cdots E_k^{-1}.
+  \end{equation*}
+  By Theorem~\ref{thm:inverse-elementary-matrix}, if $E_i$ is an
+  elementary matrix, then so is $E_i^{-1}$. Therefore, $A$ has been
+  written as a product of elementary matrices. Conversely, if $A$ can
+  be written as a product of elementary matrices, then $A$ is clearly
+  invertible, because each elementary matrix is invertible.
+\end{proof}
+
+\begin{example}{Product of elementary matrices}{prod-elementary}
+  Let $A = \begin{mymatrix}{rrr}
+    0 &  1 & 0 \\
+    1 &  1 & 0 \\
+    0 & -2 & 1
+  \end{mymatrix}$.
+  Write $A$ as a product of elementary matrices.
+\end{example}
+
+\begin{solution}
+  Following the process of Theorem~\ref{thm:prod-elementary}, we first
+  row-reduce $A$ to its {\rref}, recording each row operation as an
+  elementary matrix.
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      0 & 1 & 0 \\
+      1 & 1 & 0 \\
+      0 & -2 & 1 \\
+    \end{mymatrix}
+    \quad\stackrel{R_1\rowswap R_2}{\roweq}\quad
+    \begin{mymatrix}{rrr}
+      1 & 1 & 0 \\
+      0 & 1 & 0 \\
+      0 & -2 & 1 \\
+    \end{mymatrix}
+    \quad\mbox{with elementary matrix}\quad
+    E_1 ~=~ \begin{mymatrix}{rrr}
+      0 & 1 & 0 \\
+      1 & 0 & 0 \\
+      0 & 0 & 1
+    \end{mymatrix},
+  \end{equation*}
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 1 & 0 \\
+      0 & 1 & 0 \\
+      0 & -2 & 1 \\
+    \end{mymatrix}
+    \quad\stackrel{R_1\rowop R_1-R_2}{\roweq}\quad
+    \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & -2 & 1 \\
+    \end{mymatrix}
+    \quad\mbox{with elementary matrix}\quad
+    E_2 ~=~  \begin{mymatrix}{rrr}
+      1 & -1 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{mymatrix},
+  \end{equation*}
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & -2 & 1 \\
+    \end{mymatrix}
+    \quad\stackrel{R_3\rowop R_3+2R_2}{\roweq}\quad
+    \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1 \\
+    \end{mymatrix}
+    \quad\mbox{with elementary matrix}\quad
+    E_3 ~=~ \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 2 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  Notice that the {\rref} of $A$ is $I$. Hence $I = UA$ where
+  $U=E_3E_2E_1$. It follows that
+  $A = U^{-1} = E_1^{-1}E_2^{-1}E_3^{-1}$, and so we have succeeded in
+  writing $A$ as a product of elementary matrices
+  \begin{equation*}
+    A
+    ~=~ E_1^{-1}E_2^{-1}E_3^{-1}
+    ~=~
+    \begin{mymatrix}{rrr}
+      0 & 1 & 0 \\
+      1 & 0 & 0 \\
+      0 & 0 & 1
+    \end{mymatrix}
+    \begin{mymatrix}{rrr}
+      1 & 1 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{mymatrix}
+    \begin{mymatrix}{rrr}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & -2 & 1
+    \end{mymatrix}.
+  \end{equation*}
+  In particular, it follows that $A$ is invertible.
+\end{solution}

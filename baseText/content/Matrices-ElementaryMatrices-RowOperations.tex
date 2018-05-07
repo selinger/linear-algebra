@@ -1,0 +1,221 @@
+\subsection{Elementary matrices and row operations}
+
+Recall from Definition~\ref{def:row-operations} that there are three
+kinds of elementary row operations%
+\index{matrix!row operation}%
+\index{matrix!elementary row operation}%
+\index{row operation}%
+\index{elementary row operation} on matrices:
+\begin{enumerate}
+\item Switch two rows.
+\item Multiply a row by a non-zero number.
+\item Add a multiple of one row to another row.
+\end{enumerate}
+The purpose of this section is to show that each of these row
+operations corresponds to a special type of invertible matrix called
+an \textbf{elementary matrix}%
+\index{elementary matrix}\index{matrix!elementary matrix}.
+
+\begin{example}{Elementary matrix for switching two rows}{elementary-matrix-1}
+  Let
+  \begin{equation*}
+    E ~=~ \begin{mymatrix}{lll}
+      1 & 0 & 0 \\
+      0 & 0 & 1 \\
+      0 & 1 & 0 \\
+    \end{mymatrix}.
+  \end{equation*}
+  What is the effect of multiplying $E$ by an arbitrary $3\times
+  n$-matrix $A$?
+\end{example}
+
+\begin{solution}
+  Consider an arbitrary $3\times n$-matrix
+  \begin{equation*}
+    A ~=~ \begin{mymatrix}{cccc}
+      a_{11} & a_{12} & \cdots & a_{1n} \\
+      a_{21} & a_{22} & \cdots & a_{2n} \\
+      a_{31} & a_{32} & \cdots & a_{3n} \\
+    \end{mymatrix}.
+  \end{equation*}
+  We compute the product $EA$ by the row method:
+  \begin{equation*}
+    EA ~=~ \begin{mymatrix}{lll}
+      1 & 0 & 0 \\
+      0 & 0 & 1 \\
+      0 & 1 & 0 \\
+    \end{mymatrix}
+    \begin{mymatrix}{cccc}
+      a_{11} & a_{12} & \cdots & a_{1n} \\
+      a_{21} & a_{22} & \cdots & a_{2n} \\
+      a_{31} & a_{32} & \cdots & a_{3n} \\
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{cccc}
+      a_{11} & a_{12} & \cdots & a_{1n} \\
+      a_{31} & a_{32} & \cdots & a_{3n} \\
+      a_{21} & a_{22} & \cdots & a_{2n} \\
+    \end{mymatrix}.
+  \end{equation*}
+  So the effect of multiplying $A$ by $E$ on the left is exactly the
+  same as switching rows 2 and 3. We say that $E$ is the
+  \textbf{elementary matrix for switching rows 2 and 3}.
+\end{solution}
+
+\begin{example}{Elementary matrix for multiplying a row by a non-zero number}{elementary-matrix-2}
+  Let
+  \begin{equation*}
+    E ~=~ \begin{mymatrix}{lll}
+      1 & 0 & 0 \\
+      0 & k & 0 \\
+      0 & 0 & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  What is the effect of multiplying $E$ by an arbitrary $3\times
+  n$-matrix $A$?
+\end{example}
+
+\begin{solution}
+  We compute the product $EA$ by the row method:
+  \begin{equation*}
+    EA ~=~ \begin{mymatrix}{lll}
+      1 & 0 & 0 \\
+      0 & k & 0 \\
+      0 & 0 & 1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{cccc}
+      a_{11} & a_{12} & \cdots & a_{1n} \\
+      a_{21} & a_{22} & \cdots & a_{2n} \\
+      a_{31} & a_{32} & \cdots & a_{3n} \\
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{rrrr}
+      a_{11} & a_{12} & \cdots & a_{1n} \\
+      ka_{21} & ka_{22} & \cdots & ka_{2n} \\
+      a_{31} & a_{32} & \cdots & a_{3n} \\
+    \end{mymatrix}.
+  \end{equation*}
+  So the effect of multiplying $A$ by $E$ on the left is exactly the
+  same as multiplying row 2 by the scalar $k$. We say that $E$ is the
+  \textbf{elementary matrix for multiplying row 2 by $k$}.
+\end{solution}
+
+\begin{example}{Elementary matrix for adding a multiple of one row to another row}{elementary-matrix-3}
+  Let
+  \begin{equation*}
+    E ~=~ \begin{mymatrix}{lll}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & k & 1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  What is the effect of multiplying $E$ by an arbitrary $3\times
+  n$-matrix $A$?
+\end{example}
+
+\begin{solution}
+  Once again we compute the product $EA$:
+  \begin{equation*}
+    EA ~=~ \begin{mymatrix}{lll}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & k & 1 \\
+    \end{mymatrix}
+    \begin{mymatrix}{cccc}
+      a_{11} & a_{12} & \cdots & a_{1n} \\
+      a_{21} & a_{22} & \cdots & a_{2n} \\
+      a_{31} & a_{32} & \cdots & a_{3n} \\
+    \end{mymatrix}
+    ~=~
+    \begin{mymatrix}{cccc}
+      a_{11} & a_{12} & \cdots & a_{1n} \\
+      a_{21} & a_{22} & \cdots & a_{2n} \\
+      a_{31}+ka_{21} & a_{32}+ka_{22} & \cdots & a_{3n}+ka_{2n} \\
+    \end{mymatrix}.
+  \end{equation*}
+  So the effect of multiplying $A$ by $E$ on the left is exactly the
+  same as adding $k$ times row 2 to row 3. We say that $E$ is the
+  \textbf{elementary matrix for adding $k$ times row 2 to row 3}.
+\end{solution}
+
+As these examples show, performing each type of elementary row
+operation is the same as multiplying (on the left) by a certain
+invertible matrix. These matrices are called the \textbf{elementary
+  matrices}%
+\index{elementary matrix}\index{matrix!elementary matrix}. In the
+above examples, we have only considered $3\times 3$-elementary
+matrices, but they exist for other sizes too. The following definition
+makes this precise. It also shows how to calculate the elementary
+matrix corresponding to any elementary row operation.
+
+\begin{definition}{Elementary matrices and row operations}{elementary-matrices-and-row-operations}
+  Let $E$ be an $n\times n$-matrix. Then $E$ is an \textbf{elementary
+    matrix}%
+  \index{elementary matrix}\index{matrix!elementary matrix} if it is
+  the result of applying one row operation to the $n\times n$ identity
+  matrix.
+\end{definition}
+
+\begin{example}{Finding an elementary matrix}{finding-elementary-matrix}
+  Consider the elementary row operation of adding $5$ times row 3 to
+  row 1 of a $4\times n$-matrix. Find the elementary matrix $E$
+  corresponding to this row operation.
+\end{example}
+
+\begin{solution}
+  Following Definition~\ref{def:elementary-matrices-and-row-operations}, all
+  we have to do is apply the desired row operation to the
+  $4\times 4$-identity matrix:
+  \begin{equation*}
+    \begin{mymatrix}{rrrr}
+      1 & 0 & 0 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1 \\
+    \end{mymatrix}
+    \quad
+    \stackrel{R_1\rowop R_1+5R_3}{\roweq}
+    \quad
+    \begin{mymatrix}{rrrr}
+      1 & 0 & 5 & 0 \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1 \\
+    \end{mymatrix}
+    ~=~ E.
+  \end{equation*}
+\end{solution}
+
+We can double-check that multiplying $E$ by any $4\times n$-matrix
+does indeed have the desired effect:
+\begin{equation*}
+  \begin{mymatrix}{rrrr}
+    1 & 0 & 5 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+  \end{mymatrix}
+  \begin{mymatrix}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    a_{31} & a_{32} & \cdots & a_{3n} \\
+    a_{41} & a_{42} & \cdots & a_{4n} \\
+  \end{mymatrix}
+  ~=~
+  \begin{mymatrix}{cccc}
+    a_{11}+5a_{31} & a_{12}+5a_{32} & \cdots & a_{1n}+5a_{3n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    a_{31} & a_{32} & \cdots & a_{3n} \\
+    a_{41} & a_{42} & \cdots & a_{4n} \\
+  \end{mymatrix}.
+\end{equation*}
+The fact that this always works is the content of the following
+theorem.
+
+\begin{theorem}{Multiplication by an elementary matrix and row operations}{multiplication-by-elementary-matrix}
+  Performing any of the three row operations on a matrix $A$ is the
+  same as taking the product $EA$, where $E$ is the elementary matrix
+  obtained by applying the desired row operation to the identity
+  matrix.
+\end{theorem}
+
