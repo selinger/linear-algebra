@@ -42,6 +42,7 @@ componentnode
 componentwise
 conformable
 coords
+coplanar
 cos
 Cramer's
 cramers
