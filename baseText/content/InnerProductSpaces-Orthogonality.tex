@@ -401,9 +401,40 @@ coefficients without having to know the rest of the basis.
   So the first two coordinates are $-\frac{1}{6}$ and $\frac{2}{7}$.
 \end{solution}
 
-Orthonormal bases allow us to make a close connection between
-arbitrary inner products and dot products. Once an orthonormal basis
-has been chosen on an inner product space, computing inner products is
+A word of warning is in order: Fourier coefficients do not work when
+the basis is not orthogonal. Consider the following picture, where
+$\vect{u}_1$ and $\vect{u}_2$ are not orthogonal.
+\begin{equation*}
+  \begin{tikzpicture}[scale=2]
+    \draw (-2,0) -- (3,0);
+    \draw (-0.2,-0.4) -- (1.1,2.2);
+    \draw[thick,red,fill=yellow!20] (0,0) -- (2,0) -- (2.5,1) -- (0.5,1) -- cycle;
+    \draw[dashed,green!70!black] (2.5,1) -- (2.5,0) node[below]{$a_1$};
+    \draw[dashed,green!70!black] (2.5,1) -- (0.9,1.8) node[left,yshift=3]{$a_2$};
+    \draw[thick,blue,->] (0,0) -- node[below]{$\vect{u}_1$} (1,0);
+    \draw[thick,blue,->] (0,0) -- node[left, pos=0.55]{$\vect{u}_2$} (0.5,1);
+    \draw[thick,blue,->] (0,0) -- node[above]{$\vect{v}$} (2.5,1);
+  \end{tikzpicture}
+\end{equation*}
+The {\em coordinates} of $\vect{v}$ with respect to
+$\vect{u}_1,\vect{u}_2$ are $(2,1)$, because
+$\vect{v}=2\vect{u}_1+1\vect{u}_2$, as indicated by the shaded
+parallelogram. On the other hand, the formula for the {\em Fourier
+  coefficients} is concerned with the orthogonal projections of
+$\vect{v}$ onto $\vect{u}_1$ and $\vect{u}_2$, as indicated by the
+dashed lines. It yields the coefficients
+\begin{eqnarray*}
+  a_1 &=& \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}} ~\approx~ 2.5, \\
+  a_2 &=& \frac{\iprod{\vect{u}_2,\vect{v}}}{\iprod{\vect{u}_2,\vect{u}_2}} ~\approx~ 1.8. \\
+\end{eqnarray*}
+These are not the same as the coordinates of $\vect{v}$, because the
+dashed lines are orthogonal to $\vect{u}_1$ and $\vect{u}_2$, instead
+of parallel to them. In summary, the Fourier coefficients of a vector
+are equal to its coordinates {\em only if the basis is orthogonal}.
+
+We conclude this section by making a connection between arbitrary
+inner products and dot products.  Once an orthonormal basis has been
+chosen on an inner product space, computing inner products is
 essentially the same as computing dot products. The following
 proposition makes this more precise.
 
