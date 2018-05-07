@@ -371,7 +371,7 @@ Since this is an important result, we state it as a proposition.
 
 The Gram-Schmidt orthogonalization procedure works without changes in
 complex inner product spaces, as long as we are careful not to confuse
-$\iprod{\vect{w}_i,\vect{v}_j}$ with $\iprod{\vect{v}_j,\vect{w}_i}$.
+$\iprod{\vect{u}_i,\vect{v}_j}$ with $\iprod{\vect{v}_j,\vect{u}_i}$.
 
 \begin{proposition}{Complex Gram-Schmidt orthogonalization procedure}{gram-schmidt-complex}
   Let $\set{\vect{v}_1,\ldots,\vect{v}_k}$ be a basis for some subspace $W$
@@ -380,30 +380,30 @@ $\iprod{\vect{w}_i,\vect{v}_j}$ with $\iprod{\vect{v}_j,\vect{w}_i}$.
   \index{orthogonalization!complex}%
   \index{orthogonal basis!Gram-Schmidt procedure!complex}
   Define vectors
-  $\vect{w}_1,\ldots,\vect{w}_k$ as follows:
+  $\vect{u}_1,\ldots,\vect{u}_k$ as follows:
   \begin{eqnarray*}
-    \vect{w}_1
+    \vect{u}_1
     &=& \vect{v}_1,
     \\
-    \vect{w}_2
+    \vect{u}_2
     &=& \vect{v}_2
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1,
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_2}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1,
     \\
-    \vect{w}_3
+    \vect{u}_3
     &=& \vect{v}_3
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_3}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
-        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_3}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2,
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_3}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
+        ~-~ \frac{\iprod{\vect{u}_2,\vect{v}_3}}{\iprod{\vect{u}_2,\vect{u}_2}}\vect{u}_2,
     \\
     &\vdots&
     \\
-    \vect{w}_k
+    \vect{u}_k
     &=& \vect{v}_k
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_k}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
-        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_k}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_k}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
+        ~-~ \frac{\iprod{\vect{u}_2,\vect{v}_k}}{\iprod{\vect{u}_2,\vect{u}_2}}\vect{u}_2
         ~-~ \ldots
-        ~-~ \frac{\iprod{\vect{w}_{k-1},\vect{v}_k}}{\iprod{\vect{w}_{k-1},\vect{w}_{k-1}}}\vect{w}_{k-1}.
+        ~-~ \frac{\iprod{\vect{u}_{k-1},\vect{v}_k}}{\iprod{\vect{u}_{k-1},\vect{u}_{k-1}}}\vect{u}_{k-1}.
   \end{eqnarray*}
-  Then $\set{\vect{w}_1,\ldots,\vect{w}_k}$ is an orthogonal basis of $W$.
+  Then $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is an orthogonal basis of $W$.
 \end{proposition}
 
 \begin{example}{Complex Gram-Schmidt orthogonalization procedure}{gram-schmidt-complex}
@@ -420,14 +420,14 @@ $\iprod{\vect{w}_i,\vect{v}_j}$ with $\iprod{\vect{v}_j,\vect{w}_i}$.
 \begin{solution}
   We start with
   \begin{equation*}
-    \vect{w}_1
+    \vect{u}_1
     ~=~ \vect{v}_1
     ~=~ \begin{mymatrix}{c} 1+i \\ 1 \\ i \end{mymatrix}.
   \end{equation*}
   Next, we calculate
   \begin{equation*}
-    \iprod{\vect{w}_1,\vect{v}_2}
-    ~=~ \vect{w}_1^{\adjoint} \vect{v}_2
+    \iprod{\vect{u}_1,\vect{v}_2}
+    ~=~ \vect{u}_1^{\adjoint} \vect{v}_2
     ~=~ \begin{mymatrix}{ccc} 1-i & 1 & -i \end{mymatrix}
     \begin{mymatrix}{c} i \\ -1 \\ -3  \end{mymatrix}
     ~=~ (1-i)i + 1(-1) + (-i)(-3)
@@ -435,8 +435,8 @@ $\iprod{\vect{w}_i,\vect{v}_j}$ with $\iprod{\vect{v}_j,\vect{w}_i}$.
   \end{equation*}
   and
   \begin{equation*}
-    \iprod{\vect{w}_1,\vect{w}_1}
-    ~=~ \vect{w}_1^{\adjoint} \vect{w}_1
+    \iprod{\vect{u}_1,\vect{u}_1}
+    ~=~ \vect{u}_1^{\adjoint} \vect{u}_1
     ~=~ \begin{mymatrix}{ccc} 1-i & 1 & -i \end{mymatrix}
     \begin{mymatrix}{c} 1+i \\ 1 \\ i  \end{mymatrix}
     ~=~ (1-i)(1+i) + 1\cdot 1 + (-i)(i)
@@ -444,23 +444,23 @@ $\iprod{\vect{w}_i,\vect{v}_j}$ with $\iprod{\vect{v}_j,\vect{w}_i}$.
   \end{equation*}
   Therefore
   \begin{equation*}
-    \vect{w}_2
+    \vect{u}_2
     ~=~ \vect{v}_2
-    - \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+    - \frac{\iprod{\vect{u}_1,\vect{v}_2}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
     ~=~ \vect{v}_2
-    - \frac{4i}{4} \vect{w}_1
+    - \frac{4i}{4} \vect{u}_1
     ~=~ \vect{v}_2
-    - i \vect{w}_1
+    - i \vect{u}_1
     ~=~ \begin{mymatrix}{c} i \\ -1 \\ -3  \end{mymatrix}
     -i \begin{mymatrix}{c} 1+i \\ 1 \\ i \end{mymatrix}
     ~=~ \begin{mymatrix}{c} 1 \\ -1-i \\ -2  \end{mymatrix}.
   \end{equation*}
-  The desired orthogonal basis is $\set{\vect{w}_1,\vect{w}_2}$. We
-  double-check that $\vect{w}_1$ and $\vect{w}_2$ are indeed
+  The desired orthogonal basis is $\set{\vect{u}_1,\vect{u}_2}$. We
+  double-check that $\vect{u}_1$ and $\vect{u}_2$ are indeed
   orthogonal:
   \begin{equation*}
-    \iprod{\vect{w}_1,\vect{w}_2}
-    ~=~ \vect{w}_1^{\adjoint}\vect{w}_2
+    \iprod{\vect{u}_1,\vect{u}_2}
+    ~=~ \vect{u}_1^{\adjoint}\vect{u}_2
     ~=~ \begin{mymatrix}{ccc} 1-i & 1 & -i \end{mymatrix}
     \begin{mymatrix}{c} 1 \\ -1-i \\ -2  \end{mymatrix}
     ~=~ (1-i)1 + 1(-1-i) + (-i)(-2)

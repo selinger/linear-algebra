@@ -16,21 +16,21 @@ a method for turning any basis into an orthogonal one.
 
 The basic idea is very simple: if two vectors $\vect{v}_1,\vect{v}_2$
 are not orthogonal, then we can make them orthogonal by replacing
-$\vect{v}_2$ by a vector of the form $\vect{w}_2 = \vect{v}_2 -
+$\vect{v}_2$ by a vector of the form $\vect{u}_2 = \vect{v}_2 -
 t\vect{v}_1$, for a suitable parameter $t$.
 \begin{equation*}
   \begin{tikzpicture}[scale=1.25]
     \draw[thick,red] (1.5,0) -- (1.5,2) -- (0,2);
     \draw[thick,blue,->] (0,0) -- node[left]{$\vect{v}_1$} (0,2.7);
     \draw[thick,blue,->] (0,0) -- node[left, pos=0.6]{$\vect{v}_2$} (1.5,2);
-    \draw[thick,green!50!black,->] (0,0) -- node[below right, pos=0.3]{$\vect{w}_2 = \vect{v}_2 - t\vect{v}_1$} (1.5,0);
+    \draw[thick,green!50!black,->] (0,0) -- node[below right, pos=0.3]{$\vect{u}_2 = \vect{v}_2 - t\vect{v}_1$} (1.5,0);
   \end{tikzpicture}
 \end{equation*}
 But what is the correct value of $t$? It turns out that this value is
 uniquely determined by the requirement that $\vect{v}_1$ and
-$\vect{w}_2$ must be orthogonal. We calculate
+$\vect{u}_2$ must be orthogonal. We calculate
 \begin{equation*}
-  \iprod{\vect{v}_1,\vect{w}_2}
+  \iprod{\vect{v}_1,\vect{u}_2}
   ~=~ \iprod{\vect{v}_1,\vect{v}_2-t\vect{v}_1}
   ~=~ \iprod{\vect{v}_1,\vect{v}_2}-t\iprod{\vect{v}_1,\vect{v}_1}.
 \end{equation*}
@@ -42,17 +42,17 @@ Note that this is exactly the same thing as the Fourier coefficient of
 $\vect{v}_2$ in the direction of $\vect{v}_1$. The following
 proposition summarizes what we have found so far. For consistency with
 our later notation, we also rename the first basis vector $\vect{v}_1$
-to $\vect{w}_1$.
+to $\vect{u}_1$.
 
 \begin{proposition}{Gram-Schmidt orthogonalization procedure for 2 vectors}{gram-schmidt-2}
   Let $\set{\vect{v}_1,\vect{v}_2}$ be a basis for some subspace $W$
   of an inner product space $V$. Define vectors
-  $\vect{w}_1,\vect{w}_2$ as follows:
+  $\vect{u}_1,\vect{u}_2$ as follows:
   \begin{eqnarray*}
-    \vect{w}_1 &=& \vect{v}_1, \\
-    \vect{w}_2 &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1.
+    \vect{u}_1 &=& \vect{v}_1, \\
+    \vect{u}_2 &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_2}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1.
   \end{eqnarray*}
-  Then $\set{\vect{w}_1,\vect{w}_2}$ is an orthogonal basis of $W$.
+  Then $\set{\vect{u}_1,\vect{u}_2}$ is an orthogonal basis of $W$.
 \end{proposition}
 
 \begin{example}{Gram-Schmidt orthogonalization procedure for 2 vectors}{gram-schmidt-2}
@@ -70,11 +70,11 @@ to $\vect{w}_1$.
   and $\vect{v}_2 = \begin{mymatrix}{c} 0 \\ 1 \\ 1 \end{mymatrix}$.
   We calculate
   \begin{eqnarray*}
-    \vect{w}_1
+    \vect{u}_1
     &=& \vect{v}_1
         ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix},\\
-    \vect{w}_2
-    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+    \vect{u}_2
+    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_2}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
         ~=~ \begin{mymatrix}{c} 0 \\ 1 \\ 1 \end{mymatrix}
     ~-~ \frac{1}{2}\begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}
     ~=~ \begin{mymatrix}{c} -1/2 \\ 1/2 \\ 1 \end{mymatrix}.
@@ -96,76 +96,76 @@ vectors.
   \index{orthogonalization}%
   \index{orthogonal basis!Gram-Schmidt procedure}
   Define vectors
-  $\vect{w}_1,\ldots,\vect{w}_k$ as follows:
+  $\vect{u}_1,\ldots,\vect{u}_k$ as follows:
   \begin{eqnarray*}
-    \vect{w}_1
+    \vect{u}_1
     &=& \vect{v}_1,
     \\
-    \vect{w}_2
+    \vect{u}_2
     &=& \vect{v}_2
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1,
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_2}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1,
     \\
-    \vect{w}_3
+    \vect{u}_3
     &=& \vect{v}_3
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_3}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
-        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_3}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2,
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_3}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
+        ~-~ \frac{\iprod{\vect{u}_2,\vect{v}_3}}{\iprod{\vect{u}_2,\vect{u}_2}}\vect{u}_2,
     \\
     &\vdots&
     \\
-    \vect{w}_k
+    \vect{u}_k
     &=& \vect{v}_k
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_k}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
-        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_k}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_k}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
+        ~-~ \frac{\iprod{\vect{u}_2,\vect{v}_k}}{\iprod{\vect{u}_2,\vect{u}_2}}\vect{u}_2
         ~-~ \ldots
-        ~-~ \frac{\iprod{\vect{w}_{k-1},\vect{v}_k}}{\iprod{\vect{w}_{k-1},\vect{w}_{k-1}}}\vect{w}_{k-1}.
+        ~-~ \frac{\iprod{\vect{u}_{k-1},\vect{v}_k}}{\iprod{\vect{u}_{k-1},\vect{u}_{k-1}}}\vect{u}_{k-1}.
   \end{eqnarray*}
-  Then $\set{\vect{w}_1,\ldots,\vect{w}_k}$ is an orthogonal basis of $W$.
+  Then $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is an orthogonal basis of $W$.
 \end{proposition}
 
 \begin{proof}
   First, it is clear that $\set{\vect{v}_1,\ldots,\vect{v}_k}$ and
-  $\set{\vect{w}_1,\ldots,\vect{w}_k}$ span the same subspace, as each
+  $\set{\vect{u}_1,\ldots,\vect{u}_k}$ span the same subspace, as each
   $\vect{v}_i$ is a linear combination of
-  $\vect{w}_1,\ldots,\vect{w}_i$ and conversely, each $\vect{w}_i$ is
+  $\vect{u}_1,\ldots,\vect{u}_i$ and conversely, each $\vect{u}_i$ is
   a linear combination of $\vect{v}_1,\ldots,\vect{v}_i$. So the only
-  thing we must check is that $\set{\vect{w}_1,\ldots,\vect{w}_k}$ is
+  thing we must check is that $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is
   an orthogonal set. In other words, we must show that
-  $\iprod{\vect{w}_j,\vect{w}_i}=0$ for all $j<i$. We prove this by
+  $\iprod{\vect{u}_j,\vect{u}_i}=0$ for all $j<i$. We prove this by
   induction on $i$, i.e., we assume it is already true for all pairs
   of indices smaller than $i$. To show
-  $\iprod{\vect{w}_j,\vect{w}_i}=0$, we calculate:
+  $\iprod{\vect{u}_j,\vect{u}_i}=0$, we calculate:
   \begin{eqnarray*}
-    \iprod{\vect{w}_j,\vect{w}_i}
+    \iprod{\vect{u}_j,\vect{u}_i}
     &=& \textstyle
-        \iprod{\vect{w}_j, \vect{v}_i
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_i}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+        \iprod{\vect{u}_j, \vect{v}_i
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_i}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
         ~-~ \ldots
-        ~-~ \frac{\iprod{\vect{w}_j,\vect{v}_i}}{\iprod{\vect{w}_j,\vect{w}_j}}\vect{w}_j
+        ~-~ \frac{\iprod{\vect{u}_j,\vect{v}_i}}{\iprod{\vect{u}_j,\vect{u}_j}}\vect{u}_j
         ~-~ \ldots
-        ~-~ \frac{\iprod{\vect{w}_{i-1},\vect{v}_i}}{\iprod{\vect{w}_{i-1},\vect{w}_{i-1}}}\vect{w}_{i-1}}
+        ~-~ \frac{\iprod{\vect{u}_{i-1},\vect{v}_i}}{\iprod{\vect{u}_{i-1},\vect{u}_{i-1}}}\vect{u}_{i-1}}
     \\
     &=& \textstyle
-        \iprod{\vect{w}_j, \vect{v}_i}
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_i}}{\iprod{\vect{w}_1,\vect{w}_1}}\iprod{\vect{w}_j,\vect{w}_1}
+        \iprod{\vect{u}_j, \vect{v}_i}
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_i}}{\iprod{\vect{u}_1,\vect{u}_1}}\iprod{\vect{u}_j,\vect{u}_1}
         ~-~ \ldots
-        ~-~ \frac{\iprod{\vect{w}_j,\vect{v}_i}}{\iprod{\vect{w}_j,\vect{w}_j}}\iprod{\vect{w}_j,\vect{w}_j}
+        ~-~ \frac{\iprod{\vect{u}_j,\vect{v}_i}}{\iprod{\vect{u}_j,\vect{u}_j}}\iprod{\vect{u}_j,\vect{u}_j}
         ~-~ \ldots
-        ~-~ \frac{\iprod{\vect{w}_{i-1},\vect{v}_i}}{\iprod{\vect{w}_{i-1},\vect{w}_{i-1}}}\iprod{\vect{w}_j,\vect{w}_{i-1}}
+        ~-~ \frac{\iprod{\vect{u}_{i-1},\vect{v}_i}}{\iprod{\vect{u}_{i-1},\vect{u}_{i-1}}}\iprod{\vect{u}_j,\vect{u}_{i-1}}
     \\
     &=& \textstyle
-        \iprod{\vect{w}_j, \vect{v}_i}
+        \iprod{\vect{u}_j, \vect{v}_i}
         ~-~ 0
         ~-~ \ldots
-        ~-~ \frac{\iprod{\vect{w}_j,\vect{v}_i}}{\iprod{\vect{w}_j,\vect{w}_j}}\iprod{\vect{w}_j,\vect{w}_j}
+        ~-~ \frac{\iprod{\vect{u}_j,\vect{v}_i}}{\iprod{\vect{u}_j,\vect{u}_j}}\iprod{\vect{u}_j,\vect{u}_j}
         ~-~ \ldots
         ~-~ 0
     \\
-    &=& \iprod{\vect{w}_j, \vect{v}_i}
-        ~-~ \iprod{\vect{w}_j,\vect{v}_i}
+    &=& \iprod{\vect{u}_j, \vect{v}_i}
+        ~-~ \iprod{\vect{u}_j,\vect{v}_i}
     \\
     &=& 0.
   \end{eqnarray*}
-  It follows that the set $\set{\vect{w}_1,\ldots,\vect{w}_k}$ is
+  It follows that the set $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is
   orthogonal, as desired.
 \end{proof}
 
@@ -189,20 +189,20 @@ vectors.
   \end{equation*}
   We calculate
   \begin{eqnarray*}
-    \vect{w}_1
+    \vect{u}_1
     &=& \vect{v}_1
         ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix},
     \\
-    \vect{w}_2
-    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+    \vect{u}_2
+    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_2}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
     ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \end{mymatrix}
     ~-~ \frac{3}{4}\begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix}
     ~=~ \begin{mymatrix}{c} 1/4 \\ 1/4 \\ 1/4 \\ -3/4 \end{mymatrix},
     \\
-    \vect{w}_3
+    \vect{u}_3
     &=& \vect{v}_3
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_3}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
-        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_3}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_3}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
+        ~-~ \frac{\iprod{\vect{u}_2,\vect{v}_3}}{\iprod{\vect{u}_2,\vect{u}_2}}\vect{u}_2
     \\
     &=& \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}
     ~-~ \frac{2}{4}\begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix}
@@ -210,7 +210,7 @@ vectors.
     ~=~ \begin{mymatrix}{c} 1/3 \\ 1/3 \\ -2/3 \\ 0 \end{mymatrix}.
   \end{eqnarray*}
   Therefore the orthogonal basis is
-  $\set{\vect{w}_1,\vect{w}_2,\vect{w}_3} = \set{
+  $\set{\vect{u}_1,\vect{u}_2,\vect{u}_3} = \set{
     \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix},~
     \begin{mymatrix}{c} 1/4 \\ 1/4 \\ 1/4 \\ -3/4 \end{mymatrix},~
     \begin{mymatrix}{c} 1/3 \\ 1/3 \\ -2/3 \\ 0 \end{mymatrix}
@@ -245,20 +245,20 @@ simplify the calculations, as the following example shows.
   \end{equation*}
   We calculate
   \begin{eqnarray*}
-    \vect{w}_1
+    \vect{u}_1
     &=& \vect{v}_1
         ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix},
     \\
-    \vect{w}_2
-    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+    \vect{u}_2
+    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_2}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
     ~=~ \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 0 \end{mymatrix}
     ~-~ \frac{2}{2}\begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}
     ~=~ \begin{mymatrix}{c} 0 \\ 0 \\ 1 \\ 0 \end{mymatrix},
     \\
-    \vect{w}_3
+    \vect{u}_3
     &=& \vect{v}_3
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_3}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
-        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_3}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_3}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
+        ~-~ \frac{\iprod{\vect{u}_2,\vect{v}_3}}{\iprod{\vect{u}_2,\vect{u}_2}}\vect{u}_2
     \\
     &=& \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix}
     ~-~ \frac{2}{2}\begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix}
@@ -266,7 +266,7 @@ simplify the calculations, as the following example shows.
     ~=~ \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ 1 \end{mymatrix}.
   \end{eqnarray*}
   This time, we end up with the orthogonal basis
-  $\set{\vect{w}_1,\vect{w}_2,\vect{w}_3} = \set{
+  $\set{\vect{u}_1,\vect{u}_2,\vect{u}_3} = \set{
     \begin{mymatrix}{c} 1 \\ 1 \\ 0 \\ 0 \end{mymatrix},~
     \begin{mymatrix}{c} 0 \\ 0 \\ 1 \\ 0 \end{mymatrix},~
     \begin{mymatrix}{c} 0 \\ 0 \\ 0 \\ 1 \end{mymatrix}
@@ -365,88 +365,88 @@ inner product.
   Let $\vect{v}_1=1$, $\vect{v}_2=x$, $\vect{v}_3=x^2$, and
   $\vect{v}_4=x^3$. We follow the Gram-Schmidt procedure:
   \begin{eqnarray*}
-    \vect{w}_1
+    \vect{u}_1
     &=& \vect{v}_1
         ~=~ 1.
   \end{eqnarray*}
-  Before we calculate $\vect{w}_2$, we have to evaluate two integrals:
+  Before we calculate $\vect{u}_2$, we have to evaluate two integrals:
   \begin{eqnarray*}
-    \iprod{\vect{w}_1,\vect{v}_2}
+    \iprod{\vect{u}_1,\vect{v}_2}
     &=& \int_{-1}^{1} 1\cdot x\,dx
     ~=~ \bigbracket{\textstyle\frac{1}{2}x^2}_{-1}^{1}
     ~=~ 0,
     \\
-    \iprod{\vect{w}_1,\vect{w}_1}
+    \iprod{\vect{u}_1,\vect{u}_1}
     &=& \int_{-1}^{1} 1\cdot 1\,dx
     ~=~ \bigbracket{x}_{-1}^{1}
     ~=~ 2.
   \end{eqnarray*}
   Then
   \begin{eqnarray*}
-    \vect{w}_2
-    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_2}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
+    \vect{u}_2
+    &=& \vect{v}_2 ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_2}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
     ~=~ x ~-~ \frac{0}{2}\cdot 1 ~=~ x.
   \end{eqnarray*}
-  To calculate $\vect{w}_2$, we first evaluate three integrals:
+  To calculate $\vect{u}_2$, we first evaluate three integrals:
   \begin{eqnarray*}
-    \iprod{\vect{w}_1,\vect{v}_3}
+    \iprod{\vect{u}_1,\vect{v}_3}
     &=& \int_{-1}^{1} 1\cdot x^2\,dx
     ~=~ \bigbracket{\textstyle\frac{1}{3}x^3}_{-1}^{1}
     ~=~ \frac{2}{3},
     \\
-    \iprod{\vect{w}_2,\vect{v}_3}
+    \iprod{\vect{u}_2,\vect{v}_3}
     &=& \int_{-1}^{1} x\cdot x^2\,dx
     ~=~ \bigbracket{\textstyle\frac{1}{4}x^4}_{-1}^{1}
     ~=~ 0,
     \\
-    \iprod{\vect{w}_2,\vect{w}_2}
+    \iprod{\vect{u}_2,\vect{u}_2}
     &=& \int_{-1}^{1} x\cdot x\,dx
     ~=~ \bigbracket{\textstyle\frac{1}{3}x^3}_{-1}^{1}
     ~=~ \frac{2}{3}.
   \end{eqnarray*}
   Then
   \begin{eqnarray*}
-    \vect{w}_3
+    \vect{u}_3
     &=& \vect{v}_3
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_3}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
-        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_3}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_3}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
+        ~-~ \frac{\iprod{\vect{u}_2,\vect{v}_3}}{\iprod{\vect{u}_2,\vect{u}_2}}\vect{u}_2
         ~=~ x^2 ~-~ \frac{2/3}{2}\cdot 1 ~-~ 0\cdot x
         ~=~ x^2 - \frac{1}{3}.
   \end{eqnarray*}
-  To calculate $\vect{w}_3$, we first evaluate four integrals:
+  To calculate $\vect{u}_3$, we first evaluate four integrals:
   \begin{eqnarray*}
-    \iprod{\vect{w}_1,\vect{v}_4}
+    \iprod{\vect{u}_1,\vect{v}_4}
     &=& \int_{-1}^{1} 1\cdot x^3\,dx
     ~=~ \bigbracket{\textstyle\frac{1}{4}x^4}_{-1}^{1}
     ~=~ 0,
     \\
-    \iprod{\vect{w}_2,\vect{v}_4}
+    \iprod{\vect{u}_2,\vect{v}_4}
     &=& \int_{-1}^{1} x\cdot x^3\,dx
     ~=~ \bigbracket{\textstyle\frac{1}{5}x^5}_{-1}^{1}
     ~=~ \frac{2}{5},
     \\
-    \iprod{\vect{w}_3,\vect{v}_4}
+    \iprod{\vect{u}_3,\vect{v}_4}
     &=& \int_{-1}^{1}\textstyle (x^2-\frac{1}{3})\cdot x^3\,dx
     ~=~ \bigbracket{\textstyle\frac{1}{6}x^6 - \frac{1}{12}x^4}_{-1}^{1}
     ~=~ 0,
     \\
-    \iprod{\vect{w}_3,\vect{w}_3}
+    \iprod{\vect{u}_3,\vect{u}_3}
     &=& \int_{-1}^{1}\textstyle (x^2-\frac{1}{3})^2\,dx
     ~=~ \bigbracket{\textstyle\frac{1}{5}x^5-\frac{2}{9}x^3+\frac{1}{9}x}_{-1}^{1}
     ~=~ \frac{8}{45}.
   \end{eqnarray*}
   Then
   \begin{eqnarray*}
-    \vect{w}_4
+    \vect{u}_4
     &=& \vect{v}_4
-        ~-~ \frac{\iprod{\vect{w}_1,\vect{v}_4}}{\iprod{\vect{w}_1,\vect{w}_1}}\vect{w}_1
-        ~-~ \frac{\iprod{\vect{w}_2,\vect{v}_4}}{\iprod{\vect{w}_2,\vect{w}_2}}\vect{w}_2
-        ~-~ \frac{\iprod{\vect{w}_3,\vect{v}_4}}{\iprod{\vect{w}_3,\vect{w}_3}}\vect{w}_3
+        ~-~ \frac{\iprod{\vect{u}_1,\vect{v}_4}}{\iprod{\vect{u}_1,\vect{u}_1}}\vect{u}_1
+        ~-~ \frac{\iprod{\vect{u}_2,\vect{v}_4}}{\iprod{\vect{u}_2,\vect{u}_2}}\vect{u}_2
+        ~-~ \frac{\iprod{\vect{u}_3,\vect{v}_4}}{\iprod{\vect{u}_3,\vect{u}_3}}\vect{u}_3
     \\
     &=& x^3 ~-~ \frac{0}{2}\cdot 1 ~-~ \frac{2/5}{2/3}\cdot x ~-~ \frac{0}{8/45}\cdot(x^2-\frac{1}{3})
         ~=~ x^3 - \frac{3}{5}x.
   \end{eqnarray*}
-  Thus, we obtain the orthogonal basis $\set{\vect{w}_1,\vect{w}_2,\vect{w}_3,\vect{w}_4} =
+  Thus, we obtain the orthogonal basis $\set{\vect{u}_1,\vect{u}_2,\vect{u}_3,\vect{u}_4} =
   \set{1,~ x,~ x^2-\frac{1}{3},~ x^3 - \frac{3}{5}x}$.
 \end{solution}
 
@@ -491,7 +491,7 @@ want to compute an {\em orthonormal} basis, we also have to normalize
 each basis vector. Since normalization usually involves dividing by a
 square root, it is best to do this at the end, i.e., after the entire
 Gram-Schmidt procedure is complete, rather than normalizing each
-$\vect{w}_i$ immediately after it is found. Note that the Gram-Schmidt
+$\vect{u}_i$ immediately after it is found. Note that the Gram-Schmidt
 procedure itself does not involve computing any square roots.
 
 \begin{example}{Finding an orthonormal basis}{finding-orthonormal-basis-r4}
@@ -508,7 +508,7 @@ procedure itself does not involve computing any square roots.
 \begin{solution}
   In Example~\ref{exa:gram-schmidt-r4}, we already found an orthogonal basis
   \begin{equation*}
-    \set{\vect{w}_1,\vect{w}_2,\vect{w}_3} ~=~ 
+    \set{\vect{u}_1,\vect{u}_2,\vect{u}_3} ~=~ 
     \set{
       \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \end{mymatrix},~
       \begin{mymatrix}{c} 1/4 \\ 1/4 \\ 1/4 \\ -3/4 \end{mymatrix},~
@@ -519,9 +519,9 @@ procedure itself does not involve computing any square roots.
   vector. The orthonormal basis is
   \begin{equation*}
     \set{
-      \frac{\vect{w}_1}{\norm{\vect{w}_1}},
-      \frac{\vect{w}_2}{\norm{\vect{w}_2}},
-      \frac{\vect{w}_3}{\norm{\vect{w}_3}}
+      \frac{\vect{u}_1}{\norm{\vect{u}_1}},
+      \frac{\vect{u}_2}{\norm{\vect{u}_2}},
+      \frac{\vect{u}_3}{\norm{\vect{u}_3}}
     }
     ~=~
     \set{
@@ -551,16 +551,16 @@ procedure itself does not involve computing any square roots.
 \begin{solution}
   In Example~\ref{exa:legendre-polynomials}, we found the orthogonal
   basis
-  $\set{\vect{w}_1,\vect{w}_2,\vect{w}_3,\vect{w}_4} = \set{1,~ x,~
+  $\set{\vect{u}_1,\vect{u}_2,\vect{u}_3,\vect{u}_4} = \set{1,~ x,~
     x^2-\frac{1}{3},~ x^3 - \frac{3}{5}x}$.  We also computed
   \begin{equation*}
-    \iprod{\vect{w}_1,\vect{w}_1} = 2,\quad
-    \iprod{\vect{w}_2,\vect{w}_2} = \frac{2}{3},\quad\mbox{and}\quad
-    \iprod{\vect{w}_3,\vect{w}_3} = \frac{8}{45}.
+    \iprod{\vect{u}_1,\vect{u}_1} = 2,\quad
+    \iprod{\vect{u}_2,\vect{u}_2} = \frac{2}{3},\quad\mbox{and}\quad
+    \iprod{\vect{u}_3,\vect{u}_3} = \frac{8}{45}.
   \end{equation*}
-  We also need to compute $\iprod{\vect{w}_4,\vect{w}_4}$:
+  We also need to compute $\iprod{\vect{u}_4,\vect{u}_4}$:
   \begin{equation*}
-    \iprod{\vect{w}_4,\vect{w}_4}
+    \iprod{\vect{u}_4,\vect{u}_4}
     ~=~ \int_{-1}^{1}{\textstyle (x^3 - \frac{3}{5}x)^2}\,dx
     ~=~ \int_{-1}^{1}{\textstyle x^6 - \frac{6}{5}x^4 + \frac{9}{25}x^2}\,dx
     ~=~ \bigbracket{\textstyle\frac{1}{7}x^7-\frac{6}{25}x^5+\frac{3}{25}x^3}_{-1}^{1}
@@ -569,10 +569,10 @@ procedure itself does not involve computing any square roots.
   Therefore, the orthonormal basis is:
   \begin{equation*}
     \set{
-      \frac{\vect{w}_1}{\norm{\vect{w}_1}},
-      \frac{\vect{w}_2}{\norm{\vect{w}_2}},
-      \frac{\vect{w}_3}{\norm{\vect{w}_3}},
-      \frac{\vect{w}_4}{\norm{\vect{w}_4}}
+      \frac{\vect{u}_1}{\norm{\vect{u}_1}},
+      \frac{\vect{u}_2}{\norm{\vect{u}_2}},
+      \frac{\vect{u}_3}{\norm{\vect{u}_3}},
+      \frac{\vect{u}_4}{\norm{\vect{u}_4}}
     }
     = \set{
       \frac{1}{\sqrt{2}},~
@@ -585,43 +585,43 @@ procedure itself does not involve computing any square roots.
 
 We finish this section by remarking that the formula
 \begin{equation*}
-  \frac{\iprod{\vect{w},\vect{v}}}{\iprod{\vect{w},\vect{w}}}\vect{w}
+  \frac{\iprod{\vect{u},\vect{v}}}{\iprod{\vect{u},\vect{u}}}\vect{u}
 \end{equation*}
 is exactly what we called the \textbf{projection of $\vect{v}$ onto
-  $\vect{w}$}%
+  $\vect{u}$}%
 \index{vector!projection of}%
 \index{projection!in inner product space}%
 \index{projection!vector to vector} in Section~\ref{ssec:projections},
 except that we have generalized this concept from $\R^n$ to an
 arbitrary inner product space. We can define
 \begin{equation*}
-  \proj_{\vect{w}}(\vect{v})
-  = \frac{\iprod{\vect{w},\vect{v}}}{\iprod{\vect{w},\vect{w}}}\vect{w}.
+  \proj_{\vect{u}}(\vect{v})
+  = \frac{\iprod{\vect{u},\vect{v}}}{\iprod{\vect{u},\vect{u}}}\vect{u}.
 \end{equation*}
 With this definition, the Gram-Schmidt procedure can also be expressed
 more succinctly as follows.
 \begin{equation*}
   \begin{array}{rcl}
-    \vect{w}_1
+    \vect{u}_1
     &=& \vect{v}_1,
     \\
-    \vect{w}_2
+    \vect{u}_2
     &=& \vect{v}_2
-        ~-~ \proj_{\vect{w}_1}(\vect{v}_2),
+        ~-~ \proj_{\vect{u}_1}(\vect{v}_2),
     \\
-    \vect{w}_3
+    \vect{u}_3
     &=& \vect{v}_3
-        ~-~ \proj_{\vect{w}_1}(\vect{v}_3)
-        ~-~ \proj_{\vect{w}_2}(\vect{v}_3),
+        ~-~ \proj_{\vect{u}_1}(\vect{v}_3)
+        ~-~ \proj_{\vect{u}_2}(\vect{v}_3),
     \\
     &\vdots&
     \\
-    \vect{w}_k
+    \vect{u}_k
     &=& \vect{v}_k
-        ~-~ \proj_{\vect{w}_1}(\vect{v}_k)
-        ~-~ \proj_{\vect{w}_2}(\vect{v}_k)
+        ~-~ \proj_{\vect{u}_1}(\vect{v}_k)
+        ~-~ \proj_{\vect{u}_2}(\vect{v}_k)
         ~-~ \ldots
-        ~-~ \proj_{\vect{w}_{k-1}}(\vect{v}_k).
+        ~-~ \proj_{\vect{u}_{k-1}}(\vect{v}_k).
   \end{array}
 \end{equation*}
   
