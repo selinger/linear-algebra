@@ -548,7 +548,7 @@
 \end{ex}
 
 \begin{ex}
-  State whether each of the following sets of data are
+  State whether each of the following sets of data is
   possible for a system of equations. If possible, describe the
   solution set.  That is, indicate whether there exists a unique
   solution, no solution or infinitely many solutions. Here, $A$ is
@@ -574,13 +574,18 @@
 
   \begin{sol}
     \begin{enumerate}
-    \item This says $B$ is in the span of four of the columns. Thus the columns are not independent. Infinite solution set.
-    \item This surely can't happen. If you add in another column, the rank does not get smaller.
-    \item This says $B$ is in the span of the columns and the columns must be
-      independent. You can't have the rank equal 4 if you only have two columns.
-    \item This says $B$ is not in the span of the columns. In this case, there is no solution to the system of equations represented by the augmented matrix.
-    \item In this case, there is a
-      unique solution since the columns of $A$ are independent.
+    \item The {\ef} has 4 non-zero rows and 6 columns, so there are 2
+      free variables, and the system has infinitely many solutions.
+    \item Such a system of equations of equations does not exist. If
+      you add in another column, the rank does not get smaller.
+    \item Such a system of equations does not exist,
+      because the rank cannot equal 4 if there are only two columns.
+    \item The {\ef} has 4 non-zero rows on the left-hand side, but 5
+      non-zero rows if we also include the right-hand side. Therefore
+      the system is inconsistent, i.e., it has no solutions.
+    \item The {\ef} has 2 non-zero rows, so there are 2
+      pivot variables and no free variables. Therefore, the system has
+      a unique solution.
     \end{enumerate}
   \end{sol}
 \end{ex}
