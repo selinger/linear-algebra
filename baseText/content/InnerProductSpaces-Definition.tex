@@ -334,13 +334,13 @@ By the Cauchy-Schwarz inequality, we have the following properties:
   The proof is essentially the same as that of
   Proposition~\ref{prop:triangle-inequality-dot-product}. We have
   \begin{eqnarray*}
-    \norm{\vect{u}+\vect{v}}^{2}
+    \norm{\vect{u}+\vect{v}}^2
     &=& \iprod{\vect{u}+\vect{v},\vect{u}+\vect{v}} \\
     &=& \iprod{\vect{u},\vect{u}}+\iprod{\vect{u},\vect{v}}+\iprod{\vect{v},\vect{u}}+\iprod{\vect{v},\vect{v}} \\
-    &=&\norm{\vect{u}}^{2}+2\iprod{\vect{u},\vect{v}}+\norm{\vect{v}}^{2} \\
-    &\leq& \norm{\vect{u}}^{2}+2\abs{\iprod{\vect{u},\vect{v}}}+\norm{\vect{v}}^{2} \\
-    &\leq& \norm{\vect{u}}^{2}+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^{2} \\
-    &=& (\norm{\vect{u}}+\norm{\vect{v}})^{2}.
+    &=&\norm{\vect{u}}^2+2\iprod{\vect{u},\vect{v}}+\norm{\vect{v}}^2 \\
+    &\leq& \norm{\vect{u}}^2+2\abs{\iprod{\vect{u},\vect{v}}}+\norm{\vect{v}}^2 \\
+    &\leq& \norm{\vect{u}}^2+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^2 \\
+    &=& (\norm{\vect{u}}+\norm{\vect{v}})^2.
   \end{eqnarray*}
   The triangle inequality follows by taking square roots of both sides.
 \end{proof}

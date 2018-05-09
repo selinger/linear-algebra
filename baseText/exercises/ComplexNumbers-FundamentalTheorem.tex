@@ -26,7 +26,7 @@
 \end{ex}
 
 \begin{ex}
-  Let $p(x) =a_{n}x^{n}+a_{n-1}x^{n-1}+\ldots+a_{1}x+a_{0}$ be a
+  Let $p(x) =a_{n}x^n+a_{n-1}x^{n-1}+\ldots+a_{1}x+a_{0}$ be a
   polynomial with real coefficients, i.e., such that all the $a_{k}$
   are real numbers. Suppose that $z$ is a root of $p$. Show that
   $\conjugate{z}$ is also a root of $p$.
@@ -34,14 +34,15 @@
     If $p(z) =0$ and $a_0,\ldots,a_k$ are real, we have
     \begin{eqnarray*}
       p(\conjugate{z})
-      &=& a_{n}\conjugate{z}^{n}+a_{n-1}\conjugate{z}^{n-1}+\ldots +a_{1}\conjugate{z}
+      &=& a_{n}\conjugate{z}^n+a_{n-1}\conjugate{z}^{n-1}+\ldots +a_{1}\conjugate{z}
           +a_{0} \\
-      &=&\conjugate{a_{n}}\ \conjugate{z}^{n}+\conjugate{a_{n-1}}\ \conjugate{z}
-      ^{n-1}+\ldots +\conjugate{a_{1}}\ \conjugate{z}+\conjugate{a_{0}}
+      &=&\conjugate{a_{n}}\ \conjugate{z}^n+\conjugate{a_{n-1}}
+          \ \conjugate{z}^{n-1}+\ldots +\conjugate{a_{1}}
+          \ \conjugate{z}+\conjugate{a_{0}}
       \\
-      &=& \conjugate{a_{n}z^{n}}+\conjugate{a_{n-1}z^{n-1}}+\ldots +\conjugate{a_{1}z}+
+      &=& \conjugate{a_{n}z^n}+\conjugate{a_{n-1}z^{n-1}}+\ldots +\conjugate{a_{1}z}+
           \conjugate{a_{0}} \\
-      &=& \conjugate{a_{n}z^{n}+a_{n-1}z^{n-1}+\ldots+a_{1}z+a_{0}} \\
+      &=& \conjugate{a_{n}z^n+a_{n-1}z^{n-1}+\ldots+a_{1}z+a_{0}} \\
       &=& \conjugate{p(z) } \\
       &=& 0.
     \end{eqnarray*}

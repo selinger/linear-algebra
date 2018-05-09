@@ -140,7 +140,7 @@
 \end{ex}
 
 \begin{ex}
-  Prove the Cauchy Schwarz inequality in $\R^{n}$ as follows.  For
+  Prove the Cauchy Schwarz inequality in $\R^n$ as follows.  For
   $\vect{u},\vect{v}$ vectors, consider
   \begin{equation*}
     (\vect{u}-
@@ -154,20 +154,20 @@
   meaning of $\vect{u}=\proj_{\vect{v}}(\vect{u})$?
   \begin{sol}
     \begin{equation*}
-      \paren{\vect{u}-\frac{\vect{v}\dotprod\vect{u}}{\norm{\vect{v}}^{2}}\,\vect{v}}
+      \paren{\vect{u}-\frac{\vect{v}\dotprod\vect{u}}{\norm{\vect{v}}^2}\,\vect{v}}
       \dotprod
-      \paren{\vect{u}-\frac{\vect{v}\dotprod\vect{u}}{\norm{\vect{v}}^{2}}\,\vect{v}} 
-      = \norm{\vect{u}}^{2} - 2(\vect{v}\dotprod \vect{u})^{2}\frac{1}{\norm{\vect{v}}^{2}}+(\vect{v}\dotprod \vect{u})^{2}\frac{1}{ \norm{\vect{v}}^{2}}
+      \paren{\vect{u}-\frac{\vect{v}\dotprod\vect{u}}{\norm{\vect{v}}^2}\,\vect{v}} 
+      = \norm{\vect{u}}^2 - 2(\vect{v}\dotprod \vect{u})^2\frac{1}{\norm{\vect{v}}^2}+(\vect{v}\dotprod \vect{u})^2\frac{1}{ \norm{\vect{v}}^2}
       \geq 0,
     \end{equation*}
     and so
     \begin{equation*}
-      \norm{\vect{u}} ^{2}\norm{\vect{v}}
-      ^{2}\geq (\vect{v}\dotprod \vect{u}) ^{2}.
+      \norm{\vect{u}}^2\norm{\vect{v}}^2
+      \geq (\vect{v}\dotprod \vect{u})^2.
     \end{equation*}
     We get equality exactly when
     $\displaystyle\vect{u}=\proj_{\vect{v}}(\vect{u}) =
-    \frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{v}} ^{2}}\,\vect{v}$,
+    \frac{\vect{v}\dotprod \vect{u}}{\norm{\vect{v}}^2}\,\vect{v}$,
     or in other words, when $\vect{u}$ is a multiple of $\vect{v}$.
   \end{sol}
 \end{ex}
@@ -185,9 +185,9 @@
     This follows because
     \begin{eqnarray*}
       \proj_{\vect{v}}(\vect{w})+\proj_{\vect{v}}(\vect{u})
-      &=& \frac{\vect{v}\dotprod\vect{w}}{\norm{\vect{v}}^{2}}\vect{v}
-          + \frac{\vect{v}\dotprod\vect{u}}{\norm{\vect{v}}^{2}}\vect{v} \\
-      &=& \frac{\vect{v}\dotprod(\vect{w}+\vect{u})}{\norm{\vect{v}}^{2}}\vect{v} \\
+      &=& \frac{\vect{v}\dotprod\vect{w}}{\norm{\vect{v}}^2}\vect{v}
+          + \frac{\vect{v}\dotprod\vect{u}}{\norm{\vect{v}}^2}\vect{v} \\
+      &=& \frac{\vect{v}\dotprod(\vect{w}+\vect{u})}{\norm{\vect{v}}^2}\vect{v} \\
       &=& \proj_{\vect{v}}(\vect{w}+\vect{u}).
     \end{eqnarray*}
   \end{sol}
@@ -198,12 +198,12 @@
   \begin{equation*}
     \vect{u}\dotprod(\vect{v}-\proj_{\vect{u}}(\vect{v}))=0
   \end{equation*}
-  and conclude every vector in $\R^{n}$ can be written as the sum of
+  and conclude every vector in $\R^n$ can be written as the sum of
   two vectors, one which is orthogonal and one which is parallel to
   the given vector.
   \begin{sol}
     $\displaystyle\vect{u}\dotprod(\vect{v}-\proj_{\vect{u}}(\vect{v}))
-    = \vect{u} \dotprod \vect{v}-\frac{\vect{u}\cdot\vect{v}}{\norm{\vect{u}}^{2}}\vect{u}\dotprod\vect{u}
+    = \vect{u} \dotprod \vect{v}-\frac{\vect{u}\cdot\vect{v}}{\norm{\vect{u}}^2}\vect{u}\dotprod\vect{u}
     = \vect{u} \dotprod \vect{v}
     - \vect{u} \dotprod \vect{v}
     =0$. Therefore, we can write

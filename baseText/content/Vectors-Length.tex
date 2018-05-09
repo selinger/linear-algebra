@@ -32,8 +32,8 @@ length of the hypotenuse (and thus the distance between $P$ and $Q$)
 equals
 \begin{equation*}
   d(P,Q)
-  =\sqrt{\abs{p_{1}-q_{1}}^{2}+\abs{p_{2}-q_{2}}^{2}}
-  =\sqrt{(p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}}.
+  =\sqrt{\abs{p_{1}-q_{1}}^2+\abs{p_{2}-q_{2}}^2}
+  =\sqrt{(p_{1}-q_{1})^2+(p_{2}-q_{2})^2}.
 \end{equation*}
 Now consider two points $P=(p_{1},p_{2},p_{3})$ and
 $Q = (q_{1},q_{2},q_{3})$ in $3$-dimensional space.
@@ -58,20 +58,20 @@ solid line connecting $P$ and $Q$. First, by the Pythagorean Theorem
 applied to the right triangle $QSR$, the length of the line joining
 $R$ and $Q$ equals
 \begin{equation*}
-d(R,Q) = \sqrt{ (p_{1}-q_{1}) ^{2}+(p_{2}-q_{2}) ^{2}}.
+d(R,Q) = \sqrt{ (p_{1}-q_{1})^2+(p_{2}-q_{2})^2}.
 \end{equation*}
 Second, by the Pythagorean Theorem applied to the triangle $QRP$, the
 length of the line joining $P$ and $Q$ equals
 \begin{equation*}
-d(P,Q)=\sqrt{d(R,Q)^{2}+(p_{3}-q_{3})^{2}}
- =\sqrt{ (p_{1}-q_{1})^{2}+(p_{2}-q_{2})^{2}+(p_{3}-q_{3})^{2}}
+d(P,Q)=\sqrt{d(R,Q)^2+(p_{3}-q_{3})^2}
+ =\sqrt{ (p_{1}-q_{1})^2+(p_{2}-q_{2})^2+(p_{3}-q_{3})^2}
 \end{equation*}
 This discussion motivates the following definition for the distance
 between points in $\R^n$.
 
 \begin{definition}{Distance between points}{distance-between-points}
   Let $P=(p_{1},\ldots,p_{n})$ and $Q=(q_{1},\ldots,q_{n})$ be
-  two points in $\R^{n}$. Then the
+  two points in $\R^n$. Then the
   \textbf{distance}\index{distance!point to point}
   between these points is defined as
   \begin{equation*}
@@ -88,15 +88,16 @@ between two points in $\R^4$.
 
 \begin{example}{Distance between points}{distance-between-points}
   Find the distance between the points $P=(1,2,-4,6)$ and
-  $Q=(2,3,-1,0)$ in $\R^{4}$.
+  $Q=(2,3,-1,0)$ in $\R^4$.
 \end{example}
 
 \begin{solution}
   Using the distance formula, we have
   \begin{equation*}
-    d(P,Q)= \sqrt{ (1-2) ^{2}+(2-3)
-      ^{2}+(-4-(-1)) ^{2}+(6-0)^{2}} =
-    \sqrt{1^2+1^2+3^2+6^2} = \sqrt{47}.
+    d(P,Q)
+    = \sqrt{ (1-2)^2+(2-3)^2+(-4-(-1))^2+(6-0)^2}
+    = \sqrt{1^2+1^2+3^2+6^2}
+    = \sqrt{47}.
   \end{equation*}
 \end{solution}
 
@@ -110,17 +111,17 @@ between two points in $\R^4$.
   distance from $Q$ and $R$, thus $d(P,Q)=d(P,R)$. By the distance
   formula, we have
   \begin{equation*}
-    \sqrt{(p_1-1)^{2}+(p_2-2)^{2}+(p_3-3)^{2}}=
-    \sqrt{(p_1-0)^{2}+(p_2-1)^{2}+(p_3-2)^{2}}.
+    \sqrt{(p_1-1)^2+(p_2-2)^2+(p_3-3)^2}=
+    \sqrt{(p_1-0)^2+(p_2-1)^2+(p_3-2)^2}.
   \end{equation*}
   Squaring both sides, we obtain
   \begin{equation*}
-    (p_1 -1) ^{2}+(p_2 -2) ^{2}+(p_3 -3)
-    ^{2}=p_1^{2}+(p_2-1) ^{2}+(p_3 -2) ^{2},
+    (p_1 -1)^2+(p_2 -2)^2+(p_3 -3)^2
+    = p_1^2+(p_2-1)^2+(p_3 -2)^2,
   \end{equation*}
   and so
   \begin{equation*}
-    \allowbreak (p_1^{2}-2p_1+1)+(p_2^{2}-4p_2+4)+(p_3^{2}-6p_3+9)=p_1^{2}+(p_2^{2}-2p_2+1)+(p_3^{2}-4p_3+4).
+    \allowbreak (p_1^2-2p_1+1)+(p_2^2-4p_2+4)+(p_3^2-6p_3+9)=p_1^2+(p_2^2-2p_2+1)+(p_3^2-4p_3+4).
   \end{equation*}
   Simplifying, this becomes
   \begin{equation*}
@@ -198,7 +199,7 @@ $1$.
   \end{equation*}
 \end{definition}
 
-Let $\vect{v}$ be a non-zero vector in $\R^{n}$. Then there is a unit
+Let $\vect{v}$ be a non-zero vector in $\R^n$. Then there is a unit
 vector $\vect{u}$ that points in the same direction as $\vect{v}$, but
 has length 1.\index{vector!corresponding unit vector}. This vector is
 given by

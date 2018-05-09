@@ -1,7 +1,7 @@
 \section*{Exercises}
 
 \begin{ex}
-  For each of the following vector functions $T:\R^{n}\to\R^{n}$, show
+  For each of the following vector functions $T:\R^n\to\R^n$, show
   that $T$ is a linear transformation and find the corresponding
   matrix $A$ such that $T(\vect{x}) = A\vect{x}$.
   \begin{enumerate}
@@ -24,7 +24,7 @@
 \end{ex}
 
 \begin{ex}\label{ex:linear-transformation-inconvenient}
-  Assume that $T:\R^{n}\rightarrow \R^{m}$ is a linear transformation,
+  Assume that $T:\R^n\rightarrow \R^m$ is a linear transformation,
   and that $\vect{u}_1,\ldots,\vect{u}_n$ is a basis of $\R^n$. For
   all $i=1,\ldots,n$, let $\vect{v}_i = T(\vect{u}_i)$. Let $A$ be the
   matrix that has $\vect{u}_1,\ldots,\vect{u}_n$ as its columns, and
@@ -152,7 +152,7 @@
 
 \begin{ex}
   Consider the following linear transformations
-  $T:\R^{3}\rightarrow \R^{2}$.  For each, determine the matrix $A$
+  $T:\R^3\rightarrow \R^2$.  For each, determine the matrix $A$
   such that $T(\vect{x})=A\vect{x}$.
   \begin{enumerate}
   \item $T\begin{mymatrix}{c}
@@ -198,11 +198,11 @@
 \begin{ex}
   Find the matrix for
   $T(\vect{w}) = \proj_{\vect{v}}(\vect{w})$, where
-  $\vect{v}=\mat{1, -2, 3}^{T}$.
+  $\vect{v}=\mat{1, -2, 3}^T$.
   \begin{sol}
     Recall that the desired matrix has $i\th$ column equal to
     $\displaystyle\proj_{\vect{u}}(\vect{e}_{i}) =
-    \frac{\vect{u}\dotprod\vect{e}_i}{\norm{\vect{u}}^{2}}\vect{u}$.
+    \frac{\vect{u}\dotprod\vect{e}_i}{\norm{\vect{u}}^2}\vect{u}$.
     Therefore, the matrix is
     \begin{equation*}
       \frac{1}{14}\begin{mymatrix}{rrr}
@@ -217,7 +217,7 @@
 \begin{ex}
   Find the matrix for
   $T(\vect{w}) = \proj_{\vect{v}}(\vect{w})$, where
-  $\vect{v}=\mat{1,5,3}^{T}$.
+  $\vect{v}=\mat{1,5,3}^T$.
   \begin{sol}
     \begin{equation*}
       \frac{1}{35}\begin{mymatrix}{rrr}

@@ -5,14 +5,14 @@
     -1 & -1 & 1
   \end{mymatrix}$ and $Y=\begin{mymatrix}{rrr}
     0 & 1 & 2
-  \end{mymatrix}$. Find $X^{T}Y$ and $XY^{T}$ if
+  \end{mymatrix}$. Find $X^TY$ and $XY^T$ if
   possible.
   \begin{sol}
-    $X^{T}Y = \begin{mymatrix}{rrr}
+    $X^TY = \begin{mymatrix}{rrr}
       0 & -1 & -2 \\
       0 & -1 & -2 \\
       0 & 1 & 2
-    \end{mymatrix}$, $XY^{T} = 1$.
+    \end{mymatrix}$, $XY^T = 1$.
   \end{sol}
 \end{ex}
 
@@ -48,12 +48,12 @@
   Find the following if possible. If it is not possible explain why.
   \begin{enumerate}
   \item $-3A{^T}$.
-  \item $3B - A^{T}$.
-  \item $E^{T}B$.
-  \item $EE^{T}$.
-  \item $B^{T}B$.
-  \item $CA^{T}$.
-  \item $D^{T}BE$.
+  \item $3B - A^T$.
+  \item $E^TB$.
+  \item $EE^T$.
+  \item $B^TB$.
+  \item $CA^T$.
+  \item $D^TBE$.
   \end{enumerate}
 
   \begin{sol}
@@ -130,10 +130,10 @@
 \begin{ex}
   Let $A$ be an $n\times n$-matrix. Show $A$ equals the sum of a
   symmetric and an antisymmetric matrix.  \textbf{Hint:} Show that
-  $\frac{1}{2}(A^{T}+A)$ is symmetric and then consider using
+  $\frac{1}{2}(A^T+A)$ is symmetric and then consider using
   this as one of the matrices.
   \begin{sol}
-    $A=\frac{1}{2}(A+A^{T})+\frac{1}{2}(A-A^{T})$.
+    $A=\frac{1}{2}(A+A^T)+\frac{1}{2}(A-A^T)$.
   \end{sol}
 \end{ex}
 
@@ -142,7 +142,7 @@
   of only zeros. Recall that the main diagonal consists of every entry
   of the matrix which is of the form $a_{ii}$.
   \begin{sol}
-    If $A$ is antisymmetric then $A=-A^{T}$. It follows that
+    If $A$ is antisymmetric then $A=-A^T$. It follows that
     $a_{ii}=-a_{ii}$ and so each $a_{ii}=0$.
   \end{sol}
 \end{ex}
@@ -151,7 +151,7 @@
   Show that for $m \times n$-matrices $A,B$ and scalars $r, s$, the
   following holds:
   \begin{equation*}
-    (rA + sB) ^T = rA^{T} + sB^{T}.
+    (rA + sB)^T = rA^T + sB^T.
   \end{equation*}
   \vspace{-4ex}
   \begin{sol}
@@ -162,8 +162,8 @@
 \end{ex}
 
 \begin{ex} \label{exer-Rn3}  Let $A$ be a real $m\times n$-matrix and
-  let $\vect{u}\in \R^{n}$ and $\vect{v}\in \R^{m}$. Show
-  $(A\vect{u})\dotprod \vect{v}=\vect{u}\dotprod (A^{T}\vect{v})$.
+  let $\vect{u}\in \R^n$ and $\vect{v}\in \R^m$. Show
+  $(A\vect{u})\dotprod \vect{v}=\vect{u}\dotprod (A^T\vect{v})$.
   \begin{sol}
     $(A\vect{u})\dotprod \vect{v} = (A\vect{u})^T\vect{v} =
     (\vect{u}^TA^T)\vect{v}  = \vect{u}^T(A^T\vect{v}) =
@@ -173,15 +173,15 @@
 
 \begin{ex}
   Show that if $A$ is an invertible $n\times n$-matrix, then so is
-  $A^{T} $ and $(A^{T})^{-1}=(A^{-1})^{T}$.
+  $A^T $ and $(A^T)^{-1}=(A^{-1})^T$.
   \begin{sol}
-    We need to show that $(A^{-1})^{T}$ is the inverse of
-    $A^{T}$. From properties of the transpose,
+    We need to show that $(A^{-1})^T$ is the inverse of
+    $A^T$. From properties of the transpose,
     \begin{eqnarray*}
-      A^{T}(A^{-1})^{T} &=& (A^{-1}A)^{T}=I^{T}=I, \\
-      (A^{-1})^{T}A^{T} &=& (AA^{-1})^{T}=I^{T}=I.
+      A^T(A^{-1})^T &=& (A^{-1}A)^T=I^T=I, \\
+      (A^{-1})^TA^T &=& (AA^{-1})^T=I^T=I.
     \end{eqnarray*}
-    Hence $A^{T}$ is invertible and $(A^{T})^{-1}=(A^{-1})^{T}$.
+    Hence $A^T$ is invertible and $(A^T)^{-1}=(A^{-1})^T$.
   \end{sol}
 \end{ex}
 

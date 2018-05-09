@@ -29,8 +29,8 @@ proposition.
              \vect{v}\dotprod (t\vect{u}+\vect{v}) \\
          &=&t^2\vect{u}\dotprod \vect{u}+t(\vect{u}\dotprod \vect{v}) + t \vect{v}\dotprod \vect{u}+
              \vect{v}\dotprod \vect{v} \\
-         &=&t^2\norm{\vect{u}}^{2}+2t(\vect{u}\dotprod \vect{v}) +\norm{
-             \vect{v}} ^{2}.
+         &=&t^2\norm{\vect{u}}^2+2t(\vect{u}\dotprod \vect{v}) +\norm{
+             \vect{v}}^2.
   \end{eqnarray*}
   This means the graph of $y=f(t)$ is a parabola which opens upwards
   and is never negative. It follows that this function has at most one
@@ -38,8 +38,8 @@ proposition.
   $at^2+bt+c$ has one or zero roots if and only if $b^2-4ac\leq
   0$. Applying this reasoning to the function $f(t)$, we obtain
   \begin{equation*}
-    (2(\vect{u}\dotprod \vect{v})) ^{2}-4\norm{\vect{u}
-    } ^{2}\norm{\vect{v}} ^{2}<0,
+    (2(\vect{u}\dotprod \vect{v}))^2-4\norm{\vect{u}
+    }^2\norm{\vect{v}}^2<0,
   \end{equation*}
   which is equivalent to
   $\abs{\vect{u}\dotprod \vect{v} }<\norm{\vect{u}} \norm{\vect{v}}$.
@@ -52,7 +52,7 @@ of one side of a triangle is less than or equal the sum of the lengths
 of the two other sides.
 
 \begin{proposition}{Triangle inequality}{triangle-inequality-dot-product}
-  For\/ $\vect{u},\vect{v}\in \R^{n}$, we have
+  For\/ $\vect{u},\vect{v}\in \R^n$, we have
   \begin{equation}\label{triangle-ineq-1}
     \norm{\vect{u}+\vect{v}} \leq \norm{\vect{u}} +\norm{\vect{v}}.
   \end{equation}
@@ -70,17 +70,17 @@ of the two other sides.
   By properties of the dot product and the Cauchy-Schwarz inequality,
   we have
   \begin{eqnarray*}
-    \norm{\vect{u}+\vect{v}}^{2}
+    \norm{\vect{u}+\vect{v}}^2
     &=& (\vect{u}+\vect{v})\dotprod(\vect{u}+\vect{v}) \\
     & =&(\vect{u}\dotprod\vect{u})+(\vect{u}\dotprod\vect{v})+(\vect{v}\dotprod\vect{u})+(\vect{v}\dotprod\vect{v}) \\
-    &=&\norm{\vect{u}}^{2}+2(\vect{u}\dotprod\vect{v})+\norm{\vect{v}}^{2} \\
-    &\leq& \norm{\vect{u}}^{2}+2\abs{\vect{u}\dotprod\vect{v}}+\norm{\vect{v}}^{2} \\
-    &\leq& \norm{\vect{u}}^{2}+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^{2} \\
-    &=& (\norm{\vect{u}}+\norm{\vect{v}})^{2}.
+    &=&\norm{\vect{u}}^2+2(\vect{u}\dotprod\vect{v})+\norm{\vect{v}}^2 \\
+    &\leq& \norm{\vect{u}}^2+2\abs{\vect{u}\dotprod\vect{v}}+\norm{\vect{v}}^2 \\
+    &\leq& \norm{\vect{u}}^2+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^2 \\
+    &=& (\norm{\vect{u}}+\norm{\vect{v}})^2.
   \end{eqnarray*}
   Therefore,
   \begin{equation*}
-    \norm{\vect{u}+\vect{v}}^{2}\leq(\norm{\vect{u}}+\norm{\vect{v}})^{2}.
+    \norm{\vect{u}+\vect{v}}^2\leq(\norm{\vect{u}}+\norm{\vect{v}})^2.
   \end{equation*}
   Taking square roots of both sides, we obtain \eqref{triangle-ineq-1}.
 \end{proof}
