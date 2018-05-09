@@ -74,29 +74,29 @@ staircase. Here are some examples of {\ef}s.
 \end{example}
 
 \begin{example}{Not in {\ef}}{matrices-not-echelon}
-The following augmented matrices are not in {\ef}.
+  The following augmented matrices are not in {\ef}.
 
-\begin{equation*}
-\begin{mymatrix}{rrr|r}
-0 & 0 & 0 & 0 \\
-\circled{1} & 2 & 3 & 3 \\
-0 & \circled{1} & 0 & 2 \\
-0 & 0 & 0 & \circled{1} \\
-0 & 0 & 0 & 0
-\end{mymatrix}, \quad \begin{mymatrix}{rr|r}
-\circled{1} & 2 & 3 \\
-\circled{2} & 4 & -6 \\
-\circled{4} & 0 & 7
-\end{mymatrix}, \quad \begin{mymatrix}{rrr|r}
-0 & \circled{2} & 3 & 3 \\
-\circled{1} & 5 & 0 & 2 \\
-0 & 0 & \circled{1} & 0 \\
-0 & 0 & 0 & 0
-\end{mymatrix}
-\end{equation*}
-In the first matrix, a row of zeros is above a non-zero row. In the
-second and third matrix, the leading entries of some rows are not to
-the right of the leading entries of previous rows.
+  \begin{equation*}
+    \begin{mymatrix}{rrr|r}
+      0 & 0 & 0 & 0 \\
+      \circled{1} & 2 & 3 & 3 \\
+      0 & \circled{1} & 0 & 2 \\
+      0 & 0 & 0 & \circled{1} \\
+      0 & 0 & 0 & 0
+    \end{mymatrix}, \quad \begin{mymatrix}{rr|r}
+      \circled{1} & 2 & 3 \\
+      \circled{2} & 4 & -6 \\
+      \circled{4} & 0 & 7
+    \end{mymatrix}, \quad \begin{mymatrix}{rrr|r}
+      0 & \circled{2} & 3 & 3 \\
+      \circled{1} & 5 & 0 & 2 \\
+      0 & 0 & \circled{1} & 0 \\
+      0 & 0 & 0 & 0
+    \end{mymatrix}
+  \end{equation*}
+  In the first matrix, a row of zeros is above a non-zero row. In the
+  second and third matrix, the leading entries of some rows are not to
+  the right of the leading entries of previous rows.
 \end{example}
 
 An augmented matrix can always be converted to {\ef} by using
@@ -262,7 +262,7 @@ examples show how to do this.
   first pivot column. We switch the first two rows to move a non-zero
   number into the pivot position:
   \begin{equation*}
-  \stackrel{R_2\rowswap R_1}{\roweq}
+    \stackrel{R_2\rowswap R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3 \\
       0 &  1 &   2 & 2 \\
@@ -272,7 +272,7 @@ examples show how to do this.
   To create zeros below the pivot entry, we subtract $2$ times the
   first row from the third row:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3-2R_1}{\roweq}
+    \stackrel{R_3\rowop R_3-2R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3 \\
       0 &  1 &   2 & 2 \\
@@ -284,7 +284,7 @@ examples show how to do this.
   entry. We add $3$ times the second row to the third row to create a
   zero below the pivot:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3+3R_2}{\roweq}
+    \stackrel{R_3\rowop R_3+3R_2}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{2} &  1 &  -2 & 3 \\
       0 &  \circled{1} &   2 & 2 \\
@@ -307,7 +307,7 @@ examples show how to do this.
   \begin{equation}
     \begin{array}{r@{~}c@{~}l}
       3x  -y + 5z  &=& 8 \\
-           y - 10z &=& 1 \\
+      y - 10z &=& 1 \\
       6x  -y       &=& 17.
     \end{array}
   \end{equation}
@@ -326,7 +326,7 @@ examples show how to do this.
   pivot entry. We use row operating to create zeros beneath the pivot
   entry. We subtract $2$ times the first row from the third row and get:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3-2R_1}{\roweq}
+    \stackrel{R_3\rowop R_3-2R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{3} &  -1  &  5 & 8 \\
       0 &   1 & -10 & 1 \\
@@ -338,7 +338,7 @@ examples show how to do this.
   second column) and repeat the procedure. Subtracting the second row
   from the third row, we get:
   \begin{equation*}
-  \stackrel{R_3\rowop R_3-R_2}{\roweq}
+    \stackrel{R_3\rowop R_3-R_2}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{3} &  -1  &  5 & 8 \\
       0 &   \circled{1} & -10 & 1 \\
@@ -523,7 +523,7 @@ To summarize, we have the following possibilities for a system of equations:
       \circled{1} & 2 & 3 & 5 \\
       0 & 0 & \circled{4} & 6
     \end{mymatrix}.
-\end{equation*}
+  \end{equation*}
 \end{enumerate}
 
 There is a special name for the number of pivot variables in a system
@@ -541,15 +541,15 @@ of equations. It is called the {\em rank} of the system.
 \end{definition}
 
 \begin{example}{Finding the rank of a matrix}{rank-of-a-matrix}
-Consider the matrix
-\begin{equation*}
-\begin{mymatrix}{rrr}
-1 & 2 & 3 \\
-1 & 5 & 9 \\
-2 & 4 & 6
-\end{mymatrix}
-\end{equation*}
-What is its rank?
+  Consider the matrix
+  \begin{equation*}
+    \begin{mymatrix}{rrr}
+      1 & 2 & 3 \\
+      1 & 5 & 9 \\
+      2 & 4 & 6
+    \end{mymatrix}
+  \end{equation*}
+  What is its rank?
 \end{example}
 
 \begin{solution}
@@ -586,10 +586,10 @@ By refining the above argument, we get the following theorem:
   Consider a system of $m$ equations in $n$ variables, and assume that
   the coefficient matrix has rank $r$. Assume further that the system
   is consistent.
-\begin{enumerate}
-\item If $r=n$, then the system has a unique solution.
-\item If $r<n$, then the system has infinitely many solutions, with $n-r$ parameters.
-\end{enumerate}
+  \begin{enumerate}
+  \item If $r=n$, then the system has a unique solution.
+  \item If $r<n$, then the system has infinitely many solutions, with $n-r$ parameters.
+  \end{enumerate}
 \end{theorem}
 
 Here is a final summary of how the rank affects the number of

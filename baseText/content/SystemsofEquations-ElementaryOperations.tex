@@ -31,16 +31,16 @@ operations are the {\em key tool} we use in linear algebra to solve
 systems of equations.
 
 \begin{definition}{Elementary operations}{elementary-operations}
-\textbf{Elementary operations}\index{elementary operation} are the
-following operations:
+  \textbf{Elementary operations}\index{elementary operation} are the
+  following operations:
 
-\begin{enumerate}
-\item Interchange the order in which the equations are listed.
+  \begin{enumerate}
+  \item Interchange the order in which the equations are listed.
 
-\item Multiply any equation by a non-zero scalar.
+  \item Multiply any equation by a non-zero scalar.
 
-\item Add a multiple of one equation to another equation.
-\end{enumerate}
+  \item Add a multiple of one equation to another equation.
+  \end{enumerate}
 \end{definition}
 
 The most important property of the elementary operations is that they
@@ -48,21 +48,21 @@ do not change the solutions to the system of equations. Before proving
 that this is true in general, we will first verify it in an example.
 
 \begin{example}{Equivalent systems}{equivalent-systems}
-Show that the systems
-\begin{equation*}
-\begin{array}{r@{~}c@{~}l}
-x+2y&=&7 \\
--2x  &=& -6
-\end{array}
-\end{equation*}
-and
-\begin{equation*}
-\begin{array}{r@{~}c@{~}l}
-x+2y&=&7 \\
-4y &=& 8
-\end{array}
-\end{equation*}
-are equivalent.
+  Show that the systems
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      x+2y&=&7 \\
+      -2x  &=& -6
+    \end{array}
+  \end{equation*}
+  and
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      x+2y&=&7 \\
+      4y &=& 8
+    \end{array}
+  \end{equation*}
+  are equivalent.
 \end{example}
 
 \begin{solution}
@@ -70,7 +70,7 @@ are equivalent.
   applying an elementary operation, namely, adding 2 times the first
   equation to the second equation:
   \begin{equation*}
-      -2x + 2(x+2y) = -6 + 2(7)
+    -2x + 2(x+2y) = -6 + 2(7)
   \end{equation*}
   By simplifying, we obtain $4y = 8$.
 
@@ -95,93 +95,93 @@ represent the left-hand side of an equation, while $b_i$ denotes a
 constant term.
 
 \begin{theorem}{Elementary operations and solutions}{elementary-operations-and-solutions}
-Suppose you have a system of two linear equations in any number of variables
-\begin{equation}
- \begin{array}{c}
-  E_1=b_1 \\
-  E_2=b_2.
-\end{array} \label{system}
-\end{equation}
-Then the following systems are equivalent to \eqref{system}:
-\begin{enumerate}
-\item   \begin{equation}
-	\begin{array}{c}
-	E_2=b_2 \\
-	E_1=b_1.
-	\end{array}
-	\label{thm-1.9.1}
-	\end{equation}
-\item  \begin{equation}
-	\begin{array}{c}
-	E_1=b_1 \\
-	kE_2=kb_2 \\
-	\end{array}
-	\label{thm-1.9.2}
-	\end{equation}
-  for any scalar $k$, provided $k\neq0$.
-\item \begin{equation}
+  Suppose you have a system of two linear equations in any number of variables
+  \begin{equation}
+    \begin{array}{c}
+      E_1=b_1 \\
+      E_2=b_2.
+    \end{array} \label{system}
+  \end{equation}
+  Then the following systems are equivalent to \eqref{system}:
+  \begin{enumerate}
+  \item   \begin{equation}
       \begin{array}{c}
-       E_1=b_1 \\
-       E_2+kE_1=b_2+kb_1
-       \end{array}
-	\label{thm-1.9.3}
-	\end{equation}
-	for any scalar $k$ (including $k=0$).
+        E_2=b_2 \\
+        E_1=b_1.
+      \end{array}
+      \label{thm-1.9.1}
+    \end{equation}
+  \item  \begin{equation}
+      \begin{array}{c}
+        E_1=b_1 \\
+        kE_2=kb_2 \\
+      \end{array}
+      \label{thm-1.9.2}
+    \end{equation}
+    for any scalar $k$, provided $k\neq0$.
+  \item \begin{equation}
+      \begin{array}{c}
+        E_1=b_1 \\
+        E_2+kE_1=b_2+kb_1
+      \end{array}
+      \label{thm-1.9.3}
+    \end{equation}
+    for any scalar $k$ (including $k=0$).
 
-\end{enumerate}
+  \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-\begin{enumerate}
-\item By definition, a solution of \eqref{system} is an assignment of
-  scalars to the variables that is a solution to $E_1=b_1$ and to
-  $E_2=b_2$. But that is exactly the same thing as a solution of
-  \eqref{thm-1.9.1}.
+  \begin{enumerate}
+  \item By definition, a solution of \eqref{system} is an assignment of
+    scalars to the variables that is a solution to $E_1=b_1$ and to
+    $E_2=b_2$. But that is exactly the same thing as a solution of
+    \eqref{thm-1.9.1}.
 
-\item To prove that the systems \eqref{system} and \eqref{thm-1.9.2}
-  have the same solution set, let $(x_1,\ldots,x_n)$ be
-  any solution of \eqref{system}. Then $E_1=b_1$ and $E_2=b_2$ are
-  both true. Multiplying both sides of the last equation by $k$, we
-  know that $kE_2=kb_2$ is true, and so
-  $(x_1,\ldots,x_n)$ is a solution of
-  \eqref{thm-1.9.2}. Conversely, let $(x_1,\ldots,x_n)$
-  be any solution of \eqref{thm-1.9.2}.  Then $E_1=b_1$ and $kE_2=kb_2$
-  are true. Because $k\neq 0$, we are allowed to divide both sides of
-  the last equation by $k$, and therefore $E_2=b_2$ is true. Hence,
-  $(x_1,\ldots,x_n)$ is also a solution of
-  \eqref{system}. Since we have shown that every solution of
-  \eqref{system}  is a solution of \eqref{thm-1.9.2} and vice versa,
-  the two systems are equivalent.
+  \item To prove that the systems \eqref{system} and \eqref{thm-1.9.2}
+    have the same solution set, let $(x_1,\ldots,x_n)$ be
+    any solution of \eqref{system}. Then $E_1=b_1$ and $E_2=b_2$ are
+    both true. Multiplying both sides of the last equation by $k$, we
+    know that $kE_2=kb_2$ is true, and so
+    $(x_1,\ldots,x_n)$ is a solution of
+    \eqref{thm-1.9.2}. Conversely, let $(x_1,\ldots,x_n)$
+    be any solution of \eqref{thm-1.9.2}.  Then $E_1=b_1$ and $kE_2=kb_2$
+    are true. Because $k\neq 0$, we are allowed to divide both sides of
+    the last equation by $k$, and therefore $E_2=b_2$ is true. Hence,
+    $(x_1,\ldots,x_n)$ is also a solution of
+    \eqref{system}. Since we have shown that every solution of
+    \eqref{system}  is a solution of \eqref{thm-1.9.2} and vice versa,
+    the two systems are equivalent.
 
-\item To prove that the systems \eqref{system} and \eqref{thm-1.9.3}
-  have the same solution set, let $(x_1,\ldots,x_n)$ be
-  any solution of \eqref{system}. Then $E_1=b_1$ and $E_2=b_2$ are
-  both true. We multiply both sides of the first equation by $k$ to
-  obtain $kE_1=kb_1$. Then $kE_1+E_2 = kb_1+b_2$, and hence
-  $(x_1,\ldots,x_n)$ is a solution of
-  \eqref{thm-1.9.3}. For the converse direction, assume
-  $(x_1,\ldots,x_n)$ is a solution of $E_1=b_1$ and
-  $kE_1+E_2 = kb_1+b_2$. From the first equation, we have $kE_1=kb_1$,
-  and subtracting this from the second equation, we get $E_2=b_2$,
-  hence $(x_1,\ldots,x_n)$ is a solution of
-  \eqref{system}. Note that unlike in case 2., there was no need to
-  divide by $k$, and therefore it was not necessary to require $k\neq 0$.
-\end{enumerate}
+  \item To prove that the systems \eqref{system} and \eqref{thm-1.9.3}
+    have the same solution set, let $(x_1,\ldots,x_n)$ be
+    any solution of \eqref{system}. Then $E_1=b_1$ and $E_2=b_2$ are
+    both true. We multiply both sides of the first equation by $k$ to
+    obtain $kE_1=kb_1$. Then $kE_1+E_2 = kb_1+b_2$, and hence
+    $(x_1,\ldots,x_n)$ is a solution of
+    \eqref{thm-1.9.3}. For the converse direction, assume
+    $(x_1,\ldots,x_n)$ is a solution of $E_1=b_1$ and
+    $kE_1+E_2 = kb_1+b_2$. From the first equation, we have $kE_1=kb_1$,
+    and subtracting this from the second equation, we get $E_2=b_2$,
+    hence $(x_1,\ldots,x_n)$ is a solution of
+    \eqref{system}. Note that unlike in case 2., there was no need to
+    divide by $k$, and therefore it was not necessary to require $k\neq 0$.
+  \end{enumerate}
 \end{proof}
 
 We will now use elementary operations to solve a system of three
 equations and three variables.
 
 \begin{example}{Solving a system of equations with elementary operations}{solving-a-system-with-elementary-operations}
-Solve the system of equations
-\begin{equation*}
-\begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
-x&+&3y&+&6z&=&25 \\
-2x&+&7y&+&14z&=&58 \\
-&&2y&+&5z&=&19.
-\end{array}
-\label{solving-a-system1}
-\end{equation*}
+  Solve the system of equations
+  \begin{equation*}
+    \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
+      x&+&3y&+&6z&=&25 \\
+      2x&+&7y&+&14z&=&58 \\
+       &&2y&+&5z&=&19.
+    \end{array}
+    \label{solving-a-system1}
+  \end{equation*}
 \end{example}
 
 \begin{solution}
@@ -203,8 +203,8 @@ x&+&3y&+&6z&=&25 \\
   \begin{equation}\label{solving-a-system3}
     \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
       x&+&3y&+&6z&=&25 \\
-      &&y&+&2z&=&8 \\
-      &&&&z&=&3.
+       &&y&+&2z&=&8 \\
+       &&&&z&=&3.
     \end{array}
   \end{equation}
   At this point, it is easy to find the solution. The last equation
@@ -233,8 +233,8 @@ x&+&3y&+&6z&=&25 \\
     \allowbreak
     \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
       x&+&3y&&&=&7 \\
-      &&y&&&=&2 \\
-      &&&&z&=&3.
+       &&y&&&=&2 \\
+       &&&&z&=&3.
     \end{array}
   \end{equation*}
   Now add $(-3) $ times the second to the first. This yields
@@ -242,8 +242,8 @@ x&+&3y&+&6z&=&25 \\
     \allowbreak
     \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
       x&&&&&=&1 \\
-      &&y&&&=&2 \\
-      &&&&z&=&3,
+       &&y&&&=&2 \\
+       &&&&z&=&3,
     \end{array}
   \end{equation*}
   a system which has the same solution set as the original
@@ -262,19 +262,19 @@ writing systems of equations in \textbf{augmented matrix}%
 \index{matrix!augmented matrix} notation. Recall the
 system of equations from Example~\ref{exa:solving-a-system-with-elementary-operations}:
 \begin{equation*}
-\begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
-x&+&3y&+&6z&=&25 \\
-2x&+&7y&+&14z&=&58 \\
-&&2y&+&5z&=&19.
-\end{array}
+  \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
+    x&+&3y&+&6z&=&25 \\
+    2x&+&7y&+&14z&=&58 \\
+     &&2y&+&5z&=&19.
+  \end{array}
 \end{equation*}
 This system can be written as an augmented matrix as follows:
 \begin{equation*}
-\begin{mymatrix}{rrr|r}
-1 & 3 & 6 & 25 \\
-2 & 7 & 14 & 58 \\
-0 & 2 & 5 & 19
-\end{mymatrix}.
+  \begin{mymatrix}{rrr|r}
+    1 & 3 & 6 & 25 \\
+    2 & 7 & 14 & 58 \\
+    0 & 2 & 5 & 19
+  \end{mymatrix}.
 \end{equation*}
 A \textbf{matrix}\index{matrix} is just a $2$-dimensional array of
 numbers. An augmented matrix has two parts separated by a vertical
@@ -289,15 +289,15 @@ line. These two parts of the augmented matrix are also called the
 row of the augmented matrix corresponds to one linear equation. For
 example, the top row $\begin{mymatrix}{rrrrr} 1 & 3 & 6 & | & 25
 \end{mymatrix}$
- corresponds to the equation
+corresponds to the equation
 \begin{equation*}
-x+3y+6z=25.
+  x+3y+6z=25.
 \end{equation*}
 Each column of the coefficient matrix contains the coefficients
 for one particular variable. For example, the first column $\begin{mymatrix}{r}
-1 \\
-2 \\
-0
+  1 \\
+  2 \\
+  0
 \end{mymatrix}$ contains all of the coefficients for the variable $x$. If a
 variable does not appear in an equation, the corresponding coefficient
 is $0$. In general, the augmented matrix of a linear system of
@@ -386,8 +386,8 @@ same set of solutions.
   \begin{equation*}
     \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
       x&+&3y&+&6z&=&25 \\
-      &&y&+&2z&=&8 \\
-      &&&&z&=&3,
+       &&y&+&2z&=&8 \\
+       &&&&z&=&3,
     \end{array}
   \end{equation*}
   which is the same as {\eqref{solving-a-system3}}. We can solve it by back

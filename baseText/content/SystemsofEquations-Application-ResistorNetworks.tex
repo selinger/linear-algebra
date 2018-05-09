@@ -1,21 +1,22 @@
 \section{Application: Resistor networks}
 
-The tools of linear algebra can be used to study the application of resistor networks. An example of an electrical circuit is below.
+The tools of linear algebra can be used to study the application of
+resistor networks. An example of an electrical circuit is below.
 
 \medskip
 
 \begin{center}
-\scalebox{0.8}{
-\begin{circuitikz}[american] \draw
-(0,0) to [battery1, v^= $18\volt$~~] (0,4)
-(0,0) to [R = $ 2 \ohm$] (4,0)
+  \scalebox{0.8}{
+    \begin{circuitikz}[american] \draw
+      (0,0) to [battery1, v^= $18\volt$~~] (0,4)
+      (0,0) to [R = $ 2 \ohm$] (4,0)
       to [R = $ 4 \ohm$] (4,4)
-(0,4) to [R =$ 2 \ohm$] (4,4)
-(2,2) node[scale=4]{$\circlearrowleft$}
-(2,2) node{$I_1$}
-;
-\end{circuitikz}
-}
+      (0,4) to [R =$ 2 \ohm$] (4,4)
+      (2,2) node[scale=4]{$\circlearrowleft$}
+      (2,2) node{$I_1$}
+      ;
+    \end{circuitikz}
+  }
 \end{center}
 
 \medskip
@@ -31,179 +32,216 @@ direction from the longer of the two lines toward the
 shorter\footnote{By {\em current}, we always mean the {\em
     conventional current}, which flows from plus to minus. It is the
   opposite of the electron flow, which goes from minus to plus.}.
-Voltage is measured in volts, written as $\volt$.
-The current for a circuit is labelled $I_k$, and is measured in
-amperes, written as $\amp$.
+Voltage is measured in volts, written as $\volt$.  The current for a
+circuit is labelled $I_k$, and is measured in amperes, written as
+$\amp$.
 
-In the above figure, the current $I_1$ has been labelled with an arrow in the counterclockwise direction. This is an entirely arbitrary decision and we could have chosen to label the current in the counterclockwise direction.  With our choice of direction here, we define a positive current to flow in the counterclockwise direction and a negative current to flow in the clockwise direction.
+In the above figure, the current $I_1$ has been labelled with an arrow
+in the counterclockwise direction. This is an entirely arbitrary
+decision and we could have chosen to label the current in the
+counterclockwise direction.  With our choice of direction here, we
+define a positive current to flow in the counterclockwise direction
+and a negative current to flow in the clockwise direction.
 
-The goal of this section is to use the values of resistors and voltage sources in a circuit to determine the current. An essential theorem for this application is Kirchhoff's law\index{Kirchhoff's law}.
+The goal of this section is to use the values of resistors and voltage
+sources in a circuit to determine the current. An essential theorem
+for this application is Kirchhoff's law\index{Kirchhoff's law}.
 
 \begin{theorem}{Kirchhoff's law}{kirchhoff-law}
-The sum of the resistance ($R$) times the amperes ($I$) in the counterclockwise direction
-around a loop equals the sum of the voltage sources ($V$) in the same direction
-around the loop.
+  The sum of the resistance ($R$) times the amperes ($I$) in the
+  counterclockwise direction around a loop equals the sum of the
+  voltage sources ($V$) in the same direction around the loop.
 \end{theorem}
 
-Kirchhoff's law allows us to set up a system of linear equations and solve for any unknown variables. When setting up this system, it is important to trace the circuit in the counterclockwise direction. If a resistor or voltage source is crossed against this direction, the related term must be given a negative sign.
+Kirchhoff's law allows us to set up a system of linear equations and
+solve for any unknown variables. When setting up this system, it is
+important to trace the circuit in the counterclockwise direction. If a
+resistor or voltage source is crossed against this direction, the
+related term must be given a negative sign.
 
-We will explore this in the next example where we determine the value of the current in the initial diagram.
+We will explore this in the next example where we determine the value
+of the current in the initial diagram.
 
 \begin{example}{Solving for current}{solve-current1}
-Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$.
+  Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$.
 
-\begin{center}
-\scalebox{0.8}{
-\begin{circuitikz}[american,scale=0.8] \draw
-(0,0) to [battery1, v^= $18\volt$~~] (0,4)
-(0,0) to [R = $ 2 \ohm$] (4,0)
-      to [R = $ 4 \ohm$] (4,4)
-(0,4) to [R =$ 2 \ohm$] (4,4)
-(2,2) node[scale=4]{$\circlearrowleft$}
-(2,2) node{$I_1$}
-;
-\end{circuitikz}
-}
-\end{center}
+  \begin{center}
+    \scalebox{0.8}{
+      \begin{circuitikz}[american,scale=0.8] \draw
+        (0,0) to [battery1, v^= $18\volt$~~] (0,4)
+        (0,0) to [R = $ 2 \ohm$] (4,0)
+        to [R = $ 4 \ohm$] (4,4)
+        (0,4) to [R =$ 2 \ohm$] (4,4)
+        (2,2) node[scale=4]{$\circlearrowleft$}
+        (2,2) node{$I_1$}
+        ;
+      \end{circuitikz}
+    }
+  \end{center}
 
 \end{example}
 
 \begin{solution}
-Begin in the bottom left corner, and trace the circuit in the counterclockwise direction. At the first resistor, multiplying resistance and current gives $2I_1$. Continuing in this way through all three resistors gives $2I_1 + 4I_1 + 2 I_1$. This must equal the voltage source in the same direction. Notice that the direction of the voltage source matches the counterclockwise direction specified, so the voltage is positive.
+  Begin in the bottom left corner, and trace the circuit in the
+  counterclockwise direction. At the first resistor, multiplying
+  resistance and current gives $2I_1$. Continuing in this way through
+  all three resistors gives $2I_1 + 4I_1 + 2 I_1$. This must equal the
+  voltage source in the same direction. Notice that the direction of
+  the voltage source matches the counterclockwise direction specified,
+  so the voltage is positive.
 
-Therefore the equation and solution are given by
-\begin{eqnarray*}
-2I_1 + 4I_1 + 2 I_1 &=& 18 \\
-8I_1 &=& 18 \\
-I_1 &=& \frac{9}{4} \amp
-\end{eqnarray*}
+  Therefore the equation and solution are given by
+  \begin{eqnarray*}
+    2I_1 + 4I_1 + 2 I_1 &=& 18 \\
+    8I_1 &=& 18 \\
+    I_1 &=& \frac{9}{4} \amp
+  \end{eqnarray*}
 
-Since the answer is positive, this confirms that the current flows counterclockwise.
+  Since the answer is positive, this confirms that the current flows
+  counterclockwise.
 \end{solution}
 
 \begin{example}{Solving for current}{solve-current2}
-Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$.
+  Applying Kirchhoff's Law to the diagram below, determine the value for $I_1$.
 
-\begin{center}
-\scalebox{0.8}{
-\begin{circuitikz}[american,scale=0.8] \draw
-(0,0) to [R = $4\ohm$] (0,4)
-(2,4) to [battery1, v_= \raisebox{1ex}{$27\volt$}] (0,4)
-(2,4) to [R = $3\ohm$] (4,4)
-      to [R = $1\ohm$] (4,0)
-      to [R =$6\ohm$] (0,0)
-(2,2) node[scale=4]{$\circlearrowleft$}
-(2,2) node{$I_1$}
-;
-\end{circuitikz}
-}
-\end{center}
+  \begin{center}
+    \scalebox{0.8}{
+      \begin{circuitikz}[american,scale=0.8] \draw
+        (0,0) to [R = $4\ohm$] (0,4)
+        (2,4) to [battery1, v_= \raisebox{1ex}{$27\volt$}] (0,4)
+        (2,4) to [R = $3\ohm$] (4,4)
+        to [R = $1\ohm$] (4,0)
+        to [R =$6\ohm$] (0,0)
+        (2,2) node[scale=4]{$\circlearrowleft$}
+        (2,2) node{$I_1$}
+        ;
+      \end{circuitikz}
+    }
+  \end{center}
 
 \end{example}
 
 \begin{solution}
-Begin in the top left corner this time, and trace the circuit in the counterclockwise direction. At the first resistor, multiplying resistance and current gives $4I_1$. Continuing in this way through the four resistors gives $4I_1 + 6I_1 + 1 I_1 + 3I_1$. This must equal the voltage source in the same direction. Notice that the direction of the voltage source is opposite to the counterclockwise direction, so the voltage is negative.
+  Begin in the top left corner this time, and trace the circuit in the
+  counterclockwise direction. At the first resistor, multiplying
+  resistance and current gives $4I_1$. Continuing in this way through
+  the four resistors gives $4I_1 + 6I_1 + 1 I_1 + 3I_1$. This must
+  equal the voltage source in the same direction. Notice that the
+  direction of the voltage source is opposite to the counterclockwise
+  direction, so the voltage is negative.
 
-Therefore the equation and solution are given by
-\begin{eqnarray*}
-4I_1 + 6I_1 + 1 I_1 + 3I_1&=& -27 \\
-14I_1 &=& -27 \\
-I_1 &=& -\frac{27}{14} \amp
-\end{eqnarray*}
+  Therefore the equation and solution are given by
+  \begin{eqnarray*}
+    4I_1 + 6I_1 + 1 I_1 + 3I_1&=& -27 \\
+    14I_1 &=& -27 \\
+    I_1 &=& -\frac{27}{14} \amp
+  \end{eqnarray*}
 
-Since the answer is negative, this tells us that the current flows clockwise.
+  Since the answer is negative, this tells us that the current flows
+  clockwise.
 \end{solution}
 
-A more complicated example follows. Two of the circuits below may be familiar; they were examined in the examples above. However as they are now part of a larger system of circuits, the answers will differ.
+A more complicated example follows. Two of the circuits below may be
+familiar; they were examined in the examples above. However as they
+are now part of a larger system of circuits, the answers will differ.
 
 \begin{example}{Unknown currents}{unknown-current}
   The diagram below consists of four circuits. The current ($I_k$) in
-  the four circuits is denoted by $I_1$, $I_2$, $I_3$,
-  $I_4$. Using Kirchhoff's Law, write an equation for each circuit
-  and solve for each current.
+  the four circuits is denoted by $I_1$, $I_2$, $I_3$, $I_4$. Using
+  Kirchhoff's Law, write an equation for each circuit and solve for
+  each current.
 \end{example}
 
 \begin{solution}
-The circuits are given in the following diagram.
+  The circuits are given in the following diagram.
 
-\begin{center}
-\scalebox{0.8}{
-\begin{circuitikz}[american, scale=0.7] \draw
-(0,0) to [battery1, v^= $18\volt$~~] (0,4)
-(0,0) to [R = $ 2 \ohm$] (4,0)
-      to [R = $ 4 \ohm$] (4,4)
-(0,4) to [R =$ 2 \ohm$] (4,4)
-(6,4) to [battery1, v_= \raisebox{1ex}{$27\volt$}] (4,4)
-(6,4) to [R = $3 \ohm$] (8,4)
-      to [R = $1 \ohm$] (8,0)
-(4,0) to [R = $6 \ohm$] (8,0)
-      to [R = $2 \ohm$] (8,-4)
-      to [R = $3 \ohm$] (4,-4)
-      to [R = $1 \ohm$] (4,0)
-(4,-4)to [R = $5 \ohm$] (0,-4)
-(0,0) to [battery1, v_= $23\volt$~~] (0,-4)
-(2,2) node[scale=4]{$\circlearrowleft$}
-(2,2) node{$I_2$}
-(6,2) node[scale=4]{$\circlearrowleft$}
-(6,2) node{$I_3$}
-(6,-2) node[scale=4]{$\circlearrowleft$}
-(6,-2) node{$I_4$}
-(2,-2) node[scale=4]{$\circlearrowleft$}
-(2,-2) node{$I_1$}
-;
-\end{circuitikz}
-}
-\end{center}
+  \begin{center}
+    \scalebox{0.8}{
+      \begin{circuitikz}[american, scale=0.7] \draw
+        (0,0) to [battery1, v^= $18\volt$~~] (0,4)
+        (0,0) to [R = $ 2 \ohm$] (4,0)
+        to [R = $ 4 \ohm$] (4,4)
+        (0,4) to [R =$ 2 \ohm$] (4,4)
+        (6,4) to [battery1, v_= \raisebox{1ex}{$27\volt$}] (4,4)
+        (6,4) to [R = $3 \ohm$] (8,4)
+        to [R = $1 \ohm$] (8,0)
+        (4,0) to [R = $6 \ohm$] (8,0)
+        to [R = $2 \ohm$] (8,-4)
+        to [R = $3 \ohm$] (4,-4)
+        to [R = $1 \ohm$] (4,0)
+        (4,-4)to [R = $5 \ohm$] (0,-4)
+        (0,0) to [battery1, v_= $23\volt$~~] (0,-4)
+        (2,2) node[scale=4]{$\circlearrowleft$}
+        (2,2) node{$I_2$}
+        (6,2) node[scale=4]{$\circlearrowleft$}
+        (6,2) node{$I_3$}
+        (6,-2) node[scale=4]{$\circlearrowleft$}
+        (6,-2) node{$I_4$}
+        (2,-2) node[scale=4]{$\circlearrowleft$}
+        (2,-2) node{$I_1$}
+        ;
+      \end{circuitikz}
+    }
+  \end{center}
 
-Starting with the top left circuit, multiply the resistance by the amps and sum the resulting products. Specifically, consider the resistor labelled $2 \ohm$ that is part of the circuits of $I_1$ and $I_2$. Notice that current $I_2$ runs through this in a positive (counterclockwise) direction, and $I_1$ runs through in the opposite (negative) direction. The product of resistance and amps is then $2 (I_2 - I_1) = 2I_2 - 2I_1$.
-Continue in this way for each resistor, and set the sum of the products equal to the voltage source to write the equation:
-\begin{equation*}
-2I_2-2I_1+4I_2-4I_3+2I_2=18
-\end{equation*}
-The above process is used on each of the other three circuits, and the resulting equations are:
+  Starting with the top left circuit, multiply the resistance by the
+  amps and sum the resulting products. Specifically, consider the
+  resistor labelled $2 \ohm$ that is part of the circuits of $I_1$ and
+  $I_2$. Notice that current $I_2$ runs through this in a positive
+  (counterclockwise) direction, and $I_1$ runs through in the opposite
+  (negative) direction. The product of resistance and amps is then
+  $2 (I_2 - I_1) = 2I_2 - 2I_1$.  Continue in this way for each
+  resistor, and set the sum of the products equal to the voltage
+  source to write the equation:
+  \begin{equation*}
+    2I_2-2I_1+4I_2-4I_3+2I_2=18
+  \end{equation*}
+  The above process is used on each of the other three circuits, and
+  the resulting equations are:
 
-Upper right circuit:
-\begin{equation*}
-4I_3 - 4I_2 + 6I_3 - 6I_4 + I_3 + 3I_3 = -27
-\end{equation*}
-Lower right circuit:
-\begin{equation*}
-3I_4 + 2I_4 + 6I_4 - 6I_3 + I_4 - I_1 = 0
-\end{equation*}
-Lower left circuit:
-\begin{equation*}
-5I_1+I_1-I_4+2I_1-2I_2=-23
-\end{equation*}
+  Upper right circuit:
+  \begin{equation*}
+    4I_3 - 4I_2 + 6I_3 - 6I_4 + I_3 + 3I_3 = -27
+  \end{equation*}
+  Lower right circuit:
+  \begin{equation*}
+    3I_4 + 2I_4 + 6I_4 - 6I_3 + I_4 - I_1 = 0
+  \end{equation*}
+  Lower left circuit:
+  \begin{equation*}
+    5I_1+I_1-I_4+2I_1-2I_2=-23
+  \end{equation*}
 
-Notice that the voltage for the upper right and lower left circuits
-are negative due to the clockwise direction they indicate. The
-resulting system has four equations in four variables.  Simplifying
-and rearranging with variables in order, we have:
-\begin{equation*}
-  \begin{array}{r@{~}c@{~}l}
-    -2I_1+8I_2-4I_3&=&18 \\
-    - 4I_2 + 14I_3 - 6I_4 &=& -27 \\
-    -I_1 - 6I_3 + 12I_4 &=& 0 \\
-    8I_1-2I_2 - I_4 &=& -23
-  \end{array}
-\end{equation*}
-The augmented matrix is
-\begin{equation*}
-\begin{mymatrix}{rrrr|r}
--2 & 8 & -4 & 0 & 18 \\
-0 & -4 & 14 & -6 & -27 \\
--1 & 0 & -6 & 12 & 0 \\
-8 & -2 & 0 & -1 & -23
-\end{mymatrix}
-\end{equation*}
+  Notice that the voltage for the upper right and lower left circuits
+  are negative due to the clockwise direction they indicate. The
+  resulting system has four equations in four variables.  Simplifying
+  and rearranging with variables in order, we have:
+  \begin{equation*}
+    \begin{array}{r@{~}c@{~}l}
+      -2I_1+8I_2-4I_3&=&18 \\
+      - 4I_2 + 14I_3 - 6I_4 &=& -27 \\
+      -I_1 - 6I_3 + 12I_4 &=& 0 \\
+      8I_1-2I_2 - I_4 &=& -23
+    \end{array}
+  \end{equation*}
+  The augmented matrix is
+  \begin{equation*}
+    \begin{mymatrix}{rrrr|r}
+      -2 & 8 & -4 & 0 & 18 \\
+      0 & -4 & 14 & -6 & -27 \\
+      -1 & 0 & -6 & 12 & 0 \\
+      8 & -2 & 0 & -1 & -23
+    \end{mymatrix}
+  \end{equation*}
 
-The solution to this matrix is
-\begin{eqnarray*}
-I_1 &=& -3 \amp \\
-I_2 &=& \frac{1}{4} \amp \\
-I_3 &=& -\frac{5}{2} \amp \\
-I_4 &=& -\frac{3}{2} \amp
-\end{eqnarray*}
+  The solution to this matrix is
+  \begin{eqnarray*}
+    I_1 &=& -3 \amp \\
+    I_2 &=& \frac{1}{4} \amp \\
+    I_3 &=& -\frac{5}{2} \amp \\
+    I_4 &=& -\frac{3}{2} \amp
+  \end{eqnarray*}
 
-This tells us that currents $I_1, I_3$, and $I_4$ travel clockwise while $I_2$ travels counterclockwise.
+  This tells us that currents $I_1, I_3$, and $I_4$ travel clockwise
+  while $I_2$ travels counterclockwise.
 \end{solution}

@@ -1,11 +1,11 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-%%%Background image
+%%% Background image
 \backgroundsetup{
-scale=1,
-angle=0,
-opacity=1,  %% adjust
-contents={\includegraphics[width=\paperwidth,height=\paperheight]{figures/titlepage-image}}
+  scale=1,
+  angle=0,
+  opacity=1,  %% adjust
+  contents={\includegraphics[width=\paperwidth,height=\paperheight]{figures/titlepage-image}}
 }
 \BgThispage
 
@@ -13,30 +13,30 @@ contents={\includegraphics[width=\paperwidth,height=\paperheight]{figures/titlep
 \thispagestyle{empty}
 
 %% Title Information
-%%Fix spacing on print-cover
+%% Fix spacing on print-cover
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
-\vspace{1.5em}
+  \vspace{1.5em}
 }{
-\vspace{7em}
+  \vspace{7em}
 }
 
 \begin{center}
-\textbf{
-	\fontsize{34}{36}\selectfont {\textcolor{subtitletextcolour}{\booksubtitle}} \\
-	\fontsize{54}{60}\selectfont {\textcolor{titletextcolour}{\booksubject}} \\[.5\baselineskip]
-	\fontsize{20pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{An open text by Peter Selinger}}\smallskip\\[.5\baselineskip]
-	\fontsize{16pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{Based on the original text by Lyryx Learning and Ken Kuttler}}\bigskip \\
-	\fontsize{16pt}{18pt}\selectfont {\textcolor{subtitletextcolour}{\edition}} \\
-}
+  \textbf{
+    \fontsize{34}{36}\selectfont {\textcolor{subtitletextcolour}{\booksubtitle}} \\
+    \fontsize{54}{60}\selectfont {\textcolor{titletextcolour}{\booksubject}} \\[.5\baselineskip]
+    \fontsize{20pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{An open text by Peter Selinger}}\smallskip\\[.5\baselineskip]
+    \fontsize{16pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{Based on the original text by Lyryx Learning and Ken Kuttler}}\bigskip \\
+    \fontsize{16pt}{18pt}\selectfont {\textcolor{subtitletextcolour}{\edition}} \\
+  }
 \end{center}
 
 \vfill
 
 % License
 \begin{center*}
-	{\fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}}
+  {\fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}}
 \end{center*}
 
-%\setlength{\parskip}{\baselineskip}
+% \setlength{\parskip}{\baselineskip}
 \afterpage{\restorepagecolor}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

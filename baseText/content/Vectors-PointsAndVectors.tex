@@ -32,26 +32,26 @@ point with coordinates $(0,0)$ is called the
 \textbf{origin}\index{origin of a coordinate system} of the coordinate
 system, and also written as $0$.
 \begin{center}
-\begin{tikzpicture}[scale=0.6]
-\draw[thick,->](-4,0)--(4,0);
-\draw[thick,->](0,-1)--(0,5);
-\draw(2,0.2)--(2,-0.2);
-\draw(-3,0.2)--(-3,-0.2);
-\draw(-0.2,1)--(0.2,1);
-\draw(-0.2,4)--(0.2,4);
-\draw[help lines] (-3,0)--(-3,4)--(0,4);
-\draw[help lines](0,1)--(2,1)--(2,0);
-\draw[fill](-3,4) circle [radius=3pt];
-\draw[fill](2,1) circle [radius=3pt];
-\node[below right] at (4,0){$x$};
-\node[left] at(0,5){$y$};
-\node[below] at (-3,-0.5){$-3$};
-\node[below] at (2,-0.5){$2$};
-\node[left] at (-0.5, 1){$1$};
-\node[left] at (-0.5, 4){$4$};
-\node[above] at (-3,4){$Q = (-3,4)$};
-\node[above] at (2,1){$P = (2,1)$};
-\end{tikzpicture}
+  \begin{tikzpicture}[scale=0.6]
+    \draw[thick,->](-4,0)--(4,0);
+    \draw[thick,->](0,-1)--(0,5);
+    \draw(2,0.2)--(2,-0.2);
+    \draw(-3,0.2)--(-3,-0.2);
+    \draw(-0.2,1)--(0.2,1);
+    \draw(-0.2,4)--(0.2,4);
+    \draw[help lines] (-3,0)--(-3,4)--(0,4);
+    \draw[help lines](0,1)--(2,1)--(2,0);
+    \draw[fill](-3,4) circle [radius=3pt];
+    \draw[fill](2,1) circle [radius=3pt];
+    \node[below right] at (4,0){$x$};
+    \node[left] at(0,5){$y$};
+    \node[below] at (-3,-0.5){$-3$};
+    \node[below] at (2,-0.5){$2$};
+    \node[left] at (-0.5, 1){$1$};
+    \node[left] at (-0.5, 4){$4$};
+    \node[above] at (-3,4){$Q = (-3,4)$};
+    \node[above] at (2,1){$P = (2,1)$};
+  \end{tikzpicture}
 \end{center}
 The situation in $3$ dimensions is analogous. Here, the coordinate
 system has three axes, and each point is described by a triple of
@@ -77,12 +77,12 @@ picture a vector as an arrow, starting at one point (called the
 at another point
 (called the \textbf{tip}\index{tip of a vector}\index{vector!tip} of the arrow).
 \begin{center}
-\begin{tikzpicture}[scale=0.8]
-\draw[->, thick, blue](1,0)--+(1.5,1.125);
-\draw[->, thick, blue](2,1.2)--+(1.5,1.125);
-\draw[->, thick, blue](2,0)--+(1.5,1.125);
-\draw[->, thick, blue](0.7,0.7)--+(1.5,1.125);
-\end{tikzpicture}
+  \begin{tikzpicture}[scale=0.8]
+    \draw[->, thick, blue](1,0)--+(1.5,1.125);
+    \draw[->, thick, blue](2,1.2)--+(1.5,1.125);
+    \draw[->, thick, blue](2,0)--+(1.5,1.125);
+    \draw[->, thick, blue](0.7,0.7)--+(1.5,1.125);
+  \end{tikzpicture}
 \end{center}
 Two vectors are considered equal if they have the same direction and
 length. Thus, all four blue arrows in the above image describe exactly
@@ -93,10 +93,10 @@ described by the instruction: ``move $4$ units in the direction
 parallel to the $x$-axis, and move $3$ units in the direction parallel
 to the $y$-axis''. This situation is pictured here:
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
-  \draw[->, thick, blue](0,0) -- node[above]{$\vect{v}$} +(4,3);
-  \draw(0,0) -- node[below]{4 units} (4,0) -- node[right]{3 units} (4,3);
-\end{tikzpicture}
+  \begin{tikzpicture}[scale=0.5]
+    \draw[->, thick, blue](0,0) -- node[above]{$\vect{v}$} +(4,3);
+    \draw(0,0) -- node[below]{4 units} (4,0) -- node[right]{3 units} (4,3);
+  \end{tikzpicture}
 \end{center}
 The numbers $4$ and $3$ are also called the
 $x$-component\index{component!of a vector} and the $y$-component of
@@ -191,9 +191,9 @@ the origin. The following definition is concerned with that situation.
   \begin{center}
     \begin{tikzpicture}[scale=0.6]
       \draw[<->](2,0,0)--(0,0,0)--(0,2,0);
-    \draw[fill] (0,0) circle [radius=1.8pt] node[below]{$0$};
-    \draw[fill] (3,2) circle [radius=1.8pt] node[below]{$P$};
-    \draw[thick, blue, ->](0,0) -- node[above left]{$\vect{p}$} (3,2);
+      \draw[fill] (0,0) circle [radius=1.8pt] node[below]{$0$};
+      \draw[fill] (3,2) circle [radius=1.8pt] node[below]{$P$};
+      \draw[thick, blue, ->](0,0) -- node[above left]{$\vect{p}$} (3,2);
     \end{tikzpicture}
   \end{center}
   If the point $P$ has coordinates $(p_1,\ldots,p_n)$, then the
