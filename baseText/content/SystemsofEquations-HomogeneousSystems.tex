@@ -30,15 +30,15 @@ counterparts.
   \index{homogeneous system}
   if each of the constant terms is equal to $0$. A homogeneous system
   therefore has the form
-\begin{equation*}
-\begin{array}{c}
-a_{11}x_{1}+a_{12}x_{2}+\ldots +a_{1n}x_{n}= 0 \\
-a_{21}x_{1}+a_{22}x_{2}+\ldots +a_{2n}x_{n}= 0  \\
-\vdots \\
-a_{m1}x_{1}+a_{m2}x_{2}+\ldots +a_{mn}x_{n}= 0,
-\end{array}
-\end{equation*}
-where $a_{ij}$ are coefficients and $x_{i}$ are variables.
+  \begin{equation*}
+    \begin{array}{c}
+      a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n = 0 \\
+      a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n = 0  \\
+      \vdots \\
+      a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n = 0,
+    \end{array}
+  \end{equation*}
+  where $a_{ij}$ are coefficients and $x_i$ are variables.
 \end{definition}
 
 The first thing we note is that a homogeneous system is always
@@ -66,10 +66,10 @@ of a system is the number of pivot variables in its {\ef}.
   Consider a homogeneous system of $m$ equations in $n$ variables, and
   assume that the coefficient matrix has rank $r$. Then the system is
   consistent, and
-\begin{enumerate}
-\item if $r=n$, then the system has only the trivial solution;
-\item if $r<n$, then the system has infinitely many solutions.
-\end{enumerate}
+  \begin{enumerate}
+  \item if $r=n$, then the system has only the trivial solution;
+  \item if $r<n$, then the system has infinitely many solutions.
+  \end{enumerate}
 \end{theorem}
 
 \begin{example}{Homogeneous system with more variables than equations}{homo-more-variables}
@@ -102,14 +102,14 @@ of a system is the number of pivot variables in its {\ef}.
 We now consider an example of solving a homogeneous system of equations.
 
 \begin{example}{Solutions to a homogeneous system of equations}{homogeneous-solution}
-Find the general solution to the following homogeneous system of
-equations. Does the system have non-trivial solutions?
-\begin{equation*}
-\begin{array}{c}
-2x + y - z + w = 0 \\
-x + 2y - 2z + 3w = 0
-\end{array}
-\end{equation*}
+  Find the general solution to the following homogeneous system of
+  equations. Does the system have non-trivial solutions?
+  \begin{equation*}
+    \begin{array}{c}
+      2x + y - z + w = 0 \\
+      x + 2y - 2z + 3w = 0
+    \end{array}
+  \end{equation*}
 \end{example}
 
 \begin{solution}
@@ -158,25 +158,25 @@ Let us write the solution of the last example in another form.
 Specifically, it can be written as
 \begin{equation}\label{eqn:homogeneous-solution-1}
   \begin{mymatrix}{r}
-    x\\
-    y\\
-    z\\
+    x \\
+    y \\
+    z \\
     w
   \end{mymatrix}
   =
   s
   \begin{mymatrix}{r}
-    -1\\
-    1\\
-    1\\
+    -1 \\
+    1 \\
+    1 \\
     0
   \end{mymatrix}
   +
   t
   \begin{mymatrix}{r}
-    -1\\
-    -2\\
-    0\\
+    -1 \\
+    -2 \\
+    0 \\
     1
   \end{mymatrix}.
 \end{equation}
@@ -187,9 +187,9 @@ what happens when we choose the parameters to be $s=1$ and $t=0$. In
 this case, we get the solution
 \begin{equation}\label{eqn:homogeneous-solution-2}
   \begin{mymatrix}{r}
-    -1\\
-    1\\
-    1\\
+    -1 \\
+    1 \\
+    1 \\
     0
   \end{mymatrix},
 \end{equation}
@@ -201,9 +201,9 @@ homogeneous system of equations. The other basic solution is obtained
 by setting $s=0$ and $t=1$. In this case,
 \begin{equation}\label{eqn:homogeneous-solution-3}
   \begin{mymatrix}{r}
-    -1\\
-    -2\\
-    0\\
+    -1 \\
+    -2 \\
+    0 \\
     1
   \end{mymatrix}.
 \end{equation}
@@ -244,7 +244,7 @@ We explore this further in the following example.
   \end{equation*}
   When written in equations, this system is given by
   \begin{equation*}
-    x + 4y +3z=0.
+    x + 4y + 3z = 0.
   \end{equation*}
   Notice that $x$ is the only pivot variable, and $y$ and $z$ are free
   variables. Let $y = s$ and $z=t$ for parameters $s$ and $t$. Then the
@@ -259,8 +259,8 @@ We explore this further in the following example.
   which can be written as
   \begin{equation*}
     \begin{mymatrix}{r}
-      x\\
-      y\\
+      x \\
+      y \\
       z
     \end{mymatrix}
     =
@@ -346,8 +346,8 @@ its associated homogeneous system.
   which can be written as
   \begin{equation}\label{eqn:non-homo-vs-homo-2}
     \begin{mymatrix}{r}
-      x\\
-      y\\
+      x \\
+      y \\
       z
     \end{mymatrix}
     =

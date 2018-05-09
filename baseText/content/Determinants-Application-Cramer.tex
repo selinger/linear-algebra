@@ -26,9 +26,9 @@ square), or when $A$ is not invertible.
   \index{system of linear equations!Cramer's rule}%
   \index{determinant!Cramer's rule}
   \begin{equation*}
-    x_{i} = \frac{\det(A_{i})}{\det(A)},
+    x_i = \frac{\det(A_i)}{\det(A)},
   \end{equation*}
-  where $A_{i}$ is the matrix obtained by replacing the $i\th$ column
+  where $A_i$ is the matrix obtained by replacing the $i\th$ column
   of $A$ with $\vect{b}$.
 \end{theorem}
 
@@ -48,15 +48,15 @@ square), or when $A$ is not invertible.
   $\cofactor{A}{ji}$, the $ji\th$ cofactor of $A$. By definition of matrix
   multiplication, we have
   \begin{equation*}
-    x_i = \frac{1}{\det(A)}(\cofactor{A}{1i}\,b_{1}+\ldots+\cofactor{A}{ni}\,b_{n}).
+    x_i = \frac{1}{\det(A)}(\cofactor{A}{1i}\,b_1+\ldots+\cofactor{A}{ni}\,b_n).
   \end{equation*}
   By the formula for the expansion of a determinant along a column,
   this is equal to
   \begin{equation*}
-    x_{i}=\frac{1}{\det(A)}\begin{absmatrix}{ccccc}
-      \ast & \cdots & b_{1} & \cdots & \ast \\
+    x_i=\frac{1}{\det(A)}\begin{absmatrix}{ccccc}
+      \ast & \cdots & b_1 & \cdots & \ast \\
       \vdots &  & \vdots &  & \vdots \\
-      \ast & \cdots & b_{n} & \cdots & \ast
+      \ast & \cdots & b_n & \cdots & \ast
     \end{absmatrix},
   \end{equation*}
   where the $i\th$ column of $A$ is replaced with the column vector

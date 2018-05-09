@@ -19,7 +19,7 @@ with speed $V$ as shown.
 \end{center}
 
 The angle $\theta$ is called the angle of incidence, $B$ is the span of the wing and $A$ is called the chord. Denote by $l$ the lift. Then this should depend on
-various quantities like $\theta ,V,B,A$ and so forth. Here is a table which
+various quantities like $\theta,V,B,A$ and so forth. Here is a table which
 indicates various quantities on which it is reasonable to expect $l$ to
 depend.
 \begin{equation*}
@@ -30,7 +30,7 @@ chord & $A$ & $\m$ \\ \hline
 span & $B$ & $\m$ \\ \hline
 angle incidence & $\theta $ & $\m^0\kg^0\s^0$ \\ \hline
 speed of wind & $V$ & $\m\s^{-1}$ \\ \hline
-speed of sound & $V_{0}$ & $\m\s^{-1}$ \\ \hline
+speed of sound & $V_0$ & $\m\s^{-1}$ \\ \hline
 density of air & $\rho $ & $\kg\m^{-3}$ \\ \hline
 viscosity & $\mu $ & $\kg\s^{-1}\m^{-1}$ \\ \hline
 lift & $l$ & $\kg\s^{-2}\m$ \\ \hline
@@ -62,7 +62,7 @@ as claimed above.
 
 Returning to our original discussion, you may think that we would want
 \begin{equation*}
-l=f(A,B,\theta ,V,V_{0},\rho ,\mu)
+l=f(A,B,\theta,V,V_0,\rho,\mu)
 \end{equation*}
 This is very cumbersome because it depends on seven variables. Also,
 it is likely that without much care, a change in the units such as
@@ -74,35 +74,35 @@ have fewer independent variables and secondly, you could expect the
 formula to hold independent of the way of specifying length, mass and
 so forth. One looks for
 \begin{equation*}
-l=f(g_{1},\ldots,g_{k}) \rho V^2AB
+l=f(g_1,\ldots,g_k) \rho V^2AB
 \end{equation*}
 where the units of $\rho V^2AB$ are
 \begin{equation*}
 \frac{\kg}{\m^3}\paren{\frac{\m}{\s }}^2\m^2=\frac{\kg\times \m}{%
 \s^2}
 \end{equation*}
-which are the units of force. Each of these $g_{i}$ is of the form
+which are the units of force. Each of these $g_i$ is of the form
 \begin{equation}
-A^{x_{1}}B^{x_{2}}\theta^{x_{3}}V^{x_{4}}V_{0}^{x_{5}}\rho^{x_{6}}\mu
-^{x_{7}}  \label{11-july-e1f}
+A^{x_1}B^{x_2}\theta^{x_3}V^{x_4}V_0^{x_5}\rho^{x_6}\mu
+^{x_7}  \label{11-july-e1f}
 \end{equation}
-and each $g_{i}$ is independent of the dimensions. That is, this expression
+and each $g_i$ is independent of the dimensions. That is, this expression
 must not depend on meters, kilograms, seconds, etc. Thus, placing in the
 units for each of these quantities, one needs
 \begin{equation*}
-\m^{x_{1}}\m^{x_{2}}(\m^{x_{4}}\s^{-x_{4}}) (\m^{x_{5}}\s
-^{-x_{5}}) (\kg\m^{-3})^{x_{6}}(\kg\s
-^{-1}\m^{-1})^{x_{7}}=\m^0\kg^0\s^0
+\m^{x_1}\m^{x_2}(\m^{x_4}\s^{-x_4}) (\m^{x_5}\s
+^{-x_5}) (\kg\m^{-3})^{x_6}(\kg\s
+^{-1}\m^{-1})^{x_7}=\m^0\kg^0\s^0
 \end{equation*}
 Notice that there are no units of $\theta$ because it is just the radian
 measure of an angle. Hence its dimensions consist of length divided by
 length, thus it is dimensionless. Then this leads to the following equations
-for the $x_{i}$.
+for the $x_i$.
 \begin{equation*}
 \begin{array}{cc}
-\m: & x_{1}+x_{2}+x_{4}+x_{5}-3x_{6}-x_{7}=0 \\
-\s :\  & -x_{4}-x_{5}-x_{7}=0 \\
-\kg: & x_{6}+x_{7}=0%
+\m: & x_1+x_2+x_4+x_5-3x_6-x_7=0 \\
+\s :\  & -x_4-x_5-x_7=0 \\
+\kg: & x_6+x_7=0%
 \end{array}
 \end{equation*}
 The augmented matrix for this system is
@@ -123,58 +123,58 @@ The {\rref} is given by
 \end{equation*}
 and so the solutions are of the form
 \begin{eqnarray*}
-x_{1} &=& -x_{2}-x_{7} \\
-x_{3} &=& x_{3} \\
-x_{4} &=& -x_{5}-x_{7} \\
-x_{6} &=& -x_{7}
+x_1 &=& -x_2-x_7 \\
+x_3 &=& x_3 \\
+x_4 &=& -x_5-x_7 \\
+x_6 &=& -x_7
 \end{eqnarray*}
 Thus, in terms of vectors, the solution is
 \begin{equation*}
 \begin{mymatrix}{c}
-x_{1} \\
-x_{2} \\
-x_{3} \\
-x_{4} \\
-x_{5} \\
-x_{6} \\
-x_{7}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4 \\
+x_5 \\
+x_6 \\
+x_7
 \end{mymatrix} =\begin{mymatrix}{c}
--x_{2}-x_{7} \\
-x_{2} \\
-x_{3} \\
--x_{5}-x_{7} \\
-x_{5} \\
--x_{7} \\
-x_{7}
+-x_2-x_7 \\
+x_2 \\
+x_3 \\
+-x_5-x_7 \\
+x_5 \\
+-x_7 \\
+x_7
 \end{mymatrix}
 \end{equation*}
-Thus the free variables are $x_{2},x_{3},x_{5},x_{7}$. By assigning values
+Thus the free variables are $x_2,x_3,x_5,x_7$. By assigning values
 to these, we can obtain dimensionless variables by placing the values
-obtained for the $x_{i}$ in the formula {\eqref{11-july-e1f}}. For example, let
-$x_{2}=1$ and all the rest of the free variables are 0. This yields
+obtained for the $x_i$ in the formula {\eqref{11-july-e1f}}. For example, let
+$x_2=1$ and all the rest of the free variables are 0. This yields
 \begin{equation*}
-x_{1}=-1,x_{2}=1,x_{3}=0,x_{4}=0,x_{5}=0,x_{6}=0,x_{7}=0
+x_1=-1,x_2=1,x_3=0,x_4=0,x_5=0,x_6=0,x_7=0
 \end{equation*}
 The dimensionless variable is then $A^{-1}B^{1}$. This is the ratio between
 the span and the chord. It is called the aspect ratio, denoted as $AR$. Next
-let $x_{3}=1$ and all others equal zero. This gives for a dimensionless
-quantity the angle $\theta$. Next let $x_{5}=1$ and all others equal zero.
+let $x_3=1$ and all others equal zero. This gives for a dimensionless
+quantity the angle $\theta$. Next let $x_5=1$ and all others equal zero.
 This gives
 \begin{equation*}
-x_{1}=0,x_{2}=0,x_{3}=0,x_{4}=-1,x_{5}=1,x_{6}=0,x_{7}=0
+x_1=0,x_2=0,x_3=0,x_4=-1,x_5=1,x_6=0,x_7=0
 \end{equation*}
-Then the dimensionless variable is $V^{-1}V_{0}^{1}$. However, it is written
-as $V/V_{0}$. This is called the Mach number $\mathcal{M}$. Finally, let
-$x_{7}=1$ and all the other free variables equal 0. Then
+Then the dimensionless variable is $V^{-1}V_0^{1}$. However, it is written
+as $V/V_0$. This is called the Mach number $\mathcal{M}$. Finally, let
+$x_7=1$ and all the other free variables equal 0. Then
 \begin{equation*}
-x_{1}=-1,x_{2}=0,x_{3}=0,x_{4}=-1,x_{5}=0,x_{6}=-1,x_{7}=1
+x_1=-1,x_2=0,x_3=0,x_4=-1,x_5=0,x_6=-1,x_7=1
 \end{equation*}
 then the dimensionless variable which results from this is $A^{-1}V^{-1}\rho
 ^{-1}\mu$. It is customary to write it as $\Reynolds=(AV\rho)
 /\mu$. This one is called the Reynold's number. It is the one which
 involves viscosity. Thus we would look for
 \begin{equation*}
-l=f(\Reynolds,AR,\theta ,\mathcal{M}) \kg\times \m/\s^2
+l=f(\Reynolds,AR,\theta,\mathcal{M}) \kg\times \m/\s^2
 \end{equation*}
 This is quite interesting because it is easy to vary $\Reynolds$ by simply
 adjusting the velocity or $A$ but it is hard to vary things like $\mu $ or $%

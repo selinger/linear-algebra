@@ -39,13 +39,13 @@ concept, we will consider a cube of side length 2, centered at the
 origin. The 8 corners of this cube have the following coordinates in
 the object coordinate system:
 \begin{equation*}
-  \begin{mymatrix}{r}  1 \\  1 \\  1 \end{mymatrix},~
-  \begin{mymatrix}{r}  1 \\  1 \\ -1 \end{mymatrix},~
-  \begin{mymatrix}{r}  1 \\ -1 \\  1 \end{mymatrix},~
+  \begin{mymatrix}{r}  1 \\ 1 \\ 1 \end{mymatrix},~
+  \begin{mymatrix}{r}  1 \\ 1 \\ -1 \end{mymatrix},~
+  \begin{mymatrix}{r}  1 \\ -1 \\ 1 \end{mymatrix},~
   \begin{mymatrix}{r}  1 \\ -1 \\ -1 \end{mymatrix},~
-  \begin{mymatrix}{r} -1 \\  1 \\  1 \end{mymatrix},~
-  \begin{mymatrix}{r} -1 \\  1 \\ -1 \end{mymatrix},~
-  \begin{mymatrix}{r} -1 \\ -1 \\  1 \end{mymatrix},~
+  \begin{mymatrix}{r} -1 \\ 1 \\ 1 \end{mymatrix},~
+  \begin{mymatrix}{r} -1 \\ 1 \\ -1 \end{mymatrix},~
+  \begin{mymatrix}{r} -1 \\ -1 \\ 1 \end{mymatrix},~
   \begin{mymatrix}{r} -1 \\ -1 \\ -1 \end{mymatrix}.
 \end{equation*}
 For later reference, let us call this the \textbf{standard cube}%
@@ -144,13 +144,13 @@ $\vect{a}_y$, and $\vect{a}_z$, we can also write this formula more succinctly a
   Let $\vect{v}_1,\ldots,\vect{v}_8$ be the object coordinates of the
   8 corners of the cube:
   \begin{equation*}
-    \begin{mymatrix}{r}  1 \\  1 \\  1 \end{mymatrix},~
-    \begin{mymatrix}{r}  1 \\  1 \\ -1 \end{mymatrix},~
-    \begin{mymatrix}{r}  1 \\ -1 \\  1 \end{mymatrix},~
+    \begin{mymatrix}{r}  1 \\ 1 \\ 1 \end{mymatrix},~
+    \begin{mymatrix}{r}  1 \\ 1 \\ -1 \end{mymatrix},~
+    \begin{mymatrix}{r}  1 \\ -1 \\ 1 \end{mymatrix},~
     \begin{mymatrix}{r}  1 \\ -1 \\ -1 \end{mymatrix},~
-    \begin{mymatrix}{r} -1 \\  1 \\  1 \end{mymatrix},~
-    \begin{mymatrix}{r} -1 \\  1 \\ -1 \end{mymatrix},~
-    \begin{mymatrix}{r} -1 \\ -1 \\  1 \end{mymatrix},~
+    \begin{mymatrix}{r} -1 \\ 1 \\ 1 \end{mymatrix},~
+    \begin{mymatrix}{r} -1 \\ 1 \\ -1 \end{mymatrix},~
+    \begin{mymatrix}{r} -1 \\ -1 \\ 1 \end{mymatrix},~
     \begin{mymatrix}{r} -1 \\ -1 \\ -1 \end{mymatrix}.
   \end{equation*}
   We convert each of them to camera coordinates using the formula
@@ -163,9 +163,9 @@ $\vect{a}_y$, and $\vect{a}_z$, we can also write this formula more succinctly a
       0 & 0 & 1 \\
       0.6 & -0.8 & 0 \\
     \end{mymatrix}
-    \begin{mymatrix}{r}  1 \\  1 \\  1 \end{mymatrix}
+    \begin{mymatrix}{r}  1 \\ 1 \\ 1 \end{mymatrix}
     ~=~
-    \begin{mymatrix}{r}  1.4 \\  1.5 \\ 4.8 \end{mymatrix}, \\
+    \begin{mymatrix}{r}  1.4 \\ 1.5 \\ 4.8 \end{mymatrix}, \\
     \vect{p}_2 &=&
     \begin{mymatrix}{c} 0 \\ 0.5 \\ 5 \end{mymatrix}
     + \begin{mymatrix}{ccc}
@@ -173,7 +173,7 @@ $\vect{a}_y$, and $\vect{a}_z$, we can also write this formula more succinctly a
       0 & 0 & 1 \\
       0.6 & -0.8 & 0 \\
     \end{mymatrix}
-    \begin{mymatrix}{r}  1 \\  1 \\ -1 \end{mymatrix}
+    \begin{mymatrix}{r}  1 \\ 1 \\ -1 \end{mymatrix}
     ~=~
     \begin{mymatrix}{r}  1.4 \\ -0.5 \\ 4.8 \end{mymatrix}, \\
     \vect{p}_3 &=&
@@ -190,13 +190,13 @@ $\vect{a}_y$, and $\vect{a}_z$, we can also write this formula more succinctly a
   and so on. Continuing in the same fashion, we find
   $\vect{p}_1,\ldots,\vect{p}_8$:
   \begin{equation}\label{eqn:object-to-camera}
-    \begin{mymatrix}{r}  1.4 \\  1.5 \\ 4.8 \end{mymatrix},
+    \begin{mymatrix}{r}  1.4 \\ 1.5 \\ 4.8 \end{mymatrix},
     \begin{mymatrix}{r}  1.4 \\ -0.5 \\ 4.8 \end{mymatrix},
-    \begin{mymatrix}{r}  0.2 \\  1.5 \\ 6.4 \end{mymatrix},
+    \begin{mymatrix}{r}  0.2 \\ 1.5 \\ 6.4 \end{mymatrix},
     \begin{mymatrix}{r}  0.2 \\ -0.5 \\ 6.4 \end{mymatrix},
-    \begin{mymatrix}{r} -0.2 \\  1.5 \\ 3.6 \end{mymatrix},
+    \begin{mymatrix}{r} -0.2 \\ 1.5 \\ 3.6 \end{mymatrix},
     \begin{mymatrix}{r} -0.2 \\ -0.5 \\ 3.6 \end{mymatrix},
-    \begin{mymatrix}{r} -1.4 \\  1.5 \\ 5.2 \end{mymatrix},
+    \begin{mymatrix}{r} -1.4 \\ 1.5 \\ 5.2 \end{mymatrix},
     \begin{mymatrix}{r} -1.4 \\ -0.5 \\ 5.2 \end{mymatrix}.
   \end{equation}
 \end{solution}
@@ -274,13 +274,13 @@ $2$-dimensional image plane.
   {\eqref{eqn:object-to-camera}}.
   We have
   \begin{eqnarray*}
-    g\paren{\begin{mymatrix}{r}  1.4 \\  1.5 \\ 4.8 \end{mymatrix}}
+    g\paren{\begin{mymatrix}{r}  1.4 \\ 1.5 \\ 4.8 \end{mymatrix}}
     &=& \begin{mymatrix}{r} 1.4/4.8 \\ 1.5/4.8 \end{mymatrix}
     ~=~ \begin{mymatrix}{r} 0.292 \\ 0.312 \end{mymatrix}, \\
     g\paren{\begin{mymatrix}{r}  1.4 \\ -0.5 \\ 4.8 \end{mymatrix}}
     &=& \begin{mymatrix}{r} 1.4/4.8 \\ -0.5/4.8 \end{mymatrix}
     ~=~ \begin{mymatrix}{r} 0.292 \\ -0.104 \end{mymatrix}, \\
-    g\paren{\begin{mymatrix}{r}  0.2 \\  1.5 \\ 6.4 \end{mymatrix}}
+    g\paren{\begin{mymatrix}{r}  0.2 \\ 1.5 \\ 6.4 \end{mymatrix}}
     &=& \begin{mymatrix}{r} 0.2/6.4 \\ 1.5/6.4 \end{mymatrix}
     ~=~ \begin{mymatrix}{r} 0.031 \\ 0.234 \end{mymatrix},
   \end{eqnarray*}

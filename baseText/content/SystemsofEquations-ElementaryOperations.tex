@@ -98,31 +98,31 @@ constant term.
 Suppose you have a system of two linear equations in any number of variables
 \begin{equation}
  \begin{array}{c}
-  E_{1}=b_{1}\\
-  E_{2}=b_{2}.
+  E_1=b_1 \\
+  E_2=b_2.
 \end{array} \label{system}
 \end{equation}
 Then the following systems are equivalent to \eqref{system}:
 \begin{enumerate}
 \item   \begin{equation}
 	\begin{array}{c}
-	E_{2}=b_{2}\\
-	E_{1}=b_{1}.
+	E_2=b_2 \\
+	E_1=b_1.
 	\end{array}
 	\label{thm-1.9.1}
 	\end{equation}
 \item  \begin{equation}
 	\begin{array}{c}
-	E_{1}=b_{1} \\
-	kE_{2}=kb_{2}\\
+	E_1=b_1 \\
+	kE_2=kb_2 \\
 	\end{array}
 	\label{thm-1.9.2}
 	\end{equation}
   for any scalar $k$, provided $k\neq0$.
 \item \begin{equation}
       \begin{array}{c}
-       E_{1}=b_{1} \\
-       E_{2}+kE_{1}=b_{2}+kb_{1}
+       E_1=b_1 \\
+       E_2+kE_1=b_2+kb_1
        \end{array}
 	\label{thm-1.9.3}
 	\end{equation}
@@ -139,31 +139,31 @@ Then the following systems are equivalent to \eqref{system}:
   \eqref{thm-1.9.1}.
 
 \item To prove that the systems \eqref{system} and \eqref{thm-1.9.2}
-  have the same solution set, let $(x_{1},\ldots,x_{n})$ be
+  have the same solution set, let $(x_1,\ldots,x_n)$ be
   any solution of \eqref{system}. Then $E_1=b_1$ and $E_2=b_2$ are
   both true. Multiplying both sides of the last equation by $k$, we
   know that $kE_2=kb_2$ is true, and so
-  $(x_{1},\ldots,x_{n})$ is a solution of
-  \eqref{thm-1.9.2}. Conversely, let $(x_{1},\ldots,x_{n})$
+  $(x_1,\ldots,x_n)$ is a solution of
+  \eqref{thm-1.9.2}. Conversely, let $(x_1,\ldots,x_n)$
   be any solution of \eqref{thm-1.9.2}.  Then $E_1=b_1$ and $kE_2=kb_2$
   are true. Because $k\neq 0$, we are allowed to divide both sides of
   the last equation by $k$, and therefore $E_2=b_2$ is true. Hence,
-  $(x_{1},\ldots,x_{n})$ is also a solution of
+  $(x_1,\ldots,x_n)$ is also a solution of
   \eqref{system}. Since we have shown that every solution of
   \eqref{system}  is a solution of \eqref{thm-1.9.2} and vice versa,
   the two systems are equivalent.
 
 \item To prove that the systems \eqref{system} and \eqref{thm-1.9.3}
-  have the same solution set, let $(x_{1},\ldots,x_{n})$ be
+  have the same solution set, let $(x_1,\ldots,x_n)$ be
   any solution of \eqref{system}. Then $E_1=b_1$ and $E_2=b_2$ are
   both true. We multiply both sides of the first equation by $k$ to
   obtain $kE_1=kb_1$. Then $kE_1+E_2 = kb_1+b_2$, and hence
-  $(x_{1},\ldots,x_{n})$ is a solution of
+  $(x_1,\ldots,x_n)$ is a solution of
   \eqref{thm-1.9.3}. For the converse direction, assume
-  $(x_{1},\ldots,x_{n})$ is a solution of $E_1=b_1$ and
+  $(x_1,\ldots,x_n)$ is a solution of $E_1=b_1$ and
   $kE_1+E_2 = kb_1+b_2$. From the first equation, we have $kE_1=kb_1$,
   and subtracting this from the second equation, we get $E_2=b_2$,
-  hence $(x_{1},\ldots,x_{n})$ is a solution of
+  hence $(x_1,\ldots,x_n)$ is a solution of
   \eqref{system}. Note that unlike in case 2., there was no need to
   divide by $k$, and therefore it was not necessary to require $k\neq 0$.
 \end{enumerate}
@@ -308,17 +308,17 @@ equations is defined as follows.
   of the system of linear equations
   \begin{equation*}
     \begin{array}{c}
-      a_{11}x_{1}+\ldots +a_{1n}x_{n}=b_{1} \\
+      a_{11}x_1 + \ldots + a_{1n}x_n = b_1 \\
       \vdots \\
-      a_{m1}x_{1}+\ldots +a_{mn}x_{n}=b_{m}
+      a_{m1}x_1 + \ldots + a_{mn}x_n = b_m
     \end{array}
   \end{equation*}
   is
   \begin{equation*}
     \begin{mymatrix}{rrr|r}
-      a_{11} & \cdots & a_{1n} &  b_{1} \\
+      a_{11} & \cdots & a_{1n} &  b_1 \\
       \vdots &  & \vdots &  \vdots \\
-      a_{m1} & \cdots & a_{mn} &  b_{m}
+      a_{m1} & \cdots & a_{mn} &  b_m
     \end{mymatrix}.
   \end{equation*}
 \end{definition}
@@ -403,13 +403,13 @@ same set of solutions.
     \stackrel{R_1\rowop R_1-6R_3}{\stackrel{R_2\rowop R_2-2R_3}{\roweq}}
     \begin{mymatrix}{rrr|r}
       1 & 3 & 0 & 7 \\
-      0 & 1 & 0 & 2\\
+      0 & 1 & 0 & 2 \\
       0 & 0 & 1 & 3
     \end{mymatrix}
     \stackrel{R_1\rowop R_1-3R_2}{\roweq}
     \begin{mymatrix}{rrr|r}
-      1 & 0 & 0 & 1\\
-      0 & 1 & 0 & 2\\
+      1 & 0 & 0 & 1 \\
+      0 & 1 & 0 & 2 \\
       0 & 0 & 1 & 3
     \end{mymatrix}.
   \end{equation*}

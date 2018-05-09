@@ -168,7 +168,7 @@ of a complex inner product space. Here is another example:
   continuous, complex-valued functions $f : [a,b]\to\C$. Given two such
   functions $f,g\in C[a,b]$, we define their inner product as
   \begin{equation*}
-    \iprod{f,g} = \int_a^b \conjugate{f(x)}g(x)\,dx.
+    \iprod{f,g} = \int_{a}^{b} \conjugate{f(x)}g(x)\,dx.
   \end{equation*}
   With this operation, $C[a,b]$ is a complex inner product space.
 \end{example}
@@ -290,7 +290,7 @@ Fourier coefficients, projections, and the Gram-Schmidt procedure.
         + \ldots
         + \conjugate{a_i}\cdot 1
         + \ldots
-        + \conjugate{a_n}\cdot 0\\
+        + \conjugate{a_n}\cdot 0 \\
     &=&
         \conjugate{a_i}.
   \end{eqnarray*}
@@ -312,7 +312,7 @@ Fourier coefficients, projections, and the Gram-Schmidt procedure.
         + \ldots
         + a_i 1
         + \ldots
-        + a_n\cdot 0\\
+        + a_n\cdot 0 \\
     &=&
         a_i.
   \end{eqnarray*}
@@ -518,15 +518,15 @@ Orthogonal projections also work in complex inner product spaces.
     \iprod{\vect{u}_1,\vect{v}}
     &=& \begin{mymatrix}{ccc} 1 & -i & 0 \end{mymatrix}
         \begin{mymatrix}{c} 0 \\ 2 \\ 4\end{mymatrix}
-    ~~=~~ -2i,\\
+    ~~=~~ -2i, \\
     \iprod{\vect{u}_2,\vect{v}}
     &=& \begin{mymatrix}{ccc} -i & 1 & 1 \end{mymatrix}
         \begin{mymatrix}{c} 0 \\ 2 \\ 4\end{mymatrix}
-    ~~=~~ 6,\\
+    ~~=~~ 6, \\
     \iprod{\vect{u}_1,\vect{u}_1}
     &=& \begin{mymatrix}{ccc} 1 & -i & 0 \end{mymatrix}
         \begin{mymatrix}{c} 1 \\ i \\ 0 \end{mymatrix}
-    ~~=~~ 2,\\
+    ~~=~~ 2, \\
     \iprod{\vect{u}_2,\vect{u}_2}
     &=& \begin{mymatrix}{ccc} -i & 1 & 1 \end{mymatrix}
         \begin{mymatrix}{c} i \\ 1 \\ 1\end{mymatrix}
@@ -541,8 +541,8 @@ Orthogonal projections also work in complex inner product spaces.
     ~~=~~
     \frac{-2i}{2}\,\vect{u}_1 + \frac{6}{3}\,\vect{u}_2
     ~~=~~
-    -i\begin{mymatrix}{c} 1 \\ i \\ 0 \end{mymatrix}
-    +2\begin{mymatrix}{c} i \\ 1 \\ 1 \end{mymatrix}
+    - i \begin{mymatrix}{c} 1 \\ i \\ 0 \end{mymatrix}
+    + 2 \begin{mymatrix}{c} i \\ 1 \\ 1 \end{mymatrix}
     ~~=~~
     \begin{mymatrix}{c} i \\ 3 \\ 2 \end{mymatrix}.
   \end{equation*}
@@ -557,7 +557,7 @@ Orthogonal projections also work in complex inner product spaces.
     &=&
     \begin{mymatrix}{ccc} 1 & -i & 0 \end{mymatrix}
     \begin{mymatrix}{c} -i \\ -1 \\ 2 \end{mymatrix}
-    ~~=~~ 0,\\
+    ~~=~~ 0, \\
     \iprod{\vect{u}_2,\vect{v}-\vect{v}'}
     &=&
     \begin{mymatrix}{ccc} -i & 1 & 1 \end{mymatrix}

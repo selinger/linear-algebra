@@ -26,17 +26,17 @@ $Q=(q_1,q_2)$ in the plane, as in the following picture.
 \end{equation*}
 The distance between $P$ and $Q$ is shown in the picture as a solid
 line, which is the hypotenuse of a right triangle.  The lengths of the
-two other sides of this triangle are $\abs{p_{1}-q_{1}} $ and
-$\abs{p_{2}-q_{2}}$. Therefore, the Pythagorean Theorem implies the
+two other sides of this triangle are $\abs{p_1-q_1} $ and
+$\abs{p_2-q_2}$. Therefore, the Pythagorean Theorem implies the
 length of the hypotenuse (and thus the distance between $P$ and $Q$)
 equals
 \begin{equation*}
   d(P,Q)
-  =\sqrt{\abs{p_{1}-q_{1}}^2+\abs{p_{2}-q_{2}}^2}
-  =\sqrt{(p_{1}-q_{1})^2+(p_{2}-q_{2})^2}.
+  =\sqrt{\abs{p_1-q_1}^2+\abs{p_2-q_2}^2}
+  =\sqrt{(p_1-q_1)^2+(p_2-q_2)^2}.
 \end{equation*}
-Now consider two points $P=(p_{1},p_{2},p_{3})$ and
-$Q = (q_{1},q_{2},q_{3})$ in $3$-dimensional space.
+Now consider two points $P=(p_1,p_2,p_3)$ and
+$Q = (q_1,q_2,q_3)$ in $3$-dimensional space.
 \begin{equation*}
   \begin{tikzpicture}[scale=1]
     \draw[dashed] (3,0,-2) -- (0,0,-2) -- (0,0,0);
@@ -58,19 +58,19 @@ solid line connecting $P$ and $Q$. First, by the Pythagorean Theorem
 applied to the right triangle $QSR$, the length of the line joining
 $R$ and $Q$ equals
 \begin{equation*}
-d(R,Q) = \sqrt{ (p_{1}-q_{1})^2+(p_{2}-q_{2})^2}.
+d(R,Q) = \sqrt{ (p_1-q_1)^2+(p_2-q_2)^2}.
 \end{equation*}
 Second, by the Pythagorean Theorem applied to the triangle $QRP$, the
 length of the line joining $P$ and $Q$ equals
 \begin{equation*}
-d(P,Q)=\sqrt{d(R,Q)^2+(p_{3}-q_{3})^2}
- =\sqrt{ (p_{1}-q_{1})^2+(p_{2}-q_{2})^2+(p_{3}-q_{3})^2}
+d(P,Q)=\sqrt{d(R,Q)^2+(p_3-q_3)^2}
+ =\sqrt{ (p_1-q_1)^2+(p_2-q_2)^2+(p_3-q_3)^2}
 \end{equation*}
 This discussion motivates the following definition for the distance
 between points in $\R^n$.
 
 \begin{definition}{Distance between points}{distance-between-points}
-  Let $P=(p_{1},\ldots,p_{n})$ and $Q=(q_{1},\ldots,q_{n})$ be
+  Let $P=(p_1,\ldots,p_n)$ and $Q=(q_1,\ldots,q_n)$ be
   two points in $\R^n$. Then the
   \textbf{distance}\index{distance!point to point}
   between these points is defined as
@@ -148,7 +148,7 @@ define what is meant by the length of a vector.
   \textbf{length}\index{vector!length}\index{length of a vector} of
   $\vect{u}$, written $\norm{\vect{u}}$, is given by
   \begin{equation*}
-    \norm{\vect{u}} = \sqrt{u_{1}^2 + \ldots + u_{n}^2}.
+    \norm{\vect{u}} = \sqrt{u_1^2 + \ldots + u_n^2}.
   \end{equation*}
   The length of a vector is also sometimes called its
   \textbf{magnitude}%

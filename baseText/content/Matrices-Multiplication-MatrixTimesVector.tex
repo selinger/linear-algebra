@@ -9,22 +9,22 @@ linear equations.
   Suppose we have a system of equations given by
   \begin{equation*}
     \begin{array}{ccc}
-      a_{11}x_{1}+\ldots +a_{1n}x_{n} &=& b_{1}, \\
-      a_{21}x_{1}+\ldots +a_{2n}x_{n} &=& b_{2}, \\
+      a_{11}x_1 + \ldots + a_{1n}x_n &=& b_1, \\
+      a_{21}x_1 + \ldots + a_{2n}x_n &=& b_2, \\
       \vdots \\
-      a_{m1}x_{1}+\ldots +a_{mn}x_{n} &=& b_{m}.
+      a_{m1}x_1 + \ldots + a_{mn}x_n &=& b_m.
     \end{array}
   \end{equation*}
   We can express this system in \textbf{vector form}%
   \index{system of linear equations!vector form}%
   \index{vector form!of a system of equations}, which is as follows:
   \begin{equation*}
-    x_1 \begin{mymatrix}{c} a_{11}\\ a_{21}\\ \vdots \\ a_{m1} \end{mymatrix}
-    + x_2 \begin{mymatrix}{c} a_{12}\\ a_{22}\\ \vdots \\ a_{m2} \end{mymatrix}
+    x_1 \begin{mymatrix}{c} a_{11} \\ a_{21} \\ \vdots \\ a_{m1} \end{mymatrix}
+    + x_2 \begin{mymatrix}{c} a_{12} \\ a_{22} \\ \vdots \\ a_{m2} \end{mymatrix}
     + \ldots
-    + x_n \begin{mymatrix}{c} a_{1n}\\ a_{2n}\\ \vdots \\ a_{mn} \end{mymatrix}
+    + x_n \begin{mymatrix}{c} a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn} \end{mymatrix}
     ~=~
-    \begin{mymatrix}{c} b_1\\ b_2\\ \vdots \\ b_m \end{mymatrix}.
+    \begin{mymatrix}{c} b_1 \\ b_2 \\ \vdots \\ b_m \end{mymatrix}.
   \end{equation*}
 \end{definition}
 
@@ -49,16 +49,16 @@ are so important that we introduce a special notation for them.
       a_{m1} & a_{m2} & \cdots & a_{mn} \\
     \end{mymatrix}
     \begin{mymatrix}{c}
-      x_{1} \\
-      x_{2} \\
+      x_1 \\
+      x_2 \\
       \vdots \\
-      x_{n}
+      x_n
     \end{mymatrix}
     ~=~
-    x_1 \begin{mymatrix}{c} a_{11}\\ a_{21}\\ \vdots \\ a_{m1} \end{mymatrix}
-    + x_2 \begin{mymatrix}{c} a_{12}\\ a_{22}\\ \vdots \\ a_{m2} \end{mymatrix}
+    x_1 \begin{mymatrix}{c} a_{11} \\ a_{21} \\ \vdots \\ a_{m1} \end{mymatrix}
+    + x_2 \begin{mymatrix}{c} a_{12} \\ a_{22} \\ \vdots \\ a_{m2} \end{mymatrix}
     + \ldots
-    + x_n \begin{mymatrix}{c} a_{1n}\\ a_{2n}\\ \vdots \\ a_{mn} \end{mymatrix}.
+    + x_n \begin{mymatrix}{c} a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn} \end{mymatrix}.
   \end{equation*}
 \end{definition}
 
@@ -98,13 +98,16 @@ $\vect{x}$ has components.
   7\begin{mymatrix}{c}
     1 \\
     4
-  \end{mymatrix} +8\begin{mymatrix}{c}
+  \end{mymatrix}
+  + 8 \begin{mymatrix}{c}
     2 \\
     5
-  \end{mymatrix} +9\begin{mymatrix}{c}
+  \end{mymatrix}
+  + 9 \begin{mymatrix}{c}
     3 \\
     6
-  \end{mymatrix} =\begin{mymatrix}{c}
+  \end{mymatrix}
+  = \begin{mymatrix}{c}
     50 \\
     122
   \end{mymatrix}.
@@ -127,17 +130,17 @@ rows.
       a_{m1} & a_{m2} & \cdots & a_{mn} \\
     \end{mymatrix}
     \begin{mymatrix}{c}
-      x_{1} \\
-      x_{2} \\
+      x_1 \\
+      x_2 \\
       \vdots \\
-      x_{n}
+      x_n
     \end{mymatrix}
     ~=~
     \begin{mymatrix}{c}
-      a_{11}x_{1}+a_{12}x_{2}+\ldots+a_{13}x_{3} \\
-      a_{21}x_{1}+a_{22}x_{2}+\ldots+a_{23}x_{3} \\
+      a_{11}x_1+a_{12}x_2+\ldots+a_{13}x_3 \\
+      a_{21}x_1+a_{22}x_2+\ldots+a_{23}x_3 \\
       \vdots \\
-      a_{m1}x_{1}+a_{m2}x_{2}+\ldots+a_{m3}x_{3} \\
+      a_{m1}x_1+a_{m2}x_2+\ldots+a_{m3}x_3 \\
     \end{mymatrix}.
   \end{equation*}
 \end{proposition}
@@ -199,10 +202,10 @@ as a matrix multiplied by a vector.
   Suppose we have a system of equations given by
   \begin{equation*}
     \begin{array}{c}
-      a_{11}x_{1}+\ldots +a_{1n}x_{n}=b_{1}, \\
-      a_{21}x_{1}+ \ldots + a_{2n}x_{n} = b_{2}, \\
+      a_{11}x_1 + \ldots + a_{1n}x_n = b_1, \\
+      a_{21}x_1 + \ldots + a_{2n}x_n = b_2, \\
       \vdots \\
-      a_{m1}x_{1}+\ldots +a_{mn}x_{n}=b_{m}.
+      a_{m1}x_1 + \ldots + a_{mn}x_n = b_m.
     \end{array}
   \end{equation*}
   Then we can express this system in \textbf{matrix form}%
@@ -216,17 +219,17 @@ as a matrix multiplied by a vector.
       a_{m1} & a_{m2} & \cdots & a_{mn}
     \end{mymatrix}
     \begin{mymatrix}{c}
-      x_{1} \\
-      x_{2} \\
+      x_1 \\
+      x_2 \\
       \vdots \\
-      x_{n}
+      x_n
     \end{mymatrix}
     =
     \begin{mymatrix}{c}
-      b_{1}\\
-      b_{2}\\
+      b_1 \\
+      b_2 \\
       \vdots \\
-      b_{m}
+      b_m
     \end{mymatrix}.
   \end{equation*}
 \end{definition}

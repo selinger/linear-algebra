@@ -14,29 +14,29 @@
     \item
       Yes. Suppose
       \begin{equation*}
-        c_{1}(x^3+1) +c_{2}(x^2+x) +c_{3}(
-        2x^3+x^2) +c_{4}(2x^3-x^2-3x+1) =0.
+        c_1(x^3+1) + c_2(x^2+x) + c_3(2x^3+x^2) +
+        c_4(2x^3-x^2-3x+1) = 0.
       \end{equation*}
       Then collect equal powers of $x$:
       \begin{equation*}
-        (c_{1}+2c_{3}+2c_{4}) x^3+(c_{2}+c_{3}-c_{4})
-        x^2+(c_{2}-3c_{4}) x+(c_{1}+c_{4}) =0.
+        (c_1+2c_3+2c_4)x^3 + (c_2+c_3-c_4)x^2 +
+        (c_2-3c_4)x + (c_1+c_4) = 0.
       \end{equation*}
       Does the system
       \begin{equation*}
         \begin{array}{c}
-          c_{1}+2c_{3}+2c_{4}=0 \\
-          c_{2}+c_{3}-c_{4}=0 \\
-          c_{2}-3c_{4}=0 \\
-          c_{1}+c_{4}=0
+          c_1 + 2c_3 + 2c_4 = 0 \\
+          c_2 + c_3 - c_4 = 0 \\
+          c_2 - 3c_4 = 0 \\
+          c_1 + c_4 = 0
         \end{array}
       \end{equation*}
       have a non-trivial solution? The only solution is
       \begin{equation*}
-        c_{1}=0,\quad
-        c_{2}=0,\quad
-        c_{3}=0,\quad
-        c_{4}=0,
+        c_1 = 0,\quad
+        c_2 = 0,\quad
+        c_3 = 0,\quad
+        c_4 = 0,
       \end{equation*}
       and therefore, the polynomials are linearly independent. Since
       there are $4$ linearly independent polynomials in a
@@ -47,7 +47,7 @@
 \end{ex}
 
 \begin{ex}
-  Determine whether the following is a basis for $\Poly_{2}$, the
+  Determine whether the following is a basis for $\Poly_2$, the
   vector space of polynomials of degree at most $2$.
   \begin{equation*}
     \set{x^2+x+1,~2x^2+2x+1,~x+1}.
@@ -55,14 +55,14 @@
 \end{ex}
 
 \begin{ex}
-  Find a basis for the following subspace of $\Poly_{2}$:
+  Find a basis for the following subspace of $\Poly_2$:
   \begin{equation*}
     W=\sspan\set{1+x+x^2,~1+2x,~1+5x-3x^2}.
   \end{equation*}
 \end{ex}
 
 \begin{ex}
-  Find a basis for the following subspace of $\Poly_{3}$:
+  Find a basis for the following subspace of $\Poly_3$:
   \begin{equation*}
     W = \sspan\set{
       1+x-x^2+x^3,~1+2x+3x^3,~-1+3x+5x^2+7x^3,~1+6x+4x^2+11x^3}.
@@ -135,9 +135,9 @@
       $W_3$:
       \begin{equation*}
         \begin{array}{l}
-          (1,0,0,1,0,0,1,0,0,1,\ldots),\\
-          (0,1,0,0,1,0,0,1,0,0,\ldots),\\
-          (0,0,1,0,0,1,0,0,1,0,\ldots).\\
+          (1,0,0,1,0,0,1,0,0,1,\ldots), \\
+          (0,1,0,0,1,0,0,1,0,0,\ldots), \\
+          (0,0,1,0,0,1,0,0,1,0,\ldots). \\
         \end{array}
       \end{equation*}
       Therefore, $W_3$ is a 3-dimensional space. For general $k$,
@@ -148,15 +148,15 @@
       \begin{equation*}
         \begin{array}{ll}
           (1,1,1,1,1,1,1,1,1,1,\ldots) & \mbox{(period $1$)},\\[1ex]
-          (1,0,1,0,1,0,1,0,1,0,\ldots) & \mbox{(period $2$)},\\
+          (1,0,1,0,1,0,1,0,1,0,\ldots) & \mbox{(period $2$)}, \\
           (0,1,0,1,0,1,0,1,0,1,\ldots) & \mbox{(period $2$)},\\[1ex]
-          (1,0,0,1,0,0,1,0,0,1,\ldots) & \mbox{(period $3$)},\\
-          (0,1,0,0,1,0,0,1,0,0,\ldots) & \mbox{(period $3$)},\\
+          (1,0,0,1,0,0,1,0,0,1,\ldots) & \mbox{(period $3$)}, \\
+          (0,1,0,0,1,0,0,1,0,0,\ldots) & \mbox{(period $3$)}, \\
           (0,0,1,0,0,1,0,0,1,0,\ldots) & \mbox{(period $3$)},\\[1ex]
-          (1,0,0,0,1,0,0,0,1,0,\ldots) & \mbox{(period $4$)},\\
-          (0,1,0,0,0,1,0,0,0,1,\ldots) & \mbox{(period $4$)},\\
-          (0,0,1,0,0,0,1,0,0,0,\ldots) & \mbox{(period $4$)},\\
-          (0,0,0,1,0,0,0,1,0,0,\ldots) & \mbox{(period $4$)},\\
+          (1,0,0,0,1,0,0,0,1,0,\ldots) & \mbox{(period $4$)}, \\
+          (0,1,0,0,0,1,0,0,0,1,\ldots) & \mbox{(period $4$)}, \\
+          (0,0,1,0,0,0,1,0,0,0,\ldots) & \mbox{(period $4$)}, \\
+          (0,0,0,1,0,0,0,1,0,0,\ldots) & \mbox{(period $4$)}, \\
         \end{array}
       \end{equation*}
       and so on. However, these sequences are not linearly

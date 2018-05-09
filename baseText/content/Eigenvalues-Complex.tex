@@ -195,7 +195,7 @@ can be found in Appendix~\ref{app:complex}.
   The characteristic polynomial is
   \begin{equation*}
     p(\eigenvar)
-    = (-3-\eigenvar)(1-\eigenvar)(3-\eigenvar) - 16 +8(1-\eigenvar) + 4(3-\eigenvar)
+    = (-3-\eigenvar)(1-\eigenvar)(3-\eigenvar) - 16 + 8(1-\eigenvar) + 4(3-\eigenvar)
     = -\eigenvar^3 + \eigenvar^2 - 3\eigenvar - 5.
   \end{equation*}
   By trial and error, we find that $\eigenvar=-1$ is one of the
@@ -417,7 +417,7 @@ solve it.
     \begin{array}{l@{~}c@{~}l}
       f_0 &=& 1, \\
       f_1 &=& 3, \\
-      f_{n+2} &=& 2f_{n+1} - 2f_{n}, \quad\mbox{for all $n\geq 0$.}\\
+      f_{n+2} &=& 2f_{n+1} - 2f_n, \quad\mbox{for all $n\geq 0$.} \\
     \end{array}
   \end{equation*}
   Solve the recurrence, i.e., find a closed formula for $f_n$.
@@ -436,7 +436,7 @@ solve it.
   \begin{equation*}
     \vect{v}_{n+1}
     = \begin{mymatrix}{c} f_{n+1} \\ f_{n+2} \end{mymatrix}
-    = \begin{mymatrix}{c} f_{n+1} \\ 2f_{n+1} - 2f_{n} \end{mymatrix}
+    = \begin{mymatrix}{c} f_{n+1} \\ 2f_{n+1} - 2f_n \end{mymatrix}
     = \begin{mymatrix}{rr}
       0  & 1 \\
       -2 & 2 \\
@@ -540,7 +540,7 @@ solve it.
   We can use this, for example, to calculate the $8\th$ element of the
   sequence:
   \begin{equation*}
-    f_{8}
+    f_8
     ~=~ \frac{1}{2}\paren{(1-2i)(1+i)^8 + (1+2i)(1-i)^8}
     ~=~ \frac{1}{2}\paren{(1-2i)16 + (1+2i)16}
     ~=~ \frac{32}{2}

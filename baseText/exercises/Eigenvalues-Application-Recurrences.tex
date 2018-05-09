@@ -6,7 +6,7 @@
     \begin{array}{l@{~}c@{~}l}
       a_0 &=& 0, \\
       a_1 &=& 1, \\
-      a_{n+2} &=& 2a_{n+1} + 3a_{n}, \quad\mbox{for all $n\geq 0$.}\\
+      a_{n+2} &=& 2a_{n+1} + 3a_n, \quad\mbox{for all $n\geq 0$.} \\
     \end{array}
   \end{equation*}
   Find the first 5 members of this sequence. Then solve the recurrence
@@ -20,7 +20,7 @@
       b_0 &=& 1, \\
       b_1 &=& 2, \\
       b_2 &=& 3, \\
-      b_{n+3} &=& 2b_{n+2} + b_{n+1} - 2b_{n}, \quad\mbox{for all $n\geq 0$.}\\
+      b_{n+3} &=& 2b_{n+2} + b_{n+1} - 2b_n, \quad\mbox{for all $n\geq 0$.} \\
     \end{array}
   \end{equation*}
   Find the first 5 members of this sequence. Then solve the recurrence
@@ -34,14 +34,14 @@
   \begin{equation*}
     \begin{array}{l@{~}c@{~}l@{\quad}l@{~}c@{~}l}
       c_0 &=& 0,             & d_0 = 1 \\
-      c_{n+1} &=& 4c_n - 3d_n, & d_{n+1} = 2c_n - d_n, \quad\mbox{for all $n\geq 0$.}\\
+      c_{n+1} &=& 4c_n - 3d_n, & d_{n+1} = 2c_n - d_n, \quad\mbox{for all $n\geq 0$.} \\
     \end{array}
   \end{equation*}
   Find the first 5 members of both sequences. Then solve the
   recurrence. Hint: first find a matrix $A$ such that
   \begin{equation*}
     \begin{mymatrix}{c} c_{n+1} \\ d_{n+1} \end{mymatrix}
-    = A \begin{mymatrix}{c} c_{n} \\ d_{n} \end{mymatrix}.
+    = A \begin{mymatrix}{c} c_n \\ d_n \end{mymatrix}.
   \end{equation*}
 \end{ex}
 

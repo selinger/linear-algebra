@@ -24,10 +24,10 @@ following conditions:
   \begin{array}{l@{~}c@{~}l}
     F_0 &=& 0, \\
     F_1 &=& 1, \\
-    F_{n+2} &=& F_{n} + F_{n+1}, \quad\mbox{for all $n\geq 0$.}\\
+    F_{n+2} &=& F_n + F_{n+1}, \quad\mbox{for all $n\geq 0$.} \\
   \end{array}
 \end{equation*}
-The condition $F_{n+2} = F_{n} + F_{n+1}$ is known as a
+The condition $F_{n+2} = F_n + F_{n+1}$ is known as a
 \textbf{recurrence relation}, or simply as a \textbf{recurrence}%
 \index{recurrence}%
 \index{sequence!defined by a recurrence}, because we compute each
@@ -75,7 +75,7 @@ a closed formula is called \textbf{solving the recurrence}%
 \index{recurrence!solving}.
 
 The first step in solving the recurrence is to replace the recurrence
-relation $F_{n+2} = F_{n} + F_{n+1}$, which requires {\em two}
+relation $F_{n+2} = F_n + F_{n+1}$, which requires {\em two}
 previous terms of the sequence, by another recurrence relation
 requiring only {\em one} previous term. To that end, we define
 $\vect{v}_n$ to be the vector consisting of the $n\th$ and $n+1\st$
@@ -263,7 +263,7 @@ another example:
     \begin{array}{l@{~}c@{~}l}
       b_0 &=& 1, \\
       b_1 &=& 2, \\
-      b_{n+2} &=& 6b_{n} + b_{n+1}, \quad\mbox{for all $n\geq 0$.}\\
+      b_{n+2} &=& 6b_n + b_{n+1}, \quad\mbox{for all $n\geq 0$.} \\
     \end{array}
   \end{equation*}
   Find the first 5 members of this sequence. Then solve the recurrence

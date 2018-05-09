@@ -28,10 +28,10 @@ subspace of\/ $\R^n$ is the span of some finite set of vectors.
 \begin{theorem}{Subspaces are spans}{subspaces-are-spans}
   \index{subspace!is a span}%
   Let $V$ be a subspace of\/ $\R^n$. Then there exist linearly
-  independent vectors $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ in $V$
+  independent vectors $\set{\vect{u}_1,\ldots,\vect{u}_k}$ in $V$
   such that
   \begin{equation*}
-    V= \sspan\set{\vect{u}_{1},\ldots ,\vect{u}_{k}}.
+    V= \sspan\set{\vect{u}_1,\ldots,\vect{u}_k}.
   \end{equation*}
   \vspace{-3ex}
 \end{theorem}
@@ -42,16 +42,16 @@ subspace of\/ $\R^n$ is the span of some finite set of vectors.
   \item[0.] If $V=\set{\vect{0}}$, then $V$ is the empty span, and we
     are done.
   \item[1.] Otherwise, $V$ contains some non-zero vector.  Pick a
-    non-zero vector $\vect{u}_{1}$ in $V$. If
-    $V=\sspan\set{\vect{u}_{1}}$, we are done.
-  \item[2.] Otherwise, pick a vector $\vect{u}_{2}$ in $V$ that is not
-    in $\sspan\set{\vect{u}_{1}}$. If
-    $V=\sspan\set{\vect{u}_{1},\vect{u}_{2}}$, we are done.
-  \item[3.] Otherwise, pick a vector $\vect{u}_{3}$ in $V$ that is not
-    in $\sspan\set{\vect{u}_{1},\vect{u}_{2}}$. If
-    $V=\sspan\set{\vect{u}_{1},\vect{u}_{2},\vect{u}_{3}}$, we are done.
-  \item[4.] Otherwise, pick a vector $\vect{u}_{4}$ in $V$ that is not
-    in $\sspan\set{\vect{u}_{1},\vect{u}_{2},\vect{u}_{4}}$, and so on.
+    non-zero vector $\vect{u}_1$ in $V$. If
+    $V=\sspan\set{\vect{u}_1}$, we are done.
+  \item[2.] Otherwise, pick a vector $\vect{u}_2$ in $V$ that is not
+    in $\sspan\set{\vect{u}_1}$. If
+    $V=\sspan\set{\vect{u}_1,\vect{u}_2}$, we are done.
+  \item[3.] Otherwise, pick a vector $\vect{u}_3$ in $V$ that is not
+    in $\sspan\set{\vect{u}_1,\vect{u}_2}$. If
+    $V=\sspan\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$, we are done.
+  \item[4.] Otherwise, pick a vector $\vect{u}_4$ in $V$ that is not
+    in $\sspan\set{\vect{u}_1,\vect{u}_2,\vect{u}_4}$, and so on.
   \end{enumerate}
   Continue in this way. Note that after the $j\th$ step of this
   process, the vectors $\vect{u}_1,\ldots,\vect{u}_j$ are linearly
@@ -61,7 +61,7 @@ subspace of\/ $\R^n$ is the span of some finite set of vectors.
   Theorem~\ref{thm:properties-linear-independence}(\ref{properties-linear-independence-c}),
   there can be at most $n$ linearly independent vectors in $\R^n$.
   Therefore the process must stop after $k$ steps for some $k\leq
-  n$. But then $V=\sspan\set{\vect{u}_{1},\ldots ,\vect{u}_{k}}$, as
+  n$. But then $V=\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$, as
   desired.
 \end{proof}
 
@@ -71,14 +71,14 @@ vectors is called a \textbf{basis} of the subspace.
 
 \begin{definition}{Basis of a subspace}{subspace-basis}
   Let $V$ be a subspace of\/ $\R^n$. Then
-  $\set{\vect{u}_{1},\ldots ,\vect{u}_{k}}$ is a \textbf{basis} for
+  $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is a \textbf{basis} for
   $V$ if the following two conditions hold:%
   \index{basis}%
   \index{subspace!basis|see{basis}}%
   \index{vector!basis|see{basis}}%
   \begin{enumerate}
-  \item $\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}}=V$, and
-  \item $\vect{u}_{1},\ldots,\vect{u}_{k}$ are linearly independent.
+  \item $\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}=V$, and
+  \item $\vect{u}_1,\ldots,\vect{u}_k$ are linearly independent.
   \end{enumerate}
 \end{definition}
 
@@ -467,17 +467,17 @@ vectors as linearly independent sets.
 
 \begin{lemma}{Exchange Lemma}{exchange-lemma}
   \index{exchange lemma!in Rn@in $\R^n$}%
-  Suppose $\vect{u}_{1},\ldots,\vect{u}_{r}$ are linearly independent
-  elements of $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{s}}$. Then
+  Suppose $\vect{u}_1,\ldots,\vect{u}_r$ are linearly independent
+  elements of $\sspan\set{\vect{v}_1,\ldots,\vect{v}_s}$. Then
   $r\leq s$.
 \end{lemma}
 
 \begin{proof}
   Since each $\vect{u}_j$ is an element of
-  $\sspan\set{\vect{v}_{1},\ldots,\vect{v}_{s}}$, there exist
+  $\sspan\set{\vect{v}_1,\ldots,\vect{v}_s}$, there exist
   scalars $a_{ij}$ such that
   \begin{equation*}
-    \vect{u}_{j} = a_{1j}\,\vect{v}_1 + \ldots + a_{sj}\,\vect{v}_s.
+    \vect{u}_j = a_{1j}\,\vect{v}_1 + \ldots + a_{sj}\,\vect{v}_s.
   \end{equation*}
   Let $A = \mat{a_{ij}}$. Note that this matrix has $s$ rows and $r$
   columns, i.e., it is an $s\times r$-matrix. Now suppose, for the
@@ -507,7 +507,7 @@ vectors as linearly independent sets.
     &=& 0.
   \end{eqnarray*}
   This contradicts the assumption that
-  $\vect{u}_{1},\ldots,\vect{u}_{r}$ are linearly independent. Since
+  $\vect{u}_1,\ldots,\vect{u}_r$ are linearly independent. Since
   we assumed $r>s$ and obtained a contradiction, it follows that
   $r\leq s$, as desired.
 \end{proof}
@@ -524,11 +524,11 @@ bases of a space are of the same size.
 
 \begin{proof}
   This follows right away from the Exchange Lemma. Indeed, observe
-  that $B_1 = \set{ \vect{u}_{1},\ldots ,\vect{u}_{s}}$ is a spanning
-  set for $V$ while $ B_2 = \set{\vect{v}_{1},\ldots,\vect{v}_{r}}$ is
+  that $B_1 = \set{ \vect{u}_1,\ldots,\vect{u}_s}$ is a spanning
+  set for $V$ while $ B_2 = \set{\vect{v}_1,\ldots,\vect{v}_r}$ is
   linearly independent, so $s\geq r$. Similarly
-  $B_2 = \set{\vect{v}_{1},\ldots,\vect{v} _{r}} $ is a spanning set
-  for $V$ while $B_1 = \set{\vect{u}_{1},\ldots, \vect{u}_{s}}$ is
+  $B_2 = \set{\vect{v}_1,\ldots,\vect{v}_r} $ is a spanning set
+  for $V$ while $B_1 = \set{\vect{u}_1,\ldots, \vect{u}_s}$ is
   linearly independent, so $r\geq s$.
 \end{proof}
 
@@ -549,7 +549,7 @@ $V$.
 
 \begin{solution}
   The standard basis of $\R^n$ is
-  $\set{\vect{e}_{1},\ldots,\vect{e}_{n}}$. Since it has $n$ vectors,
+  $\set{\vect{e}_1,\ldots,\vect{e}_n}$. Since it has $n$ vectors,
   so $\dim(\R^n) = n$.
 \end{solution}
 
@@ -560,7 +560,7 @@ $V$.
   Let
   \begin{equation*}
     V=\set{\left.
-      \begin{mymatrix}{c} x\\ y\\ z\end{mymatrix}\in\R^3 ~\right\vert~
+      \begin{mymatrix}{c} x \\ y \\ z\end{mymatrix}\in\R^3 ~\right\vert~
       x-y+2z = 0
     }.
   \end{equation*}
@@ -574,7 +574,7 @@ $V$.
   as the free variables and solve for $x=y-2z=t-2s$. Therefore, a
   general element of $V$ is of the form
   \begin{equation*}
-    \begin{mymatrix}{c} x\\ y\\ z\end{mymatrix}
+    \begin{mymatrix}{c} x \\ y \\ z\end{mymatrix}
     ~=~ \begin{mymatrix}{c} t-2s \\ t \\ s \end{mymatrix}
     ~=~~ t \begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix}
     + s \begin{mymatrix}{c} -2 \\ 0 \\ 1 \end{mymatrix}.
@@ -744,8 +744,8 @@ can always be done.
     = \set{
       \begin{mymatrix}{r} 1 \\ 1 \\ -1 \\ 2 \end{mymatrix},~
       \begin{mymatrix}{r} 1 \\ 2 \\ -2 \\ 4 \end{mymatrix},~
-      \begin{mymatrix}{r} 0 \\ 1 \\  0 \\ 0 \end{mymatrix},~
-      \begin{mymatrix}{r} 0 \\ 0 \\  1 \\ 0 \end{mymatrix}
+      \begin{mymatrix}{r} 0 \\ 1 \\ 0 \\ 0 \end{mymatrix},~
+      \begin{mymatrix}{r} 0 \\ 0 \\ 1 \\ 0 \end{mymatrix}
     }.
   \end{equation*}
 \end{solution}
@@ -877,11 +877,11 @@ works if the number of vectors is exactly $k$, the dimension of $V$).
   \index{basis test}%
   \index{basis!basis test}%
   Let $V$ be a $k$-dimensional subspace of $\R^n$, and consider $k$
-  vectors $\vect{u}_{1},\ldots,\vect{u}_{k}$ in $V$.
+  vectors $\vect{u}_1,\ldots,\vect{u}_k$ in $V$.
   \begin{itemize}
-  \item If $\vect{u}_{1},\ldots,\vect{u}_{k}$ are linearly
+  \item If $\vect{u}_1,\ldots,\vect{u}_k$ are linearly
     independent, then they form a basis for $V$.
-  \item If $\vect{u}_{1},\ldots,\vect{u}_{k}$ span $V$, then they
+  \item If $\vect{u}_1,\ldots,\vect{u}_k$ span $V$, then they
     form a basis for $V$.
   \end{itemize}
 \end{proposition}
@@ -889,23 +889,23 @@ works if the number of vectors is exactly $k$, the dimension of $V$).
 \begin{proof}
   The first claim is an easy consequence of
   Lemma~\ref{lem:extend-to-basis}. Assume that
-  $\vect{u}_{1},\ldots,\vect{u}_{k}$ are linearly independent. By
+  $\vect{u}_1,\ldots,\vect{u}_k$ are linearly independent. By
   Lemma~\ref{lem:extend-to-basis}, we can add zero or more vectors to
-  $\vect{u}_{1},\ldots,\vect{u}_{k}$ to obtain a basis of $V$. On the
+  $\vect{u}_1,\ldots,\vect{u}_k$ to obtain a basis of $V$. On the
   other hand, since $V$ is $k$-dimensional, every basis must have
   exactly $k$ elements, so that the only possibility is that we have
   added zero vectors. Therefore,
-  $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ is already a basis of $V$,
+  $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is already a basis of $V$,
   as claimed.
 
   To prove the second claim, assume that
-  $V=\sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$. By
+  $V=\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$. By
   Theorem~\ref{thm:subspaces-are-spans}, there exists a linearly
-  independent subset of $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ that
+  independent subset of $\set{\vect{u}_1,\ldots,\vect{u}_k}$ that
   spans $V$, i.e., that is a basis for $V$. But since $\dim(V)=k$,
   every basis must have exactly $k$ elements, so that the only
-  possible such subset is $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$
-  itself. Therefore, $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ is a
+  possible such subset is $\set{\vect{u}_1,\ldots,\vect{u}_k}$
+  itself. Therefore, $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is a
   basis of $V$, as claimed.
 \end{proof}
 

@@ -23,7 +23,7 @@ section.
   \index{linear combination!in a vector space}%
   \index{linear combination!of vectors} of
   $\vect{u}_1,\ldots,\vect{u}_n$ if there exist scalars
-  $a_{1},\ldots,a_{n}\in K$ such that
+  $a_1,\ldots,a_n\in K$ such that
   \begin{equation*}
     \vect{v} = a_1 \vect{u}_1 + \ldots + a_n \vect{u}_n.
   \end{equation*}
@@ -290,21 +290,21 @@ vectors.
   According to the definition of linear independence, we must solve
   the equation
   \begin{equation*}
-    a x^2 + b ( x^2 + 2x -1 ) + c(2x^2 - x + 3) ~=~ 0.
+    ax^2 + b(x^2 + 2x - 1) + c(2x^2 - x + 3) ~=~ 0.
   \end{equation*}
   If there is a non-trivial solution, the polynomials are linearly
   dependent. If there is only the trivial solution, they are linearly
   independent. We first rearrange the left-hand side to collect equal
   powers of $x$:
   \begin{equation*}
-    (a+b+2c)x^2 + (2b-c)x  +(3c-b) ~=~ 0.
+    (a + b + 2c)x^2 + (2b - c)x + (3c - b) ~=~ 0.
   \end{equation*}
   This turns into a system of 3 equations in 3 variables:
   \begin{equation*}
     \begin{array}{rcl}
-      a+b+2c &=& 0 \\
-      2b-c &=& 0 \\
-      3c-b &=& 0
+      a + b + 2c &=& 0 \\
+      2b - c &=& 0 \\
+      3c - b &=& 0
     \end{array}
     \quad\roweq\quad
     \begin{mymatrix}{rrr|r}
@@ -476,12 +476,12 @@ one more vector that is not in their span, then we can add the vector
 to the set and it will remain linearly independent. 
 
 \begin{proposition}{Adding to a linearly independent set}{adding-linearly-independent}
-  Suppose $\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$ is linearly
+  Suppose $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is linearly
   independent and
-  $\vect{v}\notin \sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$. Then
+  $\vect{v}\notin \sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$. Then
   the set
   \begin{equation*}
-    \set{\vect{u}_{1},\ldots,\vect{u}_{k},\vect{v}}
+    \set{\vect{u}_1,\ldots,\vect{u}_k,\vect{v}}
   \end{equation*}
   is also linearly independent.
 \end{proposition}
@@ -491,9 +491,9 @@ to the set and it will remain linearly independent.
   by Proposition~\ref{prop:linear-dependence-redundant}, one of the
   vectors can be written as a linear combination of earlier vectors.
   This vector cannot be one of the $\vect{u}_i$, because
-  $\vect{u}_{1},\ldots,\vect{u}_{k}$ are linearly independent.  It
+  $\vect{u}_1,\ldots,\vect{u}_k$ are linearly independent.  It
   also cannot be $\vect{v}$, because
   $\vect{v}\notin
-  \sspan\set{\vect{u}_{1},\ldots,\vect{u}_{k}}$. Therefore, our
+  \sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$. Therefore, our
   assumption cannot be true, and the set is linearly independent.
 \end{proof}

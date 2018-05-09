@@ -118,8 +118,8 @@ A more complicated example follows. Two of the circuits below may be familiar; t
 
 \begin{example}{Unknown currents}{unknown-current}
   The diagram below consists of four circuits. The current ($I_k$) in
-  the four circuits is denoted by $I_{1}$, $I_{2}$, $I_{3}$,
-  $I_{4}$. Using Kirchhoff's Law, write an equation for each circuit
+  the four circuits is denoted by $I_1$, $I_2$, $I_3$,
+  $I_4$. Using Kirchhoff's Law, write an equation for each circuit
   and solve for each current.
 \end{example}
 
@@ -158,21 +158,21 @@ The circuits are given in the following diagram.
 Starting with the top left circuit, multiply the resistance by the amps and sum the resulting products. Specifically, consider the resistor labelled $2 \ohm$ that is part of the circuits of $I_1$ and $I_2$. Notice that current $I_2$ runs through this in a positive (counterclockwise) direction, and $I_1$ runs through in the opposite (negative) direction. The product of resistance and amps is then $2 (I_2 - I_1) = 2I_2 - 2I_1$.
 Continue in this way for each resistor, and set the sum of the products equal to the voltage source to write the equation:
 \begin{equation*}
-2I_{2}-2I_{1}+4I_{2}-4I_{3}+2I_{2}=18
+2I_2-2I_1+4I_2-4I_3+2I_2=18
 \end{equation*}
 The above process is used on each of the other three circuits, and the resulting equations are:
 
 Upper right circuit:
 \begin{equation*}
-4I_{3} - 4I_{2} + 6I_{3} - 6I_{4} + I_{3} + 3I_{3} = -27
+4I_3 - 4I_2 + 6I_3 - 6I_4 + I_3 + 3I_3 = -27
 \end{equation*}
 Lower right circuit:
 \begin{equation*}
-3I_{4} + 2I_{4} + 6I_{4} - 6I_{3} + I_{4} - I_{1} = 0
+3I_4 + 2I_4 + 6I_4 - 6I_3 + I_4 - I_1 = 0
 \end{equation*}
 Lower left circuit:
 \begin{equation*}
-5I_{1}+I_{1}-I_{4}+2I_{1}-2I_{2}=-23
+5I_1+I_1-I_4+2I_1-2I_2=-23
 \end{equation*}
 
 Notice that the voltage for the upper right and lower left circuits
@@ -181,10 +181,10 @@ resulting system has four equations in four variables.  Simplifying
 and rearranging with variables in order, we have:
 \begin{equation*}
   \begin{array}{r@{~}c@{~}l}
-    -2I_{1}+8I_{2}-4I_{3}&=&18 \\
-    - 4I_{2} + 14I_{3} - 6I_{4} &=& -27 \\
-    -I_{1} - 6I_{3} + 12I_{4} &=& 0 \\
-    8I_{1}-2I_{2} - I_{4} &=& -23
+    -2I_1+8I_2-4I_3&=&18 \\
+    - 4I_2 + 14I_3 - 6I_4 &=& -27 \\
+    -I_1 - 6I_3 + 12I_4 &=& 0 \\
+    8I_1-2I_2 - I_4 &=& -23
   \end{array}
 \end{equation*}
 The augmented matrix is
@@ -199,10 +199,10 @@ The augmented matrix is
 
 The solution to this matrix is
 \begin{eqnarray*}
-I_{1} &=& -3 \amp\\
-I_{2} &=& \frac{1}{4} \amp\\
-I_{3} &=& -\frac{5}{2} \amp\\
-I_{4} &=& -\frac{3}{2} \amp
+I_1 &=& -3 \amp \\
+I_2 &=& \frac{1}{4} \amp \\
+I_3 &=& -\frac{5}{2} \amp \\
+I_4 &=& -\frac{3}{2} \amp
 \end{eqnarray*}
 
 This tells us that currents $I_1, I_3$, and $I_4$ travel clockwise while $I_2$ travels counterclockwise.

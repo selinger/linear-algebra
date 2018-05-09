@@ -19,18 +19,21 @@ proposition.
   this case. Therefore, we will assume in what follows that
   $\vect{u}\neq \vect{0}$.  Define a function of $t\in \R$ by
   \begin{equation*}
-    f(t) =(t\vect{u}+\vect{v}) \dotprod (t\vect{u}+ \vect{v}).
+    f(t) =(t\vect{u}+\vect{v}) \dotprod (t\vect{u}+\vect{v}).
   \end{equation*}
   Then by Proposition~\ref{prop:properties-dot-product}, $f(t) \geq 0$
   for all $t\in \R$.  Also from
   Proposition~\ref{prop:properties-dot-product}, we have
   \begin{eqnarray*}
-    f(t) &=&t\vect{u}\dotprod (t\vect{u}+\vect{v}) +
-             \vect{v}\dotprod (t\vect{u}+\vect{v}) \\
-         &=&t^2\vect{u}\dotprod \vect{u}+t(\vect{u}\dotprod \vect{v}) + t \vect{v}\dotprod \vect{u}+
-             \vect{v}\dotprod \vect{v} \\
-         &=&t^2\norm{\vect{u}}^2+2t(\vect{u}\dotprod \vect{v}) +\norm{
-             \vect{v}}^2.
+    f(t)
+    &=& t\vect{u}\dotprod (t\vect{u}+\vect{v})
+        + \vect{v}\dotprod (t\vect{u}+\vect{v}) \\
+    &=& t^2\vect{u}\dotprod \vect{u}+t(\vect{u}\dotprod \vect{v})
+        + t \vect{v}\dotprod \vect{u}
+        + \vect{v}\dotprod \vect{v} \\
+    &=& t^2\norm{\vect{u}}^2
+        + 2t(\vect{u}\dotprod \vect{v})
+        + \norm{\vect{v}}^2.
   \end{eqnarray*}
   This means the graph of $y=f(t)$ is a parabola which opens upwards
   and is never negative. It follows that this function has at most one
@@ -54,7 +57,7 @@ of the two other sides.
 \begin{proposition}{Triangle inequality}{triangle-inequality-dot-product}
   For\/ $\vect{u},\vect{v}\in \R^n$, we have
   \begin{equation}\label{triangle-ineq-1}
-    \norm{\vect{u}+\vect{v}} \leq \norm{\vect{u}} +\norm{\vect{v}}.
+    \norm{\vect{u} + \vect{v}} \leq \norm{\vect{u}} + \norm{\vect{v}}.
   \end{equation}
 
   \begin{center}
@@ -72,8 +75,8 @@ of the two other sides.
   \begin{eqnarray*}
     \norm{\vect{u}+\vect{v}}^2
     &=& (\vect{u}+\vect{v})\dotprod(\vect{u}+\vect{v}) \\
-    & =&(\vect{u}\dotprod\vect{u})+(\vect{u}\dotprod\vect{v})+(\vect{v}\dotprod\vect{u})+(\vect{v}\dotprod\vect{v}) \\
-    &=&\norm{\vect{u}}^2+2(\vect{u}\dotprod\vect{v})+\norm{\vect{v}}^2 \\
+    &=& (\vect{u}\dotprod\vect{u})+(\vect{u}\dotprod\vect{v})+(\vect{v}\dotprod\vect{u})+(\vect{v}\dotprod\vect{v}) \\
+    &=& \norm{\vect{u}}^2+2(\vect{u}\dotprod\vect{v})+\norm{\vect{v}}^2 \\
     &\leq& \norm{\vect{u}}^2+2\abs{\vect{u}\dotprod\vect{v}}+\norm{\vect{v}}^2 \\
     &\leq& \norm{\vect{u}}^2+2\norm{\vect{u}}\norm{\vect{v}}+\norm{\vect{v}}^2 \\
     &=& (\norm{\vect{u}}+\norm{\vect{v}})^2.
