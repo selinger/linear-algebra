@@ -17,23 +17,26 @@ graphically. Our attention now turns to working with systems
 algebraically.
 
 \begin{definition}{Linear equation}{linear-equation}
-  A \textbf{linear equation}\index{linear equation} is an equation of
-  the form
+  A \textbf{linear equation}%
+  \index{linear equation} is an equation of the form
   \begin{equation*}
     a_1x_1 + a_2x_2 + \ldots + a_nx_n = b.
   \end{equation*}
   Here, $a_1,\ldots,a_n$ are real numbers called the
-  \textbf{coefficients}\index{coefficient} of the equation, $b$ is a
-  real number called the \textbf{constant term}\index{constant term}
-  of the equation, and $x_1,\ldots,x_n$ are
-  \textbf{variables}\index{variable}.
+  \textbf{coefficients}%
+  \index{coefficient} of the equation, $b$ is a real number called the
+  \textbf{constant term}%
+  \index{constant term} of the equation, and $x_1,\ldots,x_n$ are
+  \textbf{variables}%
+  \index{variable}.
 \end{definition}
 
 Real numbers, such as the coefficients $a_1,\ldots,a_n$, the constant
 term $b$, or the values of the variables $x_1,\ldots,x_n$, will also
-be called \textbf{scalars}\index{scalar}. For now, the word
-``scalar'' is just a synonym for ``real number''. Later, in
-Section~\ref{sec:fields}, we will discover other kinds of scalars.
+be called \textbf{scalars}%
+\index{scalar}. For now, the word ``scalar'' is just a synonym for
+``real number''. Later, in Section~\ref{sec:fields}, we will discover
+other kinds of scalars.
 
 \begin{example}{Linear vs. non-linear equation}{linear-vs-non-linear}
   Which of the following equations are linear?
@@ -71,22 +74,24 @@ equation is in \textbf{standard form}%
 \index{standard form!of a linear equation}. Thus, the standard form of
 the equation $2x=5+3y$ is $2x+(-3)y=5$.
 
-A \textbf{solution}\index{linear equation!solution} to a linear
-equation is an assignment of real numbers to the variables, making the
-equation true. More precisely, if $r_1,\ldots,r_n$ are real numbers,
-the assignment $x_1=r_1$, \ldots, $x_n=r_n$ is a solution to the
-equation in Definition~\ref{def:linear-equation} if the real number
+A \textbf{solution}%
+\index{linear equation!solution} to a linear equation is an assignment
+of real numbers to the variables, making the equation true. More
+precisely, if $r_1,\ldots,r_n$ are real numbers, the assignment
+$x_1=r_1$, \ldots, $x_n=r_n$ is a solution to the equation in
+Definition~\ref{def:linear-equation} if the real number
 $a_1r_1 + a_2r_2 + \ldots + a_nr_n$ is equal to the real number
 $b$. To save space, we often write solutions in \textbf{tuple
-  notation}\index{tuple}\footnote{The terminology ``tuple'' arose as
-  follows. A collection of two items is called a ``pair'', a
-  collection of three items is called a ``triple'', followed by
-  ``quadruple'', ``quintuple'', ``sextuple'', and so on. You have to
-  know Latin to know what the next ones are called. To avoid these
-  Latin terms, mathematicians started saying $4$-tuple, $5$-tuple,
-  $6$-tuple and so on, and more generally, $n$-tuple for an ordered
-  collection of $n$ items. When $n$ doesn't matter or is clear from
-  the context, we often just say ``tuple''.}  as
+  notation}%
+\index{tuple}\footnote{The terminology ``tuple'' arose as follows. A
+  collection of two items is called a ``pair'', a collection of three
+  items is called a ``triple'', followed by ``quadruple'',
+  ``quintuple'', ``sextuple'', and so on. You have to know Latin to
+  know what the next ones are called. To avoid these Latin terms,
+  mathematicians started saying $4$-tuple, $5$-tuple, $6$-tuple and so
+  on, and more generally, $n$-tuple for an ordered collection of $n$
+  items. When $n$ doesn't matter or is clear from the context, we
+  often just say ``tuple''.}  as
 $(x_1,\ldots,x_n) = (r_1,\ldots,r_n)$. When there is no doubt about
 the order of the variables, we also often simply write the solution as
 $(r_1,\ldots,r_n)$.
@@ -109,8 +114,8 @@ A system of linear equations is just several linear equations taken
 together.
 
 \begin{definition}{System of linear equations}{system-of-linear-equations}
-  A \textbf{system of linear equations}\index{system of linear
-    equations} is a list of equations
+  A \textbf{system of linear equations}%
+  \index{system of linear equations} is a list of equations
   \begin{equation*}
     \begin{array}{c@{~}c@{~}c}
       a_{11}x_1+a_{12}x_2+\ldots+a_{1n}x_n&=&b_1 \\
@@ -121,20 +126,21 @@ together.
   \end{equation*}
   where $a_{ij}$ and $b_j$ are scalars (i.e., real numbers). The above
   is a system of $m$ equations in the $n$ variables,
-  $x_1,x_2\ldots,x_n$.  As before, the numbers $a_{ij}$ are
-  called the \textbf{coefficients}\index{coefficient} and the numbers
-  $b_j$ are called the \textbf{constant terms}\index{constant term} of
-  the system of equations.
+  $x_1,x_2\ldots,x_n$.  As before, the numbers $a_{ij}$ are called the
+  \textbf{coefficients}%
+  \index{coefficient} and the numbers $b_j$ are called the
+  \textbf{constant terms}%
+  \index{constant term} of the system of equations.
 \end{definition}
 
 The relative size of $m$ and $n$ is not important here. We may have
 more variables than equations, more equations than variables, or an
 equal number of equations and variables.
 
-A \textbf{solution}\index{system of linear equations!solution} to a
-system of linear equations is an assignment of real numbers to the
-variables that is a solution to {\em all} of the equations in the
-system.
+A \textbf{solution}%
+\index{system of linear equations!solution} to a system of linear
+equations is an assignment of real numbers to the variables that is a
+solution to {\em all} of the equations in the system.
 
 \begin{example}{Solutions of a system of linear equations}{linear-system-solutions}
   Consider the system of linear equations

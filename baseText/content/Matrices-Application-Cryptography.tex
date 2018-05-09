@@ -7,22 +7,29 @@
 
 Cryptography is about encoding a message so that it is hard for a
 third party to read. The original message is called the
-\textbf{plaintext}\index{plaintext}\index{cipher!plaintext} and the
-encrypted message is called the
-\textbf{ciphertext}\index{ciphertext}\index{cipher!ciphertext}. The
-process of turning a plaintext into the corresponding ciphertext is
-called \textbf{encryption}\index{encryption}\index{cipher!encryption},
-and the process of turning a ciphertext into the corresponding
-plaintext is called \textbf{decryption}\index{decryption}%
+\textbf{plaintext}%
+\index{plaintext}%
+\index{cipher!plaintext} and the encrypted message is called the
+\textbf{ciphertext}%
+\index{ciphertext}%
+\index{cipher!ciphertext}. The process of turning a plaintext into the
+corresponding ciphertext is called \textbf{encryption}%
+\index{encryption}%
+\index{cipher!encryption}, and the process of turning a ciphertext
+into the corresponding plaintext is called \textbf{decryption}%
+\index{decryption}%
 \index{cipher!decryption}. An encryption and decryption method is also
-called a \textbf{cipher}\index{cipher}.  Modern ciphers are designed
-in such a way that the cipher itself is not secret, but the encryption
-depends on a secret \textbf{key}\index{key!cryptography}%
+called a \textbf{cipher}%
+\index{cipher}.  Modern ciphers are designed in such a way that the
+cipher itself is not secret, but the encryption depends on a secret
+\textbf{key}%
+\index{key!cryptography}%
 \index{cipher!key}. A cipher should be designed so that decryption is
 easy for a person who knows the key, but difficult for everybody
-else. The art of designing ciphers is called
-\textbf{cryptography}\index{cryptography}, and the art of breaking
-ciphers is called \textbf{cryptanalysis}\index{cryptanalysis}.
+else. The art of designing ciphers is called \textbf{cryptography}%
+\index{cryptography}, and the art of breaking ciphers is called
+\textbf{cryptanalysis}%
+\index{cryptanalysis}.
 
 In order to be able to define ciphers using algebraic operations, we
 start by encoding strings as sequences of numbers. To that end, we
@@ -60,43 +67,48 @@ handy that 29 is prime.
 There are many different ways to define ciphers. Some of the oldest
 known ciphers date back thousands of years.  An example of such a
 ``classic'' cipher is a \textbf{substitution cipher}%
-\index{substitution cipher}\index{cipher!substitution cipher}, where
-each letter of the alphabet is replaced by a different letter, for
-example $\q{A}\mapsto\q{D}$, $\q{B}\mapsto\q{E}$, and so
-on. Substitution ciphers have the property that changing one letter of
-the plaintext always changes exactly one letter of the
-ciphertext. This is not a desirable property, because it makes the
-cipher easy to break. Therefore, modern ciphers are designed to
-satisfy a property called \textbf{diffusion}\index{diffusion}%
+\index{substitution cipher}%
+\index{cipher!substitution cipher}, where each letter of the alphabet
+is replaced by a different letter, for example $\q{A}\mapsto\q{D}$,
+$\q{B}\mapsto\q{E}$, and so on. Substitution ciphers have the property
+that changing one letter of the plaintext always changes exactly one
+letter of the ciphertext. This is not a desirable property, because it
+makes the cipher easy to break. Therefore, modern ciphers are designed
+to satisfy a property called \textbf{diffusion}%
+\index{diffusion}%
 \index{cipher!diffusion}: changing one letter of the plaintext should
 change many letters of the ciphertext.
 
 In a \textbf{block cipher}%
-\index{block cipher}\index{cipher!block cipher}, the plaintext is
-first divided into blocks of equal size, and then each block is
-encrypted separately. The \textbf{block size}\index{block size} is the
-number of plaintext symbols in each block. If the length of the
-plaintext is not divisible by the block size, we pad the final block
-with additional spaces. In the context of a block cipher, the
-diffusion property means that changing one symbols of a plaintext
-block potentially affects every symbol of the ciphertext block. The
-following is an example of a block cipher.
+\index{block cipher}%
+\index{cipher!block cipher}, the plaintext is first divided into
+blocks of equal size, and then each block is encrypted separately. The
+\textbf{block size}%
+\index{block size} is the number of plaintext symbols in each
+block. If the length of the plaintext is not divisible by the block
+size, we pad the final block with additional spaces. In the context of
+a block cipher, the diffusion property means that changing one symbols
+of a plaintext block potentially affects every symbol of the
+ciphertext block. The following is an example of a block cipher.
 
 \begin{definition}{Hill cipher}{hill-cipher}
   The \textbf{Hill cipher}%
-  \index{Hill cipher}\index{cipher!Hill cipher} of block size $n$ has
-  as its key an invertible $n\times n$-matrix $A$ with scalars from
-  $\Z_{29}$. Each ciphertext block $c_1,\ldots,c_n$  is computed from
-  the corresponding plaintext block $p_1,\ldots,p_n$ by matrix
-  multiplication modulo $\Z_{29}$:
+  \index{Hill cipher}%
+  \index{cipher!Hill cipher} of block size $n$ has as its key an
+  invertible $n\times n$-matrix $A$ with scalars from $\Z_{29}$. Each
+  ciphertext block $c_1,\ldots,c_n$ is computed from the corresponding
+  plaintext block $p_1,\ldots,p_n$ by matrix multiplication modulo
+  $\Z_{29}$:
   \begin{equation*}
     \begin{mymatrix}{c}c_1\\\vdots\\c_n\end{mymatrix}
     ~=~ A\begin{mymatrix}{c}p_1\\\vdots\\p_n\end{mymatrix}.
   \end{equation*}
   The matrix $A$ is called the \textbf{encryption matrix}%
-  \index{encryption matrix}\index{matrix!encryption} of the cipher. It
-  inverse $A^{-1}$ is called the \textbf{decryption matrix}%
-  \index{decryption matrix}\index{matrix!decryption}.
+  \index{encryption matrix}%
+  \index{matrix!encryption} of the cipher. It inverse $A^{-1}$ is
+  called the \textbf{decryption matrix}%
+  \index{decryption matrix}%
+  \index{matrix!decryption}.
 \end{definition}
 
 \begin{example}{Hill cipher: encryption}{hill-cipher-encryption}
@@ -254,8 +266,8 @@ the Hill cipher is not secure. The cipher has many weaknesses. For
 one, because $A\vect{0}=\vect{0}$, a block of spaces in the plaintext
 will always be encrypted as a block of spaces in the ciphertext,
 regardless of the encryption matrix $A$. More importantly, the cipher
-is subject to a so-called \textbf{known plaintext attack}\index{known
-  plaintext attack}%
+is subject to a so-called \textbf{known plaintext attack}%
+\index{known plaintext attack}%
 \index{cipher!known plaintext attack}.  If an eavesdropper intercepts
 some ciphertext for which a small amount of the corresponding
 plaintext happens to be known, it is immediately possible to recover
@@ -264,7 +276,8 @@ this attack only requires some basic knowledge of linear algebra. The
 following example illustrates how this is done.
 
 \begin{example}{Cryptanalysis of the Hill cipher: known plaintext attack}{hill-cipher-cryptanalysis}
-  Eve intercepts the following encrypted message sent by Alice:\index{cryptanalysis}
+  Eve intercepts the following encrypted message sent by Alice:%
+  \index{cryptanalysis}
   \begin{center}
     ``EFNOR.AHIFNEPL.TSZS,RSKT.ZBBRFVUPFVZLFHNTV''.
   \end{center}
@@ -372,10 +385,11 @@ cipher by solving a system of linear equations.
 
 For this reason, all modern block ciphers have a non-linear
 component. Often this takes the form of so-called \textbf{S-boxes}%
-\index{S-box}\index{cipher!S-box}. An S-box is an operation that
-scrambles the symbols of the alphabet in a non-linear way.  For
-example, consider the following S-box, which is an operation from
-$\Z_{29}$ to $\Z_{29}$:
+\index{S-box}%
+\index{cipher!S-box}. An S-box is an operation that scrambles the
+symbols of the alphabet in a non-linear way.  For example, consider
+the following S-box, which is an operation from $\Z_{29}$ to
+$\Z_{29}$:
 \begin{center}
   \tabcolsep=0.4ex\def\arraystretch{1.4}
   \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -447,7 +461,8 @@ the input $7$ to the output $26$. We write $S(7)=26$.
 
 Note that the three basic steps (key mixture, diffusion, and S-box
 application) are repeated several times; each such repetition is
-called a \textbf{round}\index{cipher!round}%
+called a \textbf{round}%
+\index{cipher!round}%
 \index{rounds of a cipher} of the block cipher.  The more rounds a
 block cipher has, the better its diffusion and non-linearity
 properties. The final round is short: it only consists of a key
@@ -457,7 +472,8 @@ add anything to the security of the cipher. An attacker could simply
 undo these last two steps, since they do not depend on the key.
 
 The matrix $A$ is called the \textbf{diffusion matrix}%
-\index{diffusion matrix}\index{matrix!diffusion}%
+\index{diffusion matrix}%
+\index{matrix!diffusion}%
 \index{cipher!diffusion matrix} of the cipher. Note that, unlike for
 the Hill cipher, the matrix $A$ is fixed once and for all and is not
 part of the key. Instead, the key consists of scalars that are added
@@ -611,20 +627,21 @@ ciphers rely on key mixture, diffusion, and non-linear S-boxes as
 their key components.
 
 For example, AES uses an alphabet size of $256$ instead of $29$ (i.e.,
-it operates on bytes\index{byte}, rather than elements of
-$\Z_{29}$). Although $\Z_{256}$ is not a field (because $256$ is not
-prime), it nevertheless turns out that there exists a field with $256$
-elements, and AES uses it for its algebraic operations. Our toy
-cipher's block size of $3$ is much too small to achieve effective
-diffusion; modern real-world ciphers use block sizes between $16$ and
-$32$ bytes ($128$ to $256$ bits). The design of the S-boxes is a bit
-of a black art; at minimum, they must be designed to withstand two
-common types of cryptanalysis known as \textbf{linear cryptanalysis}%
-\index{cryptanalysis!linear}\index{linear cryptanalysis} and
-\textbf{differential cryptanalysis}%
-\index{cryptanalysis!differential}\index{differential cryptanalysis}.
-Among other things, this means that the S-box should be ``as far from
-linear'' as possible.
+it operates on bytes%
+\index{byte}, rather than elements of $\Z_{29}$). Although $\Z_{256}$
+is not a field (because $256$ is not prime), it nevertheless turns out
+that there exists a field with $256$ elements, and AES uses it for its
+algebraic operations. Our toy cipher's block size of $3$ is much too
+small to achieve effective diffusion; modern real-world ciphers use
+block sizes between $16$ and $32$ bytes ($128$ to $256$ bits). The
+design of the S-boxes is a bit of a black art; at minimum, they must
+be designed to withstand two common types of cryptanalysis known as
+\textbf{linear cryptanalysis}%
+\index{cryptanalysis!linear}%
+\index{linear cryptanalysis} and \textbf{differential cryptanalysis}%
+\index{cryptanalysis!differential}%
+\index{differential cryptanalysis}.  Among other things, this means
+that the S-box should be ``as far from linear'' as possible.
 
 A detailed discussion of the design and cryptanalysis of modern block
 ciphers is far beyond the scope of this book, but we hope that you

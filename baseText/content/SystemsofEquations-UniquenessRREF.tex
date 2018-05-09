@@ -19,9 +19,10 @@ elementary row operations or the order in which they were performed.
 Let $A$ be the augmented matrix of a homogeneous system of linear
 equations in the variables $x_1, x_2,\ldots, x_n$ which is also in
 {\rref}. Recall that the matrix $A$ divides the set of variables in
-two different types: $x_i$ is a
-{\em pivot variable}\index{variable!pivot} when column $i$ is a pivot
-column, and a {\em free variable}\index{variable!free} otherwise.
+two different types: $x_i$ is a {\em pivot variable}%
+\index{variable!pivot} when column $i$ is a pivot column, and a {\em
+  free variable}%
+\index{variable!free} otherwise.
 
 \begin{example}{Pivot and free variables}{pivot-free}
   Find the pivot and free variables in the following system, and find
@@ -262,14 +263,14 @@ section, which is that each matrix $A$ has a unique {\rref}.
 \end{solution}
 
 We finish this section by pointing out an important consequence of
-Theorem~\ref{thm:unique-rref}, namely that the rank\index{rank} of a
-matrix is well-defined. Recall that in Definition~\ref{def:rank}, we
-defined the rank of a matrix $A$ to be the number of pivot entries of
-``any'' {\ef} of $A$. It was not clear, however, why different {\ef}s
-of $A$ could not have different numbers of pivot entries. Now we can
-answer this question. By the Gauss-Jordan algorithm, we know that
-every {\ef} can be converted to a {\rref} without changing the number
-or position of the pivots. Since the {\rref} is unique, it follows
-that all {\ef}s of $A$ have the same number of pivot entries (and in
-fact the same pivot columns). Therefore, the rank of $A$ is a
-well-defined quantity.
+Theorem~\ref{thm:unique-rref}, namely that the rank%
+\index{rank} of a matrix is well-defined. Recall that in
+Definition~\ref{def:rank}, we defined the rank of a matrix $A$ to be
+the number of pivot entries of ``any'' {\ef} of $A$. It was not clear,
+however, why different {\ef}s of $A$ could not have different numbers
+of pivot entries. Now we can answer this question. By the Gauss-Jordan
+algorithm, we know that every {\ef} can be converted to a {\rref}
+without changing the number or position of the pivots. Since the
+{\rref} is unique, it follows that all {\ef}s of $A$ have the same
+number of pivot entries (and in fact the same pivot
+columns). Therefore, the rank of $A$ is a well-defined quantity.

@@ -26,13 +26,13 @@ linear algebra with is called a {\em field}.
 \begin{definition}{Field}{field}
   \index{properties of addition!field}%
   \index{properties of multiplication!field}%
-  A \textbf{field}\index{field} is a set $K$, together with two
-  operations called \textbf{addition}%
-  \index{addition!in a field} and
-  \textbf{multiplication}%
-  \index{multiplication!in a field}, and
-  together with two distinct elements $0$ and $1$, such that addition
-  and multiplication satisfy the following properties:
+  A \textbf{field}%
+  \index{field} is a set $K$, together with two operations called
+  \textbf{addition}%
+  \index{addition!in a field} and \textbf{multiplication}%
+  \index{multiplication!in a field}, and together with two distinct
+  elements $0$ and $1$, such that addition and multiplication satisfy
+  the following properties:
   \begin{itemize}\setlength\itemsep{0em}
   \item[(A1)] {Commutative law of addition:} $a+b=b+a$;
     \index{commutative law!of addition}%
@@ -48,7 +48,8 @@ linear algebra with is called a {\em field}.
   \item[(M2)] {Associative law of multiplication:} $(ab)c=a(bc)$;
     \index{associative law!of multiplication}%
   \item[(M3)] {Unit law of multiplication:} $1a=a$;
-    \index{multiplicative unit}\index{unit!of multiplication|see{multiplicative unit}}%
+    \index{multiplicative unit}%
+    \index{unit!of multiplication|see{multiplicative unit}}%
   \item[(M4)] {Multiplicative inverse:} for each non-zero $a\in K$, there exists an element $a^{-1}\in K$ such that $aa^{-1}=1$;
     \index{multiplicative inverse}%
     \index{inverse!multiplicative}%
@@ -82,10 +83,11 @@ field with only two elements.
 
 \begin{example}{The integers modulo 2}{z-mod-2}
   \index{modulo}%
-  Consider the set of {\em bits}\index{bit} (binary digits) $\set{0,1}$.
-  We can multiply them as usual, and add them almost as usual, subject
-  to the alternative rule $1+1=0$ (instead of $1+1=2$). Here is a
-  summary of the rules for addition and multiplication:
+  Consider the set of {\em bits}%
+  \index{bit} (binary digits) $\set{0,1}$.  We can multiply them as
+  usual, and add them almost as usual, subject to the alternative rule
+  $1+1=0$ (instead of $1+1=2$). Here is a summary of the rules for
+  addition and multiplication:
   \begin{equation*}
     \begin{array}{l|ll}
       + & 0 & 1 \\\hline
@@ -101,11 +103,12 @@ field with only two elements.
   \end{equation*}
   This particular alternative arithmetic is called ``arithmetic modulo
   2''.  In computer science, the addition is also called the ``logical
-  exclusive or'' operation\index{logical operation!exclusive or}, and
-  multiplication is also called the ``logical and''
-  operation\index{logical operation!and}. You can also think of $0$ as
-  ``even'' and $1$ as ``odd'', and not that odd plus odd makes
-  even. For example, we can calculate like this:
+  exclusive or'' operation%
+  \index{logical operation!exclusive or}, and multiplication is also
+  called the ``logical and'' operation%
+  \index{logical operation!and}. You can also think of $0$ as ``even''
+  and $1$ as ``odd'', and not that odd plus odd makes even. For
+  example, we can calculate like this:
   \begin{equation*}
     \begin{array}{lll}
       1\cdot((1+0)+1) + 1 &=& 1\cdot(1+1) + 1 \\
@@ -326,13 +329,13 @@ instead of the real numbers.
 \end{solution}
 
 \begin{example}{The integers modulo 5}{z-mod-5}
-  Consider the set $\Z_5=\set{0,1,2,3,4}$, called the
-  \textbf{integers modulo 5}\index{integers modulo $p$}. We define their
-  addition and multiplication by computing the usual addition and
-  multiplication, then ``reducing'' the answer modulo 5. Here,
-  ``reducing'' a number means repeatedly subtracting 5 until the
-  answer is between $0$ and $4$. Imagine a clock showing 5 numbers
-  instead of the usual 12:
+  Consider the set $\Z_5=\set{0,1,2,3,4}$, called the \textbf{integers
+    modulo 5}%
+  \index{integers modulo $p$}. We define their addition and
+  multiplication by computing the usual addition and multiplication,
+  then ``reducing'' the answer modulo 5. Here, ``reducing'' a number
+  means repeatedly subtracting 5 until the answer is between $0$ and
+  $4$. Imagine a clock showing 5 numbers instead of the usual 12:
   \begin{center}
     \includegraphics[width=2.5cm]{figures/clock}
   \end{center}

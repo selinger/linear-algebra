@@ -29,21 +29,21 @@ that we will stop performing row operations when the system of
 equations is in a special form called {\em {\ef}}, which we now define.
 
 \begin{definition}{\Ef}{echelon-form}
-  An entry of an augmented matrix is called a
-  \textbf{leading entry}\index{leading entry} or
-  \textbf{pivot entry}\index{pivot entry}
-  if it is the leftmost non-zero entry of a row.
-  An augmented matrix is in
-  \textbf{\ef}\eindex{\ef}
-  (also called \textbf{row echelon form}\index{row echelon form|see {\ef}}) if
+  An entry of an augmented matrix is called a \textbf{leading entry}%
+  \index{leading entry} or \textbf{pivot entry}%
+  \index{pivot entry} if it is the leftmost non-zero entry of a row.
+  An augmented matrix is in \textbf{\ef}%
+  \eindex{\ef} (also called \textbf{row echelon form}%
+  \index{row echelon form|see {\ef}}) if
   \begin{enumerate}
   \item All rows of zeros are below all non-zero rows.
 
   \item Each leading entry of a row is in a column to the right of the
     leading entry of any row above it.
   \end{enumerate}
-  A column containing a pivot entry is also called a
-  \textbf{pivot column}\index{pivot column}.
+  A column containing a pivot entry is also called a \textbf{pivot
+    column}%
+  \index{pivot column}.
 \end{definition}
 
 The word {\em echelon} comes from French {\em \'echelle}, which means
@@ -105,8 +105,10 @@ this.
 
 \begin{algorithm}{Gaussian elimination}{gaussian-elimination}
   This algorithm provides a method for using row operations to take a
-  matrix to its {\ef} \eindex{\ef!algorithm}\index{Gaussian elimination}.
-  We begin with the matrix in its original form.
+  matrix to its {\ef}
+  \eindex{\ef!algorithm}%
+  \index{Gaussian elimination}.  We begin with the matrix in its
+  original form.
 
   \begin{enumerate}
   \item Starting from the left, find the first non-zero column. This is
@@ -347,12 +349,13 @@ examples show how to do this.
   \end{equation*}
   This matrix is now in {\ef}. Observe that the first two columns are
   pivot columns, and the third column is not. We call the
-  corresponding variables $x$ and $y$
-  \textbf{pivot variables}\index{pivot variable}\index{variable!pivot},
-  and the variable $z$ is a
-  \textbf{free variable}\index{free variable}\index{variable!free}.
-  The equations corresponding to
-  this {\ef} are
+  corresponding variables $x$ and $y$ \textbf{pivot variables}%
+  \index{pivot variable}%
+  \index{variable!pivot}, and the variable $z$ is a \textbf{free
+    variable}%
+  \index{free variable}%
+  \index{variable!free}.  The equations corresponding to this {\ef}
+  are
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
       3x - y + 5z &=& 8 \\
@@ -362,10 +365,11 @@ examples show how to do this.
   Observe that the free variable $z$ is not constrained by any
   equation. In fact, $z$ can equal any number. We choose $t$ to be any
   number and let $z = t$.  In this context $t$ is called a
-  \textbf{parameter}\index{parameter}. We then use back substitution
-  to solve for the pivot variables $y$ and $x$. From the second
-  equation, we have $y = 1+10z = 1+10t$. From the first equation, we
-  have $3x = 8+y-5z = 2+(1+10t)-5t = 9+5t$, and therefore
+  \textbf{parameter}%
+  \index{parameter}. We then use back substitution to solve for the
+  pivot variables $y$ and $x$. From the second equation, we have
+  $y = 1+10z = 1+10t$. From the first equation, we have
+  $3x = 8+y-5z = 2+(1+10t)-5t = 9+5t$, and therefore
   $x=3+\frac{5}{3}t$. Therefore, the general solution of this system
   is
   \begin{equation*}
@@ -500,15 +504,17 @@ To summarize, we have the following possibilities for a system of equations:
   equations: If not all columns of the coefficient matrix of the {\ef}
   are pivot columns, then the system has infinitely many solutions.
   In this case, each variable corresponding to a non-pivot column is a
-  {\em free variable}\index{free variable}\index{variable!free} and
-  can be assigned a {\em parameter}\index{parameter}. The remaining
-  variables are
-  {\em pivot variables}\index{pivot variable}\index{variable!pivot}
-  and can be expressed in terms of the parameters. Therefore, the
-  number of parameters in the general solution is equal to the number
-  of non-pivot columns.
-  The following are examples of {\ef}s for systems of equations with
-  infinitely many solutions.
+  {\em free variable}%
+  \index{free variable}%
+  \index{variable!free} and can be assigned a {\em parameter}%
+  \index{parameter}. The remaining variables are {\em pivot
+    variables}%
+  \index{pivot variable}%
+  \index{variable!pivot} and can be expressed in terms of the
+  parameters. Therefore, the number of parameters in the general
+  solution is equal to the number of non-pivot columns.  The following
+  are examples of {\ef}s for systems of equations with infinitely many
+  solutions.
   \begin{equation*}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 0 & 1 & 5 \\
@@ -532,8 +538,9 @@ of equations. It is called the {\em rank} of the system.
 \begin{definition}{Rank of a matrix}{rank}
   Let $A$ be a matrix and consider any {\ef} of $A$.  Then, the number
   $r$ of pivot entries of $A$ does not depend on the {\ef} we choose,
-  and is called the \textbf{rank}\index{matrix!rank}\index{rank} of
-  $A$. We denote it by $\rank(A)$.
+  and is called the \textbf{rank}%
+  \index{matrix!rank}%
+  \index{rank} of $A$. We denote it by $\rank(A)$.
 
   The rank of a system of linear equations is the rank of its
   coefficient matrix (i.e., the matrix on the left-hand side).

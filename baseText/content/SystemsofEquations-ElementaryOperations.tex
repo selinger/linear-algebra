@@ -18,7 +18,8 @@ certain basic steps called ``elementary operations''.
 
 \begin{definition}{Equivalent systems}{equivalent-systems}
   Two systems of equations are called
-  \textbf{equivalent}\index{system of linear equations!equivalence}
+  \textbf{equivalent}%
+  \index{system of linear equations!equivalence}
   if they have the same solutions. This means that every solution of
   the first system is also a solution of the second system, and every
   solution of the second system is also a solution of the first system.
@@ -31,7 +32,8 @@ operations are the {\em key tool} we use in linear algebra to solve
 systems of equations.
 
 \begin{definition}{Elementary operations}{elementary-operations}
-  \textbf{Elementary operations}\index{elementary operation} are the
+  \textbf{Elementary operations}%
+  \index{elementary operation} are the
   following operations:
 
   \begin{enumerate}
@@ -222,13 +224,13 @@ equations and three variables.
   Simplifying and solving for $x$, we find that $x=1$. Hence, the
   solution to the system is $(x,y,z)=(1,2,3)$.
 
-  The process we followed for solving \eqref{solving-a-system3} by first
-  computing $z$, then $y$, then $x$ is called \textbf{back
-    substitution}\index{back substitution}.  Alternatively, we could
-  have continued from \eqref{solving-a-system3} with more elementary
-  operations as follows. Add $(-2) $ times the third
-  equation to the second and then add $(-6) $ times the
-  second to the first. This yields
+  The process we followed for solving \eqref{solving-a-system3} by
+  first computing $z$, then $y$, then $x$ is called \textbf{back
+    substitution}%
+  \index{back substitution}.  Alternatively, we could have continued
+  from \eqref{solving-a-system3} with more elementary operations as
+  follows. Add $(-2) $ times the third equation to the second and then
+  add $(-6) $ times the second to the first. This yields
   \begin{equation*}
     \allowbreak
     \begin{array}{c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
@@ -276,18 +278,20 @@ This system can be written as an augmented matrix as follows:
     0 & 2 & 5 & 19
   \end{mymatrix}.
 \end{equation*}
-A \textbf{matrix}\index{matrix} is just a $2$-dimensional array of
-numbers. An augmented matrix has two parts separated by a vertical
-line. Notice that the augmented matrix notation has exactly the same
-information as the original system of equations. All the coefficients
-are written on the left side of the vertical line, and all the
-constant terms are written on the right side of the vertical
-line. These two parts of the augmented matrix are also called the
-\textbf{coefficient matrix}\index{coefficient matrix}%
-\index{matrix!coefficient matrix} and the \textbf{constant
-  matrix}\index{constant matrix}\index{matrix!constant matrix}.  Each
-row of the augmented matrix corresponds to one linear equation. For
-example, the top row $\begin{mymatrix}{rrrrr} 1 & 3 & 6 & | & 25
+A \textbf{matrix}%
+\index{matrix} is just a $2$-dimensional array of numbers. An
+augmented matrix has two parts separated by a vertical line. Notice
+that the augmented matrix notation has exactly the same information as
+the original system of equations. All the coefficients are written on
+the left side of the vertical line, and all the constant terms are
+written on the right side of the vertical line. These two parts of the
+augmented matrix are also called the \textbf{coefficient matrix}%
+\index{coefficient matrix}%
+\index{matrix!coefficient matrix} and the \textbf{constant matrix}%
+\index{constant matrix}%
+\index{matrix!constant matrix}.  Each row of the augmented matrix
+corresponds to one linear equation. For example, the top row
+$\begin{mymatrix}{rrrrr} 1 & 3 & 6 & | & 25
 \end{mymatrix}$
 corresponds to the equation
 \begin{equation*}
@@ -304,8 +308,9 @@ is $0$. In general, the augmented matrix of a linear system of
 equations is defined as follows.
 
 \begin{definition}{Augmented matrix of a system of linear equations}{augmented-matrix}
-  The \textbf{augmented matrix}\index{augmented matrix}\index{matrix!augmented matrix}
-  of the system of linear equations
+  The \textbf{augmented matrix}%
+  \index{augmented matrix}%
+  \index{matrix!augmented matrix} of the system of linear equations
   \begin{equation*}
     \begin{array}{c}
       a_{11}x_1 + \ldots + a_{1n}x_n = b_1 \\

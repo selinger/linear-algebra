@@ -13,7 +13,8 @@ matrices are important not only for systems of equations but also for
 many other purposes.
 
 \begin{definition}{Matrix}{matrix}
-  A \textbf{matrix}\index{matrix} is a rectangular array of numbers
+  A \textbf{matrix}%
+  \index{matrix} is a rectangular array of numbers
   \begin{equation*}
     A = \begin{mymatrix}{cccc}
       a_{11} & a_{12} & \cdots & a_{1n} \\
@@ -22,13 +23,14 @@ many other purposes.
       a_{m1} & a_{m2} & \cdots & a_{mn} \\
     \end{mymatrix},
   \end{equation*}
-  where the $a_{ij}$ are scalars, called the
-  \textbf{entries}\index{matrix!entry of}%
-  \index{entry of a matrix} or
-  \textbf{components}\index{matrix!component of}%
-  \index{component!of a matrix} of $A$.  The
-  \textbf{size}\index{matrix!size of}\index{size of a matrix} or
-  \textbf{dimension}\index{matrix!dimension of}%
+  where the $a_{ij}$ are scalars, called the \textbf{entries}%
+  \index{matrix!entry of}%
+  \index{entry of a matrix} or \textbf{components}%
+  \index{matrix!component of}%
+  \index{component!of a matrix} of $A$.  The \textbf{size}%
+  \index{matrix!size of}%
+  \index{size of a matrix} or \textbf{dimension}%
+  \index{matrix!dimension of}%
   \index{dimension!of a matrix} of a matrix is defined as $m\times n$,
   where $m$ is the number of rows and $n$ is the number of columns.
 \end{definition}
@@ -47,7 +49,8 @@ columns. When specifying the size of a matrix, we always list the
 number of rows before the number of columns.
 
 Entries of the matrix are identified according to their position. The
-\textbf{$(i,j)$-entry}\index{matrix!ij-entry@$(i,j)$-entry}%
+\textbf{$(i,j)$-entry}%
+\index{matrix!ij-entry@$(i,j)$-entry}%
 \index{ij-entry of a matrix@$(i,j)$-entry of a matrix} of a matrix is
 the entry in the $i\th$ row and $j\th$ column, and is often denoted
 $a_{ij}$. For example, in the above matrix, the $(2,3)$-entry is the
@@ -63,7 +66,8 @@ another matrix, but we will see later how matrix inverses play a
 similar role.
 
 \begin{definition}{Equality of matrices}{matrix-equality}
-  Two matrices are \textbf{equal}\index{matrix!equality}%
+  Two matrices are \textbf{equal}%
+  \index{matrix!equality}%
   \index{equality!of matrices} if they have the same size and the same
   corresponding entries. More precisely, if $A=\mat{a_{ij}}$ and
   $B=\mat{b_{ij}}$ are two $m\times n$-matrices, then $A=B$ means that
@@ -98,18 +102,20 @@ There are special names for matrices of certain dimensions: some
 matrices are called square matrices, columns vectors, or row vectors.
 
 \begin{definition}{Square matrix}{square-matrix}
-  A matrix of size $n\times n$ is called a \textbf{square
-    matrix}\index{matrix!square}\index{square matrix}.  In other
-  words, $A$ is a square matrix if it has the same number of rows and
-  columns.
+  A matrix of size $n\times n$ is called a \textbf{square matrix}%
+  \index{matrix!square}%
+  \index{square matrix}.  In other words, $A$ is a square matrix if it
+  has the same number of rows and columns.
 \end{definition}
 
 \begin{definition}{Column vectors and row vectors}{row-and-column-vectors}
   A matrix of size $n\times 1$ is called a \textbf{column vector}%
-  \index{vector!column vector}\index{column vector}. A matrix of size
-  $1\times n$ is called a \textbf{row vector}%
-  \index{vector!row vector}\index{row vector}.
-  Here is an example of a column vector $X$ and a row vector $Y$:
+  \index{vector!column vector}%
+  \index{column vector}. A matrix of size $1\times n$ is called a
+  \textbf{row vector}%
+  \index{vector!row vector}%
+  \index{row vector}.  Here is an example of a column vector $X$ and a
+  row vector $Y$:
   \begin{equation*}
     X=\begin{mymatrix}{c}
       x_1 \\

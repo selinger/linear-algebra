@@ -17,20 +17,19 @@ brief review of Cartesian coordinate systems.
 \noindent\textbf{Points in $n$-dimensional space.}
 You are probably already familiar with Cartesian coordinates%
 \index{Cartesian coordinates}%
-\index{coordinate system!Cartesian}, which let you describe
-points\index{point} in $2$- or $3$-dimensional space. Consider the
-familiar coordinate plane, with an $x$-axis and a $y$-axis. Any point
-within this coordinate plane is identified by its $x$- and
-$y$-coordinates%
+\index{coordinate system!Cartesian}, which let you describe points%
+\index{point} in $2$- or $3$-dimensional space. Consider the familiar
+coordinate plane, with an $x$-axis and a $y$-axis. Any point within
+this coordinate plane is identified by its $x$- and $y$-coordinates%
 \index{coordinate!of a point}. For example, the point $P$ in the
 following diagram has $x$-coordinate~$2$ and $y$-coordinate~$1$.  We
 write these coordinates as an ordered pair $P=(2,1)$. Here,
 ``ordered'' means that the $x$-coordinate comes first, and then the
 $y$-coordinate, i.e., $(1,2)$ is not the same point as
 $(2,1)$. Coordinates can be positive, negative, or zero. The special
-point with coordinates $(0,0)$ is called the
-\textbf{origin}\index{origin of a coordinate system} of the coordinate
-system, and also written as $0$.
+point with coordinates $(0,0)$ is called the \textbf{origin}%
+\index{origin of a coordinate system} of the coordinate system, and
+also written as $0$.
 \begin{center}
   \begin{tikzpicture}[scale=0.6]
     \draw[thick,->](-4,0)--(4,0);
@@ -70,12 +69,15 @@ points in higher dimensions, we can still talk about their coordinates.
 
 \noindent\textbf{Vectors in $n$-dimensional space.}
 Unlike a point, which describes a location in a coordinate system, a
-vector\index{vector!geometric meaning} describes an {\em
-  offset}\index{offset} or a {\em distance and direction}. We usually
-picture a vector as an arrow, starting at one point (called the
-\textbf{tail}\index{tail of a vector}\index{vector!tail} of the arrow) and ending
-at another point
-(called the \textbf{tip}\index{tip of a vector}\index{vector!tip} of the arrow).
+vector%
+\index{vector!geometric meaning} describes an {\em offset}%
+\index{offset} or a {\em distance and direction}. We usually picture a
+vector as an arrow, starting at one point (called the \textbf{tail}%
+\index{tail of a vector}%
+\index{vector!tail} of the arrow) and ending at another point (called
+the \textbf{tip}%
+\index{tip of a vector}%
+\index{vector!tip} of the arrow).
 \begin{center}
   \begin{tikzpicture}[scale=0.8]
     \draw[->, thick, blue](1,0)--+(1.5,1.125);
@@ -98,17 +100,17 @@ to the $y$-axis''. This situation is pictured here:
     \draw(0,0) -- node[below]{4 units} (4,0) -- node[right]{3 units} (4,3);
   \end{tikzpicture}
 \end{center}
-The numbers $4$ and $3$ are also called the
-$x$-component\index{component!of a vector} and the $y$-component of
-the vector. Notice that a point has ``coordinates'', but a vector has
+The numbers $4$ and $3$ are also called the $x$-component%
+\index{component!of a vector} and the $y$-component of the
+vector. Notice that a point has ``coordinates'', but a vector has
 ``components''. We write the components of a vector as an ordered
 column within square brackets:
 $\vect{v}=\begin{mysmallmatrix}{c}\scriptstyle4\\\scriptstyle3\end{mysmallmatrix}$. Note
 that components can also be negative; for example, a negative
 $x$-component indicates to move left instead of right, and a negative
 $y$-component indicates to move down instead of up. The vector with
-all components equal to $0$ is called the \textbf{zero
-  vector}\index{zero vector}, and is written $\vect{0}$.
+all components equal to $0$ is called the \textbf{zero vector}%
+\index{zero vector}, and is written $\vect{0}$.
 
 The situation in $3$ dimensions is similar. Here, a vector is
 described by three components, namely, its $x$-component,
@@ -118,10 +120,13 @@ $\begin{mysmallmatrix}{c}\scriptstyle x\\\scriptstyle y\\\scriptstyle
 vectors when $n$ is greater than $3$.
 
 \begin{definition}{Column vectors and $\R^n$}{column-vector}
-  A $n$-dimensional\index{dimension!of a vector}\index{vector!dimension}
-  \textbf{column vector}\index{column vector}\index{vector!column vector},
-  often simply called a \textbf{vector}\index{vector}, is an ordered list
-  of $n$ real numbers, written as a column within square brackets:
+  A $n$-dimensional%
+  \index{dimension!of a vector}%
+  \index{vector!dimension} \textbf{column vector}%
+  \index{column vector}%
+  \index{vector!column vector}, often simply called a \textbf{vector}%
+  \index{vector}, is an ordered list of $n$ real numbers, written as a
+  column within square brackets:
   \begin{equation*}
     \begin{mymatrix}{c}
       x_1 \\
@@ -130,9 +135,11 @@ vectors when $n$ is greater than $3$.
       x_n
     \end{mymatrix}.
   \end{equation*}
-  We write $\R^n$\index{Rn@$\R^n$} for the set of all $n$-dimensional
-  column vectors. It is also known as \textbf{$n$-dimensional
-    Euclidean space}\index{Euclidean space}.
+  We write $\R^n$%
+  \index{Rn@$\R^n$} for the set of all $n$-dimensional column
+  vectors. It is also known as \textbf{$n$-dimensional Euclidean
+    space}%
+  \index{Euclidean space}.
 \end{definition}
 Vectors are usually denoted by boldface lower-case letters such as
 $\vect{v}$, $\vect{w}$, $\vect{a}$, $\vect{b}$. Some people write a
@@ -159,9 +166,10 @@ require axes, a scale, and an origin.  \bigskip
 
 \noindent\textbf{Vectors from points.}
 If $Q$ and $P$ are two points in $n$-dimensional space, we can define
-a \textbf{vector from $Q$ to $P$}\index{vector!from a point to a point}. This
-vector is written $\longvect{QP}$, and is described by the arrow whose
-tail is at $Q$ and whose tip is at $P$, as in the following picture:
+a \textbf{vector from $Q$ to $P$}%
+\index{vector!from a point to a point}. This vector is written
+$\longvect{QP}$, and is described by the arrow whose tail is at $Q$
+and whose tip is at $P$, as in the following picture:
 \begin{center}
   \begin{tikzpicture}[scale=0.55]
     \draw[fill] (0,0) circle [radius=1.8pt] node[below]{$Q$};
@@ -185,7 +193,8 @@ the origin. The following definition is concerned with that situation.
 
 \begin{definition}{The position vector of a point}{position-vector}
   Let $P$ be a point in $n$-dimensional space. The \textbf{position
-    vector}\index{position vector} of $P$ is the vector
+    vector}%
+  \index{position vector} of $P$ is the vector
   $\vect{p} = \longvect{0P}$ whose tail is at the origin and whose tip
   is at $P$.
   \begin{center}
@@ -208,8 +217,8 @@ the origin. The following definition is concerned with that situation.
   \end{equation*}
   Thus, the coordinates of a point are the same as the components of
   its position vector. For this reason, the position vector is also
-  sometimes called the
-  \textbf{coordinate vector}\index{coordinate vector} of $P$.
+  sometimes called the \textbf{coordinate vector}%
+  \index{coordinate vector} of $P$.
 \end{definition}
 
 \noindent\textbf{Points from vectors.} Conversely, given any vector
@@ -248,9 +257,10 @@ will become blurred, so that we will be able to talk about $\R^n$ as
 ``a set of points'' or ``a set of vectors'' interchangeably.  \bigskip
 
 \noindent\textbf{Equality of vectors.}
-Two vectors are equal\index{equality!of vectors}%
-\index{vector!equality} precisely when all corresponding components are
-equal. In symbols, if
+Two vectors are equal%
+\index{equality!of vectors}%
+\index{vector!equality} precisely when all corresponding components
+are equal. In symbols, if
 \begin{equation*}
   \vect{u} =
   \begin{mymatrix}{c}
