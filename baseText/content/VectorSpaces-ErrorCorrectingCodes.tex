@@ -622,7 +622,7 @@ method is called \textbf{syndrome decoding}%
 
 \begin{example}{An invalid code block}{invalid-code-block}
   Using the code of the previous example, suppose you have received
-  the code block $10010$. Can you decode it?  
+  the code block $10010$. Can you decode it?
 \end{example}
 
 \begin{solution}
@@ -648,7 +648,7 @@ theorem:
 \begin{theorem}{Check matrices of 1-error correcting codes}{1-error-check}
   Consider a linear code with check matrix $H$. Then the code is
   1-error correcting if and only if all columns of the check matrix
-  are non-zero and distinct. 
+  are non-zero and distinct.
 \end{theorem}
 
 \begin{proof}
@@ -753,7 +753,7 @@ $G$ is indeed a correct generator matrix for the code.
   each code block are the corresponding message block. This makes
   decoding especially convenient (after any errors have been corrected
   first).
-\end{solution}  
+\end{solution}
 
 \begin{example}{Decoding a Hamming code}{hamming-3-decoding}
   Using the Hamming $(7,4,3)$-code of the previous example, correct
@@ -765,7 +765,7 @@ $G$ is indeed a correct generator matrix for the code.
   We do not need to make a syndrome table, because the syndromes are
   exactly the columns of the check matrix $H$. More precisely, the
   $i\th$ column of the check matrix is the syndrome of the error
-  pattern containing a single-bit error in the $i\th$ bit. 
+  pattern containing a single-bit error in the $i\th$ bit.
   We use the check matrix
   \begin{equation*}
     H = \begin{mymatrix}{cccc|ccc}
@@ -858,7 +858,7 @@ up to $r=8$.
     7  & 127  & 120  & 0.945 \\
     8  & 255  & 247  & 0.969 \\
     \hline
-  \end{array}    
+  \end{array}
 \end{equation*}
 Of course, since the codes are only 1-error correcting, one cannot
 increase the block size indefinitely, or else the probability of
