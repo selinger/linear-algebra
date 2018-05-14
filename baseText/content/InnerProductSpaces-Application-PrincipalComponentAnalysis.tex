@@ -84,10 +84,10 @@ following:
     \fill[color=red] (-0.24,-0.29) circle (0.06);
   \end{tikzpicture}
 \end{equation}
-Although these points are spread out in two dimensions, they are all
-pretty close to a 1-dimensional subspace. Probably the best way to
-interpret this particular data set is to think of the points as being
-``essentially'' on a line, up to some small random errors.
+Although these points are spread out in two dimensions, they seem to
+be located pretty close to a 1-dimensional subspace. Probably the best
+way to interpret this particular data set is to think of the points as
+being ``essentially'' on a line, up to some small random errors.
 
 More generally, suppose we are given a collection of data points in
 $n$-dimensional space, and we are looking for a $k$-dimensional
@@ -136,9 +136,15 @@ problem is the diagonalization of symmetric matrices.
     $\eigenvar_1,\ldots,\eigenvar_n$ be the eigenvalues of $B$ in
     decreasing order, i.e., so that
     $\eigenvar_1\geq\eigenvar_2\geq\ldots\geq\eigenvar_n\geq 0$. Let
-    $\vect{u}_1,\ldots,\vect{u}_k$ be the corresponding eigenvectors.
+    $\vect{u}_1,\ldots,\vect{u}_n$ be the corresponding eigenvectors.
   \item Then $W=\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$ is the
     solution to the subspace fitting problem.
+    Moreover, the total square distance of the points from the
+    subspace is
+    \begin{equation*}
+      d(\vect{v}_1,W)^2 + \ldots + d(\vect{v}_m,W)^2
+      = \eigenvar_{k+1} + \ldots + \eigenvar_n.
+    \end{equation*}
   \end{enumerate}
 \end{proposition}  
 
@@ -158,7 +164,8 @@ problem is the diagonalization of symmetric matrices.
     }.
   \end{equation*}
   Find the 1-dimensional subspace that best approximates this
-  collection of points.
+  collection of points. What is the sum of the squares of the
+  distances of the points from this subspace?
 \end{example}
 
 \begin{solution}
@@ -187,7 +194,8 @@ problem is the diagonalization of symmetric matrices.
     \end{equation*}
   \item The desired subspace $W$ is spanned by the eigenvector
     corresponding to the largest eigenvalue, i.e.,
-    $W=\sspan\set{\vect{u}_1}$.
+    $W=\sspan\set{\vect{u}_1}$. The sum of the squares of the
+    distances is $\lambda_2 = 27$.
   \end{enumerate}
   The space $W$ is shown in the following illustration, along with the
   original points:
@@ -195,6 +203,8 @@ problem is the diagonalization of symmetric matrices.
     \begin{tikzpicture}[scale=0.15]
       \draw[thin,->] (-12,0) -- (12,0);
       \draw[thin,->] (0,-12) -- (0,12);
+      \draw[thin] (0,10) -- (-1,10) node[left] {$10$};
+      \draw[thin] (10,0) -- (10,-1) node[below] {$10$};
       \draw[thick,blue] (-8,-12) -- (8,12);
       \fill[color=red] (2,-3) circle (0.4);
       \fill[color=red] (-1, 0) circle (0.4);
@@ -207,10 +217,10 @@ problem is the diagonalization of symmetric matrices.
       \fill[color=red] (-7, -6) circle (0.4);
     \end{tikzpicture}
   \end{equation*}
-  Of course, the example was rigged to ensure that the eigenvalues
-  are integers. In real life, the entries of $A$ and $B$, as well as
-  the eigenvalues and components of the eigenvectors would be
-  arbitrary real numbers.
+  Of course, the example was rigged to ensure that the eigenvalues are
+  integers. In real life, the entries of $A$ and $B$, as well as the
+  eigenvalues and components of the eigenvectors are usually arbitrary
+  real numbers.
 \end{solution}
 
 \begin{example}{Subspace fitting in $\R^3$}{subspace-fitting-r3}
@@ -300,11 +310,7 @@ of the subspace fitting problem are called the \textbf{principal
   which the rows of $A$ show the most variability. The second
   principal component $\vect{u}_2$ gives the direction orthogonal to
   $\vect{u}_2$ in which the rows of $A$ show the most remaining
-  variability after $\vect{u}_1$ has been removed. The third principal
-  component $\vect{u}_3$ points in the direction orthogonal to
-  $\vect{u}_1$ and $\vect{u}_2$ that has the most remaining
-  variability after $\vect{u}_1$ and $\vect{u}_2$ have been removed,
-  and so on.
+  variability after $\vect{u}_1$ has been removed, and so on. 
 \end{definition}
 
 % ----------------------------------------------------------------------
@@ -358,6 +364,11 @@ illustrates the difference:
     \path[black!70] (2,-2) node {\begin{tabular}{c}minimize\\distances\\perpendicular\\to subspace\end{tabular}};
   \end{tikzpicture}
 \end{equation*}
+
+% ----------------------------------------------------------------------
+\subsection{Application to computing the rank of a matrix}
+
+
 
 % ----------------------------------------------------------------------
 \subsection{Affine fitting}
