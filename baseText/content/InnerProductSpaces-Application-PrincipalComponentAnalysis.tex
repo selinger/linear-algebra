@@ -102,27 +102,37 @@ To state the problem more precisely, let us introduce the following
 notation. If $W$ is a subspace of $\R^n$ and $\vect{v}\in\R^n$ is a
 vector, let us write $d(\vect{v},W)$ for the shortest distance from
 $\vect{v}$ to $W$ (i.e., the distance from $\vect{v}$ to $W$ along a
-line that is perpendicular to $W$). Then the problem we would like to
-solve can be stated as follows:
+line that is perpendicular to $W$). Moreover, if $W$ is a subspace of
+$\R^n$ and $\vect{v}_1,\ldots,\vect{v}_m\in\R^n$ are the position
+vectors of $m$ points, we define the \textbf{total squared distance}%
+\index{distance!total squared distance}%
+\index{squared distance}%
+\index{total squared distance}%
+\index{subspace fitting!total squared distance} of the points to
+the subspace to be the quantity
+\begin{equation*}
+  D(W) = d(\vect{v}_1,W)^2 + \ldots + d(\vect{v}_m,W)^2.
+\end{equation*}
+Then the problem we would like to solve can be stated as follows:
 
 \begin{problem}{Subspace fitting problem}{subspace-fitting}
   Given vectors $\vect{v}_1,\ldots,\vect{v}_m\in\R^n$ and given an
-  integer $k\leq n$, find a $k$-dimensional subspace $W\subseteq\R^n$
-  such that
-  \begin{equation*}
-    d(\vect{v}_1,W)^2 + \ldots + d(\vect{v}_m,W)^2
-  \end{equation*}
-  is as small as possible.
+  integer $k\leq n$, find the $k$-dimensional subspace
+  $W\subseteq\R^n$ that minimizes the total squared distance, i.e.,
+  such that $D(W)$ is as small as possible.%
+  \index{subspace fitting}
 \end{problem}
-
 
 The following proposition gives us a method for solving the subspace
 fitting problem. It turns out that the key ingredient in solving this
-problem is the diagonalization of symmetric matrices.
+problem is the diagonalization of symmetric matrices. The method was
+discovered by Gale Young%
+\index{Young, Gale}%
+\index{Gale Young} in 1937.
 
-\begin{proposition}{Solution of the subspace fitting problem}{subspace-fitting}
-  Given vectors $\vect{v}_1,\ldots,\vect{v}_m\in\R^n$ and $k\leq n$.
-  The optimal solution to the subspace fitting problem can be computed
+\begin{algorithm}{Solution of the subspace fitting problem}{subspace-fitting}
+  Given vectors $\vect{v}_1,\ldots,\vect{v}_m\in\R^n$ and $k\leq n$,
+  the optimal solution to the subspace fitting problem can be computed
   as follows:
   \begin{enumerate}
   \item Let $A$ be the $m\times n$-matrix whose rows are
@@ -133,20 +143,19 @@ problem is the diagonalization of symmetric matrices.
     $n\times n$-matrix.
   \item By Proposition~\ref{prop:characterize-positive}, all
     eigenvalues of $B$ are real and non-negative. Let
-    $\eigenvar_1,\ldots,\eigenvar_n$ be the eigenvalues of $B$ in
-    decreasing order, i.e., so that
-    $\eigenvar_1\geq\eigenvar_2\geq\ldots\geq\eigenvar_n\geq 0$. Let
-    $\vect{u}_1,\ldots,\vect{u}_n$ be the corresponding eigenvectors.
+    $\eigenvar_1,\ldots,\eigenvar_n$ be the eigenvalues of $B$, listed
+    according to their multiplicity and in decreasing order, i.e., so
+    that $\eigenvar_1\geq\eigenvar_2\geq\ldots\geq\eigenvar_n\geq
+    0$. Let $\vect{u}_1,\ldots,\vect{u}_n$ be the corresponding
+    eigenvectors.
   \item Then $W=\sspan\set{\vect{u}_1,\ldots,\vect{u}_k}$ is the
-    solution to the subspace fitting problem.
-    Moreover, the total square distance of the points from the
-    subspace is
+    solution to the subspace fitting problem.  Moreover, the total
+    squared distance of the points to this subspace is
     \begin{equation*}
-      d(\vect{v}_1,W)^2 + \ldots + d(\vect{v}_m,W)^2
-      = \eigenvar_{k+1} + \ldots + \eigenvar_n.
+      D(W) = \eigenvar_{k+1} + \ldots + \eigenvar_n.
     \end{equation*}
   \end{enumerate}
-\end{proposition}  
+\end{algorithm}
 
 \begin{example}{Subspace fitting in $\R^2$}{subspace-fitting-r2}
   Consider the following collection of points in $\R^2$:
@@ -164,12 +173,12 @@ problem is the diagonalization of symmetric matrices.
     }.
   \end{equation*}
   Find the 1-dimensional subspace that best approximates this
-  collection of points. What is the sum of the squares of the
-  distances of the points from this subspace?
+  collection of points. What is the total squared distance of the
+  points to the subspace?
 \end{example}
 
 \begin{solution}
-  We follow the steps outlined in Proposition~\ref{prop:subspace-fitting}.
+  We follow the steps of Algorithm~\ref{alg:subspace-fitting}.
   \begin{enumerate}
   \item We have
     \begin{equation*}
@@ -194,8 +203,8 @@ problem is the diagonalization of symmetric matrices.
     \end{equation*}
   \item The desired subspace $W$ is spanned by the eigenvector
     corresponding to the largest eigenvalue, i.e.,
-    $W=\sspan\set{\vect{u}_1}$. The sum of the squares of the
-    distances is $\lambda_2 = 27$.
+    $W=\sspan\set{\vect{u}_1}$. The total squared distance is
+    $\lambda_2 = 27$.
   \end{enumerate}
   The space $W$ is shown in the following illustration, along with the
   original points:
@@ -249,12 +258,14 @@ problem is the diagonalization of symmetric matrices.
       collection of points?
     \end{enumerate}
   \end{enumialphparenastyle}
+  In each case, what is the total squared distance of the points to
+  the subspace?
 \end{example}
 
 \begin{solution}
-  Again, we follow the steps of
-  Proposition~\ref{prop:subspace-fitting}. We can do parts (a), (b),
-  and (c) at the same time.
+  Again, we follow 
+  Algorithm~\ref{alg:subspace-fitting}. We can do the calculations
+  for parts (a), (b), and (c) at the same time.
   \begin{enumerate}
   \item We have
     \begin{equation*}
@@ -283,15 +294,21 @@ problem is the diagonalization of symmetric matrices.
       \vect{u}_3 = \begin{mymatrix}{r} -1 \\ -2 \\ 2 \end{mymatrix}.
     \end{equation*}
   \end{enumerate}
+  
   For part (a), the desired 1-dimensional subspace is spanned by the
   eigenvector corresponding to the largest eigenvalue, i.e., it is
-  $\sspan\set{\vect{u}_1}$. For part (b), the desired 2-dimensional
-  subspace is spanned by the eigenvectors corresponding to the two
-  largest eigenvalues, i.e., it is
-  $\sspan\set{\vect{u}_1,\vect{u}_2}$.  Finally, in part (c), the
-  desired 3-dimensional subspace is spanned by all three eigenvectors;
-  it is of course $\R^3$ itself, since it is the only 3-dimensional
-  subspace (and all points have distance 0 to it).
+  $\sspan\set{\vect{u}_1}$. The total squared distance is
+  $\eigenvar_2+\eigenvar_3 = 306 + 27 = 333$.
+
+  For part (b), the desired 2-dimensional subspace is spanned by the
+  eigenvectors corresponding to the two largest eigenvalues, i.e., it
+  is $\sspan\set{\vect{u}_1,\vect{u}_2}$. The total squared distance is
+  $\eigenvar_3 = 27$.
+
+  Finally, in part (c), the desired 3-dimensional subspace is spanned
+  by all three eigenvectors; it is of course $\R^3$ itself, since it
+  is the only 3-dimensional subspace. The total squared distance is
+  $0$, since all points lie in the subspace.
 \end{solution}
 
 The vectors $\vect{u}_1,\ldots,\vect{u}_n$ that appear in the solution
@@ -305,13 +322,15 @@ of the subspace fitting problem are called the \textbf{principal
   eigenvectors $\vect{u}_1,\ldots,\vect{u}_n$ of the positive
   semidefinite $n\times n$-matrix $A^TA$. They are usually listed in
   order of decreasing eigenvalues.
-
-  The first principal component $\vect{u}_1$ gives the direction in
-  which the rows of $A$ show the most variability. The second
-  principal component $\vect{u}_2$ gives the direction orthogonal to
-  $\vect{u}_2$ in which the rows of $A$ show the most remaining
-  variability after $\vect{u}_1$ has been removed, and so on. 
 \end{definition}
+
+The first principal component $\vect{u}_1$ gives the direction in
+which the rows of $A$ show the most variability. The second principal
+component $\vect{u}_2$ gives the direction in which the rows of $A$
+show the most remaining variability that is orthogonal to
+$\vect{u}_1$. The third principal component $\vect{u}_3$ gives the
+direction of most variability that is orthogonal to $\vect{u}_1$ and
+$\vect{u}_2$, and so on.
 
 % ----------------------------------------------------------------------
 \subsection*{Subspace fitting vs. curve fitting}
@@ -330,7 +349,7 @@ the distances of the points from the subspace in the direction
 perpendicular to the subspace. The following pair of pictures
 illustrates the difference:
 \begin{equation*}
-  \begin{tikzpicture}[scale=1]
+  \begin{tikzpicture}[scale=0.8]
     \draw[thin,->] (-3,0) -- (3,0);
     \draw[thin,->] (0,-3) -- (0,3);
     \draw[thick,blue] (-3,-3*0.75) -- (3,3*0.75);
@@ -347,7 +366,7 @@ illustrates the difference:
     \path[black!70] (2,-2) node {\begin{tabular}{c}minimize\\vertical\\distances\end{tabular}};
   \end{tikzpicture}
   \hspace{1in}
-  \begin{tikzpicture}[scale=1]
+  \begin{tikzpicture}[scale=0.8]
     \draw[thin,->] (-3,0) -- (3,0);
     \draw[thin,->] (0,-3) -- (0,3);
     \draw[thick,blue] (-3*0.92,-3) -- (3*0.92, 3);
@@ -356,27 +375,86 @@ illustrates the difference:
     \fill[color=red] (2,3) circle (0.12);
     \fill[color=red] (-2,0) circle (0.12);
     \fill[color=red] (-2,-3) circle (0.12);
-    \draw[<->,black!50] (2,0) -- (0.997*0.92,0.997); 
-    \draw[<->,black!50] (2,3) -- (2.621*0.92,2.621); 
-    \draw[<->,black!50] (-2,0) -- (-0.997*0.92,-0.997); 
-    \draw[<->,black!50] (-2,-3) -- (-2.621*0.92,-2.621); 
+    \draw[<->,black!50] (2,0) -- (0.997*0.92,0.997);
+    \draw[<->,black!50] (2,3) -- (2.621*0.92,2.621);
+    \draw[<->,black!50] (-2,0) -- (-0.997*0.92,-0.997);
+    \draw[<->,black!50] (-2,-3) -- (-2.621*0.92,-2.621);
     \path (0,-3.5) node[below] {Subspace fitting};
     \path[black!70] (2,-2) node {\begin{tabular}{c}minimize\\distances\\perpendicular\\to subspace\end{tabular}};
   \end{tikzpicture}
 \end{equation*}
 
 % ----------------------------------------------------------------------
-\subsection{Application to computing the rank of a matrix}
+\subsection*{Application to computing the rank of a matrix}
+
+You learned in Section~\ref{sec:gaussian-elimination} that the rank of
+a matrix can be computed as the number of non-zero rows in its {\ef}.
+However, there is a practical problem with computing the rank in this
+way. If there are small errors (such as rounding errors) in any of the
+matrix entries, the rank is likely to change. Compare the following
+two matrices:
+\begin{equation*}
+  A = \begin{mymatrix}{cccc}
+    1 & 1 & 1 & 1 \\
+    1 & 1 & 1 & 1 \\
+    1 & 1 & 1 & 1 \\
+  \end{mymatrix},
+  \quad
+  B = \begin{mymatrix}{cccc}
+    1 & 1 & 1 & 1 \\
+    1 & 1.0001 & 1 & 1 \\
+    1 & 1 & 1.0001 & 1 \\
+  \end{mymatrix}.  
+\end{equation*}
+The matrix $A$ has rank $1$, and the matrix $B$ has rank $3$, although
+the two matrices only differ by a tiny amount. In practice, we often
+work with floating-point numbers and small round-off errors are easily
+introduced during computations. We therefore need a method for
+calculating the ``approximate'' rank%
+\index{rank!approximate}%
+\index{approximate rank} of a matrix, i.e., a version of the rank that
+does not change when small errors occur.
+
+Our method for calculating the approximate rank is based on the
+following two facts:
+\begin{itemize}
+\item The rank of $A$ is equal to the rank of $A^TA$.
+\item The rank of $A^TA$ is equal to the number of non-zero
+  eigenvalues of $A^TA$, counted according to their multiplicities.
+\end{itemize}
+This suggests the following method for calculating the approximate
+rank:
+
+\begin{algorithm}{Computing the approximate rank}{approximate-rank}
+  \textbf{Input:} an $m\times n$-matrix $A$, and a threshold $\epsilon>0$.
+  \smallskip
+  
+  \textbf{Output:} the approximate rank of $A$, i.e., the smallest
+  possible rank of a matrix $A'$ such that $\norm{A-A'}^2 \leq
+  \epsilon$. 
+  \smallskip
+
+  \textbf{Algorithm:}
+  \begin{enumerate}
+  \item Let $B=A^TA$. Then $B$ is a positive semidefinite
+    $n\times n$-matrix.
+  \item Let $\eigenvar_1,\ldots,\eigenvar_n$ be the eigenvalues of
+    $B$, listed according to their multiplicity and in decreasing
+    order, i.e., so that
+    $\eigenvar_1\geq\eigenvar_2\geq\ldots\geq\eigenvar_n\geq 0$.
+  \item Find the smallest $k$ such that
+    $\eigenvar_{k+1}+\ldots+\eigenvar{n}\leq\epsilon$. Then $k$ is the
+    approximate rank of $A$.
+  \end{enumerate}
+\end{algorithm}
+
+% ----------------------------------------------------------------------
+\subsection*{Affine fitting}
 
 
 
 % ----------------------------------------------------------------------
-\subsection{Affine fitting}
-
-
-
-% ----------------------------------------------------------------------
-\subsection{Application to U.S. Senate voting data}
+\subsection*{Application to U.S. Senate voting data}
 
 
 
@@ -498,4 +576,3 @@ illustrates the difference:
     \fill[color=red] (-0.24,-0.29) circle (0.06);
   \end{tikzpicture}
 \end{equation*}
-
