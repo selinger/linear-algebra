@@ -130,7 +130,7 @@ discovered by Gale Young%
 \index{Young, Gale}%
 \index{Gale Young} in 1937.
 
-\begin{algorithm}{Solution of the subspace fitting problem}{subspace-fitting}
+\begin{proposition}{Solution of the subspace fitting problem}{subspace-fitting}
   Given vectors $\vect{v}_1,\ldots,\vect{v}_m\in\R^n$ and $k\leq n$,
   the optimal solution to the subspace fitting problem can be computed
   as follows:
@@ -155,7 +155,7 @@ discovered by Gale Young%
       D(W) = \eigenvar_{k+1} + \ldots + \eigenvar_n.
     \end{equation*}
   \end{enumerate}
-\end{algorithm}
+\end{proposition}
 
 \begin{example}{Subspace fitting in $\R^2$}{subspace-fitting-r2}
   Consider the following collection of points in $\R^2$:
@@ -178,7 +178,7 @@ discovered by Gale Young%
 \end{example}
 
 \begin{solution}
-  We follow the steps of Algorithm~\ref{alg:subspace-fitting}.
+  We follow the steps outlined in Proposition~\ref{prop:subspace-fitting}.
   \begin{enumerate}
   \item We have
     \begin{equation*}
@@ -263,8 +263,8 @@ discovered by Gale Young%
 \end{example}
 
 \begin{solution}
-  Again, we follow 
-  Algorithm~\ref{alg:subspace-fitting}. We can do the calculations
+  Again, we follow the steps from
+  Proposition~\ref{prop:subspace-fitting}. We can do the calculations
   for parts (a), (b), and (c) at the same time.
   \begin{enumerate}
   \item We have
@@ -383,70 +383,6 @@ illustrates the difference:
     \path[black!70] (2,-2) node {\begin{tabular}{c}minimize\\distances\\perpendicular\\to subspace\end{tabular}};
   \end{tikzpicture}
 \end{equation*}
-
-% ----------------------------------------------------------------------
-\subsection*{Application to computing the rank of a matrix}
-
-You learned in Section~\ref{sec:gaussian-elimination} that the rank of
-a matrix can be computed as the number of non-zero rows in its {\ef}.
-However, there is a practical problem with computing the rank in this
-way. If there are small errors (such as rounding errors) in any of the
-matrix entries, the rank is likely to change. Compare the following
-two matrices:
-\begin{equation*}
-  A = \begin{mymatrix}{cccc}
-    1 & 1 & 1 & 1 \\
-    1 & 1 & 1 & 1 \\
-    1 & 1 & 1 & 1 \\
-  \end{mymatrix},
-  \quad
-  B = \begin{mymatrix}{cccc}
-    1 & 1 & 1 & 1 \\
-    1 & 1.0001 & 1 & 1 \\
-    1 & 1 & 1.0001 & 1 \\
-  \end{mymatrix}.  
-\end{equation*}
-The matrix $A$ has rank $1$, and the matrix $B$ has rank $3$, although
-the two matrices only differ by a tiny amount. In practice, we often
-work with floating-point numbers and small round-off errors are easily
-introduced during computations. We therefore need a method for
-calculating the ``approximate'' rank%
-\index{rank!approximate}%
-\index{approximate rank} of a matrix, i.e., a version of the rank that
-does not change when small errors occur.
-
-Our method for calculating the approximate rank is based on the
-following two facts:
-\begin{itemize}
-\item The rank of $A$ is equal to the rank of $A^TA$.
-\item The rank of $A^TA$ is equal to the number of non-zero
-  eigenvalues of $A^TA$, counted according to their multiplicities.
-\end{itemize}
-This suggests the following method for calculating the approximate
-rank:
-
-\begin{algorithm}{Computing the approximate rank}{approximate-rank}
-  \textbf{Input:} an $m\times n$-matrix $A$, and a threshold $\epsilon>0$.
-  \smallskip
-  
-  \textbf{Output:} the approximate rank of $A$, i.e., the smallest
-  possible rank of a matrix $A'$ such that $\norm{A-A'}^2 \leq
-  \epsilon$. 
-  \smallskip
-
-  \textbf{Algorithm:}
-  \begin{enumerate}
-  \item Let $B=A^TA$. Then $B$ is a positive semidefinite
-    $n\times n$-matrix.
-  \item Let $\eigenvar_1,\ldots,\eigenvar_n$ be the eigenvalues of
-    $B$, listed according to their multiplicity and in decreasing
-    order, i.e., so that
-    $\eigenvar_1\geq\eigenvar_2\geq\ldots\geq\eigenvar_n\geq 0$.
-  \item Find the smallest $k$ such that
-    $\eigenvar_{k+1}+\ldots+\eigenvar{n}\leq\epsilon$. Then $k$ is the
-    approximate rank of $A$.
-  \end{enumerate}
-\end{algorithm}
 
 % ----------------------------------------------------------------------
 \subsection*{Affine fitting}
