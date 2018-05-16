@@ -111,7 +111,7 @@ vectors of $m$ points, we define the \textbf{total squared distance}%
 \index{subspace fitting!total squared distance} of the points to
 the subspace to be the quantity
 \begin{equation*}
-  D(W) = d(\vect{v}_1,W)^2 + \ldots + d(\vect{v}_m,W)^2.
+  D = d(\vect{v}_1,W)^2 + \ldots + d(\vect{v}_m,W)^2.
 \end{equation*}
 Then the problem we would like to solve can be stated as follows:
 
@@ -119,7 +119,7 @@ Then the problem we would like to solve can be stated as follows:
   Given vectors $\vect{v}_1,\ldots,\vect{v}_m\in\R^n$ and given an
   integer $k\leq n$, find the $k$-dimensional subspace
   $W\subseteq\R^n$ that minimizes the total squared distance, i.e.,
-  such that $D(W)$ is as small as possible%
+  such that $D$ is as small as possible%
   \index{subspace fitting}%
   \index{fitting!subspace fitting}.
 \end{problem}
@@ -153,7 +153,7 @@ discovered by Gale Young%
     solution to the subspace fitting problem.  Moreover, the total
     squared distance of the points to this subspace is
     \begin{equation*}
-      D(W) = \eigenvar_{k+1} + \ldots + \eigenvar_n.
+      D = \eigenvar_{k+1} + \ldots + \eigenvar_n.
     \end{equation*}
   \end{enumerate}
 \end{proposition}
@@ -390,10 +390,10 @@ illustrates the difference:
 % ----------------------------------------------------------------------
 \subsection*{Affine fitting}
 
-So far, we have been looking for a $k$-dimensional subspace of $\R^n$
-that is as close as possible to a given collection of points. Every
-subspace passes through the origin. But sometimes the points may not
-be near the origin, as in this example:
+So far, we have been looking to approximate a given collection of
+points by a {\em subspace}, which necessarily passes through the
+origin. But sometimes the points may not be near the origin, as in
+this example:
 \begin{equation}\label{eqn:subspace-fitting}
   \begin{tikzpicture}[baseline=-0.5ex, scale=0.8]
     \draw[thin,->] (-4,0) -- (4,0);
@@ -475,10 +475,10 @@ be near the origin, as in this example:
     \fill[color=red] (-0.15,2.11) circle (0.075);
   \end{tikzpicture}
 \end{equation}
-In this case, looking for a subspace passing through the origin does
-not make much sense. Instead, we should be looking for an
-\textbf{affine subspace}. An affine subspace is similar to a subspace,
-except it does not necessarily contain the origin.
+In this case, approximating the points by a subspace passing through
+the origin does not make much sense. Instead, we should be looking for
+an \textbf{affine subspace}. An affine subspace is similar to a
+subspace, except it does not necessarily contain the origin.
 
 \begin{definition}{Affine subspace}{affine-subspace}
   Let $V$ be a vector space. A subset $A\subseteq V$ is called an
@@ -489,15 +489,14 @@ except it does not necessarily contain the origin.
   \begin{equation*}
     A = \vect{v} + W = \set{\vect{v}+\vect{w} \mid \vect{w}\in W},
   \end{equation*}
-  where $\vect{v}\in V$ and $W$ is a subspace of\/ $V$.  
+  where $\vect{v}\in V$ and $W$ is a subspace of\/ $V$.
 \end{definition}
 
 For example, in Chapter~\ref{cha:lines-and-planes}, we considered
 lines and planes in $\R^n$ that pass through a given point (not
 necessarily the origin). These are examples of affine subspaces of
-$\R^n$. We can also describe a non-empty affine subspace as a subspace
-that has been ``shifted'' away from the origin. The affine subspace
-fitting problem is analogous to the subspace fitting problem:
+$\R^n$. The affine subspace fitting problem is analogous to the
+subspace fitting problem:
 
 \begin{problem}{Affine subspace fitting problem}{subspace-fitting}
   Given the position vectors $\vect{v}_1,\ldots,\vect{v}_m$ of $m$
@@ -519,16 +518,147 @@ origin, and then solving an ordinary subspace fitting problem.
   \textbf{centroid}%
   \index{centroid} is the vector
   \begin{equation*}
-    \overline{\vect{v}} = \frac{1}{m}(\vect{v}_1+\ldots+\vect{v}_m).
+    \centroid{\vect{v}} = \frac{1}{m}(\vect{v}_1+\ldots+\vect{v}_m).
   \end{equation*}
   It is also sometimes called the \textbf{average}%
   \index{average!of vectors} or the \textbf{center of mass}%
   \index{center of mass} of the vectors.
 \end{definition}
 
+\begin{proposition}{Solution of the affine subspace fitting problem}{affine-subspace-fitting}
+  Given vectors $\vect{v}_1,\ldots,\vect{v}_m\in\R^n$ and $k\leq n$,
+  the optimal solution to the affine subspace fitting problem can be
+  computed as follows:
+  \begin{enumerate}
+    \item Compute the centroid $\centroid{\vect{v}} =
+      \frac{1}{m}(\vect{v}_1+\ldots+\vect{v}_m)$ of the vectors.
+    \item Let $\vect{w}_i = \vect{v}_i - \centroid{\vect{v}}$, for all
+      $i=1,\ldots,n$.
+    \item Compute the solution $W$ to the (ordinary) subspace fitting
+      problem for $\vect{w}_1,\ldots,\vect{w}_m$, as in
+      Proposition~\ref{subspace-fitting}.
+  \end{enumerate}
+  Then the best solution to the affine subspace problem is
+  $\centroid{v} + W$.
+\end{proposition}
 
+\begin{example}{Affine subspace fitting problem}{affine-subspace-fitting}
+  Consider the following collection of points in $\R^2$:
+  \begin{equation*}
+    \set{
+      \begin{mymatrix}{r} 10 \\ -6 \end{mymatrix},
+      \begin{mymatrix}{r} 2 \\ 10 \end{mymatrix},
+      \begin{mymatrix}{r} 5 \\ -1 \end{mymatrix},
+      \begin{mymatrix}{r} 8 \\ 3 \end{mymatrix},
+      \begin{mymatrix}{r} 2 \\ 5 \end{mymatrix},
+      \begin{mymatrix}{r} 3 \\ 3 \end{mymatrix},
+      \begin{mymatrix}{r} 4 \\ 11 \end{mymatrix},
+      \begin{mymatrix}{r} 10 \\ -1 \end{mymatrix},
+      \begin{mymatrix}{r} 1 \\ 12 \end{mymatrix}
+    }.
+  \end{equation*}
+  Find the 1-dimensional affine subspace that best approximates this
+  collection of points. What is the total squared distance of the
+  points to the subspace?
+\end{example}
 
-
+\begin{solution}
+  We start by computing the centroid:
+  \begin{equation*}
+    \centroid{\vect{v}} =
+    \frac{1}{9}(\vect{v}_1+\ldots+\vect{v}_9)
+    = \frac{1}{9}\begin{mymatrix}{r} 45 \\ 36 \end{mymatrix}
+    = \begin{mymatrix}{r} 5 \\ 4 \end{mymatrix}.
+  \end{equation*}
+  Next, we shift all vectors by $-\centroid{\vect{v}}$ to get a new
+  collection of vectors $\vect{w}_1,\ldots,\vect{w}_9$ centered at the
+  origin.
+  For example,
+  \begin{eqnarray*}
+    \vect{w}_1 ~~=~~ \vect{v}_1 - \centroid{\vect{v}}
+    &=& \begin{mymatrix}{r} 10 \\ -6 \end{mymatrix}
+    - \begin{mymatrix}{r} 5 \\ 4 \end{mymatrix}
+    ~~=~~ \begin{mymatrix}{r} 5 \\ -10 \end{mymatrix},
+    \\
+    \vect{w}_2 ~~=~~ \vect{v}_2 - \centroid{\vect{v}}
+    &=& \begin{mymatrix}{r} 2 \\ 10 \end{mymatrix}
+    - \begin{mymatrix}{r} 5 \\ 4 \end{mymatrix}
+    ~~=~~ \begin{mymatrix}{r} -3 \\ 6 \end{mymatrix},
+  \end{eqnarray*}
+  and so on. We get
+  \begin{equation*}
+    \set{\vect{w}_1,\ldots,\vect{w}_9} =
+    \set{
+      \begin{mymatrix}{r} 5 \\ -10 \end{mymatrix},
+      \begin{mymatrix}{r} -3 \\ 6 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ -5 \end{mymatrix},
+      \begin{mymatrix}{r} 3 \\ -1 \end{mymatrix},
+      \begin{mymatrix}{r} -3 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} -2 \\ -1 \end{mymatrix},
+      \begin{mymatrix}{r} -1 \\ 7 \end{mymatrix},
+      \begin{mymatrix}{r} 5 \\ -5 \end{mymatrix},
+      \begin{mymatrix}{r} -4 \\ 8 \end{mymatrix}
+    }.
+  \end{equation*}
+  Next we, we proceed as in Proposition~\ref{subspace-fitting} to
+  find the best subspace fitting $\vect{w}_1,\ldots,\vect{w}_9$. We have
+  \begin{equation*}
+    A^T = \begin{mymatrix}{rrrrrrrrr}
+      5 & -3 & 0 & 3 & -3 & -2 & -1 & 5 & -4 \\
+      -10 & 6 & -5 & -1 & 1 & -1 & 7 & -5 & 8 \\
+    \end{mymatrix}
+  \end{equation*}
+  and
+  \begin{equation*}
+    B = A^TA = \begin{mymatrix}{rr}
+      98 & -136 \\
+      -136 & 302 \\
+    \end{mymatrix}.
+  \end{equation*}
+  The eigenvalues of $B$ are $\eigenvar_1 = 370$ and $\eigenvar_2 =
+  30$, with corresponding eigenvectors
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{r} 1 \\ -2 \end{mymatrix}
+    \quad\mbox{and}\quad
+    \vect{u}_2 = \begin{mymatrix}{r} 2 \\ 1 \end{mymatrix}
+  \end{equation*}
+  Thus, the best-fitting 1-dimensional subspace for
+  $\vect{w}_1,\ldots,\vect{w}_9$ is $W = \sspan\set{\vect{u}_1}$, and
+  the best-fitting 1-dimensional affine subspace for
+  $\vect{v}_1,\ldots,\vect{v}_9$ is
+  \begin{equation*}
+    \centroid{\vect{v}} + W
+    = \set{\centroid{\vect{v}} + \vect{w} \mid \vect{w}\in W}
+    = \set{\left.\begin{mymatrix}{r} 5 \\ 4 \end{mymatrix} +
+      t\begin{mymatrix}{r} 1 \\ -2 \end{mymatrix} ~\right\vert~ t\in\R}.
+  \end{equation*}
+  Note that this is the equation of a line passing through the
+  centroid $\centroid{\vect{v}}$, and with direction vector
+  $\vect{u}_1$. The points $\vect{v}_1,\ldots,\vect{v}_9$, their
+  centroid, and the affine subspace $\centroid{\vect{v}} + W$ are
+  shown in the following illustration:
+  \begin{equation*}
+    \begin{tikzpicture}[scale=0.2]
+      \draw[thin,->] (-12,0) -- (12,0);
+      \draw[thin,->] (0,-12) -- (0,12);
+      \draw[thin] (0,10) -- (-1,10) node[left] {$10$};
+      \draw[thin] (10,0) -- (10,-1) node[below] {$10$};
+      \draw[thick,blue] (5,4) +(-6,12) -- +(6,-12);
+      \fill[color=blue] (5,4) circle (0.6);
+      \draw[blue, ->] (5,4) +(8,4) node[right,yshift=4] {centroid $\centroid{\vect{v}}$} -- +(0.4,0.2);
+      \fill[color=red] (10, -6) circle (0.3);
+      \fill[color=red] (10, -1) circle (0.3);
+      \fill[color=red] (5, -1) circle (0.3);
+      \fill[color=red] (8, 3) circle (0.3);
+      \fill[color=red] (3, 3) circle (0.3);
+      \fill[color=red] (2, 5) circle (0.3);
+      \fill[color=red] (2, 10) circle (0.3);
+      \fill[color=red] (4, 11) circle (0.3);
+      \fill[color=red] (1, 12) circle (0.3);
+    \end{tikzpicture}
+  \end{equation*}
+  \vspace{-4ex}\par  
+\end{solution}
 
 % ----------------------------------------------------------------------
 \subsection*{Application to U.S. Senate voting data}
@@ -540,40 +670,7 @@ origin, and then solving an ordinary subspace fitting problem.
 \subsection*{CONTINUE HERE}
 
 \begin{equation*}
-  \begin{tikzpicture}[scale=0.33]
-    \draw[thin,->] (-12,0) -- (12,0);
-    \draw[thin,->] (0,-12) -- (0,12);
-    \fill[color=red] (-3,-4) circle (0.18);
-    \fill[color=red] (6,5) circle (0.18);
-    \fill[color=red] (6,11) circle (0.18);
-    \fill[color=red] (-6,-5) circle (0.18);
-    \fill[color=red] (3,4) circle (0.18);
-    \fill[color=red] (-6,-11) circle (0.18);
-    \fill[color=red] (0,-3) circle (0.18);
-    \fill[color=red] (0,3) circle (0.18);
-    \fill[color=red] (0, 0) circle (0.18);
-  \end{tikzpicture}
-\end{equation*}
-
-\begin{equation*}
-  \begin{tikzpicture}[scale=0.5]
-    \draw[thin,->] (-4,0) -- (4,0);
-    \draw[thin,->] (0,-4) -- (0,4);
-    \fill[color=red] (0,1) circle (0.06);
-    \fill[color=red] (1,0) circle (0.06);
-    \fill[color=red] (0,-1) circle (0.06);
-    \fill[color=red] (2, 3) circle (0.06);
-    \fill[color=red] (-2, -3) circle (0.06);
-    \fill[color=red] (0, 1) circle (0.06);
-    \fill[color=red] (1, 0) circle (0.06);
-    \fill[color=red] (2, 3) circle (0.06);
-    \fill[color=red] (-1, 0) circle (0.06);
-  \end{tikzpicture}
-\end{equation*}
-
-
-\begin{equation*}
-  \begin{tikzpicture}
+  \begin{tikzpicture}[baseline=-0.5ex]
     \draw[thin,->] (-4,0) -- (4,0);
     \draw[thin,->] (0,-4) -- (0,4);
     \draw[thick,blue] (-4,-4/1.29) -- (4,4/1.29);
