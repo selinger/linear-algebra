@@ -166,7 +166,7 @@ In the following example, we examine the geometric meaning of linear combination
   Consider the following picture of the vectors $\vect{u}$ and $\vect{v}$
   \begin{center}
     \begin{tikzpicture}[scale=2]
-      \draw[->, thick, blue] (0,0) -- node[above]{$\vect{u}$} (2,1);
+      \draw[->, thick, blue] (0,0) -- node[above,pos=0.45]{$\vect{u}$} (2,1);
       \draw[->, thick, red] (4,1) -- node[above]{$\vect{v}$} (5,0.5);
     \end{tikzpicture}
   \end{center}
@@ -177,11 +177,15 @@ In the following example, we examine the geometric meaning of linear combination
   Both vectors are shown below.
   \begin{center}
     \begin{tikzpicture}[scale=2]
-      \draw[->, thick, blue] (0,0) -- node[below]{$\vect{u}$} (2,1);
+      \fill (1.5,1.25) circle (0.9pt);
+      \fill (4,0) circle (0.9pt);
       \draw[->, thick, red] (2,1) -- node[above]{$\vect{2v}$} (4,0);
-      \draw[->, thick, purple](0,0) -- node[below]{$\vect{u}+2\vect{v}$} (4,0);
       \draw[->, thick, red] (2,1) -- node[above right]{$-\frac{1}{2}\vect{v}$} (1.5, 1.25);
+      \fill (2,1) circle (0.9pt);
+      \draw[->, thick, blue] (0,0) -- node[below,pos=0.55]{$\vect{u}$} (2,1);
+      \draw[->, thick, purple](0,0) -- node[below]{$\vect{u}+2\vect{v}$} (4,0);
       \draw[->, thick, purple](0,0) -- node[above left]{$\vect{u} - \frac{1}{2}\vect{v}$} (1.5,1.25);
+      \fill (0,0) circle (0.9pt);
     \end{tikzpicture}
   \end{center}
 \end{solution}
