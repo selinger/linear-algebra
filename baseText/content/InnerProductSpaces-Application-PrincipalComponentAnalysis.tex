@@ -533,13 +533,13 @@ origin, and then solving an ordinary subspace fitting problem.
   the optimal solution to the affine subspace fitting problem can be
   computed as follows:
   \begin{enumerate}
-    \item Compute the centroid $\centroid{\vect{v}} =
-      \frac{1}{m}(\vect{v}_1+\ldots+\vect{v}_m)$ of the vectors.
-    \item Let $\vect{w}_i = \vect{v}_i - \centroid{\vect{v}}$, for all
-      $i=1,\ldots,n$.
-    \item Compute the solution $W$ to the (ordinary) subspace fitting
-      problem for $\vect{w}_1,\ldots,\vect{w}_m$, as in
-      Proposition~\ref{prop:subspace-fitting}.
+  \item Compute the centroid $\centroid{\vect{v}} =
+    \frac{1}{m}(\vect{v}_1+\ldots+\vect{v}_m)$ of the vectors.
+  \item Let $\vect{w}_i = \vect{v}_i - \centroid{\vect{v}}$, for all
+    $i=1,\ldots,n$.
+  \item Compute the solution $W$ to the (ordinary) subspace fitting
+    problem for $\vect{w}_1,\ldots,\vect{w}_m$, as in
+    Proposition~\ref{prop:subspace-fitting}.
   \end{enumerate}
   Then the best solution to the affine subspace problem is
   $\centroid{v} + W$.
@@ -634,7 +634,7 @@ origin, and then solving an ordinary subspace fitting problem.
     \centroid{\vect{v}} + W
     = \set{\centroid{\vect{v}} + \vect{w} \mid \vect{w}\in W}
     = \set{\left.\begin{mymatrix}{r} 5 \\ 4 \end{mymatrix} +
-      t\begin{mymatrix}{r} 1 \\ -2 \end{mymatrix} ~\right\vert~ t\in\R}.
+        t\begin{mymatrix}{r} 1 \\ -2 \end{mymatrix} ~\right\vert~ t\in\R}.
   \end{equation*}
   Note that this is the equation of a line passing through the
   centroid $\centroid{\vect{v}}$, and with direction vector
@@ -761,107 +761,6 @@ eigenvalue $\eigenvar_1$. In other words, there is a $1$-dimensional
 affine subspace that all $99$ points are pretty close to. If we
 project each senator to this affine subspace, we get the following
 picture:
-\def\senatorsA{
-\dataRx{DeMint}{James}{R}{SC}{-11.856041}{4.315015}{0}
-\dataRy{Cornyn}{John}{R}{TX}{-11.446925}{1.720794}{0}
-\dataRx{Allard}{A.}{R}{CO}{-11.414729}{2.353678}{0}
-\dataR{Ensign}{John}{R}{NV}{-11.329050}{2.598885}{0}
-\dataR{Inhofe}{Jim}{R}{OK}{-11.161216}{4.313828}{0}
-\dataRy{Coburn}{Tom}{R}{OK}{-11.095925}{6.451745}{0}
-\dataRx{Enzi}{Michael}{R}{WY}{-10.786882}{0.794427}{0}
-\dataR{Burr}{Richard}{R}{NC}{-10.716488}{2.508468}{0}
-\dataR{Bunning}{Jim}{R}{KY}{-10.674428}{1.409311}{0}
-\dataR{Chambliss}{Saxby}{R}{GA}{-10.639465}{1.781387}{0}
-\dataR{Isakson}{Johnny}{R}{GA}{-10.548229}{0.724451}{0}
-\dataRy{Sessions}{Jeff}{R}{AL}{-10.510782}{1.437248}{0}
-\dataR{Gregg}{Judd}{R}{NH}{-10.399051}{1.990574}{0}
-\dataRx{McConnell}{Mitch}{R}{KY}{-10.375319}{-1.293286}{0}
-\dataR{Dole}{Elizabeth}{R}{NC}{-10.258572}{1.732827}{0}
-\dataRy{Kyl}{Jon}{R}{AZ}{-10.042393}{2.633156}{0}
-\dataR{Craig}{Larry}{R}{ID}{-9.996687}{-0.803843}{0}
-\dataR{Crapo}{Mike}{R}{ID}{-9.987981}{-0.982945}{0}
-\dataRx{Graham}{Lindsey}{R}{SC}{-9.942743}{2.090629}{0}
-\dataR{Sununu}{John}{R}{NH}{-9.713036}{1.627775}{0}
-\dataRy{Roberts}{Pat}{R}{KS}{-9.682832}{-1.781188}{0}
-\dataR{Martinez}{Mel}{R}{FL}{-9.602384}{1.021259}{0}
-\dataR{Thune}{John}{R}{SD}{-9.412180}{0.719407}{0}
-\dataR{Hutchison}{Kay}{R}{TX}{-9.362272}{-0.132493}{0}
-\dataR{Lott}{Trent}{R}{MS}{-9.333867}{-1.703358}{0}
-\dataRx{Hatch}{Orrin}{R}{UT}{-9.325404}{-1.647643}{0}
-\dataR{Corker}{Bob}{R}{TN}{-9.321180}{1.242018}{0}
-\dataR{Grassley}{Charles}{R}{IA}{-9.274839}{1.535256}{0}
-\dataRy{Vitter}{David}{R}{LA}{-9.268543}{3.508303}{0}
-\dataRx{Alexander}{Lamar}{R}{TN}{-8.869856}{-2.298938}{0}
-\dataRy{Shelby}{Richard}{R}{AL}{-8.861314}{0.147906}{0}
-\dataRx{Bennett}{Robert}{R}{UT}{-8.230363}{-5.265448}{0}
-\dataRy{Cochran}{Thad}{R}{MS}{-8.204309}{-3.833549}{0}
-\dataRx{Bond}{Christopher}{R}{MO}{-7.907050}{-3.678825}{0}
-\dataRy{Brownback}{Samuel}{R}{KS}{-7.841176}{0.525267}{0}
-\dataRx{Warner}{John}{R}{VA}{-7.511971}{-3.669235}{0}
-\dataRy{Murkowski}{Lisa}{R}{AK}{-6.411501}{-5.705682}{0}
-\dataR{Domenici}{Pete}{R}{NM}{-6.367823}{-4.162556}{0}
-\dataRx{Hagel}{Chuck}{R}{NE}{-6.362849}{0.617170}{0}
-\dataR{Stevens}{Ted}{R}{AK}{-6.307838}{-5.264698}{0}
-\dataRy{Lugar}{Richard}{R}{IN}{-5.943015}{-3.919419}{0}
-\dataRx{McCain}{John}{R}{AZ}{-5.888698}{2.418029}{0}
-\dataRx{Coleman}{Norm}{R}{MN}{-4.118805}{-5.477121}{0}
-\dataRy{Voinovich}{George}{R}{OH}{-3.935533}{-0.529552}{0}
-\dataRx{Smith}{Gordon}{R}{OR}{-3.444280}{-2.964483}{0}
-\dataRx{Specter}{Arlen}{R}{PA}{-2.375146}{-4.450506}{0}
-\dataRy{Collins}{Susan}{R}{ME}{-1.718529}{-4.243409}{0}
-\dataDx{Johnson}{Tim}{D}{SD}{-1.400105}{3.328882}{0}
-\dataRx{Snowe}{Olympia}{R}{ME}{0.030079}{-4.052412}{0}
-\dataDx{Nelson}{E.}{D}{NE}{3.212060}{-2.989657}{0}
-\dataDx{Pryor}{Mark}{D}{AR}{6.049862}{-2.370210}{0}
-\dataD{Landrieu}{Mary}{D}{LA}{6.120904}{0.319874}{0}
-\dataD{Bayh}{Evan}{D}{IN}{6.212828}{0.590900}{0}
-\dataDy{McCaskill}{Claire}{D}{MO}{6.236225}{2.501971}{0}
-\dataDy{Baucus}{Max}{D}{MT}{6.707413}{-1.252353}{0}
-\dataD{Tester}{Jon}{D}{MT}{6.755870}{-0.131501}{0}
-\dataD{Byrd}{Robert}{D}{WV}{6.844900}{-0.777788}{0}
-\dataDx{Lieberman}{Joe}{ID}{CT}{6.941566}{-0.879456}{0}
-\dataD{Lincoln}{Blanche}{D}{AR}{7.114470}{-2.537187}{0}
-\dataD{Dodd}{Christopher}{D}{CT}{7.150155}{0.426655}{0}
-\dataDy{Biden}{Joseph}{D}{DE}{7.191390}{1.560474}{0}
-\dataD{Dorgan}{Byron}{D}{ND}{7.226223}{-0.145256}{0}
-\dataDy{Conrad}{Kent}{D}{ND}{7.509217}{-0.834957}{0}
-\dataDx{Salazar}{Ken}{D}{CO}{7.510558}{-2.642954}{0}
-\dataD{Carper}{Thomas}{D}{DE}{7.533684}{-1.016364}{0}
-\dataD{Rockefeller}{Jay}{D}{WV}{7.697069}{0.348496}{0}
-\dataDy{Webb}{James}{D}{VA}{7.909628}{1.263548}{0}
-\dataDx{Nelson}{Bill}{D}{FL}{8.073955}{0.560473}{0}
-\dataD{Kerry}{John}{D}{MA}{8.229978}{0.783072}{0}
-\dataD{Inouye}{Daniel}{D}{HI}{8.254431}{0.128503}{0}
-\dataDy{Kennedy}{Edward}{D}{MA}{8.345720}{-0.125997}{0}
-\dataD{Cantwell}{Maria}{D}{WA}{8.453248}{0.176907}{0}
-\dataD{Feingold}{Russ}{D}{WI}{8.479149}{3.536569}{-0.15}
-\dataDx{Obama}{Barack}{D}{IL}{8.521068}{2.312086}{0}
-\dataDy{Reid}{Harry}{D}{NV}{8.689703}{0.665197}{0.1}
-\dataD{Mikulski}{Barbara}{D}{MD}{8.776657}{0.129926}{0}
-\dataD{Wyden}{Ron}{D}{OR}{8.846398}{-0.272109}{0}
-\dataD{Leahy}{Patrick}{D}{VT}{8.853166}{-0.139810}{0}
-\dataD{Harkin}{Tom}{D}{IA}{8.859139}{0.517913}{0}
-\dataD{Klobuchar}{Amy}{D}{MN}{8.865049}{-0.814168}{0}
-\dataD{Murray}{Patty}{D}{WA}{8.923771}{0.434588}{0}
-\dataD{Akaka}{Daniel}{D}{HI}{8.955400}{-1.058981}{0}
-\dataD{Brown}{Sherrod}{D}{OH}{8.961322}{1.297369}{0}
-\dataDx{Feinstein}{Dianne}{D}{CA}{9.019263}{0.316944}{-0.1}
-\dataD{Bingaman}{Jeff}{D}{NM}{9.063834}{0.227690}{0}
-\dataDy{Schumer}{Charles}{D}{NY}{9.124474}{1.151808}{0.05}
-\dataD{Cardin}{Benjamin}{D}{MD}{9.154539}{0.261731}{0}
-\dataD{Kohl}{Herb}{D}{WI}{9.168217}{0.505190}{0}
-\dataD{Casey}{Bob}{D}{PA}{9.227674}{1.165228}{0}
-\dataD{Stabenow}{Debbie}{D}{MI}{9.259294}{0.701454}{0}
-\dataD{Reed}{John}{D}{RI}{9.328214}{-0.051071}{0}
-\dataDx{Clinton}{Hillary}{D}{NY}{9.345548}{1.498053}{0.1}
-\dataDy{Sanders}{Bernard}{I}{VT}{9.366115}{1.166931}{0.3}
-\dataD{Durbin}{Richard}{D}{IL}{9.450949}{1.549572}{0}
-\dataD{Lautenberg}{Frank}{D}{NJ}{9.458477}{0.934696}{0}
-\dataD{Levin}{Carl}{D}{MI}{9.464507}{0.830443}{0}
-\dataD{Menendez}{Robert}{D}{NJ}{9.493317}{0.599649}{0}
-\dataD{Boxer}{Barbara}{D}{CA}{9.537760}{1.490709}{0}
-\dataDx{Whitehouse}{Sheldon}{D}{RI}{9.675169}{0.398093}{0.3}
-}
 \begin{equation*}
   \def\dataD#1#2#3#4#5#6#7{\fill[blue](#5,0) circle (0.09);}
   \def\dataR#1#2#3#4#5#6#7{\fill[red](#5,0) circle (0.09);}
@@ -875,125 +774,121 @@ picture:
     \draw[red,->,shorten >=0.15cm](#5,0) +(#7,-1) node[below] {\rotatebox{90}{\footnotesize #1, #4}} -- +(0,0);}
   \begin{tikzpicture}[scale=0.75]
     \draw (-12.5,0) -- (10.5,0);
-    \senatorsA
+    \dataRx{DeMint}{James}{R}{SC}{-11.856041}{4.315015}{0}
+    \dataRy{Cornyn}{John}{R}{TX}{-11.446925}{1.720794}{0}
+    \dataRx{Allard}{A.}{R}{CO}{-11.414729}{2.353678}{0}
+    \dataR{Ensign}{John}{R}{NV}{-11.329050}{2.598885}{0}
+    \dataR{Inhofe}{Jim}{R}{OK}{-11.161216}{4.313828}{0}
+    \dataRy{Coburn}{Tom}{R}{OK}{-11.095925}{6.451745}{0}
+    \dataRx{Enzi}{Michael}{R}{WY}{-10.786882}{0.794427}{0}
+    \dataR{Burr}{Richard}{R}{NC}{-10.716488}{2.508468}{0}
+    \dataR{Bunning}{Jim}{R}{KY}{-10.674428}{1.409311}{0}
+    \dataR{Chambliss}{Saxby}{R}{GA}{-10.639465}{1.781387}{0}
+    \dataR{Isakson}{Johnny}{R}{GA}{-10.548229}{0.724451}{0}
+    \dataRy{Sessions}{Jeff}{R}{AL}{-10.510782}{1.437248}{0}
+    \dataR{Gregg}{Judd}{R}{NH}{-10.399051}{1.990574}{0}
+    \dataRx{McConnell}{Mitch}{R}{KY}{-10.375319}{-1.293286}{0}
+    \dataR{Dole}{Elizabeth}{R}{NC}{-10.258572}{1.732827}{0}
+    \dataRy{Kyl}{Jon}{R}{AZ}{-10.042393}{2.633156}{0}
+    \dataR{Craig}{Larry}{R}{ID}{-9.996687}{-0.803843}{0}
+    \dataR{Crapo}{Mike}{R}{ID}{-9.987981}{-0.982945}{0}
+    \dataRx{Graham}{Lindsey}{R}{SC}{-9.942743}{2.090629}{0}
+    \dataR{Sununu}{John}{R}{NH}{-9.713036}{1.627775}{0}
+    \dataRy{Roberts}{Pat}{R}{KS}{-9.682832}{-1.781188}{0}
+    \dataR{Martinez}{Mel}{R}{FL}{-9.602384}{1.021259}{0}
+    \dataR{Thune}{John}{R}{SD}{-9.412180}{0.719407}{0}
+    \dataR{Hutchison}{Kay}{R}{TX}{-9.362272}{-0.132493}{0}
+    \dataR{Lott}{Trent}{R}{MS}{-9.333867}{-1.703358}{0}
+    \dataRx{Hatch}{Orrin}{R}{UT}{-9.325404}{-1.647643}{0}
+    \dataR{Corker}{Bob}{R}{TN}{-9.321180}{1.242018}{0}
+    \dataR{Grassley}{Charles}{R}{IA}{-9.274839}{1.535256}{0}
+    \dataRy{Vitter}{David}{R}{LA}{-9.268543}{3.508303}{0}
+    \dataRx{Alexander}{Lamar}{R}{TN}{-8.869856}{-2.298938}{0}
+    \dataRy{Shelby}{Richard}{R}{AL}{-8.861314}{0.147906}{0}
+    \dataRx{Bennett}{Robert}{R}{UT}{-8.230363}{-5.265448}{0}
+    \dataRy{Cochran}{Thad}{R}{MS}{-8.204309}{-3.833549}{0}
+    \dataRx{Bond}{Christopher}{R}{MO}{-7.907050}{-3.678825}{0}
+    \dataRy{Brownback}{Samuel}{R}{KS}{-7.841176}{0.525267}{0}
+    \dataRx{Warner}{John}{R}{VA}{-7.511971}{-3.669235}{0}
+    \dataRy{Murkowski}{Lisa}{R}{AK}{-6.411501}{-5.705682}{0}
+    \dataR{Domenici}{Pete}{R}{NM}{-6.367823}{-4.162556}{0}
+    \dataRx{Hagel}{Chuck}{R}{NE}{-6.362849}{0.617170}{0}
+    \dataR{Stevens}{Ted}{R}{AK}{-6.307838}{-5.264698}{0}
+    \dataRy{Lugar}{Richard}{R}{IN}{-5.943015}{-3.919419}{0}
+    \dataRx{McCain}{John}{R}{AZ}{-5.888698}{2.418029}{0}
+    \dataRx{Coleman}{Norm}{R}{MN}{-4.118805}{-5.477121}{0}
+    \dataRy{Voinovich}{George}{R}{OH}{-3.935533}{-0.529552}{0}
+    \dataRx{Smith}{Gordon}{R}{OR}{-3.444280}{-2.964483}{0}
+    \dataRx{Specter}{Arlen}{R}{PA}{-2.375146}{-4.450506}{0}
+    \dataRy{Collins}{Susan}{R}{ME}{-1.718529}{-4.243409}{0}
+    \dataDx{Johnson}{Tim}{D}{SD}{-1.400105}{3.328882}{0}
+    \dataRx{Snowe}{Olympia}{R}{ME}{0.030079}{-4.052412}{0}
+    \dataDx{Nelson}{E.}{D}{NE}{3.212060}{-2.989657}{0}
+    \dataDx{Pryor}{Mark}{D}{AR}{6.049862}{-2.370210}{0}
+    \dataD{Landrieu}{Mary}{D}{LA}{6.120904}{0.319874}{0}
+    \dataD{Bayh}{Evan}{D}{IN}{6.212828}{0.590900}{0}
+    \dataDy{McCaskill}{Claire}{D}{MO}{6.236225}{2.501971}{0}
+    \dataDy{Baucus}{Max}{D}{MT}{6.707413}{-1.252353}{0}
+    \dataD{Tester}{Jon}{D}{MT}{6.755870}{-0.131501}{0}
+    \dataD{Byrd}{Robert}{D}{WV}{6.844900}{-0.777788}{0}
+    \dataDx{Lieberman}{Joe}{ID}{CT}{6.941566}{-0.879456}{0}
+    \dataD{Lincoln}{Blanche}{D}{AR}{7.114470}{-2.537187}{0}
+    \dataD{Dodd}{Christopher}{D}{CT}{7.150155}{0.426655}{0}
+    \dataDy{Biden}{Joseph}{D}{DE}{7.191390}{1.560474}{0}
+    \dataD{Dorgan}{Byron}{D}{ND}{7.226223}{-0.145256}{0}
+    \dataDy{Conrad}{Kent}{D}{ND}{7.509217}{-0.834957}{0}
+    \dataDx{Salazar}{Ken}{D}{CO}{7.510558}{-2.642954}{0}
+    \dataD{Carper}{Thomas}{D}{DE}{7.533684}{-1.016364}{0}
+    \dataD{Rockefeller}{Jay}{D}{WV}{7.697069}{0.348496}{0}
+    \dataDy{Webb}{James}{D}{VA}{7.909628}{1.263548}{0}
+    \dataDx{Nelson}{Bill}{D}{FL}{8.073955}{0.560473}{0}
+    \dataD{Kerry}{John}{D}{MA}{8.229978}{0.783072}{0}
+    \dataD{Inouye}{Daniel}{D}{HI}{8.254431}{0.128503}{0}
+    \dataDy{Kennedy}{Edward}{D}{MA}{8.345720}{-0.125997}{0}
+    \dataD{Cantwell}{Maria}{D}{WA}{8.453248}{0.176907}{0}
+    \dataD{Feingold}{Russ}{D}{WI}{8.479149}{3.536569}{-0.15}
+    \dataDx{Obama}{Barack}{D}{IL}{8.521068}{2.312086}{0}
+    \dataDy{Reid}{Harry}{D}{NV}{8.689703}{0.665197}{0.1}
+    \dataD{Mikulski}{Barbara}{D}{MD}{8.776657}{0.129926}{0}
+    \dataD{Wyden}{Ron}{D}{OR}{8.846398}{-0.272109}{0}
+    \dataD{Leahy}{Patrick}{D}{VT}{8.853166}{-0.139810}{0}
+    \dataD{Harkin}{Tom}{D}{IA}{8.859139}{0.517913}{0}
+    \dataD{Klobuchar}{Amy}{D}{MN}{8.865049}{-0.814168}{0}
+    \dataD{Murray}{Patty}{D}{WA}{8.923771}{0.434588}{0}
+    \dataD{Akaka}{Daniel}{D}{HI}{8.955400}{-1.058981}{0}
+    \dataD{Brown}{Sherrod}{D}{OH}{8.961322}{1.297369}{0}
+    \dataDx{Feinstein}{Dianne}{D}{CA}{9.019263}{0.316944}{-0.1}
+    \dataD{Bingaman}{Jeff}{D}{NM}{9.063834}{0.227690}{0}
+    \dataDy{Schumer}{Charles}{D}{NY}{9.124474}{1.151808}{0.05}
+    \dataD{Cardin}{Benjamin}{D}{MD}{9.154539}{0.261731}{0}
+    \dataD{Kohl}{Herb}{D}{WI}{9.168217}{0.505190}{0}
+    \dataD{Casey}{Bob}{D}{PA}{9.227674}{1.165228}{0}
+    \dataD{Stabenow}{Debbie}{D}{MI}{9.259294}{0.701454}{0}
+    \dataD{Reed}{John}{D}{RI}{9.328214}{-0.051071}{0}
+    \dataDx{Clinton}{Hillary}{D}{NY}{9.345548}{1.498053}{0.1}
+    \dataDy{Sanders}{Bernard}{I}{VT}{9.366115}{1.166931}{0.3}
+    \dataD{Durbin}{Richard}{D}{IL}{9.450949}{1.549572}{0}
+    \dataD{Lautenberg}{Frank}{D}{NJ}{9.458477}{0.934696}{0}
+    \dataD{Levin}{Carl}{D}{MI}{9.464507}{0.830443}{0}
+    \dataD{Menendez}{Robert}{D}{NJ}{9.493317}{0.599649}{0}
+    \dataD{Boxer}{Barbara}{D}{CA}{9.537760}{1.490709}{0}
+    \dataDx{Whitehouse}{Sheldon}{D}{RI}{9.675169}{0.398093}{0.3}
     \draw[->] (0,0) +(1,-2) node[right,yshift=-2] {centroid} -- +(0,0);
     \path (-1,4.5) node {2007 U.S. Senate voting data, projection to the first principal component:};
   \end{tikzpicture}
 \end{equation*}
 For convenience, Republican senators have been shown in red and
-Democratic senators in blue. Not all senators have been named, because
-in some areas they are clustered very densely. An interpretation of
-the principal component then immediately suggests itself: it appears
-to be the ``conservative'' vs. ``liberal'' axis. We can use this
-picture to assist in answering questions such as: {\em ``Which party
-  votes more uniformly?''}, {\em ``Which state are the most liberal
-  Republicans from?''}, {\em ``Which state are the most conservative
-  Democrats from?''}, {\em ``Was Obama really a radical?''}, and {\em
-  ``Was McCain really a maverick?''}. 
-
-If we repeat the same calculation for the 2017 senate, we get the
-following picture:
-\def\senatorsB{
-\dataRx{Risch}{James}{R}{ID}{-11.005580}{-0.280661}{-0.1}
-\dataR{Daines}{Steve}{R}{MT}{-10.967825}{-0.207257}{0}
-\dataR{Lankford}{James}{R}{OK}{-10.942378}{-0.196446}{0}
-\dataR{Ernst}{Joni}{R}{IA}{-10.913457}{-0.326658}{0}
-\dataR{Fischer}{Deb}{R}{NE}{-10.910381}{-0.154224}{0}
-\dataRy{Inhofe}{Jim}{R}{OK}{-10.794950}{-0.297634}{0}
-\dataR{Scott}{Tim}{R}{SC}{-10.786803}{-0.087283}{0}
-\dataR{Enzi}{Mike}{R}{WY}{-10.766418}{-0.045151}{0}
-\dataR{Johnson}{Ron}{R}{WI}{-10.755255}{-0.049739}{0}
-\dataR{Toomey}{Patrick}{R}{PA}{-10.749891}{-0.569081}{0}
-\dataR{Crapo}{Mike}{R}{ID}{-10.748843}{0.003722}{0}
-\dataR{Gardner}{Cory}{R}{CO}{-10.719932}{-0.268951}{0}
-\dataR{Kennedy}{John}{R}{LA}{-10.692143}{-0.209493}{0}
-\dataR{Flake}{Jeff}{R}{AZ}{-10.615803}{-1.106815}{0}
-\dataR{Hoeven}{John}{R}{ND}{-10.600127}{-0.072623}{0}
-\dataR{Cassidy}{Bill}{R}{LA}{-10.598818}{-0.002070}{0}
-\dataR{Sullivan}{Dan}{R}{AK}{-10.596058}{-0.382321}{0}
-\dataRx{Rubio}{Marco}{R}{FL}{-10.588703}{-0.868620}{0}
-\dataR{Barrasso}{John}{R}{WY}{-10.584780}{-0.044905}{0}
-\dataR{Perdue}{David}{R}{GA}{-10.580328}{-0.070316}{0}
-\dataR{Cotton}{Tom}{R}{AR}{-10.536647}{0.114383}{0}
-\dataR{Thune}{John}{R}{SD}{-10.530769}{-0.008701}{0}
-\dataR{Wicker}{Roger}{R}{MS}{-10.524726}{0.028472}{0}
-\dataR{Cornyn}{John}{R}{TX}{-10.513419}{0.176439}{0}
-\dataR{Roberts}{Pat}{R}{KS}{-10.513419}{0.176439}{0}
-\dataR{Rounds}{Mike}{R}{SD}{-10.513419}{0.176439}{0}
-\dataR{Shelby}{Richard}{R}{AL}{-10.501896}{0.078644}{0}
-\dataR{Grassley}{Charles}{R}{IA}{-10.458537}{-0.074556}{0}
-\dataR{Blunt}{Roy}{R}{MO}{-10.456091}{0.188385}{0}
-\dataR{Hatch}{Orrin}{R}{UT}{-10.427457}{0.182143}{0}
-\dataR{Cochran}{Thad}{R}{MS}{-10.419903}{0.171741}{0}
-\dataR{Boozman}{John}{R}{AR}{-10.416449}{0.049056}{0}
-\dataR{Sasse}{Ben}{R}{NE}{-10.384081}{-0.769970}{0}
-\dataR{Moran}{Jerry}{R}{KS}{-10.354821}{-0.478472}{0}
-\dataRy{Cruz}{Ted}{R}{TX}{-10.337513}{-0.118032}{0}
-\dataRx{McConnell}{Mitch}{R}{KY}{-10.328164}{0.019018}{0.2}
-\dataR{Burr}{Richard}{R}{NC}{-10.281722}{-0.434053}{0}
-\dataR{Lee}{Mike}{R}{UT}{-10.250033}{-1.332033}{0}
-\dataR{Corker}{Bob}{R}{TN}{-10.181143}{-0.353619}{0}
-\dataR{Tillis}{Thomas}{R}{NC}{-10.164341}{0.190998}{0}
-\dataR{Alexander}{Lamar}{R}{TN}{-10.140983}{-0.605518}{0}
-\dataR{Graham}{Lindsey}{R}{SC}{-10.118998}{-0.308972}{0}
-\dataR{Young}{Todd}{R}{IN}{-10.114119}{0.195154}{0}
-\dataR{Capito}{Shelley}{R}{WV}{-10.092079}{-0.013747}{0.2}
-\dataRy{Portman}{Rob}{R}{OH}{-9.980981}{0.307914}{0.1}
-\dataRx{Paul}{Rand}{R}{KY}{-9.083156}{-2.311221}{0}
-\dataRy{McCain}{John}{R}{AZ}{-8.941401}{-1.537122}{0}
-\dataR{Murkowski}{Lisa}{R}{AK}{-8.929094}{0.087773}{0}
-\dataRx{Heller}{Dean}{R}{NV}{-8.607091}{-1.195798}{0}
-\dataRy{Isakson}{John}{R}{GA}{-7.825936}{-2.375299}{0}
-\dataRx{Collins}{Susan}{R}{ME}{-7.218464}{1.349259}{0}
-\dataDx{Manchin}{Joe}{D}{WV}{4.244339}{4.985463}{0}
-\dataDy{Heitkamp}{Heidi}{D}{ND}{4.699457}{6.230765}{0}
-\dataDx{Donnelly}{Joe}{D}{IN}{6.294362}{5.372277}{0}
-\dataDy{King}{Angus}{I}{ME}{6.567064}{5.137923}{0}
-\dataDx{Warner}{Mark}{D}{VA}{7.805257}{5.268461}{0}
-\dataDy{McCaskill}{Claire}{D}{MO}{8.515402}{4.257321}{0}
-\dataDx{Feinstein}{Dianne}{D}{CA}{9.195030}{1.541150}{0}
-\dataDy{Tester}{Jon}{D}{MT}{9.298819}{4.338771}{0}
-\dataD{Nelson}{Bill}{D}{FL}{9.415968}{3.904212}{0}
-\dataDx{Bennet}{Michael}{D}{CO}{9.648520}{3.741099}{0}
-\dataDy{Carper}{Thomas}{D}{DE}{9.787069}{3.051711}{0}
-\dataD{Coons}{Christopher}{D}{DE}{9.967535}{2.835454}{0}
-\dataDx{Kaine}{Timothy}{D}{VA}{10.380048}{2.820041}{0}
-\dataDy{Cortez Masto}{Catherine}{D}{NV}{10.700058}{0.650442}{0}
-\dataD{Menendez}{Robert}{D}{NJ}{10.833270}{-0.138012}{0}
-\dataD{Shaheen}{Jeanne}{D}{NH}{10.932457}{2.780893}{0}
-\dataDx{Durbin}{Richard}{D}{IL}{11.134223}{0.337495}{0}
-\dataD{Hassan}{Maggie}{D}{NH}{11.175503}{2.348138}{0}
-\dataDy{Klobuchar}{Amy}{D}{MN}{11.227181}{2.483025}{0}
-\dataD{Casey}{Bob}{D}{PA}{11.259986}{2.362439}{0}
-\dataD{Murphy}{Christopher}{D}{CT}{11.262853}{1.643260}{0}
-\dataD{Stabenow}{Debbie}{D}{MI}{11.331051}{0.981505}{0}
-\dataD{Peters}{Gary}{D}{MI}{11.377813}{1.008805}{0}
-\dataD{Schatz}{Brian}{D}{HI}{11.523780}{-0.180224}{0}
-\dataDx{Cardin}{Ben}{D}{MD}{11.530545}{1.600627}{0}
-\dataD{Leahy}{Patrick}{D}{VT}{11.666722}{0.850718}{0}
-\dataD{Heinrich}{Martin}{D}{NM}{11.677727}{-0.658323}{0}
-\dataD{Brown}{Sherrod}{D}{OH}{11.710129}{0.528127}{0}
-\dataD{Udall}{Tom}{D}{NM}{11.799501}{-1.446553}{0}
-\dataD{Cantwell}{Maria}{D}{WA}{11.871698}{0.994751}{0}
-\dataD{Reed}{John}{D}{RI}{11.903017}{-0.135526}{0}
-\dataDy{Duckworth}{Tammy}{D}{IL}{11.912992}{-1.455125}{0}
-\dataD{Baldwin}{Tammy}{D}{WI}{12.006094}{-0.147581}{0}
-\dataD{Hirono}{Mazie}{D}{HI}{12.012566}{-1.222498}{0}
-\dataDx{Franken}{Al}{D}{MN}{12.048895}{0.607727}{0}
-\dataD{Murray}{Patty}{D}{WA}{12.128326}{0.434861}{0}
-\dataD{Whitehouse}{Sheldon}{D}{RI}{12.129382}{-0.638112}{0}
-\dataD{Van Hollen}{Chris}{D}{MD}{12.330587}{-0.284590}{0}
-\dataDy{Schumer}{Charles}{D}{NY}{12.392888}{-1.562009}{0}
-\dataD{Blumenthal}{Richard}{D}{CT}{12.409939}{-2.289658}{0}
-\dataD{Wyden}{Ron}{D}{OR}{12.495539}{-2.739850}{0}
-\dataD{Markey}{Edward}{D}{MA}{12.823912}{-4.803898}{0}
-\dataDx{Sanders}{Bernie}{I}{VT}{12.866844}{-7.239669}{0}
-\dataD{Merkley}{Jeff}{D}{OR}{12.972657}{-5.312050}{0}
-\dataD{Harris}{Kamala}{D}{CA}{13.017672}{-6.143469}{0}
-\dataD{Booker}{Cory}{D}{NJ}{13.163851}{-6.942933}{0}
-\dataDy{Gillibrand}{Kirsten}{D}{NY}{13.288360}{-8.552288}{0}
-\dataDx{Warren}{Elizabeth}{D}{MA}{13.328440}{-7.543715}{0}
-}
+Democratic and independent senators in blue. Not all senators have
+been named, because in some areas they are clustered very densely. An
+interpretation of the principal component then immediately suggests
+itself: it appears to be the ``conservative'' vs. ``liberal'' axis. We
+can use this picture to assist in answering questions such as: {\em
+  ``Which party votes more uniformly?''}, {\em ``Which state are the
+  most liberal Republicans from?''}, {\em ``Which state are the most
+  conservative Democrats from?''}, {\em ``Was Obama really a
+  radical?''}, and {\em ``Was McCain really a maverick?''}.  If we
+repeat the same calculation for the 2017 senate, we get the following
+picture:
 \begin{equation*}
   \def\dataD#1#2#3#4#5#6#7{\fill[blue](#5,0) circle (0.104);}
   \def\dataR#1#2#3#4#5#6#7{\fill[red](#5,0) circle (0.104);}
@@ -1007,7 +902,105 @@ following picture:
     \draw[red,->,shorten >=0.15cm](#5,0) +(#7,-1) node[below] {\rotatebox{90}{\footnotesize #1, #4}} -- +(0,0);}
   \begin{tikzpicture}[scale=0.651]
     \draw (-12,0) -- (14.5,0);
-    \senatorsB
+    \dataRx{Risch}{James}{R}{ID}{-11.005580}{-0.280661}{-0.1}
+    \dataR{Daines}{Steve}{R}{MT}{-10.967825}{-0.207257}{0}
+    \dataR{Lankford}{James}{R}{OK}{-10.942378}{-0.196446}{0}
+    \dataR{Ernst}{Joni}{R}{IA}{-10.913457}{-0.326658}{0}
+    \dataR{Fischer}{Deb}{R}{NE}{-10.910381}{-0.154224}{0}
+    \dataRy{Inhofe}{Jim}{R}{OK}{-10.794950}{-0.297634}{0}
+    \dataR{Scott}{Tim}{R}{SC}{-10.786803}{-0.087283}{0}
+    \dataR{Enzi}{Mike}{R}{WY}{-10.766418}{-0.045151}{0}
+    \dataR{Johnson}{Ron}{R}{WI}{-10.755255}{-0.049739}{0}
+    \dataR{Toomey}{Patrick}{R}{PA}{-10.749891}{-0.569081}{0}
+    \dataR{Crapo}{Mike}{R}{ID}{-10.748843}{0.003722}{0}
+    \dataR{Gardner}{Cory}{R}{CO}{-10.719932}{-0.268951}{0}
+    \dataR{Kennedy}{John}{R}{LA}{-10.692143}{-0.209493}{0}
+    \dataR{Flake}{Jeff}{R}{AZ}{-10.615803}{-1.106815}{0}
+    \dataR{Hoeven}{John}{R}{ND}{-10.600127}{-0.072623}{0}
+    \dataR{Cassidy}{Bill}{R}{LA}{-10.598818}{-0.002070}{0}
+    \dataR{Sullivan}{Dan}{R}{AK}{-10.596058}{-0.382321}{0}
+    \dataRx{Rubio}{Marco}{R}{FL}{-10.588703}{-0.868620}{0}
+    \dataR{Barrasso}{John}{R}{WY}{-10.584780}{-0.044905}{0}
+    \dataR{Perdue}{David}{R}{GA}{-10.580328}{-0.070316}{0}
+    \dataR{Cotton}{Tom}{R}{AR}{-10.536647}{0.114383}{0}
+    \dataR{Thune}{John}{R}{SD}{-10.530769}{-0.008701}{0}
+    \dataR{Wicker}{Roger}{R}{MS}{-10.524726}{0.028472}{0}
+    \dataR{Cornyn}{John}{R}{TX}{-10.513419}{0.176439}{0}
+    \dataR{Roberts}{Pat}{R}{KS}{-10.513419}{0.176439}{0}
+    \dataR{Rounds}{Mike}{R}{SD}{-10.513419}{0.176439}{0}
+    \dataR{Shelby}{Richard}{R}{AL}{-10.501896}{0.078644}{0}
+    \dataR{Grassley}{Charles}{R}{IA}{-10.458537}{-0.074556}{0}
+    \dataR{Blunt}{Roy}{R}{MO}{-10.456091}{0.188385}{0}
+    \dataR{Hatch}{Orrin}{R}{UT}{-10.427457}{0.182143}{0}
+    \dataR{Cochran}{Thad}{R}{MS}{-10.419903}{0.171741}{0}
+    \dataR{Boozman}{John}{R}{AR}{-10.416449}{0.049056}{0}
+    \dataR{Sasse}{Ben}{R}{NE}{-10.384081}{-0.769970}{0}
+    \dataR{Moran}{Jerry}{R}{KS}{-10.354821}{-0.478472}{0}
+    \dataRy{Cruz}{Ted}{R}{TX}{-10.337513}{-0.118032}{0}
+    \dataRx{McConnell}{Mitch}{R}{KY}{-10.328164}{0.019018}{0.2}
+    \dataR{Burr}{Richard}{R}{NC}{-10.281722}{-0.434053}{0}
+    \dataR{Lee}{Mike}{R}{UT}{-10.250033}{-1.332033}{0}
+    \dataR{Corker}{Bob}{R}{TN}{-10.181143}{-0.353619}{0}
+    \dataR{Tillis}{Thomas}{R}{NC}{-10.164341}{0.190998}{0}
+    \dataR{Alexander}{Lamar}{R}{TN}{-10.140983}{-0.605518}{0}
+    \dataR{Graham}{Lindsey}{R}{SC}{-10.118998}{-0.308972}{0}
+    \dataR{Young}{Todd}{R}{IN}{-10.114119}{0.195154}{0}
+    \dataR{Capito}{Shelley}{R}{WV}{-10.092079}{-0.013747}{0.2}
+    \dataRy{Portman}{Rob}{R}{OH}{-9.980981}{0.307914}{0.1}
+    \dataRx{Paul}{Rand}{R}{KY}{-9.083156}{-2.311221}{0}
+    \dataRy{McCain}{John}{R}{AZ}{-8.941401}{-1.537122}{0}
+    \dataR{Murkowski}{Lisa}{R}{AK}{-8.929094}{0.087773}{0}
+    \dataRx{Heller}{Dean}{R}{NV}{-8.607091}{-1.195798}{0}
+    \dataRy{Isakson}{John}{R}{GA}{-7.825936}{-2.375299}{0}
+    \dataRx{Collins}{Susan}{R}{ME}{-7.218464}{1.349259}{0}
+    \dataDx{Manchin}{Joe}{D}{WV}{4.244339}{4.985463}{0}
+    \dataDy{Heitkamp}{Heidi}{D}{ND}{4.699457}{6.230765}{0}
+    \dataDx{Donnelly}{Joe}{D}{IN}{6.294362}{5.372277}{0}
+    \dataDy{King}{Angus}{I}{ME}{6.567064}{5.137923}{0}
+    \dataDx{Warner}{Mark}{D}{VA}{7.805257}{5.268461}{0}
+    \dataDy{McCaskill}{Claire}{D}{MO}{8.515402}{4.257321}{0}
+    \dataDx{Feinstein}{Dianne}{D}{CA}{9.195030}{1.541150}{0}
+    \dataDy{Tester}{Jon}{D}{MT}{9.298819}{4.338771}{0}
+    \dataD{Nelson}{Bill}{D}{FL}{9.415968}{3.904212}{0}
+    \dataDx{Bennet}{Michael}{D}{CO}{9.648520}{3.741099}{0}
+    \dataDy{Carper}{Thomas}{D}{DE}{9.787069}{3.051711}{0}
+    \dataD{Coons}{Christopher}{D}{DE}{9.967535}{2.835454}{0}
+    \dataDx{Kaine}{Timothy}{D}{VA}{10.380048}{2.820041}{0}
+    \dataDy{Cortez Masto}{Catherine}{D}{NV}{10.700058}{0.650442}{0}
+    \dataD{Menendez}{Robert}{D}{NJ}{10.833270}{-0.138012}{0}
+    \dataD{Shaheen}{Jeanne}{D}{NH}{10.932457}{2.780893}{0}
+    \dataDx{Durbin}{Richard}{D}{IL}{11.134223}{0.337495}{0}
+    \dataD{Hassan}{Maggie}{D}{NH}{11.175503}{2.348138}{0}
+    \dataDy{Klobuchar}{Amy}{D}{MN}{11.227181}{2.483025}{0}
+    \dataD{Casey}{Bob}{D}{PA}{11.259986}{2.362439}{0}
+    \dataD{Murphy}{Christopher}{D}{CT}{11.262853}{1.643260}{0}
+    \dataD{Stabenow}{Debbie}{D}{MI}{11.331051}{0.981505}{0}
+    \dataD{Peters}{Gary}{D}{MI}{11.377813}{1.008805}{0}
+    \dataD{Schatz}{Brian}{D}{HI}{11.523780}{-0.180224}{0}
+    \dataDx{Cardin}{Ben}{D}{MD}{11.530545}{1.600627}{0}
+    \dataD{Leahy}{Patrick}{D}{VT}{11.666722}{0.850718}{0}
+    \dataD{Heinrich}{Martin}{D}{NM}{11.677727}{-0.658323}{0}
+    \dataD{Brown}{Sherrod}{D}{OH}{11.710129}{0.528127}{0}
+    \dataD{Udall}{Tom}{D}{NM}{11.799501}{-1.446553}{0}
+    \dataD{Cantwell}{Maria}{D}{WA}{11.871698}{0.994751}{0}
+    \dataD{Reed}{John}{D}{RI}{11.903017}{-0.135526}{0}
+    \dataDy{Duckworth}{Tammy}{D}{IL}{11.912992}{-1.455125}{0}
+    \dataD{Baldwin}{Tammy}{D}{WI}{12.006094}{-0.147581}{0}
+    \dataD{Hirono}{Mazie}{D}{HI}{12.012566}{-1.222498}{0}
+    \dataDx{Franken}{Al}{D}{MN}{12.048895}{0.607727}{0}
+    \dataD{Murray}{Patty}{D}{WA}{12.128326}{0.434861}{0}
+    \dataD{Whitehouse}{Sheldon}{D}{RI}{12.129382}{-0.638112}{0}
+    \dataD{Van Hollen}{Chris}{D}{MD}{12.330587}{-0.284590}{0}
+    \dataDy{Schumer}{Charles}{D}{NY}{12.392888}{-1.562009}{0}
+    \dataD{Blumenthal}{Richard}{D}{CT}{12.409939}{-2.289658}{0}
+    \dataD{Wyden}{Ron}{D}{OR}{12.495539}{-2.739850}{0}
+    \dataD{Markey}{Edward}{D}{MA}{12.823912}{-4.803898}{0}
+    \dataDx{Sanders}{Bernie}{I}{VT}{12.866844}{-7.239669}{0}
+    \dataD{Merkley}{Jeff}{D}{OR}{12.972657}{-5.312050}{0}
+    \dataD{Harris}{Kamala}{D}{CA}{13.017672}{-6.143469}{0}
+    \dataD{Booker}{Cory}{D}{NJ}{13.163851}{-6.942933}{0}
+    \dataDy{Gillibrand}{Kirsten}{D}{NY}{13.288360}{-8.552288}{0}
+    \dataDx{Warren}{Elizabeth}{D}{MA}{13.328440}{-7.543715}{0}
     \draw[->] (0,0) +(1,-2) node[right,yshift=-2] {centroid} -- +(0,0);
     \path (1.25,5) node {2017 U.S. Senate voting data, projection to the first principal component:};
   \end{tikzpicture}
@@ -1017,107 +1010,6 @@ We can use this to help answer questions such as {\em ``Has the senate
 
 If we instead project the data onto the first two principal
 components, we get the following picture for the 2007 data:
-\def\senatorsA{
-\dataRx{DeMint}{James}{R}{SC}{-11.856041}{4.315015}{0}
-\dataRx{Cornyn}{John}{R}{TX}{-11.446925}{1.720794}{-1.5}
-\dataRx{Allard}{A.}{R}{CO}{-11.414729}{2.353678}{-1}
-\dataR{Ensign}{John}{R}{NV}{-11.329050}{2.598885}{0}
-\dataR{Inhofe}{Jim}{R}{OK}{-11.161216}{4.313828}{0}
-\dataRx{Coburn}{Tom}{R}{OK}{-11.095925}{6.451745}{0}
-\dataR{Enzi}{Michael}{R}{WY}{-10.786882}{0.794427}{0}
-\dataR{Burr}{Richard}{R}{NC}{-10.716488}{2.508468}{0}
-\dataR{Bunning}{Jim}{R}{KY}{-10.674428}{1.409311}{0}
-\dataR{Chambliss}{Saxby}{R}{GA}{-10.639465}{1.781387}{0}
-\dataR{Isakson}{Johnny}{R}{GA}{-10.548229}{0.724451}{0}
-\dataRx{Sessions}{Jeff}{R}{AL}{-10.510782}{1.437248}{0}
-\dataR{Gregg}{Judd}{R}{NH}{-10.399051}{1.990574}{0}
-\dataRx{McConnell}{Mitch}{R}{KY}{-10.375319}{-1.293286}{-3}
-\dataR{Dole}{Elizabeth}{R}{NC}{-10.258572}{1.732827}{0}
-\dataR{Kyl}{Jon}{R}{AZ}{-10.042393}{2.633156}{0}
-\dataR{Craig}{Larry}{R}{ID}{-9.996687}{-0.803843}{0}
-\dataR{Crapo}{Mike}{R}{ID}{-9.987981}{-0.982945}{0}
-\dataRx{Graham}{Lindsey}{R}{SC}{-9.942743}{2.090629}{0}
-\dataR{Sununu}{John}{R}{NH}{-9.713036}{1.627775}{0}
-\dataR{Roberts}{Pat}{R}{KS}{-9.682832}{-1.781188}{0}
-\dataR{Martinez}{Mel}{R}{FL}{-9.602384}{1.021259}{0}
-\dataR{Thune}{John}{R}{SD}{-9.412180}{0.719407}{0}
-\dataR{Hutchison}{Kay}{R}{TX}{-9.362272}{-0.132493}{0}
-\dataR{Lott}{Trent}{R}{MS}{-9.333867}{-1.703358}{0}
-\dataR{Hatch}{Orrin}{R}{UT}{-9.325404}{-1.647643}{0}
-\dataR{Corker}{Bob}{R}{TN}{-9.321180}{1.242018}{0}
-\dataR{Grassley}{Charles}{R}{IA}{-9.274839}{1.535256}{0}
-\dataRx{Vitter}{David}{R}{LA}{-9.268543}{3.508303}{0}
-\dataR{Alexander}{Lamar}{R}{TN}{-8.869856}{-2.298938}{0}
-\dataRx{Shelby}{Richard}{R}{AL}{-8.861314}{0.147906}{0}
-\dataRx{Bennett}{Robert}{R}{UT}{-8.230363}{-5.265448}{-0.3}
-\dataRx{Cochran}{Thad}{R}{MS}{-8.204309}{-3.833549}{0}
-\dataRx{Bond}{Christopher}{R}{MO}{-7.907050}{-3.678825}{0}
-\dataRx{Brownback}{Samuel}{R}{KS}{-7.841176}{0.525267}{0}
-\dataRx{Warner}{John}{R}{VA}{-7.511971}{-3.669235}{0}
-\dataRx{Murkowski}{Lisa}{R}{AK}{-6.411501}{-5.705682}{-0.3}
-\dataR{Domenici}{Pete}{R}{NM}{-6.367823}{-4.162556}{0}
-\dataRx{Hagel}{Chuck}{R}{NE}{-6.362849}{0.617170}{0}
-\dataR{Stevens}{Ted}{R}{AK}{-6.307838}{-5.264698}{0}
-\dataRx{Lugar}{Richard}{R}{IN}{-5.943015}{-3.919419}{0}
-\dataRx{McCain}{John}{R}{AZ}{-5.888698}{2.418029}{0}
-\dataRx{Coleman}{Norm}{R}{MN}{-4.118805}{-5.477121}{0}
-\dataRx{Voinovich}{George}{R}{OH}{-3.935533}{-0.529552}{0}
-\dataRx{Smith}{Gordon}{R}{OR}{-3.444280}{-2.964483}{0}
-\dataRx{Specter}{Arlen}{R}{PA}{-2.375146}{-4.450506}{0}
-\dataRx{Collins}{Susan}{R}{ME}{-1.718529}{-4.243409}{0}
-\dataDx{Johnson}{Tim}{D}{SD}{-1.400105}{3.328882}{0}
-\dataRx{Snowe}{Olympia}{R}{ME}{0.030079}{-4.052412}{-0.5}
-\dataDx{Nelson}{E.}{D}{NE}{3.212060}{-2.989657}{0}
-\dataDx{Pryor}{Mark}{D}{AR}{6.049862}{-2.370210}{-0.3}
-\dataD{Landrieu}{Mary}{D}{LA}{6.120904}{0.319874}{0}
-\dataDx{Bayh}{Evan}{D}{IN}{6.212828}{0.590900}{-0.5}
-\dataDx{McCaskill}{Claire}{D}{MO}{6.236225}{2.501971}{0}
-\dataDx{Baucus}{Max}{D}{MT}{6.707413}{-1.252353}{-0.2}
-\dataD{Tester}{Jon}{D}{MT}{6.755870}{-0.131501}{0}
-\dataD{Byrd}{Robert}{D}{WV}{6.844900}{-0.777788}{0}
-\dataDx{Lieberman}{Joe}{ID}{CT}{6.941566}{-0.879456}{-0.05}
-\dataD{Lincoln}{Blanche}{D}{AR}{7.114470}{-2.537187}{0}
-\dataD{Dodd}{Christopher}{D}{CT}{7.150155}{0.426655}{0}
-\dataDx{Biden}{Joseph}{D}{DE}{7.191390}{1.560474}{0.2}
-\dataD{Dorgan}{Byron}{D}{ND}{7.226223}{-0.145256}{0}
-\dataD{Conrad}{Kent}{D}{ND}{7.509217}{-0.834957}{0}
-\dataDx{Salazar}{Ken}{D}{CO}{7.510558}{-2.642954}{3.3}
-\dataD{Carper}{Thomas}{D}{DE}{7.533684}{-1.016364}{0}
-\dataD{Rockefeller}{Jay}{D}{WV}{7.697069}{0.348496}{0}
-\dataD{Webb}{James}{D}{VA}{7.909628}{1.263548}{0}
-\dataD{Nelson}{Bill}{D}{FL}{8.073955}{0.560473}{0}
-\dataD{Kerry}{John}{D}{MA}{8.229978}{0.783072}{0}
-\dataD{Inouye}{Daniel}{D}{HI}{8.254431}{0.128503}{0}
-\dataD{Kennedy}{Edward}{D}{MA}{8.345720}{-0.125997}{0}
-\dataD{Cantwell}{Maria}{D}{WA}{8.453248}{0.176907}{0}
-\dataD{Feingold}{Russ}{D}{WI}{8.479149}{3.536569}{-0.15}
-\dataDx{Obama}{Barack}{D}{IL}{8.521068}{2.312086}{-0.3}
-\dataDx{Reid}{Harry}{D}{NV}{8.689703}{0.665197}{-0.8}
-\dataD{Mikulski}{Barbara}{D}{MD}{8.776657}{0.129926}{0}
-\dataD{Wyden}{Ron}{D}{OR}{8.846398}{-0.272109}{0}
-\dataD{Leahy}{Patrick}{D}{VT}{8.853166}{-0.139810}{0}
-\dataD{Harkin}{Tom}{D}{IA}{8.859139}{0.517913}{0}
-\dataD{Klobuchar}{Amy}{D}{MN}{8.865049}{-0.814168}{0}
-\dataD{Murray}{Patty}{D}{WA}{8.923771}{0.434588}{0}
-\dataD{Akaka}{Daniel}{D}{HI}{8.955400}{-1.058981}{0}
-\dataD{Brown}{Sherrod}{D}{OH}{8.961322}{1.297369}{0}
-\dataDx{Feinstein}{Dianne}{D}{CA}{9.019263}{0.316944}{-0.1}
-\dataD{Bingaman}{Jeff}{D}{NM}{9.063834}{0.227690}{0}
-\dataDx{Schumer}{Charles}{D}{NY}{9.124474}{1.151808}{0.2}
-\dataD{Cardin}{Benjamin}{D}{MD}{9.154539}{0.261731}{0}
-\dataD{Kohl}{Herb}{D}{WI}{9.168217}{0.505190}{0}
-\dataD{Casey}{Bob}{D}{PA}{9.227674}{1.165228}{0}
-\dataD{Stabenow}{Debbie}{D}{MI}{9.259294}{0.701454}{0}
-\dataD{Reed}{John}{D}{RI}{9.328214}{-0.051071}{0}
-\dataDx{Clinton}{Hillary}{D}{NY}{9.345548}{1.498053}{0.8}
-\dataDx{Sanders}{Bernard}{I}{VT}{9.366115}{1.166931}{1.2}
-\dataD{Durbin}{Richard}{D}{IL}{9.450949}{1.549572}{0}
-\dataD{Lautenberg}{Frank}{D}{NJ}{9.458477}{0.934696}{0}
-\dataD{Levin}{Carl}{D}{MI}{9.464507}{0.830443}{0}
-\dataD{Menendez}{Robert}{D}{NJ}{9.493317}{0.599649}{0}
-\dataD{Boxer}{Barbara}{D}{CA}{9.537760}{1.490709}{0}
-\dataDx{Whitehouse}{Sheldon}{D}{RI}{9.675169}{0.398093}{1.3}
-}
 \begin{equation*}
   \def\dataD#1#2#3#4#5#6#7{\fill[blue](#5,#6) circle (0.09);}
   \def\dataR#1#2#3#4#5#6#7{\fill[red](#5,#6) circle (0.09);}
@@ -1132,7 +1024,105 @@ components, we get the following picture for the 2007 data:
   \begin{tikzpicture}[scale=0.71]
     \draw (-12.5,0) -- (10.5,0);
     \draw (0,-6) -- (0,8);
-    \senatorsA
+    \dataRx{DeMint}{James}{R}{SC}{-11.856041}{4.315015}{0}
+    \dataRx{Cornyn}{John}{R}{TX}{-11.446925}{1.720794}{-1.5}
+    \dataRx{Allard}{A.}{R}{CO}{-11.414729}{2.353678}{-1}
+    \dataR{Ensign}{John}{R}{NV}{-11.329050}{2.598885}{0}
+    \dataR{Inhofe}{Jim}{R}{OK}{-11.161216}{4.313828}{0}
+    \dataRx{Coburn}{Tom}{R}{OK}{-11.095925}{6.451745}{0}
+    \dataR{Enzi}{Michael}{R}{WY}{-10.786882}{0.794427}{0}
+    \dataR{Burr}{Richard}{R}{NC}{-10.716488}{2.508468}{0}
+    \dataR{Bunning}{Jim}{R}{KY}{-10.674428}{1.409311}{0}
+    \dataR{Chambliss}{Saxby}{R}{GA}{-10.639465}{1.781387}{0}
+    \dataR{Isakson}{Johnny}{R}{GA}{-10.548229}{0.724451}{0}
+    \dataRx{Sessions}{Jeff}{R}{AL}{-10.510782}{1.437248}{0}
+    \dataR{Gregg}{Judd}{R}{NH}{-10.399051}{1.990574}{0}
+    \dataRx{McConnell}{Mitch}{R}{KY}{-10.375319}{-1.293286}{-3}
+    \dataR{Dole}{Elizabeth}{R}{NC}{-10.258572}{1.732827}{0}
+    \dataR{Kyl}{Jon}{R}{AZ}{-10.042393}{2.633156}{0}
+    \dataR{Craig}{Larry}{R}{ID}{-9.996687}{-0.803843}{0}
+    \dataR{Crapo}{Mike}{R}{ID}{-9.987981}{-0.982945}{0}
+    \dataRx{Graham}{Lindsey}{R}{SC}{-9.942743}{2.090629}{0}
+    \dataR{Sununu}{John}{R}{NH}{-9.713036}{1.627775}{0}
+    \dataR{Roberts}{Pat}{R}{KS}{-9.682832}{-1.781188}{0}
+    \dataR{Martinez}{Mel}{R}{FL}{-9.602384}{1.021259}{0}
+    \dataR{Thune}{John}{R}{SD}{-9.412180}{0.719407}{0}
+    \dataR{Hutchison}{Kay}{R}{TX}{-9.362272}{-0.132493}{0}
+    \dataR{Lott}{Trent}{R}{MS}{-9.333867}{-1.703358}{0}
+    \dataR{Hatch}{Orrin}{R}{UT}{-9.325404}{-1.647643}{0}
+    \dataR{Corker}{Bob}{R}{TN}{-9.321180}{1.242018}{0}
+    \dataR{Grassley}{Charles}{R}{IA}{-9.274839}{1.535256}{0}
+    \dataRx{Vitter}{David}{R}{LA}{-9.268543}{3.508303}{0}
+    \dataR{Alexander}{Lamar}{R}{TN}{-8.869856}{-2.298938}{0}
+    \dataRx{Shelby}{Richard}{R}{AL}{-8.861314}{0.147906}{0}
+    \dataRx{Bennett}{Robert}{R}{UT}{-8.230363}{-5.265448}{-0.3}
+    \dataRx{Cochran}{Thad}{R}{MS}{-8.204309}{-3.833549}{0}
+    \dataRx{Bond}{Christopher}{R}{MO}{-7.907050}{-3.678825}{0}
+    \dataRx{Brownback}{Samuel}{R}{KS}{-7.841176}{0.525267}{0}
+    \dataRx{Warner}{John}{R}{VA}{-7.511971}{-3.669235}{0}
+    \dataRx{Murkowski}{Lisa}{R}{AK}{-6.411501}{-5.705682}{-0.3}
+    \dataR{Domenici}{Pete}{R}{NM}{-6.367823}{-4.162556}{0}
+    \dataRx{Hagel}{Chuck}{R}{NE}{-6.362849}{0.617170}{0}
+    \dataR{Stevens}{Ted}{R}{AK}{-6.307838}{-5.264698}{0}
+    \dataRx{Lugar}{Richard}{R}{IN}{-5.943015}{-3.919419}{0}
+    \dataRx{McCain}{John}{R}{AZ}{-5.888698}{2.418029}{0}
+    \dataRx{Coleman}{Norm}{R}{MN}{-4.118805}{-5.477121}{0}
+    \dataRx{Voinovich}{George}{R}{OH}{-3.935533}{-0.529552}{0}
+    \dataRx{Smith}{Gordon}{R}{OR}{-3.444280}{-2.964483}{0}
+    \dataRx{Specter}{Arlen}{R}{PA}{-2.375146}{-4.450506}{0}
+    \dataRx{Collins}{Susan}{R}{ME}{-1.718529}{-4.243409}{0}
+    \dataDx{Johnson}{Tim}{D}{SD}{-1.400105}{3.328882}{0}
+    \dataRx{Snowe}{Olympia}{R}{ME}{0.030079}{-4.052412}{-0.5}
+    \dataDx{Nelson}{E.}{D}{NE}{3.212060}{-2.989657}{0}
+    \dataDx{Pryor}{Mark}{D}{AR}{6.049862}{-2.370210}{-0.3}
+    \dataD{Landrieu}{Mary}{D}{LA}{6.120904}{0.319874}{0}
+    \dataDx{Bayh}{Evan}{D}{IN}{6.212828}{0.590900}{-0.5}
+    \dataDx{McCaskill}{Claire}{D}{MO}{6.236225}{2.501971}{0}
+    \dataDx{Baucus}{Max}{D}{MT}{6.707413}{-1.252353}{-0.2}
+    \dataD{Tester}{Jon}{D}{MT}{6.755870}{-0.131501}{0}
+    \dataD{Byrd}{Robert}{D}{WV}{6.844900}{-0.777788}{0}
+    \dataDx{Lieberman}{Joe}{ID}{CT}{6.941566}{-0.879456}{-0.05}
+    \dataD{Lincoln}{Blanche}{D}{AR}{7.114470}{-2.537187}{0}
+    \dataD{Dodd}{Christopher}{D}{CT}{7.150155}{0.426655}{0}
+    \dataDx{Biden}{Joseph}{D}{DE}{7.191390}{1.560474}{0.2}
+    \dataD{Dorgan}{Byron}{D}{ND}{7.226223}{-0.145256}{0}
+    \dataD{Conrad}{Kent}{D}{ND}{7.509217}{-0.834957}{0}
+    \dataDx{Salazar}{Ken}{D}{CO}{7.510558}{-2.642954}{3.3}
+    \dataD{Carper}{Thomas}{D}{DE}{7.533684}{-1.016364}{0}
+    \dataD{Rockefeller}{Jay}{D}{WV}{7.697069}{0.348496}{0}
+    \dataD{Webb}{James}{D}{VA}{7.909628}{1.263548}{0}
+    \dataD{Nelson}{Bill}{D}{FL}{8.073955}{0.560473}{0}
+    \dataD{Kerry}{John}{D}{MA}{8.229978}{0.783072}{0}
+    \dataD{Inouye}{Daniel}{D}{HI}{8.254431}{0.128503}{0}
+    \dataD{Kennedy}{Edward}{D}{MA}{8.345720}{-0.125997}{0}
+    \dataD{Cantwell}{Maria}{D}{WA}{8.453248}{0.176907}{0}
+    \dataD{Feingold}{Russ}{D}{WI}{8.479149}{3.536569}{-0.15}
+    \dataDx{Obama}{Barack}{D}{IL}{8.521068}{2.312086}{-0.3}
+    \dataDx{Reid}{Harry}{D}{NV}{8.689703}{0.665197}{-0.8}
+    \dataD{Mikulski}{Barbara}{D}{MD}{8.776657}{0.129926}{0}
+    \dataD{Wyden}{Ron}{D}{OR}{8.846398}{-0.272109}{0}
+    \dataD{Leahy}{Patrick}{D}{VT}{8.853166}{-0.139810}{0}
+    \dataD{Harkin}{Tom}{D}{IA}{8.859139}{0.517913}{0}
+    \dataD{Klobuchar}{Amy}{D}{MN}{8.865049}{-0.814168}{0}
+    \dataD{Murray}{Patty}{D}{WA}{8.923771}{0.434588}{0}
+    \dataD{Akaka}{Daniel}{D}{HI}{8.955400}{-1.058981}{0}
+    \dataD{Brown}{Sherrod}{D}{OH}{8.961322}{1.297369}{0}
+    \dataDx{Feinstein}{Dianne}{D}{CA}{9.019263}{0.316944}{-0.1}
+    \dataD{Bingaman}{Jeff}{D}{NM}{9.063834}{0.227690}{0}
+    \dataDx{Schumer}{Charles}{D}{NY}{9.124474}{1.151808}{0.2}
+    \dataD{Cardin}{Benjamin}{D}{MD}{9.154539}{0.261731}{0}
+    \dataD{Kohl}{Herb}{D}{WI}{9.168217}{0.505190}{0}
+    \dataD{Casey}{Bob}{D}{PA}{9.227674}{1.165228}{0}
+    \dataD{Stabenow}{Debbie}{D}{MI}{9.259294}{0.701454}{0}
+    \dataD{Reed}{John}{D}{RI}{9.328214}{-0.051071}{0}
+    \dataDx{Clinton}{Hillary}{D}{NY}{9.345548}{1.498053}{0.8}
+    \dataDx{Sanders}{Bernard}{I}{VT}{9.366115}{1.166931}{1.2}
+    \dataD{Durbin}{Richard}{D}{IL}{9.450949}{1.549572}{0}
+    \dataD{Lautenberg}{Frank}{D}{NJ}{9.458477}{0.934696}{0}
+    \dataD{Levin}{Carl}{D}{MI}{9.464507}{0.830443}{0}
+    \dataD{Menendez}{Robert}{D}{NJ}{9.493317}{0.599649}{0}
+    \dataD{Boxer}{Barbara}{D}{CA}{9.537760}{1.490709}{0}
+    \dataDx{Whitehouse}{Sheldon}{D}{RI}{9.675169}{0.398093}{1.3}
     \draw[->] (0,0) +(1,2) node[right,yshift=2] {centroid} -- +(0,0);
     \path (-1,10) node {2007 U.S. Senate voting data, projection to the first two principal components:};
   \end{tikzpicture}
