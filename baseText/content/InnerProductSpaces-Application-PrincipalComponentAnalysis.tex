@@ -680,17 +680,21 @@ outcome is recorded). Roll call data for the last 3 decades is
 publicly available and can be downloaded from the U.S. Senate website
 at \url{https://www.senate.gov/legislative/votes.htm}.
 
-I have made a spreadsheet containing the votes of 99 senators for the
-first 200 roll call votes of 2007. Each row in the spreadsheet
-corresponds to a senator, listed in alphabetical order from Daniel
-Akaka of Hawaii to Ron Wyden of Oregon. I omitted one senator who died
-during 2007. Each column of the spreadsheet corresponds to a vote. For
-example, the first roll call vote of 2007 was on a resolution to
-honour President Gerald Ford (it passed 88 to 0). Each cell of the
-spreadsheet contains the number $1$ if the senator voted ``yes'', the
-number $-1$ if the senator voted ``no'', and the number $0$ if the
-senator did not vote. Here are the first few rows and columns of the
-spreadsheet.
+We will now explore how to use linear algebra, and in particular
+principal component analysis, to gain some useful information from the
+voting records.\footnote{This example was inspired by Examples~11.2.13
+  and 11.3.15 of {\em ``Coding the Matrix: Linear Algebra through
+    Computer Science Applications''} by Philip N. Klein.} I have made
+a spreadsheet containing the votes of 99 senators for the first 200
+roll call votes of 2007. Each row in the spreadsheet corresponds to a
+senator, listed in alphabetical order from Daniel Akaka of Hawaii to
+Ron Wyden of Oregon. I omitted one senator who died during 2007. Each
+column of the spreadsheet corresponds to a vote. For example, the
+first roll call vote of 2007 was on a resolution to honour President
+Gerald Ford (it passed 88 to 0). Each cell of the spreadsheet contains
+the number $1$ if the senator voted ``yes'', the number $-1$ if the
+senator voted ``no'', and the number $0$ if the senator did not
+vote. Here are the first few rows and columns of the spreadsheet.
 \begin{equation*}
   \begin{array}{|l|r|r|r|r|r|r|r|r}
     \hline
@@ -708,14 +712,12 @@ amounts of data. Rather than listing 122 motions that Senator X
 supported and 78 motions that she opposed, we like to come up with
 abstractions, such as Senator X is ``conservative'', ``pro choice'',
 ``pro business'', ``hawkish'', etc. However, the problem with
-abstractions is that they do not necessarily have real-world
-meaning. In a sense, the most accurate measure we have of a senator's
-record is a sequence of votes.
+abstractions is that they do not necessarily mean anything in the real
+world. In the real world, a senator's record is just a sequence of
+votes.
 
-Let us use linear algebra, and in particular principal component
-analysis, to try to gain some useful information from the voting
-records. We will represent each senator by a vector in $\R^{200}$,
-which corresponds to a row of the above table. For example, to Senator
+We will represent each senator by a vector in $\R^{200}$, which
+corresponds to a row of the above table. For example, to Senator
 Akaka, we associate the vector
 \begin{equation*}
   \begin{mymatrix}{c} 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ -1 \\ 1 \\ \vdots \end{mymatrix}
@@ -730,9 +732,9 @@ the voting records of all the senators lie on (or at least close to) a
 much-smaller-dimensional affine subspace? This is actually not an
 unreasonable expectation; after all, there are probably only a handful
 of issues most senators care about. For example, if a certain senator
-supports gun control, he will be likely to vote accordingly, on any
-measures that affect gun control. Another senator who supports the gun
-lobby is likely to vote the opposite way.
+supports gun control, he will be likely to vote a certain way on
+measures that affect gun control. If another senator supports the gun
+lobby, she is likely to vote the opposite way.
 
 We can thus consider this as an instance of the affine subspace
 problem: we are looking for a low-dimensional affine subspace that is
@@ -875,7 +877,7 @@ picture:
     \draw (-12.5,0) -- (10.5,0);
     \senatorsA
     \draw[->] (0,0) +(1,-2) node[right,yshift=-2] {centroid} -- +(0,0);
-    \path (-1,-5) node {2007 U.S. Senate voting data, projection to the first principal component};
+    \path (-1,4.5) node {2007 U.S. Senate voting data, projection to the first principal component:};
   \end{tikzpicture}
 \end{equation*}
 For convenience, Republican senators have been shown in red and
@@ -883,11 +885,11 @@ Democratic senators in blue. Not all senators have been named, because
 in some areas they are clustered very densely. An interpretation of
 the principal component then immediately suggests itself: it appears
 to be the ``conservative'' vs. ``liberal'' axis. We can use this
-picture to assist in answering questions such as: ``Which party is
-more disciplined?'', ``Which state are the most liberal
-Republicans from?'', ``Which state are the most conservative Democrats
-from?'', ``Was Obama really a radical?'', and ``Was McCain really a
-maverick?''.
+picture to assist in answering questions such as: {\em ``Which party
+  votes more uniformly?''}, {\em ``Which state are the most liberal
+  Republicans from?''}, {\em ``Which state are the most conservative
+  Democrats from?''}, {\em ``Was Obama really a radical?''}, and {\em
+  ``Was McCain really a maverick?''}. 
 
 If we repeat the same calculation for the 2017 senate, we get the
 following picture:
@@ -1007,11 +1009,11 @@ following picture:
     \draw (-12,0) -- (14.5,0);
     \senatorsB
     \draw[->] (0,0) +(1,-2) node[right,yshift=-2] {centroid} -- +(0,0);
-    \path (1.25,-5.7) node {2017 U.S. Senate voting data, projection to the first principal component};
+    \path (1.25,5) node {2017 U.S. Senate voting data, projection to the first principal component:};
   \end{tikzpicture}
 \end{equation*}
-We can use this to help answer questions such as ``Has the senate
-become more partisan between 2007 and 2017?''.
+We can use this to help answer questions such as {\em ``Has the senate
+  become more partisan between 2007 and 2017?''}.
 
 If we instead project the data onto the first two principal
 components, we get the following picture for the 2007 data:
@@ -1132,10 +1134,46 @@ components, we get the following picture for the 2007 data:
     \draw (0,-6) -- (0,8);
     \senatorsA
     \draw[->] (0,0) +(1,2) node[right,yshift=2] {centroid} -- +(0,0);
-    \path (-1,-7) node {2007 U.S. Senate voting data, projection to the first two principal components};
+    \path (-1,10) node {2007 U.S. Senate voting data, projection to the first two principal components:};
   \end{tikzpicture}
 \end{equation*}
-While this clearly shows senators clustering in certain areas, the
-political meaning of the second principal component is less clear.
-Still, we can use it to help answer certain questions, for example,
-``How different was Sanders's voting record from Clinton's?''
+The picture clearly shows senators clustering in certain areas. We can
+use this to help answer certain questions, for example, {\em ``How
+  different was Sanders's voting record from Clinton's?''}. However,
+although the 2-dimensional picture seems to reveal more detail, its
+interpretation is less clear. While it seems obvious that the
+horizontal axis corresponds to a concervative vs.\ liberal world view,
+it is much less obvious what the political meaning of the vertical
+axis is. Maybe it is related to some issue that does not typically
+follow party lines, such as North vs. South, rich states vs. poor
+states, pro-immigration vs. anti-immigration, and so on.  To find a
+convincing interpretation of the vertical axis, further investigation
+of the data would be required (such as, looking at the actual content
+of the votes in question).
+
+Finally, a word of caution. Whenever we use mathematics to try to draw
+real-world conclusions from data, these conclusions should be taken
+with an extra-large grain of salt. People have a outsized tendency to
+trust mathematics and to take its results as infallible. We therefore
+have a special responsibility not to overstate any conclusions, and to
+point out potential pitfalls with the analysis. No matter how
+wonderful principal complement analysis is, we must keep in mind that
+what we are still only looking at a 2-dimensional projection of a
+200-dimensional space. Therefore it is inevitable that lots of details
+and nuances are lost. We could get a completely different picture by
+looking at a different 2-dimensional projection.
+
+To see how the data can sometimes be misleading, consider the question
+{\em ``How similar is Senator Tim Johnson, Democrat of South Dakota,
+  to Senators Olympia Snowe and Susan Collins of Maine?''}. In the
+1-dimensional picture, it looked as if they were very similar. We
+could easily rationalize this by pointing out that Johnson is the most
+conservative Democrat, and Snowe and Collins are the most liberal
+Republicans. However, the 2-dimensional picture reveals an interesting
+nuance, which is that the voting records of Johnson is not all that
+similar to that of Snowe and Collins. It is entirely possible that if
+we add a third or fourth dimension to the picture, many more
+additional such details will emerge. In summary, while principal
+component analysis is a useful tool, it is just one tool among many,
+and we always need to exercise our best judgement in drawing
+conclusions from data.
