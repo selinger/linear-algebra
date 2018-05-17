@@ -180,7 +180,8 @@ discovered by Gale Young%
 \end{example}
 
 \begin{solution}
-  We follow the steps outlined in Proposition~\ref{prop:subspace-fitting}.
+  We follow the steps outlined in
+  Proposition~\ref{prop:subspace-fitting}.
   \begin{enumerate}
   \item We have
     \begin{equation*}
@@ -500,7 +501,7 @@ necessarily the origin). These are examples of affine subspaces of
 $\R^n$. The affine subspace fitting problem is analogous to the
 subspace fitting problem:
 
-\begin{problem}{Affine subspace fitting problem}{subspace-fitting}
+\begin{problem}{Affine subspace fitting problem}{affine-subspace-fitting}
   Given the position vectors $\vect{v}_1,\ldots,\vect{v}_m$ of $m$
   points in $\R^n$, and given an integer $k\leq n$, find the
   $k$-dimensional affine subspace $A\subseteq\R^n$ that minimizes the
@@ -538,7 +539,7 @@ origin, and then solving an ordinary subspace fitting problem.
       $i=1,\ldots,n$.
     \item Compute the solution $W$ to the (ordinary) subspace fitting
       problem for $\vect{w}_1,\ldots,\vect{w}_m$, as in
-      Proposition~\ref{subspace-fitting}.
+      Proposition~\ref{prop:subspace-fitting}.
   \end{enumerate}
   Then the best solution to the affine subspace problem is
   $\centroid{v} + W$.
@@ -602,8 +603,9 @@ origin, and then solving an ordinary subspace fitting problem.
       \begin{mymatrix}{r} -4 \\ 8 \end{mymatrix}
     }.
   \end{equation*}
-  Next we, we proceed as in Proposition~\ref{subspace-fitting} to
-  find the best subspace fitting $\vect{w}_1,\ldots,\vect{w}_9$. We have
+  Next we, we proceed as in Proposition~\ref{prop:subspace-fitting} to
+  find the best subspace fitting $\vect{w}_1,\ldots,\vect{w}_9$. We
+  have
   \begin{equation*}
     A^T = \begin{mymatrix}{rrrrrrrrr}
       5 & -3 & 0 & 3 & -3 & -2 & -1 & 5 & -4 \\
@@ -736,10 +738,11 @@ We can thus consider this as an instance of the affine subspace
 problem: we are looking for a low-dimensional affine subspace that is
 close to all $99$ points. Following the method of
 Proposition~\ref{prop:affine-subspace-fitting}, we first find the
-centroid of the points, and then we compute a certain $99\times
-200$-matrix $A$ and a positive semidefinite $200\times 200$-matrix
-$B=A^TA$. Using software, we can find the eigenvalues and -vectors of
-$B$. The first few eigenvalues (in decreasing order) are:
+centroid of the points, and then we compute a certain
+$99\times 200$-matrix $A$ and a positive semidefinite
+$200\times 200$-matrix $B=A^TA$. Using software, we can find the
+eigenvalues and -vectors of $B$. The first few eigenvalues (in
+decreasing order) are:
 \begin{equation*}
   \eigenvar_1 = 7255.65,\quad
   \eigenvar_2 = 519.16,\quad
