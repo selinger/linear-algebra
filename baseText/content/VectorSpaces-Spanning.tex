@@ -425,17 +425,17 @@ characterization of linear dependence in terms of redundant vectors:
   \begin{equation*}
     \vect{u}_j = a_1\,\vect{u}_1 + a_2\,\vect{u}_2 + \ldots + a_{j-1}\,\vect{u}_{j-1},
   \end{equation*}
-  for some $j\in\set{1,\ldots,k}$.
+  for some $j$.
 \end{proposition}
 
 \begin{proof}
   Suppose that the vectors are linearly dependent. Then the equation
-  $b_1\vect{u}_1+\ldots+b_k\vect{u}_k=0$ has a non-trivial solution
+  $b_1\vect{u}_1+\ldots+b_k\vect{u}_k=\vect{0}$ has a non-trivial solution
   for some $k$. In other words, there exist scalars $b_1,\ldots,b_k$,
   not all equal to zero, such that
-  $b_1\vect{u}_1+\ldots+b_k\vect{u}_k=0$. Let $j$ be the largest index
+  $b_1\vect{u}_1+\ldots+b_k\vect{u}_k=\vect{0}$. Let $j$ be the largest index
   such that $b_j\neq 0$. Then
-  $b_1\vect{u}_1+\ldots+b_j\vect{u}_j=0$. Dividing by $b_j$ and
+  $b_1\vect{u}_1+\ldots+b_j\vect{u}_j=\vect{0}$. Dividing by $b_j$ and
   solving for $\vect{u}_j$, we have
   $\vect{u}_j = -\frac{b_1}{b_j}\vect{u}_1 - \ldots -
   \frac{b_{j-1}}{b_j}\vect{u}_{j-1}$, so $\vect{u}_j$ can be written
