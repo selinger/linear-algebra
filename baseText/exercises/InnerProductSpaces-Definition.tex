@@ -1,5 +1,151 @@
 \section*{Exercises}
 
+\begin{ex}
+  For each matrix $A$, determine whether the formula
+  $\iprod{\vect{u},\vect{v}} = \vect{u}^T A\vect{v}$ determines an
+  inner product on $\R^2$.
+  \begin{equation*}
+    (a)~ A = \begin{mymatrix}{cc} 1 & 0 \\ 0 & 2 \end{mymatrix},\quad
+    (b)~ A = \begin{mymatrix}{cc} 3 & 1 \\ 1 & 3 \end{mymatrix},\quad
+    (c)~ A = \begin{mymatrix}{cc} 1 & 1 \\ 0 & 2 \end{mymatrix},\quad
+    (d)~ A = \begin{mymatrix}{cc} 1 & 0 \\ 0 & -1 \end{mymatrix},\quad
+    (e)~ A = \begin{mymatrix}{cc} 1 & 1 \\ 1 & 1 \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    \begin{enumerate}
+    \item Yes, it is an inner product. Since $A=A^T$, symmetry and
+      linearity follow as in Example~\ref{exa:rn-with-inner-product}.
+      For the positive definite property, note that 
+      $\iprod{\vect{u},\vect{u}} = u_1^2 + 2u_2^2\geq 0$, and equality
+      holds if and only if $u_1,u_2=0$.
+    \item Yes, it is an inner product. Since $A=A^T$, symmetry and
+      linearity follow as in Example~\ref{exa:rn-with-inner-product}.
+      For the positive definite property, we have
+      $\iprod{\vect{u},\vect{u}} = 3u_1^2 + 2u_1u^2 + 3u_2^2 =
+      (u_1+u_2)^2 + 2u_1^2 + 2u_2^2 \geq 0$. Equality holds if and
+      only if $u_1+u_2$, $u_1$, and $u_2$ are all zero, which is the
+      case if and only if $\vect{u}=0$.
+    \item No, it is not symmetric. For example,
+      $\iprod{
+        \begin{mymatrix}{c}1\\0\end{mymatrix},
+        \begin{mymatrix}{c}0\\1\end{mymatrix}
+      } = 1$
+      but
+      $\iprod{
+        \begin{mymatrix}{c}0\\1\end{mymatrix},
+        \begin{mymatrix}{c}1\\0\end{mymatrix}
+      } = 0$.
+    \item No, it is not positive definite. For example,
+      $\iprod{
+        \begin{mymatrix}{c}0\\1\end{mymatrix},
+        \begin{mymatrix}{c}0\\1\end{mymatrix}
+      } = -1$.
+    \item No, it is not positive definite. For example,
+      $\iprod{
+        \begin{mymatrix}{c}1\\-1\end{mymatrix},
+        \begin{mymatrix}{c}1\\-1\end{mymatrix}
+      } = 0$
+      although $\begin{mymatrix}{c}1\\-1\end{mymatrix}\neq \vect{0}$.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Consider the inner product space $C[0,1]$ as in
+  Example~\ref{exa:continuous-interval}. Compute the following inner
+  products:
+  \begin{equation*}
+    (a)~ \iprod{1,x}, \quad
+    (b)~ \iprod{x,x^2}, \quad
+    (c)~ \iprod{1+x,2+x^2}.
+  \end{equation*}
+  \begin{sol}
+    \begin{enumerate}
+    \item $\iprod{1,x} = \int_{0}^{1} 1\cdot x\,dx
+      = \int_{0}^{1} x\,dx = \frac{1}{2}$.
+    \item $\iprod{x,x^2} = \int_{0}^{1} x\cdot x^2\,dx
+      = \int_{0}^{1} x^3\,dx = \frac{1}{4}$.
+    \item $\iprod{1+x,2+x^2}
+      = \int_{0}^{1} (1+x)(2+x^2)\,dx
+      = \int_{0}^{1} 2 + x^2 + 2x + 2x^3\,dx
+      = \frac{23}{6}.$
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Consider the inner product space $C[0,1]$ as in
+  Example~\ref{exa:continuous-interval}. Compute the following norms:
+  \begin{equation*}
+    (a)~ \norm{1}, \quad
+    (b)~ \norm{x}, \quad
+    (c)~ \norm{x^2+1}.
+  \end{equation*}
+  \begin{sol}
+    \begin{enumerate}
+    \item $\norm{1}^2 = \iprod{1,1} = \int_{0}^{1} 1\,dx
+      = 1$, therefore $\norm{1}=1$.
+    \item $\norm{x}^2 = \iprod{x,x} = \int_{0}^{1} x^2\,dx
+      = \frac{1}{3}$, therefore $\norm{x} = \frac{1}{\sqrt{3}}$.
+    \item $\norm{x^2+1}^2 = \iprod{x^2+1,x^2+1}
+      = \int_{0}^{1} x^4 + 2x^2 + 1\,dx
+      = \frac{1}{5} + \frac{2}{3} + 1 = \frac{28}{15}$, therefore
+      $\norm{x^2+1} = \sqrt{\frac{28}{15}}$.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  For $\vect{u},\vect{v}$ vectors in $\R^3$, define the product
+  $\vect{u}\ast \vect{v} = u_1v_1+2u_2v_2+3u_3v_3$. Show
+  that
+  \begin{equation*}
+    \abs{\vect{u}\ast \vect{v}} \leq (\vect{u}\ast \vect{u})^{1/2}
+    (\vect{v}\ast \vect{v})^{1/2}.
+  \end{equation*}
+  Hint: first show that the operation
+  $\iprod{\vect{u},\vect{v}}=\vect{u}\ast\vect{v}$ is an inner product
+  on $\R^3$, then use Proposition~\ref{prop:inner-product-and-norm}.
+  \begin{sol}
+    The operation $\iprod{\vect{u},\vect{v}}=\vect{u}\ast\vect{v}$ is
+    an inner product on $\R^3$. Symmetry and linearity are
+    straightforward to check, as is the positive definite
+    property. Therefore, the claimed inequality holds by
+    Proposition~\ref{prop:cauchy-schwarz-inequality}.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  In $C[-1,1]$, find (a) the angle between $x$ and $x^2$, (b) the
+  angle between $x$ and $x^3$.
+  \begin{sol}
+    \begin{enumerate}
+    \item We have $\iprod{x,x} = \int_{-1}^1 x^2\,dx = \frac{2}{3}$,
+      $\iprod{x^2,x^2} = \int_{-1}^1 x^4\,dx = \frac{2}{5}$, and
+      $\iprod{x, x^2} = \int_{-1}^1 x^3\,dx = 0$.  Therefore
+      \begin{equation*}
+        \cos\theta
+        ~=~ \frac{\iprod{x,x^2}}{\norm{x}\norm{x^2}}
+        ~=~ 0.
+      \end{equation*}
+      Therefore, the angle $\theta$ is $\pi/2$ radians, or $90$
+      degrees. In other words, $x$ and $x^2$ are orthogonal in
+      $C[-1,1]$.
+    \item We have $\iprod{x,x} = \int_{-1}^1 x^2\,dx = \frac{2}{3}$,
+      $\iprod{x^3,x^3} = \int_{-1}^1 x^6\,dx = \frac{2}{7}$, and
+      $\iprod{x, x^3} = \int_{-1}^1 x^4\,dx = \frac{2}{5}$.  Therefore
+      \begin{equation*}
+        \cos\theta
+        ~=~ \frac{\iprod{x,x^3}}{\norm{x}\norm{x^3}}
+        ~=~ \frac{\frac{2}{5}}{\sqrt{\frac{2}{3}}\sqrt{\frac{2}{7}}}
+        ~=~ \frac{\sqrt{21}}{5}.
+      \end{equation*}
+      The angle $\theta$ is $\cos^{-1}(\frac{\sqrt{21}}{5})$, which is
+      approximately $0.4115$ radians or $23.58$ degrees.
+    \end{enumerate}
+  \end{sol}    
+\end{ex}
+
 \begin{ex}\label{ex:hilbert-space}.
   In this exercise, we will work out the details of
   Example~\ref{exa:hilbert-space}. We must show that $\Hilb_{\R}$ is a
@@ -68,24 +214,3 @@
     that $\iprod{a,a}=0$ if and only if $a_i=0$ for all $i$.
   \end{sol}
 \end{ex}
-
-\begin{ex}
-  For $\vect{u},\vect{v}$ vectors in $\R^3$, define the product
-  $\vect{u}\ast \vect{v} = u_1v_1+2u_2v_2+3u_3v_3$. Show
-  that
-  \begin{equation*}
-    \abs{\vect{u}\ast \vect{v}} \leq (\vect{u}\ast \vect{u})^{1/2}
-    (\vect{v}\ast \vect{v})^{1/2}.
-  \end{equation*}
-  Hint: first show that the operation
-  $\iprod{\vect{u},\vect{v}}=\vect{u}\ast\vect{v}$ is an inner product
-  on $\R^3$, then use Proposition~\ref{prop:inner-product-and-norm}.
-  \begin{sol}
-    The operation $\iprod{\vect{u},\vect{v}}=\vect{u}\ast\vect{v}$ is
-    an inner product on $\R^3$. Symmetry and linearity are
-    straightforward to check, as is the positive definite
-    property. Therefore, the claimed inequality holds by
-    Proposition~\ref{prop:cauchy-schwarz-inequality}.
-  \end{sol}
-\end{ex}
-
