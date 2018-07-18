@@ -1,0 +1,138 @@
+\section*{Exercises}
+
+\begin{ex}
+  Let $A=\begin{mymatrix}{ccc} 1 & 1 & 0 \\ 1 & 2 & 0 \\ 0 & 0 &
+    2 \end{mymatrix}$, and consider $\R^3$ with the inner product given by
+  $\iprod{\vect{u},\vect{v}} = \vect{u}^TA\vect{v}$. Which of the
+  following vectors are orthogonal to each other?
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{c}  1 \\  1 \\  1 \end{mymatrix},\quad  % 2,  3,   2
+    \vect{u}_2 = \begin{mymatrix}{c} -1 \\  2 \\ -2 \end{mymatrix},\quad  % 1,  3,  -4
+    \vect{u}_3 = \begin{mymatrix}{c}  7 \\ -5 \\ -2 \end{mymatrix},\quad  % 2, -3,  -4
+    \vect{u}_4 = \begin{mymatrix}{c} 10 \\ -2 \\ -7 \end{mymatrix}.       % 8,  6, -14
+  \end{equation*}
+  \begin{sol}
+    We have
+    $\iprod{\vect{u}_1,\vect{u}_2} = \vect{u}_1^T A \vect{u}_2 = 0$,
+    $\iprod{\vect{u}_1,\vect{u}_3} = \vect{u}_1^T A \vect{u}_3 = -5$,
+    $\iprod{\vect{u}_1,\vect{u}_4} = \vect{u}_1^T A \vect{u}_4 = 0$,
+    $\iprod{\vect{u}_2,\vect{u}_3} = \vect{u}_2^T A \vect{u}_3 = 0$,
+    $\iprod{\vect{u}_2,\vect{u}_4} = \vect{u}_2^T A \vect{u}_4 = 32$,
+    and
+    $\iprod{\vect{u}_3,\vect{u}_4} = \vect{u}_3^T A \vect{u}_4 = 54$.
+    Therefore, $\vect{u}_1\orth\vect{u}_2$,
+    $\vect{u}_1\orth\vect{u}_4$, and $\vect{u}_2\orth\vect{u}_3$. None
+    of the other pairs of vectors are orthogonal.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  On $C[-1,1]$, which of the following functions are orthogonal to each other?
+  \begin{equation*}
+    f_1(x) = x,\quad
+    f_2(x) = x^2,\quad
+    f_3(x) = x^3-x,\quad
+    f_4(x) = 1-x^4.
+  \end{equation*}
+  \begin{sol}
+    $f_1\orth f_2$, $f_1\orth f_4$, $f_2\orth f_3$, and $f_3\orth f_4$.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Consider the inner product space $\Poly_3$ of polynomials of degree
+  at most $3$, with the inner product defined by
+  \begin{equation*}
+    \iprod{f,g} = \int_{-1}^{1} f(x)g(x)\,dx.
+  \end{equation*}
+  \begin{enumerate}
+  \item Find the orthogonal complement of $\set{x^2,x}$.
+  \item Find the orthogonal complement of $\set{x+1}$.
+  \end{enumerate}
+  \begin{sol}
+    \begin{enumerate}
+    \item Let $p(x)=ax^3+bx^2+cx+d$. Then
+      $\iprod{p(x), x^2} = \frac{2}{5}b + \frac{2}{3}d$ and
+      $\iprod{p(x), x} = \frac{2}{5}a + \frac{2}{3}c$.  Therefore,
+      $p(x)$ is in the orthogonal complement of $\set{x^2,x}$ if and
+      only if $\frac{2}{5}b + \frac{2}{3}d=0$ and
+      $\frac{2}{5}a + \frac{2}{3}c=0$. It follows that
+      $b=-\frac{5}{3}d$ and $a=-\frac{5}{3}c$. The general solution is
+      $p(x) = -\frac{5}{3}cx^3 - \frac{5}{3}dx^2 + cx + d$. A basis
+      for the orthogonal complement is
+      $\set{-\frac{5}{3} x^3 + x, -\frac{5}{3} x^2 + 1}$.
+    \item A basis for the orthogonal complement of $\set{x+1}$ is
+      $\set{5x^3-1, 3x^2-1, 3x-1}$.      
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Consider $\R^3$ as an inner product space with the usual dot
+  product.  For each of the following bases of $\R^3$, state whether
+  it is orthonormal, orthogonal, or neither.
+  \begin{enumerate}
+  \item $\set{
+      \begin{mymatrix}{r} 1 \\ 0 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 1 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 0 \\ 1 \end{mymatrix}
+    }$.
+  \item $\set{
+      \begin{mymatrix}{r} 1 \\ 0 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 1 \\ 1 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 0 \\ 1 \end{mymatrix}
+    }$.
+  \item $\set{
+      \begin{mymatrix}{r}  1 \\ 0 \\ 2 \end{mymatrix},
+      \begin{mymatrix}{r}  0 \\ 1 \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} -2 \\ 0 \\ 1 \end{mymatrix}
+    }$.
+  \item $\def\arraystretch{1.2}
+    \set{
+      \begin{mymatrix}{r} \frac{3}{5} \\ \frac{4}{5} \\ 0 \end{mymatrix},
+      \begin{mymatrix}{r} 0 \\ 0 \\ -1 \end{mymatrix},
+      \begin{mymatrix}{r} \frac{4}{5} \\ -\frac{3}{5} \\ 0 \end{mymatrix}
+    }$.
+  \end{enumerate}
+  \begin{sol}
+    (a) Orthonormal (therefore also orthogonal). (b) Neither
+    orthogonal nor orthonormal. (c) Orthogonal (not orthonormal). (d)
+    Orthonormal (therefore also orthogonal).
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Suppose $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$ is an orthogonal
+  basis for an inner product space $V$, such that
+  $\norm{\vect{u}_1}=2$, $\norm{\vect{u}_2}=\sqrt{3}$, and
+  $\norm{\vect{u}_3}=\sqrt{5}$.  Moreover, suppose that
+  $\vect{v}\in V$ is a vector such that
+  $\iprod{\vect{v},\vect{u}_1} = 1$,
+  $\iprod{\vect{v},\vect{u}_2} = 2$, and
+  $\iprod{\vect{v},\vect{u}_3} = -4$.  Find the coordinates of
+  $\vect{v}$ with respect to $B$.
+  \begin{sol}
+    $\vect{v} = \frac{1}{4}\vect{u}_1 + \frac{2}{3}\vect{u}_2 - \frac{4}{5}\vect{u}_3$.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Suppose $B=\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$ is an
+  orthogonal basis of $\R^3$. We have been told that
+  \begin{equation*}
+    \vect{u}_1 = \begin{mymatrix}{c} 1 \\ 1 \\ 0 \end{mymatrix},
+  \end{equation*}
+  but it is not known what $\vect{u}_2$ and $\vect{u}_3$ are. Find the
+  first coordinate of the vector
+  \begin{equation*}
+    \vect{v} = \begin{mymatrix}{c} 1 \\ 0 \\ 2 \end{mymatrix}
+  \end{equation*}
+  with respect to the basis $B$.
+  \begin{sol}
+    We have $\vect{v} = a_1\vect{u}_1 + a_2\vect{u}_2 + a_3\vect{u}_3$
+    where
+    $a_1 =
+    \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}}
+    = \frac{1}{2}$. So the first coordinate is $\frac{1}{2}$.
+  \end{sol}
+\end{ex}
