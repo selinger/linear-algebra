@@ -1,0 +1,133 @@
+\section*{Exercises}
+
+\begin{ex}\label{ex:orthogonal-basis-r3}
+  In $\R^3$ with the usual dot product, find an orthogonal basis for
+  \begin{equation*}
+    \sspan\set{
+      \begin{mymatrix}{c} 1 \\ 2 \\ 3 \end{mymatrix},~
+      \begin{mymatrix}{c} 2 \\ 6 \\ 0 \end{mymatrix}
+    }.
+  \end{equation*}
+  \begin{sol}
+    $\vect{u}_1 = \begin{mymatrix}{c} 1 \\ 2 \\ 3 \end{mymatrix}$,
+    $\vect{u}_2 = \begin{mymatrix}{c} 1 \\ 4 \\ -3 \end{mymatrix}$.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  In $\R^4$ with the usual dot product, find an orthogonal basis for
+  \begin{equation*}
+    \sspan\set{
+      \begin{mymatrix}{c} 0 \\ 1 \\ 1 \\  0 \end{mymatrix},~
+      \begin{mymatrix}{c} 3 \\ 0 \\ 2 \\ -1 \end{mymatrix}
+    }.
+  \end{equation*}
+  \begin{sol}
+    $\vect{u}_1 = \begin{mymatrix}{c} 0 \\ 1 \\ 1 \\ 0 \end{mymatrix}$,
+    $\vect{u}_2 = \begin{mymatrix}{c} 3 \\ -1 \\ 1 \\ -1 \end{mymatrix}$.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  In $\R^4$ with the usual dot product, find an orthogonal basis for
+  \begin{equation*}
+    \sspan\set{
+      \begin{mymatrix}{c} 1 \\ 0 \\ 1 \\  0 \end{mymatrix},~
+      \begin{mymatrix}{c} 1 \\ 3 \\ 1 \\ -1 \end{mymatrix},~
+      \begin{mymatrix}{c} 2 \\ 4 \\ 2 \\  2 \end{mymatrix}
+    }.
+  \end{equation*}
+  \begin{sol}
+    $\vect{u}_1 = \begin{mymatrix}{c} 1 \\ 0 \\ 1 \\ 0 \end{mymatrix}$,
+    $\vect{u}_2 = \begin{mymatrix}{c} 0 \\ 3 \\ 0 \\ -1 \end{mymatrix}$,
+    $\vect{u}_3 = \begin{mymatrix}{c} 0 \\ 1 \\ 0 \\ 3 \end{mymatrix}$.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{ccc}
+      3 & -1 & 0 \\
+      -1 & 5 & 2 \\
+      0 & 2 & 3 \\
+    \end{mymatrix},
+  \end{equation*}
+  and consider the vector space $\R^3$ with the inner product given by
+  $\iprod{\vect{v},\vect{w}} = \vect{v}^T A\vect{w}$.
+  Let
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{c} 1 \\ 0 \\ 2 \end{mymatrix},
+    \quad
+    \vect{v}_2 = \begin{mymatrix}{c} -1 \\ 1 \\ -5 \end{mymatrix},
+    \quad\mbox{and}\quad
+    \vect{v}_3 = \begin{mymatrix}{c} 2 \\ 2 \\ 3 \end{mymatrix}.
+  \end{equation*}
+  Apply the Gram-Schmidt procedure to
+  $\vect{v}_1,\vect{v}_2,\vect{v}_3$ to find an orthogonal basis
+  $\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$ for $\R^3$ with respect to
+  the above inner product.
+  \begin{sol}
+    $\vect{u}_1 = \begin{mymatrix}{c} 1 \\ 0 \\ 2 \end{mymatrix}$,
+    $\vect{u}_2 = \begin{mymatrix}{c} 1 \\ 1 \\ -1 \end{mymatrix}$,
+    $\vect{u}_3 = \begin{mymatrix}{c} -1 \\ 1 \\ 0 \end{mymatrix}$.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Let
+  \begin{equation*}
+    A = \begin{mymatrix}{cccc}
+      3 & 2 & 0 & 0 \\
+      2 & 5 & 1 & 0 \\
+      0 & 1 & 3 & 1 \\
+      0 & 0 & 1 & 3 \\
+    \end{mymatrix},
+  \end{equation*}
+  and consider the vector space $\R^4$ with the inner product given by
+  $\iprod{\vect{v},\vect{w}} = \vect{v}^T A\vect{w}$.
+  Let
+  \begin{equation*}
+    \vect{v}_1 = \begin{mymatrix}{c} 1 \\ -1 \\ 1 \\ 1 \end{mymatrix},
+    \quad
+    \vect{v}_2 = \begin{mymatrix}{c} 2 \\ 0 \\ 0 \\ 2 \end{mymatrix},
+    \quad\mbox{and}\quad
+    \vect{v}_3 = \begin{mymatrix}{c} 2 \\ 0 \\ 2 \\ 3 \end{mymatrix},
+  \end{equation*}
+  and let $W=\sspan\set{\vect{v}_1,\vect{v}_2,\vect{v}_3}$.  Apply the
+  Gram-Schmidt procedure to $\vect{v}_1,\vect{v}_2,\vect{v}_3$ to find
+  an orthogonal basis $\set{\vect{u}_1,\vect{u}_2,\vect{u}_3}$ for $W$
+  with respect to the above inner product.
+  \begin{sol}
+    $\vect{u}_1 = \begin{mymatrix}{c} 1 \\ -1 \\ 1 \\ 1 \end{mymatrix}$,
+    $\vect{u}_2 = \begin{mymatrix}{c} 1 \\ 1 \\ -1 \\ 1 \end{mymatrix}$,
+    $\vect{u}_3 = \begin{mymatrix}{c} -1 \\ 1 \\ 1 \\ 0 \end{mymatrix}$.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Consider the inner product space $C[0,2]$, with the inner product
+  given by
+  \begin{equation*}
+    \iprod{p,q} = \int_{0}^{2} f(x)g(x)\,dx.
+  \end{equation*}
+  Use the Gram-Schmidt procedure to find an orthogonal basis for
+  $\sspan\set{1,x,x^2}$.
+  \begin{sol}
+    $\vect{u}_1 = 1$, $\vect{u}_2 = x-1$, $x^2 - 2x + \frac{2}{3}$.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Find an orthonormal basis for the subspace of $\R^3$ from Exercise~\ref{ex:orthogonal-basis-r3}.
+  \begin{sol}
+    The orthonormal basis is $\displaystyle\set{
+      \frac{\vect{u}_1}{\norm{\vect{u}_1}},
+      \frac{\vect{u}_2}{\norm{\vect{u}_2}}
+    } = \set{
+      \frac{1}{\sqrt{14}} \begin{mymatrix}{c} 1 \\ 2 \\ 3 \end{mymatrix},
+      \frac{1}{\sqrt{26}} \begin{mymatrix}{c} 1 \\ 4 \\
+        -3 \end{mymatrix}
+    }$.
+  \end{sol}
+\end{ex}
