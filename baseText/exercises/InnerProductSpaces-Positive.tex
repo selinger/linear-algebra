@@ -1,0 +1,91 @@
+\section*{Exercises}
+
+\begin{ex}
+  Determine by direct calculation (i.e., without calculating the
+  eigenvalues) which of the following matrices are positive definite,
+  positive semidefinite, or neither.
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      1 & 1 \\
+      1 & 1 \\
+    \end{mymatrix},\quad
+    B = \begin{mymatrix}{rr}
+      1  & -2 \\
+      -2 &  5 \\
+    \end{mymatrix},\quad
+    C = \begin{mymatrix}{rr}
+      2 & 3 \\
+      1 & 3 \\
+    \end{mymatrix},\quad
+    D = \begin{mymatrix}{rrr}
+      2 & 1 & 1 \\
+      1 & 1 & 0 \\
+      1 & 0 & 1 \\
+    \end{mymatrix},\quad
+    E = \begin{mymatrix}{rrr}
+      1 & 0 &  0 \\
+      0 & 2 &  0 \\
+      0 & 0 & -1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    (a) Positive semidefinite. (b) Positive definite. (c) Not
+    symmetric (therefore neither). (d) Positive semidefinite. (e)
+    Neither.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Calculate the eigenvalues of each symmetric matrix, then determine
+  for each matrix whether it is positive definite, positive
+  semidefinite, or neither.
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      2 & 2 \\
+      2 & 5 \\
+    \end{mymatrix},\quad
+    B = \begin{mymatrix}{rr}
+      4  & -6 \\
+      -6 &  9 \\
+    \end{mymatrix},\quad
+    C = \begin{mymatrix}{rrr}
+      2 &  1 &  0 \\
+      1 &  1 & -1 \\
+      0 & -1 &  2 \\
+    \end{mymatrix},\quad
+    D = \begin{mymatrix}{rrr}
+      3 & -4 &  2 \\
+     -4 &  4 &  0 \\
+      2 &  0 &  4 \\
+    \end{mymatrix}.
+  \end{equation*}
+  is positive definite, positive semidefinite, or neither.
+  \begin{sol}
+    (a) Eigenvalues: $\set{1,6}$. Positive definite.
+    (b) Eigenvalues: $\set{0,13}$. Positive semidefinite.
+    (c) Eigenvalues: $\set{0,2,3}$. Positive semidefinite.
+    (d) Eigenvalues: $\set{-1,4,8}$. Neither.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Which of the following formulas define an inner product on $\R^3$?
+  Here, $\vect{u}=\mat{u_1,u_2,u_3}^T$ and
+  $\vect{v}=\mat{v_1,v_2,v_3}^T$.
+  \begin{enumerate}
+  \item $\iprod{\vect{u},\vect{v}} = u_1v_1 + 2u_1v_2 + 2u_2v_1 + 3u_2v_2
+    + 3u_3v_3$.
+  \item $\iprod{\vect{u},\vect{v}} = u_1v_1 - u_1v_2 - u_2v_1 + 2u_2v_2
+    + u_3v_3$.
+  \item $\iprod{\vect{u},\vect{v}} = u_1v_1 - u_1v_2 - u_2v_1 + u_2v_2
+    + 4u_3v_3$.
+  \item $\iprod{\vect{u},\vect{v}} = u_1v_1 - u_1v_2 - u_2v_1 + 3u_2v_2
+    - u_2v_3 - u_3v_2 + u_3v_3$.
+  \end{enumerate}
+  \begin{sol}
+    (a) No (neither positive definite nor semidefinite).
+    (b) Yes.
+    (c) No (positive semidefinite but not definite).
+    (d) Yes.
+  \end{sol}
+\end{ex}
