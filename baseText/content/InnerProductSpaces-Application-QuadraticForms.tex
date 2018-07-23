@@ -477,10 +477,10 @@ proposition.
       \begin{scope}[color=black]
         \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
         \draw[->] (0,-1.5) -- (0,1.5) node[below right] {$y$};
-        \draw (-1,0) -- +(0,-.1) +(0,-0.2) node {$-1$};
-        \draw (1,0) -- +(0,-.1) +(0,-0.2) node {$1$};
-        \draw (0,-1) -- +(-.1,0) +(-0.2,0) node {$-1$};
-        \draw (0,1) -- +(-.1,0) +(-0.2,0) node {$1$};
+        \draw (-1,0) -- +(0,-.1) node[below] {$-1$};
+        \draw (1,0) -- +(0,-.1) node[below] {$1$};
+        \draw (0,-1) -- +(-.1,0) node[left] {$-1$};
+        \draw (0,1) -- +(-.1,0) node[left] {$1$};
       \end{scope}
       \begin{scope}[color=blue,cm={(1/sqrt(5),2/sqrt(5),-2/sqrt(5),1/sqrt(5),(0,0))}]
         \draw[thick,red] (0,0) circle [x radius={1/sqrt(7)}, y radius={1/sqrt(2)}];
