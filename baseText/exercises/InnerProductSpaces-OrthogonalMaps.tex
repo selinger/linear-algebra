@@ -1,0 +1,81 @@
+\section*{Exercises}
+
+\begin{ex}
+  Which of the following linear transformations $T:\R^3\to\R^3$ are
+  orthogonal?
+  \begin{enumerate}
+  \item A rotation by 30 degrees about the $z$-axis.
+  \item A reflection about the plane $x=y$.
+  \item A scaling by a factor of $2$.
+  \item A scaling by a factor of $-1$.
+  \end{enumerate}
+  \begin{sol}
+    (a) yes. (b) yes. (c) no. (d) yes.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Which of the following matrices define orthogonal transformations?
+  Which ones define isometries?
+  \begin{equation*}
+    A = \begin{mymatrix}{rr}
+      1 &  0 \\
+      0 & -1 \\
+    \end{mymatrix},\quad
+    B = \frac{1}{2}\begin{mymatrix}{rr}
+      1 & 1 \\
+      -1 & 1 \\
+    \end{mymatrix},\quad
+    C = \frac{1}{\sqrt{5}}\begin{mymatrix}{rr}
+      1 & -2 \\
+      2 &  1 \\
+    \end{mymatrix},\quad
+    D = \frac{1}{4}\begin{mymatrix}{rr}
+      1 &  2 \\
+      2 &  2 \\
+      2 & -1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    $A$ and $C$ are orthogonal (and therefore isometries). $D$ is an
+    isometry but not orthogonal. $B$ is neither orthogonal nor an isometry.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Determine which of the following matrices are orthogonal by checking
+  whether the columns form an orthonormal set.
+  \begin{equation*}
+    A = \frac{1}{3}
+    \begin{mymatrix}{rrr}
+      1  &  2 &  2 \\
+      2  &  1 & -2 \\
+      -2 &  2 & -1 \\
+    \end{mymatrix},
+    \quad
+    B = \begin{mymatrix}{rrr}
+      0 & 0 & 2 \\
+      0 & 2 & 0 \\
+      2 & 0 & 0 \\
+    \end{mymatrix},
+    \quad
+    C = \frac{1}{3}
+    \begin{mymatrix}{rrr}
+      2  & -1 &  2 \\
+      -1 &  2 & -2 \\
+      2  & -2 &  1 \\
+    \end{mymatrix},
+    \quad
+    D =
+    \frac{1}{5}
+    \begin{mymatrix}{rrr}
+      3 &  4 & 0 \\
+      4 & -3 & 0 \\
+      0 &  0 & 5 \\
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    $A$ and $D$ are orthogonal, but $B$ and $C$ are not.
+  \end{sol}
+\end{ex}
+
