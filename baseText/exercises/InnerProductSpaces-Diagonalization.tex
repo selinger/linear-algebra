@@ -1,0 +1,89 @@
+\section*{Exercises}
+
+\begin{ex}
+  For each of the following symmetric matrices, find the eigenvalues,
+  an orthonormal basis for each eigenspace, and then orthogonally
+  diagonalize the matrix.
+  \begin{equation*}
+    (a)\quad
+    A = \begin{mymatrix}{rr}
+      -1 & 2 \\
+      2  & 2 \\
+    \end{mymatrix},\quad
+    (b)\quad
+    A = \begin{mymatrix}{rr}
+      3 & 1 \\
+      1 & 3 \\
+    \end{mymatrix},\quad
+    (c)\quad
+    A = \begin{mymatrix}{rrr}
+      1 & 1 & 0 \\
+      1 & 2 & 1 \\
+      0 & 1 & 1 \\
+    \end{mymatrix},\quad
+    (d)\quad
+    A = \begin{mymatrix}{rrr}
+      2 & 1 & 2 \\
+      1 & 2 & 2 \\
+      2 & 2 & 5 \\
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    \begin{enumerate}
+    \item $A=PDP^{-1}$ where $D=\begin{mymatrix}{rr}
+        -2 & 0 \\
+        0  & 3 \\
+      \end{mymatrix}$,
+      $P=\frac{1}{\sqrt{5}}\begin{mymatrix}{rr}
+        2  & 1 \\
+        -1 & 2 \\
+      \end{mymatrix}$.
+    \item $A=PDP^{-1}$ where $D=\begin{mymatrix}{rr}
+        2 & 0 \\
+        0 & 4 \\
+      \end{mymatrix}$,
+      $P=\frac{1}{\sqrt{2}}\begin{mymatrix}{rr}
+        1  & 1 \\
+        -1 & 1 \\
+      \end{mymatrix}$.
+    \item $A=PDP^{-1}$ where
+      $D=\begin{mymatrix}{rrr}
+        0 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 3 \\
+      \end{mymatrix}$,
+      $\def\arraystretch{1.3}
+      P=\begin{mymatrix}{rrr}
+        \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} \\
+        -\frac{1}{\sqrt{3}} & 0 & \frac{2}{\sqrt{6}} \\
+        \frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} \\
+      \end{mymatrix}$.
+    \item $A=PDP^{-1}$ where
+      $D=\begin{mymatrix}{rrr}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 7 \\
+      \end{mymatrix}$,
+      $\def\arraystretch{1.3}
+      P=\begin{mymatrix}{rrr}
+        \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{6}} \\
+        -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{6}} \\
+        0 & -\frac{1}{\sqrt{3}} & \frac{2}{\sqrt{6}} \\
+      \end{mymatrix}$.
+    \end{enumerate}
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Prove the converse of Theorem~\ref{thm:diagonalization-symmetric}:
+  if a matrix $A$ is orthogonally diagonalizable, then $A$ is
+  symmetric.
+  \begin{sol}
+    Suppose $A$ is orthogonally diagonalizable. Then $A=PDP^{-1}$,
+    where $D$ is diagonal and $P$ is orthogonal. Since $P$ is
+    orthogonal, we have $P^{-1}=P^T$, and therefore
+    $A=PDP^T$. Moreover, since $D$ is diagonal, we have $D=D^T$. It
+    follows that $A^T = (PDP^T)^T = (P^T)^T D^T P^T = PDP^T = A$, so
+    $A$ is symmetric.
+  \end{sol}
+\end{ex}
