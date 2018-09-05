@@ -17,3 +17,4 @@
 *.two
 *.texwatch.lock
 *.bak
+/revid.tex
