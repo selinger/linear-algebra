@@ -37,7 +37,7 @@ interior.dvi: $(TEXNAME).tex revid.tex
 	latex --jobname interior $<
 	latex --jobname interior $<
 
-%.dvi : %.tex
+%.dvi : %.tex revid.tex
 	latex $<
 	makeindex $(TEXNAME)
 	latex $<
@@ -68,9 +68,8 @@ spellcheck:
 	ispell -d canadian -p ./dictionary.txt -t frontmatter/*.tex content/*.tex exercises/*.tex
 
 .PHONY: revid.tex
-revision: revid.tex
 revid.tex:
-	REV=`git rev-parse HEAD | sed 's/\(........\).*/\1/'`;\
+	REV=`git rev-parse HEAD | sed 's/\(.......\).*/\1/'`;\
 	DATE=`git log HEAD^- | grep '^Date:' | sed 's/Date://;s/\([0-9]*:[0-9]*:[0-9]*\) \+\([0-9][0-9][0-9][0-9]\)/\2 \1/'`;\
 	FDATE=`date "+%B %e, %Y" -d "$$DATE" --utc`;\
 	echo "\\\newcommand{\\\revid}{$$REV}" > "revid-new.tex";\
