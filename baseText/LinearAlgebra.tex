@@ -222,7 +222,8 @@
     \frontmatter
 
     \ifthenelse{\equal{\detokenize{interior}}{\jobname}}{
-      % Skip title page for interior
+      % Skip title page for interior (but don't change the numbering)
+      \setcounter{page}{3}
     }{
       \input{frontmatter/titlepage.tex}
       \cleardoublepage
