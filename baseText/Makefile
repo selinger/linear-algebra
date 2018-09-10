@@ -49,6 +49,7 @@ interior.dvi: $(TEXNAME).tex revid.tex
 %.pdf : %.ps
 	ps2pdf -r300 -dPDFSETTINGS=/printer -dColorConversionStrategy=/LeaveColorUnchanged -dGrayImageResolution=300 -dColorImageResolution=300 $<
 
+.SECONDARY: interior.ps
 
 # Intermediate and target files that Latex will output
 suffixes := .dvi .ps .pdf .out .log .toc .aux .bbl .blg .tps .glo .ist .acn .idx .ilg .ind
