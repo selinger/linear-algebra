@@ -228,6 +228,7 @@ lyryx
 lyryxcolour
 lyryxlogoy
 MacKenzie
+mailto
 Manchin
 Markey
 Masto
