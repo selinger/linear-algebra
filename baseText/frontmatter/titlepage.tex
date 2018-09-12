@@ -43,9 +43,9 @@
   \textbf{
     \fontsize{34}{36}\selectfont {\textcolor{subtitletextcolour}{\booksubtitle}} \\
     \fontsize{54}{60}\selectfont {\textcolor{titletextcolour}{\booksubject}} \\[.5\baselineskip]
-    \fontsize{20pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{An open text by Peter Selinger}}\smallskip\\[.5\baselineskip]
-    \fontsize{16pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{Based on the original text by Lyryx Learning and Ken Kuttler}}\bigskip \\
-    \fontsize{16pt}{18pt}\selectfont {\textcolor{subtitletextcolour}{\edition}} \\
+    \fontsize{20pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{An open text by Peter Selinger}}\smallskip\\
+    \fontsize{14pt}{18pt}\selectfont {\textcolor{subtitletextcolour}{Based on the original text by Lyryx Learning and Ken Kuttler}}\bigskip \\[.5\baselineskip]
+    \fontsize{14pt}{16pt}\selectfont {\textcolor{subtitletextcolour}{\edition}} \\
   }
 \end{center}
 
@@ -53,20 +53,26 @@
 
 % License
 \begin{center*}
-  {\fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}}
+  \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
+    \raisebox{-0.5in}[0in][0in]{%
+      \fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}%
+    }
+  }{
+    \fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}%
+  }
 \end{center*}
 
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
   \begin{tikzpicture}[remember picture,overlay]
     \node[outer sep=0in, inner sep=0in, anchor=north] at
     ([yshift=-0.25in-\bleed-1.5in,xshift=\bleed+4.25in]current page.north west) {
-      \begin{minipage}{5in}
-        \fontsize{14pt}{20pt}\selectfont
-        \textbf{
+      \begin{minipage}{4.3in}
+        \fontsize{12pt}{16pt}\selectfont
+        \textbf{\textsf{
           \textcolor{subtitletextcolour}{
             \input{frontmatter/blurb.tex}
           }
-        }
+        }}
       \end{minipage}
     };
   \end{tikzpicture}
@@ -77,10 +83,10 @@
         \begin{minipage}{10in}
           \begin{tikzpicture}
             \node[anchor=west] at (0in,0) {
-              \fontsize{34}{36}\selectfont {\textcolor{subtitletextcolour}{\bookfulltitle}}
+              \fontsize{26}{28}\selectfont {\textcolor{subtitletextcolour}{\textbf{\textsf{\bookfulltitle}}}}
             };
             \node[anchor=east] at (10in,0) {
-              \fontsize{20pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{Peter Selinger}}
+              \fontsize{20pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{\textsf{Peter Selinger}}}
             };
           \end{tikzpicture}
         \end{minipage}
