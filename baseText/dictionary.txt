@@ -134,6 +134,7 @@ fourier
 Fourier's
 Franken
 Friess
+frontmatter
 FuncXK
 Gaston
 gauss
@@ -263,6 +264,7 @@ nilpotent
 NJ
 nkd
 NM
+nodeanchor
 notational
 NRQEUAPOM
 NV
@@ -324,6 +326,7 @@ seealso
 selinger
 semidefinite
 semithick
+sep
 SeqK
 sextuple
 Shaheen
@@ -346,6 +349,7 @@ SVD
 SW
 Tamsyn
 TAV
+tex
 TGVXKHGSW
 th
 Thune
