@@ -65,8 +65,9 @@
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
   \begin{tikzpicture}[remember picture,overlay]
     \node[outer sep=0in, inner sep=0in, anchor=north] at
-    ([yshift=-0.25in-\bleed-1.5in,xshift=\bleed+4.25in]current page.north west) {
+    ([yshift=-0.25in-\bleed-1in,xshift=\bleed+4.25in]current page.north west) {
       \begin{minipage}{4.3in}
+        \setlength{\parskip}{2ex}
         \fontsize{12pt}{16pt}\selectfont
         \textbf{\textsf{
           \textcolor{subtitletextcolour}{
