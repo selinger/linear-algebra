@@ -4,8 +4,18 @@
 \backgroundsetup{
   scale=1,
   angle=0,
-  opacity=1,  %% adjust
-  contents={\includegraphics[width=\paperwidth,height=\paperheight]{figures/titlepage-image}}
+  opacity=1,
+  position=current page.north west,
+  nodeanchor=north west,
+  % For some reason, current page.north east is 0.25in too high. This
+  % is probably a bug related to the presence of trim.
+  contents={%
+    \raisebox{-0.25in}[\height][0in]{%
+      \includegraphics[height=\paperheight,width=8.5in+\trim]{figures/titlepage-image-print2}%
+      \includegraphics[height=\paperheight,width=\spinewidth]{figures/titlepage-image-spine}%
+      \includegraphics[height=\paperheight,width=8.5in+\trim]{figures/titlepage-image-print1}%
+    }%
+  }%
 }
 \BgThispage
 

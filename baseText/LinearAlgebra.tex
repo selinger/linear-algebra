@@ -124,12 +124,15 @@
 
 
 %% Print Setup
+\newlength{\trim}
+\newlength{\spinewidth}
 \newlength{\coverwidth}
+\newlength{\coverheight}
 \newlength{\frontsideleft}
 \newlength{\pagethickness}
 
 %% set page number of interior
-\newcommand{\numpages}{604}
+\newcommand{\numpages}{560}
 
 % Color interior
 \setlength{\pagethickness}{0.0025in}
@@ -192,13 +195,15 @@
 % \setlength{\frontsideleft}{0.125in + 8.5in + (\pagethickness * \numpages) + 0.125in}
 
 % Lengths from LULU for samples 2017-01-16
-\setlength{\coverwidth}{44.229cm}
-\setlength{\frontsideleft}{21.905cm+0.419cm+0.3cm} %Spine begins + Spine width +safe zone
+\setlength{\trim}{0.125in}
+\setlength{\spinewidth}{76.075bp} %  \numpages * 0.13585bp for b/w?
+\setlength{\coverwidth}{\trim + 8.5in + \spinewidth + 8.5in + \trim}
+\setlength{\coverheight}{\trim + 11in + \trim}
+\setlength{\frontsideleft}{\trim + 8.5in + \spinewidth} %Spine begins + Spine width +safe zone
 
 % Options showframe, showcrop, and verbose can be used for debugging
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
-  % \geometry{papersize={\coverwidth,28.571cm},layoutsize={21cm,27.3cm},layoutoffset={\frontsideleft,0.6cm},body={18.4cm,24.7cm}}
-  \geometry{papersize={\coverwidth,28.571cm},layoutsize={21.3cm,27.3cm},layoutoffset={\frontsideleft,0.3cm},body={18.4cm,24.7cm}}
+  \geometry{papersize={\coverwidth,\coverheight},layoutsize={8.5in,11in},layoutoffset={\frontsideleft,\trim},body={18.4cm,24.7cm},showframe,showcrop,verbose}
 }{
   % No change in geometry for regular pdf
 }
