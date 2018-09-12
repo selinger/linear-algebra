@@ -286,6 +286,7 @@ Perdue
 piecewise
 PJQZGBOQKW
 plaintext
+Pok
 Poohbah
 Portman
 pos
@@ -301,6 +302,7 @@ remix
 Reynold's
 rgb
 RI
+Rie
 Risch
 rk
 rn
