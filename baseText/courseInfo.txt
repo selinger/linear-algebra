@@ -1,7 +1,0 @@
-\newcommand{\institution}{Dalhousie University}
-\newcommand{\courseCode}{} 
-\newcommand{\courseName}{Matrix Theory and Linear Algebra}
-\newcommand{\courseSession}{ }
-\newcommand{\courseSection}{ }
-\newcommand{\edition}{2018/2019 edition}
-
