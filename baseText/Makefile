@@ -12,7 +12,7 @@ index: $(TEXNAME).ind
 print-cover: print-cover.pdf
 
 print-cover: print-cover.pdf
-print-cover.dvi: $(TEXNAME).tex frontmatter/titlepage.tex figures/titlepage-image-print1.eps figures/titlepage-image-print2.eps figures/titlepage-image-spine.eps
+print-cover.dvi: $(TEXNAME).tex frontmatter/titlepage.tex figures/titlepage-image-print1.eps figures/titlepage-image-print2.eps figures/titlepage-image-spine.eps frontmatter/blurb.tex
 	latex --jobname print-cover $<
 	latex --jobname print-cover $<
 	latex --jobname print-cover $<
