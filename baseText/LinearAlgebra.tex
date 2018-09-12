@@ -120,7 +120,7 @@
 
 
 %% Print Setup
-\newlength{\trim}
+\newlength{\bleed}
 \newlength{\spinewidth}
 \newlength{\coverwidth}
 \newlength{\coverheight}
@@ -142,7 +142,7 @@
 %
 %%% Here are the calculations from lulu.com:
 % 
-% Page size: 8.5in x 11in
+% Trim size (i.e., page size after cutting): 8.5in x 11in
 %
 % Spine width: B+W interior: 560 * 0.135848bp = 76.075bp
 %              Color interior: 560 * 0.13688bp = 76.653bp
@@ -153,7 +153,7 @@
 % lines to ensure that no live elements are cut during the bookmaking
 % process.
 %
-% Cover Width: Bleed + Back Cover Trim Size + Spine Width + Front Cover Trim Size + Bleed
+% Cover Width: Bleed + Back Cover Trim Width + Spine Width + Front Cover Trim Width + Bleed
 % Cover Height: Bleed + Cover Trim Height + Bleed
 %
 % For 560 pages in black and white:
@@ -162,15 +162,15 @@
 % Height of PDF: 0.125in + 11in + 0.125in
 
 % Lengths from LULU for samples 2017-01-16
-\setlength{\trim}{0.125in}
+\setlength{\bleed}{0.125in}
 \setlength{\spinewidth}{76.075bp} % \numpages * \pagethickness
-\setlength{\coverwidth}{\trim + 8.5in + \spinewidth + 8.5in + \trim}
-\setlength{\coverheight}{\trim + 11in + \trim}
-\setlength{\frontsideleft}{\trim + 8.5in + \spinewidth}
+\setlength{\coverwidth}{\bleed + 8.5in + \spinewidth + 8.5in + \bleed}
+\setlength{\coverheight}{\bleed + 11in + \bleed}
+\setlength{\frontsideleft}{\bleed + 8.5in + \spinewidth}
 
 % Options showframe, showcrop, and verbose can be used for debugging
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
-  \geometry{papersize={\coverwidth,\coverheight},layoutsize={8.5in,11in},layoutoffset={\frontsideleft,\trim}}
+  \geometry{papersize={\coverwidth,\coverheight},layoutsize={8.5in,11in},layoutoffset={\frontsideleft,\bleed}}
 }{
   % No change in geometry for regular pdf
 }

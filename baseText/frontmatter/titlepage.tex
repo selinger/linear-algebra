@@ -9,11 +9,11 @@
     position=current page.north west,
     nodeanchor=north west,
     % For some reason, current page.north east is 0.25in too high. This
-    % is probably a bug related to the presence of trim.
+    % is probably a bug related to the presence of bleed.
     contents={%
       \raisebox{-0.25in}[\height][0in]{%
-        \includegraphics[height=\paperheight,width=8.5in+\trim+\spinewidth]{figures/titlepage-image-print2}%
-        \includegraphics[height=\paperheight,width=8.5in+\trim]{figures/titlepage-image}%
+        \includegraphics[height=\paperheight,width=8.5in+\bleed+\spinewidth]{figures/titlepage-image-print2}%
+        \includegraphics[height=\paperheight,width=8.5in+\bleed]{figures/titlepage-image}%
       }%
     }%
   }
@@ -58,7 +58,7 @@
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
   \begin{tikzpicture}[remember picture,overlay]
     \node[outer sep=0in, inner sep=0in, anchor=north] at
-    ([yshift=-0.25in-\trim-1.5in,xshift=\trim+4.25in]current page.north west) {
+    ([yshift=-0.25in-\bleed-1.5in,xshift=\bleed+4.25in]current page.north west) {
       \begin{minipage}{5in}
         \fontsize{14pt}{20pt}\selectfont
         \textbf{
@@ -71,7 +71,7 @@
   \end{tikzpicture}
   \begin{tikzpicture}[remember picture,overlay]
     \node[outer sep=0in, inner sep=0in, anchor=center] at
-    ([yshift=-0.25in-\trim-5.5in,xshift=\trim+8.5in+0.5\spinewidth]current page.north west) {
+    ([yshift=-0.25in-\bleed-5.5in,xshift=\bleed+8.5in+0.5\spinewidth]current page.north west) {
       \rotatebox{-90}{%
         \begin{minipage}{10in}
           \begin{tikzpicture}
