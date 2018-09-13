@@ -37,6 +37,10 @@ interior.dvi: $(TEXNAME).tex revid.tex
 	latex --jobname interior $<
 	latex --jobname interior $<
 
+interior-crown-quarto: interior-crown-quarto.pdf
+interior-crown-quarto.pdf: interior.pdf
+	gs -o "$@" -SDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage $<
+
 %.dvi : %.tex revid.tex
 	latex $<
 	makeindex $(TEXNAME)
