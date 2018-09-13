@@ -13,45 +13,45 @@ print-cover: print-cover.pdf
 
 print-cover: print-cover.pdf
 print-cover.dvi: $(TEXNAME).tex frontmatter/titlepage.tex frontmatter/blurb.tex figures/titlepage-image-print1.eps figures/titlepage-image-print2.eps
-	latex --jobname print-cover $<
-	latex --jobname print-cover $<
-	latex --jobname print-cover $<
+	latex --jobname print-cover "$<"
+	latex --jobname print-cover "$<"
+	latex --jobname print-cover "$<"
 
 print-cover-front: print-cover-front.pdf
 print-cover-front.dvi: $(TEXNAME).tex
-	latex --jobname print-cover-front $<
-	latex --jobname print-cover-front $<
-	latex --jobname print-cover-front $<
+	latex --jobname print-cover-front "$<"
+	latex --jobname print-cover-front "$<"
+	latex --jobname print-cover-front "$<"
 
 base-text: base-text.pdf
 base-text.dvi: $(TEXNAME).tex
-	latex --jobname base-text $<
-	makeindex base-text $<
-	latex --jobname base-text $<
-	latex --jobname base-text $<
+	latex --jobname base-text "$<"
+	makeindex base-text "$<"
+	latex --jobname base-text "$<"
+	latex --jobname base-text "$<"
 
 interior: interior.pdf
 interior.dvi: $(TEXNAME).tex revid.tex
-	latex --jobname interior $<
-	makeindex interior $<
-	latex --jobname interior $<
-	latex --jobname interior $<
+	latex --jobname interior "$<"
+	makeindex interior "$<"
+	latex --jobname interior "$<"
+	latex --jobname interior "$<"
 
 interior-crown-quarto: interior-crown-quarto.pdf
 interior-crown-quarto.pdf: interior.pdf
-	gs -o "$@" -SDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage $<
+	gs -o "$@" -SDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage "$<"
 
 %.dvi : %.tex revid.tex
-	latex $<
+	latex "$<"
 	makeindex $(TEXNAME)
-	latex $<
-	latex $<
+	latex "$<"
+	latex "$<"
 
 %.ps : %.dvi
-	dvips -o $*.ps $< 
+	dvips -o "$*".ps "$<" 
 
 %.pdf : %.ps
-	ps2pdf -r300 -dPDFSETTINGS=/printer -dColorConversionStrategy=/LeaveColorUnchanged -dGrayImageResolution=300 -dColorImageResolution=300 $<
+	ps2pdf -r300 -dPDFSETTINGS=/printer -dColorConversionStrategy=/LeaveColorUnchanged -dGrayImageResolution=300 -dColorImageResolution=300 "$<"
 
 .SECONDARY: interior.ps
 
