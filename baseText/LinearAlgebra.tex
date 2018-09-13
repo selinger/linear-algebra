@@ -213,12 +213,15 @@
     % \end{document} %to compile only the front matter
 
     % Table of Contents
-    \phantomsection
-    \addcontentsline{toc}{chapter}{Contents} %Adds contents to the table of contents itself
-    \setlength{\parskip}{3.5pt} % alter vertical space in subsequent contents. Can alter this value to adjust TOC to fit nicely on page and prevent widows/orphans, careful that this will affect the entire text.
+    % 
+    % Add the table of contents to the PDF bookmarks, but not to itself.
+    \pdfbookmark{Contents}{contents}
+    \setlength{\parskip}{3.5pt} % adjust to fit contents nicely
     \tableofcontents
     \cleardoublepage
 
+    \setlength{\parskip}{3.5pt} % to use for the rest of the book.
+    
     \mainmatter
 
     % Get ready for exercises and their solutions. We use \jobname as
