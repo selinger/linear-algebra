@@ -125,18 +125,18 @@
 \newlength{\coverwidth}
 \newlength{\coverheight}
 \newlength{\frontsideleft}
-\newlength{\hectopagethickness}
+\newlength{\kilopagethickness}
 \newlength{\coverthickness}
 
 %% set page number of interior
 \newcommand{\numpages}{558}
 
 % B+W Interior
-\setlength{\hectopagethickness}{13.55bp}  % per 100 pages, for accuracy
+\setlength{\kilopagethickness}{135.5bp}  % per 1000 pages, for accuracy
 \setlength{\coverthickness}{0.195bp}
 
 % Color interior
-% \setlength{\hectopagethickness}{13.65bp}  % per 100 pages, for accuracy
+% \setlength{\kilopagethickness}{136.5bp}  % per 1000 pages, for accuracy
 % \setlength{\coverthickness}{0.213bp}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -166,7 +166,7 @@
 
 % Lengths from LULU for samples 2017-01-16
 \setlength{\bleed}{0.125in}
-\setlength{\spinewidth}{\hectopagethickness*\numpages/100 + \coverthickness}
+\setlength{\spinewidth}{\kilopagethickness*\ratio{1pt*\numpages}{1000pt} + \coverthickness}
 \setlength{\coverwidth}{\bleed + 8.5in + \spinewidth + 8.5in + \bleed}
 \setlength{\coverheight}{\bleed + 11in + \bleed}
 \setlength{\frontsideleft}{\bleed + 8.5in + \spinewidth}
