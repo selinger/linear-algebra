@@ -12,9 +12,9 @@
     % is probably a bug related to the presence of bleed.
     contents={%
       \raisebox{-0.25in}[\height][0in]{%
-        \includegraphics[height=\paperheight,width=8.5in+\bleed]{figures/titlepage-image-print2}%
+        \includegraphics[height=\paperheight,width=\trimwidth+\bleed]{figures/titlepage-image-print2}%
         \textcolor{spinecolour}{\rule{\spinewidth}{\paperheight}}%
-        \includegraphics[height=\paperheight,width=8.5in+\bleed]{figures/titlepage-image-print1}%
+        \includegraphics[height=\paperheight,width=\trimwidth+\bleed]{figures/titlepage-image-print1}%
       }%
     }%
   }
@@ -65,7 +65,7 @@
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
   \begin{tikzpicture}[remember picture,overlay]
     \node[outer sep=0in, inner sep=0in, anchor=north] at
-    ([yshift=-0.25in-\bleed-1in,xshift=\bleed+4.25in]current page.north west) {
+    ([yshift=-0.25in-\bleed-1in,xshift=\bleed+0.5\trimwidth]current page.north west) {
       \begin{minipage}{5.2in}
         \setlength{\parskip}{2ex}
         \fontsize{12pt}{16pt}\selectfont
@@ -79,14 +79,14 @@
   \end{tikzpicture}
   \begin{tikzpicture}[remember picture,overlay]
     \node[outer sep=0in, inner sep=0in, anchor=center] at
-    ([yshift=-0.25in-\bleed-5.5in,xshift=\bleed+8.5in+0.5\spinewidth]current page.north west) {
+    ([yshift=-0.25in-\bleed-0.5\trimheight,xshift=\bleed+\trimwidth+0.5\spinewidth]current page.north west) {
       \rotatebox{-90}{%
-        \begin{minipage}{10in}
+        \begin{minipage}{\trimheight - 1in}
           \begin{tikzpicture}
             \node[anchor=west] at (0in,0) {
               \fontsize{26}{28}\selectfont {\textcolor{subtitletextcolour}{\textbf{\textsf{\bookfulltitle}}}}
             };
-            \node[anchor=east] at (10in,0) {
+            \node[anchor=east] at (\trimheight - 1in,0) {
               \fontsize{20pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{\textsf{Peter Selinger}}}
             };
           \end{tikzpicture}

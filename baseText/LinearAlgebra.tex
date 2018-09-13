@@ -118,27 +118,6 @@
 % Lyryx Linear Algebra Style
 \usepackage{LyryxLinAlgStyle}
 
-
-%% Print Setup
-\newlength{\bleed}
-\newlength{\spinewidth}
-\newlength{\coverwidth}
-\newlength{\coverheight}
-\newlength{\frontsideleft}
-\newlength{\kilopagethickness}
-\newlength{\coverthickness}
-
-%% set page number of interior
-\newcommand{\numpages}{558}
-
-% B+W Interior
-\setlength{\kilopagethickness}{135.5bp}  % per 1000 pages, for accuracy
-\setlength{\coverthickness}{0.195bp}
-
-% Color interior
-% \setlength{\kilopagethickness}{136.5bp}  % per 1000 pages, for accuracy
-% \setlength{\coverthickness}{0.213bp}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % PRINT COVER GEOMETRY CALCULATIONS
@@ -164,16 +143,43 @@
 % Width of PDF: 0.125in + 8.5in + 76.075bp + 8.5in + 0.125in
 % Height of PDF: 0.125in + 11in + 0.125in
 
-% Lengths from LULU for samples 2017-01-16
+%% Print Setup
+\newlength{\trimwidth}
+\newlength{\trimheight}
+\newlength{\bleed}
+\newlength{\kilopagethickness}
+\newlength{\coverthickness}
+\newlength{\spinewidth}
+\newlength{\coverwidth}
+\newlength{\coverheight}
+\newlength{\frontsideleft}
+
+% Number of pages of interior (rounded up to an even number)
+\newcommand{\numpages}{558}
+
+% Trim size: how big the physical pages will be after cutting
+\setlength{\trimwidth}{8.5in}
+\setlength{\trimheight}{11in}
+
+% Bleed: extra space to add outside of trim lines
 \setlength{\bleed}{0.125in}
+
+% Paper thickness for B+W interior
+\setlength{\kilopagethickness}{135.5bp}  % per 1000 pages, for accuracy
+\setlength{\coverthickness}{0.195bp}
+
+% Paper thickness for color interior
+% \setlength{\kilopagethickness}{136.5bp}  % per 1000 pages, for accuracy
+% \setlength{\coverthickness}{0.213bp}
+
 \setlength{\spinewidth}{\kilopagethickness*\ratio{1pt*\numpages}{1000pt} + \coverthickness}
-\setlength{\coverwidth}{\bleed + 8.5in + \spinewidth + 8.5in + \bleed}
-\setlength{\coverheight}{\bleed + 11in + \bleed}
-\setlength{\frontsideleft}{\bleed + 8.5in + \spinewidth}
+\setlength{\coverwidth}{\bleed + \trimwidth + \spinewidth + \trimwidth + \bleed}
+\setlength{\coverheight}{\bleed + \trimheight + \bleed}
+\setlength{\frontsideleft}{\bleed + \trimwidth + \spinewidth}
 
 % Options showframe, showcrop, and verbose can be used for debugging
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
-  \geometry{papersize={\coverwidth,\coverheight},layoutsize={8.5in,11in},layoutoffset={\frontsideleft,\bleed}}
+  \geometry{papersize={\coverwidth,\coverheight},layoutsize={\trimwidth,\trimheight},layoutoffset={\frontsideleft,\bleed}}
 }{
   % No change in geometry for regular pdf
 }
