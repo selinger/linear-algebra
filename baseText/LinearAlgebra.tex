@@ -125,16 +125,19 @@
 \newlength{\coverwidth}
 \newlength{\coverheight}
 \newlength{\frontsideleft}
-\newlength{\pagethickness}
+\newlength{\hectopagethickness}
+\newlength{\coverthickness}
 
 %% set page number of interior
-\newcommand{\numpages}{560}
+\newcommand{\numpages}{558}
 
 % B+W Interior
-\setlength{\pagethickness}{0.135848bp}
+\setlength{\hectopagethickness}{13.55bp}  % per 100 pages, for accuracy
+\setlength{\coverthickness}{0.195bp}
 
 % Color interior
-% \setlength{\pagethickness}{0.13688bp}
+% \setlength{\hectopagethickness}{13.65bp}  % per 100 pages, for accuracy
+% \setlength{\coverthickness}{0.213bp}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -144,9 +147,9 @@
 % 
 % Trim size (i.e., page size after cutting): 8.5in x 11in
 %
-% Spine width: B+W interior: 560 * 0.135848bp = 76.075bp
-%              Color interior: 560 * 0.13688bp = 76.653bp
-% 
+% Spine width: B+W interior: 558 * 0.1355bp + 0.195bp = 75.804bp
+%              Color interior: 558 * 0.1365bp + 0.213bp = 76.380bp
+ 
 % Bleed: 0.125in (needed on all 4 outside edges of PDF).
 %
 % Safe zone: Text and images must be at least 0.125" inside the trim
@@ -163,7 +166,7 @@
 
 % Lengths from LULU for samples 2017-01-16
 \setlength{\bleed}{0.125in}
-\setlength{\spinewidth}{76.075bp} % \numpages * \pagethickness
+\setlength{\spinewidth}{\hectopagethickness*\numpages/100 + \coverthickness}
 \setlength{\coverwidth}{\bleed + 8.5in + \spinewidth + 8.5in + \bleed}
 \setlength{\coverheight}{\bleed + 11in + \bleed}
 \setlength{\frontsideleft}{\bleed + 8.5in + \spinewidth}
