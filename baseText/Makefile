@@ -1,6 +1,3 @@
-#use Texlive 2015
-export PATH := /usr/local/texlive/2015/bin/x86_64-linux:$(PATH)
-
 TEXNAME=LinearAlgebra
 
 export TEXINPUTS=.:../styles:
@@ -50,11 +47,11 @@ interior-bw.dvi: $(TEXNAME).tex revid.tex
 
 interior-crown-quarto: interior-crown-quarto.pdf
 interior-crown-quarto.pdf: interior.pdf
-	gs -o "$@" -SDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None "$<"
+	gs -o "$@" -SDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dQUIET -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None "$<"
 
 interior-bw-crown-quarto: interior-bw-crown-quarto.pdf
 interior-bw-crown-quarto.pdf: interior-bw.pdf
-	gs -o "$@" -SDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None "$<"
+	gs -o "$@" -SDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dQUIET -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None "$<"
 
 %.dvi : %.tex revid.tex
 	latex "$<"
