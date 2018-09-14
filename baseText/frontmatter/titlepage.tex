@@ -32,14 +32,32 @@
 %% No page number
 \thispagestyle{empty}
 
+\ifcrownquarto
+\newcommand{\subtitlefont}{\fontsize{30}{32}\selectfont}
+\newcommand{\titlefont}{\fontsize{46}{53}\selectfont}
+\newcommand{\authorfont}{\fontsize{17}{19}\selectfont}
+\newcommand{\editionfont}{\fontsize{12}{16}\selectfont}
+\newcommand{\licensefont}{\fontsize{11}{11}\selectfont}
+\newcommand{\blurbfont}{\fontsize{11pt}{14pt}\selectfont}
+\newcommand{\blurbwidth}{4.7in}
+\else
+\newcommand{\subtitlefont}{\fontsize{34}{36}\selectfont}
+\newcommand{\titlefont}{\fontsize{54}{60}\selectfont}
+\newcommand{\authorfont}{\fontsize{20}{22}\selectfont}
+\newcommand{\editionfont}{\fontsize{14}{18}\selectfont}
+\newcommand{\licensefont}{\fontsize{12}{12}\selectfont}
+\newcommand{\blurbfont}{\fontsize{12pt}{16pt}\selectfont}
+\newcommand{\blurbwidth}{5.2in}
+\fi
+
 %% Title Information
 \begin{center}
   \textbf{
-    \fontsize{34}{36}\selectfont {\textcolor{subtitletextcolour}{\booksubtitle}} \\
-    \fontsize{54}{60}\selectfont {\textcolor{titletextcolour}{\booksubject}} \\[.5\baselineskip]
-    \fontsize{20pt}{22pt}\selectfont {\textcolor{subtitletextcolour}{An open text by Peter Selinger}}\smallskip\\
-    \fontsize{14pt}{18pt}\selectfont {\textcolor{subtitletextcolour}{Based on the original text by Lyryx Learning and Ken Kuttler}}\bigskip \\[.5\baselineskip]
-    \fontsize{14pt}{16pt}\selectfont {\textcolor{subtitletextcolour}{\edition}} \\
+    \subtitlefont {\textcolor{subtitletextcolour}{\booksubtitle}} \\
+    \titlefont {\textcolor{titletextcolour}{\booksubject}} \\[.5\baselineskip]
+    \authorfont {\textcolor{subtitletextcolour}{An open text by Peter Selinger}}\smallskip\\
+    \editionfont {\textcolor{subtitletextcolour}{Based on the original text by Lyryx Learning and Ken Kuttler}}\bigskip \\[.5\baselineskip]
+    \editionfont {\textcolor{subtitletextcolour}{\edition}} \\
   }
 \end{center}
 
@@ -48,9 +66,9 @@
   \begin{tikzpicture}[remember picture,overlay]
     \node[outer sep=0in, inner sep=0in, anchor=north] at
     ([yshift=-\bleed-1in,xshift=\bleed+0.5\trimwidth]current page.north west) {
-      \begin{minipage}{5.2in}
+      \begin{minipage}{\blurbwidth}
         \setlength{\parskip}{2ex}
-        \fontsize{12pt}{16pt}\selectfont
+        \blurbfont
         \textbf{\textsf{
           \textcolor{subtitletextcolour}{
             \input{frontmatter/blurb.tex}
@@ -82,6 +100,6 @@
 
 % License
 \begin{center*}
-  \fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}%
+  \licensefont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}%
 \end{center*}
 

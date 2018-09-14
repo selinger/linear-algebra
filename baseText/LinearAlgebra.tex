@@ -3,7 +3,7 @@
 
 % For the font
 \usepackage{mathptmx}
-\usepackage{roboto} %%for Lyryx Icon font
+\usepackage{roboto} %% better \textsf, used for spine and back cover
 \usepackage[T1]{fontenc}
 \usepackage[EULERGREEK]{sansmath}
 
@@ -180,9 +180,14 @@
 \newcommand{\numpages}{558}
 
 % Trim size: how big the physical pages will be after cutting
-\setlength{\trimwidth}{8.5in}
-\setlength{\trimheight}{11in}
-
+\ifcrownquarto
+  \setlength{\trimwidth}{536bp}
+  \setlength{\trimheight}{697bp}
+\else
+  \setlength{\trimwidth}{8.5in}
+  \setlength{\trimheight}{11in}
+\fi
+  
 % Bleed: extra space to add outside of trim lines
 \setlength{\bleed}{0.125in}
 

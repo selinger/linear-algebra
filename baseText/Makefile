@@ -10,12 +10,16 @@ all: $(TEXNAME).pdf
 index: $(TEXNAME).ind
 
 print-cover: print-cover.pdf
-
-print-cover: print-cover.pdf
 print-cover.dvi: $(TEXNAME).tex frontmatter/titlepage.tex frontmatter/blurb.tex figures/titlepage-image-print1.eps figures/titlepage-image-print2.eps
 	latex --jobname print-cover "$<"
 	latex --jobname print-cover "$<"
 	latex --jobname print-cover "$<"
+
+print-cover-crown-quarto: print-cover-crown-quarto.pdf
+print-cover-crown-quarto.dvi: $(TEXNAME).tex frontmatter/titlepage.tex frontmatter/blurb.tex figures/titlepage-image-print1.eps figures/titlepage-image-print2.eps
+	latex --jobname print-cover-crown-quarto "$<"
+	latex --jobname print-cover-crown-quarto "$<"
+	latex --jobname print-cover-crown-quarto "$<"
 
 print-cover-front: print-cover-front.pdf
 print-cover-front.dvi: $(TEXNAME).tex frontmatter/titlepage.tex figures/titlepage-image.eps
