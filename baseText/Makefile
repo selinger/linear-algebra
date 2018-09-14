@@ -71,15 +71,16 @@ interior-bw-crown-quarto.pdf: interior-bw.pdf
 .SECONDARY: interior.ps
 
 # Intermediate and target files that Latex will output
-suffixes := .dvi .ps .pdf .out .log .toc .aux .bbl .blg .tps .glo .ist .acn .idx .ilg .ind
+suffixes := .dvi .ps .pdf .out .log .toc .aux .bbl .blg .tps .glo .ist .acn .idx .ilg .ind 
 
 rmfiles := $(foreach f,$(suffixes),$(TEXNAME)$(f))
 
 .PHONY: clean
 clean:
-	rm -f $(foreach f,$(suffixes),$(TEXNAME)$(f)) solutions/*.tex interior.* ex.tex
+	rm -f $(foreach f,$(suffixes),$(TEXNAME)$(f)) *-answers.tex interior.* interior-bw.* interior-crown-quarto.* 
 	rm -f $(foreach f,$(suffixes),$(EXNAME)$(f))
 	rm -f $(foreach f,$(suffixes),print-cover$(f))
+	rm -f $(foreach f,$(suffixes),print-cover-crown-quarto$(f))
 	rm -f $(foreach f,$(suffixes),print-cover-front$(f))
 	rm -f $(foreach f,$(suffixes),base-text$(f))
 #Test
