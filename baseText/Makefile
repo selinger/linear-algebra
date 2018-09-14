@@ -39,7 +39,7 @@ interior.dvi: $(TEXNAME).tex revid.tex
 
 interior-crown-quarto: interior-crown-quarto.pdf
 interior-crown-quarto.pdf: interior.pdf
-	gs -o "$@" -SDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage "$<"
+	gs -o "$@" -SDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None "$<"
 
 %.dvi : %.tex revid.tex
 	latex "$<"
@@ -51,7 +51,7 @@ interior-crown-quarto.pdf: interior.pdf
 	dvips -o "$*".ps "$<" 
 
 %.pdf : %.ps
-	ps2pdf -r300 -dPDFSETTINGS=/printer -dColorConversionStrategy=/LeaveColorUnchanged -dGrayImageResolution=300 -dColorImageResolution=300 "$<"
+	ps2pdf -r300 -dPDFSETTINGS=/printer -dColorConversionStrategy=/LeaveColorUnchanged -dGrayImageResolution=300 -dColorImageResolution=300 -dAutoRotatePages=/None "$<"
 
 .SECONDARY: interior.ps
 
