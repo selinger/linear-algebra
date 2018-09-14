@@ -470,15 +470,13 @@ orthogonal polynomials. The first few elements of this sequence are:
 \end{eqnarray*}
 \begin{center}
   \begin{tikzpicture}[domain=1:-1, scale=4]
-    \definecolor{my-blue}{rgb}{0,0.87,1.00}
-    \definecolor{my-yellow}{rgb}{1.00,0.87,0.00}
-    \draw[thick,color=my-yellow] plot (\x,{abs(\x^6)-15/11*abs(\x^4)+5/11*abs(\x^2)-5/231}) node[left=2ex] {$x^6 - \frac{15}{11}x^4 + \frac{5}{11}x^2 - \frac{5}{231}$};
-    \draw[thick,color=my-blue] plot (\x,{\x^5 - 10/9*\x^3+5/21*\x}) node[left=2ex] {$x^5 - \frac{10}{9}x^3 + \frac{5}{21}x$};
-    \draw[thick,color=orange] plot (\x,{abs(\x^4)-6/7*abs(\x^2)+3/35}) node[left=2ex] {$x^4 - \frac{6}{7}x^2 + \frac{3}{35}$};
-    \draw[thick,color=green!70!black] plot (\x,\x^3-3/5*\x) node[left=2ex] {$x^3 - \frac{3}{5}x$};
-    \draw[thick,color=red] plot (\x,{abs(\x^2)-1/3}) node[left=2ex] {$x^2-\frac{1}{3}$};
-    \draw[thick,color=blue] plot (\x,\x) node[left=2ex] {$x$};
-    \draw[thick,color=purple] plot (\x,1) node[left=2ex] {$1$};
+    \draw[thick,color=fourier1,samples=50] plot (\x,{abs(\x^6)-15/11*abs(\x^4)+5/11*abs(\x^2)-5/231}) node[left=2ex,color=fourier1t] {$x^6 - \frac{15}{11}x^4 + \frac{5}{11}x^2 - \frac{5}{231}$};
+    \draw[thick,color=fourier2,samples=50] plot (\x,{\x^5 - 10/9*\x^3+5/21*\x}) node[left=2ex,color=fourier2t] {$x^5 - \frac{10}{9}x^3 + \frac{5}{21}x$};
+    \draw[thick,color=fourier3,samples=50] plot (\x,{abs(\x^4)-6/7*abs(\x^2)+3/35}) node[left=2ex,color=fourier3t] {$x^4 - \frac{6}{7}x^2 + \frac{3}{35}$};
+    \draw[thick,color=fourier4,samples=50] plot (\x,\x^3-3/5*\x) node[left=2ex,color=fourier4t] {$x^3 - \frac{3}{5}x$};
+    \draw[thick,color=fourier5,samples=50] plot (\x,{abs(\x^2)-1/3}) node[left=2ex,,color=fourier5t] {$x^2-\frac{1}{3}$};
+    \draw[thick,color=fourier6] plot (\x,\x) node[left=2ex,color=fourier6t] {$x$};
+    \draw[thick,color=fourier7] plot (\x,1) node[left=2ex,color=fourier7t] {$1$};
     \draw[->] (-1.2,0) -- (1.2,0) node[right] {$x$};
     \draw[->] (0,-1.2) -- (0,1.2) node[above] {$p(x)$};
     \draw (1,0) -- (1,-0.05) node[below] {$1$};

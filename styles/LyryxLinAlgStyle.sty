@@ -33,6 +33,43 @@
 \definecolor{solutioncolour}{HTML}{003835}
 \definecolor{outcomecolour}{HTML}{E0B659}
 
+% Colors for graphs, especially in the Fourier and Gram-Schmidt
+% chapters. Fourier0 a gray used for the "original" function, and the
+% sequence of colors fourier1-7 should be chosen to appear
+% progressively darker when printed in black and white. Also, it is
+% good to alternate warm and cold colors. Each color also has a
+% corresponding text color which may be darker to increase
+% readability. We use a different color palette for b/w book printing.
+
+\definecolor{fourier0}{rgb}{0.4,0.4,0.4}
+\colorlet{fourier1}{orange!50!yellow}
+\definecolor{fourier2}{rgb}{0,0.6,0.9}
+\colorlet{fourier3}{orange}
+\colorlet{fourier4}{green!70!black}
+\colorlet{fourier5}{red!50!purple}
+\colorlet{fourier6}{blue}
+\colorlet{fourier7}{purple!80!black}
+
+\ifblackandwhite
+  \colorlet{fourier0t}{black}
+  \colorlet{fourier1t}{black}
+  \colorlet{fourier2t}{black}
+  \colorlet{fourier3t}{black}
+  \colorlet{fourier4t}{black}
+  \colorlet{fourier5t}{black}
+  \colorlet{fourier6t}{black}
+  \colorlet{fourier7t}{black}
+\else
+  \colorlet{fourier0t}{fourier0}
+  \colorlet{fourier1t}{fourier1}
+  \colorlet{fourier2t}{fourier2}
+  \colorlet{fourier3t}{fourier3}
+  \colorlet{fourier4t}{fourier4}
+  \colorlet{fourier5t}{fourier5}
+  \colorlet{fourier6t}{fourier6}
+  \colorlet{fourier7t}{fourier7}
+\fi
+  
 % %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % . . . End of Colours . . . 

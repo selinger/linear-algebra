@@ -41,8 +41,19 @@ interior.dvi: $(TEXNAME).tex revid.tex
 	latex --jobname interior "$<"
 	latex --jobname interior "$<"
 
+interior-bw: interior-bw.pdf
+interior-bw.dvi: $(TEXNAME).tex revid.tex
+	latex --jobname interior-bw "$<"
+	makeindex interior-bw "$<"
+	latex --jobname interior-bw "$<"
+	latex --jobname interior-bw "$<"
+
 interior-crown-quarto: interior-crown-quarto.pdf
 interior-crown-quarto.pdf: interior.pdf
+	gs -o "$@" -SDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None "$<"
+
+interior-bw-crown-quarto: interior-bw-crown-quarto.pdf
+interior-bw-crown-quarto.pdf: interior-bw.pdf
 	gs -o "$@" -SDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None "$<"
 
 %.dvi : %.tex revid.tex

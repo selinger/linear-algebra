@@ -32,9 +32,14 @@
 \newif\ifcrownquarto
 \newif\ifprintcoverfront
 \newif\ifprintcoverfull
+\newif\ifblackandwhite
 
 \ifthenelse{\equal{\detokenize{interior}}{\jobname}}{
   \interiortrue
+}{}
+\ifthenelse{\equal{\detokenize{interior-bw}}{\jobname}}{
+  \interiortrue
+  \blackandwhitetrue
 }{}
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
   \printcovertrue

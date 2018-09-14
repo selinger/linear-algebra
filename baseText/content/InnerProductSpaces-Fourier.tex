@@ -263,10 +263,10 @@ approximations%
     \begin{tikzpicture}[domain=-1:1, scale=3, samples=25]
       \def\fA#1{1}
       \def\fC#1{(abs((#1)^2)-1/3)}
-      \draw[thick,color=my-gray] (-1,0) -- (0,1) -- (1,0);
-      \draw[thick,color=my-green!80!black] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}});
-      \path[color=my-green!80!black] (0.6,0.6) node[right]{$g(x)= \frac{13}{16} - \frac{15}{16}x^2$};
-      \path[color=my-gray] (0.2,0.9) node[right]{$f(x) = 1-\abs{x}$};
+      \draw[thick,color=fourier0] (-1,0) -- (0,1) -- (1,0);
+      \draw[thick,color=fourier2] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}});
+      \path[color=fourier2t] (0.6,0.6) node[right]{$g(x)= \frac{13}{16} - \frac{15}{16}x^2$};
+      \path[color=fourier0t] (0.2,0.9) node[right]{$f(x) = 1-\abs{x}$};
       \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
       \draw[->] (0,-0.3) -- (0,1.1);
       \draw (1,0) -- (1,-0.05) node[below] {$1$};
@@ -411,13 +411,13 @@ $\vect{v}$.
       \def\fG#1{(abs((#1)^6)-15/11*abs((#1)^4)+5/11*abs((#1)^2)-5/231)}
       \def\fH#1{((429*(#1)^7 - 693*(#1)^5 + 315*(#1)^3 - 35*(#1))/429)}
       \def\fI#1{((6435*abs((#1)^8)-12012*abs((#1)^6)+6930*abs((#1)^4)-1260*abs((#1)^2)+35)/6435)}
-      \draw[thick,color=my-gray] (-1,0) -- (0,1) -- (1,0);
-      \path[color=my-gray] (0,1) node[right=2ex] {$f$};
-      \draw[thick,color=my-yellow] plot (\x,0.5*\fA{\x}) (1,0.5) node[right=1ex] {$f_0$};
-      \draw[thick,color=my-green] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}}) (1,-0.18) node[right=1ex] {$f_2$};
-      \draw[thick,color=my-lightblue,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x}}) (1,0.18) node[right=1ex] {$f_4$};
-      \draw[thick,color=my-red,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}}) (1,-0.06) node[right=1ex] {$f_6$};
-      \draw[thick,color=my-blue,samples=75] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}+3.338470458984375*\fI{\x}}) (1,0.06) node[right=1ex] {$f_8$};
+      \draw[thick,color=fourier0] (-1,0) -- (0,1) -- (1,0);
+      \path[color=fourier0t] (0,1) node[right=2ex] {$f$};
+      \draw[thick,color=fourier1] plot (\x,0.5*\fA{\x}) (1,0.5) node[right=1ex,color=fourier1t] {$f_0$};
+      \draw[thick,color=fourier2] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x}}) (1,-0.18) node[right=1ex,color=fourier2t] {$f_2$};
+      \draw[thick,color=fourier4,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x}}) (1,0.18) node[right=1ex,color=fourier4t] {$f_4$};
+      \draw[thick,color=fourier5,samples=50] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}}) (1,-0.06) node[right=1ex,color=fourier5t] {$f_6$};
+      \draw[thick,color=fourier6,samples=75] plot (\x,{0.5*\fA{\x} - 0.9375*\fC{\x} + 0.8203125*\fE{\x} -1.46630859375*\fG{\x}+3.338470458984375*\fI{\x}}) (1,0.06) node[right=1ex,color=fourier6t] {$f_8$};
       \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
       \draw[->] (0,-0.3) -- (0,1.1);
       \draw (1,0) -- (1,-0.05) node[below] {$1$};
@@ -453,13 +453,13 @@ $\vect{v}$.
     \def\fG#1{(abs((#1)^6)-15/11*abs((#1)^4)+5/11*abs((#1)^2)-5/231)}
     \def\fH#1{((429*(#1)^7 - 693*(#1)^5 + 315*(#1)^3 - 35*(#1))/429)}
     \def\fI#1{((6435*abs((#1)^8)-12012*abs((#1)^6)+6930*abs((#1)^4)-1260*abs((#1)^2)+35)/6435)}
-    \draw[thick,color=my-gray] (-1,0) -- (0,0) -- (0,1) -- (1,1);
-    \path[color=my-gray] (0.1,1) node[above] {$f$};
-    \draw[thick,color=my-yellow] plot (\x,0.5*\fA{\x}) (1,0.5) node[right=1ex] {$f_0$};
-    \draw[thick,color=my-green]     plot (\x,{0.5*\fA{\x} + 0.75*\fB{\x}}) (1,1.24) node[right=1ex] {$f_1$};
-    \draw[thick,color=my-lightblue,samples=50]   plot (\x,{0.5*\fA{\x} + 0.75*\fB{\x} - 1.09375*\fD{\x}}) (1,0.82) node[right=1ex] {$f_3$};
-    \draw[thick,color=my-red,samples=50]       plot (\x,{0.5*\fA{\x} + 0.75*\fB{\x} - 1.09375*\fD{\x} + 2.70703125*\fF{\x}}) (1,1.10) node[right=1ex] {$f_5$};
-    \draw[thick,color=my-blue,samples=75]      plot (\x,{0.5*\fA{\x} + 0.75*\fB{\x} - 1.09375*\fD{\x} + 2.70703125*\fF{\x} - 7.855224609375*\fH{\x}}) (1,0.96) node[right=1ex] {$f_7$};
+    \draw[thick,color=fourier0] (-1,0) -- (0,0) -- (0,1) -- (1,1);
+    \path[color=fourier0t] (0.1,1) node[above] {$f$};
+    \draw[thick,color=fourier1] plot (\x,0.5*\fA{\x}) (1,0.5) node[right=1ex,color=fourier1t] {$f_0$};
+    \draw[thick,color=fourier2]     plot (\x,{0.5*\fA{\x} + 0.75*\fB{\x}}) (1,1.24) node[right=1ex,color=fourier2t] {$f_1$};
+    \draw[thick,color=fourier4,samples=50]   plot (\x,{0.5*\fA{\x} + 0.75*\fB{\x} - 1.09375*\fD{\x}}) (1,0.82) node[right=1ex,color=fourier4t] {$f_3$};
+    \draw[thick,color=fourier5,samples=50]       plot (\x,{0.5*\fA{\x} + 0.75*\fB{\x} - 1.09375*\fD{\x} + 2.70703125*\fF{\x}}) (1,1.10) node[right=1ex,color=fourier5t] {$f_5$};
+    \draw[thick,color=fourier6,samples=75]      plot (\x,{0.5*\fA{\x} + 0.75*\fB{\x} - 1.09375*\fD{\x} + 2.70703125*\fF{\x} - 7.855224609375*\fH{\x}}) (1,0.96) node[right=1ex,color=fourier6t] {$f_7$};
     \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
     \draw[->] (0,-0.3) -- (0,1.1);
     \draw (1,0) -- (1,-0.05) node[below] {$1$};
@@ -497,13 +497,13 @@ eventually converges to $f$.
     \def\fG#1{(abs((#1)^6)-15/11*abs((#1)^4)+5/11*abs((#1)^2)-5/231)}
     \def\fH#1{((429*(#1)^7 - 693*(#1)^5 + 315*(#1)^3 - 35*(#1))/429)}
     \def\fI#1{((6435*abs((#1)^8)-12012*abs((#1)^6)+6930*abs((#1)^4)-1260*abs((#1)^2)+35)/6435)}
-    \draw[thick,color=my-gray] (-1,0) -- (-0.5,0) -- (0.5,1) -- (1,1);
-    \path[color=my-gray] (0.5,1) node[above] {$f$};
-    \draw[thick,color=my-yellow] plot (\x,0.5*\fA{\x}) (1,0.5) node[right=1ex] {$f_0$};
-    \draw[thick,color=my-green]     plot (\x,{0.5*\fA{\x} + 0.6875*\fB{\x}}) (1,1.2) node[right=1ex] {$f_1$};
-    \draw[thick,color=my-lightblue,samples=50]   plot (\x,{0.5*\fA{\x} + 0.6875*\fB{\x} - 0.615234375*\fD{\x}}) (1,0.9) node[right=1ex] {$f_3$};
-    \draw[thick,color=my-red]       plot (\x,{0.5*\fA{\x} + 0.6875*\fB{\x} - 0.615234375*\fD{\x} + 0.38067626953125*\fF{\x}}) (1,1.0) node[right=1ex] {$f_5$};
-    \draw[thick,color=my-blue,samples=50]      plot (\x,{0.5*\fA{\x} + 0.6875*\fB{\x} - 0.615234375*\fD{\x} + 0.38067626953125*\fF{\x} + 1.0494089126587303*\fH{\x}}) (1,1.1) node[right=1ex] {$f_7$};
+    \draw[thick,color=fourier0] (-1,0) -- (-0.5,0) -- (0.5,1) -- (1,1);
+    \path[color=fourier0t] (0.5,1) node[above] {$f$};
+    \draw[thick,color=fourier1] plot (\x,0.5*\fA{\x}) (1,0.5) node[right=1ex,color=fourier1t] {$f_0$};
+    \draw[thick,color=fourier3]     plot (\x,{0.5*\fA{\x} + 0.6875*\fB{\x}}) (1,1.2) node[right=1ex,color=fourier3t] {$f_1$};
+    \draw[thick,color=fourier4,samples=50]   plot (\x,{0.5*\fA{\x} + 0.6875*\fB{\x} - 0.615234375*\fD{\x}}) (1,0.9) node[right=1ex,color=fourier4t] {$f_3$};
+    \draw[thick,color=fourier5]       plot (\x,{0.5*\fA{\x} + 0.6875*\fB{\x} - 0.615234375*\fD{\x} + 0.38067626953125*\fF{\x}}) (1,1.0) node[right=1ex,color=fourier5t] {$f_5$};
+    \draw[thick,color=fourier6,samples=50]      plot (\x,{0.5*\fA{\x} + 0.6875*\fB{\x} - 0.615234375*\fD{\x} + 0.38067626953125*\fF{\x} + 1.0494089126587303*\fH{\x}}) (1,1.1) node[right=1ex,color=fourier6t] {$f_7$};
     \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$};
     \draw[->] (0,-0.3) -- (0,1.1);
     \draw (1,0) -- (1,-0.05) node[below] {$1$};
@@ -597,11 +597,11 @@ Fourier series.
     \def\fG#1{(cos(3*(#1)/pi*180))}
     \def\fH#1{(sin(4*(#1)/pi*180))}
     \def\fI#1{(cos(4*(#1)/pi*180))}
-    \draw[thick,color=my-gray] (0,0) -- (0,-pi) -- (2*pi,pi) -- (2*pi,-pi) -- (4*pi,pi) -- (4*pi,-pi) -- (6*pi, pi) -- (6*pi, 0) (2*pi, pi) node[right] {$f$};
-    \draw[thick,color=my-green]                 plot (\x,{((-2)*\fB{\x})}) (pi,0) +(0.6*pi,0.6*pi) node[left=4ex] {$f_1$};
-    \draw[thick,color=my-lightblue,samples=200] plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})}) (pi,0) +(0.75*pi,0.75*pi) node[left=4ex] {$f_3$};
-    \draw[thick,color=my-red,samples=200]       plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})+((-2/3)*\fF{\x})}) (pi,0) +(0.9*pi,0.9*pi) node[left=4ex] {$f_5$};
-    \draw[thick,color=my-blue,samples=300]      plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})+((-2/3)*\fF{\x})+((-1/2)*\fH{\x})}) (pi,0) +(1.05*pi,1.05*pi) node[left=4ex] {$f_7$};
+    \draw[thick,color=fourier0] (0,0) -- (0,-pi) -- (2*pi,pi) -- (2*pi,-pi) -- (4*pi,pi) -- (4*pi,-pi) -- (6*pi, pi) -- (6*pi, 0) (2*pi, pi) node[right,color=fourier0t] {$f$};
+    \draw[thick,color=fourier1]                 plot (\x,{((-2)*\fB{\x})}) (pi,0) +(0.6*pi,0.6*pi) node[left=4ex,color=fourier1t] {$f_1$};
+    \draw[thick,color=fourier4,samples=200] plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})}) (pi,0) +(0.75*pi,0.75*pi) node[left=4ex,color=fourier4t] {$f_3$};
+    \draw[thick,color=fourier5,samples=200]       plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})+((-2/3)*\fF{\x})}) (pi,0) +(0.9*pi,0.9*pi) node[left=4ex,color=fourier5t] {$f_5$};
+    \draw[thick,color=fourier6,samples=300]      plot (\x,{((-2)*\fB{\x})+((-1)*\fD{\x})+((-2/3)*\fF{\x})+((-1/2)*\fH{\x})}) (pi,0) +(1.05*pi,1.05*pi) node[left=4ex,color=fourier6t] {$f_7$};
     \draw[->] (-0.8,0) -- (6*pi+0.8,0) node[right] {$x$};
     \draw[->] (0,-3.5) -- (0,3.5);
     \draw (pi,0) -- (pi,-0.05) node[below] {$\pi$};
@@ -636,25 +636,24 @@ called the \textbf{harmonics}%
     \def\fH#1{(sin(4*(#1)/pi*180))}
     \def\fI#1{(cos(4*(#1)/pi*180))}
     \begin{scope}[yshift=-12cm,xshift=-29cm]
-      \draw[thick,color=my-gray] (0,0) -- (0,-pi) -- (2*pi,pi) -- (2*pi,-pi) --
+      \draw[thick,color=fourier0] (0,0) -- (0,-pi) -- (2*pi,pi) -- (2*pi,-pi) --
       (4*pi,pi) -- (4*pi,-pi) -- (6*pi, pi) -- (6*pi, 0);
-      \draw[->] (-1.5,0) -- (6*pi+1.5,0)
-      node[right]{$~~=~~\left\{\rule{0mm}{3cm}\right.$};
+      \draw[->] (-1.5,0) -- (6*pi+1.5,0) node[right]{$~~=~~\left\{\rule{0mm}{3cm}\right.$};
     \end{scope}
     \begin{scope}[yshift=-4cm]
-      \draw[thick,color=my-green]   plot (\x,{((-2)*\fB{\x})}) node[right=2ex] {$-\frac{2}{1}\sin(x)$};
+      \draw[thick,color=fourier1]   plot (\x,{((-2)*\fB{\x})}) node[right=2ex,color=fourier1t] {$-\frac{2}{1}\sin(x)$};
       \draw[->] (-1.5,0) -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-8cm]
-      \draw[thick,color=my-lightblue] plot (\x,{((-1)*\fD{\x})}) node[right=2ex] {$-\frac{2}{2}\sin(2x)$};
+      \draw[thick,color=fourier4] plot (\x,{((-1)*\fD{\x})}) node[right=2ex,color=fourier4t] {$-\frac{2}{2}\sin(2x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-12cm]
-      \draw[thick,color=my-red,samples=200]     plot (\x,{((-2/3)*\fF{\x})}) node[right=2ex] {$-\frac{2}{3}\sin(3x)$};
+      \draw[thick,color=fourier5,samples=200]     plot (\x,{((-2/3)*\fF{\x})}) node[right=2ex,color=fourier5t] {$-\frac{2}{3}\sin(3x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-16cm]
-      \draw[thick,color=my-blue,samples=200]    plot (\x,{((-1/2)*\fH{\x})}) node[right=2ex] {$-\frac{2}{4}\sin(4x)$};
+      \draw[thick,color=fourier6,samples=200]    plot (\x,{((-1/2)*\fH{\x})}) node[right=2ex,color=fourier6t] {$-\frac{2}{4}\sin(4x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-20cm]
@@ -679,11 +678,11 @@ called the \textbf{harmonics}%
     \def\fG#1{(cos(3*(#1)/pi*180))}
     \def\fK#1{(cos(5*(#1)/pi*180))}
     \def\fO#1{(cos(7*(#1)/pi*180))}
-    \draw[thick,color=my-gray] (0,-pi/2) -- (pi,pi/2) -- (2*pi,-pi/2) -- (3*pi,pi/2) -- (4*pi,-pi/2) -- (5*pi,pi/2) -- (6*pi, -pi/2) (pi,pi/2) node [above] {$f$};
-    \draw[thick,color=my-green]   plot (\x,{((-1.2732395447351623)*\fC{\x})}) (0.6*pi,-pi/2+0.6*pi) node[left=2ex] {$f_2$};
-    \draw[thick,color=my-lightblue,samples=200] plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})}) (0.75*pi,-pi/2+0.75*pi) node[left=2ex] {$f_4$};
-    \draw[thick,color=my-red,samples=200]     plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})+((-0.05092958178940641)*\fK{\x})}) (0.9*pi,-pi/2+0.9*pi) node[left=2ex] {$f_6$};
-    \draw[thick,color=my-blue,samples=200]    plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})+((-0.05092958178940641)*\fK{\x})+((-0.025984480504798825)*\fO{\x})}) (1.05*pi,-pi/2+1.05*pi) node[left=2ex] {$f_8$};
+    \draw[thick,color=fourier0] (0,-pi/2) -- (pi,pi/2) -- (2*pi,-pi/2) -- (3*pi,pi/2) -- (4*pi,-pi/2) -- (5*pi,pi/2) -- (6*pi, -pi/2) (pi,pi/2) node [above,color=fourier0t] {$f$};
+    \draw[thick,color=fourier1]   plot (\x,{((-1.2732395447351623)*\fC{\x})}) (0.6*pi,-pi/2+0.6*pi) node[left=2ex,color=fourier1t] {$f_2$};
+    \draw[thick,color=fourier4,samples=200] plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})}) (0.75*pi,-pi/2+0.75*pi) node[left=2ex,color=fourier4t] {$f_4$};
+    \draw[thick,color=fourier5,samples=200]     plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})+((-0.05092958178940641)*\fK{\x})}) (0.9*pi,-pi/2+0.9*pi) node[left=2ex,color=fourier5t] {$f_6$};
+    \draw[thick,color=fourier6,samples=200]    plot (\x,{((-1.2732395447351623)*\fC{\x})+((-0.14147106052612904)*\fG{\x})+((-0.05092958178940641)*\fK{\x})+((-0.025984480504798825)*\fO{\x})}) (1.05*pi,-pi/2+1.05*pi) node[left=2ex,color=fourier6t] {$f_8$};
     \draw[->] (-0.8,0) -- (6*pi+0.8,0) node[right] {$x$};
     \draw[->] (0,-2) -- (0,2);
     \draw (pi,0) -- (pi,-0.05) node[below] {$\pi$};
@@ -708,26 +707,25 @@ have much smaller amplitudes, which explains the rapid convergence.
     \def\fK#1{(cos(5*(#1)/pi*180))}
     \def\fO#1{(cos(7*(#1)/pi*180))}
     \begin{scope}[yshift=-12cm,xshift=-29cm]
-      \draw[thick,color=my-gray] (0,-pi/2) -- (pi,pi/2) -- (2*pi,-pi/2) -- (3*pi,pi/2) --
+      \draw[thick,color=fourier0] (0,-pi/2) -- (pi,pi/2) -- (2*pi,-pi/2) -- (3*pi,pi/2) --
       (4*pi,-pi/2) -- (5*pi,pi/2) -- (6*pi, -pi/2);
-      \draw[->] (-1.5,0) -- (6*pi+1.5,0)
-      node[right]{$~~=~~\left\{\rule{0mm}{3cm}\right.$};
+      \draw[->] (-1.5,0) -- (6*pi+1.5,0) node[right]{$~~=~~\left\{\rule{0mm}{3cm}\right.$};
     \end{scope}
     \begin{scope}[yshift=-4cm]
-      \draw[thick,color=my-green]   plot (\x,{((-1.2732395447351623)*\fC{\x})}) (6*pi,0) node[right=2ex] {$-\frac{4}{\pi}cos(x)$};
+      \draw[thick,color=fourier1]   plot (\x,{((-1.2732395447351623)*\fC{\x})}) (6*pi,0) node[right=2ex,color=fourier1t] {$-\frac{4}{\pi}cos(x)$};
       \draw[->] (-1.5,0) -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-8cm]
-      \draw[thick,color=my-lightblue] plot (\x,{((-0.14147106052612904)*\fG{\x})}) (6*pi,0) node[right=2ex] {$-\frac{4}{9\pi}\cos(3x)$};
+      \draw[thick,color=fourier4] plot (\x,{((-0.14147106052612904)*\fG{\x})}) (6*pi,0) node[right=2ex,color=fourier4t] {$-\frac{4}{9\pi}\cos(3x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-12cm]
-      \draw[thick,color=my-red]     plot (\x,{((-0.05092958178940641)*\fK{\x})}) (6*pi,0) node[right=2ex] {$-\frac{4}{25\pi}\cos(5x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
+      \draw[thick,color=fourier5]     plot (\x,{((-0.05092958178940641)*\fK{\x})}) (6*pi,0) node[right=2ex,color=fourier5t] {$-\frac{4}{25\pi}\cos(5x)$};
     \end{scope}
     \begin{scope}[yshift=-16cm]
-      \draw[thick,color=my-blue]    plot (\x,{((-0.025984480504798825)*\fO{\x})}) (6*pi,0) node[right=2ex] {$-\frac{4}{49\pi}\cos(7x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
+      \draw[thick,color=fourier6]    plot (\x,{((-0.025984480504798825)*\fO{\x})}) (6*pi,0) node[right=2ex,color=fourier6t] {$-\frac{4}{49\pi}\cos(7x)$};
     \end{scope}
     \begin{scope}[yshift=-20cm]
       \path (-1.5,0) node[left]{$+$} node[right]{$\cdots$};
@@ -751,16 +749,16 @@ have much smaller amplitudes, which explains the rapid convergence.
     \def\fF#1{(sin(3*(#1)/pi*180))}
     \def\fJ#1{(sin(5*(#1)/pi*180))}
     \def\fN#1{(sin(7*(#1)/pi*180))}
-    \draw[thick,color=my-gray] (0,0) -- (0,1) -- (pi,1) -- (pi,-1) --
+    \draw[thick,color=fourier0] (0,0) -- (0,1) -- (pi,1) -- (pi,-1) --
     (2*pi,-1) -- (2*pi,1) --
     (3*pi,1) -- (3*pi,-1) --
     (4*pi,-1) -- (4*pi,1) --
     (5*pi,1) -- (5*pi,-1) --
-    (6*pi,-1) -- (6*pi,0) (pi, 1) node[right] {$f$};
-    \draw[thick,color=my-green]   plot (\x,{((1.2732395447351623)*\fB{\x})}) (0.4*pi, 1.2) node[above] {$f_1$};
-    \draw[thick,color=my-lightblue,samples=200] plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})}) (0.6*pi, 1.2) node[above] {$f_3$};
-    \draw[thick,color=my-red,samples=200]     plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})+((0.25464790894703326)*\fJ{\x})}) (0.8*pi, 1.2) node[above] {$f_5$};
-    \draw[thick,color=my-blue,samples=300]    plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})+((0.25464790894703326)*\fJ{\x})+((0.18189136353359486)*\fN{\x})}) (1.0*pi, 1.2) node[above] {$f_7$};
+    (6*pi,-1) -- (6*pi,0) (pi, 1) node[right,color=fourier0t] {$f$};
+    \draw[thick,color=fourier1]   plot (\x,{((1.2732395447351623)*\fB{\x})}) (0.4*pi, 1.2) node[above,color=fourier1t] {$f_1$};
+    \draw[thick,color=fourier4,samples=200] plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})}) (0.6*pi, 1.2) node[above,color=fourier4t] {$f_3$};
+    \draw[thick,color=fourier5,samples=200]     plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})+((0.25464790894703326)*\fJ{\x})}) (0.8*pi, 1.2) node[above,color=fourier5t] {$f_5$};
+    \draw[thick,color=fourier6,samples=300]    plot (\x,{((1.2732395447351623)*\fB{\x})+((0.4244131815783881)*\fF{\x})+((0.25464790894703326)*\fJ{\x})+((0.18189136353359486)*\fN{\x})}) (1.0*pi, 1.2) node[above,color=fourier6t] {$f_7$};
     \draw[->] (-0.8,0) -- (6*pi+0.8,0) node[right] {$x$};
     \draw[->] (0,-2) -- (0,2);
     \draw (pi,0) -- (pi,-0.05) node[below] {$\pi$};
@@ -782,7 +780,7 @@ sum of its harmonics:
     \def\fJ#1{(sin(5*(#1)/pi*180))}
     \def\fN#1{(sin(7*(#1)/pi*180))}
     \begin{scope}[yshift=-12cm,xshift=-29cm]
-      \draw[thick,color=my-gray] (0,0) -- (0,1) -- (pi,1) -- (pi,-1) --
+      \draw[thick,color=fourier0] (0,0) -- (0,1) -- (pi,1) -- (pi,-1) --
       (2*pi,-1) -- (2*pi,1) --
       (3*pi,1) -- (3*pi,-1) --
       (4*pi,-1) -- (4*pi,1) --
@@ -792,19 +790,19 @@ sum of its harmonics:
       node[right]{$~~=~~\left\{\rule{0mm}{3cm}\right.$};
     \end{scope}
     \begin{scope}[yshift=-4cm]
-      \draw[thick,color=my-green]   plot (\x,{((1.2732395447351623)*\fB{\x})}) node[right=2ex] {$\frac{4}{\pi}\sin(x)$};
+      \draw[thick,color=fourier1]   plot (\x,{((1.2732395447351623)*\fB{\x})}) node[right=2ex,color=fourier1t] {$\frac{4}{\pi}\sin(x)$};
       \draw[->] (-1.5,0) -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-8cm]
-      \draw[thick,color=my-lightblue] plot (\x,{((0.4244131815783881)*\fF{\x})}) node[right=2ex] {$\frac{4}{3\pi}\sin(3x)$};
+      \draw[thick,color=fourier4] plot (\x,{((0.4244131815783881)*\fF{\x})}) node[right=2ex,color=fourier4t] {$\frac{4}{3\pi}\sin(3x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-12cm]
-      \draw[thick,color=my-red,samples=150]     plot (\x,{((0.25464790894703326)*\fJ{\x})}) node[right=2ex] {$\frac{4}{5\pi}\sin(5x)$};
+      \draw[thick,color=fourier5,samples=150]     plot (\x,{((0.25464790894703326)*\fJ{\x})}) node[right=2ex,color=fourier5t] {$\frac{4}{5\pi}\sin(5x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-16cm]
-      \draw[thick,color=my-blue,samples=200]    plot (\x,{((0.18189136353359486)*\fN{\x})}) node[right=2ex] {$\frac{4}{7\pi}\sin(7x)$};
+      \draw[thick,color=fourier6,samples=200]    plot (\x,{((0.18189136353359486)*\fN{\x})}) node[right=2ex,color=fourier6t] {$\frac{4}{7\pi}\sin(7x)$};
       \draw[->] (-1.5,0) node[left]{$+$} -- (6*pi+1.5,0);
     \end{scope}
     \begin{scope}[yshift=-20cm]
