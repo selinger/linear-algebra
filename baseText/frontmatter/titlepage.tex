@@ -33,13 +33,6 @@
 \thispagestyle{empty}
 
 %% Title Information
-%% Fix spacing on print-cover
-\ifprintcoverfull
-  \vspace{1.5em}
-\else
-  \vspace{7em}
-\fi
-
 \begin{center}
   \textbf{
     \fontsize{34}{36}\selectfont {\textcolor{subtitletextcolour}{\booksubtitle}} \\
@@ -49,19 +42,6 @@
     \fontsize{14pt}{16pt}\selectfont {\textcolor{subtitletextcolour}{\edition}} \\
   }
 \end{center}
-
-\vfill
-
-% License
-\begin{center*}
-  \ifprintcoverfull
-    \raisebox{-0.5in}[0in][0in]{%
-      \fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}%
-    }
-  \else
-    \fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}%
-  \fi
-\end{center*}
 
 % Spine and back cover
 \ifprintcoverfull
@@ -97,4 +77,11 @@
     };
   \end{tikzpicture}
 \fi
+
+\vfill
+
+% License
+\begin{center*}
+  \fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}%
+\end{center*}
 
