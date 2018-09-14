@@ -26,14 +26,36 @@
 % Conditional statements
 \usepackage{ifthen}
 
-% Page layout
+% Some options are governed by the \jobname
+\newif\ifinterior
+\newif\ifprintcover
+\newif\ifcrownquarto
+\newif\ifprintcoverfront
+\newif\ifprintcoverfull
+
 \ifthenelse{\equal{\detokenize{interior}}{\jobname}}{
+  \interiortrue
+}{}
+\ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
+  \printcovertrue
+  \printcoverfulltrue
+}{}
+\ifthenelse{\equal{\detokenize{print-cover-crown-quarto}}{\jobname}}{
+  \printcovertrue
+  \printcoverfulltrue
+  \crownquartotrue
+}{}
+\ifthenelse{\equal{\detokenize{print-cover-front}}{\jobname}}{
+  \printcovertrue
+  \printcoverfronttrue
+}{}
+
+% Page layout
+\ifinterior
   \usepackage[headheight=15pt,top=1in, bottom=0.75in, outer=0.65in, inner=0.85in]{geometry}
-  % \usepackage[headheight=15pt,top=1in, bottom=0.1in, outer=0.75in, inner=1.25in]{geometry}
-}{
+\else
   \usepackage[headheight=15pt,top=1in, bottom=0.75in, outer=0.75in, inner=0.75in]{geometry}
-  % \usepackage[headheight=15pt,top=1in, bottom=0.1in, outer=1in, inner=1in]{geometry}
-}
+\fi
 
 % Captions for objects
 \usepackage[format=hang,font=bf]{caption}
@@ -178,11 +200,9 @@
 \setlength{\frontsideleft}{\bleed + \trimwidth + \spinewidth}
 
 % Options showframe, showcrop, and verbose can be used for debugging
-\ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
+\ifprintcoverfull
   \geometry{papersize={\coverwidth,\coverheight},layoutsize={\trimwidth,\trimheight},layoutoffset={\frontsideleft,\bleed}}
-}{
-  % No change in geometry for regular pdf
-}
+\fi
 
 % To create index
 \makeindex
@@ -190,25 +210,20 @@
 \begin{document}
 
 % Title page
-\ifthenelse{\equal{\detokenize{print-cover-front}}{\jobname}}{
-  \pagestyle{empty}
+\ifprintcover
   \input{frontmatter/titlepage}
-}{
-  \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
-    \pagestyle{empty}
-    \input{frontmatter/titlepage}
-  }{
+\else
     \raggedbottom
     \allowdisplaybreaks
     \frontmatter
 
-    \ifthenelse{\equal{\detokenize{interior}}{\jobname}}{
+    \ifinterior
       % Skip title page for interior (but don't change the numbering)
       \setcounter{page}{3}
-    }{
+    \else
       \input{frontmatter/titlepage.tex}
       \cleardoublepage
-    }
+    \fi
 
 
     % License
@@ -255,7 +270,6 @@
     \addcontentsline{toc}{chapter}{\indexname}
     \printindex
 
-  }
-}
+\fi
 %% that's it folks
 \end{document}

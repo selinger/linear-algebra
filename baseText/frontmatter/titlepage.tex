@@ -6,7 +6,7 @@
 \pdfpageheight=\paperheight
 
 %%% Background image
-\ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
+\ifprintcoverfull
   \backgroundsetup{
     scale=1,
     angle=0,
@@ -19,14 +19,14 @@
       \includegraphics[height=\paperheight,width=\trimwidth+\bleed]{figures/titlepage-image-print1}%
     }%
   }
-}{
+\else
   \backgroundsetup{
     scale=1,
     angle=0,
     opacity=1,
     contents={\includegraphics[width=\paperwidth,height=\paperheight]{figures/titlepage-image}}
   }
-}  
+\fi
 \BgThispage
 
 %% No page number
@@ -34,11 +34,11 @@
 
 %% Title Information
 %% Fix spacing on print-cover
-\ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
+\ifprintcoverfull
   \vspace{1.5em}
-}{
+\else
   \vspace{7em}
-}
+\fi
 
 \begin{center}
   \textbf{
@@ -54,16 +54,17 @@
 
 % License
 \begin{center*}
-  \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
+  \ifprintcoverfull
     \raisebox{-0.5in}[0in][0in]{%
       \fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}%
     }
-  }{
+  \else
     \fontsize{12pt}{12pt}\selectfont \textcolor{cctextcolour}{\textbf{Creative Commons License (CC BY)}}%
-  }
+  \fi
 \end{center*}
 
-\ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
+% Spine and back cover
+\ifprintcoverfull
   \begin{tikzpicture}[remember picture,overlay]
     \node[outer sep=0in, inner sep=0in, anchor=north] at
     ([yshift=-\bleed-1in,xshift=\bleed+0.5\trimwidth]current page.north west) {
@@ -95,7 +96,5 @@
       }
     };
   \end{tikzpicture}
-}{
-  % No back cover for regular pdf
-}
+\fi
 
