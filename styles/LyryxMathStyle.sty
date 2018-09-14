@@ -22,25 +22,9 @@
 % Colour for grey square in page header
 \definecolor{headersquarecolour}{HTML}{BDBDBD}
 
-%Lyryx Brand Colours
-\definecolor{lyryxcolour}{HTML}{000033}
-\definecolor{lyryxlogoy}{HTML}{E2970A}
-
 % %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % . . . End of Colours . . . 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Lyryx Logo font common to both texts
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Font used for Logo type 
-\newcommand*{\logofont}{\robotocondensed\selectfont}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% . . . End of Lyryx Logo font . . . 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -217,37 +201,6 @@
   \def\labelenumi{\textrm{\Alph{enumi}.}}%
 }{%
   \endgroup%
-}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Used for Lyryx with Open Text icons (4 of them) on back cover of text
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Font used in componentnode
-\newcommand*{\cmpfont}{\robotocondensed\selectfont}
-
-% Tikz node with \footnotesize text, center aligned, white font (Used in text under Lyryx icons on print-cover and back cover)
-\tikzset{
-	componentnode/.style={
-		font=\scriptsize\cmpfont,
-		align=center,
-		white,
-		execute at begin node=\setlength{\baselineskip}{1.25em} 	% increases space between lines of text
-	}
-}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Creates page on left side (used on back cover)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-\newcommand*\cleartoleftpage{%
-	\clearpage
-	\ifodd\value{page}\hbox{}\newpage\fi
 }
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
