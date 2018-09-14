@@ -18,7 +18,7 @@ print-cover.dvi: $(TEXNAME).tex frontmatter/titlepage.tex frontmatter/blurb.tex 
 	latex --jobname print-cover "$<"
 
 print-cover-front: print-cover-front.pdf
-print-cover-front.dvi: $(TEXNAME).tex
+print-cover-front.dvi: $(TEXNAME).tex frontmatter/titlepage.tex figures/titlepage-image.eps
 	latex --jobname print-cover-front "$<"
 	latex --jobname print-cover-front "$<"
 	latex --jobname print-cover-front "$<"
