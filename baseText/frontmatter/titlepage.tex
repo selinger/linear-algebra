@@ -1,5 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% The following line fixes a bug that was present in TeXLive 2017 an
+% is fixed in TeXLive 2018 (verify this). It only affected latex, not
+% pdflatex.
+\pdfpageheight=\paperheight
+
 %%% Background image
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
   \backgroundsetup{
@@ -8,14 +13,10 @@
     opacity=1,
     position=current page.north west,
     nodeanchor=north west,
-    % For some reason, current page.north east is 0.25in too high. This
-    % is probably a bug related to the presence of bleed.
     contents={%
-      \raisebox{-0.25in}[\height][0in]{%
-        \includegraphics[height=\paperheight,width=\trimwidth+\bleed]{figures/titlepage-image-print2}%
-        \textcolor{spinecolour}{\rule{\spinewidth}{\paperheight}}%
-        \includegraphics[height=\paperheight,width=\trimwidth+\bleed]{figures/titlepage-image-print1}%
-      }%
+      \includegraphics[height=\paperheight,width=\trimwidth+\bleed]{figures/titlepage-image-print2}%
+      \textcolor{spinecolour}{\rule{\spinewidth}{\paperheight}}%
+      \includegraphics[height=\paperheight,width=\trimwidth+\bleed]{figures/titlepage-image-print1}%
     }%
   }
 }{
@@ -65,7 +66,7 @@
 \ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
   \begin{tikzpicture}[remember picture,overlay]
     \node[outer sep=0in, inner sep=0in, anchor=north] at
-    ([yshift=-0.25in-\bleed-1in,xshift=\bleed+0.5\trimwidth]current page.north west) {
+    ([yshift=-\bleed-1in,xshift=\bleed+0.5\trimwidth]current page.north west) {
       \begin{minipage}{5.2in}
         \setlength{\parskip}{2ex}
         \fontsize{12pt}{16pt}\selectfont
@@ -79,7 +80,7 @@
   \end{tikzpicture}
   \begin{tikzpicture}[remember picture,overlay]
     \node[outer sep=0in, inner sep=0in, anchor=center] at
-    ([yshift=-0.25in-\bleed-0.5\trimheight,xshift=\bleed+\trimwidth+0.5\spinewidth]current page.north west) {
+    ([yshift=-\bleed-0.5\trimheight,xshift=\bleed+\trimwidth+0.5\spinewidth]current page.north west) {
       \rotatebox{-90}{%
         \begin{minipage}{\trimheight - 1in}
           \begin{tikzpicture}
