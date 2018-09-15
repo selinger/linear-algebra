@@ -26,7 +26,7 @@
 % Conditional statements
 \usepackage{ifthen}
 
-% Some options are governed by the \jobname
+% Some options that are governed by the \jobname
 \newif\ifinterior
 \newif\ifprintcover
 \newif\ifcrownquarto
@@ -34,23 +34,23 @@
 \newif\ifprintcoverfull
 \newif\ifblackandwhite
 
-\ifthenelse{\equal{\detokenize{interior}}{\jobname}}{
+\ifthenelse{\equal{\detokenize{interior-letter-col}}{\jobname}}{
   \interiortrue
 }{}
-\ifthenelse{\equal{\detokenize{interior-bw}}{\jobname}}{
+\ifthenelse{\equal{\detokenize{interior-letter-bw}}{\jobname}}{
   \interiortrue
   \blackandwhitetrue
 }{}
-\ifthenelse{\equal{\detokenize{print-cover}}{\jobname}}{
+\ifthenelse{\equal{\detokenize{cover-letter}}{\jobname}}{
   \printcovertrue
   \printcoverfulltrue
 }{}
-\ifthenelse{\equal{\detokenize{print-cover-crown-quarto}}{\jobname}}{
+\ifthenelse{\equal{\detokenize{cover-quarto}}{\jobname}}{
   \printcovertrue
   \printcoverfulltrue
   \crownquartotrue
 }{}
-\ifthenelse{\equal{\detokenize{print-cover-front}}{\jobname}}{
+\ifthenelse{\equal{\detokenize{frontcover-letter}}{\jobname}}{
   \printcovertrue
   \printcoverfronttrue
 }{}
