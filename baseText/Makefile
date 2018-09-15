@@ -94,6 +94,6 @@ clean:
 	rm -f *-answers.tex
 	rm -f interior.* interior-bw.* interior-crown-quarto.* interior-bw-crown-quarto.*
 	rm -f print-cover.* print-cover-crown-quarto.* print-cover-front.*
-	rm revid.tex
-	rm smallcover.jpg
+	rm -f revid.tex
+	rm -f smallcover.jpg
 
