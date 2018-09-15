@@ -62,17 +62,7 @@ $(TEXNAME).dvi: $(TEXNAME).tex revid.tex
 # Intermediate and target files that Latex will output
 suffixes := .dvi .ps .pdf .out .log .toc .aux .idx .ilg .ind 
 
-.PHONY: clean
-clean:
-	rm -f $(foreach f,$(suffixes),$(TEXNAME)$(f))
-	rm -f *-answers.tex
-	rm -f interior.* interior-bw.* interior-crown-quarto.* interior-bw-crown-quarto.*
-	rm -f print-cover.* print-cover-crown-quarto.* print-cover-front.*
-
-spellcheck:
-	ispell -d canadian -p ./dictionary.txt -t frontmatter/*.tex content/*.tex exercises/*.tex
-
-.PHONY: revid.tex
+.SECONDARY: revid.tex
 revid.tex:
 	REV=`git rev-parse HEAD | sed 's/\(.......\).*/\1/'`;\
 	DATE=`git log HEAD^- | grep '^Date:' | sed 's/Date://;s/\([0-9]*:[0-9]*:[0-9]*\) \+\([0-9][0-9][0-9][0-9]\)/\2 \1/'`;\
@@ -82,3 +72,16 @@ revid.tex:
 	if test ! -e "$@"; then touch "$@"; fi;\
 	if diff -q "revid-new.tex" "$@"; then rm -f "revid-new.tex"; else mv -f "revid-new.tex" "$@"; fi;\
 	echo "Revision $$REV of $$FDATE"
+
+.PHONY: spellcheck
+spellcheck:
+	ispell -d canadian -p ./dictionary.txt -t frontmatter/*.tex content/*.tex exercises/*.tex
+
+.PHONY: clean
+clean:
+	rm -f $(foreach f,$(suffixes),$(TEXNAME)$(f))
+	rm -f *-answers.tex
+	rm -f interior.* interior-bw.* interior-crown-quarto.* interior-bw-crown-quarto.*
+	rm -f print-cover.* print-cover-crown-quarto.* print-cover-front.*
+	rm revid.tex
+
