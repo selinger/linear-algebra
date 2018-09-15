@@ -2,7 +2,11 @@ TEXNAME=LinearAlgebra
 
 export TEXINPUTS=.:../styles:
 
-all: $(TEXNAME).pdf
+ebook: $(TEXNAME).pdf
+
+print: print-cover-crown-quarto.pdf interior-crown-quarto.pdf interior-bw-crown-quarto.pdf
+
+all: ebook print
 
 index: $(TEXNAME).ind
 
@@ -10,11 +14,9 @@ print-cover: print-cover.pdf
 print-cover.dvi: $(TEXNAME).tex frontmatter/titlepage.tex frontmatter/blurb.tex figures/titlepage-image-print1.eps figures/titlepage-image-print2.eps
 	latex --jobname print-cover "$<"
 	latex --jobname print-cover "$<"
-	latex --jobname print-cover "$<"
 
 print-cover-crown-quarto: print-cover-crown-quarto.pdf
 print-cover-crown-quarto.dvi: $(TEXNAME).tex frontmatter/titlepage.tex frontmatter/blurb.tex figures/titlepage-image-print1.eps figures/titlepage-image-print2.eps
-	latex --jobname print-cover-crown-quarto "$<"
 	latex --jobname print-cover-crown-quarto "$<"
 	latex --jobname print-cover-crown-quarto "$<"
 
@@ -22,14 +24,6 @@ print-cover-front: print-cover-front.pdf
 print-cover-front.dvi: $(TEXNAME).tex frontmatter/titlepage.tex figures/titlepage-image.eps
 	latex --jobname print-cover-front "$<"
 	latex --jobname print-cover-front "$<"
-	latex --jobname print-cover-front "$<"
-
-base-text: base-text.pdf
-base-text.dvi: $(TEXNAME).tex
-	latex --jobname base-text "$<"
-	makeindex base-text "$<"
-	latex --jobname base-text "$<"
-	latex --jobname base-text "$<"
 
 interior: interior.pdf
 interior.dvi: $(TEXNAME).tex revid.tex
@@ -53,34 +47,27 @@ interior-bw-crown-quarto: interior-bw-crown-quarto.pdf
 interior-bw-crown-quarto.pdf: interior-bw.pdf
 	gs -o "$@" -SDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dQUIET -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None "$<"
 
-%.dvi : %.tex revid.tex
+$(TEXNAME).dvi: $(TEXNAME).tex revid.tex
 	latex "$<"
-	makeindex $(TEXNAME)
+	makeindex "$(TEXNAME)"
 	latex "$<"
 	latex "$<"
 
-%.ps : %.dvi
+%.ps: %.dvi
 	dvips -o "$*".ps "$<" 
 
-%.pdf : %.ps
+%.pdf: %.ps
 	ps2pdf -r300 -dPDFSETTINGS=/printer -dColorConversionStrategy=/LeaveColorUnchanged -dGrayImageResolution=300 -dColorImageResolution=300 -dAutoRotatePages=/None "$<"
 
-.SECONDARY: interior.ps
-
 # Intermediate and target files that Latex will output
-suffixes := .dvi .ps .pdf .out .log .toc .aux .bbl .blg .tps .glo .ist .acn .idx .ilg .ind 
-
-rmfiles := $(foreach f,$(suffixes),$(TEXNAME)$(f))
+suffixes := .dvi .ps .pdf .out .log .toc .aux .idx .ilg .ind 
 
 .PHONY: clean
 clean:
-	rm -f $(foreach f,$(suffixes),$(TEXNAME)$(f)) *-answers.tex interior.* interior-bw.* interior-crown-quarto.* 
-	rm -f $(foreach f,$(suffixes),$(EXNAME)$(f))
-	rm -f $(foreach f,$(suffixes),print-cover$(f))
-	rm -f $(foreach f,$(suffixes),print-cover-crown-quarto$(f))
-	rm -f $(foreach f,$(suffixes),print-cover-front$(f))
-	rm -f $(foreach f,$(suffixes),base-text$(f))
-#Test
+	rm -f $(foreach f,$(suffixes),$(TEXNAME)$(f))
+	rm -f *-answers.tex
+	rm -f interior.* interior-bw.* interior-crown-quarto.* interior-bw-crown-quarto.*
+	rm -f print-cover.* print-cover-crown-quarto.* print-cover-front.*
 
 spellcheck:
 	ispell -d canadian -p ./dictionary.txt -t frontmatter/*.tex content/*.tex exercises/*.tex
