@@ -4,7 +4,7 @@ export TEXINPUTS=.:../styles:
 
 ebook: $(TEXNAME).pdf
 
-print: print-cover-crown-quarto.pdf interior-crown-quarto.pdf interior-bw-crown-quarto.pdf
+print: print-cover-crown-quarto.pdf interior-crown-quarto.pdf interior-bw-crown-quarto.pdf smallcover.jpg
 
 all: ebook print
 
@@ -73,6 +73,9 @@ revid.tex:
 	if diff -q "revid-new.tex" "$@"; then rm -f "revid-new.tex"; else mv -f "revid-new.tex" "$@"; fi;\
 	echo "Revision $$REV of $$FDATE"
 
+smallcover.jpg: $(TEXNAME).pdf
+	gs -q -dBATCH -dNOPAUSE -sOutputFile=- -sDEVICE=ppmraw -r144x144 -dLastPage=1 "$<" | pnmscale -height=500 | pnmnlfilt -0.5 0.8 | pnmtojpeg --quality=90 > "$@"
+
 .PHONY: spellcheck
 spellcheck:
 	ispell -d canadian -p ./dictionary.txt -t frontmatter/*.tex content/*.tex exercises/*.tex
@@ -84,4 +87,5 @@ clean:
 	rm -f interior.* interior-bw.* interior-crown-quarto.* interior-bw-crown-quarto.*
 	rm -f print-cover.* print-cover-crown-quarto.* print-cover-front.*
 	rm revid.tex
+	rm smallcover.jpg
 
