@@ -71,7 +71,7 @@ revid:
 revid.tex:
 	REV=`git rev-parse HEAD | sed 's/\(.......\).*/\1/'`;\
 	DATE=`git log HEAD^- | grep '^Date:' | sed 's/Date://;s/\([0-9]*:[0-9]*:[0-9]*\) \+\([0-9][0-9][0-9][0-9]\)/\2 \1/'`;\
-	FDATE=`date "+%B %e, %Y" -d "$$DATE" --utc`;\
+	FDATE=`date "+%B %e, %Y" -d "$$DATE"` ;\
 	echo "\\\newcommand{\\\revid}{$$REV}" > "revid-new.tex";\
 	echo "\\\newcommand{\\\revdate}{$$FDATE}" >> "revid-new.tex";\
 	if test ! -e "$@"; then touch "$@"; fi;\
