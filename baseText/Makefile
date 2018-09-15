@@ -49,10 +49,7 @@ interior-bw-crown-quarto: revid interior-bw-crown-quarto.pdf
 interior-bw-crown-quarto.pdf: interior-bw.pdf
 	gs -q -SDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None -o "$@" "$<"
 
-.PHONY: $(TEXNAME)
-$(TEXNAME): revid
-	$(MAKE) $(TEXNAME).pdf
-
+$(TEXNAME): revid $(TEXNAME).pdf
 $(TEXNAME).dvi: $(TEXNAME).tex revid.tex
 	latex "$<"
 	makeindex "$(TEXNAME)"
