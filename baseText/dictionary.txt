@@ -282,6 +282,7 @@ OZUGXABPWGTV
 parallelepiped
 parametric
 pdf
+pdflatex
 Perdue
 piecewise
 PJQZGBOQKW
@@ -352,6 +353,7 @@ SW
 Tamsyn
 TAV
 tex
+TeXLive
 TGVXKHGSW
 th
 Thune
