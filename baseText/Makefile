@@ -2,11 +2,13 @@ TEXNAME=LinearAlgebra
 
 export TEXINPUTS=.:../styles:
 
-ebook: $(TEXNAME).pdf
+ebook: $(TEXNAME)
 
-print: print-cover-crown-quarto.pdf interior-crown-quarto.pdf interior-bw-crown-quarto.pdf smallcover.jpg
+print: print-cover-crown-quarto interior-crown-quarto interior-bw-crown-quarto
 
-all: ebook print
+images: smallcover.jpg
+
+all: ebook print images
 
 index: $(TEXNAME).ind
 
@@ -25,27 +27,31 @@ print-cover-front.dvi: $(TEXNAME).tex frontmatter/titlepage.tex figures/titlepag
 	latex --jobname print-cover-front "$<"
 	latex --jobname print-cover-front "$<"
 
-interior: interior.pdf
+interior: revid interior.pdf
 interior.dvi: $(TEXNAME).tex revid.tex
 	latex --jobname interior "$<"
 	makeindex interior "$<"
 	latex --jobname interior "$<"
 	latex --jobname interior "$<"
 
-interior-bw: interior-bw.pdf
+interior-bw: revid interior-bw.pdf
 interior-bw.dvi: $(TEXNAME).tex revid.tex
 	latex --jobname interior-bw "$<"
 	makeindex interior-bw "$<"
 	latex --jobname interior-bw "$<"
 	latex --jobname interior-bw "$<"
 
-interior-crown-quarto: interior-crown-quarto.pdf
+interior-crown-quarto: revid interior-crown-quarto.pdf
 interior-crown-quarto.pdf: interior.pdf
-	gs -o "$@" -SDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dQUIET -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None "$<"
+	gs -q -SDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None -o "$@" "$<"
 
-interior-bw-crown-quarto: interior-bw-crown-quarto.pdf
+interior-bw-crown-quarto: revid interior-bw-crown-quarto.pdf
 interior-bw-crown-quarto.pdf: interior-bw.pdf
-	gs -o "$@" -SDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dQUIET -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None "$<"
+	gs -q -SDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dDEVICEWIDTHPOINTS=536 -dDEVICEHEIGHTPOINTS=697 -dFIXEDMEDIA -dCompatibilityLevel=1.4 -dPDFFitPage -dAutoRotatePages=/None -o "$@" "$<"
+
+.PHONY: $(TEXNAME)
+$(TEXNAME): revid
+	$(MAKE) $(TEXNAME).pdf
 
 $(TEXNAME).dvi: $(TEXNAME).tex revid.tex
 	latex "$<"
@@ -62,7 +68,9 @@ $(TEXNAME).dvi: $(TEXNAME).tex revid.tex
 # Intermediate and target files that Latex will output
 suffixes := .dvi .ps .pdf .out .log .toc .aux .idx .ilg .ind 
 
-.SECONDARY: revid.tex
+.PHONY: revid
+revid:
+	$(MAKE) -B revid.tex
 revid.tex:
 	REV=`git rev-parse HEAD | sed 's/\(.......\).*/\1/'`;\
 	DATE=`git log HEAD^- | grep '^Date:' | sed 's/Date://;s/\([0-9]*:[0-9]*:[0-9]*\) \+\([0-9][0-9][0-9][0-9]\)/\2 \1/'`;\
