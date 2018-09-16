@@ -5,7 +5,7 @@ export TEXINPUTS=.:../styles:
 ebook: spellcheck $(TEXNAME)
 print-quarto: spellcheck cover-quarto interior-quarto-col interior-quarto-bw
 print-letter: spellcheck cover-letter interior-letter-col interior-letter-bw
-images: cover.jpg
+images: cover-small.jpg
 all: spellcheck ebook print-quarto images
 everything: spellcheck ebook print-quarto print-letter frontcover-letter images
 
@@ -70,7 +70,7 @@ frontcover-letter.dvi: $(TEXNAME).tex frontmatter/titlepage.tex figures/titlepag
 # ----------------------------------------------------------------------
 # A JPEG image of the cover, for the website
 
-cover.jpg: $(TEXNAME).pdf
+cover-small.jpg: $(TEXNAME).pdf
 	gs -q -dBATCH -dNOPAUSE -sOutputFile=- -sDEVICE=ppmraw -r144x144 -dLastPage=1 "$<" | pnmscale -height=500 | pnmnlfilt -0.5 0.8 | pnmtojpeg --quality=90 > "$@"
 
 # ----------------------------------------------------------------------
@@ -122,6 +122,6 @@ clean:
 	rm -f interior-letter-col.* interior-letter-bw.* interior-quarto-col.* interior-quarto-bw.*
 	rm -f cover-letter.* cover-quarto.*
 	rm -f frontcover-letter.*
-	rm -f cover.jpg
+	rm -f cover-small.jpg
 	rm -f revid.tex
 
