@@ -337,6 +337,7 @@ sextuple
 Shaheen
 shearings
 Sherrod
+Shu
 Snowe
 Specter
 sqrt
@@ -400,6 +401,7 @@ xscale
 xshift
 Yaser
 Yee
+Yi
 ylabel
 ymax
 ymin
