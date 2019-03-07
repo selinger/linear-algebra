@@ -404,7 +404,7 @@ the input $7$ to the output $26$. We write $S(7)=26$.
   $3$-dimensional column vector. Then repeat the following steps $3$
   times. All operations are carried out modulo $29$.
   \begin{itemize}
-  \item Key mixture: add the next three components of the key to the
+  \item Key mixing: add the next three components of the key to the
     components of the vector.
   \item Diffusion: multiply the vector by the fixed $3\times 3$-matrix
     $A = \begin{mymatrix}{ccc}
@@ -415,7 +415,7 @@ the input $7$ to the output $26$. We write $S(7)=26$.
   \item S-box application: apply the S-box to each component of the
     vector.
   \end{itemize}
-  Finally, apply one more key mixture step at the end. The resulting
+  Finally, apply one more key mixing step at the end. The resulting
   vector is the ciphertext block. The cipher can be visualized as
   follows:
   \begin{equation*}
@@ -454,14 +454,14 @@ the input $7$ to the output $26$. We write $S(7)=26$.
 \end{equation*}
 \end{definition}
 
-Note that the three basic steps (key mixture, diffusion, and S-box
+Note that the three basic steps (key mixing, diffusion, and S-box
 application) are repeated several times; each such repetition is
 called a \textbf{round}%
 \index{cipher!round}%
 \index{rounds of a cipher} of the block cipher.  The more rounds a
 block cipher has, the better its diffusion and non-linearity
 properties. The final round is short: it only consists of a key
-mixture step, with no final diffusion or S-box application. The reason
+mixing step, with no final diffusion or S-box application. The reason
 is that performing a final diffusion and S-box application would not
 add anything to the security of the cipher. An attacker could simply
 undo these last two steps, since they do not depend on the key.
@@ -495,7 +495,7 @@ to the current block at the beginning of each round.
 
   \noindent{\bf Round 1:}
   \begin{itemize}
-  \item Key mixture: the first three components of the key are
+  \item Key mixing: the first three components of the key are
     $1,1,3$. We add them to the plaintext.
     \begin{equation*}
       \begin{mymatrix}{c} 9 \\ 0 \\ 12 \end{mymatrix}
@@ -526,7 +526,7 @@ to the current block at the beginning of each round.
 
   \noindent{\bf Round 2:}
   \begin{itemize}
-  \item Key mixture: the next three components of the key are
+  \item Key mixing: the next three components of the key are
     $3,5,5$.
     \begin{equation*}
       \begin{mymatrix}{c} 8 \\ 2 \\ 18 \end{mymatrix}
@@ -556,7 +556,7 @@ to the current block at the beginning of each round.
 
   \noindent{\bf Round 3:}
   \begin{itemize}
-  \item Key mixture: the next three components of the key are
+  \item Key mixing: the next three components of the key are
     $7,7,9$.
     \begin{equation*}
       \begin{mymatrix}{c} 26 \\ 8 \\ 16 \end{mymatrix}
@@ -586,7 +586,7 @@ to the current block at the beginning of each round.
 
   \noindent{\bf Round 4 (the final round is abbreviated):}
   \begin{itemize}
-  \item Key mixture: the next three components of the key are
+  \item Key mixing: the next three components of the key are
     $9,11,11$.
     \begin{equation*}
       \begin{mymatrix}{c} 6 \\ 15 \\ 10 \end{mymatrix}
@@ -618,7 +618,7 @@ such as the alphabet size, the block size, the number of rounds, the
 design of the S-boxes, the way the key is computed, and the precise
 order in which the operations are applied. However, their basic
 structure is very similar to our toy cipher, and indeed, all such
-ciphers rely on key mixture, diffusion, and non-linear S-boxes as
+ciphers rely on key mixing, diffusion, and non-linear S-boxes as
 their key components.
 
 For example, AES uses an alphabet size of $256$ instead of $29$ (i.e.,
