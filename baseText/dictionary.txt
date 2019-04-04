@@ -30,6 +30,7 @@ Baucus
 Bauslaugh
 Bayh
 Bennet
+Bhaskara
 Bingaman
 bipoles
 Blumenthal
@@ -198,6 +199,7 @@ Kerimbek
 Keyowski
 kg
 ki
+Kieran
 kirchhoff
 Kirchhoff's
 kiwifruit
