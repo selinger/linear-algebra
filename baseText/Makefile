@@ -2,7 +2,7 @@ TEXNAME=LinearAlgebra
 
 export TEXINPUTS=.:../styles:
 
-ebook: spellcheck $(TEXNAME)
+ebook: spellcheck $(TEXNAME) cover-small.jpg
 print-quarto: spellcheck cover-quarto interior-quarto-col interior-quarto-bw
 print-letter: spellcheck cover-letter interior-letter-col interior-letter-bw
 images: cover-small.jpg
