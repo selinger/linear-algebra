@@ -47,6 +47,7 @@ cryptanalysis
 cyan
 dal
 Dalhousie
+Daniele
 decouple
 decoupled
 decrypt
@@ -205,6 +206,7 @@ toc
 TSZS
 tuple
 tuples
+Turchetti
 unitarily
 unshift
 uploads
