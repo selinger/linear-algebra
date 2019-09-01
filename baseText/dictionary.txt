@@ -53,6 +53,7 @@ decoupled
 decrypt
 decryption
 depolarize
+descartes
 diagonalizability
 diagonalizable
 diagonalization
@@ -168,6 +169,7 @@ radian
 radians
 recurrere
 remix
+René
 Reynold's
 Rie
 rn
