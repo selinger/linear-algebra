@@ -2,8 +2,8 @@
 
 \begin{ex}
   Determine by direct calculation (i.e., without calculating the
-  eigenvalues) which of the following matrices are positive definite,
-  positive semidefinite, or neither.
+  characteristic polynomial or the eigenvalues) which of the following
+  matrices are positive definite, positive semidefinite, or neither.
   \begin{equation*}
     A = \begin{mymatrix}{rr}
       1 & 1 \\
@@ -87,5 +87,44 @@
     (b) Yes.
     (c) No (positive semidefinite but not definite).
     (d) Yes.
+  \end{sol}
+\end{ex}
+
+\begin{ex}
+  Use Descartes's rule of signs to determine which of the following
+  matrices are positive definite and/or positive semidefinite.
+  \begin{equation*}
+    A = \begin{mymatrix}{cc}
+      2 & 2 \\
+      2 & 1 \\
+    \end{mymatrix},
+    \quad
+    B = \begin{mymatrix}{ccc}
+      2  & -1 & 0 \\
+      -1 &  1 & 0 \\
+      0  &  0 & 1 \\
+    \end{mymatrix},
+    \quad
+    C = \begin{mymatrix}{cccc}
+      2  & 1 & -1 &  1 \\
+      1  & 1 &  0 &  0 \\
+      -1 & 0 &  2 & -1 \\
+      1  & 0 & -1 &  1 \\
+    \end{mymatrix}.
+  \end{equation*}
+  \begin{sol}
+    The characteristic polynomials are:
+    \begin{equation*}
+      \begin{array}{lcl}
+        \det(A-\eigenvar I) &=& \eigenvar^2 - 3\eigenvar^2 - 2, \\
+        \det(B-\eigenvar I) &=& -\eigenvar^3 + 4\eigenvar^2 - 4\eigenvar + 1, \\
+        \det(C-\eigenvar I) &=& \eigenvar^4 - 6\eigenvar^3 + 9\eigenvar^2 - 3\eigenvar + 0.
+      \end{array}
+    \end{equation*}
+    For $A$, the coefficients are not weakly alternating, so $A$ is
+    not positive semidefinite. For $B$, the coefficients are strongly
+    alternating, so $B$ is positive definite. For $C$, the
+    coefficients are weakly, but not strongly alternating, so $C$ is
+    positive semidefinite, but not positive definite.
   \end{sol}
 \end{ex}

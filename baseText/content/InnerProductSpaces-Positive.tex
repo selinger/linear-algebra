@@ -5,6 +5,8 @@
   \item Determine whether a matrix is positive semidefinite and/or
     positive definite, either directly or by looking at the
     eigenvalues.
+  \item Determine whether a matrix is positive semidefinite and/or
+    positive definite using Descartes's rule of signs.
   \item Determine whether a matrix defines an inner product.
   \end{enumerate}
 \end{outcome}
@@ -186,7 +188,7 @@ there are infinitely many. The following proposition gives us a more
 practical method for determining whether a matrix is positive
 (semi)definite.
 
-\begin{proposition}{Characterization of positive definite and positive semidefinite matrices}{characterize-positive}
+\begin{proposition}{Characterization of positive (semi)definite matrices using eigenvalues}{characterize-positive}
   Let $A$ be a symmetric $n\times n$-matrix, and let
   $\eigenvar_1,\ldots,\eigenvar_n$ be its eigenvalues. Then $A$ is
   positive semidefinite if and only if
@@ -218,8 +220,8 @@ practical method for determining whether a matrix is positive
   $\eigenvar_1,\ldots,\eigenvar_n>0$, as claimed.
 \end{proof}
 
-\begin{example}{Characterization of positive definite and positive semidefinite matrices}{characterize-positive}
-  Determine whether the matrix
+\begin{example}{Using eigenvalues to check whether a matrix is positive definite}{characterize-positive}
+  Use eigenvalues to determine whether the matrix
   \begin{equation*}
     A = \begin{mymatrix}{ccc}
       5 & 0 & 2 \\
@@ -245,4 +247,159 @@ practical method for determining whether a matrix is positive
   The eigenvalues are $\eigenvar_1=0$, $\eigenvar_2=5$, and
   $\eigenvar_3=6$.  Therefore, the matrix $A$ is positive
   semidefinite, but not positive definite.
+\end{solution}
+
+While Proposition~\ref{prop:characterize-positive} gives us a method
+to determine whether a matrix $A$ is positve definite (or
+semidefinite), it still requires finding all of the eigenvalues of
+$A$, i.e., to factor the characteristic polynomial. This can be a
+difficult calculation, especially if the degree of the polynomial is
+large or if the roots aren't integers. Fortunately, there is a better
+way to determine whether a matrix is positive definite (or
+semidefinite) by directly looking at the characteristic polynomial,
+without having to calculate its roots. The method was found by
+Ren\'e Descartes%
+\index{Descartes, Ren\'e}%
+\index{Ren\'e Descartes} in 1637 and is called {\em Descartes's rule
+  of signs}. The general form of Descartes's rule of signs is
+actually more complicated than what we consider here. We state a
+version that has been specialized to characteristic polynomials of
+symmetric matrices.
+
+Let $a_0,\ldots,a_n$ be a sequence of real numbers. We say that
+$a_0,\ldots,a_n$ have \textbf{strongly alternating signs}%
+\index{strongly alternating signs}%
+\index{alternating signs!strongly}%
+\index{sign!strongly alternating} if $a_0>0$,
+$a_1<0$, $a_2>0$, and so on (i.e., $a_i>0$ when $i$ is even, and
+$a_i<0$ when $i$ is odd). We say that $a_0,\ldots,a_n$ have
+\textbf{weakly alternating signs}%
+\index{weakly alternating signs}%
+\index{alternating signs!weakly}%
+\index{sign!weakly alternating} if $a_0\geq 0$, $a_1\leq 0$,
+$a_2\geq 0$, and so on (i.e., $a_i\geq 0$ when $i$ is even, and
+$a_i\leq 0$ when $i$ is odd).
+
+
+\begin{proposition}{Descartes's rule of signs for symmetric matrices}{descartes-rule-of-signs}
+  Let $A$ be a symmetric $n\times n$-matrix, and let
+  \begin{equation*}
+    p(\eigenvar) = a_n\eigenvar^n + a_{n-1}\eigenvar^{n-1} + \ldots + a_1\eigenvar + a_0
+  \end{equation*}
+  be its characteristic polynomial. Then:
+  \begin{itemize}
+  \item $A$ is positive definite if and only if $a_0,\ldots,a_n$ have
+    strongly alternating signs.
+  \item $A$ is positive semidefinite if and only if $a_0,\ldots,a_n$
+    have weakly alternating signs.
+  \end{itemize}
+\end{proposition}
+
+\begin{proof}
+  We first prove a general fact about polynomials. Suppose $d_1,\ldots,d_n$
+  are real numbers and
+  \begin{equation*}
+    (x+d_1)(x+d_2)\cdots(x+d_n) = b_nx^n + b_{n-1}x^{n-1} + \ldots +
+    b_1x + b_0.
+  \end{equation*}
+  Then $d_1,\ldots,d_n > 0$ if and only if $b_0,\ldots,b_n > 0$.
+  Moreover, $d_1,\ldots,d_n \geq 0$ if and only if $b_0,\ldots,b_n \geq 0$.
+
+  Proof: To prove the first claim, assume $d_1,\ldots,d_n > 0$. It is
+  easy to see that by multiplying out $(x+d_1)(x+d_2)\cdots(x+d_n)$,
+  we can only obtain positive coefficients, so $b_0,\ldots,b_n >
+  0$. Conversely, assume $b_0,\ldots,b_n > 0$. Then clearly for every
+  $x\geq 0$, we have $b_nx^n + b_{n-1}x^{n-1} + \ldots + b_1x + b_0 >
+  0$, and therefore no such $x\geq 0$ can be a root of this
+  polynomial.  In other words, all of the roots must be
+  negative. Since the roots are $-d_1,\ldots,-d_n$, it follows that
+  $d_1,\ldots,d_n>0$. The proof of the second claim (using ``$\geq$''
+  instead of ``$>$'') is similar.
+  
+  We are now ready to prove
+  Proposition~\ref{prop:descartes-rule-of-signs}. By
+  Theorem~\ref{thm:diagonalization-symmetric}, we know that $A$ is
+  diagonalizable, i.e., $A=PDP^{-1}$ for some real diagonal matrix
+  $D$. Note that $A$ and $D$ have the same characteristic
+  polynomial. If $d_1,\ldots,d_n$ are the diagonal entries of $D$, the
+  characteristic polynomial can therefore be written in two different
+  ways:
+  \begin{equation*}
+    p(\eigenvar)
+    = (d_1-\eigenvar)(d_2-\eigenvar)\cdots(d_n-\eigenvar)
+    = a_0 + a_1\eigenvar + a_2\eigenvar^2 + a_3\eigenvar^3 + \ldots + a_n\eigenvar^n.
+  \end{equation*}
+  Now let $\eigenvar=-x$ and consider
+  \begin{equation*}
+    p(-x) = (d_1+x)(d_2+x)\cdots(d_n+x)
+    = a_0 - a_1 x + a_2 x^2 - a_3x^3 + \ldots \pm a_n x^n.
+  \end{equation*}
+  We have: $A$ is positive definite if and only if $d_1,\ldots,d_n>0$,
+  if and only if $a_0,-a_1,a_2,-a_3,\ldots > 0$, if and only if
+  $a_0,\ldots,a_n$ are strongly alternating.  Moreover, $A$ is
+  positive semidefinite if and only if $d_1,\ldots,d_n\geq 0$, if and
+  only if $a_0,-a_1,a_2,-a_3,\ldots \geq 0$, if and only if
+  $a_0,\ldots,a_n$ are weakly alternating.
+\end{proof}
+
+\begin{example}{Using Descartes's rule of signs to check if a matrix is positive definite}{descartes-rule-of-signs1}
+  Use Descartes's rule of signs to check whether the matrix
+  \begin{equation*}
+    A = \begin{mymatrix}{ccc}
+      5 & 0 & 2 \\
+      0 & 5 & 1 \\
+      2 & 1 & 1 \\
+    \end{mymatrix}
+  \end{equation*}
+  is positive definite, positive semidefinite, or neither.
+\end{example}
+
+\begin{solution}
+  We already found the characteristic polynomial in
+  Example~\ref{exa:characterize-positive}: it is $-\eigenvar^3 +
+  11\eigenvar^2 - 30\eigenvar$. The coefficients are $a_0=0$,
+  $a_1=-30$, $a_2=11$, and $a_3=-1$. Note that we have included all of
+  the coefficients, even ones that are zero. Since the signs are
+  weakly alternating, but not strongly alternating, the matrix is
+  positive semidefinite, but not positive definite.
+\end{solution}
+
+\begin{example}{Using Descartes's rule of signs to check if a matrix is positive definite}{descartes-rule-of-signs2}
+  Use Descartes's rule of signs to determine which of the following
+  matrices are positive definite and/or positive semidefinite.
+  \begin{equation*}
+    A = \begin{mymatrix}{ccc}
+      2 & 1 & 2 \\
+      1 & 1 & 0 \\
+      2 & 0 & 2 \\
+    \end{mymatrix},
+    \quad
+    B = \begin{mymatrix}{ccc}
+      2  &  1 & -2 \\
+      1  &  1 & -1 \\
+      -2 & -1 &  2 \\
+    \end{mymatrix},
+    \quad
+    C = \begin{mymatrix}{ccc}
+      2  & -1 & 2 \\
+      -1 &  2 & 0 \\
+      2  &  0 & 3 \\
+    \end{mymatrix}.
+  \end{equation*}
+\end{example}
+
+\begin{solution}
+  The characteristic polynomials are:
+  \begin{equation*}
+    \begin{array}{lcl}
+      \det(A-\eigenvar I) &=& -\eigenvar^3 + 5\eigenvar^2 - 3\eigenvar - 2, \\
+      \det(B-\eigenvar I) &=& -\eigenvar^3 + 5\eigenvar^2 - 2\eigenvar + 0, \\
+      \det(C-\eigenvar I) &=& -\eigenvar^3 + 7\eigenvar^2 - 11\eigenvar + 1. \\
+    \end{array}
+  \end{equation*}
+  For $A$, the coefficients are not weakly alternating, so $A$ is not
+  positive semidefinite. For $B$, the coefficients are weakly, but not
+  strongly alternating (note that $a_0=0$), and therefore $B$ is
+  positive semidefinite, but not positive definite. For $C$, the
+  coefficients are strongly alternating, so $C$ is positive definite.
 \end{solution}
