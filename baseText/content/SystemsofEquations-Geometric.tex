@@ -193,17 +193,12 @@ the following picture involving two planes, which are given by two
 equations in three variables.
 
 \begin{center}
-  \begin{picture}(135,110)
-    \put(0,30){\begin{picture}(1,1) %\thicklines
-        \setlength{\unitlength}{.3pt} \put(0,0){\line(1,0){300}}
-        \put(0,0){\line(1,1){75}}\put(300,150){\line(1,0){150}}\put(450,150){\line(-1,-1){150}
-        }\put(150,0){\line(1,1){150}}\put(150,0){\line(-1,1){100}}\put(50,100){\line(1,1){150}}
-        \put(200,250){\line(1,-1){100}}\put(75,75){\qbezier[14](0,0)(37.5,37.5)(75,75)}
-        \put(150,150){\qbezier[14](0,0)(75,0)(150,0)}\put(300,150){\qbezier[14](0,0)(37.5,-37.5)(75,-75)}
-        \put(375,75){\line(1,-1){20}}\put(395,55){\line(-1,-1){150}}
-        \put(150,0){\line(1,-1){95}}
-      \end{picture}}
-  \end{picture}
+  \begin{tikzpicture}[scale=0.6,z={(-0.55,-0.45)}]
+    \draw[fill=gray!30] (0,0,-4) -- (0,0,2) -- (-3,0,2) -- (-3,0,-4) -- cycle;
+    \draw[fill=gray!90] (0,0,-4) -- (1.5,-2,-4) -- (1.5,-2,2) -- (0,0,2) -- cycle;
+    \draw[fill=gray!30] (0,0,-4) -- (0,0,2) -- (3,0,2) -- (3,0,-4) -- cycle;
+    \draw[fill=gray!90] (0,0,-4) -- (-1.5,2,-4) -- (-1.5,2,2) -- (0,0,2) -- cycle;
+  \end{tikzpicture}
 \end{center}
 
 Notice how these two planes intersect in a line. This means that the
@@ -222,24 +217,14 @@ three variables are no solution or infinitely many solutions.
 Now imagine adding a third plane. In other words, consider three equations in three variables. What types of solutions are now possible? Consider the following diagram.
 
 \begin{center}
-\begin{picture}(135,110)
-  \put(10,30){\begin{picture}(1,1) %\thicklines
-      \setlength{\unitlength}{.3pt} \put(0,0){\line(1,0){300}}
-      \put(0,0){\line(1,1){50}}\put(300,150){\line(1,0){150}}\put(450,150){\line(-1,-1){150}
-      }\put(150,0){\line(1,1){150}}\put(150,0){\line(-1,1){100}}\put(50,100){\line(1,1){150}}
-      \put(200,250){\line(1,-1){50}}
-      \put(250,200){\qbezier[3](0,0)(12.5,-12.5)(25,-25)}
-      \put(275,175){\line(1,-1){25}}
-      \put(50,50){\qbezier[18](0,0)(50,50)(100,100)}
-      \put(150,150){\qbezier[14](0,0)(75,0)(150,0)}\put(300,150){\qbezier[14](0,0)(37.5,-37.5)(75,-75)}
-      \put(375,75){\line(1,-1){20}}\put(395,55){\line(-1,-1){150}}
-      \put(150,0){\line(1,-1){95}}\put(100,50){\line(1,1){150}}\put(100,50){\line(-1,0){120}}
-      \put(-20,50){\line(1,1){150}}\put(130,200){\line(1,0){20}}
-      \put(140,200){\qbezier[10](0,0)(50,0)(110,0)}\put(250,200){\line(1,0){50}}
-      \put(300,200){\line(-1,-1){150}} \put(150,50){\line(-1,0){50}}
-      \put(320,230){\vector(-1,-1){30}}\put(325,230){New Plane}
-    \end{picture}}
-\end{picture}
+  \begin{tikzpicture}[scale=0.6,z={(-0.55,-0.45)}]
+    \draw[fill=gray!30] (0,0,-4) -- (0,0,2) -- (-3,0,2) -- (-3,0,-4) -- cycle;
+    \draw[fill=red!30] (-1,1,-4) -- (-1,1,2) -- (-2.5,1,2) -- (-2.5,1,-4) -- cycle;
+    \draw[fill=gray!90] (0,0,-4) -- (1.5,-2,-4) -- (1.5,-2,2) -- (0,0,2) -- cycle;
+    \draw[fill=gray!30] (0,0,-4) -- (0,0,2) -- (3,0,2) -- (3,0,-4) -- cycle;
+    \draw[fill=gray!90] (0,0,-4) -- (-1.5,2,-4) -- (-1.5,2,2) -- (0,0,2) -- cycle;
+    \draw[fill=red!30] (0.5,1,-4) -- (0.5,1,2) -- (-1,1,2) -- (-1,1,-4) -- cycle;
+  \end{tikzpicture}
 \end{center}
 
 In this diagram, there is no point which lies in all three
@@ -258,36 +243,18 @@ considering three equations in three variables? In fact, it is
 possible, and we demonstrate this situation in the following picture.
 
 \begin{center}
-\begin{picture}(135,120)
-  \put(0,30){\begin{picture}(1,1) %\thicklines
-      \setlength{\unitlength}{.3pt} \put(0,0){\line(1,0){300}}
-      \put(0,0){\line(1,1){75}}
-      % \put(300,150){\line(1,0){150}}
-      \put(300,150){\qbezier[4](0,0)(25,0)(50,0)}
-      \put(350,150){\line(1,0){100}}
-      \put(450,150){\line(-1,-1){150}}
-      \put(150,0){\line(1,1){50}}
-      \put(200,50){\qbezier[14](0,0)(50,50)(100,100)}
-      \put(150,0){\line(-1,1){100}}\put(50,100){\line(1,1){150}}
-      % \put(200,250){\line(1,-1){100}}
-      \put(200,250){\qbezier[14](0,0)(50,-50)(100,-100)}
-      \put(75,75){\qbezier[14](0,0)(37.5,37.5)(75,75)}
-      \put(150,150){\qbezier[14](0,0)(75,0)(150,0)}\put(300,150){\qbezier[14](0,0)(37.5,-37.5)(75,-75)}
-      \put(375,75){\line(1,-1){20}}
-      \put(395,55){\line(-1,-1){45}}
-      \put(350,10){\qbezier[6](0,0)(-27,-27)(-60,-60)}
-      \put(290,-50){\line(-1,-1){45}}
-      \put(150,0){\line(1,-1){95}}\put(200,50){\line(0,1){200}}\put(200,50){\line(1,0){150}}
-      \put(200,50){\qbezier[10](0,0)(-50,0)(-100,0)}\put(100,50){\line(-1,0){50}}
-      \put(50,50){\line(0,1){200}} \put(350,50){\line(0,1){200}}
-      \put(350,250){\line(-1,0){300}} \put(200,50){\circle*{5}}
-      \put(350,50){\line(0,-1){100}}\put(200,50){\qbezier[4](0,0)(0,-25)(0,-50)}
-      \put(200,0){\line(0,-1){50}} \put(200,-50){\line(1,0){150}}
-      \put(200,-50){\line(-1,0){150}} \put(50,-50){\line(0,1){50}}
-      \put(50,0){\qbezier[4](0,0)(0,25)(0,50)}
-      \put(400,250){\vector(-1,-1){50}} \put(405,250){New Plane}
-    \end{picture}}
-\end{picture}
+  \begin{tikzpicture}[scale=0.6,z={(-0.55,-0.45)}]
+    \draw[fill=gray!30] (0,0,0) -- (0,0,-4) -- (-3,0,-4) -- (-3,0,0) -- cycle;
+    \draw[fill=gray!90] (0,0,0) -- (1.5,-2,0) -- (1.5,-2,-4) -- (0,0,-4) -- cycle;
+    \draw[fill=gray!30] (0,0,0) -- (0,0,-4) -- (3,0,-4) -- (3,0,0) -- cycle;
+    \draw[fill=gray!90] (0,0,0) -- (-1.5,2,0) -- (-1.5,2,-4) -- (0,0,-4) -- cycle;
+    \draw[fill=red!30] (-3,0,0) -- (3,0,0) -- (3,-2,0) -- (-3,-2,0) -- cycle;
+    \draw[fill=gray!30] (0,0,0) -- (0,0,2) -- (-3,0,2) -- (-3,0,0) -- cycle;
+    \draw[fill=gray!90] (0,0,0) -- (1.5,-2,0) -- (1.5,-2,2) -- (0,0,2) -- cycle;
+    \draw[fill=gray!30] (0,0,0) -- (0,0,2) -- (3,0,2) -- (3,0,0) -- cycle;
+    \draw[fill=red!30] (-3,0,0) -- (3,0,0) -- (3,2,0) -- (-3,2,0) -- cycle;
+    \draw[fill=gray!90] (0,0,0) -- (-1.5,2,0) -- (-1.5,2,2) -- (0,0,2) -- cycle;
+  \end{tikzpicture}
 \end{center}
 
 In this case, the three planes have a single point of intersection.
@@ -296,24 +263,14 @@ could intersect in a line, resulting in infinitely many solutions, as
 in the following diagram.
 
 \begin{center}
-\begin{picture}(135,110)
-  \put(0,30){\begin{picture}(1,1) %\thicklines
-      \setlength{\unitlength}{.3pt} \put(0,0){\line(1,0){300}}
-      \put(0,0){\line(1,1){75}}
-      % \put(300,150){\line(1,0){150}}
-      \put(450,150){\line(-1,0){83.333}}
-      \put(300,150){\qbezier[6](0,0)(33,0)(66,0)}
-      \put(450,150){\line(-1,-1){150}
-      }\put(150,0){\line(1,1){150}}\put(150,0){\line(-1,1){100}}\put(50,100){\line(1,1){150}}
-      \put(200,250){\line(1,-1){100}}\put(75,75){\qbezier[14](0,0)(37.5,37.5)(75,75)}
-      \put(150,150){\qbezier[14](0,0)(75,0)(150,0)}\put(300,150){\qbezier[14](0,0)(37.5,-37.5)(75,-75)}
-      \put(375,75){\line(1,-1){20}}\put(395,55){\line(-1,-1){150}}
-      \put(150,0){\line(1,-1){95}}\put(150,0){\line(-3,-1){90}}
-      \put(60,-30){\line(1,1){30}}
-      \put(150,0){\line(3,1){100}}\put(250,33.333){\line(1,1){150}}
-      \put(400,183.333){\line(-3,-1){100}}
-    \end{picture}}
-\end{picture}
+  \begin{tikzpicture}[scale=0.6,z={(-0.55,-0.45)}]
+    \draw[fill=gray!30] (0,0,-4) -- (0,0,2) -- (-3,0,2) -- (-3,0,-4) -- cycle;
+    \draw[fill=red!30] (-1.5,-2,-4) -- (-1.5,-2,2) -- (0,0,2) -- (0,0,-4) -- cycle;
+    \draw[fill=gray!90] (0,0,-4) -- (1.5,-2,-4) -- (1.5,-2,2) -- (0,0,2) -- cycle;
+    \draw[fill=gray!30] (0,0,-4) -- (0,0,2) -- (3,0,2) -- (3,0,-4) -- cycle;
+    \draw[fill=gray!90] (0,0,-4) -- (-1.5,2,-4) -- (-1.5,2,2) -- (0,0,2) -- cycle;
+    \draw[fill=red!30] (1.5,2,-4) -- (1.5,2,2) -- (0,0,2) -- (0,0,-4) -- cycle;
+  \end{tikzpicture}
 \end{center}
 
 We have now seen how three equations in three variables can have no
