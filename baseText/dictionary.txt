@@ -74,6 +74,7 @@ eigenvectors
 ellipsoid
 enuitem
 equalities
+Esa
 etc
 exponentials
 échelle
@@ -90,6 +91,7 @@ gaussian
 gj
 gov
 hamilton
+Hannila
 hermitian
 hilbert
 homo
