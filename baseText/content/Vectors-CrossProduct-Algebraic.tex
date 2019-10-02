@@ -174,7 +174,7 @@ We will now look at an example of how to compute a cross product.
   \end{equation*}
 \end{solution}
 
-We use this concept in the following example.
+We use this concept in the following examples.
 
 \begin{example}{Area of a parallelogram}{area-parallelogram}
   Find the area of the parallelogram determined by the following
@@ -207,6 +207,46 @@ We use this concept in the following example.
   \begin{equation*}
     \norm{\vect{u} \times \vect{v}} =
     \sqrt{3^2+5^2+1^2} = \sqrt{35}.
+  \end{equation*}
+\end{solution}
+
+\begin{example}{Area of a parallelogram}{area-parallelogram2}
+  Find the area of the parallelogram with vertices $(1,0,1)$,
+  $(2,2,3)$, $(-1,1,3)$, and $(0,3,5)$.
+\end{example}
+
+\begin{solution}
+  Let $P=(1,0,1)$, $Q=(2,2,3)$, $R=(-1,1,3)$, and $S=(0,3,5)$.
+  \begin{center}
+    \begin{tikzpicture}[scale=1]
+      \fill[blue!5] (0,0) -- (2,2) -- (5,2) -- (3,0) -- cycle;
+      \draw[->,thick,blue!70!black] (0,0) -- (2,2);
+      \draw[->,thick,red] (0,0) -- (3,0);
+      \draw[thick] (2,2)--(5,2);
+      \draw[thick] (3,0)--(5,2);
+      \draw[fill](0,0) circle [radius=2.25pt] node[left=1ex]{$P$};
+      \draw[fill](2,2) circle [radius=2.25pt] node[left=1ex]{$Q$};
+      \draw[fill](3,0) circle [radius=2.25pt] node[right=1ex]{$R$};
+      \draw[fill](5,2) circle [radius=2.25pt] node[right=1ex]{$S$};
+    \end{tikzpicture}
+  \end{center}
+  First, we check that this really is a parallelogram. We have to have
+  $\longvect{PQ}=\longvect{RS}$. Indeed, this is the case, as
+  $\longvect{PQ}=\mat{2-1,2-0,3-1}^T=\mat{1,2,2}^T$ and
+  $\longvect{RS}=\mat{0-(-1),3-1,5-3}^T=\mat{1,2,2}^T$. The area of
+  the parallelogram is
+  \begin{equation*}
+    \norm{\longvect{PQ}\times\longvect{PR}}
+    =
+    \norm{
+      \begin{mymatrix}{r} 1 \\ 2 \\ 2 \end{mymatrix}
+      \times
+      \begin{mymatrix}{r} -2 \\ 1 \\ 3 \end{mymatrix}
+    }
+    =
+    \norm{\begin{mymatrix}{r} 4 \\ -7 \\ 5 \end{mymatrix}}
+    = \sqrt{4^2 + (-7)^2 + 5^2}
+    = \sqrt{90}.
   \end{equation*}
 \end{solution}
 
@@ -244,20 +284,12 @@ following example.
   \begin{equation*}
     \norm{\longvect{PQ}\times\longvect{PR}}
     =
-    \norm{\begin{mymatrix}{r}
-        -1 \\
-        0 \\
-        2
-      \end{mymatrix} \times \begin{mymatrix}{r}
-        4 \\
-        -1 \\
-        -1
-      \end{mymatrix}
+    \norm{
+      \begin{mymatrix}{r} -1 \\ 0 \\ 2 \end{mymatrix}
+      \times
+      \begin{mymatrix}{r} 4 \\ -1 \\ -1 \end{mymatrix}
     }
-    = \norm{\begin{mymatrix}{rrr}
-        2 \\ 7 \\ 1
-      \end{mymatrix}
-    }
+    = \norm{\begin{mymatrix}{r} 2 \\ 7 \\ 1 \end{mymatrix}}
     = \sqrt{2^2+7^2+1^2}
     = \sqrt{54}.
   \end{equation*}
