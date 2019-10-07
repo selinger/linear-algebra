@@ -162,14 +162,15 @@ instead of the real numbers.
   \end{equation*}
   The first pivot entry is the $1$ in the upper left. We use a row
   operation to create a zero below it. Note that, because we are
-  working modulo 2, adding $1$ and subtracting $1$ is the same thing.
+  working modulo 2, adding $1$ and subtracting $1$ is the same thing,
+  so $0-1=1$.
   \begin{equation*}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 1 & 0 & 0 \\
       1 & 0 & 1 & 1 \\
       0 & 1 & 1 & 1 \\
     \end{mymatrix}
-    \stackrel{R_2\rowop R_2+R_1}{\roweq}
+    \stackrel{R_2\rowop R_2-R_1}{\roweq}
     \begin{mymatrix}{rrr|r}
       \circled{1} & 1 & 0 & 0 \\
       0 & 1 & 1 & 1 \\
