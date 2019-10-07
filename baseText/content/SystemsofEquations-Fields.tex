@@ -264,35 +264,37 @@ instead of the real numbers.
   \begin{center}
     \begin{tabular}{|c|c|c|}
       \hline
-      1 & 2 & 3 \\\hline
-      4 & 5 & 6 \\\hline
-      7 & 8 & 9 \\\hline
-    \end{tabular}.
+      1 & 2 & 3\rule{0mm}{2.3ex}\\\hline
+      4 & 5 & 6\rule{0mm}{2.3ex}\\\hline
+      7 & 8 & 9\rule{0mm}{2.3ex}\\\hline
+    \end{tabular}~.
   \end{center}
-  Let $x_i$ be a variable in $\Z_2$, corresponding to the
-  event ``button $i$ is pressed'' (or more precisely, ``button $i$
-  is pressed an odd number of times'', because pressing a button
-  twice is the same as not pressing it at all. That is why we are
-  working modulo 2). To turn off the light at position 1, we must
-  press an odd number of buttons 1, 2, and 4. In other words,
-  $x_1+x_2+x_4 = 1$. To ensure the light at position 2 stays off, we
-  must press an even number of buttons 1, 2, 3, and 5, or as an
-  equation, $x_1+x_2+x_3+x_5=0$. In this way, we obtain 9 linear
-  equations in 9 variables:
+  Let $x_i$ be a variable in $\Z_2$, corresponding to the event
+  ``button $i$ is pressed'' (or more precisely, ``button $i$ is
+  pressed an odd number of times'', because pressing a button twice is
+  the same as not pressing it at all. That is why we are working
+  modulo 2). The light in position 1 is initially on. It is toggled
+  each time buttons 1, 2, and 4 are pressed, i.e., it is toggled
+  $x_1+x_2+x_4$ times. We want this light to be off in the end. So we
+  must have $1+x_1+x_2+x_4=0$. Similarly, the light in position 2 is
+  initially off. To ensure that it stays off, we must have
+  $0+x_1+x_2+x_3+x_5=0$. In this way, we obtain 9 linear equations in
+  9 variables:
   \begin{equation*}
-    \begin{array}{r@{~}c@{~}l}
-      x_1+x_2+x_4 &=& 1 \\
-      x_1+x_2+x_3+x_5 &=& 0 \\
-      x_2+x_3+x_6 &=& 1 \\
-      x_1+x_4+x_5+x_7 &=& 0 \\
-      x_2+x_4+x_5+x_6+x_8 &=& 1 \\
-      x_3+x_5+x_6+x_9 &=& 0 \\
-      x_4+x_7+x_8 &=& 0 \\
-      x_5+x_7+x_8+x_9 &=& 0 \\
-      x_6+x_8+x_9 &=& 1.
+    \begin{array}{lclcl}
+      1 &+& x_1+x_2+x_4 &=& 0 \\
+      0 &+& x_1+x_2+x_3+x_5 &=& 0 \\
+      1 &+& x_2+x_3+x_6 &=& 0 \\
+      0 &+& x_1+x_4+x_5+x_7 &=& 0 \\
+      1 &+& x_2+x_4+x_5+x_6+x_8 &=& 0 \\
+      0 &+& x_3+x_5+x_6+x_9 &=& 0 \\
+      0 &+& x_4+x_7+x_8 &=& 0 \\
+      0 &+& x_5+x_7+x_8+x_9 &=& 0 \\
+      1 &+& x_6+x_8+x_9 &=& 0.
     \end{array}
   \end{equation*}
-  Here is the augmented matrix for the system:
+  If we write this system in standard form, we obtain the following
+  augmented matrix:
   \begin{equation*}
     \begin{mymatrix}{rrrrrrrrr|r}
       1&1&0 & 1&0&0 & 0&0&0 & 1 \\
@@ -325,8 +327,9 @@ instead of the real numbers.
       0&0&0 & 0&0&0 & 0&0&1 & 0 \\
     \end{mymatrix}.
   \end{equation*}
-  This means we have to press buttons 3, 4, 5, and 8. Also, since
-  the rank is 9, the solution is unique.
+  The unique solution is $(x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9) =
+  (0,0,1,1,1,0,0,1,0)$. This means that we must press buttons 3, 4,
+  5, and 8.
 \end{solution}
 
 \begin{example}{The integers modulo 5}{z-mod-5}
