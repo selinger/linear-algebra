@@ -18,6 +18,7 @@ Arman
 ASCII
 associativity
 Baucus
+Baumgartner
 Bauslaugh
 Bayh
 Bhaskara
