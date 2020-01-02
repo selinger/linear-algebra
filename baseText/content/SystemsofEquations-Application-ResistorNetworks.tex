@@ -3,8 +3,6 @@
 The tools of linear algebra can be used to study the application of
 resistor networks. An example of an electrical circuit is below.
 
-\medskip
-
 \begin{center}
   \scalebox{0.8}{
     \begin{circuitikz}[american] \draw
@@ -19,8 +17,7 @@ resistor networks. An example of an electrical circuit is below.
   }
 \end{center}
 
-\medskip
-
+\noindent
 The jagged lines (\begin{circuitikz}[baseline=-0.5ex] \draw (0,0) to
   [R] (2,0); \end {circuitikz}) denote resistors and the numbers next
 to them give their resistance%
@@ -93,11 +90,10 @@ of the current in the initial diagram.
 
   Therefore the equation and solution are given by
   \begin{eqnarray*}
-    2I_1 + 4I_1 + 2 I_1 &=& 18 \\
-    8I_1 &=& 18 \\
-    I_1 &=& \frac{9}{4} \amp
+    2I_1 + 4I_1 + 2 I_1 &=& 18, \\
+    8I_1 &=& 18, \\
+    I_1 &=& \frac{9}{4} \amp.
   \end{eqnarray*}
-
   Since the answer is positive, this confirms that the current flows
   counterclockwise.
 \end{solution}
@@ -133,11 +129,10 @@ of the current in the initial diagram.
 
   Therefore the equation and solution are given by
   \begin{eqnarray*}
-    4I_1 + 6I_1 + 1 I_1 + 3I_1&=& -27 \\
-    14I_1 &=& -27 \\
-    I_1 &=& -\frac{27}{14} \amp
+    4I_1 + 6I_1 + 1 I_1 + 3I_1&=& -27, \\
+    14I_1 &=& -27, \\
+    I_1 &=& -\frac{27}{14} \amp.
   \end{eqnarray*}
-
   Since the answer is negative, this tells us that the current flows
   clockwise.
 \end{solution}
@@ -151,10 +146,6 @@ are now part of a larger system of circuits, the answers will differ.
   the four circuits is denoted by $I_1$, $I_2$, $I_3$, $I_4$. Using
   Kirchhoff's Law, write an equation for each circuit and solve for
   each current.
-\end{example}
-
-\begin{solution}
-  The circuits are given in the following diagram.
 
   \begin{center}
     \scalebox{0.8}{
@@ -172,45 +163,48 @@ are now part of a larger system of circuits, the answers will differ.
         to [R = $1 \ohm$] (4,0)
         (4,-4)to [R = $5 \ohm$] (0,-4)
         (0,0) to [battery1, v_= $23\volt$~~] (0,-4)
-        (2,2) node[scale=4]{$\circlearrowleft$}
+        (2,2) node[scale=3]{$\circlearrowleft$}
         (2,2) node{$I_2$}
-        (6,2) node[scale=4]{$\circlearrowleft$}
+        (6,2) node[scale=3]{$\circlearrowleft$}
         (6,2) node{$I_3$}
-        (6,-2) node[scale=4]{$\circlearrowleft$}
+        (6,-2) node[scale=3]{$\circlearrowleft$}
         (6,-2) node{$I_4$}
-        (2,-2) node[scale=4]{$\circlearrowleft$}
+        (2,-2) node[scale=3]{$\circlearrowleft$}
         (2,-2) node{$I_1$}
         ;
       \end{circuitikz}
     }
   \end{center}
+\end{example}
 
+\begin{solution}
   Starting with the top left circuit, multiply the resistance by the
-  amps and sum the resulting products. Specifically, consider the
+  current and sum the resulting products. Specifically, consider the
   resistor labelled $2 \ohm$ that is part of the circuits of $I_1$ and
   $I_2$. Notice that current $I_2$ runs through this in a positive
   (counterclockwise) direction, and $I_1$ runs through in the opposite
-  (negative) direction. The product of resistance and amps is then
+  (negative) direction. The product of resistance and current is then
   $2 (I_2 - I_1) = 2I_2 - 2I_1$.  Continue in this way for each
   resistor, and set the sum of the products equal to the voltage
   source to write the equation:
   \begin{equation*}
-    2I_2-2I_1+4I_2-4I_3+2I_2=18
+    2I_2-2I_1+4I_2-4I_3+2I_2=18.
   \end{equation*}
   The above process is used on each of the other three circuits, and
   the resulting equations are:
 
+  \noindent
   Upper right circuit:
   \begin{equation*}
-    4I_3 - 4I_2 + 6I_3 - 6I_4 + I_3 + 3I_3 = -27
+    4I_3 - 4I_2 + 6I_3 - 6I_4 + I_3 + 3I_3 = -27.
   \end{equation*}
   Lower right circuit:
   \begin{equation*}
-    3I_4 + 2I_4 + 6I_4 - 6I_3 + I_4 - I_1 = 0
+    3I_4 + 2I_4 + 6I_4 - 6I_3 + I_4 - I_1 = 0.
   \end{equation*}
   Lower left circuit:
   \begin{equation*}
-    5I_1+I_1-I_4+2I_1-2I_2=-23
+    5I_1+I_1-I_4+2I_1-2I_2=-23.
   \end{equation*}
 
   Notice that the voltage for the upper right and lower left circuits
@@ -219,10 +213,10 @@ are now part of a larger system of circuits, the answers will differ.
   and rearranging with variables in order, we have:
   \begin{equation*}
     \begin{array}{r@{~}c@{~}l}
-      -2I_1+8I_2-4I_3&=&18 \\
-      - 4I_2 + 14I_3 - 6I_4 &=& -27 \\
-      -I_1 - 6I_3 + 12I_4 &=& 0 \\
-      8I_1-2I_2 - I_4 &=& -23
+      -2I_1+8I_2-4I_3&=&18, \\
+      - 4I_2 + 14I_3 - 6I_4 &=& -27, \\
+      -I_1 - 6I_3 + 12I_4 &=& 0, \\
+      8I_1-2I_2 - I_4 &=& -23.
     \end{array}
   \end{equation*}
   The augmented matrix is
@@ -232,17 +226,15 @@ are now part of a larger system of circuits, the answers will differ.
       0 & -4 & 14 & -6 & -27 \\
       -1 & 0 & -6 & 12 & 0 \\
       8 & -2 & 0 & -1 & -23
-    \end{mymatrix}
+    \end{mymatrix}.
   \end{equation*}
-
-  The solution to this matrix is
+  The solution to this system of equations is
   \begin{eqnarray*}
-    I_1 &=& -3 \amp \\
-    I_2 &=& \frac{1}{4} \amp \\
-    I_3 &=& -\frac{5}{2} \amp \\
-    I_4 &=& -\frac{3}{2} \amp
+    I_1 &=& -3 \amp, \\
+    I_2 &=& \frac{1}{4} \amp, \\
+    I_3 &=& -\frac{5}{2} \amp, \\
+    I_4 &=& -\frac{3}{2} \amp.
   \end{eqnarray*}
-
   This tells us that currents $I_1, I_3$, and $I_4$ travel clockwise
   while $I_2$ travels counterclockwise.
 \end{solution}
