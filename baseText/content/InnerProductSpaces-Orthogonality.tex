@@ -432,6 +432,49 @@ dashed lines are orthogonal to $\vect{u}_1$ and $\vect{u}_2$, instead
 of parallel to them. In summary, the Fourier coefficients of a vector
 are equal to its coordinates {\em only if the basis is orthogonal}.
 
+When $\vect{u}_1,\ldots,\vect{u}_k$ are orthogonal, we have a
+convenient formula for the norm of
+$a_1\vect{u}_1+\ldots+a_k\vect{u}_k$:
+
+\begin{proposition}{Norm of orthogonal linear combination}{norm-orthogonal}
+  Let $V$ be an inner product space, and suppose that
+  $\vect{u}_1,\ldots,\vect{u}_k$ are orthogonal. Then
+  \begin{equation*}
+    \norm{a_1\vect{u}_1+\ldots+a_k\vect{u}_k}^2
+    = a_1^2\norm{\vect{u}_1}^2 + \ldots + a_k^2\norm{\vect{u}_k}^2.
+  \end{equation*}
+\end{proposition}
+
+\begin{proof}
+  We have
+  \begin{eqnarray*}
+    \norm{a_1\vect{u}_1+\ldots+a_k\vect{u}_k}^2
+    &=&
+    \iprod{a_1\vect{u}_1+\ldots+a_k\vect{u}_k,a_1\vect{u}_1+\ldots+a_k\vect{u}_k} \\
+    &=& \begin{array}[t]{@{}c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c@{~}c}
+          &   a_1^2\iprod{\vect{u}_1,\vect{u}_1}
+          &+& a_1a_2\iprod{\vect{u}_1,\vect{u}_2}
+          &+& \ldots
+          &+& a_1a_n\iprod{\vect{u}_1,\vect{u}_n} \\
+          +&  a_2a_1\iprod{\vect{u}_2,\vect{u}_1}
+          &+& a_2^2\iprod{\vect{u}_2,\vect{u}_2}
+          &+& \ldots
+          &+& a_2a_n\iprod{\vect{u}_2,\vect{u}_n} \\
+          +&  \vdots
+          && \vdots
+          &&
+          && \vdots \\
+          +&  a_na_1\iprod{\vect{u}_n,\vect{u}_1}
+          &+& a_na_2\iprod{\vect{u}_n,\vect{u}_2}
+          &+& \ldots
+          &+& a_n^2\iprod{\vect{u}_n,\vect{u}_n}
+        \end{array} \\
+    &=& a_1^2\norm{\vect{u}_1}^2 + \ldots + a_k^2\norm{\vect{u}_k}^2.
+  \end{eqnarray*}
+  Here we have used the fact that $\iprod{\vect{u}_i,\vect{u}_j}=0$
+  when $i\neq j$. 
+\end{proof}
+
 We conclude this section by making a connection between arbitrary
 inner products and dot products.  Once an orthonormal basis has been
 chosen on an inner product space, computing inner products is

@@ -64,70 +64,63 @@ provided that we have an orthogonal basis of the subspace.
 \end{proposition}
 
 \begin{proof}
-  Since $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is a basis of $W$, every
-  vector $\vect{w}\in W$ is of the form
-  $\vect{w} = x_1\vect{u}_1 + \ldots + x_k\vect{u}_k$, where
-  $x_1,\ldots,x_k\in\R$. We have
-  \begin{eqnarray*}
-    \norm{\vect{v}-\vect{w}}^2
-    &=& \iprod{\vect{v}-\vect{w}, \vect{v}-\vect{w}} \\
-    &=& \iprod{\vect{v}, \vect{v}} - 2\iprod{\vect{w},\vect{v}} + \iprod{\vect{w},\vect{w}} \\
-    &=& \iprod{\vect{v}, \vect{v}} - 2\iprod{x_1\vect{u}_1 + \ldots + x_k\vect{u}_k,\vect{v}} + \iprod{x_1\vect{u}_1 + \ldots + x_k\vect{u}_k, x_1\vect{u}_1 + \ldots + x_k\vect{u}_k} \\
-    &=& \iprod{\vect{v}, \vect{v}} - 2x_1\iprod{\vect{u}_1,\vect{v}} - \ldots - 2x_k\iprod{\vect{u}_k,\vect{v}} + x_1^2\iprod{\vect{u}_1, \vect{u}_1} + \ldots + x_k^2\iprod{\vect{u}_k, \vect{u}_k} \\
-    &=& \iprod{\vect{v}, \vect{v}} + (x_1^2\iprod{\vect{u}_1, \vect{u}_1} - 2x_1\iprod{\vect{u}_1,\vect{v}}) + \ldots + (x_k^2\iprod{\vect{u}_k, \vect{u}_k} - 2x_k\iprod{\vect{u}_k,\vect{v}}).
-  \end{eqnarray*}
-  Here, in the second-to-last step, we have used the fact that
-  $\iprod{\vect{u}_i,\vect{u}_j}=0$ when $i\neq j$, i.e., the
-  orthogonality of $\vect{u}_1,\ldots,\vect{u}_k$.  Therefore, the
-  expression $\norm{\vect{v}-\vect{w}}^2$ is minimized when each of the
-  expressions
-  \begin{equation}\label{eqn:projection-subspace}
-    x_1^2\iprod{\vect{u}_1, \vect{u}_1} - 2x_1\iprod{\vect{u}_1,\vect{v}}, \qquad
-    \ldots,\qquad
-    x_k^2\iprod{\vect{u}_k, \vect{u}_k} - 2x_k\iprod{\vect{u}_k,\vect{v}}
-  \end{equation}
-  takes its minimum. By the laws of calculus, the minimum of a
-  function of the form $f(x)=ax^2-2bx$ occurs when $f'(x)=2ax-2b=0$,
-  i.e., when $x=\frac{b}{a}$. Applying this reasoning to each of the
-  $k$ expressions in {\eqref{eqn:projection-subspace}}, we find that the
-  minimum occurs when
+  In case $\vect{v}\in W$, then by
+  Proposition~\ref{prop:fourier-coefficients}, we have
   \begin{equation*}
-    x_1 = \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}},\quad
-    \ldots,\quad
-    x_k = \frac{\iprod{\vect{u}_k,\vect{v}}}{\iprod{\vect{u}_k,\vect{u}_k}},
-  \end{equation*}
-  i.e., when
-  \begin{equation*}
-    \vect{w} =
+    \vect{v} =
     \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\vect{u}_1
     + \frac{\iprod{\vect{u}_2,\vect{v}}}{\iprod{\vect{u}_2,\vect{u}_2}}\,\vect{u}_2
     + \ldots
-    + \frac{\iprod{\vect{u}_k,\vect{v}}}{\iprod{\vect{u}_k,\vect{u}_k}}\,\vect{u}_k.
+    + \frac{\iprod{\vect{u}_k,\vect{v}}}{\iprod{\vect{u}_k,\vect{u}_k}}\,\vect{u}_k,
+  \end{equation*}
+  and therefore $\vect{v}'=\vect{v}$. In that case
+  $\norm{\vect{v}-\vect{v}'}=0$, which is clearly as small as
+  possible, and $\vect{v}-\vect{v}'=\vect{0}$ is orthogonal to $W$, so
+  we are done.
+
+  Now assume that $\vect{v}\not\in W$. Let
+  $W'=\sspan\set{\vect{u}_1,\ldots,\vect{u}_k,\vect{v}}$. Apply the
+  Gram-Schmidt procedure to the $k+1$ vectors
+  $\vect{u}_1,\ldots,\vect{u}_k,\vect{v}$ to obtain an orthogonal
+  basis of $W'$. Since the first $k$ vectors are already orthogonal,
+  the Gram-Schmidt procedure does not change them, and we therefore
+  obtain an orthogonal basis of $W'$ of the form
+  $\vect{u}_1,\ldots,\vect{u}_k,\vect{u}_{k+1}$. Since $\vect{v}\in
+  W'$, we can write $\vect{v}$ as a linear combination of these basis
+  vectors, i.e., $\vect{v}=a_1\vect{u}_1 + \ldots + a_k\vect{u}_k +
+  a_{k+1}\vect{u}_{k+1}$. Moreover, by
+  Proposition~\ref{prop:fourier-coefficients}, we know that each $a_j$
+  is the corresponding Fourier coefficient of $\vect{v}$, i.e., $a_j =
+  \frac{\iprod{\vect{u}_j,\vect{v}}}{\iprod{\vect{u}_j,\vect{u}_j}}$.
+
+  Now consider any $\vect{w}\in W$. Since
+  $\set{\vect{u}_1,\ldots,\vect{u}_k}$ is a basis of $W$, we can write
+  $\vect{w} = x_1\vect{u}_1 + \ldots + x_k\vect{u}_k$. Using
+  Proposition~\ref{prop:norm-orthogonal}, we have
+  \begin{eqnarray*}
+    \norm{\vect{v}-\vect{w}}^2
+    &=& \norm{(a_1-x_1)\vect{u}_1 + \ldots + (a_k-x_k)\vect{u}_k + a_{k+1}\vect{u}_{k+1}}^2 \\
+    &=& (a_1-x_1)^2\norm{\vect{u}_1}^2 ~+~ \ldots ~+~ (a_k-x_k)^2\norm{\vect{u}_k}^2 ~+~ a_{k+1}^2\norm{\vect{u}_{k+1}}^2.
+  \end{eqnarray*}
+  Here, $a_1,\ldots,a_{k+1}$ are the fixed coordinates of $\vect{v}$,
+  and $x_1,\ldots,x_k$ depend on $\vect{w}$.  Therefore,
+  $\norm{\vect{v}-\vect{w}}$ takes its smallest value when $x_j=a_j$,
+  for $j=1,\ldots,k$. So the minimum value of
+  $\norm{\vect{v}-\vect{w}}$ occurs when
+  \begin{equation*}
+    \vect{w}
+    ~~=~~ a_1\vect{u}_1 + \ldots + a_k\vect{u}_k 
+    ~~=~~ 
+    \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\vect{u}_1
+    + \frac{\iprod{\vect{u}_2,\vect{v}}}{\iprod{\vect{u}_2,\vect{u}_2}}\,\vect{u}_2
+    + \ldots
+    + \frac{\iprod{\vect{u}_k,\vect{v}}}{\iprod{\vect{u}_k,\vect{u}_k}}\,\vect{u}_k
+    ~~=~~ \vect{v}'.
   \end{equation*}
   This is what had to be shown. Finally, to show that
-  $\vect{v}-\vect{v}'$ is orthogonal to $W$, it suffices to show that
-  $\vect{v}-\vect{v}'$ is orthogonal to each basis vector
-  $\vect{u}_1,\ldots,\vect{u}_k$ of $W$. We show this by direct calculation.
-  Consider $i\in\set{1,\ldots,k}$. First note that
-  \begin{eqnarray*}
-    \iprod{\vect{v}',\vect{u}_i}
-    &=& \bigiprod{\paren{
-        \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\vect{u}_1
-        + \ldots
-        + \frac{\iprod{\vect{u}_k,\vect{v}}}{\iprod{\vect{u}_k,\vect{u}_k}}\,\vect{u}_k},
-        \vect{u}_i} \\
-    &=&
-        \frac{\iprod{\vect{u}_1,\vect{v}}}{\iprod{\vect{u}_1,\vect{u}_1}}\,\iprod{\vect{u}_1,\vect{u}_i}
-        + \ldots
-        + \frac{\iprod{\vect{u}_k,\vect{v}}}{\iprod{\vect{u}_k,\vect{u}_k}}\,\iprod{\vect{u}_k,\vect{u}_i}
-    \\
-    &=& \frac{\iprod{\vect{u}_i,\vect{v}}}{\iprod{\vect{u}_i,\vect{u}_i}}\,\iprod{\vect{u}_i,\vect{u}_i} \\
-    &=& \iprod{\vect{u}_i,\vect{v}}.
-  \end{eqnarray*}
-  Therefore,
-  $\iprod{\vect{v}-\vect{v}',\vect{u}_i} = \iprod{\vect{v},\vect{u}_i}
-  - \iprod{\vect{v}',\vect{u}_i} = 0$, and $\vect{v}-\vect{v}'$ is
-  orthogonal to $\vect{u}_i$, as desired.
+  $\vect{v}-\vect{v}'$ is orthogonal to $W$, note that
+  $\vect{v}-\vect{v}' = a_{k+1}\vect{u}_{k+1}$, which is orthogonal to
+  each $\vect{u}_1,\ldots,\vect{u}_k$, and therefore to $W$.
 \end{proof}
 
 \begin{example}{Orthogonal projection onto a subspace}{projection-subspace}
