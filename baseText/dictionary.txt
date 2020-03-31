@@ -53,6 +53,7 @@ decouple
 decoupled
 decrypt
 decryption
+Deklan
 depolarize
 descartes
 diagonalizability
@@ -140,6 +141,7 @@ Lyryx
 MacKenzie
 mailto
 mathstat
+Mengering
 metron
 mm
 Mmn
