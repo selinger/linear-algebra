@@ -235,20 +235,21 @@ We use this concept in the following examples.
   First, we check that this really is a parallelogram. We have to have
   $\longvect{PQ}=\longvect{RS}$. Indeed, this is the case, as
   $\longvect{PQ}=\mat{2-1,2-0,3-1}^T=\mat{1,2,2}^T$ and
-  $\longvect{RS}=\mat{0-(-1),3-1,5-3}^T=\mat{1,2,2}^T$. The area of
-  the parallelogram is
+  $\longvect{RS}=\mat{0-(-1),3-1,5-3}^T=\mat{1,2,2}^T$.  We also
+  compute $\longvect{PR}=\longvect{QS}=\mat{-2,1,2}^T$. The
+  area of the parallelogram is
   \begin{equation*}
     \norm{\longvect{PQ}\times\longvect{PR}}
     =
     \norm{
       \begin{mymatrix}{r} 1 \\ 2 \\ 2 \end{mymatrix}
       \times
-      \begin{mymatrix}{r} -2 \\ 1 \\ 3 \end{mymatrix}
+      \begin{mymatrix}{r} -2 \\ 1 \\ 2 \end{mymatrix}
     }
     =
-    \norm{\begin{mymatrix}{r} 4 \\ -7 \\ 5 \end{mymatrix}}
-    = \sqrt{4^2 + (-7)^2 + 5^2}
-    = \sqrt{90}.
+    \norm{\begin{mymatrix}{r} 2 \\ -6 \\ 5 \end{mymatrix}}
+    = \sqrt{2^2 + (-6)^2 + 5^2}
+    = \sqrt{65}.
   \end{equation*}
 \end{solution}
 

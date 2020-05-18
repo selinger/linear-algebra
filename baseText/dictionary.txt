@@ -16,6 +16,7 @@ antisymmetric
 Argand
 Arman
 ASCII
+Asmita
 associativity
 Baucus
 Baumgartner
@@ -200,6 +201,7 @@ sextuple
 shearings
 Shu
 Snowe
+Sodhi
 subsequence
 subspaces
 summable
