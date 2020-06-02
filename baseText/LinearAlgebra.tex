@@ -170,6 +170,9 @@
 % Width of PDF: 0.125in + 8.5in + 76.075bp + 8.5in + 0.125in
 % Height of PDF: 0.125in + 11in + 0.125in
 
+% For Crown Quarto: trimwidth = 536bp, trimheight = 697bp
+% Spine width: 1.319in (559 pages)(color)
+
 %% Print Setup
 \newlength{\trimwidth}
 \newlength{\trimheight}
@@ -197,12 +200,12 @@
 \setlength{\bleed}{0.125in}
 
 % Paper thickness for B+W interior
-\setlength{\kilopagethickness}{135.5bp}  % per 1000 pages, for accuracy
-\setlength{\coverthickness}{0.195bp}
+\setlength{\kilopagethickness}{169.2bp}  % per 1000 pages, for accuracy
+\setlength{\coverthickness}{0.213bp}
 
 % Paper thickness for color interior
-% \setlength{\kilopagethickness}{136.5bp}  % per 1000 pages, for accuracy
-% \setlength{\coverthickness}{0.213bp}
+%\setlength{\kilopagethickness}{169.2bp}  % per 1000 pages, for accuracy
+%\setlength{\coverthickness}{0.213bp}
 
 \setlength{\spinewidth}{\kilopagethickness*\ratio{1pt*\numpages}{1000pt} + \coverthickness}
 \setlength{\coverwidth}{\bleed + \trimwidth + \spinewidth + \trimwidth + \bleed}
