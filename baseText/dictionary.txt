@@ -139,6 +139,7 @@ linearity
 LinVW
 Liu
 Lyryx
+MacIntosh
 MacKenzie
 mailto
 mathstat
