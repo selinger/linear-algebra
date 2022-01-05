@@ -5,6 +5,7 @@ AES
 affine
 AHIFNEPL
 Akaka
+Alain
 Alkayale
 Allard
 american
@@ -190,6 +191,7 @@ Sava
 Sawtell
 saylor
 scalings
+Schaerer
 schmidt
 schwarz
 seealso
