@@ -17,6 +17,7 @@ antisymmetric
 Argand
 Arman
 ASCII
+Asif
 Asmita
 associativity
 Baucus
@@ -96,6 +97,7 @@ gj
 gov
 hamilton
 Hannila
+Hassaan
 hermitian
 hilbert
 homo
