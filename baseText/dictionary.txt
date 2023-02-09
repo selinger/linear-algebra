@@ -14,6 +14,7 @@ antiderivatives
 antilinear
 antilinearity
 antisymmetric
+Arcara
 Argand
 Arman
 ASCII
