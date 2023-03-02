@@ -158,12 +158,12 @@ independent.
   We must show that $a_1,\ldots,a_k = 0$. So pick some
   $i\in\set{1,\ldots,k}$. We compute
   \begin{eqnarray*}
-    \iprod{a_1\vect{u}_1 + \ldots + a_k\vect{u}_k, \vect{u}_i}
-    &=& a_1\iprod{\vect{u}_1,\vect{u}_i}
+    \iprod{\vect{u}_i, a_1\vect{u}_1 + \ldots + a_k\vect{u}_k}
+    &=& a_1\iprod{\vect{u}_i,\vect{u}_1}
         + \ldots
         + a_i\iprod{\vect{u}_i,\vect{u}_i}
         + \ldots
-        + a_k\iprod{\vect{u}_k,\vect{u}_i} \\
+        + a_k\iprod{\vect{u}_i,\vect{u}_k} \\
     &=& 0
         + \ldots
         + a_i\iprod{\vect{u}_i,\vect{u}_i}
@@ -173,8 +173,8 @@ independent.
   \end{eqnarray*}
   On the other hand,
   \begin{equation*}
-    \iprod{a_1\vect{u}_1 + \ldots + a_k\vect{u}_k, \vect{u}_i}
-    = \iprod{\vect{0}, \vect{u}_i} = 0.
+    \iprod{\vect{u}_i, a_1\vect{u}_1 + \ldots + a_k\vect{u}_k}
+    = \iprod{\vect{u}_i, \vect{0}} = 0.
   \end{equation*}
   It follows that $a_i \iprod{\vect{u}_i,\vect{u}_i} = 0$. Since
   $\iprod{\vect{u}_i,\vect{u}_i}\neq 0$, it follows that
@@ -330,9 +330,9 @@ the following property:
   basis for an inner product space $V$, such that
   $\norm{\vect{u}_1}=1$, $\norm{\vect{u}_2}=\sqrt{2}$, and
   $\norm{\vect{u}_3}=2$.  Moreover, suppose that $\vect{v}\in V$ is a
-  vector such that $\iprod{\vect{v},\vect{u}_1} = 3$,
-  $\iprod{\vect{v},\vect{u}_2} = -1$, and
-  $\iprod{\vect{v},\vect{u}_3} = 2$.  Find the coordinates of
+  vector such that $\iprod{\vect{u}_1,\vect{v}} = 3$,
+  $\iprod{\vect{u}_2,\vect{v}} = -1$, and
+  $\iprod{\vect{u}_3,\vect{v}} = 2$.  Find the coordinates of
   $\vect{v}$ with respect to $B$.
 \end{example}
 
