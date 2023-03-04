@@ -30,20 +30,26 @@
 
 \begin{ex}
   Find the matrix for the linear transformation that rotates every
-  vector in $\R^2$ by an angle of $\pi /6$ and then reflects
-  about the $x$-axis followed by a reflection about the $y$-axis.
+  vector in $\R^2$ by a counterclockwise angle of $\pi/6$ and then
+  reflects about the $x$-axis followed by a reflection about the
+  $y$-axis.
   \begin{sol}
     \begin{equation*}
       \def\arraystretch{1.2}
       \begin{mymatrix}{rr}
+        1 & 0 \\
+        0 & -1
+      \end{mymatrix}
+      \begin{mymatrix}{rr}
         -1 & 0 \\
         0 & 1
-      \end{mymatrix} \begin{mymatrix}{cc}
+      \end{mymatrix}
+      \begin{mymatrix}{cc}
         \cos \paren{\frac{\pi}{6}}  & -\sin \paren{\frac{\pi}{6}}  \\
         \sin \paren{\frac{\pi}{6}}  & \cos \paren{\frac{\pi}{6}}
       \end{mymatrix} = \begin{mymatrix}{cc}
         -\frac{1}{2}\sqrt{3} & \frac{1}{2} \\
-        \frac{1}{2} & \frac{1}{2}\sqrt{3}
+        -\frac{1}{2} & -\frac{1}{2}\sqrt{3}
       \end{mymatrix}
     \end{equation*}
   \end{sol}
