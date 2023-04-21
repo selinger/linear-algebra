@@ -1,11 +1,11 @@
-\section{Diagonalization of symmetric matrices}
+\section{Diagonalization of real symmetric matrices}
 
 \begin{outcome}
   \begin{enumerate}
-  \item Compute the real eigenvalues of a symmetric matrix.
-  \item Compute an orthogonal basis of eigenvectors for a symmetric
+  \item Compute the eigenvalues of a real symmetric matrix.
+  \item Compute an orthogonal basis of eigenvectors for a real symmetric
     matrix.
-  \item Orthogonally diagonalize a symmetric matrix. 
+  \item Orthogonally diagonalize a real symmetric matrix. 
   \end{enumerate}
 \end{outcome}
 
@@ -16,9 +16,9 @@ diagonalized is symmetric. Recall that a matrix $A$ is
 \textbf{symmetric}%
 \index{symmetric matrix}%
 \index{matrix!symmetric} if $A=A^T$. We begin with some observations
-about the eigenvalues and eigenvectors of a symmetric matrix.
+about the eigenvalues and eigenvectors of a real symmetric matrix.
 
-\begin{proposition}{Eigenvalues and eigenvectors of symmetric matrices}{eigenvalues-symmetric}
+\begin{proposition}{Eigenvalues and eigenvectors of real symmetric matrices}{eigenvalues-symmetric}
   Let $A$ be a symmetric matrix with real entries. Then
   \begin{enumialphparenastyle}
     \begin{enumerate}
@@ -104,7 +104,7 @@ can interchangeably write $D = P^{-1}AP$ or $D = P^TAP$.  The
 following is the main theorem about the diagonalization of real
 symmetric matrices.
 
-\begin{theorem}{Diagonalization of symmetric matrices}{diagonalization-symmetric}
+\begin{theorem}{Diagonalization of real symmetric matrices}{diagonalization-symmetric}
   Every real symmetric matrix $A$ is orthogonally diagonalizable.
 \end{theorem}
 
@@ -188,7 +188,7 @@ symmetric matrices.
   Therefore, $A$ is orthogonally diagonalizable.
 \end{proof}
 
-\begin{example}{Diagonalization of symmetric matrices}{diagonalization-symmetric}
+\begin{example}{Diagonalization of real symmetric matrices}{diagonalization-symmetric}
   Orthogonally diagonalize the matrix
   \begin{equation*}
     A = \begin{mymatrix}{rr}
@@ -264,7 +264,7 @@ symmetric matrices.
   \end{equation*}
 \end{solution}
 
-\begin{example}{Diagonalization of symmetric matrices}{diagonalization-symmetric2}
+\begin{example}{Diagonalization of real symmetric matrices}{diagonalization-symmetric2}
   Find an orthogonal matrix $P$ and a diagonal matrix $D$ such $D =
   P^{-1}AP$, where
   \begin{equation*}
