@@ -172,6 +172,7 @@ parallelepiped
 parametric
 pdf
 pdflatex
+Pearce
 piecewise
 plaintext
 Pok
