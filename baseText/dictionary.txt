@@ -9,7 +9,7 @@ Alain
 Alkayale
 Allard
 american
-Andrée
+AndrÃ©e
 antiderivatives
 antilinear
 antilinearity
@@ -84,7 +84,7 @@ equalities
 Esa
 etc
 exponentials
-échelle
+Ã©chelle
 Farah
 fibonacci
 fourier
@@ -184,7 +184,7 @@ radian
 radians
 recurrere
 remix
-René
+RenÃ©
 Reynold's
 Rie
 rn
