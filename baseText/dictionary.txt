@@ -1,6 +1,7 @@
 abs
 adjoint
 adjugate
+Adrien
 AES
 affine
 AHIFNEPL
@@ -58,6 +59,7 @@ decoupled
 decrypt
 decryption
 Deklan
+Delazzer
 depolarize
 descartes
 diagonalizability
@@ -151,6 +153,7 @@ mailto
 mathstat
 Mengering
 metron
+Meunier
 mm
 Mmn
 modulo
